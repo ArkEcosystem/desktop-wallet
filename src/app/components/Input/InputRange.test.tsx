@@ -5,8 +5,8 @@ import { InputRange } from "./InputRange";
 
 const properties = {
 	defaultValue: (5 * 1e8).toFixed(0),
-	min: 1,
-	max: 10,
+	min: "1",
+	max: "10",
 	step: 1,
 };
 
