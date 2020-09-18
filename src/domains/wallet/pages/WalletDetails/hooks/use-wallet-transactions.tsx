@@ -1,13 +1,10 @@
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { uniqBy } from "@arkecosystem/utils";
-import { useActiveWallet } from "app/hooks";
 import { useSynchronizer } from "app/hooks/use-synchronizer";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-export const useWalletTransactions = (limit: number) => {
-	const activeWallet = useActiveWallet();
-
+export const useWalletTransactions = (wallet: ReadWriteWallet, query: { limit: number }) => {
 	// TODO: Multi Signature PR
 	const pendingTransactions: SignedTransactionData[] = [];
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
@@ -17,12 +14,12 @@ export const useWalletTransactions = (limit: number) => {
 	const sync = useCallback(
 		async (cursor: string | number | undefined) => {
 			setIsLoading(true);
-			const response = await activeWallet.transactions({ limit, cursor });
+			const response = await wallet.transactions({ ...query, cursor });
 			setNextPage(response.nextPage());
 			setTransactions((prev) => [...prev, ...response.items()]);
 			setIsLoading(false);
 		},
-		[activeWallet, limit],
+		[wallet, query],
 	);
 
 	const fetchMore = useCallback(() => sync(nextPage), [nextPage, sync]);
@@ -33,9 +30,9 @@ export const useWalletTransactions = (limit: number) => {
 	 * Run periodically every 30 seconds to check for new transactions
 	 */
 	const verifyNew = useCallback(async () => {
-		const response = await activeWallet.transactions({ limit, cursor: 1 });
+		const response = await wallet.transactions({ ...query, cursor: 1 });
 		setTransactions((prev) => uniqBy([...response.items(), ...prev], (item) => item.id()));
-	}, [activeWallet, limit]);
+	}, [wallet, query]);
 
 	const jobs = useMemo(
 		() => [

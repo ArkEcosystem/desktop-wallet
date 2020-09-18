@@ -42,7 +42,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		fetchMore,
 		isLoading: isLoadingTransactions,
 		hasMore,
-	} = useWalletTransactions(15);
+	} = useWalletTransactions(activeWallet, { limit: 15 });
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
