@@ -8,7 +8,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
-import { TransactionSentStep as ThirdStep } from "domains/transaction/components/EntityRegistrationForm/TransactionSentStep";
+import { SentStep as ThirdStep } from "domains/transaction/components/EntityRegistrationForm";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";

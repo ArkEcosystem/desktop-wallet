@@ -12,12 +12,12 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type TransactionSentProps = {
+type SentStep = {
 	transaction: SignedTransactionData;
 	senderWallet: ReadWriteWallet;
 };
 
-export const TransactionSentStep = ({ transaction, senderWallet }: TransactionSentProps) => {
+export const SentStep = ({ transaction, senderWallet }: SentStep) => {
 	const [ipfsData, setIpfsData] = useState<any>();
 	const { t } = useTranslation();
 

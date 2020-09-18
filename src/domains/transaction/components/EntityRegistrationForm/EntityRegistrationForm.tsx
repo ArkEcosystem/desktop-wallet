@@ -15,8 +15,7 @@ import {
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 
-import { FormStep } from "./Step2";
-import { ReviewStep } from "./Step3";
+import { FormStep, ReviewStep } from "./";
 
 const FormStepsComponent = ({ activeTab, wallet }: SendEntityRegistrationComponent) => {
 	const { register } = useFormContext();

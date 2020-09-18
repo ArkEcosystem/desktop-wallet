@@ -12,9 +12,11 @@ import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { useValidation } from "app/hooks/validations";
 import { toasts } from "app/services";
 import { AuthenticationStep as ThirdStep } from "domains/transaction/components/AuthenticationStep";
-import { FormStep as FirstStep } from "domains/transaction/components/EntityRegistrationForm/Step2";
-import { ReviewStep as SecondStep } from "domains/transaction/components/EntityRegistrationForm/Step3";
-import { TransactionSentStep as FourthStep } from "domains/transaction/components/EntityRegistrationForm/TransactionSentStep";
+import {
+	FormStep as FirstStep,
+	ReviewStep as SecondStep,
+	SentStep as FourthStep,
+} from "domains/transaction/components/EntityRegistrationForm";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
