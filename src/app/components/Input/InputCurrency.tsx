@@ -12,13 +12,22 @@ type Props = { onChange?: (value: { display: string; value: string }) => void; m
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 	({ onChange, value, magnitude, ...props }: Props, ref) => {
 		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
-		const defaultValue = value ? BigNumber.make(Number(value)).divide(1e8).toString() : "";
-		console.log({ defaultValue });
-		const [amount, setAmount] = useState(convertValue(defaultValue));
+		const evaluateValue = useCallback(
+			(value: any) => {
+				if (typeof value === "string")
+					return convertValue(BigNumber.make(Number(value)).divide(1e8).toString());
+
+				if (value.display) return value;
+
+				return convertValue(value.toString());
+			},
+			[convertValue],
+		);
+		const [amount, setAmount] = useState(evaluateValue(value));
 
 		useLayoutEffect(() => {
-			setAmount(convertValue(defaultValue));
-		}, [defaultValue, convertValue, onChange]);
+			setAmount(evaluateValue(value));
+		}, [convertValue, evaluateValue, onChange, value]);
 
 		const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 			const { value } = event.target;
