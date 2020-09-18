@@ -194,9 +194,7 @@ describe("MyRegistrations", () => {
 			fireEvent.click(resignOption);
 		});
 
-		expect(history.location.pathname).toEqual(
-			`/profiles/${fixtureProfileId}/wallets/${delegateWalletId}/send-entity-update`,
-		);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/send-entity-registration`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
