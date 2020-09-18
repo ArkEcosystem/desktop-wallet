@@ -57,7 +57,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 			if (value) {
 				setValues([value]);
 			}
-		}, [value, convertValue]);
+		}, [value]);
 
 		return (
 			<InputGroup>
