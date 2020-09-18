@@ -29,8 +29,8 @@ export const FirstStep = ({
 	const { t } = useTranslation();
 	const form = useFormContext();
 
-	const { getValues, setValue } = form;
-	const { senderAddress } = form.watch();
+	const { getValues, setValue, watch } = form;
+	const { senderAddress } = watch();
 	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "5",
 		min: "0",
