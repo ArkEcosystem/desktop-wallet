@@ -175,6 +175,14 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
+	PAGE_MULTISIGNATURE: {
+		GENERATION_STEP: {
+			TITLE: "Multisignature Registration",
+			DESCRIPTION: "Register a new multisignature address by adding participants.",
+		},
+		MIN_SIGNATURES: "Minimum Required Signatures",
+	},
+
 	PAGE_RESIGN_REGISTRATION: {
 		ENTITY_NAME: "Entity Name",
 		FIRST_STEP: {
