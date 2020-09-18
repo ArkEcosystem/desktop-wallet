@@ -14,12 +14,11 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
 		const evaluateValue = useCallback(
 			(value: any) => {
-				if (typeof value === "string")
-					return convertValue(BigNumber.make(Number(value)).divide(1e8).toString());
+				if (typeof value === "string") return convertValue(BigNumber.make(Number(value)).toString());
 
-				if (value.display) return value;
+				if (value?.display) return value;
 
-				return convertValue(value.toString());
+				return convertValue(value?.toString() || "");
 			},
 			[convertValue],
 		);
