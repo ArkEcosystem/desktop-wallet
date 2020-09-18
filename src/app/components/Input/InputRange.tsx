@@ -9,7 +9,7 @@ import { InputGroup } from "./InputGroup";
 
 type Props = {
 	defaultValue: any;
-	value?: { display: string; value: string };
+	value?: any;
 	min: string;
 	max: string;
 	step: number;
@@ -55,9 +55,14 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 
 		useEffect(() => {
 			if (value) {
-				setValues([value.display]);
+				let amount = value;
+				if (!value.display) {
+					amount = convertValue(BigNumber.make(value).divide(1e8).toString());
+				}
+
+				setValues([amount.display]);
 			}
-		}, [value]);
+		}, [value, convertValue]);
 
 		return (
 			<InputGroup>
