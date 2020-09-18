@@ -237,16 +237,15 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 		</Page>
 	);
 };
-
 SendEntityUpdate.defaultProps = {
 	formDefaultValues: {
 		fees: {
-			static: "5",
-			min: "0",
-			avg: "1",
-			max: "2",
+			avg: "500000000",
+			max: "500000000",
+			min: "500000000",
+			static: "500000000",
 		},
-		fee: "0",
+		fee: "500000000",
 		ipfsData: {
 			meta: {
 				displayName: undefined,
