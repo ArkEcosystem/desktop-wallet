@@ -33,7 +33,6 @@ const whiteListedModules = [
 	"@arkecosystem/platform-sdk-xlm",
 	"@arkecosystem/platform-sdk-xmr",
 	"@arkecosystem/platform-sdk-xrp",
-	"@arkecosystem/platform-sdk-ipfs",
 	"@arkecosystem/utils",
 	"@tippyjs/react",
 	"downshift",
