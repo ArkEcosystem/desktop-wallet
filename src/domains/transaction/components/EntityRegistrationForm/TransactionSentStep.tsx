@@ -52,15 +52,17 @@ export const TransactionSentStep = ({ transaction, senderWallet }: TransactionSe
 				<div data-testid="TransactionSent__ipfs-data">
 					<TransactionDetail label={t("TRANSACTION.ENTITY.NAME")}>{transaction.data().a}</TransactionDetail>
 
-					<TransactionDetail label={t("TRANSACTION.NAME")}>{ipfsData?.meta?.displayName}</TransactionDetail>
+					<TransactionDetail label={t("TRANSACTION.NAME")}>
+						{ipfsData?.data?.meta?.displayName}
+					</TransactionDetail>
 
 					<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>
-						{ipfsData?.meta?.description}
+						{ipfsData?.data?.meta?.description}
 					</TransactionDetail>
 
 					<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
 						<Link to={ipfsData?.meta?.website} isExternal>
-							{ipfsData?.meta?.website}
+							{ipfsData?.data?.meta?.website}
 						</Link>
 					</TransactionDetail>
 				</div>
