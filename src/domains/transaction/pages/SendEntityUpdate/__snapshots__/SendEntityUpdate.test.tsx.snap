@@ -561,7 +561,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                                       data-testid="InputCurrency"
                                       name="fee"
                                       type="text"
-                                      value=""
+                                      value="25"
                                     />
                                     <div
                                       class="absolute bottom-0 w-full px-1"
@@ -582,12 +582,12 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                                             <div
                                               aria-valuemax="100"
                                               aria-valuemin="1"
-                                              aria-valuenow="NaN"
+                                              aria-valuenow="25"
                                               class="sc-fzoXzr eykVSb"
                                               data-testid="Range__thumb"
                                               draggable="false"
                                               role="slider"
-                                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(NaNpx, 0px);"
+                                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
                                               tabindex="0"
                                             />
                                           </div>
@@ -8500,7 +8500,7 @@ exports[`SendEntityUpdate should succesfully submit entity update transaction 1`
                                       data-testid="InputCurrency"
                                       name="name"
                                       type="text"
-                                      value=""
+                                      value="25"
                                     />
                                     <div
                                       class="absolute bottom-0 w-full px-1"
@@ -8521,12 +8521,12 @@ exports[`SendEntityUpdate should succesfully submit entity update transaction 1`
                                             <div
                                               aria-valuemax="100"
                                               aria-valuemin="1"
-                                              aria-valuenow="NaN"
+                                              aria-valuenow="25"
                                               class="sc-fzoXzr eykVSb"
                                               data-testid="Range__thumb"
                                               draggable="false"
                                               role="slider"
-                                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(NaNpx, 0px);"
+                                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
                                               tabindex="0"
                                             />
                                           </div>
