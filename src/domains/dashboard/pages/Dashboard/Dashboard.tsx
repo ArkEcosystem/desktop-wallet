@@ -41,23 +41,21 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 	const balancePerCoin = useMemo(() => activeProfile.walletAggregate().balancePerCoin(), [activeProfile]);
 	const portfolioPercentages = useMemo(() => {
-		const coins = Object.keys(balancePerCoin);
-		const data =
-			coins.length > 0
-				? coins.map((coin) => {
-						for (const network of availableNetworks) {
-							if (network.ticker() === coin) {
-								return {
-									color: network.extra?.textClass.replace("text-theme-", ""),
-									label: coin,
-									percentage: Number(balancePerCoin[coin].percentage),
-								};
-							}
-						}
-				  })
-				: [];
+		const data: BarItem[] = [];
 
-		return sortByDesc([...data] as BarItem[], "percentage");
+		for (const coin of Object.keys(balancePerCoin)) {
+			for (const network of availableNetworks) {
+				if (network.ticker() === coin) {
+					data.push({
+						color: network.extra!.textClass.replace("text-theme-", ""),
+						label: coin,
+						percentage: Number(balancePerCoin[coin].percentage),
+					});
+				}
+			}
+		}
+
+		return sortByDesc([...data], "percentage");
 	}, [availableNetworks, balancePerCoin]);
 
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
