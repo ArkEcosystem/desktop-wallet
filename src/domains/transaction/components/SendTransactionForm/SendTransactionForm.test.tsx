@@ -22,7 +22,7 @@ import { SendTransactionForm } from "./";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
-const defaultFee = { display: "0.71538139", value: "71538139" };
+const defaultFee = "71538139";
 
 describe("SendTransactionForm", () => {
 	beforeAll(async () => {
@@ -75,10 +75,10 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee.value));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
 
 			// Fee
-			expect(getByTestId("InputCurrency")).toHaveValue("0.71538139");
+			expect(getByTestId("InputCurrency")).toHaveValue("71538139");
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
@@ -128,7 +128,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee.value));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
 
 			// Select sender & update fees
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));

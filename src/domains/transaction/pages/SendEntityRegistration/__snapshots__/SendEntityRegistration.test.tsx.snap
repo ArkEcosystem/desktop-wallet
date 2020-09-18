@@ -9574,7 +9574,7 @@ exports[`Registration should validate entity name 1`] = `
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
-                                  value="25"
+                                  value="2500000000"
                                 />
                               </div>
                             </div>
@@ -9584,20 +9584,30 @@ exports[`Registration should validate entity name 1`] = `
                                 data-testid="SelectionBar"
                                 role="radiogroup"
                               >
-                                <label
-                                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                                  data-testid="FormLabel"
-                                  for="fee"
+                                <button
+                                  aria-checked="false"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  data-testid="SelectionBarOption"
+                                  role="radio"
+                                  type="button"
                                 >
-                                  Transaction Fee
-                                  <div
-                                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                    data-testid="FormLabel__required"
-                                  />
-                                </label>
-                                <div
-                                  class="flex space-x-2"
-                                  data-testid="InputFee"
+                                  Min
+                                </button>
+                                <button
+                                  aria-checked="false"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  data-testid="SelectionBarOption"
+                                  role="radio"
+                                  type="button"
+                                >
+                                  Average
+                                </button>
+                                <button
+                                  aria-checked="false"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  data-testid="SelectionBarOption"
+                                  role="radio"
+                                  type="button"
                                 >
                                   <div
                                     class="flex-1"
@@ -10253,7 +10263,7 @@ exports[`Registration should validate website url 1`] = `
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
-                                  value="25"
+                                  value="2500000000"
                                 />
                               </div>
                             </div>
@@ -10263,20 +10273,30 @@ exports[`Registration should validate website url 1`] = `
                                 data-testid="SelectionBar"
                                 role="radiogroup"
                               >
-                                <label
-                                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                                  data-testid="FormLabel"
-                                  for="fee"
+                                <button
+                                  aria-checked="false"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  data-testid="SelectionBarOption"
+                                  role="radio"
+                                  type="button"
                                 >
-                                  Transaction Fee
-                                  <div
-                                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                    data-testid="FormLabel__required"
-                                  />
-                                </label>
-                                <div
-                                  class="flex space-x-2"
-                                  data-testid="InputFee"
+                                  Min
+                                </button>
+                                <button
+                                  aria-checked="false"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  data-testid="SelectionBarOption"
+                                  role="radio"
+                                  type="button"
+                                >
+                                  Average
+                                </button>
+                                <button
+                                  aria-checked="false"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  data-testid="SelectionBarOption"
+                                  role="radio"
+                                  type="button"
                                 >
                                   <div
                                     class="flex-1"

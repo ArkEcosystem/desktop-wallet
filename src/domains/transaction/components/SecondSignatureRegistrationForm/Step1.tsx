@@ -1,6 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
@@ -69,9 +70,12 @@ export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFe
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={0.01}
-						onChange={(currency: { display?: string; value: string }) =>
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
-						}
+						onChange={(fee: string) => {
+							setValue("fee", BigNumber.make(fee).times(1e8).toString(), {
+								shouldValidate: true,
+								shouldDirty: true,
+							});
+						}}
 					/>
 				</FormField>
 			</div>
