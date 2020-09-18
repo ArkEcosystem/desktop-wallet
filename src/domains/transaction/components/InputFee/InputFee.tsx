@@ -1,8 +1,7 @@
-import { Currency } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { InputRange } from "app/components/Input";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export type InputFeeProps = {
@@ -12,14 +11,12 @@ export type InputFeeProps = {
 	avg: string;
 	max: string;
 	step: number;
-	magnitude?: number;
 	onChange?: (value: { display: string; value: string }) => void;
 };
 
 // TODO: Remove defaultValue?
-export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step, magnitude }: InputFeeProps) => {
+export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }: InputFeeProps) => {
 	const { t } = useTranslation();
-	const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
 
 	const minHuman = BigNumber.make(min).divide(1e8).toString();
 	const maxHuman = BigNumber.make(max).divide(1e8).toString();
@@ -54,25 +51,25 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step, m
 			<div>
 				<SelectionBar>
 					<SelectionBarOption
-						value={min}
-						isValueChecked={() => fee.display === minHuman}
-						setCheckedValue={() => handleFeeChange(convertValue(minHuman))}
+						value={minHuman}
+						isValueChecked={() => fee === minHuman}
+						setCheckedValue={handleFeeChange}
 					>
 						{t("TRANSACTION.FEES.MIN")}
 					</SelectionBarOption>
 
 					<SelectionBarOption
-						value={avg}
-						isValueChecked={() => fee.display === avgHuman}
-						setCheckedValue={() => handleFeeChange(convertValue(avgHuman))}
+						value={avgHuman}
+						isValueChecked={() => fee === avgHuman}
+						setCheckedValue={handleFeeChange}
 					>
 						{t("TRANSACTION.FEES.AVERAGE")}
 					</SelectionBarOption>
 
 					<SelectionBarOption
-						value={max}
-						isValueChecked={() => fee.display === maxHuman}
-						setCheckedValue={() => handleFeeChange(convertValue(maxHuman))}
+						value={maxHuman}
+						isValueChecked={() => fee === maxHuman}
+						setCheckedValue={handleFeeChange}
 					>
 						{t("TRANSACTION.FEES.MAX")}
 					</SelectionBarOption>
@@ -80,8 +77,4 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step, m
 			</div>
 		</div>
 	);
-};
-
-InputFee.defaultProps = {
-	magnitude: 8,
 };
