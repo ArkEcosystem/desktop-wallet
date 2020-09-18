@@ -24,15 +24,9 @@ const getStatus = (isConfirmed: boolean, isSignaturePending?: boolean): Transact
 };
 
 export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: Props) => {
-	const status = React.useMemo(() => getStatus(transaction?.isConfirmed(), isSignaturePending), [
-		transaction,
-		isSignaturePending,
-	]);
-
-	const tooltipContent = React.useMemo(
-		() => (status === "actionRequired" ? "Action Required" : `${transaction?.confirmations()} confirmations`),
-		[transaction, status],
-	);
+	const status = getStatus(transaction?.isConfirmed(), isSignaturePending);
+	const tooltipContent =
+		status === "actionRequired" ? "Action Required" : `${transaction?.confirmations()} confirmations`;
 
 	const iconName = {
 		confirmed: "Ok",

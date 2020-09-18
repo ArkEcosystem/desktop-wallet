@@ -26,7 +26,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
 	const { t } = useTranslation();
@@ -203,7 +203,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 									className="w-full mt-10 mb-5"
 									onClick={() => fetchMore()}
 								>
-									{isLoadingTransactions ? <Spinner /> : t("COMMON.VIEW_MORE")}
+									{isLoadingTransactions ? <Spinner size="sm" /> : t("COMMON.VIEW_MORE")}
 								</Button>
 							)}
 						</>

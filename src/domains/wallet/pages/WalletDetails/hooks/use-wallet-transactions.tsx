@@ -34,7 +34,7 @@ export const useWalletTransactions = (limit: number) => {
 	 */
 	const verifyNew = useCallback(async () => {
 		const response = await activeWallet.transactions({ limit, cursor: 1 });
-		setTransactions((prev) => uniqBy([...prev, ...response.items()], (item) => item.id()));
+		setTransactions((prev) => uniqBy([...response.items(), ...prev], (item) => item.id()));
 	}, [activeWallet, limit]);
 
 	const jobs = useMemo(
