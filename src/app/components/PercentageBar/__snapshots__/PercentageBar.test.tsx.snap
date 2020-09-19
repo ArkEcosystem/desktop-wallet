@@ -14,7 +14,7 @@ exports[`PercentageBar should render 1`] = `
       />
     </div>
     <div
-      class="flex"
+      class="flex -space-x-1"
     />
   </div>
 </div>
@@ -107,19 +107,19 @@ exports[`PercentageBar should render with data 1`] = `
       </div>
     </div>
     <div
-      class="flex"
+      class="flex -space-x-1"
     >
       <div
-        class="h-1 -ml-1 rounded-sm bg-theme-danger-500"
+        class="h-1 rounded-sm bg-theme-danger-500"
       />
       <div
-        class="h-1 -ml-1 rounded-sm bg-theme-warning-500"
+        class="h-1 rounded-sm bg-theme-warning-500"
       />
       <div
-        class="h-1 -ml-1 rounded-sm bg-theme-primary-500"
+        class="h-1 rounded-sm bg-theme-primary-500"
       />
       <div
-        class="h-1 -ml-1 rounded-sm bg-theme-neutral-400"
+        class="h-1 rounded-sm bg-theme-neutral-400"
       />
     </div>
   </div>
@@ -142,7 +142,7 @@ exports[`PercentageBar should render with title 1`] = `
       />
     </div>
     <div
-      class="flex"
+      class="flex -space-x-1"
     />
   </div>
 </div>
