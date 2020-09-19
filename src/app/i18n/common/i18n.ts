@@ -241,4 +241,9 @@ export const translations: { [key: string]: any } = {
 		TITLE: "No results",
 		SUBTITLE: "No results found. Refine your search and try again",
 	},
+
+	SAVE_FILE: {
+		SUCCESS: "<bold>{{filePath}}</bold> was saved successfully",
+		ERROR: "Could not save file: {{error}}",
+	},
 };

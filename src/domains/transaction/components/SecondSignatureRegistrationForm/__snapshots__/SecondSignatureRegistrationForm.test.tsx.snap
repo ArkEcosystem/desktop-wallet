@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
+exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
 <DocumentFragment>
   <form
     class="space-y-8"
@@ -36,7 +36,7 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-Axmtr BLpZJ flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-Axmtr fhsePB flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -49,9 +49,13 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxheI fmLiBe flex-1 bg-theme-warning-100"
+                class="sc-AxheI bArOyG flex-1 bg-theme-warning-100 space-y-2"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
+                <div
+                  class="text-sm"
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
+                </div>
               </div>
             </div>
             <ul
@@ -125,18 +129,20 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
             class="py-3"
           >
             <div
-              class="flex justify-between"
+              class="flex items-center justify-between"
             >
-              <div>
-                <h3
-                  class="mb-1 text-theme-neutral-dark"
+              <div
+                class="space-y-1"
+              >
+                <span
+                  class="text-lg font-semibold text-theme-neutral-dark"
                 >
-                  Your password in the file
-                </h3>
+                  Download Your Passphrase
+                </span>
                 <p
-                  class="text-theme-neutral"
+                  class="text-sm  text-theme-neutral"
                 >
-                  You can also download and store safely your passphrase.
+                  You can also download and safely store your passphrase.
                 </p>
               </div>
               <div
@@ -150,10 +156,10 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
               </div>
             </div>
             <div
-              class="flex justify-end w-full"
+              class="flex justify-end w-full mt-8"
             >
               <button
-                class="sc-fzqNJr fQhJIp flex items-center mt-4 space-x-2"
+                class="sc-fzqNJr fQhJIp flex items-center space-x-2"
                 color="primary"
                 data-testid="SecondSignature__download"
                 type="button"
@@ -226,7 +232,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-Axmtr dmCHuV flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-Axmtr fhsePB flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -239,9 +245,13 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxheI jVDBvm flex-1 bg-theme-warning-100"
+                class="sc-AxheI bArOyG flex-1 bg-theme-warning-100 space-y-2"
               >
-                Before creating the second signature, we strongly recommend that you save it, as if lost you will not have access to your funds.
+                <div
+                  class="text-sm"
+                >
+                  Before creating the second signature, we strongly recommend that you save it, as if lost you will not have access to your funds.
+                </div>
               </div>
             </div>
             <div
