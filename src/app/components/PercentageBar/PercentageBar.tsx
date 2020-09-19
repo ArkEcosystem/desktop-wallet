@@ -64,12 +64,12 @@ export const PercentageBar = ({ data, title }: PercentageBarProps) => {
 						))}
 				</div>
 			</div>
-			<div className="flex">
+			<div className="flex -space-x-1">
 				{percentageData &&
 					percentageData.map((item: BarItem, index: number) => (
 						<div
 							key={index}
-							className={`h-1 -ml-1 rounded-sm bg-theme-${item.color}`}
+							className={`h-1 rounded-sm bg-theme-${item.color}`}
 							style={{
 								width: `calc(${item.percentage}% + 0.25rem)`,
 							}}
