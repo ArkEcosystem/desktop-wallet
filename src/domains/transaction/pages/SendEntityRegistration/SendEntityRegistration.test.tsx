@@ -1,14 +1,20 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { act, renderHook } from "@testing-library/react-hooks";
+import { act as renderHookAct, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import delegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
+import DelegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
+import EntityRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-update.json";
+import IpfsFixture from "tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json";
+// @ts-ignore
+EntityRegistrationFixture.data.asset.data.name = "Test-Entity-Name";
+
 import {
+	act,
 	defaultNetMocks,
 	env,
 	fireEvent,
@@ -68,12 +74,23 @@ const renderPage = async (wallet?: ReadWriteWallet) => {
 const createTransactionMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-		id: () => delegateRegistrationFixture.data.id,
-		sender: () => delegateRegistrationFixture.data.sender,
-		recipient: () => delegateRegistrationFixture.data.recipient,
-		amount: () => BigNumber.make(delegateRegistrationFixture.data.amount),
-		fee: () => BigNumber.make(delegateRegistrationFixture.data.fee),
-		data: () => delegateRegistrationFixture.data,
+		id: () => DelegateRegistrationFixture.data.id,
+		sender: () => DelegateRegistrationFixture.data.sender,
+		recipient: () => DelegateRegistrationFixture.data.recipient,
+		amount: () => BigNumber.make(DelegateRegistrationFixture.data.amount),
+		fee: () => BigNumber.make(DelegateRegistrationFixture.data.fee),
+		data: () => DelegateRegistrationFixture.data,
+	});
+
+const createEntityRegistrationMock = (wallet: ReadWriteWallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => EntityRegistrationFixture.data.id,
+		sender: () => EntityRegistrationFixture.data.sender,
+		recipient: () => EntityRegistrationFixture.data.recipient,
+		amount: () => BigNumber.make(EntityRegistrationFixture.data.amount),
+		fee: () => BigNumber.make(EntityRegistrationFixture.data.fee),
+		data: () => EntityRegistrationFixture.data,
 	});
 
 describe("Registration", () => {
@@ -91,6 +108,19 @@ describe("Registration", () => {
 	beforeEach(() => {
 		nock.cleanAll();
 		defaultNetMocks();
+
+		nock("https://dwallets.ark.io")
+			.get("/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")
+			.reply(200, require("tests/fixtures/coins/ark/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
+
+		nock("https://platform.ark.io/api")
+			.get("/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV")
+			.reply(200, IpfsFixture)
+			.get("/ipfs/QmV1n5F9PuBE2ovW9jVfFpxyvWZxYHjSdfLrYL2nDcb1gW")
+			.reply(200, IpfsFixture)
+			.post("/ipfs")
+			.reply(200, { data: { hash: EntityRegistrationFixture.data.asset.data.ipfsData } })
+			.persist();
 	});
 
 	it("should render registration form without selected wallet", async () => {
@@ -138,7 +168,7 @@ describe("Registration", () => {
 		const setValueSpy = jest.spyOn(form.current, "setValue");
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await renderHookAct(async () => {
 			rendered = render(
 				<FormProvider {...form.current}>
 					<FirstStep
@@ -156,7 +186,7 @@ describe("Registration", () => {
 
 		const { asFragment, getByTestId } = rendered!;
 
-		await act(async () => {
+		await renderHookAct(async () => {
 			fireEvent.click(getByTestId("select-list__toggle-button"));
 
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
@@ -187,7 +217,7 @@ describe("Registration", () => {
 		const setValueSpy = jest.spyOn(form.current, "setValue");
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await renderHookAct(async () => {
 			rendered = render(
 				<FormProvider {...form.current}>
 					<FirstStep
@@ -205,7 +235,7 @@ describe("Registration", () => {
 
 		const { asFragment, getByTestId } = rendered!;
 
-		await act(async () => {
+		await renderHookAct(async () => {
 			fireEvent.click(getByTestId("select-list__toggle-button"));
 
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
@@ -423,7 +453,7 @@ describe("Registration", () => {
 
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signDelegateRegistration")
-				.mockReturnValue(Promise.resolve(delegateRegistrationFixture.data.id));
+				.mockReturnValue(Promise.resolve(DelegateRegistrationFixture.data.id));
 			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 			const transactionMock = createTransactionMock(wallet);
 
@@ -882,5 +912,126 @@ describe("Registration", () => {
 		});
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should succesfully register entity", async () => {
+		const { asFragment, getByTestId, queryAllByTestId } = await renderPage(secondWallet);
+
+		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), {
+				target: {
+					value: "Test-Entity-Name",
+				},
+			});
+		});
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("Test-Entity-Name"));
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__display-name"), {
+				target: {
+					value: "Test Entity Display Name",
+				},
+			});
+		});
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue("Test Entity Display Name"),
+		);
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__description"), {
+				target: {
+					value: "Test Entity Description",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__description")).toHaveValue("Test Entity Description"),
+		);
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__website"), {
+				target: {
+					value: "https://test-step.entity.com",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__website")).toHaveValue("https://test-step.entity.com"),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("ReviewStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+		// Step 4 - signing
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+		const mnemonic = getByTestId("AuthenticationStep__mnemonic");
+		const secondMnemonic = getByTestId("AuthenticationStep__second-mnemonic");
+
+		act(() => {
+			fireEvent.input(mnemonic, { target: { value: "passphrase" } });
+		});
+
+		fireEvent.input(secondMnemonic, { target: { value: "passphrase" } });
+
+		await waitFor(() => expect(mnemonic).toHaveValue("passphrase"));
+		await waitFor(() => expect(secondMnemonic).toHaveValue("passphrase"));
+
+		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
+		await waitFor(() => expect(getByTestId("Registration__send-button")).toBeTruthy());
+
+		const signMock = jest
+			.spyOn(secondWallet.transaction(), "signEntityRegistration")
+			.mockReturnValue(Promise.resolve(EntityRegistrationFixture.data.id));
+		const broadcastMock = jest.spyOn(secondWallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createEntityRegistrationMock(secondWallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__send-button"));
+		});
+
+		await waitFor(() => expect(signMock).toHaveBeenCalled());
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+
+		// Step 5 - sent screen
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 });

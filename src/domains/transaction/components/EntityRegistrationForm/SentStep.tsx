@@ -34,7 +34,6 @@ export const SentStep = ({ transaction, senderWallet }: SentStep) => {
 
 		fetchIpfs();
 	}, [transaction]);
-	console.log("rendering send step", transaction?.data().asset);
 
 	return (
 		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>

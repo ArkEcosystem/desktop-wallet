@@ -154,7 +154,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 								/>
 							)}
 
-							{registrationForm && form.getValues("fee") && (
+							{registrationForm && (
 								<>
 									<TabPanel tabId={stepCount - 1}>
 										<AuthenticationStep wallet={activeWallet} />
