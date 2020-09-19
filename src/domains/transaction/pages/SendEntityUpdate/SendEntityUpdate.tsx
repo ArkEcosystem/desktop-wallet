@@ -64,7 +64,6 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 		register("ipfsData.images");
 		register("registrationId");
 
-		register("entityName", entityRegistration.entityName());
 		register("ipfsData.meta.displayName", entityRegistration.displayName());
 		register("ipfsData.meta.description", entityRegistration.description());
 		register("ipfsData.meta.website", entityRegistration.website());
@@ -166,6 +165,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 							<div className="mt-8">
 								<TabPanel tabId={1}>
 									<FirstStep
+										showEntityNameField={false}
 										title={t("TRANSACTION.PAGE_UPDATE_REGISTRATION.FIRST_STEP.BUSINESS.TITLE")}
 										description={t(
 											"TRANSACTION.PAGE_UPDATE_REGISTRATION.FIRST_STEP.BUSINESS.DESCRIPTION",

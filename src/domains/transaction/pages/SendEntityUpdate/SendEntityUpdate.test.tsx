@@ -93,17 +93,6 @@ describe("SendEntityUpdate", () => {
 			.persist();
 	});
 
-	it("should fetch and fill entity name", async () => {
-		const { getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
-		await waitFor(() =>
-			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
-				BusinessTransactionsFixture.asset.data.name,
-			),
-		);
-	});
-
 	it("should fetch and fill display name input from ipfs", async () => {
 		const { getByTestId } = renderPage();
 
@@ -136,7 +125,7 @@ describe("SendEntityUpdate", () => {
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
 				BusinessTransactionsFixture.asset.data.name,
 			),
 		);
@@ -155,7 +144,7 @@ describe("SendEntityUpdate", () => {
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
 				BusinessTransactionsFixture.asset.data.name,
 			),
 		);
@@ -196,7 +185,7 @@ describe("SendEntityUpdate", () => {
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
 				BusinessTransactionsFixture.asset.data.name,
 			),
 		);
@@ -207,7 +196,7 @@ describe("SendEntityUpdate", () => {
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
 				BusinessTransactionsFixture.asset.data.name,
 			),
 		);
@@ -221,7 +210,7 @@ describe("SendEntityUpdate", () => {
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
 				BusinessTransactionsFixture.asset.data.name,
 			),
 		);
@@ -242,7 +231,7 @@ describe("SendEntityUpdate", () => {
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
 				BusinessTransactionsFixture.asset.data.name,
 			),
 		);
@@ -306,7 +295,7 @@ describe("SendEntityUpdate", () => {
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
 				BusinessTransactionsFixture.asset.data.name,
 			),
 		);
@@ -320,55 +309,6 @@ describe("SendEntityUpdate", () => {
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should fail validation on entity name input in first step", async () => {
-		const { asFragment, getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
-		await waitFor(() =>
-			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
-				BusinessTransactionsFixture.asset.data.name,
-			),
-		);
-
-		// Required
-		act(() => {
-			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), { target: { value: " " } });
-		});
-
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
-		});
-		//
-
-		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
-		expect(asFragment()).toMatchSnapshot();
-
-		// Min length
-		act(() => {
-			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), { target: { value: "ab" } });
-		});
-
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
-		expect(asFragment()).toMatchSnapshot();
-
-		// Max length
-		act(() => {
-			const longText =
-				"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
-			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), { target: { value: longText } });
-		});
-
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
-		});
-		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -669,7 +609,7 @@ describe("SendEntityUpdate", () => {
 		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("TransactionSent__ipfs-data")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SentStep__ipfs-data")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		signMock.mockRestore();
@@ -718,7 +658,7 @@ describe("SendEntityUpdate", () => {
 		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("TransactionSent__ipfs-data")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SentStep__ipfs-data")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {

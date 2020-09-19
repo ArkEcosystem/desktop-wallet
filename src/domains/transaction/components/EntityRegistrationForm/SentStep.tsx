@@ -34,6 +34,7 @@ export const SentStep = ({ transaction, senderWallet }: SentStep) => {
 
 		fetchIpfs();
 	}, [transaction]);
+	console.log("rendering send step", transaction?.data().asset);
 
 	return (
 		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
@@ -48,10 +49,14 @@ export const SentStep = ({ transaction, senderWallet }: SentStep) => {
 				{t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION")}
 			</TransactionDetail>
 
-			{ipfsData && (
-				<div data-testid="TransactionSent__ipfs-data">
-					<TransactionDetail label={t("TRANSACTION.ENTITY.NAME")}>{transaction.data().a}</TransactionDetail>
+			{transaction.data()?.asset?.data?.name && (
+				<TransactionDetail label={t("TRANSACTION.ENTITY.NAME")}>
+					{transaction.data()?.asset?.data?.name}
+				</TransactionDetail>
+			)}
 
+			{ipfsData && (
+				<div data-testid="SentStep__ipfs-data">
 					<TransactionDetail label={t("TRANSACTION.NAME")}>
 						{ipfsData?.data?.meta?.displayName}
 					</TransactionDetail>

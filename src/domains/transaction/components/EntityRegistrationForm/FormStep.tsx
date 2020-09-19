@@ -14,9 +14,10 @@ const entityProvider = new EntityProvider();
 type FormStepProps = {
 	title?: string;
 	description?: string;
+	showEntityNameField?: boolean;
 };
 
-export const FormStep = ({ title, description }: FormStepProps) => {
+export const FormStep = ({ title, description, showEntityNameField = true }: FormStepProps) => {
 	const [selectedAvatar, setSelectedAvatar] = useState<EntityLink | undefined>();
 
 	const { t } = useTranslation();
@@ -99,16 +100,18 @@ export const FormStep = ({ title, description }: FormStepProps) => {
 
 			<div>
 				<div className="pb-8 mt-8">
-					<FormField name="entityName" className="font-normal">
-						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
-						<Input
-							data-testid="EntityRegistrationForm__entity-name"
-							type="text"
-							onChange={handleInput}
-							defaultValue={getValues("entityName")}
-						/>
-						<FormHelperText errorMessage={t("TRANSACTION.ENTITY.INVALID_NAME")} />
-					</FormField>
+					{showEntityNameField && (
+						<FormField name="entityName" className="font-normal">
+							<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
+							<Input
+								data-testid="EntityRegistrationForm__entity-name"
+								type="text"
+								onChange={handleInput}
+								defaultValue={getValues("entityName")}
+							/>
+							<FormHelperText errorMessage={t("TRANSACTION.ENTITY.INVALID_NAME")} />
+						</FormField>
+					)}
 
 					<FormField name="ipfsData.meta.displayName" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.ENTITY.DISPLAY_NAME")}</FormLabel>
