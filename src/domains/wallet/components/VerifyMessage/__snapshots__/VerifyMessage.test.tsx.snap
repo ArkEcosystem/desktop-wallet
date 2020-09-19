@@ -116,13 +116,17 @@ exports[`VerifyMessage should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxirZ evPsEn flex-1 bg-theme-warning-100"
+                    class="sc-AxirZ evPsEn flex-1 bg-theme-warning-100 space-y-2"
                   >
-                    <span
-                      class="text-sm font-medium"
+                    <div
+                      class="text-sm"
                     >
-                      Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}
-                    </span>
+                      <span
+                        class="text-sm font-medium"
+                      >
+                        Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <div

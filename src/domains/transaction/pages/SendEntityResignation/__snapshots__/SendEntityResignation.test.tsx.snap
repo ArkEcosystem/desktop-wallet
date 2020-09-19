@@ -322,7 +322,7 @@ exports[`SendEntityResignation should render 1st step 1`] = `
                           class="flex rounded-lg overflow-hidden bg-theme-warning"
                         >
                           <div
-                            class="sc-fzoNJl kzPnWw flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                            class="sc-fzoNJl igajqw flex items-center justify-center text-theme-warning bg-theme-warning-200"
                           >
                             <div
                               class="sc-AxiKw iRsrJT"
@@ -335,9 +335,13 @@ exports[`SendEntityResignation should render 1st step 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-fzoyTs frnvzS flex-1 bg-theme-warning-100"
+                            class="sc-fzoyTs fFmDGa flex-1 bg-theme-warning-100 space-y-2"
                           >
-                            Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
+                            <div
+                              class="text-sm"
+                            >
+                              Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -863,7 +867,7 @@ exports[`SendEntityResignation should render 1st step as entity 1`] = `
                           class="flex rounded-lg overflow-hidden bg-theme-warning"
                         >
                           <div
-                            class="sc-fzoNJl kzPnWw flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                            class="sc-fzoNJl igajqw flex items-center justify-center text-theme-warning bg-theme-warning-200"
                           >
                             <div
                               class="sc-AxiKw iRsrJT"
@@ -876,9 +880,13 @@ exports[`SendEntityResignation should render 1st step as entity 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-fzoyTs frnvzS flex-1 bg-theme-warning-100"
+                            class="sc-fzoyTs fFmDGa flex-1 bg-theme-warning-100 space-y-2"
                           >
-                            Keep in mind that you cannot restore your entity after the resignation has been registered on the blockchain.
+                            <div
+                              class="text-sm"
+                            >
+                              Keep in mind that you cannot restore your entity after the resignation has been registered on the blockchain.
+                            </div>
                           </div>
                         </div>
                       </div>
