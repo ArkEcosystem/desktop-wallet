@@ -445,15 +445,19 @@ exports[`Settings should change a password 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fzoNJl cMajEE flex-1 bg-theme-success-100"
+                        class="sc-fzoNJl cMajEE flex-1 bg-theme-success-100 space-y-2"
                       >
                         <p
-                          class="text-xl font-bold text-theme-success"
+                          class="text-lg font-bold text-theme-success"
                           data-testid="alert__title"
                         >
                           Success
                         </p>
-                        Your password has been successfully changed.
+                        <div
+                          class="text-sm"
+                        >
+                          Your password has been successfully changed.
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -5018,15 +5022,19 @@ exports[`Settings should set a password 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fzoNJl cMajEE flex-1 bg-theme-success-100"
+                        class="sc-fzoNJl cMajEE flex-1 bg-theme-success-100 space-y-2"
                       >
                         <p
-                          class="text-xl font-bold text-theme-success"
+                          class="text-lg font-bold text-theme-success"
                           data-testid="alert__title"
                         >
                           Success
                         </p>
-                        Your password has been successfully changed.
+                        <div
+                          class="text-sm"
+                        >
+                          Your password has been successfully changed.
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -5640,15 +5648,19 @@ exports[`Settings should show an error alert if the current password does not ma
                         </div>
                       </div>
                       <div
-                        class="sc-fzoNJl cMajEE flex-1 bg-theme-danger-100"
+                        class="sc-fzoNJl cMajEE flex-1 bg-theme-danger-100 space-y-2"
                       >
                         <p
-                          class="text-xl font-bold text-theme-danger"
+                          class="text-lg font-bold text-theme-danger"
                           data-testid="alert__title"
                         >
                           Error
                         </p>
-                        The current password does not match.
+                        <div
+                          class="text-sm"
+                        >
+                          The current password does not match.
+                        </div>
                       </div>
                     </div>
                   </div>

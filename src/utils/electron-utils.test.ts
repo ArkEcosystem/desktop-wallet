@@ -75,6 +75,16 @@ describe("Electron utils", () => {
 			await expect(saveFile()).resolves.toEqual(undefined);
 		});
 
+		it("should return the basename", async () => {
+			showSaveDialogMock = jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => ({
+				filePath: "directory/filename.txt",
+			}));
+
+			await expect(saveFile("raw", "directory/filename", { returnBasename: true })).resolves.toEqual(
+				"filename.txt",
+			);
+		});
+
 		describe("with filter parameter", () => {
 			it("should parse a single FileFilter correctly", async () => {
 				await saveFile("raw", "path", { filters: defaultFilters[0] });
