@@ -16,6 +16,7 @@ import { InputFee } from "../InputFee";
 
 export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFee; wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
+
 	const { getValues, setValue, register, watch } = useFormContext();
 
 	// getValues does not get the value of `defaultValues` on first render
@@ -24,12 +25,14 @@ export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFe
 
 	useEffect(() => {
 		register("secondMnemonic");
+		register("wallet");
 	}, [register]);
 
 	useEffect(() => {
 		const newMnemonic = BIP39.generate();
 		setValue("secondMnemonic", newMnemonic);
-	}, [setValue]);
+		setValue("wallet", wallet);
+	}, [setValue, wallet]);
 
 	return (
 		<section data-testid="SecondSignatureRegistrationForm__generation-step">
@@ -41,7 +44,7 @@ export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFe
 			</div>
 
 			<div className="mt-4">
-				<Alert>{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
+				<Alert size="lg">{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
 
 				<TransactionDetail
 					className="mt-2"
