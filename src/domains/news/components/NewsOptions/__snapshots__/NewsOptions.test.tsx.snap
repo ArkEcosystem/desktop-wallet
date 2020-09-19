@@ -53,7 +53,6 @@ exports[`NewsOptions should render 1`] = `
             data-testid="NewsOptions__category-All"
           >
             <input
-              checked=""
               class="SelectCategory__Input-k7qbth-0 dbODum"
               data-testid="SelectCategory__undefined"
               type="checkbox"
@@ -70,6 +69,7 @@ exports[`NewsOptions should render 1`] = `
             data-testid="NewsOptions__category-Technical"
           >
             <input
+              checked=""
               class="SelectCategory__Input-k7qbth-0 dbODum"
               data-testid="SelectCategory__undefined"
               type="checkbox"

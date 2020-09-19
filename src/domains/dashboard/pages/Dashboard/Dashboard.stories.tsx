@@ -4,7 +4,7 @@ import React from "react";
 import { MemoryRouter, Route } from "react-router";
 import { WalletsDecorator } from "utils/storybook";
 
-import { balances, networks, portfolioPercentages } from "../../data";
+import { balances, networks } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 export default {
@@ -17,9 +17,7 @@ export const Default = ({ env, profile }: { env: Environment; profile: Profile }
 		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/dashboard`]}>
 			<Route
 				path="/profiles/:profileId/dashboard"
-				component={() => (
-					<Dashboard balances={balances} networks={networks} portfolioPercentages={portfolioPercentages} />
-				)}
+				component={() => <Dashboard balances={balances} networks={networks} />}
 			/>
 		</MemoryRouter>
 	</EnvironmentProvider>
@@ -30,9 +28,7 @@ export const FewerWallets = ({ env, profile }: { env: Environment; profile: Prof
 		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/dashboard`]}>
 			<Route
 				path="/profiles/:profileId/dashboard"
-				component={() => (
-					<Dashboard balances={balances} networks={networks} portfolioPercentages={portfolioPercentages} />
-				)}
+				component={() => <Dashboard balances={balances} networks={networks} />}
 			/>
 		</MemoryRouter>
 	</EnvironmentProvider>
@@ -40,6 +36,6 @@ export const FewerWallets = ({ env, profile }: { env: Environment; profile: Prof
 
 export const Empty = ({ env }: { env: Environment }) => (
 	<EnvironmentProvider env={env}>
-		<Dashboard networks={networks} portfolioPercentages={portfolioPercentages} />
+		<Dashboard networks={networks} />
 	</EnvironmentProvider>
 );

@@ -1,39 +1,39 @@
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
 
-import { assets, categories } from "../../data";
-import { translations } from "../../i18n";
 import { NewsOptions } from "./NewsOptions";
+
+const categories = ["Technical"];
+const coins = ["ark"];
 
 describe("NewsOptions", () => {
 	it("should render", () => {
-		const { container, asFragment } = render(
-			<NewsOptions defaultCategories={categories} selectedAssets={assets} />,
-		);
+		const { container, asFragment } = render(<NewsOptions selectedCategories={categories} selectedCoins={coins} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select category", () => {
-		const onCategoryChange = jest.fn();
 		const { getByTestId } = render(
-			<NewsOptions defaultCategories={categories} selectedAssets={assets} onCategoryChange={onCategoryChange} />,
+			<NewsOptions selectedCategories={categories} selectedCoins={coins} onSubmit={jest.fn()} />,
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId(`NewsOptions__category-${translations.CATEGORIES.TECHNICAL}`));
+			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
 		});
-
-		expect(onCategoryChange).toBeCalledWith(
-			expect.arrayContaining([{ isSelected: true, name: translations.CATEGORIES.TECHNICAL }]),
-		);
 	});
 
 	it("should handle search input", () => {
 		const onSearch = jest.fn();
+
 		const { getByTestId } = render(
-			<NewsOptions defaultCategories={categories} selectedAssets={assets} onSearch={onSearch} />,
+			<NewsOptions
+				selectedCategories={categories}
+				selectedCoins={coins}
+				onSearch={onSearch}
+				onSubmit={jest.fn()}
+			/>,
 		);
 
 		act(() => {
@@ -50,7 +50,7 @@ describe("NewsOptions", () => {
 	it("should limit search query to 32 letters", () => {
 		const onSearch = jest.fn();
 		const { getByTestId } = render(
-			<NewsOptions defaultCategories={categories} selectedAssets={assets} onSearch={onSearch} />,
+			<NewsOptions selectedCategories={categories} selectedCoins={coins} onSearch={onSearch} />,
 		);
 
 		act(() => {
@@ -65,30 +65,23 @@ describe("NewsOptions", () => {
 	});
 
 	it("should select asset", () => {
-		const onAssetChange = jest.fn();
-		const { getByTestId } = render(
-			<NewsOptions defaultCategories={categories} selectedAssets={assets} onAssetChange={onAssetChange} />,
-		);
+		const { getByTestId } = render(<NewsOptions selectedCategories={categories} selectedCoins={coins} />);
 
 		const arkOption = getByTestId("network__option--0");
 		act(() => {
 			fireEvent.click(arkOption);
 		});
-
-		expect(onAssetChange).toBeCalledWith(
-			expect.arrayContaining([{ coin: "ARK", isSelected: true, name: "ARK" }]),
-			expect.anything(),
-		);
 	});
 
 	it("should emit onSubmit with all selected filters", () => {
 		const onSubmit = jest.fn();
+
 		const { getByTestId } = render(
-			<NewsOptions defaultCategories={categories} selectedAssets={assets} onSubmit={onSubmit} />,
+			<NewsOptions selectedCategories={categories} selectedCoins={coins} onSubmit={onSubmit} />,
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId(`NewsOptions__category-${translations.CATEGORIES.TECHNICAL}`));
+			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
 			fireEvent.click(getByTestId("network__option--0"));
 			fireEvent.change(getByTestId("NewsOptions__search"), {
 				target: {
@@ -102,9 +95,9 @@ describe("NewsOptions", () => {
 		});
 
 		expect(onSubmit).toBeCalledWith({
-			assets: expect.arrayContaining([{ coin: "ARK", isSelected: true, name: "ARK" }]),
+			categories: expect.arrayContaining(["Technical"]),
+			coins: expect.arrayContaining(["ark"]),
 			searchQuery: expect.stringMatching("test query"),
-			categories: expect.arrayContaining([{ isSelected: true, name: translations.CATEGORIES.TECHNICAL }]),
 		});
 	});
 });

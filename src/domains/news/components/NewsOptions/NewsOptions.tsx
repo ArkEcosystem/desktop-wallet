@@ -6,47 +6,82 @@ import { Input } from "app/components/Input";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { assets as availableCoins, categories as availableCategories } from "../../data";
 import { SelectCategory } from "./components/SelectCategory";
 
-type Props = {
-	defaultCategories?: any[];
-	selectedAssets: any[];
-	onCategoryChange?: (categories: any) => void;
-	onAssetChange?: (assets: any[], asset: any) => void;
-	onSearch?: (search: string) => void;
-	onSubmit?: (data: object) => void;
+type Option = {
+	name: string;
+	isSelected: boolean;
 };
 
-export const NewsOptions = ({
-	defaultCategories,
-	selectedAssets,
-	onCategoryChange,
-	onSearch,
-	onAssetChange,
-	onSubmit,
-}: Props) => {
+type CoinOption = {
+	coin: string;
+} & Option;
+
+type NewsOptionsProps = {
+	selectedCategories: string[];
+	selectedCoins: string[];
+	onSearch?: (search: string) => void;
+	onSubmit: (data: object) => void;
+};
+
+export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSubmit }: NewsOptionsProps) => {
 	const { t } = useTranslation();
-	const [categories, setCategories] = useState(defaultCategories);
-	const [assets, setAssets] = useState(selectedAssets);
+
+	const [categories, setCategories] = useState(
+		availableCategories.map((category: Option) => ({
+			...category,
+			isSelected: selectedCategories.includes(category.name),
+		})),
+	);
+	const [coins, setCoins] = useState(
+		availableCoins.map((coin: CoinOption) => ({
+			...coin,
+			isSelected: selectedCoins.includes(coin.coin.toLowerCase()),
+		})),
+	);
+
 	const [searchQuery, setSearchQuery] = useState("");
 
 	const handleCategoryChange = (name: string) => {
-		const updatedCategories = categories?.map((category: any) => ({
+		let updatedCategories = [...categories];
+
+		if (name === "All") {
+			return setCategories(
+				updatedCategories.map((category: Option) => ({
+					...category,
+					isSelected: category.name === "All",
+				})),
+			);
+		}
+
+		updatedCategories = updatedCategories.map((category: Option) => ({
 			...category,
-			isSelected: category.name === name,
+			isSelected: category.name === "All" ? false : category.isSelected,
 		}));
 
-		setCategories(updatedCategories);
-		onCategoryChange?.(updatedCategories);
+		const selected = updatedCategories.filter((category: Option) => category.isSelected);
+
+		if (selected.length === 1 && selected[0].name === name) return;
+
+		setCategories(
+			updatedCategories.map((category: Option) =>
+				category.name === name
+					? {
+							...category,
+							isSelected: !category.isSelected,
+					  }
+					: category,
+			),
+		);
 	};
 
-	const handleSelectAsset = (selectedAsset: any) => {
-		const updatedAssets = assets.map((asset) => ({
-			...asset,
-			isSelected: asset.name === selectedAsset.name,
+	const handleSelectCoin = (selectedCoin: CoinOption) => {
+		const updatedCoins = coins.map((coin: CoinOption) => ({
+			...coin,
+			isSelected: coin.name === selectedCoin.name,
 		}));
-		setAssets(updatedAssets);
-		onAssetChange?.(updatedAssets, { ...selectedAsset, isSelected: true });
+		setCoins(updatedCoins);
 	};
 
 	const handleSearchInput = (searchQuery: string) => {
@@ -56,9 +91,20 @@ export const NewsOptions = ({
 	};
 
 	const handleSubmit = () => {
-		onSubmit?.({
-			categories,
-			assets,
+		const categoryNames = categories.reduce(
+			(acc: string[], category: Option) =>
+				category.name !== "All" && category.isSelected ? acc.concat(category.name) : acc,
+			[],
+		);
+
+		const coinNames = coins.reduce(
+			(acc: string[], coin: CoinOption) => (coin.isSelected ? acc.concat(coin.coin.toLowerCase()) : acc),
+			[],
+		);
+
+		onSubmit({
+			categories: categoryNames,
+			coins: coinNames,
 			searchQuery,
 		});
 	};
@@ -87,19 +133,24 @@ export const NewsOptions = ({
 					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.SELECT_YOUR_CATEGORIES")}</p>
 
 					<div className="flex flex-wrap -mx-1">
-						{categories?.map((category, index) => (
-							<SelectCategory
-								data-testid={`NewsOptions__category-${t(
-									`NEWS.CATEGORIES.${category.name.toUpperCase()}`,
-								)}`}
-								key={index}
-								className="p-1"
-								checked={category.isSelected}
-								onChange={() => handleCategoryChange(category.name)}
-							>
-								#{t(`NEWS.CATEGORIES.${category.name.toUpperCase()}`)}
-							</SelectCategory>
-						))}
+						{categories.map((category, index) => {
+							const isSelected = () =>
+								category.isSelected ||
+								(category.name === "All" &&
+									!categories.some((category: Option) => category.isSelected));
+
+							return (
+								<SelectCategory
+									data-testid={`NewsOptions__category-${category.name}`}
+									key={index}
+									className="p-1"
+									checked={isSelected()}
+									onChange={() => handleCategoryChange(category.name)}
+								>
+									#{t(`NEWS.CATEGORIES.${category.name.toUpperCase()}`)}
+								</SelectCategory>
+							);
+						})}
 					</div>
 				</div>
 
@@ -110,7 +161,7 @@ export const NewsOptions = ({
 					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}</p>
 
 					<div className="pb-4">
-						<FilterNetwork networks={assets} hideViewAll onChange={handleSelectAsset} />
+						<FilterNetwork networks={coins} hideViewAll onChange={handleSelectCoin} />
 					</div>
 
 					<Button className="w-full" variant="plain" onClick={handleSubmit} data-testid="NewsOptions__submit">
@@ -120,9 +171,4 @@ export const NewsOptions = ({
 			</div>
 		</div>
 	);
-};
-
-NewsOptions.defaultProps = {
-	defaultCategories: [],
-	selectedAssets: [],
 };

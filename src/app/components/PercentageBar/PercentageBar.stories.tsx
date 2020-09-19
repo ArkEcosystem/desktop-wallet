@@ -9,24 +9,24 @@ export default {
 export const Blank = () => {
 	const data = [
 		{
-			label: "ARK",
-			value: 40,
 			color: "danger-500",
+			label: "ARK",
+			percentage: 40,
 		},
 		{
-			label: "BTC",
-			value: 25,
 			color: "warning-500",
+			label: "BTC",
+			percentage: 25,
 		},
 		{
-			label: "ETH",
-			value: 20,
 			color: "primary-500",
+			label: "ETH",
+			percentage: 20,
 		},
 		{
-			label: "Other",
-			value: 15,
 			color: "neutral-400",
+			label: "Other",
+			percentage: 15,
 		},
 	];
 	return <PercentageBar title="Total portfolio" data={data} />;

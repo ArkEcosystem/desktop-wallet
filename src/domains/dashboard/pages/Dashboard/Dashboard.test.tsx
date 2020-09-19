@@ -6,7 +6,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "utils/testing-library";
 
-import { balances, portfolioPercentages } from "../../data";
+import { balances } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 const history = createMemoryHistory();
@@ -36,7 +36,7 @@ beforeEach(() => {
 
 describe("Dashboard", () => {
 	it("should render", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -53,7 +53,7 @@ describe("Dashboard", () => {
 	it("should render wallets", async () => {
 		Promise.resolve().then(() => jest.useFakeTimers());
 
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -102,7 +102,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		act(() => {
@@ -119,7 +119,7 @@ describe("Dashboard", () => {
 	it("should render portfolio percentage bar", async () => {
 		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard portfolioPercentages={portfolioPercentages} />
+				<Dashboard />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -127,7 +127,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -135,7 +135,7 @@ describe("Dashboard", () => {
 	it("should render portfolio chart", async () => {
 		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard balances={balances} portfolioPercentages={portfolioPercentages} />
+				<Dashboard balances={balances} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -143,7 +143,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -159,7 +159,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
@@ -187,7 +187,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		act(() => {
@@ -209,7 +209,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		fireEvent.click(getByText("Create"));
@@ -219,7 +219,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should fetch more transactions", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -249,7 +249,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should open detail modal on transaction row click", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
