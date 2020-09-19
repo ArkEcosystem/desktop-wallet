@@ -45,7 +45,7 @@ const renderPage = async () => {
 	const { getAllByTestId } = rendered;
 
 	await waitFor(() =>
-		expect(within(getAllByTestId("TransactionTable")[1]).queryAllByTestId("TableRow")).toHaveLength(1),
+		expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(1),
 	);
 
 	return rendered;
@@ -240,19 +240,14 @@ describe("WalletDetails", () => {
 
 		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
-		const pendingFetchMoreBtn = getByTestId("pending-transactions__fetch-more-button");
 		const fetchMoreTransactionsBtn = getByTestId("transactions__fetch-more-button");
-
-		act(() => {
-			fireEvent.click(pendingFetchMoreBtn);
-		});
 
 		act(() => {
 			fireEvent.click(fetchMoreTransactionsBtn);
 		});
 
 		await waitFor(() => {
-			expect(within(getAllByTestId("TransactionTable")[1]).queryAllByTestId("TableRow")).toHaveLength(3);
+			expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(2);
 		});
 	});
 
