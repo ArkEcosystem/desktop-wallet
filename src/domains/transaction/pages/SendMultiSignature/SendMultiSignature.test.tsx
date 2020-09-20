@@ -1,13 +1,26 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	screen,
+	syncFees,
+	waitFor,
+} from "utils/testing-library";
 
 import { SendMultiSignature } from "./SendMultiSignature";
 
 describe("Send MultiSignature Transaction", () => {
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
+
+	beforeAll(async () => {
+		await syncFees();
+	});
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());

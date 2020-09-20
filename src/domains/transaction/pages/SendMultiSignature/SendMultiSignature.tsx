@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
+import { Participant } from "./components/AddParticipant/AddParticipant";
 import { FormStep } from "./FormStep";
 import { ReviewStep } from "./ReviewStep";
 import { SentStep } from "./SentStep";
@@ -65,6 +66,7 @@ export const SendMultiSignature = () => {
 		}
 
 		const { fee, minParticipants, participants, mnemonic /** secondMnemonic **/ } = getValues();
+		const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
 
 		try {
 			const transactionId = await senderWallet.transaction().signMultiSignature({
@@ -72,12 +74,12 @@ export const SendMultiSignature = () => {
 				from: senderWallet.address(),
 				sign: {
 					multiSignature: {
-						publicKeys: [participants],
+						publicKeys: [...publicKeys],
 						min: minParticipants,
 					},
 				},
 				data: {
-					publicKeys: [participants],
+					publicKeys: [...publicKeys],
 					min: minParticipants,
 					senderPublicKey: senderWallet.publicKey(),
 				},
