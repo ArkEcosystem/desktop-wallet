@@ -163,8 +163,8 @@ export const translations: { [key: string]: any } = {
 			WARNING:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.",
 			DOWNLOAD: {
-				TITLE: "Your password in the file",
-				DESCRIPTION: "You can also download and store safely your passphrase.",
+				TITLE: "Download Your Passphrase",
+				DESCRIPTION: "You can also download and safely store your passphrase.",
 			},
 		},
 

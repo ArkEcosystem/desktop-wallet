@@ -95,28 +95,4 @@ describe("App", () => {
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
-
-	it("should render and schedule delegates sync", async () => {
-		process.env.REACT_APP_BUILD_MODE = "demo";
-
-		const { container, asFragment, getByText, getByTestId } = renderWithRouter(<App syncInterval={500} />, {
-			withProviders: false,
-		});
-		expect(getByTestId("Splash__text")).toBeInTheDocument();
-
-		await act(async () => {
-			await new Promise((resolve) => setTimeout(resolve, 3000));
-		});
-
-		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
-
-			expect(container).toBeTruthy();
-
-			expect(getByText("John Doe")).toBeInTheDocument();
-			expect(getByText("Jane Doe")).toBeInTheDocument();
-
-			expect(asFragment()).toMatchSnapshot();
-		});
-	});
 });

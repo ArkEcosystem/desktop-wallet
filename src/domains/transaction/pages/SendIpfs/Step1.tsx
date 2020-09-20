@@ -18,7 +18,7 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 				<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.FIRST_STEP.DESCRIPTION")}</div>
 			</div>
 			<div className="mt-8">
-				<SendTransactionForm networks={networks} profile={profile}>
+				<SendTransactionForm networks={networks} profile={profile} transactionType="ipfs">
 					<>
 						<FormField name="hash" className="relative mt-1">
 							<div className="mb-2">

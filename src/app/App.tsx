@@ -24,35 +24,32 @@ import { StubStorage } from "tests/mocks";
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
 import { useNetworkStatus } from "./hooks";
+import { useEnvSynchronizer } from "./hooks/use-synchronizer";
 import { i18n } from "./i18n";
-import { httpClient, Scheduler } from "./services";
+import { httpClient } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production";
 
-type Props = {
-	syncInterval?: number;
-};
-
-const Main = ({ syncInterval }: Props) => {
+const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 
 	const { pathname } = useLocation();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
+	const { start, runAll } = useEnvSynchronizer();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [pathname]);
 
+	useEffect(() => {
+		if (!showSplash) {
+			start();
+		}
+	}, [showSplash, start]);
+
 	useLayoutEffect(() => {
-		const syncDelegates = async () => await env.delegates().syncAll();
-		const syncFees = async () => await env.fees().syncAll();
-		const syncExchangeRates = async () => await env.exchangeRates().syncAll();
-		const syncWallets = async () => await env.wallets().syncAll();
-
 		const boot = async () => {
-			const scheduler = new Scheduler(syncInterval);
-
 			/* istanbul ignore next */
 			const shouldUseFixture: boolean =
 				process.env.REACT_APP_BUILD_MODE === "demo" ||
@@ -61,16 +58,14 @@ const Main = ({ syncInterval }: Props) => {
 
 			await env.verify(shouldUseFixture ? fixtureData : undefined);
 			await env.boot();
-			await Promise.allSettled([syncDelegates(), syncWallets(), syncFees(), syncExchangeRates()]);
+			await runAll();
 			await persist();
-
-			scheduler.schedule([syncDelegates, syncFees, syncWallets, syncExchangeRates], persist);
 
 			setShowSplash(false);
 		};
 
 		boot();
-	}, [env, persist, syncInterval]);
+	}, [env, persist, runAll]);
 
 	if (showSplash) {
 		return <Splash />;
@@ -88,11 +83,7 @@ const Main = ({ syncInterval }: Props) => {
 	);
 };
 
-Main.defaultProps = {
-	syncInterval: 300000,
-};
-
-export const App = ({ syncInterval }: Props) => {
+export const App = () => {
 	/**
 	 * Ensure that the Environment object will not be recreated when the state changes,
 	 * as the data is stored in memory by the `DataRepository`.
@@ -126,13 +117,9 @@ export const App = ({ syncInterval }: Props) => {
 		<ErrorBoundary FallbackComponent={ApplicationError}>
 			<I18nextProvider i18n={i18n}>
 				<EnvironmentProvider env={env}>
-					<Main syncInterval={syncInterval} />
+					<Main />
 				</EnvironmentProvider>
 			</I18nextProvider>
 		</ErrorBoundary>
 	);
-};
-
-App.defaultProps = {
-	syncInterval: 300000,
 };

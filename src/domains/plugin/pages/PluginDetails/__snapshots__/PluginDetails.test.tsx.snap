@@ -630,15 +630,19 @@ exports[`PluginDetails should render properly 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqNqU jnurM flex-1 bg-theme-warning-100"
+                class="sc-fzqNqU jnurM flex-1 bg-theme-warning-100 space-y-2"
               >
                 <p
-                  class="text-xl font-bold text-theme-warning"
+                  class="text-lg font-bold text-theme-warning"
                   data-testid="alert__title"
                 >
                   Disclaimer
                 </p>
-                The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
+                <div
+                  class="text-sm"
+                >
+                  The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
+                </div>
               </div>
             </div>
           </div>
@@ -2131,15 +2135,19 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqNqU jnurM flex-1 bg-theme-warning-100"
+                class="sc-fzqNqU jnurM flex-1 bg-theme-warning-100 space-y-2"
               >
                 <p
-                  class="text-xl font-bold text-theme-warning"
+                  class="text-lg font-bold text-theme-warning"
                   data-testid="alert__title"
                 >
                   Disclaimer
                 </p>
-                The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
+                <div
+                  class="text-sm"
+                >
+                  The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
+                </div>
               </div>
             </div>
           </div>

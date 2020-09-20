@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -30,8 +31,7 @@ export const FirstStep = ({
 
 	const { getValues, setValue, watch } = form;
 	const { senderAddress } = watch();
-
-	const [fees, setFees] = useState({
+	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "5",
 		min: "0",
 		avg: "1",
