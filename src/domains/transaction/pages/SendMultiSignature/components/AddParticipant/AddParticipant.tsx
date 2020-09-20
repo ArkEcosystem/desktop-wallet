@@ -42,7 +42,7 @@ export const AddParticipant = ({ profile, wallet, onChange }: Props) => {
 
 	const addParticipant = () => {
 		if (lastValidationRef.current) {
-			setParticipantsWallets((prev) => [...prev, ...(lastValidationRef.current as ReadWriteWallet[])]);
+			setParticipantsWallets((prev) => [...prev, lastValidationRef.current as ReadWriteWallet]);
 		}
 	};
 
@@ -62,20 +62,20 @@ export const AddParticipant = ({ profile, wallet, onChange }: Props) => {
 				const remote = response.findByAddress(address);
 
 				if (!remote) {
-					return "Not found wallet";
+					return t("TRANSACTION.INPUT_MULTISIG.ADDRESS_NOT_FOUND");
 				}
 
 				participantWallet = remote;
 			}
 
 			if (!(participantWallet as ReadOnlyWallet)?.publicKey()) {
-				return "Not found Public Key";
+				return t("TRANSACTION.INPUT_MULTISIG.PUBLIC_KEY_NOT_FOUND");
 			}
 
 			lastValidationRef.current = participantWallet;
 			return true;
-		} catch (e) {
-			return "Failed to find";
+		} catch {
+			return t("TRANSACTION.INPUT_MULTISIG.ADDRESS_NOT_FOUND");
 		} finally {
 			setIsValidating(false);
 		}
@@ -114,6 +114,7 @@ export const AddParticipant = ({ profile, wallet, onChange }: Props) => {
 				recipients={participants.map((item) => ({ ...item, amount: item.balance }))}
 				assetSymbol={wallet.network().ticker()}
 				onRemove={removeParticipant}
+				isEditable
 			/>
 		</div>
 	);

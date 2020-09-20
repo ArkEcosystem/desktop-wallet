@@ -51,6 +51,11 @@ export const translations: { [key: string]: any } = {
 	WELL_CONFIRMED: "Well confirmed",
 	YOUR_ADDRESS: "Your address",
 
+	INPUT_MULTISIG: {
+		ADDRESS_NOT_FOUND: "The address could not be found",
+		PUBLIC_KEY_NOT_FOUND: "The public key could not be found",
+	},
+
 	FEES: {
 		MIN: "Min",
 		AVERAGE: "Average",

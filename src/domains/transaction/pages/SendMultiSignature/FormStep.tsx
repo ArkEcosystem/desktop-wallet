@@ -34,7 +34,7 @@ export const FormStep = ({ profile, activeWallet }: { profile: Profile; activeWa
 		}
 	}, [activeWallet, networks, register, setValue]);
 
-	const handlePariticipant = useCallback(
+	const handleParticipant = useCallback(
 		(participants: Participant[]) => {
 			setValue("participants", participants, { shouldValidate: true });
 		},
@@ -44,7 +44,7 @@ export const FormStep = ({ profile, activeWallet }: { profile: Profile; activeWa
 	return (
 		<div data-testid="SendMultiSignature--form-step">
 			<SendTransactionForm profile={profile} networks={networks}>
-				<AddParticipant profile={profile} wallet={activeWallet} onChange={handlePariticipant} />
+				<AddParticipant profile={profile} wallet={activeWallet} onChange={handleParticipant} />
 
 				<FormField name="minParticipants">
 					<FormLabel>{t("TRANSACTION.PAGE_MULTISIGNATURE.MIN_SIGNATURES")}</FormLabel>
