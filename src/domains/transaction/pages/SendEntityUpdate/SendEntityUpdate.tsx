@@ -36,7 +36,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 	const [isLoading, setIsLoading] = useState(true);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues, shouldUnregister: false });
-	const { setValue, trigger, register } = form;
+	const { setValue, trigger, register, formState } = form;
 	const { entityRegistration } = useValidation();
 
 	const { env } = useEnvironmentContext();
@@ -187,7 +187,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 								<div className="flex justify-end mt-8 space-x-3">
 									{activeTab < 4 && activeTab > 1 && (
 										<Button
-											disabled={activeTab === 1}
+											disabled={activeTab === 1 || formState.isSubmitting}
 											data-testid="SendEntityUpdate__back-button"
 											variant="plain"
 											onClick={handleBack}
@@ -205,7 +205,8 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 									{activeTab === 3 && (
 										<Button
 											data-testid="SendEntityUpdate__send-button"
-											onClick={handleSubmit}
+											disabled={formState.isSubmitting}
+											onClick={form.handleSubmit(handleSubmit)}
 											className="space-x-2"
 										>
 											<Icon name="Send" width={20} height={20} />
