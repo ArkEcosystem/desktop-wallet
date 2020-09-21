@@ -4,12 +4,12 @@ import { buildTranslations } from "../../../app/i18n/helpers";
 
 const translations = buildTranslations();
 
-export const goToImportWalletPage = async (t: any) => {
+export const goToImportWalletPage = async (t: any, options?: { passphrase: string }) => {
 	await t.click(Selector("button").withText(translations.COMMON.IMPORT));
 	await t.expect(Selector("[data-testid=header__title]").withText("Select a Network").exists).ok();
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
-	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), "passphrase");
+	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), options?.passphrase || "passphrase");
 	await t.click(Selector("button").withText(translations.COMMON.GO_TO_WALLET));
 	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), "Test Wallet");
 	await t.click(Selector("button").withText(translations.COMMON.SAVE_FINISH));
