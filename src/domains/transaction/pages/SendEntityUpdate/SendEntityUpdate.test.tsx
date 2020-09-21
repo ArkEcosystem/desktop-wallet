@@ -500,7 +500,6 @@ describe("SendEntityUpdate", () => {
 		await waitFor(() => expect(loadingToastMock).toHaveBeenCalled());
 
 		expect(getByTestId("AuthenticationStep")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
 
 		loadingToastMock.mockRestore();
 	});
