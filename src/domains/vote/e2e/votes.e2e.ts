@@ -76,10 +76,10 @@ test("should navigate to votes page from navigation bar", async (t) => {
 	// Navigate to wallet page
 	await goToWallet(t);
 
+	// Navigate to vote page
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
 	await t.expect(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES).exists).ok();
 	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES));
-
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
 });
 
@@ -87,10 +87,10 @@ test("should select network, address and delegate", async (t) => {
 	// Navigate to wallet page
 	await goToWallet(t);
 
+	// Navigate to vote page
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
 	await t.expect(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES).exists).ok();
 	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES));
-
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
 
 	// Select network
@@ -117,13 +117,10 @@ test.requestHooks(walletMock, sendMock)("should send a vote transaction", async 
 	// Navigate to import wallet page
 	await goToImportWalletPage(t);
 
-	// Navigate to wallet details page
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
-
+	// Navigate to vote page
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
 	await t.expect(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES).exists).ok();
 	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES));
-
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
 
 	// Select network
