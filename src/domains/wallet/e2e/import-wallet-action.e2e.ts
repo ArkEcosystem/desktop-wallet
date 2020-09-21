@@ -29,13 +29,13 @@ test("should import a wallet by mnemonic", async (t) => {
 	const passphraseInput = Selector("input[name=passphrase]");
 
 	await t.typeText(passphraseInput, "buddy year cost vendor honey tonight viable nut female alarm duck symptom");
-	await t.click(Selector("button").withExactText(translations().COMMON.GO_TO_WALLET));
+	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
 
 	// Fill a wallet name
 	const walletNameInput = Selector("input[name=name]");
 
 	await t.typeText(walletNameInput, "Test Mnemonic");
-	await t.click(Selector("button").withExactText(translations().COMMON.SAVE_FINISH));
+	await t.click(Selector("button").withExactText(translations().COMMON.GO_TO_WALLET));
 });
 
 test("should import a wallet by address", async (t) => {
@@ -64,15 +64,14 @@ test("should import a wallet by address", async (t) => {
 	// Fill an address and advance to the third step
 	const addressInput = Selector("input[name=address]");
 
-	// @TODO why does it fail with "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib" ?
 	await t.typeText(addressInput, "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P");
-	await t.click(Selector("button").withExactText(translations().COMMON.GO_TO_WALLET));
+	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
 
 	// Fill a wallet name
 	const walletNameInput = Selector("input[name=name]");
 
 	await t.typeText(walletNameInput, "Test Address");
-	await t.click(Selector("button").withExactText(translations().COMMON.SAVE_FINISH));
+	await t.click(Selector("button").withExactText(translations().COMMON.GO_TO_WALLET));
 });
 
 test("should show an error message for invalid address", async (t) => {
