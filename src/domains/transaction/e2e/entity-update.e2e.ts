@@ -50,10 +50,9 @@ const selectRegistrationOption = async (rowSelector: string, optionLabel: string
 };
 
 const goToSendEntityUpdate = async (t: any) => {
-	await goToMyRegistrations(t);
+	const businessRowItem = "[data-testid=BusinessRegistrations] [data-testid=TableRow]:last-child";
+	await t.expect(Selector(businessRowItem).exists).ok();
 
-	// Select update action for business
-	const businessRowItem = "[data-testid=BusinessRegistrations] [data-testid=EntityTableRowItem]:nth-child(1)";
 	await selectRegistrationOption(businessRowItem, "update", t);
 
 	await t
@@ -64,96 +63,163 @@ const goToSendEntityUpdate = async (t: any) => {
 		.ok();
 };
 
-test("should navigate to update entity registration", async (t: any) => goToSendEntityUpdate(t));
+test("should navigate to entity update form", async (t: any) => {
+	const passphrase = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
 
-test("should render 1st step filled with entity values", async (t: any) => {
+	await goToProfile(t);
+	await goToImportWalletPage(t, { passphrase });
+	await goToMyRegistrations(t);
+
 	await goToSendEntityUpdate(t);
-	await t.expect(Selector("[data-testid=SendEntityUpdate__name]").value).eql(IpfsFixture.data.meta.displayName);
-	await t
-		.expect(Selector("[data-testid=SendEntityUpdate__description]").value)
-		.eql(IpfsFixture.data.meta.description);
-
-	// Open and check Repository links to be 4
-	await t.click(Selector("[data-testid=LinkCollection__header]").nth(0));
-	await t.expect(Selector("[data-testid=LinkCollection__remove-link]").count).eql(4);
-	await t.click(Selector("[data-testid=LinkCollection__header]").nth(0));
-
-	// Check social media links to be 12
-	await t.click(Selector("[data-testid=LinkCollection__header]").nth(1));
-	await t.expect(Selector("[data-testid=LinkCollection__remove-link]").count).eql(11);
-	await t.click(Selector("[data-testid=LinkCollection__header]").nth(1));
 });
 
-test("should fail validation", async (t: any) => {
+test("should fail validation in first step", async (t: any) => {
+	await goToProfile(t);
+	await goToImportWalletPage(t);
+	await goToMyRegistrations(t);
 	await goToSendEntityUpdate(t);
-	await t.expect(Selector("[data-testid=SendEntityUpdate__name]").value).eql(IpfsFixture.data.meta.displayName);
+
+	await t
+		.expect(Selector("[data-testid=EntityRegistrationForm__display-name]").value)
+		.eql(IpfsFixture.data.meta.displayName);
 
 	const longText =
 		"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
 
-	// Name field
+	// Display name
 	// Required
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__name]"), " ", { replace: true });
-	await t.expect(Selector("[data-testid=SendEntityUpdate__name]").hasAttribute("aria-invalid")).ok();
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__display-name]"), " ", { replace: true });
+	await t.expect(Selector("[data-testid=EntityRegistrationForm__display-name]").hasAttribute("aria-invalid")).ok();
 
 	// MinLength
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__name]"), "ab", { replace: true });
-	await t.expect(Selector("[data-testid=SendEntityUpdate__name]").hasAttribute("aria-invalid")).ok();
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__display-name]"), "ab", { replace: true });
+	await t.expect(Selector("[data-testid=EntityRegistrationForm__display-name]").hasAttribute("aria-invalid")).ok();
 
 	// MaxLength
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__name]"), longText, { replace: true, paste: true });
-	await t.expect(Selector("[data-testid=SendEntityUpdate__name]").hasAttribute("aria-invalid")).ok();
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__display-name]"), longText, {
+		replace: true,
+		paste: true,
+	});
+	await t.expect(Selector("[data-testid=EntityRegistrationForm__display-name]").hasAttribute("aria-invalid")).ok();
 
 	// Description field
 	// Required
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__description]"), " ", { replace: true });
-	await t.expect(Selector("[data-testid=SendEntityUpdate__description]").hasAttribute("aria-invalid")).ok();
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__description]"), " ", { replace: true });
+	await t.expect(Selector("[data-testid=EntityRegistrationForm__description]").hasAttribute("aria-invalid")).ok();
 
 	// MinLength
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__description]"), "ab", { replace: true });
-	await t.expect(Selector("[data-testid=SendEntityUpdate__description]").hasAttribute("aria-invalid")).ok();
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__description]"), "ab", { replace: true });
+	await t.expect(Selector("[data-testid=EntityRegistrationForm__description]").hasAttribute("aria-invalid")).ok();
 
 	// MaxLength
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__description]"), longText, { replace: true, paste: true });
-	await t.expect(Selector("[data-testid=SendEntityUpdate__description]").hasAttribute("aria-invalid")).ok();
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__description]"), longText, {
+		replace: true,
+		paste: true,
+	});
+	await t.expect(Selector("[data-testid=EntityRegistrationForm__description]").hasAttribute("aria-invalid")).ok();
 
 	// Website field
 	// Required
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__website]"), " ", { replace: true });
-	await t.expect(Selector("[data-testid=SendEntityUpdate__website]").hasAttribute("aria-invalid")).ok();
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__website]"), " ", { replace: true });
+	await t.expect(Selector("[data-testid=EntityRegistrationForm__website]").hasAttribute("aria-invalid")).ok();
 
 	// Wrong url
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__website]"), "wrong url", { replace: true });
-	await t.expect(Selector("[data-testid=SendEntityUpdate__website]").hasAttribute("aria-invalid")).ok();
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__website]"), "wrong url", { replace: true });
+	await t.expect(Selector("[data-testid=EntityRegistrationForm__website]").hasAttribute("aria-invalid")).ok();
 });
 
-test("should fail validation on submit to continue", async (t: any) => {
+test("should fail validation on submit to continue in first step", async (t: any) => {
+	await goToProfile(t);
+	await goToImportWalletPage(t);
+	await goToMyRegistrations(t);
 	await goToSendEntityUpdate(t);
-	await t.expect(Selector("[data-testid=SendEntityUpdate__name]").value).eql(IpfsFixture.data.meta.displayName);
+
+	await t
+		.expect(Selector("[data-testid=EntityRegistrationForm__display-name]").value)
+		.eql(IpfsFixture.data.meta.displayName);
 
 	// Empty name field
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__name]"), " ", { replace: true });
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__display-name]"), " ", { replace: true });
 
 	await t.hover(Selector("[data-testid=SendEntityUpdate__continue-button]"));
 	await t.click(Selector("[data-testid=SendEntityUpdate__continue-button]"));
 
-	await t.expect(Selector("[data-testid=SendEntityUpdate__first-step]").exists).ok();
-	await t.expect(Selector("[data-testid=SendEntityUpdate__name]").hasAttribute("aria-invalid")).ok();
+	await t.expect(Selector("[data-testid=EntityRegistrationForm__display-name]").hasAttribute("aria-invalid")).ok();
 });
 
 test("should pass validation on submit and go to 2nd step", async (t: any) => {
+	await goToProfile(t);
+	await goToImportWalletPage(t);
+	await goToMyRegistrations(t);
 	await goToSendEntityUpdate(t);
-	await t.expect(Selector("[data-testid=SendEntityUpdate__name]").value).eql(IpfsFixture.data.meta.displayName);
+
+	await t
+		.expect(Selector("[data-testid=EntityRegistrationForm__display-name]").value)
+		.eql(IpfsFixture.data.meta.displayName);
 
 	// Empty name field
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__name]"), "Lorem ipsum", { replace: true });
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__description]"), "Lorem ipsum dolor sit amet", {
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__display-name]"), "Lorem ipsum", { replace: true });
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__description]"), "Lorem ipsum dolor sit amet", {
 		replace: true,
 	});
-	await t.typeText(Selector("[data-testid=SendEntityUpdate__website]"), "https://ark.io", { replace: true });
+	await t.typeText(Selector("[data-testid=EntityRegistrationForm__website]"), "https://ark.io", { replace: true });
 
 	await t.hover(Selector("[data-testid=SendEntityUpdate__continue-button]"));
 	await t.click(Selector("[data-testid=SendEntityUpdate__continue-button]"));
 
-	await t.expect(Selector("[data-testid=SendEntityUpdate__second-step]").exists).ok();
+	await t.expect(Selector("[data-testid=ReviewStep]").exists).ok();
+});
+
+test("should fail authentication and see error message in toast", async (t: any) => {
+	const passphrase = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
+
+	await goToProfile(t);
+	await goToImportWalletPage(t, { passphrase });
+	await goToMyRegistrations(t);
+	await goToSendEntityUpdate(t);
+
+	await t.hover(Selector("[data-testid=SendEntityUpdate__continue-button]"));
+	await t.click(Selector("[data-testid=SendEntityUpdate__continue-button]"));
+	await t.expect(Selector("[data-testid=ReviewStep]").exists).ok();
+
+	await t.hover(Selector("[data-testid=SendEntityUpdate__continue-button]"));
+	await t.click(Selector("[data-testid=SendEntityUpdate__continue-button]"));
+	await t.expect(Selector("[data-testid=AuthenticationStep").exists).ok();
+
+	// mnemonic
+	await t.hover(Selector("[data-testid=AuthenticationStep__mnemonic]"));
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong passphrase", { replace: true });
+
+	await t.hover(Selector("[data-testid=SendEntityUpdate__send-button]"));
+	await t.click(Selector("[data-testid=SendEntityUpdate__send-button]"));
+
+	await t.expect(Selector("[data-testid=AuthenticationStep").exists).ok();
+	await t.expect(Selector(".Toastify__toast--error").exists).ok();
+});
+
+test("should succesfully update entity", async (t: any) => {
+	const passphrase = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
+
+	await goToProfile(t);
+	await goToImportWalletPage(t, { passphrase });
+	await goToMyRegistrations(t);
+
+	await goToSendEntityUpdate(t);
+
+	await t.hover(Selector("[data-testid=SendEntityUpdate__continue-button]"));
+	await t.click(Selector("[data-testid=SendEntityUpdate__continue-button]"));
+	await t.expect(Selector("[data-testid=ReviewStep]").exists).ok();
+
+	await t.hover(Selector("[data-testid=SendEntityUpdate__continue-button]"));
+	await t.click(Selector("[data-testid=SendEntityUpdate__continue-button]"));
+	await t.expect(Selector("[data-testid=AuthenticationStep").exists).ok();
+
+	// mnemonic
+	await t.hover(Selector("[data-testid=AuthenticationStep__mnemonic]"));
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), passphrase, { replace: true });
+
+	await t.hover(Selector("[data-testid=SendEntityUpdate__send-button]"));
+	await t.click(Selector("[data-testid=SendEntityUpdate__send-button]"));
+
+	await t.expect(Selector("[data-testid=TransactionSuccessful").exists).ok();
 });
