@@ -10,9 +10,9 @@ export const goToImportWalletPage = async (t: any) => {
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), "passphrase");
-	await t.click(Selector("button").withText(translations.COMMON.GO_TO_WALLET));
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), "Test Wallet");
-	await t.click(Selector("button").withText(translations.COMMON.SAVE_FINISH));
+	await t.click(Selector("button").withText(translations.COMMON.GO_TO_WALLET));
 };
 
 export const goToTransferPage = async (t: any) => {
