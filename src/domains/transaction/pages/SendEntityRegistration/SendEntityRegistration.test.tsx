@@ -469,13 +469,13 @@ describe("Registration", () => {
 
 			// Step 5 - sent screen
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(asFragment()).toMatchSnapshot();
 
 			// Go back to wallet
 			const historySpy = jest.spyOn(history, "push");
 			fireEvent.click(getByTestId("Registration__button--back-to-wallet"));
 			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 			historySpy.mockRestore();
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
 	});
 
