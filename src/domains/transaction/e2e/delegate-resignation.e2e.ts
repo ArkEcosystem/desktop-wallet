@@ -1,13 +1,15 @@
 import { Selector } from "testcafe";
 
 import { createFixture } from "../../../utils/e2e-utils";
-import { goToMyRegistrations } from "../../profile/e2e/common";
+import { goToMyRegistrations, goToProfile } from "../../profile/e2e/common";
 import { goToResignDelegatePage } from "./common";
 import { transactionsMock, walletMock } from "./mocks";
 
-createFixture(`Delegate Registration action`).beforeEach(async (t) => await goToMyRegistrations(t));
+createFixture(`Delegate Registration action`);
 
 test("should fail delegate resignation submittion", async (t: any) => {
+	await goToProfile(t);
+	await goToMyRegistrations(t);
 	await goToResignDelegatePage(t);
 	const continueBtn = "[data-testid=SendEntityResignation__continue-button]";
 
@@ -33,6 +35,8 @@ test("should fail delegate resignation submittion", async (t: any) => {
 });
 
 test("should successfully submit delegate resignation", async (t) => {
+	await goToProfile(t);
+	await goToMyRegistrations(t);
 	await goToResignDelegatePage(t);
 	const continueButton = "[data-testid=SendEntityResignation__continue-button]";
 
