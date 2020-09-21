@@ -1,6 +1,6 @@
 import { InputFee } from "domains/transaction/components/InputFee";
 import React from "react";
-import { fireEvent, render } from "utils/testing-library";
+import { fireEvent, render, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 
@@ -28,9 +28,12 @@ describe("InputFee", () => {
 			<InputFee min={min} max={max} avg={avg} defaultValue={value} value={value} step={0.01} />,
 		);
 
-		rerender(<InputFee min={min} max={max} avg={avg} defaultValue={value} value={1} step={0.01} />);
+		rerender(<InputFee min={min} max={max} avg={avg} defaultValue={value} value={"100000000"} step={0.01} />);
 
-		expect(getByTestId("InputCurrency")).toHaveValue("1");
+		waitFor(() => {
+			expect(getByTestId("InputCurrency")).toHaveValue("1");
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -43,7 +46,11 @@ describe("InputFee", () => {
 
 		fireEvent.click(getByText(transactionTranslations.FEES.MIN));
 
-		expect(onChange).toHaveBeenCalledWith({ display: "1", value: "100000000" });
+		waitFor(() => {
+			expect(getByTestId("InputCurrency")).toHaveValue("1");
+			expect(onChange).toHaveBeenCalledWith({ display: "1", value: "100000000" });
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -56,7 +63,11 @@ describe("InputFee", () => {
 
 		fireEvent.click(getByText(transactionTranslations.FEES.AVERAGE));
 
-		expect(onChange).toHaveBeenCalledWith({ display: "1.354", value: "135400000" });
+		waitFor(() => {
+			expect(getByTestId("InputCurrency")).toHaveValue("1.354");
+			expect(onChange).toHaveBeenCalledWith({ display: "1.354", value: "135400000" });
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -69,7 +80,11 @@ describe("InputFee", () => {
 
 		fireEvent.click(getByText(transactionTranslations.FEES.MAX));
 
-		expect(onChange).toHaveBeenCalledWith({ display: "10", value: "1000000000" });
+		waitFor(() => {
+			expect(getByTestId("InputCurrency")).toHaveValue("10");
+			expect(onChange).toHaveBeenCalledWith({ display: "10", value: "1000000000" });
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

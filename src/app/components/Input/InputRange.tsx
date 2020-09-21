@@ -21,16 +21,16 @@ type Props = {
 // TODO: tidy up storage of amount (why array of values?)
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 	({ min, max, step, defaultValue, magnitude, onChange, value }: Props, ref) => {
-		const [values, setValues] = React.useState<any>([BigNumber.make(defaultValue).divide(1e8)]);
 		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
+		const [values, setValues] = React.useState<any>([BigNumber.make(defaultValue).divide(1e8)]);
 		const maxValues = convertValue(max);
-		const maxValue = BigNumber.make(maxValues.value).divide(1e8).toNumber();
+		const maxValue = BigNumber.make(maxValues.value).divide(1e8);
 
 		const handleInput = (currency: { display: string; value: string }) => {
 			let value = currency.display;
 
-			if (BigNumber.make(currency.value).divide(1e8).toNumber() > maxValue) {
-				value = maxValues.display;
+			if (Number(value) > maxValue.toNumber()) {
+				value = maxValue.toString();
 			}
 
 			setValues([value]);
@@ -45,12 +45,12 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		};
 
 		let trackBackgroundMinValue = values[0];
-		let rangeValues = [Math.min(values[0], maxValue)];
+		let rangeValues = [Math.min(values[0], maxValue.toNumber())];
 
 		if (values[0]?.value) {
 			const rangeValue = BigNumber.make(values[0].value).divide(1e8);
 			trackBackgroundMinValue = rangeValue;
-			rangeValues = [Math.min(rangeValue.toNumber(), maxValue)];
+			rangeValues = [Math.min(rangeValue.toNumber(), maxValue.toNumber())];
 		}
 
 		useEffect(() => {

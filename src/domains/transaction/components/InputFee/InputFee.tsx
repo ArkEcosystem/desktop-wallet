@@ -31,7 +31,8 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 
 	useEffect(() => {
 		if (value && value !== fee) {
-			setFee(value);
+			const amount = BigNumber.make(value).divide(1e8).toString();
+			setFee(amount);
 		}
 	}, [fee, value]);
 

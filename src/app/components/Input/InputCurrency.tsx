@@ -1,5 +1,4 @@
 import { Currency } from "@arkecosystem/platform-sdk-intl";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React, { useCallback, useLayoutEffect, useState } from "react";
 
 import { Input } from "./Input";
@@ -11,22 +10,18 @@ type Props = { onChange?: (value: { display: string; value: string }) => void; m
 
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 	({ onChange, value, magnitude, ...props }: Props, ref) => {
-		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
-		const evaluateValue = useCallback(
-			(value: any) => {
-				if (typeof value === "string") return convertValue(BigNumber.make(Number(value)).toString());
-
-				if (value?.display) return value;
-
-				return convertValue(value?.toString() || "");
-			},
-			[convertValue],
-		);
-		const [amount, setAmount] = useState(evaluateValue(value));
+		const convertValue = useCallback((value: string) => Currency.fromString(value || "", magnitude), [magnitude]);
+		const [amount, setAmount] = useState(convertValue(value?.toString() || ""));
 
 		useLayoutEffect(() => {
+			const evaluateValue = (value: any) => {
+				if (value?.display) return value;
+
+				return convertValue(value?.toString()) || convertValue("");
+			};
+
 			setAmount(evaluateValue(value));
-		}, [convertValue, evaluateValue, onChange, value]);
+		}, [convertValue, onChange, value]);
 
 		const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 			const { value } = event.target;

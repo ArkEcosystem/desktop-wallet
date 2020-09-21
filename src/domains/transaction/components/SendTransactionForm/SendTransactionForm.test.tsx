@@ -78,10 +78,10 @@ describe("SendTransactionForm", () => {
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
 
 			// Fee
-			expect(getByTestId("InputCurrency")).toHaveValue("71538139");
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 			expect(rendered.container).toMatchSnapshot();
 		});
