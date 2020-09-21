@@ -135,9 +135,6 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 	};
 
 	const handleSubmit = async () => {
-		const isValid = await trigger("mnemonic");
-		if (!isValid) return;
-
 		const loadingToastId = toasts.info(t("TRANSACTION.BROADCASTING"));
 
 		try {
