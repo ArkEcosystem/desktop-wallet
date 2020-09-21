@@ -19,7 +19,7 @@ export const fetchTxIpfsData = async (tx: TransactionData) => {
 };
 
 export const sendEntityUpdateTransaction = async ({ form, senderWallet, env, type }: SignEntityUpdateProps) => {
-	const { fee, entityName, ipfsData, mnemonic, secondMnemonic, registrationId } = form.getValues();
+	const { fee, ipfsData, mnemonic, secondMnemonic, registrationId } = form.getValues();
 
 	const sanitizedData = filter(ipfsData, (item) => !isEmpty(item));
 	const entityType = type ?? Enums.EntityType.Business;
@@ -33,7 +33,6 @@ export const sendEntityUpdateTransaction = async ({ form, senderWallet, env, typ
 			type: entityType,
 			// @TODO: let the user choose what sub-type they wish to use.
 			subType: Enums.EntitySubType.None,
-			name: entityName,
 			ipfs: await new File(httpClient).upload(sanitizedData),
 		},
 	});
