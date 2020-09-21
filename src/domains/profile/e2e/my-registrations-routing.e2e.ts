@@ -42,14 +42,19 @@ test("should navigate to my registrations page", async (t) => {
 		.ok();
 });
 
-test("should navigate to my registrations from navigation bar", goToMyRegistrations);
+test("should navigate to my registrations from navigation bar", async (t) => {
+	await goToProfile(t);
+	await goToMyRegistrations(t);
+});
 
 test("should render delegates list", async (t: any) => {
+	await goToProfile(t);
 	await goToMyRegistrations(t);
 	await t.expect(Selector("[data-testid=DelegateRegistrations]").exists).ok();
 });
 
 test("should handle delegate update action", async (t: any) => {
+	await goToProfile(t);
 	await goToMyRegistrations(t);
 
 	const delegateRowItem = "[data-testid=DelegateRegistrations] [data-testid=TableRow]";
@@ -59,6 +64,7 @@ test("should handle delegate update action", async (t: any) => {
 });
 
 test("should handle delegate resign action", async (t: any) => {
+	await goToProfile(t);
 	await goToMyRegistrations(t);
 
 	const delegateRowItem = "[data-testid=DelegateRegistrations] [data-testid=TableRow]";
@@ -73,11 +79,13 @@ test("should handle delegate resign action", async (t: any) => {
 });
 
 test("should render business registrations list", async (t: any) => {
+	await goToProfile(t);
 	await goToMyRegistrations(t);
 	await t.expect(Selector("[data-testid=BusinessRegistrations] [data-testid=TableRow]").exists).ok();
 });
 
 test("should handle business registration update action", async (t: any) => {
+	await goToProfile(t);
 	await goToMyRegistrations(t);
 
 	const businessRowItem = "[data-testid=BusinessRegistrations] [data-testid=TableRow]:nth-child(1)";
@@ -92,6 +100,7 @@ test("should handle business registration update action", async (t: any) => {
 });
 
 test("should handle business registration resign action", async (t: any) => {
+	await goToProfile(t);
 	await goToMyRegistrations(t);
 
 	const businessRowItem = "[data-testid=BusinessRegistrations] [data-testid=TableRow]:nth-child(1)";
@@ -101,11 +110,13 @@ test("should handle business registration resign action", async (t: any) => {
 });
 
 test("should render plugin registrations list", async (t: any) => {
+	await goToProfile(t);
 	await goToMyRegistrations(t);
 	await t.expect(Selector("[data-testid=PluginRegistrations] [data-testid=TableRow]").exists).ok();
 });
 
 test("should handle plugin registration update action", async (t: any) => {
+	await goToProfile(t);
 	await goToMyRegistrations(t);
 
 	const pluginRowItem = "[data-testid=PluginRegistrations] [data-testid=TableRow]";
@@ -120,6 +131,7 @@ test("should handle plugin registration update action", async (t: any) => {
 });
 
 test("should handle plugin registration resign action", async (t: any) => {
+	await goToProfile(t);
 	await goToMyRegistrations(t);
 
 	const pluginRowItem = "[data-testid=PluginRegistrations] [data-testid=TableRow]";
