@@ -1,13 +1,37 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture } from "../../../utils/e2e-utils";
+import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToMyRegistrations } from "../../profile/e2e/common";
+
 const IpfsFixture = require("../../../tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json");
 
 const translations = buildTranslations();
 
-createFixture(`Send Entity Update`);
+createFixture(`Send Entity Update`, [
+	mockRequest(
+		{
+			url: "https://dwallets.ark.io/api/transactions/search",
+			method: "POST",
+		},
+		require("../../../tests/fixtures/registrations/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P-businesses.json"),
+	),
+	mockRequest("https://platform.ark.io/api/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV", IpfsFixture),
+	mockRequest(
+		{
+			url: "https://dwallets.ark.io/api/transactions",
+			method: "GET",
+		},
+		require("../../../tests/fixtures/registrations/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P-businesses.json"),
+	),
+	mockRequest(
+		{
+			url: "https://dwallets.ark.io/api/transactions",
+			method: "POST",
+		},
+		require("../../../tests/fixtures/coins/ark/transactions/entity-update.json"),
+	),
+]);
 
 const selectRegistrationOption = async (rowSelector: string, optionLabel: string, t: any) => {
 	const dropdownToggle = `${rowSelector} [data-testid=dropdown__toggle]`;
