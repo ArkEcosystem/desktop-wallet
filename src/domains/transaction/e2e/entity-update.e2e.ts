@@ -2,7 +2,7 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
-import { goToMyRegistrations,goToProfile } from "../../profile/e2e/common";
+import { goToMyRegistrations, goToProfile } from "../../profile/e2e/common";
 import { goToImportWalletPage } from "./common";
 
 const IpfsFixture = require("../../../tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json");
