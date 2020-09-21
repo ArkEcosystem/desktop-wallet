@@ -13,9 +13,7 @@ test("should import a wallet by mnemonic", async (t) => {
 
 	// Navigate to import page
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
-	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
-		.ok();
+	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
 
 	// Select a network and advance to second step
 	await t.click(Selector("#ImportWallet__network-item-1"));
@@ -23,9 +21,7 @@ test("should import a wallet by mnemonic", async (t) => {
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
 		.notOk("Network selected", { timeout: 5000 });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
-	await t
-		.expect(Selector("h1").withExactText(translations.WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists)
-		.ok();
+	await t.expect(Selector("h1").withExactText(translations.WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists).ok();
 
 	// Fill a passphrase and advance to third step
 	const passphraseInput = Selector("input[name=passphrase]");
@@ -46,9 +42,7 @@ test("should import a wallet by address", async (t) => {
 
 	// Navigate to import page
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
-	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
-		.ok();
+	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
 
 	// Select a network and advance to the step two
 	await t.click(Selector("#ImportWallet__network-item-1"));
@@ -56,9 +50,7 @@ test("should import a wallet by address", async (t) => {
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
 		.notOk("Network selected", { timeout: 5000 });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
-	await t
-		.expect(Selector("h1").withExactText(translations.WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists)
-		.ok();
+	await t.expect(Selector("h1").withExactText(translations.WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists).ok();
 
 	// Use the address only
 	await t.click(Selector("input[name=isAddressOnly]").parent());
@@ -82,9 +74,7 @@ test("should show an error message for invalid address", async (t) => {
 
 	// Navigate to import page
 	await t.click(Selector("button").withExactText("Import"));
-	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
-		.ok();
+	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
 
 	// Select a network and advance to step two
 	await t.click(Selector("#ImportWallet__network-item-1"));
@@ -114,9 +104,7 @@ test("should show an error message for duplicate address", async (t) => {
 
 	// Navigate to import page
 	await t.click(Selector("button").withExactText("Import"));
-	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
-		.ok();
+	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
 
 	// Select a network and advance to step two
 	await t.click(Selector("#ImportWallet__network-item-1"));
@@ -140,9 +128,7 @@ test("should show an error message for duplicate address", async (t) => {
 
 	// Navigate to import page
 	await t.click(Selector("button").withExactText("Import"));
-	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
-		.ok();
+	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
 
 	// Select a network and advance to step two
 	await t.click(Selector("#ImportWallet__network-item-1"));
