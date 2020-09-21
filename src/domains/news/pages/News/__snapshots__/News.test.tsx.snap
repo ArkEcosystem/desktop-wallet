@@ -560,7 +560,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                     class="flex flex-col space-y-3"
                   >
                     <div
-                      class="flex justify-between items-center"
+                      class="flex items-center justify-between"
                     >
                       <h5
                         class="font-semibold"
@@ -568,7 +568,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         Category
                       </h5>
                       <button
-                        class="focus:outline-none font-semibold text-xs text-theme-neutral"
+                        class="text-xs font-semibold focus:outline-none text-theme-neutral"
                       >
                         Select All
                       </button>
@@ -1429,7 +1429,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     class="flex flex-col space-y-3"
                   >
                     <div
-                      class="flex justify-between items-center"
+                      class="flex items-center justify-between"
                     >
                       <h5
                         class="font-semibold"

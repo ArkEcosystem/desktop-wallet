@@ -127,12 +127,12 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 				<Divider dashed />
 
 				<div className="flex flex-col space-y-3">
-					<div className="flex justify-between items-center">
+					<div className="flex items-center justify-between">
 						<h5 className="font-semibold">{t("COMMON.CATEGORY")}</h5>
 						{showSelectAllCategories && (
 							<button
 								onClick={handleSelectAllCategories}
-								className="focus:outline-none font-semibold text-xs text-theme-neutral"
+								className="text-xs font-semibold focus:outline-none text-theme-neutral"
 							>
 								{t("COMMON.SELECT_ALL")}
 							</button>
