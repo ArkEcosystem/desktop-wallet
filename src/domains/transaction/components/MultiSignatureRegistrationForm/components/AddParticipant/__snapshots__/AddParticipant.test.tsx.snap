@@ -11,7 +11,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
         data-testid="FormLabel"
         for="address"
       >
-        Sender
+        Participant Address
         <div
           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
@@ -71,12 +71,12 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
       </p>
     </fieldset>
     <button
-      class="sc-AxjAm fPpool w-full"
+      class="sc-AxjAm fPpool w-full my-4"
       color="primary"
       data-testid="LinkCollection__add-link"
       type="button"
     >
-      Add Link
+      Add Participant
     </button>
     <div
       class="sc-fzoyAV dtgZXc"
@@ -172,7 +172,7 @@ exports[`Add Participant should fail to find 1`] = `
         data-testid="FormLabel"
         for="address"
       >
-        Sender
+        Participant Address
         <div
           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
@@ -232,12 +232,12 @@ exports[`Add Participant should fail to find 1`] = `
       </p>
     </fieldset>
     <button
-      class="sc-AxjAm fPpool w-full"
+      class="sc-AxjAm fPpool w-full my-4"
       color="primary"
       data-testid="LinkCollection__add-link"
       type="button"
     >
-      Add Link
+      Add Participant
     </button>
     <div
       class="sc-fzoyAV dtgZXc"
@@ -333,7 +333,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
         data-testid="FormLabel"
         for="address"
       >
-        Sender
+        Participant Address
         <div
           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
@@ -393,12 +393,12 @@ exports[`Add Participant should fail with cold wallet 1`] = `
       </p>
     </fieldset>
     <button
-      class="sc-AxjAm fPpool w-full"
+      class="sc-AxjAm fPpool w-full my-4"
       color="primary"
       data-testid="LinkCollection__add-link"
       type="button"
     >
-      Add Link
+      Add Participant
     </button>
     <div
       class="sc-fzoyAV dtgZXc"
@@ -494,7 +494,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
         data-testid="FormLabel"
         for="address"
       >
-        Sender
+        Participant Address
         <div
           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
@@ -548,12 +548,12 @@ exports[`Add Participant should work with a remote wallet 1`] = `
       </div>
     </fieldset>
     <button
-      class="sc-AxjAm fPpool w-full"
+      class="sc-AxjAm fPpool w-full my-4"
       color="primary"
       data-testid="LinkCollection__add-link"
       type="button"
     >
-      Add Link
+      Add Participant
     </button>
     <div
       class="sc-fzoyAV dtgZXc"
@@ -726,7 +726,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
         data-testid="FormLabel"
         for="address"
       >
-        Sender
+        Participant Address
         <div
           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
@@ -780,12 +780,12 @@ exports[`Add Participant should work with an imported wallet 1`] = `
       </div>
     </fieldset>
     <button
-      class="sc-AxjAm fPpool w-full"
+      class="sc-AxjAm fPpool w-full my-4"
       color="primary"
       data-testid="LinkCollection__add-link"
       type="button"
     >
-      Add Link
+      Add Participant
     </button>
     <div
       class="sc-fzoyAV dtgZXc"

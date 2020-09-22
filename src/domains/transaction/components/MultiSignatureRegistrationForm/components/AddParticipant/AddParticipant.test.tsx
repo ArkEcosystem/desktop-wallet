@@ -30,7 +30,7 @@ describe("Add Participant", () => {
 		});
 
 		act(() => {
-			fireEvent.click(screen.getByText("Add Link"));
+			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 		});
 
 		await waitFor(() =>
@@ -61,7 +61,7 @@ describe("Add Participant", () => {
 		});
 
 		act(() => {
-			fireEvent.click(screen.getByText("Add Link"));
+			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 		});
 
 		await waitFor(() =>
@@ -71,6 +71,40 @@ describe("Add Participant", () => {
 		);
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should fail with a duplicate address", async () => {
+		render(
+			<AddParticipant
+				profile={profile}
+				wallet={wallet}
+				defaultParticipants={[
+					{
+						address: wallet.address(),
+						publicKey: wallet.publicKey()!,
+						balance: wallet.balance().toString(),
+					},
+				]}
+			/>,
+		);
+
+		act(() => {
+			fireEvent.input(screen.getByRole("textbox"), {
+				target: {
+					value: wallet.address(),
+				},
+			});
+		});
+
+		act(() => {
+			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
+		});
+
+		await waitFor(() =>
+			expect(
+				screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_ALREADY_ADDED),
+			).toBeInTheDocument(),
+		);
 	});
 
 	it("should fail if cannot find the address remotely", async () => {
@@ -92,7 +126,7 @@ describe("Add Participant", () => {
 		});
 
 		act(() => {
-			fireEvent.click(screen.getByText("Add Link"));
+			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 		});
 
 		await waitFor(() =>
@@ -117,7 +151,7 @@ describe("Add Participant", () => {
 		});
 
 		act(() => {
-			fireEvent.click(screen.getByText("Add Link"));
+			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 		});
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(1));
@@ -150,7 +184,7 @@ describe("Add Participant", () => {
 		});
 
 		act(() => {
-			fireEvent.click(screen.getByText("Add Link"));
+			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 		});
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(1));
@@ -171,7 +205,7 @@ describe("Add Participant", () => {
 		});
 
 		act(() => {
-			fireEvent.click(screen.getByText("Add Link"));
+			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 		});
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(1));
