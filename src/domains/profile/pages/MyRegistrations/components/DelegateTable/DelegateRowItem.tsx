@@ -34,7 +34,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 	const { t } = useTranslation();
 
 	const options = [
-		{ label: t("COMMON.UPDATE"), value: "update" },
+		{ label: t("COMMON.UPDATE"), value: "updateDelegate" },
 		{ label: t("COMMON.RESIGN"), value: "resign" },
 	];
 

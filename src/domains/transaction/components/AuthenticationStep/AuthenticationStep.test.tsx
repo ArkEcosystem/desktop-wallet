@@ -32,7 +32,7 @@ describe("AuthenticationStep", () => {
 		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__mnemonic")).toBeInTheDocument());
 
 		act(() => {
-			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
+			fireEvent.change(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "my mnemonic",
 				},
@@ -53,7 +53,7 @@ describe("AuthenticationStep", () => {
 		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).toBeInTheDocument());
 
 		act(() => {
-			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
+			fireEvent.change(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "my mnemonic",
 				},
@@ -61,7 +61,7 @@ describe("AuthenticationStep", () => {
 		});
 
 		act(() => {
-			fireEvent.input(screen.getByTestId("AuthenticationStep__second-mnemonic"), {
+			fireEvent.change(screen.getByTestId("AuthenticationStep__second-mnemonic"), {
 				target: {
 					value: "my second mnemonic",
 				},

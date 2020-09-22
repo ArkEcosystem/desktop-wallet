@@ -531,6 +531,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
           >
             <tr
               class="font-semibold border-b last:border-b-0 border-theme-neutral-200"
+              data-testid="LinkCollection__item"
             >
               <td
                 class="w-16 text-center align-middle pb-6 pt-2"
@@ -585,6 +586,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
             </tr>
             <tr
               class="font-semibold border-b last:border-b-0 border-theme-neutral-200"
+              data-testid="LinkCollection__item"
             >
               <td
                 class="w-16 text-center align-middle py-6"
