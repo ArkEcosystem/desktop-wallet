@@ -35,11 +35,20 @@ exports[`NewsOptions should render 1`] = `
       <div
         class="flex flex-col space-y-3"
       >
-        <h5
-          class="font-semibold"
+        <div
+          class="flex items-center justify-between"
         >
-          Category
-        </h5>
+          <h5
+            class="font-semibold"
+          >
+            Category
+          </h5>
+          <button
+            class="text-xs font-semibold focus:outline-none text-theme-neutral"
+          >
+            Select All
+          </button>
+        </div>
         <p
           class="text-sm text-theme-neutral"
         >
@@ -48,22 +57,6 @@ exports[`NewsOptions should render 1`] = `
         <div
           class="flex flex-wrap -mx-1"
         >
-          <label
-            class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
-            data-testid="NewsOptions__category-All"
-          >
-            <input
-              class="SelectCategory__Input-k7qbth-0 dbODum"
-              data-testid="SelectCategory__undefined"
-              type="checkbox"
-              value=""
-            />
-            <div
-              class="SelectCategory__CustomButton-k7qbth-1 idPDIy"
-            >
-              #All
-            </div>
-          </label>
           <label
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
             data-testid="NewsOptions__category-Technical"

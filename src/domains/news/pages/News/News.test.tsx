@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Blockfolio, BlockfolioResponse } from "@arkecosystem/platform-sdk-news";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -153,7 +154,7 @@ describe("News", () => {
 	});
 
 	it("should filter results based on category query and asset", async () => {
-		const { getAllByTestId, getByTestId, asFragment } = renderWithRouter(
+		const { getAllByTestId, getByTestId, getByText, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/news">
 				<News />
 			</Route>,
@@ -173,7 +174,15 @@ describe("News", () => {
 					value: "Hacking",
 				},
 			});
-			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
+		});
+
+		for (const category of ["Marketing", "Community", "Emergency"]) {
+			act(() => {
+				fireEvent.click(getByTestId(`NewsOptions__category-${category}`));
+			});
+		}
+
+		act(() => {
 			fireEvent.click(getByTestId("network__option--0"));
 		});
 
@@ -193,7 +202,8 @@ describe("News", () => {
 					value: "",
 				},
 			});
-			fireEvent.click(getByTestId("NewsOptions__category-All"));
+
+			fireEvent.click(getByText(commonTranslations.SELECT_ALL));
 		});
 
 		act(() => {

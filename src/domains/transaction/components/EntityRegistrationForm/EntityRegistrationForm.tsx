@@ -5,27 +5,48 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useValidation } from "app/hooks/validations";
 import { httpClient } from "app/services";
 import {
 	SendEntityRegistrationComponent,
 	SendEntityRegistrationDetailsOptions,
 	SendEntityRegistrationForm,
 } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
-import React from "react";
+import React, { useEffect } from "react";
+import { useFormContext } from "react-hook-form";
 
-import { FormStep } from "./Step2";
-import { ReviewStep } from "./Step3";
+import { FormStep, ReviewStep } from "./";
 
-const component = ({ activeTab, wallet, fees }: SendEntityRegistrationComponent) => (
-	<Tabs activeId={activeTab}>
-		<TabPanel tabId={2}>
-			<FormStep fees={fees} />
-		</TabPanel>
-		<TabPanel tabId={3}>
-			<ReviewStep wallet={wallet} />
-		</TabPanel>
-	</Tabs>
-);
+const FormStepsComponent = ({ activeTab, wallet }: SendEntityRegistrationComponent) => {
+	const { register } = useFormContext();
+	const { entityRegistration } = useValidation();
+
+	useEffect(() => {
+		register("entityName", entityRegistration.entityName());
+		register("ipfsData.meta.displayName", entityRegistration.displayName());
+		register("ipfsData.meta.website", entityRegistration.website());
+		register("ipfsData.meta.description", entityRegistration.description());
+
+		register("ipfsData.sourceControl");
+		register("ipfsData.socialMedia");
+		register("ipfsData.images");
+		register("ipfsData.videos");
+
+		register("fees");
+		register("fee");
+	}, [register, entityRegistration]);
+
+	return (
+		<Tabs activeId={activeTab}>
+			<TabPanel tabId={2}>
+				<FormStep />
+			</TabPanel>
+			<TabPanel tabId={3}>
+				<ReviewStep wallet={wallet} />
+			</TabPanel>
+		</Tabs>
+	);
+};
 
 const transactionDetails = ({ translations, transaction }: SendEntityRegistrationDetailsOptions) => (
 	<>
@@ -52,12 +73,12 @@ const transactionDetails = ({ translations, transaction }: SendEntityRegistratio
 	</>
 );
 
-component.displayName = "EntityRegistrationForm";
+FormStepsComponent.displayName = "EntityRegistrationForm";
 transactionDetails.displayName = "EntityRegistrationFormTransactionDetails";
 
 export const EntityRegistrationForm: SendEntityRegistrationForm = {
 	tabSteps: 2,
-	component,
+	component: FormStepsComponent,
 	transactionDetails,
 	formFields: ["ipfsData"],
 

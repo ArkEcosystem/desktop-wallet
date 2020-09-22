@@ -176,6 +176,7 @@ describe("SendEntityResignation", () => {
 		const signMock = jest.spyOn(wallet.transaction(), "signDelegateResignation").mockImplementation(() => {
 			throw new Error();
 		});
+		const consoleMock = jest.spyOn(console, "log").mockImplementation();
 
 		const { asFragment, getByTestId } = renderPage();
 
@@ -189,12 +190,24 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "test",
 				},
 			});
 		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+
+		act(() => {
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: "test",
+				},
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
@@ -208,6 +221,7 @@ describe("SendEntityResignation", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		signMock.mockRestore();
+		consoleMock.mockRestore();
 	});
 
 	it("should succesfully sign and submit resignation transaction", async () => {
@@ -229,12 +243,24 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "test",
 				},
 			});
 		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+
+		act(() => {
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: "test",
+				},
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
@@ -270,12 +296,24 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "test",
 				},
 			});
 		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+
+		act(() => {
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: "test",
+				},
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
@@ -309,12 +347,24 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "test",
 				},
 			});
 		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+
+		act(() => {
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: "test",
+				},
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
@@ -352,12 +402,24 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "test",
 				},
 			});
 		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+
+		act(() => {
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: "test",
+				},
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityResignation__send-button"));

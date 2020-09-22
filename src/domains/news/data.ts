@@ -1,25 +1,4 @@
-export const categories = [
-	{
-		name: "All",
-		isSelected: true,
-	},
-	{
-		name: "Technical",
-		isSelected: false,
-	},
-	{
-		name: "Marketing",
-		isSelected: false,
-	},
-	{
-		name: "Community",
-		isSelected: false,
-	},
-	{
-		name: "Emergency",
-		isSelected: false,
-	},
-];
+export const AVAILABLE_CATEGORIES = ["Technical", "Marketing", "Community", "Emergency"];
 
 export const assets = [
 	{

@@ -50,6 +50,9 @@ export const translations: { [key: string]: any } = {
 	WEBSITE: "Website",
 	WELL_CONFIRMED: "Well confirmed",
 	YOUR_ADDRESS: "Your address",
+	BROADCASTING: "Broadcasting transaction to the network",
+	NOT_FOUND: "Unable to find transaction for [{{transactionId}}]",
+	IPFS_NOT_FOUND: "Unable to find ipfs data for transaction [{{transactionId}}]",
 
 	INPUT_MULTISIG: {
 		ADDRESS_NOT_FOUND: "The address could not be found",
@@ -118,9 +121,17 @@ export const translations: { [key: string]: any } = {
 		TWITTER: "Twitter",
 		VIMEO: "Vimeo",
 		YOUTUBE: "YouTube",
+		DISCORD: "Discord",
+		INSTAGRAM: "Instagram",
+		MEDIUM: "Medium",
+		REDDIT: "Reddit",
+		SLACK: "Slack",
+		TELEGRAM: "Telegram",
+		WECHAT: "Wechat",
 	},
 
 	ENTITY: {
+		NAME: "Entity Name",
 		DISPLAY_NAME: "Display Name",
 		INVALID_NAME: "Invalid Entity Name",
 		INVALID_DESCRIPTION: "Invalid Entity Description",
