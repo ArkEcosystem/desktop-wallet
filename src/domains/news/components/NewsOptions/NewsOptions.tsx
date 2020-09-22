@@ -3,10 +3,10 @@ import { Divider } from "app/components/Divider";
 import { FilterNetwork } from "app/components/FilterNetwork";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { assets as availableCoins, categories as availableCategories } from "../../data";
+import { assets as availableCoins, AVAILABLE_CATEGORIES } from "../../data";
 import { SelectCategory } from "./components/SelectCategory";
 
 type Option = {
@@ -28,12 +28,13 @@ type NewsOptionsProps = {
 export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSubmit }: NewsOptionsProps) => {
 	const { t } = useTranslation();
 
-	const [categories, setCategories] = useState(
-		availableCategories.map((category: Option) => ({
-			...category,
-			isSelected: selectedCategories.includes(category.name),
+	const [categories, setCategories] = useState<Option[]>(
+		AVAILABLE_CATEGORIES.map((name: string) => ({
+			name,
+			isSelected: !selectedCategories.length || selectedCategories.includes(name),
 		})),
 	);
+
 	const [coins, setCoins] = useState(
 		availableCoins.map((coin: CoinOption) => ({
 			...coin,
@@ -43,29 +44,17 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 
 	const [searchQuery, setSearchQuery] = useState("");
 
-	const handleCategoryChange = (name: string) => {
-		let updatedCategories = [...categories];
+	const showSelectAllCategories = useMemo(() => categories.some((option: Option) => !option.isSelected), [
+		categories,
+	]);
 
-		if (name === "All") {
-			return setCategories(
-				updatedCategories.map((category: Option) => ({
-					...category,
-					isSelected: category.name === "All",
-				})),
-			);
-		}
-
-		updatedCategories = updatedCategories.map((category: Option) => ({
-			...category,
-			isSelected: category.name === "All" ? false : category.isSelected,
-		}));
-
-		const selected = updatedCategories.filter((category: Option) => category.isSelected);
+	const handleSelectCategory = (name: string) => {
+		const selected = categories.filter((category: Option) => category.isSelected);
 
 		if (selected.length === 1 && selected[0].name === name) return;
 
 		setCategories(
-			updatedCategories.map((category: Option) =>
+			categories.map((category: Option) =>
 				category.name === name
 					? {
 							...category,
@@ -73,6 +62,15 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 					  }
 					: category,
 			),
+		);
+	};
+
+	const handleSelectAllCategories = () => {
+		setCategories(
+			categories.map((category: Option) => ({
+				...category,
+				isSelected: true,
+			})),
 		);
 	};
 
@@ -129,28 +127,32 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 				<Divider dashed />
 
 				<div className="flex flex-col space-y-3">
-					<h5 className="font-semibold">{t("COMMON.CATEGORY")}</h5>
+					<div className="flex items-center justify-between">
+						<h5 className="font-semibold">{t("COMMON.CATEGORY")}</h5>
+						{showSelectAllCategories && (
+							<button
+								onClick={handleSelectAllCategories}
+								className="text-xs font-semibold focus:outline-none text-theme-neutral"
+							>
+								{t("COMMON.SELECT_ALL")}
+							</button>
+						)}
+					</div>
+
 					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.SELECT_YOUR_CATEGORIES")}</p>
 
 					<div className="flex flex-wrap -mx-1">
-						{categories.map((category, index) => {
-							const isSelected = () =>
-								category.isSelected ||
-								(category.name === "All" &&
-									!categories.some((category: Option) => category.isSelected));
-
-							return (
-								<SelectCategory
-									data-testid={`NewsOptions__category-${category.name}`}
-									key={index}
-									className="p-1"
-									checked={isSelected()}
-									onChange={() => handleCategoryChange(category.name)}
-								>
-									#{t(`NEWS.CATEGORIES.${category.name.toUpperCase()}`)}
-								</SelectCategory>
-							);
-						})}
+						{categories.map((category, index) => (
+							<SelectCategory
+								data-testid={`NewsOptions__category-${category.name}`}
+								key={index}
+								className="p-1"
+								checked={category.isSelected}
+								onChange={() => handleSelectCategory(category.name)}
+							>
+								#{t(`NEWS.CATEGORIES.${category.name.toUpperCase()}`)}
+							</SelectCategory>
+						))}
 					</div>
 				</div>
 
