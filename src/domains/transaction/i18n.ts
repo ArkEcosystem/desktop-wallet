@@ -54,9 +54,17 @@ export const translations: { [key: string]: any } = {
 	NOT_FOUND: "Unable to find transaction for [{{transactionId}}]",
 	IPFS_NOT_FOUND: "Unable to find ipfs data for transaction [{{transactionId}}]",
 
-	INPUT_MULTISIG: {
-		ADDRESS_NOT_FOUND: "The address could not be found",
-		PUBLIC_KEY_NOT_FOUND: "The public key could not be found",
+	MULTISIGNATURE: {
+		MIN_SIGNATURES: "Minimum Required Signatures",
+		PARTICIPANT_ADDRESS: "Participant Address",
+		PARTICIPANTS: "Multisiganture Participants",
+		ADD_PARTICIPANT: "Add Participant",
+		OUT_OF_LENGTH: "out of {{ length }}",
+		ERROR: {
+			ADDRESS_ALREADY_ADDED: "The address is already in the list",
+			ADDRESS_NOT_FOUND: "The address could not be found",
+			PUBLIC_KEY_NOT_FOUND: "The public key could not be found",
+		},
 	},
 
 	FEES: {
@@ -196,7 +204,6 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Multisignature Registration",
 			DESCRIPTION: "Register a new multisignature address by adding participants.",
 		},
-		MIN_SIGNATURES: "Minimum Required Signatures",
 	},
 
 	PAGE_RESIGN_REGISTRATION: {

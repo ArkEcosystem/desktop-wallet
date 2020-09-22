@@ -151,6 +151,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 									activeTab={activeTab}
 									fees={feesByType(registrationType.value)}
 									wallet={activeWallet}
+									profile={activeProfile}
 								/>
 							)}
 

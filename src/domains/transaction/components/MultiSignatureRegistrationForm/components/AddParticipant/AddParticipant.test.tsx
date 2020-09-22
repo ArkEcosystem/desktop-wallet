@@ -34,7 +34,9 @@ describe("Add Participant", () => {
 		});
 
 		await waitFor(() =>
-			expect(screen.queryByText(transactionTranslations.INPUT_MULTISIG.ADDRESS_NOT_FOUND)).toBeInTheDocument(),
+			expect(
+				screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_NOT_FOUND),
+			).toBeInTheDocument(),
 		);
 
 		expect(asFragment()).toMatchSnapshot();
@@ -63,7 +65,9 @@ describe("Add Participant", () => {
 		});
 
 		await waitFor(() =>
-			expect(screen.queryByText(transactionTranslations.INPUT_MULTISIG.PUBLIC_KEY_NOT_FOUND)).toBeInTheDocument(),
+			expect(
+				screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.PUBLIC_KEY_NOT_FOUND),
+			).toBeInTheDocument(),
 		);
 
 		expect(asFragment()).toMatchSnapshot();
@@ -92,7 +96,9 @@ describe("Add Participant", () => {
 		});
 
 		await waitFor(() =>
-			expect(screen.queryByText(transactionTranslations.INPUT_MULTISIG.ADDRESS_NOT_FOUND)).toBeInTheDocument(),
+			expect(
+				screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_NOT_FOUND),
+			).toBeInTheDocument(),
 		);
 
 		expect(asFragment()).toMatchSnapshot();

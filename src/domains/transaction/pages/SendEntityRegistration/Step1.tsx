@@ -5,6 +5,7 @@ import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm/DelegateRegistrationForm";
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
+import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -17,6 +18,7 @@ const registrationComponents: any = {
 	delegateRegistration: DelegateRegistrationForm,
 	entityRegistration: EntityRegistrationForm,
 	secondSignature: SecondSignatureRegistrationForm,
+	multiSignature: MultiSignatureRegistrationForm,
 };
 
 const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
@@ -60,6 +62,13 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		registrationTypes.push({
 			value: "delegateRegistration",
 			label: "Delegate",
+		});
+	}
+
+	if (!wallet.isMultiSignature?.()) {
+		registrationTypes.push({
+			value: "multiSignature",
+			label: "MultiSignature",
 		});
 	}
 

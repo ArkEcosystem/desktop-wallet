@@ -62,7 +62,12 @@ describe("SecondSignatureRegistrationForm", () => {
 		activeTab?: number;
 	}) => (
 		<Form context={form} onSubmit={onSubmit}>
-			<SecondSignatureRegistrationForm.component activeTab={activeTab} fees={fees} wallet={wallet} />
+			<SecondSignatureRegistrationForm.component
+				profile={profile}
+				activeTab={activeTab}
+				fees={fees}
+				wallet={wallet}
+			/>
 		</Form>
 	);
 
