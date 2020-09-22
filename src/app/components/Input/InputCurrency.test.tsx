@@ -65,6 +65,17 @@ describe("InputCurrency", () => {
 		expect(input).toHaveValue("0.01");
 	});
 
+	it("should fallback on convert value", () => {
+		const { getByTestId, rerender } = render(<InputCurrency value=".01" />);
+		const input = getByTestId("InputCurrency");
+
+		waitFor(() => expect(input).toHaveValue("0.01"));
+
+		rerender(<InputCurrency value={undefined} />);
+
+		waitFor(() => expect(input).toHaveValue("0"));
+	});
+
 	it("should work with a controlled value", () => {
 		const Component = () => {
 			const [value, setValue] = useState("0.04");
