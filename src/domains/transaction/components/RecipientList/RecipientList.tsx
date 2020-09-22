@@ -32,7 +32,7 @@ const RecipientListItem = ({
 
 	return (
 		<tr
-			className="border-b last:border-b-0 border-dashed border-theme-neutral-300"
+			className="border-b border-dashed last:border-b-0 border-theme-neutral-300"
 			data-testid="recipient-list__recipient-list-item"
 		>
 			<td className={`${paddingStyles} w-14`}>
