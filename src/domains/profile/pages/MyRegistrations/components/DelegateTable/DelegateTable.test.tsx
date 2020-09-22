@@ -74,6 +74,6 @@ describe("Welcome", () => {
 			fireEvent.click(resignOption);
 		});
 
-		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "update" });
+		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "updateDelegate" });
 	});
 });

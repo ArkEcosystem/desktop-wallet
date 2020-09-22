@@ -103,14 +103,18 @@ export const MyRegistrations = () => {
 			case "register":
 				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
 				break;
+
 			case "resign":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`, {
-					entity,
-					type,
-				});
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);
 				break;
+
 			case "update":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
+				history.push(
+					`/profiles/${activeProfile.id()}/wallets/${walletId}/transactions/${entity.id()}/send-entity-update`,
+				);
+				break;
+			case "updateDelegate":
+				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
 				break;
 		}
 	};

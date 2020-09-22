@@ -1,9 +1,12 @@
 import { Selector } from "testcafe";
 
 import { createFixture } from "../../../utils/e2e-utils";
-import { goToMyRegistrations } from "./common";
+import { goToMyRegistrations, goToProfile } from "./common";
 
-createFixture(`My Registrations Search`).beforeEach(async (t) => await goToMyRegistrations(t));
+createFixture(`My Registrations Search`).beforeEach(async (t) => {
+	await goToProfile(t);
+	await goToMyRegistrations(t);
+});
 
 test("should search and find delegate wallet", async (t: any) => {
 	await t.expect(Selector("[data-testid=DelegateRegistrations] [data-testid=TableRow]").exists).ok();
