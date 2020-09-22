@@ -48,7 +48,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				{wallet.network().name()}
 			</TransactionDetail>
 
-			<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+			<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />}>
 				<div className="flex-1 space-y-2">
 					<div className="text-theme-neutral">
 						<span className="mr-1 text-sm">{t("TRANSACTION.SENDER")}</span>
@@ -60,11 +60,20 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				</div>
 			</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.RECIPIENTS")}>
-				<div className="-my-4">
-					<RecipientList recipients={recipients} assetSymbol={wallet.currency()} isEditable={false} />
-				</div>
-			</TransactionDetail>
+			{recipients.length === 1 ? (
+				<TransactionDetail
+					label={t("TRANSACTION.RECIPIENT")}
+					extra={<Avatar size="lg" address={recipients[0].address} />}
+				>
+					<Address address={recipients[0].address} walletName={recipients[0].walletName} />
+				</TransactionDetail>
+			) : (
+				<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })}>
+					<div className="-my-2">
+						<RecipientList recipients={recipients} assetSymbol={wallet.currency()} variant="condensed" />
+					</div>
+				</TransactionDetail>
+			)}
 
 			{smartbridge && (
 				<TransactionDetail

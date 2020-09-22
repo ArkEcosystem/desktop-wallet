@@ -18,15 +18,39 @@ const RecipientListWrapper = styled.div`
 	${defaultStyle}
 `;
 const RecipientListItem = ({
-	amount,
 	address,
-	walletName,
+	amount,
 	assetSymbol,
-	onRemove,
 	isEditable,
 	listIndex,
+	variant,
+	walletName,
+	onRemove,
 }: RecipientListItemProps) => {
 	const { t } = useTranslation();
+
+	if (variant === "condensed") {
+		return (
+			<tr
+				className="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+				data-testid="recipient-list__recipient-list-item"
+			>
+				<td className="py-4 w-12">
+					<Avatar size="sm" address={address} />
+				</td>
+
+				<td className="py-4">
+					<Address address={address} walletName={walletName} />
+				</td>
+
+				<td className="py-4">
+					<div className="font-bold text-right text-theme-neutral-800">
+						<Amount ticker={assetSymbol!} value={amount} />
+					</div>
+				</td>
+			</tr>
+		);
+	}
 
 	return (
 		<tr
@@ -68,7 +92,7 @@ const RecipientListItem = ({
 	);
 };
 
-export const RecipientList = ({ recipients, onRemove, assetSymbol, isEditable }: RecipientListProps) => {
+export const RecipientList = ({ assetSymbol, isEditable, recipients, variant, onRemove }: RecipientListProps) => {
 	const onRemoveRecipient = (address: string) => {
 		if (typeof onRemove === "function") return onRemove(address);
 	};
@@ -85,13 +109,14 @@ export const RecipientList = ({ recipients, onRemove, assetSymbol, isEditable }:
 			<Table columns={columns} data={recipients}>
 				{(recipient: RecipientListItemProps, index: number) => (
 					<RecipientListItem
-						assetSymbol={assetSymbol}
-						amount={recipient.amount}
 						address={recipient.address}
-						walletName={recipient.walletName}
-						onRemove={() => onRemoveRecipient(recipient?.address)}
+						amount={recipient.amount}
+						assetSymbol={assetSymbol}
 						isEditable={isEditable}
 						listIndex={index + 1}
+						variant={variant}
+						walletName={recipient.walletName}
+						onRemove={() => onRemoveRecipient(recipient?.address)}
 					/>
 				)}
 			</Table>

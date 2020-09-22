@@ -1865,9 +1865,9 @@ exports[`Transaction Send should render 2nd step (review) 1`] = `
           class="w-full h-full"
         >
           <img
-            alt="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-            title="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
           />
         </div>
       </div>
@@ -1882,141 +1882,35 @@ exports[`Transaction Send should render 2nd step (review) 1`] = `
         <div
           class="text-sm font-semibold text-theme-neutral"
         >
-          Recipients
+          Recipient
         </div>
         <div
           class="font-semibold"
         >
           <div
-            class="-my-4"
+            class="inline-block truncate align-middle"
           >
-            <div
-              class="sc-fzoyTs yvXJk"
+            <span
+              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+              data-testid="address__wallet-address"
             >
-              <div
-                class="sc-Axmtr idwkoD"
-                role="table"
-              >
-                <table
-                  cellpadding="0"
-                  class="table-auto"
-                >
-                  <thead>
-                    <tr
-                      role="row"
-                    >
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--0"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top hidden"
-                        >
-                          <div>
-                            Avatar
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--1"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top hidden"
-                        >
-                          <div>
-                            Address
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--2"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top hidden"
-                        >
-                          <div>
-                            Amount
-                          </div>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    role="rowgroup"
-                  >
-                    <tr
-                      class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
-                      data-testid="recipient-list__recipient-list-item"
-                    >
-                      <td
-                        class="py-6 w-14"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="py-6"
-                      >
-                        <div
-                          class="mb-1 text-sm font-semibold text-theme-neutral"
-                        >
-                          Recipient #1
-                        </div>
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D8rr7B…s6YUYD
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="py-6"
-                      >
-                        <div
-                          class="mb-1 text-sm font-semibold text-right text-theme-neutral"
-                        >
-                          Amount
-                        </div>
-                        <div
-                          class="font-bold text-right text-theme-neutral-800"
-                        >
-                          <span
-                            data-testid="Amount"
-                          >
-                            1 DARK
-                          </span>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+              D8rr7B…s6YUYD
+            </span>
           </div>
+        </div>
+      </div>
+      <div
+        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+        data-testid="Avatar"
+      >
+        <div
+          class="w-full h-full"
+        >
+          <img
+            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+          />
         </div>
       </div>
     </div>
@@ -2323,7 +2217,49 @@ exports[`Transaction Send should render 4th step (summary) 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral"
           >
-            Amount
+            Recipient
+          </div>
+          <div
+            class="font-semibold"
+          >
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D5pVkh…xfKwSv
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+          data-testid="Avatar"
+        >
+          <div
+            class="w-full h-full"
+          >
+            <img
+              alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+              title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+        data-testid="TransactionDetail"
+      >
+        <div
+          class="flex-1 space-y-2"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral"
+          >
+            Total Amount
           </div>
           <div
             class="font-semibold"
@@ -4611,7 +4547,295 @@ exports[`Transaction Send should send a multi payment 1`] = `
                           <div
                             class="text-sm font-semibold text-theme-neutral"
                           >
-                            Amount
+                            Recipients (4)
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            <div
+                              class="-my-2"
+                            >
+                              <div
+                                class="sc-fzoyTs yvXJk"
+                              >
+                                <div
+                                  class="sc-Axmtr idwkoD"
+                                  role="table"
+                                >
+                                  <table
+                                    cellpadding="0"
+                                    class="table-auto"
+                                  >
+                                    <thead>
+                                      <tr
+                                        role="row"
+                                      >
+                                        <th
+                                          class="text-sm text-left select-none text-theme-neutral"
+                                          colspan="1"
+                                          data-testid="table__th--0"
+                                          role="columnheader"
+                                        >
+                                          <div
+                                            class="flex flex-inline align-top hidden"
+                                          >
+                                            <div>
+                                              Avatar
+                                            </div>
+                                          </div>
+                                        </th>
+                                        <th
+                                          class="text-sm text-left select-none text-theme-neutral"
+                                          colspan="1"
+                                          data-testid="table__th--1"
+                                          role="columnheader"
+                                        >
+                                          <div
+                                            class="flex flex-inline align-top hidden"
+                                          >
+                                            <div>
+                                              Address
+                                            </div>
+                                          </div>
+                                        </th>
+                                        <th
+                                          class="text-sm text-left select-none text-theme-neutral"
+                                          colspan="1"
+                                          data-testid="table__th--2"
+                                          role="columnheader"
+                                        >
+                                          <div
+                                            class="flex flex-inline align-top hidden"
+                                          >
+                                            <div>
+                                              Amount
+                                            </div>
+                                          </div>
+                                        </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody
+                                      role="rowgroup"
+                                    >
+                                      <tr
+                                        class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                                        data-testid="recipient-list__recipient-list-item"
+                                      >
+                                        <td
+                                          class="py-4 w-12"
+                                        >
+                                          <div
+                                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                                            data-testid="Avatar"
+                                          >
+                                            <div
+                                              class="w-full h-full"
+                                            >
+                                              <img
+                                                alt="DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd"
+                                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                                                title="DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd"
+                                              />
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="py-4"
+                                        >
+                                          <div
+                                            class="inline-block truncate align-middle"
+                                          >
+                                            <span
+                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                              data-testid="address__wallet-address"
+                                            >
+                                              DReUcX…yPwAmd
+                                            </span>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="py-4"
+                                        >
+                                          <div
+                                            class="font-bold text-right text-theme-neutral-800"
+                                          >
+                                            <span
+                                              data-testid="Amount"
+                                            >
+                                              10,000 DARK
+                                            </span>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr
+                                        class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                                        data-testid="recipient-list__recipient-list-item"
+                                      >
+                                        <td
+                                          class="py-4 w-12"
+                                        >
+                                          <div
+                                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                                            data-testid="Avatar"
+                                          >
+                                            <div
+                                              class="w-full h-full"
+                                            >
+                                              <img
+                                                alt="D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP"
+                                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                                                title="D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP"
+                                              />
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="py-4"
+                                        >
+                                          <div
+                                            class="inline-block truncate align-middle"
+                                          >
+                                            <span
+                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                              data-testid="address__wallet-address"
+                                            >
+                                              D7JJ4Z…U3HHGP
+                                            </span>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="py-4"
+                                        >
+                                          <div
+                                            class="font-bold text-right text-theme-neutral-800"
+                                          >
+                                            <span
+                                              data-testid="Amount"
+                                            >
+                                              10,000 DARK
+                                            </span>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr
+                                        class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                                        data-testid="recipient-list__recipient-list-item"
+                                      >
+                                        <td
+                                          class="py-4 w-12"
+                                        >
+                                          <div
+                                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                                            data-testid="Avatar"
+                                          >
+                                            <div
+                                              class="w-full h-full"
+                                            >
+                                              <img
+                                                alt="DA4RAKRngGDfgEA7L6nQjYVEKcZPgi8EdP"
+                                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"30\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"50\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                                                title="DA4RAKRngGDfgEA7L6nQjYVEKcZPgi8EdP"
+                                              />
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="py-4"
+                                        >
+                                          <div
+                                            class="inline-block truncate align-middle"
+                                          >
+                                            <span
+                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                              data-testid="address__wallet-address"
+                                            >
+                                              DA4RAK…gi8EdP
+                                            </span>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="py-4"
+                                        >
+                                          <div
+                                            class="font-bold text-right text-theme-neutral-800"
+                                          >
+                                            <span
+                                              data-testid="Amount"
+                                            >
+                                              10,000 DARK
+                                            </span>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr
+                                        class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                                        data-testid="recipient-list__recipient-list-item"
+                                      >
+                                        <td
+                                          class="py-4 w-12"
+                                        >
+                                          <div
+                                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                                            data-testid="Avatar"
+                                          >
+                                            <div
+                                              class="w-full h-full"
+                                            >
+                                              <img
+                                                alt="DK52aX793nEMRpDvRVB2euBgGXiCpRfmwQ"
+                                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                                                title="DK52aX793nEMRpDvRVB2euBgGXiCpRfmwQ"
+                                              />
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="py-4"
+                                        >
+                                          <div
+                                            class="inline-block truncate align-middle"
+                                          >
+                                            <span
+                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                              data-testid="address__wallet-address"
+                                            >
+                                              DK52aX…pRfmwQ
+                                            </span>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="py-4"
+                                        >
+                                          <div
+                                            class="font-bold text-right text-theme-neutral-800"
+                                          >
+                                            <span
+                                              data-testid="Amount"
+                                            >
+                                              10,000 DARK
+                                            </span>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral"
+                          >
+                            Total Amount
                           </div>
                           <div
                             class="font-semibold"
@@ -5168,7 +5392,49 @@ exports[`Transaction Send should send a single transfer 1`] = `
                           <div
                             class="text-sm font-semibold text-theme-neutral"
                           >
-                            Amount
+                            Recipient
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            <div
+                              class="inline-block truncate align-middle"
+                            >
+                              <span
+                                class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                D5pVkh…xfKwSv
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                              title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral"
+                          >
+                            Total Amount
                           </div>
                           <div
                             class="font-semibold"

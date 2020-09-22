@@ -13,21 +13,18 @@ const recipients = [
 	{
 		address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient 2",
-		isMultisig: true,
 		amount: BigNumber.make("100"),
 		assetSymbol: "ARK",
 	},
 	{
 		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient 3",
-		isInArkNetwork: true,
 		amount: BigNumber.make("100"),
 		assetSymbol: "ARK",
 	},
 	{
 		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient 4",
-		isInArkNetwork: true,
 		amount: BigNumber.make("100"),
 		assetSymbol: "ARK",
 	},

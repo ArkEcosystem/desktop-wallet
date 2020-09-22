@@ -102,8 +102,6 @@ export const SendTransfer = () => {
 
 			await env.persist();
 
-			setValue("recipients", null);
-
 			setTransaction(senderWallet!.transaction().transaction(transactionId));
 
 			handleNext();
