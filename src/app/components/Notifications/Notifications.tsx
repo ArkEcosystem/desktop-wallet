@@ -1,33 +1,48 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { Icon } from "app/components/Icon";
 import { Table } from "app/components/Table";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import React from "react";
 
-import { Icon } from "../Icon";
-import { EmptyPlaceholderProps, NotificationsProps, PluginNotification } from "./models";
+import { EmptyPlaceholderProps, NotificationItemProps,NotificationsProps } from "./models";
+import { mapNotificationAction } from "./utils";
 
-const Plugin = ({ logoUrl, logoClassName, title, description, action, onAction }: PluginNotification) => (
-	<tr>
-		<td className="w-8">
-			<div className={logoClassName}>{logoUrl && <img src={logoUrl} alt={title} />}</div>
-		</td>
-		<td>
-			<span className="font-bold text-md text-theme-neutral-600">{title}</span>
-			<span className="text-md text-theme-neutral-600"> {description}</span>
-		</td>
-		<td>
-			{action && action.label && (
-				<div
-					data-testid="notifications__plugin-action"
-					className="font-bold text-right cursor-pointer text-md text-theme-primary-500"
-					onClick={() => onAction(action.value)}
-				>
-					{action.label}
-				</div>
-			)}
-		</td>
-	</tr>
-);
+const NotificationItem = ({ name, body, icon, image, action: actionName, onAction }: NotificationItemProps) => {
+	const action = mapNotificationAction(actionName as string);
+
+	return (
+		<tr data-testid="NotificationItem">
+			<td className="w-8">
+				{icon && (
+					<div className="w-full h-jull p-2 mr-4 rounded-lg">
+						<Icon name={icon} width={32} height={32} />
+					</div>
+				)}
+
+				{image && (
+					<div className="w-full h-jull p-2 mr-4 rounded-lg">
+						<img src={image} alt={name} />
+					</div>
+				)}
+			</td>
+			<td>
+				<span className="font-bold text-md text-theme-neutral-600">{name}</span>
+				<span className="text-md text-theme-neutral-600"> {body}</span>
+			</td>
+			<td>
+				{action && action.label && (
+					<div
+						data-testid="NotificationItem__action"
+						className="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+						onClick={() => onAction?.(action.value)}
+					>
+						{action.label}
+					</div>
+				)}
+			</td>
+		</tr>
+	);
+};
 
 const EmptyPlaceholder = ({ title }: EmptyPlaceholderProps) => (
 	<div>
@@ -63,20 +78,30 @@ export const Notifications = ({
 		onAction?.("click", transaction);
 	};
 
-	if (!transactions!.length && !plugins!.length) {
-		return <EmptyPlaceholder title={emptyText} />;
-	}
-
 	return (
 		<div>
-			<div className="mb-2 text-sm font-bold text-theme-neutral">{pluginsHeader}</div>
-			<Table hideHeader columns={hiddenTableHeaders} data={plugins}>
-				{(plugin: PluginNotification) => (
-					<Plugin {...plugin} onAction={(name: string) => onAction?.(name, plugin)} />
-				)}
-			</Table>
-			<div className="mb-2 text-sm font-bold mt-9 text-theme-neutral">{transactionsHeader}</div>
-			<TransactionTable onRowClick={handleTransactionClick} transactions={transactions!} isCompact hideHeader />
+			{plugins!.length > 0 && (
+				<>
+					<div className="mb-2 text-sm font-bold text-theme-neutral">{pluginsHeader}</div>
+					<Table hideHeader columns={hiddenTableHeaders} data={plugins}>
+						{(plugin: NotificationItemProps) => (
+							<NotificationItem {...plugin} onAction={(name: string) => onAction?.(name, plugin)} />
+						)}
+					</Table>
+				</>
+			)}
+
+			{transactions!.length > 0 && (
+				<>
+					<div className="mb-2 text-sm font-bold mt-9 text-theme-neutral">{transactionsHeader}</div>
+					<TransactionTable
+						onRowClick={handleTransactionClick}
+						transactions={transactions!}
+						isCompact
+						hideHeader
+					/>
+				</>
+			)}
 		</div>
 	);
 };
@@ -85,5 +110,13 @@ Notifications.defaultProps = {
 	pluginsHeader: "",
 	emptyText: "You have no notifications at this time.",
 	transactions: [],
-	plugins: [],
+	// TODO: remove after integration
+	plugins: [
+		{
+			icon: "ArkLogo",
+			name: "ARK Explorer",
+			body: "- update v2.5.6",
+			action: "update",
+		},
+	],
 };
