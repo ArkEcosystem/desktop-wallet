@@ -466,7 +466,7 @@ exports[`SendEntityResignation should render 1st step 1`] = `
                                         data-testid="InputCurrency"
                                         name="name"
                                         type="text"
-                                        value="0.00000005"
+                                        value="25"
                                       />
                                     </div>
                                   </div>
@@ -477,7 +477,7 @@ exports[`SendEntityResignation should render 1st step 1`] = `
                                       role="radiogroup"
                                     >
                                       <button
-                                        aria-checked="false"
+                                        aria-checked="true"
                                         class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                         data-testid="SelectionBarOption"
                                         role="radio"
@@ -486,7 +486,7 @@ exports[`SendEntityResignation should render 1st step 1`] = `
                                         Min
                                       </button>
                                       <button
-                                        aria-checked="false"
+                                        aria-checked="true"
                                         class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                         data-testid="SelectionBarOption"
                                         role="radio"
@@ -495,7 +495,7 @@ exports[`SendEntityResignation should render 1st step 1`] = `
                                         Average
                                       </button>
                                       <button
-                                        aria-checked="false"
+                                        aria-checked="true"
                                         class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                         data-testid="SelectionBarOption"
                                         role="radio"

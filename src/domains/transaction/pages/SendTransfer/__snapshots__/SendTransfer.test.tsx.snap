@@ -784,7 +784,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
-                                  value="0"
+                                  value="1"
                                 />
                                 <div
                                   class="absolute bottom-0 w-full px-1"
@@ -805,7 +805,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                                         <div
                                           aria-valuemax="2e-8"
                                           aria-valuemin="0"
-                                          aria-valuenow="0"
+                                          aria-valuenow="2e-8"
                                           class="sc-fzoXzr eykVSb"
                                           data-testid="Range__thumb"
                                           draggable="false"
@@ -1671,7 +1671,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
-                  value="0"
+                  value="1"
                 />
                 <div
                   class="absolute bottom-0 w-full px-1"
@@ -1692,7 +1692,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                         <div
                           aria-valuemax="2e-8"
                           aria-valuemin="0"
-                          aria-valuenow="0"
+                          aria-valuenow="2e-8"
                           class="sc-fzoXzr eykVSb"
                           data-testid="Range__thumb"
                           draggable="false"
@@ -3100,7 +3100,7 @@ exports[`Transaction Send should render registration form without selected walle
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
-                                  value="0"
+                                  value="1"
                                 />
                                 <div
                                   class="absolute bottom-0 w-full px-1"
@@ -3121,7 +3121,7 @@ exports[`Transaction Send should render registration form without selected walle
                                         <div
                                           aria-valuemax="2e-8"
                                           aria-valuemin="0"
-                                          aria-valuenow="0"
+                                          aria-valuenow="2e-8"
                                           class="sc-fzoXzr eykVSb"
                                           data-testid="Range__thumb"
                                           draggable="false"
@@ -3997,7 +3997,7 @@ exports[`Transaction Send should select network first and see select address inp
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
-                                  value="0"
+                                  value="1"
                                 />
                                 <div
                                   class="absolute bottom-0 w-full px-1"
@@ -4018,7 +4018,7 @@ exports[`Transaction Send should select network first and see select address inp
                                         <div
                                           aria-valuemax="2e-8"
                                           aria-valuemin="0"
-                                          aria-valuenow="0"
+                                          aria-valuenow="2e-8"
                                           class="sc-fzoXzr eykVSb"
                                           data-testid="Range__thumb"
                                           draggable="false"

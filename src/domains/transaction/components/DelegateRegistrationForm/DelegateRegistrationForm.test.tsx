@@ -184,14 +184,14 @@ describe("DelegateRegistrationForm", () => {
 	});
 
 	it("should set fee", async () => {
-		const { asFragment, form, getByTestId, rerender } = await renderComponent({ fee: "" });
+		const { asFragment, form, getByTestId, rerender } = await renderComponent({ fee: "100000000" });
 
 		await act(async () => {
-			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0"));
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[2]);
 
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
 	});

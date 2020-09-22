@@ -1131,7 +1131,7 @@ exports[`SendIpfs should render 1st step 1`] = `
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
-                  value="0"
+                  value="1"
                 />
                 <div
                   class="absolute bottom-0 w-full px-1"
@@ -1152,7 +1152,7 @@ exports[`SendIpfs should render 1st step 1`] = `
                         <div
                           aria-valuemax="2e-8"
                           aria-valuemin="0"
-                          aria-valuenow="0"
+                          aria-valuenow="2e-8"
                           class="sc-fzoXzr eykVSb"
                           data-testid="Range__thumb"
                           draggable="false"
@@ -2310,7 +2310,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                   Min
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"

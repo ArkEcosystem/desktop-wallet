@@ -2118,7 +2118,7 @@ exports[`Registration should go to review step after succesfully filling form da
                                     class="mt-2 text-lg font-semibold"
                                     data-testid="total-amount-box__transaction-fee"
                                   >
-                                    25 ARK
+                                    NaN ARK
                                   </span>
                                 </div>
                               </div>
@@ -2152,7 +2152,7 @@ exports[`Registration should go to review step after succesfully filling form da
                                 class="text-2xl font-bold"
                                 data-testid="total-amount-box__total"
                               >
-                                25 ARK
+                                NaN ARK
                               </span>
                             </div>
                           </div>
@@ -9574,7 +9574,7 @@ exports[`Registration should validate entity name 1`] = `
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
-                                  value="25"
+                                  value="2500000000"
                                 />
                               </div>
                             </div>
@@ -10274,7 +10274,7 @@ exports[`Registration should validate website url 1`] = `
                                 role="radiogroup"
                               >
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -10283,7 +10283,7 @@ exports[`Registration should validate website url 1`] = `
                                   Min
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -10292,7 +10292,7 @@ exports[`Registration should validate website url 1`] = `
                                   Average
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
