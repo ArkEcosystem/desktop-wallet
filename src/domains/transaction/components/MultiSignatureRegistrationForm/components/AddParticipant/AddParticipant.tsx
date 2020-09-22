@@ -33,6 +33,18 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 	const address = watch("address");
 
 	useEffect(() => {
+		if (!defaultParticipants!.length) {
+			setParticipants([
+				{
+					address: wallet.address(),
+					publicKey: wallet.publicKey()!,
+					balance: wallet.balance().toString(),
+				},
+			]);
+		}
+	}, [wallet, defaultParticipants]);
+
+	useEffect(() => {
 		onChange?.(participants);
 	}, [onChange, participants]);
 
@@ -119,7 +131,6 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 				</FormField>
 
 				<Button
-					data-testid="LinkCollection__add-link"
 					className="w-full my-4"
 					variant="plain"
 					type="button"

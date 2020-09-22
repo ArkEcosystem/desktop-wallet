@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
-import React, { ChangeEvent, useCallback } from "react";
+import React, { ChangeEvent, useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -19,8 +19,13 @@ export const FormStep = ({
 	wallet: ReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
-	const { setValue, getValues } = useFormContext();
+	const { setValue, getValues, register } = useFormContext();
 	const { participants, fee, minParticipants } = getValues();
+
+	useEffect(() => {
+		register("participants", { required: true, minLength: 2 });
+		register("minParticipants", { required: true, min: 2 });
+	}, [register]);
 
 	const handleParticipant = useCallback(
 		(values: Participant[]) => {

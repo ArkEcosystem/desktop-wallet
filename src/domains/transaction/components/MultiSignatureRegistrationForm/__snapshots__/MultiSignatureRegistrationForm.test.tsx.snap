@@ -22,7 +22,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                 data-testid="FormLabel"
                 for="address"
               >
-                Sender
+                Participant Address
                 <div
                   class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                   data-testid="FormLabel__required"
@@ -65,12 +65,11 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
               </div>
             </fieldset>
             <button
-              class="sc-fznKkj eqyWCu w-full"
+              class="sc-fznKkj eqyWCu w-full my-4"
               color="primary"
-              data-testid="LinkCollection__add-link"
               type="button"
             >
-              Add Link
+              Add Participant
             </button>
             <div
               class="sc-fzpjYC geicTd"
@@ -153,7 +152,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
             </div>
           </div>
           <fieldset
-            class="sc-AxjAm fmGClo flex flex-col space-y-2"
+            class="sc-AxjAm fmGClo mt-8"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -172,12 +171,13 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
               <input
                 class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
+                min="2"
                 name="minParticipants"
                 type="number"
-                value="2"
+                value=""
               />
               <div
-                class="sc-AxheI sc-AxmLO jcthaj"
+                class="sc-AxheI sc-AxmLO jcthaj pointer-events-none text-theme-neutral-light pr-4"
               >
                 out of 2
               </div>

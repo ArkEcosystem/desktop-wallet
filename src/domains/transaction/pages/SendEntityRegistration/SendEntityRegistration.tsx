@@ -47,15 +47,6 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 		register("network", { required: true });
 		register("registrationType", { required: true });
 		register("senderAddress", { required: true });
-
-		register("ipfsData");
-		register("ipfsData.images");
-		register("ipfsData.videos");
-		register("ipfsData.sourceControl");
-		register("ipfsData.socialMedia");
-		register("ipfsData.meta.displayName");
-		register("ipfsData.meta.description");
-		register("ipfsData.meta.website");
 	}, [register]);
 
 	useEffect(() => {

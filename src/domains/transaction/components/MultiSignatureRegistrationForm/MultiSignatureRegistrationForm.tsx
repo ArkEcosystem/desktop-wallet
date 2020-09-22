@@ -8,34 +8,22 @@ import {
 	SendEntityRegistrationForm,
 	SendEntityRegistrationSignOptions,
 } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
-import React, { useEffect } from "react";
-import { useFormContext } from "react-hook-form";
+import React from "react";
 
 import { Participant } from "./components/AddParticipant/AddParticipant";
 import { FormStep } from "./FormStep";
 import { ReviewStep } from "./ReviewStep";
 
-const StepsComponent = ({ activeTab, fees, wallet, profile }: SendEntityRegistrationComponent) => {
-	const { register, setValue } = useFormContext();
-
-	useEffect(() => {
-		register("participants", { required: true, minLength: 2 });
-
-		register("minParticipants", { required: true, min: 2 });
-		setValue("minParticipants", 2);
-	}, [register, setValue]);
-
-	return (
-		<Tabs activeId={activeTab}>
-			<TabPanel tabId={2}>
-				<FormStep fees={fees} wallet={wallet} profile={profile} />
-			</TabPanel>
-			<TabPanel tabId={3}>
-				<ReviewStep />
-			</TabPanel>
-		</Tabs>
-	);
-};
+const StepsComponent = ({ activeTab, fees, wallet, profile }: SendEntityRegistrationComponent) => (
+	<Tabs activeId={activeTab}>
+		<TabPanel tabId={2}>
+			<FormStep fees={fees} wallet={wallet} profile={profile} />
+		</TabPanel>
+		<TabPanel tabId={3}>
+			<ReviewStep />
+		</TabPanel>
+	</Tabs>
+);
 
 const transactionDetails = ({ translations }: SendEntityRegistrationDetailsOptions) => (
 	<TransactionDetail
