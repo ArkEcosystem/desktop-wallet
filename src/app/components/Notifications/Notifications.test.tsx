@@ -1,21 +1,20 @@
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, render } from "testing-library";
+import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { Notifications } from "./Notifications";
 
 const plugins = [
 	{
+		icon: "Warning",
 		logoUrl: "/static/media/ark-logo.bafd72bb.png",
 		logoClassName: "flex p-2 mr-4 rounded-lg bg-logo",
-		title: "ARK Explorer",
-		description: "- update v2.5.6",
-		action: {
-			label: "Update now",
-			value: "update",
-		},
+		name: "ARK Explorer",
+		body: "- update v2.5.6",
+		action: "update",
 	},
 ];
 
@@ -88,36 +87,59 @@ const transactions = [
 	},
 ];
 
+let profile: Profile;
+
 describe("Notifications", () => {
-	it("should render", () => {
+	beforeAll(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		profile.notifications().push({
+			icon: "ArkLogo",
+			name: "New plugin updates",
+			body: "test",
+			action: "Goto",
+		});
+
+		const notes = profile.notifications().values();
+	});
+
+	it("should render empty without profile", () => {
 		const { container } = render(<Notifications />);
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render empty without notifications", () => {
+		const { container } = render(<Notifications profile={profile} />);
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render plugins", () => {
-		const { container } = render(<Notifications pluginsHeader="Plugins" plugins={plugins} />);
+		const { container } = render(<Notifications profile={profile} pluginsHeader="Plugins" plugins={plugins} />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render transactions", () => {
-		const { container } = render(<Notifications pluginsHeader="Transactions" transactions={transactions} />);
+		const { container } = render(
+			<Notifications profile={profile} pluginsHeader="Transactions" transactions={transactions} />,
+		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should emit onAction event when plugin action clicked", () => {
 		const fn = jest.fn();
-		const { getByTestId } = render(<Notifications pluginsHeader="Plugins" plugins={plugins} onAction={fn} />);
-		const toggle = getByTestId("notifications__plugin-action");
+		const { getByTestId } = render(
+			<Notifications profile={profile} pluginsHeader="Plugins" plugins={plugins} onAction={fn} />,
+		);
+		const toggle = getByTestId("NotificationItem__action");
 		act(() => {
 			fireEvent.click(toggle);
 		});
 		expect(fn).toBeCalled();
 	});
 
-	it("should not emit onAction event when plugin action clicked and allback not provided", () => {
+	it("should not emit onAction event if callback is not provided", () => {
 		const fn = jest.fn();
-		const { getByTestId } = render(<Notifications pluginsHeader="Plugins" plugins={plugins} />);
-		const toggle = getByTestId("notifications__plugin-action");
+		const { getByTestId } = render(<Notifications profile={profile} pluginsHeader="Plugins" plugins={plugins} />);
+		const toggle = getByTestId("NotificationItem__action");
 		act(() => {
 			fireEvent.click(toggle);
 		});
@@ -126,10 +148,15 @@ describe("Notifications", () => {
 
 	it("should emit onAction event when transaction was clicked", () => {
 		const fn = jest.fn();
-		const { getByRole } = render(
-			<Notifications transactionsHeader="Transactions" transactions={transactions} onAction={fn} />,
+		const { getByTestId } = render(
+			<Notifications
+				profile={profile}
+				transactionsHeader="Transactions"
+				transactions={transactions}
+				onAction={fn}
+			/>,
 		);
-		const toggle = getByRole("row");
+		const toggle = getByTestId("TableRow");
 		act(() => {
 			fireEvent.click(toggle);
 		});
