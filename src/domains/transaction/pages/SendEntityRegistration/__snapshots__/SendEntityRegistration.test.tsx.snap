@@ -2118,7 +2118,7 @@ exports[`Registration should go to review step after succesfully filling form da
                                     class="mt-2 text-lg font-semibold"
                                     data-testid="total-amount-box__transaction-fee"
                                   >
-                                    NaN ARK
+                                    0 ARK
                                   </span>
                                 </div>
                               </div>
@@ -2152,7 +2152,7 @@ exports[`Registration should go to review step after succesfully filling form da
                                 class="text-2xl font-bold"
                                 data-testid="total-amount-box__total"
                               >
-                                NaN ARK
+                                0 ARK
                               </span>
                             </div>
                           </div>
@@ -3657,7 +3657,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                     class="mt-2 text-lg font-semibold"
                                     data-testid="total-amount-box__transaction-fee"
                                   >
-                                    25 ARK
+                                    NaN ARK
                                   </span>
                                 </div>
                               </div>
@@ -3691,7 +3691,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                 class="text-2xl font-bold"
                                 data-testid="total-amount-box__total"
                               >
-                                25 ARK
+                                NaN ARK
                               </span>
                             </div>
                           </div>
@@ -6365,7 +6365,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
-                                  value="25"
+                                  value="2500000000"
                                 />
                               </div>
                             </div>
@@ -6376,7 +6376,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                 role="radiogroup"
                               >
                                 <button
-                                  aria-checked="true"
+                                  aria-checked="false"
                                   class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -6385,7 +6385,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                   Min
                                 </button>
                                 <button
-                                  aria-checked="true"
+                                  aria-checked="false"
                                   class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -6394,7 +6394,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                   Average
                                 </button>
                                 <button
-                                  aria-checked="true"
+                                  aria-checked="false"
                                   class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -9566,48 +9566,23 @@ exports[`Registration should validate entity name 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              <div
-                                class="sc-fzqNJr gmzgI"
+                              <fieldset
+                                class="sc-AxirZ izhStr flex flex-col space-y-2"
                               >
-                                <input
-                                  class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                  data-testid="InputCurrency"
-                                  name="fee"
-                                  type="text"
-                                  value="2500000000"
-                                />
-                              </div>
-                            </div>
-                            <div>
-                              <div
-                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                data-testid="SelectionBar"
-                                role="radiogroup"
-                              >
-                                <button
-                                  aria-checked="false"
-                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
+                                <label
+                                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                                  data-testid="FormLabel"
+                                  for="fee"
                                 >
-                                  Min
-                                </button>
-                                <button
-                                  aria-checked="false"
-                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
-                                >
-                                  Average
-                                </button>
-                                <button
-                                  aria-checked="false"
-                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
+                                  Transaction Fee
+                                  <div
+                                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                    data-testid="FormLabel__required"
+                                  />
+                                </label>
+                                <div
+                                  class="flex space-x-2"
+                                  data-testid="InputFee"
                                 >
                                   <div
                                     class="flex-1"
@@ -10255,48 +10230,23 @@ exports[`Registration should validate website url 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              <div
-                                class="sc-fzqNJr gmzgI"
+                              <fieldset
+                                class="sc-AxirZ izhStr flex flex-col space-y-2"
                               >
-                                <input
-                                  class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                  data-testid="InputCurrency"
-                                  name="fee"
-                                  type="text"
-                                  value="25"
-                                />
-                              </div>
-                            </div>
-                            <div>
-                              <div
-                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                data-testid="SelectionBar"
-                                role="radiogroup"
-                              >
-                                <button
-                                  aria-checked="true"
-                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
+                                <label
+                                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                                  data-testid="FormLabel"
+                                  for="fee"
                                 >
-                                  Min
-                                </button>
-                                <button
-                                  aria-checked="true"
-                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
-                                >
-                                  Average
-                                </button>
-                                <button
-                                  aria-checked="true"
-                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
+                                  Transaction Fee
+                                  <div
+                                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                    data-testid="FormLabel__required"
+                                  />
+                                </label>
+                                <div
+                                  class="flex space-x-2"
+                                  data-testid="InputFee"
                                 >
                                   <div
                                     class="flex-1"

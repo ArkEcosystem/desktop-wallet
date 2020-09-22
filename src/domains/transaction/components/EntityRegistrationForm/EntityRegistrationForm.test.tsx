@@ -19,13 +19,14 @@ describe("EntityRegistrationForm", () => {
 
 	const formDefaultValues = {
 		fees: {
-			static: "5",
-			min: "0",
+			static: (5 * 1e8).toFixed(0),
+			min: (1 * 1e8).toFixed(0),
 			max: (10 * 1e8).toFixed(0),
 			avg: (1.354 * 1e8).toFixed(0),
 		},
-		fee: 0,
+		fee: (5 * 1e8).toFixed(0),
 	};
+
 	const ipfsForm = {
 		meta: {
 			displayName: "Test Entity Display Name",

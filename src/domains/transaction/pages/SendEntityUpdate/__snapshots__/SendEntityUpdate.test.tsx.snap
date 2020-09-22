@@ -561,7 +561,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                                       data-testid="InputCurrency"
                                       name="fee"
                                       type="text"
-                                      value="0.00000005"
+                                      value="0"
                                     />
                                   </div>
                                 </div>
@@ -8461,52 +8461,9 @@ exports[`SendEntityUpdate should succesfully submit entity update transaction 1`
                                   height="1em"
                                   width="1em"
                                 >
-                                  <div
-                                    class="sc-fzqNJr gmzgI"
-                                  >
-                                    <input
-                                      class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                      data-testid="InputCurrency"
-                                      name="name"
-                                      type="text"
-                                      value="25"
-                                    />
-                                  </div>
-                                </div>
-                                <div>
-                                  <div
-                                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                    data-testid="SelectionBar"
-                                    role="radiogroup"
-                                  >
-                                    <button
-                                      aria-checked="false"
-                                      class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Min
-                                    </button>
-                                    <button
-                                      aria-checked="false"
-                                      class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Average
-                                    </button>
-                                    <button
-                                      aria-checked="false"
-                                      class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Max
-                                    </button>
-                                  </div>
+                                  <svg>
+                                    eye.svg
+                                  </svg>
                                 </div>
                               </button>
                             </div>

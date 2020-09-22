@@ -252,7 +252,7 @@ exports[`SendTransactionForm should render 1`] = `
               data-testid="InputCurrency"
               name="fee"
               type="text"
-              value="1"
+              value="0"
             />
             <div
               class="absolute bottom-0 w-full px-1"
@@ -273,7 +273,7 @@ exports[`SendTransactionForm should render 1`] = `
                     <div
                       aria-valuemax="2e-8"
                       aria-valuemin="0"
-                      aria-valuenow="2e-8"
+                      aria-valuenow="0"
                       class="sc-fzoLsD iBGNss"
                       data-testid="Range__thumb"
                       draggable="false"
@@ -294,7 +294,7 @@ exports[`SendTransactionForm should render 1`] = `
             role="radiogroup"
           >
             <button
-              aria-checked="false"
+              aria-checked="true"
               class="sc-fzqNJr dLZgRW relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
