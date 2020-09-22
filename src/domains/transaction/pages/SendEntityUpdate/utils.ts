@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { File } from "@arkecosystem/platform-sdk-ipfs";
 import { Enums, ReadWriteWallet, TransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { filter, isEmpty } from "@arkecosystem/utils";
@@ -37,7 +38,10 @@ export const sendEntityUpdateTransaction = async ({ form, senderWallet, env, typ
 		},
 	});
 
-	await senderWallet.transaction().broadcast(transactionId);
+	const response: Contracts.BroadcastResponse = await senderWallet.transaction().broadcast(transactionId);
+	const errorCodes = Object.values(response?.errors || {}).map((e) => e[0]);
+	if (errorCodes.length > 0) throw errorCodes[0];
+
 	await env.persist();
 
 	return senderWallet.transaction().transaction(transactionId);
