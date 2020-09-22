@@ -6,6 +6,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
+import { useEnvSynchronizer } from "app/hooks/use-synchronizer";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -20,7 +21,8 @@ export const ImportWallet = () => {
 	const [walletData, setWalletData] = useState<ReadWriteWallet | null>(null);
 
 	const history = useHistory();
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
+	const { runAll } = useEnvSynchronizer();
 
 	const activeProfile = useActiveProfile();
 
@@ -59,6 +61,9 @@ export const ImportWallet = () => {
 		let wallet: ReadWriteWallet | undefined;
 
 		if (!walletData) {
+			const hasWalletsByCoinWithNetwork =
+				activeProfile.wallets().findByCoinWithNetwork(network.coin(), network.id()).length > 0;
+
 			if (passphrase) {
 				wallet = await activeProfile.wallets().importByMnemonic(passphrase, network.coin(), network.id());
 			} else {
@@ -67,7 +72,15 @@ export const ImportWallet = () => {
 
 			setWalletData(wallet);
 
-			await wallet.syncVotes();
+			if (network.allowsVoting()) {
+				if (hasWalletsByCoinWithNetwork) {
+					await wallet.syncVotes();
+				} else {
+					await env.delegates().syncAll();
+					await wallet.syncVotes();
+				}
+			}
+
 			await persist();
 
 			setActiveTab(activeTab + 1);
