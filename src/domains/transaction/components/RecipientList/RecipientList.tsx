@@ -1,10 +1,11 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
+import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table } from "app/components/Table";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
 import {
@@ -24,37 +25,50 @@ const RecipientListItem = ({
 	onRemove,
 	isEditable,
 	listIndex,
-}: RecipientListItemProps) => (
-	<tr className="border-b border-dotted border-theme-neutral-200" data-testid="recipient-list__recipient-list-item">
-		<td className="py-6 w-14">
-			<Avatar address={address} />
-		</td>
-		<td>
-			<div className="mb-1 text-sm font-semibold text-theme-neutral">Recipient #{listIndex}</div>
-			<Address address={address} walletName={walletName} />
-		</td>
+}: RecipientListItemProps) => {
+	const { t } = useTranslation();
 
-		<td>
-			<div className="mb-1 text-sm font-semibold text-right text-theme-neutral">Amount</div>
-			<div className="font-bold text-right text-theme-neutral-800">
-				{amount} {assetSymbol}
-			</div>
-		</td>
-		{isEditable && (
-			<td className="w-20 text-right">
-				<Button
-					variant="plain"
-					onClick={() => typeof onRemove === "function" && onRemove(address)}
-					data-testid="recipient-list__remove-recipient"
-				>
-					<div className="py-1">
-						<Icon name="Trash" />
-					</div>
-				</Button>
+	const paddingStyles = listIndex === 1 ? "pt-2 pb-6" : "py-6";
+
+	return (
+		<tr
+			className="border-b last:border-b-0 border-dashed border-theme-neutral-300"
+			data-testid="recipient-list__recipient-list-item"
+		>
+			<td className={`${paddingStyles} w-14`}>
+				<Avatar address={address} />
 			</td>
-		)}
-	</tr>
-);
+
+			<td className={paddingStyles}>
+				<div className="mb-1 text-sm font-semibold text-theme-neutral">
+					{t("COMMON.RECIPIENT_#", { count: listIndex })}
+				</div>
+				<Address address={address} walletName={walletName} />
+			</td>
+
+			<td className={paddingStyles}>
+				<div className="mb-1 text-sm font-semibold text-right text-theme-neutral">{t("COMMON.AMOUNT")}</div>
+				<div className="font-bold text-right text-theme-neutral-800">
+					<Amount ticker={assetSymbol!} value={amount} />
+				</div>
+			</td>
+
+			{isEditable && (
+				<td className={`${paddingStyles} w-20 text-right`}>
+					<Button
+						variant="plain"
+						onClick={() => typeof onRemove === "function" && onRemove(address)}
+						data-testid="recipient-list__remove-recipient"
+					>
+						<div className="py-1">
+							<Icon name="Trash" />
+						</div>
+					</Button>
+				</td>
+			)}
+		</tr>
+	);
+};
 
 export const RecipientList = ({ recipients, onRemove, assetSymbol, isEditable }: RecipientListProps) => {
 	const onRemoveRecipient = (address: string) => {
@@ -74,7 +88,7 @@ export const RecipientList = ({ recipients, onRemove, assetSymbol, isEditable }:
 				{(recipient: RecipientListItemProps, index: number) => (
 					<RecipientListItem
 						assetSymbol={assetSymbol}
-						amount={BigNumber.make(recipient.amount).toHuman(8)}
+						amount={recipient.amount}
 						address={recipient.address}
 						walletName={recipient.walletName}
 						onRemove={() => onRemoveRecipient(recipient?.address)}

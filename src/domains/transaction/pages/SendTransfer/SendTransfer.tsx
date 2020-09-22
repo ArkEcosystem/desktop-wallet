@@ -14,9 +14,9 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { FifthStep } from "./Step5";
+import { FormStep } from "./Step1";
+import { ReviewStep } from "./Step2";
+import { SummaryStep } from "./Step4";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
@@ -102,6 +102,8 @@ export const SendTransfer = () => {
 
 			await env.persist();
 
+			setValue("recipients", null);
+
 			setTransaction(senderWallet!.transaction().transaction(transactionId));
 
 			handleNext();
@@ -137,15 +139,15 @@ export const SendTransfer = () => {
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={5} activeIndex={activeTab} />
+						<StepIndicator size={4} activeIndex={activeTab} />
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep networks={networks} profile={activeProfile} />
+								<FormStep networks={networks} profile={activeProfile} />
 							</TabPanel>
 
 							<TabPanel tabId={2}>
-								<SecondStep wallet={activeWallet} />
+								<ReviewStep wallet={activeWallet} />
 							</TabPanel>
 
 							<TabPanel tabId={3}>
@@ -153,7 +155,7 @@ export const SendTransfer = () => {
 							</TabPanel>
 
 							<TabPanel tabId={4}>
-								<FifthStep transaction={transaction} senderWallet={activeWallet} />
+								<SummaryStep transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
@@ -183,8 +185,10 @@ export const SendTransfer = () => {
 												type="submit"
 												data-testid="SendTransfer__button--submit"
 												disabled={!formState.isValid}
+												className="space-x-2"
 											>
-												{t("TRANSACTION.SIGN_CONTINUE")}
+												<Icon name="Send" width={20} height={20} />
+												<span>{t("COMMON.SEND")}</span>
 											</Button>
 										)}
 									</>

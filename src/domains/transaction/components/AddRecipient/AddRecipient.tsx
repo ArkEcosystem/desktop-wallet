@@ -107,7 +107,7 @@ export const AddRecipient = ({
 
 		onChange?.([
 			{
-				amount: BigNumber.make(amount).divide(fraction).toFixed(0),
+				amount: BigNumber.make(amount).divide(fraction),
 				address: recipientAddress,
 			},
 		]);
@@ -115,7 +115,7 @@ export const AddRecipient = ({
 
 	const onAddRecipient = (address: string, amount: number) => {
 		addedRecipients.push({
-			amount: BigNumber.make(amount).divide(fraction).toFixed(0),
+			amount: BigNumber.make(amount).divide(fraction),
 			address,
 		});
 		setAddressRecipients(addedRecipients);

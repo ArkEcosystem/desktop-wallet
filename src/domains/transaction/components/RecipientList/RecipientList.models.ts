@@ -1,5 +1,7 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
+
 export type RecipientListItem = {
-	amount: string;
+	amount: BigNumber;
 	address: string;
 	walletName?: string;
 	assetSymbol?: string;

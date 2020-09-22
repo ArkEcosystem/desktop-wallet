@@ -62,15 +62,6 @@ const entity = {
 		id: () => "test id",
 	}),
 	sender: () => entityFixture.data[0].sender,
-	wallet: () => ({
-		alias: () => "test",
-		manifest: () => ({
-			get: (key) => "ARK",
-		}),
-		network: () => ({
-			name: () => "ark.devnet",
-		}),
-	}),
 };
 
 const createTransactionMock = (wallet: ReadWriteWallet) =>
@@ -84,6 +75,8 @@ describe("SendEntityResignation", () => {
 
 		await syncDelegates();
 		await syncFees();
+
+		entity.wallet = () => wallet;
 	});
 
 	beforeEach(() => {
