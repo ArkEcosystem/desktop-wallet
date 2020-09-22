@@ -35,7 +35,7 @@ const RecipientListItem = ({
 				className="border-b border-dashed last:border-b-0 border-theme-neutral-300"
 				data-testid="recipient-list__recipient-list-item"
 			>
-				<td className="py-4 w-12">
+				<td className="w-12 py-4">
 					<Avatar size="sm" address={address} />
 				</td>
 
