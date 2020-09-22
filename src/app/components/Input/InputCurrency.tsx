@@ -17,7 +17,7 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 			const evaluateValue = (value: any) => {
 				if (value?.display) return value;
 
-				return convertValue(value?.toString()) || convertValue("");
+				return convertValue(value?.toString() || "");
 			};
 
 			setAmount(evaluateValue(value));
