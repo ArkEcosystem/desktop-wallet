@@ -12,12 +12,10 @@ export const Default = () => {
 	const plugins = [
 		{
 			logoClassName: "w-8 h-8 p-2 mr-4 rounded-lg bg-logo",
-			title: "ARK Explorer",
-			description: "- update v2.5.6",
-			action: {
-				label: "Update now",
-				value: "update",
-			},
+			icon: "Warning",
+			name: "ARK Explorer",
+			body: "- update v2.5.6",
+			action: "update",
 		},
 	];
 
