@@ -14,6 +14,8 @@ import { NewsOptions } from "domains/news/components/NewsOptions";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { AVAILABLE_CATEGORIES } from "../../data";
+
 type NewsFilters = {
 	categories: string[];
 	coins: string[];
@@ -59,7 +61,7 @@ export const News = ({ itemsPerPage }: Props) => {
 			setNews([]);
 
 			const query = {
-				...(categories.length && { categories }),
+				...(categories.length && categories.length !== AVAILABLE_CATEGORIES.length && { categories }),
 				...(searchQuery && { query: searchQuery }),
 				page: currentPage,
 			};

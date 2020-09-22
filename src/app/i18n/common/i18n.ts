@@ -126,6 +126,7 @@ export const translations: { [key: string]: any } = {
 	SECURITY: "Security",
 	SELECT: "Select",
 	SELECTED: "Selected",
+	SELECT_ALL: "Select All",
 	SELECT_OPTION: "Select {{option}}",
 	SEND: "Send",
 	SETTINGS: "Settings",
