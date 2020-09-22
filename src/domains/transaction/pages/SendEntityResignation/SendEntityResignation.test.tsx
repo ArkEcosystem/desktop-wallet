@@ -176,6 +176,7 @@ describe("SendEntityResignation", () => {
 		const signMock = jest.spyOn(wallet.transaction(), "signDelegateResignation").mockImplementation(() => {
 			throw new Error();
 		});
+		const consoleMock = jest.spyOn(console, "log").mockImplementation();
 
 		const { asFragment, getByTestId } = renderPage();
 
@@ -220,6 +221,7 @@ describe("SendEntityResignation", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		signMock.mockRestore();
+		consoleMock.mockRestore();
 	});
 
 	it("should succesfully sign and submit resignation transaction", async () => {
