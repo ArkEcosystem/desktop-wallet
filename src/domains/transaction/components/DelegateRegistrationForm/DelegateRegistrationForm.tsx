@@ -115,7 +115,7 @@ const SecondStep = ({ fees, wallet }: any) => {
 						value={fee || 0}
 						step={0.01}
 						onChange={(currency: { display: string; value: string }) => {
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+							setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
 				</FormField>
