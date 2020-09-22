@@ -27,14 +27,14 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		const maxValue = BigNumber.make(maxValues.value).divide(1e8);
 
 		const handleInput = (currency: { display: string; value: string }) => {
-			let value = currency.display;
+			let value = currency;
 
 			if (Number(value) > maxValue.toNumber()) {
-				value = maxValue.toString();
+				value = convertValue(maxValue.toString());
 			}
 
 			setValues([value]);
-			onChange?.(currency);
+			onChange?.(value);
 		};
 
 		const handleRange = (values: number[]) => {
@@ -73,6 +73,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 					magnitude={magnitude}
 					type="text"
 					value={values[0]}
+					defaultValue={defaultValue}
 					ref={ref}
 					onChange={handleInput}
 				/>

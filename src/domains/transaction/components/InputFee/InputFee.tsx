@@ -22,7 +22,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 	const maxHuman = BigNumber.make(max).divide(1e8).toString();
 	const avgHuman = BigNumber.make(avg).divide(1e8).toString();
 
-	const [fee, setFee] = useState<any>(defaultValue);
+	const [fee, setFee] = useState<any>(avg);
 
 	const handleFeeChange = (currency: { display: string; value: string }) => {
 		setFee(currency);
@@ -30,9 +30,10 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 	};
 
 	useEffect(() => {
+		if (value?.display) return;
+
 		if (value && value !== fee) {
-			const amount = BigNumber.make(value).divide(1e8).toString();
-			setFee(amount);
+			setFee(BigNumber.make(value).divide(1e8).toString());
 		}
 	}, [fee, value]);
 
@@ -53,7 +54,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 				<SelectionBar>
 					<SelectionBarOption
 						value={minHuman}
-						isValueChecked={() => fee.display === minHuman}
+						isValueChecked={() => (fee?.display ? fee.display === minHuman : fee === minHuman)}
 						setCheckedValue={() => handleFeeChange({ display: minHuman, value: min })}
 					>
 						{t("TRANSACTION.FEES.MIN")}
@@ -61,7 +62,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 
 					<SelectionBarOption
 						value={avgHuman}
-						isValueChecked={() => fee.display === avgHuman}
+						isValueChecked={() => (fee?.display ? fee.display === avgHuman : fee === avgHuman)}
 						setCheckedValue={() => handleFeeChange({ display: avgHuman, value: avg })}
 					>
 						{t("TRANSACTION.FEES.AVERAGE")}
@@ -69,7 +70,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 
 					<SelectionBarOption
 						value={maxHuman}
-						isValueChecked={() => fee.display === maxHuman}
+						isValueChecked={() => (fee?.display ? fee.display === maxHuman : fee === maxHuman)}
 						setCheckedValue={() => handleFeeChange({ display: maxHuman, value: max })}
 					>
 						{t("TRANSACTION.FEES.MAX")}
