@@ -23,7 +23,10 @@ test("should filter news results", async (t) => {
 	const queryInput = Selector('[data-testid="NewsOptions__search"]');
 	await t.typeText(queryInput, query, { replace: true });
 
-	await t.click(Selector('[data-testid="NewsOptions__category-Technical"]'));
+	for (const category of ["Marketing", "Community", "Emergency"]) {
+		await t.click(Selector(`[data-testid="NewsOptions__category-${category}"]`));
+	}
+
 	await t.click(Selector(`[data-testid="${eth}"]`));
 	await t.click(Selector('[data-testid="NewsOptions__submit"]'));
 
