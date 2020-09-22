@@ -596,7 +596,13 @@ describe("SendEntityUpdate", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signEntityUpdate")
 			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockReturnValue(
+			Promise.resolve({
+				errors: {},
+				rejected: [],
+				accepted: [EntityUpdateTransactionFixture.data.id],
+			}),
+		);
 		const transactionMock = createTransactionMock(wallet);
 
 		act(() => {
@@ -645,7 +651,14 @@ describe("SendEntityUpdate", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signEntityUpdate")
 			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockReturnValue(
+			/* @ts-ignore */
+			Promise.resolve({
+				errors: undefined,
+				rejected: [],
+				accepted: [EntityUpdateTransactionFixture.data.id],
+			}),
+		);
 		const transactionMock = createTransactionMock(wallet);
 
 		act(() => {
@@ -669,5 +682,51 @@ describe("SendEntityUpdate", () => {
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
+	});
+
+	it("should show broadcast error", async () => {
+		const { getByTestId } = renderPage();
+		const errorToastMock = jest.spyOn(toast, "error");
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
+		);
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+
+		act(() => {
+			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), { target: { value: "wrong mnemonic" } });
+		});
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityUpdate")
+			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockReturnValue(
+			Promise.resolve({
+				errors: { [EntityUpdateTransactionFixture.data.id]: ["broadcast error"] },
+				rejected: [EntityUpdateTransactionFixture.data.id],
+				accepted: [],
+			}),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
+		});
+
+		await waitFor(() => expect(signMock).toHaveBeenCalled());
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(errorToastMock).toHaveBeenCalled());
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		errorToastMock.mockRestore();
 	});
 });
