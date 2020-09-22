@@ -146,7 +146,84 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   </thead>
                   <tbody
                     role="rowgroup"
-                  />
+                  >
+                    <tr
+                      class="border-b border-dotted border-theme-neutral-200"
+                      data-testid="recipient-list__recipient-list-item"
+                    >
+                      <td
+                        class="py-6 w-14"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="mb-1 text-sm font-semibold text-theme-neutral"
+                        >
+                          Recipient #1
+                        </div>
+                        <div
+                          class="inline-block truncate align-middle"
+                        >
+                          <span
+                            class="sc-fzoLag gqDFwP text-theme-text font-semibold text-base"
+                            data-testid="address__wallet-address"
+                          >
+                            D8rr7B…s6YUYD
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                        >
+                          Amount
+                        </div>
+                        <div
+                          class="font-bold text-right text-theme-neutral-800"
+                        >
+                          33.75089801 DARK
+                        </div>
+                      </td>
+                      <td
+                        class="w-20 text-right"
+                      >
+                        <button
+                          class="sc-fznKkj eqyWCu"
+                          color="primary"
+                          data-testid="recipient-list__remove-recipient"
+                          type="button"
+                        >
+                          <div
+                            class="py-1"
+                          >
+                            <div
+                              class="sc-AxiKw dzBdqj"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                trash.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -171,7 +248,6 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
               <input
                 class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
-                min="2"
                 name="minParticipants"
                 type="number"
                 value=""

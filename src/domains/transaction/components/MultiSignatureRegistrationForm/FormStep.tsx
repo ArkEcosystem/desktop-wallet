@@ -24,8 +24,14 @@ export const FormStep = ({
 
 	useEffect(() => {
 		register("participants", { required: true, minLength: 2 });
-		register("minParticipants", { required: true, min: 2, max: Math.max(2, participants?.length) });
+		register("minParticipants", { required: true, min: 2, max: Math.max(2, participants?.length || 0) });
 	}, [register, participants]);
+
+	useEffect(() => {
+		if (minParticipants === undefined) {
+			setValue("minParticipants", 2);
+		}
+	}, [setValue, minParticipants]);
 
 	const handleParticipant = useCallback(
 		(values: Participant[]) => {
@@ -50,7 +56,7 @@ export const FormStep = ({
 			<FormField name="minParticipants" className="mt-8">
 				<FormLabel>{t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}</FormLabel>
 				<InputGroup>
-					<Input type="number" min={2} value={minParticipants} onChange={handleInput} />
+					<Input type="number" value={minParticipants} onChange={handleInput} />
 					<InputAddonEnd className="pointer-events-none text-theme-neutral-light pr-4">
 						{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
 							length: Math.max(2, participants?.length || 0),

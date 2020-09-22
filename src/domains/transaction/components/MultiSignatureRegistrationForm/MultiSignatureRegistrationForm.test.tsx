@@ -49,22 +49,19 @@ describe("MultiSignature Registration Form", () => {
 	);
 
 	it("should render form step", async () => {
-		const { result } = renderHook(() => useForm());
+		const { result, waitForNextUpdate } = renderHook(() => useForm());
 		const { asFragment } = render(<Component form={result.current} />);
-
-		await waitFor(() =>
-			expect(screen.queryByTestId("MultiSignatureRegistrationForm--form-step")).toBeInTheDocument(),
-		);
-
+		await waitForNextUpdate();
+		await waitFor(() => expect(screen.queryAllByRole("row")).toHaveLength(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should set fee", async () => {
-		const { result } = renderHook(() => useForm());
-
+		const { result, waitForNextUpdate } = renderHook(() => useForm());
 		result.current.register("fee");
 
 		render(<Component form={result.current} onSubmit={() => void 0} />);
+		await waitForNextUpdate();
 
 		act(() => {
 			fireEvent.click(screen.getByText(transactionTranslations.FEES.AVERAGE));
