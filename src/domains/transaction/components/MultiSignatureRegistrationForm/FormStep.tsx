@@ -24,8 +24,8 @@ export const FormStep = ({
 
 	useEffect(() => {
 		register("participants", { required: true, minLength: 2 });
-		register("minParticipants", { required: true, min: 2 });
-	}, [register]);
+		register("minParticipants", { required: true, min: 2, max: Math.max(2, participants?.length) });
+	}, [register, participants]);
 
 	const handleParticipant = useCallback(
 		(values: Participant[]) => {
