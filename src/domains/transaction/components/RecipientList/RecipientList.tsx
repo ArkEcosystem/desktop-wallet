@@ -28,25 +28,23 @@ const RecipientListItem = ({
 }: RecipientListItemProps) => {
 	const { t } = useTranslation();
 
-	const paddingStyles = listIndex === 1 ? "pt-2 pb-6" : "py-6";
-
 	return (
 		<tr
 			className="border-b border-dashed last:border-b-0 border-theme-neutral-300"
 			data-testid="recipient-list__recipient-list-item"
 		>
-			<td className={`${paddingStyles} w-14`}>
+			<td className="py-6 w-14">
 				<Avatar address={address} />
 			</td>
 
-			<td className={paddingStyles}>
+			<td className="py-6">
 				<div className="mb-1 text-sm font-semibold text-theme-neutral">
 					{t("COMMON.RECIPIENT_#", { count: listIndex })}
 				</div>
 				<Address address={address} walletName={walletName} />
 			</td>
 
-			<td className={paddingStyles}>
+			<td className="py-6">
 				<div className="mb-1 text-sm font-semibold text-right text-theme-neutral">{t("COMMON.AMOUNT")}</div>
 				<div className="font-bold text-right text-theme-neutral-800">
 					<Amount ticker={assetSymbol!} value={amount} />
@@ -54,7 +52,7 @@ const RecipientListItem = ({
 			</td>
 
 			{isEditable && (
-				<td className={`${paddingStyles} w-20 text-right`}>
+				<td className="py-6 w-20 text-right">
 					<Button
 						variant="plain"
 						onClick={() => typeof onRemove === "function" && onRemove(address)}

@@ -60,8 +60,10 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				</div>
 			</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.RECIPIENTS")} className="py-6">
-				<RecipientList recipients={recipients} assetSymbol={wallet.currency()} isEditable={false} />
+			<TransactionDetail label={t("TRANSACTION.RECIPIENTS")}>
+				<div className="-my-4">
+					<RecipientList recipients={recipients} assetSymbol={wallet.currency()} isEditable={false} />
+				</div>
 			</TransactionDetail>
 
 			{smartbridge && (
