@@ -8,7 +8,7 @@ import { InputCurrency } from "./InputCurrency";
 import { InputGroup } from "./InputGroup";
 
 type Props = {
-	defaultValue: any;
+	avg: any;
 	value?: { display: string; value: string };
 	min: string;
 	max: string;
@@ -20,9 +20,9 @@ type Props = {
 
 // TODO: tidy up storage of amount (why array of values?)
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
-	({ min, max, step, defaultValue, magnitude, onChange, value }: Props, ref) => {
+	({ min, max, step, avg, magnitude, onChange, value }: Props, ref) => {
 		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
-		const [values, setValues] = React.useState<any>([BigNumber.make(defaultValue).divide(1e8)]);
+		const [values, setValues] = React.useState<any>([BigNumber.make(avg).divide(1e8)]);
 		const maxValues = convertValue(max);
 		const maxValue = BigNumber.make(maxValues.value).divide(1e8);
 
@@ -72,8 +72,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 					}}
 					magnitude={magnitude}
 					type="text"
-					value={values[0]}
-					defaultValue={defaultValue}
+					value={values[0] || avg}
 					ref={ref}
 					onChange={handleInput}
 				/>

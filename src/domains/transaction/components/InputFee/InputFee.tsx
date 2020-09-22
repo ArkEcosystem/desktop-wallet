@@ -30,6 +30,10 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 	};
 
 	useEffect(() => {
+		if (!value) {
+			setFee(BigNumber.make("0").times(1e8).toString());
+		}
+
 		if (value?.display) return;
 
 		if (value && value !== fee) {
@@ -42,7 +46,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 			<div className="flex-1">
 				<InputRange
 					name="fee"
-					defaultValue={fee}
+					avg={avg}
 					value={fee}
 					min={minHuman}
 					max={maxHuman}

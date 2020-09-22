@@ -9,11 +9,12 @@ export const Default = () => {
 	const fees = {
 		min: "0",
 		max: "100",
+		avg: "1354000",
 	};
 
 	return (
 		<div className="max-w-lg">
-			<InputRange {...fees} defaultValue={value.value} step={0.01} onChange={(toshi: any) => setValue(toshi)} />
+			<InputRange {...fees} avg={fees.avg} step={0.01} onChange={(toshi: any) => setValue(toshi)} />
 
 			{value.value}
 		</div>
