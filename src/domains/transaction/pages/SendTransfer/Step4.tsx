@@ -1,5 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Amount } from "app/components/Amount";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -17,6 +18,14 @@ export const SummaryStep = ({
 }) => {
 	const { t } = useTranslation();
 
+	const amount =
+		transaction
+			.data()
+			.asset?.payments?.reduce(
+				(sum: BigNumber, recipient: Contracts.MultiPaymentRecipient) => sum.plus(recipient.amount),
+				BigNumber.ZERO,
+			) || transaction.amount();
+
 	return (
 		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			<TransactionDetail
@@ -29,7 +38,7 @@ export const SummaryStep = ({
 					</div>
 				}
 			>
-				<Amount ticker={senderWallet.currency()} value={transaction.amount().plus(transaction.fee())} />
+				<Amount ticker={senderWallet.currency()} value={amount.plus(transaction.fee())} />
 			</TransactionDetail>
 		</TransactionSuccessful>
 	);
