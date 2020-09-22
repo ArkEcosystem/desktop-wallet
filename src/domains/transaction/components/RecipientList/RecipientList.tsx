@@ -52,7 +52,7 @@ const RecipientListItem = ({
 			</td>
 
 			{isEditable && (
-				<td className="py-6 w-20 text-right">
+				<td className="w-20 py-6 text-right">
 					<Button
 						variant="plain"
 						onClick={() => typeof onRemove === "function" && onRemove(address)}
