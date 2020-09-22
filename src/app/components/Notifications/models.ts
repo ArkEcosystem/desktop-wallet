@@ -1,4 +1,4 @@
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData,Profile } from "@arkecosystem/platform-sdk-profiles";
 export type EmptyPlaceholderProps = {
 	title?: string;
 };
@@ -8,20 +8,21 @@ export type Action = {
 	value: string;
 };
 
-export type PluginNotification = {
-	logoUrl?: string;
-	logoClassName: string;
-	title: string;
-	description: string;
-	action?: Action;
-	onAction?: any;
+export type NotificationItemProps = {
+	body: string;
+	name: string;
+	action?: string;
+	icon: string;
+	image?: string;
+	onAction?: (name: string) => void;
 };
 
 export type NotificationsProps = {
-	plugins?: PluginNotification[];
+	plugins?: NotificationItemProps[];
 	pluginsHeader?: string;
 	transactions?: ExtendedTransactionData[];
 	transactionsHeader?: string;
-	onAction?: any;
+	onAction?: (name: string, item?: NotificationItemProps | ExtendedTransactionData) => void;
 	emptyText?: string;
+	profile?: Profile;
 };
