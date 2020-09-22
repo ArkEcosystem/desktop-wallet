@@ -38,7 +38,7 @@ describe("InputRange", () => {
 
 		fireEvent.keyDown(thumb, { key: "ArrowRight", code: "ArrowRight" });
 
-		expect(thumb).toHaveAttribute("aria-valuenow", "6");
+		waitFor(() => expect(thumb).toHaveAttribute("aria-valuenow", "6"));
 		waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("6"));
 	});
 
