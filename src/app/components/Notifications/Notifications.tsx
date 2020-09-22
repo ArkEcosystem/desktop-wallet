@@ -51,8 +51,13 @@ export const Notifications = ({
 	transactionsHeader,
 	onAction,
 	emptyText,
+	profile,
 }: NotificationsProps) => {
 	const hiddenTableHeaders = [{ Header: "-", className: "hidden" }];
+
+	if (!profile?.id() || (!transactions!.length && !plugins!.length)) {
+		return <EmptyPlaceholder title={emptyText} />;
+	}
 
 	const handleTransactionClick = (transaction: ExtendedTransactionData) => {
 		onAction?.("click", transaction);

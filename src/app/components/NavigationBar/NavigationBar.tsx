@@ -53,6 +53,7 @@ const NotificationsDropdown = ({
 	transactionsHeader,
 	transactions,
 	onAction,
+	profile,
 }: NotificationsProps) => (
 	<Dropdown
 		toggleContent={
@@ -75,6 +76,7 @@ const NotificationsDropdown = ({
 				transactionsHeader={transactionsHeader}
 				transactions={transactions}
 				onAction={onAction}
+				profile={profile}
 			/>
 		</div>
 	</Dropdown>
@@ -210,7 +212,11 @@ export const NavigationBar = ({
 							<ul className="flex h-20 mr-auto md:h-24">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
-								<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
+								<NotificationsDropdown
+									{...notifications}
+									onAction={onNotificationAction}
+									profile={profile}
+								/>
 
 								<div className="h-8 border-r border-theme-neutral-200" />
 
@@ -305,7 +311,6 @@ NavigationBar.defaultProps = {
 		transactionsHeader: "Transactions",
 		transactions: [],
 		pluginsHeader: "Plugins",
-		plugins: [],
 	},
 	menu: [
 		{
