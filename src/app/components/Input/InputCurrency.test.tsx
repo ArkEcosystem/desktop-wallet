@@ -23,7 +23,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "12300000000" });
+		expect(onChange).toHaveBeenCalledWith("123");
 	});
 
 	it("should accept a custom magnitude", () => {
@@ -39,7 +39,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "12300" });
+		expect(onChange).toHaveBeenCalledWith("123");
 	});
 
 	it("should not allow letters", () => {
@@ -55,7 +55,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "123" });
+		expect(onChange).toHaveBeenCalledWith("abc123");
 	});
 
 	it("should format with a default value", () => {

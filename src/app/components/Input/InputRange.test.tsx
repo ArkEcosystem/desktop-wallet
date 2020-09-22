@@ -14,8 +14,11 @@ describe("InputRange", () => {
 	it("should render with default value", () => {
 		const { asFragment, getByTestId } = render(<InputRange {...properties} />);
 
-		expect(getByTestId("InputCurrency")).toHaveValue("5");
-		expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "5");
+		waitFor(() => {
+			expect(getByTestId("InputCurrency")).toHaveValue("5");
+			expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "5");
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
