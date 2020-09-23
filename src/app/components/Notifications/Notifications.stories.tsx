@@ -1,4 +1,5 @@
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 
@@ -9,16 +10,6 @@ export default {
 };
 
 export const Default = () => {
-	const plugins = [
-		{
-			logoClassName: "w-8 h-8 p-2 mr-4 rounded-lg bg-logo",
-			icon: "Warning",
-			name: "ARK Explorer",
-			body: "- update v2.5.6",
-			action: "update",
-		},
-	];
-
 	const transactions = [
 		{
 			id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
@@ -92,7 +83,6 @@ export const Default = () => {
 		<div>
 			<Notifications
 				pluginsHeader="Plugin 17 Feb, 2020"
-				plugins={plugins}
 				transactionsHeader="Transactions 17 Feb, 2020"
 				// @ts-ignore
 				transactions={transactions}
@@ -107,5 +97,6 @@ export const Empty = () => (
 		pluginsHeader="Plugin 17 Feb, 2020"
 		transactionsHeader="Transactions 17 Feb, 2020"
 		onAction={console.log}
+		profile={{} as Profile}
 	/>
 );

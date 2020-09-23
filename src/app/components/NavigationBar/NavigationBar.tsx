@@ -49,7 +49,6 @@ const NavWrapper = styled.nav<{ noShadow?: boolean }>`
 
 const NotificationsDropdown = ({
 	pluginsHeader,
-	plugins,
 	transactionsHeader,
 	transactions,
 	onAction,
@@ -72,7 +71,6 @@ const NotificationsDropdown = ({
 		<div className="p-8 py-3 mt-2 w-128">
 			<Notifications
 				pluginsHeader={pluginsHeader}
-				plugins={plugins}
 				transactionsHeader={transactionsHeader}
 				transactions={transactions}
 				onAction={onAction}
