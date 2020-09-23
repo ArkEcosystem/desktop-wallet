@@ -32,7 +32,6 @@ export const AddBlacklistPlugin = ({
 	const activeProfile = useActiveProfile();
 
 	useEffect(() => {
-		console.log({ plugins, blacklisted });
 		const list = plugins.filter((plugin: any) => !blacklisted.find((id: any) => plugin.id === id));
 
 		setDataset(list);

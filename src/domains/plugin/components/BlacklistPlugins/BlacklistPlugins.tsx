@@ -25,9 +25,6 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose, blacklisted }: Blac
 		setBlacklistedPlugins(blacklisted.map((id: any) => plugins.find((plugin: any) => id === plugin.id)));
 	}, [plugins, blacklisted]);
 
-	console.log({ plugins });
-	console.log({ blacklistedPlugins });
-
 	const columns = [
 		{
 			Header: "Logo",
