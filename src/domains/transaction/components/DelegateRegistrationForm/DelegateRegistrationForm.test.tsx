@@ -17,7 +17,6 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { translations as transactionTranslations } from "../../i18n";
 import { DelegateRegistrationForm } from "./DelegateRegistrationForm";
 
 let profile: Profile;
@@ -133,7 +132,7 @@ describe("DelegateRegistrationForm", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("invalid delegate"));
-		await waitFor(() => expect(container).toHaveTextContent(transactionTranslations.INVALID_DELEGATE_NAME));
+		await waitFor(() => expect(container).toHaveTextContent("'Delegate Name' is invalid"));
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
@@ -157,7 +156,7 @@ describe("DelegateRegistrationForm", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("thisisaveryveryverylongdelegatename"));
-		await waitFor(() => expect(container).toHaveTextContent(transactionTranslations.DELEGATE_NAME_TOO_LONG));
+		await waitFor(() => expect(container).toHaveTextContent("'Delegate Name' should have at most 20 characters"));
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
@@ -179,7 +178,7 @@ describe("DelegateRegistrationForm", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("arkx"));
-		await waitFor(() => expect(container).toHaveTextContent(transactionTranslations.DELEGATE_NAME_EXISTS));
+		await waitFor(() => expect(container).toHaveTextContent("'Delegate Name' already exists"));
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
