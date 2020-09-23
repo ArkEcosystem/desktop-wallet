@@ -146,6 +146,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 					</Section>
 				)}
 			</Page>
+
 			{transactionModalItem && (
 				<TransactionDetailModal
 					isOpen={!!transactionModalItem}
