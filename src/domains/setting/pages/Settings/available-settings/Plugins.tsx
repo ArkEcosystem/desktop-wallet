@@ -5,9 +5,10 @@ import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
+import { useActiveProfile } from "app/hooks/env";
 import { AddBlacklistPlugin } from "domains/plugin/components/AddBlacklistPlugin";
 import { BlacklistPlugins } from "domains/plugin/components/BlacklistPlugins";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type PluginsProps = {
@@ -15,11 +16,58 @@ type PluginsProps = {
 	onSubmit?: any;
 };
 
+const loadDemoPlugins = () => {
+	const plugins = [];
+	for (let i = 0; i < 4; i++) {
+		plugins.push(
+			{
+				id: `ark-explorer-${i}`,
+				name: "ARK Explorer",
+				author: "ARK.io",
+				category: "utility",
+				rating: 4.2,
+				version: "1.3.8",
+				size: "4.2 MB",
+				isInstalled: false,
+				isOfficial: true,
+			},
+			{
+				id: `ark-avatars-${i}`,
+				name: "ARK Avatars",
+				author: "ARK.io",
+				category: "other",
+				rating: 3.8,
+				version: "1.3.8",
+				size: "163 KB",
+				isInstalled: true,
+				isGrant: true,
+			},
+		);
+	}
+
+	return plugins;
+};
+
 export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 	const [modalOpenListIsOpen, setModalOpenListIsOpen] = useState(false);
 	const [modalAddPluginIsOpen, setModalAddPluginIsOpen] = useState(false);
-
+	const [profilePlugins, setProfilePlugins] = useState<any>(loadDemoPlugins());
+	const [blacklistedPlugins, setBlacklistedPlugins] = useState<any>([]);
+	const activeProfile = useActiveProfile();
 	const { t } = useTranslation();
+
+	// TODO: Load real plugins instead of use demos
+	useEffect(() => {
+		const blacklistedPlugins = Array.from(activeProfile.plugins().blacklist());
+
+		setBlacklistedPlugins(blacklistedPlugins);
+	}, [activeProfile]);
+
+	const addToBlackList = (pluginId: any) => {
+		const updatedBlacklist = activeProfile.plugins().blacklist().add(pluginId);
+
+		setBlacklistedPlugins(Array.from(updatedBlacklist));
+	};
 
 	const pluginItems = [
 		{
@@ -85,8 +133,19 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 				</div>
 			</Form>
 
-			<BlacklistPlugins isOpen={modalOpenListIsOpen} onClose={() => setModalOpenListIsOpen(false)} />
-			<AddBlacklistPlugin isOpen={modalAddPluginIsOpen} onClose={() => setModalAddPluginIsOpen(false)} />
+			<BlacklistPlugins
+				isOpen={modalOpenListIsOpen}
+				onClose={() => setModalOpenListIsOpen(false)}
+				plugins={profilePlugins}
+				blacklisted={blacklistedPlugins}
+			/>
+			<AddBlacklistPlugin
+				isOpen={modalAddPluginIsOpen}
+				onClose={() => setModalAddPluginIsOpen(false)}
+				handleBlacklist={addToBlackList}
+				plugins={profilePlugins}
+				blacklisted={blacklistedPlugins}
+			/>
 		</>
 	);
 };
