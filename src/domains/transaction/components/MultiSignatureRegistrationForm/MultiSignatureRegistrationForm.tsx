@@ -57,16 +57,12 @@ const signTransaction = async ({
 	const { fee, minParticipants, participants, mnemonic, senderAddress } = getValues();
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
-	if (!senderWallet) {
-		throw new Error();
-	}
-
 	const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
 
 	try {
-		const transactionId = await senderWallet.transaction().signMultiSignature({
+		const transactionId = await senderWallet!.transaction().signMultiSignature({
 			fee,
-			from: senderWallet.address(),
+			from: senderAddress,
 			sign: {
 				multiSignature: {
 					publicKeys: [...publicKeys],
@@ -76,14 +72,14 @@ const signTransaction = async ({
 			data: {
 				publicKeys: [...publicKeys],
 				min: minParticipants,
-				senderPublicKey: senderWallet.publicKey(),
+				senderPublicKey: senderWallet!.publicKey(),
 			},
 		});
 
-		await senderWallet.transaction().addSignature(transactionId, mnemonic);
+		await senderWallet!.transaction().addSignature(transactionId, mnemonic);
 		await env.persist();
 
-		setTransaction(senderWallet.transaction().transaction(transactionId));
+		setTransaction(senderWallet!.transaction().transaction(transactionId));
 
 		handleNext();
 	} catch (error) {

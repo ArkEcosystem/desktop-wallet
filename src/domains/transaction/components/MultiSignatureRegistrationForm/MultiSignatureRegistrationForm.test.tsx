@@ -18,6 +18,17 @@ describe("MultiSignature Registration Form", () => {
 	let wallet2: ReadWriteWallet;
 	let fees: Contracts.TransactionFee;
 
+	const createTransactionMock = (wallet: ReadWriteWallet) =>
+		// @ts-ignore
+		jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+			id: () => multiSignatureFixture.data.id,
+			sender: () => multiSignatureFixture.data.sender,
+			recipient: () => multiSignatureFixture.data.recipient,
+			amount: () => BigNumber.make(multiSignatureFixture.data.amount),
+			fee: () => BigNumber.make(multiSignatureFixture.data.fee),
+			data: () => multiSignatureFixture.data,
+		});
+
 	beforeAll(async () => {
 		await syncFees();
 	});
@@ -122,5 +133,57 @@ describe("MultiSignature Registration Form", () => {
 
 		await waitFor(() => expect(screen.getByTestId("TransactionDetail")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should sign transaction", async () => {
+		const form = {
+			clearErrors: jest.fn(),
+			getValues: () => ({
+				fee: "1",
+				mnemonic: "sample passphrase",
+				senderAddress: wallet.address(),
+				minParticipants: 2,
+				participants: [
+					{
+						address: wallet.address(),
+						publicKey: wallet.publicKey()!,
+						balance: wallet.balance().toString(),
+					},
+					{
+						address: wallet2.address(),
+						publicKey: wallet2.publicKey()!,
+						balance: wallet2.balance().toString(),
+					},
+				],
+			}),
+			setError: jest.fn(),
+			setValue: jest.fn(),
+		};
+		const handleNext = jest.fn();
+		const setTransaction = jest.fn();
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signMultiSignature")
+			.mockReturnValue(Promise.resolve(multiSignatureFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "addSignature").mockImplementation();
+		const transactionMock = createTransactionMock(wallet);
+
+		await MultiSignatureRegistrationForm.signTransaction({
+			env,
+			form,
+			handleNext,
+			profile,
+			setTransaction,
+		});
+
+		expect(signMock).toHaveBeenCalled();
+		expect(broadcastMock).toHaveBeenCalled();
+		expect(transactionMock).toHaveBeenCalled();
+		expect(setTransaction).toHaveBeenCalled();
+		expect(handleNext).toHaveBeenCalled();
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
 	});
 });
