@@ -146,9 +146,10 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 					</Section>
 				)}
 			</Page>
+
 			{transactionModalItem && (
 				<TransactionDetailModal
-					isOpen={Boolean(transactionModalItem)}
+					isOpen={!!transactionModalItem}
 					transactionItem={transactionModalItem}
 					onClose={() => setTransactionModalItem(undefined)}
 				/>

@@ -57,7 +57,7 @@ export const EntitySecondStep = ({ entity, fees }: EntityResignationStepProps) =
 				</TransactionDetail>
 
 				<div className="my-4">
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fees.static)} />
+					<TotalAmountBox fee={BigNumber.make(fees.static)} ticker={entity.wallet().currency()} />
 				</div>
 			</div>
 		</div>

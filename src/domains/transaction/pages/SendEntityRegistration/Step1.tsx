@@ -26,12 +26,8 @@ const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrat
 
 	return (
 		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
-			<div className="mb-2">
-				<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
-			</div>
-			<div>
-				<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
-			</div>
+			<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
+			<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
 		</FormField>
 	);
 };
@@ -128,10 +124,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 				</FormField>
 
 				<FormField name="senderAddress" className="relative">
-					<div className="mb-2">
-						<FormLabel label="Sender" />
-					</div>
-
+					<FormLabel label="Sender" />
 					<div data-testid="sender-address">
 						<SelectAddress
 							address={senderAddress}

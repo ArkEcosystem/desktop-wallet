@@ -107,7 +107,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 
 	const crumbs = [
 		{
-			route: `/wallets/${activeProfile.id()}/dashboard`,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];

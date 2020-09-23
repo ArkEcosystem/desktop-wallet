@@ -20,7 +20,7 @@ export const ImportWallet = () => {
 	const [walletData, setWalletData] = useState<ReadWriteWallet | null>(null);
 
 	const history = useHistory();
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();
 
@@ -59,6 +59,9 @@ export const ImportWallet = () => {
 		let wallet: ReadWriteWallet | undefined;
 
 		if (!walletData) {
+			const hasWalletsByCoinWithNetwork =
+				activeProfile.wallets().findByCoinWithNetwork(network.coin(), network.id()).length > 0;
+
 			if (passphrase) {
 				wallet = await activeProfile.wallets().importByMnemonic(passphrase, network.coin(), network.id());
 			} else {
@@ -67,7 +70,15 @@ export const ImportWallet = () => {
 
 			setWalletData(wallet);
 
-			await wallet.syncVotes();
+			if (network.allowsVoting()) {
+				if (hasWalletsByCoinWithNetwork) {
+					await wallet.syncVotes();
+				} else {
+					await env.delegates().syncAll();
+					await wallet.syncVotes();
+				}
+			}
+
 			await persist();
 
 			setActiveTab(activeTab + 1);
@@ -131,9 +142,9 @@ export const ImportWallet = () => {
 									<Button
 										disabled={!formState.isValid || formState.isSubmitting}
 										type="submit"
-										data-testid="ImportWallet__gotowallet-button"
+										data-testid="ImportWallet__continue-button"
 									>
-										{t("COMMON.GO_TO_WALLET")}
+										{t("COMMON.CONTINUE")}
 									</Button>
 								)}
 
@@ -141,9 +152,9 @@ export const ImportWallet = () => {
 									<Button
 										disabled={formState.isSubmitting}
 										type="submit"
-										data-testid="ImportWallet__save-button"
+										data-testid="ImportWallet__gotowallet-button"
 									>
-										{t("COMMON.SAVE_FINISH")}
+										{t("COMMON.GO_TO_WALLET")}
 									</Button>
 								)}
 							</div>
