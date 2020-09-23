@@ -70,11 +70,13 @@ export const ImportWallet = () => {
 
 			setWalletData(wallet);
 
-			if (hasWalletsByCoinWithNetwork) {
-				await wallet.syncVotes();
-			} else {
-				await env.delegates().syncAll();
-				await wallet.syncVotes();
+			if (network.allowsVoting()) {
+				if (hasWalletsByCoinWithNetwork) {
+					await wallet.syncVotes();
+				} else {
+					await env.delegates().syncAll();
+					await wallet.syncVotes();
+				}
 			}
 
 			await persist();
