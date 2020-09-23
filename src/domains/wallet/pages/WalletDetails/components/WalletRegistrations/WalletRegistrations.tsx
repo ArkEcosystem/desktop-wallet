@@ -63,8 +63,8 @@ export const WalletRegistrations = ({
 						<Circle size="lg" />
 					</div>
 
-					<div className="flex flex-1 justify-between">
-						<div className="flex flex-col font-semibold text-theme-text mr-4">
+					<div className="flex justify-between flex-1">
+						<div className="flex flex-col mr-4 font-semibold text-theme-text">
 							<span className="mr-2">
 								{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.EMPTY_DESCRIPTION")}
 							</span>

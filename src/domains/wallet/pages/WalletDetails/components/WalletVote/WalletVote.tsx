@@ -44,8 +44,8 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 						</div>
 					</div>
 
-					<div className="flex flex-1 justify-between">
-						<div className="flex flex-col font-semibold text-theme-text mr-4">
+					<div className="flex justify-between flex-1">
+						<div className="flex flex-col mr-4 font-semibold text-theme-text">
 							<span>{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}</span>
 
 							<Link

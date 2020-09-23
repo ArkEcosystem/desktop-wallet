@@ -534,10 +534,10 @@ exports[`WalletVote should render the maximum votes 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-1 justify-between"
+        class="flex justify-between flex-1"
       >
         <div
-          class="flex flex-col font-semibold text-theme-text mr-4"
+          class="flex flex-col mr-4 font-semibold text-theme-text"
         >
           <span>
             You have not yet voted for a Delegate
@@ -617,10 +617,10 @@ exports[`WalletVote should render without votes 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-1 justify-between"
+        class="flex justify-between flex-1"
       >
         <div
-          class="flex flex-col font-semibold text-theme-text mr-4"
+          class="flex flex-col mr-4 font-semibold text-theme-text"
         >
           <span>
             You have not yet voted for a Delegate
