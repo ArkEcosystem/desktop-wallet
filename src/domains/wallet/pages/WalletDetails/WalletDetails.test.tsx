@@ -235,6 +235,24 @@ describe("WalletDetails", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should open detail modal on transaction row click", async () => {
+		const { asFragment, getByTestId } = await renderPage();
+
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
+		});
+
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should fetch more transactions", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
 

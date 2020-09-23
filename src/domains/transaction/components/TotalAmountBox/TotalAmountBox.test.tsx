@@ -6,7 +6,9 @@ import { TotalAmountBox } from "./TotalAmountBox";
 
 describe("TotalAmountBox", () => {
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(<TotalAmountBox amount={BigNumber.make(1e8)} fee={BigNumber.ONE} />);
+		const { asFragment, getByTestId } = render(
+			<TotalAmountBox amount={BigNumber.make(1e8)} fee={BigNumber.ONE} ticker="ARK" />,
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 		expect(getByTestId("total-amount-box__transaction-amount")).toHaveTextContent("1 ARK");
