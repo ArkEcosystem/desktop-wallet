@@ -133,7 +133,26 @@ describe("WalletDetails", () => {
 		});
 	});
 
-	it("should navigate to registrations page when clicking on WalletRegistrations button", async () => {
+	it("should navigate to new registration page when clicking on WalletRegistrations button (register)", async () => {
+		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
+		history.push(walletUrl);
+
+		const historySpy = jest.spyOn(history, "push");
+
+		const { getByTestId, queryAllByTestId } = await renderPage();
+
+		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletRegistrations__button"));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(
+			`/profiles/${profile.id()}/wallets/${blankWallet.id()}/send-entity-registration`,
+		);
+	});
+
+	it("should navigate to registrations page when clicking on WalletRegistrations button (show all)", async () => {
 		const historySpy = jest.spyOn(history, "push");
 
 		const { getByTestId, queryAllByTestId } = await renderPage();
@@ -231,6 +250,24 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => expect(wallet.isStarred()).toBe(false));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should open detail modal on transaction row click", async () => {
+		const { asFragment, getByTestId } = await renderPage();
+
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
+		});
+
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
 
 		expect(asFragment()).toMatchSnapshot();
 	});

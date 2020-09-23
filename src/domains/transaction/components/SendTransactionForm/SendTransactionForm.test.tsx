@@ -75,13 +75,13 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
 
 			// Fee
-			expect(getByTestId("InputCurrency")).toHaveValue("0.71538139");
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 			expect(rendered.container).toMatchSnapshot();
 		});
@@ -128,7 +128,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
 
 			// Select sender & update fees
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));

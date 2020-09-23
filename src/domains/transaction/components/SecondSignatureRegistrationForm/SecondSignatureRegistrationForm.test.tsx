@@ -91,7 +91,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			fireEvent.click(screen.getByText(transactionTranslations.FEES.AVERAGE));
 		});
 
-		await waitFor(() => expect(result.current.getValues("fee")).toBe("135400000"));
+		await waitFor(() => expect(result.current.getValues("fee")).toEqual({ display: "1.354", value: "135400000" }));
 	});
 
 	describe("backup step", () => {
