@@ -24,6 +24,7 @@ export const translations: { [key: string]: any } = {
 	RECEIVED: "Received",
 	RECIPIENT: "Recipient",
 	RECIPIENTS: "Recipients",
+	RECIPIENTS_COUNT: "Recipients ({{count}})",
 	RECIPIENTS_HELPTEXT: "A multiple recipient transaction allows up to {{count}} recipients in one transaction",
 	REGISTRATION_TYPE: "Registration Type",
 	SECOND_MNEMONIC: "2nd Mnemonic",

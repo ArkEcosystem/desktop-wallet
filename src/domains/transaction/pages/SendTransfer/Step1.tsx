@@ -8,7 +8,7 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; profile: Profile }) => {
+export const FormStep = ({ networks, profile }: { networks: NetworkData[]; profile: Profile }) => {
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
 	const { recipients, smartbridge } = getValues();
