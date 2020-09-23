@@ -88,4 +88,5 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose, blacklisted }: Blac
 BlacklistPlugins.defaultProps = {
 	isOpen: false,
 	plugins: [],
+	blacklisted: [],
 };
