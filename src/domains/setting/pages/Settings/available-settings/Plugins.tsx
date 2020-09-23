@@ -51,13 +51,16 @@ const loadDemoPlugins = () => {
 export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 	const [modalOpenListIsOpen, setModalOpenListIsOpen] = useState(false);
 	const [modalAddPluginIsOpen, setModalAddPluginIsOpen] = useState(false);
-	const [profilePlugins, setProfilePlugins] = useState<any>(loadDemoPlugins());
+
+	// TODO: Load plugins from filesystem + MSQ
+	// const [pluginsList, setPluginsList] = useState<any>(loadDemoPlugins());
 	const [blacklistedPlugins, setBlacklistedPlugins] = useState<any>([]);
 	const activeProfile = useActiveProfile();
 	const { t } = useTranslation();
 
-	// TODO: Load real plugins instead of use demos
+	// TODO: Load plugins from filesystem + MSQ
 	useEffect(() => {
+		// const filesystemPlugins = activeProfile.plugins().all()
 		const blacklistedPlugins = Array.from(activeProfile.plugins().blacklist());
 
 		setBlacklistedPlugins(blacklistedPlugins);
@@ -136,14 +139,14 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			<BlacklistPlugins
 				isOpen={modalOpenListIsOpen}
 				onClose={() => setModalOpenListIsOpen(false)}
-				plugins={profilePlugins}
+				plugins={loadDemoPlugins()}
 				blacklisted={blacklistedPlugins}
 			/>
 			<AddBlacklistPlugin
 				isOpen={modalAddPluginIsOpen}
 				onClose={() => setModalAddPluginIsOpen(false)}
 				handleBlacklist={addToBlackList}
-				plugins={profilePlugins}
+				plugins={loadDemoPlugins()}
 				blacklisted={blacklistedPlugins}
 			/>
 		</>
