@@ -1,9 +1,12 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import multiSignatureFixture from "tests/fixtures/coins/ark/transactions/multisignature-registration.json";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, syncFees, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
@@ -99,6 +102,25 @@ describe("MultiSignature Registration Form", () => {
 		expect(screen.getByText(transactionTranslations.MULTISIGNATURE.PARTICIPANTS)).toBeInTheDocument();
 		expect(screen.getByText(transactionTranslations.MULTISIGNATURE.MIN_SIGNATURES)).toBeInTheDocument();
 
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render transaction details", async () => {
+		const DetailsComponent = () => {
+			const { t } = useTranslation();
+			return <MultiSignatureRegistrationForm.transactionDetails translations={t} transaction={transaction} />;
+		};
+		const transaction = {
+			id: () => multiSignatureFixture.data.id,
+			sender: () => multiSignatureFixture.data.sender,
+			recipient: () => multiSignatureFixture.data.recipient,
+			amount: () => BigNumber.make(multiSignatureFixture.data.amount),
+			fee: () => BigNumber.make(multiSignatureFixture.data.fee),
+			data: () => multiSignatureFixture.data,
+		} as Contracts.SignedTransactionData;
+		const { asFragment } = render(<DetailsComponent />);
+
+		await waitFor(() => expect(screen.getByTestId("TransactionDetail")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

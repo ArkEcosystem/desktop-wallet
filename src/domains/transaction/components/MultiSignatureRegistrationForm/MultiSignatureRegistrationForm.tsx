@@ -36,14 +36,14 @@ const transactionDetails = ({ translations }: SendEntityRegistrationDetailsOptio
 			</div>
 		}
 	>
-		{translations("TRANSACTION.PAGE_SECOND_SIGNATURE.REVIEW_STEP.TYPE")}
+		{translations("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TYPE")}
 	</TransactionDetail>
 );
 
 StepsComponent.displayName = "MultiSignatureRegistrationForm";
 transactionDetails.displayName = "MultiSignatureRegistrationFormTransactionDetails";
 
-const submitForm = async ({
+const signTransaction = async ({
 	env,
 	form,
 	handleNext,
@@ -100,5 +100,5 @@ export const MultiSignatureRegistrationForm: SendEntityRegistrationForm = {
 	transactionDetails,
 	formFields: ["participants", "minParticipants"],
 
-	signTransaction: submitForm,
+	signTransaction,
 };

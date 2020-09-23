@@ -73,7 +73,9 @@ export const FormStep = ({
 					max={fees.max}
 					defaultValue={fee || 0}
 					step={0.01}
-					onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
+					onChange={(currency) =>
+						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
+					}
 				/>
 			</FormField>
 		</section>
