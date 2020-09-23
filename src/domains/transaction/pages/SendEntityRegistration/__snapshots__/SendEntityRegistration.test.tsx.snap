@@ -256,7 +256,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -674,7 +674,7 @@ exports[`Registration should fill all data including link collections 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -1720,7 +1720,7 @@ exports[`Registration should go to review step after succesfully filling form da
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -2447,7 +2447,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -2682,21 +2682,17 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                       <fieldset
                         class="sc-AxirZ izhStr relative"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="senderAddress"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="senderAddress"
-                          >
-                            Sender
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Sender
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div
                           data-testid="sender-address"
                         >
@@ -2759,80 +2755,74 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                         class="sc-AxirZ izhStr relative h-20 mt-8"
                         data-testid="Registration__type"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="registrationType"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="registrationType"
-                          >
-                            Registration Type
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
-                        <div>
+                          Registration Type
                           <div
-                            class="relative w-full"
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <div
+                          class="relative w-full"
+                        >
+                          <input
+                            class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                            data-testid="select-list__input"
+                            name="registrationType"
+                            readonly=""
+                            type="text"
+                            value=""
+                          />
+                          <div
+                            class="relative w-full cursor-pointer"
                           >
-                            <input
-                              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                              data-testid="select-list__input"
-                              name="registrationType"
-                              readonly=""
-                              type="text"
-                              value=""
-                            />
-                            <div
-                              class="relative w-full cursor-pointer"
-                            >
-                              <div>
-                                <button
-                                  aria-expanded="true"
-                                  aria-haspopup="listbox"
-                                  aria-labelledby="downshift-35-label downshift-35-toggle-button"
-                                  class="sc-fzoXWK dAGxql is-open  "
-                                  data-testid="select-list__toggle-button"
-                                  id="downshift-35-toggle-button"
-                                  type="button"
-                                />
-                                <ul
-                                  aria-labelledby="downshift-35-label"
-                                  class="sc-fzpmMD dhwOMv is-open"
-                                  id="downshift-35-menu"
-                                  role="listbox"
-                                  tabindex="-1"
-                                >
-                                  <li
-                                    aria-selected="false"
-                                    class="select-list-option "
-                                    data-testid="select-list__toggle-option-0"
-                                    id="downshift-35-item-0"
-                                    role="option"
-                                  >
-                                    <div
-                                      class="select-list-option__label"
-                                    >
-                                      Business
-                                    </div>
-                                  </li>
-                                </ul>
-                              </div>
-                              <div
-                                class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
+                            <div>
+                              <button
+                                aria-expanded="true"
+                                aria-haspopup="listbox"
+                                aria-labelledby="downshift-35-label downshift-35-toggle-button"
+                                class="sc-fzoXWK dAGxql is-open  "
+                                data-testid="select-list__toggle-button"
+                                id="downshift-35-toggle-button"
+                                type="button"
+                              />
+                              <ul
+                                aria-labelledby="downshift-35-label"
+                                class="sc-fzpmMD dhwOMv is-open"
+                                id="downshift-35-menu"
+                                role="listbox"
+                                tabindex="-1"
                               >
-                                <div
-                                  class="sc-AxiKw iDEwuj"
-                                  height="8"
-                                  width="8"
+                                <li
+                                  aria-selected="false"
+                                  class="select-list-option "
+                                  data-testid="select-list__toggle-option-0"
+                                  id="downshift-35-item-0"
+                                  role="option"
                                 >
-                                  <svg>
-                                    arrowup.svg
-                                  </svg>
-                                </div>
+                                  <div
+                                    class="select-list-option__label"
+                                  >
+                                    Business
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                            <div
+                              class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
+                            >
+                              <div
+                                class="sc-AxiKw iDEwuj"
+                                height="8"
+                                width="8"
+                              >
+                                <svg>
+                                  arrowup.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -3033,21 +3023,17 @@ exports[`Registration should not set fee if no fee options 1`] = `
       <fieldset
         class="sc-AxirZ izhStr relative"
       >
-        <div
-          class="mb-2"
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="senderAddress"
         >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="senderAddress"
-          >
-            Sender
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-        </div>
+          Sender
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
         <div
           data-testid="sender-address"
         >
@@ -3092,68 +3078,62 @@ exports[`Registration should not set fee if no fee options 1`] = `
         class="sc-AxirZ izhStr relative h-20 mt-8"
         data-testid="Registration__type"
       >
-        <div
-          class="mb-2"
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="registrationType"
         >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="registrationType"
-          >
-            Registration Type
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-        </div>
-        <div>
+          Registration Type
           <div
-            class="relative w-full"
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div
+          class="relative w-full"
+        >
+          <input
+            class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+            data-testid="select-list__input"
+            name="registrationType"
+            readonly=""
+            type="text"
+            value="delegateRegistration"
+          />
+          <div
+            class="relative w-full cursor-pointer"
           >
-            <input
-              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-              data-testid="select-list__input"
-              name="registrationType"
-              readonly=""
-              type="text"
-              value="delegateRegistration"
-            />
-            <div
-              class="relative w-full cursor-pointer"
-            >
-              <div>
-                <button
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-15-label downshift-15-toggle-button"
-                  class="sc-fzoXWK dAGxql  is-selected "
-                  data-testid="select-list__toggle-button"
-                  id="downshift-15-toggle-button"
-                  type="button"
-                >
-                  Delegate
-                </button>
-                <ul
-                  aria-labelledby="downshift-15-label"
-                  class="sc-fzpmMD dhwOMv"
-                  id="downshift-15-menu"
-                  role="listbox"
-                  tabindex="-1"
-                />
-              </div>
-              <div
-                class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
+            <div>
+              <button
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-15-label downshift-15-toggle-button"
+                class="sc-fzoXWK dAGxql  is-selected "
+                data-testid="select-list__toggle-button"
+                id="downshift-15-toggle-button"
+                type="button"
               >
-                <div
-                  class="sc-AxiKw iDEwuj"
-                  height="8"
-                  width="8"
-                >
-                  <svg>
-                    arrowdown.svg
-                  </svg>
-                </div>
+                Delegate
+              </button>
+              <ul
+                aria-labelledby="downshift-15-label"
+                class="sc-fzpmMD dhwOMv"
+                id="downshift-15-menu"
+                role="listbox"
+                tabindex="-1"
+              />
+            </div>
+            <div
+              class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
+            >
+              <div
+                class="sc-AxiKw iDEwuj"
+                height="8"
+                width="8"
+              >
+                <svg>
+                  arrowdown.svg
+                </svg>
               </div>
             </div>
           </div>
@@ -3420,7 +3400,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -3482,60 +3462,55 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                         Make up a name and register your delegate online.
                       </div>
                       <div
-                        class="grid grid-flow-row gap-2 mt-4"
+                        class="flex items-center py-6 true "
+                        data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex items-center py-6 true "
-                          data-testid="TransactionDetail"
+                          class="flex-1 space-y-2"
                         >
                           <div
-                            class="flex-1 space-y-2"
+                            class="text-sm font-semibold text-theme-neutral"
                           >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
-                              Network
-                            </div>
-                            <div
-                              class="font-semibold"
-                            >
-                              <div
-                                class="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24"
-                              >
-                                ARK Devnet
-                              </div>
-                            </div>
+                            Network
                           </div>
                           <div
-                            class="ml-1 text-theme-danger"
+                            class="font-semibold"
                           >
-                            <div
-                              class="sc-AxgMl eqWWwc bg-theme-background border-theme-danger-light"
-                            >
-                              <div
-                                class="sc-AxiKw dklFyP"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  ark.svg
-                                </svg>
-                              </div>
-                            </div>
+                            ARK Devnet
                           </div>
                         </div>
                         <div
-                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-                          data-testid="TransactionDetail"
+                          aria-label="ARK Devnet"
+                          class="sc-AxgMl eqWWwc border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="flex-1 space-y-2"
+                            class="sc-AxiKw dklFyP"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="font-semibold"
                           >
                             <div
-                              class="font-semibold"
+                              class="flex-1 space-y-2"
                             >
                               <div
-                                class="mb-2 font-semibold text-theme-neutral"
+                                class="text-theme-neutral"
                               >
                                 <span
                                   class="mr-1 text-sm"
@@ -3571,129 +3546,129 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                               </div>
                             </div>
                           </div>
+                        </div>
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
+                        >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              />
-                            </div>
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral"
+                          >
+                            Delegate Name
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            test_delegate
                           </div>
                         </div>
                         <div
-                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6"
-                          data-testid="TransactionDetail"
+                          class="sc-AxgMl eqWWwc bg-theme-background border-theme-text"
                         >
                           <div
-                            class="flex-1 space-y-2"
+                            class="sc-AxiKw bBEAwK"
+                            height="25"
+                            width="20"
                           >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
-                              Delegate Name
-                            </div>
-                            <div
-                              class="font-semibold"
-                            >
-                              test_delegate
-                            </div>
-                          </div>
-                          <div
-                            class="mx-2"
-                          >
-                            <div
-                              class="sc-AxiKw gZwZcb"
-                              height="32"
-                              width="32"
-                            >
-                              <svg>
-                                delegate.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              delegate.svg
+                            </svg>
                           </div>
                         </div>
+                      </div>
+                      <div
+                        class="mt-2"
+                      >
                         <div
-                          class="mt-2"
+                          class="border rounded-lg border-theme-neutral-300"
                         >
                           <div
-                            class="border rounded-lg border-theme-neutral-300"
+                            class="relative p-4"
                           >
                             <div
-                              class="relative p-4"
+                              class="flex divide-x divide-theme-neutral-300"
                             >
                               <div
-                                class="flex divide-x divide-theme-neutral-300"
+                                class="flex flex-col w-1/2 justify-center px-4 py-2"
                               >
-                                <div
-                                  class="flex flex-col w-1/2 justify-center px-4 py-2"
+                                <span
+                                  class="sc-fznMAR jjjiZV"
                                 >
-                                  <span
-                                    class="sc-fznMAR jjjiZV"
-                                  >
-                                    Transaction Amount
-                                  </span>
-                                  <span
-                                    class="mt-1 text-lg font-semibold"
-                                    data-testid="total-amount-box__transaction-amount"
-                                  >
-                                    0 DARK
-                                  </span>
-                                </div>
-                                <div
-                                  class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
+                                  Transaction Amount
+                                </span>
+                                <span
+                                  class="mt-1 text-lg font-semibold"
+                                  data-testid="total-amount-box__transaction-amount"
                                 >
-                                  <span
-                                    class="sc-fznMAR jjjiZV"
-                                  >
-                                    Transaction Fee
-                                  </span>
-                                  <span
-                                    class="mt-1 text-lg font-semibold"
-                                    data-testid="total-amount-box__transaction-fee"
-                                  >
-                                    25 DARK
-                                  </span>
-                                </div>
+                                  0 DARK
+                                </span>
                               </div>
                               <div
-                                class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+                                class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                               >
-                                <div
-                                  class="py-2 ml-px bg-white"
+                                <span
+                                  class="sc-fznMAR jjjiZV"
                                 >
-                                  <div
-                                    class="sc-AxiKw kgmJgX"
-                                    height="14"
-                                    width="14"
-                                  >
-                                    <svg>
-                                      plus.svg
-                                    </svg>
-                                  </div>
-                                </div>
+                                  Transaction Fee
+                                </span>
+                                <span
+                                  class="mt-1 text-lg font-semibold"
+                                  data-testid="total-amount-box__transaction-fee"
+                                >
+                                  25 DARK
+                                </span>
                               </div>
                             </div>
                             <div
-                              class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 justfiy-center bg-theme-neutral-contrast"
+                              class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
                             >
-                              <span
-                                class="sc-fznMAR jjjiZV"
+                              <div
+                                class="py-2 ml-px bg-white"
                               >
-                                Total Amount
-                              </span>
-                              <span
-                                class="text-2xl font-bold"
-                                data-testid="total-amount-box__total"
-                              >
-                                25 DARK
-                              </span>
+                                <div
+                                  class="sc-AxiKw kgmJgX"
+                                  height="14"
+                                  width="14"
+                                >
+                                  <svg>
+                                    plus.svg
+                                  </svg>
+                                </div>
+                              </div>
                             </div>
+                          </div>
+                          <div
+                            class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 justfiy-center bg-theme-neutral-contrast"
+                          >
+                            <span
+                              class="sc-fznMAR jjjiZV"
+                            >
+                              Total Amount
+                            </span>
+                            <span
+                              class="text-2xl font-bold"
+                              data-testid="total-amount-box__total"
+                            >
+                              25 DARK
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -3911,21 +3886,17 @@ exports[`Registration should render 1st step 1`] = `
       <fieldset
         class="sc-AxirZ izhStr relative"
       >
-        <div
-          class="mb-2"
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="senderAddress"
         >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="senderAddress"
-          >
-            Sender
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-        </div>
+          Sender
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
         <div
           data-testid="sender-address"
         >
@@ -3970,68 +3941,62 @@ exports[`Registration should render 1st step 1`] = `
         class="sc-AxirZ izhStr relative h-20 mt-8"
         data-testid="Registration__type"
       >
-        <div
-          class="mb-2"
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="registrationType"
         >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="registrationType"
-          >
-            Registration Type
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-        </div>
-        <div>
+          Registration Type
           <div
-            class="relative w-full"
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div
+          class="relative w-full"
+        >
+          <input
+            class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+            data-testid="select-list__input"
+            name="registrationType"
+            readonly=""
+            type="text"
+            value="delegateRegistration"
+          />
+          <div
+            class="relative w-full cursor-pointer"
           >
-            <input
-              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-              data-testid="select-list__input"
-              name="registrationType"
-              readonly=""
-              type="text"
-              value="delegateRegistration"
-            />
-            <div
-              class="relative w-full cursor-pointer"
-            >
-              <div>
-                <button
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-10-label downshift-10-toggle-button"
-                  class="sc-fzoXWK dAGxql  is-selected "
-                  data-testid="select-list__toggle-button"
-                  id="downshift-10-toggle-button"
-                  type="button"
-                >
-                  Delegate
-                </button>
-                <ul
-                  aria-labelledby="downshift-10-label"
-                  class="sc-fzpmMD dhwOMv"
-                  id="downshift-10-menu"
-                  role="listbox"
-                  tabindex="-1"
-                />
-              </div>
-              <div
-                class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
+            <div>
+              <button
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-10-label downshift-10-toggle-button"
+                class="sc-fzoXWK dAGxql  is-selected "
+                data-testid="select-list__toggle-button"
+                id="downshift-10-toggle-button"
+                type="button"
               >
-                <div
-                  class="sc-AxiKw iDEwuj"
-                  height="8"
-                  width="8"
-                >
-                  <svg>
-                    arrowdown.svg
-                  </svg>
-                </div>
+                Delegate
+              </button>
+              <ul
+                aria-labelledby="downshift-10-label"
+                class="sc-fzpmMD dhwOMv"
+                id="downshift-10-menu"
+                role="listbox"
+                tabindex="-1"
+              />
+            </div>
+            <div
+              class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
+            >
+              <div
+                class="sc-AxiKw iDEwuj"
+                height="8"
+                width="8"
+              >
+                <svg>
+                  arrowdown.svg
+                </svg>
               </div>
             </div>
           </div>
@@ -4298,7 +4263,7 @@ exports[`Registration should render registration form without selected wallet 1`
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -4510,21 +4475,17 @@ exports[`Registration should render registration form without selected wallet 1`
                       <fieldset
                         class="sc-AxirZ izhStr relative"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="senderAddress"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="senderAddress"
-                          >
-                            Sender
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Sender
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div
                           data-testid="sender-address"
                         >
@@ -4569,66 +4530,60 @@ exports[`Registration should render registration form without selected wallet 1`
                         class="sc-AxirZ izhStr relative h-20 mt-8"
                         data-testid="Registration__type"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="registrationType"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="registrationType"
-                          >
-                            Registration Type
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
-                        <div>
+                          Registration Type
                           <div
-                            class="relative w-full"
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <div
+                          class="relative w-full"
+                        >
+                          <input
+                            class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                            data-testid="select-list__input"
+                            name="registrationType"
+                            readonly=""
+                            type="text"
+                            value=""
+                          />
+                          <div
+                            class="relative w-full cursor-pointer"
                           >
-                            <input
-                              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                              data-testid="select-list__input"
-                              name="registrationType"
-                              readonly=""
-                              type="text"
-                              value=""
-                            />
+                            <div>
+                              <button
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                                class="sc-fzoXWK dAGxql   "
+                                data-testid="select-list__toggle-button"
+                                id="downshift-0-toggle-button"
+                                type="button"
+                              />
+                              <ul
+                                aria-labelledby="downshift-0-label"
+                                class="sc-fzpmMD dhwOMv"
+                                id="downshift-0-menu"
+                                role="listbox"
+                                tabindex="-1"
+                              />
+                            </div>
                             <div
-                              class="relative w-full cursor-pointer"
+                              class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
                             >
-                              <div>
-                                <button
-                                  aria-expanded="false"
-                                  aria-haspopup="listbox"
-                                  aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                                  class="sc-fzoXWK dAGxql   "
-                                  data-testid="select-list__toggle-button"
-                                  id="downshift-0-toggle-button"
-                                  type="button"
-                                />
-                                <ul
-                                  aria-labelledby="downshift-0-label"
-                                  class="sc-fzpmMD dhwOMv"
-                                  id="downshift-0-menu"
-                                  role="listbox"
-                                  tabindex="-1"
-                                />
-                              </div>
                               <div
-                                class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
+                                class="sc-AxiKw iDEwuj"
+                                height="8"
+                                width="8"
                               >
-                                <div
-                                  class="sc-AxiKw iDEwuj"
-                                  height="8"
-                                  width="8"
-                                >
-                                  <svg>
-                                    arrowdown.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  arrowdown.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -4906,7 +4861,7 @@ exports[`Registration should select network first and see select address input c
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -5136,21 +5091,17 @@ exports[`Registration should select network first and see select address input c
                       <fieldset
                         class="sc-AxirZ izhStr relative"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="senderAddress"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="senderAddress"
-                          >
-                            Sender
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Sender
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div
                           data-testid="sender-address"
                         >
@@ -5195,66 +5146,60 @@ exports[`Registration should select network first and see select address input c
                         class="sc-AxirZ izhStr relative h-20 mt-8"
                         data-testid="Registration__type"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="registrationType"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="registrationType"
-                          >
-                            Registration Type
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
-                        <div>
+                          Registration Type
                           <div
-                            class="relative w-full"
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <div
+                          class="relative w-full"
+                        >
+                          <input
+                            class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                            data-testid="select-list__input"
+                            name="registrationType"
+                            readonly=""
+                            type="text"
+                            value=""
+                          />
+                          <div
+                            class="relative w-full cursor-pointer"
                           >
-                            <input
-                              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                              data-testid="select-list__input"
-                              name="registrationType"
-                              readonly=""
-                              type="text"
-                              value=""
-                            />
+                            <div>
+                              <button
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-labelledby="downshift-2-label downshift-2-toggle-button"
+                                class="sc-fzoXWK dAGxql   "
+                                data-testid="select-list__toggle-button"
+                                id="downshift-2-toggle-button"
+                                type="button"
+                              />
+                              <ul
+                                aria-labelledby="downshift-2-label"
+                                class="sc-fzpmMD dhwOMv"
+                                id="downshift-2-menu"
+                                role="listbox"
+                                tabindex="-1"
+                              />
+                            </div>
                             <div
-                              class="relative w-full cursor-pointer"
+                              class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
                             >
-                              <div>
-                                <button
-                                  aria-expanded="false"
-                                  aria-haspopup="listbox"
-                                  aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                                  class="sc-fzoXWK dAGxql   "
-                                  data-testid="select-list__toggle-button"
-                                  id="downshift-2-toggle-button"
-                                  type="button"
-                                />
-                                <ul
-                                  aria-labelledby="downshift-2-label"
-                                  class="sc-fzpmMD dhwOMv"
-                                  id="downshift-2-menu"
-                                  role="listbox"
-                                  tabindex="-1"
-                                />
-                              </div>
                               <div
-                                class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
+                                class="sc-AxiKw iDEwuj"
+                                height="8"
+                                width="8"
                               >
-                                <div
-                                  class="sc-AxiKw iDEwuj"
-                                  height="8"
-                                  width="8"
-                                >
-                                  <svg>
-                                    arrowdown.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  arrowdown.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -5532,7 +5477,7 @@ exports[`Registration should select network with unavailable wallets and see sel
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -5756,21 +5701,17 @@ exports[`Registration should select network with unavailable wallets and see sel
                       <fieldset
                         class="sc-AxirZ izhStr relative"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="senderAddress"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="senderAddress"
-                          >
-                            Sender
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Sender
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div
                           data-testid="sender-address"
                         >
@@ -5816,66 +5757,60 @@ exports[`Registration should select network with unavailable wallets and see sel
                         class="sc-AxirZ izhStr relative h-20 mt-8"
                         data-testid="Registration__type"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="registrationType"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="registrationType"
-                          >
-                            Registration Type
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
-                        <div>
+                          Registration Type
                           <div
-                            class="relative w-full"
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <div
+                          class="relative w-full"
+                        >
+                          <input
+                            class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                            data-testid="select-list__input"
+                            name="registrationType"
+                            readonly=""
+                            type="text"
+                            value=""
+                          />
+                          <div
+                            class="relative w-full cursor-pointer"
                           >
-                            <input
-                              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                              data-testid="select-list__input"
-                              name="registrationType"
-                              readonly=""
-                              type="text"
-                              value=""
-                            />
+                            <div>
+                              <button
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-labelledby="downshift-6-label downshift-6-toggle-button"
+                                class="sc-fzoXWK dAGxql   "
+                                data-testid="select-list__toggle-button"
+                                id="downshift-6-toggle-button"
+                                type="button"
+                              />
+                              <ul
+                                aria-labelledby="downshift-6-label"
+                                class="sc-fzpmMD dhwOMv"
+                                id="downshift-6-menu"
+                                role="listbox"
+                                tabindex="-1"
+                              />
+                            </div>
                             <div
-                              class="relative w-full cursor-pointer"
+                              class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
                             >
-                              <div>
-                                <button
-                                  aria-expanded="false"
-                                  aria-haspopup="listbox"
-                                  aria-labelledby="downshift-6-label downshift-6-toggle-button"
-                                  class="sc-fzoXWK dAGxql   "
-                                  data-testid="select-list__toggle-button"
-                                  id="downshift-6-toggle-button"
-                                  type="button"
-                                />
-                                <ul
-                                  aria-labelledby="downshift-6-label"
-                                  class="sc-fzpmMD dhwOMv"
-                                  id="downshift-6-menu"
-                                  role="listbox"
-                                  tabindex="-1"
-                                />
-                              </div>
                               <div
-                                class="sc-fznZeY sc-fzqBZW iAaafO w-10 pointer-events-none text-theme-neutral"
+                                class="sc-AxiKw iDEwuj"
+                                height="8"
+                                width="8"
                               >
-                                <div
-                                  class="sc-AxiKw iDEwuj"
-                                  height="8"
-                                  width="8"
-                                >
-                                  <svg>
-                                    arrowdown.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  arrowdown.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -6153,7 +6088,7 @@ exports[`Registration should select registration type & show form 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -6215,7 +6150,7 @@ exports[`Registration should select registration type & show form 1`] = `
                         Make up a name and register your delegate online.
                       </div>
                       <div
-                        class="mt-4"
+                        class="mt-6"
                       >
                         <div
                           class="flex rounded-lg overflow-hidden bg-theme-warning"
@@ -6254,39 +6189,43 @@ exports[`Registration should select registration type & show form 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="mb-2 font-semibold text-theme-neutral"
+                                class="flex-1 space-y-2"
                               >
-                                <span
-                                  class="mr-1 text-sm"
-                                >
-                                  Sender
-                                </span>
                                 <div
-                                  class="sc-fzoLsD jBzTcb"
-                                  color="warning"
+                                  class="text-theme-neutral"
                                 >
                                   <span
-                                    class="text-sm"
+                                    class="mr-1 text-sm"
                                   >
-                                    Your address
+                                    Sender
+                                  </span>
+                                  <div
+                                    class="sc-fzoLsD jBzTcb"
+                                    color="warning"
+                                  >
+                                    <span
+                                      class="text-sm"
+                                    >
+                                      Your address
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                    data-testid="address__wallet-name"
+                                  >
+                                    ARK Wallet 1
+                                  </span>
+                                  <span
+                                    class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    D8rr7B…s6YUYD
                                   </span>
                                 </div>
-                              </div>
-                              <div
-                                class="inline-block truncate align-middle"
-                              >
-                                <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                  data-testid="address__wallet-name"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                                <span
-                                  class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  D8rr7B…s6YUYD
-                                </span>
                               </div>
                             </div>
                           </div>
@@ -6298,18 +6237,18 @@ exports[`Registration should select registration type & show form 1`] = `
                               class="w-full h-full"
                             >
                               <img
-                                alt="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                                title="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                               />
                             </div>
                           </div>
                         </div>
-                        <fieldset
-                          class="sc-AxirZ izhStr relative mt-8"
+                        <div
+                          class="relative mt-8 space-y-8"
                         >
-                          <div
-                            class="mb-2"
+                          <fieldset
+                            class="sc-AxirZ izhStr flex flex-col space-y-2"
                           >
                             <label
                               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -6322,90 +6261,84 @@ exports[`Registration should select registration type & show form 1`] = `
                                 data-testid="FormLabel__required"
                               />
                             </label>
-                          </div>
-                          <div
-                            class="sc-fzqNJr gmzgI"
-                          >
                             <input
                               class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
                               data-testid="Input__username"
                               name="username"
-                              placeholder=" "
-                              type="text"
                               value=""
                             />
-                          </div>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="fee"
+                          </fieldset>
+                          <fieldset
+                            class="sc-AxirZ izhStr flex flex-col space-y-2"
                           >
-                            Transaction Fee
+                            <label
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              data-testid="FormLabel"
+                              for="fee"
+                            >
+                              Transaction Fee
+                              <div
+                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                data-testid="FormLabel__required"
+                              />
+                            </label>
                             <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <div
-                            class="flex space-x-2"
-                            data-testid="InputFee"
-                          >
-                            <div
-                              class="flex-1"
+                              class="flex space-x-2"
+                              data-testid="InputFee"
                             >
                               <div
-                                class="sc-fzqNJr gmzgI"
+                                class="flex-1"
                               >
-                                <input
-                                  class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                  data-testid="InputCurrency"
-                                  name="fee"
-                                  type="text"
-                                  value="25"
-                                />
+                                <div
+                                  class="sc-fzqNJr gmzgI"
+                                >
+                                  <input
+                                    class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                    data-testid="InputCurrency"
+                                    name="fee"
+                                    type="text"
+                                    value="25"
+                                  />
+                                </div>
+                              </div>
+                              <div>
+                                <div
+                                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                                  data-testid="SelectionBar"
+                                  role="radiogroup"
+                                >
+                                  <button
+                                    aria-checked="true"
+                                    class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                    data-testid="SelectionBarOption"
+                                    role="radio"
+                                    type="button"
+                                  >
+                                    Min
+                                  </button>
+                                  <button
+                                    aria-checked="true"
+                                    class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                    data-testid="SelectionBarOption"
+                                    role="radio"
+                                    type="button"
+                                  >
+                                    Average
+                                  </button>
+                                  <button
+                                    aria-checked="true"
+                                    class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                    data-testid="SelectionBarOption"
+                                    role="radio"
+                                    type="button"
+                                  >
+                                    Max
+                                  </button>
+                                </div>
                               </div>
                             </div>
-                            <div>
-                              <div
-                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                data-testid="SelectionBar"
-                                role="radiogroup"
-                              >
-                                <button
-                                  aria-checked="true"
-                                  class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
-                                >
-                                  Min
-                                </button>
-                                <button
-                                  aria-checked="true"
-                                  class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
-                                >
-                                  Average
-                                </button>
-                                <button
-                                  aria-checked="true"
-                                  class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
-                                >
-                                  Max
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </fieldset>
+                          </fieldset>
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -6697,7 +6630,7 @@ exports[`Registration should should go back and forth & correctly register field
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -6759,7 +6692,7 @@ exports[`Registration should should go back and forth & correctly register field
                         Make up a name and register your delegate online.
                       </div>
                       <div
-                        class="mt-4"
+                        class="mt-6"
                       >
                         <div
                           class="flex rounded-lg overflow-hidden bg-theme-warning"
@@ -6798,39 +6731,43 @@ exports[`Registration should should go back and forth & correctly register field
                               class="font-semibold"
                             >
                               <div
-                                class="mb-2 font-semibold text-theme-neutral"
+                                class="flex-1 space-y-2"
                               >
-                                <span
-                                  class="mr-1 text-sm"
-                                >
-                                  Sender
-                                </span>
                                 <div
-                                  class="sc-fzoLsD jBzTcb"
-                                  color="warning"
+                                  class="text-theme-neutral"
                                 >
                                   <span
-                                    class="text-sm"
+                                    class="mr-1 text-sm"
                                   >
-                                    Your address
+                                    Sender
+                                  </span>
+                                  <div
+                                    class="sc-fzoLsD jBzTcb"
+                                    color="warning"
+                                  >
+                                    <span
+                                      class="text-sm"
+                                    >
+                                      Your address
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                    data-testid="address__wallet-name"
+                                  >
+                                    ARK Wallet 1
+                                  </span>
+                                  <span
+                                    class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    D8rr7B…s6YUYD
                                   </span>
                                 </div>
-                              </div>
-                              <div
-                                class="inline-block truncate align-middle"
-                              >
-                                <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                  data-testid="address__wallet-name"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                                <span
-                                  class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  D8rr7B…s6YUYD
-                                </span>
                               </div>
                             </div>
                           </div>
@@ -6842,18 +6779,18 @@ exports[`Registration should should go back and forth & correctly register field
                               class="w-full h-full"
                             >
                               <img
-                                alt="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                                title="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                               />
                             </div>
                           </div>
                         </div>
-                        <fieldset
-                          class="sc-AxirZ izhStr relative mt-8"
+                        <div
+                          class="relative mt-8 space-y-8"
                         >
-                          <div
-                            class="mb-2"
+                          <fieldset
+                            class="sc-AxirZ izhStr flex flex-col space-y-2"
                           >
                             <label
                               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -6866,90 +6803,84 @@ exports[`Registration should should go back and forth & correctly register field
                                 data-testid="FormLabel__required"
                               />
                             </label>
-                          </div>
-                          <div
-                            class="sc-fzqNJr gmzgI"
-                          >
                             <input
                               class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
                               data-testid="Input__username"
                               name="username"
-                              placeholder=" "
-                              type="text"
                               value="test_delegate"
                             />
-                          </div>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="fee"
+                          </fieldset>
+                          <fieldset
+                            class="sc-AxirZ izhStr flex flex-col space-y-2"
                           >
-                            Transaction Fee
+                            <label
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              data-testid="FormLabel"
+                              for="fee"
+                            >
+                              Transaction Fee
+                              <div
+                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                data-testid="FormLabel__required"
+                              />
+                            </label>
                             <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <div
-                            class="flex space-x-2"
-                            data-testid="InputFee"
-                          >
-                            <div
-                              class="flex-1"
+                              class="flex space-x-2"
+                              data-testid="InputFee"
                             >
                               <div
-                                class="sc-fzqNJr gmzgI"
+                                class="flex-1"
                               >
-                                <input
-                                  class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                  data-testid="InputCurrency"
-                                  name="fee"
-                                  type="text"
-                                  value="25"
-                                />
+                                <div
+                                  class="sc-fzqNJr gmzgI"
+                                >
+                                  <input
+                                    class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                    data-testid="InputCurrency"
+                                    name="fee"
+                                    type="text"
+                                    value="25"
+                                  />
+                                </div>
+                              </div>
+                              <div>
+                                <div
+                                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                                  data-testid="SelectionBar"
+                                  role="radiogroup"
+                                >
+                                  <button
+                                    aria-checked="true"
+                                    class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                    data-testid="SelectionBarOption"
+                                    role="radio"
+                                    type="button"
+                                  >
+                                    Min
+                                  </button>
+                                  <button
+                                    aria-checked="true"
+                                    class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                    data-testid="SelectionBarOption"
+                                    role="radio"
+                                    type="button"
+                                  >
+                                    Average
+                                  </button>
+                                  <button
+                                    aria-checked="true"
+                                    class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                    data-testid="SelectionBarOption"
+                                    role="radio"
+                                    type="button"
+                                  >
+                                    Max
+                                  </button>
+                                </div>
                               </div>
                             </div>
-                            <div>
-                              <div
-                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                data-testid="SelectionBar"
-                                role="radiogroup"
-                              >
-                                <button
-                                  aria-checked="true"
-                                  class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
-                                >
-                                  Min
-                                </button>
-                                <button
-                                  aria-checked="true"
-                                  class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
-                                >
-                                  Average
-                                </button>
-                                <button
-                                  aria-checked="true"
-                                  class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
-                                >
-                                  Max
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </fieldset>
+                          </fieldset>
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -7240,7 +7171,7 @@ exports[`Registration should succesfully register entity 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -7929,7 +7860,7 @@ exports[`Registration should validate description 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -8595,7 +8526,7 @@ exports[`Registration should validate display name 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -9259,7 +9190,7 @@ exports[`Registration should validate entity name 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -9923,7 +9854,7 @@ exports[`Registration should validate website url 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/wallets/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio

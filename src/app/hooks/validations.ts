@@ -1,4 +1,4 @@
-import { authentication, entityRegistration } from "domains/transaction/validations";
+import { authentication, delegateRegistration, entityRegistration } from "domains/transaction/validations";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -7,8 +7,9 @@ export const useValidation = () => {
 
 	return useMemo(
 		() => ({
-			entityRegistration: entityRegistration(t),
 			authentication: authentication(t),
+			delegateRegistration: delegateRegistration(t),
+			entityRegistration: entityRegistration(t),
 		}),
 		[t],
 	);
