@@ -248,4 +248,10 @@ export const translations: { [key: string]: any } = {
 		SUCCESS: "<bold>{{filePath}}</bold> was saved successfully",
 		ERROR: "Could not save file: {{error}}",
 	},
+	NOTIFICATIONS: {
+		ACTIONS: {
+			READ_CHANGELOG: "Read Changelog",
+			UPDATE: "Update",
+		},
+	},
 };

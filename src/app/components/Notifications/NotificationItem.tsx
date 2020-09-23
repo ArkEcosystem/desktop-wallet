@@ -1,11 +1,12 @@
 import { Icon } from "app/components/Icon";
 import React from "react";
 
+import { useActionNameMap } from "./hooks";
 import { NotificationItemProps } from "./models";
-import { mapNotificationAction } from "./utils";
 
 export const NotificationItem = ({ name, body, icon, image, action: actionName, onAction }: NotificationItemProps) => {
-	const action = mapNotificationAction(actionName as string);
+	const { mapActionName } = useActionNameMap();
+	const action = mapActionName(actionName as string);
 
 	return (
 		<tr data-testid="NotificationItem">
