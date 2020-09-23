@@ -108,7 +108,13 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`);
 	};
 
-	const handleRegistrationsButton = () => {
+	const handleRegistrationsButton = (newRegistration?: boolean) => {
+		if (newRegistration) {
+			return history.push(
+				`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-entity-registration`,
+			);
+		}
+
 		history.push(`/profiles/${activeProfile.id()}/registrations`);
 	};
 

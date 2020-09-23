@@ -79,6 +79,18 @@ describe("WalletVote", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should emit action on button (vote)", () => {
+		const onButtonClick = jest.fn();
+
+		const { getByTestId } = render(<WalletVote onButtonClick={onButtonClick} votes={[]} />);
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletVote__button"));
+		});
+
+		expect(onButtonClick).toHaveBeenCalled();
+	});
+
 	it("should emit action on button (unvote)", () => {
 		const onButtonClick = jest.fn();
 
@@ -100,6 +112,6 @@ describe("WalletVote", () => {
 			fireEvent.click(getByTestId("WalletVote__button"));
 		});
 
-		expect(onButtonClick).toHaveBeenCalledWith();
+		expect(onButtonClick).toHaveBeenCalled();
 	});
 });
