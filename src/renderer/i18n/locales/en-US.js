@@ -992,7 +992,35 @@ export default {
       BUSINESS_UPDATE: 'Business Update',
       BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration',
       BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation',
-      BRIDGECHAIN_UPDATE: 'Bridgechain Update'
+      BRIDGECHAIN_UPDATE: 'Bridgechain Update',
+      // Magistrate 2.0
+      BUSINESS_ENTITY_REGISTRATION: 'Business Registration',
+      BUSINESS_ENTITY_RESIGNATION: 'Business Resignation',
+      BUSINESS_ENTITY_UPDATE: 'Business Update',
+      PRODUCT_ENTITY_REGISTRATION: 'Product Registration',
+      PRODUCT_ENTITY_RESIGNATION: 'Product Resignation',
+      PRODUCT_ENTITY_UPDATE: 'Product Update',
+      PLUGIN_ENTITY_REGISTRATION: 'Plugin Registration',
+      PLUGIN_ENTITY_RESIGNATION: 'Plugin Resignation',
+      PLUGIN_ENTITY_UPDATE: 'Plugin Update',
+      MODULE_ENTITY_REGISTRATION: 'Module Registration',
+      MODULE_ENTITY_RESIGNATION: 'Module Resignation',
+      MODULE_ENTITY_UPDATE: 'Module Update',
+      DELEGATE_ENTITY_REGISTRATION: 'Delegate Registration (AIP36)',
+      DELEGATE_ENTITY_RESIGNATION: 'Delegate Resignation (AIP36)',
+      DELEGATE_ENTITY_UPDATE: 'Delegate Update',
+      // Magistrate 1.0
+      LEGACY_BUSINESS_REGISTRATION: 'Business Registration (Legacy)',
+      LEGACY_BUSINESS_RESIGNATION: 'Business Resignation (Legacy)',
+      LEGACY_BUSINESS_UPDATE: 'Business Update (Legacy)',
+      LEGACY_BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration (Legacy)',
+      LEGACY_BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation (Legacy)',
+      LEGACY_BRIDGECHAIN_UPDATE: 'Bridgechain Update (Legacy)',
+      // Unknown type
+      UNDEFINED_REGISTRATION: 'Undefined Registration',
+      UNDEFINED_RESIGNATION: 'Undefined Resignation',
+      UNDEFINED_UPDATE: 'Undefined Update',
+      UNDEFINED: 'Undefined'
     },
     ERROR: {
       VALIDATION: {
@@ -1004,13 +1032,7 @@ export default {
         MULTI_SIGNATURE: 'Multisignature transaction could not be created',
         MULTI_PAYMENT: 'Multipayment transaction could not be created',
         IPFS: 'IPFS transaction could not be created',
-        DELEGATE_RESIGNATION: 'Delegate Resignation transaction could not be created',
-        BUSINESS_REGISTRATION: 'Business Registration transaction could not be created',
-        BUSINESS_RESIGNATION: 'Business Resignation transaction could not be created',
-        BUSINESS_UPDATE: 'Business Update transaction could not be created',
-        BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration transaction could not be created',
-        BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation transaction could not be created',
-        BRIDGECHAIN_UPDATE: 'Bridgechain Update transaction could not be created'
+        DELEGATE_RESIGNATION: 'Delegate Resignation transaction could not be created'
       },
       TRANSFER: 'Your transaction could not be sent',
       SECOND_SIGNATURE: 'Second signature could not be registered',
@@ -1026,12 +1048,6 @@ export default {
       MULTI_PAYMENT: 'Multipayment could not be created',
       MULTI_PAYMENT_TO_SELF: 'Excluding {amount} sent to itself',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
-      BUSINESS_REGISTRATION: 'Business registration was unsuccessful',
-      BUSINESS_RESIGNATION: 'Business resignation was unsuccessful',
-      BUSINESS_UPDATE: 'Business update was unsuccessful',
-      BRIDGECHAIN_REGISTRATION: 'Bridgechain registration was unsuccessful',
-      BRIDGECHAIN_RESIGNATION: 'Bridgechain resignation was unsuccessful',
-      BRIDGECHAIN_UPDATE: 'Bridgechain update was unsuccessful',
       SAVE_OFFLINE: 'Failed to save transaction file: {error}',
       LOAD_FROM_FILE: 'Failed to load transaction file',
       LOAD_FROM_URI: 'Failed to load transaction URI',
@@ -1045,9 +1061,7 @@ export default {
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.',
-      DELEGATE_RESIGNATION: 'Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.',
-      BUSINESS_RESIGNATION: 'Keep in mind that you cannot restore your business after the resignation has been registered on the blockchain.',
-      BRIDGECHAIN_RESIGNATION: 'Keep in mind that you cannot restore your bridgechain after the resignation has been registered on the blockchain.'
+      DELEGATE_RESIGNATION: 'Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.'
     },
     INFO: {
       BROADCASTING: 'Your transaction is being broadcast to the network',
@@ -1067,12 +1081,6 @@ export default {
       HTLC_REFUND: 'Timelock Refund created successfully',
       MULTI_PAYMENT: 'Multipayment created successfully',
       DELEGATE_RESIGNATION: 'Delegate resignation was successful',
-      BUSINESS_REGISTRATION: 'Business Registration created successfully',
-      BUSINESS_RESIGNATION: 'Business Resignation created successfully',
-      BUSINESS_UPDATE: 'Business Update created successfully',
-      BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration created successfully',
-      BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation created successfully',
-      BRIDGECHAIN_UPDATE: 'Bridgechain Update created successfully',
       SAVE_OFFLINE: 'The transaction file was saved successfully in: {path}',
       LOAD_FROM_FILE: 'The transaction file was loaded successfully'
     },
@@ -1240,20 +1248,7 @@ export default {
       DELETE_CONTACT: 'Delete Contact',
       DELETE_WALLET: 'Delete Wallet',
       SHOW_PUBLIC_KEY: 'Show Public Key',
-      SHOW_ADDRESS: 'Show Address',
-
-      BUSINESS: {
-        REGISTER: 'Register Business',
-        RESIGN: 'Resign Business',
-        UPDATE: 'Update Business',
-        CANNOT_RESIGN: 'You must resign all bridgechains first'
-      },
-
-      BRIDGECHAIN: {
-        REGISTER: 'Register Bridgechain',
-        RESIGN: 'Resign Bridgechain',
-        UPDATE: 'Update Bridgechain'
-      }
+      SHOW_ADDRESS: 'Show Address'
     },
     PENDING_BALANCE: '{amount} including 1 unconfirmed transaction | {amount} including {n} unconfirmed transactions',
     SECOND_PASSPHRASE_ENABLED: 'Second Signature Enabled'
@@ -1341,39 +1336,6 @@ export default {
     HEADER: 'Multisignature',
     DESCRIPTION: 'Pending transactions requiring your signature',
     BUTTON_SET_PEER: 'Set Peer'
-  },
-
-  WALLET_BUSINESS: {
-    BUTTON_REGISTER_BRIDGECHAIN: 'Register Bridgechain',
-    HEADER: 'Bridgechains',
-    DESCRIPTION: 'All bridgechains registered for this business',
-    NAME: 'Name',
-    NAME_ERROR: 'No special characters or uppercase allowed',
-    WEBSITE: 'Website',
-    VAT: 'VAT',
-    REPOSITORY: 'Repository',
-    NO_TRANSACTIONS: 'This wallet has no bridgechains',
-    NOT_REGISTERED: 'This wallet is not registered as a business',
-    COLUMN: {
-      NAME: 'Name',
-      SEEDS: 'Seeds',
-      GENESIS_HASH: 'Genesis Hash',
-      REPOSITORY: 'Repository'
-    },
-    BRIDGECHAIN: {
-      NAME: 'Name',
-      SEED_NODES: 'Seed Nodes',
-      GENESIS_HASH: 'Genesis Hash',
-      BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
-      BRIDGECHAIN_ASSET_REPOSITORY: 'Bridgechain Asset Repository',
-      API_PORT: 'API Port',
-      NOT_REGISTERED: 'This bridgechain is not registered',
-      RESIGNED: 'Resigned',
-      BUTTON: {
-        RESIGN: 'Resign',
-        UPDATE: 'Update'
-      }
-    }
   },
 
   WALLET_GRID: {

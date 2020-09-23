@@ -4,6 +4,7 @@ import VTooltip from 'v-tooltip'
 import eventBus from '@/plugins/event-bus'
 import directives from '@/directives'
 import filters from '@/filters'
+import TransactionTypesMixin from '@/mixins/transaction-types'
 
 require('babel-plugin-require-context-hook/register')()
 
@@ -20,6 +21,7 @@ Vue.use(VTooltip, {
 })
 Vue.use(directives)
 Vue.use(filters)
+Vue.mixin(TransactionTypesMixin)
 Vue.config.ignoredElements = ['webview']
 
 VueTestUtils.config.mocks.$eventBus = eventBus

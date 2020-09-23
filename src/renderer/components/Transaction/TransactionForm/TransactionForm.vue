@@ -18,8 +18,6 @@ import TransactionFormMultiSignature from './TransactionFormMultiSignature'
 import TransactionFormTransfer from './TransactionFormTransfer'
 import TransactionFormVote from './TransactionFormVote'
 import TransactionFormSecondSignature from './TransactionFormSecondSignature'
-import TransactionFormBusiness from './TransactionFormBusiness'
-import TransactionFormBridgechain from './TransactionFormBridgechain'
 
 export default {
   name: 'TransactionForm',
@@ -32,9 +30,7 @@ export default {
     TransactionFormMultiSignature,
     TransactionFormTransfer,
     TransactionFormVote,
-    TransactionFormSecondSignature,
-    ...TransactionFormBusiness,
-    ...TransactionFormBridgechain
+    TransactionFormSecondSignature
   },
 
   props: {
