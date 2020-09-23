@@ -1,10 +1,20 @@
 import { Icon } from "app/components/Icon";
 import React from "react";
+import VisibilitySensor from "react-visibility-sensor";
 
 import { useActionNameMap } from "./hooks";
 import { NotificationItemProps } from "./models";
 
-export const NotificationItem = ({ name, body, icon, image, action: actionName, onAction }: NotificationItemProps) => {
+export const NotificationItem = ({
+	name,
+	body,
+	icon,
+	image,
+	action: actionName,
+	onAction,
+	onVisibilityChange,
+	containmentRef,
+}: NotificationItemProps) => {
 	const { mapActionName } = useActionNameMap();
 	const action = mapActionName(actionName as string);
 
@@ -24,8 +34,17 @@ export const NotificationItem = ({ name, body, icon, image, action: actionName, 
 				)}
 			</td>
 			<td>
-				<span className="font-bold text-md text-theme-neutral-600">{name}</span>
-				<span className="text-md text-theme-neutral-600"> {body}</span>
+				<VisibilitySensor
+					onChange={(isVisible) => onVisibilityChange?.(isVisible)}
+					scrollCheck={true}
+					delayedCall={true}
+					containment={containmentRef.current}
+				>
+					<div>
+						<span className="font-bold text-md text-theme-neutral-600">{name}</span>
+						<span className="text-md text-theme-neutral-600"> {body}</span>
+					</div>
+				</VisibilitySensor>
 			</td>
 			<td>
 				{action && action.label && (

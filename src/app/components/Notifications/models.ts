@@ -9,12 +9,15 @@ export type Action = {
 };
 
 export type NotificationItemProps = {
+	id: string;
 	body: string;
 	name: string;
 	action?: string;
 	icon: string;
 	image?: string;
 	onAction?: (name: string) => void;
+	onVisibilityChange?: (isVisible: boolean) => void;
+	containmentRef?: any;
 };
 
 export type NotificationsProps = {
