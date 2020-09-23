@@ -21,7 +21,7 @@ type WalletRegistrationsProps = {
 	isLoading?: boolean;
 	isMultiSignature?: boolean;
 	isSecondSignature?: boolean;
-	onButtonClick: () => void;
+	onButtonClick: (newRegistration?: boolean) => void;
 };
 
 export const WalletRegistrations = ({
@@ -63,12 +63,24 @@ export const WalletRegistrations = ({
 						<Circle size="lg" />
 					</div>
 
-					<div className="font-semibold text-theme-text">
-						<span className="mr-2">{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.EMPTY_DESCRIPTION")}</span>
+					<div className="flex justify-between flex-1">
+						<div className="flex flex-col mr-4 font-semibold text-theme-text">
+							<span className="mr-2">
+								{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.EMPTY_DESCRIPTION")}
+							</span>
 
-						<Link to="@TODO" isExternal showExternalIcon={false}>
-							{t("COMMON.LEARN_MORE")}
-						</Link>
+							<Link to="@TODO" isExternal showExternalIcon={false}>
+								{t("COMMON.LEARN_MORE")}
+							</Link>
+						</div>
+
+						<Button
+							variant="plain"
+							onClick={() => onButtonClick(true)}
+							data-testid="WalletRegistrations__button"
+						>
+							{t("COMMON.REGISTER")}
+						</Button>
 					</div>
 				</div>
 			);

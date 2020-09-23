@@ -644,7 +644,8 @@ describe("ImportWallet", () => {
 
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
-			const continueButton = getByTestId("ImportWallet__continue-button");
+			let continueButton = getByTestId("ImportWallet__continue-button");
+
 			expect(continueButton).toBeTruthy();
 			expect(continueButton).not.toHaveAttribute("disabled");
 
@@ -664,19 +665,20 @@ describe("ImportWallet", () => {
 
 			await fireEvent.input(addressInput, { target: { value: randomAddress } });
 
-			const goToWalletButton = getByTestId("ImportWallet__gotowallet-button");
-			expect(goToWalletButton).toBeTruthy();
+			continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
 			await waitFor(() => {
-				expect(goToWalletButton).not.toHaveAttribute("disabled");
+				expect(continueButton).not.toHaveAttribute("disabled");
 			});
 
-			await fireEvent.click(goToWalletButton);
+			await fireEvent.click(continueButton);
 
 			await waitFor(() => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 
-			const submitButton = getByTestId("ImportWallet__save-button");
+			const submitButton = getByTestId("ImportWallet__gotowallet-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
