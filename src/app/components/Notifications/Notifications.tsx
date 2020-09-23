@@ -6,6 +6,7 @@ import React, { useEffect, useMemo } from "react";
 
 import { NotificationItem, NotificationsSkeleton } from "./";
 import { NotificationItemProps, NotificationsProps } from "./models";
+import { NotificationsWrapper } from "./styles";
 
 export const Notifications = ({
 	transactions,
@@ -44,7 +45,7 @@ export const Notifications = ({
 	}
 
 	return (
-		<div>
+		<NotificationsWrapper>
 			{plugins.length > 0 && (
 				<>
 					<div className="mb-2 text-sm font-bold text-theme-neutral">{pluginsHeader}</div>
@@ -67,7 +68,7 @@ export const Notifications = ({
 					/>
 				</>
 			)}
-		</div>
+		</NotificationsWrapper>
 	);
 };
 
