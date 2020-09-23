@@ -142,9 +142,9 @@ export const ImportWallet = () => {
 									<Button
 										disabled={!formState.isValid || formState.isSubmitting}
 										type="submit"
-										data-testid="ImportWallet__gotowallet-button"
+										data-testid="ImportWallet__continue-button"
 									>
-										{t("COMMON.GO_TO_WALLET")}
+										{t("COMMON.CONTINUE")}
 									</Button>
 								)}
 
@@ -152,9 +152,9 @@ export const ImportWallet = () => {
 									<Button
 										disabled={formState.isSubmitting}
 										type="submit"
-										data-testid="ImportWallet__save-button"
+										data-testid="ImportWallet__gotowallet-button"
 									>
-										{t("COMMON.SAVE_FINISH")}
+										{t("COMMON.GO_TO_WALLET")}
 									</Button>
 								)}
 							</div>
