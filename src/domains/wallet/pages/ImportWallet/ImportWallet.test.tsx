@@ -598,7 +598,7 @@ describe("ImportWallet", () => {
 		});
 	});
 
-	it("should forget all wallets and import by address", async () => {
+	it("should empty all wallets and import by address", async () => {
 		profile.wallets().flush();
 
 		const history = createMemoryHistory();
