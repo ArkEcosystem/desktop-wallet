@@ -6,7 +6,6 @@ import { ReviewRating } from "app/components/ReviewRating";
 import { SearchBar } from "app/components/SearchBar";
 import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
-import { useActiveProfile } from "app/hooks/env";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -29,7 +28,6 @@ export const AddBlacklistPlugin = ({
 }: AddBlacklistPluginProps) => {
 	const [dataset, setDataset] = useState([]);
 	const { t } = useTranslation();
-	const activeProfile = useActiveProfile();
 
 	useEffect(() => {
 		const list = plugins.filter((plugin: any) => !blacklisted.find((id: any) => plugin.id === id));

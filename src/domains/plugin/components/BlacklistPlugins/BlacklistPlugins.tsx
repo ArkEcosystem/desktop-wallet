@@ -2,7 +2,6 @@ import { images } from "app/assets/images";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { Table, TableCell, TableRow } from "app/components/Table";
-import { useActiveProfile } from "app/hooks/env";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -18,7 +17,6 @@ const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
 export const BlacklistPlugins = ({ isOpen, plugins, onClose, blacklisted }: BlacklistPluginsProps) => {
 	const [blacklistedPlugins, setBlacklistedPlugins] = useState<any>([]);
-	const activeProfile = useActiveProfile();
 	const { t } = useTranslation();
 
 	useEffect(() => {
