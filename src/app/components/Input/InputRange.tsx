@@ -40,7 +40,6 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		const handleRange = (values: number[]) => {
 			const amount = convertValue(values[0].toString());
 
-			setValues([amount]);
 			onChange?.(amount);
 		};
 

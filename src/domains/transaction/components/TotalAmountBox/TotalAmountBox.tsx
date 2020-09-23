@@ -7,7 +7,7 @@ import tw from "twin.macro";
 
 type Props = {
 	amount: BigNumber;
-	fee: BigNumber;
+	fee: any;
 	ticker: string;
 };
 

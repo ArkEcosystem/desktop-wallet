@@ -89,7 +89,11 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			)}
 
 			<div className="mt-2">
-				<TotalAmountBox amount={amount} fee={BigNumber.make(fee)} ticker={wallet.currency()} />
+				<TotalAmountBox
+					amount={amount}
+					fee={fee?.value ? BigNumber.make(fee.value) : BigNumber.make(fee)}
+					ticker={wallet.currency()}
+				/>
 			</div>
 		</section>
 	);

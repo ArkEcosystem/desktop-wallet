@@ -71,7 +71,10 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				</TransactionDetail>
 
 				<div className="mt-2">
-					<TotalAmountBox fee={BigNumber.make(fee)} ticker={wallet.currency()} />
+					<TotalAmountBox
+						fee={fee?.value ? BigNumber.make(fee.value) : BigNumber.make(fee)}
+						ticker={wallet.currency()}
+					/>
 				</div>
 			</div>
 		</section>
