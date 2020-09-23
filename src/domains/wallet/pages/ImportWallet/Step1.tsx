@@ -9,8 +9,8 @@ import { useTranslation } from "react-i18next";
 
 export const FirstStep = () => {
 	const { getValues, register, setValue } = useFormContext();
-	const context = useEnvironmentContext();
-	const networks = useMemo(() => context.env.availableNetworks(), [context]);
+	const { env } = useEnvironmentContext();
+	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const selectedNetwork: NetworkData = getValues("network");
 
