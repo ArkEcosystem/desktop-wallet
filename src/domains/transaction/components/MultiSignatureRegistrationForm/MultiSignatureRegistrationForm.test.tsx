@@ -186,4 +186,63 @@ describe("MultiSignature Registration Form", () => {
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
 	});
+
+	it("should error if signing fails", async () => {
+		const form = {
+			clearErrors: jest.fn(),
+			getValues: () => ({
+				fee: "1",
+				mnemonic: "sample passphrase",
+				senderAddress: wallet.address(),
+				minParticipants: 2,
+				participants: [
+					{
+						address: wallet.address(),
+						publicKey: wallet.publicKey()!,
+						balance: wallet.balance().toString(),
+					},
+					{
+						address: wallet2.address(),
+						publicKey: wallet2.publicKey()!,
+						balance: wallet2.balance().toString(),
+					},
+				],
+			}),
+			setError: jest.fn(),
+			setValue: jest.fn(),
+		};
+		const handleNext = jest.fn();
+		const setTransaction = jest.fn();
+		const translations = jest.fn((translation) => translation);
+
+		const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => void 0);
+		const signMock = jest.spyOn(wallet.transaction(), "signMultiSignature").mockImplementation(() => {
+			throw new Error("Signing failed");
+		});
+		const transactionMock = createTransactionMock(wallet);
+
+		await MultiSignatureRegistrationForm.signTransaction({
+			env,
+			form,
+			handleNext,
+			profile,
+			setTransaction,
+			translations,
+		});
+
+		expect(consoleSpy).toHaveBeenCalledTimes(1);
+		expect(form.setValue).toHaveBeenCalledWith("mnemonic", "");
+		expect(form.setError).toHaveBeenCalledWith("mnemonic", {
+			type: "manual",
+			message: "TRANSACTION.INVALID_MNEMONIC",
+		});
+
+		expect(transactionMock).not.toHaveBeenCalled();
+		expect(setTransaction).not.toHaveBeenCalled();
+		expect(handleNext).not.toHaveBeenCalled();
+
+		consoleSpy.mockRestore();
+		signMock.mockRestore();
+		transactionMock.mockRestore();
+	});
 });
