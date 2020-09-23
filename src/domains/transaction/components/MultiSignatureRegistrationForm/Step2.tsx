@@ -13,18 +13,19 @@ import { useTranslation } from "react-i18next";
 
 import { RecipientList } from "../RecipientList";
 import { TotalAmountBox } from "../TotalAmountBox";
+import { Participant } from "./components/AddParticipant/AddParticipant";
 
 export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
-	const { getValues, unregister } = useFormContext();
-	const { fee, participants, minParticipants } = getValues();
+	const { unregister, watch } = useFormContext();
+	const { fee, participants, minParticipants } = watch();
 
 	useEffect(() => {
 		unregister("mnemonic");
 	}, [unregister]);
 
 	return (
-		<section data-testid="SecondSignature__review-step">
+		<section data-testid="MultiSignature__review-step">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">
 				{t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.DESCRIPTION")}
@@ -53,13 +54,17 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 				<TransactionDetail border={false} label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")}>
 					<RecipientList
-						recipients={participants.map((item: any) => ({ ...item, amount: item.balance }))}
+						variant="condensed"
+						recipients={participants.map((item: Participant) => ({
+							...item,
+							amount: BigNumber.make(item.balance),
+						}))}
 						assetSymbol={wallet.network().ticker()}
 						isEditable={false}
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")}>
+				<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}>
 					<div className="font-semibold flex items-center space-x-1">
 						<span>{minParticipants}</span>
 						<span className="text-theme-neutral">
@@ -82,7 +87,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				</TransactionDetail>
 
 				<div className="mt-2">
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} ticker={wallet.currency()} />
 				</div>
 			</div>
 		</section>

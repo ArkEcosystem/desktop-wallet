@@ -12,6 +12,7 @@ import { MultiSignatureRegistrationForm } from "./MultiSignatureRegistrationForm
 describe("MultiSignature Registration Form", () => {
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
+	let wallet2: ReadWriteWallet;
 	let fees: Contracts.TransactionFee;
 
 	beforeAll(async () => {
@@ -21,6 +22,7 @@ describe("MultiSignature Registration Form", () => {
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
+		wallet2 = profile.wallets().last();
 		fees = {
 			static: "0",
 			min: "0",
@@ -60,7 +62,7 @@ describe("MultiSignature Registration Form", () => {
 		const { result, waitForNextUpdate } = renderHook(() => useForm());
 		result.current.register("fee");
 
-		render(<Component form={result.current} onSubmit={() => void 0} />);
+		render(<Component form={result.current} />);
 		await waitForNextUpdate();
 
 		act(() => {
@@ -68,5 +70,35 @@ describe("MultiSignature Registration Form", () => {
 		});
 
 		await waitFor(() => expect(result.current.getValues("fee")).toBe("135400000"));
+	});
+
+	it("should render review step", () => {
+		const { result } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					fee: fees.avg,
+					participants: [
+						{
+							address: wallet.address(),
+							publicKey: wallet.publicKey()!,
+							balance: wallet.balance().toString(),
+						},
+						{
+							address: wallet2.address(),
+							publicKey: wallet2.publicKey()!,
+							balance: wallet2.balance().toString(),
+						},
+					],
+					minParticipants: 2,
+				},
+			}),
+		);
+
+		const { asFragment } = render(<Component activeTab={3} form={result.current} />);
+
+		expect(screen.getByText(transactionTranslations.MULTISIGNATURE.PARTICIPANTS)).toBeInTheDocument();
+		expect(screen.getByText(transactionTranslations.MULTISIGNATURE.MIN_SIGNATURES)).toBeInTheDocument();
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
