@@ -44,16 +44,22 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 						</div>
 					</div>
 
-					<div className="font-semibold text-theme-text">
-						<span className="mr-2">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}</span>
+					<div className="flex flex-1 justify-between">
+						<div className="flex flex-col font-semibold text-theme-text mr-4">
+							<span>{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}</span>
 
-						<Link
-							to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-							isExternal
-							showExternalIcon={false}
-						>
-							{t("COMMON.LEARN_MORE")}
-						</Link>
+							<Link
+								to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+								isExternal
+								showExternalIcon={false}
+							>
+								{t("COMMON.LEARN_MORE")}
+							</Link>
+						</div>
+
+						<Button variant="plain" onClick={() => onButtonClick()} data-testid="WalletVote__button">
+							{t("COMMON.VOTE")}
+						</Button>
 					</div>
 				</div>
 			);
