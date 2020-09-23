@@ -127,54 +127,6 @@ export default class WalletService {
   }
 
   /**
-   * Check if a wallet is a business wallet
-   * @param {Object} wallet
-   * @param {Boolean} ignoreResigned
-   * @returns {Boolean}
-   */
-  static isBusiness (wallet, ignoreResigned = true) {
-    if (!wallet.business) {
-      return false
-    }
-
-    if (ignoreResigned) {
-      return !!wallet.business.name
-    }
-
-    return !wallet.business.resigned
-  }
-
-  /**
-   * Check if a wallet can resign as a business
-   * @param {Object} wallet
-   * @returns {Boolean}
-   */
-  static canResignBusiness (wallet) {
-    if (!wallet.business) {
-      return false
-    }
-
-    return !wallet.business.resigned
-  }
-
-  /**
-   * Check if a wallet business has bridgechains
-   * @param {Object} wallet
-   * @returns {Boolean}
-   */
-  static async hasBridgechains (wallet, vm) {
-    try {
-      const bridegchains = await vm.$client.fetchBusinessBridgechains(wallet.address)
-
-      return bridegchains.data.filter(bridgechain => !bridgechain.isResigned).length > 0
-    } catch (error) {
-      //
-    }
-
-    return false
-  }
-
-  /**
    * Signs a message by using the given passphrase.
    * @param {String} message
    * @param {String} passphrase

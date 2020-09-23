@@ -261,16 +261,4 @@ export default class TransactionService {
 
     return validSignatures
   }
-
-  static isBridgechainRegistration (transaction) {
-    return !!(transaction.asset && transaction.asset.bridgechainRegistration)
-  }
-
-  static isBridgechainUpdate (transaction) {
-    return !!(transaction.asset && transaction.asset.bridgechainUpdate)
-  }
-
-  static isBridgechainResignation (transaction) {
-    return !!(transaction.asset && transaction.asset.bridgechainResignation)
-  }
 }

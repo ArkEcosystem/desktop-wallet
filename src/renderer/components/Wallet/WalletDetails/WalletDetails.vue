@@ -163,7 +163,6 @@ import { at } from 'lodash'
 import { ButtonGeneric } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
 import {
-  WalletBusiness,
   WalletDelegates,
   WalletExchange,
   WalletHeading,
@@ -176,7 +175,6 @@ import {
 } from '../'
 import { MenuTab, MenuTabItem } from '@/components/Menu'
 import SvgIcon from '@/components/SvgIcon'
-import WalletService from '@/services/wallet'
 
 export default {
   components: {
@@ -184,7 +182,6 @@ export default {
     MenuTab,
     MenuTabItem,
     TransactionModal,
-    WalletBusiness,
     WalletDelegates,
     WalletExchange,
     WalletHeading,
@@ -267,14 +264,6 @@ export default {
             component: 'WalletMultiSignature',
             componentName: 'WalletMultiSignature',
             text: this.$t('PAGES.WALLET.MULTI_SIGNATURE')
-          })
-        }
-
-        if (WalletService.isBusiness(this.currentWallet, false)) {
-          tabs.push({
-            component: 'WalletBusiness',
-            componentName: 'WalletBusiness',
-            text: this.$t('PAGES.WALLET.BUSINESS')
           })
         }
       }
