@@ -23,9 +23,9 @@ import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.j
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendTransfer } from "./SendTransfer";
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { FifthStep } from "./Step5";
+import { FormStep } from "./Step1";
+import { ReviewStep } from "./Step2";
+import { SummaryStep } from "./Step4";
 
 const fixtureProfileId = getDefaultProfileId();
 
@@ -68,12 +68,12 @@ beforeAll(async () => {
 });
 
 describe("Transaction Send", () => {
-	it("should render 1st step", async () => {
+	it("should render 1st step (form)", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
-				<FirstStep networks={[]} profile={profile} />
+				<FormStep networks={[]} profile={profile} />
 			</FormProvider>,
 		);
 
@@ -81,7 +81,7 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 2nd step", async () => {
+	it("should render 2nd step (review)", async () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
@@ -89,7 +89,7 @@ describe("Transaction Send", () => {
 					recipients: [
 						{
 							address: wallet.address(),
-							amount: (1 * 1e8).toFixed(0),
+							amount: BigNumber.make(1 * 1e8),
 						},
 					],
 					senderAddress: wallet.address(),
@@ -100,7 +100,7 @@ describe("Transaction Send", () => {
 
 		const { asFragment, container, getByTestId } = render(
 			<FormProvider {...form.current}>
-				<SecondStep wallet={wallet} />
+				<ReviewStep wallet={wallet} />
 			</FormProvider>,
 		);
 
@@ -112,15 +112,16 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 5th step", async () => {
+	it("should render 4th step (summary)", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const transaction = (await wallet.transactions()).findById(
 			"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
 		);
+
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
-				<FifthStep transaction={transaction!} />
+				<SummaryStep transaction={transaction!} senderWallet={wallet} />
 			</FormProvider>,
 		);
 
