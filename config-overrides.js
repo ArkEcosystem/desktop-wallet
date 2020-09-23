@@ -60,6 +60,7 @@ const whiteListedModules = [
 	"swiper",
 	"yup",
 	"extract-domain",
+	"react-visibility-sensor",
 ];
 
 const addNodeExternals = () =>
