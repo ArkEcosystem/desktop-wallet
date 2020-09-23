@@ -14,7 +14,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
@@ -53,32 +53,44 @@ const NotificationsDropdown = ({
 	transactions,
 	onAction,
 	profile,
-}: NotificationsProps) => (
-	<Dropdown
-		toggleContent={
-			<div className="overflow-hidden rounded-lg">
-				<Button
-					variant="transparent"
-					size="icon"
-					className="text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-					data-testid="navbar__buttons--notifications"
-				>
-					<Icon name="Notification" width={22} height={22} className="p-1" />
-				</Button>
+}: NotificationsProps) => {
+	// TODO: Remove ts-ignore when unread will return array type from sdk
+	/* @ts-ignore */
+	const hasUnread = useMemo(() => profile.notifications().unread().length > 0, [
+		profile.notifications().unread(),
+		profile,
+	]);
+
+	return (
+		<Dropdown
+			toggleContent={
+				<div className="overflow-hidden rounded-lg">
+					<Button
+						variant="transparent"
+						size="icon"
+						className="text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+						data-testid="navbar__buttons--notifications"
+					>
+						<Icon name="Notification" width={22} height={22} className="p-1" />
+						{hasUnread && (
+							<div className="absolute border-theme-danger-400 flex border-2 rounded-full justify-center w-3 h-3 items-center align-middle -mt-4 -ml-3" />
+						)}
+					</Button>
+				</div>
+			}
+		>
+			<div className="mt-2">
+				<Notifications
+					pluginsHeader={pluginsHeader}
+					transactionsHeader={transactionsHeader}
+					transactions={transactions}
+					onAction={onAction}
+					profile={profile}
+				/>
 			</div>
-		}
-	>
-		<div className="mt-2">
-			<Notifications
-				pluginsHeader={pluginsHeader}
-				transactionsHeader={transactionsHeader}
-				transactions={transactions}
-				onAction={onAction}
-				profile={profile}
-			/>
-		</div>
-	</Dropdown>
-);
+		</Dropdown>
+	);
+};
 
 type UserInfoProps = {
 	avatarImage?: string;
