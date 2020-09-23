@@ -1,5 +1,5 @@
-import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import React, { useState } from "react";
+import { act, fireEvent, render, waitFor } from "testing-library";
 
 import { InputCurrency } from "./InputCurrency";
 
@@ -23,7 +23,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith("12300000000");
+		expect(onChange).toHaveBeenCalledWith("123");
 	});
 
 	it("should accept a custom magnitude", () => {
@@ -39,7 +39,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith("12300");
+		expect(onChange).toHaveBeenCalledWith("123");
 	});
 
 	it("should not allow letters", () => {
@@ -55,7 +55,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith("123");
+		expect(onChange).toHaveBeenCalledWith("abc123");
 	});
 
 	it("should format with a default value", () => {
@@ -63,5 +63,37 @@ describe("InputCurrency", () => {
 		const input = getByTestId("InputCurrency");
 
 		expect(input).toHaveValue("0.01");
+	});
+
+	it("should fallback on convert value", () => {
+		const { getByTestId, rerender } = render(<InputCurrency value=".01" />);
+		const input = getByTestId("InputCurrency");
+
+		waitFor(() => expect(input).toHaveValue("0.01"));
+
+		rerender(<InputCurrency value={undefined} />);
+
+		waitFor(() => expect(input).toHaveValue("0"));
+	});
+
+	it("should work with a controlled value", () => {
+		const Component = () => {
+			const [value, setValue] = useState("0.04");
+			return <InputCurrency value={value} onChange={setValue} />;
+		};
+		const { getByTestId } = render(<Component />);
+		const input = getByTestId("InputCurrency");
+
+		expect(input).toHaveValue("0.04");
+
+		act(() => {
+			fireEvent.input(input, {
+				target: {
+					value: "1.23",
+				},
+			});
+		});
+
+		waitFor(() => expect(input).toHaveValue("1.23"));
 	});
 });

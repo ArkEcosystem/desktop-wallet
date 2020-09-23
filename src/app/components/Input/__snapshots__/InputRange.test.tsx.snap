@@ -9,7 +9,7 @@ exports[`InputRange should render with default value 1`] = `
       class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
       data-testid="InputCurrency"
       type="text"
-      value="5"
+      value=""
     />
     <div
       class="absolute bottom-0 w-full px-1"
@@ -30,12 +30,12 @@ exports[`InputRange should render with default value 1`] = `
             <div
               aria-valuemax="10"
               aria-valuemin="1"
-              aria-valuenow="5"
+              aria-valuenow="NaN"
               class="sc-AxiKw jKNfZI"
               data-testid="Range__thumb"
               draggable="false"
               role="slider"
-              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(NaNpx, 0px);"
               tabindex="0"
             />
           </div>

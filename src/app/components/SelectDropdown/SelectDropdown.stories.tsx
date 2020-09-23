@@ -3,7 +3,7 @@ import React from "react";
 import { Select } from "./SelectDropdown";
 
 export default {
-	title: "App / Components / Select",
+	title: "App / Components / Select Dropdown",
 };
 
 export const Dropdown = () => {

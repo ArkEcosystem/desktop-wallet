@@ -97,12 +97,12 @@ const SecondStep = ({ fees, wallet }: any) => {
 							min={fees.min}
 							avg={fees.avg}
 							max={fees.max}
-							defaultValue={fee || 0}
-							value={fee || 0}
+							defaultValue={fee}
+							value={fee}
 							step={0.01}
-							onChange={(value: any) =>
-								setValue("fee", value, { shouldValidate: true, shouldDirty: true })
-							}
+							onChange={(currency: { display: string; value: string }) => {
+								setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
+							}}
 						/>
 					</FormField>
 				</div>

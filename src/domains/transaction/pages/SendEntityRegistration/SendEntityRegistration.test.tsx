@@ -594,7 +594,7 @@ describe("Registration", () => {
 		});
 
 		const feeInput = getByTestId("InputCurrency");
-		await waitFor(() => expect(feeInput).toHaveValue("0"));
+		waitFor(() => expect(feeInput).toHaveValue("0"));
 	});
 
 	it("should validate entity name", async () => {

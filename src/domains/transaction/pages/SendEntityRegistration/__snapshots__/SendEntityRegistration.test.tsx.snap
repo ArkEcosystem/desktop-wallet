@@ -3646,7 +3646,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                   class="mt-1 text-lg font-semibold"
                                   data-testid="total-amount-box__transaction-fee"
                                 >
-                                  25 DARK
+                                  NaN DARK
                                 </span>
                               </div>
                             </div>
@@ -3680,7 +3680,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                               class="text-2xl font-bold"
                               data-testid="total-amount-box__total"
                             >
-                              25 DARK
+                              NaN DARK
                             </span>
                           </div>
                         </div>
@@ -6310,7 +6310,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                     data-testid="InputCurrency"
                                     name="fee"
                                     type="text"
-                                    value="25"
+                                    value="2500000000"
                                   />
                                 </div>
                               </div>
@@ -6321,7 +6321,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                   role="radiogroup"
                                 >
                                   <button
-                                    aria-checked="true"
+                                    aria-checked="false"
                                     class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                     data-testid="SelectionBarOption"
                                     role="radio"
@@ -6330,7 +6330,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                     Min
                                   </button>
                                   <button
-                                    aria-checked="true"
+                                    aria-checked="false"
                                     class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                     data-testid="SelectionBarOption"
                                     role="radio"
@@ -6339,7 +6339,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                     Average
                                   </button>
                                   <button
-                                    aria-checked="true"
+                                    aria-checked="false"
                                     class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                     data-testid="SelectionBarOption"
                                     role="radio"
