@@ -65,7 +65,7 @@ export const SecondStep = ({ senderWallet, fees }: StepProps) => {
 				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate?.username()}</TransactionDetail>
 
 				<div className="my-4">
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fees.static)} />
+					<TotalAmountBox fee={BigNumber.make(fees.static)} ticker={senderWallet.currency()} />
 				</div>
 			</div>
 		</div>

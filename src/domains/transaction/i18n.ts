@@ -38,6 +38,7 @@ export const translations: { [key: string]: any } = {
 	SMARTBRIDGE: "Smartbridge",
 	TIMESTAMP: "Timestamp",
 	TOTAL_AMOUNT: "Total Amount",
+	TRANSACTION_AMOUNT: "Transaction Amount",
 	TRANSACTION_FEE: "Transaction Fee",
 	TRANSACTION_TYPE: "Transaction Type",
 	TYPE: "Type",

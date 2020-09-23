@@ -160,7 +160,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			</TransactionDetail>
 
 			<div className="mt-2">
-				<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} />
+				<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);
