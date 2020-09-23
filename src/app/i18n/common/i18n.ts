@@ -193,9 +193,10 @@ export const translations: { [key: string]: any } = {
 	VALIDATION: {
 		REQUIRED: "This field is required",
 		OPTIONAL: "This field is optional",
-		FIELD_REQUIRED: "{{field}} is required",
-		FIELD_INVALID: "{{field}} is invalid",
+		FIELD_REQUIRED: "'{{field}}' is required",
+		FIELD_INVALID: "'{{field}}' is invalid",
 		IS_REQUIRED: "is required",
+		EXISTS: "'{{field}}' already exists",
 		MAX_LENGTH: "'{{field}}' should have at most {{maxLength}} characters",
 		MIN_LENGTH: "'{{field}}' should have at least {{minLength}} characters",
 		SUBJECT_INVALID: "The {{subject}} is invalid",

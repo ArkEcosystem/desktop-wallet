@@ -113,14 +113,14 @@ test.requestHooks(walletMock, sendMock)("should send IPFS successfully", async (
 	await goToProfile(t);
 
 	// Navigate to import wallet page
-	await t.click(Selector("button").withText("Import"));
-	await t.expect(Selector("[data-testid=header__title]").withText("Select a Network").exists).ok();
+	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
+	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
 	await t.click(Selector("#ImportWallet__network-item-1"));
-	await t.click(Selector("button").withText("Continue"));
+	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), "passphrase");
-	await t.click(Selector("button").withText("Go to Wallet"));
+	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), "Test Wallet");
-	await t.click(Selector("button").withText("Save & Finish"));
+	await t.click(Selector("button").withExactText(translations.COMMON.GO_TO_WALLET));
 
 	// Navigate to wallet details page
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();

@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
 import { Spinner } from "app/components/Spinner";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { SignMessage } from "domains/wallet/components/SignMessage";
@@ -28,6 +29,8 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
+
+	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 
 	const { t } = useTranslation();
 
@@ -195,6 +198,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 								exchangeCurrency={exchangeCurrency}
 								isLoading={isLoading}
 								skeletonRowsLimit={txSkeletonRowsLimit}
+								onRowClick={(row) => setTransactionModalItem(row)}
 							/>
 							{hasMore && (
 								<Button
@@ -245,6 +249,14 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 				profileId={activeProfile.id()}
 				signatory={activeWallet.publicKey()}
 			/>
+
+			{transactionModalItem && (
+				<TransactionDetailModal
+					isOpen={!!transactionModalItem}
+					transactionItem={transactionModalItem}
+					onClose={() => setTransactionModalItem(undefined)}
+				/>
+			)}
 		</>
 	);
 };
