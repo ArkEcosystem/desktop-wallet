@@ -337,6 +337,54 @@ describe("Settings", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
+	it("should add a plugin to the blacklist", async () => {
+		const { container, asFragment, getByTestId, getAllByTestId, getAllByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+		act(() => {
+			fireEvent.click(getByTestId("side-menu__item--Plugins"));
+		});
+
+		// Open `AddBlacklistPlugin` modal
+		act(() => {
+			fireEvent.click(getByTestId("plugins__add-plugin"));
+		});
+		expect(getByTestId("modal__inner")).toHaveTextContent(pluginTranslations.MODAL_ADD_BLACKLIST_PLUGIN.TITLE);
+
+		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(8));
+
+		const addButton = getAllByText("Add")[0];
+		waitFor(() => expect(addButton).toBeTruthy());
+
+		act(() => fireEvent.click(addButton));
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		// Open `BlacklistPlugins` modal
+		act(() => {
+			fireEvent.click(getByTestId("plugins__open-list"));
+		});
+		expect(getByTestId("modal__inner")).toHaveTextContent(pluginTranslations.MODAL_BLACKLIST_PLUGINS.TITLE);
+
+		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
+	});
+
 	it("should render password settings", async () => {
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
@@ -412,7 +460,7 @@ describe("Settings", () => {
 
 		const currentPasswordInput = "Password-settings__input--currentPassword";
 
-		expect(getByTestId(currentPasswordInput)).toBeTruthy();
+		waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
 
 		fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "password" } });
 		fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "new password" } });
@@ -451,7 +499,7 @@ describe("Settings", () => {
 
 		const currentPasswordInput = "Password-settings__input--currentPassword";
 
-		expect(getByTestId(currentPasswordInput)).toBeTruthy();
+		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
 
 		fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "wrong!" } });
 		fireEvent.input(getByTestId("Password-settings__input--password_1"), {
