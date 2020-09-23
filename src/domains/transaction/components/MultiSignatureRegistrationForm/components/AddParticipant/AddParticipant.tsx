@@ -1,4 +1,5 @@
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Spinner } from "app/components/Spinner";
@@ -143,7 +144,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 			<FormField name="participants">
 				<FormLabel label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")} />
 				<RecipientList
-					recipients={participants.map((item) => ({ ...item, amount: item.balance }))}
+					recipients={participants.map((item) => ({ ...item, amount: BigNumber.make(item.balance) }))}
 					assetSymbol={wallet.network().ticker()}
 					onRemove={removeParticipant}
 					isEditable
