@@ -11,7 +11,7 @@ import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -32,6 +32,11 @@ const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 
 const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManagerHomeProps) => {
 	const activeProfile = useActiveProfile();
+	const [blacklist, setBlacklist] = useState<any>([]);
+
+	useEffect(() => {
+		setBlacklist(Array.from(activeProfile.plugins().blacklist()));
+	}, [activeProfile]);
 
 	const { t } = useTranslation();
 	const history = useHistory();
@@ -67,6 +72,9 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 		);
 	}
 
+	const pluginList = plugins.filter((plugin: any) => !blacklist.find((id: any) => plugin.id === id));
+
+	console.log({ pluginList, blacklist });
 	return (
 		<div>
 			<div data-testid="PluginManager__home__featured">
@@ -85,14 +93,14 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 
 				{viewType === "grid" && (
 					<PluginGrid
-						plugins={plugins}
+						plugins={pluginList}
 						onSelect={handleSelectPlugin}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
 				)}
 			</div>
 
@@ -110,14 +118,14 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 				</div>
 				{viewType === "grid" && (
 					<PluginGrid
-						plugins={plugins}
+						plugins={pluginList}
 						onSelect={handleSelectPlugin}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
 				)}
 			</div>
 
@@ -135,14 +143,14 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 				</div>
 				{viewType === "grid" && (
 					<PluginGrid
-						plugins={plugins}
+						plugins={pluginList}
 						onSelect={handleSelectPlugin}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
 				)}
 			</div>
 		</div>
@@ -157,6 +165,12 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [installPlugin, setInstallPlugin] = useState(false);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
+
+	const [blacklist, setBlacklist] = useState<any>([]);
+
+	useEffect(() => {
+		setBlacklist(Array.from(activeProfile.plugins().blacklist()));
+	}, [activeProfile]);
 
 	const handleSelectPlugin = (pluginId: string) =>
 		history.push(`/profiles/${activeProfile.id()}/plugins/${pluginId}`);
@@ -188,6 +202,8 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 			},
 		);
 	}
+
+	const pluginList = plugins.filter((plugin: any) => !blacklist.find((id: any) => plugin.id === id));
 
 	return (
 		<>
@@ -252,7 +268,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
 								</h2>
 								<PluginGrid
-									plugins={plugins}
+									plugins={pluginList}
 									onSelect={handleSelectPlugin}
 									onDelete={() => console.log("delete")}
 									className="mt-6"
@@ -262,7 +278,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 						{currentView !== "home" && viewType === "list" && (
 							<PluginList
-								plugins={plugins}
+								plugins={pluginList}
 								onInstall={() => setInstallPlugin(true)}
 								onDelete={() => console.log("delete")}
 								className="mt-6"
