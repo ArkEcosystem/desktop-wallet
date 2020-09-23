@@ -82,7 +82,7 @@ export const SecondStep = ({
 				)}
 
 				<div className="my-4">
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} />
+					<TotalAmountBox fee={BigNumber.make(fee)} ticker={wallet.currency()} />
 				</div>
 			</div>
 		</section>

@@ -5,32 +5,39 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export type InputFeeProps = {
-	defaultValue: string;
-	value?: string;
+	defaultValue: any;
+	value?: any;
 	min: string;
 	avg: string;
 	max: string;
 	step: number;
-	onChange?: (value: string) => void;
+	onChange?: (value: { display: string; value: string }) => void;
 };
 
 // TODO: Remove defaultValue?
 export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }: InputFeeProps) => {
 	const { t } = useTranslation();
 
-	const minHuman = BigNumber.make(min).divide(1e8).toNumber();
-	const maxHuman = BigNumber.make(max).divide(1e8).toNumber();
+	const minHuman = BigNumber.make(min).divide(1e8).toString();
+	const maxHuman = BigNumber.make(max).divide(1e8).toString();
+	const avgHuman = BigNumber.make(avg).divide(1e8).toString();
 
-	const [fee, setFee] = useState<string>(defaultValue);
+	const [fee, setFee] = useState<any>(avg);
 
-	const handleFeeChange = (fee: any) => {
-		onChange?.(fee);
-		setFee(fee);
+	const handleFeeChange = (currency: { display: string; value: string }) => {
+		setFee(currency);
+		onChange?.(currency);
 	};
 
 	useEffect(() => {
+		if (!value) {
+			setFee(BigNumber.make("0").times(1e8).toString());
+		}
+
+		if (value?.display) return;
+
 		if (value && value !== fee) {
-			setFee(value);
+			setFee(BigNumber.make(value).divide(1e8).toString());
 		}
 	}, [fee, value]);
 
@@ -39,7 +46,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 			<div className="flex-1">
 				<InputRange
 					name="fee"
-					defaultValue={fee}
+					avg={avg}
 					value={fee}
 					min={minHuman}
 					max={maxHuman}
@@ -50,25 +57,25 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 			<div>
 				<SelectionBar>
 					<SelectionBarOption
-						value={min}
-						isValueChecked={() => fee === min}
-						setCheckedValue={handleFeeChange}
+						value={minHuman}
+						isValueChecked={() => (fee?.display ? fee.display === minHuman : fee === minHuman)}
+						setCheckedValue={() => handleFeeChange({ display: minHuman, value: min })}
 					>
 						{t("TRANSACTION.FEES.MIN")}
 					</SelectionBarOption>
 
 					<SelectionBarOption
-						value={avg}
-						isValueChecked={() => fee === avg}
-						setCheckedValue={handleFeeChange}
+						value={avgHuman}
+						isValueChecked={() => (fee?.display ? fee.display === avgHuman : fee === avgHuman)}
+						setCheckedValue={() => handleFeeChange({ display: avgHuman, value: avg })}
 					>
 						{t("TRANSACTION.FEES.AVERAGE")}
 					</SelectionBarOption>
 
 					<SelectionBarOption
-						value={max}
-						isValueChecked={() => fee === max}
-						setCheckedValue={handleFeeChange}
+						value={maxHuman}
+						isValueChecked={() => (fee?.display ? fee.display === maxHuman : fee === maxHuman)}
+						setCheckedValue={() => handleFeeChange({ display: maxHuman, value: max })}
 					>
 						{t("TRANSACTION.FEES.MAX")}
 					</SelectionBarOption>
