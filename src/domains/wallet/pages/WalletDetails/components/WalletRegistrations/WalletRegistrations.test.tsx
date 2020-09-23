@@ -44,11 +44,21 @@ describe("WalletRegistrations", () => {
 		entities = [businessEntity, pluginEntity, developerEntity];
 	});
 
-	it("should emit actions", () => {
+	it("should emit actions (register)", () => {
+		const onButtonClick = jest.fn();
+
+		const { getByTestId } = render(<WalletRegistrations entities={[]} onButtonClick={onButtonClick} />);
+
+		fireEvent.click(getByTestId("WalletRegistrations__button"));
+
+		expect(onButtonClick).toHaveBeenCalledWith(true);
+	});
+
+	it("should emit actions (show all)", () => {
 		const onButtonClick = jest.fn();
 
 		const { getByTestId } = render(
-			<WalletRegistrations delegate={delegate} entities={[]} onButtonClick={onButtonClick} />,
+			<WalletRegistrations delegate={delegate} entities={entities} onButtonClick={onButtonClick} />,
 		);
 
 		fireEvent.click(getByTestId("WalletRegistrations__button"));
