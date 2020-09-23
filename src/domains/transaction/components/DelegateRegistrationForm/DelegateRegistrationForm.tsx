@@ -43,10 +43,9 @@ const SecondStep = ({ fees, wallet }: any) => {
 		if (!username) {
 			register("username", {
 				...delegateRegistration.username(),
-				validate: (value) => (
-						!delegates.some((delegate: ReadOnlyWallet) => delegate.username() === value) ||
-						t("COMMON.VALIDATION.EXISTS", { field: t("COMMON.DELEGATE_NAME") }).toString()
-					),
+				validate: (value) =>
+					!delegates.some((delegate: ReadOnlyWallet) => delegate.username() === value) ||
+					t("COMMON.VALIDATION.EXISTS", { field: t("COMMON.DELEGATE_NAME") }).toString(),
 			});
 		}
 	}, [delegateRegistration, delegates, register, username, t]);
