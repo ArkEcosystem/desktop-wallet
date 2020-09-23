@@ -203,6 +203,11 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Multisignature Registration",
 			DESCRIPTION: "Register a new multisignature address by adding participants.",
 		},
+		REVIEW_STEP: {
+			TITLE: "Transaction Review",
+			DESCRIPTION: "Review your multisignature registration details",
+			TYPE: "Multisignature Registration",
+		},
 	},
 
 	PAGE_RESIGN_REGISTRATION: {

@@ -23,13 +23,13 @@ export const FormStep = ({
 	const { participants, fee, minParticipants } = getValues();
 
 	useEffect(() => {
-		register("participants", { required: true, minLength: 2 });
+		register("participants", { required: true, validate: (value) => Array.isArray(value) && value.length > 1 });
 		register("minParticipants", { required: true, min: 2, max: Math.max(2, participants?.length || 0) });
 	}, [register, participants]);
 
 	useEffect(() => {
 		if (minParticipants === undefined) {
-			setValue("minParticipants", 2);
+			setValue("minParticipants", 2, { shouldValidate: true, shouldDirty: true });
 		}
 	}, [setValue, minParticipants]);
 
@@ -56,7 +56,7 @@ export const FormStep = ({
 			<FormField name="minParticipants" className="mt-8">
 				<FormLabel>{t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}</FormLabel>
 				<InputGroup>
-					<Input type="number" value={minParticipants} onChange={handleInput} />
+					<Input type="number" value={minParticipants || 0} onChange={handleInput} />
 					<InputAddonEnd className="pointer-events-none text-theme-neutral-light pr-4">
 						{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
 							length: Math.max(2, participants?.length || 0),

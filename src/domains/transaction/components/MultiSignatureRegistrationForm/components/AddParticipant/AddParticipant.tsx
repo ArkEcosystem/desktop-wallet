@@ -140,12 +140,15 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 				</Button>
 			</FormProvider>
 
-			<RecipientList
-				recipients={participants.map((item) => ({ ...item, amount: item.balance }))}
-				assetSymbol={wallet.network().ticker()}
-				onRemove={removeParticipant}
-				isEditable
-			/>
+			<FormField name="participants">
+				<FormLabel label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")} />
+				<RecipientList
+					recipients={participants.map((item) => ({ ...item, amount: item.balance }))}
+					assetSymbol={wallet.network().ticker()}
+					onRemove={removeParticipant}
+					isEditable
+				/>
+			</FormField>
 		</div>
 	);
 };

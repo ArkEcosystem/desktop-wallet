@@ -11,8 +11,8 @@ import {
 import React from "react";
 
 import { Participant } from "./components/AddParticipant/AddParticipant";
-import { FormStep } from "./FormStep";
-import { ReviewStep } from "./ReviewStep";
+import { FormStep } from "./Step1";
+import { ReviewStep } from "./Step2";
 
 const StepsComponent = ({ activeTab, fees, wallet, profile }: SendEntityRegistrationComponent) => (
 	<Tabs activeId={activeTab}>
@@ -20,7 +20,7 @@ const StepsComponent = ({ activeTab, fees, wallet, profile }: SendEntityRegistra
 			<FormStep fees={fees} wallet={wallet} profile={profile} />
 		</TabPanel>
 		<TabPanel tabId={3}>
-			<ReviewStep />
+			<ReviewStep wallet={wallet} />
 		</TabPanel>
 	</Tabs>
 );
@@ -31,7 +31,7 @@ const transactionDetails = ({ translations }: SendEntityRegistrationDetailsOptio
 		extra={
 			<div>
 				<Circle className="border-black bg-theme-background" size="lg">
-					<Icon name="Key" width={20} height={20} />
+					<Icon name="Multisig" width={20} height={20} />
 				</Circle>
 			</div>
 		}
