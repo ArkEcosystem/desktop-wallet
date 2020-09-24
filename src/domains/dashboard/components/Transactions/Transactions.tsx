@@ -5,7 +5,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
-	title: string;
+	title?: string;
 	transactions: ExtendedTransactionData[];
 	exchangeCurrency?: string;
 	fetchMoreAction?: Function;
@@ -27,7 +27,7 @@ export const Transactions = ({
 
 	return (
 		<div className="bg-white">
-			<div className="text-4xl font-bold">{title}</div>
+			{title && <div className="text-4xl font-bold">{title}</div>}
 			<div className="pt-8">
 				<TransactionTable
 					transactions={transactions}

@@ -137,6 +137,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 				{showTransactions && (
 					<Section data-testid="dashboard__transactions-view">
 						<Transactions
+							title={t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}
 							transactions={allTransactions}
 							exchangeCurrency={exchangeCurrency}
 							fetchMoreAction={fetchTransactions}
