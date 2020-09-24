@@ -23,14 +23,12 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 	({ min, max, step, avg, magnitude, onChange, value }: Props, ref) => {
 		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
 		const [values, setValues] = React.useState<any>([BigNumber.make(avg).divide(1e8)]);
-		const maxValues = convertValue(max);
-		const maxValue = BigNumber.make(maxValues.value).divide(1e8);
 
 		const handleInput = (currency: { display: string; value: string }) => {
 			let value = currency;
 
-			if (Number(value) > maxValue.toNumber()) {
-				value = convertValue(maxValue.toString());
+			if (Number(value.display) > Number(max)) {
+				value = convertValue(max.toString());
 			}
 
 			setValues([value]);
@@ -44,12 +42,12 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		};
 
 		let trackBackgroundMinValue = values[0];
-		let rangeValues = [Math.min(values[0], maxValue.toNumber())];
+		let rangeValues = [Math.min(values[0], Number(max))];
 
 		if (values[0]?.value) {
 			const rangeValue = BigNumber.make(values[0].value).divide(1e8);
 			trackBackgroundMinValue = rangeValue;
-			rangeValues = [Math.min(rangeValue.toNumber(), maxValue.toNumber())];
+			rangeValues = [Math.min(rangeValue.toNumber(), Number(max))];
 		}
 
 		useEffect(() => {
