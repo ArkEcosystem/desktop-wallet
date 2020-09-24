@@ -3,6 +3,7 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Spinner } from "app/components/Spinner";
+import { toasts } from "app/services";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import React, { useCallback, useEffect, useRef, useState } from "react";
@@ -61,6 +62,10 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 	};
 
 	const removeParticipant = (address: string) => {
+		if (address === wallet.address()) {
+			toasts.error(t("TRANSACTION.MULTISIGNATURE.ERROR.REMOVE_OWN_ADDRESS"));
+			return;
+		}
 		setParticipants((prev) => prev.filter((wallet) => wallet.address !== address));
 	};
 

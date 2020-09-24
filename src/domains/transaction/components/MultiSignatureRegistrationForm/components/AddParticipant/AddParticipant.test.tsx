@@ -11,10 +11,12 @@ import { AddParticipant } from "./AddParticipant";
 describe("Add Participant", () => {
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
+	let wallet2: ReadWriteWallet;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
+		wallet2 = profile.wallets().last();
 	});
 
 	it("should fail to find", async () => {
@@ -198,7 +200,6 @@ describe("Add Participant", () => {
 	});
 
 	it("should render custom participants", () => {
-		const wallet2 = profile.wallets().last();
 		const { asFragment } = render(
 			<AddParticipant
 				profile={profile}
@@ -218,7 +219,43 @@ describe("Add Participant", () => {
 
 	it("should remove participant", async () => {
 		const onChange = jest.fn();
-		render(<AddParticipant profile={profile} wallet={wallet} onChange={onChange} />);
+		render(
+			<AddParticipant
+				profile={profile}
+				wallet={wallet}
+				onChange={onChange}
+				defaultParticipants={[
+					{
+						address: wallet.address(),
+						publicKey: wallet.publicKey()!,
+						balance: wallet.balance().toString(),
+					},
+					{
+						address: wallet2.address(),
+						publicKey: wallet2.publicKey()!,
+						balance: wallet2.balance().toString(),
+					},
+				]}
+			/>,
+		);
+
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(2));
+
+		act(() => {
+			fireEvent.click(screen.getAllByTestId("recipient-list__remove-recipient")[1]);
+		});
+
+		expect(onChange).toHaveBeenCalledWith([
+			{
+				address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+				balance: "3375089801",
+				publicKey: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+			},
+		]);
+	});
+
+	it("should not remove own address", async () => {
+		render(<AddParticipant profile={profile} wallet={wallet} />);
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(1));
 
@@ -226,6 +263,6 @@ describe("Add Participant", () => {
 			fireEvent.click(screen.getByTestId("recipient-list__remove-recipient"));
 		});
 
-		expect(onChange).toHaveBeenNthCalledWith(3, []);
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(1));
 	});
 });

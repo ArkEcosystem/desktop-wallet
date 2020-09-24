@@ -33,9 +33,9 @@ export const FormStep = ({
 		}
 	}, [setValue, minParticipants]);
 
-	const handleParticipant = useCallback(
+	const handleParticipants = useCallback(
 		(values: Participant[]) => {
-			setValue("participants", values, { shouldValidate: true });
+			setValue("participants", values, { shouldValidate: values.length > 1 });
 		},
 		[setValue],
 	);
@@ -49,7 +49,7 @@ export const FormStep = ({
 			<AddParticipant
 				profile={profile}
 				wallet={wallet}
-				onChange={handleParticipant}
+				onChange={handleParticipants}
 				defaultParticipants={participants}
 			/>
 

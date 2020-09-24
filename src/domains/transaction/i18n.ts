@@ -63,6 +63,7 @@ export const translations: { [key: string]: any } = {
 			ADDRESS_ALREADY_ADDED: "The address is already in the list",
 			ADDRESS_NOT_FOUND: "The address could not be found",
 			PUBLIC_KEY_NOT_FOUND: "The public key could not be found",
+			REMOVE_OWN_ADDRESS: "Cannot remove your own address",
 		},
 	},
 
