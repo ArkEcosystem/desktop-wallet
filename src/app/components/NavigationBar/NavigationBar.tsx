@@ -1,4 +1,4 @@
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData,Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
 import { AvatarWrapper } from "app/components/Avatar";
@@ -47,19 +47,22 @@ const NavWrapper = styled.nav<{ noShadow?: boolean }>`
 	${({ noShadow }) => !noShadow && tw`shadow-md`};
 `;
 
-const NotificationsDropdown = ({
-	pluginsHeader,
-	transactionsHeader,
-	transactions,
-	onAction,
-	profile,
-}: NotificationsProps) => {
+const NotificationsDropdown = ({ pluginsHeader, transactionsHeader, onAction, profile }: NotificationsProps) => {
+	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
 	// TODO: Remove ts-ignore when unread will return array type from sdk
 	/* @ts-ignore */
 	const hasUnread = useMemo(() => profile.notifications().unread().length > 0, [
 		profile.notifications().unread(),
 		profile,
 	]);
+
+	useEffect(() => {
+		const fetchTransactions = async () => {
+			const txs = await profile.transactionAggregate().transactions();
+			setTransactions(txs.items());
+		};
+		fetchTransactions();
+	}, [profile]);
 
 	return (
 		<Dropdown
@@ -321,7 +324,6 @@ NavigationBar.defaultProps = {
 	variant: "full",
 	notifications: {
 		transactionsHeader: "Transactions",
-		transactions: [],
 		pluginsHeader: "Plugins",
 	},
 	menu: [
