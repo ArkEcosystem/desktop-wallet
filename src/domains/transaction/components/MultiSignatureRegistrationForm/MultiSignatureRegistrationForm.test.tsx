@@ -76,7 +76,7 @@ describe("MultiSignature Registration Form", () => {
 		const { result, waitForNextUpdate } = renderHook(() => useForm());
 		result.current.register("fee");
 
-		render(<Component form={result.current} />);
+		const { rerender } = render(<Component form={result.current} />);
 		await waitForNextUpdate();
 
 		act(() => {
@@ -86,13 +86,18 @@ describe("MultiSignature Registration Form", () => {
 		act(() => {
 			fireEvent.input(screen.getByTestId("MultiSignatureRegistrationForm__min-participants"), {
 				target: {
-					value: 2,
+					value: 3,
 				},
 			});
 		});
 
+		await waitForNextUpdate();
 		await waitFor(() => expect(result.current.getValues("fee")).toBe("135400000"));
-		await waitFor(() => expect(result.current.getValues("minParticipants")).toBe("2"));
+		await waitFor(() => expect(result.current.getValues("minParticipants")).toBe("3"));
+
+		rerender(<Component form={result.current} />);
+
+		await waitFor(() => expect(result.current.getValues("minParticipants")).toBe("3"));
 	});
 
 	it("should render review step", () => {
