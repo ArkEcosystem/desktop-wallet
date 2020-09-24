@@ -12,6 +12,8 @@ type TransactionsProps = {
 	onRowClick?: (row: ExtendedTransactionData) => void;
 	emptyText?: string;
 	isLoading?: boolean;
+	hideHeader?: boolean;
+	isCompact?: boolean;
 };
 
 export const Transactions = ({
@@ -21,20 +23,24 @@ export const Transactions = ({
 	emptyText,
 	fetchMoreAction,
 	isLoading,
+	isCompact,
+	hideHeader,
 	onRowClick,
 }: TransactionsProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<div className="bg-white">
-			{title && <div className="text-4xl font-bold">{title}</div>}
-			<div className="pt-8">
+			{title && <div className="text-4xl font-bold mb-8">{title}</div>}
+			<div>
 				<TransactionTable
 					transactions={transactions}
 					exchangeCurrency={exchangeCurrency}
 					showExplorerLinkColumn={false}
 					isLoading={isLoading}
 					onRowClick={onRowClick}
+					isCompact={isCompact}
+					hideHeader={hideHeader}
 				/>
 
 				{transactions.length > 0 && (
@@ -55,7 +61,6 @@ export const Transactions = ({
 };
 
 Transactions.defaultProps = {
-	title: "Transactions History",
 	emptyText:
 		"This will display the history of your transactions. But you don't have more than one transaction at the moment.",
 	transactions: [],

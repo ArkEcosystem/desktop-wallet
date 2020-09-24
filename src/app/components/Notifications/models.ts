@@ -15,13 +15,16 @@ export type NotificationItemProps = {
 	action?: string;
 	icon: string;
 	image?: string;
-	onAction?: (name: string) => void;
+	onAction?: (id: string) => void;
 	onVisibilityChange?: (isVisible: boolean) => void;
 	containmentRef?: any;
 };
 
 export type NotificationsProps = {
+	isLoadingTransactions?: boolean;
 	profile: Profile;
 	transactions?: ExtendedTransactionData[];
-	onAction?: (name: string, item?: NotificationItemProps | ExtendedTransactionData) => void;
+	onNotificationAction?: (id: string) => void;
+	onTransactionClick?: (item?: ExtendedTransactionData) => void;
+	onFetchMoreTransactions?: () => void;
 };

@@ -84,10 +84,10 @@ export const Default = () => {
 			<Notifications
 				// @ts-ignore
 				transactions={transactions}
-				onAction={console.log}
+				onNotificationAction={console.log}
 			/>
 		</div>
 	);
 };
 
-export const Empty = () => <Notifications onAction={console.log} profile={{} as Profile} />;
+export const Empty = () => <Notifications onNotificationAction={console.log} profile={{} as Profile} />;

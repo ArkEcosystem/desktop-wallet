@@ -6,6 +6,7 @@ import { useActionNameMap } from "./hooks";
 import { NotificationItemProps } from "./models";
 
 export const NotificationItem = ({
+	id,
 	name,
 	body,
 	icon,
@@ -51,7 +52,7 @@ export const NotificationItem = ({
 					<div
 						data-testid="NotificationItem__action"
 						className="font-bold text-right cursor-pointer text-md text-theme-primary-500"
-						onClick={() => onAction?.(action.value)}
+						onClick={() => onAction?.(id)}
 					>
 						{action.label}
 					</div>

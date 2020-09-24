@@ -53,21 +53,13 @@ export const Default = () => {
 
 	return (
 		<EnvironmentProvider env={env}>
-			<NavigationBar
-				profile={profile}
-				onUserAction={(action: any) => alert(action.label)}
-				onNotificationAction={(actionName: string) => alert(actionName)}
-			/>
+			<NavigationBar profile={profile} onUserAction={(action: any) => alert(action.label)} />
 		</EnvironmentProvider>
 	);
 };
 
 export const EmptyNotifications = () => (
-		<EnvironmentProvider env={env}>
-			<NavigationBar
-				profile={profile}
-				onUserAction={(action: any) => alert(action.label)}
-				onNotificationAction={(actionName: string) => alert(actionName)}
-			/>
-		</EnvironmentProvider>
-	);
+	<EnvironmentProvider env={env}>
+		<NavigationBar profile={profile} onUserAction={(action: any) => alert(action.label)} />
+	</EnvironmentProvider>
+);
