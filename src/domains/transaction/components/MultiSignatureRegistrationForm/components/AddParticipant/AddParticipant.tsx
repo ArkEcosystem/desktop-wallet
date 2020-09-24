@@ -144,7 +144,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 				</Button>
 			</FormProvider>
 
-			<FormField name="participants">
+			<FormField name="">
 				<FormLabel label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")} />
 				<RecipientList
 					recipients={participants.map((item) => ({ ...item, amount: BigNumber.make(item.balance) }))}

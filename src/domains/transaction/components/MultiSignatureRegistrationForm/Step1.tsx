@@ -63,7 +63,7 @@ export const FormStep = ({
 						<Input
 							data-testid="MultiSignatureRegistrationForm__min-participants"
 							type="number"
-							value={minParticipants || 0}
+							value={minParticipants ?? 0}
 							onChange={handleInput}
 						/>
 						<InputAddonEnd className="pr-4 pointer-events-none text-theme-neutral-light">
@@ -81,6 +81,7 @@ export const FormStep = ({
 						avg={fees.avg}
 						max={fees.max}
 						defaultValue={fee || 0}
+						value={fee || 0}
 						step={0.01}
 						onChange={(currency) =>
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
