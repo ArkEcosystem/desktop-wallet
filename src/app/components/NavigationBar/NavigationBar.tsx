@@ -51,8 +51,6 @@ const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData>();
 
-	// TODO: Remove ts-ignore when unread will return array type from sdk
-	/* @ts-ignore */
 	const hasUnread = profile.notifications().unread().length > 0;
 
 	const fetchTransactions = async () => {
