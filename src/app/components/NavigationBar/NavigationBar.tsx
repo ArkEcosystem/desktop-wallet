@@ -73,7 +73,9 @@ const NotificationsDropdown = ({
 					>
 						<Icon name="Notification" width={22} height={22} className="p-1" />
 						{hasUnread && (
-							<div className="absolute border-theme-danger-400 flex border-2 rounded-full justify-center w-3 h-3 items-center align-middle -mt-4 -ml-3" />
+							<div className="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full">
+								<div className="w-2 h-2 rounded-full bg-theme-danger-500" />
+							</div>
 						)}
 					</Button>
 				</div>
