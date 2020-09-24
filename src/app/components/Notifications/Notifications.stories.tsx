@@ -82,8 +82,6 @@ export const Default = () => {
 	return (
 		<div>
 			<Notifications
-				pluginsHeader="Plugin 17 Feb, 2020"
-				transactionsHeader="Transactions 17 Feb, 2020"
 				// @ts-ignore
 				transactions={transactions}
 				onAction={console.log}
@@ -92,11 +90,4 @@ export const Default = () => {
 	);
 };
 
-export const Empty = () => (
-	<Notifications
-		pluginsHeader="Plugin 17 Feb, 2020"
-		transactionsHeader="Transactions 17 Feb, 2020"
-		onAction={console.log}
-		profile={{} as Profile}
-	/>
-);
+export const Empty = () => <Notifications onAction={console.log} profile={{} as Profile} />;

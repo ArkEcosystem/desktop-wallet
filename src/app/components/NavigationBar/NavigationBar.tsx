@@ -1,4 +1,4 @@
-import { ExtendedTransactionData,Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
 import { AvatarWrapper } from "app/components/Avatar";
@@ -36,7 +36,6 @@ type NavigationBarProps = {
 	menu?: MenuItem[];
 	userActions?: Action[];
 	avatarImage?: string;
-	notifications?: any;
 	onUserAction?: any;
 	onNotificationAction?: any;
 };
@@ -47,7 +46,7 @@ const NavWrapper = styled.nav<{ noShadow?: boolean }>`
 	${({ noShadow }) => !noShadow && tw`shadow-md`};
 `;
 
-const NotificationsDropdown = ({ pluginsHeader, transactionsHeader, onAction, profile }: NotificationsProps) => {
+const NotificationsDropdown = ({ onAction, profile }: NotificationsProps) => {
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
 	// TODO: Remove ts-ignore when unread will return array type from sdk
 	/* @ts-ignore */
@@ -61,6 +60,7 @@ const NotificationsDropdown = ({ pluginsHeader, transactionsHeader, onAction, pr
 			const txs = await profile.transactionAggregate().transactions();
 			setTransactions(txs.items());
 		};
+
 		fetchTransactions();
 	}, [profile]);
 
@@ -85,13 +85,7 @@ const NotificationsDropdown = ({ pluginsHeader, transactionsHeader, onAction, pr
 			}
 		>
 			<div className="mt-2">
-				<Notifications
-					pluginsHeader={pluginsHeader}
-					transactionsHeader={transactionsHeader}
-					transactions={transactions}
-					onAction={onAction}
-					profile={profile}
-				/>
+				<Notifications profile={profile} transactions={transactions} onAction={onAction} />
 			</div>
 		</Dropdown>
 	);
@@ -155,14 +149,7 @@ const LogoContainer = styled.div`
 	height: 50px;
 `;
 
-export const NavigationBar = ({
-	profile,
-	variant,
-	menu,
-	userActions,
-	notifications,
-	onNotificationAction,
-}: NavigationBarProps) => {
+export const NavigationBar = ({ profile, variant, menu, userActions, onNotificationAction }: NavigationBarProps) => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
@@ -227,11 +214,7 @@ export const NavigationBar = ({
 							<ul className="flex h-20 mr-auto md:h-24">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
-								<NotificationsDropdown
-									{...notifications}
-									onAction={onNotificationAction}
-									profile={profile}
-								/>
+								<NotificationsDropdown onAction={onNotificationAction} profile={profile!} />
 
 								<div className="h-8 border-r border-theme-neutral-200" />
 
@@ -322,10 +305,6 @@ export const NavigationBar = ({
 
 NavigationBar.defaultProps = {
 	variant: "full",
-	notifications: {
-		transactionsHeader: "Transactions",
-		pluginsHeader: "Plugins",
-	},
 	menu: [
 		{
 			title: "Portfolio",

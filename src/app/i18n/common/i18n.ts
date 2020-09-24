@@ -253,5 +253,8 @@ export const translations: { [key: string]: any } = {
 			READ_CHANGELOG: "Read Changelog",
 			UPDATE: "Update",
 		},
+		PLUGINS_TITLE: "PLugins",
+		TRANSACTIONS_TITLE: "Transactions",
+		EMPTY: "You have no notifications at this time",
 	},
 };

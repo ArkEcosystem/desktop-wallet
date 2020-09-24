@@ -21,10 +21,7 @@ export type NotificationItemProps = {
 };
 
 export type NotificationsProps = {
-	pluginsHeader?: string;
-	transactions?: ExtendedTransactionData[];
-	transactionsHeader?: string;
-	onAction?: (name: string, item?: NotificationItemProps | ExtendedTransactionData) => void;
-	emptyText?: string;
 	profile: Profile;
+	transactions?: ExtendedTransactionData[];
+	onAction?: (name: string, item?: NotificationItemProps | ExtendedTransactionData) => void;
 };
