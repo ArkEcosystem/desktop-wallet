@@ -10,7 +10,6 @@ export const NotificationItem = ({
 	name,
 	body,
 	icon,
-	image,
 	action: actionName,
 	onAction,
 	onVisibilityChange,
@@ -27,19 +26,13 @@ export const NotificationItem = ({
 						<Icon name={icon} width={32} height={32} />
 					</div>
 				)}
-
-				{image && (
-					<div className="w-full h-jull p-2 mr-4 rounded-lg">
-						<img src={image} alt={name} />
-					</div>
-				)}
 			</td>
 			<td>
 				<VisibilitySensor
 					onChange={(isVisible) => onVisibilityChange?.(isVisible)}
 					scrollCheck={true}
 					delayedCall={true}
-					containment={containmentRef.current}
+					containment={containmentRef?.current}
 				>
 					<div>
 						<span className="font-bold text-md text-theme-neutral-600">{name}</span>
