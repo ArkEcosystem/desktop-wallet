@@ -26,7 +26,7 @@ export const Notifications = ({
 	const plugins = profile.notifications().values();
 	const wrapperRef = useRef();
 
-	if (!profile?.id() || (!transactions!.length && !plugins.length)) {
+	if (!transactions!.length && !plugins.length) {
 		return <NotificationsSkeleton title={t("COMMON.NOTIFICATIONS.EMPTY")} />;
 	}
 
@@ -41,7 +41,7 @@ export const Notifications = ({
 	};
 
 	return (
-		<NotificationsWrapper ref={wrapperRef as React.MutableRefObject<any>}>
+		<NotificationsWrapper ref={wrapperRef as React.MutableRefObject<any>} data-testid="NotificationsWrapper">
 			{plugins.length > 0 && (
 				<>
 					<div className="mb-2 text-sm font-bold text-theme-neutral sticky -top-5 bg-white z-10 -mx-4 py-4 pl-4 pr-8">
