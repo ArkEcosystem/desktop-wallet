@@ -19,7 +19,7 @@ export const Notifications = ({
 	const hiddenTableHeaders = [{ Header: "-", className: "hidden" }];
 	const { persist } = useEnvironmentContext();
 
-	// TODO: filter by type when types will be used
+	// TODO: filter by type when multiple types will be used
 	const plugins = useMemo(() => profile.notifications().values(), [profile, profile.notifications()]);
 	const wrapperRef = useRef();
 
@@ -37,15 +37,13 @@ export const Notifications = ({
 		await persist();
 	};
 
-	const handleTransactionClick = (transaction: ExtendedTransactionData) => {
-		onAction?.("click", transaction);
-	};
-
 	return (
 		<NotificationsWrapper ref={wrapperRef as React.MutableRefObject<any>}>
 			{plugins.length > 0 && (
 				<>
-					<div className="mb-2 text-sm font-bold text-theme-neutral">{pluginsHeader}</div>
+					<div className="mb-2 text-sm font-bold text-theme-neutral sticky -top-5 bg-white z-10 -mx-4 py-4 pl-4 pr-8">
+						{pluginsHeader}
+					</div>
 					<Table hideHeader columns={hiddenTableHeaders} data={plugins}>
 						{(plugin: NotificationItemProps) => (
 							<NotificationItem
@@ -61,9 +59,11 @@ export const Notifications = ({
 
 			{transactions!.length > 0 && (
 				<>
-					<div className="mb-2 text-sm font-bold mt-9 text-theme-neutral">{transactionsHeader}</div>
+					<div className="mb-2 text-sm font-bold text-theme-neutral sticky -top-5 bg-white z-10 -mx-4 py-4 pl-4 pr-8">
+						{transactionsHeader}
+					</div>
 					<TransactionTable
-						onRowClick={handleTransactionClick}
+						onRowClick={(tx: ExtendedTransactionData) => onAction?.("click", tx)}
 						transactions={transactions!}
 						isCompact
 						hideHeader
