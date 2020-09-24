@@ -24,7 +24,7 @@ export const TransactionRowAmount = ({ transaction, exchangeCurrency }: Props) =
 	const color = transaction.isSent() ? "danger" : "success";
 
 	return (
-		<Label data-testid="TransactionRowAmount" color={color}>
+		<Label data-testid="TransactionRowAmount" color={color} className="whitespace-no-wrap">
 			{/* @ts-ignore */}
 			<Amount ticker={transaction.wallet()?.currency() || ""} value={transaction.total()} />
 		</Label>
