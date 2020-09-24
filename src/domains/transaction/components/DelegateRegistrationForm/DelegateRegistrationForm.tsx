@@ -161,7 +161,6 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 			<div className="mt-2">
 				<TotalAmountBox
-					amount={BigNumber.ZERO}
 					fee={fee?.value ? BigNumber.make(fee.value) : BigNumber.make(fee)}
 					ticker={wallet.currency()}
 				/>
