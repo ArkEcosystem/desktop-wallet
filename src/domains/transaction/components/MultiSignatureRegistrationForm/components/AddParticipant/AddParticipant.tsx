@@ -50,16 +50,14 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 	}, [onChange, participants]);
 
 	const addParticipant = () => {
-		if (lastValidationRef.current) {
-			const ref = lastValidationRef.current as ReadWriteWallet;
-			const participant = {
-				address: ref.address(),
-				publicKey: ref.publicKey()!,
-				balance: ref.balance().toString(),
-			};
-			setParticipants((prev) => [...prev, participant]);
-			setValue("address", "");
-		}
+		const ref = lastValidationRef.current as ReadWriteWallet;
+		const participant = {
+			address: ref.address(),
+			publicKey: ref.publicKey()!,
+			balance: ref.balance().toString(),
+		};
+		setParticipants((prev) => [...prev, participant]);
+		setValue("address", "");
 	};
 
 	const removeParticipant = (address: string) => {

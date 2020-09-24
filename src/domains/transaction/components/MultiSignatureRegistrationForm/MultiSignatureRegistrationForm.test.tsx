@@ -72,7 +72,7 @@ describe("MultiSignature Registration Form", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should set fee", async () => {
+	it("should fill form", async () => {
 		const { result, waitForNextUpdate } = renderHook(() => useForm());
 		result.current.register("fee");
 
@@ -83,7 +83,16 @@ describe("MultiSignature Registration Form", () => {
 			fireEvent.click(screen.getByText(transactionTranslations.FEES.AVERAGE));
 		});
 
+		act(() => {
+			fireEvent.input(screen.getByTestId("MultiSignatureRegistrationForm__min-participants"), {
+				target: {
+					value: 2,
+				},
+			});
+		});
+
 		await waitFor(() => expect(result.current.getValues("fee")).toBe("135400000"));
+		await waitFor(() => expect(result.current.getValues("minParticipants")).toBe("2"));
 	});
 
 	it("should render review step", () => {

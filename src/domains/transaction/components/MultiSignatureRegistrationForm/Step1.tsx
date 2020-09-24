@@ -56,7 +56,12 @@ export const FormStep = ({
 			<FormField name="minParticipants" className="mt-8">
 				<FormLabel>{t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}</FormLabel>
 				<InputGroup>
-					<Input type="number" value={minParticipants || 0} onChange={handleInput} />
+					<Input
+						data-testid="MultiSignatureRegistrationForm__min-participants"
+						type="number"
+						value={minParticipants || 0}
+						onChange={handleInput}
+					/>
 					<InputAddonEnd className="pr-4 pointer-events-none text-theme-neutral-light">
 						{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
 							length: Math.max(2, participants?.length || 0),
