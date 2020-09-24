@@ -174,7 +174,8 @@ describe("MultiSignature Registration Form", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signMultiSignature")
 			.mockReturnValue(Promise.resolve(multiSignatureFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "addSignature").mockImplementation();
+		const addSignatureMock = jest.spyOn(wallet.transaction(), "addSignature").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
 
 		await MultiSignatureRegistrationForm.signTransaction({
@@ -186,6 +187,7 @@ describe("MultiSignature Registration Form", () => {
 		});
 
 		expect(signMock).toHaveBeenCalled();
+		expect(addSignatureMock).toHaveBeenCalled();
 		expect(broadcastMock).toHaveBeenCalled();
 		expect(transactionMock).toHaveBeenCalled();
 		expect(setTransaction).toHaveBeenCalled();

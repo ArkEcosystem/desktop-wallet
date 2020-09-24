@@ -200,7 +200,7 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_MULTISIGNATURE: {
-		GENERATION_STEP: {
+		FORM_STEP: {
 			TITLE: "Multisignature Registration",
 			DESCRIPTION: "Register a new multisignature address by adding participants.",
 		},
