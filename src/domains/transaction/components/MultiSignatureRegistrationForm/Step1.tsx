@@ -35,7 +35,7 @@ export const FormStep = ({
 
 	const handleParticipants = useCallback(
 		(values: Participant[]) => {
-			setValue("participants", values, { shouldValidate: values.length > 1 });
+			setValue("participants", values, { shouldValidate: true, shouldDirty: true });
 		},
 		[setValue],
 	);
