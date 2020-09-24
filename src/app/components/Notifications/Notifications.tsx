@@ -78,13 +78,4 @@ Notifications.defaultProps = {
 	pluginsHeader: "",
 	emptyText: "You have no notifications at this time.",
 	transactions: [],
-	// TODO: remove after integration
-	plugins: [
-		{
-			icon: "ArkLogo",
-			name: "ARK Explorer",
-			body: "- update v2.5.6",
-			action: "update",
-		},
-	],
 };
