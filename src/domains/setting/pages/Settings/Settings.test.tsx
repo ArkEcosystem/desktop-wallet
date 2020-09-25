@@ -348,6 +348,7 @@ describe("Settings", () => {
 		);
 
 		expect(container).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByTestId("side-menu__item--Plugins"));
 		});
@@ -358,7 +359,7 @@ describe("Settings", () => {
 		});
 		expect(getByTestId("modal__inner")).toHaveTextContent(pluginTranslations.MODAL_ADD_BLACKLIST_PLUGIN.TITLE);
 
-		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(8));
+		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(7));
 
 		const addButton = getAllByText("Add")[0];
 		waitFor(() => expect(addButton).toBeTruthy());

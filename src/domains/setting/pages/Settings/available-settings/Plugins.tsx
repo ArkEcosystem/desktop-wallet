@@ -19,30 +19,31 @@ type PluginsProps = {
 const loadDemoPlugins = () => {
 	const plugins = [];
 	for (let i = 0; i < 4; i++) {
-		plugins.push(
-			{
-				id: `ark-explorer-${i}`,
-				name: "ARK Explorer",
-				author: "ARK.io",
-				category: "utility",
-				rating: 4.2,
-				version: "1.3.8",
-				size: "4.2 MB",
-				isInstalled: false,
-				isOfficial: true,
-			},
-			{
-				id: `ark-avatars-${i}`,
-				name: "ARK Avatars",
-				author: "ARK.io",
-				category: "other",
-				rating: 3.8,
-				version: "1.3.8",
-				size: "163 KB",
-				isInstalled: true,
-				isGrant: true,
-			},
-		);
+		plugins.push({
+			id: i,
+			name: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			rating: 4.2,
+			version: "1.3.8",
+			size: "4.2 MB",
+			isInstalled: false,
+			isOfficial: true,
+		});
+	}
+
+	for (let i = 5; i < 8; i++) {
+		plugins.push({
+			id: i,
+			name: "ARK Avatars",
+			author: "ARK.io",
+			category: "other",
+			rating: 3.8,
+			version: "1.3.8",
+			size: "163 KB",
+			isInstalled: true,
+			isGrant: true,
+		});
 	}
 
 	return plugins;
