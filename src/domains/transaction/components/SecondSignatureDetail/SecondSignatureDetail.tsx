@@ -1,7 +1,9 @@
 import Tippy from "@tippyjs/react";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
+import { Clipboard } from "app/components/Clipboard";
 import { Icon } from "app/components/Icon";
+import { Link } from "app/components/Link";
 import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
@@ -113,20 +115,38 @@ export const SecondSignatureDetail = ({
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>
-				<TruncateMiddle text={transaction.id()} className="text-theme-primary-dark" />
+				<Link to={transaction.explorerLink()} isExternal showExternalIcon={false}>
+					<TruncateMiddle text={transaction.id()} maxChars={30} className="text-theme-primary-dark" />
+				</Link>
 
 				<span className="inline-block ml-4 text-theme-primary-300">
-					<Icon name="Copy" />
+					<Clipboard data={transaction.id()}>
+						<Icon name="Copy" />
+					</Clipboard>
 				</span>
 			</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
-				<TruncateMiddle text={transaction.blockId()} className="text-theme-primary-dark" />
+			{!!transaction.blockId() && (
+				<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
+					<Link
+						to={transaction.coin()?.link().block(transaction.blockId())}
+						isExternal
+						showExternalIcon={false}
+					>
+						<TruncateMiddle
+							text={transaction.blockId()}
+							maxChars={30}
+							className="text-theme-primary-dark"
+						/>
+					</Link>
 
-				<span className="inline-block ml-4 text-theme-primary-300">
-					<Icon name="Copy" />
-				</span>
-			</TransactionDetail>
+					<span className="inline-block ml-4 text-theme-primary-300">
+						<Clipboard data={transaction.blockId()}>
+							<Icon name="Copy" />
+						</Clipboard>
+					</span>
+				</TransactionDetail>
+			)}
 		</Modal>
 	);
 };
