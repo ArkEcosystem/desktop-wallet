@@ -68,7 +68,7 @@ export const SecondSignatureDetail = ({
 					extra={
 						<div className="flex items-center">
 							<Circle className="-mr-2 border-black">
-								<Icon name="Delegate" width={25} height={25} />
+								<Icon name="Key" width={20} height={20} />
 							</Circle>
 							<Avatar address={transaction.sender()} />
 						</div>
@@ -87,7 +87,7 @@ export const SecondSignatureDetail = ({
 				extra={
 					<div className="flex items-center">
 						<Circle className="-mr-2 border-black">
-							<Icon name="Delegate" width={25} height={25} />
+							<Icon name="Key" width={20} height={20} />
 						</Circle>
 						<Avatar address={transaction.sender()} />
 					</div>
