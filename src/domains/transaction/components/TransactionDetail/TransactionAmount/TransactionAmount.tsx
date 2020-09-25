@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 import { TransactionDetail } from "../TransactionDetail";
 
-type TransactionAmounProps = {
+type TransactionAmountProps = {
 	amount: BigNumber;
 	convertedAmount: BigNumber;
 	currency: string;
@@ -25,7 +25,7 @@ export const TransactionAmount = ({
 	exchangeCurrency,
 	isMultiPayment,
 	isSent,
-}: TransactionAmounProps) => {
+}: TransactionAmountProps) => {
 	const { t } = useTranslation();
 
 	const renderModeIcon = (isSent: boolean) => {

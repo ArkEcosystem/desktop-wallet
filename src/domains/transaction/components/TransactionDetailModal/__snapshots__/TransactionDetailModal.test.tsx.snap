@@ -998,6 +998,59 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                Block ID
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  class="flex items-center"
+                >
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
+                  >
+                    <span
+                      class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      as32d1as65d1a…as3d2as165das
+                    </span>
+                  </a>
+                  <span
+                    class="inline-block ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

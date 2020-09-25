@@ -60,13 +60,13 @@ export const MultiPaymentDetail = ({ isOpen, transaction, walletAlias, onClose }
 
 			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
 
-			{/* @TODO uncomment after SDK bump
-
 			{transaction.blockId() && (
-				<TransactionExplorerLink id={transaction.blockId()} link={transaction.explorerBlockLink()} variant="block" />
+				<TransactionExplorerLink
+					id={transaction.blockId()}
+					link={transaction.explorerLinkForBlock()}
+					variant="block"
+				/>
 			)}
-
-			*/}
 		</Modal>
 	);
 };
