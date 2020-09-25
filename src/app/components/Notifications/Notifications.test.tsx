@@ -6,7 +6,7 @@ import React from "react";
 import { act } from "react-dom/test-utils";
 import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
-import { Notifications } from "./Notifications";
+import { markAsRead,Notifications } from "./";
 
 const transactions = [
 	{
@@ -170,6 +170,27 @@ describe("Notifications", () => {
 		});
 
 		await waitFor(() => expect(onFetchMoreTransactions).toHaveBeenCalled());
+	});
+
+	it("should mark notification as read", () => {
+		const notification = profile.notifications().first();
+		expect(notification.read_at).toBeUndefined();
+		const isVisible = true;
+		markAsRead(isVisible, notification.id, profile, env);
+		expect(profile.notifications().get(notification.id).read_at).toBeTruthy();
+	});
+
+	it("should not mark notification if is already read", () => {
+		const notification = profile.notifications().last();
+		expect(notification.read_at).toBeUndefined();
+		const isVisible = true;
+
+		markAsRead(isVisible, notification.id, profile, env);
+		const firstReadAt = profile.notifications().get(notification.id).read_at;
+		expect(firstReadAt).toBeTruthy();
+
+		markAsRead(isVisible, notification.id, profile, env);
+		expect(profile.notifications().get(notification.id).read_at).toEqual(firstReadAt);
 	});
 
 	it("should render empty", () => {
