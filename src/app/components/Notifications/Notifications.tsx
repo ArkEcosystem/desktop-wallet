@@ -5,9 +5,14 @@ import { Transactions } from "domains/dashboard/components/Transactions";
 import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-import { NotificationItem, NotificationsSkeleton } from "./";
-import { NotificationItemProps, NotificationsProps } from "./models";
-import { NotificationsWrapper } from "./styles";
+import {
+	markAsRead,
+	NotificationItem,
+	NotificationItemProps,
+	NotificationsProps,
+	NotificationsSkeleton,
+	NotificationsWrapper,
+} from "./";
 
 export const Notifications = ({
 	transactions,
@@ -20,7 +25,7 @@ export const Notifications = ({
 	const hiddenTableHeaders = [{ Header: "-", className: "hidden" }];
 
 	const { t } = useTranslation();
-	const { persist } = useEnvironmentContext();
+	const env = useEnvironmentContext();
 
 	// TODO: filter by type when multiple types will be used
 	const plugins = profile.notifications().values();
@@ -29,16 +34,6 @@ export const Notifications = ({
 	if (!transactions!.length && !plugins.length) {
 		return <NotificationsSkeleton title={t("COMMON.NOTIFICATIONS.EMPTY")} />;
 	}
-
-	const markAsRead = async (isVisible: boolean, id: string) => {
-		if (!isVisible) return;
-
-		const notification = profile.notifications().get(id);
-		if (!notification || notification?.read_at) return;
-
-		profile.notifications().markAsRead(id);
-		await persist();
-	};
 
 	return (
 		<NotificationsWrapper ref={wrapperRef as React.MutableRefObject<any>} data-testid="NotificationsWrapper">
@@ -52,7 +47,7 @@ export const Notifications = ({
 							<NotificationItem
 								{...plugin}
 								onAction={onNotificationAction}
-								onVisibilityChange={(isVisible) => markAsRead(isVisible, plugin.id)}
+								onVisibilityChange={(isVisible) => markAsRead(isVisible, plugin.id, profile, env)}
 								containmentRef={wrapperRef}
 							/>
 						)}
