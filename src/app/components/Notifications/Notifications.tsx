@@ -15,7 +15,7 @@ import {
 } from "./";
 
 export const Notifications = ({ profile, onNotificationAction, onTransactionClick }: NotificationsProps) => {
-	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
+	const [isLoadingTransactions, setIsLoadingTransactions] = useState(false);
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
 
 	const { t } = useTranslation();
@@ -27,7 +27,7 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 	const plugins = profile.notifications().values();
 	const wrapperRef = useRef();
 
-	const fetchTransactions = async () => {
+	const fetchMoreTransactions = async () => {
 		setIsLoadingTransactions(true);
 		const txs = await profile.transactionAggregate().transactions({ limit: 5 });
 		setTransactions([...transactions, ...txs.items()]);
@@ -35,7 +35,9 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 	};
 
 	useEffect(() => {
-		fetchTransactions();
+		const initialFetch = async () =>
+			setTransactions((await profile.transactionAggregate().transactions({ limit: 5 })).items());
+		initialFetch();
 	}, [profile]);
 
 	if (!transactions.length && !plugins.length) {
@@ -72,7 +74,7 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 						hideHeader
 						isCompact
 						transactions={transactions}
-						fetchMoreAction={fetchTransactions}
+						fetchMoreAction={fetchMoreTransactions}
 						onRowClick={(tx: ExtendedTransactionData) => onTransactionClick?.(tx)}
 					/>
 				</div>
