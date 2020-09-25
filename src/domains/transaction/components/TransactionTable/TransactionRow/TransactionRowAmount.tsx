@@ -6,7 +6,7 @@ import React from "react";
 
 type Props = {
 	isSent: boolean;
-	wallet: ReadWriteWallet;
+	wallet?: ReadWriteWallet;
 	total: BigNumber;
 	convertedTotal?: BigNumber;
 	exchangeCurrency?: string;
@@ -28,7 +28,7 @@ export const BaseTransactionRowAmount = ({ isSent, wallet, total, convertedTotal
 
 	return (
 		<Label data-testid="TransactionRowAmount" color={color}>
-			<Amount ticker={wallet.currency()} value={total} />
+			<Amount ticker={wallet?.currency() || ""} value={total} />
 		</Label>
 	);
 };
