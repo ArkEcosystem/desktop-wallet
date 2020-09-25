@@ -21,10 +21,7 @@ export type NotificationItemProps = {
 };
 
 export type NotificationsProps = {
-	isLoadingTransactions?: boolean;
 	profile: Profile;
-	transactions?: ExtendedTransactionData[];
 	onNotificationAction?: (id: string) => void;
 	onTransactionClick?: (item?: ExtendedTransactionData) => void;
-	onFetchMoreTransactions?: () => void;
 };
