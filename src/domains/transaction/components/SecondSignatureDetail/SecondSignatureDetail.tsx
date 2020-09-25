@@ -1,3 +1,4 @@
+import Tippy from "@tippyjs/react";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -9,43 +10,55 @@ import { useTranslation } from "react-i18next";
 
 type SecondSignatureDetailProps = {
 	isOpen: boolean;
-	transaction?: any;
 	ticker?: string;
+	transaction: any;
 	walletAlias?: string;
 	onClose?: any;
 };
 
-const renderConfirmationStatus = (isConfirmed: boolean) => {
-	if (!isConfirmed) {
+export const SecondSignatureDetail = ({
+	isOpen,
+	ticker,
+	transaction,
+	walletAlias,
+	onClose,
+}: SecondSignatureDetailProps) => {
+	const { t } = useTranslation();
+
+	const renderConfirmationStatus = (isConfirmed: boolean, confirmations: number) => {
+		const confirmationStatusStyle = isConfirmed
+			? "bg-theme-success-200 text-theme-success-500"
+			: "bg-theme-danger-200 text-theme-danger-500";
+
+		if (isConfirmed) {
+			return (
+				<div className="flex">
+					<span>{t("TRANSACTION.WELL_CONFIRMED")}</span>
+					<Tippy content={t("TRANSACTION.CONFIRMATIONS_COUNT", { count: confirmations })}>
+						<div className={`flex w-6 h-6 ml-2 rounded-full ${confirmationStatusStyle}`}>
+							<div className="m-auto">
+								<Icon name="Checkmark" width={15} height={15} />
+							</div>
+						</div>
+					</Tippy>
+				</div>
+			);
+		}
+
 		return (
 			<div className="flex">
-				Not Confirmed
-				<div className="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500">
+				<span>{t("TRANSACTION.NOT_CONFIRMED")}</span>
+				<div className={`flex w-6 h-6 ml-2 rounded-full ${confirmationStatusStyle}`}>
 					<div className="m-auto">
 						<Icon name="CrossSlim" width={12} height={12} />
 					</div>
 				</div>
 			</div>
 		);
-	}
-
-	return (
-		<div className="flex">
-			Well Confirmed
-			<div className="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500">
-				<div className="m-auto">
-					<Icon name="Checkmark" width={15} height={15} />
-				</div>
-			</div>
-		</div>
-	);
-};
-
-export const SecondSignatureDetail = (props: SecondSignatureDetailProps) => {
-	const { t } = useTranslation();
+	};
 
 	const renderSender = () => {
-		if (props.walletAlias) {
+		if (walletAlias) {
 			return (
 				<TransactionDetail
 					label={t("TRANSACTION.SENDER")}
@@ -54,13 +67,13 @@ export const SecondSignatureDetail = (props: SecondSignatureDetailProps) => {
 							<Circle className="-mr-2 border-black">
 								<Icon name="Delegate" width={25} height={25} />
 							</Circle>
-							<Avatar address={props.transaction.sender()} />
+							<Avatar address={transaction.sender()} />
 						</div>
 					}
 					border={false}
 				>
-					{props.walletAlias}
-					<TruncateMiddle text={props.transaction.sender()} className="ml-2 text-theme-neutral" />
+					{walletAlias}
+					<TruncateMiddle text={transaction.sender()} className="ml-2 text-theme-neutral" />
 				</TransactionDetail>
 			);
 		}
@@ -73,38 +86,34 @@ export const SecondSignatureDetail = (props: SecondSignatureDetailProps) => {
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Avatar address={props.transaction.sender()} />
+						<Avatar address={transaction.sender()} />
 					</div>
 				}
 				border={false}
 			>
-				<TruncateMiddle text={props.transaction.sender()} className="text-theme-neutral" />
+				<TruncateMiddle text={transaction.sender()} className="text-theme-neutral" />
 			</TransactionDetail>
 		);
 	};
 
 	return (
-		<Modal
-			title={t("TRANSACTION.MODAL_SECOND_SIGNATURE_DETAIL.TITLE")}
-			isOpen={props.isOpen}
-			onClose={props.onClose}
-		>
+		<Modal title={t("TRANSACTION.MODAL_SECOND_SIGNATURE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			{renderSender()}
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>
-				{`${props.transaction.fee().toHuman()} ${props.ticker?.toUpperCase()}`}
+				{`${transaction.fee().toHuman()} ${ticker?.toUpperCase()}`}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>
-				{props.transaction.timestamp()!.format("DD.MM.YYYY HH:mm:ss")}
+				{transaction.timestamp()!.format("DD.MM.YYYY HH:mm:ss")}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
-				{renderConfirmationStatus(props.transaction.isConfirmed())}
+				{renderConfirmationStatus(transaction.isConfirmed(), transaction.confirmations().toNumber())}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>
-				<TruncateMiddle text={props.transaction.id()} className="text-theme-primary-dark" />
+				<TruncateMiddle text={transaction.id()} className="text-theme-primary-dark" />
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />
@@ -112,7 +121,7 @@ export const SecondSignatureDetail = (props: SecondSignatureDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
-				<TruncateMiddle text={props.transaction.blockId()} className="text-theme-primary-dark" />
+				<TruncateMiddle text={transaction.blockId()} className="text-theme-primary-dark" />
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />

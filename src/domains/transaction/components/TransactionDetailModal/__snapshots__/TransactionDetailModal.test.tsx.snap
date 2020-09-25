@@ -1606,7 +1606,9 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                 <div
                   class="flex"
                 >
-                  Not Confirmed
+                  <span>
+                    Not confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                   >

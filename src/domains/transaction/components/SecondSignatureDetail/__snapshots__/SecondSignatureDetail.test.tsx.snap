@@ -158,7 +158,9 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
                 <div
                   class="flex"
                 >
-                  Not Confirmed
+                  <span>
+                    Not confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                   >
@@ -416,7 +418,9 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
                 <div
                   class="flex"
                 >
-                  Not Confirmed
+                  <span>
+                    Not confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                   >
@@ -675,7 +679,9 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
                 <div
                   class="flex"
                 >
-                  Well Confirmed
+                  <span>
+                    Well confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
                   >

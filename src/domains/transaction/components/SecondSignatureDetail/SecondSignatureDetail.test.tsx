@@ -51,7 +51,7 @@ describe("SecondSignatureDetail", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SECOND_SIGNATURE_DETAIL.TITLE);
-		expect(getByText("Well Confirmed")).toBeTruthy();
+		expect(getByText("Well confirmed")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
