@@ -1,7 +1,7 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { translations } from "app/i18n/common/i18n";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, render, waitFor } from "testing-library";
 import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
 
 import { DelegateTable } from "./DelegateTable";
@@ -220,5 +220,43 @@ describe("DelegateTable", () => {
 		expect(container).toBeTruthy();
 		expect(onContinue).toHaveBeenCalledWith([delegateAddress], []);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should navigate on next and previous pages", async () => {
+		delegates = [];
+
+		for (let i = 0; i <= 52; i++) {
+			delegates.push(
+				new ReadOnlyWallet({
+					address: data[0].address,
+					explorerLink: "",
+					publicKey: data[0].publicKey,
+					username: data[0].username,
+					rank: data[0].rank,
+				}),
+			);
+		}
+
+		const { getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+
+		await waitFor(() => {
+			expect(getByTestId("DelegateRow__toggle-50")).toBeTruthy();
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("Pagination__next"));
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("DelegateRow__toggle-1")).toBeTruthy();
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("Pagination__previous"));
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("DelegateRow__toggle-50")).toBeTruthy();
+		});
 	});
 });
