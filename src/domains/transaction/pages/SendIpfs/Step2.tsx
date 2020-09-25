@@ -1,5 +1,4 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -7,6 +6,7 @@ import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
+import { evaluateFee } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -71,10 +71,7 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				</TransactionDetail>
 
 				<div className="mt-2">
-					<TotalAmountBox
-						fee={fee?.value ? BigNumber.make(fee.value) : BigNumber.make(fee)}
-						ticker={wallet.currency()}
-					/>
+					<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
 				</div>
 			</div>
 		</section>

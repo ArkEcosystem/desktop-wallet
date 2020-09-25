@@ -1,5 +1,4 @@
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -7,6 +6,7 @@ import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
+import { evaluateFee } from "domains/transaction/utils";
 import { VoteList } from "domains/vote/components/VoteList";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -82,10 +82,7 @@ export const SecondStep = ({
 				)}
 
 				<div className="my-4">
-					<TotalAmountBox
-						fee={fee?.value ? BigNumber.make(fee.value) : BigNumber.make(fee)}
-						ticker={wallet.currency()}
-					/>
+					<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
 				</div>
 			</div>
 		</section>

@@ -17,6 +17,7 @@ import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
+import { evaluateFee } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -160,11 +161,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			</TransactionDetail>
 
 			<div className="mt-2">
-				<TotalAmountBox
-					amount={BigNumber.ZERO}
-					fee={fee?.value ? BigNumber.make(fee.value) : BigNumber.make(fee)}
-					ticker={wallet.currency()}
-				/>
+				<TotalAmountBox amount={BigNumber.ZERO} fee={evaluateFee(fee)} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);
