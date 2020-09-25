@@ -13,6 +13,7 @@ export const TransactionFixture = {
 	recipient: () => "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 	recipients: () => [],
 	amount: () => BigNumber.make(100).times(1e8),
+	convertedAmount: () => BigNumber.ZERO,
 	fee: () => BigNumber.make(21).times(1e8),
 	memo: () => "Test",
 	asset: () => ({ a: "b" }),

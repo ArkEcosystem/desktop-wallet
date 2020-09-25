@@ -1,10 +1,10 @@
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { TextArea } from "app/components/TextArea";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { EntityLink } from "domains/transaction/components/LinkCollection/LinkCollection.models";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { EntityProvider } from "domains/transaction/entity/providers";
 import React, { ChangeEvent, useCallback, useState } from "react";
 import { useFormContext } from "react-hook-form";

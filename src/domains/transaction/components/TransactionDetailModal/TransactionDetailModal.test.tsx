@@ -108,6 +108,11 @@ describe("TransactionDetailModal", () => {
 						...TransactionFixture,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "multiPayment",
+						wallet: () => ({
+							alias: () => "Test Wallet",
+							currency: () => "ARK",
+							exchangeCurrency: () => "BTC",
+						}),
 					}}
 				/>
 				,

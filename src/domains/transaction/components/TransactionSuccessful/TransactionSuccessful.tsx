@@ -6,8 +6,8 @@ import { Avatar } from "app/components/Avatar";
 import { Clipboard } from "app/components/Clipboard";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
