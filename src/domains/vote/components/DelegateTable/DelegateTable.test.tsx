@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/require-await */
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { translations } from "app/i18n/common/i18n";
 import React from "react";
-import { act, fireEvent, render, waitFor } from "testing-library";
+import { act, fireEvent, render } from "testing-library";
 import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
 
 import { DelegateTable } from "./DelegateTable";
@@ -223,7 +222,7 @@ describe("DelegateTable", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should navigate on next and previous pages", async () => {
+	it("should navigate on next and previous pages", () => {
 		delegates = [];
 
 		for (let i = 0; i <= 52; i++) {
@@ -240,24 +239,18 @@ describe("DelegateTable", () => {
 
 		const { getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
 
-		await waitFor(() => {
-			expect(getByTestId("DelegateRow__toggle-50")).toBeTruthy();
-		});
+		expect(getByTestId("DelegateRow__toggle-50")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("Pagination__next"));
 		});
 
-		await waitFor(() => {
-			expect(getByTestId("DelegateRow__toggle-1")).toBeTruthy();
-		});
+		expect(getByTestId("DelegateRow__toggle-1")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("Pagination__previous"));
 		});
 
-		await waitFor(() => {
-			expect(getByTestId("DelegateRow__toggle-50")).toBeTruthy();
-		});
+		expect(getByTestId("DelegateRow__toggle-50")).toBeTruthy();
 	});
 });
