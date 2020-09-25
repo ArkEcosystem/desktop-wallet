@@ -207,16 +207,16 @@ exports[`Signed Transaction Table should render 1`] = `
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-Axmtr wghwp border-theme-success-300 text-theme-success"
+                    class="sc-Axmtr wghwp border-theme-danger-contrast text-theme-danger"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
-                      data-testid="TransactionRowMode__Received"
+                      data-testid="TransactionRowMode__Sent"
                       height="1em"
                       width="1em"
                     >
                       <svg>
-                        received.svg
+                        sent.svg
                       </svg>
                     </div>
                   </div>
@@ -281,10 +281,14 @@ exports[`Signed Transaction Table should render 1`] = `
                 class="sc-AxhCb bdHkpa justify-center"
               >
                 <div
-                  class="sc-AxirZ iQaTP"
+                  class="sc-AxirZ iQaTP text-theme-danger-400"
                   height="1em"
                   width="1em"
-                />
+                >
+                  <svg>
+                    edit.svg
+                  </svg>
+                </div>
               </div>
             </td>
             <td>
@@ -292,14 +296,14 @@ exports[`Signed Transaction Table should render 1`] = `
                 class="sc-AxhCb bdHkpa justify-end"
               >
                 <div
-                  class="sc-AxheI dbuKLQ"
-                  color="success"
+                  class="sc-AxheI kinEEx"
+                  color="danger"
                   data-testid="TransactionRowAmount"
                 >
                   <span
                     data-testid="Amount"
                   >
-                    0.00000001 DARK
+                    0.00000002 DARK
                   </span>
                 </div>
               </div>
