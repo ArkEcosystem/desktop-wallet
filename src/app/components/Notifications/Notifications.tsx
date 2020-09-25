@@ -2,7 +2,7 @@ import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
 import { Transactions } from "domains/dashboard/components/Transactions";
-import React, { useEffect,useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import {

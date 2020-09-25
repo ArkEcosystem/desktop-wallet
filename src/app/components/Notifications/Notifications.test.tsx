@@ -1,4 +1,3 @@
-
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { waitFor } from "@testing-library/react";
 import nock from "nock";
