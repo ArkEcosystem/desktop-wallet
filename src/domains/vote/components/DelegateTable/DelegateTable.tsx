@@ -14,10 +14,11 @@ type DelegateTableProps = {
 	delegates: ReadOnlyWallet[];
 	maxVotes: number;
 	votes?: ReadOnlyWallet[];
+	itemsPerPage?: number;
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
-export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }: DelegateTableProps) => {
+export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [currentPage, setCurrentPage] = useState(1);
 	const [selectedUnvotes, setSelectedUnvotes] = useState<string[]>([]);
@@ -84,7 +85,6 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 	];
 
 	const totalDelegates = delegates.length;
-	const itemsPerPage = 51;
 	const hasVotes = votes!.length > 0;
 	const getTotalVotes = () => selectedVotes.length + selectedUnvotes.length;
 
@@ -149,7 +149,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 
 	const showSkeleton = useMemo(() => totalDelegates === 0, [totalDelegates]);
 	const skeletonList = new Array(8).fill({});
-	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage);
+	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage!);
 
 	return (
 		<div data-testid="DelegateTable">
@@ -277,4 +277,5 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 DelegateTable.defaultProps = {
 	delegates: [],
 	votes: [],
+	itemsPerPage: 51,
 };
