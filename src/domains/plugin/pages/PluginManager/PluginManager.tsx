@@ -75,7 +75,6 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 
 	const pluginList = plugins.filter((plugin: any) => !blacklist.find((id: any) => plugin.id === id));
 
-	console.log({ pluginList, blacklist });
 	return (
 		<div>
 			<div data-testid="PluginManager__home__featured">
