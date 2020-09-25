@@ -3,7 +3,7 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { TransactionFixture } from "tests/fixtures/transactions";
-import { env, getDefaultProfileId, render } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, screen } from "utils/testing-library";
 
 import { SignedTransactionTable } from "./SignedTransactionTable";
 
@@ -27,5 +27,30 @@ describe("Signed Transaction Table", () => {
 	it("should render", () => {
 		const { asFragment } = render(<SignedTransactionTable transactions={[fixture]} wallet={wallet} />);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should show a transfer", () => {
+		const { asFragment } = render(
+			<SignedTransactionTable transactions={[{ ...fixture, isMultiSignature: () => false }]} wallet={wallet} />,
+		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should show the sign button", () => {
+		const onSign = jest.fn();
+		const awaitingMock = jest.spyOn(wallet.transaction(), "isAwaitingOurSignature").mockReturnValue(true);
+
+		const { asFragment } = render(
+			<SignedTransactionTable transactions={[fixture]} wallet={wallet} onSign={onSign} />,
+		);
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("TransactionRow__sign"));
+		});
+
+		expect(onSign).toHaveBeenCalled();
+		expect(asFragment()).toMatchSnapshot();
+
+		awaitingMock.mockRestore();
 	});
 });

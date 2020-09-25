@@ -16,7 +16,7 @@ import { BaseTransactionRowRecipientLabel } from "../TransactionRow/TransactionR
 type Props = {
 	transactions: SignedTransactionData[];
 	wallet: ReadWriteWallet;
-	onSign?: () => void;
+	onSign?: (transaction: SignedTransactionData) => void;
 };
 
 const getType = (transaction: SignedTransactionData) => {
@@ -113,12 +113,18 @@ export const SignedTransactionTable = ({ transactions, onSign, wallet }: Props) 
 							/>
 						</TableCell>
 
-						<TableCell variant="end" innerClassName="justify-end">
-							<Button data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
-								<Icon name="Edit" />
-								<span>Sign</span>
-							</Button>
-						</TableCell>
+						{wallet.transaction().isAwaitingOurSignature(transaction.id()) ? (
+							<TableCell variant="end" innerClassName="justify-end">
+								<Button
+									data-testid="TransactionRow__sign"
+									variant="plain"
+									onClick={() => onSign?.(transaction)}
+								>
+									<Icon name="Edit" />
+									<span>Sign</span>
+								</Button>
+							</TableCell>
+						) : null}
 					</TableRow>
 				)}
 			</Table>
