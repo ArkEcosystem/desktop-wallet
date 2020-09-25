@@ -20,4 +20,14 @@ describe("BlacklistPlugins", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_BLACKLIST_PLUGINS.DESCRIPTION);
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render a modal with blacklist", () => {
+		const { asFragment, getByTestId } = render(
+			<BlacklistPlugins isOpen={true} plugins={plugins} blacklisted={[plugins[0].id]} />,
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_BLACKLIST_PLUGINS.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_BLACKLIST_PLUGINS.DESCRIPTION);
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
