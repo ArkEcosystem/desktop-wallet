@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
@@ -161,7 +160,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			</TransactionDetail>
 
 			<div className="mt-2">
-				<TotalAmountBox amount={BigNumber.ZERO} fee={evaluateFee(fee)} ticker={wallet.currency()} />
+				<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);
