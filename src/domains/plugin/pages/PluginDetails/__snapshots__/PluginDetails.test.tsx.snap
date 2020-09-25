@@ -7,7 +7,7 @@ exports[`PluginDetails should render properly 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXzr HuCwn"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`PluginDetails should render properly 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzpjYC fJwOPl"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -80,29 +80,38 @@ exports[`PluginDetails should render properly 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -617,7 +626,7 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-fzoyTs jvhphu flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-fzpmMD dUAAUD flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -630,7 +639,7 @@ exports[`PluginDetails should render properly 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqNqU jnurM flex-1 bg-theme-warning-100 space-y-2"
+                class="sc-fzoXWK izpuUs flex-1 bg-theme-warning-100 space-y-2"
               >
                 <p
                   class="text-lg font-bold text-theme-warning"
@@ -929,7 +938,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-fzqARJ dfPfhA mt-2 ml-10 text-theme-neutral-600"
+                            class="sc-fzoNJl ia-dsuj mt-2 ml-10 text-theme-neutral-600"
                           >
                             <a
                               href="#"
@@ -1106,24 +1115,24 @@ exports[`PluginDetails should render properly 1`] = `
                     class="mt-7"
                   >
                     <div
-                      class="sc-fznJRM gNSROs"
+                      class="sc-fzqARJ eKBrhv"
                       data-testid="Pagination"
                     >
                       <div
                         class="flex px-2 rounded bg-theme-primary-contrast"
                       >
                         <div
-                          class="sc-fznWqX kPaNdW current-page"
+                          class="sc-fzqNqU iWOVop current-page"
                         >
                           1
                         </div>
                         <div
-                          class="sc-fznWqX kPaNdW"
+                          class="sc-fzqNqU iWOVop"
                         >
                           2
                         </div>
                         <div
-                          class="sc-fznWqX kPaNdW"
+                          class="sc-fzqNqU iWOVop"
                         >
                           3
                         </div>
@@ -1257,7 +1266,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzoNJl kVyMxR h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznxKY kMLCfq h-2 rounded-lg bg-theme-warning-400"
                           data-testid="5-stars__rating-count"
                           width="44.95677233429395"
                         />
@@ -1320,7 +1329,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzoNJl cEEYNC h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznxKY iuQQcJ h-2 rounded-lg bg-theme-warning-400"
                           data-testid="4-stars__rating-count"
                           width="55.907780979827095"
                         />
@@ -1374,7 +1383,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzoNJl fEeuBC h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznxKY fIWSgd h-2 rounded-lg bg-theme-warning-400"
                           data-testid="3-stars__rating-count"
                           width="7.204610951008646"
                         />
@@ -1419,7 +1428,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzoNJl dgKJRc h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznxKY hJhuqT h-2 rounded-lg bg-theme-warning-400"
                           data-testid="2-stars__rating-count"
                           width="12.103746397694524"
                         />
@@ -1455,7 +1464,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzoNJl isTzSj h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznxKY gncsIc h-2 rounded-lg bg-theme-warning-400"
                           data-testid="1-stars__rating-count"
                           width="2.0172910662824206"
                         />
@@ -1480,7 +1489,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXzr HuCwn"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1492,7 +1501,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzpjYC fJwOPl"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -1553,29 +1562,38 @@ exports[`PluginDetails should render properly as installed 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -2122,7 +2140,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-fzoyTs jvhphu flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-fzpmMD dUAAUD flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -2135,7 +2153,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqNqU jnurM flex-1 bg-theme-warning-100 space-y-2"
+                class="sc-fzoXWK izpuUs flex-1 bg-theme-warning-100 space-y-2"
               >
                 <p
                   class="text-lg font-bold text-theme-warning"
@@ -2434,7 +2452,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-fzqARJ dfPfhA mt-2 ml-10 text-theme-neutral-600"
+                            class="sc-fzoNJl ia-dsuj mt-2 ml-10 text-theme-neutral-600"
                           >
                             <a
                               href="#"
@@ -2611,24 +2629,24 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="mt-7"
                   >
                     <div
-                      class="sc-fznJRM gNSROs"
+                      class="sc-fzqARJ eKBrhv"
                       data-testid="Pagination"
                     >
                       <div
                         class="flex px-2 rounded bg-theme-primary-contrast"
                       >
                         <div
-                          class="sc-fznWqX kPaNdW current-page"
+                          class="sc-fzqNqU iWOVop current-page"
                         >
                           1
                         </div>
                         <div
-                          class="sc-fznWqX kPaNdW"
+                          class="sc-fzqNqU iWOVop"
                         >
                           2
                         </div>
                         <div
-                          class="sc-fznWqX kPaNdW"
+                          class="sc-fzqNqU iWOVop"
                         >
                           3
                         </div>
@@ -2762,7 +2780,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzoNJl kVyMxR h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznxKY kMLCfq h-2 rounded-lg bg-theme-warning-400"
                           data-testid="5-stars__rating-count"
                           width="44.95677233429395"
                         />
@@ -2825,7 +2843,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzoNJl cEEYNC h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznxKY iuQQcJ h-2 rounded-lg bg-theme-warning-400"
                           data-testid="4-stars__rating-count"
                           width="55.907780979827095"
                         />
@@ -2879,7 +2897,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzoNJl fEeuBC h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznxKY fIWSgd h-2 rounded-lg bg-theme-warning-400"
                           data-testid="3-stars__rating-count"
                           width="7.204610951008646"
                         />
@@ -2924,7 +2942,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzoNJl dgKJRc h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznxKY hJhuqT h-2 rounded-lg bg-theme-warning-400"
                           data-testid="2-stars__rating-count"
                           width="12.103746397694524"
                         />
@@ -2960,7 +2978,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzoNJl isTzSj h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznxKY gncsIc h-2 rounded-lg bg-theme-warning-400"
                           data-testid="1-stars__rating-count"
                           width="2.0172910662824206"
                         />

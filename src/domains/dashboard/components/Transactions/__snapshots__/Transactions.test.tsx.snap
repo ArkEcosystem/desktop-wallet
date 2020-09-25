@@ -5,14 +5,168 @@ exports[`Transactions should render with 1`] = `
   <div
     class="bg-white"
   >
-    <div
-      class="text-4xl font-bold"
-    >
-      Transactions History
+    <div>
+      <div
+        class="relative"
+        data-testid="TransactionTable"
+      >
+        <div
+          class="sc-AxiKw kebiLh"
+          role="table"
+        >
+          <table
+            cellpadding="0"
+            class="table-auto"
+          >
+            <thead>
+              <tr
+                role="row"
+              >
+                <th
+                  class="text-sm text-left select-none text-theme-neutral"
+                  colspan="1"
+                  data-testid="table__th--0"
+                  role="columnheader"
+                  style="cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  <div
+                    class="flex flex-inline align-top "
+                  >
+                    <div>
+                      Date
+                    </div>
+                    <div
+                      class="flex items-center ml-2 text-theme-color-neutral"
+                      data-testid="table__Sort"
+                    >
+                      <div
+                        class="sc-AxirZ jMwzyA"
+                        height="12"
+                        width="15"
+                      >
+                        <svg>
+                          sort.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+                <th
+                  class="text-sm text-left select-none text-theme-neutral"
+                  colspan="1"
+                  data-testid="table__th--1"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top invisible"
+                  >
+                    <div>
+                      Type
+                    </div>
+                  </div>
+                </th>
+                <th
+                  class="text-sm text-left select-none text-theme-neutral"
+                  colspan="1"
+                  data-testid="table__th--2"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top "
+                  >
+                    <div>
+                      Recipient
+                    </div>
+                  </div>
+                </th>
+                <th
+                  class="text-sm text-left select-none text-theme-neutral"
+                  colspan="1"
+                  data-testid="table__th--3"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top justify-center"
+                  >
+                    <div>
+                      Info
+                    </div>
+                  </div>
+                </th>
+                <th
+                  class="text-sm text-left select-none text-theme-neutral"
+                  colspan="1"
+                  data-testid="table__th--4"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top justify-center"
+                  >
+                    <div>
+                      Status
+                    </div>
+                  </div>
+                </th>
+                <th
+                  class="text-sm text-left select-none text-theme-neutral"
+                  colspan="1"
+                  data-testid="table__th--5"
+                  role="columnheader"
+                  style="cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  <div
+                    class="flex flex-inline align-top justify-end"
+                  >
+                    <div>
+                      Amount
+                    </div>
+                    <div
+                      class="flex items-center ml-2 text-theme-color-neutral"
+                      data-testid="table__Sort"
+                    >
+                      <div
+                        class="sc-AxirZ jMwzyA"
+                        height="12"
+                        width="15"
+                      >
+                        <svg>
+                          sort.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              role="rowgroup"
+            />
+          </table>
+        </div>
+      </div>
     </div>
     <div
-      class="pt-8"
+      class="text-theme-neutral-dark"
     >
+      This will display the history of your transactions. But you don't have more than one transaction at the moment.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Transactions should render with custom title 1`] = `
+<div>
+  <div
+    class="bg-white"
+  >
+    <div
+      class="text-4xl font-bold mb-8"
+    >
+      Transaction history
+    </div>
+    <div>
       <div
         class="relative"
         data-testid="TransactionTable"
@@ -168,14 +322,7 @@ exports[`Transactions should render with with transactions 1`] = `
   <div
     class="bg-white"
   >
-    <div
-      class="text-4xl font-bold"
-    >
-      Transactions History
-    </div>
-    <div
-      class="pt-8"
-    >
+    <div>
       <div
         class="relative"
         data-testid="TransactionTable"
@@ -440,7 +587,7 @@ exports[`Transactions should render with with transactions 1`] = `
                     class="sc-AxhCb bdHkpa justify-end"
                   >
                     <div
-                      class="sc-AxgMl eXChH"
+                      class="sc-AxgMl eXChH whitespace-no-wrap"
                       color="danger"
                       data-testid="TransactionRowAmount"
                     >
@@ -585,7 +732,7 @@ exports[`Transactions should render with with transactions 1`] = `
                     class="sc-AxhCb bdHkpa justify-end"
                   >
                     <div
-                      class="sc-AxgMl eXChH"
+                      class="sc-AxgMl eXChH whitespace-no-wrap"
                       color="danger"
                       data-testid="TransactionRowAmount"
                     >
@@ -726,7 +873,7 @@ exports[`Transactions should render with with transactions 1`] = `
                     class="sc-AxhCb bdHkpa justify-end"
                   >
                     <div
-                      class="sc-AxgMl eXChH"
+                      class="sc-AxgMl eXChH whitespace-no-wrap"
                       color="danger"
                       data-testid="TransactionRowAmount"
                     >
@@ -867,7 +1014,7 @@ exports[`Transactions should render with with transactions 1`] = `
                     class="sc-AxhCb bdHkpa justify-end"
                   >
                     <div
-                      class="sc-AxgMl eXChH"
+                      class="sc-AxgMl eXChH whitespace-no-wrap"
                       color="danger"
                       data-testid="TransactionRowAmount"
                     >

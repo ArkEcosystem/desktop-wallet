@@ -7,7 +7,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznWqX jilIuA"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fzoiQi kUFyMj"
             >
               <svg
                 width="40"
@@ -80,29 +80,38 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -1906,14 +1915,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   class="flex justify-center"
                 >
                   <div
-                    class="sc-fzqNqU guWFiY mt-5"
+                    class="sc-fzoyTs cIPXQW mt-5"
                     data-testid="Pagination"
                   >
                     <div
                       class="flex px-2 rounded bg-theme-primary-contrast"
                     >
                       <div
-                        class="sc-fzoyTs iwVGRH current-page"
+                        class="sc-fzoNJl duzFwd current-page"
                       >
                         1
                       </div>
@@ -1937,7 +1946,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznWqX jilIuA"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1949,7 +1958,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fzoiQi kUFyMj"
             >
               <svg
                 width="40"
@@ -2010,29 +2019,38 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -3836,14 +3854,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   class="flex justify-center"
                 >
                   <div
-                    class="sc-fzqNqU guWFiY mt-5"
+                    class="sc-fzoyTs cIPXQW mt-5"
                     data-testid="Pagination"
                   >
                     <div
                       class="flex px-2 rounded bg-theme-primary-contrast"
                     >
                       <div
-                        class="sc-fzoyTs iwVGRH current-page"
+                        class="sc-fzoNJl duzFwd current-page"
                       >
                         1
                       </div>
@@ -3867,7 +3885,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznWqX jilIuA"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3879,7 +3897,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fzoiQi kUFyMj"
             >
               <svg
                 width="40"
@@ -3940,29 +3958,38 @@ exports[`PluginsCategory should delete plugin 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -4287,7 +4314,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--ark-explorer-0"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -4368,7 +4395,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--ark-avatars-0"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -4464,7 +4491,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--ark-explorer-1"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -4545,7 +4572,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--ark-avatars-1"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -4641,7 +4668,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--ark-explorer-2"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -4722,7 +4749,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--ark-avatars-2"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -4818,7 +4845,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--ark-explorer-3"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -4899,7 +4926,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--ark-avatars-3"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -5012,7 +5039,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznWqX jilIuA"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5024,7 +5051,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fzoiQi kUFyMj"
             >
               <svg
                 width="40"
@@ -5085,29 +5112,38 @@ exports[`PluginsCategory should download & install plugin 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -6911,14 +6947,14 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                   class="flex justify-center"
                 >
                   <div
-                    class="sc-fzqNqU guWFiY mt-5"
+                    class="sc-fzoyTs cIPXQW mt-5"
                     data-testid="Pagination"
                   >
                     <div
                       class="flex px-2 rounded bg-theme-primary-contrast"
                     >
                       <div
-                        class="sc-fzoyTs iwVGRH current-page"
+                        class="sc-fzoNJl duzFwd current-page"
                       >
                         1
                       </div>
@@ -7097,7 +7133,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznWqX jilIuA"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7109,7 +7145,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fzoiQi kUFyMj"
             >
               <svg
                 width="40"
@@ -7170,29 +7206,38 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -7517,7 +7562,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--ark-explorer-0"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -7598,7 +7643,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--ark-avatars-0"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -7694,7 +7739,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--ark-explorer-1"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -7775,7 +7820,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--ark-avatars-1"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -7871,7 +7916,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--ark-explorer-2"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -7952,7 +7997,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--ark-avatars-2"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -8048,7 +8093,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--ark-explorer-3"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -8129,7 +8174,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--ark-avatars-3"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -8397,7 +8442,7 @@ exports[`PluginsCategory should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznWqX jilIuA"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -8409,7 +8454,7 @@ exports[`PluginsCategory should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fzoiQi kUFyMj"
             >
               <svg
                 width="40"
@@ -8470,29 +8515,38 @@ exports[`PluginsCategory should render 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -8817,7 +8871,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--ark-explorer-0"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -8898,7 +8952,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--ark-avatars-0"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -8994,7 +9048,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--ark-explorer-1"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -9075,7 +9129,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--ark-avatars-1"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -9171,7 +9225,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--ark-explorer-2"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -9252,7 +9306,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--ark-avatars-2"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -9348,7 +9402,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--ark-explorer-3"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -9429,7 +9483,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--ark-avatars-3"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -9542,7 +9596,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznWqX jilIuA"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -9554,7 +9608,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fzoiQi kUFyMj"
             >
               <svg
                 width="40"
@@ -9615,29 +9669,38 @@ exports[`PluginsCategory should search for plugin 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -10012,7 +10075,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--ark-explorer-0"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -10093,7 +10156,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--ark-avatars-0"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -10189,7 +10252,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--ark-explorer-1"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -10270,7 +10333,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--ark-avatars-1"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -10366,7 +10429,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--ark-explorer-2"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -10447,7 +10510,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--ark-avatars-2"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -10543,7 +10606,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--ark-explorer-3"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -10624,7 +10687,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--ark-avatars-3"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -10737,7 +10800,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznWqX jilIuA"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -10749,7 +10812,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fzoiQi kUFyMj"
             >
               <svg
                 width="40"
@@ -10810,29 +10873,38 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -11157,7 +11229,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--ark-explorer-0"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -11238,7 +11310,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--ark-avatars-0"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -11334,7 +11406,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--ark-explorer-1"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -11415,7 +11487,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--ark-avatars-1"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -11511,7 +11583,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--ark-explorer-2"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -11592,7 +11664,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--ark-avatars-2"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -11688,7 +11760,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--ark-explorer-3"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -11769,7 +11841,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--ark-avatars-3"
                   >
                     <div
-                      class="sc-fzoXWK jHILxp border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzpmMD dtnPtO border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -11882,7 +11954,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznWqX jilIuA"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11894,7 +11966,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fzoiQi kUFyMj"
             >
               <svg
                 width="40"
@@ -11955,29 +12027,38 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -13781,14 +13862,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   class="flex justify-center"
                 >
                   <div
-                    class="sc-fzqNqU guWFiY mt-5"
+                    class="sc-fzoyTs cIPXQW mt-5"
                     data-testid="Pagination"
                   >
                     <div
                       class="flex px-2 rounded bg-theme-primary-contrast"
                     >
                       <div
-                        class="sc-fzoyTs iwVGRH current-page"
+                        class="sc-fzoNJl duzFwd current-page"
                       >
                         1
                       </div>

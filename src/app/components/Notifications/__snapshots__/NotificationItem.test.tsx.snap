@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notifications should render notification item 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        data-testid="NotificationItem"
+      >
+        <td
+          class="w-8"
+        >
+          <div
+            class="w-full h-jull p-2 mr-4 rounded-lg"
+          >
+            <div
+              class="sc-AxjAm cSUFmk"
+              height="32"
+              width="32"
+            >
+              <svg>
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <span
+              class="font-bold text-md text-theme-neutral-600"
+            >
+              Ledger Update Available
+            </span>
+            <span
+              class="text-md text-theme-neutral-600"
+            >
+               
+              
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+            data-testid="NotificationItem__action"
+          >
+            Read Changelog
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Notifications should render with custom action name 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        data-testid="NotificationItem"
+      >
+        <td
+          class="w-8"
+        >
+          <div
+            class="w-full h-jull p-2 mr-4 rounded-lg"
+          >
+            <div
+              class="sc-AxjAm cSUFmk"
+              height="32"
+              width="32"
+            >
+              <svg>
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <span
+              class="font-bold text-md text-theme-neutral-600"
+            >
+              New plugin updates
+            </span>
+            <span
+              class="text-md text-theme-neutral-600"
+            >
+               
+              test
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+            data-testid="NotificationItem__action"
+          >
+            custom action name
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

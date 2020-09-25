@@ -7,7 +7,7 @@ exports[`SendEntityResignation should render 1st step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`SendEntityResignation should render 1st step 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -79,29 +79,38 @@ exports[`SendEntityResignation should render 1st step 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -281,19 +290,19 @@ exports[`SendEntityResignation should render 1st step 1`] = `
             <div>
               <div>
                 <ul
-                  class="sc-fznWqX bcUgwz"
+                  class="sc-fzqARJ kCbUYb"
                 >
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                 </ul>
                 <div
@@ -459,10 +468,10 @@ exports[`SendEntityResignation should render 1st step 1`] = `
                                     class="flex-1"
                                   >
                                     <div
-                                      class="sc-fzqNJr gmzgI"
+                                      class="sc-fzoLag hoOQgq"
                                     >
                                       <input
-                                        class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                         data-testid="InputCurrency"
                                         name="name"
                                         type="text"
@@ -552,7 +561,7 @@ exports[`SendEntityResignation should render 1st step as entity 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -564,7 +573,7 @@ exports[`SendEntityResignation should render 1st step as entity 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -624,29 +633,38 @@ exports[`SendEntityResignation should render 1st step as entity 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -826,19 +844,19 @@ exports[`SendEntityResignation should render 1st step as entity 1`] = `
             <div>
               <div>
                 <ul
-                  class="sc-fznWqX bcUgwz"
+                  class="sc-fzqARJ kCbUYb"
                 >
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                 </ul>
                 <div
@@ -1004,10 +1022,10 @@ exports[`SendEntityResignation should render 1st step as entity 1`] = `
                                     class="flex-1"
                                   >
                                     <div
-                                      class="sc-fzqNJr gmzgI"
+                                      class="sc-fzoLag hoOQgq"
                                     >
                                       <input
-                                        class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                         data-testid="InputCurrency"
                                         name="name"
                                         type="text"
@@ -1097,7 +1115,7 @@ exports[`SendEntityResignation should render 2nd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1109,7 +1127,7 @@ exports[`SendEntityResignation should render 2nd step 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -1169,29 +1187,38 @@ exports[`SendEntityResignation should render 2nd step 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -1371,19 +1398,19 @@ exports[`SendEntityResignation should render 2nd step 1`] = `
             <div>
               <div>
                 <ul
-                  class="sc-fznWqX bcUgwz"
+                  class="sc-fzqARJ kCbUYb"
                 >
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                 </ul>
                 <div
@@ -1650,7 +1677,7 @@ exports[`SendEntityResignation should render 2nd step as entity 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1662,7 +1689,7 @@ exports[`SendEntityResignation should render 2nd step as entity 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -1722,29 +1749,38 @@ exports[`SendEntityResignation should render 2nd step as entity 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -1924,19 +1960,19 @@ exports[`SendEntityResignation should render 2nd step as entity 1`] = `
             <div>
               <div>
                 <ul
-                  class="sc-fznWqX bcUgwz"
+                  class="sc-fzqARJ kCbUYb"
                 >
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                 </ul>
                 <div
@@ -2203,7 +2239,7 @@ exports[`SendEntityResignation should render 3rd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2215,7 +2251,7 @@ exports[`SendEntityResignation should render 3rd step 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -2275,29 +2311,38 @@ exports[`SendEntityResignation should render 3rd step 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -2477,19 +2522,19 @@ exports[`SendEntityResignation should render 3rd step 1`] = `
             <div>
               <div>
                 <ul
-                  class="sc-fznWqX bcUgwz"
+                  class="sc-fzqARJ kCbUYb"
                 >
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                 </ul>
                 <div
@@ -2530,17 +2575,17 @@ exports[`SendEntityResignation should render 3rd step 1`] = `
                               />
                             </label>
                             <div
-                              class="sc-fzqNJr gmzgI max-w-20"
+                              class="sc-fzoLag hoOQgq max-w-20"
                               data-testid="InputPassword"
                             >
                               <input
-                                class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                                 data-testid="AuthenticationStep__mnemonic"
                                 name="mnemonic"
                                 type="password"
                               />
                               <div
-                                class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
+                                class="sc-fzqBZW sc-fzoyAV icrEyZ my-px mr-4"
                               >
                                 <button
                                   class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -2575,17 +2620,17 @@ exports[`SendEntityResignation should render 3rd step 1`] = `
                               />
                             </label>
                             <div
-                              class="sc-fzqNJr gmzgI max-w-20"
+                              class="sc-fzoLag hoOQgq max-w-20"
                               data-testid="InputPassword"
                             >
                               <input
-                                class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                                 data-testid="AuthenticationStep__second-mnemonic"
                                 name="secondMnemonic"
                                 type="password"
                               />
                               <div
-                                class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
+                                class="sc-fzqBZW sc-fzoyAV icrEyZ my-px mr-4"
                               >
                                 <button
                                   class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -2659,7 +2704,7 @@ exports[`SendEntityResignation should show authentication error 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2671,7 +2716,7 @@ exports[`SendEntityResignation should show authentication error 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -2731,29 +2776,38 @@ exports[`SendEntityResignation should show authentication error 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -2933,19 +2987,19 @@ exports[`SendEntityResignation should show authentication error 1`] = `
             <div>
               <div>
                 <ul
-                  class="sc-fznWqX bcUgwz"
+                  class="sc-fzqARJ kCbUYb"
                 >
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fiwUGS"
+                    class="sc-fzoiQi kdGDDv"
                   />
                 </ul>
                 <div
@@ -2986,18 +3040,18 @@ exports[`SendEntityResignation should show authentication error 1`] = `
                               />
                             </label>
                             <div
-                              class="sc-fzqNJr gmzgI max-w-20"
+                              class="sc-fzoLag hoOQgq max-w-20"
                               data-testid="InputPassword"
                             >
                               <input
                                 aria-invalid="true"
-                                class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                                 data-testid="AuthenticationStep__mnemonic"
                                 name="mnemonic"
                                 type="password"
                               />
                               <div
-                                class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
+                                class="sc-fzqBZW sc-fzoyAV icrEyZ my-px mr-4"
                               >
                                 <button
                                   class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -3037,17 +3091,17 @@ exports[`SendEntityResignation should show authentication error 1`] = `
                               />
                             </label>
                             <div
-                              class="sc-fzqNJr gmzgI max-w-20"
+                              class="sc-fzoLag hoOQgq max-w-20"
                               data-testid="InputPassword"
                             >
                               <input
-                                class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                                 data-testid="AuthenticationStep__second-mnemonic"
                                 name="secondMnemonic"
                                 type="password"
                               />
                               <div
-                                class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
+                                class="sc-fzqBZW sc-fzoyAV icrEyZ my-px mr-4"
                               >
                                 <button
                                   class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -3121,7 +3175,7 @@ exports[`SendEntityResignation should succesfully sign and submit an entity resi
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3133,7 +3187,7 @@ exports[`SendEntityResignation should succesfully sign and submit an entity resi
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -3193,29 +3247,38 @@ exports[`SendEntityResignation should succesfully sign and submit an entity resi
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -3395,19 +3458,19 @@ exports[`SendEntityResignation should succesfully sign and submit an entity resi
             <div>
               <div>
                 <ul
-                  class="sc-fznWqX bcUgwz"
+                  class="sc-fzqARJ kCbUYb"
                 >
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                 </ul>
                 <div
@@ -3740,7 +3803,7 @@ exports[`SendEntityResignation should succesfully sign and submit resignation tr
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzpjYC coERBU"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3752,7 +3815,7 @@ exports[`SendEntityResignation should succesfully sign and submit resignation tr
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznxsB gUNIFm"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -3812,29 +3875,38 @@ exports[`SendEntityResignation should succesfully sign and submit resignation tr
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -4014,19 +4086,19 @@ exports[`SendEntityResignation should succesfully sign and submit resignation tr
             <div>
               <div>
                 <ul
-                  class="sc-fznWqX bcUgwz"
+                  class="sc-fzqARJ kCbUYb"
                 >
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                   <li
-                    class="sc-fznJRM fanqcP"
+                    class="sc-fzoiQi gZjCeK"
                   />
                 </ul>
                 <div
