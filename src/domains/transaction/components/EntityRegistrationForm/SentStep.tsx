@@ -51,6 +51,10 @@ export const SentStep = ({ transaction }: SentStep) => {
 				</TransactionDetail>
 			)}
 
+			<TransactionDetail label={t("TRANSACTION.IPFS_HASH")}>
+				{transaction?.data()?.asset?.data?.ipfsData}
+			</TransactionDetail>
+
 			{ipfsData && (
 				<div data-testid="SentStep__ipfs-data">
 					<TransactionDetail label={t("TRANSACTION.NAME")}>
