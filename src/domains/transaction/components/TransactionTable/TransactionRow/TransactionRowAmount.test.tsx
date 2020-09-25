@@ -14,7 +14,12 @@ describe("TransactionRowAmount", () => {
 	});
 
 	it("should show total as currency", () => {
-		const { getByText } = render(<TransactionRowAmount transaction={TransactionFixture} exchangeCurrency="BTC" />);
+		const { getByText } = render(
+			<TransactionRowAmount
+				transaction={{ ...TransactionFixture, wallet: () => ({ currency: () => "ARK" }) }}
+				exchangeCurrency="BTC"
+			/>,
+		);
 		expect(getByText("0 BTC")).toBeTruthy();
 	});
 });
