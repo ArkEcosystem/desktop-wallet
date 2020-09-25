@@ -47,6 +47,15 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 		register("network", { required: true });
 		register("registrationType", { required: true });
 		register("senderAddress", { required: true });
+
+		register("ipfsData");
+		register("ipfsData.images");
+		register("ipfsData.videos");
+		register("ipfsData.sourceControl");
+		register("ipfsData.socialMedia");
+		register("ipfsData.meta.displayName");
+		register("ipfsData.meta.description");
+		register("ipfsData.meta.website");
 	}, [register]);
 
 	useEffect(() => {
@@ -228,4 +237,25 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	);
 };
 
-SendEntityRegistration.defaultProps = {};
+SendEntityRegistration.defaultProps = {
+	formDefaultValues: {
+		fees: {
+			static: "5",
+			min: "0",
+			avg: "1",
+			max: "2",
+		},
+		fee: "0",
+		ipfsData: {
+			meta: {
+				displayName: undefined,
+				description: undefined,
+				website: undefined,
+			},
+			images: [],
+			videos: [],
+			sourceControl: [],
+			socialMedia: [],
+		},
+	},
+};
