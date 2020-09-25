@@ -84,7 +84,7 @@ export const SignedTransactionTable = ({ transactions, onSign, wallet }: Props) 
 
 						<TableCell className="w-32">
 							<BaseTransactionRowMode
-								isSent={false}
+								isSent={true}
 								type={getType(transaction)}
 								recipient={transaction.recipient()}
 							/>
@@ -102,11 +102,15 @@ export const SignedTransactionTable = ({ transactions, onSign, wallet }: Props) 
 						</TableCell>
 
 						<TableCell className="w-16" innerClassName="justify-center">
-							<Icon name="edit" />
+							<Icon name="Edit" className="text-theme-danger-400" />
 						</TableCell>
 
 						<TableCell innerClassName="justify-end">
-							<BaseTransactionRowAmount isSent={false} total={transaction.amount()} wallet={wallet} />
+							<BaseTransactionRowAmount
+								isSent={true}
+								total={transaction.amount().plus(transaction.fee())}
+								wallet={wallet}
+							/>
 						</TableCell>
 
 						<TableCell variant="end" innerClassName="justify-end">
