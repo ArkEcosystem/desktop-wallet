@@ -66,12 +66,12 @@ const signTransaction = async ({
 			sign: {
 				multiSignature: {
 					publicKeys: [...publicKeys],
-					min: minParticipants,
+					min: +minParticipants,
 				},
 			},
 			data: {
 				publicKeys: [...publicKeys],
-				min: minParticipants,
+				min: +minParticipants,
 				senderPublicKey: senderWallet!.publicKey(),
 			},
 		});
