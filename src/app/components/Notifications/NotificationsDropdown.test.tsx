@@ -33,44 +33,50 @@ describe("Notifications", () => {
 	it("should render with transactions and plugins", async () => {
 		const allNotifications = profile.notifications().count();
 
-		await act(async () => {
-			const { container, getAllByTestId, getByTestId } = render(<NotificationsDropdown profile={profile} />);
+		const { container, getAllByTestId, getByTestId } = render(<NotificationsDropdown profile={profile} />);
 
+		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
-
-			await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(allNotifications));
-			await waitFor(() => expect(getByTestId("TransactionTable")).toBeTruthy());
-			expect(container).toMatchSnapshot();
 		});
+
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(allNotifications));
+		await waitFor(() => expect(getByTestId("TransactionTable")).toBeTruthy());
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should open and close transaction details modal", async () => {
 		const allNotifications = profile.notifications().count();
 
-		await act(async () => {
-			const { container, getByTestId, getAllByTestId } = renderWithRouter(
-				<Route path="/profiles/:profileId/dashboard">
-					<NotificationsDropdown profile={profile} />
-				</Route>,
-				{
-					routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
-					history,
-				},
-			);
+		const { container, getByTestId, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NotificationsDropdown profile={profile} />
+			</Route>,
+			{
+				routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
+				history,
+			},
+		);
 
+		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
-
-			await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(allNotifications));
-			await waitFor(() => expect(getByTestId("TransactionTable")).toBeTruthy());
-			await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(4));
-
-			fireEvent.click(getAllByTestId("TableRow")[2]);
-			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
-			expect(container).toMatchSnapshot();
-
-			fireEvent.click(getByTestId("modal__close-btn"));
-			await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/^Unable to find an element by/));
-			expect(container).toMatchSnapshot();
 		});
+
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(allNotifications));
+		await waitFor(() => expect(getByTestId("TransactionTable")).toBeTruthy());
+		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(4));
+
+		act(() => {
+			fireEvent.click(getAllByTestId("TableRow")[2]);
+		});
+
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+		expect(container).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/^Unable to find an element by/));
+		expect(container).toMatchSnapshot();
 	});
 });
