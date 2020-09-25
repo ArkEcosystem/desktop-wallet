@@ -2,6 +2,7 @@ import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -18,6 +19,7 @@ type DelegateTableProps = {
 
 export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
+	const [currentPage, setCurrentPage] = useState(1);
 	const [selectedUnvotes, setSelectedUnvotes] = useState<string[]>([]);
 	const [selectedVotes, setSelectedVotes] = useState<string[]>([]);
 	const [isVoteDisabled, setIsVoteDisabled] = useState(false);
@@ -133,9 +135,20 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 		}
 	};
 
+	const handleSelectPage = (page: number) => {
+		setCurrentPage(page);
+	};
+
+	const paginator = (items: ReadOnlyWallet[], currentPage = 1, itemsPerPage = 51) => {
+		const offset = (currentPage - 1) * itemsPerPage;
+		const paginatedItems = items.slice(offset).slice(0, itemsPerPage);
+
+		return paginatedItems;
+	};
+
 	const showSkeleton = useMemo(() => delegates.length === 0, [delegates]);
 	const skeletonList = new Array(8).fill({});
-	const data = showSkeleton ? skeletonList : delegates;
+	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, 51);
 
 	return (
 		<div data-testid="DelegateTable">
@@ -163,6 +176,19 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 					);
 				}}
 			</Table>
+
+			<div
+				className={`flex justify-center w-full mt-10 ${
+					selectedUnvotes.length > 0 || selectedVotes.length > 0 ? "mb-24" : ""
+				}`}
+			>
+				<Pagination
+					totalCount={delegates.length}
+					itemsPerPage={51}
+					currentPage={currentPage}
+					onSelectPage={handleSelectPage}
+				/>
+			</div>
 
 			{(selectedUnvotes.length > 0 || selectedVotes.length > 0) && (
 				<div
