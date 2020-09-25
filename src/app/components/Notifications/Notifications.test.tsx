@@ -1,81 +1,12 @@
-import { DateTime } from "@arkecosystem/platform-sdk-intl";
+
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { waitFor } from "@testing-library/react";
+import nock from "nock";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
-import { markAsRead,Notifications } from "./";
-
-const transactions = [
-	{
-		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
-		blockId: () => "71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9",
-		type: () => "transfer",
-		timestamp: () => DateTime.fromUnix(1596213281),
-		confirmations: () => BigNumber.make(10),
-		votes: () => ["10"],
-		unvotes: () => ["10"],
-		sender: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		recipient: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		recipients: () => [],
-		amount: () => BigNumber.make(100),
-		fee: () => BigNumber.make(21),
-		memo: () => "Test",
-		asset: () => ({ a: "b" }),
-		isConfirmed: () => false,
-		isSent: () => true,
-		isReceived: () => false,
-		isTransfer: () => true,
-		isSecondSignature: () => false,
-		isMultiSignature: () => false,
-		isDelegateRegistration: () => false,
-		isDelegateResignation: () => false,
-		isVote: () => false,
-		isUnvote: () => false,
-		isIpfs: () => false,
-		isMultiPayment: () => false,
-		isHtlcLock: () => false,
-		isHtlcClaim: () => false,
-		isHtlcRefund: () => false,
-
-		isEntityRegistration: () => false,
-		isEntityResignation: () => false,
-		isEntityUpdate: () => false,
-		isBusinessEntityRegistration: () => false,
-		isBusinessEntityResignation: () => false,
-		isBusinessEntityUpdate: () => false,
-		isDeveloperEntityRegistration: () => false,
-		isDeveloperEntityResignation: () => false,
-		isDeveloperEntityUpdate: () => false,
-		isCorePluginEntityRegistration: () => false,
-		isCorePluginEntityResignation: () => false,
-		isCorePluginEntityUpdate: () => false,
-		isDesktopPluginEntityRegistration: () => false,
-		isDesktopPluginEntityResignation: () => false,
-		isDesktopPluginEntityUpdate: () => false,
-		isDelegateEntityRegistration: () => false,
-		isDelegateEntityResignation: () => false,
-		isDelegateEntityUpdate: () => false,
-		isLegacyBusinessRegistration: () => false,
-		isLegacyBusinessResignation: () => false,
-		isLegacyBusinessUpdate: () => false,
-		isLegacyBridgechainRegistration: () => false,
-		isLegacyBridgechainResignation: () => false,
-		isLegacyBridgechainUpdate: () => false,
-		toObject: () => ({ a: "b" }),
-		hasPassed: () => true,
-		hasFailed: () => false,
-		getMeta: () => "",
-		setMeta: () => "",
-		total: () => BigNumber.make(121).times(1e8),
-		convertedTotal: () => BigNumber.ZERO,
-		wallet: () => undefined,
-		coin: () => undefined,
-		data: () => undefined,
-	},
-];
+import { markAsRead, Notifications } from "./";
 
 let profile: Profile;
 
@@ -88,21 +19,34 @@ describe("Notifications", () => {
 			body: "test",
 			action: "Goto",
 		});
+
+		nock.disableNetConnect();
+		nock("https://dwallets.ark.io")
+			.post("/api/transactions/search")
+			.query(true)
+			.reply(200, () => {
+				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
+				return {
+					meta,
+					data: data.slice(0, 2),
+				};
+			})
+			.persist();
 	});
 
-	it("should render with plugins", () => {
-		const { container } = render(<Notifications profile={profile} />);
+	it("should render with plugins", async () => {
+		const { container, queryAllByTestId } = render(<Notifications profile={profile} />);
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with transactions and plugins", async () => {
 		const allNotifications = profile.notifications().count();
 
-		const { container, getAllByTestId } = render(
-			<Notifications profile={profile} transactions={transactions as any} />,
-		);
+		const { container, getAllByTestId, queryAllByTestId } = render(<Notifications profile={profile} />);
 		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(allNotifications));
-		await waitFor(() => expect(getAllByTestId("TransactionRowMode")).toHaveLength(transactions.length));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
 		expect(container).toMatchSnapshot();
 	});
 
@@ -110,15 +54,11 @@ describe("Notifications", () => {
 		const onNotificationAction = jest.fn();
 		const all = profile.notifications().count();
 
-		const { getAllByTestId } = render(
-			<Notifications
-				profile={profile}
-				transactions={transactions as any}
-				onNotificationAction={onNotificationAction}
-			/>,
+		const { getAllByTestId, queryAllByTestId } = render(
+			<Notifications profile={profile} onNotificationAction={onNotificationAction} />,
 		);
 		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(all));
-		await waitFor(() => expect(getAllByTestId("TransactionRowMode")).toHaveLength(transactions.length));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
 
 		act(() => {
 			fireEvent.click(getAllByTestId("NotificationItem__action")[3]);
@@ -132,15 +72,11 @@ describe("Notifications", () => {
 
 		const all = profile.notifications().count();
 
-		const { container, getAllByTestId } = render(
-			<Notifications
-				profile={profile}
-				transactions={transactions as any}
-				onTransactionClick={onTransactionClick}
-			/>,
+		const { container, getAllByTestId, queryAllByTestId } = render(
+			<Notifications profile={profile} onTransactionClick={onTransactionClick} />,
 		);
 		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(all));
-		await waitFor(() => expect(getAllByTestId("TransactionRowMode")).toHaveLength(transactions.length));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
 
 		act(() => {
 			fireEvent.click(getAllByTestId("TransactionRowMode")[0]);
@@ -150,26 +86,18 @@ describe("Notifications", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should emit onFetchMoreTransactions when button is clicked", async () => {
-		const onFetchMoreTransactions = jest.fn();
-
+	it("should fetch more transactions when button is clicked", async () => {
 		const all = profile.notifications().count();
 
-		const { getAllByTestId, getByTestId } = render(
-			<Notifications
-				profile={profile}
-				transactions={transactions as any}
-				onFetchMoreTransactions={onFetchMoreTransactions}
-			/>,
-		);
+		const { getAllByTestId, getByTestId, queryAllByTestId } = render(<Notifications profile={profile} />);
 		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(all));
-		await waitFor(() => expect(getAllByTestId("TransactionRowMode")).toHaveLength(transactions.length));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
 
 		act(() => {
 			fireEvent.click(getByTestId("transactions__fetch-more-button"));
 		});
 
-		await waitFor(() => expect(onFetchMoreTransactions).toHaveBeenCalled());
+		await waitFor(() => expect(getAllByTestId("TransactionRowMode")).toHaveLength(4));
 	});
 
 	it("should mark notification as read", () => {
@@ -193,9 +121,10 @@ describe("Notifications", () => {
 		expect(profile.notifications().get(notification.id).read_at).toEqual(firstReadAt);
 	});
 
-	it("should render empty", () => {
+	it("should render with empty notifications", async () => {
 		profile.notifications().flush();
-		const { container } = render(<Notifications profile={profile} />);
+		const { container, queryAllByTestId } = render(<Notifications profile={profile} />);
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
 		expect(container).toMatchSnapshot();
 	});
 });
