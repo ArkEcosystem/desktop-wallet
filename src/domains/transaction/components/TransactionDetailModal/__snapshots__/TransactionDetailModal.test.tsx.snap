@@ -1565,7 +1565,11 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
               <div
                 class="font-semibold"
               >
-                21.00000000 BTC
+                <span
+                  data-testid="Amount"
+                >
+                  21 
+                </span>
               </div>
             </div>
           </div>

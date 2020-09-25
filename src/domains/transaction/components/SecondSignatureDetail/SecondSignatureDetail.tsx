@@ -1,4 +1,5 @@
 import Tippy from "@tippyjs/react";
+import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
@@ -7,7 +8,7 @@ import { Link } from "app/components/Link";
 import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 type SecondSignatureDetailProps = {
@@ -98,12 +99,14 @@ export const SecondSignatureDetail = ({
 		);
 	};
 
+	const currency = useMemo(() => transaction.wallet()?.currency() || "", [transaction]);
+
 	return (
 		<Modal title={t("TRANSACTION.MODAL_SECOND_SIGNATURE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			{renderSender()}
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>
-				{`${transaction.fee().toHuman()} ${ticker?.toUpperCase()}`}
+				<Amount ticker={currency} value={transaction.fee()} />
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>
