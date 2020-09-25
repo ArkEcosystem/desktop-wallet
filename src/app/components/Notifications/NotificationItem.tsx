@@ -22,7 +22,7 @@ export const NotificationItem = ({
 		<tr data-testid="NotificationItem">
 			<td className="w-8">
 				{icon && (
-					<div className="w-full h-jull p-2 mr-4 rounded-lg">
+					<div className="w-full p-2 mr-4 rounded-lg h-jull">
 						<Icon name={icon} width={32} height={32} />
 					</div>
 				)}

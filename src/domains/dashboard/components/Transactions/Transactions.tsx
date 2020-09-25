@@ -31,7 +31,7 @@ export const Transactions = ({
 
 	return (
 		<div className="bg-white">
-			{title && <div className="text-4xl font-bold mb-8">{title}</div>}
+			{title && <div className="mb-8 text-4xl font-bold">{title}</div>}
 			<div>
 				<TransactionTable
 					transactions={transactions}
