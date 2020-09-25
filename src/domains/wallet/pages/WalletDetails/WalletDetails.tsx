@@ -7,6 +7,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
+import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
@@ -187,12 +188,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					{pendingTransactions.length ? (
 						<div className="mb-16">
 							<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
-							<TransactionTable
-								transactions={transactions}
-								showSignColumn
-								isLoading={isLoading}
-								skeletonRowsLimit={txSkeletonRowsLimit}
-							/>
+							<SignedTransactionTable transactions={pendingTransactions} wallet={activeWallet} />
 						</div>
 					) : null}
 
