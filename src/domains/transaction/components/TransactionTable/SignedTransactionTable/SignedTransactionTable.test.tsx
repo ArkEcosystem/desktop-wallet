@@ -16,6 +16,7 @@ describe("Signed Transaction Table", () => {
 		isMultiSignature: () => true,
 		amount: () => BigNumber.ONE,
 		recipient: () => TransactionFixture.recipient(),
+		fee: () => BigNumber.ONE,
 	};
 
 	beforeEach(() => {

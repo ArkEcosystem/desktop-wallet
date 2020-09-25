@@ -22,7 +22,7 @@ type Props = {
 const getType = (transaction: SignedTransactionData) => {
 	let type = "transfer";
 
-	if (transaction.isMultiSignatureRegistration()) {
+	if (transaction.isMultiSignature()) {
 		type = "multiSignature";
 	}
 
