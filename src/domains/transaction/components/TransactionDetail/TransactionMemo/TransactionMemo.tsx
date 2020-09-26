@@ -5,13 +5,13 @@ import { useTranslation } from "react-i18next";
 import { TransactionDetail } from "../TransactionDetail";
 
 type TransactionMemoProps = {
-	memo?: string;
+	memo: string;
 };
 
 export const TransactionMemo = ({ memo }: TransactionMemoProps) => {
 	const { t } = useTranslation();
 
-	return memo ? (
+	return (
 		<TransactionDetail
 			label={t("TRANSACTION.SMARTBRIDGE")}
 			extra={
@@ -22,5 +22,5 @@ export const TransactionMemo = ({ memo }: TransactionMemoProps) => {
 		>
 			<p className="break-all">{memo}</p>
 		</TransactionDetail>
-	) : null;
+	);
 };

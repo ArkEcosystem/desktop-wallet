@@ -11,7 +11,7 @@ import { TransactionDetail } from "../TransactionDetail";
 
 type TransactionAmountProps = {
 	amount: BigNumber;
-	convertedAmount: BigNumber;
+	convertedAmount?: BigNumber;
 	currency: string;
 	exchangeCurrency?: string;
 	isMultiPayment: boolean;
@@ -53,7 +53,7 @@ export const TransactionAmount = ({
 			<Label color={isSent ? "danger" : "success"}>
 				<Amount ticker={currency} value={amount} />
 			</Label>
-			{exchangeCurrency && (
+			{exchangeCurrency && convertedAmount && (
 				<Amount ticker={exchangeCurrency} value={convertedAmount} className="ml-1 text-theme-neutral-light" />
 			)}
 		</TransactionDetail>

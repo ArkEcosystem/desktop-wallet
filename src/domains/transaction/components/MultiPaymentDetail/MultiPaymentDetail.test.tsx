@@ -10,6 +10,8 @@ const wallet = {
 	alias: () => "Test Wallet",
 	currency: () => "ARK",
 	exchangeCurrency: () => "BTC",
+	isDelegate: () => true,
+	isResignedDelegate: () => false,
 };
 
 describe("MultiPaymentDetail", () => {
@@ -22,7 +24,6 @@ describe("MultiPaymentDetail", () => {
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
 					wallet: () => wallet,
 				}}
-				ticker="BTC"
 			/>,
 		);
 
@@ -39,53 +40,10 @@ describe("MultiPaymentDetail", () => {
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
 					wallet: () => wallet,
 				}}
-				ticker="BTC"
 			/>,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render with wallet alias", () => {
-		const { asFragment, getByText, getByTestId } = render(
-			<MultiPaymentDetail
-				isOpen={true}
-				onClose={() => console.log("onClose")}
-				transaction={{
-					...TransactionFixture,
-					isSent: () => false,
-					blockId: () => "adsad12312xsd1w312e1s13203e12",
-					wallet: () => wallet,
-				}}
-				walletAlias="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-				ticker="BTC"
-			/>,
-		);
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render as confirmed", () => {
-		const { asFragment, getByText, getByTestId } = render(
-			<MultiPaymentDetail
-				isOpen={true}
-				onClose={() => console.log("onClose")}
-				transaction={{
-					...TransactionFixture,
-					isConfirmed: () => true,
-					blockId: () => "adsad12312xsd1w312e1s13203e12",
-					wallet: () => wallet,
-				}}
-				ticker="BTC"
-			/>,
-		);
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-
-		waitFor(() => expect(getByText("Well Confirmed")).toBeTruthy());
-
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -114,7 +72,6 @@ describe("MultiPaymentDetail", () => {
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
 					wallet: () => wallet,
 				}}
-				ticker="BTC"
 			/>,
 		);
 

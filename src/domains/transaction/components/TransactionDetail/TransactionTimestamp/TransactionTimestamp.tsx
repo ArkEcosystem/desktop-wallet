@@ -6,15 +6,13 @@ import { TransactionDetail } from "../TransactionDetail";
 
 type TransactionTimestampProps = {
 	format: string;
-	timestamp: DateTime | undefined;
+	timestamp: DateTime;
 };
 
 export const TransactionTimestamp = ({ format, timestamp }: TransactionTimestampProps) => {
 	const { t } = useTranslation();
 
-	return timestamp ? (
-		<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>{timestamp.format(format)}</TransactionDetail>
-	) : null;
+	return <TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>{timestamp.format(format)}</TransactionDetail>;
 };
 
 TransactionTimestamp.defaultProps = {

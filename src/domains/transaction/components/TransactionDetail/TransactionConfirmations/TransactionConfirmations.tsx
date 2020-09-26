@@ -1,3 +1,4 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
 import { Icon } from "app/components/Icon";
 import React from "react";
@@ -7,13 +8,13 @@ import { TransactionDetail } from "../TransactionDetail";
 
 type TransactionConfirmationsProps = {
 	isConfirmed: boolean;
-	confirmations: number;
+	confirmations: BigNumber;
 };
 
 export const TransactionConfirmations = ({ isConfirmed, confirmations }: TransactionConfirmationsProps) => {
 	const { t } = useTranslation();
 
-	const renderConfirmationStatus = (isConfirmed: boolean, confirmations: number) => {
+	const renderConfirmationStatus = (isConfirmed: boolean, confirmations: BigNumber) => {
 		const confirmationStatusStyle = isConfirmed
 			? "bg-theme-success-200 text-theme-success-500"
 			: "bg-theme-danger-200 text-theme-danger-500";
@@ -22,7 +23,7 @@ export const TransactionConfirmations = ({ isConfirmed, confirmations }: Transac
 			return (
 				<div className="flex">
 					<span>{t("TRANSACTION.WELL_CONFIRMED")}</span>
-					<Tippy content={t("TRANSACTION.CONFIRMATIONS_COUNT", { count: confirmations })}>
+					<Tippy content={t("TRANSACTION.CONFIRMATIONS_COUNT", { count: confirmations.toNumber() })}>
 						<div className={`flex w-6 h-6 ml-2 rounded-full ${confirmationStatusStyle}`}>
 							<div className="m-auto">
 								<Icon name="Checkmark" width={15} height={15} />

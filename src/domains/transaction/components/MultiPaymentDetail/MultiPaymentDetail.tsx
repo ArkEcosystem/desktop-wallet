@@ -14,19 +14,14 @@ import { useTranslation } from "react-i18next";
 
 type MultiPaymentDetailProps = {
 	isOpen: boolean;
-	ticker?: string;
 	transaction: any;
-	walletAlias?: string;
 	onClose?: any;
 };
 
-export const MultiPaymentDetail = ({ isOpen, transaction, walletAlias, onClose }: MultiPaymentDetailProps) => {
+export const MultiPaymentDetail = ({ isOpen, transaction, onClose }: MultiPaymentDetailProps) => {
 	const { t } = useTranslation();
 
 	const wallet = useMemo(() => transaction.wallet(), [transaction]);
-
-	const currency = useMemo(() => wallet.currency() || "", [wallet]);
-	const exchangeCurrency = useMemo(() => wallet.exchangeCurrency() || "", [wallet]);
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
@@ -36,26 +31,26 @@ export const MultiPaymentDetail = ({ isOpen, transaction, walletAlias, onClose }
 				isDelegate={wallet.isDelegate && !wallet.isResignedDelegate()}
 			/>
 
-			<TransactionRecipients currency={currency} recipients={transaction.recipients()} />
+			<TransactionRecipients currency={wallet.currency()} recipients={transaction.recipients()} />
 
 			<TransactionAmount
 				amount={transaction.amount()}
 				convertedAmount={transaction.convertedAmount()}
-				currency={currency}
-				exchangeCurrency={exchangeCurrency}
+				currency={wallet.currency()}
+				exchangeCurrency={wallet.exchangeCurrency()}
 				isMultiPayment={true}
 				isSent={transaction.isSent()}
 			/>
 
-			<TransactionFee currency={currency} value={transaction.fee()} />
+			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 
-			<TransactionMemo memo={transaction.memo()} />
+			{transaction.memo() && <TransactionMemo memo={transaction.memo()} />}
 
 			<TransactionTimestamp timestamp={transaction.timestamp()} />
 
 			<TransactionConfirmations
 				isConfirmed={transaction.isConfirmed()}
-				confirmations={transaction.confirmations().toNumber()}
+				confirmations={transaction.confirmations()}
 			/>
 
 			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
