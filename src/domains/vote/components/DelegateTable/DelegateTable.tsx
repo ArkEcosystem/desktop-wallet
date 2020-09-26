@@ -2,6 +2,7 @@ import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -13,24 +14,16 @@ type DelegateTableProps = {
 	delegates: ReadOnlyWallet[];
 	maxVotes: number;
 	votes?: ReadOnlyWallet[];
+	itemsPerPage?: number;
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
-export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }: DelegateTableProps) => {
+export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
+	const [currentPage, setCurrentPage] = useState(1);
 	const [selectedUnvotes, setSelectedUnvotes] = useState<string[]>([]);
 	const [selectedVotes, setSelectedVotes] = useState<string[]>([]);
 	const [isVoteDisabled, setIsVoteDisabled] = useState(false);
-
-	const hasVotes = votes!.length > 0;
-
-	useEffect(() => {
-		if (hasVotes && selectedVotes.length === maxVotes) {
-			setIsVoteDisabled(true);
-		} else {
-			setIsVoteDisabled(false);
-		}
-	}, [hasVotes, maxVotes, selectedVotes]);
 
 	const columns = [
 		{
@@ -91,7 +84,17 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 		},
 	];
 
+	const totalDelegates = delegates.length;
+	const hasVotes = votes!.length > 0;
 	const getTotalVotes = () => selectedVotes.length + selectedUnvotes.length;
+
+	useEffect(() => {
+		if (hasVotes && selectedVotes.length === maxVotes) {
+			setIsVoteDisabled(true);
+		} else {
+			setIsVoteDisabled(false);
+		}
+	}, [hasVotes, maxVotes, selectedVotes]);
 
 	const toggleUnvotesSelected = (address: string) => {
 		if (selectedUnvotes.find((delegateAddress) => delegateAddress === address)) {
@@ -133,9 +136,20 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 		}
 	};
 
-	const showSkeleton = useMemo(() => delegates.length === 0, [delegates]);
+	const handleSelectPage = (page: number) => {
+		setCurrentPage(page);
+	};
+
+	const paginator = (items: ReadOnlyWallet[], currentPage: number, itemsPerPage: number) => {
+		const offset = (currentPage - 1) * itemsPerPage;
+		const paginatedItems = items.slice(offset).slice(0, itemsPerPage);
+
+		return paginatedItems;
+	};
+
+	const showSkeleton = useMemo(() => totalDelegates === 0, [totalDelegates]);
 	const skeletonList = new Array(8).fill({});
-	const data = showSkeleton ? skeletonList : delegates;
+	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage!);
 
 	return (
 		<div data-testid="DelegateTable">
@@ -163,6 +177,19 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 					);
 				}}
 			</Table>
+
+			<div
+				className={`flex justify-center w-full mt-10 ${
+					selectedUnvotes.length > 0 || selectedVotes.length > 0 ? "mb-24" : ""
+				}`}
+			>
+				<Pagination
+					totalCount={totalDelegates}
+					itemsPerPage={itemsPerPage}
+					currentPage={currentPage}
+					onSelectPage={handleSelectPage}
+				/>
+			</div>
 
 			{(selectedUnvotes.length > 0 || selectedVotes.length > 0) && (
 				<div
@@ -250,4 +277,5 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 DelegateTable.defaultProps = {
 	delegates: [],
 	votes: [],
+	itemsPerPage: 51,
 };

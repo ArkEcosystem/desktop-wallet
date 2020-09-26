@@ -1,10 +1,4 @@
-import {
-	DelegateMapper,
-	NetworkData,
-	Profile,
-	ReadOnlyWallet,
-	ReadWriteWallet,
-} from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -162,11 +156,7 @@ export const Votes = () => {
 		(wallet) => {
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
-			const readOnlyDelegates = DelegateMapper.execute(
-				wallet,
-				delegates.map((delegate: ReadOnlyWallet) => delegate.publicKey()) as string[],
-			);
-			setDelegates(readOnlyDelegates);
+			setDelegates(delegates);
 		},
 		[env],
 	);
