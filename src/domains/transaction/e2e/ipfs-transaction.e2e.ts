@@ -115,6 +115,7 @@ test.requestHooks(walletMock, sendMock)("should send IPFS successfully", async (
 	// Navigate to import wallet page
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
 	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
+	await t.click(Selector("#SelectNetworkInput__input"));
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), "passphrase");

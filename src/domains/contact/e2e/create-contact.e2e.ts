@@ -51,6 +51,7 @@ test("should succesfully create contact", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
+	await t.click(Selector("#SelectNetworkInput__input"));
 	await t.click(Selector("#ContactForm__network-item-1"));
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
@@ -92,6 +93,7 @@ test("should error for invalid address", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
+	await t.click(Selector("#SelectNetworkInput__input"));
 	await t.click(Selector("#ContactForm__network-item-1"));
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
@@ -123,6 +125,7 @@ test("should error on duplicate address addition", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
+	await t.click(Selector("#SelectNetworkInput__input"));
 	await t.click(Selector("#ContactForm__network-item-1"));
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
@@ -134,6 +137,7 @@ test("should error on duplicate address addition", async (t) => {
 	await t.expect(Selector('[data-testid="contact-form__address-list-item"]').withText("D6Z26L69").exists).ok();
 
 	// Add secondary duplicate address
+	await t.click(Selector("#SelectNetworkInput__input"));
 	await t.click(Selector("#ContactForm__network-item-1"));
 
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
@@ -165,6 +169,7 @@ test("should error if contact name already exists", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
+	await t.click(Selector("#SelectNetworkInput__input"));
 	await t.click(Selector("#ContactForm__network-item-1"));
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
@@ -201,6 +206,7 @@ test("should disable save button if name consists of empty spaces", async (t) =>
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, "          ");
 
+	await t.click(Selector("#SelectNetworkInput__input"));
 	await t.click(Selector("#ContactForm__network-item-1"));
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');

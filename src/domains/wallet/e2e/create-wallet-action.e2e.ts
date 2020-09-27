@@ -17,6 +17,7 @@ test("should create a wallet", async (t) => {
 		.ok();
 
 	// Select a network and advance to step two
+	await t.click(Selector("#SelectNetworkInput__input"));
 	await t.click(Selector("#CreateWallet__network-item-1"));
 	await t
 		.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled"))
