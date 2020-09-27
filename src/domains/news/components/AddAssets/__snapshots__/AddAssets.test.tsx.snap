@@ -69,48 +69,50 @@ exports[`AddAssets should render a modal 1`] = `
                   data-testid="FormLabel__required"
                 />
               </label>
-              <div
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-owns="AddAssets__network-menu"
-                data-testid="SelectNetwork"
-                role="combobox"
-              >
-                <label
-                  for="AddAssets__network-input"
-                  id="AddAssets__network-label"
-                />
+              <div>
                 <div
-                  class="sc-fzoLsD rzdyj"
-                  data-testid="SelectNetworkInput"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-owns="AddAssets__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
                 >
+                  <label
+                    for="AddAssets__network-input"
+                    id="AddAssets__network-label"
+                  />
                   <div
-                    class="sc-Axmtr sc-AxmLO VVqBg px-4"
+                    class="sc-fzoLsD rzdyj"
+                    data-testid="SelectNetworkInput"
                   >
                     <div
-                      class="sc-AxhCb esLhBV border-theme-neutral-light text-theme-neutral"
-                      data-testid="SelectNetworkInput__network"
+                      class="sc-Axmtr sc-AxmLO VVqBg px-4"
+                    >
+                      <div
+                        class="sc-AxhCb esLhBV border-theme-neutral-light text-theme-neutral"
+                        data-testid="SelectNetworkInput__network"
+                      />
+                    </div>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="AddAssets__network-menu"
+                      aria-labelledby="AddAssets__network-label"
+                      autocomplete="off"
+                      class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="AddAssets__network-input"
+                      placeholder="Enter the asset name"
+                      value=""
                     />
                   </div>
-                  <input
-                    aria-autocomplete="list"
-                    aria-controls="AddAssets__network-menu"
-                    aria-labelledby="AddAssets__network-label"
-                    autocomplete="off"
-                    class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                    data-testid="SelectNetworkInput__input"
-                    id="AddAssets__network-input"
-                    placeholder="Enter the asset name"
-                    value=""
-                  />
                 </div>
+                <ul
+                  aria-labelledby="AddAssets__network-label"
+                  class="hidden"
+                  id="AddAssets__network-menu"
+                  role="listbox"
+                />
               </div>
-              <ul
-                aria-labelledby="AddAssets__network-label"
-                class="hidden"
-                id="AddAssets__network-menu"
-                role="listbox"
-              />
             </fieldset>
             <div
               class="flex flex-col space-y-10"

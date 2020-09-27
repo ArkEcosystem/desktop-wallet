@@ -25,48 +25,50 @@ exports[`SendTransactionForm should render 1`] = `
           />
         </label>
       </div>
-      <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="SendTransactionForm__network-menu"
-        data-testid="SelectNetwork"
-        role="combobox"
-      >
-        <label
-          for="SendTransactionForm__network-input"
-          id="SendTransactionForm__network-label"
-        />
+      <div>
         <div
-          class="sc-Axmtr jzhOwR"
-          data-testid="SelectNetworkInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="SendTransactionForm__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
         >
+          <label
+            for="SendTransactionForm__network-input"
+            id="SendTransactionForm__network-label"
+          />
           <div
-            class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            class="sc-Axmtr jzhOwR"
+            data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-AxirZ fuoUNN border-theme-neutral-light text-theme-neutral"
-              data-testid="SelectNetworkInput__network"
+              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            >
+              <div
+                class="sc-AxirZ fuoUNN border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransactionForm__network-menu"
+              aria-labelledby="SendTransactionForm__network-label"
+              autocomplete="off"
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="SendTransactionForm__network-input"
+              placeholder="Enter a network name"
+              value=""
             />
           </div>
-          <input
-            aria-autocomplete="list"
-            aria-controls="SendTransactionForm__network-menu"
-            aria-labelledby="SendTransactionForm__network-label"
-            autocomplete="off"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-            data-testid="SelectNetworkInput__input"
-            id="SendTransactionForm__network-input"
-            placeholder="Enter a network name"
-            value=""
-          />
         </div>
+        <ul
+          aria-labelledby="SendTransactionForm__network-label"
+          class="hidden"
+          id="SendTransactionForm__network-menu"
+          role="listbox"
+        />
       </div>
-      <ul
-        aria-labelledby="SendTransactionForm__network-label"
-        class="hidden"
-        id="SendTransactionForm__network-menu"
-        role="listbox"
-      />
     </fieldset>
     <fieldset
       class="sc-AxjAm fmGClo relative"
@@ -254,49 +256,51 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           />
         </label>
       </div>
-      <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="SendTransactionForm__network-menu"
-        data-testid="SelectNetwork"
-        role="combobox"
-      >
-        <label
-          for="SendTransactionForm__network-input"
-          id="SendTransactionForm__network-label"
-        />
+      <div>
         <div
-          class="sc-Axmtr jzhOwR"
-          data-testid="SelectNetworkInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="SendTransactionForm__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
         >
+          <label
+            for="SendTransactionForm__network-input"
+            id="SendTransactionForm__network-label"
+          />
           <div
-            class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            class="sc-Axmtr jzhOwR"
+            data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-AxirZ fuoUNN border-theme-neutral-light text-theme-neutral"
-              data-testid="SelectNetworkInput__network"
+              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            >
+              <div
+                class="sc-AxirZ fuoUNN border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransactionForm__network-menu"
+              aria-labelledby="SendTransactionForm__network-label"
+              autocomplete="off"
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              disabled=""
+              id="SendTransactionForm__network-input"
+              placeholder="Enter a network name"
+              value=""
             />
           </div>
-          <input
-            aria-autocomplete="list"
-            aria-controls="SendTransactionForm__network-menu"
-            aria-labelledby="SendTransactionForm__network-label"
-            autocomplete="off"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-            data-testid="SelectNetworkInput__input"
-            disabled=""
-            id="SendTransactionForm__network-input"
-            placeholder="Enter a network name"
-            value=""
-          />
         </div>
+        <ul
+          aria-labelledby="SendTransactionForm__network-label"
+          class="hidden"
+          id="SendTransactionForm__network-menu"
+          role="listbox"
+        />
       </div>
-      <ul
-        aria-labelledby="SendTransactionForm__network-label"
-        class="hidden"
-        id="SendTransactionForm__network-menu"
-        role="listbox"
-      />
     </fieldset>
     <fieldset
       class="sc-AxjAm fmGClo relative"

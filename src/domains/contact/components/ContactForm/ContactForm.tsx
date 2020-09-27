@@ -190,14 +190,12 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 			<SubForm>
 				<FormField name="network">
 					<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
-					<div>
-						<SelectNetwork
-							id="ContactForm__network"
-							networks={networks}
-							onSelect={handleSelectNetwork}
-							selected={network}
-						/>
-					</div>
+					<SelectNetwork
+						id="ContactForm__network"
+						networks={networks}
+						onSelect={handleSelectNetwork}
+						selected={network}
+					/>
 					<FormHelperText errorMessage={form.errors} />
 				</FormField>
 

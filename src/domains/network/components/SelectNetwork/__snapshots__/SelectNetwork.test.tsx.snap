@@ -2,94 +2,98 @@
 
 exports[`SelectNetwork should render 1`] = `
 <div>
-  <div
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-owns="downshift-1-menu"
-    data-testid="SelectNetwork"
-    role="combobox"
-  >
-    <label
-      for="downshift-0-input"
-      id="downshift-1-label"
-    />
+  <div>
     <div
-      class="sc-AxheI IkGcK"
-      data-testid="SelectNetworkInput"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="downshift-1-menu"
+      data-testid="SelectNetwork"
+      role="combobox"
     >
+      <label
+        for="downshift-0-input"
+        id="downshift-1-label"
+      />
       <div
-        class="sc-AxhCb sc-AxhUy jFkFxS px-4"
+        class="sc-AxheI IkGcK"
+        data-testid="SelectNetworkInput"
       >
         <div
-          class="sc-AxjAm fWyUly border-theme-neutral-light text-theme-neutral"
-          data-testid="SelectNetworkInput__network"
+          class="sc-AxhCb sc-AxhUy jFkFxS px-4"
+        >
+          <div
+            class="sc-AxjAm fWyUly border-theme-neutral-light text-theme-neutral"
+            data-testid="SelectNetworkInput__network"
+          />
+        </div>
+        <input
+          aria-autocomplete="list"
+          aria-controls="downshift-1-menu"
+          aria-labelledby="downshift-1-label"
+          autocomplete="off"
+          class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+          data-testid="SelectNetworkInput__input"
+          id="downshift-0-input"
+          placeholder="Enter a network name"
+          value=""
         />
       </div>
-      <input
-        aria-autocomplete="list"
-        aria-controls="downshift-1-menu"
-        aria-labelledby="downshift-1-label"
-        autocomplete="off"
-        class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-        data-testid="SelectNetworkInput__input"
-        id="downshift-0-input"
-        placeholder="Enter a network name"
-        value=""
-      />
     </div>
+    <ul
+      aria-labelledby="downshift-1-label"
+      class="hidden"
+      id="downshift-1-menu"
+      role="listbox"
+    />
   </div>
-  <ul
-    aria-labelledby="downshift-1-label"
-    class="hidden"
-    id="downshift-1-menu"
-    role="listbox"
-  />
 </div>
 `;
 
 exports[`SelectNetwork should render with networks 1`] = `
 <div>
-  <div
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-owns="downshift-5-menu"
-    data-testid="SelectNetwork"
-    role="combobox"
-  >
-    <label
-      for="downshift-4-input"
-      id="downshift-5-label"
-    />
+  <div>
     <div
-      class="sc-AxheI IkGcK"
-      data-testid="SelectNetworkInput"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="downshift-5-menu"
+      data-testid="SelectNetwork"
+      role="combobox"
     >
+      <label
+        for="downshift-4-input"
+        id="downshift-5-label"
+      />
       <div
-        class="sc-AxhCb sc-AxhUy jFkFxS px-4"
+        class="sc-AxheI IkGcK"
+        data-testid="SelectNetworkInput"
       >
         <div
-          class="sc-AxjAm fWyUly border-theme-neutral-light text-theme-neutral"
-          data-testid="SelectNetworkInput__network"
+          class="sc-AxhCb sc-AxhUy jFkFxS px-4"
+        >
+          <div
+            class="sc-AxjAm fWyUly border-theme-neutral-light text-theme-neutral"
+            data-testid="SelectNetworkInput__network"
+          />
+        </div>
+        <input
+          aria-autocomplete="list"
+          aria-controls="downshift-5-menu"
+          aria-labelledby="downshift-5-label"
+          autocomplete="off"
+          class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+          data-testid="SelectNetworkInput__input"
+          id="downshift-4-input"
+          placeholder="Enter a network name"
+          value=""
         />
       </div>
-      <input
-        aria-autocomplete="list"
-        aria-controls="downshift-5-menu"
-        aria-labelledby="downshift-5-label"
-        autocomplete="off"
-        class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-        data-testid="SelectNetworkInput__input"
-        id="downshift-4-input"
-        placeholder="Enter a network name"
-        value=""
-      />
     </div>
+    <ul
+      aria-labelledby="downshift-5-label"
+      class="hidden"
+      id="downshift-5-menu"
+      role="listbox"
+    />
   </div>
-  <ul
-    aria-labelledby="downshift-5-label"
-    class="hidden"
-    id="downshift-5-menu"
-    role="listbox"
-  />
 </div>
 `;

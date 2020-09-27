@@ -105,7 +105,7 @@ export const SelectNetwork = ({
 	};
 
 	return (
-		<>
+		<div>
 			<div data-testid="SelectNetwork" {...getComboboxProps()}>
 				<label {...getLabelProps()} />
 				<SelectNetworkInput
@@ -149,7 +149,10 @@ export const SelectNetwork = ({
 								item,
 								index,
 								disabled,
-								onMouseDown: () => selectItem(item),
+								onMouseDown: () => {
+									selectItem(item);
+									closeMenu();
+								},
 							})}
 						>
 							<NetworkIcon
@@ -163,7 +166,7 @@ export const SelectNetwork = ({
 						</li>
 					))}
 			</ul>
-		</>
+		</div>
 	);
 };
 
