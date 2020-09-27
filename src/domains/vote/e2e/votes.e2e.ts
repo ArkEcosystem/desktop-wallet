@@ -94,7 +94,7 @@ test("should select network, address and delegate", async (t) => {
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
 
 	// Select network
-	await t.click(Selector("#SelectNetworkInput__input"));
+	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#Votes__network-item-1"));
 
 	// Select address
@@ -125,7 +125,7 @@ test.requestHooks(walletMock, sendMock)("should send a vote transaction", async 
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
 
 	// Select network
-	await t.click(Selector("#SelectNetworkInput__input"));
+	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#Votes__network-item-1"));
 
 	// Select address
