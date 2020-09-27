@@ -402,111 +402,10 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                 </div>
                 <ul
                   aria-labelledby="Votes__network-label"
-                  class="grid grid-cols-6 gap-6 mt-6"
+                  class="hidden"
                   id="Votes__network-menu"
                   role="listbox"
-                >
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-0"
-                    role="option"
-                  >
-                    <div
-                      aria-label="ARK"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-ark.mainnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-1"
-                    role="option"
-                  >
-                    <div
-                      aria-label="ARK Devnet"
-                      class="sc-AxirZ bjGJqJ text-theme-success-500 border-theme-success-200"
-                      data-testid="NetworkIcon-ARK-ark.devnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-2"
-                    role="option"
-                  >
-                    <div
-                      aria-label="Compendia"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-compendia.mainnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          bind.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-3"
-                    role="option"
-                  >
-                    <div
-                      aria-label="Compendia Testnet"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-compendia.testnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          bind.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                />
               </div>
             </div>
           </div>
@@ -1938,111 +1837,10 @@ exports[`Votes should render 1`] = `
                 </div>
                 <ul
                   aria-labelledby="Votes__network-label"
-                  class="grid grid-cols-6 gap-6 mt-6"
+                  class="hidden"
                   id="Votes__network-menu"
                   role="listbox"
-                >
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-0"
-                    role="option"
-                  >
-                    <div
-                      aria-label="ARK"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-ark.mainnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-1"
-                    role="option"
-                  >
-                    <div
-                      aria-label="ARK Devnet"
-                      class="sc-AxirZ bjGJqJ text-theme-success-500 border-theme-success-200"
-                      data-testid="NetworkIcon-ARK-ark.devnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-2"
-                    role="option"
-                  >
-                    <div
-                      aria-label="Compendia"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-compendia.mainnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          bind.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-3"
-                    role="option"
-                  >
-                    <div
-                      aria-label="Compendia Testnet"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-compendia.testnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          bind.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                />
               </div>
             </div>
           </div>
@@ -3474,111 +3272,10 @@ exports[`Votes should select a delegate 1`] = `
                 </div>
                 <ul
                   aria-labelledby="Votes__network-label"
-                  class="grid grid-cols-6 gap-6 mt-6"
+                  class="hidden"
                   id="Votes__network-menu"
                   role="listbox"
-                >
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-0"
-                    role="option"
-                  >
-                    <div
-                      aria-label="ARK"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-ark.mainnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-1"
-                    role="option"
-                  >
-                    <div
-                      aria-label="ARK Devnet"
-                      class="sc-AxirZ bjGJqJ text-theme-success-500 border-theme-success-200"
-                      data-testid="NetworkIcon-ARK-ark.devnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-2"
-                    role="option"
-                  >
-                    <div
-                      aria-label="Compendia"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-compendia.mainnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          bind.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    disabled=""
-                    id="Votes__network-item-3"
-                    role="option"
-                  >
-                    <div
-                      aria-label="Compendia Testnet"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-compendia.testnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          bind.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                />
               </div>
             </div>
           </div>
@@ -5087,7 +4784,7 @@ exports[`Votes should select an address without vote 1`] = `
                 class="font-semibold"
               >
                 <div
-                  aria-expanded="true"
+                  aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-owns="Votes__network-menu"
                   data-testid="SelectNetwork"
@@ -5142,107 +4839,10 @@ exports[`Votes should select an address without vote 1`] = `
                 </div>
                 <ul
                   aria-labelledby="Votes__network-label"
-                  class="grid grid-cols-6 gap-6 mt-6"
+                  class="hidden"
                   id="Votes__network-menu"
                   role="listbox"
-                >
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-0"
-                    role="option"
-                  >
-                    <div
-                      aria-label="ARK"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-ark.mainnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-1"
-                    role="option"
-                  >
-                    <div
-                      aria-label="ARK Devnet"
-                      class="sc-AxirZ bjGJqJ text-theme-success-500 border-theme-success-200"
-                      data-testid="NetworkIcon-ARK-ark.devnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-2"
-                    role="option"
-                  >
-                    <div
-                      aria-label="Compendia"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-compendia.mainnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          bind.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-3"
-                    role="option"
-                  >
-                    <div
-                      aria-label="Compendia Testnet"
-                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
-                      data-testid="NetworkIcon-ARK-compendia.testnet"
-                    >
-                      <div
-                        class="sc-AxhCb dCXdPH"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          bind.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                />
               </div>
             </div>
           </div>

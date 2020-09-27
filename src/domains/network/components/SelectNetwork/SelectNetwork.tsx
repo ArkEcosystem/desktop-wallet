@@ -39,6 +39,9 @@ export const SelectNetwork = ({
 	);
 
 	const {
+		isOpen,
+		closeMenu,
+		openMenu,
 		getComboboxProps,
 		getLabelProps,
 		getInputProps,
@@ -55,7 +58,7 @@ export const SelectNetwork = ({
 		onSelectedItemChange: ({ selectedItem }) => onSelect?.(selectedItem),
 		onInputValueChange: ({ inputValue, selectedItem }) => {
 			// Clear selection when user is changing input,
-			// and input does is not exact match with previously selected item
+			// and input does not match previously selected item
 			if (selectedItem && selectedItem.extra?.displayName !== inputValue) {
 				reset();
 			}
@@ -112,12 +115,21 @@ export const SelectNetwork = ({
 					{...getInputProps({
 						name,
 						placeholder,
-						onBlur: () => !selectedItem && reset(),
+						onFocus: openMenu,
+						onBlur: () => {
+							if (inputMatches.length > 0) {
+								selectItem(inputMatches[0]);
+								closeMenu();
+							} else {
+								reset();
+							}
+						},
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
 								// Select first match
 								if (inputMatches.length > 0) {
 									selectItem(inputMatches[0]);
+									closeMenu();
 								}
 								event.preventDefault();
 								return;
@@ -126,24 +138,30 @@ export const SelectNetwork = ({
 					})}
 				/>
 			</div>
-			<ul {...getMenuProps()} className="grid grid-cols-6 gap-6 mt-6">
-				{items.map((item, index) => (
-					<li
-						data-testid="SelectNetwork__NetworkIcon--container"
-						key={index}
-						className="inline-block cursor-pointer"
-						{...getItemProps({ item, index, disabled })}
-					>
-						<NetworkIcon
-							coin={item.coin()}
-							network={item.id()}
-							size="xl"
-							iconSize={26}
-							className={assetClassName(item)}
-							noShadow
-						/>
-					</li>
-				))}
+			<ul {...getMenuProps()} className={isOpen ? "grid grid-cols-6 gap-6 mt-6" : "hidden"}>
+				{isOpen &&
+					items.map((item, index) => (
+						<li
+							data-testid="SelectNetwork__NetworkIcon--container"
+							key={index}
+							className="inline-block cursor-pointer"
+							{...getItemProps({
+								item,
+								index,
+								disabled,
+								onMouseDown: () => selectItem(item),
+							})}
+						>
+							<NetworkIcon
+								coin={item.coin()}
+								network={item.id()}
+								size="xl"
+								iconSize={26}
+								className={assetClassName(item)}
+								noShadow
+							/>
+						</li>
+					))}
 			</ul>
 		</>
 	);
