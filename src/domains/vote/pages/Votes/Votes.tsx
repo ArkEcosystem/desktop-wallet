@@ -206,7 +206,7 @@ export const Votes = () => {
 				/>
 			</Section>
 
-			<div className="container mx-auto px-14">
+			<Section hasBackground={false}>
 				<div className="grid grid-flow-col grid-cols-2 gap-6 -my-5">
 					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
 						<SelectNetwork
@@ -229,7 +229,7 @@ export const Votes = () => {
 						<Tabs selected={tabItem} onClick={(tabItem) => setTabItem(tabItem)} />
 					</>
 				)}
-			</div>
+			</Section>
 
 			<Section className="flex-1">
 				{network && address ? (

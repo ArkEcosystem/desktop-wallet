@@ -32,19 +32,16 @@ export const FirstStep = () => {
 					subtitle={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE")}
 				/>
 			</div>
-			<div className="space-y-2">
-				<FormField name="network" className="relative mt-1">
-					<div className="mb-2">
-						<FormLabel label={t("COMMON.NETWORK")} />
-					</div>
-					<SelectNetwork
-						id="ImportWallet__network"
-						networks={networks}
-						selected={selectedNetwork}
-						onSelect={handleSelect}
-					/>
-				</FormField>
-			</div>
+
+			<FormField name="network">
+				<FormLabel label={t("COMMON.NETWORK")} />
+				<SelectNetwork
+					id="ImportWallet__network"
+					networks={networks}
+					selected={selectedNetwork}
+					onSelect={handleSelect}
+				/>
+			</FormField>
 		</section>
 	);
 };

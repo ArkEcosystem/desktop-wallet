@@ -63,48 +63,50 @@ exports[`PeerList should add peer 1`] = `
                     data-testid="FormLabel__required"
                   />
                 </label>
-                <div
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-owns="CustomPeers__network-menu"
-                  data-testid="SelectNetwork"
-                  role="combobox"
-                >
-                  <label
-                    for="CustomPeers__network-input"
-                    id="CustomPeers__network-label"
-                  />
+                <div>
                   <div
-                    class="sc-fzpans diytpf"
-                    data-testid="SelectNetworkInput"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="CustomPeers__network-menu"
+                    data-testid="SelectNetwork"
+                    role="combobox"
                   >
+                    <label
+                      for="CustomPeers__network-input"
+                      id="CustomPeers__network-label"
+                    />
                     <div
-                      class="sc-AxmLO sc-fzozJi flvnfR px-4"
+                      class="sc-fzpans diytpf"
+                      data-testid="SelectNetworkInput"
                     >
                       <div
-                        class="sc-fzokOt kLNUey border-theme-neutral-light text-theme-neutral"
-                        data-testid="SelectNetworkInput__network"
+                        class="sc-AxmLO sc-fzozJi flvnfR px-4"
+                      >
+                        <div
+                          class="sc-fzokOt kLNUey border-theme-neutral-light text-theme-neutral"
+                          data-testid="SelectNetworkInput__network"
+                        />
+                      </div>
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="CustomPeers__network-menu"
+                        aria-labelledby="CustomPeers__network-label"
+                        autocomplete="off"
+                        class="sc-Axmtr dEPowd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                        data-testid="SelectNetworkInput__input"
+                        id="CustomPeers__network-input"
+                        placeholder="Enter a network name"
+                        value=""
                       />
                     </div>
-                    <input
-                      aria-autocomplete="list"
-                      aria-controls="CustomPeers__network-menu"
-                      aria-labelledby="CustomPeers__network-label"
-                      autocomplete="off"
-                      class="sc-Axmtr dEPowd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                      data-testid="SelectNetworkInput__input"
-                      id="CustomPeers__network-input"
-                      placeholder="Enter a network name"
-                      value=""
-                    />
                   </div>
+                  <ul
+                    aria-labelledby="CustomPeers__network-label"
+                    class="hidden"
+                    id="CustomPeers__network-menu"
+                    role="listbox"
+                  />
                 </div>
-                <ul
-                  aria-labelledby="CustomPeers__network-label"
-                  class="grid grid-cols-6 gap-6 mt-6"
-                  id="CustomPeers__network-menu"
-                  role="listbox"
-                />
               </fieldset>
               <fieldset
                 class="sc-AxheI dThsOi flex flex-col space-y-2"
