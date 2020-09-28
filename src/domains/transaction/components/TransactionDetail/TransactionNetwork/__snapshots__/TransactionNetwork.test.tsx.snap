@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionNetwork should render 1`] = `
+<div>
+  <div
+    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Network
+      </div>
+      <div
+        class="font-semibold"
+      >
+        ARK Devnet
+      </div>
+    </div>
+    <div
+      aria-label="ARK Devnet"
+      class="sc-AxjAm bHAIY border-theme-primary-100 text-theme-primary-400"
+      data-testid="NetworkIcon-ARK-ark.devnet"
+    >
+      <div
+        class="sc-AxirZ eEbZjj"
+        data-testid="NetworkIcon__icon"
+        height="20"
+        width="20"
+      >
+        <svg>
+          ark.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,5 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Amount } from "app/components/Amount";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
@@ -27,19 +28,16 @@ export const FourthStep = ({
 				<>
 					<TransactionDetail
 						label={t("TRANSACTION.TRANSACTION_TYPE")}
-						className="pb-0"
 						extra={
-							<div className="ml-1 text-theme-neutral-900">
-								<Circle className="border-theme-neutral-900 bg-theme-background" size="lg">
-									<Icon name="Unvote" className="text-xl" />
-								</Circle>
-							</div>
+							<Circle className="border-theme-text" size="lg">
+								<Icon name="Unvote" width={21} height={21} />
+							</Circle>
 						}
 					>
 						{t("TRANSACTION.TRANSACTION_TYPES.UNVOTE")}
 					</TransactionDetail>
 
-					<TransactionDetail label={`${t("TRANSACTION.UNVOTES")} (${unvotes.length})`}>
+					<TransactionDetail label={t("TRANSACTION.UNVOTES_COUNT", { count: unvotes.length })}>
 						<VoteList votes={unvotes} />
 					</TransactionDetail>
 				</>
@@ -49,25 +47,24 @@ export const FourthStep = ({
 				<>
 					<TransactionDetail
 						label={t("TRANSACTION.TRANSACTION_TYPE")}
-						className="pb-0"
 						extra={
-							<div className="ml-1 text-theme-neutral-900">
-								<Circle className="border-theme-neutral-900 bg-theme-background" size="lg">
-									<Icon name="Vote" className="text-xl" />
-								</Circle>
-							</div>
+							<Circle className="border-theme-text" size="lg">
+								<Icon name="Vote" width={21} height={21} />
+							</Circle>
 						}
 					>
 						{t("TRANSACTION.TRANSACTION_TYPES.VOTE")}
 					</TransactionDetail>
 
-					<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
+					<TransactionDetail label={t("TRANSACTION.VOTES_COUNT", { count: votes.length })}>
 						<VoteList votes={votes} />
 					</TransactionDetail>
 				</>
 			)}
 
-			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09660435 ARK</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")} className="pb-0">
+				<Amount ticker={senderWallet.currency()} value={transaction.fee()} />
+			</TransactionDetail>
 		</TransactionSuccessful>
 	);
 };

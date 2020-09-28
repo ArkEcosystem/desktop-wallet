@@ -640,7 +640,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 true "
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -675,6 +675,19 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
             <div
               class="flex items-center -space-x-2"
             >
+              <div
+                class="sc-AxjAm bHAIY border-theme-text"
+              >
+                <div
+                  class="sc-AxirZ dCVESD"
+                  height="25"
+                  width="25"
+                >
+                  <svg>
+                    delegate.svg
+                  </svg>
+                </div>
+              </div>
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"

@@ -5,15 +5,15 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { TransactionDetail } from "../TransactionDetail";
+import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail";
 
 type TransactionSenderProps = {
 	address: string;
 	alias?: string;
 	isDelegate?: boolean;
-};
+} & TransactionDetailProps;
 
-export const TransactionSender = ({ address, alias, isDelegate }: TransactionSenderProps) => {
+export const TransactionSender = ({ address, alias, isDelegate, ...props }: TransactionSenderProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -29,9 +29,13 @@ export const TransactionSender = ({ address, alias, isDelegate }: TransactionSen
 					<Avatar address={address} size="lg" />
 				</div>
 			}
-			border={false}
+			{...props}
 		>
 			<Address address={address} maxChars={!alias ? 0 : undefined} walletName={alias} />
 		</TransactionDetail>
 	);
+};
+
+TransactionSender.defaultProps = {
+	borderPosition: "top",
 };
