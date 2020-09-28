@@ -17,6 +17,7 @@ import {
 	ReviewStep as SecondStep,
 	SentStep as FourthStep,
 } from "domains/transaction/components/EntityRegistrationForm";
+import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -177,7 +178,9 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 								</TabPanel>
 								<TabPanel tabId={4}>
 									{savedTransaction && (
-										<FourthStep transaction={savedTransaction} senderWallet={activeWallet} />
+										<TransactionSuccessful senderWallet={activeWallet}>
+											<FourthStep transaction={savedTransaction} />
+										</TransactionSuccessful>
 									)}
 								</TabPanel>
 

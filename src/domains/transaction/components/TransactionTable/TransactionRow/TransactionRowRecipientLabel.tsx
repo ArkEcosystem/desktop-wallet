@@ -3,11 +3,12 @@ import { Address } from "app/components/Address";
 import React from "react";
 
 type Props = {
-	transaction: ExtendedTransactionData;
+	type: string;
+	recipient: string;
 	walletName?: string;
 };
 
-export const TransactionRowRecipientLabel = ({ transaction, walletName }: Props) => {
+export const BaseTransactionRowRecipientLabel = ({ type, recipient, walletName }: Props) => {
 	// TODO: i18n
 	const transactionLabel: Record<string, string> = {
 		transfer: "Transfer",
@@ -48,13 +49,27 @@ export const TransactionRowRecipientLabel = ({ transaction, walletName }: Props)
 		legacyBridgechainUpdate: "Legacy Bridgechain Update",
 	};
 
-	if (transaction?.type() === "transfer") {
-		return <Address walletName={walletName} address={transaction?.recipient()} />;
+	if (type === "transfer") {
+		return <Address walletName={walletName} address={recipient} />;
 	}
 
 	return (
 		<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
-			{transactionLabel[transaction?.type()]}
+			{transactionLabel[type]}
 		</span>
 	);
 };
+
+export const TransactionRowRecipientLabel = ({
+	transaction,
+	walletName,
+}: {
+	transaction: ExtendedTransactionData;
+	walletName?: string;
+}) => (
+	<BaseTransactionRowRecipientLabel
+		type={transaction.type()}
+		recipient={transaction.recipient()}
+		walletName={walletName}
+	/>
+);

@@ -62,7 +62,12 @@ describe("SecondSignatureRegistrationForm", () => {
 		activeTab?: number;
 	}) => (
 		<Form context={form} onSubmit={onSubmit}>
-			<SecondSignatureRegistrationForm.component activeTab={activeTab} fees={fees} wallet={wallet} />
+			<SecondSignatureRegistrationForm.component
+				profile={profile}
+				activeTab={activeTab}
+				fees={fees}
+				wallet={wallet}
+			/>
 		</Form>
 	);
 
@@ -252,7 +257,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		const { result } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					fee: 0,
+					fee: "0",
 				},
 			}),
 		);
@@ -285,7 +290,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		const form = {
 			clearErrors: jest.fn(),
 			getValues: () => ({
-				fee: "1",
+				fee: { display: "1", value: "100000000" },
 				mnemonic: "sample passphrase",
 				senderAddress: wallet.address(),
 				secondMnemonic: "second sample passphrase",
