@@ -67,7 +67,7 @@ beforeAll(async () => {
 	await syncFees();
 });
 
-describe("Transaction Send", () => {
+describe("SendTransfer", () => {
 	it("should render 1st step (form)", async () => {
 		const { result: form } = renderHook(() => useForm());
 
@@ -175,6 +175,12 @@ describe("Transaction Send", () => {
 		});
 
 		act(() => {
+			fireEvent.focus(rendered.getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
+		act(() => {
 			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
@@ -203,6 +209,12 @@ describe("Transaction Send", () => {
 
 			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
 		});
+
+		act(() => {
+			fireEvent.focus(rendered.getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.mainnet"));
@@ -239,7 +251,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			await waitFor(() =>
-				expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toHaveClass("border-theme-success-200"),
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
 			);
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
@@ -359,7 +371,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			await waitFor(() =>
-				expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toHaveClass("border-theme-success-200"),
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
 			);
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 

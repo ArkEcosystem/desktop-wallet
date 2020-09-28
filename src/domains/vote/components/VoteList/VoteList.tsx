@@ -1,7 +1,7 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
-import { TransactionDetail } from "app/components/TransactionDetail";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React from "react";
 
 type VoteListProps = {

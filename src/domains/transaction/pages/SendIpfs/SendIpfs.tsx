@@ -60,6 +60,7 @@ export const SendIpfs = () => {
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
+
 		const { fee, mnemonic, secondMnemonic, senderAddress, hash } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 

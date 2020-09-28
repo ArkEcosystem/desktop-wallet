@@ -103,7 +103,7 @@ describe("EntityRegistrationForm", () => {
 		activeTab?: number;
 	}) => (
 		<Form context={form} onSubmit={onSubmit}>
-			<EntityRegistrationForm.component activeTab={activeTab} fees={fees} wallet={wallet} />
+			<EntityRegistrationForm.component profile={profile} activeTab={activeTab} fees={fees} wallet={wallet} />
 		</Form>
 	);
 

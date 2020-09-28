@@ -23,7 +23,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith("123");
+		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "12300000000" });
 	});
 
 	it("should accept a custom magnitude", () => {
@@ -39,7 +39,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith("123");
+		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "12300" });
 	});
 
 	it("should not allow letters", () => {
@@ -55,7 +55,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith("abc123");
+		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "123" });
 	});
 
 	it("should format with a default value", () => {
@@ -69,7 +69,7 @@ describe("InputCurrency", () => {
 		const { getByTestId, rerender } = render(<InputCurrency value=".01" />);
 		const input = getByTestId("InputCurrency");
 
-		waitFor(() => expect(input).toHaveValue("0.01"));
+		expect(input).toHaveValue("0.01");
 
 		rerender(<InputCurrency value={undefined} />);
 

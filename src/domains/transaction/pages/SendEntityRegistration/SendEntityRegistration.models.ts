@@ -18,20 +18,23 @@ export type SendEntityRegistrationComponent = {
 	activeTab: number;
 	fees: Contracts.TransactionFee;
 	wallet: ReadWriteWallet;
+	profile: Profile;
+};
+
+export type SendEntityRegistrationSignOptions = {
+	env: Environment;
+	form: ReturnType<typeof useForm>;
+	handleNext: () => void;
+	profile: Profile;
+	setTransaction: (transaction: Contracts.SignedTransactionData) => void;
+	translations: TFunction;
+	type?: Enums.EntityType;
 };
 
 export type SendEntityRegistrationForm = {
 	transactionDetails: ({ transaction, translations }: SendEntityRegistrationDetailsOptions) => JSX.Element;
 
-	signTransaction: (options: {
-		env: Environment;
-		form: ReturnType<typeof useForm>;
-		handleNext: () => void;
-		profile: Profile;
-		setTransaction: (transaction: Contracts.SignedTransactionData) => void;
-		translations: TFunction;
-		type?: Enums.EntityType;
-	}) => Promise<void>;
+	signTransaction: (options: SendEntityRegistrationSignOptions) => Promise<void>;
 
 	tabSteps: number;
 

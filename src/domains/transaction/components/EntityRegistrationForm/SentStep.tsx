@@ -1,23 +1,20 @@
 import { File } from "@arkecosystem/platform-sdk-ipfs";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Amount } from "app/components/Amount";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { toasts } from "app/services";
 import { httpClient } from "app/services";
-import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type SentStep = {
 	transaction: SignedTransactionData;
-	senderWallet: ReadWriteWallet;
 };
 
-export const SentStep = ({ transaction, senderWallet }: SentStep) => {
+export const SentStep = ({ transaction }: SentStep) => {
 	const [ipfsData, setIpfsData] = useState<any>();
 	const { t } = useTranslation();
 
@@ -36,7 +33,7 @@ export const SentStep = ({ transaction, senderWallet }: SentStep) => {
 	}, [transaction]);
 
 	return (
-		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
+		<>
 			<TransactionDetail
 				label={t("TRANSACTION.TRANSACTION_TYPE")}
 				extra={
@@ -53,6 +50,10 @@ export const SentStep = ({ transaction, senderWallet }: SentStep) => {
 					{transaction.data()?.asset?.data?.name}
 				</TransactionDetail>
 			)}
+
+			<TransactionDetail label={t("TRANSACTION.IPFS_HASH")}>
+				{transaction?.data()?.asset?.data?.ipfsData}
+			</TransactionDetail>
 
 			{ipfsData && (
 				<div data-testid="SentStep__ipfs-data">
@@ -84,6 +85,6 @@ export const SentStep = ({ transaction, senderWallet }: SentStep) => {
 			>
 				<Amount ticker="ARK" value={transaction.fee()} />
 			</TransactionDetail>
-		</TransactionSuccessful>
+		</>
 	);
 };

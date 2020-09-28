@@ -221,4 +221,24 @@ describe("DelegateTable", () => {
 		expect(onContinue).toHaveBeenCalledWith([delegateAddress], []);
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should navigate on next and previous pages", () => {
+		const { getByTestId } = render(
+			<DelegateTable delegates={delegates} votes={votes} maxVotes={1} itemsPerPage={2} />,
+		);
+
+		expect(getByTestId("DelegateRow__toggle-1")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("Pagination__next"));
+		});
+
+		expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("Pagination__previous"));
+		});
+
+		expect(getByTestId("DelegateRow__toggle-1")).toBeTruthy();
+	});
 });

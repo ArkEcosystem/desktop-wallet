@@ -4,7 +4,8 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 
 type Props = {
-	transaction: ExtendedTransactionData;
+	memo?: string;
+	isMultiSignature: boolean;
 };
 
 const VendorField = ({ vendorField }: { vendorField: string | undefined }) => (
@@ -24,9 +25,13 @@ const MultiSignature = () => (
 	</Tippy>
 );
 
-export const TransactionRowInfo = ({ transaction }: Props) => (
+export const BaseTransactionRowInfo = ({ memo, isMultiSignature }: Props) => (
 	<div data-testid="TransactionRowInfo" className="inline-flex space-x-1 align-middle">
-		{transaction?.isMultiSignature() && <MultiSignature />}
-		{transaction?.memo() && <VendorField vendorField={transaction?.memo()} />}
+		{isMultiSignature && <MultiSignature />}
+		{memo && <VendorField vendorField={memo} />}
 	</div>
+);
+
+export const TransactionRowInfo = ({ transaction }: { transaction: ExtendedTransactionData }) => (
+	<BaseTransactionRowInfo memo={transaction.memo()} isMultiSignature={transaction.isMultiSignature()} />
 );

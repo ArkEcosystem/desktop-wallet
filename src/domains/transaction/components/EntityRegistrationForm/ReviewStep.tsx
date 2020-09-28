@@ -1,16 +1,16 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { Link } from "app/components/Link";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { LinkList, ProviderEntityLink } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { EntityProvider } from "domains/transaction/entity/providers";
+import { evaluateFee } from "domains/transaction/utils";
 import React, { useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -137,7 +137,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				)}
 
 				<div>
-					<TotalAmountBox fee={BigNumber.make(fee)} ticker={wallet.currency()} />
+					<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
 				</div>
 			</div>
 		</div>

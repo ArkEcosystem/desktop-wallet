@@ -16,7 +16,7 @@ type SelectRecipientProps = {
 	contactSearchDescription?: string;
 	selectActionLabel?: string;
 	onChange?: (address: string) => void;
-} & React.InputHTMLAttributes<any>;
+} & Omit<React.InputHTMLAttributes<any>, "onChange">;
 
 const ProfileAvatar = ({ address }: any) => {
 	if (!address) return <Circle className="mx-3 bg-theme-neutral-200 border-theme-neutral-200" size="sm" noShadow />;

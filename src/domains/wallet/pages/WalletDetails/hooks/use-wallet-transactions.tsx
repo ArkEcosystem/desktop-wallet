@@ -5,8 +5,11 @@ import { useSynchronizer } from "app/hooks/use-synchronizer";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limit: number }) => {
-	// TODO: Multi Signature PR
-	const pendingTransactions: SignedTransactionData[] = [];
+	const pendingTransactions: SignedTransactionData[] = Object.values({
+		...wallet.transaction().waitingForOtherSignatures(),
+		...wallet.transaction().waitingForOurSignature(),
+	});
+
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
 	const [nextPage, setNextPage] = useState<string | number | undefined>(1);
 	const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +17,11 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 	const sync = useCallback(
 		async (cursor: string | number | undefined) => {
 			setIsLoading(true);
+
+			await wallet.transaction().sync();
+
 			const response = await wallet.transactions({ limit, cursor });
+
 			setNextPage(response.nextPage());
 			setTransactions((prev) => [...prev, ...response.items()]);
 			setIsLoading(false);

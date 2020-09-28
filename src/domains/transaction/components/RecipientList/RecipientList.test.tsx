@@ -23,14 +23,11 @@ const recipients = [
 	{
 		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient 3",
-		isInArkNetwork: true,
 		amount: BigNumber.make("100"),
 		assetSymbol: "ARK",
 	},
 	{
 		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-		walletName: "Recipient 4",
-		isInArkNetwork: true,
 		amount: BigNumber.make("100"),
 		assetSymbol: "ARK",
 	},
@@ -39,6 +36,13 @@ const recipients = [
 describe("RecipientList", () => {
 	it("should render editable", () => {
 		const { container } = render(<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render condensed variant", () => {
+		const { container } = render(
+			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" variant="condensed" />,
+		);
 		expect(container).toMatchSnapshot();
 	});
 
