@@ -4711,69 +4711,72 @@ exports[`SendEntityUpdate should handle download transaction button click on ste
                   data-testid="tab-pabel__active-panel"
                 >
                   <div
+                    class="space-y-8"
                     data-testid="AuthenticationStep"
                   >
-                    <div>
-                      <h1
-                        class="mb-0"
-                      >
-                        Authenticate
-                      </h1>
-                      <div
-                        class="text-theme-neutral-dark"
-                      >
-                        Enter your twelve word mnemonic to authenticate the transaction.
-                      </div>
-                      <div
-                        class="mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ izhStr flex flex-col space-y-2"
+                    <div
+                      class="flex items-end justify-between bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="mnemonic"
-                          >
-                            Mnemonic
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <div
-                            class="sc-fzqNJr gmzgI max-w-20"
-                            data-testid="InputPassword"
-                          >
-                            <input
-                              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                              data-testid="AuthenticationStep__mnemonic"
-                              name="mnemonic"
-                              type="password"
-                            />
-                            <div
-                              class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
-                            >
-                              <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                                data-testid="InputPassword__toggle"
-                                type="button"
-                              >
-                                <div
-                                  class="sc-AxiKw dzBdqj"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    eye.svg
-                                  </svg>
-                                </div>
-                              </button>
-                            </div>
-                          </div>
-                        </fieldset>
+                          Authenticate
+                        </h1>
+                        <div
+                          class="text-theme-neutral-dark"
+                          data-testid="header__subtitle"
+                        >
+                          Enter your twelve word mnemonic to authenticate the transaction.
+                        </div>
                       </div>
                     </div>
+                    <fieldset
+                      class="sc-AxirZ izhStr flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="mnemonic"
+                      >
+                        Mnemonic
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fzqNJr gmzgI max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="AuthenticationStep__mnemonic"
+                          name="mnemonic"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxiKw dzBdqj"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
                   </div>
                 </div>
                 <div
@@ -5121,26 +5124,31 @@ exports[`SendEntityUpdate should handle download transaction button click on ste
                     class="space-y-8"
                     data-testid="TransactionSuccessful"
                   >
-                    <div>
-                      <h1>
-                        Transaction Sent
-                      </h1>
-                      <div
-                        class="w-full my-8"
-                      >
-                        <svg
-                          class="w-full"
+                    <div
+                      class="flex items-end justify-between bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
                         >
-                          transaction_successful.svg
-                        </svg>
+                          Transaction Sent
+                        </h1>
                       </div>
-                      <p
-                        class="mb-2 text-theme-neutral-dark"
-                      >
-                        Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
-                      </p>
+                    </div>
+                    <svg
+                      class="w-full"
+                    >
+                      transaction_successful.svg
+                    </svg>
+                    <p
+                      class="text-theme-neutral-dark"
+                    >
+                      Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
+                    </p>
+                    <div>
                       <div
-                        class="flex items-center py-6 true "
+                        class="flex items-center py-6 true pt-0"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -6550,69 +6558,72 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <div
+                    class="space-y-8"
                     data-testid="AuthenticationStep"
                   >
-                    <div>
-                      <h1
-                        class="mb-0"
-                      >
-                        Authenticate
-                      </h1>
-                      <div
-                        class="text-theme-neutral-dark"
-                      >
-                        Enter your twelve word mnemonic to authenticate the transaction.
-                      </div>
-                      <div
-                        class="mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ izhStr flex flex-col space-y-2"
+                    <div
+                      class="flex items-end justify-between bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="mnemonic"
-                          >
-                            Mnemonic
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <div
-                            class="sc-fzqNJr gmzgI max-w-20"
-                            data-testid="InputPassword"
-                          >
-                            <input
-                              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                              data-testid="AuthenticationStep__mnemonic"
-                              name="mnemonic"
-                              type="password"
-                            />
-                            <div
-                              class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
-                            >
-                              <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                                data-testid="InputPassword__toggle"
-                                type="button"
-                              >
-                                <div
-                                  class="sc-AxiKw dzBdqj"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    eye.svg
-                                  </svg>
-                                </div>
-                              </button>
-                            </div>
-                          </div>
-                        </fieldset>
+                          Authenticate
+                        </h1>
+                        <div
+                          class="text-theme-neutral-dark"
+                          data-testid="header__subtitle"
+                        >
+                          Enter your twelve word mnemonic to authenticate the transaction.
+                        </div>
                       </div>
                     </div>
+                    <fieldset
+                      class="sc-AxirZ izhStr flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="mnemonic"
+                      >
+                        Mnemonic
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fzqNJr gmzgI max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="AuthenticationStep__mnemonic"
+                          name="mnemonic"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxiKw dzBdqj"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
                   </div>
                 </div>
                 <div
@@ -6957,75 +6968,78 @@ exports[`SendEntityUpdate should require mnemonic field input 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <div
+                    class="space-y-8"
                     data-testid="AuthenticationStep"
                   >
-                    <div>
-                      <h1
-                        class="mb-0"
-                      >
-                        Authenticate
-                      </h1>
-                      <div
-                        class="text-theme-neutral-dark"
-                      >
-                        Enter your twelve word mnemonic to authenticate the transaction.
-                      </div>
-                      <div
-                        class="mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ kMHTdH flex flex-col space-y-2"
+                    <div
+                      class="flex items-end justify-between bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="mnemonic"
-                          >
-                            Mnemonic
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <div
-                            class="sc-fzqNJr gmzgI max-w-20"
-                            data-testid="InputPassword"
-                          >
-                            <input
-                              aria-invalid="true"
-                              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                              data-testid="AuthenticationStep__mnemonic"
-                              name="mnemonic"
-                              type="password"
-                            />
-                            <div
-                              class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
-                            >
-                              <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                                data-testid="InputPassword__toggle"
-                                type="button"
-                              >
-                                <div
-                                  class="sc-AxiKw dzBdqj"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    eye.svg
-                                  </svg>
-                                </div>
-                              </button>
-                            </div>
-                          </div>
-                          <p
-                            class="text-sm text-theme-danger"
-                          >
-                            'Mnemonic' is required
-                          </p>
-                        </fieldset>
+                          Authenticate
+                        </h1>
+                        <div
+                          class="text-theme-neutral-dark"
+                          data-testid="header__subtitle"
+                        >
+                          Enter your twelve word mnemonic to authenticate the transaction.
+                        </div>
                       </div>
                     </div>
+                    <fieldset
+                      class="sc-AxirZ kMHTdH flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="mnemonic"
+                      >
+                        Mnemonic
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fzqNJr gmzgI max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          aria-invalid="true"
+                          class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="AuthenticationStep__mnemonic"
+                          name="mnemonic"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxiKw dzBdqj"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                      <p
+                        class="text-sm text-theme-danger"
+                      >
+                        'Mnemonic' is required
+                      </p>
+                    </fieldset>
                   </div>
                 </div>
                 <div
@@ -7994,69 +8008,72 @@ exports[`SendEntityUpdate should show error message when wrong mnemonic is enter
                   data-testid="tab-pabel__active-panel"
                 >
                   <div
+                    class="space-y-8"
                     data-testid="AuthenticationStep"
                   >
-                    <div>
-                      <h1
-                        class="mb-0"
-                      >
-                        Authenticate
-                      </h1>
-                      <div
-                        class="text-theme-neutral-dark"
-                      >
-                        Enter your twelve word mnemonic to authenticate the transaction.
-                      </div>
-                      <div
-                        class="mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ izhStr flex flex-col space-y-2"
+                    <div
+                      class="flex items-end justify-between bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="mnemonic"
-                          >
-                            Mnemonic
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <div
-                            class="sc-fzqNJr gmzgI max-w-20"
-                            data-testid="InputPassword"
-                          >
-                            <input
-                              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                              data-testid="AuthenticationStep__mnemonic"
-                              name="mnemonic"
-                              type="password"
-                            />
-                            <div
-                              class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
-                            >
-                              <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                                data-testid="InputPassword__toggle"
-                                type="button"
-                              >
-                                <div
-                                  class="sc-AxiKw dzBdqj"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    eye.svg
-                                  </svg>
-                                </div>
-                              </button>
-                            </div>
-                          </div>
-                        </fieldset>
+                          Authenticate
+                        </h1>
+                        <div
+                          class="text-theme-neutral-dark"
+                          data-testid="header__subtitle"
+                        >
+                          Enter your twelve word mnemonic to authenticate the transaction.
+                        </div>
                       </div>
                     </div>
+                    <fieldset
+                      class="sc-AxirZ izhStr flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="mnemonic"
+                      >
+                        Mnemonic
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fzqNJr gmzgI max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="AuthenticationStep__mnemonic"
+                          name="mnemonic"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxiKw dzBdqj"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
                   </div>
                 </div>
                 <div
@@ -8401,69 +8418,72 @@ exports[`SendEntityUpdate should succesfully submit entity update transaction 1`
                   data-testid="tab-pabel__active-panel"
                 >
                   <div
+                    class="space-y-8"
                     data-testid="AuthenticationStep"
                   >
-                    <div>
-                      <h1
-                        class="mb-0"
-                      >
-                        Authenticate
-                      </h1>
-                      <div
-                        class="text-theme-neutral-dark"
-                      >
-                        Enter your twelve word mnemonic to authenticate the transaction.
-                      </div>
-                      <div
-                        class="mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ izhStr flex flex-col space-y-2"
+                    <div
+                      class="flex items-end justify-between bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="mnemonic"
-                          >
-                            Mnemonic
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <div
-                            class="sc-fzqNJr gmzgI max-w-20"
-                            data-testid="InputPassword"
-                          >
-                            <input
-                              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                              data-testid="AuthenticationStep__mnemonic"
-                              name="mnemonic"
-                              type="password"
-                            />
-                            <div
-                              class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
-                            >
-                              <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                                data-testid="InputPassword__toggle"
-                                type="button"
-                              >
-                                <div
-                                  class="sc-AxiKw dzBdqj"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    eye.svg
-                                  </svg>
-                                </div>
-                              </button>
-                            </div>
-                          </div>
-                        </fieldset>
+                          Authenticate
+                        </h1>
+                        <div
+                          class="text-theme-neutral-dark"
+                          data-testid="header__subtitle"
+                        >
+                          Enter your twelve word mnemonic to authenticate the transaction.
+                        </div>
                       </div>
                     </div>
+                    <fieldset
+                      class="sc-AxirZ izhStr flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="mnemonic"
+                      >
+                        Mnemonic
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fzqNJr gmzgI max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="AuthenticationStep__mnemonic"
+                          name="mnemonic"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fznZeY sc-fzqBZW iAaafO my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxiKw dzBdqj"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
                   </div>
                 </div>
                 <div
@@ -8811,26 +8831,31 @@ exports[`SendEntityUpdate should succesfully submit entity update transaction 2`
                     class="space-y-8"
                     data-testid="TransactionSuccessful"
                   >
-                    <div>
-                      <h1>
-                        Transaction Sent
-                      </h1>
-                      <div
-                        class="w-full my-8"
-                      >
-                        <svg
-                          class="w-full"
+                    <div
+                      class="flex items-end justify-between bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
                         >
-                          transaction_successful.svg
-                        </svg>
+                          Transaction Sent
+                        </h1>
                       </div>
-                      <p
-                        class="mb-2 text-theme-neutral-dark"
-                      >
-                        Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
-                      </p>
+                    </div>
+                    <svg
+                      class="w-full"
+                    >
+                      transaction_successful.svg
+                    </svg>
+                    <p
+                      class="text-theme-neutral-dark"
+                    >
+                      Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
+                    </p>
+                    <div>
                       <div
-                        class="flex items-center py-6 true "
+                        class="flex items-center py-6 true pt-0"
                         data-testid="TransactionDetail"
                       >
                         <div

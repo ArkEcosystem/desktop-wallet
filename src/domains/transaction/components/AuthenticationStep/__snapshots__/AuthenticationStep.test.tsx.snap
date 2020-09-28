@@ -7,69 +7,72 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
     data-testid="Form"
   >
     <div
+      class="space-y-8"
       data-testid="AuthenticationStep"
     >
-      <div>
-        <h1
-          class="mb-0"
-        >
-          Authenticate
-        </h1>
-        <div
-          class="text-theme-neutral-dark"
-        >
-          Enter your twelve word mnemonic to authenticate the transaction.
-        </div>
-        <div
-          class="mt-8"
-        >
-          <fieldset
-            class="sc-AxjAm fmGClo flex flex-col space-y-2"
+      <div
+        class="flex items-end justify-between bg-theme-background"
+      >
+        <div>
+          <h1
+            class="mb-0 md:text-4xl"
+            data-testid="header__title"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="mnemonic"
-            >
-              Mnemonic
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-            <div
-              class="sc-AxheI IkGcK max-w-20"
-              data-testid="InputPassword"
-            >
-              <input
-                class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                data-testid="AuthenticationStep__mnemonic"
-                name="mnemonic"
-                type="password"
-              />
-              <div
-                class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
-              >
-                <button
-                  class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                  data-testid="InputPassword__toggle"
-                  type="button"
-                >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      eye.svg
-                    </svg>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </fieldset>
+            Authenticate
+          </h1>
+          <div
+            class="text-theme-neutral-dark"
+            data-testid="header__subtitle"
+          >
+            Enter your twelve word mnemonic to authenticate the transaction.
+          </div>
         </div>
       </div>
+      <fieldset
+        class="sc-AxjAm fmGClo flex flex-col space-y-2"
+      >
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="mnemonic"
+        >
+          Mnemonic
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div
+          class="sc-AxheI IkGcK max-w-20"
+          data-testid="InputPassword"
+        >
+          <input
+            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            data-testid="AuthenticationStep__mnemonic"
+            name="mnemonic"
+            type="password"
+          />
+          <div
+            class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
+          >
+            <button
+              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              data-testid="InputPassword__toggle"
+              type="button"
+            >
+              <div
+                class="sc-AxiKw dzBdqj"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  eye.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </fieldset>
     </div>
   </form>
 </DocumentFragment>
@@ -82,114 +85,117 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
     data-testid="Form"
   >
     <div
+      class="space-y-8"
       data-testid="AuthenticationStep"
     >
-      <div>
-        <h1
-          class="mb-0"
-        >
-          Authenticate
-        </h1>
-        <div
-          class="text-theme-neutral-dark"
-        >
-          Enter your twelve word mnemonic to authenticate the transaction.
-        </div>
-        <div
-          class="mt-8"
-        >
-          <fieldset
-            class="sc-AxjAm fmGClo flex flex-col space-y-2"
+      <div
+        class="flex items-end justify-between bg-theme-background"
+      >
+        <div>
+          <h1
+            class="mb-0 md:text-4xl"
+            data-testid="header__title"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="mnemonic"
-            >
-              Mnemonic
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-            <div
-              class="sc-AxheI IkGcK max-w-20"
-              data-testid="InputPassword"
-            >
-              <input
-                class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                data-testid="AuthenticationStep__mnemonic"
-                name="mnemonic"
-                type="password"
-              />
-              <div
-                class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
-              >
-                <button
-                  class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                  data-testid="InputPassword__toggle"
-                  type="button"
-                >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      eye.svg
-                    </svg>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset
-            class="sc-AxjAm fmGClo mt-8"
+            Authenticate
+          </h1>
+          <div
+            class="text-theme-neutral-dark"
+            data-testid="header__subtitle"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="secondMnemonic"
-            >
-              2nd Mnemonic
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-            <div
-              class="sc-AxheI IkGcK max-w-20"
-              data-testid="InputPassword"
-            >
-              <input
-                class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                data-testid="AuthenticationStep__second-mnemonic"
-                name="secondMnemonic"
-                type="password"
-              />
-              <div
-                class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
-              >
-                <button
-                  class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                  data-testid="InputPassword__toggle"
-                  type="button"
-                >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      eye.svg
-                    </svg>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </fieldset>
+            Enter your twelve word mnemonic to authenticate the transaction.
+          </div>
         </div>
       </div>
+      <fieldset
+        class="sc-AxjAm fmGClo flex flex-col space-y-2"
+      >
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="mnemonic"
+        >
+          Mnemonic
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div
+          class="sc-AxheI IkGcK max-w-20"
+          data-testid="InputPassword"
+        >
+          <input
+            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            data-testid="AuthenticationStep__mnemonic"
+            name="mnemonic"
+            type="password"
+          />
+          <div
+            class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
+          >
+            <button
+              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              data-testid="InputPassword__toggle"
+              type="button"
+            >
+              <div
+                class="sc-AxiKw dzBdqj"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  eye.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset
+        class="sc-AxjAm fmGClo flex flex-col space-y-2"
+      >
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="secondMnemonic"
+        >
+          2nd Mnemonic
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div
+          class="sc-AxheI IkGcK max-w-20"
+          data-testid="InputPassword"
+        >
+          <input
+            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            data-testid="AuthenticationStep__second-mnemonic"
+            name="secondMnemonic"
+            type="password"
+          />
+          <div
+            class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
+          >
+            <button
+              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              data-testid="InputPassword__toggle"
+              type="button"
+            >
+              <div
+                class="sc-AxiKw dzBdqj"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  eye.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </fieldset>
     </div>
   </form>
 </DocumentFragment>
@@ -202,37 +208,51 @@ exports[`AuthenticationStep should show only ledger confirmation 1`] = `
     data-testid="Form"
   >
     <div
+      class="space-y-8"
       data-testid="AuthenticationStep"
     >
-      <div>
-        <h1>
-          Confirm Your Transaction
-        </h1>
-        <svg
-          class="my-8"
-        >
-          confirm-transaction-ledger-banner.svg
-        </svg>
-        <div
-          class="mt-8 text-center text-theme-neutral-dark"
-          data-testid="LedgerConfirmation-description"
-        >
-          Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
-        </div>
-        <div
-          class="inline-flex items-center justify-center w-full mt-8 space-x-3"
-        >
-          <div
-            class="sc-fzoLsD gjSfIV"
-            color="primary"
-          />
-          <span
-            class="font-semibold text-black"
-            data-testid="LedgerConfirmation-loading_message"
+      <div
+        class="flex items-end justify-between bg-theme-background"
+      >
+        <div>
+          <h1
+            class="mb-0 md:text-4xl"
+            data-testid="header__title"
           >
-            Waiting for confirmation ...
-          </span>
+            Confirm Your Transaction
+          </h1>
+          <div
+            class="text-theme-neutral-dark"
+            data-testid="header__subtitle"
+          >
+            Enter your twelve word mnemonic to authenticate the transaction.
+          </div>
         </div>
+      </div>
+      <svg
+        class="my-8"
+      >
+        confirm-transaction-ledger-banner.svg
+      </svg>
+      <div
+        class="mt-8 text-center text-theme-neutral-dark"
+        data-testid="LedgerConfirmation-description"
+      >
+        Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
+      </div>
+      <div
+        class="inline-flex items-center justify-center w-full mt-8 space-x-3"
+      >
+        <div
+          class="sc-fzoLsD gjSfIV"
+          color="primary"
+        />
+        <span
+          class="font-semibold text-black"
+          data-testid="LedgerConfirmation-loading_message"
+        >
+          Waiting for confirmation ...
+        </span>
       </div>
     </div>
   </form>

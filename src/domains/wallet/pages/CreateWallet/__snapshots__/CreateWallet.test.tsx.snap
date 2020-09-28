@@ -3,157 +3,92 @@
 exports[`CreateWallet 2nd step should render 1`] = `
 <DocumentFragment>
   <section
+    class="space-y-8"
     data-testid="CreateWallet__second-step"
   >
     <div
-      class="my-8"
+      class="flex items-end justify-between bg-theme-background"
     >
-      <div
-        class="flex items-end justify-between bg-theme-background"
-      >
-        <div>
-          <h1
-            class="mb-0 md:text-4xl"
-            data-testid="header__title"
-          >
-            Your Passphrase
-          </h1>
-        </div>
+      <div>
+        <h1
+          class="mb-0 md:text-4xl"
+          data-testid="header__title"
+        >
+          Your Passphrase
+        </h1>
       </div>
     </div>
     <div
-      class="space-y-8"
+      class="flex rounded-lg overflow-hidden bg-theme-warning"
     >
       <div
-        class="flex rounded-lg overflow-hidden bg-theme-warning"
+        class="sc-fzoyTs jDTNSW flex items-center justify-center text-theme-warning bg-theme-warning-200"
       >
         <div
-          class="sc-fzoyTs jDTNSW flex items-center justify-center text-theme-warning bg-theme-warning-200"
-        >
-          <div
-            class="sc-AxhCb gCvBAn"
-            height="30"
-            width="30"
-          >
-            <svg>
-              alert-default.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-fzqNqU iFgBqQ flex-1 bg-theme-warning-100 space-y-2"
-        >
-          <div
-            class="text-sm"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
-          </div>
-        </div>
-      </div>
-      <ul
-        class="grid grid-cols-2 row-gap-5 col-gap-3 md:grid-cols-3 lg:grid-cols-4"
-      >
-        <li
-          class="relative px-3 py-3 border rounded border-theme-neutral-light"
-          data-testid="MnemonicList__item"
-        >
-          <span
-            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
-          >
-            1
-          </span>
-          <span
-            class="font-medium text-theme-neutral-800"
-          >
-            test
-          </span>
-        </li>
-        <li
-          class="relative px-3 py-3 border rounded border-theme-neutral-light"
-          data-testid="MnemonicList__item"
-        >
-          <span
-            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
-          >
-            2
-          </span>
-          <span
-            class="font-medium text-theme-neutral-800"
-          >
-            mnemonic
-          </span>
-        </li>
-      </ul>
-      <div
-        class="flex justify-end w-full"
-      >
-        <div
-          class="inline-block cursor-pointer"
-          data-testid="clipboard__wrapper"
-        >
-          <button
-            class="sc-AxjAm fPpool"
-            color="primary"
-            data-testid="CreateWallet__copy"
-            type="button"
-          >
-            <div
-              class="sc-AxhCb fxrKLH"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                copy.svg
-              </svg>
-            </div>
-            <span>
-              Copy
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div
-      class="sc-AxiKw kXkCOd border-theme-neutral-300"
-      type="horizontal"
-    />
-    <div
-      class="py-3"
-    >
-      <div
-        class="flex items-center justify-between"
-      >
-        <div
-          class="space-y-1"
-        >
-          <span
-            class="text-lg font-semibold text-theme-neutral-dark"
-          >
-            Download Your Passphrase
-          </span>
-          <p
-            class="text-sm text-theme-neutral"
-          >
-            You can also download and safely store your passphrase.
-          </p>
-        </div>
-        <div
-          class="sc-AxhCb cCYhIn"
-          height="40"
-          width="40"
+          class="sc-AxhCb gCvBAn"
+          height="30"
+          width="30"
         >
           <svg>
-            file-password.svg
+            alert-default.svg
           </svg>
         </div>
       </div>
       <div
-        class="flex justify-end w-full mt-8"
+        class="sc-fzqNqU iFgBqQ flex-1 bg-theme-warning-100 space-y-2"
+      >
+        <div
+          class="text-sm"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
+        </div>
+      </div>
+    </div>
+    <ul
+      class="grid grid-cols-2 row-gap-5 col-gap-3 md:grid-cols-3 lg:grid-cols-4"
+    >
+      <li
+        class="relative px-3 py-3 border rounded border-theme-neutral-light"
+        data-testid="MnemonicList__item"
+      >
+        <span
+          class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
+        >
+          1
+        </span>
+        <span
+          class="font-medium text-theme-neutral-800"
+        >
+          test
+        </span>
+      </li>
+      <li
+        class="relative px-3 py-3 border rounded border-theme-neutral-light"
+        data-testid="MnemonicList__item"
+      >
+        <span
+          class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
+        >
+          2
+        </span>
+        <span
+          class="font-medium text-theme-neutral-800"
+        >
+          mnemonic
+        </span>
+      </li>
+    </ul>
+    <div
+      class="flex justify-end w-full"
+    >
+      <div
+        class="inline-block cursor-pointer"
+        data-testid="clipboard__wrapper"
       >
         <button
-          class="sc-AxjAm fPpool flex items-center space-x-2"
+          class="sc-AxjAm fPpool"
           color="primary"
-          data-testid="CreateWallet__download"
+          data-testid="CreateWallet__copy"
           type="button"
         >
           <div
@@ -162,14 +97,68 @@ exports[`CreateWallet 2nd step should render 1`] = `
             width="1em"
           >
             <svg>
-              download.svg
+              copy.svg
             </svg>
           </div>
           <span>
-            Download
+            Copy
           </span>
         </button>
       </div>
+    </div>
+    <div
+      class="sc-AxiKw kXkCOd border-theme-neutral-300"
+      type="horizontal"
+    />
+    <div
+      class="flex items-center justify-between"
+    >
+      <div
+        class="space-y-2"
+      >
+        <span
+          class="text-lg font-semibold text-theme-neutral-dark"
+        >
+          Download Your Passphrase
+        </span>
+        <p
+          class="text-sm text-theme-neutral"
+        >
+          You can also download and safely store your passphrase.
+        </p>
+      </div>
+      <div
+        class="sc-AxhCb cCYhIn"
+        height="40"
+        width="40"
+      >
+        <svg>
+          file-password.svg
+        </svg>
+      </div>
+    </div>
+    <div
+      class="flex justify-end w-full"
+    >
+      <button
+        class="sc-AxjAm fPpool flex items-center space-x-2"
+        color="primary"
+        data-testid="CreateWallet__download"
+        type="button"
+      >
+        <div
+          class="sc-AxhCb fxrKLH"
+          height="1em"
+          width="1em"
+        >
+          <svg>
+            download.svg
+          </svg>
+        </div>
+        <span>
+          Download
+        </span>
+      </button>
     </div>
     <div
       class="sc-AxiKw kXkCOd border-theme-neutral-300"
@@ -476,14 +465,14 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                 />
               </ul>
               <div
-                data-testid="tab-pabel__active-panel"
+                class="mt-8"
               >
-                <section
-                  class="space-y-8"
-                  data-testid="CreateWallet__first-step"
+                <div
+                  data-testid="tab-pabel__active-panel"
                 >
-                  <div
-                    class="my-8"
+                  <section
+                    class="space-y-8"
+                    data-testid="CreateWallet__first-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"
@@ -503,89 +492,89 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <fieldset
-                    class="sc-AxirZ izhStr flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="network"
+                    <fieldset
+                      class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
-                      Network
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div>
-                      <div
-                        aria-expanded="false"
-                        aria-haspopup="listbox"
-                        aria-owns="CreateWallet__network-menu"
-                        data-testid="SelectNetwork"
-                        role="combobox"
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="network"
                       >
-                        <label
-                          for="CreateWallet__network-input"
-                          id="CreateWallet__network-label"
-                        />
+                        Network
                         <div
-                          class="sc-fzqNJr gmzgI"
-                          data-testid="SelectNetworkInput"
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div>
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="CreateWallet__network-menu"
+                          data-testid="SelectNetwork"
+                          role="combobox"
                         >
+                          <label
+                            for="CreateWallet__network-input"
+                            id="CreateWallet__network-label"
+                          />
                           <div
-                            class="sc-fznZeY sc-fzokOt jWugcU px-4"
+                            class="sc-fzqNJr gmzgI"
+                            data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
-                              data-testid="SelectNetworkInput__network"
+                              class="sc-fznZeY sc-fzokOt jWugcU px-4"
+                            >
+                              <div
+                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                data-testid="SelectNetworkInput__network"
+                              />
+                            </div>
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="CreateWallet__network-menu"
+                              aria-labelledby="CreateWallet__network-label"
+                              autocomplete="off"
+                              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              data-testid="SelectNetworkInput__input"
+                              id="CreateWallet__network-input"
+                              placeholder="Enter a network name"
+                              value=""
                             />
                           </div>
-                          <input
-                            aria-autocomplete="list"
-                            aria-controls="CreateWallet__network-menu"
-                            aria-labelledby="CreateWallet__network-label"
-                            autocomplete="off"
-                            class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                            data-testid="SelectNetworkInput__input"
-                            id="CreateWallet__network-input"
-                            placeholder="Enter a network name"
-                            value=""
-                          />
                         </div>
+                        <ul
+                          aria-labelledby="CreateWallet__network-label"
+                          class="hidden"
+                          id="CreateWallet__network-menu"
+                          role="listbox"
+                        />
                       </div>
-                      <ul
-                        aria-labelledby="CreateWallet__network-label"
-                        class="hidden"
-                        id="CreateWallet__network-menu"
-                        role="listbox"
-                      />
-                    </div>
-                  </fieldset>
-                </section>
-              </div>
-              <div
-                class="flex justify-end mt-10 space-x-3"
-              >
-                <button
-                  class="sc-AxjAm fPpool"
-                  color="primary"
-                  data-testid="CreateWallet__back-button"
-                  disabled=""
-                  type="button"
+                    </fieldset>
+                  </section>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
                 >
-                  Back
-                </button>
-                <button
-                  class="sc-AxjAm kbZyZT"
-                  color="primary"
-                  data-testid="CreateWallet__continue-button"
-                  disabled=""
-                  type="button"
-                >
-                  Continue
-                </button>
+                  <button
+                    class="sc-AxjAm fPpool"
+                    color="primary"
+                    data-testid="CreateWallet__back-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="sc-AxjAm kbZyZT"
+                    color="primary"
+                    data-testid="CreateWallet__continue-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Continue
+                  </button>
+                </div>
               </div>
             </div>
           </form>
@@ -893,14 +882,14 @@ exports[`CreateWallet should render 1`] = `
                 />
               </ul>
               <div
-                data-testid="tab-pabel__active-panel"
+                class="mt-8"
               >
-                <section
-                  class="space-y-8"
-                  data-testid="CreateWallet__first-step"
+                <div
+                  data-testid="tab-pabel__active-panel"
                 >
-                  <div
-                    class="my-8"
+                  <section
+                    class="space-y-8"
+                    data-testid="CreateWallet__first-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"
@@ -920,89 +909,89 @@ exports[`CreateWallet should render 1`] = `
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <fieldset
-                    class="sc-AxirZ izhStr flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="network"
+                    <fieldset
+                      class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
-                      Network
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div>
-                      <div
-                        aria-expanded="false"
-                        aria-haspopup="listbox"
-                        aria-owns="CreateWallet__network-menu"
-                        data-testid="SelectNetwork"
-                        role="combobox"
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="network"
                       >
-                        <label
-                          for="CreateWallet__network-input"
-                          id="CreateWallet__network-label"
-                        />
+                        Network
                         <div
-                          class="sc-fzqNJr gmzgI"
-                          data-testid="SelectNetworkInput"
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div>
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="CreateWallet__network-menu"
+                          data-testid="SelectNetwork"
+                          role="combobox"
                         >
+                          <label
+                            for="CreateWallet__network-input"
+                            id="CreateWallet__network-label"
+                          />
                           <div
-                            class="sc-fznZeY sc-fzokOt jWugcU px-4"
+                            class="sc-fzqNJr gmzgI"
+                            data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
-                              data-testid="SelectNetworkInput__network"
+                              class="sc-fznZeY sc-fzokOt jWugcU px-4"
+                            >
+                              <div
+                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                data-testid="SelectNetworkInput__network"
+                              />
+                            </div>
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="CreateWallet__network-menu"
+                              aria-labelledby="CreateWallet__network-label"
+                              autocomplete="off"
+                              class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              data-testid="SelectNetworkInput__input"
+                              id="CreateWallet__network-input"
+                              placeholder="Enter a network name"
+                              value=""
                             />
                           </div>
-                          <input
-                            aria-autocomplete="list"
-                            aria-controls="CreateWallet__network-menu"
-                            aria-labelledby="CreateWallet__network-label"
-                            autocomplete="off"
-                            class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                            data-testid="SelectNetworkInput__input"
-                            id="CreateWallet__network-input"
-                            placeholder="Enter a network name"
-                            value=""
-                          />
                         </div>
+                        <ul
+                          aria-labelledby="CreateWallet__network-label"
+                          class="hidden"
+                          id="CreateWallet__network-menu"
+                          role="listbox"
+                        />
                       </div>
-                      <ul
-                        aria-labelledby="CreateWallet__network-label"
-                        class="hidden"
-                        id="CreateWallet__network-menu"
-                        role="listbox"
-                      />
-                    </div>
-                  </fieldset>
-                </section>
-              </div>
-              <div
-                class="flex justify-end mt-10 space-x-3"
-              >
-                <button
-                  class="sc-AxjAm fPpool"
-                  color="primary"
-                  data-testid="CreateWallet__back-button"
-                  disabled=""
-                  type="button"
+                    </fieldset>
+                  </section>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
                 >
-                  Back
-                </button>
-                <button
-                  class="sc-AxjAm kbZyZT"
-                  color="primary"
-                  data-testid="CreateWallet__continue-button"
-                  disabled=""
-                  type="button"
-                >
-                  Continue
-                </button>
+                  <button
+                    class="sc-AxjAm fPpool"
+                    color="primary"
+                    data-testid="CreateWallet__back-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="sc-AxjAm kbZyZT"
+                    color="primary"
+                    data-testid="CreateWallet__continue-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Continue
+                  </button>
+                </div>
               </div>
             </div>
           </form>
@@ -1020,24 +1009,20 @@ exports[`CreateWallet should render 1st step 1`] = `
     data-testid="CreateWallet__first-step"
   >
     <div
-      class="my-8"
+      class="flex items-end justify-between bg-theme-background"
     >
-      <div
-        class="flex items-end justify-between bg-theme-background"
-      >
-        <div>
-          <h1
-            class="mb-0 md:text-4xl"
-            data-testid="header__title"
-          >
-            Select a Network
-          </h1>
-          <div
-            class="text-theme-neutral-dark"
-            data-testid="header__subtitle"
-          >
-            Select a Network to create your new wallet address
-          </div>
+      <div>
+        <h1
+          class="mb-0 md:text-4xl"
+          data-testid="header__title"
+        >
+          Select a Network
+        </h1>
+        <div
+          class="text-theme-neutral-dark"
+          data-testid="header__subtitle"
+        >
+          Select a Network to create your new wallet address
         </div>
       </div>
     </div>
