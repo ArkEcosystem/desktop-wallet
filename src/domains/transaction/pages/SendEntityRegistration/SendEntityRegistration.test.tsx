@@ -134,6 +134,13 @@ describe("Registration", () => {
 		const { getByTestId, asFragment } = await renderPage();
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
 		act(() => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
@@ -147,6 +154,13 @@ describe("Registration", () => {
 		const { getByTestId, asFragment } = await renderPage();
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
+
 		act(() => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});

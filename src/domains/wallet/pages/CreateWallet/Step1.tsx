@@ -39,26 +39,21 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 
 	return (
 		<section data-testid="CreateWallet__first-step" className="space-y-8">
-			<div className="my-8">
-				<Header
-					title={t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.TITLE")}
-					subtitle={t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.SUBTITLE")}
+			<Header
+				title={t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.TITLE")}
+				subtitle={t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.SUBTITLE")}
+			/>
+
+			<FormField name="network">
+				<FormLabel label={t("COMMON.NETWORK")} />
+				<SelectNetwork
+					id="CreateWallet__network"
+					networks={networks}
+					selected={selectedNetwork}
+					onSelect={handleSelect}
+					disabled={isGeneratingWallet}
 				/>
-			</div>
-			<div className="space-y-2">
-				<FormField name="network" className="relative mt-1">
-					<div className="mb-2">
-						<FormLabel label={t("COMMON.NETWORK")} />
-					</div>
-					<SelectNetwork
-						id="CreateWallet__network"
-						networks={networks}
-						selected={selectedNetwork}
-						onSelect={handleSelect}
-						disabled={isGeneratingWallet}
-					/>
-				</FormField>
-			</div>
+			</FormField>
 		</section>
 	);
 };

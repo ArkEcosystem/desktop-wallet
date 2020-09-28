@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Circle } from "app/components/Circle";
@@ -7,15 +8,18 @@ import React from "react";
 import { TransactionRowRecipientIcon } from "./TransactionRowRecipientIcon";
 
 type Props = {
-	transaction: ExtendedTransactionData;
+	type: string;
+	isSent: boolean;
+	recipient: string;
+	recipients?: Contracts.MultiPaymentRecipient[];
 	circleShadowColor?: string;
 };
 
-export const TransactionRowMode = ({ transaction, circleShadowColor }: Props) => {
+export const BaseTransactionRowMode = ({ type, isSent, recipient, recipients, circleShadowColor }: Props) => {
 	// TODO: i18n
-	const tooltipContent = transaction?.isSent() ? "Sent" : "Received";
-	const modeIconName = transaction?.isSent() ? "Sent" : "Received";
-	const modeCircleStyle = transaction?.isSent()
+	const tooltipContent = isSent ? "Sent" : "Received";
+	const modeIconName = isSent ? "Sent" : "Received";
+	const modeCircleStyle = isSent
 		? "border-theme-danger-contrast text-theme-danger"
 		: "border-theme-success-300 text-theme-success";
 
@@ -27,12 +31,28 @@ export const TransactionRowMode = ({ transaction, circleShadowColor }: Props) =>
 				</Circle>
 			</Tippy>
 			<TransactionRowRecipientIcon
-				recipients={transaction?.recipients()}
-				recipient={transaction?.recipient()}
-				type={transaction?.type()}
+				recipients={recipients}
+				recipient={recipient}
+				type={type}
 				className={`bg-theme-background font-semibold ${modeCircleStyle}`}
 				circleShadowColor={circleShadowColor}
 			/>
 		</div>
 	);
 };
+
+export const TransactionRowMode = ({
+	transaction,
+	circleShadowColor,
+}: {
+	transaction: ExtendedTransactionData;
+	circleShadowColor?: string;
+}) => (
+	<BaseTransactionRowMode
+		circleShadowColor={circleShadowColor}
+		isSent={transaction.isSent()}
+		type={transaction.type()}
+		recipient={transaction.recipient()}
+		recipients={transaction.recipients()}
+	/>
+);

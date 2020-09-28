@@ -25,26 +25,21 @@ export const FirstStep = () => {
 	};
 
 	return (
-		<section className="space-y-8" data-testid="ImportWallet__first-step">
-			<div className="my-8">
-				<Header
-					title={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.TITLE")}
-					subtitle={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE")}
+		<section data-testid="ImportWallet__first-step" className="space-y-8">
+			<Header
+				title={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.TITLE")}
+				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE")}
+			/>
+
+			<FormField name="network">
+				<FormLabel label={t("COMMON.NETWORK")} />
+				<SelectNetwork
+					id="ImportWallet__network"
+					networks={networks}
+					selected={selectedNetwork}
+					onSelect={handleSelect}
 				/>
-			</div>
-			<div className="space-y-2">
-				<FormField name="network" className="relative mt-1">
-					<div className="mb-2">
-						<FormLabel label={t("COMMON.NETWORK")} />
-					</div>
-					<SelectNetwork
-						id="ImportWallet__network"
-						networks={networks}
-						selected={selectedNetwork}
-						onSelect={handleSelect}
-					/>
-				</FormField>
-			</div>
+			</FormField>
 		</section>
 	);
 };

@@ -5,10 +5,10 @@ import { Avatar } from "app/components/Avatar";
 import { FormField, FormLabel } from "app/components/Form";
 import { Label } from "app/components/Label";
 import { Loader } from "app/components/Loader";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveWallet } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 

@@ -7,6 +7,7 @@ const translations = buildTranslations();
 export const goToImportWalletPage = async (t: any, options?: { passphrase: string }) => {
 	await t.click(Selector("button").withText(translations.COMMON.IMPORT));
 	await t.expect(Selector("[data-testid=header__title]").withText("Select a Network").exists).ok();
+	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), options?.passphrase || "passphrase");

@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import { TransactionDetail } from "app/components/TransactionDetail";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import { VoteList } from "domains/vote/components/VoteList";
 import React from "react";

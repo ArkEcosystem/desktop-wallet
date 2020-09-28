@@ -44,505 +44,50 @@ exports[`ContactForm should select 1`] = `
             data-testid="FormLabel__required"
           />
         </label>
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-owns="ContactForm__network-menu"
-          data-testid="SelectNetwork"
-          role="combobox"
-        >
-          <label
-            for="ContactForm__network-input"
-            id="ContactForm__network-label"
-          />
+        <div>
           <div
-            class="sc-AxmLO kuiknc"
-            data-testid="SelectNetworkInput"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="ContactForm__network-menu"
+            data-testid="SelectNetwork"
+            role="combobox"
           >
+            <label
+              for="ContactForm__network-input"
+              id="ContactForm__network-label"
+            />
             <div
-              class="sc-AxgMl sc-AxheI hUEXQW px-4"
+              class="sc-AxmLO kuiknc"
+              data-testid="SelectNetworkInput"
             >
               <div
-                class="sc-fzplWN bjoBgQ border-theme-neutral-light text-theme-neutral"
-                data-testid="SelectNetworkInput__network"
+                class="sc-AxgMl sc-AxheI hUEXQW px-4"
+              >
+                <div
+                  class="sc-fzplWN bjoBgQ border-theme-neutral-light text-theme-neutral"
+                  data-testid="SelectNetworkInput__network"
+                />
+              </div>
+              <input
+                aria-autocomplete="list"
+                aria-controls="ContactForm__network-menu"
+                aria-labelledby="ContactForm__network-label"
+                autocomplete="off"
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                data-testid="SelectNetworkInput__input"
+                id="ContactForm__network-input"
+                placeholder="Enter a network name"
+                value=""
               />
             </div>
-            <input
-              aria-autocomplete="list"
-              aria-controls="ContactForm__network-menu"
-              aria-labelledby="ContactForm__network-label"
-              autocomplete="off"
-              class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-              data-testid="SelectNetworkInput__input"
-              id="ContactForm__network-input"
-              placeholder="Enter a network name"
-              value=""
-            />
           </div>
+          <ul
+            aria-labelledby="ContactForm__network-label"
+            class="hidden"
+            id="ContactForm__network-menu"
+            role="listbox"
+          />
         </div>
-        <ul
-          aria-labelledby="ContactForm__network-label"
-          class="grid grid-cols-6 gap-6 mt-6"
-          id="ContactForm__network-menu"
-          role="listbox"
-        >
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-0"
-            role="option"
-          >
-            <div
-              aria-label="ARK"
-              class="sc-fzplWN iJrBKY border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon-ARK-ark.mainnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-1"
-            role="option"
-          >
-            <div
-              aria-label="ARK Devnet"
-              class="sc-fzplWN iJrBKY border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-ark.devnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-2"
-            role="option"
-          >
-            <div
-              aria-label="Compendia"
-              class="sc-fzplWN iJrBKY border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-compendia.mainnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  bind.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-3"
-            role="option"
-          >
-            <div
-              aria-label="Compendia Testnet"
-              class="sc-fzplWN iJrBKY border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-compendia.testnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  bind.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-4"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-5"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-6"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-7"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-8"
-            role="option"
-          >
-            <div
-              aria-label="Bitcoin"
-              class="sc-fzplWN iJrBKY border-theme-warning-200 text-theme-warning-400"
-              data-testid="NetworkIcon-BTC-btc.livenet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  btc.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-9"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-10"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-11"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-12"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-13"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-14"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-15"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-16"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-17"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-18"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-19"
-            role="option"
-          >
-            <div
-              aria-label="Lisk"
-              class="sc-fzplWN iJrBKY border-theme-primary-400 text-theme-primary"
-              data-testid="NetworkIcon-LSK-lsk.mainnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-20"
-            role="option"
-          >
-            <div
-              aria-label="Lisk Testnet"
-              class="sc-fzplWN iJrBKY border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-lsk.testnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-21"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-22"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-23"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-24"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-25"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-26"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-27"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-28"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-29"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-30"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-        </ul>
       </fieldset>
       <fieldset
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
@@ -682,505 +227,50 @@ exports[`ContactForm should select with errors 1`] = `
             data-testid="FormLabel__required"
           />
         </label>
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-owns="ContactForm__network-menu"
-          data-testid="SelectNetwork"
-          role="combobox"
-        >
-          <label
-            for="ContactForm__network-input"
-            id="ContactForm__network-label"
-          />
+        <div>
           <div
-            class="sc-AxmLO kuiknc"
-            data-testid="SelectNetworkInput"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="ContactForm__network-menu"
+            data-testid="SelectNetwork"
+            role="combobox"
           >
+            <label
+              for="ContactForm__network-input"
+              id="ContactForm__network-label"
+            />
             <div
-              class="sc-AxgMl sc-AxheI hUEXQW px-4"
+              class="sc-AxmLO kuiknc"
+              data-testid="SelectNetworkInput"
             >
               <div
-                class="sc-fzplWN bjoBgQ border-theme-neutral-light text-theme-neutral"
-                data-testid="SelectNetworkInput__network"
+                class="sc-AxgMl sc-AxheI hUEXQW px-4"
+              >
+                <div
+                  class="sc-fzplWN bjoBgQ border-theme-neutral-light text-theme-neutral"
+                  data-testid="SelectNetworkInput__network"
+                />
+              </div>
+              <input
+                aria-autocomplete="list"
+                aria-controls="ContactForm__network-menu"
+                aria-labelledby="ContactForm__network-label"
+                autocomplete="off"
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                data-testid="SelectNetworkInput__input"
+                id="ContactForm__network-input"
+                placeholder="Enter a network name"
+                value=""
               />
             </div>
-            <input
-              aria-autocomplete="list"
-              aria-controls="ContactForm__network-menu"
-              aria-labelledby="ContactForm__network-label"
-              autocomplete="off"
-              class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-              data-testid="SelectNetworkInput__input"
-              id="ContactForm__network-input"
-              placeholder="Enter a network name"
-              value=""
-            />
           </div>
+          <ul
+            aria-labelledby="ContactForm__network-label"
+            class="hidden"
+            id="ContactForm__network-menu"
+            role="listbox"
+          />
         </div>
-        <ul
-          aria-labelledby="ContactForm__network-label"
-          class="grid grid-cols-6 gap-6 mt-6"
-          id="ContactForm__network-menu"
-          role="listbox"
-        >
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-0"
-            role="option"
-          >
-            <div
-              aria-label="ARK"
-              class="sc-fzplWN iJrBKY border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon-ARK-ark.mainnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-1"
-            role="option"
-          >
-            <div
-              aria-label="ARK Devnet"
-              class="sc-fzplWN iJrBKY border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-ark.devnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-2"
-            role="option"
-          >
-            <div
-              aria-label="Compendia"
-              class="sc-fzplWN iJrBKY border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-compendia.mainnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  bind.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-3"
-            role="option"
-          >
-            <div
-              aria-label="Compendia Testnet"
-              class="sc-fzplWN iJrBKY border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-compendia.testnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  bind.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-4"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-5"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-6"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-7"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-8"
-            role="option"
-          >
-            <div
-              aria-label="Bitcoin"
-              class="sc-fzplWN iJrBKY border-theme-warning-200 text-theme-warning-400"
-              data-testid="NetworkIcon-BTC-btc.livenet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  btc.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-9"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-10"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-11"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-12"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-13"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-14"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-15"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-16"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-17"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-18"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-19"
-            role="option"
-          >
-            <div
-              aria-label="Lisk"
-              class="sc-fzplWN iJrBKY border-theme-primary-400 text-theme-primary"
-              data-testid="NetworkIcon-LSK-lsk.mainnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-20"
-            role="option"
-          >
-            <div
-              aria-label="Lisk Testnet"
-              class="sc-fzplWN iJrBKY border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-lsk.testnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-21"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-22"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-23"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-24"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-25"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-26"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-27"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-28"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-29"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-30"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN iJrBKY border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-        </ul>
       </fieldset>
       <fieldset
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
@@ -1314,48 +404,50 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
             data-testid="FormLabel__required"
           />
         </label>
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-owns="ContactForm__network-menu"
-          data-testid="SelectNetwork"
-          role="combobox"
-        >
-          <label
-            for="ContactForm__network-input"
-            id="ContactForm__network-label"
-          />
+        <div>
           <div
-            class="sc-AxmLO kuiknc"
-            data-testid="SelectNetworkInput"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="ContactForm__network-menu"
+            data-testid="SelectNetwork"
+            role="combobox"
           >
+            <label
+              for="ContactForm__network-input"
+              id="ContactForm__network-label"
+            />
             <div
-              class="sc-AxgMl sc-AxheI hUEXQW px-4"
+              class="sc-AxmLO kuiknc"
+              data-testid="SelectNetworkInput"
             >
               <div
-                class="sc-fzplWN bjoBgQ border-theme-neutral-light text-theme-neutral"
-                data-testid="SelectNetworkInput__network"
+                class="sc-AxgMl sc-AxheI hUEXQW px-4"
+              >
+                <div
+                  class="sc-fzplWN bjoBgQ border-theme-neutral-light text-theme-neutral"
+                  data-testid="SelectNetworkInput__network"
+                />
+              </div>
+              <input
+                aria-autocomplete="list"
+                aria-controls="ContactForm__network-menu"
+                aria-labelledby="ContactForm__network-label"
+                autocomplete="off"
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                data-testid="SelectNetworkInput__input"
+                id="ContactForm__network-input"
+                placeholder="Enter a network name"
+                value=""
               />
             </div>
-            <input
-              aria-autocomplete="list"
-              aria-controls="ContactForm__network-menu"
-              aria-labelledby="ContactForm__network-label"
-              autocomplete="off"
-              class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-              data-testid="SelectNetworkInput__input"
-              id="ContactForm__network-input"
-              placeholder="Enter a network name"
-              value=""
-            />
           </div>
+          <ul
+            aria-labelledby="ContactForm__network-label"
+            class="hidden"
+            id="ContactForm__network-menu"
+            role="listbox"
+          />
         </div>
-        <ul
-          aria-labelledby="ContactForm__network-label"
-          class="grid grid-cols-6 gap-6 mt-6"
-          id="ContactForm__network-menu"
-          role="listbox"
-        />
       </fieldset>
       <fieldset
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
@@ -1489,48 +581,50 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             data-testid="FormLabel__required"
           />
         </label>
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-owns="ContactForm__network-menu"
-          data-testid="SelectNetwork"
-          role="combobox"
-        >
-          <label
-            for="ContactForm__network-input"
-            id="ContactForm__network-label"
-          />
+        <div>
           <div
-            class="sc-AxmLO kuiknc"
-            data-testid="SelectNetworkInput"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="ContactForm__network-menu"
+            data-testid="SelectNetwork"
+            role="combobox"
           >
+            <label
+              for="ContactForm__network-input"
+              id="ContactForm__network-label"
+            />
             <div
-              class="sc-AxgMl sc-AxheI hUEXQW px-4"
+              class="sc-AxmLO kuiknc"
+              data-testid="SelectNetworkInput"
             >
               <div
-                class="sc-fzplWN bjoBgQ border-theme-neutral-light text-theme-neutral"
-                data-testid="SelectNetworkInput__network"
+                class="sc-AxgMl sc-AxheI hUEXQW px-4"
+              >
+                <div
+                  class="sc-fzplWN bjoBgQ border-theme-neutral-light text-theme-neutral"
+                  data-testid="SelectNetworkInput__network"
+                />
+              </div>
+              <input
+                aria-autocomplete="list"
+                aria-controls="ContactForm__network-menu"
+                aria-labelledby="ContactForm__network-label"
+                autocomplete="off"
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                data-testid="SelectNetworkInput__input"
+                id="ContactForm__network-input"
+                placeholder="Enter a network name"
+                value=""
               />
             </div>
-            <input
-              aria-autocomplete="list"
-              aria-controls="ContactForm__network-menu"
-              aria-labelledby="ContactForm__network-label"
-              autocomplete="off"
-              class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-              data-testid="SelectNetworkInput__input"
-              id="ContactForm__network-input"
-              placeholder="Enter a network name"
-              value=""
-            />
           </div>
+          <ul
+            aria-labelledby="ContactForm__network-label"
+            class="hidden"
+            id="ContactForm__network-menu"
+            role="listbox"
+          />
         </div>
-        <ul
-          aria-labelledby="ContactForm__network-label"
-          class="grid grid-cols-6 gap-6 mt-6"
-          id="ContactForm__network-menu"
-          role="listbox"
-        />
       </fieldset>
       <fieldset
         class="sc-AxiKw iQzisX flex flex-col space-y-2"

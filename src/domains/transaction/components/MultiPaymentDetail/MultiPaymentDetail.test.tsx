@@ -1,19 +1,29 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
-import { render } from "testing-library";
+import { render, waitFor } from "testing-library";
 import { TransactionFixture } from "tests/fixtures/transactions";
 
-// i18n
 import { translations } from "../../i18n";
 import { MultiPaymentDetail } from "./MultiPaymentDetail";
+
+const wallet = {
+	alias: () => "Test Wallet",
+	currency: () => "ARK",
+	exchangeCurrency: () => "BTC",
+	isDelegate: () => true,
+	isResignedDelegate: () => false,
+};
 
 describe("MultiPaymentDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<MultiPaymentDetail
 				isOpen={false}
-				transaction={{ ...TransactionFixture, blockId: () => "adsad12312xsd1w312e1s13203e12" }}
-				ticker="BTC"
+				transaction={{
+					...TransactionFixture,
+					blockId: () => "adsad12312xsd1w312e1s13203e12",
+					wallet: () => wallet,
+				}}
 			/>,
 		);
 
@@ -25,50 +35,15 @@ describe("MultiPaymentDetail", () => {
 		const { asFragment, getByTestId } = render(
 			<MultiPaymentDetail
 				isOpen={true}
-				transaction={{ ...TransactionFixture, blockId: () => "adsad12312xsd1w312e1s13203e12" }}
-				ticker="BTC"
-			/>,
-		);
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render with wallet alias", () => {
-		const { asFragment, getByText, getByTestId } = render(
-			<MultiPaymentDetail
-				isOpen={true}
-				onClose={() => console.log("onClose")}
 				transaction={{
 					...TransactionFixture,
-					isSent: () => false,
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
+					wallet: () => wallet,
 				}}
-				walletAlias="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-				ticker="BTC"
 			/>,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render as confirmed", () => {
-		const { asFragment, getByText, getByTestId } = render(
-			<MultiPaymentDetail
-				isOpen={true}
-				onClose={() => console.log("onClose")}
-				transaction={{
-					...TransactionFixture,
-					isConfirmed: () => true,
-					blockId: () => "adsad12312xsd1w312e1s13203e12",
-				}}
-				ticker="BTC"
-			/>,
-		);
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-		expect(getByText("Well Confirmed")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -95,13 +70,13 @@ describe("MultiPaymentDetail", () => {
 						},
 					],
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
+					wallet: () => wallet,
 				}}
-				ticker="BTC"
 			/>,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-		expect(getByText("Well Confirmed")).toBeTruthy();
+		waitFor(() => expect(getByText("Well Confirmed")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

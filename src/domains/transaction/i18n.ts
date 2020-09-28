@@ -111,6 +111,10 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Transaction IPFS Hash",
 	},
 
+	MODAL_SECOND_SIGNATURE_DETAIL: {
+		TITLE: "Second Signature",
+	},
+
 	LEDGER_CONFIRMATION: {
 		TITLE: "Confirm Your Transaction",
 		DESCRIPTION:
