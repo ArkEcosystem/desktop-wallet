@@ -5,13 +5,15 @@ import { fireEvent, renderWithRouter } from "utils/testing-library";
 import { TransactionRow } from "./TransactionRow";
 
 describe("TransactionRow", () => {
+	const fixture = { ...TransactionFixture, wallet: () => ({ currency: () => "DARK" }) };
+
 	it("should show transaction", () => {
 		const { getByTestId } = renderWithRouter(
 			<table>
 				<tbody>
 					<TransactionRow
 						// @ts-ignore
-						transaction={{ ...TransactionFixture, wallet: () => ({ currency: () => "DARK" }) }}
+						transaction={fixture}
 					/>
 				</tbody>
 			</table>,
@@ -30,7 +32,7 @@ describe("TransactionRow", () => {
 			<table>
 				<tbody>
 					{/* @ts-ignore */}
-					<TransactionRow transaction={TransactionFixture} exchangeCurrency="BTC" />
+					<TransactionRow transaction={fixture} exchangeCurrency="BTC" />
 				</tbody>
 			</table>,
 		);
@@ -45,7 +47,7 @@ describe("TransactionRow", () => {
 				<tbody>
 					<TransactionRow
 						// @ts-ignore
-						transaction={TransactionFixture}
+						transaction={fixture}
 						exchangeCurrency="BTC"
 						onSign={onSign}
 						isSignaturePending
@@ -67,7 +69,7 @@ describe("TransactionRow", () => {
 			<table>
 				<tbody>
 					{/* @ts-ignore */}
-					<TransactionRow transaction={TransactionFixture} exchangeCurrency="BTC" />
+					<TransactionRow transaction={fixture} exchangeCurrency="BTC" />
 				</tbody>
 			</table>,
 		);
