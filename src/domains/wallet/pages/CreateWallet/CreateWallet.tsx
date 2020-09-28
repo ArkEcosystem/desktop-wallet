@@ -79,50 +79,48 @@ export const CreateWallet = () => {
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
-						<div className="mt-4">
-							<TabPanel tabId={1}>
-								<FirstStep env={env} profile={activeProfile} />
-							</TabPanel>
-							<TabPanel tabId={2}>
-								<SecondStep />
-							</TabPanel>
-							<TabPanel tabId={3}>
-								<ThirdStep />
-							</TabPanel>
-							<TabPanel tabId={4}>
-								<FourthStep nameMaxLength={nameMaxLength} />
-							</TabPanel>
+						<TabPanel tabId={1}>
+							<FirstStep env={env} profile={activeProfile} />
+						</TabPanel>
+						<TabPanel tabId={2}>
+							<SecondStep />
+						</TabPanel>
+						<TabPanel tabId={3}>
+							<ThirdStep />
+						</TabPanel>
+						<TabPanel tabId={4}>
+							<FourthStep nameMaxLength={nameMaxLength} />
+						</TabPanel>
 
-							<div className="flex justify-end mt-10 space-x-3">
+						<div className="flex justify-end mt-10 space-x-3">
+							<Button
+								disabled={activeTab === 1}
+								data-testid="CreateWallet__back-button"
+								variant="plain"
+								onClick={handleBack}
+							>
+								{t("COMMON.BACK")}
+							</Button>
+
+							{activeTab < 4 && (
 								<Button
-									disabled={activeTab === 1}
-									data-testid="CreateWallet__back-button"
-									variant="plain"
-									onClick={handleBack}
+									data-testid="CreateWallet__continue-button"
+									disabled={!formState.isValid}
+									onClick={handleNext}
 								>
-									Back
+									{t("COMMON.CONTINUE")}
 								</Button>
+							)}
 
-								{activeTab < 4 && (
-									<Button
-										data-testid="CreateWallet__continue-button"
-										disabled={!formState.isValid}
-										onClick={handleNext}
-									>
-										{t("COMMON.CONTINUE")}
-									</Button>
-								)}
-
-								{activeTab === 4 && (
-									<Button
-										disabled={formState.isSubmitting}
-										type="submit"
-										data-testid="CreateWallet__save-button"
-									>
-										{t("COMMON.SAVE_FINISH")}
-									</Button>
-								)}
-							</div>
+							{activeTab === 4 && (
+								<Button
+									disabled={formState.isSubmitting}
+									type="submit"
+									data-testid="CreateWallet__save-button"
+								>
+									{t("COMMON.SAVE_FINISH")}
+								</Button>
+							)}
 						</div>
 					</Tabs>
 				</Form>

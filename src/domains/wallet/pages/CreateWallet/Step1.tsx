@@ -45,20 +45,17 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 					subtitle={t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.SUBTITLE")}
 				/>
 			</div>
-			<div className="space-y-2">
-				<FormField name="network" className="relative mt-1">
-					<div className="mb-2">
-						<FormLabel label={t("COMMON.NETWORK")} />
-					</div>
-					<SelectNetwork
-						id="CreateWallet__network"
-						networks={networks}
-						selected={selectedNetwork}
-						onSelect={handleSelect}
-						disabled={isGeneratingWallet}
-					/>
-				</FormField>
-			</div>
+
+			<FormField name="network">
+				<FormLabel label={t("COMMON.NETWORK")} />
+				<SelectNetwork
+					id="CreateWallet__network"
+					networks={networks}
+					selected={selectedNetwork}
+					onSelect={handleSelect}
+					disabled={isGeneratingWallet}
+				/>
+			</FormField>
 		</section>
 	);
 };
