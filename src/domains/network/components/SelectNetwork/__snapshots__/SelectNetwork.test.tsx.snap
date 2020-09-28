@@ -2,551 +2,98 @@
 
 exports[`SelectNetwork should render 1`] = `
 <div>
-  <div
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-owns="downshift-1-menu"
-    data-testid="SelectNetwork"
-    role="combobox"
-  >
-    <label
-      for="downshift-0-input"
-      id="downshift-1-label"
-    />
+  <div>
     <div
-      class="sc-AxheI IkGcK"
-      data-testid="SelectNetworkInput"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="downshift-1-menu"
+      data-testid="SelectNetwork"
+      role="combobox"
     >
+      <label
+        for="downshift-0-input"
+        id="downshift-1-label"
+      />
       <div
-        class="sc-AxhCb sc-AxhUy jFkFxS px-4"
+        class="sc-AxheI IkGcK"
+        data-testid="SelectNetworkInput"
       >
         <div
-          class="sc-AxjAm fWyUly border-theme-neutral-light text-theme-neutral"
-          data-testid="SelectNetworkInput__network"
+          class="sc-AxhCb sc-AxhUy jFkFxS px-4"
+        >
+          <div
+            class="sc-AxjAm fWyUly border-theme-neutral-light text-theme-neutral"
+            data-testid="SelectNetworkInput__network"
+          />
+        </div>
+        <input
+          aria-autocomplete="list"
+          aria-controls="downshift-1-menu"
+          aria-labelledby="downshift-1-label"
+          autocomplete="off"
+          class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+          data-testid="SelectNetworkInput__input"
+          id="downshift-0-input"
+          placeholder="Enter a network name"
+          value=""
         />
       </div>
-      <input
-        aria-autocomplete="list"
-        aria-controls="downshift-1-menu"
-        aria-labelledby="downshift-1-label"
-        autocomplete="off"
-        class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-        data-testid="SelectNetworkInput__input"
-        id="downshift-0-input"
-        placeholder="Enter a network name"
-        value=""
-      />
     </div>
+    <ul
+      aria-labelledby="downshift-1-label"
+      class="hidden"
+      id="downshift-1-menu"
+      role="listbox"
+    />
   </div>
-  <ul
-    aria-labelledby="downshift-1-label"
-    class="grid grid-cols-6 gap-6 mt-6"
-    id="downshift-1-menu"
-    role="listbox"
-  />
 </div>
 `;
 
 exports[`SelectNetwork should render with networks 1`] = `
 <div>
-  <div
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-owns="downshift-5-menu"
-    data-testid="SelectNetwork"
-    role="combobox"
-  >
-    <label
-      for="downshift-4-input"
-      id="downshift-5-label"
-    />
+  <div>
     <div
-      class="sc-AxheI IkGcK"
-      data-testid="SelectNetworkInput"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="downshift-5-menu"
+      data-testid="SelectNetwork"
+      role="combobox"
     >
+      <label
+        for="downshift-4-input"
+        id="downshift-5-label"
+      />
       <div
-        class="sc-AxhCb sc-AxhUy jFkFxS px-4"
+        class="sc-AxheI IkGcK"
+        data-testid="SelectNetworkInput"
       >
         <div
-          class="sc-AxjAm fWyUly border-theme-neutral-light text-theme-neutral"
-          data-testid="SelectNetworkInput__network"
+          class="sc-AxhCb sc-AxhUy jFkFxS px-4"
+        >
+          <div
+            class="sc-AxjAm fWyUly border-theme-neutral-light text-theme-neutral"
+            data-testid="SelectNetworkInput__network"
+          />
+        </div>
+        <input
+          aria-autocomplete="list"
+          aria-controls="downshift-5-menu"
+          aria-labelledby="downshift-5-label"
+          autocomplete="off"
+          class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+          data-testid="SelectNetworkInput__input"
+          id="downshift-4-input"
+          placeholder="Enter a network name"
+          value=""
         />
       </div>
-      <input
-        aria-autocomplete="list"
-        aria-controls="downshift-5-menu"
-        aria-labelledby="downshift-5-label"
-        autocomplete="off"
-        class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-        data-testid="SelectNetworkInput__input"
-        id="downshift-4-input"
-        placeholder="Enter a network name"
-        value=""
-      />
     </div>
+    <ul
+      aria-labelledby="downshift-5-label"
+      class="hidden"
+      id="downshift-5-menu"
+      role="listbox"
+    />
   </div>
-  <ul
-    aria-labelledby="downshift-5-label"
-    class="grid grid-cols-6 gap-6 mt-6"
-    id="downshift-5-menu"
-    role="listbox"
-  >
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-0"
-      role="option"
-    >
-      <div
-        aria-label="ARK"
-        class="sc-AxjAm hZIQme border-theme-danger-light text-theme-danger-400"
-        data-testid="NetworkIcon-ARK-ark.mainnet"
-      >
-        <div
-          class="sc-AxirZ hyqZof"
-          data-testid="NetworkIcon__icon"
-          height="26"
-          width="26"
-        >
-          <svg>
-            ark.svg
-          </svg>
-        </div>
-      </div>
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-1"
-      role="option"
-    >
-      <div
-        aria-label="ARK Devnet"
-        class="sc-AxjAm hZIQme border-theme-primary-100 text-theme-primary-400"
-        data-testid="NetworkIcon-ARK-ark.devnet"
-      >
-        <div
-          class="sc-AxirZ hyqZof"
-          data-testid="NetworkIcon__icon"
-          height="26"
-          width="26"
-        >
-          <svg>
-            ark.svg
-          </svg>
-        </div>
-      </div>
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-2"
-      role="option"
-    >
-      <div
-        aria-label="Compendia"
-        class="sc-AxjAm hZIQme border-theme-primary-100 text-theme-primary-400"
-        data-testid="NetworkIcon-ARK-compendia.mainnet"
-      >
-        <div
-          class="sc-AxirZ hyqZof"
-          data-testid="NetworkIcon__icon"
-          height="26"
-          width="26"
-        >
-          <svg>
-            bind.svg
-          </svg>
-        </div>
-      </div>
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-3"
-      role="option"
-    >
-      <div
-        aria-label="Compendia Testnet"
-        class="sc-AxjAm hZIQme border-theme-primary-100 text-theme-primary-400"
-        data-testid="NetworkIcon-ARK-compendia.testnet"
-      >
-        <div
-          class="sc-AxirZ hyqZof"
-          data-testid="NetworkIcon__icon"
-          height="26"
-          width="26"
-        >
-          <svg>
-            bind.svg
-          </svg>
-        </div>
-      </div>
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-4"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-5"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-6"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-7"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-8"
-      role="option"
-    >
-      <div
-        aria-label="Bitcoin"
-        class="sc-AxjAm hZIQme border-theme-warning-200 text-theme-warning-400"
-        data-testid="NetworkIcon-BTC-btc.livenet"
-      >
-        <div
-          class="sc-AxirZ hyqZof"
-          data-testid="NetworkIcon__icon"
-          height="26"
-          width="26"
-        >
-          <svg>
-            btc.svg
-          </svg>
-        </div>
-      </div>
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-9"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-10"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-11"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-12"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-13"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-14"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-15"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-16"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-17"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-18"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-19"
-      role="option"
-    >
-      <div
-        aria-label="Lisk"
-        class="sc-AxjAm hZIQme border-theme-primary-400 text-theme-primary"
-        data-testid="NetworkIcon-LSK-lsk.mainnet"
-      >
-        <div
-          class="sc-AxirZ hyqZof"
-          data-testid="NetworkIcon__icon"
-          height="26"
-          width="26"
-        >
-          <svg>
-            lsk.svg
-          </svg>
-        </div>
-      </div>
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-20"
-      role="option"
-    >
-      <div
-        aria-label="Lisk Testnet"
-        class="sc-AxjAm hZIQme border-theme-primary-100 text-theme-primary-400"
-        data-testid="NetworkIcon-LSK-lsk.testnet"
-      >
-        <div
-          class="sc-AxirZ hyqZof"
-          data-testid="NetworkIcon__icon"
-          height="26"
-          width="26"
-        >
-          <svg>
-            lsk.svg
-          </svg>
-        </div>
-      </div>
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-21"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-22"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-23"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-24"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-25"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-26"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-27"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-28"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-29"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-30"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm hZIQme border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-  </ul>
 </div>
 `;

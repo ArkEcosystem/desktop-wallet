@@ -1,5 +1,6 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
 import { useValidation } from "app/hooks/validations";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
@@ -15,41 +16,41 @@ export const AuthenticationStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 	const { authentication } = useValidation();
 
+	if (isLedger) {
+		return (
+			<div data-testid="AuthenticationStep" className="space-y-8">
+				<Header
+					title={t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}
+					subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}
+				/>
+
+				<LedgerConfirmation />
+			</div>
+		);
+	}
+
 	return (
-		<div data-testid="AuthenticationStep">
-			{!isLedger && (
-				<div>
-					<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
-					<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
-					<div className="mt-8">
-						<FormField name="mnemonic">
-							<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
-							<InputPassword
-								data-testid="AuthenticationStep__mnemonic"
-								ref={register(authentication.mnemonic())}
-							/>
-							<FormHelperText />
-						</FormField>
+		<div data-testid="AuthenticationStep" className="space-y-8">
+			<Header
+				title={t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}
+				subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}
+			/>
 
-						{wallet.isSecondSignature() && (
-							<FormField name="secondMnemonic" className="mt-8">
-								<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
-								<InputPassword
-									data-testid="AuthenticationStep__second-mnemonic"
-									ref={register(authentication.secondMnemonic())}
-								/>
-								<FormHelperText />
-							</FormField>
-						)}
-					</div>
-				</div>
-			)}
+			<FormField name="mnemonic">
+				<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
+				<InputPassword data-testid="AuthenticationStep__mnemonic" ref={register(authentication.mnemonic())} />
+				<FormHelperText />
+			</FormField>
 
-			{isLedger && (
-				<div>
-					<h1>{t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}</h1>
-					<LedgerConfirmation />
-				</div>
+			{wallet.isSecondSignature() && (
+				<FormField name="secondMnemonic">
+					<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
+					<InputPassword
+						data-testid="AuthenticationStep__second-mnemonic"
+						ref={register(authentication.secondMnemonic())}
+					/>
+					<FormHelperText />
+				</FormField>
 			)}
 		</div>
 	);

@@ -4,7 +4,7 @@ import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
-import { TransactionDetail } from "app/components/TransactionDetail";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 

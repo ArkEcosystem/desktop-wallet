@@ -74,14 +74,13 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 	};
 
 	return (
-		<section className="space-y-8" data-testid="ImportWallet__second-step">
-			<div className="my-8">
-				<Header
-					title={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE")}
-					subtitle={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.SUBTITLE")}
-				/>
-			</div>
-			<div className="flex flex-col mt-8">
+		<section data-testid="ImportWallet__second-step" className="space-y-8">
+			<Header
+				title={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE")}
+				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.SUBTITLE")}
+			/>
+
+			<div className="flex flex-col">
 				<div className="flex items-center justify-between">
 					<div className="text-lg font-semibold text-theme-neutral-dark">
 						{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.TITLE")}
@@ -102,9 +101,8 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 					{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.DESCRIPTION")}
 				</div>
 			</div>
-			<div className="mt-8" data-testid="ImportWallet__fields">
-				{renderImportInput()}
-			</div>
+
+			<div data-testid="ImportWallet__fields">{renderImportInput()}</div>
 		</section>
 	);
 };

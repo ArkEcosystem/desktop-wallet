@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionMemo should render 1`] = `
+<div>
+  <div
+    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Smartbridge
+      </div>
+      <div
+        class="font-semibold"
+      >
+        <p
+          class="break-all"
+        >
+          test memo
+        </p>
+      </div>
+    </div>
+    <div
+      class="flex justify-center w-11"
+    >
+      <div
+        class="sc-AxjAm fNFuPV"
+        height="22"
+        width="18"
+      >
+        <svg>
+          smartbridge.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
