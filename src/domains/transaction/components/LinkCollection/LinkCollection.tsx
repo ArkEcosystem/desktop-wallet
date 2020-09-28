@@ -53,7 +53,7 @@ export const LinkCollection = ({
 			links: data,
 		},
 	});
-	const { control, register, setValue, getValues, handleSubmit, errors, clearError } = form;
+	const { control, register, setValue, getValues, handleSubmit, errors, clearErrors } = form;
 	const { fields, append, remove } = useFieldArray({
 		control,
 		name: "links",
@@ -73,7 +73,7 @@ export const LinkCollection = ({
 	const addLink = (link: EntityLink) => {
 		append(link);
 		setValue("value", "");
-		clearError("value");
+		clearErrors("value");
 	};
 
 	const removeLink = (index: number) => {
@@ -107,7 +107,8 @@ export const LinkCollection = ({
 			accessor: "link",
 		},
 		{
-			Header: " ",
+			Header: "Actions",
+			className: "hidden",
 		},
 	);
 
@@ -184,7 +185,11 @@ export const LinkCollection = ({
 
 					<Table columns={columns} data={fields}>
 						{(rowData: any, rowIndex: any) => (
-							<tr key={rowData.value} className="font-semibold border-b border-theme-neutral-200">
+							<tr
+								data-testid="LinkCollection__item"
+								key={rowData.value}
+								className="font-semibold border-b last:border-b-0 border-theme-neutral-200"
+							>
 								{selectionTypeTitle && (
 									<td
 										className={`w-16 text-center align-middle ${

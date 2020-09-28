@@ -11,7 +11,7 @@ exports[`AddressTable should render 1`] = `
       Select Address
     </h2>
     <div
-      class="sc-AxirZ TjFbC"
+      class="sc-AxirZ foACTB"
       role="table"
     >
       <table
@@ -29,7 +29,7 @@ exports[`AddressTable should render 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                    
@@ -89,7 +89,7 @@ exports[`AddressTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Balance
@@ -117,7 +117,7 @@ exports[`AddressTable should render 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                    
@@ -163,7 +163,7 @@ exports[`AddressTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -232,15 +232,17 @@ exports[`AddressTable should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxhCb cgPpiW group"
+            class="sc-AxhCb cokDuf group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxiKw hZNKUE"
+                class="sc-AxiKw gtaXRk"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
                   data-testid="Avatar"
                 >
                   <div
@@ -259,7 +261,7 @@ exports[`AddressTable should render 1`] = `
               class="w-20"
             >
               <div
-                class="sc-AxiKw taAfS"
+                class="sc-AxiKw cNDILm"
               >
                 <div
                   class="inline-block truncate align-middle"
@@ -283,7 +285,7 @@ exports[`AddressTable should render 1`] = `
               class="w-20"
             >
               <div
-                class="sc-AxiKw taAfS text-sm font-bold justify-center"
+                class="sc-AxiKw cNDILm justify-center text-sm font-bold"
               >
                 <div
                   class="inline-flex items-center space-x-2"
@@ -306,7 +308,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw taAfS font-bold text-theme-neutral-dark"
+                class="sc-AxiKw cNDILm justify-end font-bold text-theme-neutral-dark"
               >
                 <span
                   data-testid="Amount"
@@ -315,29 +317,35 @@ exports[`AddressTable should render 1`] = `
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-24"
+            >
               <div
-                class="sc-AxiKw taAfS"
+                class="sc-AxiKw cNDILm justify-end"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                  data-testid="Avatar"
+                  class="mr-4"
                 >
                   <div
-                    class="w-full h-full"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                    data-testid="Avatar"
                   >
-                    <img
-                      alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                      title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    />
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </td>
             <td>
               <div
-                class="sc-AxiKw taAfS font-bold"
+                class="sc-AxiKw cNDILm font-bold"
               >
                 <span>
                   arkx
@@ -346,7 +354,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw taAfS font-bold text-theme-neutral-dark"
+                class="sc-AxiKw cNDILm justify-center font-bold text-theme-neutral-dark"
               >
                 <span>
                   #
@@ -355,47 +363,39 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw taAfS"
+                class="sc-AxiKw cNDILm justify-center"
               >
                 <div
-                  class="flex justify-center h-full"
+                  class="sc-AxjAm cpczEI text-xl text-theme-primary"
                   data-testid="AddressRow__profile"
+                  height="1em"
+                  width="1em"
                 >
-                  <div
-                    class="sc-AxjAm cpczEI text-xl text-theme-primary"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      msq.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    msq.svg
+                  </svg>
                 </div>
               </div>
             </td>
             <td>
               <div
-                class="sc-AxiKw taAfS"
+                class="sc-AxiKw cNDILm justify-center"
               >
                 <div
-                  class="flex justify-center h-full"
+                  class="sc-AxjAm cpczEI text-theme-success"
                   data-testid="AddressRow__status"
+                  height="1em"
+                  width="1em"
                 >
-                  <div
-                    class="sc-AxjAm cpczEI text-theme-success"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      ok.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    ok.svg
+                  </svg>
                 </div>
               </div>
             </td>
             <td>
               <div
-                class="sc-AxiKw hOGkQU justify-end"
+                class="sc-AxiKw bQCFMo justify-end"
               >
                 <button
                   class="sc-AxgMl jTfhed"
@@ -426,7 +426,7 @@ exports[`AddressTable should render with empty list 1`] = `
       Select Address
     </h2>
     <div
-      class="sc-AxirZ TjFbC"
+      class="sc-AxirZ foACTB"
       role="table"
     >
       <table
@@ -444,7 +444,7 @@ exports[`AddressTable should render with empty list 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                    
@@ -504,7 +504,7 @@ exports[`AddressTable should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Balance
@@ -532,7 +532,7 @@ exports[`AddressTable should render with empty list 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                    
@@ -578,7 +578,7 @@ exports[`AddressTable should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -647,7 +647,7 @@ exports[`AddressTable should render with empty list 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="AddressRowSkeleton"
           >
             <td
@@ -658,7 +658,7 @@ exports[`AddressTable should render with empty list 1`] = `
               />
             </td>
             <td
-              class="w-20 py-5"
+              class="py-5"
             >
               <span>
                 <span
@@ -765,7 +765,7 @@ exports[`AddressTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="AddressRowSkeleton"
           >
             <td
@@ -776,7 +776,7 @@ exports[`AddressTable should render with empty list 1`] = `
               />
             </td>
             <td
-              class="w-20 py-5"
+              class="py-5"
             >
               <span>
                 <span
@@ -883,7 +883,7 @@ exports[`AddressTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="AddressRowSkeleton"
           >
             <td
@@ -894,7 +894,7 @@ exports[`AddressTable should render with empty list 1`] = `
               />
             </td>
             <td
-              class="w-20 py-5"
+              class="py-5"
             >
               <span>
                 <span
@@ -1001,7 +1001,7 @@ exports[`AddressTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="AddressRowSkeleton"
           >
             <td
@@ -1012,7 +1012,7 @@ exports[`AddressTable should render with empty list 1`] = `
               />
             </td>
             <td
-              class="w-20 py-5"
+              class="py-5"
             >
               <span>
                 <span
@@ -1119,7 +1119,7 @@ exports[`AddressTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="AddressRowSkeleton"
           >
             <td
@@ -1130,7 +1130,7 @@ exports[`AddressTable should render with empty list 1`] = `
               />
             </td>
             <td
-              class="w-20 py-5"
+              class="py-5"
             >
               <span>
                 <span
@@ -1237,7 +1237,7 @@ exports[`AddressTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="AddressRowSkeleton"
           >
             <td
@@ -1248,7 +1248,7 @@ exports[`AddressTable should render with empty list 1`] = `
               />
             </td>
             <td
-              class="w-20 py-5"
+              class="py-5"
             >
               <span>
                 <span
@@ -1355,7 +1355,7 @@ exports[`AddressTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="AddressRowSkeleton"
           >
             <td
@@ -1366,7 +1366,7 @@ exports[`AddressTable should render with empty list 1`] = `
               />
             </td>
             <td
-              class="w-20 py-5"
+              class="py-5"
             >
               <span>
                 <span
@@ -1473,7 +1473,7 @@ exports[`AddressTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="AddressRowSkeleton"
           >
             <td
@@ -1484,7 +1484,7 @@ exports[`AddressTable should render with empty list 1`] = `
               />
             </td>
             <td
-              class="w-20 py-5"
+              class="py-5"
             >
               <span>
                 <span

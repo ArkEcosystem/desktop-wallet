@@ -1,13 +1,15 @@
 import { Selector } from "testcafe";
 
 import { createFixture } from "../../../utils/e2e-utils";
-import { goToMyRegistrations } from "../../profile/e2e/common";
+import { goToMyRegistrations, goToProfile } from "../../profile/e2e/common";
 import { goToResignDelegatePage } from "./common";
 import { transactionsMock, walletMock } from "./mocks";
 
-createFixture(`Delegate Registration action`).beforeEach(async (t) => await goToMyRegistrations(t));
+createFixture(`Delegate Registration action`);
 
 test("should fail delegate resignation submittion", async (t: any) => {
+	await goToProfile(t);
+	await goToMyRegistrations(t);
 	await goToResignDelegatePage(t);
 	const continueBtn = "[data-testid=SendEntityResignation__continue-button]";
 
@@ -22,6 +24,10 @@ test("should fail delegate resignation submittion", async (t: any) => {
 	// Type wrong mnemonic
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });
 
+	await t.typeText(Selector("[data-testid=AuthenticationStep__second-mnemonic]"), "wrong second mnemonic", {
+		replace: true,
+	});
+
 	const sendButton = "[data-testid=SendEntityResignation__send-button]";
 	await t.click(Selector(sendButton));
 
@@ -29,6 +35,8 @@ test("should fail delegate resignation submittion", async (t: any) => {
 });
 
 test("should successfully submit delegate resignation", async (t) => {
+	await goToProfile(t);
+	await goToMyRegistrations(t);
 	await goToResignDelegatePage(t);
 	const continueButton = "[data-testid=SendEntityResignation__continue-button]";
 
@@ -41,6 +49,11 @@ test("should successfully submit delegate resignation", async (t) => {
 	await t.click(Selector(continueButton));
 
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "v3wallet2", { replace: true });
+	await t.typeText(
+		Selector("[data-testid=AuthenticationStep__second-mnemonic]"),
+		"merge warfare desk catch produce typical young submit enemy wool off card",
+		{ replace: true },
+	);
 
 	transactionsMock();
 	walletMock("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");

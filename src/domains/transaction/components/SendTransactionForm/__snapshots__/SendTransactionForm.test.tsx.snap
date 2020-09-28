@@ -25,97 +25,50 @@ exports[`SendTransactionForm should render 1`] = `
           />
         </label>
       </div>
-      <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="SendTransactionForm__network-menu"
-        data-testid="SelectNetwork"
-        role="combobox"
-      >
-        <label
-          for="SendTransactionForm__network-input"
-          id="SendTransactionForm__network-label"
-        />
+      <div>
         <div
-          class="sc-Axmtr jzhOwR"
-          data-testid="SelectNetworkInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="SendTransactionForm__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
         >
+          <label
+            for="SendTransactionForm__network-input"
+            id="SendTransactionForm__network-label"
+          />
           <div
-            class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            class="sc-Axmtr jzhOwR"
+            data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-AxirZ fuoUNN border-theme-neutral-light text-theme-neutral"
-              data-testid="SelectNetworkInput__network"
+              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            >
+              <div
+                class="sc-AxirZ fuoUNN border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransactionForm__network-menu"
+              aria-labelledby="SendTransactionForm__network-label"
+              autocomplete="off"
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="SendTransactionForm__network-input"
+              placeholder="Enter a network name"
+              value=""
             />
           </div>
-          <input
-            aria-autocomplete="list"
-            aria-controls="SendTransactionForm__network-menu"
-            aria-labelledby="SendTransactionForm__network-label"
-            autocomplete="off"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-            data-testid="SelectNetworkInput__input"
-            id="SendTransactionForm__network-input"
-            placeholder="Enter a network name"
-            value=""
-          />
         </div>
+        <ul
+          aria-labelledby="SendTransactionForm__network-label"
+          class="hidden"
+          id="SendTransactionForm__network-menu"
+          role="listbox"
+        />
       </div>
-      <ul
-        aria-labelledby="SendTransactionForm__network-label"
-        class="grid grid-cols-6 gap-6 mt-6"
-        id="SendTransactionForm__network-menu"
-        role="listbox"
-      >
-        <li
-          aria-selected="false"
-          class="inline-block cursor-pointer"
-          data-testid="SelectNetwork__NetworkIcon--container"
-          id="SendTransactionForm__network-item-0"
-          role="option"
-        >
-          <div
-            aria-label="Ark"
-            class="sc-AxirZ bjGJqJ border-theme-danger-light text-theme-danger-400"
-            data-testid="NetworkIcon-ARK-mainnet"
-          >
-            <div
-              class="sc-AxiKw fubePL"
-              data-testid="NetworkIcon__icon"
-              height="26"
-              width="26"
-            >
-              <svg>
-                ark.svg
-              </svg>
-            </div>
-          </div>
-        </li>
-        <li
-          aria-selected="false"
-          class="inline-block cursor-pointer"
-          data-testid="SelectNetwork__NetworkIcon--container"
-          id="SendTransactionForm__network-item-1"
-          role="option"
-        >
-          <div
-            aria-label="Ark Devnet"
-            class="sc-AxirZ bjGJqJ border-theme-primary-100 text-theme-primary-400"
-            data-testid="NetworkIcon-ARK-devnet"
-          >
-            <div
-              class="sc-AxiKw fubePL"
-              data-testid="NetworkIcon__icon"
-              height="26"
-              width="26"
-            >
-              <svg>
-                ark.svg
-              </svg>
-            </div>
-          </div>
-        </li>
-      </ul>
     </fieldset>
     <fieldset
       class="sc-AxjAm fmGClo relative"
@@ -246,7 +199,7 @@ exports[`SendTransactionForm should render 1`] = `
             role="radiogroup"
           >
             <button
-              aria-checked="false"
+              aria-checked="true"
               class="sc-fzqNJr dLZgRW relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
@@ -303,100 +256,51 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           />
         </label>
       </div>
-      <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="SendTransactionForm__network-menu"
-        data-testid="SelectNetwork"
-        role="combobox"
-      >
-        <label
-          for="SendTransactionForm__network-input"
-          id="SendTransactionForm__network-label"
-        />
+      <div>
         <div
-          class="sc-Axmtr jzhOwR"
-          data-testid="SelectNetworkInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="SendTransactionForm__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
         >
+          <label
+            for="SendTransactionForm__network-input"
+            id="SendTransactionForm__network-label"
+          />
           <div
-            class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            class="sc-Axmtr jzhOwR"
+            data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-AxirZ fuoUNN border-theme-neutral-light text-theme-neutral"
-              data-testid="SelectNetworkInput__network"
+              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            >
+              <div
+                class="sc-AxirZ fuoUNN border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransactionForm__network-menu"
+              aria-labelledby="SendTransactionForm__network-label"
+              autocomplete="off"
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              disabled=""
+              id="SendTransactionForm__network-input"
+              placeholder="Enter a network name"
+              value=""
             />
           </div>
-          <input
-            aria-autocomplete="list"
-            aria-controls="SendTransactionForm__network-menu"
-            aria-labelledby="SendTransactionForm__network-label"
-            autocomplete="off"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-            data-testid="SelectNetworkInput__input"
-            disabled=""
-            id="SendTransactionForm__network-input"
-            placeholder="Enter a network name"
-            value=""
-          />
         </div>
+        <ul
+          aria-labelledby="SendTransactionForm__network-label"
+          class="hidden"
+          id="SendTransactionForm__network-menu"
+          role="listbox"
+        />
       </div>
-      <ul
-        aria-labelledby="SendTransactionForm__network-label"
-        class="grid grid-cols-6 gap-6 mt-6"
-        id="SendTransactionForm__network-menu"
-        role="listbox"
-      >
-        <li
-          aria-selected="false"
-          class="inline-block cursor-pointer"
-          data-testid="SelectNetwork__NetworkIcon--container"
-          disabled=""
-          id="SendTransactionForm__network-item-0"
-          role="option"
-        >
-          <div
-            aria-label="Ark"
-            class="sc-AxirZ bjGJqJ border-theme-danger-light text-theme-danger-400"
-            data-testid="NetworkIcon-ARK-mainnet"
-          >
-            <div
-              class="sc-AxiKw fubePL"
-              data-testid="NetworkIcon__icon"
-              height="26"
-              width="26"
-            >
-              <svg>
-                ark.svg
-              </svg>
-            </div>
-          </div>
-        </li>
-        <li
-          aria-selected="false"
-          class="inline-block cursor-pointer"
-          data-testid="SelectNetwork__NetworkIcon--container"
-          disabled=""
-          id="SendTransactionForm__network-item-1"
-          role="option"
-        >
-          <div
-            aria-label="Ark Devnet"
-            class="sc-AxirZ bjGJqJ border-theme-primary-100 text-theme-primary-400"
-            data-testid="NetworkIcon-ARK-devnet"
-          >
-            <div
-              class="sc-AxiKw fubePL"
-              data-testid="NetworkIcon__icon"
-              height="26"
-              width="26"
-            >
-              <svg>
-                ark.svg
-              </svg>
-            </div>
-          </div>
-        </li>
-      </ul>
     </fieldset>
     <fieldset
       class="sc-AxjAm fmGClo relative"

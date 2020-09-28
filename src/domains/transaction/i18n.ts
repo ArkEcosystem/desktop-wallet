@@ -10,12 +10,9 @@ export const translations: { [key: string]: any } = {
 	CONFIRMATIONS_COUNT: "{{count}} Confirmations",
 	DELEGATE: "Delegate",
 	DELEGATE_NAME: "Delegate Name",
-	DELEGATE_NAME_TOO_LONG: "Delegate Name too long (max 20 characters)",
-	DELEGATE_NAME_EXISTS: "Delegate Name already exists",
 	DESCRIPTION: "Description",
 	ENCRYPTION_PASSWORD: "Encryption Password",
 	ID: "ID",
-	INVALID_DELEGATE_NAME: "Invalid Delegate Name",
 	INVALID_MNEMONIC: "Invalid Mnemonic",
 	INVALID_URL: "Invalid URL",
 	IPFS_HASH: "IPFS Hash",
@@ -27,6 +24,7 @@ export const translations: { [key: string]: any } = {
 	RECEIVED: "Received",
 	RECIPIENT: "Recipient",
 	RECIPIENTS: "Recipients",
+	RECIPIENTS_COUNT: "Recipients ({{count}})",
 	RECIPIENTS_HELPTEXT: "A multiple recipient transaction allows up to {{count}} recipients in one transaction",
 	REGISTRATION_TYPE: "Registration Type",
 	SECOND_MNEMONIC: "2nd Mnemonic",
@@ -41,6 +39,7 @@ export const translations: { [key: string]: any } = {
 	SMARTBRIDGE: "Smartbridge",
 	TIMESTAMP: "Timestamp",
 	TOTAL_AMOUNT: "Total Amount",
+	TRANSACTION_AMOUNT: "Transaction Amount",
 	TRANSACTION_FEE: "Transaction Fee",
 	TRANSACTION_TYPE: "Transaction Type",
 	TYPE: "Type",
@@ -50,6 +49,23 @@ export const translations: { [key: string]: any } = {
 	WEBSITE: "Website",
 	WELL_CONFIRMED: "Well confirmed",
 	YOUR_ADDRESS: "Your address",
+	BROADCASTING: "Broadcasting transaction to the network",
+	NOT_FOUND: "Unable to find transaction for [{{transactionId}}]",
+	IPFS_NOT_FOUND: "Unable to find ipfs data for transaction [{{transactionId}}]",
+
+	MULTISIGNATURE: {
+		MIN_SIGNATURES: "Minimum Required Signatures",
+		PARTICIPANT_ADDRESS: "Participant Address",
+		PARTICIPANTS: "Multisiganture Participants",
+		ADD_PARTICIPANT: "Add Participant",
+		OUT_OF_LENGTH: "out of {{ length }}",
+		ERROR: {
+			ADDRESS_ALREADY_ADDED: "The address is already in the list",
+			ADDRESS_NOT_FOUND: "The address could not be found",
+			PUBLIC_KEY_NOT_FOUND: "The public key could not be found",
+			REMOVE_OWN_ADDRESS: "Cannot remove your own address",
+		},
+	},
 
 	FEES: {
 		MIN: "Min",
@@ -60,6 +76,7 @@ export const translations: { [key: string]: any } = {
 	TRANSACTION_TYPES: {
 		BUSINESS_REGISTRATION: "Business Registration",
 		BUSINESS_UPDATE: "Business Update",
+		UNVOTE: "Unvote",
 		VOTE: "Vote",
 	},
 
@@ -94,6 +111,10 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Transaction IPFS Hash",
 	},
 
+	MODAL_SECOND_SIGNATURE_DETAIL: {
+		TITLE: "Second Signature",
+	},
+
 	LEDGER_CONFIRMATION: {
 		TITLE: "Confirm Your Transaction",
 		DESCRIPTION:
@@ -112,9 +133,17 @@ export const translations: { [key: string]: any } = {
 		TWITTER: "Twitter",
 		VIMEO: "Vimeo",
 		YOUTUBE: "YouTube",
+		DISCORD: "Discord",
+		INSTAGRAM: "Instagram",
+		MEDIUM: "Medium",
+		REDDIT: "Reddit",
+		SLACK: "Slack",
+		TELEGRAM: "Telegram",
+		WECHAT: "Wechat",
 	},
 
 	ENTITY: {
+		NAME: "Entity Name",
 		DISPLAY_NAME: "Display Name",
 		INVALID_NAME: "Invalid Entity Name",
 		INVALID_DESCRIPTION: "Invalid Entity Description",
@@ -157,8 +186,8 @@ export const translations: { [key: string]: any } = {
 			WARNING:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.",
 			DOWNLOAD: {
-				TITLE: "Your password in the file",
-				DESCRIPTION: "You can also download and store safely your passphrase.",
+				TITLE: "Download Your Passphrase",
+				DESCRIPTION: "You can also download and safely store your passphrase.",
 			},
 		},
 
@@ -174,13 +203,32 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
+	PAGE_MULTISIGNATURE: {
+		FORM_STEP: {
+			TITLE: "Multisignature Registration",
+			DESCRIPTION: "Register a new multisignature address by adding participants.",
+		},
+		REVIEW_STEP: {
+			TITLE: "Transaction Review",
+			DESCRIPTION: "Review your multisignature registration details",
+			TYPE: "Multisignature Registration",
+		},
+	},
+
 	PAGE_RESIGN_REGISTRATION: {
+		ENTITY_NAME: "Entity Name",
 		FIRST_STEP: {
 			DELEGATE: {
 				TITLE: "Delegate Resignation",
 				DESCRIPTION: "Resign your delegate for always.",
 				WARNING:
 					"Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.",
+			},
+			ENTITY: {
+				TITLE: "Entity Resignation",
+				DESCRIPTION: "Resign your entity for always.",
+				WARNING:
+					"Keep in mind that you cannot restore your entity after the resignation has been registered on the blockchain.",
 			},
 		},
 		SECOND_STEP: {

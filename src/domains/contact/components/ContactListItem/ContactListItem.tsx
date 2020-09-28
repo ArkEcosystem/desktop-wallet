@@ -27,109 +27,101 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 			{contact
 				.addresses()
 				.values()
-				.map((address: ContactAddress, index: number) => (
-					<TableRow key={index} border={index === 0 || index === contact.addresses().count() - 1}>
-						<TableCell variant="start">
-							{index === 0 && (
-								<div className="flex items-center space-x-3">
-									<AvatarWrapper data-testid="ContactListItem__user--avatar" size="lg" noShadow>
-										<img
-											src={`data:image/svg+xml;utf8,${contact.avatar()}`}
-											title={contact.name()}
-											alt={contact.name()}
-										/>
-										<span className="absolute text-sm font-semibold text-theme-background">
-											{contact.name().slice(0, 2).toUpperCase()}
-										</span>
-									</AvatarWrapper>
+				.map((address: ContactAddress, index: number) => {
+					const borderClasses = () =>
+						index !== 0 && index !== contact.addresses().count() - 1
+							? "border-b border-dashed border-theme-neutral-200"
+							: "";
 
+					return (
+						<TableRow key={index} border={index === 0 || index === contact.addresses().count() - 1}>
+							<TableCell variant="start" className="w-1">
+								{index === 0 && (
+									<div className="mr-4">
+										<AvatarWrapper data-testid="ContactListItem__user--avatar" size="lg" noShadow>
+											<img
+												src={`data:image/svg+xml;utf8,${contact.avatar()}`}
+												title={contact.name()}
+												alt={contact.name()}
+											/>
+											<span className="absolute text-sm font-semibold text-theme-background">
+												{contact.name().slice(0, 2).toUpperCase()}
+											</span>
+										</AvatarWrapper>
+									</div>
+								)}
+							</TableCell>
+
+							<TableCell>
+								{index === 0 && (
 									<span className="font-semibold" data-testid="ContactListItem__name">
 										{contact.name()}
 									</span>
-								</div>
-							)}
-						</TableCell>
-
-						<TableCell innerClassName="justify-center">
-							<NetworkIcon
-								coin={address.coin()}
-								network={address.network()}
-								size="lg"
-								iconSize={20}
-								noShadow
-							/>
-						</TableCell>
-
-						<TableCell
-							className={
-								index !== 0 && index !== contact.addresses().count() - 1
-									? "border-b border-dashed border-theme-neutral-200"
-									: ""
-							}
-						>
-							<div className="flex items-center space-x-3">
-								<Avatar address={address.address()} size="lg" noShadow />
-								<Address address={address.address()} maxChars={isCondensed() ? 24 : undefined} />
-							</div>
-						</TableCell>
-
-						{!isCondensed() && (
-							<TableCell
-								innerClassName={`space-x-2 text-sm font-bold text-center ${
-									index !== 0 && index !== contact.addresses().count() - 1
-										? "border-b border-dashed border-theme-neutral-200"
-										: ""
-								}`}
-							>
-								{address.hasSyncedWithNetwork() &&
-									walletTypes.map((type: string) =>
-										// @ts-ignore
-										address[`is${type}`]() ? (
-											<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-												<Circle className="border-black" noShadow>
-													<Icon name={type} width={25} height={25} />
-												</Circle>
-											</Tippy>
-										) : null,
-									)}
+								)}
 							</TableCell>
-						)}
 
-						<TableCell
-							variant="end"
-							innerClassName={`justify-end ${
-								index !== 0 && index !== contact.addresses().count() - 1
-									? "border-b border-dashed border-theme-neutral-200"
-									: ""
-							}`}
-						>
-							{index === 0 && options?.length > 1 && (
-								<Dropdown
-									toggleContent={
-										<div className="float-right">
-											<Button variant="plain" size="icon">
-												<Icon name="Settings" width={20} height={20} />
-											</Button>
-										</div>
-									}
-									options={options}
-									onSelect={(action: Option) => onAction?.(action, address)}
-								/>
-							)}
+							<TableCell innerClassName="justify-center">
+								<NetworkIcon coin={address.coin()} network={address.network()} size="lg" noShadow />
+							</TableCell>
 
-							{index === 0 && options?.length === 1 && (
-								<Button
-									data-testid={`ContactListItem__one-option-button-${index}`}
-									className="float-right"
-									variant="plain"
-									onClick={() => onAction?.(options[0], address)}
+							<TableCell
+								className={`w-1 ${borderClasses()}
+								`}
+							>
+								<Avatar className="mr-4" address={address.address()} size="lg" noShadow />
+							</TableCell>
+
+							<TableCell className={borderClasses()}>
+								<Address address={address.address()} maxChars={isCondensed() ? 24 : undefined} />
+							</TableCell>
+
+							{!isCondensed() && (
+								<TableCell
+									innerClassName={`space-x-2 text-sm font-bold justify-center ${borderClasses()}`}
 								>
-									{options[0]?.label}
-								</Button>
+									{address.hasSyncedWithNetwork() &&
+										walletTypes.map((type: string) =>
+											// @ts-ignore
+											address[`is${type}`]() ? (
+												<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+													<Circle className="border-black" noShadow>
+														<Icon name={type} width={25} height={25} />
+													</Circle>
+												</Tippy>
+											) : null,
+										)}
+								</TableCell>
 							)}
-						</TableCell>
-					</TableRow>
-				))}
+
+							<TableCell variant="end" innerClassName={`justify-end ${borderClasses()}`}>
+								{index === 0 && options?.length > 1 && (
+									<Dropdown
+										toggleContent={
+											<div className="float-right">
+												<Button variant="plain" size="icon">
+													<Icon name="Settings" width={20} height={20} />
+												</Button>
+											</div>
+										}
+										options={options}
+										onSelect={(action: Option) => onAction?.(action, address)}
+									/>
+								)}
+
+								{index === 0 && options?.length === 1 && (
+									<Button
+										data-testid={`ContactListItem__one-option-button-${index}`}
+										className="float-right"
+										variant="plain"
+										onClick={() => onAction?.(options[0], address)}
+									>
+										{options[0]?.label}
+									</Button>
+								)}
+							</TableCell>
+						</TableRow>
+					);
+				})}
 		</>
 	);
 };

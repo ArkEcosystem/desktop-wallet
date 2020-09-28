@@ -10,7 +10,7 @@ export function MnemonicList({ mnemonic }: Props) {
 			{mnemonic.split(" ").map((word, index) => (
 				<li
 					data-testid="MnemonicList__item"
-					key={word}
+					key={index}
 					className="relative px-3 py-3 border rounded border-theme-neutral-light"
 				>
 					<span className="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral">

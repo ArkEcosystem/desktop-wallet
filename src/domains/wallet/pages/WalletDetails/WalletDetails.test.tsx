@@ -45,7 +45,7 @@ const renderPage = async () => {
 	const { getAllByTestId } = rendered;
 
 	await waitFor(() =>
-		expect(within(getAllByTestId("TransactionTable")[1]).queryAllByTestId("TableRow")).toHaveLength(1),
+		expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(1),
 	);
 
 	return rendered;
@@ -55,11 +55,11 @@ describe("WalletDetails", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
-		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
+		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "ark.devnet");
+		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "ark.devnet");
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
+		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "ark.devnet");
 
 		await syncDelegates();
 		await wallet.syncVotes();
@@ -133,7 +133,26 @@ describe("WalletDetails", () => {
 		});
 	});
 
-	it("should navigate to registrations page when clicking on WalletRegistrations button", async () => {
+	it("should navigate to new registration page when clicking on WalletRegistrations button (register)", async () => {
+		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
+		history.push(walletUrl);
+
+		const historySpy = jest.spyOn(history, "push");
+
+		const { getByTestId, queryAllByTestId } = await renderPage();
+
+		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletRegistrations__button"));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(
+			`/profiles/${profile.id()}/wallets/${blankWallet.id()}/send-entity-registration`,
+		);
+	});
+
+	it("should navigate to registrations page when clicking on WalletRegistrations button (show all)", async () => {
 		const historySpy = jest.spyOn(history, "push");
 
 		const { getByTestId, queryAllByTestId } = await renderPage();
@@ -235,47 +254,38 @@ describe("WalletDetails", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should open detail modal on transaction row click", async () => {
+		const { asFragment, getByTestId } = await renderPage();
+
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
+		});
+
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should fetch more transactions", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
 
 		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
-		const pendingFetchMoreBtn = getByTestId("pending-transactions__fetch-more-button");
 		const fetchMoreTransactionsBtn = getByTestId("transactions__fetch-more-button");
-
-		act(() => {
-			fireEvent.click(pendingFetchMoreBtn);
-		});
 
 		act(() => {
 			fireEvent.click(fetchMoreTransactionsBtn);
 		});
 
 		await waitFor(() => {
-			expect(within(getAllByTestId("TransactionTable")[1]).queryAllByTestId("TableRow")).toHaveLength(3);
+			expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(2);
 		});
-	});
-
-	it("should render with timers", async () => {
-		jest.useFakeTimers();
-
-		const { asFragment, getAllByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletDetails txSkeletonRowsLimit={1} />
-			</Route>,
-			{
-				routes: [walletUrl],
-				history,
-			},
-		);
-
-		await act(async () => {
-			jest.advanceTimersByTime(30000);
-		});
-
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
-		expect(asFragment()).toMatchSnapshot();
-		jest.useRealTimers();
 	});
 
 	it("should delete wallet", async () => {

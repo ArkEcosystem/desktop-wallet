@@ -4,7 +4,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import {
 	env,
@@ -46,9 +46,9 @@ describe("SendTransactionForm", () => {
 
 		await act(async () => {
 			rendered = render(
-				<FormContext {...form.current}>
+				<FormProvider {...form.current}>
 					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
-				</FormContext>,
+				</FormProvider>,
 			);
 		});
 
@@ -60,27 +60,28 @@ describe("SendTransactionForm", () => {
 		form.current.register("fee");
 		form.current.register("senderAddress");
 		form.current.setValue("senderAddress", wallet.address());
+		form.current.setValue("fee", defaultFee);
 
 		let rendered: any;
 
 		await act(async () => {
 			rendered = render(
-				<FormContext {...form.current}>
+				<FormProvider {...form.current}>
 					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
-				</FormContext>,
+				</FormProvider>,
 			);
 		});
 
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
 
 			// Fee
-			expect(getByTestId("InputCurrency")).toHaveValue("0.71538139");
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 			expect(rendered.container).toMatchSnapshot();
 		});
@@ -96,7 +97,7 @@ describe("SendTransactionForm", () => {
 
 		for (const network of env.availableNetworks()) {
 			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
-				form.current.setValue("network", network, true);
+				form.current.setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
@@ -111,9 +112,9 @@ describe("SendTransactionForm", () => {
 		await act(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/sign-transfer">
-					<FormContext {...form.current}>
+					<FormProvider {...form.current}>
 						<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
-					</FormContext>
+					</FormProvider>
 				</Route>,
 				{
 					routes: [sendUrl],
@@ -127,7 +128,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
 
 			// Select sender & update fees
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));

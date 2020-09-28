@@ -67,7 +67,6 @@ export const WalletHeader = ({
 								coin={coin}
 								network={network}
 								size="lg"
-								iconSize={20}
 								className="-mr-1 border-theme-neutral-dark text-theme-neutral-dark"
 								noShadow
 							/>

@@ -34,18 +34,18 @@ export const SendVote = () => {
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearError, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
@@ -87,8 +87,30 @@ export const SendVote = () => {
 		setActiveTab(activeTab + 1);
 	};
 
+	const confirmSendVote = (type: "unvote" | "vote") =>
+		new Promise((resolve) => {
+			const interval = setInterval(async () => {
+				let isConfirmed = false;
+
+				await activeWallet.syncVotes();
+				const walletVotes = activeWallet.votes();
+
+				isConfirmed =
+					type === "unvote"
+						? !walletVotes.find((vote) => vote.address() === unvotes[0].address())
+						: !!walletVotes.find((vote) => vote.address() === votes[0].address());
+
+				if (isConfirmed) {
+					clearInterval(interval);
+					resolve();
+				}
+
+				return;
+			}, 1000);
+		});
+
 	const submitForm = async () => {
-		clearError("mnemonic");
+		clearErrors("mnemonic");
 		const { fee, mnemonic, secondMnemonic, senderAddress } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
@@ -114,6 +136,8 @@ export const SendVote = () => {
 
 				await env.persist();
 
+				await confirmSendVote("unvote");
+
 				const voteTransactionId = await senderWallet!.transaction().signVote({
 					...voteTransactionInput,
 					data: {
@@ -126,11 +150,16 @@ export const SendVote = () => {
 				await env.persist();
 
 				setTransaction(senderWallet!.transaction().transaction(voteTransactionId));
+
+				handleNext();
+
+				await confirmSendVote("vote");
 			} else {
+				const isUnvote = unvotes.length > 0;
 				const transactionId = await senderWallet!.transaction().signVote({
 					...voteTransactionInput,
 					data: {
-						vote: unvotes.length > 0 ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
+						vote: isUnvote ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
 					},
 				});
 
@@ -139,14 +168,16 @@ export const SendVote = () => {
 				await env.persist();
 
 				setTransaction(senderWallet!.transaction().transaction(transactionId));
-			}
 
-			handleNext();
+				handleNext();
+
+				await confirmSendVote(isUnvote ? "unvote" : "vote");
+			}
 		} catch (error) {
 			console.error("Could not vote: ", error);
 
 			setValue("mnemonic", "");
-			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	};
 
@@ -190,7 +221,9 @@ export const SendVote = () => {
 								{activeTab < 4 && (
 									<>
 										<Button
-											disabled={activeTab === 1}
+											disabled={
+												activeTab === 1 || activeTab === 3 ? formState.isSubmitting : false
+											}
 											variant="plain"
 											onClick={handleBack}
 											data-testid="SendVote__button--back"
@@ -211,7 +244,7 @@ export const SendVote = () => {
 										{activeTab === 3 && (
 											<Button
 												type="submit"
-												disabled={!formState.isValid}
+												disabled={!formState.isValid || formState.isSubmitting}
 												data-testid="SendVote__button--submit"
 											>
 												{t("COMMON.SEND")}
@@ -228,10 +261,10 @@ export const SendVote = () => {
 										<Button
 											variant="plain"
 											className="space-x-2"
-											data-testid="SendVote__button--copy"
+											data-testid="SendVote__button--download"
 										>
-											<Icon name="Copy" />
-											<span>{t("COMMON.COPY")}</span>
+											<Icon name="Download" />
+											<span>{t("COMMON.DOWNLOAD")}</span>
 										</Button>
 									</>
 								)}

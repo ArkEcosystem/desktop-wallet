@@ -91,48 +91,50 @@ exports[`UpdateContact should render a modal 1`] = `
                       data-testid="FormLabel__required"
                     />
                   </label>
-                  <div
-                    aria-expanded="false"
-                    aria-haspopup="listbox"
-                    aria-owns="ContactForm__network-menu"
-                    data-testid="SelectNetwork"
-                    role="combobox"
-                  >
-                    <label
-                      for="ContactForm__network-input"
-                      id="ContactForm__network-label"
-                    />
+                  <div>
                     <div
-                      class="sc-fzozJi OgXfh"
-                      data-testid="SelectNetworkInput"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="ContactForm__network-menu"
+                      data-testid="SelectNetwork"
+                      role="combobox"
                     >
+                      <label
+                        for="ContactForm__network-input"
+                        id="ContactForm__network-label"
+                      />
                       <div
-                        class="sc-AxheI sc-Axmtr kSmZlB px-4"
+                        class="sc-fzozJi OgXfh"
+                        data-testid="SelectNetworkInput"
                       >
                         <div
-                          class="sc-fznyAO cjLqJY border-theme-neutral-light text-theme-neutral"
-                          data-testid="SelectNetworkInput__network"
+                          class="sc-AxheI sc-Axmtr kSmZlB px-4"
+                        >
+                          <div
+                            class="sc-fznyAO cjLqJY border-theme-neutral-light text-theme-neutral"
+                            data-testid="SelectNetworkInput__network"
+                          />
+                        </div>
+                        <input
+                          aria-autocomplete="list"
+                          aria-controls="ContactForm__network-menu"
+                          aria-labelledby="ContactForm__network-label"
+                          autocomplete="off"
+                          class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                          data-testid="SelectNetworkInput__input"
+                          id="ContactForm__network-input"
+                          placeholder="Enter a network name"
+                          value=""
                         />
                       </div>
-                      <input
-                        aria-autocomplete="list"
-                        aria-controls="ContactForm__network-menu"
-                        aria-labelledby="ContactForm__network-label"
-                        autocomplete="off"
-                        class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                        data-testid="SelectNetworkInput__input"
-                        id="ContactForm__network-input"
-                        placeholder="Enter a network name"
-                        value=""
-                      />
                     </div>
+                    <ul
+                      aria-labelledby="ContactForm__network-label"
+                      class="hidden"
+                      id="ContactForm__network-menu"
+                      role="listbox"
+                    />
                   </div>
-                  <ul
-                    aria-labelledby="ContactForm__network-label"
-                    class="grid grid-cols-6 gap-6 mt-6"
-                    id="ContactForm__network-menu"
-                    role="listbox"
-                  />
                 </fieldset>
                 <fieldset
                   class="sc-AxhUy dJlYTe flex flex-col space-y-2"
@@ -215,9 +217,9 @@ exports[`UpdateContact should render a modal 1`] = `
                         class="flex items-center -space-x-1"
                       >
                         <div
-                          aria-label="Ark Devnet"
+                          aria-label="ARK Devnet"
                           class="sc-fznyAO dLHlnS border-theme-primary-100 text-theme-primary-400"
-                          data-testid="NetworkIcon-ARK-devnet"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
                             class="sc-AxirZ eEbZjj"

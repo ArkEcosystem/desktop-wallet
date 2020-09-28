@@ -14,17 +14,19 @@ type SendTransactionFormProps = {
 	networks: NetworkData[];
 	profile: Profile;
 	children?: React.ReactNode;
+	transactionType: string;
 };
 
-export const SendTransactionForm = ({ children, networks, profile }: SendTransactionFormProps) => {
+export const SendTransactionForm = ({ children, networks, profile, transactionType }: SendTransactionFormProps) => {
 	const history = useHistory();
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 
 	const form = useFormContext();
-	const { getValues, setValue } = form;
-	const { network, senderAddress } = form.watch();
+	const { getValues, setValue, watch } = form;
+	const { network, senderAddress } = watch();
+
 	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "5",
 		min: "0",
@@ -32,20 +34,24 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 		max: "2",
 	});
 
-	const fee = getValues("fee") || null;
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultFee] = useState(() => watch("fee"));
+	const fee = getValues("fee") || defaultFee;
 
 	useEffect(() => {
 		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		if (senderWallet) {
-			const transactionFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "transfer");
+			const transactionFees = env
+				.fees()
+				.findByType(senderWallet.coinId(), senderWallet.networkId(), transactionType);
 
 			setFees(transactionFees);
 
-			setValue("fee", transactionFees.avg, true);
+			setValue("fee", transactionFees.avg, { shouldValidate: true, shouldDirty: true });
 		}
-	}, [env, setFees, setValue, profile, senderAddress]);
+	}, [env, setFees, setValue, profile, senderAddress, transactionType]);
 
 	useEffect(() => {
 		if (network) {
@@ -55,7 +61,7 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 	}, [network, profile]);
 
 	const onSelectSender = (address: any) => {
-		setValue("senderAddress", address, true);
+		setValue("senderAddress", address, { shouldValidate: true, shouldDirty: true });
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
 		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-transfer`);
@@ -102,9 +108,15 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 					defaultValue={fee || 0}
 					value={fee || 0}
 					step={0.01}
-					onChange={(value: any) => setValue("fee", value, true)}
+					onChange={(currency: { display: string; value: string }) => {
+						setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
+					}}
 				/>
 			</FormField>
 		</div>
 	);
+};
+
+SendTransactionForm.defaultProps = {
+	transactionType: "transfer",
 };

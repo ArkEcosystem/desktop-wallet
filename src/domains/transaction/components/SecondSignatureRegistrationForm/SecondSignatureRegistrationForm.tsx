@@ -3,7 +3,7 @@ import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { TransactionDetail } from "app/components/TransactionDetail";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React from "react";
 
@@ -62,9 +62,9 @@ export const SecondSignatureRegistrationForm: SendEntityRegistrationForm = {
 	formFields: ["secondMnemonic", "verification"],
 
 	signTransaction: async ({ env, form, handleNext, profile, setTransaction, translations }: any) => {
-		const { clearError, getValues, setError, setValue } = form;
+		const { clearErrors, getValues, setError, setValue } = form;
 
-		clearError("mnemonic");
+		clearErrors("mnemonic");
 		const { fee, mnemonic, senderAddress, secondMnemonic } = getValues();
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
@@ -91,7 +91,7 @@ export const SecondSignatureRegistrationForm: SendEntityRegistrationForm = {
 			console.error("Could not create transaction: ", error);
 
 			setValue("mnemonic", "");
-			setError("mnemonic", "manual", translations("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: translations("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	},
 };

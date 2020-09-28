@@ -5,7 +5,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import {
 	env,
@@ -23,9 +23,9 @@ import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.j
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendTransfer } from "./SendTransfer";
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { FifthStep } from "./Step5";
+import { FormStep } from "./Step1";
+import { ReviewStep } from "./Step2";
+import { SummaryStep } from "./Step4";
 
 const fixtureProfileId = getDefaultProfileId();
 
@@ -67,21 +67,21 @@ beforeAll(async () => {
 	await syncFees();
 });
 
-describe("Transaction Send", () => {
-	it("should render 1st step", async () => {
+describe("SendTransfer", () => {
+	it("should render 1st step (form)", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
-				<FirstStep networks={[]} profile={profile} />
-			</FormContext>,
+			<FormProvider {...form.current}>
+				<FormStep networks={[]} profile={profile} />
+			</FormProvider>,
 		);
 
 		expect(getByTestId("SendTransfer__step--first")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 2nd step", async () => {
+	it("should render 2nd step (review)", async () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
@@ -89,7 +89,7 @@ describe("Transaction Send", () => {
 					recipients: [
 						{
 							address: wallet.address(),
-							amount: (1 * 1e8).toFixed(0),
+							amount: BigNumber.make(1 * 1e8),
 						},
 					],
 					senderAddress: wallet.address(),
@@ -99,9 +99,9 @@ describe("Transaction Send", () => {
 		);
 
 		const { asFragment, container, getByTestId } = render(
-			<FormContext {...form.current}>
-				<SecondStep wallet={wallet} />
-			</FormContext>,
+			<FormProvider {...form.current}>
+				<ReviewStep wallet={wallet} />
+			</FormProvider>,
 		);
 
 		expect(getByTestId("SendTransfer__step--second")).toBeTruthy();
@@ -112,16 +112,17 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 5th step", async () => {
+	it("should render 4th step (summary)", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const transaction = (await wallet.transactions()).findById(
 			"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
 		);
+
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
-				<FifthStep transaction={transaction!} />
-			</FormContext>,
+			<FormProvider {...form.current}>
+				<SummaryStep transaction={transaction!} senderWallet={wallet} />
+			</FormProvider>,
 		);
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
@@ -174,10 +175,16 @@ describe("Transaction Send", () => {
 		});
 
 		act(() => {
-			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-devnet"));
+			fireEvent.focus(rendered.getByTestId("SelectNetworkInput__input"));
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark Devnet");
+		await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
@@ -204,10 +211,16 @@ describe("Transaction Send", () => {
 		});
 
 		act(() => {
-			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-mainnet"));
+			fireEvent.focus(rendered.getByTestId("SelectNetworkInput__input"));
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark");
+		await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.mainnet"));
+		});
+
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
 		expect(rendered.getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
@@ -238,7 +251,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			await waitFor(() =>
-				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
 			);
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
@@ -358,7 +371,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			await waitFor(() =>
-				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
 			);
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 

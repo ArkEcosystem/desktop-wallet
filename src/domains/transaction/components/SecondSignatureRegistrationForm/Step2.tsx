@@ -1,23 +1,55 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
 import { Divider } from "app/components/Divider";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
+import { toasts } from "app/services";
 import { MnemonicList } from "domains/wallet/components/MnemonicList";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
+import { saveFile } from "utils/electron-utils";
 
 export const BackupStep = () => {
-	const { getValues, unregister } = useFormContext();
-	const mnemonic = getValues("secondMnemonic");
+	const { getValues, unregister, watch } = useFormContext();
+
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultMnemonic] = useState(() => watch("secondMnemonic"));
+	const mnemonic = getValues("secondMnemonic") || defaultMnemonic;
+
+	const [defaultWallet] = useState(() => watch("wallet"));
+	const wallet = getValues("wallet") || defaultWallet;
 
 	const { t } = useTranslation();
 
 	useEffect(() => {
 		unregister("verification");
 	}, [unregister]);
+
+	const handleDownload = async () => {
+		const fileName = `${wallet.address()}.txt`;
+
+		try {
+			const filePath = await saveFile(mnemonic, fileName, {
+				filters: { name: "Text Document", extensions: ["txt"] },
+				returnBasename: true,
+			});
+
+			if (filePath) {
+				toasts.success(
+					<Trans
+						i18nKey="COMMON.SAVE_FILE.SUCCESS"
+						values={{ filePath }}
+						components={{ bold: <strong /> }}
+					/>,
+				);
+			}
+		} catch (error) {
+			toasts.error(t("COMMON.SAVE_FILE.ERROR", { error: error.message }));
+		}
+	};
 
 	return (
 		<section data-testid="SecondSignature__backup-step">
@@ -41,22 +73,25 @@ export const BackupStep = () => {
 			<Divider dashed />
 
 			<div className="py-3">
-				<div className="flex justify-between">
-					<div>
-						<h3 className="mb-1 text-theme-neutral-dark">
+				<div className="flex items-center justify-between">
+					<div className="space-y-1">
+						<span className="text-lg font-semibold text-theme-neutral-dark">
 							{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.TITLE")}
-						</h3>
-						<p className="text-theme-neutral">
+						</span>
+						<p className="text-sm  text-theme-neutral">
 							{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.DESCRIPTION")}
 						</p>
 					</div>
+
 					<Icon name="FilePassword" width={40} height={40} />
 				</div>
-				<div className="flex justify-end w-full">
+
+				<div className="flex justify-end w-full mt-8">
 					<Button
 						data-testid="SecondSignature__download"
 						variant="plain"
-						className="flex items-center mt-4 space-x-2"
+						className="flex items-center space-x-2"
+						onClick={handleDownload}
 					>
 						<Icon name="Download" />
 						<span>{t("COMMON.DOWNLOAD")}</span>

@@ -63,48 +63,50 @@ exports[`PeerList should add peer 1`] = `
                     data-testid="FormLabel__required"
                   />
                 </label>
-                <div
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-owns="CustomPeers__network-menu"
-                  data-testid="SelectNetwork"
-                  role="combobox"
-                >
-                  <label
-                    for="CustomPeers__network-input"
-                    id="CustomPeers__network-label"
-                  />
+                <div>
                   <div
-                    class="sc-fzpans diytpf"
-                    data-testid="SelectNetworkInput"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="CustomPeers__network-menu"
+                    data-testid="SelectNetwork"
+                    role="combobox"
                   >
+                    <label
+                      for="CustomPeers__network-input"
+                      id="CustomPeers__network-label"
+                    />
                     <div
-                      class="sc-AxmLO sc-fzozJi flvnfR px-4"
+                      class="sc-fzpans diytpf"
+                      data-testid="SelectNetworkInput"
                     >
                       <div
-                        class="sc-fzokOt kLNUey border-theme-neutral-light text-theme-neutral"
-                        data-testid="SelectNetworkInput__network"
+                        class="sc-AxmLO sc-fzozJi flvnfR px-4"
+                      >
+                        <div
+                          class="sc-fzokOt kLNUey border-theme-neutral-light text-theme-neutral"
+                          data-testid="SelectNetworkInput__network"
+                        />
+                      </div>
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="CustomPeers__network-menu"
+                        aria-labelledby="CustomPeers__network-label"
+                        autocomplete="off"
+                        class="sc-Axmtr dEPowd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                        data-testid="SelectNetworkInput__input"
+                        id="CustomPeers__network-input"
+                        placeholder="Enter a network name"
+                        value=""
                       />
                     </div>
-                    <input
-                      aria-autocomplete="list"
-                      aria-controls="CustomPeers__network-menu"
-                      aria-labelledby="CustomPeers__network-label"
-                      autocomplete="off"
-                      class="sc-Axmtr dEPowd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                      data-testid="SelectNetworkInput__input"
-                      id="CustomPeers__network-input"
-                      placeholder="Enter a network name"
-                      value=""
-                    />
                   </div>
+                  <ul
+                    aria-labelledby="CustomPeers__network-label"
+                    class="hidden"
+                    id="CustomPeers__network-menu"
+                    role="listbox"
+                  />
                 </div>
-                <ul
-                  aria-labelledby="CustomPeers__network-label"
-                  class="grid grid-cols-6 gap-6 mt-6"
-                  id="CustomPeers__network-menu"
-                  role="listbox"
-                />
               </fieldset>
               <fieldset
                 class="sc-AxheI dThsOi flex flex-col space-y-2"
@@ -194,7 +196,7 @@ exports[`PeerList should add peer 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw ksSMAm"
+      class="sc-AxiKw kebiLh"
       role="table"
     >
       <table
@@ -267,12 +269,12 @@ exports[`PeerList should add peer 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxhUy djyxHj group"
+            class="sc-AxhUy iIfeGO group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxhCb hyGNjM space-x-2"
+                class="sc-AxhCb xlrPM space-x-2"
               >
                 <div
                   class="sc-fzokOt kLPAEf text-logo border-theme-danger-light"
@@ -294,7 +296,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   ROBank
@@ -303,7 +305,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   194.168.4.67:800
@@ -312,7 +314,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi text-theme-neutral justify-center"
+                class="sc-AxhCb bdHkpa text-theme-neutral justify-center"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -327,7 +329,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb yHtWA text-theme-neutral-300"
+                class="sc-AxhCb fhxLXM text-theme-neutral-300"
               >
                 <div
                   class="relative"
@@ -351,12 +353,12 @@ exports[`PeerList should add peer 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxhUy djyxHj group"
+            class="sc-AxhUy iIfeGO group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxhCb hyGNjM space-x-2"
+                class="sc-AxhCb xlrPM space-x-2"
               >
                 <div
                   class="sc-fzokOt kLPAEf border-theme-neutral-300"
@@ -365,11 +367,7 @@ exports[`PeerList should add peer 1`] = `
                     class="sc-AxirZ iQaTP"
                     height="1em"
                     width="1em"
-                  >
-                    <svg>
-                      eth.svg
-                    </svg>
-                  </div>
+                  />
                 </div>
                 <span>
                   ETHEREUM
@@ -378,7 +376,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   MATBank
@@ -387,7 +385,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   194.168.4.67:800
@@ -396,7 +394,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi text-theme-neutral justify-center"
+                class="sc-AxhCb bdHkpa text-theme-neutral justify-center"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -411,7 +409,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb yHtWA text-theme-neutral-300"
+                class="sc-AxhCb fhxLXM text-theme-neutral-300"
               >
                 <div
                   class="relative"
@@ -435,12 +433,12 @@ exports[`PeerList should add peer 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxhUy djyxHj group"
+            class="sc-AxhUy iIfeGO group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxhCb hyGNjM space-x-2"
+                class="sc-AxhCb xlrPM space-x-2"
               >
                 <div
                   class="sc-fzokOt kLPAEf text-theme-warning-400 border-theme-warning-200"
@@ -449,11 +447,7 @@ exports[`PeerList should add peer 1`] = `
                     class="sc-AxirZ iQaTP"
                     height="1em"
                     width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
+                  />
                 </div>
                 <span>
                   BITCOIN
@@ -462,7 +456,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   OLEBank
@@ -471,7 +465,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   194.168.4.67:800
@@ -480,7 +474,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi text-theme-neutral justify-center"
+                class="sc-AxhCb bdHkpa text-theme-neutral justify-center"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -495,7 +489,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb yHtWA text-theme-neutral-300"
+                class="sc-AxhCb fhxLXM text-theme-neutral-300"
               >
                 <div
                   class="relative"
@@ -537,7 +531,7 @@ exports[`PeerList should render 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="sc-AxiKw ksSMAm"
+      class="sc-AxiKw kebiLh"
       role="table"
     >
       <table
@@ -610,12 +604,12 @@ exports[`PeerList should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxhUy djyxHj group"
+            class="sc-AxhUy iIfeGO group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxhCb hyGNjM space-x-2"
+                class="sc-AxhCb xlrPM space-x-2"
               >
                 <div
                   class="sc-fzokOt kLPAEf text-logo border-theme-danger-light"
@@ -637,7 +631,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   ROBank
@@ -646,7 +640,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   194.168.4.67:800
@@ -655,7 +649,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi text-theme-neutral justify-center"
+                class="sc-AxhCb bdHkpa text-theme-neutral justify-center"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -670,7 +664,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb yHtWA text-theme-neutral-300"
+                class="sc-AxhCb fhxLXM text-theme-neutral-300"
               >
                 <div
                   class="relative"
@@ -694,12 +688,12 @@ exports[`PeerList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxhUy djyxHj group"
+            class="sc-AxhUy iIfeGO group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxhCb hyGNjM space-x-2"
+                class="sc-AxhCb xlrPM space-x-2"
               >
                 <div
                   class="sc-fzokOt kLPAEf border-theme-neutral-300"
@@ -708,11 +702,7 @@ exports[`PeerList should render 1`] = `
                     class="sc-AxirZ iQaTP"
                     height="1em"
                     width="1em"
-                  >
-                    <svg>
-                      eth.svg
-                    </svg>
-                  </div>
+                  />
                 </div>
                 <span>
                   ETHEREUM
@@ -721,7 +711,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   MATBank
@@ -730,7 +720,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   194.168.4.67:800
@@ -739,7 +729,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi text-theme-neutral justify-center"
+                class="sc-AxhCb bdHkpa text-theme-neutral justify-center"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -754,7 +744,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb yHtWA text-theme-neutral-300"
+                class="sc-AxhCb fhxLXM text-theme-neutral-300"
               >
                 <div
                   class="relative"
@@ -778,12 +768,12 @@ exports[`PeerList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxhUy djyxHj group"
+            class="sc-AxhUy iIfeGO group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxhCb hyGNjM space-x-2"
+                class="sc-AxhCb xlrPM space-x-2"
               >
                 <div
                   class="sc-fzokOt kLPAEf text-theme-warning-400 border-theme-warning-200"
@@ -792,11 +782,7 @@ exports[`PeerList should render 1`] = `
                     class="sc-AxirZ iQaTP"
                     height="1em"
                     width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
+                  />
                 </div>
                 <span>
                   BITCOIN
@@ -805,7 +791,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   OLEBank
@@ -814,7 +800,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi"
+                class="sc-AxhCb bdHkpa"
               >
                 <span>
                   194.168.4.67:800
@@ -823,7 +809,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb cGAXHi text-theme-neutral justify-center"
+                class="sc-AxhCb bdHkpa text-theme-neutral justify-center"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -838,7 +824,7 @@ exports[`PeerList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb yHtWA text-theme-neutral-300"
+                class="sc-AxhCb fhxLXM text-theme-neutral-300"
               >
                 <div
                   class="relative"
@@ -880,7 +866,7 @@ exports[`PeerList should render with empty peer list 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="sc-AxiKw ksSMAm"
+      class="sc-AxiKw kebiLh"
       role="table"
     >
       <table

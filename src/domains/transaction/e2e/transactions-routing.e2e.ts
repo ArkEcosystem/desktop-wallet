@@ -2,7 +2,7 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture } from "../../../utils/e2e-utils";
-import { goToMyRegistrations } from "../../profile/e2e/common";
+import { goToMyRegistrations, goToProfile } from "../../profile/e2e/common";
 import { goToWallet } from "../../wallet/e2e/common";
 import { goToRegistrationPage, goToResignDelegatePage, goToTransferPage } from "./common";
 
@@ -29,6 +29,7 @@ test("should navigate to registration page", async (t) => {
 });
 
 test("should navigate to delegate resignation page", async (t: any) => {
+	await goToProfile(t);
 	await goToMyRegistrations(t);
 	await goToResignDelegatePage(t);
 });

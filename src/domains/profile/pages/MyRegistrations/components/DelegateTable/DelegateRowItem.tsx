@@ -19,10 +19,10 @@ type DelegateRowItem = {
 
 const getStatusIcon = (confirmed: boolean) => {
 	if (!confirmed) {
-		return <Icon name="StatusClock" className="ml-2 text-theme-neutral" />;
+		return <Icon name="StatusClock" className="text-theme-neutral" />;
 	}
 
-	return <Icon name="Checkmark" className="ml-1 text-theme-success" width={30} height={30} />;
+	return <Icon name="Checkmark" className="text-theme-success" width={30} height={30} />;
 };
 
 export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowItem) => {
@@ -34,7 +34,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 	const { t } = useTranslation();
 
 	const options = [
-		{ label: t("COMMON.UPDATE"), value: "update" },
+		{ label: t("COMMON.UPDATE"), value: "updateDelegate" },
 		{ label: t("COMMON.RESIGN"), value: "resign" },
 	];
 

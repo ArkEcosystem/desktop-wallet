@@ -1,13 +1,12 @@
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import { evaluateFee } from "domains/transaction/utils";
 import { VoteList } from "domains/vote/components/VoteList";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -50,7 +49,7 @@ export const SecondStep = ({
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
+								{coinName && <Icon name={coinName} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
@@ -83,7 +82,7 @@ export const SecondStep = ({
 				)}
 
 				<div className="my-4">
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} />
+					<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
 				</div>
 			</div>
 		</section>

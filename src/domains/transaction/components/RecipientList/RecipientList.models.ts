@@ -1,18 +1,20 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
+
 export type RecipientListItem = {
-	amount: string;
 	address: string;
-	walletName?: string;
+	amount: BigNumber;
 	assetSymbol?: string;
-	isMultisig?: boolean;
-	isInArkNetwork?: boolean;
 	isEditable?: boolean;
-	onRemove?: (address: string) => void;
 	listIndex?: number;
+	variant?: "condensed";
+	walletName?: string;
+	onRemove?: (address: string) => void;
 };
 
 export type RecipientList = {
-	onRemove?: (address: string) => void;
 	assetSymbol: string;
 	isEditable?: boolean;
 	recipients?: RecipientListItem[];
+	variant?: "condensed";
+	onRemove?: (address: string) => void;
 };

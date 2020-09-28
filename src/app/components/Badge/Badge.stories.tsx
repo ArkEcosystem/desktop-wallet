@@ -75,23 +75,23 @@ export const WithIcon = () => (
 	<div>
 		<div className="mt-3 mb-10">
 			<Circle className="relative border-theme-success-500 text-theme-success-500">
-				<Icon name="Ark" />
+				<Icon name="ARK" />
 				<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
 			</Circle>
 			<Circle className="relative ml-5 border-theme-success-500 text-theme-success-500">
-				<Icon name="Ethereum" />
+				<Icon name="ETH" />
 				<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
 			</Circle>
 			<Circle className="relative ml-5 border-theme-success-500 text-theme-success-500">
-				<Icon name="Bitcoin" />
+				<Icon name="BTC" />
 				<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
 			</Circle>
 			<Circle className="relative ml-5 border-theme-neutral-200 text-theme-neutral-200">
-				<Icon name="Lisk" />
+				<Icon name="LSK" />
 				<Badge className="border-theme-neutral-200" />
 			</Circle>
 			<Circle className="relative ml-5 border-theme-neutral-200 text-theme-neutral-200">
-				<Icon name="Ripple" />
+				<Icon name="XRP" />
 				<Badge className="border-theme-neutral-200" />
 			</Circle>
 			<Circle className="relative ml-5 border-theme-primary-contrast">

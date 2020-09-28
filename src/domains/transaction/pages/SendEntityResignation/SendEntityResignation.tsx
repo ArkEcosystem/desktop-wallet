@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -12,25 +11,28 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
+import { EntityFirstStep, EntityFourthStep, EntitySecondStep } from "../../components/EntityResignationSteps";
 import { FirstStep, FourthStep, SecondStep } from "./";
-import { SendEntityResignationProps } from "./SendEntityResignation.models";
 
-export const SendEntityResignation = ({ formDefaultData, onDownload }: SendEntityResignationProps) => {
-	const { env } = useEnvironmentContext();
-	const activeProfile = useActiveProfile();
-	const activeWallet = useActiveWallet();
+export const SendEntityResignation = ({ formDefaultData, onDownload, passwordType }: any) => {
 	const { t } = useTranslation();
 	const history = useHistory();
-
+	const location = useLocation();
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
-	const { formState, getValues, setError, setValue } = form;
+	const { formState, getValues, setError } = form;
 	const { isValid } = formState;
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
+
+	const { env } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
+	const activeWallet = useActiveWallet();
+	const { state } = location;
+	const { type = "delegate" } = state || {};
+
 	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "5",
 		min: "0",
@@ -40,21 +42,19 @@ export const SendEntityResignation = ({ formDefaultData, onDownload }: SendEntit
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+			label: t("COMMON.BACK_TO_WALLET"),
 		},
 	];
 
 	useEffect(() => {
-		setDelegate(
-			env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address()),
-		);
-	}, [env, activeWallet]);
+		const transactionTypes: { [key: string]: string } = {
+			entity: "entityResignation",
+			delegate: "delegateResignation",
+		};
 
-	useEffect(() => {
-		// @TODO: use min/avg/max like for all other transaction types
-		setFees(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
-	}, [env, setFees, setValue, activeProfile, activeWallet]);
+		setFees(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), transactionTypes[type]));
+	}, [env, setFees, activeProfile, activeWallet, type]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -70,14 +70,37 @@ export const SendEntityResignation = ({ formDefaultData, onDownload }: SendEntit
 		const from = activeWallet.address();
 
 		try {
-			const transactionId = await activeWallet.transaction().signDelegateResignation({
-				from,
-				fee: fees.static,
-				sign: {
-					mnemonic,
-					secondMnemonic,
-				},
-			});
+			let transactionId;
+
+			if (type === "entity") {
+				// Define entity
+				const { entity } = state;
+				const entityData = entity.data();
+				const asset = entityData.asset();
+
+				transactionId = await activeWallet.transaction().signEntityResignation({
+					from: entity.sender(),
+					data: {
+						type: asset.type,
+						subType: asset.subType,
+						registrationId: entityData.id(),
+					},
+					fee: fees.static,
+					sign: {
+						mnemonic,
+						secondMnemonic,
+					},
+				});
+			} else {
+				transactionId = await activeWallet.transaction().signDelegateResignation({
+					from,
+					fee: fees.static,
+					sign: {
+						mnemonic,
+						secondMnemonic,
+					},
+				});
+			}
 
 			await activeWallet.transaction().broadcast(transactionId);
 			await env.persist();
@@ -87,7 +110,29 @@ export const SendEntityResignation = ({ formDefaultData, onDownload }: SendEntit
 			handleNext();
 		} catch (error) {
 			// TODO: Handle/Map various error messages
-			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+			console.log({ error });
+			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+		}
+	};
+
+	const getStepComponent = () => {
+		const { type = "delegate" } = state || {};
+
+		switch (type) {
+			case "entity": {
+				const { entity } = state;
+
+				if (activeTab === 1) return <EntityFirstStep entity={entity} fees={fees} />;
+				if (activeTab === 2) return <EntitySecondStep entity={entity} fees={fees} />;
+				if (activeTab === 4) return <EntityFourthStep entity={entity} fees={fees} transaction={transaction} />;
+				break;
+			}
+
+			default:
+				if (activeTab === 1) return <FirstStep fees={fees} senderWallet={activeWallet} />;
+				if (activeTab === 2) return <SecondStep fees={fees} senderWallet={activeWallet} />;
+				if (activeTab === 4)
+					return <FourthStep fees={fees} senderWallet={activeWallet} transaction={transaction} />;
 		}
 	};
 
@@ -96,27 +141,16 @@ export const SendEntityResignation = ({ formDefaultData, onDownload }: SendEntit
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={handleSubmit}>
 					<Tabs activeId={activeTab}>
-						{fees && delegate && (
+						{fees && (
 							<div>
 								<StepIndicator size={4} activeIndex={activeTab} />
 								<div className="mt-8">
-									<TabPanel tabId={1}>
-										<FirstStep senderWallet={activeWallet} delegate={delegate} fees={fees} />
-									</TabPanel>
-									<TabPanel tabId={2}>
-										<SecondStep senderWallet={activeWallet} delegate={delegate} fees={fees} />
-									</TabPanel>
+									<TabPanel tabId={1}>{getStepComponent()}</TabPanel>
+									<TabPanel tabId={2}>{getStepComponent()}</TabPanel>
 									<TabPanel tabId={3}>
 										<AuthenticationStep wallet={activeWallet} />
 									</TabPanel>
-									<TabPanel tabId={4}>
-										<FourthStep
-											senderWallet={activeWallet}
-											delegate={delegate}
-											fees={fees}
-											transaction={transaction}
-										/>
-									</TabPanel>
+									<TabPanel tabId={4}>{getStepComponent()}</TabPanel>
 
 									<div className="flex justify-end mt-8 space-x-3">
 										{activeTab < 4 && (

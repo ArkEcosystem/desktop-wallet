@@ -172,15 +172,18 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -265,15 +268,18 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -571,7 +577,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw ksSMAm"
+            class="sc-AxiKw kebiLh"
             role="table"
           >
             <table
@@ -722,18 +728,21 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 role="rowgroup"
               >
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -760,7 +769,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -782,7 +791,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -805,7 +814,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -816,7 +825,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -827,18 +836,21 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -865,7 +877,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -887,7 +899,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -910,7 +922,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -921,7 +933,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -932,18 +944,21 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -970,7 +985,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -992,7 +1007,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1015,7 +1030,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1026,7 +1041,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1037,18 +1052,21 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -1075,7 +1093,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1097,7 +1115,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1120,7 +1138,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1131,7 +1149,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1142,18 +1160,21 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -1180,7 +1201,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1202,7 +1223,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1225,7 +1246,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1236,7 +1257,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1247,18 +1268,21 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -1285,7 +1309,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1307,7 +1331,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1330,7 +1354,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1341,7 +1365,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1352,18 +1376,21 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -1390,7 +1417,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1412,7 +1439,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1435,7 +1462,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1446,7 +1473,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1457,18 +1484,21 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -1495,7 +1525,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1517,7 +1547,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1540,7 +1570,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1551,7 +1581,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1562,18 +1592,21 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -1600,7 +1633,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1622,7 +1655,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1645,7 +1678,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1656,7 +1689,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1848,15 +1881,18 @@ exports[`Wallets should render grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -1941,15 +1977,18 @@ exports[`Wallets should render grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -2247,7 +2286,7 @@ exports[`Wallets should render list 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw ksSMAm"
+            class="sc-AxiKw kebiLh"
             role="table"
           >
             <table
@@ -2398,18 +2437,21 @@ exports[`Wallets should render list 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -2436,7 +2478,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -2458,7 +2500,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -2481,7 +2523,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -2492,7 +2534,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -2503,18 +2545,21 @@ exports[`Wallets should render list 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -2541,7 +2586,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -2563,7 +2608,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -2572,7 +2617,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -2583,7 +2628,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -2775,15 +2820,18 @@ exports[`Wallets should render many wallets on grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -2868,15 +2916,18 @@ exports[`Wallets should render many wallets on grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -2961,15 +3012,18 @@ exports[`Wallets should render many wallets on grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -3054,15 +3108,18 @@ exports[`Wallets should render many wallets on grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -3147,15 +3204,18 @@ exports[`Wallets should render many wallets on grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -3240,15 +3300,18 @@ exports[`Wallets should render many wallets on grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -3333,15 +3396,18 @@ exports[`Wallets should render many wallets on grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -3426,15 +3492,18 @@ exports[`Wallets should render many wallets on grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -3519,15 +3588,18 @@ exports[`Wallets should render many wallets on grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -3612,15 +3684,18 @@ exports[`Wallets should render many wallets on grid 1`] = `
                       class="relative p-2"
                     >
                       <div
-                        class="flex"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM border-theme-primary-contrast -mr-2 undefined"
+                          aria-label="ARK Devnet"
+                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
                             <svg>
                               ark.svg
@@ -4184,7 +4259,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw ksSMAm"
+            class="sc-AxiKw kebiLh"
             role="table"
           >
             <table
@@ -4335,18 +4410,21 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -4373,7 +4451,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -4395,7 +4473,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -4418,7 +4496,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -4429,7 +4507,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4440,18 +4518,21 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -4478,7 +4559,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -4500,7 +4581,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -4509,7 +4590,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -4520,7 +4601,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4687,7 +4768,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw ksSMAm"
+            class="sc-AxiKw kebiLh"
             role="table"
           >
             <table
@@ -4838,18 +4919,21 @@ exports[`Wallets should render with list view enabled as default and empty walle
                 role="rowgroup"
               >
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -4876,7 +4960,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -4898,7 +4982,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -4921,7 +5005,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -4932,7 +5016,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4943,18 +5027,21 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -4981,7 +5068,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5003,7 +5090,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5012,7 +5099,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5023,7 +5110,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5190,7 +5277,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw ksSMAm"
+            class="sc-AxiKw kebiLh"
             role="table"
           >
             <table
@@ -5341,18 +5428,21 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 role="rowgroup"
               >
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -5379,7 +5469,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5401,7 +5491,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5424,7 +5514,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5435,7 +5525,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5446,18 +5536,21 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -5484,7 +5577,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5506,7 +5599,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5529,7 +5622,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5540,7 +5633,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5551,18 +5644,21 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -5589,7 +5685,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5611,7 +5707,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5634,7 +5730,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5645,7 +5741,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5656,18 +5752,21 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -5694,7 +5793,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5716,7 +5815,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5739,7 +5838,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5750,7 +5849,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5761,18 +5860,21 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -5799,7 +5901,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5821,7 +5923,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5844,7 +5946,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5855,7 +5957,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5866,18 +5968,21 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -5904,7 +6009,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5926,7 +6031,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5949,7 +6054,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5960,7 +6065,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5971,18 +6076,21 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -6009,7 +6117,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -6031,7 +6139,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6054,7 +6162,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6065,7 +6173,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6076,18 +6184,21 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -6114,7 +6225,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -6136,7 +6247,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6159,7 +6270,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6170,7 +6281,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6181,18 +6292,21 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -6219,7 +6333,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -6241,7 +6355,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6264,7 +6378,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6275,7 +6389,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6286,18 +6400,21 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy tuDtX group"
+                  class="sc-AxhUy loGswa group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-AxhCb hyGNjM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxmLO fgVzBM -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -6324,7 +6441,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi"
+                      class="sc-AxhCb bdHkpa"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -6346,7 +6463,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6369,7 +6486,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb cGAXHi font-semibold justify-end"
+                      class="sc-AxhCb bdHkpa font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6380,7 +6497,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb yHtWA justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"

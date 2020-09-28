@@ -53,7 +53,7 @@ describe("CreateContact", () => {
 				target: { value: existingContact.name() },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 

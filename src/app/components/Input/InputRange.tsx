@@ -1,50 +1,58 @@
+import { Currency } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Range } from "app/components/Range";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { getTrackBackground } from "react-range";
 
 import { InputCurrency } from "./InputCurrency";
 import { InputGroup } from "./InputGroup";
 
 type Props = {
-	defaultValue: string;
-	value?: string;
-	min: number;
-	max: number;
+	avg: any;
+	value?: { display: string; value: string };
+	min: string;
+	max: string;
 	step: number;
 	name?: string;
 	magnitude?: number;
-	onChange?: (value: string) => void;
+	onChange?: any;
 };
 
 // TODO: tidy up storage of amount (why array of values?)
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
-	({ min, max, step, defaultValue, magnitude, onChange, value }: Props, ref) => {
-		const [values, setValues] = React.useState<number[]>([BigNumber.make(defaultValue).divide(1e8).toNumber()]);
-		const fraction = Math.pow(10, magnitude! * -1);
+	({ min, max, step, avg, magnitude, onChange, value }: Props, ref) => {
+		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
+		const [values, setValues] = React.useState<any>([BigNumber.make(avg).divide(1e8)]);
 
-		const handleInput = (value: string) => {
-			if (BigNumber.make(value).divide(1e8).toNumber() > max) {
-				value = BigNumber.make(max).times(1e8).toFixed(0);
+		const handleInput = (currency: { display: string; value: string }) => {
+			let value = currency;
+
+			if (Number(value.display) > Number(max)) {
+				value = convertValue(max.toString());
 			}
 
-			const amount = BigNumber.make(value).times(fraction);
-			setValues([amount.toNumber()]);
-			onChange?.(amount.toFixed(0));
+			setValues([value]);
+			onChange?.(value);
 		};
 
 		const handleRange = (values: number[]) => {
-			const amount = BigNumber.make(values[0]).divide(fraction).toFixed(0);
-			setValues(values);
+			const amount = convertValue(values[0].toString());
+
 			onChange?.(amount);
 		};
 
-		const trackBackgroundMinValue = values[0];
-		const rangeValues = [Math.min(values[0], max)];
+		let trackBackgroundMinValue = values[0];
+		let rangeValues = [Math.min(values[0], Number(max))];
+
+		if (values[0]?.value) {
+			const rangeValue = BigNumber.make(values[0].value).divide(1e8);
+			trackBackgroundMinValue = rangeValue;
+			rangeValues = [Math.min(rangeValue.toNumber(), Number(max))];
+		}
 
 		useEffect(() => {
 			if (value) {
-				setValues([BigNumber.make(value).divide(1e8).toNumber()]);
+				setValues([value]);
 			}
 		}, [value]);
 
@@ -55,8 +63,8 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						background: getTrackBackground({
 							values: [trackBackgroundMinValue],
 							colors: ["rgba(var(--theme-color-primary-rgb), 0.1)", "transparent"],
-							min,
-							max,
+							min: Number(min),
+							max: Number(max),
 						}),
 					}}
 					magnitude={magnitude}

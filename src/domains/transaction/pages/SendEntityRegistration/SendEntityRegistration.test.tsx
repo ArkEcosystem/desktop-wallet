@@ -1,14 +1,20 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { act, renderHook } from "@testing-library/react-hooks";
+import { act as renderHookAct, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import delegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
+import DelegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
+import EntityRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-update.json";
+import IpfsFixture from "tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json";
+// @ts-ignore
+EntityRegistrationFixture.data.asset.data.name = "Test-Entity-Name";
+
 import {
+	act,
 	defaultNetMocks,
 	env,
 	fireEvent,
@@ -68,12 +74,23 @@ const renderPage = async (wallet?: ReadWriteWallet) => {
 const createTransactionMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-		id: () => delegateRegistrationFixture.data.id,
-		sender: () => delegateRegistrationFixture.data.sender,
-		recipient: () => delegateRegistrationFixture.data.recipient,
-		amount: () => BigNumber.make(delegateRegistrationFixture.data.amount),
-		fee: () => BigNumber.make(delegateRegistrationFixture.data.fee),
-		data: () => delegateRegistrationFixture.data,
+		id: () => DelegateRegistrationFixture.data.id,
+		sender: () => DelegateRegistrationFixture.data.sender,
+		recipient: () => DelegateRegistrationFixture.data.recipient,
+		amount: () => BigNumber.make(DelegateRegistrationFixture.data.amount),
+		fee: () => BigNumber.make(DelegateRegistrationFixture.data.fee),
+		data: () => DelegateRegistrationFixture.data,
+	});
+
+const createEntityRegistrationMock = (wallet: ReadWriteWallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => EntityRegistrationFixture.data.id,
+		sender: () => EntityRegistrationFixture.data.sender,
+		recipient: () => EntityRegistrationFixture.data.recipient,
+		amount: () => BigNumber.make(EntityRegistrationFixture.data.amount),
+		fee: () => BigNumber.make(EntityRegistrationFixture.data.fee),
+		data: () => EntityRegistrationFixture.data,
 	});
 
 describe("Registration", () => {
@@ -82,7 +99,7 @@ describe("Registration", () => {
 		wallet = profile.wallets().first();
 		secondWallet = profile.wallets().findByAddress("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")!;
 
-		await profile.wallets().importByAddress("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", "ARK", "devnet");
+		await profile.wallets().importByAddress("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", "ARK", "ark.devnet");
 
 		await syncDelegates();
 		await syncFees();
@@ -91,6 +108,19 @@ describe("Registration", () => {
 	beforeEach(() => {
 		nock.cleanAll();
 		defaultNetMocks();
+
+		nock("https://dwallets.ark.io")
+			.get("/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")
+			.reply(200, require("tests/fixtures/coins/ark/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
+
+		nock("https://platform.ark.io/api")
+			.get("/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV")
+			.reply(200, IpfsFixture)
+			.get("/ipfs/QmV1n5F9PuBE2ovW9jVfFpxyvWZxYHjSdfLrYL2nDcb1gW")
+			.reply(200, IpfsFixture)
+			.post("/ipfs")
+			.reply(200, { data: { hash: EntityRegistrationFixture.data.asset.data.ipfsData } })
+			.persist();
 	});
 
 	it("should render registration form without selected wallet", async () => {
@@ -104,11 +134,18 @@ describe("Registration", () => {
 		const { getByTestId, asFragment } = await renderPage();
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+
 		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-devnet"));
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark Devnet");
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -117,11 +154,18 @@ describe("Registration", () => {
 		const { getByTestId, asFragment } = await renderPage();
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+
 		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-mainnet"));
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark");
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
+		});
+
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
 		expect(getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -138,9 +182,9 @@ describe("Registration", () => {
 		const setValueSpy = jest.spyOn(form.current, "setValue");
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await renderHookAct(async () => {
 			rendered = render(
-				<FormContext {...form.current}>
+				<FormProvider {...form.current}>
 					<FirstStep
 						networks={env.availableNetworks()}
 						profile={profile}
@@ -148,7 +192,7 @@ describe("Registration", () => {
 						setRegistrationForm={setRegistrationForm}
 						fees={fees}
 					/>
-				</FormContext>,
+				</FormProvider>,
 			);
 
 			await waitFor(() => expect(rendered.getByTestId("Registration__first-step")).toBeTruthy());
@@ -156,7 +200,7 @@ describe("Registration", () => {
 
 		const { asFragment, getByTestId } = rendered!;
 
-		await act(async () => {
+		await renderHookAct(async () => {
 			fireEvent.click(getByTestId("select-list__toggle-button"));
 
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
@@ -168,11 +212,13 @@ describe("Registration", () => {
 					1,
 					"registrationType",
 					{ label: "Delegate", value: "delegateRegistration" },
-					true,
+					{ shouldValidate: true, shouldDirty: true },
 				),
 			);
 			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
-			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(2, "fee", "1", true));
+			await waitFor(() =>
+				expect(setValueSpy).toHaveBeenNthCalledWith(2, "fee", "1", { shouldValidate: true, shouldDirty: true }),
+			);
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
 	});
@@ -185,9 +231,9 @@ describe("Registration", () => {
 		const setValueSpy = jest.spyOn(form.current, "setValue");
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await renderHookAct(async () => {
 			rendered = render(
-				<FormContext {...form.current}>
+				<FormProvider {...form.current}>
 					<FirstStep
 						networks={env.availableNetworks()}
 						profile={profile}
@@ -195,7 +241,7 @@ describe("Registration", () => {
 						setRegistrationForm={setRegistrationForm}
 						fees={fees}
 					/>
-				</FormContext>,
+				</FormProvider>,
 			);
 
 			await waitFor(() => expect(rendered.getByTestId("Registration__first-step")).toBeTruthy());
@@ -203,7 +249,7 @@ describe("Registration", () => {
 
 		const { asFragment, getByTestId } = rendered!;
 
-		await act(async () => {
+		await renderHookAct(async () => {
 			fireEvent.click(getByTestId("select-list__toggle-button"));
 
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
@@ -215,7 +261,7 @@ describe("Registration", () => {
 					1,
 					"registrationType",
 					{ label: "Delegate", value: "delegateRegistration" },
-					true,
+					{ shouldValidate: true, shouldDirty: true },
 				),
 			);
 			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
@@ -272,17 +318,14 @@ describe("Registration", () => {
 	});
 
 	it("should not have delegate option if wallet is a delegate", async () => {
-		const { asFragment, getByTestId } = await renderPage(secondWallet);
+		const { asFragment, getByTestId, queryByText } = await renderPage(secondWallet);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("select-list__toggle-button"));
-
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-			await waitFor(() =>
-				expect(() => getByTestId("select-list__toggle-option-1")).toThrow(/Unable to find an element by/),
-			);
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
+		await waitFor(() => expect(queryByText("Business")).toBeInTheDocument());
+		await waitFor(() => expect(queryByText("Delegate")).not.toBeInTheDocument());
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should should go back and forth & correctly register fields", async () => {
@@ -421,7 +464,7 @@ describe("Registration", () => {
 
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signDelegateRegistration")
-				.mockReturnValue(Promise.resolve(delegateRegistrationFixture.data.id));
+				.mockReturnValue(Promise.resolve(DelegateRegistrationFixture.data.id));
 			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 			const transactionMock = createTransactionMock(wallet);
 
@@ -437,14 +480,12 @@ describe("Registration", () => {
 
 			// Step 5 - sent screen
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 
 			// Go back to wallet
 			const historySpy = jest.spyOn(history, "push");
 			fireEvent.click(getByTestId("Registration__button--back-to-wallet"));
 			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 			historySpy.mockRestore();
-
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
 	});
@@ -509,5 +550,497 @@ describe("Registration", () => {
 
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
+	});
+
+	it("should validate website url", async () => {
+		const { asFragment, getByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__website"), { target: { value: "wrong url" } });
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__website")).toHaveAttribute("aria-invalid"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should set fee", async () => {
+		const { getByTestId, getAllByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getAllByTestId("SelectionBarOption")[1]);
+		});
+
+		const feeInput = getByTestId("InputCurrency");
+		waitFor(() => expect(feeInput).toHaveValue("0"));
+	});
+
+	it("should validate entity name", async () => {
+		const { asFragment, getByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), { target: { value: "ab" } });
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveAttribute("aria-invalid"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should validate display name", async () => {
+		const { asFragment, getByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__display-name"), { target: { value: "ab" } });
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveAttribute("aria-invalid"),
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should validate description", async () => {
+		const { asFragment, getByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__description"), { target: { value: "ab" } });
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__description")).toHaveAttribute("aria-invalid"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should go to review step after succesfully filling form data", async () => {
+		const { asFragment, getByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__entity-name"), {
+				target: {
+					value: "Test-Entity-Name",
+				},
+			});
+		});
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("Test-Entity-Name"));
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__display-name"), {
+				target: {
+					value: "Test Entity Display Name",
+				},
+			});
+		});
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue("Test Entity Display Name"),
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__description"), {
+				target: {
+					value: "Test Entity Description",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__description")).toHaveValue("Test Entity Description"),
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__website"), {
+				target: {
+					value: "https://test-step.entity.com",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__website")).toHaveValue("https://test-step.entity.com"),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("ReviewStep")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should fill all data including link collections", async () => {
+		const { asFragment, getByTestId, getAllByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__entity-name"), {
+				target: {
+					value: "Test-Entity-Name",
+				},
+			});
+		});
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("Test-Entity-Name"));
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__display-name"), {
+				target: {
+					value: "Test Entity Display Name",
+				},
+			});
+		});
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue("Test Entity Display Name"),
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__description"), {
+				target: {
+					value: "Test Entity Description",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__description")).toHaveValue("Test Entity Description"),
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__website"), {
+				target: {
+					value: "https://test-step.entity.com",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__website")).toHaveValue("https://test-step.entity.com"),
+		);
+
+		const toggleLinkCollectionHeader = async (collection: any) => {
+			// Open sourceControl
+			await act(async () => {
+				fireEvent.click(within(collection).getByTestId("LinkCollection__header"));
+			});
+		};
+
+		const addLink = async (collection: any, optionLabel: string, inputValue: string) => {
+			await toggleLinkCollectionHeader(collection);
+
+			const selectButton = within(collection).getByTestId("select-list__toggle-button");
+
+			act(() => {
+				fireEvent.click(selectButton);
+			});
+
+			act(() => {
+				fireEvent.click(within(collection).getByText(optionLabel), { selector: ["role=option"] });
+			});
+
+			await waitFor(() => expect(selectButton).toHaveTextContent(optionLabel));
+
+			act(() => {
+				fireEvent.input(within(collection).getByTestId("LinkCollection__input-link"), {
+					target: {
+						value: inputValue,
+					},
+				});
+			});
+
+			const addedItems = within(collection).queryAllByTestId("LinkCollection__item");
+			const newLength = addedItems.length + 1;
+
+			act(() => {
+				fireEvent.click(within(collection).getByTestId("LinkCollection__add-link"));
+			});
+
+			await waitFor(() => expect(within(collection).getByTestId("LinkCollection__input-link")).toHaveValue(""));
+
+			await waitFor(() =>
+				expect(within(collection).getAllByTestId("LinkCollection__item")).toHaveLength(newLength),
+			);
+			const addedItem = within(collection).getAllByTestId("LinkCollection__item")[newLength - 1];
+			await waitFor(() => expect(addedItem).toBeTruthy());
+			await waitFor(() => expect(addedItem).toHaveTextContent(optionLabel));
+			await waitFor(() => expect(addedItem).toHaveTextContent(inputValue));
+
+			toggleLinkCollectionHeader(collection);
+		};
+
+		const repository = getAllByTestId("LinkCollection")[0];
+		const socialMedia = getAllByTestId("LinkCollection")[1];
+		const media = getAllByTestId("LinkCollection")[2];
+
+		// Add source control link
+		await addLink(repository, "GitHub", "https://github.com/test");
+
+		// Add source media link
+		await addLink(socialMedia, "Facebook", "https://facebook.com/test");
+		await addLink(socialMedia, "Instagram", "https://instagram.com/test");
+
+		// Add media link
+		await addLink(media, "Imgur", "https://i.imgur.com/123456.png");
+		await addLink(
+			media,
+			"GitHub",
+			"https://raw.githubusercontent.com/arkecosystem/plugins/master/images/preview-1.jpg",
+		);
+
+		await addLink(media, "YouTube", "https://youtube.com/watch?v=123456");
+
+		await toggleLinkCollectionHeader(media);
+		// Select avatar
+		const firstMediaItem = within(media).getAllByTestId("LinkCollection__item")[0];
+
+		act(() => {
+			fireEvent.click(within(firstMediaItem).getByTestId("LinkCollection__selected"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should succesfully register entity", async () => {
+		const { asFragment, getByTestId, queryAllByTestId } = await renderPage(secondWallet);
+
+		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), {
+				target: {
+					value: "Test-Entity-Name",
+				},
+			});
+		});
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("Test-Entity-Name"));
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__display-name"), {
+				target: {
+					value: "Test Entity Display Name",
+				},
+			});
+		});
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue("Test Entity Display Name"),
+		);
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__description"), {
+				target: {
+					value: "Test Entity Description",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__description")).toHaveValue("Test Entity Description"),
+		);
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__website"), {
+				target: {
+					value: "https://test-step.entity.com",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__website")).toHaveValue("https://test-step.entity.com"),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("ReviewStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+		// Step 4 - signing
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+		const mnemonic = getByTestId("AuthenticationStep__mnemonic");
+		const secondMnemonic = getByTestId("AuthenticationStep__second-mnemonic");
+
+		act(() => {
+			fireEvent.input(mnemonic, { target: { value: "passphrase" } });
+		});
+
+		fireEvent.input(secondMnemonic, { target: { value: "passphrase" } });
+
+		await waitFor(() => expect(mnemonic).toHaveValue("passphrase"));
+		await waitFor(() => expect(secondMnemonic).toHaveValue("passphrase"));
+
+		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
+		await waitFor(() => expect(getByTestId("Registration__send-button")).toBeTruthy());
+
+		const signMock = jest
+			.spyOn(secondWallet.transaction(), "signEntityRegistration")
+			.mockReturnValue(Promise.resolve(EntityRegistrationFixture.data.id));
+		const broadcastMock = jest.spyOn(secondWallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createEntityRegistrationMock(secondWallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__send-button"));
+		});
+
+		await waitFor(() => expect(signMock).toHaveBeenCalled());
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+
+		// Step 5 - sent screen
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 });

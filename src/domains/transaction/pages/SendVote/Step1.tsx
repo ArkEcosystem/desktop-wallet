@@ -1,14 +1,14 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
 import { InputFee } from "domains/transaction/components/InputFee";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { VoteList } from "domains/vote/components/VoteList";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -29,16 +29,19 @@ export const FirstStep = ({
 	const { t } = useTranslation();
 	const form = useFormContext();
 
-	const { getValues, setValue } = form;
-	const { senderAddress } = form.watch();
-	const [fees, setFees] = useState({
+	const { getValues, setValue, watch } = form;
+	const { senderAddress } = watch();
+	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "5",
 		min: "0",
 		avg: "1",
 		max: "2",
 	});
 
-	const fee = getValues("fee") || null;
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultFee] = useState(() => watch("fee"));
+	const fee = getValues("fee") || defaultFee;
+
 	const coinName = wallet.coinId();
 	const network = `${coinName} ${wallet.network().name()}`;
 	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
@@ -51,7 +54,7 @@ export const FirstStep = ({
 
 			setFees(transactionFees);
 
-			setValue("fee", transactionFees.avg, true);
+			setValue("fee", transactionFees.avg, { shouldValidate: true, shouldDirty: true });
 		}
 	}, [env, setFees, setValue, profile, senderAddress]);
 
@@ -67,7 +70,7 @@ export const FirstStep = ({
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
+								{coinName && <Icon name={coinName} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
@@ -109,7 +112,9 @@ export const FirstStep = ({
 							defaultValue={fee || 0}
 							value={fee || 0}
 							step={0.01}
-							onChange={(value: any) => setValue("fee", value, true)}
+							onChange={(currency: { display: string; value: string }) => {
+								setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
+							}}
 						/>
 					</FormField>
 				</TransactionDetail>

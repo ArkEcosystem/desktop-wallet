@@ -7,9 +7,8 @@ import { Avatar } from "app/components/Avatar";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Label } from "app/components/Label";
-import { TransactionDetail } from "app/components/TransactionDetail";
-import { useEffect } from "react";
-import React from "react";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -17,18 +16,23 @@ import { InputFee } from "../InputFee";
 
 export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFee; wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
-	const { getValues, setValue, register } = useFormContext();
 
-	const fee = getValues("fee") || null;
+	const { getValues, setValue, register, watch } = useFormContext();
+
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultFee] = useState(() => watch("fee"));
+	const fee = getValues("fee") || defaultFee;
 
 	useEffect(() => {
 		register("secondMnemonic");
+		register("wallet");
 	}, [register]);
 
 	useEffect(() => {
 		const newMnemonic = BIP39.generate();
 		setValue("secondMnemonic", newMnemonic);
-	}, [setValue]);
+		setValue("wallet", wallet);
+	}, [setValue, wallet]);
 
 	return (
 		<section data-testid="SecondSignatureRegistrationForm__generation-step">
@@ -40,7 +44,7 @@ export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFe
 			</div>
 
 			<div className="mt-4">
-				<Alert>{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
+				<Alert size="lg">{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
 
 				<TransactionDetail
 					className="mt-2"
@@ -65,7 +69,9 @@ export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFe
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={0.01}
-						onChange={(value: any) => setValue("fee", value, true)}
+						onChange={(currency: { display: string; value: string }) => {
+							setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
+						}}
 					/>
 				</FormField>
 			</div>

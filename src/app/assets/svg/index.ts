@@ -91,9 +91,11 @@ import { ReactComponent as StarsOutline } from "./stars-outline.svg";
 import { ReactComponent as StatusClock } from "./status-clock.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
+import { ReactComponent as Unvote } from "./unvote.svg";
 import { ReactComponent as Update } from "./update.svg";
 import { ReactComponent as Upload } from "./upload.svg";
 import { ReactComponent as User } from "./user.svg";
+import { ReactComponent as VoteUnvote } from "./vote-unvote.svg";
 import { ReactComponent as Vote } from "./vote.svg";
 import { ReactComponent as Voted } from "./voted.svg";
 
@@ -178,8 +180,10 @@ export const SvgCollection: any = {
 	StatusClock,
 	Trash,
 	Twitter,
+	Unvote,
 	Update,
 	Upload,
+	VoteUnvote,
 	Vote,
 	Voted,
 	Notification,

@@ -3,7 +3,7 @@ name: Draft Artifacts
 on:
     push:
         branches:
-            - "3.0-react"
+            - "develop"
 
 jobs:
     linux:

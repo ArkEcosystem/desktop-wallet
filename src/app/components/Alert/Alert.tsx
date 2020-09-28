@@ -17,7 +17,7 @@ const AlertContent = styled.div<{ size?: Size }>`
 			case "sm":
 				return tw`px-6 py-4`;
 			case "lg":
-				return tw`px-10 py-8`;
+				return tw`px-8 py-8`;
 			default:
 				return tw`px-8 py-6`;
 		}
@@ -30,7 +30,7 @@ const AlertIconWrapper = styled.div<{ size?: Size }>`
 			case "sm":
 				return tw`px-4 py-2`;
 			case "lg":
-				return tw`px-8 py-6`;
+				return tw`px-10 py-6`;
 			default:
 				return tw`px-6 py-4`;
 		}
@@ -57,13 +57,13 @@ export const Alert = ({ variant, title, size, children }: AlertProps) => (
 		>
 			<AlertIcon variant={variant!} />
 		</AlertIconWrapper>
-		<AlertContent size={size} className={`flex-1 bg-theme-${variant}-100`}>
+		<AlertContent size={size} className={`flex-1 bg-theme-${variant}-100 space-y-2`}>
 			{title && (
-				<p className={`text-xl font-bold text-theme-${variant}`} data-testid="alert__title">
+				<p className={`text-lg font-bold text-theme-${variant}`} data-testid="alert__title">
 					{title}
 				</p>
 			)}
-			{children}
+			{children && <div className="text-sm">{children}</div>}
 		</AlertContent>
 	</div>
 );

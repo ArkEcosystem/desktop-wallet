@@ -5,6 +5,7 @@ import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm/DelegateRegistrationForm";
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
+import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -17,6 +18,7 @@ const registrationComponents: any = {
 	delegateRegistration: DelegateRegistrationForm,
 	entityRegistration: EntityRegistrationForm,
 	secondSignature: SecondSignatureRegistrationForm,
+	multiSignature: MultiSignatureRegistrationForm,
 };
 
 const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
@@ -24,12 +26,8 @@ const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrat
 
 	return (
 		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
-			<div className="mb-2">
-				<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
-			</div>
-			<div>
-				<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
-			</div>
+			<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
+			<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
 		</FormField>
 	);
 };
@@ -63,6 +61,13 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		});
 	}
 
+	if (!wallet.isMultiSignature?.()) {
+		registrationTypes.push({
+			value: "multiSignature",
+			label: "MultiSignature",
+		});
+	}
+
 	if (!wallet.isSecondSignature?.()) {
 		registrationTypes.push({
 			value: "secondSignature",
@@ -82,18 +87,18 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 	}, [network, profile]);
 
 	const onSelectSender = (address: any) => {
-		setValue("senderAddress", address, true);
+		setValue("senderAddress", address, { shouldValidate: true, shouldDirty: true });
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
 		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-entity-registration`);
 	};
 
 	const onSelectType = (selectedItem: SendEntityRegistrationType) => {
-		setValue("registrationType", selectedItem, true);
+		setValue("registrationType", selectedItem, { shouldValidate: true, shouldDirty: true });
 		setRegistrationForm(registrationComponents[selectedItem.value]);
 
 		if (fees[selectedItem.value]) {
-			setValue("fee", fees[selectedItem.value].avg, true);
+			setValue("fee", fees[selectedItem.value].avg, { shouldValidate: true, shouldDirty: true });
 		}
 	};
 
@@ -119,10 +124,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 				</FormField>
 
 				<FormField name="senderAddress" className="relative">
-					<div className="mb-2">
-						<FormLabel label="Sender" />
-					</div>
-
+					<FormLabel label="Sender" />
 					<div data-testid="sender-address">
 						<SelectAddress
 							address={senderAddress}

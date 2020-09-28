@@ -10,8 +10,6 @@ export const goToProfile = async (t: any) => {
 };
 
 export const goToMyRegistrations = async (t: any) => {
-	await goToProfile(t);
-
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 
 	await t.click(Selector('[data-testid="navbar__useractions"]'));

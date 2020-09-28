@@ -6,7 +6,7 @@ import tw, { styled } from "twin.macro";
 import { OptionButton } from "./MnemonicVerificationOptions";
 
 const TabStyled = styled(OptionButton)<{ isActive: boolean; isComplete: boolean; isPending: boolean }>`
-	${tw`flex-1 flex justify-center pointer-events-none transition-colors duration-200`};
+	${tw`flex-1 flex items-center justify-center pointer-events-none transition-colors duration-200`};
 	${({ isActive }) => isActive && tw`font-medium bg-theme-success-contrast border-theme-success`};
 	${({ isComplete }) => isComplete && tw`border-transparent bg-theme-success-200`};
 	${({ isPending }) => isPending && tw`border-theme-primary-contrast text-theme-primary`};

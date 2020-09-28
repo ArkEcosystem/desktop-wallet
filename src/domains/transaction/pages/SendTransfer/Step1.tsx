@@ -8,7 +8,7 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; profile: Profile }) => {
+export const FormStep = ({ networks, profile }: { networks: NetworkData[]; profile: Profile }) => {
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
 	const { recipients, smartbridge } = getValues();
@@ -28,7 +28,9 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 							<AddRecipient
 								maxAvailableAmount={80}
 								profile={profile}
-								onChange={(recipients: RecipientListItem[]) => setValue("recipients", recipients, true)}
+								onChange={(recipients: RecipientListItem[]) =>
+									setValue("recipients", recipients, { shouldValidate: true, shouldDirty: true })
+								}
 								recipients={recipients}
 							/>
 						</div>
@@ -45,7 +47,12 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 									className="pr-24"
 									maxLength={255}
 									defaultValue={smartbridge}
-									onChange={(event: any) => setValue("smartbridge", event.target.value, true)}
+									onChange={(event: any) =>
+										setValue("smartbridge", event.target.value, {
+											shouldValidate: true,
+											shouldDirty: true,
+										})
+									}
 								/>
 								<InputAddonEnd>
 									<button type="button" className="px-4 text-theme-neutral-light focus:outline-none">

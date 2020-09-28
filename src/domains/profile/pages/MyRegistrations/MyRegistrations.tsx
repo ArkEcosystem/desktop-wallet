@@ -96,16 +96,25 @@ export const MyRegistrations = () => {
 		plugins,
 	]);
 
-	const handleAction = ({ action, walletId }: any) => {
+	// TODO: Find a better way to carry on entity from registrations to resign page
+	// to avoid use state and also work better with loading states in the send entity resignation
+	const handleAction = ({ action, walletId, entity, type }: any) => {
 		switch (action) {
 			case "register":
 				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
 				break;
+
 			case "resign":
 				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);
 				break;
+
 			case "update":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
+				history.push(
+					`/profiles/${activeProfile.id()}/wallets/${walletId}/transactions/${entity.id()}/send-entity-update`,
+				);
+				break;
+			case "updateDelegate":
+				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
 				break;
 		}
 	};
@@ -139,41 +148,51 @@ export const MyRegistrations = () => {
 			{isLoading && !hasNoRegistrations && <Loader />}
 
 			{!isLoading && businessEntities.length > 0 && (
-				<div data-testid="BusinessRegistrations">
-					<EntityTable
-						title={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}
-						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME")}
-						entities={businessEntities}
-						onAction={handleAction}
-					/>
-				</div>
+				<Section className="flex-1">
+					<div data-testid="BusinessRegistrations">
+						<EntityTable
+							title={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}
+							nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME")}
+							type="entity"
+							entities={businessEntities}
+							onAction={handleAction}
+						/>
+					</div>
+				</Section>
 			)}
 
 			{!isLoading && pluginEntities.length > 0 && (
-				<div data-testid="PluginRegistrations">
-					<EntityTable
-						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGIN_NAME")}
-						title={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGINS")}
-						entities={pluginEntities}
-						onAction={handleAction}
-					/>
-				</div>
+				<Section className="flex-1">
+					<div data-testid="PluginRegistrations">
+						<EntityTable
+							nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGIN_NAME")}
+							title={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGINS")}
+							type="entity"
+							entities={pluginEntities}
+							onAction={handleAction}
+						/>
+					</div>
+				</Section>
 			)}
 
 			{!isLoading && delegateWallets.length > 0 && (
-				<div data-testid="DelegateRegistrations">
-					<DelegateTable wallets={delegateWallets} onAction={handleAction} />
-				</div>
+				<Section className="flex-1">
+					<div data-testid="DelegateRegistrations">
+						<DelegateTable wallets={delegateWallets} onAction={handleAction} />
+					</div>
+				</Section>
 			)}
 
 			{hasNoRegistrations && <EmptyRegistrations />}
 
 			{!hasNoRegistrations && showEmptySearchResults && (
-				<EmptyResults
-					className="flex-1"
-					title={t("COMMON.EMPTY_RESULTS.TITLE")}
-					subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
-				/>
+				<Section className="flex-1">
+					<EmptyResults
+						className="flex-1"
+						title={t("COMMON.EMPTY_RESULTS.TITLE")}
+						subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+					/>
+				</Section>
 			)}
 		</Page>
 	);

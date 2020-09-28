@@ -1,17 +1,29 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
+import { toasts } from "app/services";
+import electron from "electron";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { act } from "react-test-renderer";
 import secondSignatureFixture from "tests/fixtures/coins/ark/transactions/second-signature-registration.json";
-import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SecondSignatureRegistrationForm } from "./SecondSignatureRegistrationForm";
+
+jest.mock("electron", () => ({
+	remote: {
+		dialog: {
+			showSaveDialog: jest.fn(),
+		},
+	},
+}));
 
 describe("SecondSignatureRegistrationForm", () => {
 	const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
@@ -50,7 +62,12 @@ describe("SecondSignatureRegistrationForm", () => {
 		activeTab?: number;
 	}) => (
 		<Form context={form} onSubmit={onSubmit}>
-			<SecondSignatureRegistrationForm.component activeTab={activeTab} fees={fees} wallet={wallet} />
+			<SecondSignatureRegistrationForm.component
+				profile={profile}
+				activeTab={activeTab}
+				fees={fees}
+				wallet={wallet}
+			/>
 		</Form>
 	);
 
@@ -70,6 +87,7 @@ describe("SecondSignatureRegistrationForm", () => {
 
 	it("should set fee", async () => {
 		const { result } = renderHook(() => useForm());
+
 		result.current.register("fee");
 
 		render(<Component form={result.current} onSubmit={() => void 0} />);
@@ -78,35 +96,129 @@ describe("SecondSignatureRegistrationForm", () => {
 			fireEvent.click(screen.getByText(transactionTranslations.FEES.AVERAGE));
 		});
 
-		await waitFor(() => expect(result.current.getValues("fee")).toBe("135400000"));
+		await waitFor(() => expect(result.current.getValues("fee")).toEqual({ display: "1.354", value: "135400000" }));
 	});
 
-	it("should render backup step", async () => {
-		const { result } = renderHook(() =>
-			useForm({
-				defaultValues: {
-					secondMnemonic: "test mnemonic",
-				},
-			}),
-		);
-		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+	describe("backup step", () => {
+		it("should render", async () => {
+			const { result } = renderHook(() =>
+				useForm({
+					defaultValues: {
+						secondMnemonic: "test mnemonic",
+						wallet: {
+							address: () => "address",
+						},
+					},
+				}),
+			);
+			const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
 
-		await waitFor(() => expect(screen.getByTestId("SecondSignature__backup-step")).toBeTruthy());
+			await waitFor(() => expect(screen.getByTestId("SecondSignature__backup-step")).toBeTruthy());
 
-		const writeTextMock = jest.fn();
-		const clipboardOriginal = navigator.clipboard;
-		// @ts-ignore
-		navigator.clipboard = { writeText: writeTextMock };
+			const writeTextMock = jest.fn();
+			const clipboardOriginal = navigator.clipboard;
+			// @ts-ignore
+			navigator.clipboard = { writeText: writeTextMock };
 
-		act(() => {
-			fireEvent.click(screen.getByTestId(`SecondSignature__copy`));
+			act(() => {
+				fireEvent.click(screen.getByTestId(`SecondSignature__copy`));
+			});
+
+			await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith("test mnemonic"));
+
+			// @ts-ignore
+			navigator.clipboard = clipboardOriginal;
+
+			act(() => {
+				fireEvent.click(screen.getByTestId(`SecondSignature__download`));
+			});
+
+			expect(asFragment()).toMatchSnapshot();
 		});
 
-		await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith("test mnemonic"));
+		it("should show success toast on succesfull download", async () => {
+			const { result } = renderHook(() =>
+				useForm({
+					defaultValues: {
+						secondMnemonic: "test mnemonic",
+						wallet: {
+							address: () => "address",
+						},
+					},
+				}),
+			);
 
-		// @ts-ignore
-		navigator.clipboard = clipboardOriginal;
-		expect(asFragment()).toMatchSnapshot();
+			render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+
+			jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => ({
+				filePath: "filePath",
+			}));
+
+			const toastSpy = jest.spyOn(toasts, "success");
+
+			await act(async () => {
+				fireEvent.click(screen.getByTestId(`SecondSignature__download`));
+			});
+
+			expect(toastSpy).toHaveBeenCalled();
+			toastSpy.mockRestore();
+		});
+
+		it("should not show success toast on cancelled download", async () => {
+			const { result } = renderHook(() =>
+				useForm({
+					defaultValues: {
+						secondMnemonic: "test mnemonic",
+						wallet: {
+							address: () => "address",
+						},
+					},
+				}),
+			);
+
+			render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+
+			jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => ({
+				filePath: undefined,
+			}));
+
+			const toastSpy = jest.spyOn(toasts, "success");
+
+			await act(async () => {
+				fireEvent.click(screen.getByTestId(`SecondSignature__download`));
+			});
+
+			expect(toastSpy).not.toHaveBeenCalled();
+			toastSpy.mockRestore();
+		});
+
+		it("should show error toast on error", async () => {
+			const { result } = renderHook(() =>
+				useForm({
+					defaultValues: {
+						secondMnemonic: "test mnemonic",
+						wallet: {
+							address: () => "address",
+						},
+					},
+				}),
+			);
+
+			render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+
+			jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => {
+				throw new Error("Error");
+			});
+
+			const toastSpy = jest.spyOn(toasts, "error");
+
+			await act(async () => {
+				fireEvent.click(screen.getByTestId(`SecondSignature__download`));
+			});
+
+			expect(toastSpy).toHaveBeenCalled();
+			toastSpy.mockRestore();
+		});
 	});
 
 	it("should render verification step", async () => {
@@ -145,7 +257,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		const { result } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					fee: 0,
+					fee: "0",
 				},
 			}),
 		);
@@ -176,9 +288,9 @@ describe("SecondSignatureRegistrationForm", () => {
 
 	it("should sign transaction", async () => {
 		const form = {
-			clearError: jest.fn(),
+			clearErrors: jest.fn(),
 			getValues: () => ({
-				fee: "1",
+				fee: { display: "1", value: "100000000" },
 				mnemonic: "sample passphrase",
 				senderAddress: wallet.address(),
 				secondMnemonic: "second sample passphrase",
@@ -216,7 +328,7 @@ describe("SecondSignatureRegistrationForm", () => {
 
 	it("should error if signing fails", async () => {
 		const form = {
-			clearError: jest.fn(),
+			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
 				mnemonic: "sample passphrase",
@@ -248,7 +360,10 @@ describe("SecondSignatureRegistrationForm", () => {
 
 		expect(consoleSpy).toHaveBeenCalledTimes(1);
 		expect(form.setValue).toHaveBeenCalledWith("mnemonic", "");
-		expect(form.setError).toHaveBeenCalledWith("mnemonic", "manual", "TRANSACTION.INVALID_MNEMONIC");
+		expect(form.setError).toHaveBeenCalledWith("mnemonic", {
+			type: "manual",
+			message: "TRANSACTION.INVALID_MNEMONIC",
+		});
 
 		expect(broadcastMock).not.toHaveBeenCalled();
 		expect(transactionMock).not.toHaveBeenCalled();

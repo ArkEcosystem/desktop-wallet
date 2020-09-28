@@ -14,9 +14,9 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { FifthStep } from "./Step5";
+import { FormStep } from "./Step1";
+import { ReviewStep } from "./Step2";
+import { SummaryStep } from "./Step4";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
@@ -34,7 +34,7 @@ export const SendTransfer = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearError, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -47,11 +47,11 @@ export const SendTransfer = () => {
 	useEffect(() => {
 		if (!activeWallet?.address?.()) return;
 
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
@@ -59,7 +59,7 @@ export const SendTransfer = () => {
 	}, [activeWallet, networks, setValue]);
 
 	const submitForm = async () => {
-		clearError("mnemonic");
+		clearErrors("mnemonic");
 
 		const { fee, mnemonic, secondMnemonic, recipients, senderAddress, smartbridge } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
@@ -109,7 +109,7 @@ export const SendTransfer = () => {
 			console.error("Could not create transaction: ", error);
 
 			setValue("mnemonic", "");
-			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	};
 
@@ -137,15 +137,15 @@ export const SendTransfer = () => {
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={5} activeIndex={activeTab} />
+						<StepIndicator size={4} activeIndex={activeTab} />
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep networks={networks} profile={activeProfile} />
+								<FormStep networks={networks} profile={activeProfile} />
 							</TabPanel>
 
 							<TabPanel tabId={2}>
-								<SecondStep wallet={activeWallet} />
+								<ReviewStep wallet={activeWallet} />
 							</TabPanel>
 
 							<TabPanel tabId={3}>
@@ -153,7 +153,7 @@ export const SendTransfer = () => {
 							</TabPanel>
 
 							<TabPanel tabId={4}>
-								<FifthStep transaction={transaction} senderWallet={activeWallet} />
+								<SummaryStep transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
@@ -183,8 +183,10 @@ export const SendTransfer = () => {
 												type="submit"
 												data-testid="SendTransfer__button--submit"
 												disabled={!formState.isValid}
+												className="space-x-2"
 											>
-												{t("TRANSACTION.SIGN_CONTINUE")}
+												<Icon name="Send" width={20} height={20} />
+												<span>{t("COMMON.SEND")}</span>
 											</Button>
 										)}
 									</>

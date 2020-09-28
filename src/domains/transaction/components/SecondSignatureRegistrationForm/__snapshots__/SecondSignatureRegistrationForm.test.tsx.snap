@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
+exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
 <DocumentFragment>
   <form
     class="space-y-8"
@@ -36,7 +36,7 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-Axmtr BLpZJ flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -49,9 +49,13 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxheI fmLiBe flex-1 bg-theme-warning-100"
+                class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
+                <div
+                  class="text-sm"
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
+                </div>
               </div>
             </div>
             <ul
@@ -96,7 +100,7 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
                 data-testid="clipboard__wrapper"
               >
                 <button
-                  class="sc-fzqNJr fQhJIp"
+                  class="sc-AxmLO feykcd"
                   color="primary"
                   data-testid="SecondSignature__copy"
                   type="button"
@@ -118,25 +122,27 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
             </div>
           </div>
           <div
-            class="sc-fzoyAV exnPWc border-theme-neutral-300"
+            class="sc-fznJRM glAjFm border-theme-neutral-300"
             type="horizontal"
           />
           <div
             class="py-3"
           >
             <div
-              class="flex justify-between"
+              class="flex items-center justify-between"
             >
-              <div>
-                <h3
-                  class="mb-1 text-theme-neutral-dark"
+              <div
+                class="space-y-1"
+              >
+                <span
+                  class="text-lg font-semibold text-theme-neutral-dark"
                 >
-                  Your password in the file
-                </h3>
+                  Download Your Passphrase
+                </span>
                 <p
-                  class="text-theme-neutral"
+                  class="text-sm  text-theme-neutral"
                 >
-                  You can also download and store safely your passphrase.
+                  You can also download and safely store your passphrase.
                 </p>
               </div>
               <div
@@ -150,10 +156,10 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
               </div>
             </div>
             <div
-              class="flex justify-end w-full"
+              class="flex justify-end w-full mt-8"
             >
               <button
-                class="sc-fzqNJr fQhJIp flex items-center mt-4 space-x-2"
+                class="sc-AxmLO feykcd flex items-center space-x-2"
                 color="primary"
                 data-testid="SecondSignature__download"
                 type="button"
@@ -174,7 +180,7 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
             </div>
           </div>
           <div
-            class="sc-fzoyAV exnPWc border-theme-neutral-300"
+            class="sc-fznJRM glAjFm border-theme-neutral-300"
             type="horizontal"
           />
         </section>
@@ -226,7 +232,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-Axmtr dmCHuV flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -239,9 +245,13 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxheI jVDBvm flex-1 bg-theme-warning-100"
+                class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
               >
-                Before creating the second signature, we strongly recommend that you save it, as if lost you will not have access to your funds.
+                <div
+                  class="text-sm"
+                >
+                  Before creating the second signature, we strongly recommend that you save it, as if lost you will not have access to your funds.
+                </div>
               </div>
             </div>
             <div
@@ -263,7 +273,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                       Sender
                     </span>
                     <div
-                      class="sc-AxmLO hRohEE"
+                      class="sc-AxgMl frvnNY"
                       color="warning"
                     >
                       <span
@@ -283,7 +293,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                       ARK Wallet 1
                     </span>
                     <span
-                      class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                      class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
                       D8rr7B…s6YUYD
@@ -328,10 +338,10 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                   class="flex-1"
                 >
                   <div
-                    class="sc-fznyAO dnZZBi"
+                    class="sc-fzoyAV khmTmm"
                   >
                     <input
-                      class="sc-fzozJi fwEJKJ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                      class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -345,19 +355,19 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                         data-testid="Range"
                       >
                         <div
-                          class="sc-fznKkj iLXPqn"
+                          class="sc-fzoLag iUplou"
                           data-testid="Range__track"
                           style="transform: scale(1); cursor: pointer;"
                         >
                           <div
-                            class="sc-fznZeY bDrBFu"
+                            class="sc-fzoXzr hvdrCN"
                             data-testid="Range__track__filled"
                           >
                             <div
                               aria-valuemax="10"
                               aria-valuemin="0"
                               aria-valuenow="0"
-                              class="sc-fzokOt jXTmWb"
+                              class="sc-fzpjYC gjAIiE"
                               data-testid="Range__thumb"
                               draggable="false"
                               role="slider"
@@ -377,8 +387,8 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     role="radiogroup"
                   >
                     <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      aria-checked="true"
+                      class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -387,7 +397,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     </button>
                     <button
                       aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -396,7 +406,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     </button>
                     <button
                       aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"

@@ -2,9 +2,12 @@
 import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
+import { Spinner } from "app/components/Spinner";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
+import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
@@ -15,19 +18,20 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { WalletHeader, WalletRegistrations, WalletVote } from "./components";
+import { useWalletTransactions } from "./hooks/use-wallet-transactions";
 
 type WalletDetailsProps = {
 	txSkeletonRowsLimit?: number;
 };
 
 export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
-	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
-
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
+
+	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 
 	const { t } = useTranslation();
 
@@ -35,6 +39,14 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+	const {
+		pendingTransactions,
+		transactions,
+		fetchInit,
+		fetchMore,
+		isLoading: isLoadingTransactions,
+		hasMore,
+	} = useWalletTransactions(activeWallet, { limit: 15 });
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
@@ -54,13 +66,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 	useEffect(() => {
 		const fetchAllData = async () => {
-			setTransactions((await activeWallet.transactions({ limit: 10 })).items());
-
+			await fetchInit();
 			setIsLoading(false);
 		};
-
 		fetchAllData();
-	}, [activeWallet]);
+	}, [fetchInit]);
 
 	const handleDeleteWallet = async () => {
 		activeProfile.wallets().forget(activeWallet.id());
@@ -86,13 +96,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		await persist();
 	};
 
-	const fetchMoreTransactions = async (type?: string) => {
-		//TODO: Fetch more type based / ex: pending and confirmed txs
-		const nextPage = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
-
-		return transactions && setTransactions(transactions?.concat(nextPage));
-	};
-
 	const handleVoteButton = (address?: string) => {
 		/* istanbul ignore else */
 		if (address) {
@@ -106,7 +109,13 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`);
 	};
 
-	const handleRegistrationsButton = () => {
+	const handleRegistrationsButton = (newRegistration?: boolean) => {
+		if (newRegistration) {
+			return history.push(
+				`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-entity-registration`,
+			);
+		}
+
 		history.push(`/profiles/${activeProfile.id()}/registrations`);
 	};
 
@@ -176,28 +185,12 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 				</Section>
 
 				<Section>
-					<div className="mb-16">
-						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
-						{/* TODO: Deal with pending transactions once SDK methods for it are available */}
-						<>
-							<TransactionTable
-								transactions={transactions}
-								showSignColumn
-								isLoading={isLoading}
-								skeletonRowsLimit={txSkeletonRowsLimit}
-							/>
-							{transactions.length > 0 && (
-								<Button
-									data-testid="pending-transactions__fetch-more-button"
-									variant="plain"
-									className="w-full mt-10 mb-5"
-									onClick={() => fetchMoreTransactions("pending")}
-								>
-									{t("COMMON.VIEW_MORE")}
-								</Button>
-							)}
-						</>
-					</div>
+					{pendingTransactions.length ? (
+						<div className="mb-16">
+							<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
+							<SignedTransactionTable transactions={pendingTransactions} wallet={activeWallet} />
+						</div>
+					) : null}
 
 					<div>
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY")}</h2>
@@ -207,15 +200,16 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 								exchangeCurrency={exchangeCurrency}
 								isLoading={isLoading}
 								skeletonRowsLimit={txSkeletonRowsLimit}
+								onRowClick={(row) => setTransactionModalItem(row)}
 							/>
-							{transactions.length > 0 && (
+							{hasMore && (
 								<Button
 									data-testid="transactions__fetch-more-button"
 									variant="plain"
 									className="w-full mt-10 mb-5"
-									onClick={() => fetchMoreTransactions()}
+									onClick={() => fetchMore()}
 								>
-									{t("COMMON.VIEW_MORE")}
+									{isLoadingTransactions ? <Spinner size="sm" /> : t("COMMON.VIEW_MORE")}
 								</Button>
 							)}
 						</>
@@ -257,6 +251,14 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 				profileId={activeProfile.id()}
 				signatory={activeWallet.publicKey()}
 			/>
+
+			{transactionModalItem && (
+				<TransactionDetailModal
+					isOpen={!!transactionModalItem}
+					transactionItem={transactionModalItem}
+					onClose={() => setTransactionModalItem(undefined)}
+				/>
+			)}
 		</>
 	);
 };

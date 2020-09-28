@@ -44,21 +44,33 @@ exports[`WalletRegistrations should render empty mode 1`] = `
         />
       </div>
       <div
-        class="font-semibold text-theme-text"
+        class="flex justify-between flex-1"
       >
-        <span
-          class="mr-2"
+        <div
+          class="flex flex-col mr-4 font-semibold text-theme-text"
         >
-          You have no active registrations
-        </span>
-        <a
-          class="sc-AxhCb kJzNmV inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-          data-testid="Link"
-          rel="noopener noreferrer"
-          to="@TODO"
+          <span
+            class="mr-2"
+          >
+            You have no active registrations
+          </span>
+          <a
+            class="sc-AxhCb kJzNmV inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+            data-testid="Link"
+            rel="noopener noreferrer"
+            to="@TODO"
+          >
+            Learn more
+          </a>
+        </div>
+        <button
+          class="sc-AxjAm fPpool"
+          color="primary"
+          data-testid="WalletRegistrations__button"
+          type="button"
         >
-          Learn more
-        </a>
+          Register
+        </button>
       </div>
     </div>
   </section>

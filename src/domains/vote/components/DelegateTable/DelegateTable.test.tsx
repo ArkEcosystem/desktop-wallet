@@ -1,12 +1,13 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { translations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
 import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
 
-import { translations } from "../../i18n";
 import { DelegateTable } from "./DelegateTable";
 
 let delegates: ReadOnlyWallet[];
+let votes: ReadOnlyWallet[];
 
 describe("DelegateTable", () => {
 	beforeAll(() => {
@@ -20,56 +21,139 @@ describe("DelegateTable", () => {
 					rank: data[index].rank,
 				}),
 		);
+
+		votes = [
+			new ReadOnlyWallet({
+				address: data[0].address,
+				explorerLink: "",
+				publicKey: data[0].publicKey,
+				username: data[0].username,
+				rank: data[0].rank,
+			}),
+		];
 	});
 
 	it("should render", () => {
-		const { container, asFragment } = render(<DelegateTable coin="ARK" delegates={delegates} />);
+		const { container, asFragment } = render(<DelegateTable delegates={delegates} maxVotes={1} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with empty list", () => {
-		const { container, asFragment } = render(<DelegateTable coin="ARK" delegates={[]} />);
+		const { container, asFragment } = render(<DelegateTable delegates={[]} maxVotes={1} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select a delegate", () => {
-		const delegateName = delegates[0].username()!;
-		const { asFragment, getByTestId } = render(<DelegateTable coin="ARK" delegates={delegates} />);
+	it("should select a delegate to vote", () => {
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} maxVotes={1} />);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
 			fireEvent.click(selectButton);
 		});
 
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegateName);
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("1");
+
+		act(() => {
+			fireEvent.click(selectButton);
+		});
+
+		expect(selectButton).toHaveTextContent(translations.SELECTED);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should unselect a delegate", () => {
-		const delegateName = delegates[0].username()!;
-		const { asFragment, getByTestId } = render(<DelegateTable coin="ARK" delegates={delegates} />);
+	it("should unselect a delegate to vote", () => {
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+		const selectButton = getByTestId("DelegateRow__toggle-1");
+
+		act(() => {
+			fireEvent.click(selectButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("1");
+
+		act(() => {
+			fireEvent.click(selectButton);
+		});
+
+		expect(selectButton).toHaveTextContent(translations.SELECTED);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select a delegate to unvote", () => {
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
 			fireEvent.click(selectButton);
 		});
 
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegateName);
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--unvotes")).toHaveTextContent("1");
 
 		act(() => {
 			fireEvent.click(selectButton);
 		});
 
-		expect(selectButton).toHaveTextContent("Select");
+		expect(selectButton).toHaveTextContent(translations.CURRENT);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select multiple delegates", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable coin="LSK" delegates={delegates} />);
+	it("should unselect a delegate to unvote", () => {
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+		const selectUnvoteButton = getByTestId("DelegateRow__toggle-0");
+		const selectVoteButton = getByTestId("DelegateRow__toggle-1");
+
+		act(() => {
+			fireEvent.click(selectUnvoteButton);
+		});
+
+		act(() => {
+			fireEvent.click(selectVoteButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--unvotes")).toHaveTextContent("1");
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("1");
+
+		act(() => {
+			fireEvent.click(selectUnvoteButton);
+		});
+
+		expect(selectUnvoteButton).toHaveTextContent(translations.CURRENT);
+		expect(selectVoteButton).toHaveTextContent(translations.SELECTED);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select a delegate to unvote/vote", () => {
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+		const selectUnvoteButton = getByTestId("DelegateRow__toggle-0");
+		const selectVoteButton = getByTestId("DelegateRow__toggle-1");
+
+		act(() => {
+			fireEvent.click(selectUnvoteButton);
+		});
+
+		act(() => {
+			fireEvent.click(selectVoteButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--unvotes")).toHaveTextContent("1");
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("1");
+
+		expect(selectUnvoteButton).toHaveTextContent(translations.UNSELECTED);
+		expect(selectVoteButton).toHaveTextContent(translations.SELECTED);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select multiple delegates to unvote/vote", () => {
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={10} />);
 		const selectButtons = [0, 1, 2].map((index) => getByTestId(`DelegateRow__toggle-${index}`));
 
 		act(() => {
@@ -84,26 +168,18 @@ describe("DelegateTable", () => {
 			fireEvent.click(selectButtons[2]);
 		});
 
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_TABLE.SHOW_LIST);
-
-		act(() => {
-			fireEvent.click(getByTestId("DelegateTable__toggle-show-selected"));
-		});
-
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_TABLE.HIDE_LIST);
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[0].username()!);
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[1].username()!);
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[2].username()!);
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("2");
+		expect(getByTestId("DelegateTable__footer--unvotes")).toHaveTextContent("1");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should emit action on continue button", () => {
-		const delegateName = delegates[0].username()!;
+	it("should emit action on continue button to vote", () => {
 		const delegateAddress = delegates[0].address()!;
 
 		const onContinue = jest.fn();
 		const { container, asFragment, getByTestId } = render(
-			<DelegateTable coin="ARK" delegates={delegates} onContinue={onContinue} />,
+			<DelegateTable delegates={delegates} maxVotes={1} onContinue={onContinue} />,
 		);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
@@ -111,14 +187,58 @@ describe("DelegateTable", () => {
 			fireEvent.click(selectButton);
 		});
 
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegateName);
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("DelegateTable__continue-button"));
 		});
 
 		expect(container).toBeTruthy();
-		expect(onContinue).toHaveBeenCalledWith([delegateAddress]);
+		expect(onContinue).toHaveBeenCalledWith([], [delegateAddress]);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should emit action on continue button to unvote", () => {
+		const delegateAddress = votes[0].address()!;
+
+		const onContinue = jest.fn();
+		const { container, asFragment, getByTestId } = render(
+			<DelegateTable delegates={delegates} maxVotes={1} votes={votes} onContinue={onContinue} />,
+		);
+		const selectButton = getByTestId("DelegateRow__toggle-0");
+
+		act(() => {
+			fireEvent.click(selectButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("DelegateTable__continue-button"));
+		});
+
+		expect(container).toBeTruthy();
+		expect(onContinue).toHaveBeenCalledWith([delegateAddress], []);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should navigate on next and previous pages", () => {
+		const { getByTestId } = render(
+			<DelegateTable delegates={delegates} votes={votes} maxVotes={1} itemsPerPage={2} />,
+		);
+
+		expect(getByTestId("DelegateRow__toggle-1")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("Pagination__next"));
+		});
+
+		expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("Pagination__previous"));
+		});
+
+		expect(getByTestId("DelegateRow__toggle-1")).toBeTruthy();
 	});
 });

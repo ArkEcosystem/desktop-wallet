@@ -65,7 +65,7 @@ describe("Contacts", () => {
 					target: { value: "name" },
 				});
 
-				fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+				fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 			});
 
 			await act(async () => {

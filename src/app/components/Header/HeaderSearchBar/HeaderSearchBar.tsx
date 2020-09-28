@@ -77,7 +77,7 @@ export const HeaderSearchBar = ({
 						<Icon className="text-theme-neutral" name="CrossSlim" width={12} height={12} />
 					</button>
 
-					<div className="mx-4">
+					<div className="flex-1 mx-4">
 						<Input
 							className="pt-2 border-none shadow-none HeaderSearchBar__input"
 							placeholder={placeholder}

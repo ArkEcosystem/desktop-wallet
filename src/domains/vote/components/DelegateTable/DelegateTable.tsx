@@ -1,105 +1,81 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
-import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Icon } from "app/components/Icon";
+import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { DelegateRow } from "./DelegateRow";
 
-type Delegate = { address: string; username: string; rank: number };
-
 type DelegateTableProps = {
-	coin?: string;
+	title?: string;
 	delegates: ReadOnlyWallet[];
-	onContinue?: (votes: string[]) => void;
+	maxVotes: number;
+	votes?: ReadOnlyWallet[];
+	itemsPerPage?: number;
+	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
-const SelectedDelegateList = ({ delegates, className }: { delegates: Delegate[]; className: string }) => {
-	const output = [];
-
-	for (const delegate of delegates) {
-		output.push(
-			<div
-				key={delegate.username}
-				className="flex items-center py-4 font-semibold border-b border-dashed border-theme-neutral-200 last:border-0"
-			>
-				<div className="flex flex-1">
-					<Avatar address={delegate.address} className="mr-8" />
-					<div className="mr-2">{delegate.username}</div>
-					<div className="text-theme-neutral">{delegate.address}</div>
-				</div>
-				#{delegate.rank}
-			</div>,
-		);
-	}
-
-	return <div className={className}>{output}</div>;
-};
-
-const DelegateAvatarList = ({ delegates, limit }: { delegates: Delegate[]; limit: number }) => {
-	const items = delegates.slice(0, limit);
-	const rest = Math.max(0, delegates.length - limit);
-
-	return (
-		<div className="flex items-center -space-x-2" data-testid="DelegateAvatarList__avatar-list">
-			{items.map((item, index) => (
-				<Avatar key={index} address={item.address} data-testid="DelegateAvatarList__avatar-list__avatar" />
-			))}
-			{rest > 0 && (
-				<Circle
-					size="lg"
-					className="text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-dark"
-					data-testid="DelegateAvatarList__avatar-list__rest"
-				>
-					+{rest}
-				</Circle>
-			)}
-		</div>
-	);
-};
-
-export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProps) => {
+export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
-	const [selected, setSelected] = useState([] as Delegate[]);
-	const [showSelectedList, setShowSelectedList] = useState(false);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [selectedUnvotes, setSelectedUnvotes] = useState<string[]>([]);
+	const [selectedVotes, setSelectedVotes] = useState<string[]>([]);
+	const [isVoteDisabled, setIsVoteDisabled] = useState(false);
 
 	const columns = [
 		{
+			Header: "Avatar",
+			disableSortBy: true,
+			className: "hidden",
+		},
+		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
 			accessor: "delegateName",
-			className: "pl-14",
+		},
+		{
+			Header: t("COMMON.STATUS"),
+			accessor: "status",
+			disableSortBy: true,
+			className: "justify-center",
 		},
 		{
 			Header: t("COMMON.RANK"),
 			accessor: "rank",
+			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.VOTES"),
 			accessor: "votes",
+			className: "justify-center",
 		},
 		{
 			Header: t("COMMON.PROFILE"),
 			accessor: "profile",
 			disableSortBy: true,
-			className: "flex justify-center",
+			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.COMMISSION"),
 			accessor: "commissionPercentage",
+			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.PAYOUT_INTERVAL"),
 			accessor: "payout",
+			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.MIN"),
 			accessor: "min",
+			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
 			accessor: "commissionDaily",
+			className: "justify-end",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.VOTE"),
@@ -108,98 +84,188 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 		},
 	];
 
-	const toggleSelected = (delegate: Delegate) => {
-		if (selected.find((selectedDelegate: Delegate) => selectedDelegate.username === delegate.username)) {
-			setSelected(
-				selected.filter((selectedDelegate: Delegate) => selectedDelegate.username !== delegate.username),
-			);
+	const totalDelegates = delegates.length;
+	const hasVotes = votes!.length > 0;
+	const getTotalVotes = () => selectedVotes.length + selectedUnvotes.length;
+
+	useEffect(() => {
+		if (hasVotes && selectedVotes.length === maxVotes) {
+			setIsVoteDisabled(true);
+		} else {
+			setIsVoteDisabled(false);
+		}
+	}, [hasVotes, maxVotes, selectedVotes]);
+
+	const toggleUnvotesSelected = (address: string) => {
+		if (selectedUnvotes.find((delegateAddress) => delegateAddress === address)) {
+			setSelectedUnvotes(selectedUnvotes.filter((delegateAddress) => delegateAddress !== address));
+
+			if (maxVotes === 1 && selectedVotes.length > 0) {
+				setSelectedVotes([]);
+			}
 
 			return;
 		}
 
-		if (coin === "ARK") {
-			setSelected([delegate]);
+		if (maxVotes === 1) {
+			setSelectedUnvotes([address]);
 		} else {
-			setSelected([...selected, delegate]);
+			setSelectedUnvotes([...selectedUnvotes, address]);
 		}
 	};
 
-	const showSkeleton = useMemo(() => delegates.length === 0, [delegates]);
+	const toggleVotesSelected = (address: string) => {
+		if (selectedVotes.find((delegateAddress) => delegateAddress === address)) {
+			setSelectedVotes(selectedVotes.filter((delegateAddress) => delegateAddress !== address));
+
+			if (maxVotes === 1 && hasVotes) {
+				setSelectedUnvotes([]);
+			}
+
+			return;
+		}
+
+		if (maxVotes === 1) {
+			setSelectedVotes([address]);
+
+			if (hasVotes) {
+				setSelectedUnvotes(votes!.map((vote) => vote.address()));
+			}
+		} else {
+			setSelectedVotes([...selectedVotes, address]);
+		}
+	};
+
+	const handleSelectPage = (page: number) => {
+		setCurrentPage(page);
+	};
+
+	const paginator = (items: ReadOnlyWallet[], currentPage: number, itemsPerPage: number) => {
+		const offset = (currentPage - 1) * itemsPerPage;
+		const paginatedItems = items.slice(offset).slice(0, itemsPerPage);
+
+		return paginatedItems;
+	};
+
+	const showSkeleton = useMemo(() => totalDelegates === 0, [totalDelegates]);
 	const skeletonList = new Array(8).fill({});
-	const data = showSkeleton ? skeletonList : delegates;
+	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage!);
 
 	return (
 		<div data-testid="DelegateTable">
-			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
+			<h2 className="py-5 text-2xl font-bold">{title ? title : t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
 			<Table columns={columns} data={data}>
-				{(delegate: ReadOnlyWallet, index: number) => (
-					<DelegateRow
-						index={index}
-						delegate={delegate}
-						selected={selected}
-						isLoading={showSkeleton}
-						onSelect={toggleSelected}
-					/>
-				)}
+				{(delegate: ReadOnlyWallet, index: number) => {
+					let isVoted = false;
+
+					if (hasVotes) {
+						isVoted = !!votes?.find((vote) => vote.address() === delegate.address());
+					}
+
+					return (
+						<DelegateRow
+							index={index}
+							delegate={delegate}
+							selectedUnvotes={selectedUnvotes}
+							selectedVotes={selectedVotes}
+							isVoted={isVoted}
+							isVoteDisabled={isVoteDisabled}
+							isLoading={showSkeleton}
+							onUnvoteSelect={toggleUnvotesSelected}
+							onVoteSelect={toggleVotesSelected}
+						/>
+					);
+				}}
 			</Table>
 
-			{selected.length > 0 && (
+			<div
+				className={`flex justify-center w-full mt-10 ${
+					selectedUnvotes.length > 0 || selectedVotes.length > 0 ? "mb-24" : ""
+				}`}
+			>
+				<Pagination
+					totalCount={totalDelegates}
+					itemsPerPage={itemsPerPage}
+					currentPage={currentPage}
+					onSelectPage={handleSelectPage}
+				/>
+			</div>
+
+			{(selectedUnvotes.length > 0 || selectedVotes.length > 0) && (
 				<div
 					className="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 bg-white shadow-2xl"
 					data-testid="DelegateTable__footer"
 				>
-					<div className="flex">
-						<div className="px-8 mr-8 font-semibold border-r border-theme-neutral-300">
-							<div className="text-sm text-theme-neutral">{t("COMMON.QUANTITY")}</div>
-							{coin === "ARK" ? (
-								<div className="text-theme-neutral-dark">{selected.length}/1</div>
-							) : (
-								<div className="text-theme-neutral-dark">{selected.length}/50</div>
-							)}
-						</div>
-
-						<div className="flex-1">
-							<div className="flex justify-between">
-								<div className="font-semibold">
-									{selected.length === 1 ? (
-										<>
-											<div className="inline-flex">
-												<Avatar address={selected[0].address} className="mr-4" />
-												<div className="flex flex-col">
-													<div className="text-sm text-theme-neutral-dark">
-														{t("COMMON.DELEGATE")}
-													</div>
-													<div className="text-theme-neutral">
-														{selected[0].username} - {selected[0].address}
-													</div>
-												</div>
-											</div>
-										</>
-									) : (
-										<div className="inline-flex items-center">
-											<DelegateAvatarList delegates={selected} limit={2} />
+					<div className="flex-1">
+						<div className="flex justify-between">
+							<div className="flex font-semibold">
+								<div className="px-8 border-r border-theme-neutral-300">
+									<div className="inline-flex">
+										<Circle
+											className="mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+											size="lg"
+										>
+											<Icon name="Vote" className="text-xl" />
+										</Circle>
+										<div className="flex flex-col">
+											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
 											<div
-												className="ml-4 cursor-pointer text-theme-primary-dark hover:text-theme-primary-500"
-												onClick={() => setShowSelectedList(!showSelectedList)}
-												data-testid="DelegateTable__toggle-show-selected"
+												className="text-theme-neutral-900"
+												data-testid="DelegateTable__footer--votes"
 											>
-												{showSelectedList
-													? t("VOTE.DELEGATE_TABLE.HIDE_LIST")
-													: t("VOTE.DELEGATE_TABLE.SHOW_LIST")}
+												{selectedVotes.length}
 											</div>
 										</div>
-									)}
+									</div>
 								</div>
 
-								<Button
-									onClick={() => onContinue?.(selected.map((select) => select.address))}
-									data-testid="DelegateTable__continue-button"
-								>
-									{t("COMMON.CONTINUE")}
-								</Button>
+								<div className="px-8 border-r border-theme-neutral-300">
+									<div className="inline-flex">
+										<Circle
+											className="mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+											size="lg"
+										>
+											<Icon name="Unvote" className="text-xl" />
+										</Circle>
+										<div className="flex flex-col">
+											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.UNVOTES")}</div>
+											<div
+												className="text-theme-neutral-900"
+												data-testid="DelegateTable__footer--unvotes"
+											>
+												{selectedUnvotes.length}
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div className="px-8">
+									<div className="inline-flex">
+										<Circle
+											className="mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+											size="lg"
+										>
+											<Icon name="VoteUnvote" className="text-xl" />
+										</Circle>
+										<div className="flex flex-col">
+											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
+											<div
+												className="text-theme-neutral-900"
+												data-testid="DelegateTable__footer--total"
+											>
+												{maxVotes === 1 ? "1/1" : getTotalVotes()}
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 
-							{showSelectedList && <SelectedDelegateList delegates={selected} className="mt-2" />}
+							<Button
+								onClick={() => onContinue?.(selectedUnvotes, selectedVotes)}
+								data-testid="DelegateTable__continue-button"
+							>
+								{t("COMMON.CONTINUE")}
+							</Button>
 						</div>
 					</div>
 				</div>
@@ -209,6 +275,7 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 };
 
 DelegateTable.defaultProps = {
-	coin: "ARK",
 	delegates: [],
+	votes: [],
+	itemsPerPage: 51,
 };

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { fireEvent, render } from "testing-library";
@@ -9,35 +10,39 @@ const recipients = [
 	{
 		address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient 1",
-		amount: "100",
+		amount: BigNumber.make("100"),
 		assetSymbol: "ARK",
 	},
 	{
 		address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient 2",
 		isMultisig: true,
-		amount: "100",
+		amount: BigNumber.make("100"),
 		assetSymbol: "ARK",
 	},
 	{
 		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient 3",
-		isInArkNetwork: true,
-		amount: "100",
+		amount: BigNumber.make("100"),
 		assetSymbol: "ARK",
 	},
 	{
 		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-		walletName: "Recipient 4",
-		isInArkNetwork: true,
-		amount: "100",
+		amount: BigNumber.make("100"),
 		assetSymbol: "ARK",
 	},
 ];
 
-describe("SendTransactionForm", () => {
+describe("RecipientList", () => {
 	it("should render editable", () => {
 		const { container } = render(<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render condensed variant", () => {
+		const { container } = render(
+			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" variant="condensed" />,
+		);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -47,10 +52,10 @@ describe("SendTransactionForm", () => {
 	});
 
 	it("should call onRemove callback to remove recipient", async () => {
-		const fn = jest.fn();
+		const onRemove = jest.fn();
 
 		const { getAllByTestId } = render(
-			<RecipientList onRemove={fn} recipients={recipients} isEditable={true} assetSymbol="ARK" />,
+			<RecipientList onRemove={onRemove} recipients={recipients} isEditable={true} assetSymbol="ARK" />,
 		);
 
 		const removeBtn = getAllByTestId("recipient-list__remove-recipient");
@@ -59,11 +64,11 @@ describe("SendTransactionForm", () => {
 			fireEvent.click(removeBtn[0]);
 		});
 
-		expect(fn).toBeCalled();
+		expect(onRemove).toBeCalled();
 	});
 
 	it("should not call onRemove callback if not provided", async () => {
-		const fn = jest.fn();
+		const onRemove = jest.fn();
 
 		const { getAllByTestId } = render(
 			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" />,
@@ -75,6 +80,6 @@ describe("SendTransactionForm", () => {
 			fireEvent.click(removeBtn[0]);
 		});
 
-		expect(fn).not.toBeCalled();
+		expect(onRemove).not.toBeCalled();
 	});
 });

@@ -68,7 +68,7 @@ exports[`AddExchange should render a modal 1`] = `
             class="mt-8 -mb-6"
           >
             <div
-              class="sc-AxhCb kCInKi"
+              class="sc-AxhCb kePquh"
               role="table"
             >
               <table
@@ -86,10 +86,10 @@ exports[`AddExchange should render a modal 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                           
+                          Logo
                         </div>
                       </div>
                     </th>
@@ -220,10 +220,10 @@ exports[`AddExchange should render a modal 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                            
+                          Actions
                         </div>
                       </div>
                     </th>
@@ -233,13 +233,14 @@ exports[`AddExchange should render a modal 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
+                    class="sc-AxgMl fRZhDw group"
+                    data-testid="TableRow"
                   >
                     <td
                       class="w-18"
                     >
                       <div
-                        class="sc-AxhUy ietzKN"
+                        class="sc-AxhUy dVoyKx"
                       >
                         <svg
                           class="w-12 h-12"
@@ -250,7 +251,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <div
                           class="flex flex-col"
@@ -268,7 +269,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <span>
                           Other
@@ -277,7 +278,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <div
                           class="flex"
@@ -312,7 +313,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <span>
                           v 1.3.8
@@ -323,7 +324,7 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-AxhUy gaxSDd justify-end"
+                        class="sc-AxhUy fhUFrJ justify-end"
                       >
                         <button
                           class="sc-AxjAm fPpool"
@@ -336,13 +337,14 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
+                    class="sc-AxgMl fRZhDw group"
+                    data-testid="TableRow"
                   >
                     <td
                       class="w-18"
                     >
                       <div
-                        class="sc-AxhUy ietzKN"
+                        class="sc-AxhUy dVoyKx"
                       >
                         <svg
                           class="w-12 h-12"
@@ -353,7 +355,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <div
                           class="flex flex-col"
@@ -371,7 +373,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <span>
                           Other
@@ -380,7 +382,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <div
                           class="flex"
@@ -415,7 +417,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <span>
                           v 1.3.8
@@ -426,7 +428,7 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-AxhUy gaxSDd justify-end"
+                        class="sc-AxhUy fhUFrJ justify-end"
                       >
                         <button
                           class="sc-AxjAm fPpool"
@@ -439,13 +441,14 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
+                    class="sc-AxgMl fRZhDw group"
+                    data-testid="TableRow"
                   >
                     <td
                       class="w-18"
                     >
                       <div
-                        class="sc-AxhUy ietzKN"
+                        class="sc-AxhUy dVoyKx"
                       >
                         <svg
                           class="w-12 h-12"
@@ -456,7 +459,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <div
                           class="flex flex-col"
@@ -474,7 +477,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <span>
                           Other
@@ -483,7 +486,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <div
                           class="flex"
@@ -518,7 +521,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <span>
                           v 1.3.8
@@ -529,7 +532,7 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-AxhUy gaxSDd justify-end"
+                        class="sc-AxhUy fhUFrJ justify-end"
                       >
                         <button
                           class="sc-AxjAm fPpool"
@@ -542,13 +545,14 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
+                    class="sc-AxgMl fRZhDw group"
+                    data-testid="TableRow"
                   >
                     <td
                       class="w-18"
                     >
                       <div
-                        class="sc-AxhUy ietzKN"
+                        class="sc-AxhUy dVoyKx"
                       >
                         <svg
                           class="w-12 h-12"
@@ -559,7 +563,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <div
                           class="flex flex-col"
@@ -577,7 +581,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <span>
                           Other
@@ -586,7 +590,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <div
                           class="flex"
@@ -621,7 +625,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy ekyfZv"
+                        class="sc-AxhUy eGtEIz"
                       >
                         <span>
                           v 1.3.8
@@ -632,7 +636,7 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-AxhUy gaxSDd justify-end"
+                        class="sc-AxhUy fhUFrJ justify-end"
                       >
                         <button
                           class="sc-AxjAm fPpool"

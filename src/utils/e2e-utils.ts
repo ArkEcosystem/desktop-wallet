@@ -12,7 +12,7 @@ export const scrollTo = ClientFunction((top: number, left = 0, behavior = "auto"
 export const scrollToTop = ClientFunction(() => window.scrollTo({ top: 0 }));
 export const scrollToBottom = ClientFunction(() => window.scrollTo({ top: document.body.scrollHeight }));
 
-export const mockRequest = (url: string, fixture: string | object, statusCode = 200) =>
+export const mockRequest = (url: string | object, fixture: string | object, statusCode = 200) =>
 	RequestMock()
 		.onRequestTo(url)
 		.respond(typeof fixture === "string" ? require(`../tests/fixtures/${fixture}.json`) : fixture, statusCode, {

@@ -1,12 +1,11 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { upperFirst } from "@arkecosystem/utils";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
-import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -15,7 +14,6 @@ import { Dropdown } from "../Dropdown";
 export type WalletListItemProps = {
 	wallet: ReadWriteWallet;
 	activeWalletId?: string;
-	coinClass?: string;
 	actions?: string | any[];
 	variant?: "condensed";
 	onAction?: any;
@@ -25,7 +23,6 @@ export type WalletListItemProps = {
 export const WalletListItem = ({
 	wallet,
 	activeWalletId,
-	coinClass,
 	actions,
 	variant,
 	onAction,
@@ -45,8 +42,6 @@ export const WalletListItem = ({
 	const handleAction = (action: any) => {
 		if (typeof onAction === "function") onAction(action);
 	};
-
-	const coinName = wallet.coinId();
 
 	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
 
@@ -69,10 +64,8 @@ export const WalletListItem = ({
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor(defaultShadowColor)}
 		>
-			<TableCell variant="start" isSelected={isSelected}>
-				<Circle className={`-mr-2 ${coinClass}`} size="lg" shadowColor={shadowColor}>
-					{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
-				</Circle>
+			<TableCell variant="start" isSelected={isSelected} innerClassName="-space-x-2">
+				<NetworkIcon size="lg" coin={wallet.coinId()} network={wallet.networkId()} shadowColor={shadowColor} />
 				<Avatar size="lg" address={wallet.address()} shadowColor={shadowColor} />
 			</TableCell>
 
