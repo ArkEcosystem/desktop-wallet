@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
@@ -17,6 +16,7 @@ import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
+import { evaluateFee } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -160,7 +160,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			</TransactionDetail>
 
 			<div className="mt-2">
-				<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} ticker={wallet.currency()} />
+				<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);

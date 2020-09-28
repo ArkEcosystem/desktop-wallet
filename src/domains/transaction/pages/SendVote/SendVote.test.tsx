@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { act } from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import {
 	env,
@@ -205,10 +206,20 @@ describe("SendVote", () => {
 
 		let rendered: RenderResult;
 
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					fee: (0.1 * 1e8).toFixed(0),
+				},
+			}),
+		);
+
 		await act(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<SendVote />
+					<FormProvider {...form.current}>
+						<SendVote />
+					</FormProvider>
 				</Route>,
 				{
 					routes: [voteURL],
@@ -225,12 +236,6 @@ describe("SendVote", () => {
 		const { getByTestId } = rendered!;
 
 		await act(async () => {
-			// Fee
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
-
 			// Step 2
 			fireEvent.click(getByTestId("SendVote__button--continue"));
 			await waitFor(() => expect(getByTestId("SendVote__step--second")).toBeTruthy());

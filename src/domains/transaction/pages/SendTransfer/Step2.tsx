@@ -8,6 +8,7 @@ import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import { evaluateFee } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -89,7 +90,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			)}
 
 			<div className="mt-2">
-				<TotalAmountBox amount={amount} fee={BigNumber.make(fee)} ticker={wallet.currency()} />
+				<TotalAmountBox amount={amount} fee={evaluateFee(fee)} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);
