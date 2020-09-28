@@ -53,6 +53,20 @@ export const translations: { [key: string]: any } = {
 	NOT_FOUND: "Unable to find transaction for [{{transactionId}}]",
 	IPFS_NOT_FOUND: "Unable to find ipfs data for transaction [{{transactionId}}]",
 
+	MULTISIGNATURE: {
+		MIN_SIGNATURES: "Minimum Required Signatures",
+		PARTICIPANT_ADDRESS: "Participant Address",
+		PARTICIPANTS: "Multisiganture Participants",
+		ADD_PARTICIPANT: "Add Participant",
+		OUT_OF_LENGTH: "out of {{ length }}",
+		ERROR: {
+			ADDRESS_ALREADY_ADDED: "The address is already in the list",
+			ADDRESS_NOT_FOUND: "The address could not be found",
+			PUBLIC_KEY_NOT_FOUND: "The public key could not be found",
+			REMOVE_OWN_ADDRESS: "Cannot remove your own address",
+		},
+	},
+
 	FEES: {
 		MIN: "Min",
 		AVERAGE: "Average",
@@ -186,6 +200,18 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Register Second Signature",
 			DESCRIPTION: "Check your information",
 			TYPE: "Second Signature",
+		},
+	},
+
+	PAGE_MULTISIGNATURE: {
+		FORM_STEP: {
+			TITLE: "Multisignature Registration",
+			DESCRIPTION: "Register a new multisignature address by adding participants.",
+		},
+		REVIEW_STEP: {
+			TITLE: "Transaction Review",
+			DESCRIPTION: "Review your multisignature registration details",
+			TYPE: "Multisignature Registration",
 		},
 	},
 

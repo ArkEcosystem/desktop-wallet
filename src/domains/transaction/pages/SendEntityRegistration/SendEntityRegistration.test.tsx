@@ -318,17 +318,14 @@ describe("Registration", () => {
 	});
 
 	it("should not have delegate option if wallet is a delegate", async () => {
-		const { asFragment, getByTestId } = await renderPage(secondWallet);
+		const { asFragment, getByTestId, queryByText } = await renderPage(secondWallet);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("select-list__toggle-button"));
-
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-			await waitFor(() =>
-				expect(() => getByTestId("select-list__toggle-option-1")).toThrow(/Unable to find an element by/),
-			);
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
+		await waitFor(() => expect(queryByText("Business")).toBeInTheDocument());
+		await waitFor(() => expect(queryByText("Delegate")).not.toBeInTheDocument());
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should should go back and forth & correctly register fields", async () => {

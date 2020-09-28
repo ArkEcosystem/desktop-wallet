@@ -5167,14 +5167,7 @@ exports[`SendEntityUpdate should handle download transaction button click on ste
                             >
                               <div
                                 class="inline-block truncate align-middle"
-                              >
-                                <span
-                                  class="sc-fzpans kkFAbe text-theme-primary font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  ba5dbaac0254ad…8e1b85e3b8d002
-                                </span>
-                              </div>
+                              />
                               <span
                                 class="flex ml-5"
                               >
@@ -5274,12 +5267,6 @@ exports[`SendEntityUpdate should handle download transaction button click on ste
                               >
                                 ARK Wallet 1
                               </span>
-                              <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
-                                data-testid="address__wallet-address"
-                              >
-                                D82V4V…XgXAZ1
-                              </span>
                             </div>
                           </div>
                         </div>
@@ -5327,6 +5314,25 @@ exports[`SendEntityUpdate should handle download transaction button click on ste
                             <svg>
                               business.svg
                             </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral"
+                          >
+                            IPFS Hash
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            QmV1n5F9PuBE2ovW9jVfFpxyvWZxYHjSdfLrYL2nDcb1gW
                           </div>
                         </div>
                       </div>
@@ -8874,14 +8880,7 @@ exports[`SendEntityUpdate should succesfully submit entity update transaction 2`
                             >
                               <div
                                 class="inline-block truncate align-middle"
-                              >
-                                <span
-                                  class="sc-fzpans kkFAbe text-theme-primary font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  ba5dbaac0254ad…8e1b85e3b8d002
-                                </span>
-                              </div>
+                              />
                               <span
                                 class="flex ml-5"
                               >
@@ -8981,12 +8980,6 @@ exports[`SendEntityUpdate should succesfully submit entity update transaction 2`
                               >
                                 ARK Wallet 1
                               </span>
-                              <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
-                                data-testid="address__wallet-address"
-                              >
-                                D82V4V…XgXAZ1
-                              </span>
                             </div>
                           </div>
                         </div>
@@ -9034,6 +9027,25 @@ exports[`SendEntityUpdate should succesfully submit entity update transaction 2`
                             <svg>
                               business.svg
                             </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral"
+                          >
+                            IPFS Hash
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            QmV1n5F9PuBE2ovW9jVfFpxyvWZxYHjSdfLrYL2nDcb1gW
                           </div>
                         </div>
                       </div>
