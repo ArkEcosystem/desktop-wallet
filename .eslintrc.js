@@ -52,6 +52,7 @@ module.exports = {
 		"@typescript-eslint/restrict-template-expressions": "off",
 		"@typescript-eslint/unbound-method": "off",
 		"arrow-body-style": ["error", "as-needed"],
+		"no-unused-expressions": "off",
 		"prefer-const": [
 			"error",
 			{
