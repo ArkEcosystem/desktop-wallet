@@ -134,6 +134,13 @@ describe("Registration", () => {
 		const { getByTestId, asFragment } = await renderPage();
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
 		act(() => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
@@ -147,6 +154,13 @@ describe("Registration", () => {
 		const { getByTestId, asFragment } = await renderPage();
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
+
 		act(() => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
@@ -304,17 +318,14 @@ describe("Registration", () => {
 	});
 
 	it("should not have delegate option if wallet is a delegate", async () => {
-		const { asFragment, getByTestId } = await renderPage(secondWallet);
+		const { asFragment, getByTestId, queryByText } = await renderPage(secondWallet);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("select-list__toggle-button"));
-
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-			await waitFor(() =>
-				expect(() => getByTestId("select-list__toggle-option-1")).toThrow(/Unable to find an element by/),
-			);
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
+		await waitFor(() => expect(queryByText("Business")).toBeInTheDocument());
+		await waitFor(() => expect(queryByText("Delegate")).not.toBeInTheDocument());
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should should go back and forth & correctly register fields", async () => {

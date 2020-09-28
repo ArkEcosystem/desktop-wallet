@@ -1,19 +1,22 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Amount } from "app/components/Amount";
 import { Label } from "app/components/Label";
 import React from "react";
 
 type Props = {
-	transaction: Contracts.TransactionDataType;
+	isSent: boolean;
+	wallet?: ReadWriteWallet;
+	total: BigNumber;
+	convertedTotal?: BigNumber;
 	exchangeCurrency?: string;
 };
 
-export const TransactionRowAmount = ({ transaction, exchangeCurrency }: Props) => {
+export const BaseTransactionRowAmount = ({ isSent, wallet, total, convertedTotal, exchangeCurrency }: Props) => {
 	if (exchangeCurrency) {
 		return (
 			<Amount
-				/* @ts-ignore waiting interface update */
-				value={transaction.convertedTotal()}
+				value={convertedTotal!}
 				ticker={exchangeCurrency}
 				className="text-theme-neutral-dark"
 				data-testid="TransactionRowAmount"
@@ -21,12 +24,27 @@ export const TransactionRowAmount = ({ transaction, exchangeCurrency }: Props) =
 		);
 	}
 
-	const color = transaction.isSent() ? "danger" : "success";
+	const color = isSent ? "danger" : "success";
 
 	return (
-		<Label data-testid="TransactionRowAmount" color={color} className="whitespace-no-wrap">
-			{/* @ts-ignore */}
-			<Amount ticker={transaction.wallet()?.currency() || ""} value={transaction.total()} />
+		<Label data-testid="TransactionRowAmount" color={color}>
+			<Amount ticker={wallet?.currency() || ""} value={total} />
 		</Label>
 	);
 };
+
+export const TransactionRowAmount = ({
+	transaction,
+	exchangeCurrency,
+}: {
+	transaction: ExtendedTransactionData;
+	exchangeCurrency?: string;
+}) => (
+	<BaseTransactionRowAmount
+		isSent={transaction.isSent()}
+		wallet={transaction.wallet()}
+		total={transaction.total()}
+		convertedTotal={transaction.convertedTotal()}
+		exchangeCurrency={exchangeCurrency}
+	/>
+);

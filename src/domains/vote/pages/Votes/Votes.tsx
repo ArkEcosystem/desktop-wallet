@@ -1,10 +1,4 @@
-import {
-	DelegateMapper,
-	NetworkData,
-	Profile,
-	ReadOnlyWallet,
-	ReadWriteWallet,
-} from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -14,10 +8,10 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
 import { MyVoteTable } from "domains/vote/components/MyVoteTable";
@@ -162,11 +156,7 @@ export const Votes = () => {
 		(wallet) => {
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
-			const readOnlyDelegates = DelegateMapper.execute(
-				wallet,
-				delegates.map((delegate: ReadOnlyWallet) => delegate.publicKey()) as string[],
-			);
-			setDelegates(readOnlyDelegates);
+			setDelegates(delegates);
 		},
 		[env],
 	);
@@ -216,7 +206,7 @@ export const Votes = () => {
 				/>
 			</Section>
 
-			<div className="container mx-auto px-14">
+			<Section hasBackground={false}>
 				<div className="grid grid-flow-col grid-cols-2 gap-6 -my-5">
 					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
 						<SelectNetwork
@@ -239,7 +229,7 @@ export const Votes = () => {
 						<Tabs selected={tabItem} onClick={(tabItem) => setTabItem(tabItem)} />
 					</>
 				)}
-			</div>
+			</Section>
 
 			<Section className="flex-1">
 				{network && address ? (
