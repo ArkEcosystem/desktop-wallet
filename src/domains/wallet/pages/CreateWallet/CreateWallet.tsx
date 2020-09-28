@@ -79,7 +79,7 @@ export const CreateWallet = () => {
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
-						<div className="mt-4">
+						<div className="mt-8">
 							<TabPanel tabId={1}>
 								<FirstStep env={env} profile={activeProfile} />
 							</TabPanel>
@@ -100,7 +100,7 @@ export const CreateWallet = () => {
 									variant="plain"
 									onClick={handleBack}
 								>
-									Back
+									{t("COMMON.BACK")}
 								</Button>
 
 								{activeTab < 4 && (

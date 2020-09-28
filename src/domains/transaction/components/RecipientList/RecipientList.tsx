@@ -3,6 +3,7 @@ import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Label } from "app/components/Label";
 import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -40,13 +41,13 @@ const RecipientListItem = ({
 				</td>
 
 				<td className="py-4">
-					<Address address={address} walletName={walletName} />
+					<Address address={address} walletName={walletName} maxChars={!walletName ? 0 : undefined} />
 				</td>
 
-				<td className="py-4">
-					<div className="font-bold text-right text-theme-neutral-800">
+				<td className="py-4 text-right">
+					<Label color="danger">
 						<Amount ticker={assetSymbol!} value={amount} />
-					</div>
+					</Label>
 				</td>
 			</tr>
 		);

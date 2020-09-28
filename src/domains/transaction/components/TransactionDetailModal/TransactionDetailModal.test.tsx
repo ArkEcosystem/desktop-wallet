@@ -5,7 +5,6 @@ import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
 import { getDefaultProfileId, renderWithRouter, syncDelegates } from "utils/testing-library";
 
-// i18n
 import { translations } from "../../i18n";
 import { TransactionDetailModal } from "./TransactionDetailModal";
 
@@ -108,6 +107,11 @@ describe("TransactionDetailModal", () => {
 						...TransactionFixture,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "multiPayment",
+						wallet: () => ({
+							alias: () => "Test Wallet",
+							currency: () => "ARK",
+							exchangeCurrency: () => "BTC",
+						}),
 					}}
 				/>
 				,
@@ -215,6 +219,29 @@ describe("TransactionDetailModal", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render a second signature modal", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<TransactionDetailModal
+					isOpen={true}
+					transactionItem={{
+						...TransactionFixture,
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						type: () => "secondSignature",
+					}}
+				/>
+				,
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SECOND_SIGNATURE_DETAIL.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

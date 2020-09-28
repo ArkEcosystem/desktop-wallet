@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionTimestamp should render 1`] = `
+<div>
+  <div
+    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Timestamp
+      </div>
+      <div
+        class="font-semibold"
+      >
+        31.07.2020 16:34:41
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransactionTimestamp should render with custom format 1`] = `
+<div>
+  <div
+    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Timestamp
+      </div>
+      <div
+        class="font-semibold"
+      >
+        2020-07-31
+      </div>
+    </div>
+  </div>
+</div>
+`;
