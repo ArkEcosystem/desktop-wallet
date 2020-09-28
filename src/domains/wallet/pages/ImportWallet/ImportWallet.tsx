@@ -105,57 +105,59 @@ export const ImportWallet = () => {
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={3} activeIndex={activeTab} />
 
-						<TabPanel tabId={1}>
-							<FirstStep />
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep profile={activeProfile} />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep address={walletData?.address() as string} nameMaxLength={nameMaxLength} />
-						</TabPanel>
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep profile={activeProfile} />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep address={walletData?.address() as string} nameMaxLength={nameMaxLength} />
+							</TabPanel>
 
-						<div className="flex justify-end mt-10 space-x-3">
-							{activeTab < 3 && (
-								<Button
-									disabled={activeTab === 1 || formState.isSubmitting}
-									variant="plain"
-									onClick={handleBack}
-									data-testid="ImportWallet__back-button"
-								>
-									{t("COMMON.BACK")}
-								</Button>
-							)}
+							<div className="flex justify-end mt-10 space-x-3">
+								{activeTab < 3 && (
+									<Button
+										disabled={activeTab === 1 || formState.isSubmitting}
+										variant="plain"
+										onClick={handleBack}
+										data-testid="ImportWallet__back-button"
+									>
+										{t("COMMON.BACK")}
+									</Button>
+								)}
 
-							{activeTab === 1 && (
-								<Button
-									disabled={!formState.isValid}
-									onClick={handleNext}
-									data-testid="ImportWallet__continue-button"
-								>
-									{t("COMMON.CONTINUE")}
-								</Button>
-							)}
+								{activeTab === 1 && (
+									<Button
+										disabled={!formState.isValid}
+										onClick={handleNext}
+										data-testid="ImportWallet__continue-button"
+									>
+										{t("COMMON.CONTINUE")}
+									</Button>
+								)}
 
-							{activeTab === 2 && (
-								<Button
-									disabled={!formState.isValid || formState.isSubmitting}
-									type="submit"
-									data-testid="ImportWallet__continue-button"
-								>
-									{t("COMMON.CONTINUE")}
-								</Button>
-							)}
+								{activeTab === 2 && (
+									<Button
+										disabled={!formState.isValid || formState.isSubmitting}
+										type="submit"
+										data-testid="ImportWallet__continue-button"
+									>
+										{t("COMMON.CONTINUE")}
+									</Button>
+								)}
 
-							{activeTab === 3 && (
-								<Button
-									disabled={formState.isSubmitting}
-									type="submit"
-									data-testid="ImportWallet__gotowallet-button"
-								>
-									{t("COMMON.GO_TO_WALLET")}
-								</Button>
-							)}
+								{activeTab === 3 && (
+									<Button
+										disabled={formState.isSubmitting}
+										type="submit"
+										data-testid="ImportWallet__gotowallet-button"
+									>
+										{t("COMMON.GO_TO_WALLET")}
+									</Button>
+								)}
+							</div>
 						</div>
 					</Tabs>
 				</Form>

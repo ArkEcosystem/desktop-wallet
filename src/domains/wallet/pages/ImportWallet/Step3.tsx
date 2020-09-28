@@ -23,31 +23,32 @@ export const ThirdStep = ({ address, nameMaxLength }: { address: string; nameMax
 	const { t } = useTranslation();
 
 	return (
-		<section data-testid="ImportWallet__third-step">
-			<div className="my-8">
-				<Header
-					title={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
-					subtitle={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
-				/>
+		<section data-testid="ImportWallet__third-step" className="space-y-8">
+			<Header
+				title={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
+				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
+			/>
+
+			<div>
+				<TransactionDetail
+					className="pt-0"
+					label={t("COMMON.NETWORK")}
+					borderPosition="bottom"
+					extra={<NetworkIcon size="lg" coin={network.coin()} network={network.id()} />}
+				>
+					{networkConfig?.displayName}
+				</TransactionDetail>
+
+				<TransactionDetail
+					label={t("COMMON.ADDRESS")}
+					borderPosition="bottom"
+					extra={<Avatar size="lg" address={address} />}
+				>
+					<Address address={address} maxChars={0} />
+				</TransactionDetail>
 			</div>
 
-			<TransactionDetail
-				label={t("COMMON.NETWORK")}
-				borderPosition="bottom"
-				extra={<NetworkIcon size="lg" coin={network.coin()} network={network.id()} />}
-			>
-				{networkConfig?.displayName}
-			</TransactionDetail>
-
-			<TransactionDetail
-				label={t("COMMON.ADDRESS")}
-				borderPosition="bottom"
-				extra={<Avatar size="lg" address={address} />}
-			>
-				<Address address={address} maxChars={0} />
-			</TransactionDetail>
-
-			<FormField name="name" className="mt-8">
+			<FormField name="name">
 				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} required={false} optional />
 				<Input
 					ref={register({

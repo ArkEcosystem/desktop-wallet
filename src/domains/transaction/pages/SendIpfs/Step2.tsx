@@ -3,8 +3,10 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
+import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
@@ -20,51 +22,45 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const fee = getValues("fee") || watched.fee;
 	const hash = getValues("hash") || watched.hash;
 
-	const coinName = wallet.coinId();
-
 	useEffect(() => {
 		unregister("mnemonic");
 	}, [unregister]);
 
 	return (
-		<section data-testid="SendIpfs__step--second">
-			<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}</h1>
-			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}</div>
+		<section data-testid="SendIpfs__step--second" className="space-y-8">
+			<Header
+				title={t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}
+			/>
 
-			<div className="grid grid-flow-row gap-2 mt-4">
+			<div>
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
-					extra={
-						<div className="ml-1 text-theme-danger">
-							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								{coinName && <Icon name={coinName} width={20} height={20} />}
-							</Circle>
-						</div>
-					}
+					extra={<NetworkIcon size="lg" coin={wallet.network().coin()} network={wallet.network().id()} />}
+					className="pt-0"
 				>
-					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{wallet.network().name()}
-					</div>
+					{wallet.network().name()}
 				</TransactionDetail>
 
-				<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-					<div className="mb-2 font-semibold text-theme-neutral">
-						<span className="mr-1 text-sm">Sender</span>
-						<Label color="warning">
-							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
-						</Label>
+				<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />}>
+					<div className="flex-1 space-y-2">
+						<div className="text-theme-neutral">
+							<span className="mr-1 text-sm">{t("TRANSACTION.SENDER")}</span>
+							<Label color="warning">
+								<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
+							</Label>
+						</div>
+						<Address address={wallet.address()} walletName={wallet.alias()} />
 					</div>
-					<Address address={wallet.address()} walletName={wallet.alias()} />
 				</TransactionDetail>
 
 				<TransactionDetail
 					label={t("TRANSACTION.IPFS_HASH")}
-					className="pt-6"
 					extra={
-						<div className="mx-2">
-							<Icon name="Ipfs" width={32} height={32} />
-						</div>
+						<Circle className="border-theme-text" size="lg">
+							<Icon name="Ipfs" width={23} height={23} />
+						</Circle>
 					}
 				>
 					{hash}
