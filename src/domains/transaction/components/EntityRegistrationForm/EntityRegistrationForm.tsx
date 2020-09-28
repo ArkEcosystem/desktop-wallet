@@ -4,7 +4,6 @@ import { filter, isEmpty } from "@arkecosystem/utils";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useValidation } from "app/hooks/validations";
 import { httpClient } from "app/services";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import {
 	SendEntityRegistrationComponent,
 	SendEntityRegistrationDetailsOptions,
