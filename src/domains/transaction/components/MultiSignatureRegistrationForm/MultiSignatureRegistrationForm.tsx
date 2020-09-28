@@ -1,7 +1,7 @@
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { TransactionDetail } from "app/components/TransactionDetail";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import {
 	SendEntityRegistrationComponent,
 	SendEntityRegistrationDetailsOptions,
