@@ -4,8 +4,8 @@ import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 // UI Elements
 import { Modal } from "app/components/Modal";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

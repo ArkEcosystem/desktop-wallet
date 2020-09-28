@@ -4,9 +4,9 @@ import { filter, isEmpty } from "@arkecosystem/utils";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { useValidation } from "app/hooks/validations";
 import { httpClient } from "app/services";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import {
 	SendEntityRegistrationComponent,
 	SendEntityRegistrationDetailsOptions,

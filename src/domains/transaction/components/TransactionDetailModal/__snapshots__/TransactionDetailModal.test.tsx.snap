@@ -640,7 +640,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="flex items-center py-6 true "
             data-testid="TransactionDetail"
           >
             <div
@@ -654,33 +654,29 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               <div
                 class="font-semibold"
               >
-                ARK Wallet 1
-                <span
-                  class="sc-AxgMl fFPQpl ml-2 text-theme-neutral"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B…s6YUYD
-                </span>
+                  <span
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    Test Wallet
+                  </span>
+                  <span
+                    class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B…s6YUYD
+                  </span>
+                </div>
               </div>
             </div>
             <div
-              class="flex items-center"
+              class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm fJvtfB -mr-2 border-black"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -696,7 +692,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 last:pb-0"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -705,23 +701,78 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Recipients
+                Recipients (0)
               </div>
               <div
                 class="font-semibold"
               >
                 <div
-                  class="flex justify-between text-sm font-semibold text-theme-neutral"
+                  class="-my-2"
                 >
                   <div
-                    class="ml-12"
+                    class="sc-fzoLsD bxbuLV"
                   >
-                    Address
-                  </div>
-                  <div
-                    class="ml-12"
-                  >
-                    Amount
+                    <div
+                      class="sc-Axmtr idwkoD"
+                      role="table"
+                    >
+                      <table
+                        cellpadding="0"
+                        class="table-auto"
+                      >
+                        <thead>
+                          <tr
+                            role="row"
+                          >
+                            <th
+                              class="text-sm text-left select-none text-theme-neutral"
+                              colspan="1"
+                              data-testid="table__th--0"
+                              role="columnheader"
+                            >
+                              <div
+                                class="flex flex-inline align-top hidden"
+                              >
+                                <div>
+                                  Avatar
+                                </div>
+                              </div>
+                            </th>
+                            <th
+                              class="text-sm text-left select-none text-theme-neutral"
+                              colspan="1"
+                              data-testid="table__th--1"
+                              role="columnheader"
+                            >
+                              <div
+                                class="flex flex-inline align-top hidden"
+                              >
+                                <div>
+                                  Address
+                                </div>
+                              </div>
+                            </th>
+                            <th
+                              class="text-sm text-left select-none text-theme-neutral"
+                              colspan="1"
+                              data-testid="table__th--2"
+                              role="columnheader"
+                            >
+                              <div
+                                class="flex flex-inline align-top hidden"
+                              >
+                                <div>
+                                  Amount
+                                </div>
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody
+                          role="rowgroup"
+                        />
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -737,7 +788,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Amount
+                Total Amount
               </div>
               <div
                 class="font-semibold"
@@ -746,17 +797,27 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                   class="sc-AxiKw BrXzA"
                   color="danger"
                 >
-                  100.00000000 BTC
+                  <span
+                    data-testid="Amount"
+                  >
+                    100 ARK
+                  </span>
                 </div>
+                <span
+                  class="ml-1 text-theme-neutral-light"
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
               </div>
             </div>
             <div
-              class="sc-AxjAm fJvtfB border-theme-danger-200 text-theme-danger-dark"
+              class="sc-AxjAm bHAIY border-theme-danger-contrast text-theme-danger"
             >
               <div
-                class="sc-AxirZ dCVESD"
-                height="25"
-                width="25"
+                class="sc-AxirZ caNxxo"
+                height="21"
+                width="15"
               >
                 <svg>
                   sent.svg
@@ -779,7 +840,11 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               <div
                 class="font-semibold"
               >
-                21.00000000 BTC
+                <span
+                  data-testid="Amount"
+                >
+                  21 ARK
+                </span>
               </div>
             </div>
           </div>
@@ -798,20 +863,24 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <div
-                  class="flex justify-between"
+                <p
+                  class="break-all"
                 >
                   Test
-                  <div
-                    class="sc-AxirZ eEbZjj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      smartbridge.svg
-                    </svg>
-                  </div>
-                </div>
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex justify-center w-11"
+            >
+              <div
+                class="sc-AxirZ nLAEm"
+                height="22"
+                width="18"
+              >
+                <svg>
+                  smartbridge.svg
+                </svg>
               </div>
             </div>
           </div>
@@ -852,7 +921,9 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                 <div
                   class="flex"
                 >
-                  Not Confirmed
+                  <span>
+                    Not confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                   >
@@ -889,25 +960,41 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  ee4175…3ecefe
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      ee4175091d9f4…9d09bcf3ecefe
+                    </span>
+                  </a>
+                  <span
+                    class="inline-block ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -926,25 +1013,41 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  as32d1…165das
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      as32d1as65d1a…as3d2as165das
+                    </span>
+                  </a>
+                  <span
+                    class="inline-block ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -1252,7 +1355,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                                 />
                               </div>
                               <span
-                                class="sc-fzozJi eDFubI flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="sc-fznKkj deEkrW flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
                               >
                                 <div
                                   class="sc-AxirZ hDwaov"
@@ -1291,7 +1394,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                                 />
                               </div>
                               <span
-                                class="sc-fzozJi eDFubI flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
+                                class="sc-fznKkj deEkrW flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                               >
                                 <div
                                   class="sc-AxirZ hDwaov"
@@ -1319,7 +1422,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                                 />
                               </div>
                               <span
-                                class="sc-fzozJi eDFubI flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
+                                class="sc-fznKkj deEkrW flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                               >
                                 <div
                                   class="sc-AxirZ hDwaov"
@@ -1347,7 +1450,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                                 />
                               </div>
                               <span
-                                class="sc-fzozJi eDFubI flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="sc-fznKkj deEkrW flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
                               >
                                 <div
                                   class="sc-AxirZ hDwaov"
@@ -1375,7 +1478,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                                 />
                               </div>
                               <span
-                                class="sc-fzozJi eDFubI flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
+                                class="sc-fznKkj deEkrW flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                               >
                                 <div
                                   class="sc-AxirZ hDwaov"
@@ -1650,7 +1753,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                 class="font-semibold"
               >
                 <a
-                  class="sc-fzqNJr ghHlyu inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                   data-testid="Link"
                   rel="noopener noreferrer"
                   to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
@@ -1699,7 +1802,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                 class="font-semibold"
               >
                 <a
-                  class="sc-fzqNJr ghHlyu inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                   data-testid="Link"
                   rel="noopener noreferrer"
                 >
@@ -2052,7 +2155,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                 class="font-semibold"
               >
                 <a
-                  class="sc-fzqNJr ghHlyu inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                   data-testid="Link"
                   rel="noopener noreferrer"
                   to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
@@ -2101,7 +2204,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                 class="font-semibold"
               >
                 <a
-                  class="sc-fzqNJr ghHlyu inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                   data-testid="Link"
                   rel="noopener noreferrer"
                 >
