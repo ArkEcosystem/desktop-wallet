@@ -132,7 +132,7 @@ module.exports = {
 			maxHeight: {
 				"17e": "4.25em",
 				"18e": "4.5em",
-				"128": "32rem",
+				128: "32rem",
 			},
 			height: {
 				"1/2": "50%",

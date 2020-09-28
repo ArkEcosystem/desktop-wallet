@@ -14,22 +14,22 @@ const HandleInner = styled.span<{ baseColor?: string; disabled?: boolean }>`
 	margin-top: 3px;
 	width: 18px;
 	height: 18px;
-    ${tw`rounded-full absolute transform -translate-y-1/2 transition transition-colors transition-transform ease-in-out duration-200`}
+	${tw`rounded-full absolute transform -translate-y-1/2 transition transition-colors transition-transform ease-in-out duration-200`}
 
-    ${({ baseColor, disabled }) =>
+	${({ baseColor, disabled }) =>
 		css`
-  			${Input} ~ ${Handle} & {
-  				background-color: var(${baseColor && !disabled ? baseColor : "--theme-color-neutral-light"});
-  			}
-  		`};
+			${Input} ~ ${Handle} & {
+				background-color: var(${baseColor && !disabled ? baseColor : "--theme-color-neutral-light"});
+			}
+		`};
 
-    ${Input}:checked ~ ${Handle} & {
-        ${tw`translate-x-full bg-theme-primary text-2xl`}
-    }
+	${Input}:checked ~ ${Handle} & {
+		${tw`translate-x-full bg-theme-primary text-2xl`}
+	}
 
-    ${Input}:focus ~ ${Handle} & {
-        ${tw`shadow-outline`}
-    }
+	${Input}:focus ~ ${Handle} & {
+		${tw`shadow-outline`}
+	}
 `;
 
 type ToggleProps = { baseColor?: string; disabled?: boolean } & React.InputHTMLAttributes<any>;

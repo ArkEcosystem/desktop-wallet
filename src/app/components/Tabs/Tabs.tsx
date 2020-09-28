@@ -56,26 +56,26 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 Tab.displayName = "Tab";
 
 export const TabList = styled.div`
-    ${tw`inline-flex justify-start items-stretch rounded bg-theme-neutral-contrast px-3`}
+	${tw`inline-flex justify-start items-stretch rounded bg-theme-neutral-contrast px-3`}
 
-    & > ${TabButton} {
-        ${tw`px-5 py-4 border-b-3 border-transparent font-semibold text-theme-neutral-dark relative transition-colors ease-in-out duration-300`}
+	& > ${TabButton} {
+		${tw`px-5 py-4 border-b-3 border-transparent font-semibold text-theme-neutral-dark relative transition-colors ease-in-out duration-300`}
 
-        &[aria-selected="true"] {
-            ${tw`border-theme-primary text-theme-text`}
-        }
+		&[aria-selected="true"] {
+			${tw`border-theme-primary text-theme-text`}
+		}
 
-        &:hover,
+		&:hover,
 		&:focus {
 			${tw`outline-none text-theme-text`};
-        }
+		}
 
-        & + ${TabButton}:after {
-            content: "";
-            width: 1px;
-            ${tw`h-4 bg-theme-neutral-light absolute left-0 top-1/2 transform -translate-y-1/2 block`};
-        }
-    }
+		& + ${TabButton}:after {
+			content: "";
+			width: 1px;
+			${tw`h-4 bg-theme-neutral-light absolute left-0 top-1/2 transform -translate-y-1/2 block`};
+		}
+	}
 `;
 
 type TabPanelProps = {
