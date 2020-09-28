@@ -136,7 +136,6 @@
 		"@arkecosystem/platform-sdk-profiles": "^0.9.367",
 		"@arkecosystem/platform-sdk-support": "^0.9.367",
 		"@arkecosystem/platform-sdk-trx": "^0.9.367",
-		"@arkecosystem/platform-sdk-xlm": "^0.9.367",
 		"@arkecosystem/platform-sdk-xmr": "^0.9.367",
 		"@arkecosystem/platform-sdk-xrp": "^0.9.367",
 		"@arkecosystem/utils": "^1.2.0",
@@ -224,11 +223,11 @@
 		"copy-webpack-plugin": "^6.0.3",
 		"cross-env": "^7.0.2",
 		"customize-cra": "^1.0.0",
-		"electron": "^9.0.2",
-		"electron-builder": "^22.7.0",
-		"electron-devtools-installer": "^3.0.0",
+		"electron": "^9.3.1",
+		"electron-builder": "^22.8.1",
+		"electron-devtools-installer": "^3.1.1",
 		"electron-notarize": "^1.0.0",
-		"electron-rebuild": "^1.11.0",
+		"electron-rebuild": "^2.0.3",
 		"electron-root-path": "^1.0.16",
 		"eslint-config-prettier": "^6.11.0",
 		"eslint-config-react-app": "^5.2.1",
@@ -266,7 +265,8 @@
 		"testcafe": "^1.8.8",
 		"testcafe-browser-provider-electron": "^0.0.15",
 		"typescript": "^3.9.5",
-		"wait-on": "^5.1.0"
+		"wait-on": "^5.1.0",
+		"webpack-node-externals": "^2.5.2"
 	},
 	"babelMacros": {
 		"twin": {
