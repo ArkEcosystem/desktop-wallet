@@ -99,7 +99,7 @@ export const SecondSignatureDetail = ({
 		);
 	};
 
-	const currency = useMemo(() => transaction.wallet()?.currency() || "", [transaction]);
+	const currency = useMemo(() => transaction.wallet()?.currency(), [transaction]);
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_SECOND_SIGNATURE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>

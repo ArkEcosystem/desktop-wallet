@@ -22,7 +22,6 @@ describe("MultiPaymentDetail", () => {
 				transaction={{
 					...TransactionFixture,
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
-					wallet: () => wallet,
 				}}
 			/>,
 		);
@@ -38,7 +37,6 @@ describe("MultiPaymentDetail", () => {
 				transaction={{
 					...TransactionFixture,
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
-					wallet: () => wallet,
 				}}
 			/>,
 		);
@@ -70,7 +68,6 @@ describe("MultiPaymentDetail", () => {
 						},
 					],
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
-					wallet: () => wallet,
 				}}
 			/>,
 		);
