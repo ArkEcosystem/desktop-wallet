@@ -4,10 +4,11 @@ import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Clipboard } from "app/components/Clipboard";
+import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -24,18 +25,16 @@ export const TransactionSuccessful = ({ children, transaction, senderWallet }: T
 
 	return (
 		<section data-testid="TransactionSuccessful" className="space-y-8">
+			<Header title={t("TRANSACTION.SUCCESS.TITLE")} />
+
+			<TransactionSuccessfulBanner className="w-full" />
+
+			<p className="text-theme-neutral-dark">{t("TRANSACTION.SUCCESS.DESCRIPTION")}</p>
+
 			<div>
-				<h1>{t("TRANSACTION.SUCCESS.TITLE")}</h1>
-
-				<div className="w-full my-8">
-					<TransactionSuccessfulBanner className="w-full" />
-				</div>
-
-				<p className="mb-2 text-theme-neutral-dark">{t("TRANSACTION.SUCCESS.DESCRIPTION")}</p>
-
 				{senderWallet && (
 					<>
-						<TransactionDetail label={t("TRANSACTION.ID")} border={false}>
+						<TransactionDetail label={t("TRANSACTION.ID")} border={false} className="pt-0">
 							<div className="flex items-center">
 								<Address addressClass="text-theme-primary" address={transaction?.id()} maxChars={32} />
 								<span className="flex ml-5">

@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionConfirmations should render when confirmed 1`] = `
+<div>
+  <div
+    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Confirmations
+      </div>
+      <div
+        class="font-semibold"
+      >
+        <div
+          class="flex"
+        >
+          <span>
+            Well confirmed
+          </span>
+          <div
+            class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
+          >
+            <div
+              class="m-auto"
+            >
+              <div
+                class="sc-AxjAm pXfjM"
+                height="15"
+                width="15"
+              >
+                <svg>
+                  checkmark.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransactionConfirmations should render when not confirmed 1`] = `
+<div>
+  <div
+    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Confirmations
+      </div>
+      <div
+        class="font-semibold"
+      >
+        <div
+          class="flex"
+        >
+          <span>
+            Not confirmed
+          </span>
+          <div
+            class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+          >
+            <div
+              class="m-auto"
+            >
+              <div
+                class="sc-AxjAm HWmvM"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

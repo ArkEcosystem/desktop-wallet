@@ -69,7 +69,7 @@ describe("InputCurrency", () => {
 		const { getByTestId, rerender } = render(<InputCurrency value=".01" />);
 		const input = getByTestId("InputCurrency");
 
-		waitFor(() => expect(input).toHaveValue("0.01"));
+		expect(input).toHaveValue("0.01");
 
 		rerender(<InputCurrency value={undefined} />);
 

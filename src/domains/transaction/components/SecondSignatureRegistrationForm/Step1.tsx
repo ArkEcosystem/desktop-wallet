@@ -7,7 +7,7 @@ import { Avatar } from "app/components/Avatar";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Label } from "app/components/Label";
-import { TransactionDetail } from "app/components/TransactionDetail";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";

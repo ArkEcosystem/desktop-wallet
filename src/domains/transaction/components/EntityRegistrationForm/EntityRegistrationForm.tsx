@@ -1,12 +1,10 @@
 import { File } from "@arkecosystem/platform-sdk-ipfs";
 import { Enums, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { filter, isEmpty } from "@arkecosystem/utils";
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import { useValidation } from "app/hooks/validations";
 import { httpClient } from "app/services";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import {
 	SendEntityRegistrationComponent,
 	SendEntityRegistrationDetailsOptions,
@@ -16,6 +14,7 @@ import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 
 import { FormStep, ReviewStep } from "./";
+import { SentStep } from "./SentStep";
 
 const FormStepsComponent = ({ activeTab, wallet }: SendEntityRegistrationComponent) => {
 	const { register } = useFormContext();
@@ -48,29 +47,8 @@ const FormStepsComponent = ({ activeTab, wallet }: SendEntityRegistrationCompone
 	);
 };
 
-const transactionDetails = ({ translations, transaction }: SendEntityRegistrationDetailsOptions) => (
-	<>
-		<TransactionDetail
-			label={translations("TRANSACTION.TYPE")}
-			extra={
-				<div>
-					<Circle className="border-black bg-theme-background" size="lg">
-						<Icon name="Business" width={20} height={20} />
-					</Circle>
-				</div>
-			}
-		>
-			{translations("TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION")}
-		</TransactionDetail>
-
-		<TransactionDetail label={translations("TRANSACTION.NAME")}>
-			{transaction?.data().asset.data.name}
-		</TransactionDetail>
-
-		<TransactionDetail label={translations("TRANSACTION.IPFS_HASH")}>
-			{transaction?.data().asset.data.ipfsData}
-		</TransactionDetail>
-	</>
+const transactionDetails = ({ transaction }: SendEntityRegistrationDetailsOptions) => (
+	<SentStep transaction={transaction} />
 );
 
 FormStepsComponent.displayName = "EntityRegistrationForm";
@@ -80,7 +58,7 @@ export const EntityRegistrationForm: SendEntityRegistrationForm = {
 	tabSteps: 2,
 	component: FormStepsComponent,
 	transactionDetails,
-	formFields: ["ipfsData"],
+	formFields: ["ipfsData", "entityName"],
 
 	signTransaction: async ({ handleNext, form, setTransaction, profile, env, translations, type }) => {
 		const { getValues, setValue, setError } = form;

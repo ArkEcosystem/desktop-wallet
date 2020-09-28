@@ -105,7 +105,7 @@ export const ImportWallet = () => {
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={3} activeIndex={activeTab} />
 
-						<div className="mt-4">
+						<div className="mt-8">
 							<TabPanel tabId={1}>
 								<FirstStep />
 							</TabPanel>
