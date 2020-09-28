@@ -30,8 +30,8 @@ export const NotificationItem = ({
 			<td>
 				<VisibilitySensor
 					onChange={(isVisible) => onVisibilityChange?.(isVisible)}
-					scrollCheck={true}
-					delayedCall={true}
+					scrollCheck
+					delayedCall
 					containment={containmentRef?.current}
 				>
 					<div>

@@ -1,10 +1,10 @@
 import { Icon } from "app/components/Icon";
 import React from "react";
 
-import { NotificationsSkeletonProps } from "./models";
+import { NotificationsSkeletonProps, NotificationsWrapper } from "./";
 
 export const NotificationsSkeleton = ({ title }: NotificationsSkeletonProps) => (
-	<div>
+	<NotificationsWrapper>
 		<div className="p-6 mb-5 border-2 border-theme-neutral-200 text-md rounded-xl text-theme-neutral-dark">
 			{title}
 		</div>
@@ -15,5 +15,5 @@ export const NotificationsSkeleton = ({ title }: NotificationsSkeletonProps) => 
 		<div>
 			<Icon name="Placeholder" width={200} height={80} />
 		</div>
-	</div>
+	</NotificationsWrapper>
 );
