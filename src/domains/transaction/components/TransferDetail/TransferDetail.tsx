@@ -39,6 +39,7 @@ export const TransferDetail = ({
 				address={transaction.sender()}
 				alias={wallet.alias()}
 				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+				border={false}
 			/>
 
 			<TransactionRecipients currency={wallet.currency()} recipient={{ address: transaction.recipient() }} />
