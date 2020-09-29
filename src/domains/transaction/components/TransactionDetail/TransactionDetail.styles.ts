@@ -2,9 +2,8 @@ import tw from "twin.macro";
 
 const baseStyles = () => tw`flex items-center`;
 
-const getBorder = (border?: boolean, borderPosition?: "top" | "bottom") => border
-		? [tw`border-dashed border-theme-neutral-300`, borderPosition === "top" ? tw`border-t` : tw`border-b`]
-		: [];
+const getBorder = (border?: boolean, borderPosition?: "top" | "bottom") =>
+	border ? [tw`border-dashed border-theme-neutral-300`, borderPosition === "top" ? tw`border-t` : tw`border-b`] : [];
 
 const getPadding = (padding?: boolean) => padding && tw`py-6`;
 
