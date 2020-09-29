@@ -1,5 +1,8 @@
 import { Label } from "app/components/Label";
 import React from "react";
+import { styled } from "twin.macro";
+
+import { getStyles } from "./TransactionDetail.styles";
 
 export type TransactionDetailProps = {
 	children?: React.ReactNode;
@@ -8,10 +11,12 @@ export type TransactionDetailProps = {
 	labelExtraColor?: "primary" | "success" | "danger" | "warning";
 	extra?: React.ReactNode;
 	border?: boolean;
-	borderPosition: "top" | "bottom";
+	borderPosition?: "top" | "bottom";
 	padding?: boolean;
 	className?: string;
 };
+
+const TransactionDetailStyled = styled.div<TransactionDetailProps>(getStyles);
 
 export const TransactionDetail = ({
 	border,
@@ -24,11 +29,12 @@ export const TransactionDetail = ({
 	labelExtraColor,
 	padding,
 }: TransactionDetailProps) => (
-	<div
+	<TransactionDetailStyled
 		data-testid="TransactionDetail"
-		className={`flex items-center ${!padding || "py-6"} ${
-			!border || `${borderPosition === "top" ? "border-t" : "border-b"} border-dashed border-theme-neutral-300`
-		} ${className}`}
+		border={border}
+		borderPosition={borderPosition}
+		padding={padding}
+		className={className}
 	>
 		<div className="flex-1 space-y-2">
 			{label && (
@@ -50,11 +56,10 @@ export const TransactionDetail = ({
 		</div>
 
 		{extra ? extra : null}
-	</div>
+	</TransactionDetailStyled>
 );
 
 TransactionDetail.defaultProps = {
-	className: "",
 	border: true,
 	borderPosition: "top",
 	padding: true,
