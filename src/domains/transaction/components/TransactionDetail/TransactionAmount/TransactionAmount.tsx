@@ -14,7 +14,7 @@ type TransactionAmountProps = {
 	convertedAmount?: BigNumber;
 	currency: string;
 	exchangeCurrency?: string;
-	isMultiPayment: boolean;
+	isMultiPayment?: boolean;
 	isSent: boolean;
 };
 

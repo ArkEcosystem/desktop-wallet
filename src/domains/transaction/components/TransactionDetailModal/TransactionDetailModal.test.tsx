@@ -111,6 +111,8 @@ describe("TransactionDetailModal", () => {
 							alias: () => "Test Wallet",
 							currency: () => "ARK",
 							exchangeCurrency: () => "BTC",
+							isDelegate: () => true,
+							isResignedDelegate: () => false,
 						}),
 					}}
 				/>
