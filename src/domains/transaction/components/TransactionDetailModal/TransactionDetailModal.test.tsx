@@ -1,3 +1,4 @@
+import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -155,6 +156,16 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a vote modal", () => {
+		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+			votes.map(
+				(vote: string, index: number) =>
+					new ReadOnlyWallet({
+						address: vote,
+						username: `delegate-${index}`,
+					}),
+			),
+		);
+
 		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
@@ -178,6 +189,16 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a unvote modal", () => {
+		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+			votes.map(
+				(vote: string, index: number) =>
+					new ReadOnlyWallet({
+						address: vote,
+						username: `delegate-${index}`,
+					}),
+			),
+		);
+
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
