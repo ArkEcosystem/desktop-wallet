@@ -307,7 +307,7 @@ describe("SendTransfer", () => {
 			fireEvent.click(getByTestId("SendTransfer__button--submit"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e77…2f1b89abb49877");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877");
 
 			// Copy Transaction
 			const copyMock = jest.fn();
@@ -434,7 +434,7 @@ describe("SendTransfer", () => {
 			fireEvent.click(getByTestId("SendTransfer__button--submit"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("34b557950ed485…cbbb907b2c829c");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("34b557950ed48…bbb907b2c829c");
 
 			// Copy Transaction
 			const copyMock = jest.fn();
