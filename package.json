@@ -21,7 +21,7 @@
 	],
 	"main": "src/electron/index.js",
 	"scripts": {
-		"build": "react-app-rewired build",
+		"build": "NODE_ENV=production react-app-rewired build",
 		"build:ci": "cross-env GENERATE_SOURCEMAP=false yarn build",
 		"build:linux": "yarn build:ci && electron-builder --linux --publish never",
 		"build:mac": "yarn build:ci && electron-builder --mac --publish never",
@@ -35,7 +35,7 @@
 		"storybook": "start-storybook -p 5000",
 		"test": "react-app-rewired --expose-gc test --logHeapUsage",
 		"test:coverage": "react-app-rewired --expose-gc test --logHeapUsage --coverage --watchAll=false",
-		"test:e2e": "cross-env ELECTRON_IS_E2E=1 ELECTRON_IS_DEV=0 NODE_ENV=production REACT_APP_BUILD_MODE=demo testcafe",
+		"test:e2e": "cross-env NODE_ENV=e2e REACT_APP_BUILD_MODE=demo testcafe",
 		"preversion": "cross-env ./scripts/version-artifacts.sh"
 	},
 	"husky": {
