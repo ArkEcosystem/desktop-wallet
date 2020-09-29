@@ -1,6 +1,6 @@
 import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
-import React, { useCallback,useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import {

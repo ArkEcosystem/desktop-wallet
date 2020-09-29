@@ -5,10 +5,10 @@ import { Address } from "app/components/Address";
 import { TableCell, TableRow } from "app/components/Table";
 import { BaseTransactionRowAmount } from "domains/transaction/components/TransactionTable/TransactionRow/TransactionRowAmount";
 import { TransactionRowMode } from "domains/transaction/components/TransactionTable/TransactionRow/TransactionRowMode";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
-import { NotificationTransactionItemProps,NotificationTransactionItemSkeleton } from "./";
+import { NotificationTransactionItemProps, NotificationTransactionItemSkeleton } from "./";
 
 export const NotificationTransactionItem = ({
 	notification,
