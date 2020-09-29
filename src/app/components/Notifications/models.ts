@@ -1,4 +1,5 @@
 import { ExtendedTransactionData, Profile } from "@arkecosystem/platform-sdk-profiles";
+
 export type NotificationsSkeletonProps = {
 	title?: string;
 };
@@ -18,6 +19,15 @@ export type NotificationItemProps = {
 	onAction?: (id: string) => void;
 	onVisibilityChange?: (isVisible: boolean) => void;
 	containmentRef?: any;
+	meta?: Record<string, any>;
+};
+
+export type NotificationTransactionItemProps = {
+	notification: NotificationItemProps;
+	profile: Profile;
+	containmentRef?: any;
+	onVisibilityChange?: (isVisible: boolean) => void;
+	onTransactionClick?: (item?: ExtendedTransactionData) => void;
 };
 
 export type NotificationsProps = {
