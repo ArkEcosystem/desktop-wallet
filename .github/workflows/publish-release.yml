@@ -201,7 +201,7 @@ jobs:
                   node-version: ${{ matrix.node-version }}
 
             - name: Install
-              run: yarn global add node-gyp && yarn install --frozen-lockfile
+              run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-optional
               shell: cmd
 
             - name: Build & Publish
