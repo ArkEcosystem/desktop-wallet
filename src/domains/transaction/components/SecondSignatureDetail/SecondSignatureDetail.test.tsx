@@ -6,14 +6,9 @@ import { translations } from "../../i18n";
 import { SecondSignatureDetail } from "./SecondSignatureDetail";
 
 describe("SecondSignatureDetail", () => {
-	const extraProps = {
-		ticker: "BTC",
-		walletAlias: "Wallet 1",
-	};
-
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
-			<SecondSignatureDetail isOpen={false} transaction={TransactionFixture} {...extraProps} />,
+			<SecondSignatureDetail isOpen={false} transaction={TransactionFixture} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -22,7 +17,7 @@ describe("SecondSignatureDetail", () => {
 
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
-			<SecondSignatureDetail isOpen={true} transaction={TransactionFixture} {...extraProps} />,
+			<SecondSignatureDetail isOpen={true} transaction={TransactionFixture} />,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SECOND_SIGNATURE_DETAIL.TITLE);
@@ -31,7 +26,16 @@ describe("SecondSignatureDetail", () => {
 
 	it("should render a modal without a wallet alias", () => {
 		const { asFragment, getByTestId } = render(
-			<SecondSignatureDetail isOpen={true} transaction={TransactionFixture} ticker="BTC" />,
+			<SecondSignatureDetail
+				isOpen={true}
+				transaction={{
+					...TransactionFixture,
+					wallet: () => ({
+						...TransactionFixture.wallet(),
+						alias: () => undefined,
+					}),
+				}}
+			/>,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SECOND_SIGNATURE_DETAIL.TITLE);
@@ -46,12 +50,11 @@ describe("SecondSignatureDetail", () => {
 					...TransactionFixture,
 					isConfirmed: () => true,
 				}}
-				{...extraProps}
 			/>,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SECOND_SIGNATURE_DETAIL.TITLE);
-		expect(getByText("Well confirmed")).toBeTruthy();
+		expect(getByText(translations.WELL_CONFIRMED)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
