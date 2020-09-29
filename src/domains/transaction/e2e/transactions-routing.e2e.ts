@@ -28,7 +28,7 @@ test("should navigate to registration page", async (t) => {
 	await goToRegistrationPage(t);
 });
 
-test("should navigate to delegate resignation page", async (t: any) => {
+test("should navigate to delegate resignation page", async (t) => {
 	await goToProfile(t);
 	await goToMyRegistrations(t);
 	await goToResignDelegatePage(t);
