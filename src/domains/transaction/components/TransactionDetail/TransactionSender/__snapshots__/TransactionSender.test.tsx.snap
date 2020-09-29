@@ -3,7 +3,7 @@
 exports[`TransactionSender should not render delegate icon 1`] = `
 <div>
   <div
-    class="flex items-center py-6 true "
+    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
     data-testid="TransactionDetail"
   >
     <div
@@ -67,7 +67,7 @@ exports[`TransactionSender should not render delegate icon 1`] = `
 exports[`TransactionSender should not render with alias 1`] = `
 <div>
   <div
-    class="flex items-center py-6 true "
+    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
     data-testid="TransactionDetail"
   >
     <div
@@ -124,7 +124,7 @@ exports[`TransactionSender should not render with alias 1`] = `
 exports[`TransactionSender should render 1`] = `
 <div>
   <div
-    class="flex items-center py-6 true "
+    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
     data-testid="TransactionDetail"
   >
     <div
