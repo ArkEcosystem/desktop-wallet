@@ -47,7 +47,7 @@ exports[`IpfsDetail should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 true "
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -385,7 +385,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 true "
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -717,7 +717,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 true "
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
