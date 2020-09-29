@@ -205,7 +205,7 @@ export const Votes = () => {
 				/>
 			</Section>
 
-			<div className="container mx-auto pt-10 px-14">
+			<div className="container pt-10 mx-auto px-14">
 				<div className="grid grid-flow-col grid-cols-2 gap-6 mb-10">
 					<div className="flex flex-col space-y-2 group">
 						<div className="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral">
