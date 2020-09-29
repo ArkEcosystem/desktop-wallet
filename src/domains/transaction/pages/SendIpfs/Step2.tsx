@@ -59,7 +59,7 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					label={t("TRANSACTION.IPFS_HASH")}
 					extra={
 						<Circle className="border-theme-text" size="lg">
-							<Icon name="Ipfs" width={23} height={23} />
+							<Icon name="Ipfs" width={21} height={23} />
 						</Circle>
 					}
 				>
