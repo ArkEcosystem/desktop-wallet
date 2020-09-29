@@ -1,14 +1,12 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
-import { Clipboard } from "app/components/Clipboard";
 import { Header } from "app/components/Header";
-import { Icon } from "app/components/Icon";
-import { Label } from "app/components/Label";
-import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import { TransactionExplorerLink, TransactionNetwork, TransactionSender } from "domains/transaction/components/TransactionDetail";
+import {
+	TransactionExplorerLink,
+	TransactionNetwork,
+	TransactionSender,
+} from "domains/transaction/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

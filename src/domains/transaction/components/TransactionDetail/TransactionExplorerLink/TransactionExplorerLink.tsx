@@ -19,10 +19,7 @@ export const TransactionExplorerLink = ({ id, link, variant, ...props }: Transac
 	const isTransactionLink = () => variant === "transaction";
 
 	return (
-		<TransactionDetail
-			label={isTransactionLink() ? t("TRANSACTION.ID") : t("TRANSACTION.BLOCK_ID")}
-			{...props}
-		>
+		<TransactionDetail label={isTransactionLink() ? t("TRANSACTION.ID") : t("TRANSACTION.BLOCK_ID")} {...props}>
 			<div className="flex items-center">
 				<Link to={link} isExternal showExternalIcon={false}>
 					<TruncateMiddle text={id} maxChars={30} className="text-theme-primary-dark" />
