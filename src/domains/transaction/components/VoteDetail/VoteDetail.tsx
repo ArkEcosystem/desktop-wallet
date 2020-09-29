@@ -1,4 +1,4 @@
-import { DelegateMapper, ReadOnlyWallet,VoteData } from "@arkecosystem/platform-sdk-profiles";
+import { DelegateMapper, ReadOnlyWallet, VoteData } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import {
