@@ -1,64 +1,37 @@
 // @ts-ignore - Could not find a declaration file for module '@ledgerhq/hw-transport-node-hid-singleton'.
 import LedgerTransport from "@ledgerhq/hw-transport-node-hid-singleton";
-import { useEffect, useReducer } from "react";
-import { Observable } from "rxjs";
+import { useEffect, useState } from "react";
 
-import { initialState, reducer } from "./LedgerListener.state";
+import { LedgerDevice } from "./LedgerListener.models";
 
 export const LedgerListener = () => {
-	const [, dispatch] = useReducer(reducer, initialState);
+	// eslint-disable-next-line
+	const [_, setDevice] = useState<LedgerDevice | undefined>();
 
 	useEffect(() => {
-		let subscription: { unsubscribe: Function } | undefined;
-
 		const syncDevices = () => {
-			if (subscription) {
-				subscription.unsubscribe();
-			}
-
-			subscription = Observable.create(LedgerTransport.listen).subscribe(
-				// Next
-				({ device, deviceModel, type }: any) => {
-					console.log("Next", { device, deviceModel, type });
-					if (device) {
-						dispatch({
-							type,
-							payload: {
-								type: "hid",
-								path: device.path,
-								modelId: deviceModel ? deviceModel.id : "nanoS",
-							},
-						});
+			LedgerTransport.listen({
+				next: ({
+					deviceModel,
+					descriptor,
+					type,
+				}: {
+					descriptor: string;
+					type: string;
+					deviceModel: { id?: string };
+				}) => {
+					console.log(`[Ledger] ${type}`, { descriptor, deviceModel, type });
+					if (type === "add") {
+						setDevice({ path: descriptor, modelId: deviceModel?.id || "nanoS" });
 					}
+					setDevice(undefined);
 				},
-				// Error
-				// @ts-ignore
-				(e) => {
-					console.log("Error", e);
-					dispatch({ type: "reset" });
-
-					// syncDevices();
-				},
-				// Completed
-				() => {
-					console.log("Completed");
-					dispatch({ type: "reset" });
-
-					syncDevices();
-				},
-			);
+			});
 		};
 
-		const timeoutSyncDevices = setTimeout(syncDevices, 1000);
-
+		const timeoutRef = setTimeout(syncDevices, 100);
 		return () => {
-			clearTimeout(timeoutSyncDevices);
-
-			if (subscription) {
-				subscription.unsubscribe();
-			}
-
-			subscription = undefined;
+			clearTimeout(timeoutRef);
 		};
 	}, []);
 
