@@ -4,63 +4,50 @@ import nock from "nock";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
+const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/notification-transactions.json");
 
 import { markAsRead, Notifications } from "./";
 
 let profile: Profile;
 
 describe("Notifications", () => {
-	beforeAll(() => {
-		profile = env.profiles().findById(getDefaultProfileId());
-		profile.notifications().push({
-			icon: "ArkLogo",
-			name: "New plugin updates",
-			body: "test",
-			action: "Goto",
-		});
-
-		nock.disableNetConnect();
+	beforeEach(() => {
 		nock("https://dwallets.ark.io")
 			.post("/api/transactions/search")
 			.query(true)
-			.reply(200, () => {
-				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
-				return {
-					meta,
-					data: data.slice(0, 2),
-				};
-			})
-			.persist();
+			.reply(200, NotificationTransactionsFixtures);
+
+		profile = env.profiles().findById(getDefaultProfileId());
+		profile.transactionAggregate().flush();
 	});
 
 	it("should render with plugins", async () => {
 		const { container, queryAllByTestId } = render(<Notifications profile={profile} />);
-		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).not.toHaveLength(0));
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with transactions and plugins", async () => {
-		const allNotifications = profile.notifications().count();
-
 		const { container, getAllByTestId, queryAllByTestId } = render(<Notifications profile={profile} />);
-		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(allNotifications));
-		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
+
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode").length).toBeGreaterThan(0));
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should emit onNotificationAction event", async () => {
 		const onNotificationAction = jest.fn();
-		const all = profile.notifications().count();
 
 		const { getAllByTestId, queryAllByTestId } = render(
 			<Notifications profile={profile} onNotificationAction={onNotificationAction} />,
 		);
-		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(all));
-		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode").length).toBeGreaterThan(0));
 
 		act(() => {
-			fireEvent.click(getAllByTestId("NotificationItem__action")[3]);
+			fireEvent.click(getAllByTestId("NotificationItem__action")[1]);
 		});
 
 		await waitFor(() => expect(onNotificationAction).toHaveBeenCalled());
@@ -74,8 +61,9 @@ describe("Notifications", () => {
 		const { container, getAllByTestId, queryAllByTestId } = render(
 			<Notifications profile={profile} onTransactionClick={onTransactionClick} />,
 		);
-		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(all));
-		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
+
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode").length).toBeGreaterThan(0));
 
 		act(() => {
 			fireEvent.click(getAllByTestId("TransactionRowMode")[0]);
@@ -83,20 +71,6 @@ describe("Notifications", () => {
 
 		await waitFor(() => expect(onTransactionClick).toHaveBeenCalled());
 		expect(container).toMatchSnapshot();
-	});
-
-	it("should fetch more transactions when button is clicked", async () => {
-		const all = profile.notifications().count();
-
-		const { getAllByTestId, getByTestId, queryAllByTestId } = render(<Notifications profile={profile} />);
-		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(all));
-		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
-
-		act(() => {
-			fireEvent.click(getByTestId("transactions__fetch-more-button"));
-		});
-
-		await waitFor(() => expect(getAllByTestId("TransactionRowMode")).toHaveLength(4));
 	});
 
 	it("should mark notification as read", () => {
@@ -123,7 +97,7 @@ describe("Notifications", () => {
 	it("should render with empty notifications", async () => {
 		profile.notifications().flush();
 		const { container, queryAllByTestId } = render(<Notifications profile={profile} />);
-		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(4));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(0));
 		expect(container).toMatchSnapshot();
 	});
 });
