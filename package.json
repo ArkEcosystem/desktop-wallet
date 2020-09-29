@@ -21,7 +21,7 @@
 	],
 	"main": "src/electron/index.js",
 	"scripts": {
-		"build": "NODE_ENV=production react-app-rewired build",
+		"build": "cross-env NODE_ENV=production react-app-rewired build",
 		"build:ci": "cross-env GENERATE_SOURCEMAP=false yarn build",
 		"build:linux": "yarn build:ci && electron-builder --linux --publish never",
 		"build:mac": "yarn build:ci && electron-builder --mac --publish never",
