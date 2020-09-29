@@ -4,6 +4,7 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, render, renderWithRouter, waitFor } from "testing-library";
+const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/notification-transactions.json");
 
 import { NotificationsDropdown } from "./";
 
@@ -12,7 +13,6 @@ let profile: Profile;
 
 describe("Notifications", () => {
 	beforeEach(() => {
-		profile = env.profiles().findById(getDefaultProfileId());
 		const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 		history.push(dashboardURL);
 
@@ -20,34 +20,29 @@ describe("Notifications", () => {
 		nock("https://dwallets.ark.io")
 			.post("/api/transactions/search")
 			.query(true)
-			.reply(200, () => {
-				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
-				return {
-					meta,
-					data: data.slice(0, 2),
-				};
-			})
-			.persist();
+			.reply(200, NotificationTransactionsFixtures);
+
+		profile = env.profiles().findById(getDefaultProfileId());
+		profile.transactionAggregate().flush();
 	});
 
 	it("should render with transactions and plugins", async () => {
-		const allNotifications = profile.notifications().count();
-
-		const { container, getAllByTestId, getByTestId } = render(<NotificationsDropdown profile={profile} />);
+		const { container, getAllByTestId, queryAllByTestId, getByTestId } = render(
+			<NotificationsDropdown profile={profile} />,
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
 
-		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(allNotifications));
-		await waitFor(() => expect(getByTestId("TransactionTable")).toBeTruthy());
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode").length).toBeGreaterThan(0));
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should open and close transaction details modal", async () => {
-		const allNotifications = profile.notifications().count();
-
-		const { container, getByTestId, getAllByTestId } = renderWithRouter(
+		const { container, getByTestId, queryAllByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<NotificationsDropdown profile={profile} />
 			</Route>,
@@ -57,16 +52,16 @@ describe("Notifications", () => {
 			},
 		);
 
+		await waitFor(() => expect(getAllByTestId("dropdown__toggle")).toBeTruthy());
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
 
-		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(allNotifications));
-		await waitFor(() => expect(getByTestId("TransactionTable")).toBeTruthy());
-		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode").length).toBeGreaterThan(0));
 
 		act(() => {
-			fireEvent.click(getAllByTestId("TableRow")[2]);
+			fireEvent.click(getAllByTestId("TransactionRowMode")[0]);
 		});
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
