@@ -2,8 +2,7 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
-import { useActionNameMap } from "./hooks";
-import { NotificationItemProps } from "./models";
+import { NotificationItemProps,useActionNameMap } from "./";
 
 export const NotificationItem = ({
 	id,
