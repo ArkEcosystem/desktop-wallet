@@ -21,8 +21,9 @@ export const LedgerListener = () => {
 					deviceModel: { id?: string };
 				}) => {
 					console.log(`[Ledger] ${type}`, { descriptor, deviceModel, type });
+					const modelId = deviceModel?.id || "nanoS";
 					if (type === "add") {
-						setDevice({ path: descriptor, modelId: deviceModel?.id || "nanoS" });
+						setDevice({ path: descriptor, modelId });
 					}
 					setDevice(undefined);
 				},
