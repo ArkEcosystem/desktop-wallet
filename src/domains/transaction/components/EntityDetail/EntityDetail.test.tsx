@@ -6,24 +6,15 @@ import { translations } from "../../i18n";
 import { EntityDetail } from "./EntityDetail";
 
 describe("EntityDetail", () => {
-	const extraProps = {
-		ticker: "BTC",
-		walletAlias: "Wallet 1",
-	};
-
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(
-			<EntityDetail isOpen={false} transaction={TransactionFixture} {...extraProps} />,
-		);
+		const { asFragment, getByTestId } = render(<EntityDetail isOpen={false} transaction={TransactionFixture} />);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render a modal", () => {
-		const { asFragment, getByTestId } = render(
-			<EntityDetail isOpen={true} transaction={TransactionFixture} {...extraProps} />,
-		);
+		const { asFragment, getByTestId } = render(<EntityDetail isOpen={true} transaction={TransactionFixture} />);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ENTITY_DETAIL.TITLE);
 		expect(asFragment()).toMatchSnapshot();
@@ -31,10 +22,19 @@ describe("EntityDetail", () => {
 
 	it("should render a modal without a wallet alias", () => {
 		const { asFragment, getByTestId } = render(
-			<EntityDetail isOpen={true} transaction={TransactionFixture} ticker="BTC" />,
+			<EntityDetail
+				isOpen={true}
+				transaction={{
+					...TransactionFixture,
+					wallet: () => ({
+						...TransactionFixture.wallet(),
+						alias: () => undefined,
+					}),
+				}}
+			/>,
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ENTITY_DETAIL.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SECOND_SIGNATURE_DETAIL.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -46,12 +46,11 @@ describe("EntityDetail", () => {
 					...TransactionFixture,
 					isConfirmed: () => true,
 				}}
-				{...extraProps}
 			/>,
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ENTITY_DETAIL.TITLE);
-		expect(getByText("Well confirmed")).toBeTruthy();
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SECOND_SIGNATURE_DETAIL.TITLE);
+		expect(getByText(translations.WELL_CONFIRMED)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
