@@ -179,7 +179,7 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("SendIpfs__button--submit"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a7…6db3d69131067e");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a…db3d69131067");
 
 			// Copy Transaction
 			const copyMock = jest.fn();

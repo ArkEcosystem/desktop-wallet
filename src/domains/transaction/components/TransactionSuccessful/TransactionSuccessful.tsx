@@ -1,14 +1,12 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
-import { Clipboard } from "app/components/Clipboard";
 import { Header } from "app/components/Header";
-import { Icon } from "app/components/Icon";
-import { Label } from "app/components/Label";
-import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import {
+	TransactionExplorerLink,
+	TransactionNetwork,
+	TransactionSender,
+} from "domains/transaction/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -32,43 +30,23 @@ export const TransactionSuccessful = ({ children, transaction, senderWallet }: T
 			<p className="text-theme-neutral-dark">{t("TRANSACTION.SUCCESS.DESCRIPTION")}</p>
 
 			<div>
-				{senderWallet && (
+				{senderWallet && transaction && (
 					<>
-						<TransactionDetail label={t("TRANSACTION.ID")} border={false} className="pt-0">
-							<div className="flex items-center">
-								<Address addressClass="text-theme-primary" address={transaction?.id()} maxChars={32} />
-								<span className="flex ml-5">
-									<Clipboard data={transaction?.id()}>
-										<div className="text-theme-primary-300">
-											<Icon name="Copy" />
-										</div>
-									</Clipboard>
-								</span>
-							</div>
-						</TransactionDetail>
+						<TransactionExplorerLink
+							id={transaction.id()}
+							link={senderWallet.coin().link().transaction(transaction.id())}
+							border={false}
+							className="pt-0"
+						/>
 
-						<TransactionDetail
-							label={t("TRANSACTION.NETWORK")}
-							extra={
-								<NetworkIcon
-									size="lg"
-									coin={senderWallet.network().coin()}
-									network={senderWallet.network().id()}
-								/>
-							}
-						>
-							{senderWallet.network().name()}
-						</TransactionDetail>
+						<TransactionNetwork network={senderWallet.network()} />
 
-						<TransactionDetail extra={<Avatar size="lg" address={senderWallet.address()} />}>
-							<div className="mb-2 text-sm font-semibold text-theme-neutral">
-								<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
-								<Label color="warning">
-									<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
-								</Label>
-							</div>
-							<Address address={transaction?.sender()} walletName={senderWallet.alias()} />
-						</TransactionDetail>
+						<TransactionSender
+							address={senderWallet.address()}
+							alias={senderWallet.alias()}
+							labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
+							isDelegate={senderWallet.isDelegate() && !senderWallet.isResignedDelegate()}
+						/>
 					</>
 				)}
 
