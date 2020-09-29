@@ -1,7 +1,6 @@
 import { Modal } from "app/components/Modal";
 import {
 	TransactionConfirmations,
-	TransactionDetail,
 	TransactionExplorerLink,
 	TransactionFee,
 	TransactionSender,
