@@ -9,13 +9,14 @@ import { TransactionDetail } from "../TransactionDetail";
 
 type TransactionRecipientsProps = {
 	currency: string;
-	recipients: (Contracts.MultiPaymentRecipient & { alias?: string }) | { address: string; alias?: string };
+	recipient?: { address: string; alias?: string };
+	recipients?: (Contracts.MultiPaymentRecipient & { alias?: string })[];
 };
 
-export const TransactionRecipients = ({ currency, recipients }: TransactionRecipientsProps) => {
+export const TransactionRecipients = ({ currency, recipient, recipients }: TransactionRecipientsProps) => {
 	const { t } = useTranslation();
 
-	if (Array.isArray(recipients)) {
+	if (recipients && Array.isArray(recipients)) {
 		return (
 			<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })}>
 				<div className="-my-2">
@@ -23,11 +24,20 @@ export const TransactionRecipients = ({ currency, recipients }: TransactionRecip
 				</div>
 			</TransactionDetail>
 		);
+	} else if (recipient) {
+		return (
+			<TransactionDetail
+				label={t("TRANSACTION.RECIPIENT")}
+				extra={<Avatar size="lg" address={recipient.address} />}
+			>
+				<Address
+					address={recipient.address}
+					walletName={recipient.alias}
+					maxChars={!recipient.alias ? 0 : undefined}
+				/>
+			</TransactionDetail>
+		);
 	}
 
-	return (
-		<TransactionDetail label={t("TRANSACTION.RECIPIENT")} extra={<Avatar size="lg" address={recipients.address} />}>
-			<Address address={recipients.address} walletName={recipients.alias} />
-		</TransactionDetail>
-	);
+	return null;
 };
