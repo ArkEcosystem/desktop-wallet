@@ -3533,35 +3533,34 @@ exports[`SendEntityResignation should succesfully sign and submit an entity resi
                                 <div
                                   class="flex items-center"
                                 >
-                                  <div
-                                    class="inline-block truncate align-middle"
+                                  <a
+                                    class="sc-fzplWN bETMmw inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                                    data-testid="Link"
+                                    rel="noopener noreferrer"
+                                    to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                                   >
                                     <span
-                                      class="sc-fzpans kkFAbe text-theme-primary font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                      class="sc-fzpans kkFAbe text-theme-primary-dark"
+                                      data-testid="TruncateMiddle"
                                     >
-                                      8f913b6b719e77…2f1b89abb49877
+                                      8f913b6b719e7…f1b89abb49877
                                     </span>
-                                  </div>
+                                  </a>
                                   <span
-                                    class="flex ml-5"
+                                    class="inline-block ml-5 text-theme-primary-300"
                                   >
                                     <div
                                       class="inline-block cursor-pointer"
                                       data-testid="clipboard__wrapper"
                                     >
                                       <div
-                                        class="text-theme-primary-300"
+                                        class="sc-AxiKw dzBdqj"
+                                        height="1em"
+                                        width="1em"
                                       >
-                                        <div
-                                          class="sc-AxiKw dzBdqj"
-                                          height="1em"
-                                          width="1em"
-                                        >
-                                          <svg>
-                                            copy.svg
-                                          </svg>
-                                        </div>
+                                        <svg>
+                                          copy.svg
+                                        </svg>
                                       </div>
                                     </div>
                                   </span>
@@ -3612,27 +3611,27 @@ exports[`SendEntityResignation should succesfully sign and submit an entity resi
                               class="flex-1 space-y-2"
                             >
                               <div
-                                class="font-semibold"
+                                class="text-sm font-semibold text-theme-neutral"
                               >
+                                <span
+                                  class="mr-1"
+                                >
+                                  Sender
+                                </span>
                                 <div
-                                  class="mb-2 text-sm font-semibold text-theme-neutral"
+                                  class="sc-fzoLsD jBzTcb"
+                                  color="warning"
                                 >
                                   <span
-                                    class="mr-1"
+                                    class="text-sm"
                                   >
-                                    Sender
+                                    Your address
                                   </span>
-                                  <div
-                                    class="sc-fzoLsD jBzTcb"
-                                    color="warning"
-                                  >
-                                    <span
-                                      class="text-sm"
-                                    >
-                                      Your address
-                                    </span>
-                                  </div>
                                 </div>
+                              </div>
+                              <div
+                                class="font-semibold"
+                              >
                                 <div
                                   class="inline-block truncate align-middle"
                                 >
@@ -3646,23 +3645,27 @@ exports[`SendEntityResignation should succesfully sign and submit an entity resi
                                     class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
-                                    D6Z26L…tHY4ax
+                                    D5sRKW…cvJtwb
                                   </span>
                                 </div>
                               </div>
                             </div>
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                              data-testid="Avatar"
+                              class="flex items-center -space-x-2"
                             >
                               <div
-                                class="w-full h-full"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                data-testid="Avatar"
                               >
-                                <img
-                                  alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                                  title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                                />
+                                <div
+                                  class="w-full h-full"
+                                >
+                                  <img
+                                    alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                                    title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                  />
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -4166,35 +4169,34 @@ exports[`SendEntityResignation should succesfully sign and submit resignation tr
                                 <div
                                   class="flex items-center"
                                 >
-                                  <div
-                                    class="inline-block truncate align-middle"
+                                  <a
+                                    class="sc-fzplWN bETMmw inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                                    data-testid="Link"
+                                    rel="noopener noreferrer"
+                                    to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                                   >
                                     <span
-                                      class="sc-fzpans kkFAbe text-theme-primary font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                      class="sc-fzpans kkFAbe text-theme-primary-dark"
+                                      data-testid="TruncateMiddle"
                                     >
-                                      8f913b6b719e77…2f1b89abb49877
+                                      8f913b6b719e7…f1b89abb49877
                                     </span>
-                                  </div>
+                                  </a>
                                   <span
-                                    class="flex ml-5"
+                                    class="inline-block ml-5 text-theme-primary-300"
                                   >
                                     <div
                                       class="inline-block cursor-pointer"
                                       data-testid="clipboard__wrapper"
                                     >
                                       <div
-                                        class="text-theme-primary-300"
+                                        class="sc-AxiKw dzBdqj"
+                                        height="1em"
+                                        width="1em"
                                       >
-                                        <div
-                                          class="sc-AxiKw dzBdqj"
-                                          height="1em"
-                                          width="1em"
-                                        >
-                                          <svg>
-                                            copy.svg
-                                          </svg>
-                                        </div>
+                                        <svg>
+                                          copy.svg
+                                        </svg>
                                       </div>
                                     </div>
                                   </span>
@@ -4245,27 +4247,27 @@ exports[`SendEntityResignation should succesfully sign and submit resignation tr
                               class="flex-1 space-y-2"
                             >
                               <div
-                                class="font-semibold"
+                                class="text-sm font-semibold text-theme-neutral"
                               >
+                                <span
+                                  class="mr-1"
+                                >
+                                  Sender
+                                </span>
                                 <div
-                                  class="mb-2 text-sm font-semibold text-theme-neutral"
+                                  class="sc-fzoLsD jBzTcb"
+                                  color="warning"
                                 >
                                   <span
-                                    class="mr-1"
+                                    class="text-sm"
                                   >
-                                    Sender
+                                    Your address
                                   </span>
-                                  <div
-                                    class="sc-fzoLsD jBzTcb"
-                                    color="warning"
-                                  >
-                                    <span
-                                      class="text-sm"
-                                    >
-                                      Your address
-                                    </span>
-                                  </div>
                                 </div>
+                              </div>
+                              <div
+                                class="font-semibold"
+                              >
                                 <div
                                   class="inline-block truncate align-middle"
                                 >
@@ -4279,23 +4281,27 @@ exports[`SendEntityResignation should succesfully sign and submit resignation tr
                                     class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
-                                    D6Z26L…tHY4ax
+                                    D5sRKW…cvJtwb
                                   </span>
                                 </div>
                               </div>
                             </div>
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                              data-testid="Avatar"
+                              class="flex items-center -space-x-2"
                             >
                               <div
-                                class="w-full h-full"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                data-testid="Avatar"
                               >
-                                <img
-                                  alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                                  title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                                />
+                                <div
+                                  class="w-full h-full"
+                                >
+                                  <img
+                                    alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                                    title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                  />
+                                </div>
                               </div>
                             </div>
                           </div>

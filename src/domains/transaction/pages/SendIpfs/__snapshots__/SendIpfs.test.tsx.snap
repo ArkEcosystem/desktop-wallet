@@ -769,35 +769,34 @@ exports[`SendIpfs should navigate between steps 1`] = `
                             <div
                               class="flex items-center"
                             >
-                              <div
-                                class="inline-block truncate align-middle"
+                              <a
+                                class="sc-fzplWN bETMmw inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                                data-testid="Link"
+                                rel="noopener noreferrer"
+                                to="https://dexplorer.ark.io/transaction/1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e"
                               >
                                 <span
-                                  class="sc-fzpans kkFAbe text-theme-primary font-semibold text-base"
-                                  data-testid="address__wallet-address"
+                                  class="sc-fzpans kkFAbe text-theme-primary-dark"
+                                  data-testid="TruncateMiddle"
                                 >
-                                  1e9b975eff66a7…6db3d69131067e
+                                  1e9b975eff66a…db3d69131067e
                                 </span>
-                              </div>
+                              </a>
                               <span
-                                class="flex ml-5"
+                                class="inline-block ml-5 text-theme-primary-300"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
                                   data-testid="clipboard__wrapper"
                                 >
                                   <div
-                                    class="text-theme-primary-300"
+                                    class="sc-AxiKw dzBdqj"
+                                    height="1em"
+                                    width="1em"
                                   >
-                                    <div
-                                      class="sc-AxiKw dzBdqj"
-                                      height="1em"
-                                      width="1em"
-                                    >
-                                      <svg>
-                                        copy.svg
-                                      </svg>
-                                    </div>
+                                    <svg>
+                                      copy.svg
+                                    </svg>
                                   </div>
                                 </div>
                               </span>
@@ -848,27 +847,27 @@ exports[`SendIpfs should navigate between steps 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="font-semibold"
+                            class="text-sm font-semibold text-theme-neutral"
                           >
+                            <span
+                              class="mr-1"
+                            >
+                              Sender
+                            </span>
                             <div
-                              class="mb-2 text-sm font-semibold text-theme-neutral"
+                              class="sc-fzoLsD jBzTcb"
+                              color="warning"
                             >
                               <span
-                                class="mr-1"
+                                class="text-sm"
                               >
-                                Sender
+                                Your address
                               </span>
-                              <div
-                                class="sc-fzoLsD jBzTcb"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
                             </div>
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
                             <div
                               class="inline-block truncate align-middle"
                             >
@@ -882,23 +881,27 @@ exports[`SendIpfs should navigate between steps 1`] = `
                                 class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                D5sRKW…cvJtwb
+                                D8rr7B…s6YUYD
                               </span>
                             </div>
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                          data-testid="Avatar"
+                          class="flex items-center -space-x-2"
                         >
                           <div
-                            class="w-full h-full"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                            data-testid="Avatar"
                           >
-                            <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
