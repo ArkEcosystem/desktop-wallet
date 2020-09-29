@@ -1,10 +1,5 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { TransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
-import { Address } from "app/components/Address";
-import { TableCell, TableRow } from "app/components/Table";
-import { BaseTransactionRowAmount } from "domains/transaction/components/TransactionTable/TransactionRow/TransactionRowAmount";
-import { TransactionRowMode } from "domains/transaction/components/TransactionTable/TransactionRow/TransactionRowMode";
+import { TransactionCompactRow } from "domains/transaction/components/TransactionTable/TransactionRow/TransactionCompactRow";
 import React, { useEffect, useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
@@ -17,21 +12,22 @@ export const NotificationTransactionItem = ({
 	containmentRef,
 	onTransactionClick,
 }: NotificationTransactionItemProps) => {
-	const [transaction, setTransaction] = useState<TransactionData>();
-	const [wallet, setWallet] = useState<ReadWriteWallet>();
+	const [transaction, setTransaction] = useState<ExtendedTransactionData>();
+	const [walletName, setWalletName] = useState<string>();
 
 	useEffect(() => {
 		const fetchTransaction = async () => {
 			try {
 				/* @ts-ignore */
-				const wallet = profile.wallets().findByAddress(notification.meta?.address);
-				if (!wallet) return;
+				// TODO: Fetch transactions by their ids
+				const receivedTxs = await profile.transactionAggregate().receivedTransactions({ cursor: 1, limit: 15 });
 
-				/* @ts-ignore */
-				const tx = await wallet?.client().transaction(notification?.meta?.txId);
-
-				setWallet(wallet);
+				const tx = receivedTxs.findById(notification.meta?.txId);
 				setTransaction(tx);
+
+				// TODO: Check wallet alias in contacts instead of profile
+				const senderWallet = profile.wallets().findByAddress(tx!.sender());
+				setWalletName(senderWallet?.alias());
 			} catch (e) {
 				// TODO: handle
 				console.error(e);
@@ -43,29 +39,18 @@ export const NotificationTransactionItem = ({
 	if (!transaction) return <NotificationTransactionItemSkeleton />;
 
 	return (
-		<TableRow onClick={() => onTransactionClick?.(transaction as ExtendedTransactionData)}>
-			<TableCell variant="start" className="w-24">
-				<TransactionRowMode transaction={transaction} iconSize="sm" />
-			</TableCell>
-
-			<TableCell>
-				<Address walletName={wallet?.alias()} address={transaction.recipient()} maxChars={10} />
-			</TableCell>
-
-			<TableCell variant="end" innerClassName="justify-end">
-				<VisibilitySensor
-					onChange={(isVisible) => onVisibilityChange?.(isVisible)}
-					scrollCheck
-					delayedCall
-					containment={containmentRef?.current}
-				>
-					<BaseTransactionRowAmount
-						isSent={transaction.isSent()}
-						wallet={wallet}
-						total={transaction.amount()}
-					/>
-				</VisibilitySensor>
-			</TableCell>
-		</TableRow>
+		<VisibilitySensor
+			onChange={(isVisible) => onVisibilityChange?.(isVisible)}
+			scrollCheck
+			delayedCall
+			containment={containmentRef?.current}
+		>
+			<TransactionCompactRow
+				walletName={walletName}
+				transaction={transaction}
+				iconSize="sm"
+				onClick={() => onTransactionClick?.(transaction)}
+			/>
+		</VisibilitySensor>
 	);
 };
