@@ -28,7 +28,7 @@ import { useEnvSynchronizer } from "./hooks/use-synchronizer";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
 
-const __DEV__ = process.env.NODE_ENV !== "production";
+const __DEV__ = process.env.NODE_ENV !== "production" || process.env.REACT_APP_BUILD_MODE === "demo";
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
@@ -51,15 +51,12 @@ const Main = () => {
 	useLayoutEffect(() => {
 		const boot = async () => {
 			/* istanbul ignore next */
-			const shouldUseFixture: boolean =
-				process.env.REACT_APP_BUILD_MODE === "demo" ||
-				// TestCafe doesn't expose environment variables.
-				(process.env.NODE_ENV === "production" && process.env.PUBLIC_URL === ".");
-
-			await env.verify(shouldUseFixture ? fixtureData : undefined);
+			await env.verify(__DEV__ ? fixtureData : undefined);
 			await env.boot();
 			await runAll();
-			await persist();
+			if (!__DEV__) {
+				await persist();
+			}
 
 			setShowSplash(false);
 		};
