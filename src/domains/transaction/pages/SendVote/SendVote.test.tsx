@@ -60,6 +60,8 @@ describe("SendVote", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
+		jest.spyOn(wallet, "isDelegate").mockImplementation(() => true);
+
 		await syncDelegates();
 		await syncFees();
 
@@ -188,6 +190,12 @@ describe("SendVote", () => {
 			transactionVoteMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+
+			// Go back to wallet
+			const historySpy = jest.spyOn(history, "push");
+			fireEvent.click(getByTestId("SendVote__button--back-to-wallet"));
+			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+			historySpy.mockRestore();
 		});
 	});
 

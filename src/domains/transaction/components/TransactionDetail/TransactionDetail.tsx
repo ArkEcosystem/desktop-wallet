@@ -1,8 +1,11 @@
+import { Label } from "app/components/Label";
 import React from "react";
 
-type TransactionDetailProps = {
-	children: React.ReactNode;
+export type TransactionDetailProps = {
+	children?: React.ReactNode;
 	label?: any;
+	labelExtra?: string;
+	labelExtraColor?: "primary" | "success" | "danger" | "warning";
 	extra?: React.ReactNode;
 	border?: boolean;
 	borderPosition: "top" | "bottom";
@@ -17,6 +20,8 @@ export const TransactionDetail = ({
 	className,
 	extra,
 	label,
+	labelExtra,
+	labelExtraColor,
 	padding,
 }: TransactionDetailProps) => (
 	<div
@@ -26,7 +31,20 @@ export const TransactionDetail = ({
 		} ${className}`}
 	>
 		<div className="flex-1 space-y-2">
-			{label && <div className="text-sm font-semibold text-theme-neutral">{label}</div>}
+			{label && (
+				<div className="text-sm font-semibold text-theme-neutral">
+					{labelExtra ? (
+						<>
+							<span className="mr-1">{label}</span>
+							<Label color={labelExtraColor || "warning"}>
+								<span className="text-sm">{labelExtra}</span>
+							</Label>
+						</>
+					) : (
+						label
+					)}
+				</div>
+			)}
 
 			<div className="font-semibold">{children}</div>
 		</div>

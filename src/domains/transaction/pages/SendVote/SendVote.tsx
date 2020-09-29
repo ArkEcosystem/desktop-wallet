@@ -13,6 +13,7 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
@@ -21,9 +22,12 @@ import { FourthStep } from "./Step4";
 export const SendVote = () => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
+	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+
 	const networks = useMemo(() => env.availableNetworks(), [env]);
+
 	const queryParams = useQueryParams();
 	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
 	const voteAddresses = queryParams.get("votes")?.split(",");
@@ -217,12 +221,12 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 
-							<div className="flex justify-end mt-8 space-x-3">
+							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < 4 && (
 									<>
 										<Button
 											disabled={
-												activeTab === 1 || activeTab === 3 ? formState.isSubmitting : false
+												activeTab === 1 || (activeTab === 3 ? formState.isSubmitting : false)
 											}
 											variant="plain"
 											onClick={handleBack}
@@ -244,10 +248,12 @@ export const SendVote = () => {
 										{activeTab === 3 && (
 											<Button
 												type="submit"
-												disabled={!formState.isValid || formState.isSubmitting}
 												data-testid="SendVote__button--submit"
+												disabled={!formState.isValid || formState.isSubmitting}
+												className="space-x-2"
 											>
-												{t("COMMON.SEND")}
+												<Icon name="Send" width={20} height={20} />
+												<span>{t("COMMON.SEND")}</span>
 											</Button>
 										)}
 									</>
@@ -255,7 +261,15 @@ export const SendVote = () => {
 
 								{activeTab === 4 && (
 									<>
-										<Button variant="plain" data-testid="SendVote__button--back-to-wallet">
+										<Button
+											data-testid="SendVote__button--back-to-wallet"
+											variant="plain"
+											onClick={() =>
+												history.push(
+													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+												)
+											}
+										>
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 										<Button
