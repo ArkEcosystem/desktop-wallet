@@ -59,6 +59,7 @@ export const SummaryStep = ({
 						</Circle>
 					</div>
 				}
+				className="pb-0"
 			>
 				<Amount ticker={currency} value={transactionAmount.plus(transaction.fee())} />
 			</TransactionDetail>
