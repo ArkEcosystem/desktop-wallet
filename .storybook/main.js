@@ -1,10 +1,13 @@
-const path = require("path");
-const { override, addWebpackAlias, addWebpackModuleRule } = require("customize-cra");
+const { override, addWebpackModuleRule } = require("customize-cra");
 const { injectTailwindCSS } = require("../config-overrides");
 
 const injectNode = () =>
-	addWebpackAlias({
-		fs: path.resolve(__dirname, "mocks/fsMock.js"),
+	override((config) => {
+		config.node = {
+			fs: "empty",
+			dns: "mock",
+		};
+		return config;
 	});
 
 module.exports = {
