@@ -325,201 +325,179 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 hRKUkv"
+        class="container mx-auto pt-10 px-14"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="grid grid-flow-col grid-cols-2 gap-6 mb-10"
         >
           <div
-            class="grid grid-flow-col grid-cols-2 gap-6 -my-5"
+            class="flex flex-col space-y-2 group"
           >
             <div
-              class="flex items-center py-6 true "
-              data-testid="TransactionDetail"
+              class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral"
             >
-              <div
-                class="flex-1 space-y-2"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Network
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  <div>
-                    <div
-                      aria-expanded="false"
-                      aria-haspopup="listbox"
-                      aria-owns="Votes__network-menu"
-                      data-testid="SelectNetwork"
-                      role="combobox"
-                    >
-                      <label
-                        for="Votes__network-input"
-                        id="Votes__network-label"
-                      />
-                      <div
-                        class="sc-AxmLO kuiknc"
-                        data-testid="SelectNetworkInput"
-                      >
-                        <div
-                          class="sc-AxgMl sc-AxheI hUEXQW px-4"
-                        >
-                          <div
-                            aria-label="ARK Devnet"
-                            class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
-                            data-testid="SelectNetworkInput__network"
-                          >
-                            <div
-                              class="sc-AxhCb VoPpj"
-                              data-testid="NetworkIcon__icon"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                ark.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <span
-                          class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
-                          data-testid="SelectNetworkInput__typeahead"
-                        >
-                          ARK Devnet
-                        </span>
-                        <input
-                          aria-autocomplete="list"
-                          aria-controls="Votes__network-menu"
-                          aria-labelledby="Votes__network-label"
-                          autocomplete="off"
-                          class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                          data-testid="SelectNetworkInput__input"
-                          disabled=""
-                          id="Votes__network-input"
-                          placeholder="Select Network"
-                          value="ARK Devnet"
-                        />
-                      </div>
-                    </div>
-                    <ul
-                      aria-labelledby="Votes__network-label"
-                      class="hidden"
-                      id="Votes__network-menu"
-                      role="listbox"
-                    />
-                  </div>
-                </div>
-              </div>
+              Network
             </div>
-            <div
-              class="flex items-center py-6 true mt-2"
-              data-testid="TransactionDetail"
-            >
+            <div>
               <div
-                class="flex-1 space-y-2"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-owns="Votes__network-menu"
+                data-testid="SelectNetwork"
+                role="combobox"
               >
+                <label
+                  for="Votes__network-input"
+                  id="Votes__network-label"
+                />
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Address
-                </div>
-                <div
-                  class="font-semibold"
+                  class="sc-AxmLO kuiknc"
+                  data-testid="SelectNetworkInput"
                 >
                   <div
-                    class="relative flex items-center pb-24"
+                    class="sc-AxgMl sc-AxheI hUEXQW px-4"
                   >
-                    <input
-                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="Input"
-                      disabled=""
-                      type="text"
-                    />
                     <div
-                      class="absolute flex items-center justify-between w-full ml-3"
+                      aria-label="ARK Devnet"
+                      class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
+                      data-testid="SelectNetworkInput__network"
                     >
                       <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
-                          </div>
-                        </div>
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            ARK Wallet 1
-                          </span>
-                          <span
-                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D8rr7B…s6YUYD
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhCb VoPpj mr-6"
+                        class="sc-AxhCb VoPpj"
+                        data-testid="NetworkIcon__icon"
                         height="20"
                         width="20"
                       >
                         <svg>
-                          user.svg
+                          ark.svg
                         </svg>
                       </div>
                     </div>
                   </div>
+                  <span
+                    class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                    data-testid="SelectNetworkInput__typeahead"
+                  >
+                    ARK Devnet
+                  </span>
+                  <input
+                    aria-autocomplete="list"
+                    aria-controls="Votes__network-menu"
+                    aria-labelledby="Votes__network-label"
+                    autocomplete="off"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                    data-testid="SelectNetworkInput__input"
+                    disabled=""
+                    id="Votes__network-input"
+                    placeholder="Select Network"
+                    value="ARK Devnet"
+                  />
+                </div>
+              </div>
+              <ul
+                aria-labelledby="Votes__network-label"
+                class="hidden"
+                id="Votes__network-menu"
+                role="listbox"
+              />
+            </div>
+          </div>
+          <div
+            class="flex flex-col space-y-2"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              Address
+            </div>
+            <div
+              class="relative flex items-center"
+            >
+              <input
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                data-testid="Input"
+                disabled=""
+                type="text"
+              />
+              <div
+                class="absolute flex items-center justify-between w-full ml-3"
+              >
+                <div
+                  class="flex items-center"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                      data-testid="address__wallet-name"
+                    >
+                      ARK Wallet 1
+                    </span>
+                    <span
+                      class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B…s6YUYD
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxhCb VoPpj mr-6"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    user.svg
+                  </svg>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="sc-AxiKw cFARgj border-theme-neutral-300"
-            type="horizontal"
-          />
-          <ul
-            class="flex h-20 mr-auto -mt-5 -mb-5"
-            data-testid="Tabs"
-          >
-            <li
-              class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
-              data-testid="Tab__item--delegate"
-            >
-              Select a Delegate
-            </li>
-            <li
-              class="flex items-center mr-4"
-            >
-              <div
-                class="sc-AxiKw hpWYLk border-theme-neutral-300"
-                type="vertical"
-              />
-            </li>
-            <li
-              class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
-              data-testid="Tab__item--vote"
-            >
-              My Vote
-            </li>
-          </ul>
         </div>
+        <div
+          class="sc-AxiKw cFARgj border-theme-neutral-300"
+          type="horizontal"
+        />
+        <ul
+          class="flex h-20 mr-auto -mt-5 -mb-5"
+          data-testid="Tabs"
+        >
+          <li
+            class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
+            data-testid="Tab__item--delegate"
+          >
+            Select a Delegate
+          </li>
+          <li
+            class="flex items-center mr-4"
+          >
+            <div
+              class="sc-AxiKw hpWYLk border-theme-neutral-300"
+              type="vertical"
+            />
+          </li>
+          <li
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            data-testid="Tab__item--vote"
+          >
+            My Vote
+          </li>
+        </ul>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
@@ -1766,201 +1744,179 @@ exports[`Votes should render 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 hRKUkv"
+        class="container mx-auto pt-10 px-14"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="grid grid-flow-col grid-cols-2 gap-6 mb-10"
         >
           <div
-            class="grid grid-flow-col grid-cols-2 gap-6 -my-5"
+            class="flex flex-col space-y-2 group"
           >
             <div
-              class="flex items-center py-6 true "
-              data-testid="TransactionDetail"
+              class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral"
             >
-              <div
-                class="flex-1 space-y-2"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Network
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  <div>
-                    <div
-                      aria-expanded="false"
-                      aria-haspopup="listbox"
-                      aria-owns="Votes__network-menu"
-                      data-testid="SelectNetwork"
-                      role="combobox"
-                    >
-                      <label
-                        for="Votes__network-input"
-                        id="Votes__network-label"
-                      />
-                      <div
-                        class="sc-AxmLO kuiknc"
-                        data-testid="SelectNetworkInput"
-                      >
-                        <div
-                          class="sc-AxgMl sc-AxheI hUEXQW px-4"
-                        >
-                          <div
-                            aria-label="ARK Devnet"
-                            class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
-                            data-testid="SelectNetworkInput__network"
-                          >
-                            <div
-                              class="sc-AxhCb VoPpj"
-                              data-testid="NetworkIcon__icon"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                ark.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <span
-                          class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
-                          data-testid="SelectNetworkInput__typeahead"
-                        >
-                          ARK Devnet
-                        </span>
-                        <input
-                          aria-autocomplete="list"
-                          aria-controls="Votes__network-menu"
-                          aria-labelledby="Votes__network-label"
-                          autocomplete="off"
-                          class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                          data-testid="SelectNetworkInput__input"
-                          disabled=""
-                          id="Votes__network-input"
-                          placeholder="Select Network"
-                          value="ARK Devnet"
-                        />
-                      </div>
-                    </div>
-                    <ul
-                      aria-labelledby="Votes__network-label"
-                      class="hidden"
-                      id="Votes__network-menu"
-                      role="listbox"
-                    />
-                  </div>
-                </div>
-              </div>
+              Network
             </div>
-            <div
-              class="flex items-center py-6 true mt-2"
-              data-testid="TransactionDetail"
-            >
+            <div>
               <div
-                class="flex-1 space-y-2"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-owns="Votes__network-menu"
+                data-testid="SelectNetwork"
+                role="combobox"
               >
+                <label
+                  for="Votes__network-input"
+                  id="Votes__network-label"
+                />
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Address
-                </div>
-                <div
-                  class="font-semibold"
+                  class="sc-AxmLO kuiknc"
+                  data-testid="SelectNetworkInput"
                 >
                   <div
-                    class="relative flex items-center pb-24"
+                    class="sc-AxgMl sc-AxheI hUEXQW px-4"
                   >
-                    <input
-                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="Input"
-                      disabled=""
-                      type="text"
-                    />
                     <div
-                      class="absolute flex items-center justify-between w-full ml-3"
+                      aria-label="ARK Devnet"
+                      class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
+                      data-testid="SelectNetworkInput__network"
                     >
                       <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
-                          </div>
-                        </div>
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            ARK Wallet 1
-                          </span>
-                          <span
-                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D8rr7B…s6YUYD
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhCb VoPpj mr-6"
+                        class="sc-AxhCb VoPpj"
+                        data-testid="NetworkIcon__icon"
                         height="20"
                         width="20"
                       >
                         <svg>
-                          user.svg
+                          ark.svg
                         </svg>
                       </div>
                     </div>
                   </div>
+                  <span
+                    class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                    data-testid="SelectNetworkInput__typeahead"
+                  >
+                    ARK Devnet
+                  </span>
+                  <input
+                    aria-autocomplete="list"
+                    aria-controls="Votes__network-menu"
+                    aria-labelledby="Votes__network-label"
+                    autocomplete="off"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                    data-testid="SelectNetworkInput__input"
+                    disabled=""
+                    id="Votes__network-input"
+                    placeholder="Select Network"
+                    value="ARK Devnet"
+                  />
+                </div>
+              </div>
+              <ul
+                aria-labelledby="Votes__network-label"
+                class="hidden"
+                id="Votes__network-menu"
+                role="listbox"
+              />
+            </div>
+          </div>
+          <div
+            class="flex flex-col space-y-2"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              Address
+            </div>
+            <div
+              class="relative flex items-center"
+            >
+              <input
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                data-testid="Input"
+                disabled=""
+                type="text"
+              />
+              <div
+                class="absolute flex items-center justify-between w-full ml-3"
+              >
+                <div
+                  class="flex items-center"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                      data-testid="address__wallet-name"
+                    >
+                      ARK Wallet 1
+                    </span>
+                    <span
+                      class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B…s6YUYD
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxhCb VoPpj mr-6"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    user.svg
+                  </svg>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="sc-AxiKw cFARgj border-theme-neutral-300"
-            type="horizontal"
-          />
-          <ul
-            class="flex h-20 mr-auto -mt-5 -mb-5"
-            data-testid="Tabs"
-          >
-            <li
-              class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
-              data-testid="Tab__item--delegate"
-            >
-              Select a Delegate
-            </li>
-            <li
-              class="flex items-center mr-4"
-            >
-              <div
-                class="sc-AxiKw hpWYLk border-theme-neutral-300"
-                type="vertical"
-              />
-            </li>
-            <li
-              class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
-              data-testid="Tab__item--vote"
-            >
-              My Vote
-            </li>
-          </ul>
         </div>
+        <div
+          class="sc-AxiKw cFARgj border-theme-neutral-300"
+          type="horizontal"
+        />
+        <ul
+          class="flex h-20 mr-auto -mt-5 -mb-5"
+          data-testid="Tabs"
+        >
+          <li
+            class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
+            data-testid="Tab__item--delegate"
+          >
+            Select a Delegate
+          </li>
+          <li
+            class="flex items-center mr-4"
+          >
+            <div
+              class="sc-AxiKw hpWYLk border-theme-neutral-300"
+              type="vertical"
+            />
+          </li>
+          <li
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            data-testid="Tab__item--vote"
+          >
+            My Vote
+          </li>
+        </ul>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
@@ -3207,201 +3163,179 @@ exports[`Votes should select a delegate 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 hRKUkv"
+        class="container mx-auto pt-10 px-14"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="grid grid-flow-col grid-cols-2 gap-6 mb-10"
         >
           <div
-            class="grid grid-flow-col grid-cols-2 gap-6 -my-5"
+            class="flex flex-col space-y-2 group"
           >
             <div
-              class="flex items-center py-6 true "
-              data-testid="TransactionDetail"
+              class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral"
             >
-              <div
-                class="flex-1 space-y-2"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Network
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  <div>
-                    <div
-                      aria-expanded="false"
-                      aria-haspopup="listbox"
-                      aria-owns="Votes__network-menu"
-                      data-testid="SelectNetwork"
-                      role="combobox"
-                    >
-                      <label
-                        for="Votes__network-input"
-                        id="Votes__network-label"
-                      />
-                      <div
-                        class="sc-AxmLO kuiknc"
-                        data-testid="SelectNetworkInput"
-                      >
-                        <div
-                          class="sc-AxgMl sc-AxheI hUEXQW px-4"
-                        >
-                          <div
-                            aria-label="ARK Devnet"
-                            class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
-                            data-testid="SelectNetworkInput__network"
-                          >
-                            <div
-                              class="sc-AxhCb VoPpj"
-                              data-testid="NetworkIcon__icon"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                ark.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <span
-                          class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
-                          data-testid="SelectNetworkInput__typeahead"
-                        >
-                          ARK Devnet
-                        </span>
-                        <input
-                          aria-autocomplete="list"
-                          aria-controls="Votes__network-menu"
-                          aria-labelledby="Votes__network-label"
-                          autocomplete="off"
-                          class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                          data-testid="SelectNetworkInput__input"
-                          disabled=""
-                          id="Votes__network-input"
-                          placeholder="Select Network"
-                          value="ARK Devnet"
-                        />
-                      </div>
-                    </div>
-                    <ul
-                      aria-labelledby="Votes__network-label"
-                      class="hidden"
-                      id="Votes__network-menu"
-                      role="listbox"
-                    />
-                  </div>
-                </div>
-              </div>
+              Network
             </div>
-            <div
-              class="flex items-center py-6 true mt-2"
-              data-testid="TransactionDetail"
-            >
+            <div>
               <div
-                class="flex-1 space-y-2"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-owns="Votes__network-menu"
+                data-testid="SelectNetwork"
+                role="combobox"
               >
+                <label
+                  for="Votes__network-input"
+                  id="Votes__network-label"
+                />
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Address
-                </div>
-                <div
-                  class="font-semibold"
+                  class="sc-AxmLO kuiknc"
+                  data-testid="SelectNetworkInput"
                 >
                   <div
-                    class="relative flex items-center pb-24"
+                    class="sc-AxgMl sc-AxheI hUEXQW px-4"
                   >
-                    <input
-                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="Input"
-                      disabled=""
-                      type="text"
-                    />
                     <div
-                      class="absolute flex items-center justify-between w-full ml-3"
+                      aria-label="ARK Devnet"
+                      class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
+                      data-testid="SelectNetworkInput__network"
                     >
                       <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
-                          </div>
-                        </div>
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            ARK Wallet 1
-                          </span>
-                          <span
-                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D8rr7B…s6YUYD
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhCb VoPpj mr-6"
+                        class="sc-AxhCb VoPpj"
+                        data-testid="NetworkIcon__icon"
                         height="20"
                         width="20"
                       >
                         <svg>
-                          user.svg
+                          ark.svg
                         </svg>
                       </div>
                     </div>
                   </div>
+                  <span
+                    class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                    data-testid="SelectNetworkInput__typeahead"
+                  >
+                    ARK Devnet
+                  </span>
+                  <input
+                    aria-autocomplete="list"
+                    aria-controls="Votes__network-menu"
+                    aria-labelledby="Votes__network-label"
+                    autocomplete="off"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                    data-testid="SelectNetworkInput__input"
+                    disabled=""
+                    id="Votes__network-input"
+                    placeholder="Select Network"
+                    value="ARK Devnet"
+                  />
+                </div>
+              </div>
+              <ul
+                aria-labelledby="Votes__network-label"
+                class="hidden"
+                id="Votes__network-menu"
+                role="listbox"
+              />
+            </div>
+          </div>
+          <div
+            class="flex flex-col space-y-2"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              Address
+            </div>
+            <div
+              class="relative flex items-center"
+            >
+              <input
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                data-testid="Input"
+                disabled=""
+                type="text"
+              />
+              <div
+                class="absolute flex items-center justify-between w-full ml-3"
+              >
+                <div
+                  class="flex items-center"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                      data-testid="address__wallet-name"
+                    >
+                      ARK Wallet 1
+                    </span>
+                    <span
+                      class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B…s6YUYD
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxhCb VoPpj mr-6"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    user.svg
+                  </svg>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="sc-AxiKw cFARgj border-theme-neutral-300"
-            type="horizontal"
-          />
-          <ul
-            class="flex h-20 mr-auto -mt-5 -mb-5"
-            data-testid="Tabs"
-          >
-            <li
-              class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
-              data-testid="Tab__item--delegate"
-            >
-              Select a Delegate
-            </li>
-            <li
-              class="flex items-center mr-4"
-            >
-              <div
-                class="sc-AxiKw hpWYLk border-theme-neutral-300"
-                type="vertical"
-              />
-            </li>
-            <li
-              class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
-              data-testid="Tab__item--vote"
-            >
-              My Vote
-            </li>
-          </ul>
         </div>
+        <div
+          class="sc-AxiKw cFARgj border-theme-neutral-300"
+          type="horizontal"
+        />
+        <ul
+          class="flex h-20 mr-auto -mt-5 -mb-5"
+          data-testid="Tabs"
+        >
+          <li
+            class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
+            data-testid="Tab__item--delegate"
+          >
+            Select a Delegate
+          </li>
+          <li
+            class="flex items-center mr-4"
+          >
+            <div
+              class="sc-AxiKw hpWYLk border-theme-neutral-300"
+              type="vertical"
+            />
+          </li>
+          <li
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            data-testid="Tab__item--vote"
+          >
+            My Vote
+          </li>
+        </ul>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
@@ -4781,194 +4715,172 @@ exports[`Votes should select an address without vote 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 hRKUkv"
+        class="container mx-auto pt-10 px-14"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="grid grid-flow-col grid-cols-2 gap-6 mb-10"
         >
           <div
-            class="grid grid-flow-col grid-cols-2 gap-6 -my-5"
+            class="flex flex-col space-y-2 group"
           >
             <div
-              class="flex items-center py-6 true "
-              data-testid="TransactionDetail"
+              class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral"
             >
-              <div
-                class="flex-1 space-y-2"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Network
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  <div>
-                    <div
-                      aria-expanded="false"
-                      aria-haspopup="listbox"
-                      aria-owns="Votes__network-menu"
-                      data-testid="SelectNetwork"
-                      role="combobox"
-                    >
-                      <label
-                        for="Votes__network-input"
-                        id="Votes__network-label"
-                      />
-                      <div
-                        class="sc-AxmLO kuiknc"
-                        data-testid="SelectNetworkInput"
-                      >
-                        <div
-                          class="sc-AxgMl sc-AxheI hUEXQW px-4"
-                        >
-                          <div
-                            aria-label="ARK Devnet"
-                            class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
-                            data-testid="SelectNetworkInput__network"
-                          >
-                            <div
-                              class="sc-AxhCb VoPpj"
-                              data-testid="NetworkIcon__icon"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                ark.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <span
-                          class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
-                          data-testid="SelectNetworkInput__typeahead"
-                        >
-                          ARK Devnet
-                        </span>
-                        <input
-                          aria-autocomplete="list"
-                          aria-controls="Votes__network-menu"
-                          aria-labelledby="Votes__network-label"
-                          autocomplete="off"
-                          class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                          data-testid="SelectNetworkInput__input"
-                          id="Votes__network-input"
-                          placeholder="Select Network"
-                          value="ARK Devnet"
-                        />
-                      </div>
-                    </div>
-                    <ul
-                      aria-labelledby="Votes__network-label"
-                      class="hidden"
-                      id="Votes__network-menu"
-                      role="listbox"
-                    />
-                  </div>
-                </div>
-              </div>
+              Network
             </div>
-            <div
-              class="flex items-center py-6 true mt-2"
-              data-testid="TransactionDetail"
-            >
+            <div>
               <div
-                class="flex-1 space-y-2"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-owns="Votes__network-menu"
+                data-testid="SelectNetwork"
+                role="combobox"
               >
+                <label
+                  for="Votes__network-input"
+                  id="Votes__network-label"
+                />
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Address
-                </div>
-                <div
-                  class="font-semibold"
+                  class="sc-AxmLO kuiknc"
+                  data-testid="SelectNetworkInput"
                 >
                   <div
-                    class="relative flex items-center pb-24"
+                    class="sc-AxgMl sc-AxheI hUEXQW px-4"
                   >
-                    <input
-                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="Input"
-                      disabled=""
-                      type="text"
-                    />
                     <div
-                      class="absolute flex items-center justify-between w-full ml-3"
+                      aria-label="ARK Devnet"
+                      class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
+                      data-testid="SelectNetworkInput__network"
                     >
                       <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                              title="DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
-                            />
-                          </div>
-                        </div>
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            DTLomV…JnG23z
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhCb VoPpj mr-6"
+                        class="sc-AxhCb VoPpj"
+                        data-testid="NetworkIcon__icon"
                         height="20"
                         width="20"
                       >
                         <svg>
-                          user.svg
+                          ark.svg
                         </svg>
                       </div>
                     </div>
                   </div>
+                  <span
+                    class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                    data-testid="SelectNetworkInput__typeahead"
+                  >
+                    ARK Devnet
+                  </span>
+                  <input
+                    aria-autocomplete="list"
+                    aria-controls="Votes__network-menu"
+                    aria-labelledby="Votes__network-label"
+                    autocomplete="off"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                    data-testid="SelectNetworkInput__input"
+                    id="Votes__network-input"
+                    placeholder="Select Network"
+                    value="ARK Devnet"
+                  />
+                </div>
+              </div>
+              <ul
+                aria-labelledby="Votes__network-label"
+                class="hidden"
+                id="Votes__network-menu"
+                role="listbox"
+              />
+            </div>
+          </div>
+          <div
+            class="flex flex-col space-y-2"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              Address
+            </div>
+            <div
+              class="relative flex items-center"
+            >
+              <input
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                data-testid="Input"
+                disabled=""
+                type="text"
+              />
+              <div
+                class="absolute flex items-center justify-between w-full ml-3"
+              >
+                <div
+                  class="flex items-center"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                        title="DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DTLomV…JnG23z
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxhCb VoPpj mr-6"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    user.svg
+                  </svg>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="sc-AxiKw cFARgj border-theme-neutral-300"
-            type="horizontal"
-          />
-          <ul
-            class="flex h-20 mr-auto -mt-5 -mb-5"
-            data-testid="Tabs"
-          >
-            <li
-              class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
-              data-testid="Tab__item--delegate"
-            >
-              Select a Delegate
-            </li>
-            <li
-              class="flex items-center mr-4"
-            >
-              <div
-                class="sc-AxiKw hpWYLk border-theme-neutral-300"
-                type="vertical"
-              />
-            </li>
-            <li
-              class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
-              data-testid="Tab__item--vote"
-            >
-              My Vote
-            </li>
-          </ul>
         </div>
+        <div
+          class="sc-AxiKw cFARgj border-theme-neutral-300"
+          type="horizontal"
+        />
+        <ul
+          class="flex h-20 mr-auto -mt-5 -mb-5"
+          data-testid="Tabs"
+        >
+          <li
+            class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
+            data-testid="Tab__item--delegate"
+          >
+            Select a Delegate
+          </li>
+          <li
+            class="flex items-center mr-4"
+          >
+            <div
+              class="sc-AxiKw hpWYLk border-theme-neutral-300"
+              type="vertical"
+            />
+          </li>
+          <li
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            data-testid="Tab__item--vote"
+          >
+            My Vote
+          </li>
+        </ul>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"

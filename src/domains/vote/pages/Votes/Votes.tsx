@@ -11,7 +11,6 @@ import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
 import { MyVoteTable } from "domains/vote/components/MyVoteTable";
@@ -64,7 +63,7 @@ const InputAddress = ({ address, profile }: { address: string; profile: Profile 
 	const walletName = profile.wallets().findByAddress(address)?.alias();
 
 	return (
-		<div className="relative flex items-center pb-24">
+		<div className="relative flex items-center">
 			<Input type="text" disabled />
 			<div className="absolute flex items-center justify-between w-full ml-3">
 				<div className="flex items-center">
@@ -76,7 +75,7 @@ const InputAddress = ({ address, profile }: { address: string; profile: Profile 
 					) : (
 						<>
 							<Circle className="mr-3 bg-theme-neutral-200 border-theme-neutral-200" size="sm" noShadow />
-							<span className="text-base font-semibold text-theme-neutral-light">
+							<span className="text-theme-neutral-light">
 								{t("COMMON.SELECT_OPTION", { option: t("COMMON.ADDRESS") })}
 							</span>
 						</>
@@ -206,9 +205,12 @@ export const Votes = () => {
 				/>
 			</Section>
 
-			<Section hasBackground={false}>
-				<div className="grid grid-flow-col grid-cols-2 gap-6 -my-5">
-					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
+			<div className="container mx-auto pt-10 px-14">
+				<div className="grid grid-flow-col grid-cols-2 gap-6 mb-10">
+					<div className="flex flex-col space-y-2 group">
+						<div className="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral">
+							{t("COMMON.NETWORK")}
+						</div>
 						<SelectNetwork
 							id="Votes__network"
 							networks={networks}
@@ -217,10 +219,12 @@ export const Votes = () => {
 							onSelect={handleSelectNetwork}
 							disabled={hasWalletId}
 						/>
-					</TransactionDetail>
-					<TransactionDetail border={false} label={t("COMMON.ADDRESS")} className="mt-2">
+					</div>
+
+					<div className="flex flex-col space-y-2">
+						<div className="text-sm font-semibold text-theme-neutral">{t("COMMON.ADDRESS")}</div>
 						<InputAddress address={address} profile={activeProfile} />
-					</TransactionDetail>
+					</div>
 				</div>
 
 				{address && (
@@ -229,7 +233,7 @@ export const Votes = () => {
 						<Tabs selected={tabItem} onClick={(tabItem) => setTabItem(tabItem)} />
 					</>
 				)}
-			</Section>
+			</div>
 
 			<Section className="flex-1">
 				{network && address ? (
