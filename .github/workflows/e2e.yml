@@ -42,6 +42,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Build
               run: yarn build:ci
 
@@ -85,6 +88,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -137,6 +143,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -187,6 +196,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -239,6 +251,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -289,6 +304,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -341,6 +359,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -391,6 +412,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -443,6 +467,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -493,6 +520,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -545,6 +575,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -595,6 +628,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -647,6 +683,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -697,6 +736,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -749,6 +791,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -799,6 +844,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -851,6 +899,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -901,6 +952,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -953,6 +1007,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -1003,6 +1060,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -1055,6 +1115,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -1105,6 +1168,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -1157,6 +1223,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -1207,6 +1276,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -1259,6 +1331,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -1309,6 +1384,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -1361,6 +1439,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -1411,6 +1492,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -1463,6 +1547,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -1513,6 +1600,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -1565,6 +1655,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -1615,6 +1708,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
@@ -1667,6 +1763,9 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
+
             - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
@@ -1717,6 +1816,9 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Set env as demo mode
+              run: export REACT_APP_BUILD_MODE=demo
 
             - name: Download Build Artifact
               uses: actions/download-artifact@v2

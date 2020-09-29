@@ -30,8 +30,6 @@ import { httpClient } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production" || process.env.REACT_APP_BUILD_MODE === "demo";
 
-console.log({ env: process.env });
-
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 
@@ -53,7 +51,7 @@ const Main = () => {
 	useLayoutEffect(() => {
 		const boot = async () => {
 			/* istanbul ignore next */
-			await env.verify(__DEV__ || process.env.npm_package_scripts_test_ui_run ? fixtureData : undefined);
+			await env.verify(__DEV__ ? fixtureData : undefined);
 			await env.boot();
 			await runAll();
 			if (!__DEV__) {
