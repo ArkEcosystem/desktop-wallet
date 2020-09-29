@@ -17,7 +17,7 @@ test("should mark notifications as read and hide red dot", async (t) => {
 	await t.click(Selector("[data-testid=navbar__buttons--notifications"));
 
 	await t.expect(Selector("[data-testid=NotificationsWrapper]").exists).ok();
-	await t.expect(Selector("[data-testid=NotificationItem]").count).eql(12);
+	await t.expect(Selector("[data-testid=NotificationItem]").count).eql(2);
 	await t.hover(Selector("[data-testid=NotificationItem]:last-child"));
 
 	await t.expect(Selector("[data-testid=navbar__buttons--notifications] .rounded-full").exists).notOk();
@@ -28,7 +28,7 @@ test("should open notifications and see notifications list", async (t) => {
 	await t.click(Selector("[data-testid=navbar__buttons--notifications]"));
 
 	await t.expect(Selector("[data-testid=NotificationsWrapper]").exists).ok();
-	await t.expect(Selector("[data-testid=NotificationItem]").count).eql(12);
+	await t.expect(Selector("[data-testid=NotificationItem]").count).eql(2);
 });
 
 test("should open notifications and see transactions list", async (t) => {
@@ -36,27 +36,27 @@ test("should open notifications and see transactions list", async (t) => {
 	await t.click(Selector("[data-testid=navbar__buttons--notifications"));
 
 	await t.expect(Selector("[data-testid=NotificationsWrapper]").exists).ok();
-	await t.expect(Selector("[data-testid=NotificationItem]").count).eql(12);
+	await t.expect(Selector("[data-testid=NotificationItem]").count).eql(2);
 
 	await t.expect(Selector("[data-testid=TransactionTable]").exists).ok();
 	await t.hover(Selector("[data-testid=TransactionTable]"));
-	await t.expect(Selector("[data-testid=NotificationsWrapper] [data-testid=TableRow]").count).eql(10);
-	await t.hover(Selector("[data-testid=NotificationsWrapper] [data-testid=transactions__fetch-more-button]"));
+	await t.expect(Selector("[data-testid=NotificationsWrapper] [data-testid=TableRow]").count).eql(2);
 });
 
-test("should open notifications and load more transactions", async (t) => {
+test("should open and close transaction details modal", async (t) => {
 	await t.expect(Selector("[data-testid=navbar__buttons--notifications").exists).ok();
 	await t.click(Selector("[data-testid=navbar__buttons--notifications"));
 
 	await t.expect(Selector("[data-testid=NotificationsWrapper]").exists).ok();
-	await t.expect(Selector("[data-testid=NotificationItem]").count).eql(12);
+	await t.expect(Selector("[data-testid=NotificationItem]").count).eql(2);
 
 	await t.expect(Selector("[data-testid=TransactionTable]").exists).ok();
 	await t.hover(Selector("[data-testid=TransactionTable]"));
-	await t.expect(Selector("[data-testid=NotificationsWrapper] [data-testid=TableRow]").count).eql(10);
-	await t.hover(Selector("[data-testid=NotificationsWrapper] [data-testid=transactions__fetch-more-button]"));
-	await t.click(Selector("[data-testid=NotificationsWrapper] [data-testid=transactions__fetch-more-button]"));
+	await t.expect(Selector("[data-testid=NotificationsWrapper] [data-testid=TableRow]").count).eql(2);
 
-	await t.hover(Selector("[data-testid=NotificationsWrapper] [data-testid=transactions__fetch-more-button]"));
-	await t.expect(Selector("[data-testid=NotificationsWrapper] [data-testid=TableRow]").count).eql(20);
+	await t.click(Selector("[data-testid=NotificationsWrapper] [data-testid=TableRow]:first-child"));
+	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
+
+	await t.click(Selector("[data-testid=modal__close-btn]"));
+	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
 });
