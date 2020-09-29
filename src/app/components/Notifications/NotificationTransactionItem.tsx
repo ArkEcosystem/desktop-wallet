@@ -17,21 +17,15 @@ export const NotificationTransactionItem = ({
 
 	useEffect(() => {
 		const fetchTransaction = async () => {
-			try {
-				/* @ts-ignore */
-				// TODO: Fetch transactions by their ids
-				const receivedTxs = await profile.transactionAggregate().receivedTransactions({ cursor: 1, limit: 15 });
+			// TODO: Fetch transactions by their ids
+			const receivedTxs = await profile.transactionAggregate().receivedTransactions({ cursor: 1, limit: 15 });
+			/* @ts-ignore */
+			const tx = receivedTxs.findById(notification.meta?.txId);
 
-				const tx = receivedTxs.findById(notification.meta?.txId);
-				setTransaction(tx);
+			const senderWallet = profile.contacts().findByAddress(tx?.sender() as string);
 
-				// TODO: Check wallet alias in contacts instead of profile
-				const senderWallet = profile.wallets().findByAddress(tx!.sender());
-				setWalletName(senderWallet?.alias());
-			} catch (e) {
-				// TODO: handle
-				console.error(e);
-			}
+			setWalletName(senderWallet[0]?.name());
+			setTransaction(tx);
 		};
 		fetchTransaction();
 	}, [profile, notification]);
