@@ -1,6 +1,7 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type Props = {
 	transaction?: ExtendedTransactionData;
@@ -9,50 +10,40 @@ type Props = {
 	walletName?: string;
 };
 
-export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient, walletName }: Props) => {
-	console.log("TX >> ", transaction?.toObject());
-	console.log("TX >> ", transaction?.isBusinessEntityRegistration());
-	console.log("TX >> ", transaction?.isBusinessEntityResignation());
-	console.log("TX >> ", transaction?.isBusinessEntityUpdate());
+const RecipientLabel = ({ type }: { type: string }) => (
+	<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
+		{type}
+	</span>
+);
 
-	// TODO: i18n
+export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient, walletName }: Props) => {
+	const { t } = useTranslation();
+
 	const transactionLabel: Record<string, string> = {
-		transfer: "Transfer",
-		secondSignature: "2nd Signature Creation",
-		delegateRegistration: "Delegate Registration",
-		vote: "Vote",
-		unvote: "Vote",
-		multiSignature: "Multisignature Registration",
-		ipfs: "IPFS",
-		multiPayment: "Multipayment",
-		delegateResignation: "Delegate Resignation",
-		htlcLock: "Timelock",
-		htlcClaim: "Timelock Claim",
-		htlcRefund: "Timelock Refund",
-		entityRegistration: "Entity Registration",
-		entityResignation: "Entity Resignation",
-		entityUpdate: "Entity Update",
-		businessEntityRegistration: "Business Entity Registration",
-		businessEntityResignation: "Business Entity Resignation",
-		businessEntityUpdate: "Business Entity Update",
-		developerEntityRegistration: "Developer Entity Registration",
-		developerEntityResignation: "Developer Entity Resignation",
-		developerEntityUpdate: "Developer Entity Update",
-		corePluginEntityRegistration: "Core Plugin Entity Registration",
-		corePluginEntityResignation: "Core Plugin Entity Resignation",
-		corePluginEntityUpdate: "Core Plugin Entity Update",
-		desktopPluginEntityRegistration: "Desktop Plugin Entity Registration",
-		desktopPluginEntityResignation: "Desktop Plugin Entity Resignation",
-		desktopPluginEntityUpdate: "Desktop Plugin Entity Update",
-		delegateEntityRegistration: "Delegate Entity Registration",
-		delegateEntityResignation: "Delegate Entity Resignation",
-		delegateEntityUpdate: "Delegate Entity Update",
-		legacyBusinessRegistration: "Legacy Business Registration",
-		legacyBusinessResignation: "Legacy Business Resignation",
-		legacyBusinessUpdate: "Legacy Business Update",
-		legacyBridgechainRegistration: "Legacy Bridgechain Registration",
-		legacyBridgechainResignation: "Legacy Bridgechain Resignation",
-		legacyBridgechainUpdate: "Legacy Bridgechain Update",
+		transfer: t("TRANSACTION.TRANSACTION_TYPES.TRANSFER"),
+		secondSignature: t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
+		delegateRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
+		vote: t("TRANSACTION.TRANSACTION_TYPES.VOTE"),
+		unvote: t("TRANSACTION.TRANSACTION_TYPES.UNVOTE"),
+		multiSignature: t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
+		ipfs: t("TRANSACTION.TRANSACTION_TYPES.IPFS"),
+		multiPayment: t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
+		delegateResignation: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
+		htlcLock: t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
+		htlcClaim: t("TRANSACTION.TRANSACTION_TYPES.HTLC_CLAIM"),
+		htlcRefund: t("TRANSACTION.TRANSACTION_TYPES.HTLC_REFUND"),
+		entityRegistration: t("TRANSACTION.TRANSACTION_TYPES.ENTITY_REGISTRATION"),
+		entityResignation: t("TRANSACTION.TRANSACTION_TYPES.ENTITY_RESIGNATION"),
+		entityUpdate: t("TRANSACTION.TRANSACTION_TYPES.ENTITY_UPDATE"),
+		delegateEntityRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_REGISTRATION"),
+		delegateEntityResignation: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_RESIGNATION"),
+		delegateEntityUpdate: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_UPDATE"),
+		legacyBusinessRegistration: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BUSINESS_REGISTRATION"),
+		legacyBusinessResignation: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BUSINESS_RESIGNATION"),
+		legacyBusinessUpdate: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BUSINESS_UPDATE"),
+		legacyBridgechainRegistration: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BRIDGECHAIN_REGISTRATION"),
+		legacyBridgechainResignation: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BRIDGECHAIN_RESIGNATION"),
+		legacyBridgechainUpdate: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BRIDGECHAIN_UPDATE"),
 	};
 
 	if (type === "transfer") {
@@ -60,27 +51,15 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 	}
 
 	if (transaction?.isBusinessEntityRegistration()) {
-		return (
-			<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
-				Business Registration
-			</span>
-		);
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION")} />;
 	}
 
 	if (transaction?.isBusinessEntityResignation()) {
-		return (
-			<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
-				Business Resignation
-			</span>
-		);
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_RESIGNATION")} />;
 	}
 
 	if (transaction?.isBusinessEntityUpdate()) {
-		return (
-			<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
-				Business Update
-			</span>
-		);
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_UPDATE")} />;
 	}
 
 	return (
