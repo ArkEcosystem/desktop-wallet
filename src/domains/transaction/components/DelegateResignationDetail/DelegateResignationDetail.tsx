@@ -11,20 +11,19 @@ import {
 } from "domains/transaction/components/TransactionDetail";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-
-type DelegateRegistrationDetailProps = {
+type DelegateResignationDetailProps = {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: any;
 };
 
-export const DelegateRegistrationDetail = ({ isOpen, transaction, onClose }: DelegateRegistrationDetailProps) => {
+export const DelegateResignationDetail = ({ isOpen, transaction, onClose }: DelegateResignationDetailProps) => {
 	const { t } = useTranslation();
 
 	const wallet = useMemo(() => transaction.wallet(), [transaction]);
 
 	return (
-		<Modal title={t("TRANSACTION.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
+		<Modal title={t("TRANSACTION.MODAL_DELEGATE_RESIGNATION_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			<TransactionSender
 				address={transaction.sender()}
 				alias={wallet.alias()}
@@ -36,11 +35,11 @@ export const DelegateRegistrationDetail = ({ isOpen, transaction, onClose }: Del
 				label={t("TRANSACTION.DELEGATE_NAME")}
 				extra={
 					<Circle className="border-theme-text" size="lg">
-						<Icon name="Delegate" width={25} height={25} />
+						<Icon name="DelegateResigned" width={19} height={20} />
 					</Circle>
 				}
 			>
-				{transaction.username()}
+				{wallet.username()}
 			</TransactionDetail>
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
@@ -65,8 +64,8 @@ export const DelegateRegistrationDetail = ({ isOpen, transaction, onClose }: Del
 	);
 };
 
-DelegateRegistrationDetail.defaultProps = {
+DelegateResignationDetail.defaultProps = {
 	isOpen: false,
 };
 
-DelegateRegistrationDetail.displayName = "DelegateRegistrationDetail";
+DelegateResignationDetail.displayName = "DelegateResignationDetail";

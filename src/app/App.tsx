@@ -13,6 +13,7 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
+import { LedgerListener } from "domains/transaction/components/LedgerListener";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
@@ -51,11 +52,7 @@ const Main = () => {
 	useLayoutEffect(() => {
 		const boot = async () => {
 			/* istanbul ignore next */
-			const shouldUseFixture: boolean =
-				process.env.REACT_APP_BUILD_MODE === "demo" ||
-				// TestCafe doesn't expose environment variables.
-				(process.env.NODE_ENV === "production" && process.env.PUBLIC_URL === ".");
-
+			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
 			await env.verify(shouldUseFixture ? fixtureData : undefined);
 			await env.boot();
 			await runAll();
@@ -117,6 +114,7 @@ export const App = () => {
 		<ErrorBoundary FallbackComponent={ApplicationError}>
 			<I18nextProvider i18n={i18n}>
 				<EnvironmentProvider env={env}>
+					<LedgerListener />
 					<Main />
 				</EnvironmentProvider>
 			</I18nextProvider>

@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DelegateRegistrationDetail should not render if not open 1`] = `<DocumentFragment />`;
+exports[`DelegateResignationDetail should not render if not open 1`] = `<DocumentFragment />`;
 
-exports[`DelegateRegistrationDetail should render a modal 1`] = `
+exports[`DelegateResignationDetail should render a modal 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
@@ -41,13 +41,13 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
         <h2
           class="mb-0 text-3xl font-bold"
         >
-          Delegate Registration
+          Delegate Resignation
         </h2>
         <div
           class="flex-1"
         >
           <div
-            class="sc-AxheI kidnAz"
+            class="flex items-center py-6 true "
             data-testid="TransactionDetail"
           >
             <div
@@ -113,7 +113,7 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -127,25 +127,25 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                Ark Wallet
+                ARK Wallet
               </div>
             </div>
             <div
               class="sc-AxjAm bHAIY border-theme-text"
             >
               <div
-                class="sc-AxirZ dCVESD"
-                height="25"
-                width="25"
+                class="sc-AxirZ kLMCZl"
+                height="20"
+                width="19"
               >
                 <svg>
-                  delegate.svg
+                  delegate-resigned.svg
                 </svg>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -168,7 +168,7 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -187,7 +187,7 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -229,7 +229,7 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -282,7 +282,7 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -341,7 +341,7 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
+exports[`DelegateResignationDetail should render as confirmed 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
@@ -380,13 +380,13 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
         <h2
           class="mb-0 text-3xl font-bold"
         >
-          Delegate Registration
+          Delegate Resignation
         </h2>
         <div
           class="flex-1"
         >
           <div
-            class="sc-AxheI kidnAz"
+            class="flex items-center py-6 true "
             data-testid="TransactionDetail"
           >
             <div
@@ -452,7 +452,7 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -466,25 +466,25 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                Ark Wallet
+                ARK Wallet
               </div>
             </div>
             <div
               class="sc-AxjAm bHAIY border-theme-text"
             >
               <div
-                class="sc-AxirZ dCVESD"
-                height="25"
-                width="25"
+                class="sc-AxirZ kLMCZl"
+                height="20"
+                width="19"
               >
                 <svg>
-                  delegate.svg
+                  delegate-resigned.svg
                 </svg>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -507,7 +507,7 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -526,7 +526,7 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -568,7 +568,7 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div
@@ -621,7 +621,7 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI dlZkJI"
+            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             data-testid="TransactionDetail"
           >
             <div

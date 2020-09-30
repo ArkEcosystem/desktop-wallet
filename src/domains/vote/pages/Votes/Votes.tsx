@@ -166,8 +166,14 @@ export const Votes = () => {
 		}
 	}, [activeWallet, loadDelegates, hasWalletId]);
 
-	const handleSelectNetwork = (network?: NetworkData | null) => {
-		setNetwork(network!);
+	const handleSelectNetwork = (networkData?: NetworkData | null) => {
+		if (!networkData || networkData.id() !== network?.id()) {
+			setTabItem("delegate");
+			setWallets([]);
+			setAddress("");
+		}
+
+		setNetwork(networkData!);
 	};
 
 	const handleSelectAddress = (address: string) => {
@@ -217,7 +223,6 @@ export const Votes = () => {
 							selected={network!}
 							placeholder={t("COMMON.SELECT_OPTION", { option: t("COMMON.NETWORK") })}
 							onSelect={handleSelectNetwork}
-							disabled={hasWalletId}
 						/>
 					</div>
 
