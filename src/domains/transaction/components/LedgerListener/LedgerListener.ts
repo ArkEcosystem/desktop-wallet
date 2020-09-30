@@ -49,6 +49,7 @@ export const LedgerListener = ({ transport, onDevice, onError, onComplete }: Pro
 	return null;
 };
 
+/* istanbul ignore next */
 LedgerListener.defaultProps = {
 	onError: () => void 0,
 	onComplete: () => void 0,
