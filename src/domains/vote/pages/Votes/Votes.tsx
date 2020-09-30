@@ -246,12 +246,12 @@ export const Votes = () => {
 					tabItem === "delegate" ? (
 						<DelegateTable
 							delegates={delegates}
-							maxVotes={network.maximumVotes()}
+							maxVotes={network.maximumVotesPerWallet()}
 							votes={votes}
 							onContinue={handleContinue}
 						/>
 					) : (
-						<MyVoteTable maxVotes={network.maximumVotes()} votes={votes} onContinue={handleContinue} />
+						<MyVoteTable maxVotes={network.maximumVotesPerWallet()} votes={votes} onContinue={handleContinue} />
 					)
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
