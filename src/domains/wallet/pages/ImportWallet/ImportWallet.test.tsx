@@ -371,7 +371,7 @@ describe("ImportWallet", () => {
 				currency: { ticker: "DARK", symbol: "DѦ" },
 				crypto: { slip44: 111 },
 				networking: { hosts: ["https://dwallets.ark.io"], hostsMultiSignature: [] },
-				governance: { voting: { enabled: false, maximum: 1, maximumPerTransaction: 1 } },
+				governance: { voting: { enabled: false, maximumPerWallet: 1, maximumPerTransaction: 1 } },
 			}),
 		]);
 
