@@ -2,20 +2,26 @@ import { images } from "app/assets/images";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { Table, TableCell, TableRow } from "app/components/Table";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type BlacklistPluginsProps = {
 	isOpen: boolean;
 	plugins: any;
 	onClose?: any;
+	blacklisted?: any;
 };
 
 const { BestPluginsBanner } = images.plugin.common;
 const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
-export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsProps) => {
+export const BlacklistPlugins = ({ isOpen, plugins, onClose, blacklisted }: BlacklistPluginsProps) => {
+	const [blacklistedPlugins, setBlacklistedPlugins] = useState<any>([]);
 	const { t } = useTranslation();
+
+	useEffect(() => {
+		setBlacklistedPlugins(blacklisted.map((id: any) => plugins.find((plugin: any) => id === plugin.id)));
+	}, [plugins, blacklisted]);
 
 	const columns = [
 		{
@@ -50,7 +56,7 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 			onClose={onClose}
 		>
 			<div className="mt-8 -mb-6">
-				<Table columns={columns} data={plugins}>
+				<Table columns={columns} data={blacklistedPlugins}>
 					{(rowData: any) => (
 						<TableRow>
 							<TableCell variant="start" className="w-16">
@@ -82,4 +88,5 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 BlacklistPlugins.defaultProps = {
 	isOpen: false,
 	plugins: [],
+	blacklisted: [],
 };

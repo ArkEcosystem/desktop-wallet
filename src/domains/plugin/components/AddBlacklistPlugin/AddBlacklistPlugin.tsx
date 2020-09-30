@@ -6,19 +6,34 @@ import { ReviewRating } from "app/components/ReviewRating";
 import { SearchBar } from "app/components/SearchBar";
 import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type AddBlacklistPluginProps = {
 	isOpen: boolean;
 	plugins: any;
+	blacklisted?: any;
 	onClose?: any;
+	handleBlacklist?: any;
 };
 
 const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
-export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPluginProps) => {
+export const AddBlacklistPlugin = ({
+	isOpen,
+	plugins,
+	blacklisted,
+	onClose,
+	handleBlacklist,
+}: AddBlacklistPluginProps) => {
+	const [dataset, setDataset] = useState([]);
 	const { t } = useTranslation();
+
+	useEffect(() => {
+		const list = plugins.filter((plugin: any) => !blacklisted.find((id: any) => plugin.id === id));
+
+		setDataset(list);
+	}, [plugins, blacklisted]);
 
 	const columns = [
 		{
@@ -60,7 +75,7 @@ export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPlu
 			</div>
 
 			<div className="mt-8 -mb-6">
-				<Table columns={columns} data={plugins}>
+				<Table columns={columns} data={dataset}>
 					{(rowData: any) => (
 						<TableRow>
 							<TableCell className="w-16">
@@ -89,7 +104,9 @@ export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPlu
 							</TableCell>
 
 							<TableCell className="w-16">
-								<Button variant="plain">{t("COMMON.ADD")}</Button>
+								<Button variant="plain" onClick={() => handleBlacklist(rowData.id)}>
+									{t("COMMON.ADD")}
+								</Button>
 							</TableCell>
 						</TableRow>
 					)}
