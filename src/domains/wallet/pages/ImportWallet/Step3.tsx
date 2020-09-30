@@ -1,4 +1,4 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -16,7 +16,7 @@ export const ThirdStep = ({ address, nameMaxLength }: { address: string; nameMax
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultNetwork] = useState(() => watch("network"));
-	const network: NetworkData = getValues("network") || defaultNetwork;
+	const network: Coins.Network = getValues("network") || defaultNetwork;
 
 	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
 

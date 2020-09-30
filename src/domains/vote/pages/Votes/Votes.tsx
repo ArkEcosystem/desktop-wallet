@@ -1,4 +1,5 @@
-import { NetworkData, Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -11,7 +12,6 @@ import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
 import { MyVoteTable } from "domains/vote/components/MyVoteTable";
@@ -64,7 +64,7 @@ const InputAddress = ({ address, profile }: { address: string; profile: Profile 
 	const walletName = profile.wallets().findByAddress(address)?.alias();
 
 	return (
-		<div className="relative flex items-center pb-24">
+		<div className="relative flex items-center">
 			<Input type="text" disabled />
 			<div className="absolute flex items-center justify-between w-full ml-3">
 				<div className="flex items-center">
@@ -76,7 +76,7 @@ const InputAddress = ({ address, profile }: { address: string; profile: Profile 
 					) : (
 						<>
 							<Circle className="mr-3 bg-theme-neutral-200 border-theme-neutral-200" size="sm" noShadow />
-							<span className="text-base font-semibold text-theme-neutral-light">
+							<span className="text-theme-neutral-light">
 								{t("COMMON.SELECT_OPTION", { option: t("COMMON.ADDRESS") })}
 							</span>
 						</>
@@ -97,7 +97,7 @@ export const Votes = () => {
 	const activeWallet = useActiveWallet();
 
 	const [tabItem, setTabItem] = useState("delegate");
-	const [network, setNetwork] = useState<NetworkData | null>(null);
+	const [network, setNetwork] = useState<Coins.Network | null>(null);
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
@@ -167,8 +167,14 @@ export const Votes = () => {
 		}
 	}, [activeWallet, loadDelegates, hasWalletId]);
 
-	const handleSelectNetwork = (network?: NetworkData | null) => {
-		setNetwork(network!);
+	const handleSelectNetwork = (networkData?: Coins.Network | null) => {
+		if (!networkData || networkData.id() !== network?.id()) {
+			setTabItem("delegate");
+			setWallets([]);
+			setAddress("");
+		}
+
+		setNetwork(networkData!);
 	};
 
 	const handleSelectAddress = (address: string) => {
@@ -206,21 +212,25 @@ export const Votes = () => {
 				/>
 			</Section>
 
-			<Section hasBackground={false}>
-				<div className="grid grid-flow-col grid-cols-2 gap-6 -my-5">
-					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
+			<div className="container pt-10 mx-auto px-14">
+				<div className="grid grid-flow-col grid-cols-2 gap-6 mb-10">
+					<div className="flex flex-col space-y-2 group">
+						<div className="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral">
+							{t("COMMON.NETWORK")}
+						</div>
 						<SelectNetwork
 							id="Votes__network"
 							networks={networks}
 							selected={network!}
 							placeholder={t("COMMON.SELECT_OPTION", { option: t("COMMON.NETWORK") })}
 							onSelect={handleSelectNetwork}
-							disabled={hasWalletId}
 						/>
-					</TransactionDetail>
-					<TransactionDetail border={false} label={t("COMMON.ADDRESS")} className="mt-2">
+					</div>
+
+					<div className="flex flex-col space-y-2">
+						<div className="text-sm font-semibold text-theme-neutral">{t("COMMON.ADDRESS")}</div>
 						<InputAddress address={address} profile={activeProfile} />
-					</TransactionDetail>
+					</div>
 				</div>
 
 				{address && (
@@ -229,19 +239,23 @@ export const Votes = () => {
 						<Tabs selected={tabItem} onClick={(tabItem) => setTabItem(tabItem)} />
 					</>
 				)}
-			</Section>
+			</div>
 
 			<Section className="flex-1">
 				{network && address ? (
 					tabItem === "delegate" ? (
 						<DelegateTable
 							delegates={delegates}
-							maxVotes={network.maximumVotes()}
+							maxVotes={network.maximumVotesPerWallet()}
 							votes={votes}
 							onContinue={handleContinue}
 						/>
 					) : (
-						<MyVoteTable maxVotes={network.maximumVotes()} votes={votes} onContinue={handleContinue} />
+						<MyVoteTable
+							maxVotes={network.maximumVotesPerWallet()}
+							votes={votes}
+							onContinue={handleContinue}
+						/>
 					)
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />

@@ -44,8 +44,10 @@ export const translations: { [key: string]: any } = {
 	TRANSACTION_TYPE: "Transaction Type",
 	TYPE: "Type",
 	UNVOTES: "Unvotes",
+	UNVOTES_COUNT: "Unvotes ({{count}})",
 	VOTER: "Voter",
 	VOTES: "Votes",
+	VOTES_COUNT: "Votes ({{count}})",
 	WEBSITE: "Website",
 	WELL_CONFIRMED: "Well confirmed",
 	YOUR_ADDRESS: "Your address",
@@ -86,6 +88,10 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_DELEGATE_REGISTRATION_DETAIL: {
 		TITLE: "Delegate Registration",
+	},
+
+	MODAL_DELEGATE_RESIGNATION_DETAIL: {
+		TITLE: "Delegate Resignation",
 	},
 
 	MODAL_MULTISIGNATURE_DETAIL: {

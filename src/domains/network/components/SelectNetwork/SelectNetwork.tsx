@@ -1,4 +1,4 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
@@ -7,17 +7,17 @@ import React, { useEffect } from "react";
 
 import { SelectNetworkInput } from "./SelectNetworkInput";
 
-type Network = NetworkData & { extra?: CoinNetworkExtended };
+type Network = Coins.Network & { extra?: CoinNetworkExtended };
 
 type SelectNetworkProps = {
-	selected?: NetworkData;
-	networks: NetworkData[];
+	selected?: Coins.Network;
+	networks: Coins.Network[];
 	placeholder?: string;
 	name?: string;
 	value?: string;
 	id?: string;
 	disabled?: boolean;
-	onSelect?: (network?: NetworkData | null) => void;
+	onSelect?: (network?: Coins.Network | null) => void;
 };
 
 export const itemToString = (item: Network | null) => item?.extra?.displayName || "";

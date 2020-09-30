@@ -34,12 +34,12 @@ test("should navigate to plugin details and back", async (t) => {
 	await t.click(Selector('[data-testid="PluginGrid"] > div > div').withText("ARK Explorer"));
 	await t.expect(Selector("span").withExactText("ARK Explorer").exists).ok();
 
-	await t.expect(getLocation()).contains("/plugins/ark-explorer");
+	await t.expect(getLocation()).contains("/plugins/0");
 
 	await scrollToTop();
 
 	await t.click(Selector("span").withExactText(translations.PLUGINS.GO_BACK_TO_PLUGIN_STORE));
 
 	await t.expect(getLocation()).contains("/plugins");
-	await t.expect(getLocation()).notContains("/plugins/ark-explorer");
+	await t.expect(getLocation()).notContains("/plugins/0");
 });

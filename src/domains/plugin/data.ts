@@ -108,6 +108,7 @@ export const plugins = [
 		rating: 4.6,
 		version: "1.3.8",
 		isOfficial: true,
+		isGrant: true,
 	},
 	{
 		name: "Animal Avatars",

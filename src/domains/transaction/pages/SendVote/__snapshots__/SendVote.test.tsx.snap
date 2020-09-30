@@ -7,7 +7,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -279,19 +279,19 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fzqARJ kCbUYb"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
               </ul>
               <div
@@ -328,7 +328,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                     </p>
                     <div>
                       <div
-                        class="flex items-center py-6 true pt-0"
+                        class="sc-fznKkj bQquPG pt-0"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -345,35 +345,34 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                             <div
                               class="flex items-center"
                             >
-                              <div
-                                class="inline-block truncate align-middle"
+                              <a
+                                class="sc-fzplWN bETMmw inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                                data-testid="Link"
+                                rel="noopener noreferrer"
+                                to="https://dexplorer.ark.io/transaction/d819c5199e323a62a4349948ff075edde91e509028329f66ec76b8518ad1e493"
                               >
                                 <span
-                                  class="sc-fzpans kkFAbe text-theme-primary font-semibold text-base"
-                                  data-testid="address__wallet-address"
+                                  class="sc-fzpans kkFAbe text-theme-primary-dark"
+                                  data-testid="TruncateMiddle"
                                 >
-                                  d819c5199e323a…76b8518ad1e493
+                                  d819c5199e323…6b8518ad1e493
                                 </span>
-                              </div>
+                              </a>
                               <span
-                                class="flex ml-5"
+                                class="inline-block ml-5 text-theme-primary-300"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
                                   data-testid="clipboard__wrapper"
                                 >
                                   <div
-                                    class="text-theme-primary-300"
+                                    class="sc-AxiKw dzBdqj"
+                                    height="1em"
+                                    width="1em"
                                   >
-                                    <div
-                                      class="sc-AxiKw dzBdqj"
-                                      height="1em"
-                                      width="1em"
-                                    >
-                                      <svg>
-                                        copy.svg
-                                      </svg>
-                                    </div>
+                                    <svg>
+                                      copy.svg
+                                    </svg>
                                   </div>
                                 </div>
                               </span>
@@ -382,7 +381,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -417,34 +416,34 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="font-semibold"
+                            class="text-sm font-semibold text-theme-neutral"
                           >
+                            <span
+                              class="mr-1"
+                            >
+                              Sender
+                            </span>
                             <div
-                              class="mb-2 text-sm font-semibold text-theme-neutral"
+                              class="sc-fzoLsD jBzTcb"
+                              color="warning"
                             >
                               <span
-                                class="mr-1"
+                                class="text-sm"
                               >
-                                Sender
+                                Your address
                               </span>
-                              <div
-                                class="sc-fzoLsD jBzTcb"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
                             </div>
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
                             <div
                               class="inline-block truncate align-middle"
                             >
@@ -464,22 +463,39 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                          data-testid="Avatar"
+                          class="flex items-center -space-x-2"
                         >
                           <div
-                            class="w-full h-full"
+                            class="sc-AxgMl eqWWwc border-theme-text"
                           >
-                            <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
+                            <div
+                              class="sc-AxiKw iQZLaj"
+                              height="25"
+                              width="25"
+                            >
+                              <svg>
+                                delegate.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -497,25 +513,21 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           </div>
                         </div>
                         <div
-                          class="ml-1 text-theme-neutral-900"
+                          class="sc-AxgMl eqWWwc border-theme-text"
                         >
                           <div
-                            class="sc-AxgMl eqWWwc border-theme-neutral-900 bg-theme-background"
+                            class="sc-AxiKw jcWfEX"
+                            height="21"
+                            width="21"
                           >
-                            <div
-                              class="sc-AxiKw dzBdqj text-xl"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                unvote.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              unvote.svg
+                            </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -530,52 +542,43 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="-my-5"
+                              class="-my-2"
                             >
                               <div
-                                class="flex items-center py-6 true "
-                                data-testid="TransactionDetail"
+                                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
                               >
                                 <div
-                                  class="flex-1 space-y-2"
+                                  class="py-4 space-x-4"
                                 >
                                   <div
-                                    class="font-semibold"
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                                    data-testid="Avatar"
                                   >
                                     <div
-                                      class="space-x-2"
+                                      class="w-full h-full"
                                     >
-                                      <div
-                                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
-                                        data-testid="Avatar"
-                                      >
-                                        <div
-                                          class="w-full h-full"
-                                        >
-                                          <img
-                                            alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                                            title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                                          />
-                                        </div>
-                                      </div>
-                                      <div
-                                        class="inline-block truncate align-middle"
-                                      >
-                                        <span
-                                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                          data-testid="address__wallet-name"
-                                        >
-                                          genesis_42
-                                        </span>
-                                        <span
-                                          class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
-                                          data-testid="address__wallet-address"
-                                        >
-                                          D5L5zX…d6iWVr
-                                        </span>
-                                      </div>
+                                      <img
+                                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                                      />
                                     </div>
+                                  </div>
+                                  <div
+                                    class="inline-block truncate align-middle"
+                                  >
+                                    <span
+                                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                      data-testid="address__wallet-name"
+                                    >
+                                      genesis_42
+                                    </span>
+                                    <span
+                                      class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                      data-testid="address__wallet-address"
+                                    >
+                                      D5L5zX…d6iWVr
+                                    </span>
                                   </div>
                                 </div>
                               </div>
@@ -584,7 +587,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -602,25 +605,21 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           </div>
                         </div>
                         <div
-                          class="ml-1 text-theme-neutral-900"
+                          class="sc-AxgMl eqWWwc border-theme-text"
                         >
                           <div
-                            class="sc-AxgMl eqWWwc border-theme-neutral-900 bg-theme-background"
+                            class="sc-AxiKw jcWfEX"
+                            height="21"
+                            width="21"
                           >
-                            <div
-                              class="sc-AxiKw dzBdqj text-xl"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                vote.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              vote.svg
+                            </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -635,52 +634,43 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="-my-5"
+                              class="-my-2"
                             >
                               <div
-                                class="flex items-center py-6 true "
-                                data-testid="TransactionDetail"
+                                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
                               >
                                 <div
-                                  class="flex-1 space-y-2"
+                                  class="py-4 space-x-4"
                                 >
                                   <div
-                                    class="font-semibold"
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                                    data-testid="Avatar"
                                   >
                                     <div
-                                      class="space-x-2"
+                                      class="w-full h-full"
                                     >
-                                      <div
-                                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
-                                        data-testid="Avatar"
-                                      >
-                                        <div
-                                          class="w-full h-full"
-                                        >
-                                          <img
-                                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                                          />
-                                        </div>
-                                      </div>
-                                      <div
-                                        class="inline-block truncate align-middle"
-                                      >
-                                        <span
-                                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                          data-testid="address__wallet-name"
-                                        >
-                                          arkx
-                                        </span>
-                                        <span
-                                          class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
-                                          data-testid="address__wallet-address"
-                                        >
-                                          D61mfS…J3Dyib
-                                        </span>
-                                      </div>
+                                      <img
+                                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                                      />
                                     </div>
+                                  </div>
+                                  <div
+                                    class="inline-block truncate align-middle"
+                                  >
+                                    <span
+                                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                      data-testid="address__wallet-name"
+                                    >
+                                      arkx
+                                    </span>
+                                    <span
+                                      class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                      data-testid="address__wallet-address"
+                                    >
+                                      D61mfS…J3Dyib
+                                    </span>
                                   </div>
                                 </div>
                               </div>
@@ -689,7 +679,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp pb-0"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -703,7 +693,11 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           <div
                             class="font-semibold"
                           >
-                            0.09660435 ARK
+                            <span
+                              data-testid="Amount"
+                            >
+                              0.20716584 DARK
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -711,7 +705,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="flex justify-end mt-10 space-x-3"
                 >
                   <button
                     class="sc-AxjAm fPpool"
@@ -758,7 +752,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -770,7 +764,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -1030,19 +1024,19 @@ exports[`SendVote should send a unvote transaction 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fzqARJ kCbUYb"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
               </ul>
               <div
@@ -1079,7 +1073,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                     </p>
                     <div>
                       <div
-                        class="flex items-center py-6 true pt-0"
+                        class="sc-fznKkj bQquPG pt-0"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1096,35 +1090,34 @@ exports[`SendVote should send a unvote transaction 1`] = `
                             <div
                               class="flex items-center"
                             >
-                              <div
-                                class="inline-block truncate align-middle"
+                              <a
+                                class="sc-fzplWN bETMmw inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                                data-testid="Link"
+                                rel="noopener noreferrer"
+                                to="https://dexplorer.ark.io/transaction/32e5278cb72f24f2c04c4797dbfbffa7072f6a30e016093fdd3f7660a2ee2faf"
                               >
                                 <span
-                                  class="sc-fzpans kkFAbe text-theme-primary font-semibold text-base"
-                                  data-testid="address__wallet-address"
+                                  class="sc-fzpans kkFAbe text-theme-primary-dark"
+                                  data-testid="TruncateMiddle"
                                 >
-                                  32e5278cb72f24…3f7660a2ee2faf
+                                  32e5278cb72f2…f7660a2ee2faf
                                 </span>
-                              </div>
+                              </a>
                               <span
-                                class="flex ml-5"
+                                class="inline-block ml-5 text-theme-primary-300"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
                                   data-testid="clipboard__wrapper"
                                 >
                                   <div
-                                    class="text-theme-primary-300"
+                                    class="sc-AxiKw dzBdqj"
+                                    height="1em"
+                                    width="1em"
                                   >
-                                    <div
-                                      class="sc-AxiKw dzBdqj"
-                                      height="1em"
-                                      width="1em"
-                                    >
-                                      <svg>
-                                        copy.svg
-                                      </svg>
-                                    </div>
+                                    <svg>
+                                      copy.svg
+                                    </svg>
                                   </div>
                                 </div>
                               </span>
@@ -1133,7 +1126,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1168,34 +1161,34 @@ exports[`SendVote should send a unvote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="font-semibold"
+                            class="text-sm font-semibold text-theme-neutral"
                           >
+                            <span
+                              class="mr-1"
+                            >
+                              Sender
+                            </span>
                             <div
-                              class="mb-2 text-sm font-semibold text-theme-neutral"
+                              class="sc-fzoLsD jBzTcb"
+                              color="warning"
                             >
                               <span
-                                class="mr-1"
+                                class="text-sm"
                               >
-                                Sender
+                                Your address
                               </span>
-                              <div
-                                class="sc-fzoLsD jBzTcb"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
                             </div>
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
                             <div
                               class="inline-block truncate align-middle"
                             >
@@ -1215,22 +1208,39 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                          data-testid="Avatar"
+                          class="flex items-center -space-x-2"
                         >
                           <div
-                            class="w-full h-full"
+                            class="sc-AxgMl eqWWwc border-theme-text"
                           >
-                            <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
+                            <div
+                              class="sc-AxiKw iQZLaj"
+                              height="25"
+                              width="25"
+                            >
+                              <svg>
+                                delegate.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1248,25 +1258,21 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           </div>
                         </div>
                         <div
-                          class="ml-1 text-theme-neutral-900"
+                          class="sc-AxgMl eqWWwc border-theme-text"
                         >
                           <div
-                            class="sc-AxgMl eqWWwc border-theme-neutral-900 bg-theme-background"
+                            class="sc-AxiKw jcWfEX"
+                            height="21"
+                            width="21"
                           >
-                            <div
-                              class="sc-AxiKw dzBdqj text-xl"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                unvote.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              unvote.svg
+                            </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1281,52 +1287,43 @@ exports[`SendVote should send a unvote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="-my-5"
+                              class="-my-2"
                             >
                               <div
-                                class="flex items-center py-6 true "
-                                data-testid="TransactionDetail"
+                                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
                               >
                                 <div
-                                  class="flex-1 space-y-2"
+                                  class="py-4 space-x-4"
                                 >
                                   <div
-                                    class="font-semibold"
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                                    data-testid="Avatar"
                                   >
                                     <div
-                                      class="space-x-2"
+                                      class="w-full h-full"
                                     >
-                                      <div
-                                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
-                                        data-testid="Avatar"
-                                      >
-                                        <div
-                                          class="w-full h-full"
-                                        >
-                                          <img
-                                            alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                                            title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                                          />
-                                        </div>
-                                      </div>
-                                      <div
-                                        class="inline-block truncate align-middle"
-                                      >
-                                        <span
-                                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                          data-testid="address__wallet-name"
-                                        >
-                                          genesis_42
-                                        </span>
-                                        <span
-                                          class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
-                                          data-testid="address__wallet-address"
-                                        >
-                                          D5L5zX…d6iWVr
-                                        </span>
-                                      </div>
+                                      <img
+                                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                                      />
                                     </div>
+                                  </div>
+                                  <div
+                                    class="inline-block truncate align-middle"
+                                  >
+                                    <span
+                                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                      data-testid="address__wallet-name"
+                                    >
+                                      genesis_42
+                                    </span>
+                                    <span
+                                      class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                      data-testid="address__wallet-address"
+                                    >
+                                      D5L5zX…d6iWVr
+                                    </span>
                                   </div>
                                 </div>
                               </div>
@@ -1335,7 +1332,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp pb-0"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1349,7 +1346,11 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           <div
                             class="font-semibold"
                           >
-                            0.09660435 ARK
+                            <span
+                              data-testid="Amount"
+                            >
+                              0.20716584 DARK
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -1357,7 +1358,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="flex justify-end mt-10 space-x-3"
                 >
                   <button
                     class="sc-AxjAm fPpool"
@@ -1404,7 +1405,7 @@ exports[`SendVote should send a vote transaction 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1416,7 +1417,7 @@ exports[`SendVote should send a vote transaction 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -1676,19 +1677,19 @@ exports[`SendVote should send a vote transaction 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fzqARJ kCbUYb"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
               </ul>
               <div
@@ -1725,7 +1726,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                     </p>
                     <div>
                       <div
-                        class="flex items-center py-6 true pt-0"
+                        class="sc-fznKkj bQquPG pt-0"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1742,35 +1743,34 @@ exports[`SendVote should send a vote transaction 1`] = `
                             <div
                               class="flex items-center"
                             >
-                              <div
-                                class="inline-block truncate align-middle"
+                              <a
+                                class="sc-fzplWN bETMmw inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                                data-testid="Link"
+                                rel="noopener noreferrer"
+                                to="https://dexplorer.ark.io/transaction/d819c5199e323a62a4349948ff075edde91e509028329f66ec76b8518ad1e493"
                               >
                                 <span
-                                  class="sc-fzpans kkFAbe text-theme-primary font-semibold text-base"
-                                  data-testid="address__wallet-address"
+                                  class="sc-fzpans kkFAbe text-theme-primary-dark"
+                                  data-testid="TruncateMiddle"
                                 >
-                                  d819c5199e323a…76b8518ad1e493
+                                  d819c5199e323…6b8518ad1e493
                                 </span>
-                              </div>
+                              </a>
                               <span
-                                class="flex ml-5"
+                                class="inline-block ml-5 text-theme-primary-300"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
                                   data-testid="clipboard__wrapper"
                                 >
                                   <div
-                                    class="text-theme-primary-300"
+                                    class="sc-AxiKw dzBdqj"
+                                    height="1em"
+                                    width="1em"
                                   >
-                                    <div
-                                      class="sc-AxiKw dzBdqj"
-                                      height="1em"
-                                      width="1em"
-                                    >
-                                      <svg>
-                                        copy.svg
-                                      </svg>
-                                    </div>
+                                    <svg>
+                                      copy.svg
+                                    </svg>
                                   </div>
                                 </div>
                               </span>
@@ -1779,7 +1779,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1814,34 +1814,34 @@ exports[`SendVote should send a vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="font-semibold"
+                            class="text-sm font-semibold text-theme-neutral"
                           >
+                            <span
+                              class="mr-1"
+                            >
+                              Sender
+                            </span>
                             <div
-                              class="mb-2 text-sm font-semibold text-theme-neutral"
+                              class="sc-fzoLsD jBzTcb"
+                              color="warning"
                             >
                               <span
-                                class="mr-1"
+                                class="text-sm"
                               >
-                                Sender
+                                Your address
                               </span>
-                              <div
-                                class="sc-fzoLsD jBzTcb"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
                             </div>
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
                             <div
                               class="inline-block truncate align-middle"
                             >
@@ -1861,22 +1861,39 @@ exports[`SendVote should send a vote transaction 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                          data-testid="Avatar"
+                          class="flex items-center -space-x-2"
                         >
                           <div
-                            class="w-full h-full"
+                            class="sc-AxgMl eqWWwc border-theme-text"
                           >
-                            <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
+                            <div
+                              class="sc-AxiKw iQZLaj"
+                              height="25"
+                              width="25"
+                            >
+                              <svg>
+                                delegate.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1894,25 +1911,21 @@ exports[`SendVote should send a vote transaction 1`] = `
                           </div>
                         </div>
                         <div
-                          class="ml-1 text-theme-neutral-900"
+                          class="sc-AxgMl eqWWwc border-theme-text"
                         >
                           <div
-                            class="sc-AxgMl eqWWwc border-theme-neutral-900 bg-theme-background"
+                            class="sc-AxiKw jcWfEX"
+                            height="21"
+                            width="21"
                           >
-                            <div
-                              class="sc-AxiKw dzBdqj text-xl"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                vote.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              vote.svg
+                            </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1927,52 +1940,43 @@ exports[`SendVote should send a vote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="-my-5"
+                              class="-my-2"
                             >
                               <div
-                                class="flex items-center py-6 true "
-                                data-testid="TransactionDetail"
+                                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
                               >
                                 <div
-                                  class="flex-1 space-y-2"
+                                  class="py-4 space-x-4"
                                 >
                                   <div
-                                    class="font-semibold"
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                                    data-testid="Avatar"
                                   >
                                     <div
-                                      class="space-x-2"
+                                      class="w-full h-full"
                                     >
-                                      <div
-                                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
-                                        data-testid="Avatar"
-                                      >
-                                        <div
-                                          class="w-full h-full"
-                                        >
-                                          <img
-                                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                                          />
-                                        </div>
-                                      </div>
-                                      <div
-                                        class="inline-block truncate align-middle"
-                                      >
-                                        <span
-                                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                          data-testid="address__wallet-name"
-                                        >
-                                          arkx
-                                        </span>
-                                        <span
-                                          class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
-                                          data-testid="address__wallet-address"
-                                        >
-                                          D61mfS…J3Dyib
-                                        </span>
-                                      </div>
+                                      <img
+                                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                                      />
                                     </div>
+                                  </div>
+                                  <div
+                                    class="inline-block truncate align-middle"
+                                  >
+                                    <span
+                                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                      data-testid="address__wallet-name"
+                                    >
+                                      arkx
+                                    </span>
+                                    <span
+                                      class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                      data-testid="address__wallet-address"
+                                    >
+                                      D61mfS…J3Dyib
+                                    </span>
                                   </div>
                                 </div>
                               </div>
@@ -1981,7 +1985,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        class="sc-fznKkj bBFPlp pb-0"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1995,7 +1999,11 @@ exports[`SendVote should send a vote transaction 1`] = `
                           <div
                             class="font-semibold"
                           >
-                            0.09660435 ARK
+                            <span
+                              data-testid="Amount"
+                            >
+                              0.20716584 DARK
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -2003,7 +2011,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="flex justify-end mt-10 space-x-3"
                 >
                   <button
                     class="sc-AxjAm fPpool"
@@ -2050,7 +2058,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fznJRM jfPUjT"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2062,7 +2070,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznWqX kSivTB"
             >
               <svg
                 width="40"
@@ -2322,19 +2330,19 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fzqARJ kCbUYb"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fzoiQi gZjCeK"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fzoiQi kdGDDv"
                 />
               </ul>
               <div
@@ -2380,18 +2388,18 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                         />
                       </label>
                       <div
-                        class="sc-fzoyAV khmTmm max-w-20"
+                        class="sc-fzoLag hoOQgq max-w-20"
                         data-testid="InputPassword"
                       >
                         <input
                           aria-invalid="true"
-                          class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
                         />
                         <div
-                          class="sc-fzokOt sc-fzqNJr iVtotz my-px mr-4"
+                          class="sc-fzqBZW sc-fzoyAV icrEyZ my-px mr-4"
                         >
                           <button
                             class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -2419,7 +2427,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="flex justify-end mt-10 space-x-3"
                 >
                   <button
                     class="sc-AxjAm fPpool"
@@ -2430,13 +2438,24 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm kbZyZT"
+                    class="sc-AxjAm kbZyZT space-x-2"
                     color="primary"
                     data-testid="SendVote__button--submit"
                     disabled=""
                     type="submit"
                   >
-                    Send
+                    <div
+                      class="sc-AxiKw dklFyP"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        send.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Send
+                    </span>
                   </button>
                 </div>
               </div>

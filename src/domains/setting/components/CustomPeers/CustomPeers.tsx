@@ -1,4 +1,4 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
 import { Checkbox } from "app/components/Checkbox";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -13,7 +13,7 @@ type CustomPeersProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onAddPeer?: any;
-	networks?: NetworkData[];
+	networks?: Coins.Network[];
 };
 
 export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeersProps) => {
