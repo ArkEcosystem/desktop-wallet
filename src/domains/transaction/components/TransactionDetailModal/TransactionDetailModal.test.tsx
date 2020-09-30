@@ -1,3 +1,4 @@
+import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -155,6 +156,16 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a vote modal", () => {
+		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+			votes.map(
+				(vote: string, index: number) =>
+					new ReadOnlyWallet({
+						address: vote,
+						username: `delegate-${index}`,
+					}),
+			),
+		);
+
 		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
@@ -178,6 +189,16 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a unvote modal", () => {
+		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+			votes.map(
+				(vote: string, index: number) =>
+					new ReadOnlyWallet({
+						address: vote,
+						username: `delegate-${index}`,
+					}),
+			),
+		);
+
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
@@ -221,6 +242,33 @@ describe("TransactionDetailModal", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render a delegate resignation modal", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<TransactionDetailModal
+					isOpen={true}
+					transactionItem={{
+						...TransactionFixture,
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						type: () => "delegateResignation",
+						wallet: () => ({
+							...TransactionFixture.wallet(),
+							username: () => "ARK Wallet",
+						}),
+					}}
+				/>
+				,
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELEGATE_RESIGNATION_DETAIL.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

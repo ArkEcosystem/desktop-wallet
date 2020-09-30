@@ -46,7 +46,7 @@ const sendMock = RequestMock()
 
 createFixture(`Single Transfer action`);
 
-test("should show an error if wrong mnemonic", async (t: any) => {
+test("should show an error if wrong mnemonic", async (t) => {
 	// Navigate to wallet page
 	await goToWallet(t);
 

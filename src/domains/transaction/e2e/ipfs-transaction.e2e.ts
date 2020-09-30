@@ -81,7 +81,7 @@ test("should show an error if an invalid IPFS hash is entered", async (t) => {
 	await t.expect(Selector("[data-testid=Input__hash]").hasAttribute("aria-invalid")).ok();
 });
 
-test("should show an error if wrong mnemonic", async (t: any) => {
+test("should show an error if wrong mnemonic", async (t) => {
 	// Navigate to wallet page
 	await goToWallet(t);
 

@@ -154,7 +154,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 						<div className="w-1/2 pr-12 border-r border-theme-neutral-300">
 							<WalletVote
 								votes={activeWallet.hasSyncedWithNetwork() ? activeWallet.votes() : []}
-								maxVotes={activeWallet.network().maximumVotes()}
+								maxVotes={activeWallet.network().maximumVotesPerWallet()}
 								isLoading={isLoading}
 								onButtonClick={handleVoteButton}
 							/>

@@ -211,7 +211,7 @@ describe("PluginManager", () => {
 			fireEvent.click(within(getByTestId("PluginManager__home__top-rated")).getAllByText("ARK Explorer")[0]);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/ark-explorer-0`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/0`);
 	});
 
 	it("should select plugin on game grid", () => {
@@ -222,7 +222,7 @@ describe("PluginManager", () => {
 			fireEvent.click(getAllByText("ARK Explorer")[0]);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/ark-explorer-0`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/0`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

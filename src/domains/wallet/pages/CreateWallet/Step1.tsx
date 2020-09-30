@@ -1,4 +1,5 @@
-import { Environment, NetworkData, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -11,11 +12,11 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 	const [isGeneratingWallet, setIsGeneratingWallet] = React.useState(false);
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const selectedNetwork: NetworkData = getValues("network");
+	const selectedNetwork: Coins.Network = getValues("network");
 
 	const { t } = useTranslation();
 
-	const handleSelect = async (network?: NetworkData | null) => {
+	const handleSelect = async (network?: Coins.Network | null) => {
 		const currentWallet = getValues("wallet");
 
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });

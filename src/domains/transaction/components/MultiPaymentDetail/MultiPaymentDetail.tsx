@@ -29,6 +29,7 @@ export const MultiPaymentDetail = ({ isOpen, transaction, onClose }: MultiPaymen
 				address={transaction.sender()}
 				alias={wallet.alias()}
 				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+				border={false}
 			/>
 
 			<TransactionRecipients currency={wallet.currency()} recipients={transaction.recipients()} />

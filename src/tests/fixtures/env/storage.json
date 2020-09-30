@@ -6,29 +6,16 @@
 				"ac38fe6d-4b67-4ef1-85be-17c5f6841129": {
 					"id": "ac38fe6d-4b67-4ef1-85be-17c5f6841129",
 					"coin": "ARK",
-					"coinConfig": {
-						"network": {
-							"id": "ark.devnet",
-							"type": "test",
-							"name": "ARK Devnet",
-							"explorer": "https://dexplorer.ark.io/",
-							"currency": {
-								"ticker": "DARK",
-								"symbol": "DѦ"
-							},
-							"crypto": {
-								"slip44": 111
-							},
+					"network": "ark.devnet",
+					"networkConfig": {
+						"crypto": {
+							"slip44": 111
+						},
+						"networking": {
 							"hosts": ["https://dwallets.ark.io"],
-							"hostsMultiSignature": ["https://dmusig1.ark.io"],
-							"voting": {
-								"enabled": true,
-								"maximum": 1,
-								"maximumPerTransaction": 1
-							}
+							"hostsMultiSignature": ["https://dmusig1.ark.io"]
 						}
 					},
-					"network": "ark.devnet",
 					"address": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					"publicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 					"data": {
@@ -50,29 +37,16 @@
 				"d044a552-7a49-411c-ae16-8ff407acc430": {
 					"id": "d044a552-7a49-411c-ae16-8ff407acc430",
 					"coin": "ARK",
-					"coinConfig": {
-						"network": {
-							"id": "ark.devnet",
-							"type": "test",
-							"name": "ARK Devnet",
-							"explorer": "https://dexplorer.ark.io/",
-							"currency": {
-								"ticker": "DARK",
-								"symbol": "DѦ"
-							},
-							"crypto": {
-								"slip44": 111
-							},
+					"network": "ark.devnet",
+					"networkConfig": {
+						"crypto": {
+							"slip44": 111
+						},
+						"networking": {
 							"hosts": ["https://dwallets.ark.io"],
-							"hostsMultiSignature": ["https://dmusig1.ark.io"],
-							"voting": {
-								"enabled": true,
-								"maximum": 1,
-								"maximumPerTransaction": 1
-							}
+							"hostsMultiSignature": ["https://dmusig1.ark.io"]
 						}
 					},
-					"network": "ark.devnet",
 					"address": "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 					"publicKey": "03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
 					"data": {
@@ -178,7 +152,7 @@
 			},
 			"plugins": {
 				"data": {},
-				"blacklist": []
+				"blacklist": [0]
 			},
 			"data": {
 				"key": "value"
@@ -204,7 +178,7 @@
 			"notifications": {},
 			"plugins": {
 				"data": {},
-				"blacklist": []
+				"blacklist": [0]
 			},
 			"data": {
 				"key": "value"

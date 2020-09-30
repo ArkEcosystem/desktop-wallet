@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Contact, ContactAddress, NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Contact, ContactAddress } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -71,7 +71,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 
 type ContactFormProps = {
 	contact?: Contact;
-	networks: NetworkData[];
+	networks: Coins.Network[];
 	onCancel?: any;
 	onChange?: any;
 	onDelete?: any;
@@ -148,7 +148,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 		);
 	};
 
-	const handleSelectNetwork = (network?: NetworkData | null) => {
+	const handleSelectNetwork = (network?: Coins.Network | null) => {
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
 

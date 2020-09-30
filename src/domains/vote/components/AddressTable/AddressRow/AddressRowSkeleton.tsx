@@ -15,7 +15,9 @@ export const AddressRowSkeleton = () => (
 		<td className="w-20 py-5" />
 
 		<td className="py-5">
-			<Skeleton width="40%" height={6} className="mt-4" />
+			<div className="flex justify-end h-full">
+				<Skeleton width={50} height={6} className="mt-4 mr-5" />
+			</div>
 		</td>
 
 		<td className="py-5">
@@ -27,7 +29,9 @@ export const AddressRowSkeleton = () => (
 		</td>
 
 		<td className="py-5">
-			<Skeleton width="30%" height={6} className="mt-4" />
+			<div className="flex justify-center h-full">
+				<Skeleton width={30} height={6} className="mt-4" />
+			</div>
 		</td>
 
 		<td className="py-5">
