@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { NetworkData, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
@@ -362,7 +363,7 @@ describe("ImportWallet", () => {
 
 	it("should import by address and fill a wallet name", async () => {
 		const networkMock = jest.spyOn(env, "availableNetworks").mockReturnValue([
-			new NetworkData("ARK", {
+			new Coins.Network("ARK", {
 				id: "ark.devnet",
 				type: "test",
 				name: "ARK Devnet",

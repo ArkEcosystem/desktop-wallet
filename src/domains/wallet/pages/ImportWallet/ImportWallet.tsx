@@ -1,4 +1,5 @@
-import { NetworkData, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -51,7 +52,7 @@ export const ImportWallet = () => {
 		address,
 		name,
 	}: {
-		network: NetworkData;
+		network: Coins.Network;
 		passphrase: string;
 		address: string;
 		name: string;

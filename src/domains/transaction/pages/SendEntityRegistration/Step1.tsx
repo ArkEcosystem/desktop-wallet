@@ -1,4 +1,5 @@
-import { Enums, NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Enums, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Select } from "app/components/SelectDropdown";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -33,7 +34,7 @@ const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrat
 };
 
 type FirstStepProps = {
-	networks: NetworkData[];
+	networks: Coins.Network[];
 	profile: Profile;
 	wallet: ReadWriteWallet;
 	setRegistrationForm: any;
@@ -117,7 +118,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 						networks={networks}
 						selected={network}
 						disabled={!!senderAddress}
-						onSelect={(selectedNetwork: NetworkData | null | undefined) =>
+						onSelect={(selectedNetwork: Coins.Network | null | undefined) =>
 							setValue("network", selectedNetwork)
 						}
 					/>

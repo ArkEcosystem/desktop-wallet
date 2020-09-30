@@ -1,10 +1,10 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Input, InputAddon, InputAddonStart, InputGroup } from "app/components/Input";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 
 type Props = {
-	network?: NetworkData;
+	network?: Coins.Network;
 	suggestion?: string;
 } & React.InputHTMLAttributes<any>;
 
