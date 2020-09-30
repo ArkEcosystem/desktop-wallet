@@ -251,7 +251,11 @@ export const Votes = () => {
 							onContinue={handleContinue}
 						/>
 					) : (
-						<MyVoteTable maxVotes={network.maximumVotesPerWallet()} votes={votes} onContinue={handleContinue} />
+						<MyVoteTable
+							maxVotes={network.maximumVotesPerWallet()}
+							votes={votes}
+							onContinue={handleContinue}
+						/>
 					)
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
