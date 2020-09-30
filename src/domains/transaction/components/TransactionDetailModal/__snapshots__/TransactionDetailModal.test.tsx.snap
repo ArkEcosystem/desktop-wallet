@@ -12,14 +12,14 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -56,38 +56,48 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Account
+                <span
+                  class="mr-1"
+                >
+                  Sender
+                </span>
+                <div
+                  class="sc-AxhUy kDFfAu"
+                  color="warning"
+                >
+                  <span
+                    class="text-sm"
+                  >
+                    Your address
+                  </span>
+                </div>
               </div>
               <div
                 class="font-semibold"
               >
-                ARK Wallet
-                <span
-                  class="sc-AxgMl fFPQpl ml-2 text-theme-neutral"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B…s6YUYD
-                </span>
+                  <span
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    Test Wallet
+                  </span>
+                  <span
+                    class="sc-AxheI fniENP text-theme-neutral-light font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B…s6YUYD
+                  </span>
+                </div>
               </div>
             </div>
             <div
-              class="flex items-center"
+              class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm fJvtfB -mr-2 border-black"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -112,21 +122,16 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Amount
+                Delegate Name
               </div>
               <div
                 class="font-semibold"
               >
-                <div
-                  class="sc-AxiKw BrXzA"
-                  color="danger"
-                >
-                  121.00000000 BTC
-                </div>
+                ARK Wallet
               </div>
             </div>
             <div
-              class="sc-AxjAm fJvtfB border-theme-danger-200 text-theme-danger-dark"
+              class="sc-AxjAm bHAIY border-theme-text"
             >
               <div
                 class="sc-AxirZ dCVESD"
@@ -134,7 +139,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                 width="25"
               >
                 <svg>
-                  sent.svg
+                  delegate.svg
                 </svg>
               </div>
             </div>
@@ -154,7 +159,11 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               <div
                 class="font-semibold"
               >
-                21.00000000 BTC
+                <span
+                  data-testid="Amount"
+                >
+                  21 ARK
+                </span>
               </div>
             </div>
           </div>
@@ -195,7 +204,9 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                 <div
                   class="flex"
                 >
-                  Not Confirmed
+                  <span>
+                    Not confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                   >
@@ -232,25 +243,41 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  ee4175…3ecefe
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-AxheI fniENP text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      ee4175091d9f4…9d09bcf3ecefe
+                    </span>
+                  </a>
+                  <span
+                    class="inline-block ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -269,25 +296,41 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  as32d1…165das
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-AxheI fniENP text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      as32d1as65d1a…as3d2as165das
+                    </span>
+                  </a>
+                  <span
+                    class="inline-block ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -309,14 +352,14 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -368,7 +411,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-neutral-light font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -543,13 +586,13 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                      class="sc-AxheI fniENP text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4…9d09bcf3ecefe
@@ -596,13 +639,13 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                      class="sc-AxheI fniENP text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5…972b8075d67e9
@@ -648,14 +691,14 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -707,7 +750,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-neutral-light font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -850,7 +893,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-AxiKw BrXzA"
+                  class="sc-AxhUy gRLEpJ"
                   color="danger"
                 >
                   <span
@@ -1020,13 +1063,13 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                      class="sc-AxheI fniENP text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4…9d09bcf3ecefe
@@ -1073,13 +1116,13 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                      class="sc-AxheI fniENP text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       as32d1as65d1a…as3d2as165das
@@ -1125,14 +1168,14 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -1261,7 +1304,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="sc-AxiKw BrXzA"
+                          class="sc-AxhUy gRLEpJ"
                           color="danger"
                         >
                           2,088.84557 ARK
@@ -1562,7 +1605,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                   class="flex-1"
                 >
                   <button
-                    class="sc-AxhCb hPLjLy mr-2"
+                    class="sc-AxiKw MYNNu mr-2"
                     color="primary"
                     type="button"
                   >
@@ -1573,7 +1616,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                   class="space-x-3"
                 >
                   <button
-                    class="sc-AxhCb hPLjLy"
+                    class="sc-AxiKw MYNNu"
                     color="primary"
                     data-testid="MultiSignatureDetail__back-button"
                     disabled=""
@@ -1582,7 +1625,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxhCb khNOPs inline-block"
+                    class="sc-AxiKw gQbnsc inline-block"
                     color="primary"
                     data-testid="MultiSignatureDetail__sign-button"
                     type="button"
@@ -1590,7 +1633,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                     Sign
                   </button>
                   <button
-                    class="sc-AxhCb khNOPs hidden"
+                    class="sc-AxiKw gQbnsc hidden"
                     color="primary"
                     data-testid="MultiSignatureDetail__submit-button"
                     type="submit"
@@ -1619,14 +1662,14 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -1678,7 +1721,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-neutral-light font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -1821,13 +1864,13 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                      class="sc-AxheI fniENP text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4…9d09bcf3ecefe
@@ -1874,13 +1917,13 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                      class="sc-AxheI fniENP text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       as32d1as65d1a…as3d2as165das
@@ -1926,14 +1969,14 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -1985,7 +2028,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-neutral-light font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -2044,7 +2087,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-text font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2083,7 +2126,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-AxiKw BrXzA"
+                  class="sc-AxhUy gRLEpJ"
                   color="danger"
                 >
                   <span
@@ -2253,13 +2296,13 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                      class="sc-AxheI fniENP text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4…9d09bcf3ecefe
@@ -2306,13 +2349,13 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                      class="sc-AxheI fniENP text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       as32d1as65d1a…as3d2as165das
@@ -2358,14 +2401,14 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -2409,7 +2452,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               >
                 ARK Wallet 1
                 <span
-                  class="sc-AxgMl fFPQpl ml-2 text-theme-neutral"
+                  class="sc-AxheI fniENP ml-2 text-theme-neutral"
                   data-testid="TruncateMiddle"
                 >
                   D8rr7B…s6YUYD
@@ -2468,7 +2511,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 >
                   arkx
                   <span
-                    class="sc-AxgMl fFPQpl ml-2 text-theme-neutral"
+                    class="sc-AxheI fniENP ml-2 text-theme-neutral"
                     data-testid="VoteDetail__delegate__address"
                   >
                     D61mfS…J3Dyib
@@ -2602,7 +2645,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 class="font-semibold"
               >
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                  class="sc-AxheI fniENP text-theme-primary-dark"
                   data-testid="TruncateMiddle"
                 >
                   ee4175…3ecefe
@@ -2639,7 +2682,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 class="font-semibold"
               >
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                  class="sc-AxheI fniENP text-theme-primary-dark"
                   data-testid="TruncateMiddle"
                 >
                   as32d1…165das
@@ -2678,14 +2721,14 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -2729,7 +2772,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               >
                 ARK Wallet 1
                 <span
-                  class="sc-AxgMl fFPQpl ml-2 text-theme-neutral"
+                  class="sc-AxheI fniENP ml-2 text-theme-neutral"
                   data-testid="TruncateMiddle"
                 >
                   D8rr7B…s6YUYD
@@ -2788,7 +2831,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 >
                   arkx
                   <span
-                    class="sc-AxgMl fFPQpl ml-2 text-theme-neutral"
+                    class="sc-AxheI fniENP ml-2 text-theme-neutral"
                     data-testid="VoteDetail__delegate__address"
                   >
                     D61mfS…J3Dyib
@@ -2922,7 +2965,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 class="font-semibold"
               >
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                  class="sc-AxheI fniENP text-theme-primary-dark"
                   data-testid="TruncateMiddle"
                 >
                   ee4175…3ecefe
@@ -2959,7 +3002,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 class="font-semibold"
               >
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
+                  class="sc-AxheI fniENP text-theme-primary-dark"
                   data-testid="TruncateMiddle"
                 >
                   as32d1…165das
