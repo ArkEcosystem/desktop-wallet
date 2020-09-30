@@ -90,6 +90,10 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Delegate Registration",
 	},
 
+	MODAL_DELEGATE_RESIGNATION_DETAIL: {
+		TITLE: "Delegate Resignation",
+	},
+
 	MODAL_MULTISIGNATURE_DETAIL: {
 		STEP_1: {
 			TITLE: "Multisignature",
