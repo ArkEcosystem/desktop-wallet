@@ -52,11 +52,7 @@ const Main = () => {
 	useLayoutEffect(() => {
 		const boot = async () => {
 			/* istanbul ignore next */
-			const shouldUseFixture: boolean =
-				process.env.REACT_APP_BUILD_MODE === "demo" ||
-				// TestCafe doesn't expose environment variables.
-				(process.env.NODE_ENV === "production" && process.env.PUBLIC_URL === ".");
-
+			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
 			await env.verify(shouldUseFixture ? fixtureData : undefined);
 			await env.boot();
 			await runAll();
