@@ -62,6 +62,42 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_UPDATE")} />;
 	}
 
+	if (transaction?.isProductEntityRegistration()) {
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_REGISTRATION")} />;
+	}
+
+	if (transaction?.isProductEntityResignation()) {
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_RESIGNATION")} />;
+	}
+
+	if (transaction?.isProductEntityUpdate()) {
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_UPDATE")} />;
+	}
+
+	if (transaction?.isPluginEntityRegistration()) {
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_REGISTRATION")} />;
+	}
+
+	if (transaction?.isPluginEntityResignation()) {
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_RESIGNATION")} />;
+	}
+
+	if (transaction?.isPluginEntityUpdate()) {
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_UPDATE")} />;
+	}
+
+	if (transaction?.isModuleEntityRegistration()) {
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_REGISTRATION")} />;
+	}
+
+	if (transaction?.isModuleEntityResignation()) {
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_RESIGNATION")} />;
+	}
+
+	if (transaction?.isModuleEntityUpdate()) {
+		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_UPDATE")} />;
+	}
+
 	return (
 		<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
 			{transactionLabel[type]}
