@@ -73,7 +73,7 @@ describe("EntityDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal business entity resignation", () => {
+	it("should render a business entity resignation modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EntityDetail
 				isOpen={true}
@@ -91,7 +91,7 @@ describe("EntityDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal business entity update", () => {
+	it("should render a business entity update modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EntityDetail
 				isOpen={true}
@@ -107,7 +107,7 @@ describe("EntityDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal product entity registration", () => {
+	it("should render a product entity registration modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EntityDetail
 				isOpen={true}
@@ -125,7 +125,7 @@ describe("EntityDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal product entity resignation", () => {
+	it("should render a product entity resignation modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EntityDetail
 				isOpen={true}
@@ -143,7 +143,7 @@ describe("EntityDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal product entity update", () => {
+	it("should render a product entity update modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EntityDetail
 				isOpen={true}
@@ -159,7 +159,7 @@ describe("EntityDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal plugin entity registration", () => {
+	it("should render a plugin entity registration modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EntityDetail
 				isOpen={true}
@@ -177,7 +177,7 @@ describe("EntityDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal plugin entity resignation", () => {
+	it("should render a plugin entity resignation modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EntityDetail
 				isOpen={true}
@@ -193,7 +193,7 @@ describe("EntityDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal plugin entity update", () => {
+	it("should render a plugin entity update modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EntityDetail
 				isOpen={true}
@@ -209,7 +209,7 @@ describe("EntityDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal module entity registration", () => {
+	it("should render a module entity registration modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EntityDetail
 				isOpen={true}
@@ -227,7 +227,7 @@ describe("EntityDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal module entity resignation", () => {
+	it("should render a module entity resignation modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EntityDetail
 				isOpen={true}
@@ -243,7 +243,7 @@ describe("EntityDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal module entity update", () => {
+	it("should render a module entity update modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EntityDetail
 				isOpen={true}
