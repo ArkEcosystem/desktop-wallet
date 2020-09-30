@@ -1,5 +1,5 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { useEnvironmentContext } from "app/contexts";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 type SendTransactionFormProps = {
-	networks: NetworkData[];
+	networks: Coins.Network[];
 	profile: Profile;
 	children?: React.ReactNode;
 	transactionType: string;
@@ -78,7 +78,9 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 					networks={networks}
 					selected={network}
 					disabled={!!senderAddress}
-					onSelect={(selectedNetwork: NetworkData | null | undefined) => setValue("network", selectedNetwork)}
+					onSelect={(selectedNetwork: Coins.Network | null | undefined) =>
+						setValue("network", selectedNetwork)
+					}
 				/>
 			</FormField>
 

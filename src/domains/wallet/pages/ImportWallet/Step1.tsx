@@ -1,4 +1,4 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { useEnvironmentContext } from "app/contexts";
@@ -12,7 +12,7 @@ export const FirstStep = () => {
 	const { env } = useEnvironmentContext();
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const selectedNetwork: NetworkData = getValues("network");
+	const selectedNetwork: Coins.Network = getValues("network");
 
 	const { t } = useTranslation();
 
@@ -20,7 +20,7 @@ export const FirstStep = () => {
 		register("network", { required: true });
 	}, [register]);
 
-	const handleSelect = (network?: NetworkData | null) => {
+	const handleSelect = (network?: Coins.Network | null) => {
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
 

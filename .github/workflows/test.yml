@@ -46,8 +46,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --frozen-lockfile
 
+            - name: Rebuild
+              run: npm rebuild
+
             - name: Test
-              run: yarn test:coverage --maxWorkers=4 --coverageDirectory .coverage/unit
+              run: yarn test:coverage --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
             - name: Codecov
               uses: codecov/codecov-action@v1

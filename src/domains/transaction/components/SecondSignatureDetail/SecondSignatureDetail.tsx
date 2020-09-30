@@ -26,6 +26,7 @@ export const SecondSignatureDetail = ({ isOpen, transaction, onClose }: SecondSi
 				address={transaction.sender()}
 				alias={wallet.alias()}
 				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+				border={false}
 			/>
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />

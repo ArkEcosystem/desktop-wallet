@@ -1,3 +1,4 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 // import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { ATOM } from "@arkecosystem/platform-sdk-atom";
@@ -6,9 +7,8 @@ import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 import { NEO } from "@arkecosystem/platform-sdk-neo";
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { TRX } from "@arkecosystem/platform-sdk-trx";
-import { XLM } from "@arkecosystem/platform-sdk-xlm";
+// import { XLM } from "@arkecosystem/platform-sdk-xlm";
 import { XMR } from "@arkecosystem/platform-sdk-xmr";
 import { XRP } from "@arkecosystem/platform-sdk-xrp";
 
@@ -282,43 +282,43 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// },
 };
 
-export const availableNetworksMock: NetworkData[] = [
-	// new NetworkData(ADA.manifest.name, ADA.manifest.networks["ada.mainnet"]),
-	new NetworkData(ARK.manifest.name, ARK.manifest.networks["ark.mainnet"]),
-	new NetworkData(ARK.manifest.name, ARK.manifest.networks["ark.devnet"]),
-	new NetworkData(ARK.manifest.name, ARK.manifest.networks["compendia.mainnet"]),
-	new NetworkData(ARK.manifest.name, ARK.manifest.networks["compendia.testnet"]),
-	new NetworkData(ATOM.manifest.name, ATOM.manifest.networks["cosmos.mainnet"]),
-	new NetworkData(ATOM.manifest.name, ATOM.manifest.networks["cosmos.testnet"]),
-	new NetworkData(ATOM.manifest.name, ATOM.manifest.networks["terra.mainnet"]),
-	new NetworkData(ATOM.manifest.name, ATOM.manifest.networks["terra.testnet"]),
-	new NetworkData(BTC.manifest.name, BTC.manifest.networks["btc.livenet"]),
-	new NetworkData(BTC.manifest.name, BTC.manifest.networks["btc.testnet"]),
-	new NetworkData(EOS.manifest.name, EOS.manifest.networks["bos.mainnet"]),
-	new NetworkData(EOS.manifest.name, EOS.manifest.networks["eos.mainnet"]),
-	new NetworkData(EOS.manifest.name, EOS.manifest.networks["eos.testnet"]),
-	new NetworkData(EOS.manifest.name, EOS.manifest.networks["meetone.mainnet"]),
-	new NetworkData(EOS.manifest.name, EOS.manifest.networks["telos.mainnet"]),
-	new NetworkData(EOS.manifest.name, EOS.manifest.networks["telos.testnet"]),
-	new NetworkData(EOS.manifest.name, EOS.manifest.networks["wax.mainnet"]),
-	new NetworkData(EOS.manifest.name, EOS.manifest.networks["worbli.mainnet"]),
-	new NetworkData(EOS.manifest.name, EOS.manifest.networks["worbli.testnet"]),
-	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.["eth.goerli"]),
-	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.["eth.kovan"]),
-	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.["eth.mainnet"]),
-	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.["eth.rinkeby"]),
-	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.["eth.ropsten"]),
-	// new NetworkData(LSK.manifest.name, LSK.manifest.networks.["lsk.betanet"]),
-	new NetworkData(LSK.manifest.name, LSK.manifest.networks["lsk.mainnet"]),
-	new NetworkData(LSK.manifest.name, LSK.manifest.networks["lsk.testnet"]),
-	new NetworkData(NEO.manifest.name, NEO.manifest.networks["neo.mainnet"]),
-	new NetworkData(NEO.manifest.name, NEO.manifest.networks["neo.testnet"]),
-	new NetworkData(TRX.manifest.name, TRX.manifest.networks["trx.mainnet"]),
-	new NetworkData(TRX.manifest.name, TRX.manifest.networks["trx.testnet"]),
-	new NetworkData(XLM.manifest.name, XLM.manifest.networks["xlm.mainnet"]),
-	new NetworkData(XLM.manifest.name, XLM.manifest.networks["xlm.testnet"]),
-	new NetworkData(XMR.manifest.name, XMR.manifest.networks["xmr.mainnet"]),
-	new NetworkData(XMR.manifest.name, XMR.manifest.networks["xmr.testnet"]),
-	new NetworkData(XRP.manifest.name, XRP.manifest.networks["xrp.mainnet"]),
-	new NetworkData(XRP.manifest.name, XRP.manifest.networks["xrp.testnet"]),
+export const availableNetworksMock: Coins.Network[] = [
+	// new Coins.Network(ADA.manifest.name, ADA.manifest.networks["ada.mainnet"]),
+	new Coins.Network(ARK.manifest.name, ARK.manifest.networks["ark.mainnet"]),
+	new Coins.Network(ARK.manifest.name, ARK.manifest.networks["ark.devnet"]),
+	new Coins.Network(ARK.manifest.name, ARK.manifest.networks["compendia.mainnet"]),
+	new Coins.Network(ARK.manifest.name, ARK.manifest.networks["compendia.testnet"]),
+	new Coins.Network(ATOM.manifest.name, ATOM.manifest.networks["cosmos.mainnet"]),
+	new Coins.Network(ATOM.manifest.name, ATOM.manifest.networks["cosmos.testnet"]),
+	new Coins.Network(ATOM.manifest.name, ATOM.manifest.networks["terra.mainnet"]),
+	new Coins.Network(ATOM.manifest.name, ATOM.manifest.networks["terra.testnet"]),
+	new Coins.Network(BTC.manifest.name, BTC.manifest.networks["btc.livenet"]),
+	new Coins.Network(BTC.manifest.name, BTC.manifest.networks["btc.testnet"]),
+	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["bos.mainnet"]),
+	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["eos.mainnet"]),
+	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["eos.testnet"]),
+	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["meetone.mainnet"]),
+	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["telos.mainnet"]),
+	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["telos.testnet"]),
+	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["wax.mainnet"]),
+	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["worbli.mainnet"]),
+	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["worbli.testnet"]),
+	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.goerli"]),
+	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.kovan"]),
+	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.mainnet"]),
+	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.rinkeby"]),
+	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.ropsten"]),
+	// new Coins.Network(LSK.manifest.name, LSK.manifest.networks.["lsk.betanet"]),
+	new Coins.Network(LSK.manifest.name, LSK.manifest.networks["lsk.mainnet"]),
+	new Coins.Network(LSK.manifest.name, LSK.manifest.networks["lsk.testnet"]),
+	new Coins.Network(NEO.manifest.name, NEO.manifest.networks["neo.mainnet"]),
+	new Coins.Network(NEO.manifest.name, NEO.manifest.networks["neo.testnet"]),
+	new Coins.Network(TRX.manifest.name, TRX.manifest.networks["trx.mainnet"]),
+	new Coins.Network(TRX.manifest.name, TRX.manifest.networks["trx.testnet"]),
+	// new Coins.Network(XLM.manifest.name, XLM.manifest.networks["xlm.mainnet"]),
+	// new Coins.Network(XLM.manifest.name, XLM.manifest.networks["xlm.testnet"]),
+	new Coins.Network(XMR.manifest.name, XMR.manifest.networks["xmr.mainnet"]),
+	new Coins.Network(XMR.manifest.name, XMR.manifest.networks["xmr.testnet"]),
+	new Coins.Network(XRP.manifest.name, XRP.manifest.networks["xrp.mainnet"]),
+	new Coins.Network(XRP.manifest.name, XRP.manifest.networks["xrp.testnet"]),
 ];

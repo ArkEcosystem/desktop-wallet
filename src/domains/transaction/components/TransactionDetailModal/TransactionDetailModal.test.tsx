@@ -224,6 +224,33 @@ describe("TransactionDetailModal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render a delegate resignation modal", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<TransactionDetailModal
+					isOpen={true}
+					transactionItem={{
+						...TransactionFixture,
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						type: () => "delegateResignation",
+						wallet: () => ({
+							...TransactionFixture.wallet(),
+							username: () => "ARK Wallet",
+						}),
+					}}
+				/>
+				,
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELEGATE_RESIGNATION_DETAIL.TITLE);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render a second signature modal", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">

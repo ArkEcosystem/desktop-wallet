@@ -1,4 +1,5 @@
-import { NetworkData, Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -96,7 +97,7 @@ export const Votes = () => {
 	const activeWallet = useActiveWallet();
 
 	const [tabItem, setTabItem] = useState("delegate");
-	const [network, setNetwork] = useState<NetworkData | null>(null);
+	const [network, setNetwork] = useState<Coins.Network | null>(null);
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
@@ -166,8 +167,14 @@ export const Votes = () => {
 		}
 	}, [activeWallet, loadDelegates, hasWalletId]);
 
-	const handleSelectNetwork = (network?: NetworkData | null) => {
-		setNetwork(network!);
+	const handleSelectNetwork = (networkData?: Coins.Network | null) => {
+		if (!networkData || networkData.id() !== network?.id()) {
+			setTabItem("delegate");
+			setWallets([]);
+			setAddress("");
+		}
+
+		setNetwork(networkData!);
 	};
 
 	const handleSelectAddress = (address: string) => {
@@ -217,7 +224,6 @@ export const Votes = () => {
 							selected={network!}
 							placeholder={t("COMMON.SELECT_OPTION", { option: t("COMMON.NETWORK") })}
 							onSelect={handleSelectNetwork}
-							disabled={hasWalletId}
 						/>
 					</div>
 
@@ -240,12 +246,16 @@ export const Votes = () => {
 					tabItem === "delegate" ? (
 						<DelegateTable
 							delegates={delegates}
-							maxVotes={network.maximumVotes()}
+							maxVotes={network.maximumVotesPerWallet()}
 							votes={votes}
 							onContinue={handleContinue}
 						/>
 					) : (
-						<MyVoteTable maxVotes={network.maximumVotes()} votes={votes} onContinue={handleContinue} />
+						<MyVoteTable
+							maxVotes={network.maximumVotesPerWallet()}
+							votes={votes}
+							onContinue={handleContinue}
+						/>
 					)
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />

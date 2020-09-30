@@ -1,4 +1,5 @@
-import { Contact, NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Contact } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
@@ -55,7 +56,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	const [contactAction, setContactAction] = useState<string | null>(null);
 	const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
 
-	const [availableNetworks] = useState<NetworkData[]>(env.availableNetworks());
+	const [availableNetworks] = useState<Coins.Network[]>(env.availableNetworks());
 
 	const { t } = useTranslation();
 
