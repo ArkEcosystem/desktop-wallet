@@ -20,62 +20,62 @@ export const EntityDetail = ({ isOpen, transaction, onClose }: EntityDetailProps
 
 	const wallet = useMemo(() => transaction.wallet(), [transaction]);
 
-	const getTitle = () => {
-		let title = "";
+	const getEntityTitle = () => {
+		let entityTitle = "";
 
 		if (transaction.isBusinessEntityRegistration()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION");
 		}
 
 		if (transaction.isBusinessEntityResignation()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_RESIGNATION");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_RESIGNATION");
 		}
 
 		if (transaction.isBusinessEntityUpdate()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_UPDATE");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_UPDATE");
 		}
 
 		if (transaction.isProductEntityRegistration()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_REGISTRATION");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_REGISTRATION");
 		}
 
 		if (transaction.isProductEntityResignation()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_RESIGNATION");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_RESIGNATION");
 		}
 
 		if (transaction.isProductEntityUpdate()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_UPDATE");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_UPDATE");
 		}
 
 		if (transaction.isPluginEntityRegistration()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_REGISTRATION");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_REGISTRATION");
 		}
 
 		if (transaction.isPluginEntityResignation()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_RESIGNATION");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_RESIGNATION");
 		}
 
 		if (transaction.isPluginEntityUpdate()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_UPDATE");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_UPDATE");
 		}
 
 		if (transaction.isModuleEntityRegistration()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_REGISTRATION");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_REGISTRATION");
 		}
 
 		if (transaction.isModuleEntityResignation()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_RESIGNATION");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_RESIGNATION");
 		}
 
 		if (transaction.isModuleEntityUpdate()) {
-			title = t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_UPDATE");
+			entityTitle = t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_UPDATE");
 		}
 
-		return title;
+		return entityTitle;
 	};
 
 	return (
-		<Modal title={getTitle()} isOpen={isOpen} onClose={onClose}>
+		<Modal title={getEntityTitle()} isOpen={isOpen} onClose={onClose}>
 			<TransactionSender
 				address={transaction.sender()}
 				alias={wallet.alias()}

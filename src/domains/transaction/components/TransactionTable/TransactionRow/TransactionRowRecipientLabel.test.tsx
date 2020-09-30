@@ -14,6 +14,6 @@ describe("TransactionRowRecipientLabel", () => {
 		const { getByText } = render(
 			<TransactionRowRecipientLabel transaction={{ ...TransactionFixture, type: () => "secondSignature" }} />,
 		);
-		expect(getByText("2nd Signature Creation")).toBeTruthy();
+		expect(getByText("Second Signature")).toBeTruthy();
 	});
 });
