@@ -36,7 +36,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-fznZeY bjCdbf flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -49,7 +49,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+                class="sc-fznKkj juGaYD flex-1 bg-theme-warning-100 space-y-2"
               >
                 <div
                   class="text-sm"
@@ -100,7 +100,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
                 data-testid="clipboard__wrapper"
               >
                 <button
-                  class="sc-AxmLO feykcd"
+                  class="sc-fzozJi kSwOTY"
                   color="primary"
                   data-testid="SecondSignature__copy"
                   type="button"
@@ -122,7 +122,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             </div>
           </div>
           <div
-            class="sc-fznJRM glAjFm border-theme-neutral-300"
+            class="sc-fznWqX kGOVcl border-theme-neutral-300"
             type="horizontal"
           />
           <div
@@ -159,7 +159,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
               class="flex justify-end w-full mt-8"
             >
               <button
-                class="sc-AxmLO feykcd flex items-center space-x-2"
+                class="sc-fzozJi kSwOTY flex items-center space-x-2"
                 color="primary"
                 data-testid="SecondSignature__download"
                 type="button"
@@ -180,7 +180,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             </div>
           </div>
           <div
-            class="sc-fznJRM glAjFm border-theme-neutral-300"
+            class="sc-fznWqX kGOVcl border-theme-neutral-300"
             type="horizontal"
           />
         </section>
@@ -232,7 +232,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-fznZeY bjCdbf flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -245,7 +245,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+                class="sc-fznKkj juGaYD flex-1 bg-theme-warning-100 space-y-2"
               >
                 <div
                   class="text-sm"
@@ -255,7 +255,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-b border-dashed border-theme-neutral-300 mt-2"
+              class="sc-AxheI hHgBKA mt-2"
               data-testid="TransactionDetail"
             >
               <div
@@ -293,7 +293,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                       ARK Wallet 1
                     </span>
                     <span
-                      class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                      class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
                       D8rr7B…s6YUYD
@@ -338,10 +338,10 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                   class="flex-1"
                 >
                   <div
-                    class="sc-fzoyAV khmTmm"
+                    class="sc-fzoLag hoOQgq"
                   >
                     <input
-                      class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                      class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -355,19 +355,19 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                         data-testid="Range"
                       >
                         <div
-                          class="sc-fzoLag iUplou"
+                          class="sc-fzoXzr dYWnKg"
                           data-testid="Range__track"
                           style="transform: scale(1); cursor: pointer;"
                         >
                           <div
-                            class="sc-fzoXzr hvdrCN"
+                            class="sc-fzpjYC csTNzu"
                             data-testid="Range__track__filled"
                           >
                             <div
                               aria-valuemax="10"
                               aria-valuemin="0"
                               aria-valuenow="0"
-                              class="sc-fzpjYC gjAIiE"
+                              class="sc-fznxsB fjEYYX"
                               data-testid="Range__thumb"
                               draggable="false"
                               role="slider"
@@ -388,7 +388,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                   >
                     <button
                       aria-checked="true"
-                      class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -397,7 +397,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     </button>
                     <button
                       aria-checked="false"
-                      class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -406,7 +406,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     </button>
                     <button
                       aria-checked="false"
-                      class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -428,7 +428,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
 exports[`SecondSignatureRegistrationForm should render transaction details 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+    class="sc-AxheI dlZkJI"
     data-testid="TransactionDetail"
   >
     <div

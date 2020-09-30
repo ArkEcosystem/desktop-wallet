@@ -1,4 +1,5 @@
-import { NetworkData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -16,7 +17,7 @@ export const FourthStep = ({ nameMaxLength }: { nameMaxLength: number }) => {
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultNetwork] = useState(() => watch("network"));
-	const network: NetworkData = getValues("network") || defaultNetwork;
+	const network: Coins.Network = getValues("network") || defaultNetwork;
 
 	const [defaultWallet] = useState(() => watch("wallet"));
 	const wallet: ReadWriteWallet = getValues("wallet") || defaultWallet;

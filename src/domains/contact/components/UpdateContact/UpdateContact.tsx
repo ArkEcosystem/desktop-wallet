@@ -1,4 +1,5 @@
-import { Contact, NetworkData, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import { ContactForm } from "domains/contact/components/ContactForm";
@@ -9,7 +10,7 @@ type UpdateContactProps = {
 	isOpen: boolean;
 	contact: Contact;
 	profile: Profile;
-	networks: NetworkData[];
+	networks: Coins.Network[];
 	onCancel?: any;
 	onClose?: any;
 	onDelete?: any;

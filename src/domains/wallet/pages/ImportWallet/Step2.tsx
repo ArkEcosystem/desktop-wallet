@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { NetworkData, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputAddress, InputPassword } from "app/components/Input";
@@ -16,7 +16,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultNetwork] = useState(() => watch("network"));
-	const network: NetworkData = getValues("network") || defaultNetwork;
+	const network: Coins.Network = getValues("network") || defaultNetwork;
 
 	const { t } = useTranslation();
 

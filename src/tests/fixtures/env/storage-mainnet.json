@@ -6,35 +6,16 @@
 				"ac38fe6d-4b67-4ef1-85be-17c5f6841129": {
 					"id": "ac38fe6d-4b67-4ef1-85be-17c5f6841129",
 					"coin": "ARK",
-					"coinConfig": {
-						"network": {
-							"id": "ark.mainnet",
-							"type": "test",
-							"name": "ARK Mainnet",
-							"explorer": "https://explorer.ark.io/",
-							"currency": {
-								"ticker": "ARK",
-								"symbol": "DѦ"
-							},
-							"crypto": {
-								"slip44": 111
-							},
-							"hosts": [
-								"https://explorer.ark.io",
-								"http://167.114.29.51:4003",
-								"http://167.114.29.52:4003",
-								"http://167.114.29.53:4003",
-								"http://167.114.29.54:4003",
-								"http://167.114.29.55:4003"
-							],
-							"hostsMultiSignature": [],
-							"voting": {
-								"enabled": true,
-								"singular": true
-							}
+					"network": "ark.mainnet",
+					"networkConfig": {
+						"crypto": {
+							"slip44": 111
+						},
+						"networking": {
+							"hosts": ["https://wallets.ark.io"],
+							"hostsMultiSignature": ["https://musig1.ark.io"]
 						}
 					},
-					"network": "ark.mainnet",
 					"address": "AHZLH1CwMEGPBxMjuohAgdR79DpezntksA",
 					"publicKey": "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
 					"data": {
