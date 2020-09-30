@@ -47,12 +47,12 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			textClass: "text-theme-primary-400",
 			iconName: "BIND",
 		},
-		"compendia.testnet": {
-			displayName: "Compendia Testnet",
-			borderClass: "border-theme-primary-100",
-			textClass: "text-theme-primary-400",
-			iconName: "BIND",
-		},
+		// "compendia.testnet": {
+		// 	displayName: "Compendia Testnet",
+		// 	borderClass: "border-theme-primary-100",
+		// 	textClass: "text-theme-primary-400",
+		// 	iconName: "BIND",
+		// },
 	},
 	// ATOM: {
 	// 	"cosmos.mainnet": {
@@ -199,16 +199,16 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		},
 		"lsk.testnet": {
 			displayName: "Lisk Testnet",
-			borderClass: "border-theme-primary-100",
+			borderClass: "border-theme-primary-300",
+			textClass: "text-theme-primary-500",
+			iconName: "LSK",
+		},
+		"lsk.betanet": {
+			displayName: "Lisk Betanet",
+			borderClass: "border-theme-primary-200",
 			textClass: "text-theme-primary-400",
 			iconName: "LSK",
 		},
-		// 'lsk.betanet': {
-		// 	displayName: "Lisk Betanet",
-		// 	borderClass: "border-theme-primary-100",
-		// 	textClass: "text-theme-primary-400",
-		// 	iconName: "LSK",
-		// },
 	},
 	// NEO: {
 	// 	'neo.mainnet': {
@@ -287,7 +287,7 @@ export const availableNetworksMock: Coins.Network[] = [
 	new Coins.Network(ARK.manifest.name, ARK.manifest.networks["ark.mainnet"]),
 	new Coins.Network(ARK.manifest.name, ARK.manifest.networks["ark.devnet"]),
 	new Coins.Network(ARK.manifest.name, ARK.manifest.networks["compendia.mainnet"]),
-	new Coins.Network(ARK.manifest.name, ARK.manifest.networks["compendia.testnet"]),
+	// new Coins.Network(ARK.manifest.name, ARK.manifest.networks["compendia.testnet"]),
 	new Coins.Network(ATOM.manifest.name, ATOM.manifest.networks["cosmos.mainnet"]),
 	new Coins.Network(ATOM.manifest.name, ATOM.manifest.networks["cosmos.testnet"]),
 	new Coins.Network(ATOM.manifest.name, ATOM.manifest.networks["terra.mainnet"]),
@@ -308,7 +308,7 @@ export const availableNetworksMock: Coins.Network[] = [
 	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.mainnet"]),
 	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.rinkeby"]),
 	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.ropsten"]),
-	// new Coins.Network(LSK.manifest.name, LSK.manifest.networks.["lsk.betanet"]),
+	new Coins.Network(LSK.manifest.name, LSK.manifest.networks["lsk.betanet"]),
 	new Coins.Network(LSK.manifest.name, LSK.manifest.networks["lsk.mainnet"]),
 	new Coins.Network(LSK.manifest.name, LSK.manifest.networks["lsk.testnet"]),
 	new Coins.Network(NEO.manifest.name, NEO.manifest.networks["neo.mainnet"]),
