@@ -3,12 +3,18 @@ import { Address } from "app/components/Address";
 import React from "react";
 
 type Props = {
+	transaction?: ExtendedTransactionData;
 	type: string;
 	recipient: string;
 	walletName?: string;
 };
 
-export const BaseTransactionRowRecipientLabel = ({ type, recipient, walletName }: Props) => {
+export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient, walletName }: Props) => {
+	console.log("TX >> ", transaction?.toObject());
+	console.log("TX >> ", transaction?.isBusinessEntityRegistration());
+	console.log("TX >> ", transaction?.isBusinessEntityResignation());
+	console.log("TX >> ", transaction?.isBusinessEntityUpdate());
+
 	// TODO: i18n
 	const transactionLabel: Record<string, string> = {
 		transfer: "Transfer",
@@ -53,6 +59,30 @@ export const BaseTransactionRowRecipientLabel = ({ type, recipient, walletName }
 		return <Address walletName={walletName} address={recipient} />;
 	}
 
+	if (transaction?.isBusinessEntityRegistration()) {
+		return (
+			<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
+				Business Registration
+			</span>
+		);
+	}
+
+	if (transaction?.isBusinessEntityResignation()) {
+		return (
+			<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
+				Business Resignation
+			</span>
+		);
+	}
+
+	if (transaction?.isBusinessEntityUpdate()) {
+		return (
+			<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
+				Business Update
+			</span>
+		);
+	}
+
 	return (
 		<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
 			{transactionLabel[type]}
@@ -68,6 +98,7 @@ export const TransactionRowRecipientLabel = ({
 	walletName?: string;
 }) => (
 	<BaseTransactionRowRecipientLabel
+		transaction={transaction}
 		type={transaction.type()}
 		recipient={transaction.recipient()}
 		walletName={walletName}
