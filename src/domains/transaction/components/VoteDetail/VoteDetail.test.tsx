@@ -1,3 +1,4 @@
+import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -32,6 +33,16 @@ describe("VoteDetail", () => {
 	beforeEach(() => {
 		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
+
+		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+			votes.map(
+				(vote: string, index: number) =>
+					new ReadOnlyWallet({
+						address: vote,
+						username: `delegate-${index}`,
+					}),
+			),
+		);
 	});
 
 	it("should not render if not open", async () => {
@@ -49,34 +60,15 @@ describe("VoteDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal", async () => {
-		const { asFragment, getByTestId, queryAllByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<VoteDetail isOpen={true} transaction={TransactionFixture} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await waitFor(() =>
-			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
-		);
-		await waitFor(() => expect(queryAllByTestId("VoteDetails__delegates-container")).toHaveLength(1));
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render a modal as confirmed", async () => {
-		const { asFragment, getByTestId, getByText, queryAllByTestId } = renderWithRouter(
+	it("should render a modal with votes", async () => {
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<VoteDetail
 					isOpen={true}
 					transaction={{
 						...TransactionFixture,
-						sender: () => "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 						votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
-						isConfirmed: () => true,
+						unvotes: () => [],
 					}}
 				/>
 			</Route>,
@@ -89,15 +81,24 @@ describe("VoteDetail", () => {
 		await waitFor(() =>
 			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
 		);
-		await waitFor(() => expect(getByText("Well Confirmed")).toBeInTheDocument());
-		await waitFor(() => expect(getByText("arkx")).toBeInTheDocument());
+
+		await waitFor(() => expect(getByText("Votes (1)")).toBeTruthy());
+		await waitFor(() => expect(getByText("delegate-0")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal with wallet alias", async () => {
-		const { asFragment, getByTestId, getByText, queryAllByTestId } = renderWithRouter(
+	it("should render a modal with unvotes", async () => {
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<VoteDetail isOpen={true} transaction={TransactionFixture} walletAlias="Wallet Alias" />
+				<VoteDetail
+					isOpen={true}
+					transaction={{
+						...TransactionFixture,
+						votes: () => [],
+						unvotes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
+					}}
+				/>
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -108,24 +109,39 @@ describe("VoteDetail", () => {
 		await waitFor(() =>
 			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
 		);
-		await waitFor(() => expect(queryAllByTestId("VoteDetails__delegates-container")).toHaveLength(1));
-		await waitFor(() => expect(getByText("Wallet Alias")).toBeInTheDocument());
+
+		await waitFor(() => expect(getByText("Unvotes (1)")).toBeTruthy());
+		await waitFor(() => expect(getByText("delegate-0")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should throw error with a unknown sender", () => {
-		jest.spyOn(console, "error").mockImplementation(() => null);
-		expect(() =>
-			renderWithRouter(
-				<Route path="/profiles/:profileId/dashboard">
-					<VoteDetail isOpen={true} transaction={{ ...TransactionFixture, sender: () => "" }} />
-				</Route>,
-				{
-					routes: [dashboardURL],
-					history,
-				},
-			),
-		).toThrowError();
-		console.error.mockRestore();
+	it("should render a modal with votes and unvotes", async () => {
+		const { asFragment, getByTestId, getAllByText, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<VoteDetail
+					isOpen={true}
+					transaction={{
+						...TransactionFixture,
+						votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
+						unvotes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
+					}}
+				/>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() =>
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
+		);
+
+		await waitFor(() => expect(getByText("Votes (1)")).toBeTruthy());
+		await waitFor(() => expect(getByText("Unvotes (1)")).toBeTruthy());
+		await waitFor(() => expect(getAllByText("delegate-0")).toHaveLength(2));
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
