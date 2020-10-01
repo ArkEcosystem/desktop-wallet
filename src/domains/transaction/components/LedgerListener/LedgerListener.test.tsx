@@ -1,31 +1,38 @@
-import LedgerTransport from "@ledgerhq/hw-transport-node-hid-singleton";
+import { createTransportReplayer } from "@ledgerhq/hw-transport-mocker";
 import React from "react";
-import { act } from "react-dom/test-utils";
-import { render } from "utils/testing-library";
+import { act, render } from "utils/testing-library";
 
 import { LedgerListener } from "./LedgerListener";
 
 describe("LedgerListener", () => {
-	it("should sync devices", async () => {
-		let onNext: any;
-		const listenMock = jest.spyOn(LedgerTransport, "listen").mockImplementation(({ next }: any) => (onNext = next));
-		const consoleMock = jest.spyOn(console, "log").mockImplementation(() => null);
+	let mocker: typeof createTransportReplayer;
 
-		render(<LedgerListener />);
+	beforeEach(() => {
+		mocker = createTransportReplayer();
+	});
 
-		await new Promise((resolve) => setTimeout(resolve, 200));
+	it("should handle next", () => {
+		const onDevice = jest.fn();
 
-		const addParams = { type: "add", descriptor: "", deviceModel: { id: "1" } };
+		let onNext: Function;
+
+		const listenMock = jest.spyOn(mocker, "listen").mockImplementation(({ next }: any) => (onNext = next));
+
+		render(<LedgerListener transport={mocker} onDevice={onDevice} />);
+
 		act(() => {
+			const addParams = { type: "add", descriptor: "", deviceModel: { id: "1" } };
 			onNext(addParams);
 		});
-		expect(consoleMock).toHaveBeenCalledWith("[Ledger] add", addParams);
 
-		const removeParams = { type: "remove", descriptor: "", deviceModel: {} };
+		expect(onDevice).toHaveBeenCalledTimes(2);
+
 		act(() => {
+			const removeParams = { type: "remove", descriptor: "", deviceModel: {} };
 			onNext(removeParams);
 		});
-		expect(consoleMock).toHaveBeenCalledWith("[Ledger] remove", removeParams);
+
+		expect(onDevice).toHaveBeenCalledTimes(3);
 
 		listenMock.mockReset();
 	});

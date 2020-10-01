@@ -54,7 +54,7 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a transfer modal", () => {
-		const { asFragment, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
@@ -166,7 +166,7 @@ describe("TransactionDetailModal", () => {
 			),
 		);
 
-		const { asFragment, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
@@ -292,6 +292,33 @@ describe("TransactionDetailModal", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SECOND_SIGNATURE_DETAIL.TITLE);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render a entity modal", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<TransactionDetailModal
+					isOpen={true}
+					transactionItem={{
+						...TransactionFixture,
+						isTransfer: () => false,
+						isBusinessEntityRegistration: () => true,
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						type: () => "entityRegistration",
+					}}
+				/>
+				,
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			translations.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION,
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

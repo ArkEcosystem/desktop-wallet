@@ -1,40 +1,56 @@
-// @ts-ignore - Could not find a declaration file for module '@ledgerhq/hw-transport-node-hid-singleton'.
-import LedgerTransport from "@ledgerhq/hw-transport-node-hid-singleton";
-import { useEffect, useState } from "react";
+import Transport from "@ledgerhq/hw-transport";
+import { useCallback, useEffect, useState } from "react";
 
 import { LedgerDevice } from "./LedgerListener.models";
 
-export const LedgerListener = () => {
-	// eslint-disable-next-line
-	const [_, setDevice] = useState<LedgerDevice | undefined>();
+type Props = {
+	transport: typeof Transport;
+	onDevice?: (device: LedgerDevice | undefined) => void;
+	onError?: () => void;
+	onComplete?: () => void;
+};
 
-	useEffect(() => {
-		const syncDevices = () => {
-			LedgerTransport.listen({
+export const LedgerListener = ({ transport, onDevice, onError, onComplete }: Props) => {
+	const [device, setDevice] = useState<LedgerDevice | undefined>();
+
+	const syncDevices = useCallback(
+		() =>
+			transport.listen({
 				next: ({
+					// @ts-ignore
 					deviceModel,
 					descriptor,
 					type,
-				}: {
-					descriptor: string;
-					type: string;
-					deviceModel: { id?: string };
 				}) => {
-					console.log(`[Ledger] ${type}`, { descriptor, deviceModel, type });
 					const modelId = deviceModel?.id || "nanoS";
 					if (type === "add") {
 						setDevice({ path: descriptor, modelId });
+						return;
 					}
 					setDevice(undefined);
 				},
-			});
-		};
+				error: onError!,
+				complete: onComplete!,
+			}),
+		[transport, onError, onComplete],
+	);
 
-		const timeoutRef = setTimeout(syncDevices, 100);
+	useEffect(() => {
+		const subscription = syncDevices();
 		return () => {
-			clearTimeout(timeoutRef);
+			subscription?.unsubscribe?.();
 		};
-	}, []);
+	}, [syncDevices]);
+
+	useEffect(() => {
+		onDevice?.(device);
+	}, [device, onDevice]);
 
 	return null;
+};
+
+/* istanbul ignore next */
+LedgerListener.defaultProps = {
+	onError: () => void 0,
+	onComplete: () => void 0,
 };
