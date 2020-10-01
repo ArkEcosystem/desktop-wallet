@@ -80,7 +80,7 @@ export const useEnvSynchronizer = () => {
 		};
 
 		return [syncDelegates, syncFees, syncExchangeRates, syncWallets, syncNotifications];
-	}, [env]);
+	}, [env, notifications]);
 
 	return useSynchronizer(jobs);
 };
