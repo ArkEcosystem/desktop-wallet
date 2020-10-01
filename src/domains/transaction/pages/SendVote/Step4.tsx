@@ -18,6 +18,6 @@ export const FourthStep = ({
 	<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 		<TransactionVotes votes={votes} unvotes={unvotes} />
 
-		<TransactionFee currency={senderWallet.currency()} value={transaction.fee()} className="pb-0" />
+		<TransactionFee currency={senderWallet.currency()} value={transaction.fee()} paddingPosition="top" />
 	</TransactionSuccessful>
 );
