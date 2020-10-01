@@ -1,5 +1,4 @@
 import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
-import { URIService } from "@arkecosystem/platform-sdk/dist/coins";
 import { sortByDesc } from "@arkecosystem/utils";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
@@ -10,7 +9,6 @@ import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
-import { ipcRenderer } from "electron";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -109,15 +107,6 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 			color: "success-600",
 		},
 	];
-
-	ipcRenderer.on("process-url", (_, url) => {
-		const uriService = new URIService();
-
-		// TODO: Parse URL and redirect, should this live here in the dashboard?
-		// Since we need an active profile to access the current wallet
-		// how to handle this "hang while user is not logged" part?
-		console.log({ schema: uriService.deserialize(url) });
-	});
 
 	return (
 		<>

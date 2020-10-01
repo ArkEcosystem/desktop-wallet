@@ -7,19 +7,23 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { URIService } from "@arkecosystem/platform-sdk/dist/coins";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
 // import { XLM } from "@arkecosystem/platform-sdk-xlm";
 // import { XMR } from "@arkecosystem/platform-sdk-xmr";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
+import { getDeeplinkRoute, toasts } from "app/services";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { LedgerListener } from "domains/transaction/components/LedgerListener";
+import { ipcRenderer } from "electron";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useHistory, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
@@ -34,12 +38,14 @@ import { httpClient } from "./services";
 const __DEV__ = process.env.NODE_ENV !== "production";
 
 const Main = () => {
+	const uriService = new URIService();
 	const [showSplash, setShowSplash] = useState(true);
-
-	const { pathname } = useLocation();
+	const { pathname, state } = useLocation();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
+	const { t } = useTranslation();
+	const history = useHistory();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -50,6 +56,25 @@ const Main = () => {
 			start();
 		}
 	}, [showSplash, start]);
+
+	useEffect(() => {
+		ipcRenderer.on("process-url", (_, url) => {
+			if (history.location.pathname === "/") return toasts.warning(t("COMMON.SELECT_A_PROFILE"));
+
+			if (history.location.pathname.includes("/dashboard")) return toasts.warning(t("COMMON.SELECT_A_WALLET"));
+
+			const urlParts = history.location.pathname.split("/");
+			const activeSession = {
+				profileId: urlParts[2],
+				walletId: urlParts[4],
+			};
+
+			const deeplinkSchema = uriService.deserialize(url);
+
+			return history.replace(getDeeplinkRoute(activeSession)[deeplinkSchema.method], deeplinkSchema);
+		});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [history.location.pathname]);
 
 	useLayoutEffect(() => {
 		const boot = async () => {
