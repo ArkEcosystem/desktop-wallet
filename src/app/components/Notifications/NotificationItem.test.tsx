@@ -62,6 +62,7 @@ describe("Notifications", () => {
 			name: "New plugin updates",
 			body: "test",
 			action: "custom action name",
+			type: "plugin",
 		});
 		profile.notifications().last();
 

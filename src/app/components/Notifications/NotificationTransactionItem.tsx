@@ -17,10 +17,10 @@ export const NotificationTransactionItem = ({
 
 	useEffect(() => {
 		const fetchTransaction = async () => {
-			// TODO: Fetch transactions by their ids
+			// TODO: Update with wallet.findTransactionById
 			const receivedTxs = await profile.transactionAggregate().receivedTransactions({ cursor: 1, limit: 15 });
 			/* @ts-ignore */
-			const tx = receivedTxs.findById(notification.meta?.txId);
+			const tx = receivedTxs.findById(notification.meta?.transactionId);
 
 			const senderWallet = profile.contacts().findByAddress(tx?.sender() as string);
 

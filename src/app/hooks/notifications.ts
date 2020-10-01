@@ -6,53 +6,58 @@ import { useMemo } from "react";
 type NotififyReceivedTransactionsParams = {
 	profile?: Profile;
 	lookupLimit?: number;
-	allowedTxTypes?: string[];
+	allowedTransactionTypes?: string[];
 };
 
 const fetchRecentProfileTransactions = async (profile: Profile, limit = 10) => {
-	const fetchWalletRecentTxs = async (wallet: ReadWriteWallet) =>
+	const fetchWalletRecentTransactions = async (wallet: ReadWriteWallet) =>
 		(await wallet.client().transactions({ limit })).items();
 
-	const allWalletsTxs = await Promise.all(profile.wallets().values().map(fetchWalletRecentTxs));
-	return allWalletsTxs.flat();
+	const allWalletTransactions = await Promise.all(profile.wallets().values().map(fetchWalletRecentTransactions));
+	return allWalletTransactions.flat();
 };
 
-const isRecipient = (profile: Profile, tx: TransactionDataType) => {
-	const txRecipients = [tx.recipient(), ...tx.recipients().map((r) => r.address)];
-	return txRecipients.some((address: string) => profile.wallets().findByAddress(address));
+const isRecipient = (profile: Profile, transaction: TransactionDataType) => {
+	const allRecipients = [transaction.recipient(), ...transaction.recipients().map((r) => r.address)];
+	return allRecipients.some((address: string) => profile.wallets().findByAddress(address));
 };
 
-const txNotificationExists = (profile: Profile, tx: TransactionDataType) => profile
+const transactionNotificationExists = (profile: Profile, transaction: TransactionDataType) =>
+	profile
 		.notifications()
 		.values()
-		.some((n) => n.type === "transaction" && n?.meta?.txId === tx.id());
+		.some((n) => n.type === "transaction" && n?.meta?.transactionId === transaction.id());
 
-const formatNotification = (tx: TransactionDataType) => ({
+const formatNotification = (transaction: TransactionDataType) => ({
 	icon: "",
 	body: "",
 	name: "",
 	action: "",
 	type: "transaction",
 	meta: {
-		txId: tx.id(),
-		walletAddress: tx.recipient(),
+		transactionId: transaction.id(),
+		walletAddress: transaction.recipient(),
 	},
 });
 
 const notifyReceivedTransactions: any = async ({
 	profile,
 	lookupLimit = 60,
-	allowedTxTypes = ["transfer", "multiPayment"],
+	allowedTransactionTypes = ["transfer", "multiPayment"],
 }: NotififyReceivedTransactionsParams) => {
 	if (!profile?.id()) return [];
 
-	const allRecentTxs = await fetchRecentProfileTransactions(profile, lookupLimit);
-	const newUnseenTxs = allRecentTxs.filter(
-		(tx: TransactionDataType) =>
-			allowedTxTypes.includes(tx.type()) && isRecipient(profile, tx) && !txNotificationExists(profile, tx),
+	const allRecentTransactions = await fetchRecentProfileTransactions(profile, lookupLimit);
+	const newUnseenTransactions = allRecentTransactions.filter(
+		(transaction: TransactionDataType) =>
+			allowedTransactionTypes.includes(transaction.type()) &&
+			isRecipient(profile, transaction) &&
+			!transactionNotificationExists(profile, transaction),
 	);
 
-	return newUnseenTxs.map((tx: TransactionDataType) => profile.notifications().push(formatNotification(tx)));
+	return newUnseenTransactions.map((transaction: TransactionDataType) =>
+		profile.notifications().push(formatNotification(transaction)),
+	);
 };
 
 export const useNotifications = () => {
@@ -60,9 +65,8 @@ export const useNotifications = () => {
 	const profiles = env.profiles().values();
 
 	return useMemo(() => {
-		const syncReceivedTransactions = async (params?: NotififyReceivedTransactionsParams) => await Promise.all(
-				profiles.map((profile: Profile) => notifyReceivedTransactions({ ...params, profile })),
-			);
+		const syncReceivedTransactions = async (params?: NotififyReceivedTransactionsParams) =>
+			await Promise.all(profiles.map((profile: Profile) => notifyReceivedTransactions({ ...params, profile })));
 
 		return {
 			notifications: {
