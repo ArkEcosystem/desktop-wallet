@@ -542,14 +542,18 @@ exports[`WalletVote should render the maximum votes 1`] = `
           <span>
             You have not yet voted for a Delegate
           </span>
-          <a
-            class="sc-AxhUy fEOaBg inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-            data-testid="Link"
-            rel="noopener noreferrer"
-            to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+          <div
+            class="mr-auto"
           >
-            Learn more
-          </a>
+            <a
+              class="sc-AxhUy fEOaBg inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+              data-testid="Link"
+              rel="noopener noreferrer"
+              to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+            >
+              Learn more
+            </a>
+          </div>
         </div>
         <button
           class="sc-AxirZ dXpJau"
@@ -625,14 +629,18 @@ exports[`WalletVote should render without votes 1`] = `
           <span>
             You have not yet voted for a Delegate
           </span>
-          <a
-            class="sc-AxhUy fEOaBg inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-            data-testid="Link"
-            rel="noopener noreferrer"
-            to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+          <div
+            class="mr-auto"
           >
-            Learn more
-          </a>
+            <a
+              class="sc-AxhUy fEOaBg inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+              data-testid="Link"
+              rel="noopener noreferrer"
+              to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+            >
+              Learn more
+            </a>
+          </div>
         </div>
         <button
           class="sc-AxirZ dXpJau"

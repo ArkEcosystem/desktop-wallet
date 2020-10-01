@@ -527,14 +527,17 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       <span>
                         You have not yet voted for a Delegate
                       </span>
-                      <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      <span
+                        class="mr-auto"
                       >
-                        Learn more
-                      </a>
+                        <a
+                          class="sc-fzpans geMtOc inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/wallets/https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                        >
+                          Learn more
+                        </a>
+                      </span>
                     </div>
                     <button
                       class="sc-AxjAm fPpool"
@@ -603,14 +606,17 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       >
                         You have no active registrations
                       </span>
-                      <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="@TODO"
+                      <span
+                        class="mr-auto"
                       >
-                        Learn more
-                      </a>
+                        <a
+                          class="sc-fzpans geMtOc inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/wallets/@TODO"
+                        >
+                          Learn more
+                        </a>
+                      </span>
                     </div>
                     <button
                       class="sc-AxjAm fPpool"
@@ -6425,14 +6431,17 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       <span>
                         You have not yet voted for a Delegate
                       </span>
-                      <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      <span
+                        class="mr-auto"
                       >
-                        Learn more
-                      </a>
+                        <a
+                          class="sc-fzpans geMtOc inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                        >
+                          Learn more
+                        </a>
+                      </span>
                     </div>
                     <button
                       class="sc-AxjAm fPpool"
@@ -6501,14 +6510,17 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       >
                         You have no active registrations
                       </span>
-                      <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="@TODO"
+                      <span
+                        class="mr-auto"
                       >
-                        Learn more
-                      </a>
+                        <a
+                          class="sc-fzpans geMtOc inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/@TODO"
+                        >
+                          Learn more
+                        </a>
+                      </span>
                     </div>
                     <button
                       class="sc-AxjAm fPpool"
@@ -8012,14 +8024,17 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       <span>
                         You have not yet voted for a Delegate
                       </span>
-                      <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      <span
+                        class="mr-auto"
                       >
-                        Learn more
-                      </a>
+                        <a
+                          class="sc-fzpans geMtOc inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                        >
+                          Learn more
+                        </a>
+                      </span>
                     </div>
                     <button
                       class="sc-AxjAm fPpool"
@@ -8088,14 +8103,17 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       >
                         You have no active registrations
                       </span>
-                      <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="@TODO"
+                      <span
+                        class="mr-auto"
                       >
-                        Learn more
-                      </a>
+                        <a
+                          class="sc-fzpans geMtOc inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/@TODO"
+                        >
+                          Learn more
+                        </a>
+                      </span>
                     </div>
                     <button
                       class="sc-AxjAm fPpool"
