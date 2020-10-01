@@ -12,6 +12,7 @@ export type SendEntityRegistrationType = {
 export type SendEntityRegistrationDetailsOptions = {
 	transaction: Contracts.SignedTransactionData;
 	translations: TFunction;
+	wallet: ReadWriteWallet;
 };
 
 export type SendEntityRegistrationComponent = {
@@ -32,7 +33,7 @@ export type SendEntityRegistrationSignOptions = {
 };
 
 export type SendEntityRegistrationForm = {
-	transactionDetails: ({ transaction, translations }: SendEntityRegistrationDetailsOptions) => JSX.Element;
+	transactionDetails: ({ transaction, translations, wallet }: SendEntityRegistrationDetailsOptions) => JSX.Element;
 
 	signTransaction: (options: SendEntityRegistrationSignOptions) => Promise<void>;
 

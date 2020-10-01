@@ -35,10 +35,10 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 			<div>
 				<TransactionDetail
-					border={false}
 					label={t("TRANSACTION.NETWORK")}
 					extra={<NetworkIcon size="lg" coin={wallet.network().coin()} network={wallet.network().id()} />}
-					className="pt-0"
+					border={false}
+					paddingPosition="bottom"
 				>
 					{wallet.network().name()}
 				</TransactionDetail>

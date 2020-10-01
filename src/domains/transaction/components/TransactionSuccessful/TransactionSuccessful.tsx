@@ -36,7 +36,7 @@ export const TransactionSuccessful = ({ children, transaction, senderWallet }: T
 							id={transaction.id()}
 							link={senderWallet.coin().link().transaction(transaction.id())}
 							border={false}
-							className="pt-0"
+							paddingPosition="bottom"
 						/>
 
 						<TransactionNetwork network={senderWallet.network()} />

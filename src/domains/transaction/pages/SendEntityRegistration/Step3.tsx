@@ -18,7 +18,7 @@ export const ThirdStep = ({
 	return (
 		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			{registrationForm.transactionDetails && (
-				<registrationForm.transactionDetails transaction={transaction} translations={t} />
+				<registrationForm.transactionDetails transaction={transaction} translations={t} wallet={senderWallet} />
 			)}
 		</TransactionSuccessful>
 	);

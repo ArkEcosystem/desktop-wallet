@@ -297,11 +297,15 @@ describe("DelegateRegistrationForm", () => {
 			data: () => delegateRegistrationFixture.data,
 		} as Contracts.SignedTransactionData;
 
-		const { getByTestId, getByText } = render(
-			<DelegateRegistrationForm.transactionDetails transaction={transaction} translations={translations} />,
+		const { getByText } = render(
+			<DelegateRegistrationForm.transactionDetails
+				transaction={transaction}
+				translations={translations}
+				wallet={wallet}
+			/>,
 		);
 
 		expect(getByText("TRANSACTION.DELEGATE_NAME")).toBeTruthy();
-		expect(getByTestId("TransactionDetail")).toHaveTextContent("test_delegate");
+		expect(getByText("test_delegate")).toBeTruthy();
 	});
 });

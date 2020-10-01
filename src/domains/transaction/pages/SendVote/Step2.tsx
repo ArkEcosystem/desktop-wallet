@@ -40,7 +40,7 @@ export const SecondStep = ({
 			/>
 
 			<div>
-				<TransactionNetwork network={wallet.network()} border={false} className="pt-0" />
+				<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" />
 
 				<TransactionSender
 					address={wallet.address()}
