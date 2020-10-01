@@ -1,5 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { Breadcrumbs } from "app/components/Breadcrumbs";
+import { Breadcrumbs,Crumb } from "app/components/Breadcrumbs";
 import { NavigationBar } from "app/components/NavigationBar";
 import React from "react";
 import { NavbarVariant } from "types";
@@ -7,7 +7,7 @@ import { NavbarVariant } from "types";
 type PageProps = {
 	navbarVariant?: NavbarVariant;
 	profile?: Profile;
-	crumbs?: any;
+	crumbs?: Crumb[];
 	sidebar?: React.ReactNode;
 	children: React.ReactNode;
 };

@@ -16,7 +16,7 @@ describe("Breadcrumbs", () => {
 			<Breadcrumbs crumbs={[{ route: "dashboard", label: "Dashboard" }]} />,
 		);
 
-		expect(getByTestId("breadcrumbs__wrapper")).toHaveTextContent("arrow-back.svg");
+		expect(getByTestId("breadcrumbs__wrapper")).toHaveTextContent("arrow-left.svg");
 		expect(getByTestId("breadcrumbs__wrapper")).toHaveTextContent("Dashboard");
 		expect(asFragment()).toMatchSnapshot();
 	});

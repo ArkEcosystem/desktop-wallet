@@ -1,18 +1,23 @@
 import { ReactComponent as AlertDanger } from "./alert-danger.svg";
 import { ReactComponent as AlertDefault } from "./alert-default.svg";
 import { ReactComponent as AlertSuccess } from "./alert-success.svg";
-import { ReactComponent as ArrowBack } from "./arrow-back.svg";
-import { ReactComponent as ArrowDown } from "./arrowdown.svg";
-import { ReactComponent as ArrowUp } from "./arrowup.svg";
+import { ReactComponent as ArrowLeft } from "./arrow-left.svg";
+import { ReactComponent as ArrowRight } from "./arrow-right.svg";
 import { ReactComponent as Article } from "./article.svg";
 import { ReactComponent as Back } from "./back.svg";
 import { ReactComponent as BitBucket } from "./bitbucket.svg";
 import { ReactComponent as Blockfolio } from "./blockfolio.svg";
 import { ReactComponent as Bridgechain } from "./bridgechain.svg";
 import { ReactComponent as Business } from "./business.svg";
+import { ReactComponent as CaretDown } from "./caret-down.svg";
+import { ReactComponent as CaretUp } from "./caret-up.svg";
 import { ReactComponent as ChartActiveDot } from "./chart-active-dot.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
+import { ReactComponent as ChevronLeftDouble } from "./chevron-left-double.svg";
+import { ReactComponent as ChevronLeft } from "./chevron-left.svg";
+import { ReactComponent as ChevronRightDouble } from "./chevron-right-double.svg";
+import { ReactComponent as ChevronRight } from "./chevron-right.svg";
 import { ReactComponent as ChevronUp } from "./chevron-up.svg";
 import { ReactComponent as Close } from "./close.svg";
 import { ReactComponent as CopyAddress } from "./copy-address.svg";
@@ -103,16 +108,23 @@ export const SvgCollection: any = {
 	AlertDanger,
 	AlertDefault,
 	AlertSuccess,
-	ArrowBack,
-	ArrowDown,
-	ArrowUp,
+	ArrowLeft,
+	ArrowRight,
+	Article,
 	Back,
 	BitBucket,
 	Blockfolio,
 	Bridgechain,
 	Business,
+	CaretDown,
+	CaretUp,
+	ChartActiveDot,
 	Checkmark,
 	ChevronDown,
+	ChevronLeft,
+	ChevronLeftDouble,
+	ChevronRight,
+	ChevronRightDouble,
 	ChevronUp,
 	Close,
 	Copy,
@@ -126,9 +138,11 @@ export const SvgCollection: any = {
 	Download,
 	Edit,
 	Entity,
+	Exchange,
 	Explorer,
 	Eye,
 	EyeOff,
+	EyeTag,
 	Facebook,
 	File,
 	FilePassword,
@@ -147,19 +161,27 @@ export const SvgCollection: any = {
 	Link,
 	LinkedIn,
 	List,
+	LoaderLogo,
 	Lock,
 	Medium,
 	Msq,
 	Multisig,
+	Notification,
 	Npm,
 	OfficialArkPlugin,
 	Ok,
 	PaginationFirst,
 	PaginationLast,
 	Peer,
+	Placeholder,
 	Plugin,
+	Plugins,
 	Plus,
+	Portfolio,
+	PortfolioTag,
+	Profile,
 	Qrcode,
+	QuestionMark,
 	Receive,
 	Received,
 	Reddit,
@@ -183,21 +205,9 @@ export const SvgCollection: any = {
 	Unvote,
 	Update,
 	Upload,
-	VoteUnvote,
+	User,
 	Vote,
 	Voted,
-	Notification,
-	User,
-	Exchange,
-	Plugins,
-	Profile,
-	Portfolio,
-	PortfolioTag,
-	Article,
-	EyeTag,
-	ChartActiveDot,
-	Placeholder,
-	QuestionMark,
-	LoaderLogo,
+	VoteUnvote,
 	...Currencies,
 };
