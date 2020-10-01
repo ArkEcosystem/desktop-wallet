@@ -203,7 +203,7 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			textClass: "text-theme-primary-400",
 			iconName: "LSK",
 		},
-		'lsk.betanet': {
+		"lsk.betanet": {
 			displayName: "Lisk Betanet",
 			borderClass: "border-theme-primary-100",
 			textClass: "text-theme-primary-400",
@@ -308,7 +308,7 @@ export const availableNetworksMock: Coins.Network[] = [
 	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.mainnet"]),
 	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.rinkeby"]),
 	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.ropsten"]),
-	new Coins.Network(LSK.manifest.name, LSK.manifest.networks.["lsk.betanet"]),
+	new Coins.Network(LSK.manifest.name, LSK.manifest.networks["lsk.betanet"]),
 	new Coins.Network(LSK.manifest.name, LSK.manifest.networks["lsk.mainnet"]),
 	new Coins.Network(LSK.manifest.name, LSK.manifest.networks["lsk.testnet"]),
 	new Coins.Network(NEO.manifest.name, NEO.manifest.networks["neo.mainnet"]),
