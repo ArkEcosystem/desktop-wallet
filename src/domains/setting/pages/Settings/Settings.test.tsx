@@ -354,21 +354,29 @@ describe("Settings", () => {
 		});
 
 		// Open `AddBlacklistPlugin` modal
+		await waitFor(() => expect(getByTestId("plugins__add-plugin")).toBeTruthy());
+
 		act(() => {
 			fireEvent.click(getByTestId("plugins__add-plugin"));
 		});
+
 		expect(getByTestId("modal__inner")).toHaveTextContent(pluginTranslations.MODAL_ADD_BLACKLIST_PLUGIN.TITLE);
 
 		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(7));
 
 		const addButton = getAllByText("Add")[0];
-		waitFor(() => expect(addButton).toBeTruthy());
+		await waitFor(() => expect(addButton).toBeTruthy());
 
-		act(() => fireEvent.click(addButton));
+		act(() => {
+			fireEvent.click(addButton);
+		});
+
+		await waitFor(() => expect(getByTestId("modal__close-btn")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
+
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		// Open `BlacklistPlugins` modal
@@ -383,7 +391,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 
-		waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
 	});
 
 	it("should render password settings", async () => {
@@ -461,11 +469,17 @@ describe("Settings", () => {
 
 		const currentPasswordInput = "Password-settings__input--currentPassword";
 
-		waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
+		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
 
-		fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "password" } });
-		fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "new password" } });
-		fireEvent.input(getByTestId("Password-settings__input--password_2"), { target: { value: "new password" } });
+		act(() => {
+			fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "password" } });
+		});
+		act(() => {
+			fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "new password" } });
+		});
+		act(() => {
+			fireEvent.input(getByTestId("Password-settings__input--password_2"), { target: { value: "new password" } });
+		});
 
 		// wait for formState.isValid to be updated
 		await findByTestId("Password-settings__submit-button");

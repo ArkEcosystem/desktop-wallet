@@ -7,6 +7,8 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
+// @ts-ignore
+import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
 // import { XLM } from "@arkecosystem/platform-sdk-xlm";
 // import { XMR } from "@arkecosystem/platform-sdk-xmr";
@@ -114,7 +116,7 @@ export const App = () => {
 		<ErrorBoundary FallbackComponent={ApplicationError}>
 			<I18nextProvider i18n={i18n}>
 				<EnvironmentProvider env={env}>
-					<LedgerListener />
+					<LedgerListener transport={LedgerTransportNodeHID} />
 					<Main />
 				</EnvironmentProvider>
 			</I18nextProvider>

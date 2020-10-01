@@ -2,6 +2,7 @@ import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-
 import { useActiveProfile } from "app/hooks/env";
 import { DelegateRegistrationDetail } from "domains/transaction/components/DelegateRegistrationDetail";
 import { DelegateResignationDetail } from "domains/transaction/components/DelegateResignationDetail";
+import { EntityDetail } from "domains/transaction/components/EntityDetail";
 import { IpfsDetail } from "domains/transaction/components/IpfsDetail";
 import { MultiPaymentDetail } from "domains/transaction/components/MultiPaymentDetail";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
@@ -51,6 +52,11 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 			break;
 		case "secondSignature":
 			TransactionModal = SecondSignatureDetail;
+			break;
+		case "entityRegistration":
+		case "entityResignation":
+		case "entityUpdate":
+			TransactionModal = EntityDetail;
 			break;
 
 		default:
