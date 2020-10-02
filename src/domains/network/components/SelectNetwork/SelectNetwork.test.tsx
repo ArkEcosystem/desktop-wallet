@@ -23,7 +23,9 @@ describe("SelectNetwork", () => {
 			fireEvent.focus(input);
 		});
 
-		expect(getAllByTestId("SelectNetwork__NetworkIcon--container")).toHaveLength(availableNetworksMock.length);
+		const availableNetworksLength = availableNetworksMock.filter((network) => network.extra).length;
+
+		expect(getAllByTestId("SelectNetwork__NetworkIcon--container")).toHaveLength(availableNetworksLength);
 
 		const value = "Ar";
 
@@ -41,7 +43,7 @@ describe("SelectNetwork", () => {
 			fireEvent.change(input, { target: { value: "" } });
 		});
 
-		expect(getAllByTestId("SelectNetwork__NetworkIcon--container")).toHaveLength(availableNetworksMock.length);
+		expect(getAllByTestId("SelectNetwork__NetworkIcon--container")).toHaveLength(availableNetworksLength);
 	});
 
 	it("should show typeahead when typing has found at least one match", () => {
