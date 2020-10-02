@@ -1,13 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
-import { Avatar } from "app/components/Avatar";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Label } from "app/components/Label";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import { TransactionSender } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -35,32 +32,24 @@ export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFe
 	}, [setValue, wallet]);
 
 	return (
-		<section data-testid="SecondSignatureRegistrationForm__generation-step">
-			<div className="my-8">
-				<Header
-					title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.TITLE")}
-					subtitle={t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.DESCRIPTION")}
-				/>
-			</div>
+		<section data-testid="SecondSignatureRegistrationForm__generation-step" className="space-y-8">
+			<Header
+				title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.DESCRIPTION")}
+			/>
 
-			<div className="mt-4">
-				<Alert size="lg">{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
+			<Alert size="lg">{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
 
-				<TransactionDetail
-					className="mt-2"
-					extra={<Avatar size="lg" address={wallet.address()} />}
-					borderPosition="bottom"
-				>
-					<div className="mb-2 font-semibold text-theme-neutral">
-						<span className="mr-1 text-sm">{t("TRANSACTION.SENDER")}</span>
-						<Label color="warning">
-							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
-						</Label>
-					</div>
-					<Address address={wallet.address()} walletName={wallet.alias()} />
-				</TransactionDetail>
+			<TransactionSender
+				address={wallet.address()}
+				alias={wallet.alias()}
+				labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
+				borderPosition="bottom"
+				paddingPosition="bottom"
+			/>
 
-				<FormField name="fee" className="mt-8">
+			<div className="space-y-8">
+				<FormField name="fee">
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
 						min={fees.min}

@@ -3,7 +3,7 @@ import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
 import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React from "react";
 
@@ -37,19 +37,29 @@ const component = ({
 	</Tabs>
 );
 
-const transactionDetails = ({ translations }: { transaction: Contracts.SignedTransactionData; translations: any }) => (
-	<TransactionDetail
-		label={translations("TRANSACTION.TYPE")}
-		extra={
-			<div>
-				<Circle className="border-black bg-theme-background" size="lg">
+const transactionDetails = ({
+	transaction,
+	translations,
+	wallet,
+}: {
+	transaction: Contracts.SignedTransactionData;
+	translations: any;
+	wallet: ReadWriteWallet;
+}) => (
+	<>
+		<TransactionDetail
+			label={translations("TRANSACTION.TRANSACTION_TYPE")}
+			extra={
+				<Circle className="border-theme-text" size="lg">
 					<Icon name="Key" width={20} height={20} />
 				</Circle>
-			</div>
-		}
-	>
-		{translations("TRANSACTION.PAGE_SECOND_SIGNATURE.REVIEW_STEP.TYPE")}
-	</TransactionDetail>
+			}
+		>
+			{translations("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE")}
+		</TransactionDetail>
+
+		<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />
+	</>
 );
 
 component.displayName = "SecondSignatureRegistrationForm";
