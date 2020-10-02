@@ -54,14 +54,18 @@ exports[`WalletRegistrations should render empty mode 1`] = `
           >
             You have no active registrations
           </span>
-          <a
-            class="sc-AxhCb kJzNmV inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-            data-testid="Link"
-            rel="noopener noreferrer"
-            to="@TODO"
+          <div
+            class="mr-auto"
           >
-            Learn more
-          </a>
+            <a
+              class="sc-AxhCb kJzNmV inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+              data-testid="Link"
+              rel="noopener noreferrer"
+              to="@TODO"
+            >
+              Learn more
+            </a>
+          </div>
         </div>
         <button
           class="sc-AxjAm fPpool"

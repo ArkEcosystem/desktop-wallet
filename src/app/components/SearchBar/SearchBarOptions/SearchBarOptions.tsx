@@ -16,9 +16,9 @@ export const SearchBarOptions = (props: SearchBarOptionsProps) => {
 		<div data-testid="SearchBarOptions" className="flex items-center pr-8 my-1">
 			<Dropdown
 				toggleContent={
-					<span className="font-semibold cursor-pointer select-none">
+					<span className="flex font-semibold cursor-pointer select-none">
 						{props.selectedOption ? props.selectedOption.label : t("COMMON.TYPE")}
-						<SvgCollection.ArrowDown className="inline-block w-2 ml-2 text-black" />
+						<SvgCollection.ChevronDown className="inline-block w-2 ml-2 text-black" />
 					</span>
 				}
 				options={props.options}

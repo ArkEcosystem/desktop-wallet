@@ -93,7 +93,7 @@ const SelectDropdown = ({
 				</SelectOptionsList>
 			</div>
 			<InputAddonEnd className="w-10 pointer-events-none text-theme-neutral">
-				<Icon name={isOpen ? "ArrowUp" : "ArrowDown"} width={8} height={8} />
+				<Icon name="CaretDown" className={isOpen ? "transform rotate-180" : ""} width={7} height={5} />
 			</InputAddonEnd>
 		</div>
 	);

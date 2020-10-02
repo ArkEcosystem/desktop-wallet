@@ -70,13 +70,13 @@ exports[`SearchHelp should render a modal 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <span
-                      class="font-semibold cursor-pointer select-none"
+                      class="flex font-semibold cursor-pointer select-none"
                     >
                       All
                       <svg
                         class="inline-block w-2 ml-2 text-black"
                       >
-                        arrowdown.svg
+                        chevron-down.svg
                       </svg>
                     </span>
                   </div>
@@ -355,13 +355,13 @@ exports[`SearchHelp should render a modal 2`] = `
                     data-testid="dropdown__toggle"
                   >
                     <span
-                      class="font-semibold cursor-pointer select-none"
+                      class="flex font-semibold cursor-pointer select-none"
                     >
                       Delegate
                       <svg
                         class="inline-block w-2 ml-2 text-black"
                       >
-                        arrowdown.svg
+                        chevron-down.svg
                       </svg>
                     </span>
                   </div>
