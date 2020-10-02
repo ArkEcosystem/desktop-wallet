@@ -58,7 +58,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 								<span className="flex items-center space-x-1 text-theme-neutral-900">
 									<span>{t(`COMMON.${transformType(sortType)}`)}</span>
 									<Icon
-										name={sortBy.direction === "asc" ? "ArrowUp" : "ArrowDown"}
+										name={sortBy.direction === "asc" ? "ChevronUp" : "ChevronDown"}
 										width={7}
 										height={5}
 									/>
