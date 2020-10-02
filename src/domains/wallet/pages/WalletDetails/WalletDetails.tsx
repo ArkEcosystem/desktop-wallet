@@ -66,6 +66,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 	useEffect(() => {
 		const fetchAllData = async () => {
+			setIsLoading(true);
 			await fetchInit();
 			setIsLoading(false);
 		};
