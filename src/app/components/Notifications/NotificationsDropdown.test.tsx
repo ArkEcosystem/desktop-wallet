@@ -16,14 +16,13 @@ describe("Notifications", () => {
 		const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 		history.push(dashboardURL);
 
-		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.query(true)
-			.reply(200, NotificationTransactionsFixtures);
+			.get("/api/transactions/ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b")
+			.reply(200, { data: NotificationTransactionsFixtures.data[0] })
+			.get("/api/transactions/1a767ebc0cc53246b9105a9f09b6c2ffa7baedcc7e632c8c1bac58f8f17389f6")
+			.reply(200, { data: NotificationTransactionsFixtures.data[1] });
 
 		profile = env.profiles().findById(getDefaultProfileId());
-		profile.transactionAggregate().flush();
 	});
 
 	it("should render with transactions and plugins", async () => {

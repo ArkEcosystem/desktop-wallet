@@ -15,17 +15,14 @@ describe("Notifications", () => {
 		httpClient.clearCache();
 
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.query(true)
-			.reply(200, NotificationTransactionsFixtures);
+			.get("/api/transactions/ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b")
+			.reply(200, { data: NotificationTransactionsFixtures.data[0] });
 
 		profile = env.profiles().findById(getDefaultProfileId());
-		profile.transactionAggregate().flush();
 
 		notification = profile
 			.notifications()
 			.values()
-			/* @ts-ignore */
 			.find((n) => n.type === "transaction");
 	});
 
