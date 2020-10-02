@@ -3,13 +3,14 @@ import { TransactionDataType } from "@arkecosystem/platform-sdk/dist/contracts";
 import { useEnvironmentContext } from "app/contexts";
 import { useMemo } from "react";
 
-type NotififyReceivedTransactionsParams = {
-	profile?: Profile;
+type SyncReceivedTransactionsParams = {
 	lookupLimit?: number;
 	allowedTransactionTypes?: string[];
 };
 
-const fetchRecentProfileTransactions = async (profile: Profile, limit = 10) => {
+type NotifyReceivedTransactionsParams = SyncReceivedTransactionsParams & { profile: Profile };
+
+const fetchRecentProfileTransactions = async (profile: Profile, limit: number) => {
 	const fetchWalletRecentTransactions = async (wallet: ReadWriteWallet) =>
 		(await wallet.client().transactions({ limit })).items();
 
@@ -44,9 +45,7 @@ const notifyReceivedTransactions: any = async ({
 	profile,
 	lookupLimit = 20,
 	allowedTransactionTypes = ["transfer", "multiPayment"],
-}: NotififyReceivedTransactionsParams) => {
-	if (!profile?.id()) return [];
-
+}: NotifyReceivedTransactionsParams) => {
 	const allRecentTransactions = await fetchRecentProfileTransactions(profile, lookupLimit);
 	const newUnseenTransactions = allRecentTransactions.filter(
 		(transaction: TransactionDataType) =>
@@ -65,7 +64,7 @@ export const useNotifications = () => {
 	const profiles = env.profiles();
 
 	return useMemo(() => {
-		const syncReceivedTransactions = async (params?: NotififyReceivedTransactionsParams) =>
+		const syncReceivedTransactions = async (params?: SyncReceivedTransactionsParams) =>
 			await Promise.all(
 				profiles.values().map((profile: Profile) => notifyReceivedTransactions({ ...params, profile })),
 			);
