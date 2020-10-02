@@ -15,7 +15,36 @@ describe("SelectNetwork", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should show typeahead when typing has found one exact match", () => {
+	it("should filter the network icons based on the input value", () => {
+		const { getAllByTestId, getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
+		const input = getByTestId("SelectNetworkInput__input");
+
+		act(() => {
+			fireEvent.focus(input);
+		});
+
+		expect(getAllByTestId("SelectNetwork__NetworkIcon--container")).toHaveLength(availableNetworksMock.length);
+
+		const value = "Ar";
+
+		act(() => {
+			fireEvent.change(input, { target: { value } });
+		});
+
+		expect(getAllByTestId("SelectNetwork__NetworkIcon--container")).toHaveLength(
+			availableNetworksMock.filter((network) =>
+				network.extra?.displayName?.toLowerCase().startsWith(value.toLowerCase()),
+			).length,
+		);
+
+		act(() => {
+			fireEvent.change(input, { target: { value: "" } });
+		});
+
+		expect(getAllByTestId("SelectNetwork__NetworkIcon--container")).toHaveLength(availableNetworksMock.length);
+	});
+
+	it("should show typeahead when typing has found at least one match", () => {
 		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
 		const input = getByTestId("SelectNetworkInput__input");
 		act(() => {
