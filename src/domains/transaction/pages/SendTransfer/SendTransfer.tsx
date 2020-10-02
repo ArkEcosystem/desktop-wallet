@@ -44,7 +44,7 @@ export const SendTransfer = () => {
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 		register("smartbridge");
-	}, [register, state, setValue]);
+	}, [register, state]);
 
 	useEffect(() => {
 		console.log({ state });
