@@ -1,13 +1,22 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
+import nock from "nock";
 import React from "react";
 import { act, renderWithRouter, useDefaultNetMocks, waitFor } from "utils/testing-library";
 
 import { App } from "./App";
 
 describe("App", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
+
+		nock("https://dwallets.ark.io")
+			.post("/api/transactions/search")
+			.query(true)
+			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+			.persist();
+	});
 
 	it("should render splash screen", async () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
