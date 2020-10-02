@@ -14,7 +14,7 @@ describe("App", () => {
 		nock("https://dwallets.ark.io")
 			.post("/api/transactions/search")
 			.query(true)
-			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+			.reply(200, require("tests/fixtures/coins/ark/notification-transactions.json"))
 			.persist();
 	});
 
