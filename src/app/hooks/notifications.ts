@@ -62,11 +62,13 @@ const notifyReceivedTransactions: any = async ({
 
 export const useNotifications = () => {
 	const { env } = useEnvironmentContext();
-	const profiles = env.profiles().values();
+	const profiles = env.profiles();
 
 	return useMemo(() => {
 		const syncReceivedTransactions = async (params?: NotififyReceivedTransactionsParams) =>
-			await Promise.all(profiles.map((profile: Profile) => notifyReceivedTransactions({ ...params, profile })));
+			await Promise.all(
+				profiles.values().map((profile: Profile) => notifyReceivedTransactions({ ...params, profile })),
+			);
 
 		return {
 			notifications: {
