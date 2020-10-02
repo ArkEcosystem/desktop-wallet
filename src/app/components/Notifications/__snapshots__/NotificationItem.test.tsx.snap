@@ -8,21 +8,11 @@ exports[`Notifications should render notification item 1`] = `
         data-testid="NotificationItem"
       >
         <td
-          class="w-8"
+          class="w-8 h-8"
         >
           <div
-            class="w-full p-2 mr-4 rounded-lg h-jull"
-          >
-            <div
-              class="sc-AxjAm cSUFmk"
-              height="32"
-              width="32"
-            >
-              <svg>
-                ark-logo.svg
-              </svg>
-            </div>
-          </div>
+            class="w-8 h-8 mr-4 my-2 rounded-lg bg-logo flex text-white flex items-center align-middle justify-center"
+          />
         </td>
         <td>
           <div>
@@ -61,21 +51,11 @@ exports[`Notifications should render with custom action name 1`] = `
         data-testid="NotificationItem"
       >
         <td
-          class="w-8"
+          class="w-8 h-8"
         >
           <div
-            class="w-full p-2 mr-4 rounded-lg h-jull"
-          >
-            <div
-              class="sc-AxjAm cSUFmk"
-              height="32"
-              width="32"
-            >
-              <svg>
-                ark-logo.svg
-              </svg>
-            </div>
-          </div>
+            class="w-8 h-8 mr-4 my-2 rounded-lg bg-logo flex text-white flex items-center align-middle justify-center"
+          />
         </td>
         <td>
           <div>
