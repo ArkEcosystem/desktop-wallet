@@ -140,31 +140,35 @@ export const SelectNetwork = ({
 			</div>
 			<ul {...getMenuProps()} className={isOpen ? "grid grid-cols-6 gap-6 mt-6" : "hidden"}>
 				{isOpen &&
-					items.map((item, index) => (
-						<li
-							data-testid="SelectNetwork__NetworkIcon--container"
-							key={index}
-							className="inline-block cursor-pointer"
-							{...getItemProps({
-								item,
-								index,
-								disabled,
-								onMouseDown: () => {
-									selectItem(item);
-									closeMenu();
-								},
-							})}
-						>
-							<NetworkIcon
-								coin={item.coin()}
-								network={item.id()}
-								size="xl"
-								iconSize={26}
-								className={assetClassName(item)}
-								noShadow
-							/>
-						</li>
-					))}
+					items.map((item, index) => {
+						if (item.extra) {
+							return (
+								<li
+									data-testid="SelectNetwork__NetworkIcon--container"
+									key={index}
+									className="inline-block cursor-pointer"
+									{...getItemProps({
+										item,
+										index,
+										disabled,
+										onMouseDown: () => {
+											selectItem(item);
+											closeMenu();
+										},
+									})}
+								>
+									<NetworkIcon
+										coin={item.coin()}
+										network={item.id()}
+										size="xl"
+										iconSize={26}
+										className={assetClassName(item)}
+										noShadow
+									/>
+								</li>
+							);
+						}
+					})}
 			</ul>
 		</div>
 	);
