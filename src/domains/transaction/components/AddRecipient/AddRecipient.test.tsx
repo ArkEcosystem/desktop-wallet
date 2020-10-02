@@ -2,7 +2,7 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "utils/testing-library";
 
 import { AddRecipient } from "./AddRecipient";
 
@@ -56,6 +56,40 @@ describe("AddRecipient", () => {
 			/>,
 		);
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should set amount", () => {
+		const onChange = jest.fn();
+		const { getByTestId } = render(
+			<AddRecipient
+				profile={profile}
+				assetSymbol="ARK"
+				maxAvailableAmount={BigNumber.make(80)}
+				onChange={onChange}
+			/>,
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("add-recipient__amount-input"), {
+				target: {
+					value: "1.23",
+				},
+			});
+		});
+
+		expect(onChange).toHaveBeenCalledWith([]);
+
+		act(() => {
+			fireEvent.input(getByTestId("SelectRecipient__input"), {
+				target: {
+					value: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT",
+				},
+			});
+		});
+
+		expect(onChange).toHaveBeenCalledWith([
+			{ amount: expect.any(BigNumber), address: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" },
+		]);
 	});
 
 	it("should select recipient", async () => {

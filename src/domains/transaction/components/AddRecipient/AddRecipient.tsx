@@ -187,7 +187,10 @@ export const AddRecipient = ({
 									data-testid="add-recipient__send-all"
 									onClick={() => {
 										setDisplayAmount(availableAmount.toHuman());
-										setValue("amount", availableAmount.toString());
+										setValue("amount", availableAmount.toString(), {
+											shouldValidate: true,
+											shouldDirty: true,
+										});
 										singleRecipientOnChange();
 									}}
 									className="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
