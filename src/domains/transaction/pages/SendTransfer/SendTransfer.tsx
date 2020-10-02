@@ -22,8 +22,7 @@ export const SendTransfer = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
 	const location = useLocation();
-
-	console.log({ state: location.state });
+	const { state } = location;
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
@@ -45,7 +44,14 @@ export const SendTransfer = () => {
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 		register("smartbridge");
-	}, [register]);
+	}, [register, state, setValue]);
+
+	useEffect(() => {
+		console.log({ state });
+
+		if (state?.fee) setValue("fee", state.fee);
+		if (state?.memo) setValue("smartbridge", state.memo);
+	}, [state, setValue]);
 
 	useEffect(() => {
 		if (!activeWallet?.address?.()) return;
