@@ -158,7 +158,7 @@ export const WalletHeader = ({
 										}`}
 									>
 										<Icon
-											name="ArrowUp"
+											name="ChevronUp"
 											className={currencyDelta < 0 ? "rotate-180" : ""}
 											width={10}
 										/>
