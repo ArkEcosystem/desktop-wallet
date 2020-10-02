@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
@@ -14,23 +15,26 @@ describe("AddRecipient", () => {
 
 	it("should render", () => {
 		const { container } = render(
-			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,
 		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render without recipients", () => {
-		const { container } = render(<AddRecipient profile={profile} recipients={null} />);
+		const { container } = render(
+			<AddRecipient maxAvailableAmount={BigNumber.ZERO} profile={profile} recipients={undefined} />,
+		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with single recipient data", () => {
 		const { container, getByTestId } = render(
 			<AddRecipient
+				maxAvailableAmount={BigNumber.ZERO}
 				profile={profile}
 				recipients={[
 					{
-						amount: (100 * 1e8).toString(),
+						amount: BigNumber.make(100 * 1e8),
 						address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
 					},
 				]}
@@ -38,7 +42,6 @@ describe("AddRecipient", () => {
 		);
 
 		expect(getByTestId("SelectRecipient__input")).toHaveValue("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
-		expect(getByTestId("add-recipient__amount-input")).toHaveValue(100);
 
 		expect(container).toMatchSnapshot();
 	});
@@ -48,8 +51,7 @@ describe("AddRecipient", () => {
 			<AddRecipient
 				profile={profile}
 				assetSymbol="ARK"
-				maxAvailableAmount={80}
-				availableAmount={0}
+				maxAvailableAmount={BigNumber.make(80)}
 				isSingleRecipient={false}
 			/>,
 		);
@@ -58,7 +60,7 @@ describe("AddRecipient", () => {
 
 	it("should select recipient", async () => {
 		const { getByTestId, getAllByTestId } = render(
-			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -86,7 +88,7 @@ describe("AddRecipient", () => {
 
 	it("should set available amount", async () => {
 		const { getByTestId, container } = render(
-			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(8 * 1e8)} />,
 		);
 		const sendAll = getByTestId("add-recipient__send-all");
 		const amountInput = getByTestId("add-recipient__amount-input");
@@ -94,13 +96,13 @@ describe("AddRecipient", () => {
 			fireEvent.click(sendAll);
 		});
 
-		expect(amountInput).toHaveValue(80);
+		expect(amountInput).toHaveValue("8.00000000");
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should toggle between single and multiple recipients", async () => {
 		const { getByTestId, queryByText } = render(
-			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,
 		);
 
 		const singleButton = getByTestId("add-recipient-is-single-toggle");
@@ -128,8 +130,7 @@ describe("AddRecipient", () => {
 			<AddRecipient
 				profile={profile}
 				assetSymbol="ARK"
-				maxAvailableAmount={80}
-				availableAmount={0}
+				maxAvailableAmount={BigNumber.make(80)}
 				isSingleRecipient={false}
 			/>,
 		);
@@ -162,8 +163,7 @@ describe("AddRecipient", () => {
 			<AddRecipient
 				profile={profile}
 				assetSymbol="ARK"
-				maxAvailableAmount={80}
-				availableAmount={0}
+				maxAvailableAmount={BigNumber.make(80)}
 				isSingleRecipient={false}
 			/>,
 		);
@@ -212,8 +212,7 @@ describe("AddRecipient", () => {
 			<AddRecipient
 				profile={profile}
 				assetSymbol="ARK"
-				maxAvailableAmount={80}
-				availableAmount={0}
+				maxAvailableAmount={BigNumber.make(80)}
 				isSingleRecipient={false}
 			/>,
 		);
