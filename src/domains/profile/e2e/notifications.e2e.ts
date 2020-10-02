@@ -40,7 +40,7 @@ test("should open notifications and see transactions list", async (t) => {
 
 	await t.expect(Selector("[data-testid=TransactionTable]").exists).ok();
 	await t.hover(Selector("[data-testid=TransactionTable]"));
-	await t.expect(Selector("[data-testid=NotificationsWrapper] [data-testid=TableRow]").count).eql(2);
+	await t.expect(Selector("[data-testid=NotificationsWrapper] [data-testid=TableRow]").count).gt(0);
 });
 
 test("should open and close transaction details modal", async (t) => {
@@ -52,7 +52,7 @@ test("should open and close transaction details modal", async (t) => {
 
 	await t.expect(Selector("[data-testid=TransactionTable]").exists).ok();
 	await t.hover(Selector("[data-testid=TransactionTable]"));
-	await t.expect(Selector("[data-testid=NotificationsWrapper] [data-testid=TableRow]").count).eql(2);
+	await t.expect(Selector("[data-testid=NotificationsWrapper] [data-testid=TableRow]").count).gt(0);
 
 	await t.click(Selector("[data-testid=NotificationsWrapper] [data-testid=TableRow]:first-child"));
 	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
