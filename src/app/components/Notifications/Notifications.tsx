@@ -22,8 +22,6 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 			profile
 				.notifications()
 				.values()
-				// TODO: remove ts-ignore when types are supported from sdk
-				/* @ts-ignore */
 				.filter((n) => n.type === type),
 		[profile],
 	);
@@ -57,8 +55,8 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 			)}
 
 			{transactions.length > 0 && (
-				<>
-					<div className="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5">
+				<div className="mt-4">
+					<div className="sticky z-10 py-4 pl-4 pr-8 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5">
 						{t("COMMON.NOTIFICATIONS.TRANSACTIONS_TITLE")}
 					</div>
 					<Table hideHeader columns={[{ Header: "-", className: "hidden" }]} data={transactions}>
@@ -72,7 +70,7 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 							/>
 						)}
 					</Table>
-				</>
+				</div>
 			)}
 		</NotificationsWrapper>
 	);

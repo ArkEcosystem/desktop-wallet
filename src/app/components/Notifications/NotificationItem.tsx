@@ -1,4 +1,3 @@
-import { Icon } from "app/components/Icon";
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
@@ -8,7 +7,6 @@ export const NotificationItem = ({
 	id,
 	name,
 	body,
-	icon,
 	action: actionName,
 	onAction,
 	onVisibilityChange,
@@ -19,12 +17,8 @@ export const NotificationItem = ({
 
 	return (
 		<tr data-testid="NotificationItem">
-			<td className="w-8">
-				{icon && (
-					<div className="w-full p-2 mr-4 rounded-lg h-jull">
-						<Icon name={icon} width={32} height={32} />
-					</div>
-				)}
+			<td className="w-8 h-8">
+				<div className="w-8 h-8 mr-4 my-2 rounded-lg bg-logo flex text-white flex items-center align-middle justify-center" />
 			</td>
 			<td>
 				<VisibilitySensor
