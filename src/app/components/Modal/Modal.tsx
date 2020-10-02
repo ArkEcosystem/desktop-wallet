@@ -1,6 +1,6 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
@@ -126,6 +126,23 @@ export const Modal = (props: ModalProps) => {
 			return;
 		};
 	}, [props.isOpen]);
+
+	const onEscKey = useCallback(
+		(event: KeyboardEvent) => {
+			if (event.key === "Escape") {
+				props.onClose();
+			}
+		},
+		[props],
+	);
+
+	useEffect(() => {
+		document.addEventListener("keyup", onEscKey, false);
+
+		return () => {
+			document.removeEventListener("keyup", onEscKey);
+		};
+	}, [onEscKey]);
 
 	if (!props.isOpen) {
 		return <></>;

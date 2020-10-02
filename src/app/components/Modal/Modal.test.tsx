@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { render } from "testing-library";
+import { act, fireEvent, render } from "testing-library";
 
 import { Modal } from "./Modal";
 
@@ -19,6 +20,20 @@ describe("Modal", () => {
 		);
 
 		expect(getByTestId("modal__overlay")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should closed by esc button", async () => {
+		const onClose = jest.fn();
+		const { asFragment, getByTestId } = render(<Modal title="ark" isOpen={true} onClose={onClose} />);
+
+		expect(getByTestId("modal__overlay")).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.keyUp(getByTestId("modal__inner"), { key: "Escape", code: 27 });
+		});
+
+		expect(onClose).toHaveBeenCalled();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
