@@ -257,8 +257,12 @@ export const Votes = () => {
 							onContinue={handleContinue}
 						/>
 					)
-				) : (
+				) : network ? (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
+				) : (
+					<div className="mt-8 text-center text-theme-neutral-dark" data-testid="votes__message">
+						{t("VOTE.VOTES_PAGE.SELECT_NETWORK_MESSAGE")}
+					</div>
 				)}
 			</Section>
 		</Page>
