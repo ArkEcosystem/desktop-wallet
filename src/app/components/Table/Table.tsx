@@ -35,12 +35,8 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 	};
 
 	const getSortIconName = (isSorted: boolean, isSortedDesc: boolean) => {
-		if (isSorted && isSortedDesc) {
-			return "ArrowDown";
-		}
-
-		if (isSorted && !isSortedDesc) {
-			return "ArrowUp";
+		if (isSorted) {
+			return isSortedDesc ? "CaretDown" : "CaretUp";
 		}
 
 		return "Sort";

@@ -65,15 +65,8 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 
 	const { t } = useTranslation();
 
-	const crumbs = [
-		{
-			route: `/profiles/${activeProfile.id()}/support`,
-			label: t("HELP.GO_BACK_TO_HELP_SUPPORT"),
-		},
-	];
-
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section>
 				<Header
 					title={t("HELP.PAGE_SUPPORT.TITLE")}
