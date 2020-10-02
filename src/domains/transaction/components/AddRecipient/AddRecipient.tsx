@@ -62,7 +62,7 @@ export const AddRecipient = ({
 	recipients,
 	onChange,
 }: AddRecipientProps) => {
-	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients || []);
+	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
 	const [displayAmount, setDisplayAmount] = useState<string | undefined>();
 
