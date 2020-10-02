@@ -47,6 +47,47 @@ describe("NewsOptions", () => {
 		expect(onSearch).toBeCalledWith("test query");
 	});
 
+	it("should handle search input pressing the Enter key", () => {
+		const onSearch = jest.fn();
+		const onSubmit = jest.fn();
+
+		const { getByTestId } = render(
+			<NewsOptions
+				selectedCategories={categories}
+				selectedCoins={coins}
+				onSearch={onSearch}
+				onSubmit={onSubmit}
+			/>,
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
+			fireEvent.click(getByTestId("network__option--0"));
+			fireEvent.change(getByTestId("NewsOptions__search"), {
+				target: {
+					value: "test query",
+				},
+			});
+		});
+
+		act(() => {
+			fireEvent.keyDown(getByTestId("NewsOptions__search"), { key: "Escape", code: 27 });
+		});
+
+		expect(onSubmit).not.toHaveBeenCalled();
+
+		act(() => {
+			fireEvent.keyDown(getByTestId("NewsOptions__search"), { key: "Enter", code: 13 });
+		});
+
+		expect(onSearch).toBeCalledWith("test query");
+		expect(onSubmit).toBeCalledWith({
+			categories: expect.arrayContaining(["Technical"]),
+			coins: expect.arrayContaining(["ark"]),
+			searchQuery: expect.stringMatching("test query"),
+		});
+	});
+
 	it("should limit search query to 32 letters", () => {
 		const onSearch = jest.fn();
 		const { getByTestId } = render(
