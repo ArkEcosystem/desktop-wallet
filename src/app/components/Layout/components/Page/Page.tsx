@@ -1,5 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { Breadcrumbs,Crumb } from "app/components/Breadcrumbs";
+import { Breadcrumbs, Crumb } from "app/components/Breadcrumbs";
 import { NavigationBar } from "app/components/NavigationBar";
 import React from "react";
 import { NavbarVariant } from "types";
