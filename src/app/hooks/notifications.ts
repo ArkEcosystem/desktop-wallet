@@ -42,7 +42,7 @@ const formatNotification = (transaction: TransactionDataType) => ({
 
 const notifyReceivedTransactions: any = async ({
 	profile,
-	lookupLimit = 60,
+	lookupLimit = 20,
 	allowedTransactionTypes = ["transfer", "multiPayment"],
 }: NotififyReceivedTransactionsParams) => {
 	if (!profile?.id()) return [];
