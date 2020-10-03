@@ -54,7 +54,7 @@ export const useSynchronizer = (jobs: Job[]) => {
 
 export const useEnvSynchronizer = () => {
 	const { env } = useEnvironmentContext();
-	const { notifications } = useNotifications();
+	const { notifications } = useNotifications(env);
 
 	const jobs = useMemo(() => {
 		const syncDelegates = {
