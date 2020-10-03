@@ -34,7 +34,7 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/delegates?page=5", "coins/ark/delegates-devnet"),
 	],
 	transactions: [
-		mockRequest("https://dwallets.ark.io/api/node/fees?days=7", "coins/ark/node-fees"),
+		mockRequest("https://dwallets.ark.io/api/node/fees?days=30", "coins/ark/node-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/transaction-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions/search?limit=10", "coins/ark/transactions"),
 		mockRequest(
@@ -94,6 +94,18 @@ export const requestMocks = {
 		mockRequest(
 			"https://dwallets.ark.io/api/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
 			"coins/ark/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
+		),
+		mockRequest(
+			"https://dwallets.ark.io/api/wallets/DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+			"coins/ark/wallets/DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+		),
+		mockRequest(
+			"https://dwallets.ark.io/api/wallets/D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
+			"coins/ark/wallets/D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
+		),
+		mockRequest(
+			"https://dwallets.ark.io/api/wallets/DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
+			"coins/ark/wallets/DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
 		),
 		mockRequest("https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes", "coins/ark/votes"),
 	],
