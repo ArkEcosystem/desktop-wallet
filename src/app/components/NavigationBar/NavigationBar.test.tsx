@@ -105,6 +105,16 @@ describe("NavigationBar", () => {
 		});
 	});
 
+	it("should render the navbar with exchange currency", () => {
+		profile.settings().set(ProfileSetting.ExchangeCurrency, "BRL");
+
+		const { getByText } = renderWithRouter(<NavigationBar profile={profile} />);
+
+		expect(getByText("R$")).toBeTruthy();
+
+		profile.settings().set(ProfileSetting.ExchangeCurrency, "BTC");
+	});
+
 	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support"])(
 		"should handle '%s' click on user actions dropdown",
 		async (label) => {

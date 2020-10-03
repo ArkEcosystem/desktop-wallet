@@ -31,11 +31,13 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
 
-	const [availableNetworks] = useState(() =>
-		env.availableNetworks().map((network) => {
-			const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
-			return Object.assign(network, { extra: extended });
-		}),
+	const availableNetworks = useMemo(
+		() =>
+			env.availableNetworks().map((network) => {
+				const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
+				return Object.assign(network, { extra: extended });
+			}),
+		[env],
 	);
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
@@ -45,9 +47,9 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 		for (const coin of Object.keys(balancePerCoin)) {
 			for (const network of availableNetworks) {
-				if (network.ticker() === coin) {
+				if (network.extra && network.ticker() === coin) {
 					data.push({
-						color: network.extra!.textClass.replace("text-theme-", ""),
+						color: network.extra.textClass.replace("text-theme-", ""),
 						label: coin,
 						percentage: Number(balancePerCoin[coin].percentage),
 					});

@@ -384,6 +384,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                     </div>
                                   </div>
                                 </div>
+                                <span
+                                  class="sc-fzoyAV gCfUUB py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                  data-testid="SelectNetworkInput__typeahead"
+                                >
+                                  ARK
+                                </span>
                                 <input
                                   aria-activedescendant="SendTransactionForm__network-item-0"
                                   aria-autocomplete="list"
@@ -448,30 +454,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   >
                                     <svg>
                                       ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                aria-selected="false"
-                                class="inline-block cursor-pointer"
-                                data-testid="SelectNetwork__NetworkIcon--container"
-                                id="SendTransactionForm__network-item-2"
-                                role="option"
-                              >
-                                <div
-                                  aria-label="Compendia"
-                                  class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
-                                >
-                                  <div
-                                    class="sc-AxiKw fubePL"
-                                    data-testid="NetworkIcon__icon"
-                                    height="26"
-                                    width="26"
-                                  >
-                                    <svg>
-                                      bind.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -678,8 +660,8 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
-                                      type="number"
-                                      value="0"
+                                      type="text"
+                                      value=""
                                     />
                                     <div
                                       class="sc-fzoyAV sc-fzoXzr YtqIf"
@@ -729,14 +711,10 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               value=""
                             />
                             <div
-                              class="sc-fzoyAV sc-fzoXzr YtqIf"
+                              class="sc-fzoyAV sc-fzoXzr YtqIf px-2 text-sm pointer-events-none text-theme-neutral"
+                              data-testid="InputCounter__counter"
                             >
-                              <button
-                                class="px-4 text-theme-neutral-light focus:outline-none"
-                                type="button"
-                              >
-                                255 Max
-                              </button>
+                              0/255
                             </div>
                           </div>
                         </fieldset>
@@ -1587,8 +1565,8 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                       data-testid="add-recipient__amount-input"
                       name="amount"
                       placeholder="Amount"
-                      type="number"
-                      value="0"
+                      type="text"
+                      value=""
                     />
                     <div
                       class="sc-fzoyAV sc-fzoXzr YtqIf"
@@ -1638,14 +1616,10 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               value=""
             />
             <div
-              class="sc-fzoyAV sc-fzoXzr YtqIf"
+              class="sc-fzoyAV sc-fzoXzr YtqIf px-2 text-sm pointer-events-none text-theme-neutral"
+              data-testid="InputCounter__counter"
             >
-              <button
-                class="px-4 text-theme-neutral-light focus:outline-none"
-                type="button"
-              >
-                255 Max
-              </button>
+              0/255
             </div>
           </div>
         </fieldset>
@@ -2895,8 +2869,8 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
-                                      type="number"
-                                      value="0"
+                                      type="text"
+                                      value=""
                                     />
                                     <div
                                       class="sc-fzoyAV sc-fzoXzr YtqIf"
@@ -2946,14 +2920,10 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               value=""
                             />
                             <div
-                              class="sc-fzoyAV sc-fzoXzr YtqIf"
+                              class="sc-fzoyAV sc-fzoXzr YtqIf px-2 text-sm pointer-events-none text-theme-neutral"
+                              data-testid="InputCounter__counter"
                             >
-                              <button
-                                class="px-4 text-theme-neutral-light focus:outline-none"
-                                type="button"
-                              >
-                                255 Max
-                              </button>
+                              0/255
                             </div>
                           </div>
                         </fieldset>
@@ -3512,30 +3482,6 @@ exports[`SendTransfer should select network first and see select address input c
                                 role="option"
                               >
                                 <div
-                                  aria-label="ARK"
-                                  class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                  data-testid="NetworkIcon-ARK-ark.mainnet"
-                                >
-                                  <div
-                                    class="sc-AxiKw fubePL"
-                                    data-testid="NetworkIcon__icon"
-                                    height="26"
-                                    width="26"
-                                  >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                aria-selected="true"
-                                class="inline-block cursor-pointer"
-                                data-testid="SelectNetwork__NetworkIcon--container"
-                                id="SendTransactionForm__network-item-1"
-                                role="option"
-                              >
-                                <div
                                   aria-label="ARK Devnet"
                                   class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
@@ -3548,30 +3494,6 @@ exports[`SendTransfer should select network first and see select address input c
                                   >
                                     <svg>
                                       ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                aria-selected="false"
-                                class="inline-block cursor-pointer"
-                                data-testid="SelectNetwork__NetworkIcon--container"
-                                id="SendTransactionForm__network-item-2"
-                                role="option"
-                              >
-                                <div
-                                  aria-label="Compendia"
-                                  class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
-                                >
-                                  <div
-                                    class="sc-AxiKw fubePL"
-                                    data-testid="NetworkIcon__icon"
-                                    height="26"
-                                    width="26"
-                                  >
-                                    <svg>
-                                      bind.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -3777,8 +3699,8 @@ exports[`SendTransfer should select network first and see select address input c
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
-                                      type="number"
-                                      value="0"
+                                      type="text"
+                                      value=""
                                     />
                                     <div
                                       class="sc-fzoyAV sc-fzoXzr YtqIf"
@@ -3828,14 +3750,10 @@ exports[`SendTransfer should select network first and see select address input c
                               value=""
                             />
                             <div
-                              class="sc-fzoyAV sc-fzoXzr YtqIf"
+                              class="sc-fzoyAV sc-fzoXzr YtqIf px-2 text-sm pointer-events-none text-theme-neutral"
+                              data-testid="InputCounter__counter"
                             >
-                              <button
-                                class="px-4 text-theme-neutral-light focus:outline-none"
-                                type="button"
-                              >
-                                255 Max
-                              </button>
+                              0/255
                             </div>
                           </div>
                         </fieldset>

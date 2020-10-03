@@ -116,10 +116,15 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 				<div className="flex items-center justify-between px-2 py-4 rounded-md shadow-xl">
 					<Input
 						data-testid="NewsOptions__search"
-						maxLength={32}
-						onChange={(e) => handleSearchInput?.((e.target as HTMLInputElement).value)}
 						className="border-none shadow-none NewsOptions__search"
+						maxLength={32}
 						placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")}
+						onChange={(event) => handleSearchInput?.((event.target as HTMLInputElement).value)}
+						onKeyDown={(event) => {
+							if (event.key === "Enter") {
+								handleSubmit();
+							}
+						}}
 					/>
 					<Icon className="mr-4 text-theme-neutral" name="Search" width={20} height={20} />
 				</div>
