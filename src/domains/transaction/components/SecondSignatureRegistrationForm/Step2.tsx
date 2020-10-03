@@ -52,51 +52,46 @@ export const BackupStep = () => {
 	};
 
 	return (
-		<section data-testid="SecondSignature__backup-step">
-			<div className="my-8">
-				<Header title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.TITLE")} />
-			</div>
+		<section data-testid="SecondSignature__backup-step" className="space-y-8">
+			<Header title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.TITLE")} />
 
-			<div className="space-y-8">
-				<Alert size="lg">{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.WARNING")}</Alert>
-				<MnemonicList mnemonic={mnemonic} />
-				<div className="flex justify-end w-full">
-					<Clipboard data={mnemonic}>
-						<Button data-testid="SecondSignature__copy" variant="plain">
-							<Icon name="Copy" />
-							<span>{t("COMMON.COPY")}</span>
-						</Button>
-					</Clipboard>
-				</div>
+			<Alert size="lg">{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.WARNING")}</Alert>
+			<MnemonicList mnemonic={mnemonic} />
+
+			<div className="flex justify-end w-full">
+				<Clipboard data={mnemonic}>
+					<Button data-testid="SecondSignature__copy" variant="plain">
+						<Icon name="Copy" />
+						<span>{t("COMMON.COPY")}</span>
+					</Button>
+				</Clipboard>
 			</div>
 
 			<Divider dashed />
 
-			<div className="py-3">
-				<div className="flex items-center justify-between">
-					<div className="space-y-1">
-						<span className="text-lg font-semibold text-theme-neutral-dark">
-							{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.TITLE")}
-						</span>
-						<p className="text-sm  text-theme-neutral">
-							{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.DESCRIPTION")}
-						</p>
-					</div>
-
-					<Icon name="FilePassword" width={40} height={40} />
+			<div className="flex items-center justify-between">
+				<div className="space-y-2">
+					<span className="text-lg font-semibold text-theme-neutral-dark">
+						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.TITLE")}
+					</span>
+					<p className="text-sm text-theme-neutral">
+						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.DESCRIPTION")}
+					</p>
 				</div>
 
-				<div className="flex justify-end w-full mt-8">
-					<Button
-						data-testid="SecondSignature__download"
-						variant="plain"
-						className="flex items-center space-x-2"
-						onClick={handleDownload}
-					>
-						<Icon name="Download" />
-						<span>{t("COMMON.DOWNLOAD")}</span>
-					</Button>
-				</div>
+				<Icon name="FilePassword" width={40} height={40} />
+			</div>
+
+			<div className="flex justify-end w-full">
+				<Button
+					data-testid="SecondSignature__download"
+					variant="plain"
+					className="flex items-center space-x-2"
+					onClick={handleDownload}
+				>
+					<Icon name="Download" />
+					<span>{t("COMMON.DOWNLOAD")}</span>
+				</Button>
 			</div>
 
 			<Divider dashed />
