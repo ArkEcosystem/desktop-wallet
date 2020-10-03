@@ -61,5 +61,5 @@ test("should successfully submit delegate resignation", async (t) => {
 	const sendButton = "[data-testid=SendEntityResignation__send-button]";
 	await t.click(Selector(sendButton));
 
-	await t.expect(Selector("[data-testid=SendEntityResignation__fourth-step]").exists).ok();
+	await t.expect(Selector("[data-testid=SendDelegateResignation__summary-step]").exists).ok();
 });
