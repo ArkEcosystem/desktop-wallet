@@ -4630,30 +4630,6 @@ exports[`Registration should select network first and see select address input c
                               role="option"
                             >
                               <div
-                                aria-label="ARK"
-                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                data-testid="NetworkIcon-ARK-ark.mainnet"
-                              >
-                                <div
-                                  class="sc-AxiKw fubePL"
-                                  data-testid="NetworkIcon__icon"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                            <li
-                              aria-selected="true"
-                              class="inline-block cursor-pointer"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                              id="SendTransactionForm__network-item-1"
-                              role="option"
-                            >
-                              <div
                                 aria-label="ARK Devnet"
                                 class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
@@ -4666,30 +4642,6 @@ exports[`Registration should select network first and see select address input c
                                 >
                                   <svg>
                                     ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                            <li
-                              aria-selected="false"
-                              class="inline-block cursor-pointer"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                              id="SendTransactionForm__network-item-2"
-                              role="option"
-                            >
-                              <div
-                                aria-label="Compendia"
-                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                data-testid="NetworkIcon-ARK-compendia.mainnet"
-                              >
-                                <div
-                                  class="sc-AxiKw fubePL"
-                                  data-testid="NetworkIcon__icon"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    bind.svg
                                   </svg>
                                 </div>
                               </div>
@@ -5191,6 +5143,12 @@ exports[`Registration should select network with unavailable wallets and see sel
                                   </div>
                                 </div>
                               </div>
+                              <span
+                                class="sc-fzqBZW iEnjyC py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                data-testid="SelectNetworkInput__typeahead"
+                              >
+                                ARK
+                              </span>
                               <input
                                 aria-activedescendant="SendTransactionForm__network-item-0"
                                 aria-autocomplete="list"
@@ -5255,30 +5213,6 @@ exports[`Registration should select network with unavailable wallets and see sel
                                 >
                                   <svg>
                                     ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                            <li
-                              aria-selected="false"
-                              class="inline-block cursor-pointer"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                              id="SendTransactionForm__network-item-2"
-                              role="option"
-                            >
-                              <div
-                                aria-label="Compendia"
-                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                data-testid="NetworkIcon-ARK-compendia.mainnet"
-                              >
-                                <div
-                                  class="sc-AxiKw fubePL"
-                                  data-testid="NetworkIcon__icon"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    bind.svg
                                   </svg>
                                 </div>
                               </div>
