@@ -133,7 +133,7 @@ export const SendEntityResignation = ({ formDefaultData, passwordType }: any) =>
 				});
 			}
 
-			// await activeWallet.transaction().broadcast(signedTransactionId);
+			await activeWallet.transaction().broadcast(signedTransactionId);
 
 			await env.persist();
 
