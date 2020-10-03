@@ -87,5 +87,5 @@ export const useNotifications = (env: Environment) => {
 				syncReceivedTransactions,
 			},
 		};
-	}, [profiles]);
+	}, [profiles, env]);
 };
