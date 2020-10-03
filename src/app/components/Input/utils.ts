@@ -9,4 +9,5 @@ const isStepDivisible = ({ min, max, step }: RangeInput) => {
 	return parseInt(res.toString(), 10) === res;
 };
 
-export const sanitizeStep = ({ min, max, step }: RangeInput): number => isStepDivisible({ min, max, step }) ? step : max / 100;
+export const sanitizeStep = ({ min, max, step }: RangeInput): number =>
+	isStepDivisible({ min, max, step }) ? step : max / 100;
