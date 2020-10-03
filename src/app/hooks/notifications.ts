@@ -1,6 +1,5 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Environment,Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { TransactionDataType } from "@arkecosystem/platform-sdk/dist/contracts";
-import { useEnvironmentContext } from "app/contexts";
 import { useMemo } from "react";
 
 type SyncReceivedTransactionsParams = {
@@ -59,15 +58,18 @@ const notifyReceivedTransactions: any = async ({
 	);
 };
 
-export const useNotifications = () => {
-	const { env } = useEnvironmentContext();
+export const useNotifications = (env: Environment) => {
 	const profiles = env.profiles();
 
 	return useMemo(() => {
-		const syncReceivedTransactions = async (params?: SyncReceivedTransactionsParams) =>
-			await Promise.all(
+		const syncReceivedTransactions = async (params?: SyncReceivedTransactionsParams) => {
+			const savedNotifications = await Promise.all(
 				profiles.values().map((profile: Profile) => notifyReceivedTransactions({ ...params, profile })),
 			);
+
+			await env.persist();
+			return savedNotifications.flat();
+		};
 
 		return {
 			notifications: {
