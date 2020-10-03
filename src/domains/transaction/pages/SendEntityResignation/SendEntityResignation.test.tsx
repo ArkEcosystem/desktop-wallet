@@ -22,7 +22,6 @@ import {
 
 import { SendEntityResignation } from "../SendEntityResignation";
 
-
 let wallet: ReadWriteWallet;
 let profile: Profile;
 
