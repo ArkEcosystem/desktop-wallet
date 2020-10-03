@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
+
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createMemoryHistory } from "history";
@@ -32,11 +33,26 @@ const defaultProps: any = {
 
 const history = createMemoryHistory();
 
-const renderPage = (props: SendEntityResignationProps = defaultProps) => {
+const renderDelegatePage = (props: SendEntityResignationProps = defaultProps) => {
 	const allProps = { ...defaultProps, ...props };
 
 	const rendered: RenderResult = renderWithRouter(
 		<Route path="/profiles/:profileId/wallets/:walletId/send-entity-resignation">
+			<SendEntityResignation {...allProps} />
+		</Route>,
+		{
+			routes: [resignRegistrationURL],
+			history,
+		},
+	);
+	return rendered;
+};
+
+const renderEntityPage = (props: SendEntityResignationProps = defaultProps) => {
+	const allProps = { ...defaultProps, ...props };
+
+	const rendered: RenderResult = renderWithRouter(
+		<Route path="/profiles/:profileId/wallets/:walletId/transactions/:transactionId/send-entity-resignation">
 			<SendEntityResignation {...allProps} />
 		</Route>,
 		{
@@ -59,7 +75,7 @@ const transactionResponse = {
 const entity = {
 	data: () => ({
 		asset: () => entityFixture.data[0].asset,
-		id: () => "test id",
+		id: () => "test-id",
 	}),
 	sender: () => entityFixture.data[0].sender,
 };
@@ -79,355 +95,365 @@ describe("SendEntityResignation", () => {
 		entity.wallet = () => wallet;
 	});
 
-	beforeEach(() => {
-		resignRegistrationURL = `/profiles/${getDefaultProfileId()}/wallets/${wallet.id()}/send-entity-resignation`;
-		history.push(resignRegistrationURL);
-	});
-
-	it("should render 1st step", async () => {
-		const { asFragment, getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render 1st step as entity", async () => {
-		history.push(resignRegistrationURL, { type: "entity", entity });
-		const { asFragment, getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render 2nd step", async () => {
-		const { asFragment, getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+	describe("entity", () => {
+		beforeEach(() => {
+			resignRegistrationURL = `/profiles/${getDefaultProfileId()}/wallets/${wallet.id()}/transactions/${entity
+				.data()
+				.id()}/send-entity-resignation`;
+			history.push(resignRegistrationURL);
 		});
 
-		expect(getByTestId("SendEntityResignation__second-step")).toBeTruthy();
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-	});
+		it.only("should render 1st step as entity", async () => {
+			const { asFragment, getByTestId } = renderEntityPage();
 
-	it("should render 2nd step as entity", async () => {
-		history.push(resignRegistrationURL, { type: "entity", entity });
-		const { asFragment, getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			await waitFor(() => expect(getByTestId("SendEntityResignation__form-step")).toBeTruthy());
+			expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+			expect(asFragment()).toMatchSnapshot();
 		});
 
-		expect(getByTestId("SendEntityResignation__second-step")).toBeTruthy();
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-	});
+		it("should render 2nd step as entity", async () => {
+			history.push(resignRegistrationURL, { type: "entity", entity });
+			const { asFragment, getByTestId } = renderEntityPage();
 
-	it("should navigate  between 1st and 2nd steps", async () => {
-		const { getByTestId } = renderPage();
+			await waitFor(() => expect(getByTestId("SendEntityResignation__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__second-step")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityResignation__back-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-	});
-
-	it("should render 3rd step", async () => {
-		const { asFragment, getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-
-		expect(getByTestId("AuthenticationStep")).toBeTruthy();
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should show authentication error", async () => {
-		const signMock = jest.spyOn(wallet.transaction(), "signDelegateResignation").mockImplementation(() => {
-			throw new Error();
-		});
-		const consoleMock = jest.spyOn(console, "log").mockImplementation();
-
-		const { asFragment, getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-
-		act(() => {
-			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
-				target: {
-					value: "test",
-				},
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
 			});
+
+			expect(getByTestId("SendEntityResignation__second-step")).toBeTruthy();
+			expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+			expect(asFragment()).toMatchSnapshot();
 		});
 
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+		it("should succesfully sign and submit an entity resignation transaction", async () => {
+			history.push(resignRegistrationURL, { type: "entity", entity });
 
-		act(() => {
-			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
-				target: {
-					value: "test",
-				},
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signEntityResignation")
+				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
+
+			const { asFragment, getByTestId } = renderEntityPage();
+
+			await waitFor(() => expect(getByTestId("SendEntityResignation__form-step")).toBeTruthy());
+
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
 			});
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+					target: {
+						value: "test",
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+					target: {
+						value: "test",
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+
+			act(() => {
+				fireEvent.click(getByTestId("SendEntityResignation__send-button"));
+			});
+
+			await waitFor(() => expect(getByTestId("SendEntityResignation__summary-step")).toBeTruthy());
+			expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+			expect(asFragment()).toMatchSnapshot();
+
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
 		});
-
-		await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
-
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveAttribute("aria-invalid"));
-		await waitFor(() => expect(getByTestId("SendEntityResignation__send-button")).toBeDisabled());
-
-		expect(getByTestId("AuthenticationStep")).toBeTruthy();
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-
-		signMock.mockRestore();
-		consoleMock.mockRestore();
 	});
 
-	it("should succesfully sign and submit resignation transaction", async () => {
-		const signMock = jest
-			.spyOn(wallet.transaction(), "signDelegateResignation")
-			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
-		const transactionMock = createTransactionMock(wallet);
-
-		const { asFragment, getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+	describe("delegate", () => {
+		beforeEach(() => {
+			resignRegistrationURL = `/profiles/${getDefaultProfileId()}/wallets/${wallet.id()}/send-entity-resignation`;
+			history.push(resignRegistrationURL);
 		});
 
-		act(() => {
-			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
-				target: {
-					value: "test",
-				},
+		it("should render 1st step", async () => {
+			const { asFragment, getByTestId } = renderDelegatePage();
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+			expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+			expect(asFragment()).toMatchSnapshot();
+		});
+
+		it("should render 2nd step", async () => {
+			const { asFragment, getByTestId } = renderDelegatePage();
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
 			});
+
+			expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy();
+			expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+			expect(asFragment()).toMatchSnapshot();
 		});
 
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+		it("should navigate between 1st and 2nd step", async () => {
+			const { getByTestId } = renderDelegatePage();
 
-		act(() => {
-			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
-				target: {
-					value: "test",
-				},
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			act(() => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
 			});
-		});
 
-		await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__fourth-step")).toBeTruthy());
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-
-		signMock.mockRestore();
-		broadcastMock.mockRestore();
-		transactionMock.mockRestore();
-	});
-
-	it("should succesfully sign and submit an entity resignation transaction", async () => {
-		history.push(resignRegistrationURL, { type: "entity", entity });
-
-		const signMock = jest
-			.spyOn(wallet.transaction(), "signEntityResignation")
-			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
-		const transactionMock = createTransactionMock(wallet);
-
-		const { asFragment, getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-
-		act(() => {
-			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
-				target: {
-					value: "test",
-				},
+			act(() => {
+				fireEvent.click(getByTestId("SendEntityResignation__back-button"));
 			});
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 		});
 
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+		it("should render 3rd step", async () => {
+			const { asFragment, getByTestId } = renderDelegatePage();
 
-		act(() => {
-			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
-				target: {
-					value: "test",
-				},
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
 			});
-		});
-
-		await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
-
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__fourth-step")).toBeTruthy());
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-
-		signMock.mockRestore();
-		broadcastMock.mockRestore();
-		transactionMock.mockRestore();
-	});
-
-	it("should handle download button after succesful submittion", async () => {
-		const signMock = jest
-			.spyOn(wallet.transaction(), "signDelegateResignation")
-			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
-		const transactionMock = createTransactionMock(wallet);
-
-		const { getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-
-		act(() => {
-			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
-				target: {
-					value: "test",
-				},
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
 			});
+
+			expect(getByTestId("AuthenticationStep")).toBeTruthy();
+			expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+			expect(asFragment()).toMatchSnapshot();
 		});
 
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
-
-		act(() => {
-			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
-				target: {
-					value: "test",
-				},
+		it("should show authentication error", async () => {
+			const signMock = jest.spyOn(wallet.transaction(), "signDelegateResignation").mockImplementation(() => {
+				throw new Error();
 			});
-		});
+			const consoleMock = jest.spyOn(console, "log").mockImplementation();
 
-		await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+			const { asFragment, getByTestId } = renderDelegatePage();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
-		});
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SendEntityResignation__fourth-step")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityResignation__download-button"));
-		});
-
-		expect(defaultProps.onDownload).toHaveBeenCalledWith(transactionResponse);
-
-		signMock.mockRestore();
-		broadcastMock.mockRestore();
-		transactionMock.mockRestore();
-	});
-
-	it("should back button after succesful submittion", async () => {
-		const signMock = jest
-			.spyOn(wallet.transaction(), "signDelegateResignation")
-			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
-		const transactionMock = createTransactionMock(wallet);
-
-		const { getByTestId } = renderPage();
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-
-		act(() => {
-			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
-				target: {
-					value: "test",
-				},
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
 			});
-		});
-
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
-
-		act(() => {
-			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
-				target: {
-					value: "test",
-				},
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
 			});
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+					target: {
+						value: "test",
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+					target: {
+						value: "test",
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+
+			act(() => {
+				fireEvent.click(getByTestId("SendEntityResignation__send-button"));
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveAttribute("aria-invalid"));
+			await waitFor(() => expect(getByTestId("SendEntityResignation__send-button")).toBeDisabled());
+
+			expect(getByTestId("AuthenticationStep")).toBeTruthy();
+			expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+			expect(asFragment()).toMatchSnapshot();
+
+			signMock.mockRestore();
+			consoleMock.mockRestore();
 		});
 
-		await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+		it("should succesfully sign and submit resignation transaction", async () => {
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signDelegateResignation")
+				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
 
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
+			const { asFragment, getByTestId } = renderDelegatePage();
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+					target: {
+						value: "test",
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+					target: {
+						value: "test",
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+
+			act(() => {
+				fireEvent.click(getByTestId("SendEntityResignation__send-button"));
+			});
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__summary-step")).toBeTruthy());
+			expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+			expect(asFragment()).toMatchSnapshot();
+
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
 		});
 
-		await waitFor(() => expect(getByTestId("SendEntityResignation__fourth-step")).toBeTruthy());
+		it("should handle download button after succesful submittion", async () => {
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signDelegateResignation")
+				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
 
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityResignation__wallet-button"));
+			const { getByTestId } = renderDelegatePage();
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+					target: {
+						value: "test",
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+					target: {
+						value: "test",
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+
+			act(() => {
+				fireEvent.click(getByTestId("SendEntityResignation__send-button"));
+			});
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__summary-step")).toBeTruthy());
+
+			act(() => {
+				fireEvent.click(getByTestId("SendEntityResignation__download-button"));
+			});
+
+			expect(defaultProps.onDownload).toHaveBeenCalledWith(transactionResponse);
+
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
 		});
 
-		expect(history.location.pathname).toMatch(dashboardUrl);
+		it("should back button after successful submittion", async () => {
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signDelegateResignation")
+				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
 
-		signMock.mockRestore();
-		broadcastMock.mockRestore();
-		transactionMock.mockRestore();
+			const { getByTestId } = renderDelegatePage();
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+					target: {
+						value: "test",
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+					target: {
+						value: "test",
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+
+			act(() => {
+				fireEvent.click(getByTestId("SendEntityResignation__send-button"));
+			});
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__summary-step")).toBeTruthy());
+
+			act(() => {
+				fireEvent.click(getByTestId("SendEntityResignation__wallet-button"));
+			});
+
+			expect(history.location.pathname).toMatch(dashboardUrl);
+
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
+		});
 	});
 });

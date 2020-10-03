@@ -35,7 +35,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 
 	const options = [
 		{ label: t("COMMON.UPDATE"), value: "updateDelegate" },
-		{ label: t("COMMON.RESIGN"), value: "resign" },
+		{ label: t("COMMON.RESIGN"), value: "resignDelegate" },
 	];
 
 	useEffect(() => {
