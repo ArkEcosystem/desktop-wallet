@@ -3,6 +3,7 @@ import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profi
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
+import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -29,6 +30,8 @@ export const ImportWallet = () => {
 
 	const form = useForm({ mode: "onChange" });
 	const { formState } = form;
+	const { isSubmitting, isValid } = formState;
+
 	const nameMaxLength = 42;
 
 	const crumbs = [
@@ -46,6 +49,25 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab + 1);
 	};
 
+	const syncNewWallet = async (network: Coins.Network, wallet: ReadWriteWallet) => {
+		const votes = async () => {
+			if (network.allowsVoting()) {
+				try {
+					env.delegates().all(network.coin(), network.id());
+				} catch {
+					// Sync network delegates for the first time
+					await env.delegates().sync(network.coin(), network.id());
+				}
+				await wallet.syncVotes();
+			}
+		};
+
+		const rates = () => env.exchangeRates().syncCoinByProfile(activeProfile, wallet.currency(), [wallet]);
+
+		await Promise.allSettled([votes(), rates()]);
+		await persist();
+	};
+
 	const handleSubmit = async ({
 		network,
 		passphrase,
@@ -60,9 +82,6 @@ export const ImportWallet = () => {
 		let wallet: ReadWriteWallet | undefined;
 
 		if (!walletData) {
-			const hasWalletsByCoinWithNetwork =
-				activeProfile.wallets().findByCoinWithNetwork(network.coin(), network.id()).length > 0;
-
 			if (passphrase) {
 				wallet = await activeProfile.wallets().importByMnemonic(passphrase, network.coin(), network.id());
 			} else {
@@ -70,17 +89,10 @@ export const ImportWallet = () => {
 			}
 
 			setWalletData(wallet);
-
-			if (network.allowsVoting()) {
-				if (hasWalletsByCoinWithNetwork) {
-					await wallet.syncVotes();
-				} else {
-					await env.delegates().syncAll();
-					await wallet.syncVotes();
-				}
-			}
-
 			await persist();
+
+			// Run in background
+			syncNewWallet(network, wallet);
 
 			setActiveTab(activeTab + 1);
 		} else {
@@ -120,7 +132,7 @@ export const ImportWallet = () => {
 							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < 3 && (
 									<Button
-										disabled={activeTab === 1 || formState.isSubmitting}
+										disabled={activeTab === 1 || isSubmitting}
 										variant="plain"
 										onClick={handleBack}
 										data-testid="ImportWallet__back-button"
@@ -131,7 +143,7 @@ export const ImportWallet = () => {
 
 								{activeTab === 1 && (
 									<Button
-										disabled={!formState.isValid}
+										disabled={!isValid}
 										onClick={handleNext}
 										data-testid="ImportWallet__continue-button"
 									>
@@ -141,17 +153,23 @@ export const ImportWallet = () => {
 
 								{activeTab === 2 && (
 									<Button
-										disabled={!formState.isValid || formState.isSubmitting}
+										disabled={!isValid || isSubmitting}
 										type="submit"
 										data-testid="ImportWallet__continue-button"
 									>
-										{t("COMMON.CONTINUE")}
+										{isSubmitting ? (
+											<span className="px-3">
+												<Spinner size="sm" />
+											</span>
+										) : (
+											t("COMMON.CONTINUE")
+										)}
 									</Button>
 								)}
 
 								{activeTab === 3 && (
 									<Button
-										disabled={formState.isSubmitting}
+										disabled={isSubmitting}
 										type="submit"
 										data-testid="ImportWallet__gotowallet-button"
 									>
