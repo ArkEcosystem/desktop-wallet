@@ -23,7 +23,7 @@ describe("Modal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should closed by esc button", async () => {
+	it("should closed by the Esc key", async () => {
 		const onClose = jest.fn();
 		const { asFragment, getByTestId } = render(<Modal title="ark" isOpen={true} onClose={onClose} />);
 

@@ -24,13 +24,11 @@ export const VerificationStep = () => {
 	}, [register]);
 
 	return (
-		<section data-testid="SecondSignature__confirmation-step">
-			<div className="my-8">
-				<Header
-					title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_CONFIRMATION_STEP.TITLE")}
-					subtitle={t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_CONFIRMATION_STEP.SUBTITLE")}
-				/>
-			</div>
+		<section data-testid="SecondSignature__confirmation-step" className="space-y-8">
+			<Header
+				title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_CONFIRMATION_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_CONFIRMATION_STEP.SUBTITLE")}
+			/>
 
 			<MnemonicVerification
 				mnemonic={mnemonic}

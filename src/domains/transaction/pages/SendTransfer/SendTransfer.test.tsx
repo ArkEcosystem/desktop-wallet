@@ -266,7 +266,7 @@ describe("SendTransfer", () => {
 
 			// Amount
 			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue(80);
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.03551662");
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
@@ -494,7 +494,7 @@ describe("SendTransfer", () => {
 
 			// Amount
 			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue(80);
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue("13.03551662");
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });

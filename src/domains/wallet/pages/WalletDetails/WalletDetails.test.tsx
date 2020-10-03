@@ -325,4 +325,18 @@ describe("WalletDetails", () => {
 		expect(queryAllByTestId("WalletBottomSheetMenu")).toHaveLength(0);
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should not fail if the votes have not yet been synchronized", async () => {
+		const newWallet = await profile.wallets().importByMnemonic("test mnemonic", "ARK", "ark.devnet");
+		nock("https://dwallets.ark.io").get(`/api/wallets/${newWallet.address()}`).reply(200, walletMock);
+
+		await newWallet.syncIdentity();
+
+		walletUrl = `/profiles/${profile.id()}/wallets/${newWallet.id()}`;
+		history.push(walletUrl);
+
+		const { asFragment } = await renderPage();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

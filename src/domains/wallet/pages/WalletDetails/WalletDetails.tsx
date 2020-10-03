@@ -48,6 +48,15 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		hasMore,
 	} = useWalletTransactions(activeWallet, { limit: 15 });
 
+	const walletVotes = () => {
+		// Being synced in background and will be updated after persisting
+		try {
+			return activeWallet.votes();
+		} catch (e) {
+			return [];
+		}
+	};
+
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
 	const coinName = activeWallet.coinId();
@@ -153,7 +162,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					<div className="flex">
 						<div className="w-1/2 pr-12 border-r border-theme-neutral-300">
 							<WalletVote
-								votes={activeWallet.hasSyncedWithNetwork() ? activeWallet.votes() : []}
+								votes={activeWallet.hasSyncedWithNetwork() ? walletVotes() : []}
 								maxVotes={activeWallet.network().maximumVotesPerWallet()}
 								isLoading={isLoading}
 								onButtonClick={handleVoteButton}
