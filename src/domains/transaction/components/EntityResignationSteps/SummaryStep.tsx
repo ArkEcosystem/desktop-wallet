@@ -1,4 +1,3 @@
-
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
