@@ -1,9 +1,9 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 
 export type AddRecipientProps = {
-	maxAvailableAmount: number;
-	availableAmount: number;
+	maxAvailableAmount: BigNumber;
 	assetSymbol: string;
 	isSingleRecipient?: boolean;
 	singleLabel?: string;
