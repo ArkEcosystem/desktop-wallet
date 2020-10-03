@@ -333,7 +333,7 @@ describe("SendEntityResignation", () => {
 			transactionMock.mockRestore();
 		});
 
-		// it("should handle download button after succesful submittion", async () => {
+		// it("should handle download button after succesful submission", async () => {
 		// 	const signMock = jest
 		// 		.spyOn(wallet.transaction(), "signDelegateResignation")
 		// 		.mockReturnValue(Promise.resolve(transactionFixture.data.id));
@@ -388,7 +388,7 @@ describe("SendEntityResignation", () => {
 		// 	transactionMock.mockRestore();
 		// });
 
-		it("should back button after successful submittion", async () => {
+		it("should back button after successful submission", async () => {
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signDelegateResignation")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));

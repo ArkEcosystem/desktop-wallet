@@ -7,7 +7,7 @@ import { transactionsMock, walletMock } from "./mocks";
 
 createFixture(`Delegate Registration action`);
 
-test("should fail delegate resignation submittion", async (t: any) => {
+test("should fail delegate resignation submission", async (t: any) => {
 	await goToProfile(t);
 	await goToMyRegistrations(t);
 	await goToResignDelegatePage(t);

@@ -95,13 +95,10 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 				<span data-testid="DelegateRowItem__actions">
 					<Dropdown
 						toggleContent={
-							<div className="float-right">
-								<Button variant="plain" size="icon">
-									<Icon name="Settings" width={20} height={20} />
-								</Button>
-							</div>
+							<Button variant="plain" size="icon">
+								<Icon name="Settings" width={20} height={20} />
+							</Button>
 						}
-						toggleIcon="Settings"
 						options={options}
 						onSelect={({ value }: any) => onAction?.({ walletId: wallet.id(), action: value })}
 					/>

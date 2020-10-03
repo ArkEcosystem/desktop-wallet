@@ -68,11 +68,9 @@ export const EntityTableRowItem = ({ onAction, entity, type }: EntityTableRowIte
 			<TableCell variant="end" className="w-22" innerClassName="justify-end">
 				<Dropdown
 					toggleContent={
-						<div className="float-right">
-							<Button variant="plain" size="icon">
-								<Icon name="Settings" width={20} height={20} />
-							</Button>
-						</div>
+						<Button variant="plain" size="icon">
+							<Icon name="Settings" width={20} height={20} />
+						</Button>
 					}
 					options={options}
 					onSelect={({ value }: any) =>
