@@ -1,4 +1,4 @@
-import { Environment,Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { TransactionDataType } from "@arkecosystem/platform-sdk/dist/contracts";
 import { useMemo } from "react";
 
@@ -40,18 +40,29 @@ const formatNotification = (transaction: TransactionDataType) => ({
 	},
 });
 
+const filterUnseenTransactions = (
+	profile: Profile,
+	transactions: TransactionDataType[],
+	allowedTransactionTypes: string[],
+) =>
+	transactions.reduce((addedTransactions: TransactionDataType[], transaction: TransactionDataType) => {
+		if (
+			allowedTransactionTypes.includes(transaction.type()) &&
+			isRecipient(profile, transaction) &&
+			!transactionNotificationExists(profile, transaction) &&
+			!addedTransactions.find((t) => t.id() === transaction.id())
+		)
+			addedTransactions.push(transaction);
+		return addedTransactions;
+	}, []);
+
 const notifyReceivedTransactions: any = async ({
 	profile,
 	lookupLimit = 20,
 	allowedTransactionTypes = ["transfer", "multiPayment"],
 }: NotifyReceivedTransactionsParams) => {
 	const allRecentTransactions = await fetchRecentProfileTransactions(profile, lookupLimit);
-	const newUnseenTransactions = allRecentTransactions.filter(
-		(transaction: TransactionDataType) =>
-			allowedTransactionTypes.includes(transaction.type()) &&
-			isRecipient(profile, transaction) &&
-			!transactionNotificationExists(profile, transaction),
-	);
+	const newUnseenTransactions = filterUnseenTransactions(profile, allRecentTransactions, allowedTransactionTypes);
 
 	return newUnseenTransactions.map((transaction: TransactionDataType) =>
 		profile.notifications().push(formatNotification(transaction)),
