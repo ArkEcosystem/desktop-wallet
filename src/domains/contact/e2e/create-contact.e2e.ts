@@ -38,7 +38,7 @@ test("should open and cancel contact creation modal", async (t) => {
 		.notOk();
 });
 
-test("should succesfully create contact", async (t) => {
+test("should successfully create contact", async (t) => {
 	const contactName = "Test contact";
 
 	await t.click(Selector('[data-testid="contacts__add-contact-btn"]'));

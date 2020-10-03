@@ -117,6 +117,20 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
               </div>
             </div>
           </th>
+          <th
+            class="text-sm text-left select-none text-theme-neutral"
+            colspan="1"
+            data-testid="table__th--7"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top hidden"
+            >
+              <div>
+                Actions
+              </div>
+            </div>
+          </th>
         </tr>
       </thead>
       <tbody
@@ -228,7 +242,7 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw cNDILm text-theme-neutral-light justify-end"
+              class="sc-AxiKw cNDILm font-semibold text-theme-neutral-dark justify-end"
             >
               <span
                 class="whitespace-no-wrap"
@@ -258,24 +272,26 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
               </span>
             </div>
           </td>
-          <td>
+          <td
+            class="w-22"
+          >
             <div
               class="sc-AxiKw bQCFMo justify-end"
             >
               <span
                 data-testid="DelegateRowItem__actions"
               >
-                <button
-                  class="sc-AxhUy dbxpTG ml-16"
-                  color="primary"
-                  type="button"
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="relative"
-                    data-testid="dropdown__toggle"
+                    class="float-right"
                   >
-                    <div
-                      class="float-right outline-none cursor-pointer focus:outline-none"
+                    <button
+                      class="sc-AxhUy ekOxnf"
+                      color="primary"
+                      type="button"
                     >
                       <div
                         class="sc-AxjAm buCJuk"
@@ -286,9 +302,9 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
                           settings.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
-                </button>
+                </div>
               </span>
             </div>
           </td>
@@ -416,6 +432,20 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
               </div>
             </div>
           </th>
+          <th
+            class="text-sm text-left select-none text-theme-neutral"
+            colspan="1"
+            data-testid="table__th--7"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top hidden"
+            >
+              <div>
+                Actions
+              </div>
+            </div>
+          </th>
         </tr>
       </thead>
       <tbody
@@ -527,7 +557,7 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw cNDILm text-theme-neutral-light justify-end"
+              class="sc-AxiKw cNDILm font-semibold text-theme-neutral-dark justify-end"
             >
               <span
                 class="whitespace-no-wrap"
@@ -557,24 +587,26 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
               </span>
             </div>
           </td>
-          <td>
+          <td
+            class="w-22"
+          >
             <div
               class="sc-AxiKw bQCFMo justify-end"
             >
               <span
                 data-testid="DelegateRowItem__actions"
               >
-                <button
-                  class="sc-AxhUy dbxpTG ml-16"
-                  color="primary"
-                  type="button"
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="relative"
-                    data-testid="dropdown__toggle"
+                    class="float-right"
                   >
-                    <div
-                      class="float-right outline-none cursor-pointer focus:outline-none"
+                    <button
+                      class="sc-AxhUy ekOxnf"
+                      color="primary"
+                      type="button"
                     >
                       <div
                         class="sc-AxjAm buCJuk"
@@ -585,9 +617,9 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
                           settings.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
-                </button>
+                </div>
               </span>
             </div>
           </td>
@@ -715,6 +747,20 @@ exports[`Welcome should render delegates 1`] = `
               </div>
             </div>
           </th>
+          <th
+            class="text-sm text-left select-none text-theme-neutral"
+            colspan="1"
+            data-testid="table__th--7"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top hidden"
+            >
+              <div>
+                Actions
+              </div>
+            </div>
+          </th>
         </tr>
       </thead>
       <tbody
@@ -826,7 +872,7 @@ exports[`Welcome should render delegates 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw cNDILm text-theme-neutral-light justify-end"
+              class="sc-AxiKw cNDILm font-semibold text-theme-neutral-dark justify-end"
             >
               <span
                 class="whitespace-no-wrap"
@@ -856,24 +902,26 @@ exports[`Welcome should render delegates 1`] = `
               </span>
             </div>
           </td>
-          <td>
+          <td
+            class="w-22"
+          >
             <div
               class="sc-AxiKw bQCFMo justify-end"
             >
               <span
                 data-testid="DelegateRowItem__actions"
               >
-                <button
-                  class="sc-AxhUy dbxpTG ml-16"
-                  color="primary"
-                  type="button"
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="relative"
-                    data-testid="dropdown__toggle"
+                    class="float-right"
                   >
-                    <div
-                      class="float-right outline-none cursor-pointer focus:outline-none"
+                    <button
+                      class="sc-AxhUy ekOxnf"
+                      color="primary"
+                      type="button"
                     >
                       <div
                         class="sc-AxjAm buCJuk"
@@ -884,9 +932,9 @@ exports[`Welcome should render delegates 1`] = `
                           settings.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
-                </button>
+                </div>
               </span>
             </div>
           </td>
@@ -1011,6 +1059,20 @@ exports[`Welcome should render empty state 1`] = `
             >
               <div>
                 Votes
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-sm text-left select-none text-theme-neutral"
+            colspan="1"
+            data-testid="table__th--7"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top hidden"
+            >
+              <div>
+                Actions
               </div>
             </div>
           </th>

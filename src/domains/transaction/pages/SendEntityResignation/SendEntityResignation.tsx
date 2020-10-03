@@ -13,8 +13,7 @@ import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/component
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory, useLocation } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import {
 	FormStep as EntityFormStep,
@@ -22,11 +21,12 @@ import {
 	SummaryStep as EntitySummaryStep,
 } from "../../components/EntityResignationSteps";
 
-export const SendEntityResignation = ({ formDefaultData, onDownload, passwordType }: any) => {
+export const SendEntityResignation = ({ formDefaultData, passwordType }: any) => {
 	const { t } = useTranslation();
 	const history = useHistory();
-	const location = useLocation();
+
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
+
 	const { formState, getValues, setError } = form;
 	const { isValid } = formState;
 
@@ -51,7 +51,6 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 		};
 
 		if (transactionId) {
-			console.log("fetching", transactionId);
 			fetchTransaction();
 		} else {
 			setState({ type: "delegate" });
@@ -247,7 +246,6 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 													data-testid="SendEntityResignation__download-button"
 													variant="plain"
 													className="space-x-2"
-													onClick={() => onDownload?.(transaction)}
 												>
 													<Icon name="Download" />
 													<span>{t("COMMON.DOWNLOAD")}</span>

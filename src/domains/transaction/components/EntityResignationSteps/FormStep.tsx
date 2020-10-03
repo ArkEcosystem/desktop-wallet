@@ -8,9 +8,7 @@ import { useTranslation } from "react-i18next";
 
 import { EntityResignationStepProps } from "./EntityResignationSteps.models";
 
-type FromStepProps = EntityResignationStepProps;
-
-export const FormStep = ({ entity, fees }: FromStepProps) => {
+export const FormStep = ({ entity, fees }: EntityResignationStepProps) => {
 	const { t } = useTranslation();
 
 	return (

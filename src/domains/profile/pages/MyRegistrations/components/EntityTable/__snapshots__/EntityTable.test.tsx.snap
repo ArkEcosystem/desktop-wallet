@@ -258,21 +258,23 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
               </span>
             </div>
           </td>
-          <td>
+          <td
+            class="w-22"
+          >
             <div
               class="sc-AxiKw bQCFMo justify-end"
             >
-              <button
-                class="sc-AxgMl gbsPBQ ml-16"
-                color="primary"
-                type="button"
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="relative"
-                  data-testid="dropdown__toggle"
+                  class="float-right"
                 >
-                  <div
-                    class="float-right outline-none cursor-pointer focus:outline-none"
+                  <button
+                    class="sc-AxgMl iheamR"
+                    color="primary"
+                    type="button"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -283,9 +285,9 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
                         settings.svg
                       </svg>
                     </div>
-                  </div>
+                  </button>
                 </div>
-              </button>
+              </div>
             </div>
           </td>
         </tr>
@@ -694,21 +696,23 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
               </span>
             </div>
           </td>
-          <td>
+          <td
+            class="w-22"
+          >
             <div
               class="sc-AxiKw bQCFMo justify-end"
             >
-              <button
-                class="sc-AxgMl gbsPBQ ml-16"
-                color="primary"
-                type="button"
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="relative"
-                  data-testid="dropdown__toggle"
+                  class="float-right"
                 >
-                  <div
-                    class="float-right outline-none cursor-pointer focus:outline-none"
+                  <button
+                    class="sc-AxgMl iheamR"
+                    color="primary"
+                    type="button"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -719,9 +723,9 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
                         settings.svg
                       </svg>
                     </div>
-                  </div>
+                  </button>
                 </div>
-              </button>
+              </div>
             </div>
           </td>
         </tr>

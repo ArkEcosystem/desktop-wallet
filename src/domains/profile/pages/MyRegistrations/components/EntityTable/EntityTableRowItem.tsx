@@ -65,22 +65,26 @@ export const EntityTableRowItem = ({ onAction, entity, type }: EntityTableRowIte
 				<span>{t("COMMON.VIEW")}</span>
 			</TableCell>
 
-			<TableCell variant="end" innerClassName="justify-end">
-				<Button variant="plain" size="sm" className="ml-16">
-					<Dropdown
-						toggleIcon="Settings"
-						options={options}
-						onSelect={({ value }: any) =>
-							onAction?.({
-								walletId: entity.wallet().id(),
-								txId: entity.id(),
-								entity,
-								type,
-								action: value,
-							})
-						}
-					/>
-				</Button>
+			<TableCell variant="end" className="w-22" innerClassName="justify-end">
+				<Dropdown
+					toggleContent={
+						<div className="float-right">
+							<Button variant="plain" size="icon">
+								<Icon name="Settings" width={20} height={20} />
+							</Button>
+						</div>
+					}
+					options={options}
+					onSelect={({ value }: any) =>
+						onAction?.({
+							walletId: entity.wallet().id(),
+							txId: entity.id(),
+							entity,
+							type,
+							action: value,
+						})
+					}
+				/>
 			</TableCell>
 		</TableRow>
 	);

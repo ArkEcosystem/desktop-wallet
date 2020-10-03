@@ -110,7 +110,7 @@ exports[`DelegateRowItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jMsVEB text-theme-neutral-light justify-end"
+            class="sc-AxgMl jMsVEB font-semibold text-theme-neutral-dark justify-end"
           >
             <span
               class="whitespace-no-wrap"
@@ -140,24 +140,26 @@ exports[`DelegateRowItem should render 1`] = `
             </span>
           </div>
         </td>
-        <td>
+        <td
+          class="w-22"
+        >
           <div
             class="sc-AxgMl hkmjkT justify-end"
           >
             <span
               data-testid="DelegateRowItem__actions"
             >
-              <button
-                class="sc-AxjAm bXCWLY ml-16"
-                color="primary"
-                type="button"
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="relative"
-                  data-testid="dropdown__toggle"
+                  class="float-right"
                 >
-                  <div
-                    class="float-right outline-none cursor-pointer focus:outline-none"
+                  <button
+                    class="sc-AxjAm gBWztV"
+                    color="primary"
+                    type="button"
                   >
                     <div
                       class="sc-AxiKw dklFyP"
@@ -168,9 +170,9 @@ exports[`DelegateRowItem should render 1`] = `
                         settings.svg
                       </svg>
                     </div>
-                  </div>
+                  </button>
                 </div>
-              </button>
+              </div>
             </span>
           </div>
         </td>
@@ -290,7 +292,7 @@ exports[`DelegateRowItem should render all columns 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jMsVEB text-theme-neutral-light justify-end"
+            class="sc-AxgMl jMsVEB font-semibold text-theme-neutral-dark justify-end"
           >
             <span
               class="whitespace-no-wrap"
@@ -320,24 +322,26 @@ exports[`DelegateRowItem should render all columns 1`] = `
             </span>
           </div>
         </td>
-        <td>
+        <td
+          class="w-22"
+        >
           <div
             class="sc-AxgMl hkmjkT justify-end"
           >
             <span
               data-testid="DelegateRowItem__actions"
             >
-              <button
-                class="sc-AxjAm bXCWLY ml-16"
-                color="primary"
-                type="button"
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="relative"
-                  data-testid="dropdown__toggle"
+                  class="float-right"
                 >
-                  <div
-                    class="float-right outline-none cursor-pointer focus:outline-none"
+                  <button
+                    class="sc-AxjAm gBWztV"
+                    color="primary"
+                    type="button"
                   >
                     <div
                       class="sc-AxiKw dklFyP"
@@ -348,9 +352,9 @@ exports[`DelegateRowItem should render all columns 1`] = `
                         settings.svg
                       </svg>
                     </div>
-                  </div>
+                  </button>
                 </div>
-              </button>
+              </div>
             </span>
           </div>
         </td>
@@ -470,7 +474,7 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jMsVEB text-theme-neutral-light justify-end"
+            class="sc-AxgMl jMsVEB font-semibold text-theme-neutral-dark justify-end"
           >
             <span
               class="whitespace-no-wrap"
@@ -500,24 +504,26 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
             </span>
           </div>
         </td>
-        <td>
+        <td
+          class="w-22"
+        >
           <div
             class="sc-AxgMl hkmjkT justify-end"
           >
             <span
               data-testid="DelegateRowItem__actions"
             >
-              <button
-                class="sc-AxjAm bXCWLY ml-16"
-                color="primary"
-                type="button"
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="relative"
-                  data-testid="dropdown__toggle"
+                  class="float-right"
                 >
-                  <div
-                    class="float-right outline-none cursor-pointer focus:outline-none"
+                  <button
+                    class="sc-AxjAm gBWztV"
+                    color="primary"
+                    type="button"
                   >
                     <div
                       class="sc-AxiKw dklFyP"
@@ -528,9 +534,9 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
                         settings.svg
                       </svg>
                     </div>
-                  </div>
+                  </button>
                 </div>
-              </button>
+              </div>
             </span>
           </div>
         </td>
@@ -650,7 +656,7 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jMsVEB text-theme-neutral-light justify-end"
+            class="sc-AxgMl jMsVEB font-semibold text-theme-neutral-dark justify-end"
           >
             <span
               class="whitespace-no-wrap"
@@ -680,24 +686,26 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
             </span>
           </div>
         </td>
-        <td>
+        <td
+          class="w-22"
+        >
           <div
             class="sc-AxgMl hkmjkT justify-end"
           >
             <span
               data-testid="DelegateRowItem__actions"
             >
-              <button
-                class="sc-AxjAm bXCWLY ml-16"
-                color="primary"
-                type="button"
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="relative"
-                  data-testid="dropdown__toggle"
+                  class="float-right"
                 >
-                  <div
-                    class="float-right outline-none cursor-pointer focus:outline-none"
+                  <button
+                    class="sc-AxjAm gBWztV"
+                    color="primary"
+                    type="button"
                   >
                     <div
                       class="sc-AxiKw dklFyP"
@@ -708,9 +716,9 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
                         settings.svg
                       </svg>
                     </div>
-                  </div>
+                  </button>
                 </div>
-              </button>
+              </div>
             </span>
           </div>
         </td>
