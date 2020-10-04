@@ -45,6 +45,10 @@ export const DelegateTable = ({ wallets, onAction }: Props) => {
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.VOTES"),
 			className: "justify-end",
 		},
+		{
+			Header: "Actions",
+			className: "hidden",
+		},
 	];
 
 	return (
