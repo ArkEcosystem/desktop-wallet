@@ -35,6 +35,7 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 
 	const showPagination = useMemo(() => data.length > swiperOptions.slidesPerView * swiperOptions.slidesPerColumn, [
 		data,
+		swiperOptions,
 	]);
 
 	// Swiper needs container height to be defined.
