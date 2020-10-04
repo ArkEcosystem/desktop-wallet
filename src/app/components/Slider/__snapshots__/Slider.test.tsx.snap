@@ -7,7 +7,7 @@ exports[`Slider should render 1`] = `
   >
     <div
       class="swiper-container swiper-container-initialized swiper-container-horizontal"
-      style="height: 234px;"
+      style="height: 184px;"
     >
       <div
         class="h-full swiper-wrapper "
@@ -15,16 +15,13 @@ exports[`Slider should render 1`] = `
       >
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div>
             Slider item
           </div>
         </div>
       </div>
-      <div
-        class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-      />
     </div>
   </div>
 </div>
@@ -37,7 +34,7 @@ exports[`Slider should render empty rows if template not provided 1`] = `
   >
     <div
       class="swiper-container swiper-container-initialized swiper-container-horizontal"
-      style="height: 234px;"
+      style="height: 184px;"
     >
       <div
         class="h-full swiper-wrapper "
@@ -45,14 +42,11 @@ exports[`Slider should render empty rows if template not provided 1`] = `
       >
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
       </div>
-      <div
-        class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-      />
     </div>
   </div>
 </div>
@@ -65,7 +59,7 @@ exports[`Slider should render pagination 1`] = `
   >
     <div
       class="swiper-container swiper-container-initialized swiper-container-horizontal"
-      style="height: 234px;"
+      style="height: 248px;"
     >
       <div
         class="h-full swiper-wrapper "
@@ -73,73 +67,73 @@ exports[`Slider should render pagination 1`] = `
       >
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
         <div
           class="swiper-slide"
-          style="height: 180px;"
+          style="height: 184px;"
         >
           <div />
         </div>
       </div>
       <div
-        class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+        class="swiper-pagination flex items-center justify-center h-6 important:bottom-0 swiper-pagination-clickable swiper-pagination-bullets"
       />
     </div>
   </div>
