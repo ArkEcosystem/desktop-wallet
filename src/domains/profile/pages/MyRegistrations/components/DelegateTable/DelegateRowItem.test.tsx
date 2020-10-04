@@ -127,7 +127,7 @@ describe("DelegateRowItem", () => {
 			fireEvent.click(resignOption);
 		});
 
-		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "resign" });
+		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "resignDelegate" });
 	});
 
 	it("should handle delegate update action", async () => {

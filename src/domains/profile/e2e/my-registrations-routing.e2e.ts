@@ -106,7 +106,7 @@ test("should handle business registration resign action", async (t: any) => {
 	const businessRowItem = "[data-testid=BusinessRegistrations] [data-testid=TableRow]:nth-child(1)";
 	await selectRegistrationOption(businessRowItem, "resign", t);
 
-	await t.expect(Selector("[data-testid=SendEntityResignation__first-step]").exists).ok();
+	await t.expect(Selector("[data-testid=SendEntityResignation__form-step]").exists).ok();
 });
 
 test("should render plugin registrations list", async (t: any) => {
@@ -137,5 +137,5 @@ test("should handle plugin registration resign action", async (t: any) => {
 	const pluginRowItem = "[data-testid=PluginRegistrations] [data-testid=TableRow]";
 	await selectRegistrationOption(pluginRowItem, "resign", t);
 
-	await t.expect(Selector("[data-testid=SendEntityResignation__first-step]").exists).ok();
+	await t.expect(Selector("[data-testid=SendEntityResignation__form-step]").exists).ok();
 });
