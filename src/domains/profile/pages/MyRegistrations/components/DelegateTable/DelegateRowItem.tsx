@@ -35,7 +35,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 
 	const options = [
 		{ label: t("COMMON.UPDATE"), value: "updateDelegate" },
-		{ label: t("COMMON.RESIGN"), value: "resign" },
+		{ label: t("COMMON.RESIGN"), value: "resignDelegate" },
 	];
 
 	useEffect(() => {
@@ -78,7 +78,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 				<span data-testid="DelegateRowItem__status">{getStatusIcon(isConfirmed)}</span>
 			</TableCell>
 
-			<TableCell innerClassName="text-theme-neutral-light justify-end">
+			<TableCell innerClassName="font-semibold text-theme-neutral-dark justify-end">
 				<span data-testid="DelegateRowItem__forged" className="whitespace-no-wrap">
 					2,450.643 Ѧ
 				</span>
@@ -91,15 +91,17 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 				</span>
 			</TableCell>
 
-			<TableCell variant="end" innerClassName="justify-end">
+			<TableCell variant="end" className="w-22" innerClassName="justify-end">
 				<span data-testid="DelegateRowItem__actions">
-					<Button variant="plain" size="sm" className="ml-16">
-						<Dropdown
-							toggleIcon="Settings"
-							options={options}
-							onSelect={({ value }: any) => onAction?.({ walletId: wallet.id(), action: value })}
-						/>
-					</Button>
+					<Dropdown
+						toggleContent={
+							<Button variant="plain" size="icon">
+								<Icon name="Settings" width={20} height={20} />
+							</Button>
+						}
+						options={options}
+						onSelect={({ value }: any) => onAction?.({ walletId: wallet.id(), action: value })}
+					/>
 				</span>
 			</TableCell>
 		</TableRow>
