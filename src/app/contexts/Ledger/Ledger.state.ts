@@ -68,6 +68,7 @@ export const ledgerStateReducer = (state: State, action: Action): State => {
 			return {
 				...state,
 				isBusy: false,
+				isWaiting: false,
 				error: action.message,
 			};
 		}

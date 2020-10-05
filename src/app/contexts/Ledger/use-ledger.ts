@@ -15,7 +15,7 @@ export const useLedger = (transport: typeof Transport) => {
 	const [state, dispatch] = useReducer(ledgerStateReducer, defaultLedgerState);
 	const abortRetryRef = useRef<boolean>(false);
 
-	const { isBusy, error } = state;
+	const { isBusy, isConnected, error } = state;
 
 	const listenDevice = useCallback(
 		() =>
@@ -35,7 +35,10 @@ export const useLedger = (transport: typeof Transport) => {
 	);
 
 	const connect = useCallback(
-		async (coin: Coins.Coin) => {
+		async (
+			coin: Coins.Coin,
+			retryOptions: retry.Options = { retries: 50, randomize: false, factor: 1, minTimeout: 2000 },
+		) => {
 			dispatch({ type: "waiting" });
 			abortRetryRef.current = false;
 
@@ -47,19 +50,14 @@ export const useLedger = (transport: typeof Transport) => {
 						bail(new Error("User aborted"));
 					}
 
-					try {
-						await coin.ledger().connect(transport);
-						await coin.ledger().getPublicKey(formatDerivationPath(slip44, 0));
-					} catch (e) {
-						console.error(e);
-						throw e;
-					}
+					await coin.ledger().connect(transport);
+					await coin.ledger().getPublicKey(formatDerivationPath(slip44, 0));
 				};
 
-				await retry(connectFn, { retries: 50, randomize: false, factor: 1, minTimeout: 2000 });
-
+				await retry(connectFn, retryOptions);
 				dispatch({ type: "connected" });
 			} catch (e) {
+				coin.ledger().disconnect();
 				dispatch({ type: "failed", message: e.message });
 			}
 		},
@@ -131,11 +129,13 @@ export const useLedger = (transport: typeof Transport) => {
 
 	return {
 		abortConnectionRetry,
+		connect,
 		error,
 		hasDeviceAvailable,
 		isAwaitingConnection,
 		isAwaitingDeviceConfirmation,
 		isBusy,
+		isConnected,
 		scanWallets,
 	};
 };
