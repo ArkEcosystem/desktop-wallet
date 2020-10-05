@@ -215,7 +215,7 @@ export const LinkCollection = ({
 								<tr
 									data-testid="LinkCollection__item"
 									key={rowData.value}
-									className="font-semibold border-b last:border-b-0 border-dashed border-theme-neutral-300"
+									className="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300"
 								>
 									{selectionTypeTitle && (
 										<td className="w-16 text-center align-middle">
