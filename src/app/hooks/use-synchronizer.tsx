@@ -28,11 +28,18 @@ export const useSynchronizer = (jobs: Job[]) => {
 		[persist],
 	);
 
+	const stop = useCallback(() => {
+		for (const timer of timers.current) {
+			clearInterval(timer);
+		}
+	}, []);
+
 	const start = useCallback(() => {
+		stop(); // Stop previous jobs in progress
 		for (const job of jobs) {
 			timers.current.push(setInterval(() => run(job.callback), job.interval));
 		}
-	}, [run, jobs]);
+	}, [run, jobs, stop]);
 
 	const runAll = useCallback(async () => {
 		for (const job of jobs) {
@@ -49,7 +56,7 @@ export const useSynchronizer = (jobs: Job[]) => {
 		};
 	}, [timers]);
 
-	return { start, runAll };
+	return { start, stop, runAll };
 };
 
 export const useEnvSynchronizer = () => {

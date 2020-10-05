@@ -62,9 +62,18 @@ export const ImportWallet = () => {
 			}
 		};
 
+		const fees = async () => {
+			try {
+				env.fees().all(network.coin(), network.id());
+			} catch {
+				// Sync network fees for the first time
+				await env.fees().sync(network.coin(), network.id());
+			}
+		};
+
 		const rates = () => env.exchangeRates().syncCoinByProfile(activeProfile, wallet.currency(), [wallet]);
 
-		await Promise.allSettled([votes(), rates()]);
+		await Promise.allSettled([votes(), rates(), fees()]);
 		await persist();
 	};
 

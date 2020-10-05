@@ -198,7 +198,7 @@ test("should fail authentication and see error message in toast", async (t: any)
 	await t.expect(Selector(".Toastify__toast--error").exists).ok();
 });
 
-test("should succesfully update entity", async (t: any) => {
+test("should successfully update entity", async (t: any) => {
 	const passphrase = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
 
 	await goToProfile(t);

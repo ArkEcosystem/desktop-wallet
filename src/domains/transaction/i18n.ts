@@ -257,6 +257,7 @@ export const translations: { [key: string]: any } = {
 
 	PAGE_RESIGN_REGISTRATION: {
 		ENTITY_NAME: "Entity Name",
+		ENTITY_TYPE: "Entity Type",
 		FIRST_STEP: {
 			DELEGATE: {
 				TITLE: "Delegate Resignation",

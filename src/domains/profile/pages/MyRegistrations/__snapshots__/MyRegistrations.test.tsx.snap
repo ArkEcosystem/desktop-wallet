@@ -4,6 +4,8 @@ exports[`MyRegistrations should handle delegate resignation dropdown action 1`] 
 
 exports[`MyRegistrations should handle delegate update dropdown action 1`] = `<DocumentFragment />`;
 
+exports[`MyRegistrations should handle entity resignation dropdown action 1`] = `<DocumentFragment />`;
+
 exports[`MyRegistrations should handle entity update dropdown action 1`] = `<DocumentFragment />`;
 
 exports[`MyRegistrations should render business registrations 1`] = `
@@ -616,34 +618,32 @@ exports[`MyRegistrations should render business registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -769,34 +769,32 @@ exports[`MyRegistrations should render business registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -1071,34 +1069,32 @@ exports[`MyRegistrations should render business registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -1224,34 +1220,32 @@ exports[`MyRegistrations should render business registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -1377,34 +1371,32 @@ exports[`MyRegistrations should render business registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -1530,34 +1522,32 @@ exports[`MyRegistrations should render business registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -1691,6 +1681,20 @@ exports[`MyRegistrations should render business registrations 1`] = `
                         </div>
                       </div>
                     </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--7"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top hidden"
+                      >
+                        <div>
+                          Actions
+                        </div>
+                      </div>
+                    </th>
                   </tr>
                 </thead>
                 <tbody
@@ -1802,7 +1806,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt lauRYh text-theme-neutral-light justify-end"
+                        class="sc-fzokOt lauRYh font-semibold text-theme-neutral-dark justify-end"
                       >
                         <span
                           class="whitespace-no-wrap"
@@ -1832,37 +1836,35 @@ exports[`MyRegistrations should render business registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
                         <span
                           data-testid="DelegateRowItem__actions"
                         >
-                          <button
-                            class="sc-AxjAm bXCWLY ml-16"
-                            color="primary"
-                            type="button"
+                          <div
+                            class="relative"
+                            data-testid="dropdown__toggle"
                           >
-                            <div
-                              class="relative"
-                              data-testid="dropdown__toggle"
+                            <button
+                              class="sc-AxjAm gBWztV"
+                              color="primary"
+                              type="button"
                             >
                               <div
-                                class="float-right outline-none cursor-pointer focus:outline-none"
+                                class="sc-AxirZ eEbZjj"
+                                height="20"
+                                width="20"
                               >
-                                <div
-                                  class="sc-AxirZ eEbZjj"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    settings.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  settings.svg
+                                </svg>
                               </div>
-                            </div>
-                          </button>
+                            </button>
+                          </div>
                         </span>
                       </div>
                     </td>
@@ -2488,34 +2490,32 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -2641,34 +2641,32 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -2943,34 +2941,32 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -3096,34 +3092,32 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -3249,34 +3243,32 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -3402,34 +3394,32 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -3563,6 +3553,20 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                         </div>
                       </div>
                     </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--7"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top hidden"
+                      >
+                        <div>
+                          Actions
+                        </div>
+                      </div>
+                    </th>
                   </tr>
                 </thead>
                 <tbody
@@ -3674,7 +3678,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt lauRYh text-theme-neutral-light justify-end"
+                        class="sc-fzokOt lauRYh font-semibold text-theme-neutral-dark justify-end"
                       >
                         <span
                           class="whitespace-no-wrap"
@@ -3704,37 +3708,35 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
                         <span
                           data-testid="DelegateRowItem__actions"
                         >
-                          <button
-                            class="sc-AxjAm bXCWLY ml-16"
-                            color="primary"
-                            type="button"
+                          <div
+                            class="relative"
+                            data-testid="dropdown__toggle"
                           >
-                            <div
-                              class="relative"
-                              data-testid="dropdown__toggle"
+                            <button
+                              class="sc-AxjAm gBWztV"
+                              color="primary"
+                              type="button"
                             >
                               <div
-                                class="float-right outline-none cursor-pointer focus:outline-none"
+                                class="sc-AxirZ eEbZjj"
+                                height="20"
+                                width="20"
                               >
-                                <div
-                                  class="sc-AxirZ eEbZjj"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    settings.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  settings.svg
+                                </svg>
                               </div>
-                            </div>
-                          </button>
+                            </button>
+                          </div>
                         </span>
                       </div>
                     </td>
@@ -4726,34 +4728,32 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -4879,34 +4879,32 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -5181,34 +5179,32 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -5334,34 +5330,32 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -5487,34 +5481,32 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -5640,34 +5632,32 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -5801,6 +5791,20 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                         </div>
                       </div>
                     </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--7"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top hidden"
+                      >
+                        <div>
+                          Actions
+                        </div>
+                      </div>
+                    </th>
                   </tr>
                 </thead>
                 <tbody
@@ -5912,7 +5916,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt lauRYh text-theme-neutral-light justify-end"
+                        class="sc-fzokOt lauRYh font-semibold text-theme-neutral-dark justify-end"
                       >
                         <span
                           class="whitespace-no-wrap"
@@ -5942,37 +5946,35 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
                         <span
                           data-testid="DelegateRowItem__actions"
                         >
-                          <button
-                            class="sc-AxjAm bXCWLY ml-16"
-                            color="primary"
-                            type="button"
+                          <div
+                            class="relative"
+                            data-testid="dropdown__toggle"
                           >
-                            <div
-                              class="relative"
-                              data-testid="dropdown__toggle"
+                            <button
+                              class="sc-AxjAm gBWztV"
+                              color="primary"
+                              type="button"
                             >
                               <div
-                                class="float-right outline-none cursor-pointer focus:outline-none"
+                                class="sc-AxirZ eEbZjj"
+                                height="20"
+                                width="20"
                               >
-                                <div
-                                  class="sc-AxirZ eEbZjj"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    settings.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  settings.svg
+                                </svg>
                               </div>
-                            </div>
-                          </button>
+                            </button>
+                          </div>
                         </span>
                       </div>
                     </td>
@@ -6614,34 +6616,32 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -6767,34 +6767,32 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -7069,34 +7067,32 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -7222,34 +7218,32 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -7375,34 +7369,32 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -7528,34 +7520,32 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -7689,6 +7679,20 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                         </div>
                       </div>
                     </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--7"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top hidden"
+                      >
+                        <div>
+                          Actions
+                        </div>
+                      </div>
+                    </th>
                   </tr>
                 </thead>
                 <tbody
@@ -7800,7 +7804,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt lauRYh text-theme-neutral-light justify-end"
+                        class="sc-fzokOt lauRYh font-semibold text-theme-neutral-dark justify-end"
                       >
                         <span
                           class="whitespace-no-wrap"
@@ -7830,37 +7834,35 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
                         <span
                           data-testid="DelegateRowItem__actions"
                         >
-                          <button
-                            class="sc-AxjAm bXCWLY ml-16"
-                            color="primary"
-                            type="button"
+                          <div
+                            class="relative"
+                            data-testid="dropdown__toggle"
                           >
-                            <div
-                              class="relative"
-                              data-testid="dropdown__toggle"
+                            <button
+                              class="sc-AxjAm gBWztV"
+                              color="primary"
+                              type="button"
                             >
                               <div
-                                class="float-right outline-none cursor-pointer focus:outline-none"
+                                class="sc-AxirZ eEbZjj"
+                                height="20"
+                                width="20"
                               >
-                                <div
-                                  class="sc-AxirZ eEbZjj"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    settings.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  settings.svg
+                                </svg>
                               </div>
-                            </div>
-                          </button>
+                            </button>
+                          </div>
                         </span>
                       </div>
                     </td>
@@ -8502,34 +8504,32 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -8804,34 +8804,32 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -8957,34 +8955,32 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -9625,34 +9621,32 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -9778,34 +9772,32 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -10080,34 +10072,32 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -10233,34 +10223,32 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -10386,34 +10374,32 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -10539,34 +10525,32 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -10700,6 +10684,20 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                         </div>
                       </div>
                     </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--7"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top hidden"
+                      >
+                        <div>
+                          Actions
+                        </div>
+                      </div>
+                    </th>
                   </tr>
                 </thead>
                 <tbody
@@ -10811,7 +10809,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt lauRYh text-theme-neutral-light justify-end"
+                        class="sc-fzokOt lauRYh font-semibold text-theme-neutral-dark justify-end"
                       >
                         <span
                           class="whitespace-no-wrap"
@@ -10841,37 +10839,35 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
                         <span
                           data-testid="DelegateRowItem__actions"
                         >
-                          <button
-                            class="sc-AxjAm bXCWLY ml-16"
-                            color="primary"
-                            type="button"
+                          <div
+                            class="relative"
+                            data-testid="dropdown__toggle"
                           >
-                            <div
-                              class="relative"
-                              data-testid="dropdown__toggle"
+                            <button
+                              class="sc-AxjAm gBWztV"
+                              color="primary"
+                              type="button"
                             >
                               <div
-                                class="float-right outline-none cursor-pointer focus:outline-none"
+                                class="sc-AxirZ eEbZjj"
+                                height="20"
+                                width="20"
                               >
-                                <div
-                                  class="sc-AxirZ eEbZjj"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    settings.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  settings.svg
+                                </svg>
                               </div>
-                            </div>
-                          </button>
+                            </button>
+                          </div>
                         </span>
                       </div>
                     </td>
@@ -11513,34 +11509,32 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -11815,34 +11809,32 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -11968,34 +11960,32 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-22"
+                    >
                       <div
                         class="sc-fzokOt iOhiPL justify-end"
                       >
-                        <button
-                          class="sc-AxjAm bXCWLY ml-16"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="relative"
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="sc-AxjAm gBWztV"
+                            color="primary"
+                            type="button"
                           >
                             <div
-                              class="float-right outline-none cursor-pointer focus:outline-none"
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
                             >
-                              <div
-                                class="sc-AxirZ eEbZjj"
-                                height="20"
-                                width="20"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
+                              <svg>
+                                settings.svg
+                              </svg>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </div>
                       </div>
                     </td>
                   </tr>

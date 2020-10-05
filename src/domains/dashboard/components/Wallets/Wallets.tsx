@@ -1,4 +1,5 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { chunk } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Slider } from "app/components/Slider";
 import { Table } from "app/components/Table";
@@ -19,6 +20,11 @@ type WalletsProps = {
 	onCreateWallet?: any;
 	onImportWallet?: any;
 	onWalletAction?: any;
+};
+
+type GridWallet = {
+	wallet?: ReadWriteWallet;
+	isBlank?: boolean;
 };
 
 export const Wallets = ({
@@ -76,17 +82,31 @@ export const Wallets = ({
 
 	// Grid
 	const loadGridWallets = () => {
-		const walletObjects = wallets.map((wallet) => ({ wallet }));
-		const walletsPerPage = walletSliderOptions.slidesPerView;
+		const walletObjects = wallets.map((wallet: ReadWriteWallet) => ({ wallet }));
 
-		if (wallets.length < walletsPerPage) {
-			const blankWalletsLength = walletsPerPage - wallets.length;
-			const blankWalletsCards = new Array(blankWalletsLength).fill({ isBlank: true });
-
-			return [...walletObjects, ...blankWalletsCards];
+		if (walletObjects.length <= walletSliderOptions.slidesPerView) {
+			return walletObjects.concat(
+				new Array(walletSliderOptions.slidesPerView - walletObjects.length).fill({ isBlank: true }),
+			);
 		}
 
-		return walletObjects;
+		const walletsPerPage = walletSliderOptions.slidesPerView * 2;
+		const desiredLength = Math.ceil(walletObjects.length / walletsPerPage) * walletsPerPage;
+
+		walletObjects.push(...new Array(desiredLength - walletObjects.length).fill({ isBlank: true }));
+
+		const result: GridWallet[] = [];
+
+		for (const page of chunk(walletObjects, walletsPerPage)) {
+			const firstHalf = page.slice(0, walletsPerPage / 2);
+			const secondHalf = page.slice(walletsPerPage / 2, page.length);
+
+			for (let i = 0; i < firstHalf.length; i++) {
+				result.push(firstHalf[i], secondHalf[i]);
+			}
+		}
+
+		return result;
 	};
 
 	// List

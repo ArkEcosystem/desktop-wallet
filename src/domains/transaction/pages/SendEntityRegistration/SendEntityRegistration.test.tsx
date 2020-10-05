@@ -703,7 +703,7 @@ describe("Registration", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should go to review step after succesfully filling form data", async () => {
+	it("should go to review step after successfully filling form data", async () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
@@ -923,7 +923,7 @@ describe("Registration", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should succesfully register entity", async () => {
+	it("should successfully register entity", async () => {
 		const { asFragment, getByTestId, queryAllByTestId } = await renderPage(secondWallet);
 
 		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));

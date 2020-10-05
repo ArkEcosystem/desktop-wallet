@@ -9,3 +9,7 @@ body {
 .link:hover {
 	@apply text-theme-primary-500;
 }
+
+.important\:bottom-0 {
+	bottom: 0 !important;
+}
