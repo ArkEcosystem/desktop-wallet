@@ -73,7 +73,7 @@ export const translations: { [key: string]: any } = {
 		WEBSITE: "Website",
 	},
 	PAGE_WELCOME: {
-		TITLE: "Welcome to ARK",
+		TITLE: "Welcome to the <1/> ARK Desktop Wallet",
 		HAS_NO_PROFILES: "Sign in via MarketSquare or create a new Profile to get started.",
 		HAS_PROFILES:
 			"Choose from an existing Profile below, sign in via MarketSquare or create a new Profile to get started.",
