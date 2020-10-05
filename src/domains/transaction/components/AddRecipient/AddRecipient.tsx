@@ -86,7 +86,7 @@ export const AddRecipient = ({
 	}, [register]);
 
 	useEffect(() => {
-		setDisplayAmount(
+		setRecipientsAmount(
 			recipients
 				?.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue.amount), 0)
 				.toString(),
@@ -183,7 +183,7 @@ export const AddRecipient = ({
 								name="amount"
 								placeholder={t("COMMON.AMOUNT")}
 								className="pr-20"
-								value={displayAmount}
+								value={displayAmount || recipientsAmount}
 								onChange={(currency) => {
 									setDisplayAmount(currency.display);
 									setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
