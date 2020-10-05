@@ -59,9 +59,9 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_CREATE_WALLET: {
-		NETWORK_STEP: {
-			TITLE: "Select a Network",
-			SUBTITLE: "Select a Network to create your new wallet address",
+		CRYPTOASSET_STEP: {
+			TITLE: "Select a Cryptoasset",
+			SUBTITLE: "Select a cryptoasset to create your new wallet address",
 		},
 
 		PASSPHRASE_STEP: {
@@ -92,9 +92,9 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_IMPORT_WALLET: {
-		NETWORK_STEP: {
-			TITLE: "Select a Network",
-			SUBTITLE: "Select a Network to import your existing wallet address",
+		CRYPTOASSET_STEP: {
+			TITLE: "Select a Cryptoasset",
+			SUBTITLE: "Select a cryptoasset to import your existing wallet address",
 		},
 
 		METHOD_STEP: {

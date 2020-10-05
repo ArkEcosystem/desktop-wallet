@@ -41,12 +41,12 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 	return (
 		<section data-testid="CreateWallet__first-step" className="space-y-8">
 			<Header
-				title={t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.TITLE")}
-				subtitle={t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.SUBTITLE")}
+				title={t("WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.TITLE")}
+				subtitle={t("WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.SUBTITLE")}
 			/>
 
 			<FormField name="network">
-				<FormLabel label={t("COMMON.NETWORK")} />
+				<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				<SelectNetwork
 					id="CreateWallet__network"
 					networks={networks}
