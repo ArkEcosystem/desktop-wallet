@@ -41,6 +41,7 @@ export const translations: { [key: string]: any } = {
 					"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
 			},
 		},
+		SUCCESS: "Your profile settings have been updated",
 	},
 	PASSWORD: {
 		MENU_ITEM: "Password",
