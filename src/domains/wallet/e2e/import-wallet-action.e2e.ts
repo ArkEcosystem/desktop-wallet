@@ -13,7 +13,9 @@ test("should import a wallet by mnemonic", async (t) => {
 
 	// Navigate to import page
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
-	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
+	await t
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.ok();
 
 	// Select a network and advance to second step
 	await t.click('[data-testid="SelectNetworkInput__input"]');
@@ -43,7 +45,9 @@ test("should import a wallet by address", async (t) => {
 
 	// Navigate to import page
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
-	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
+	await t
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.ok();
 
 	// Select a network and advance to the step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
@@ -76,7 +80,9 @@ test("should show an error message for invalid address", async (t) => {
 
 	// Navigate to import page
 	await t.click(Selector("button").withExactText("Import"));
-	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
+	await t
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.ok();
 
 	// Select a network and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
@@ -107,7 +113,9 @@ test("should show an error message for duplicate address", async (t) => {
 
 	// Navigate to import page
 	await t.click(Selector("button").withExactText("Import"));
-	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
+	await t
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.ok();
 
 	// Select a network and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
@@ -132,7 +140,9 @@ test("should show an error message for duplicate address", async (t) => {
 
 	// Navigate to import page
 	await t.click(Selector("button").withExactText("Import"));
-	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
+	await t
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.ok();
 
 	// Select a network and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');

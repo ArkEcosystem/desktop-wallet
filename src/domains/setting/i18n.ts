@@ -74,8 +74,8 @@ export const translations: { [key: string]: any } = {
 			DESCRIPTION:
 				"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
 		},
+		CRYPTOASSET: "Cryptoasset",
 		ADD_PEER: "Add Peer",
-		NETWORK: "Network",
 		NAME: "Name",
 		IP: "IP",
 		TYPE: "Type",
