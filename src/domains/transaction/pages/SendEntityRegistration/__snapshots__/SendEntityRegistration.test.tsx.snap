@@ -239,20 +239,20 @@ exports[`Registration should error for invalid mnemonic 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -660,20 +660,20 @@ exports[`Registration should fill all data including link collections 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -1016,12 +1016,12 @@ exports[`Registration should fill all data including link collections 1`] = `
                                             class="sc-fzqBZW sc-fzoyAV icrEyZ w-10 pointer-events-none text-theme-neutral"
                                           >
                                             <div
-                                              class="sc-AxiKw iDEwuj"
-                                              height="8"
-                                              width="8"
+                                              class="sc-AxiKw jNSjzx"
+                                              height="5"
+                                              width="7"
                                             >
                                               <svg>
-                                                arrowdown.svg
+                                                caret-down.svg
                                               </svg>
                                             </div>
                                           </div>
@@ -1467,7 +1467,7 @@ exports[`Registration should fill all data including link collections 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Registration should go to review step after succesfully filling form data 1`] = `
+exports[`Registration should go to review step after successfully filling form data 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -1706,20 +1706,20 @@ exports[`Registration should go to review step after succesfully filling form da
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -1859,7 +1859,7 @@ exports[`Registration should go to review step after succesfully filling form da
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   ARK Wallet 1
@@ -2433,20 +2433,20 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -2733,12 +2733,12 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               class="sc-fzqBZW sc-fzoyAV icrEyZ w-10 pointer-events-none text-theme-neutral"
                             >
                               <div
-                                class="sc-AxiKw iDEwuj"
-                                height="8"
-                                width="8"
+                                class="sc-AxiKw jNSjzx transform rotate-180"
+                                height="5"
+                                width="7"
                               >
                                 <svg>
-                                  arrowup.svg
+                                  caret-down.svg
                                 </svg>
                               </div>
                             </div>
@@ -2949,12 +2949,12 @@ exports[`Registration should not set fee if no fee options 1`] = `
               class="sc-fzqBZW sc-fzoyAV icrEyZ w-10 pointer-events-none text-theme-neutral"
             >
               <div
-                class="sc-AxiKw iDEwuj"
-                height="8"
-                width="8"
+                class="sc-AxiKw jNSjzx"
+                height="5"
+                width="7"
               >
                 <svg>
-                  arrowdown.svg
+                  caret-down.svg
                 </svg>
               </div>
             </div>
@@ -3205,20 +3205,20 @@ exports[`Registration should not unregister fields when going back to step 2 onw
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -3361,7 +3361,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   ARK Wallet 1
@@ -3715,12 +3715,12 @@ exports[`Registration should render 1st step 1`] = `
               class="sc-fzqBZW sc-fzoyAV icrEyZ w-10 pointer-events-none text-theme-neutral"
             >
               <div
-                class="sc-AxiKw iDEwuj"
-                height="8"
-                width="8"
+                class="sc-AxiKw jNSjzx"
+                height="5"
+                width="7"
               >
                 <svg>
-                  arrowdown.svg
+                  caret-down.svg
                 </svg>
               </div>
             </div>
@@ -3971,20 +3971,20 @@ exports[`Registration should render registration form without selected wallet 1`
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -4207,12 +4207,12 @@ exports[`Registration should render registration form without selected wallet 1`
                               class="sc-fzqBZW sc-fzoyAV icrEyZ w-10 pointer-events-none text-theme-neutral"
                             >
                               <div
-                                class="sc-AxiKw iDEwuj"
-                                height="8"
-                                width="8"
+                                class="sc-AxiKw jNSjzx"
+                                height="5"
+                                width="7"
                               >
                                 <svg>
-                                  arrowdown.svg
+                                  caret-down.svg
                                 </svg>
                               </div>
                             </div>
@@ -4474,20 +4474,20 @@ exports[`Registration should select network first and see select address input c
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -4630,30 +4630,6 @@ exports[`Registration should select network first and see select address input c
                               role="option"
                             >
                               <div
-                                aria-label="ARK"
-                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                data-testid="NetworkIcon-ARK-ark.mainnet"
-                              >
-                                <div
-                                  class="sc-AxiKw fubePL"
-                                  data-testid="NetworkIcon__icon"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                            <li
-                              aria-selected="true"
-                              class="inline-block cursor-pointer"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                              id="SendTransactionForm__network-item-1"
-                              role="option"
-                            >
-                              <div
                                 aria-label="ARK Devnet"
                                 class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
@@ -4666,30 +4642,6 @@ exports[`Registration should select network first and see select address input c
                                 >
                                   <svg>
                                     ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                            <li
-                              aria-selected="false"
-                              class="inline-block cursor-pointer"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                              id="SendTransactionForm__network-item-2"
-                              role="option"
-                            >
-                              <div
-                                aria-label="Compendia"
-                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                data-testid="NetworkIcon-ARK-compendia.mainnet"
-                              >
-                                <div
-                                  class="sc-AxiKw fubePL"
-                                  data-testid="NetworkIcon__icon"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    bind.svg
                                   </svg>
                                 </div>
                               </div>
@@ -4802,12 +4754,12 @@ exports[`Registration should select network first and see select address input c
                               class="sc-fzqBZW sc-fzoyAV icrEyZ w-10 pointer-events-none text-theme-neutral"
                             >
                               <div
-                                class="sc-AxiKw iDEwuj"
-                                height="8"
-                                width="8"
+                                class="sc-AxiKw jNSjzx"
+                                height="5"
+                                width="7"
                               >
                                 <svg>
-                                  arrowdown.svg
+                                  caret-down.svg
                                 </svg>
                               </div>
                             </div>
@@ -5069,20 +5021,20 @@ exports[`Registration should select network with unavailable wallets and see sel
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -5191,6 +5143,12 @@ exports[`Registration should select network with unavailable wallets and see sel
                                   </div>
                                 </div>
                               </div>
+                              <span
+                                class="sc-fzqBZW iEnjyC py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                data-testid="SelectNetworkInput__typeahead"
+                              >
+                                ARK
+                              </span>
                               <input
                                 aria-activedescendant="SendTransactionForm__network-item-0"
                                 aria-autocomplete="list"
@@ -5255,30 +5213,6 @@ exports[`Registration should select network with unavailable wallets and see sel
                                 >
                                   <svg>
                                     ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                            <li
-                              aria-selected="false"
-                              class="inline-block cursor-pointer"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                              id="SendTransactionForm__network-item-2"
-                              role="option"
-                            >
-                              <div
-                                aria-label="Compendia"
-                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                data-testid="NetworkIcon-ARK-compendia.mainnet"
-                              >
-                                <div
-                                  class="sc-AxiKw fubePL"
-                                  data-testid="NetworkIcon__icon"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    bind.svg
                                   </svg>
                                 </div>
                               </div>
@@ -5392,12 +5326,12 @@ exports[`Registration should select network with unavailable wallets and see sel
                               class="sc-fzqBZW sc-fzoyAV icrEyZ w-10 pointer-events-none text-theme-neutral"
                             >
                               <div
-                                class="sc-AxiKw iDEwuj"
-                                height="8"
-                                width="8"
+                                class="sc-AxiKw jNSjzx"
+                                height="5"
+                                width="7"
                               >
                                 <svg>
-                                  arrowdown.svg
+                                  caret-down.svg
                                 </svg>
                               </div>
                             </div>
@@ -5659,20 +5593,20 @@ exports[`Registration should select registration type & show form 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -5805,7 +5739,7 @@ exports[`Registration should select registration type & show form 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
@@ -6206,20 +6140,20 @@ exports[`Registration should should go back and forth & correctly register field
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -6352,7 +6286,7 @@ exports[`Registration should should go back and forth & correctly register field
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
@@ -6513,7 +6447,7 @@ exports[`Registration should should go back and forth & correctly register field
 </DocumentFragment>
 `;
 
-exports[`Registration should succesfully register entity 1`] = `
+exports[`Registration should successfully register entity 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -6752,20 +6686,20 @@ exports[`Registration should succesfully register entity 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -6876,7 +6810,7 @@ exports[`Registration should succesfully register entity 1`] = `
                                 </span>
                               </a>
                               <span
-                                class="inline-block ml-5 text-theme-primary-300"
+                                class="flex ml-5 text-theme-primary-300"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
@@ -6965,7 +6899,7 @@ exports[`Registration should succesfully register entity 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 2
@@ -7468,20 +7402,20 @@ exports[`Registration should validate description 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -8134,20 +8068,20 @@ exports[`Registration should validate display name 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -8798,20 +8732,20 @@ exports[`Registration should validate entity name 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -9462,20 +9396,20 @@ exports[`Registration should validate website url 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"

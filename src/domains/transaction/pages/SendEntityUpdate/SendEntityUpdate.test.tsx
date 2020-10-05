@@ -567,7 +567,7 @@ describe("SendEntityUpdate", () => {
 		errorToastMock.mockRestore();
 	});
 
-	it("should succesfully submit entity update transaction", async () => {
+	it("should successfully submit entity update transaction", async () => {
 		const { asFragment, getByTestId } = renderPage();
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());

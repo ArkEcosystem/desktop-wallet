@@ -69,9 +69,11 @@ export const WalletRegistrations = ({
 								{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.EMPTY_DESCRIPTION")}
 							</span>
 
-							<Link to="@TODO" isExternal showExternalIcon={false}>
-								{t("COMMON.LEARN_MORE")}
-							</Link>
+							<div className="mr-auto">
+								<Link to="@TODO" isExternal showExternalIcon={false}>
+									{t("COMMON.LEARN_MORE")}
+								</Link>
+							</div>
 						</div>
 
 						<Button
