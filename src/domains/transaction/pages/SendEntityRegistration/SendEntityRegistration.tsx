@@ -10,7 +10,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
-import React, { useCallback,useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -122,7 +122,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 		setEntityRegistrationTitle(t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_UPDATE"));
 
 		setActiveTab(2);
-	}, [getValues, mapFees, setValue, getValues, activeWallet, env, register, selectedRegistrationType]);
+	}, [getValues, mapFees, setValue, getValues, activeWallet, env, register, selectedRegistrationType, t]);
 
 	const submitForm = () =>
 		registrationForm!.signTransaction({
