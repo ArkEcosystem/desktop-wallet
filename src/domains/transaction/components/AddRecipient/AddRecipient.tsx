@@ -65,6 +65,7 @@ export const AddRecipient = ({
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
 	const [displayAmount, setDisplayAmount] = useState<string | undefined>();
+	const [recipientsAmount, setRecipientsAmount] = useState<any>();
 
 	const { t } = useTranslation();
 
@@ -83,6 +84,14 @@ export const AddRecipient = ({
 	useEffect(() => {
 		register("amount");
 	}, [register]);
+
+	useEffect(() => {
+		setDisplayAmount(
+			recipients
+				?.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue.amount), 0)
+				.toString(),
+		);
+	}, [recipients, displayAmount]);
 
 	const availableAmount = useMemo(
 		() => addedRecipients.reduce((sum, item) => sum.minus(item.amount), maxAvailableAmount),
