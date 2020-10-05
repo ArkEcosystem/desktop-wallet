@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { waitFor } from "@testing-library/react";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
@@ -37,7 +38,7 @@ describe("LinkCollection", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should toggle open/close of link collection", () => {
+	it("should toggle open/close link collection", () => {
 		const { asFragment, getByTestId } = render(
 			<LinkCollection
 				title="Social Media"
@@ -60,9 +61,10 @@ describe("LinkCollection", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should add and remove links", async () => {
+	it("should add links", async () => {
 		const onChange = jest.fn();
-		const { asFragment, getByTestId } = render(
+
+		const { asFragment, getAllByTestId, getByTestId } = render(
 			<LinkCollection
 				title="Social Media"
 				description="Tell people more about yourself through social media"
@@ -76,49 +78,80 @@ describe("LinkCollection", () => {
 
 		const toggle = getByTestId("select-list__toggle-button");
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(toggle);
 		});
+
+		expect(getByTestId("LinkCollection__add-link")).toBeDisabled();
+		expect(getByTestId("LinkCollection__input-link")).toBeDisabled();
+
 		const firstOption = getByTestId("select-list__toggle-option-1");
 		expect(firstOption).toBeTruthy();
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(firstOption);
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("twitter");
 
-		const linkField = getByTestId("LinkCollection__input-link");
-		act(() => {
-			fireEvent.change(linkField, {
+		await waitFor(() => expect(getByTestId("LinkCollection__input-link")).toBeEnabled());
+
+		const value = "https://twitter.com/arkecosystem";
+
+		await act(async () => {
+			fireEvent.input(getByTestId("LinkCollection__input-link"), {
 				target: {
-					value: "testing link",
+					value,
 				},
 			});
 		});
 
-		expect(linkField).toHaveValue("testing link");
+		await waitFor(() => expect(getByTestId("LinkCollection__add-link")).toBeEnabled());
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("LinkCollection__add-link"));
 		});
 
-		await waitFor(() => expect(onChange).toHaveBeenCalledWith([{ value: "testing link", type: "twitter" }]));
+		await waitFor(() => expect(onChange).toHaveBeenCalledWith([{ value, type: "twitter" }]));
 
-		expect(getByTestId("LinkCollection")).toHaveTextContent("Twitter");
-		expect(getByTestId("LinkCollection")).toHaveTextContent("testing link");
-
-		fireEvent.click(getByTestId("LinkCollection__remove-link"));
-
-		expect(onChange).toHaveBeenCalledWith([]);
-		expect(getByTestId("LinkCollection")).not.toHaveTextContent("twitter");
-		expect(getByTestId("LinkCollection")).not.toHaveTextContent("testing link");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should trigger validation before adding the link", async () => {
+	it("should remove links", async () => {
+		const onChange = jest.fn();
+
+		const data = [{ type: "twitter", value: "https//twitter.com/arkecosystem" }];
+
+		const { asFragment, getAllByTestId, getByTestId } = render(
+			<LinkCollection
+				title="Social Media"
+				description="Tell people more about yourself through social media"
+				types={types}
+				data={data}
+				typeName="media"
+				onChange={onChange}
+			/>,
+		);
+
+		fireEvent.click(getByTestId("LinkCollection__header"));
+
+		expect(() => getAllByTestId("LinkCollection__item").toHaveLength(1));
+
+		expect(getByTestId("LinkCollection__item")).toHaveTextContent("Twitter");
+		expect(getByTestId("LinkCollection__item")).toHaveTextContent(data[0].value);
+
+		fireEvent.click(getByTestId("LinkCollection__remove-link"));
+		expect(onChange).toHaveBeenCalledWith([]);
+
+		expect(() => getByTestId("LinkCollection__item")).toThrow(/Unable to find an element by/);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should trigger validation before adding a link", async () => {
 		const onChange = jest.fn();
 		const validate = jest.fn(() => false);
+
 		const { getByTestId } = render(
 			<LinkCollection
 				title="Social Media"
@@ -139,35 +172,23 @@ describe("LinkCollection", () => {
 
 		const toggle = getByTestId("select-list__toggle-button");
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(toggle);
 		});
-		const firstOption = getByTestId("select-list__toggle-option-0");
-		expect(firstOption).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(firstOption);
+		await act(async () => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		});
 
-		expect(getByTestId("select-list__input")).toHaveValue("test-entity");
-
-		const linkField = getByTestId("LinkCollection__input-link");
 		act(() => {
-			fireEvent.change(linkField, {
+			fireEvent.input(getByTestId("LinkCollection__input-link"), {
 				target: {
-					value: "testing link",
+					value: "invalid link",
 				},
 			});
 		});
 
-		expect(linkField).toHaveValue("testing link");
-
-		act(() => {
-			fireEvent.click(getByTestId("LinkCollection__add-link"));
-		});
-
-		await waitFor(() => expect(validate).toHaveBeenCalledWith("testing link"));
-		expect(getByTestId("LinkCollection")).not.toHaveTextContent("testing link");
+		await waitFor(() => expect(validate).toHaveBeenCalledWith("invalid link"));
 	});
 
 	it("should select a specific link type", () => {

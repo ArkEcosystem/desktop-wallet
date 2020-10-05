@@ -853,18 +853,22 @@ describe("Registration", () => {
 
 			const selectButton = within(collection).getByTestId("select-list__toggle-button");
 
-			act(() => {
+			await act(async () => {
 				fireEvent.click(selectButton);
 			});
 
-			act(() => {
+			await act(async () => {
 				fireEvent.click(within(collection).getByText(optionLabel), { selector: ["role=option"] });
 			});
 
 			await waitFor(() => expect(selectButton).toHaveTextContent(optionLabel));
 
-			act(() => {
-				fireEvent.input(within(collection).getByTestId("LinkCollection__input-link"), {
+			const input = within(collection).getByTestId("LinkCollection__input-link");
+
+			await waitFor(() => expect(input).toBeEnabled());
+
+			await act(async () => {
+				fireEvent.input(input, {
 					target: {
 						value: inputValue,
 					},
@@ -874,11 +878,11 @@ describe("Registration", () => {
 			const addedItems = within(collection).queryAllByTestId("LinkCollection__item");
 			const newLength = addedItems.length + 1;
 
-			act(() => {
+			await act(async () => {
 				fireEvent.click(within(collection).getByTestId("LinkCollection__add-link"));
 			});
 
-			await waitFor(() => expect(within(collection).getByTestId("LinkCollection__input-link")).toHaveValue(""));
+			await waitFor(() => expect(input).toHaveValue(""));
 
 			await waitFor(() =>
 				expect(within(collection).getAllByTestId("LinkCollection__item")).toHaveLength(newLength),
@@ -888,7 +892,7 @@ describe("Registration", () => {
 			await waitFor(() => expect(addedItem).toHaveTextContent(optionLabel));
 			await waitFor(() => expect(addedItem).toHaveTextContent(inputValue));
 
-			toggleLinkCollectionHeader(collection);
+			await toggleLinkCollectionHeader(collection);
 		};
 
 		const repository = getAllByTestId("LinkCollection")[0];
