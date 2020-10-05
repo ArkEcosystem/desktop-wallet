@@ -45,14 +45,7 @@ export const SendTransfer = () => {
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 		register("smartbridge");
-	}, [register, state]);
-
-	useEffect(() => {
-		console.log({ state });
-
-		if (state?.fee) setValue("fee", state.fee);
-		if (state?.memo) setValue("smartbridge", state.memo);
-	}, [state, setValue]);
+	}, [register]);
 
 	useEffect(() => {
 		if (!activeWallet?.address?.()) return;
@@ -67,6 +60,10 @@ export const SendTransfer = () => {
 			}
 		}
 	}, [activeWallet, networks, setValue]);
+
+	useEffect(() => {
+		if (state?.memo) setValue("smartbridge", state.memo);
+	}, [state, setValue]);
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
@@ -151,7 +148,7 @@ export const SendTransfer = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FormStep networks={networks} profile={activeProfile} />
+								<FormStep networks={networks} profile={activeProfile} deeplinkProps={state} />
 							</TabPanel>
 
 							<TabPanel tabId={2}>
