@@ -1,5 +1,3 @@
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -8,13 +6,9 @@ import { useActiveProfile } from "app/hooks/env";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type SettingsProps = {
-	env: Environment;
-	formConfig: any;
-	onSubmit: (profile: Profile) => void;
-};
+import { SettingsProps } from "../Settings.models";
 
-export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) => {
+export const PasswordSettings = ({ env, formConfig, onSuccess, onError }: SettingsProps) => {
 	const [status, setStatus] = useState<Record<string, string> | null>(null);
 
 	const activeProfile = useActiveProfile();
@@ -34,16 +28,14 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 				activeProfile.auth().setPassword(password_1);
 			}
 		} catch (error) {
-			return setStatus({ type: "error", message: t("SETTINGS.PASSWORD.ERROR.MISMATCH") });
+			return onError(t("SETTINGS.PASSWORD.ERROR.MISMATCH"));
 		}
 
 		reset();
 
-		setStatus({ type: "success", message: t("SETTINGS.PASSWORD.SUCCESS") });
-
 		await env.persist();
 
-		onSubmit(activeProfile);
+		onSuccess();
 	};
 
 	return (
@@ -54,20 +46,6 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 					usesPassword ? t("SETTINGS.PASSWORD.SUBTITLE_UPDATE") : t("SETTINGS.PASSWORD.SUBTITLE_CREATE")
 				}
 			/>
-
-			{status && (
-				<div className="mb-8" data-testid={`Password-settings__${status.type}-alert`}>
-					{status.type === "error" ? (
-						<Alert variant="danger" size="sm" title={t("COMMON.ERROR")}>
-							{status.message}
-						</Alert>
-					) : (
-						<Alert variant="success" size="sm" title={t("COMMON.SUCCESS")}>
-							{status.message}
-						</Alert>
-					)}
-				</div>
-			)}
 
 			<Form
 				id="password-settings__form"

@@ -1,4 +1,4 @@
-import { Avatar as AvatarSDK, Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -9,7 +9,6 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks/env";
-import { toasts } from "app/services";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
@@ -17,13 +16,9 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { setScreenshotProtection } from "utils/electron-utils";
 
-type GeneralProps = {
-	env: Environment;
-	formConfig: any;
-	onSubmit: (profile: Profile) => void;
-};
+import { SettingsProps } from "../Settings.models";
 
-export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
+export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
@@ -185,9 +180,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 
 		await env.persist();
 
-		toasts.success(t("SETTINGS.GENERAL.SUCCESS"));
-
-		onSubmit(activeProfile);
+		onSuccess();
 	};
 
 	return (

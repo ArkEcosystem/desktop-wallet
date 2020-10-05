@@ -42,6 +42,7 @@ export const translations: { [key: string]: any } = {
 			},
 		},
 		SUCCESS: "Your profile settings have been updated",
+		ERROR: "Your profile settings could not be updated",
 	},
 	PASSWORD: {
 		MENU_ITEM: "Password",

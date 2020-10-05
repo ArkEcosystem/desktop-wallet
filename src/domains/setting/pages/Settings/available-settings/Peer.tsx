@@ -9,12 +9,9 @@ import { networks, peers } from "domains/setting/data";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type PeerProps = {
-	formConfig: any;
-	onSubmit?: any;
-};
+import { SettingsProps } from "../Settings.models";
 
-export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
+export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();
 
 	const peerItems = [
@@ -36,11 +33,15 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 		},
 	];
 
+	const handleSubmit = () => {
+		onSuccess();
+	};
+
 	return (
 		<>
 			<Header title={t("SETTINGS.PEERS.TITLE")} subtitle={t("SETTINGS.PEERS.SUBTITLE")} />
 
-			<Form id="peer-settings__form" context={formConfig.context} onSubmit={onSubmit} className="mt-8">
+			<Form id="peer-settings__form" context={formConfig.context} onSubmit={handleSubmit} className="mt-8">
 				<ListDivided items={peerItems} />
 
 				<div className="pt-8">
