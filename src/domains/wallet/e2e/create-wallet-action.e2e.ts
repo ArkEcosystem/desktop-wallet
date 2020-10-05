@@ -21,7 +21,7 @@ test("should create a wallet", async (t) => {
 	await t.click(Selector("#CreateWallet__network-item-1"));
 	await t
 		.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled"))
-		.notOk("Network selected", { timeout: 5000 });
+		.notOk("Cryptoasset selected", { timeout: 5000 });
 	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
 	await t.click(Selector("h1").withExactText(translations().COMMON.YOUR_PASSPHRASE));
 

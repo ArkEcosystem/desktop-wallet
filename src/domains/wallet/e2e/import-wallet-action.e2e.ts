@@ -22,7 +22,7 @@ test("should import a wallet by mnemonic", async (t) => {
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
-		.notOk("Network selected", { timeout: 5000 });
+		.notOk("Cryptoasset selected", { timeout: 5000 });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText(translations.WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists).ok();
 
@@ -54,7 +54,7 @@ test("should import a wallet by address", async (t) => {
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
-		.notOk("Network selected", { timeout: 5000 });
+		.notOk("Cryptoasset selected", { timeout: 5000 });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText(translations.WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists).ok();
 
@@ -89,7 +89,7 @@ test("should show an error message for invalid address", async (t) => {
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
-		.notOk("Network selected", { timeout: 5000 });
+		.notOk("Cryptoasset selected", { timeout: 5000 });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
@@ -122,7 +122,7 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
-		.notOk("Network selected", { timeout: 5000 });
+		.notOk("Cryptoasset selected", { timeout: 5000 });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
@@ -149,7 +149,7 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
-		.notOk("Network selected", { timeout: 5000 });
+		.notOk("Cryptoasset selected", { timeout: 5000 });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
