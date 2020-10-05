@@ -144,6 +144,7 @@ export const CreateProfile = () => {
 											}).toString(),
 										})}
 										options={PlatformSdkChoices.marketProviders}
+										defaultValue="cryptocompare"
 										onChange={() => {
 											if (form.errors.marketProvider) {
 												form.clearErrors("marketProvider");
@@ -187,6 +188,7 @@ export const CreateProfile = () => {
 							<Button variant="plain" onClick={() => history.go(-1)}>
 								{t("COMMON.BACK")}
 							</Button>
+
 							<Button type="submit" data-testid="CreateProfile__submit-button">
 								{t("COMMON.COMPLETE")}
 							</Button>
