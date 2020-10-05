@@ -1,9 +1,5 @@
-import { URIService } from "@arkecosystem/platform-sdk/dist/coins";
 import { useEnvironmentContext } from "app/contexts";
-import { getDeeplinkRoute, toasts } from "app/services";
-import { ipcRenderer } from "electron";
-import React, { useLayoutEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import React, { useMemo, useState } from "react";
 import { RouteConfig } from "react-router-config";
 import { Redirect, Route, Switch, useHistory, useLocation } from "react-router-dom";
 import { styled } from "twin.macro";
@@ -21,7 +17,6 @@ type Props = {
 export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 	const location = useLocation();
 	const history = useHistory();
-	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 	const [redirectUrl, setRedirectUrl] = useState<string | undefined>(undefined);
 
@@ -32,26 +27,6 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 			),
 		[location, middlewares, env, history],
 	);
-
-	useLayoutEffect(() => {
-		ipcRenderer.on("process-url", (_, url) => {
-			const uriService = new URIService();
-
-			if (window.location.pathname === "/") return toasts.warning(t("COMMON.SELECT_A_PROFILE"));
-
-			if (window.location.pathname.includes("/dashboard")) return toasts.warning(t("COMMON.SELECT_A_WALLET"));
-
-			const urlParts = window.location.pathname.split("/");
-			const activeSession = {
-				profileId: urlParts[2],
-				walletId: urlParts[4],
-			};
-
-			const deeplinkSchema = uriService.deserialize(url);
-
-			return history.replace(getDeeplinkRoute(activeSession)[deeplinkSchema.method], deeplinkSchema);
-		});
-	}, [history, t]);
 
 	return (
 		<Switch>

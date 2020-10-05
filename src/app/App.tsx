@@ -26,8 +26,7 @@ import { StubStorage } from "tests/mocks";
 
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
-import { useNetworkStatus } from "./hooks";
-import { useEnvSynchronizer } from "./hooks/use-synchronizer";
+import { useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
 
@@ -39,6 +38,7 @@ const Main = () => {
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
+	useDeeplink();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
