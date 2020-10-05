@@ -5,7 +5,6 @@ export type PasswordType = "mnemonic" | "password" | "ledger";
 
 export type SendEntityResignationProps = {
 	formDefaultData?: any;
-	onDownload?: (transaction: Contracts.SignedTransactionData) => void;
 };
 
 export type StepProps = {

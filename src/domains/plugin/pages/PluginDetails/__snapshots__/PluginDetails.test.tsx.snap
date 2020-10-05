@@ -240,20 +240,20 @@ exports[`PluginDetails should render properly 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           aria-current="page"
@@ -537,7 +537,7 @@ exports[`PluginDetails should render properly 1`] = `
               >
                 <div
                   class="swiper-container swiper-container-initialized swiper-container-horizontal"
-                  style="height: 234px;"
+                  style="height: 248px;"
                 >
                   <div
                     class="h-full swiper-wrapper "
@@ -545,7 +545,7 @@ exports[`PluginDetails should render properly 1`] = `
                   >
                     <div
                       class="swiper-slide"
-                      style="height: 180px;"
+                      style="height: 184px;"
                     >
                       <div
                         class="flex pb-10 mt-3 mr-3 space-x-4"
@@ -566,7 +566,7 @@ exports[`PluginDetails should render properly 1`] = `
                     </div>
                     <div
                       class="swiper-slide"
-                      style="height: 180px;"
+                      style="height: 184px;"
                     >
                       <div
                         class="flex pb-10 mt-3 mr-3 space-x-4"
@@ -587,7 +587,7 @@ exports[`PluginDetails should render properly 1`] = `
                     </div>
                     <div
                       class="swiper-slide"
-                      style="height: 180px;"
+                      style="height: 184px;"
                     >
                       <div
                         class="flex pb-10 mt-3 mr-3 space-x-4"
@@ -608,7 +608,7 @@ exports[`PluginDetails should render properly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="swiper-pagination"
+                    class="flex items-center justify-center h-6 swiper-pagination important:bottom-0"
                   />
                 </div>
               </div>
@@ -710,7 +710,7 @@ exports[`PluginDetails should render properly 1`] = `
                             width="7"
                           >
                             <svg>
-                              arrowup.svg
+                              chevron-up.svg
                             </svg>
                           </div>
                         </span>
@@ -1713,20 +1713,20 @@ exports[`PluginDetails should render properly as installed 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           aria-current="page"
@@ -2042,7 +2042,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               >
                 <div
                   class="swiper-container swiper-container-initialized swiper-container-horizontal"
-                  style="height: 234px;"
+                  style="height: 248px;"
                 >
                   <div
                     class="h-full swiper-wrapper "
@@ -2050,7 +2050,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   >
                     <div
                       class="swiper-slide"
-                      style="height: 180px;"
+                      style="height: 184px;"
                     >
                       <div
                         class="flex pb-10 mt-3 mr-3 space-x-4"
@@ -2071,7 +2071,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     </div>
                     <div
                       class="swiper-slide"
-                      style="height: 180px;"
+                      style="height: 184px;"
                     >
                       <div
                         class="flex pb-10 mt-3 mr-3 space-x-4"
@@ -2092,7 +2092,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     </div>
                     <div
                       class="swiper-slide"
-                      style="height: 180px;"
+                      style="height: 184px;"
                     >
                       <div
                         class="flex pb-10 mt-3 mr-3 space-x-4"
@@ -2113,7 +2113,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     </div>
                   </div>
                   <div
-                    class="swiper-pagination"
+                    class="flex items-center justify-center h-6 swiper-pagination important:bottom-0"
                   />
                 </div>
               </div>
@@ -2215,7 +2215,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             width="7"
                           >
                             <svg>
-                              arrowup.svg
+                              chevron-up.svg
                             </svg>
                           </div>
                         </span>

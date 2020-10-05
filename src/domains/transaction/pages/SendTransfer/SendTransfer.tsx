@@ -37,6 +37,7 @@ export const SendTransfer = () => {
 
 	const form = useForm({ mode: "onChange" });
 	const { clearErrors, formState, getValues, register, setError, setValue } = form;
+	const { isValid } = formState;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -180,7 +181,7 @@ export const SendTransfer = () => {
 										{activeTab < 3 && (
 											<Button
 												data-testid="SendTransfer__button--continue"
-												disabled={!formState.isValid}
+												disabled={!isValid}
 												onClick={handleNext}
 											>
 												{t("COMMON.CONTINUE")}
@@ -191,7 +192,7 @@ export const SendTransfer = () => {
 											<Button
 												type="submit"
 												data-testid="SendTransfer__button--submit"
-												disabled={!formState.isValid}
+												disabled={!isValid}
 												className="space-x-2"
 											>
 												<Icon name="Send" width={20} height={20} />

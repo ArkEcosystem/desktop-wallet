@@ -11,7 +11,7 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 	});
 
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
-	const [nextPage, setNextPage] = useState<string | number | undefined>(1);
+	const [nextPage, setNextPage] = useState<string | number | undefined>();
 	const [isLoading, setIsLoading] = useState(false);
 
 	const sync = useCallback(
@@ -30,7 +30,13 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 	);
 
 	const fetchMore = useCallback(() => sync(nextPage), [nextPage, sync]);
-	const fetchInit = useCallback(() => sync(1), [sync]);
+
+	const fetchInit = useCallback(async () => {
+		setNextPage(undefined);
+		setTransactions([]);
+		await sync(1);
+	}, [sync]);
+
 	const hasMore = nextPage !== undefined;
 
 	/**

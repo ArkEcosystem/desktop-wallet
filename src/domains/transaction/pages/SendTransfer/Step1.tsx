@@ -1,18 +1,24 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { FormField, FormLabel } from "app/components/Form";
-import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
+import { InputCounter } from "app/components/Input";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
-import React from "react";
+import React, { ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; profile: Profile }) => {
 	const { t } = useTranslation();
-	const { getValues, setValue } = useFormContext();
+	const { getValues, setValue, watch } = useFormContext();
 	const { recipients, smartbridge } = getValues();
+	const { senderAddress, fee } = watch();
+
+	const feeSatoshi = fee?.display ? fee.value : fee;
+	const senderWallet = profile.wallets().findByAddress(senderAddress);
+	const maxAmount = senderWallet ? BigNumber.make(senderWallet.balance()).minus(feeSatoshi) : BigNumber.ZERO;
 
 	return (
 		<section data-testid="SendTransfer__step--first">
@@ -27,7 +33,8 @@ export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; pro
 					<>
 						<div data-testid="recipient-address">
 							<AddRecipient
-								maxAvailableAmount={80}
+								assetSymbol={senderWallet?.currency()}
+								maxAvailableAmount={maxAmount}
 								profile={profile}
 								onChange={(recipients: RecipientListItem[]) =>
 									setValue("recipients", recipients, { shouldValidate: true, shouldDirty: true })
@@ -40,27 +47,17 @@ export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; pro
 							<div className="mb-2">
 								<FormLabel label="Smartbridge" />
 							</div>
-							<InputGroup>
-								<Input
-									data-testid="Input__smartbridge"
-									type="text"
-									placeholder=" "
-									className="pr-24"
-									maxLength={255}
-									defaultValue={smartbridge}
-									onChange={(event: any) =>
-										setValue("smartbridge", event.target.value, {
-											shouldValidate: true,
-											shouldDirty: true,
-										})
-									}
-								/>
-								<InputAddonEnd>
-									<button type="button" className="px-4 text-theme-neutral-light focus:outline-none">
-										255 Max
-									</button>
-								</InputAddonEnd>
-							</InputGroup>
+							<InputCounter
+								data-testid="Input__smartbridge"
+								type="text"
+								placeholder=" "
+								className="pr-24"
+								maxLength={255}
+								defaultValue={smartbridge}
+								onChange={(e: ChangeEvent<HTMLInputElement>) =>
+									setValue("smartbridge", e.target.value, { shouldDirty: true, shouldValidate: true })
+								}
+							/>
 						</FormField>
 					</>
 				</SendTransactionForm>

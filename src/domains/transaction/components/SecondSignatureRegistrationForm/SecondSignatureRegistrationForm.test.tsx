@@ -270,7 +270,13 @@ describe("SecondSignatureRegistrationForm", () => {
 	it("should render transaction details", async () => {
 		const DetailsComponent = () => {
 			const { t } = useTranslation();
-			return <SecondSignatureRegistrationForm.transactionDetails translations={t} transaction={transaction} />;
+			return (
+				<SecondSignatureRegistrationForm.transactionDetails
+					translations={t}
+					transaction={transaction}
+					wallet={wallet}
+				/>
+			);
 		};
 		const transaction = {
 			id: () => secondSignatureFixture.data.id,
@@ -282,7 +288,11 @@ describe("SecondSignatureRegistrationForm", () => {
 		} as Contracts.SignedTransactionData;
 		const { asFragment } = render(<DetailsComponent />);
 
-		await waitFor(() => expect(screen.getByTestId("TransactionDetail")).toBeInTheDocument());
+		await waitFor(() => {
+			expect(screen.getByText(transactionTranslations.TRANSACTION_TYPE)).toBeInTheDocument();
+			expect(screen.getByText(transactionTranslations.TRANSACTION_TYPES.SECOND_SIGNATURE)).toBeInTheDocument();
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
