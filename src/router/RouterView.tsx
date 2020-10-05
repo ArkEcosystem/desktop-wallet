@@ -36,17 +36,14 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 	);
 
 	useLayoutEffect(() => {
-		console.log({ state });
 		ipcRenderer.on("process-url", (_, url) => {
 			const uriService = new URIService();
 
-			if (!state?.method) {
-				if (pathname === "/") return toasts.warning(t("COMMON.SELECT_A_PROFILE"));
+			if (window.location.pathname === "/") return toasts.warning(t("COMMON.SELECT_A_PROFILE"));
 
-				if (pathname.includes("/dashboard")) return toasts.warning(t("COMMON.SELECT_A_WALLET"));
-			}
+			if (window.location.pathname.includes("/dashboard")) return toasts.warning(t("COMMON.SELECT_A_WALLET"));
 
-			const urlParts = pathname.split("/");
+			const urlParts = window.location.pathname.split("/");
 			const activeSession = {
 				profileId: urlParts[2],
 				walletId: urlParts[4],
@@ -56,7 +53,7 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 
 			return history.replace(getDeeplinkRoute(activeSession)[deeplinkSchema.method], deeplinkSchema);
 		});
-	}, [pathname, state, history, t]);
+	}, [history, t]);
 
 	return (
 		<Switch>
