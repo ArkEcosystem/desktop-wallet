@@ -1,10 +1,12 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+// @ts-ignore
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputAddress, InputPassword } from "app/components/Input";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
+import { useLedgerContext } from "app/contexts/Ledger/Ledger";
 import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -18,6 +20,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Coins.Network = getValues("network") || defaultNetwork;
 
+	const { scanWallets, isAwaitingConnection, abortConnectionRetry } = useLedgerContext();
 	const { t } = useTranslation();
 
 	const renderImportInput = () => {

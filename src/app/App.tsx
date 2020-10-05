@@ -15,7 +15,6 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
-import { LedgerListener } from "domains/transaction/components/LedgerListener";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
@@ -26,6 +25,7 @@ import { StubStorage } from "tests/mocks";
 
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
+import { LedgerProvider } from "./contexts/Ledger/Ledger";
 import { useNetworkStatus } from "./hooks";
 import { useEnvSynchronizer } from "./hooks/use-synchronizer";
 import { i18n } from "./i18n";
@@ -116,8 +116,9 @@ export const App = () => {
 		<ErrorBoundary FallbackComponent={ApplicationError}>
 			<I18nextProvider i18n={i18n}>
 				<EnvironmentProvider env={env}>
-					<LedgerListener transport={LedgerTransportNodeHID} />
-					<Main />
+					<LedgerProvider transport={LedgerTransportNodeHID}>
+						<Main />
+					</LedgerProvider>
 				</EnvironmentProvider>
 			</I18nextProvider>
 		</ErrorBoundary>
