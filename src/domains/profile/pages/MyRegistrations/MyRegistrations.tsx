@@ -126,7 +126,7 @@ export const MyRegistrations = () => {
 				break;
 
 			case "updateDelegate":
-				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/delegate/send-entity-registration`);
 				break;
 
 			case "resignDelegate":
