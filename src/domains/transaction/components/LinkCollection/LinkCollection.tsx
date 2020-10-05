@@ -62,18 +62,7 @@ export const LinkCollection = ({
 			links: data,
 		},
 	});
-	const {
-		clearErrors,
-		control,
-		errors,
-		formState,
-		getValues,
-		handleSubmit,
-		register,
-		setValue,
-		trigger,
-		watch,
-	} = form;
+	const { clearErrors, control, errors, formState, handleSubmit, register, setValue, trigger, watch } = form;
 	const { fields, append, remove } = useFieldArray({
 		control,
 		name: "links",

@@ -191,6 +191,68 @@ describe("LinkCollection", () => {
 		await waitFor(() => expect(validate).toHaveBeenCalledWith("invalid link"));
 	});
 
+	it("should trigger validation when changing the type", async () => {
+		const onChange = jest.fn();
+
+		const { getByTestId } = render(
+			<LinkCollection
+				title="Social Media"
+				description="Tell people more about yourself through social media"
+				types={[
+					{
+						label: "TestEntity 1",
+						value: "test-entity-1",
+						validate: jest.fn(() => true),
+					},
+					{
+						label: "TestEntity 2",
+						value: "test-entity-2",
+						validate: jest.fn(() => false),
+					},
+				]}
+				typeName="media"
+				onChange={onChange}
+			/>,
+		);
+
+		fireEvent.click(getByTestId("LinkCollection__header"));
+
+		const toggle = getByTestId("select-list__toggle-button");
+
+		await act(async () => {
+			fireEvent.click(toggle);
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		const input = getByTestId("LinkCollection__input-link");
+		const button = getByTestId("LinkCollection__add-link");
+
+		act(() => {
+			fireEvent.input(input, {
+				target: {
+					value: "invalid link",
+				},
+			});
+		});
+
+		await waitFor(() => expect(input).toBeValid());
+		expect(button).toBeEnabled();
+
+		await act(async () => {
+			fireEvent.click(toggle);
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+		});
+
+		await waitFor(() => expect(input).toBeInvalid());
+		expect(button).toBeDisabled();
+	});
+
 	it("should select a specific link type", () => {
 		const onChoose = jest.fn();
 		const { asFragment, getAllByTestId, getByTestId } = render(

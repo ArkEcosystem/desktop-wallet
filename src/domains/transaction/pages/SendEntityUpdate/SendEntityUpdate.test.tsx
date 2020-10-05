@@ -598,7 +598,7 @@ describe("SendEntityUpdate", () => {
 			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockReturnValue(
 			Promise.resolve({
-				errors: {},
+				errors: undefined,
 				rejected: [],
 				accepted: [EntityUpdateTransactionFixture.data.id],
 			}),
