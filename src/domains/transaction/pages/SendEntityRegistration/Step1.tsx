@@ -111,7 +111,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 			<div className="mt-8 space-y-8">
 				<FormField name="network" className="relative">
 					<div className="mb-2">
-						<FormLabel label="Network" />
+						<FormLabel label={t("TRANSACTION.CRYPTOASSET")} />
 					</div>
 					<SelectNetwork
 						id="SendTransactionForm__network"
@@ -125,7 +125,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 				</FormField>
 
 				<FormField name="senderAddress" className="relative">
-					<FormLabel label="Sender" />
+					<FormLabel label={t("TRANSACTION.SENDER")} />
 					<div data-testid="sender-address">
 						<SelectAddress
 							address={senderAddress}
