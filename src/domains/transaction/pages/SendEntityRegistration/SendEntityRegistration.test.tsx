@@ -920,7 +920,7 @@ describe("Registration", () => {
 		// Select avatar
 		const firstMediaItem = within(media).getAllByTestId("LinkCollection__item")[0];
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(within(firstMediaItem).getByTestId("LinkCollection__selected"));
 		});
 
