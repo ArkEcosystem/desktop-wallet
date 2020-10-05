@@ -22,8 +22,6 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 	const location = useLocation();
 	const history = useHistory();
 	const { t } = useTranslation();
-	const { pathname, state } = location;
-
 	const { env } = useEnvironmentContext();
 	const [redirectUrl, setRedirectUrl] = useState<string | undefined>(undefined);
 
