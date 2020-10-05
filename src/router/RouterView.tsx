@@ -20,9 +20,9 @@ type Props = {
 
 export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 	const location = useLocation();
-	const { pathname } = location;
 	const history = useHistory();
 	const { t } = useTranslation();
+	const { pathname, state } = location;
 
 	const { env } = useEnvironmentContext();
 	const [redirectUrl, setRedirectUrl] = useState<string | undefined>(undefined);
@@ -36,12 +36,15 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 	);
 
 	useLayoutEffect(() => {
+		console.log({ state });
 		ipcRenderer.on("process-url", (_, url) => {
 			const uriService = new URIService();
-			console.log({ pathname });
-			if (pathname === "/") return toasts.warning(t("COMMON.SELECT_A_PROFILE"));
 
-			if (pathname.includes("/dashboard")) return toasts.warning(t("COMMON.SELECT_A_WALLET"));
+			if (!state?.method) {
+				if (pathname === "/") return toasts.warning(t("COMMON.SELECT_A_PROFILE"));
+
+				if (pathname.includes("/dashboard")) return toasts.warning(t("COMMON.SELECT_A_WALLET"));
+			}
 
 			const urlParts = pathname.split("/");
 			const activeSession = {
@@ -53,7 +56,7 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 
 			return history.replace(getDeeplinkRoute(activeSession)[deeplinkSchema.method], deeplinkSchema);
 		});
-	}, [pathname, history, t]);
+	}, [pathname, state, history, t]);
 
 	return (
 		<Switch>
