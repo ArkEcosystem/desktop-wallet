@@ -9,9 +9,9 @@ export const translations: { [key: string]: any } = {
 		ADD_ADDRESS: "Add address",
 		ADDRESS: "Address",
 		ADDRESSES: "Addresses",
+		CRYPTOASSET: "Cryptoasset",
 		DELETE_CONTACT: "Delete Contact",
 		NAME: "Name",
-		NETWORK: "Network",
 	},
 	MODAL_CREATE_CONTACT: {
 		TITLE: "Add Contact",

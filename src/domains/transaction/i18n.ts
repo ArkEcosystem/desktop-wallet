@@ -8,6 +8,7 @@ export const translations: { [key: string]: any } = {
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",
 	CONFIRMATIONS_COUNT: "{{count}} Confirmations",
+	CRYPTOASSET: "Cryptoasset",
 	DELEGATE: "Delegate",
 	DELEGATE_NAME: "Delegate Name",
 	DESCRIPTION: "Description",

@@ -9,9 +9,9 @@ describe("TransactionNetwork", () => {
 	it("should render", () => {
 		const network = availableNetworksMock.find((network) => network.id() === "ark.devnet");
 
-		const { container } = render(<TransactionNetwork network={network} />);
+		const { container } = render(<TransactionNetwork network={network!} />);
 
-		expect(container).toHaveTextContent(transactionTranslations.NETWORK);
+		expect(container).toHaveTextContent(transactionTranslations.CRYPTOASSET);
 		expect(container).toHaveTextContent("ark.svg");
 
 		expect(container).toMatchSnapshot();

@@ -796,7 +796,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                           <div
                             class="text-sm font-semibold text-theme-neutral"
                           >
-                            Network
+                            Cryptoasset
                           </div>
                           <div
                             class="font-semibold"
@@ -1003,7 +1003,7 @@ exports[`SendIpfs should render 1st step 1`] = `
             data-testid="FormLabel"
             for="network"
           >
-            Network
+            Cryptoasset
             <div
               class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
               data-testid="FormLabel__required"
@@ -1281,7 +1281,7 @@ exports[`SendIpfs should render 2nd step 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral"
           >
-            Network
+            Cryptoasset
           </div>
           <div
             class="font-semibold"
@@ -1887,7 +1887,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                             data-testid="FormLabel"
                             for="network"
                           >
-                            Network
+                            Cryptoasset
                             <div
                               class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"

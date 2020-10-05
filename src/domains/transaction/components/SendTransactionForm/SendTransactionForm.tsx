@@ -71,7 +71,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 		<div className="space-y-8 SendTransactionForm">
 			<FormField name="network" className="relative">
 				<div className="mb-2">
-					<FormLabel label="Network" />
+					<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				</div>
 				<SelectNetwork
 					id="SendTransactionForm__network"
@@ -86,7 +86,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 
 			<FormField name="senderAddress" className="relative">
 				<div className="mb-2">
-					<FormLabel label="Sender" />
+					<FormLabel label={t("TRANSACTION.SENDER")} />
 				</div>
 
 				<div data-testid="sender-address">

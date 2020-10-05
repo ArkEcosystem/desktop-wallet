@@ -267,7 +267,7 @@ describe("ContactForm", () => {
 			);
 
 			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NAME);
-			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NETWORK);
+			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.CRYPTOASSET);
 			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.ADDRESS);
 			expect(getByTestId("contact-form__save-btn")).toBeTruthy();
 			expect(() => getAllByTestId("contact-form__address-list")).toThrow(/Unable to find an element by/);
@@ -287,7 +287,7 @@ describe("ContactForm", () => {
 			const { asFragment, getAllByTestId, getByTestId } = renderContext;
 
 			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NAME);
-			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NETWORK);
+			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.CRYPTOASSET);
 			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.ADDRESS);
 			expect(getByTestId("contact-form__address-list")).toBeTruthy();
 			expect(getByTestId("contact-form__save-btn")).toBeTruthy();
