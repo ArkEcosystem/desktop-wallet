@@ -130,7 +130,7 @@ describe("Registration", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select network first and see select address input clickable", async () => {
+	it("should select cryptoasset first and see select address input clickable", async () => {
 		const { getByTestId, asFragment } = await renderPage();
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
@@ -150,7 +150,7 @@ describe("Registration", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select network with unavailable wallets and see select address input disabled", async () => {
+	it("should select cryptoasset with unavailable wallets and see select address input disabled", async () => {
 		const { getByTestId, asFragment } = await renderPage();
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());

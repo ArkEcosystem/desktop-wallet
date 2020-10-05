@@ -17,7 +17,7 @@ test("should import a wallet by mnemonic", async (t) => {
 		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
 		.ok();
 
-	// Select a network and advance to second step
+	// Select a cryptoasset and advance to second step
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t
@@ -49,7 +49,7 @@ test("should import a wallet by address", async (t) => {
 		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
 		.ok();
 
-	// Select a network and advance to the step two
+	// Select a cryptoasset and advance to the step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t
@@ -84,7 +84,7 @@ test("should show an error message for invalid address", async (t) => {
 		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
 		.ok();
 
-	// Select a network and advance to step two
+	// Select a cryptoasset and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t
@@ -117,7 +117,7 @@ test("should show an error message for duplicate address", async (t) => {
 		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
 		.ok();
 
-	// Select a network and advance to step two
+	// Select a cryptoasset and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t
@@ -144,7 +144,7 @@ test("should show an error message for duplicate address", async (t) => {
 		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
 		.ok();
 
-	// Select a network and advance to step two
+	// Select a cryptoasset and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t

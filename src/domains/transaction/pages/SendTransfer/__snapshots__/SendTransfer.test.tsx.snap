@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SendTransfer should display disabled address selection input if selected network has not available wallets 1`] = `
+exports[`SendTransfer should display disabled address selection input if selected cryptoasset has not available wallets 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -3037,7 +3037,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
 </DocumentFragment>
 `;
 
-exports[`SendTransfer should select network first and see select address input clickable 1`] = `
+exports[`SendTransfer should select cryptoasset first and see select address input clickable 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"

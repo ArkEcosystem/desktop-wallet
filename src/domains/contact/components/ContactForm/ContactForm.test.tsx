@@ -57,7 +57,7 @@ describe("ContactForm", () => {
 		});
 	});
 
-	it("should select network", () => {
+	it("should select cryptoasset", () => {
 		const { getByTestId } = renderWithRouter(
 			<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />,
 		);

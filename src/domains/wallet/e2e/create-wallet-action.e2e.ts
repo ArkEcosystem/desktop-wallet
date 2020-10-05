@@ -16,7 +16,7 @@ test("should create a wallet", async (t) => {
 		.expect(Selector("div").withText(translations().WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
 		.ok();
 
-	// Select a network and advance to step two
+	// Select a cryptoasset and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#CreateWallet__network-item-1"));
 	await t
