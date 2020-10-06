@@ -32,6 +32,7 @@ type MenuItem = {
 };
 
 type NavigationBarProps = {
+	title?: string;
 	profile?: Profile;
 	variant?: NavbarVariant;
 	menu?: MenuItem[];
@@ -145,12 +146,11 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 };
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center my-auto mr-4 text-white rounded-lg bg-logo`};
-	width: 50px;
-	height: 50px;
+	${tw`flex items-center justify-center my-auto mr-4 text-white bg-logo rounded h-12 w-12`};
 `;
 
 export const NavigationBar = ({
+	title,
 	profile,
 	variant,
 	menu,
@@ -213,8 +213,10 @@ export const NavigationBar = ({
 				<div className="relative flex justify-between h-20 md:h-24">
 					<div className="flex items-center my-auto">
 						<LogoContainer>
-							<ARKLogo width={40} />
+							<ARKLogo width={48} />
 						</LogoContainer>
+
+						{title && <span className="text-2xl font-bold">{title}</span>}
 					</div>
 
 					{variant === "full" && (

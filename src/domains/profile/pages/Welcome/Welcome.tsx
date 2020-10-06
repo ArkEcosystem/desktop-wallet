@@ -66,7 +66,7 @@ export const Welcome = () => {
 
 	return (
 		<>
-			<Page navbarVariant="logo-only">
+			<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
 				<Section className="flex flex-col justify-center flex-1 text-center">
 					<h1 className="mb-8 font-extrabold">
 						<Trans i18nKey="PROFILE.PAGE_WELCOME.TITLE">
