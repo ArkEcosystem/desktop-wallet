@@ -5,7 +5,7 @@ exports[`VoteDetail should not render if not open 1`] = `<DocumentFragment />`;
 exports[`VoteDetail should render a modal with unvotes 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll flex items-center justify-center"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -403,7 +403,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
 exports[`VoteDetail should render a modal with votes 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll flex items-center justify-center"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -801,7 +801,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
 exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll flex items-center justify-center"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"

@@ -162,7 +162,7 @@ export const Modal = (props: ModalProps) => {
 	}
 
 	return (
-		<div className="fixed inset-0 z-50 w-full h-full overflow-y-scroll flex items-center justify-center">
+		<div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll">
 			<div
 				className="fixed z-50 w-full h-full bg-black opacity-50"
 				data-testid="modal__overlay"
