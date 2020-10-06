@@ -20,6 +20,8 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Coins.Network = getValues("network") || defaultNetwork;
 
+	// TODO: Waiting design
+	// @ts-ignore
 	const { scanWallets, isAwaitingConnection, abortConnectionRetry } = useLedgerContext();
 	const { t } = useTranslation();
 

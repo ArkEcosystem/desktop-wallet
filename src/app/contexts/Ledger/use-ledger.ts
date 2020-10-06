@@ -1,7 +1,7 @@
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Transport from "@ledgerhq/hw-transport";
-import { useEnvironmentContext } from "app/contexts";
 import retry from "async-retry";
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
 
@@ -10,8 +10,6 @@ import { defaultLedgerState, ledgerStateReducer } from "./Ledger.state";
 const formatDerivationPath = (coinType: number, index: number) => `44'/${coinType}'/${index}'/0/0`;
 
 export const useLedger = (transport: typeof Transport) => {
-	const { env } = useEnvironmentContext();
-
 	const [state, dispatch] = useReducer(ledgerStateReducer, defaultLedgerState);
 	const abortRetryRef = useRef<boolean>(false);
 
@@ -35,10 +33,7 @@ export const useLedger = (transport: typeof Transport) => {
 	);
 
 	const connect = useCallback(
-		async (
-			coin: Coins.Coin,
-			retryOptions: retry.Options = { retries: 50, randomize: false, factor: 1, minTimeout: 2000 },
-		) => {
+		async (coin: Coins.Coin, retryOptions: retry.Options = { retries: 50, randomize: false, factor: 1 }) => {
 			dispatch({ type: "waiting" });
 			abortRetryRef.current = false;
 
@@ -51,14 +46,16 @@ export const useLedger = (transport: typeof Transport) => {
 					}
 
 					await coin.ledger().connect(transport);
+					// Ensure that the app is accessible
 					await coin.ledger().getPublicKey(formatDerivationPath(slip44, 0));
 				};
 
 				await retry(connectFn, retryOptions);
 				dispatch({ type: "connected" });
-			} catch (e) {
+			} catch (connectError) {
 				coin.ledger().disconnect();
-				dispatch({ type: "failed", message: e.message });
+				dispatch({ type: "failed", message: connectError.message });
+				throw connectError;
 			}
 		},
 		[transport],
@@ -70,49 +67,63 @@ export const useLedger = (transport: typeof Transport) => {
 	}, []);
 
 	const scanWallets = useCallback(
-		async (coin: string, network: string, profile: Profile) => {
-			const instance = await env.coin(coin, network);
-			const slip44 = instance.config().get<number>("network.crypto.slip44");
+		async (coin: Coins.Coin, profile: Profile) => {
+			const slip44 = coin.config().get<number>("network.crypto.slip44");
+			const wallets: { address: string; balance: BigNumber; index: number }[] = [];
 
-			await connect(instance);
+			try {
+				await connect(coin);
 
-			dispatch({ type: "busy" });
+				dispatch({ type: "busy" });
 
-			const wallets: Contracts.WalletData[] = [];
-			let hasMore = true;
-			let cursor = 0;
+				let hasMore = true;
+				let cursor = 0;
 
-			while (hasMore) {
-				const path = formatDerivationPath(slip44, cursor);
-				const publicKey = await instance.ledger().getPublicKey(path);
-				const address = await instance.identity().address().fromPublicKey(publicKey);
+				while (hasMore) {
+					const path = formatDerivationPath(slip44, cursor);
+					const publicKey = await coin.ledger().getPublicKey(path);
+					const address = await coin.identity().address().fromPublicKey(publicKey);
 
-				// Already imported
-				if (profile.wallets().findByPublicKey(publicKey)) {
-					cursor++;
-					continue;
-				}
-
-				try {
-					const identity = await instance.client().wallet(address);
-
-					if (!identity) {
-						throw new Error();
+					// Already imported
+					if (profile.wallets().findByPublicKey(publicKey)) {
+						cursor++;
+						continue;
 					}
 
-					wallets.push(identity);
-				} catch {
-					hasMore = false;
+					try {
+						const identity = await coin.client().wallet(address);
+
+						if (!identity) {
+							throw new Error();
+						}
+
+						wallets.push({
+							address: identity.address(),
+							balance: identity.balance(),
+							index: cursor,
+						});
+					} catch {
+						// New Cold Wallet
+						wallets.push({
+							address,
+							balance: BigNumber.ZERO,
+							index: cursor,
+						});
+						hasMore = false;
+					}
+
+					cursor++;
 				}
 
-				cursor++;
+				await disconnect(coin);
+				return wallets;
+			} catch (e) {
+				dispatch({ type: "failed", message: e.message });
 			}
-
-			await disconnect(instance);
 
 			return wallets;
 		},
-		[env, connect, disconnect],
+		[connect, disconnect],
 	);
 
 	const abortConnectionRetry = () => (abortRetryRef.current = true);
