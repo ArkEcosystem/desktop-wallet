@@ -21,8 +21,9 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 	const network: Coins.Network = getValues("network") || defaultNetwork;
 
 	// TODO: Waiting design
-	// @ts-ignore
+	// eslint-disable-next-line
 	const { scanWallets, isAwaitingConnection, abortConnectionRetry } = useLedgerContext();
+
 	const { t } = useTranslation();
 
 	const renderImportInput = () => {
