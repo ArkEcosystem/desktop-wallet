@@ -136,14 +136,7 @@ describe("NavigationBar", () => {
 	);
 
 	it("should require password if user action is protected and profile uses password", async () => {
-		const options = [
-			{ label: "Option 1", value: "/test", mountPath: () => "/test", isProtected: true },
-			{ label: "Option 2", value: "/test2", mountPath: () => "/test" },
-		];
-
-		const { getByTestId, history } = renderWithRouter(
-			<NavigationBar profile={passwordProtectedProfile} userActions={options} />,
-		);
+		const { getByTestId, history } = renderWithRouter(<NavigationBar profile={passwordProtectedProfile} />);
 
 		const toggle = getByTestId("navbar__useractions");
 
@@ -152,11 +145,11 @@ describe("NavigationBar", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("dropdown__options")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("dropdown__option--0")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("dropdown__option--0")).toHaveTextContent("Option 1"));
+		await waitFor(() => expect(getByTestId("dropdown__option--3")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("dropdown__option--3")).toHaveTextContent("Settings"));
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--0"));
+			fireEvent.click(getByTestId("dropdown__option--3"));
 		});
 
 		await waitFor(() => expect(getByTestId("SignIn__input--password")).toBeTruthy());
@@ -172,7 +165,9 @@ describe("NavigationBar", () => {
 			fireEvent.click(getByTestId("SignIn__submit-button"));
 		});
 
-		await waitFor(() => expect(history.location.pathname).toMatch(options[0].value));
+		await waitFor(() =>
+			expect(history.location.pathname).toMatch(`/profiles/${passwordProtectedProfile.id()}/settings`),
+		);
 	});
 
 	it("should require password modal and cancel", async () => {
