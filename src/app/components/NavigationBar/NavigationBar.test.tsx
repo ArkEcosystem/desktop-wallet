@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
-import { act } from "react-dom/test-utils";
 import { Route } from "react-router-dom";
-import { env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { NavigationBar } from "./NavigationBar";
 
 let profile: Profile;
+let passwordProtectedProfile: Profile;
 
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
@@ -15,6 +16,7 @@ const history = createMemoryHistory();
 describe("NavigationBar", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		passwordProtectedProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
 		history.push(dashboardURL);
 	});
@@ -116,7 +118,7 @@ describe("NavigationBar", () => {
 		profile.settings().set(ProfileSetting.ExchangeCurrency, "BTC");
 	});
 
-	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support"])(
+	it.each(["Contacts", "Votes", "Registrations", "Support"])(
 		"should handle '%s' click on user actions dropdown",
 		async (label) => {
 			const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
@@ -132,6 +134,116 @@ describe("NavigationBar", () => {
 			expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
 		},
 	);
+
+	it("should require password if user action is protected and profile uses password", async () => {
+		const options = [
+			{ label: "Option 1", value: "/test", mountPath: () => "/test", isProtected: true },
+			{ label: "Option 2", value: "/test2", mountPath: () => "/test" },
+		];
+
+		const { getByTestId, history } = renderWithRouter(
+			<NavigationBar profile={passwordProtectedProfile} userActions={options} />,
+		);
+
+		const toggle = getByTestId("navbar__useractions");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__options")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("dropdown__option--0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("dropdown__option--0")).toHaveTextContent("Option 1"));
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--0"));
+		});
+
+		await waitFor(() => expect(getByTestId("SignIn__input--password")).toBeTruthy());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: "password" } });
+		});
+
+		await waitFor(() => expect(getByTestId("SignIn__input--password")).toHaveValue("password"));
+		await waitFor(() => expect(getByTestId("SignIn__submit-button")).not.toBeDisabled());
+
+		act(() => {
+			fireEvent.click(getByTestId("SignIn__submit-button"));
+		});
+
+		await waitFor(() => expect(history.location.pathname).toMatch(options[0].value));
+	});
+
+	it("should require password modal and cancel", async () => {
+		const options = [
+			{ label: "Option 1", value: "/test", mountPath: () => "/test", isProtected: true },
+			{ label: "Option 2", value: "/test2", mountPath: () => "/test" },
+		];
+
+		const { getByTestId } = renderWithRouter(
+			<NavigationBar profile={passwordProtectedProfile} userActions={options} />,
+		);
+
+		const toggle = getByTestId("navbar__useractions");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__options")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("dropdown__option--0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("dropdown__option--0")).toHaveTextContent("Option 1"));
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--0"));
+		});
+
+		await waitFor(() => expect(getByTestId("SignIn__input--password")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("SignIn__cancel-button"));
+		});
+
+		await waitFor(() =>
+			expect(() => getByTestId("SignIn__input--password")).toThrow(/^Unable to find an element by/),
+		);
+	});
+
+	it("should require password modal and close", async () => {
+		const options = [
+			{ label: "Option 1", value: "/test", mountPath: () => "/test", isProtected: true },
+			{ label: "Option 2", value: "/test2", mountPath: () => "/test" },
+		];
+
+		const { getByTestId } = renderWithRouter(
+			<NavigationBar profile={passwordProtectedProfile} userActions={options} />,
+		);
+
+		const toggle = getByTestId("navbar__useractions");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__options")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("dropdown__option--0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("dropdown__option--0")).toHaveTextContent("Option 1"));
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--0"));
+		});
+
+		await waitFor(() => expect(getByTestId("SignIn__input--password")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		await waitFor(() =>
+			expect(() => getByTestId("SignIn__input--password")).toThrow(/^Unable to find an element by/),
+		);
+	});
 
 	it("should handle 'Exit' click on user actions dropdown", async () => {
 		const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
