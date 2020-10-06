@@ -11,10 +11,7 @@ import { BlacklistPlugins } from "domains/plugin/components/BlacklistPlugins";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type PluginsProps = {
-	formConfig: any;
-	onSubmit?: any;
-};
+import { SettingsProps } from "../Settings.models";
 
 const loadDemoPlugins = () => {
 	const plugins = [];
@@ -49,7 +46,7 @@ const loadDemoPlugins = () => {
 	return plugins;
 };
 
-export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
+export const Plugins = ({ formConfig, onSuccess }: SettingsProps) => {
 	const [modalOpenListIsOpen, setModalOpenListIsOpen] = useState(false);
 	const [modalAddPluginIsOpen, setModalAddPluginIsOpen] = useState(false);
 
@@ -123,17 +120,23 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 		},
 	];
 
+	const handleSubmit = () => {
+		onSuccess(t("SETTINGS.PLUGINS.SUCCESS"));
+	};
+
 	return (
 		<>
 			<Header title={t("SETTINGS.PLUGINS.TITLE")} subtitle={t("SETTINGS.PLUGINS.SUBTITLE")} />
 
-			<Form id="plugin-settings__form" context={formConfig.context} onSubmit={onSubmit} className="mt-8">
+			<Form id="plugin-settings__form" context={formConfig.context} onSubmit={handleSubmit} className="mt-8">
 				<ListDivided items={pluginItems} />
 
 				<Divider dashed />
 
 				<div className="flex justify-end w-full pt-2">
-					<Button>{t("COMMON.SAVE")}</Button>
+					<Button data-testid="Plugins-settings__submit-button" type="submit">
+						{t("COMMON.SAVE")}
+					</Button>
 				</div>
 			</Form>
 
@@ -143,6 +146,7 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 				plugins={loadDemoPlugins()}
 				blacklisted={blacklistedPlugins}
 			/>
+
 			<AddBlacklistPlugin
 				isOpen={modalAddPluginIsOpen}
 				onClose={() => setModalAddPluginIsOpen(false)}
