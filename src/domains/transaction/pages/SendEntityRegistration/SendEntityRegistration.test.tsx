@@ -35,10 +35,9 @@ import { FirstStep } from "./Step1";
 let profile: Profile;
 let wallet: ReadWriteWallet;
 let secondWallet: ReadWriteWallet;
+const history = createMemoryHistory();
 
 const renderPage = async (wallet?: ReadWriteWallet) => {
-	const history = createMemoryHistory();
-
 	const path = wallet
 		? "/profiles/:profileId/wallets/:walletId/send-entity-registration"
 		: "/profiles/:profileId/send-entity-registration";
@@ -487,6 +486,30 @@ describe("Registration", () => {
 			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 			historySpy.mockRestore();
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
+	});
+
+	it("should register delegate as entity", async () => {
+		const delegateToEntityPath = `/profiles/${getDefaultProfileId()}/wallets/${secondWallet.id()}/delegate/send-entity-registration`;
+		history.push(delegateToEntityPath);
+
+		let renderedPage: any;
+		await act(async () => {
+			renderedPage = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/:registrationType/send-entity-registration">
+					<SendEntityRegistration />
+				</Route>,
+				{
+					routes: [delegateToEntityPath],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(renderedPage.getByTestId("Registration__form")).toBeTruthy());
+			await waitFor(() => expect(renderedPage.getByTestId("EntityRegistrationForm__entity-name")).toBeTruthy());
+			await waitFor(() =>
+				expect(renderedPage.getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("testwallet2"),
+			);
 		});
 	});
 
