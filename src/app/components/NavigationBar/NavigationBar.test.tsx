@@ -26,6 +26,16 @@ describe("NavigationBar", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render with title", () => {
+		const title = "Desktop Wallet";
+
+		const { container, asFragment } = renderWithRouter(<NavigationBar title={title} profile={profile} />);
+
+		expect(container).toBeTruthy();
+		expect(container).toHaveTextContent(title);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render with custom menu", () => {
 		const menu = [
 			{

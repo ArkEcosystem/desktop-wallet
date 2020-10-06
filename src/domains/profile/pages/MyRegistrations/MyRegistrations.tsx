@@ -38,6 +38,7 @@ export const MyRegistrations = () => {
 	const [query, setQuery] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
+	const [entityDelegates, setEntityDelegates] = useState<ExtendedTransactionData[]>([]);
 	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
 	const [plugins, setPlugins] = useState<ExtendedTransactionData[]>([]);
 
@@ -69,6 +70,14 @@ export const MyRegistrations = () => {
 
 			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
 			setDelegates(delegateRegistrations);
+
+			const entityDelegateRegistrations = await activeProfile
+				.entityAggregate()
+				.registrations(Enums.EntityType.Delegate);
+
+			setEntityDelegates(entityDelegateRegistrations.items());
+
+			setPlugins(pluginRegistrations.items());
 
 			setIsLoading(false);
 		};
@@ -117,7 +126,7 @@ export const MyRegistrations = () => {
 				break;
 
 			case "updateDelegate":
-				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/delegate/send-entity-registration`);
 				break;
 
 			case "resignDelegate":
@@ -182,10 +191,24 @@ export const MyRegistrations = () => {
 				</Section>
 			)}
 
-			{!isLoading && delegateWallets.length > 0 && (
+			{!isLoading && delegateWallets.length > 0 && !entityDelegates.length && (
 				<Section className="flex-1">
 					<div data-testid="DelegateRegistrations">
 						<DelegateTable wallets={delegateWallets} onAction={handleAction} />
+					</div>
+				</Section>
+			)}
+
+			{!isLoading && entityDelegates.length > 0 && (
+				<Section className="flex-1">
+					<div data-testid="EntityDelegateRegistrations">
+						<EntityTable
+							nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.DELEGATE_NAME")}
+							title={t("PROFILE.PAGE_MY_REGISTRATIONS.DELEGATE")}
+							type="entity"
+							entities={entityDelegates}
+							onAction={handleAction}
+						/>
 					</div>
 				</Section>
 			)}

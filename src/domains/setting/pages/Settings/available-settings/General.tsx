@@ -1,4 +1,4 @@
-import { Avatar as AvatarSDK, Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -16,14 +16,9 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { setScreenshotProtection } from "utils/electron-utils";
 
-type GeneralProps = {
-	env: Environment;
-	formConfig: any;
-	pageConfig: any;
-	onSubmit: (profile: Profile) => void;
-};
+import { SettingsProps } from "../Settings.models";
 
-export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
+export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
@@ -185,7 +180,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 
 		await env.persist();
 
-		onSubmit(activeProfile);
+		onSuccess();
 	};
 
 	return (

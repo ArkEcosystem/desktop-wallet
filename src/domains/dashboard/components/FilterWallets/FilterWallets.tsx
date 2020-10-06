@@ -49,10 +49,10 @@ export const FilterWallets = ({
 		<div className="flex flex-col text-left">
 			<div className="mb-8">
 				<div className="font-semibold text-theme-neutral-dark">
-					{t("DASHBOARD.FILTER_WALLETS.NETWORK.TITLE")}
+					{t("DASHBOARD.FILTER_WALLETS.CRYPTOASSET.TITLE")}
 				</div>
 				<div className="mt-1 text-sm text-theme-neutral">
-					{t("DASHBOARD.FILTER_WALLETS.NETWORK.DESCRIPTION")}
+					{t("DASHBOARD.FILTER_WALLETS.CRYPTOASSET.DESCRIPTION")}
 				</div>
 			</div>
 

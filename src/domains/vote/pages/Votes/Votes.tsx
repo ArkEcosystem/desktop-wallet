@@ -216,13 +216,13 @@ export const Votes = () => {
 				<div className="grid grid-flow-col grid-cols-2 gap-6 mb-10">
 					<div className="flex flex-col space-y-2 group">
 						<div className="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral">
-							{t("COMMON.NETWORK")}
+							{t("COMMON.CRYPTOASSET")}
 						</div>
 						<SelectNetwork
 							id="Votes__network"
 							networks={networks}
 							selected={network!}
-							placeholder={t("COMMON.SELECT_OPTION", { option: t("COMMON.NETWORK") })}
+							placeholder={t("COMMON.SELECT_OPTION", { option: t("COMMON.CRYPTOASSET") })}
 							onSelect={handleSelectNetwork}
 						/>
 					</div>
@@ -261,7 +261,7 @@ export const Votes = () => {
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
 				) : (
 					<div className="mt-8 text-center text-theme-neutral-dark" data-testid="votes__message">
-						{t("VOTE.VOTES_PAGE.SELECT_NETWORK_MESSAGE")}
+						{t("VOTE.VOTES_PAGE.SELECT_CRYPTOASSET_MESSAGE")}
 					</div>
 				)}
 			</Section>

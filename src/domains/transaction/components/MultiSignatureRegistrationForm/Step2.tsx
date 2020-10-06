@@ -34,7 +34,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
-					label={t("TRANSACTION.NETWORK")}
+					label={t("TRANSACTION.CRYPTOASSET")}
 					extra={<NetworkIcon coin={wallet.coinId()} network={wallet.networkId()} />}
 				>
 					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">

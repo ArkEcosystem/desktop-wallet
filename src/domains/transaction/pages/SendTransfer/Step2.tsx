@@ -43,7 +43,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 			<TransactionDetail
 				border={false}
-				label={t("TRANSACTION.NETWORK")}
+				label={t("TRANSACTION.CRYPTOASSET")}
 				extra={<NetworkIcon size="lg" coin={wallet.network().coin()} network={wallet.network().id()} />}
 			>
 				{wallet.network().name()}

@@ -6,15 +6,16 @@ import { NavbarVariant } from "types";
 
 type PageProps = {
 	navbarVariant?: NavbarVariant;
+	title?: string;
 	profile?: Profile;
 	crumbs?: Crumb[];
 	sidebar?: React.ReactNode;
 	children: React.ReactNode;
 };
 
-export const Page = ({ navbarVariant = "full", profile, crumbs, sidebar, children }: PageProps) => (
+export const Page = ({ navbarVariant, title, profile, crumbs, sidebar, children }: PageProps) => (
 	<div className="relative flex flex-col min-h-screen bg-theme-neutral-contrast">
-		{<NavigationBar variant={navbarVariant} profile={profile} />}
+		{<NavigationBar variant={navbarVariant} title={title} profile={profile} />}
 
 		{crumbs?.length && <Breadcrumbs crumbs={crumbs} className="container py-5 mx-auto font-semibold px-14" />}
 
@@ -33,3 +34,7 @@ export const Page = ({ navbarVariant = "full", profile, crumbs, sidebar, childre
 		</div>
 	</div>
 );
+
+Page.defaultProps = {
+	navbarVariant: "full",
+};
