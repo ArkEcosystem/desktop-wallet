@@ -40,7 +40,7 @@ export const SearchContact = ({
 			accessor: "name",
 		},
 		{
-			Header: t("COMMON.NETWORK"),
+			Header: t("COMMON.CRYPTOASSET"),
 			className: "justify-center",
 		},
 		{

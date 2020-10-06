@@ -1,4 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import Tippy from "@tippyjs/react";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
@@ -8,7 +9,7 @@ import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeletePr
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import { SignIn } from "domains/profile/components/SignIn/SignIn";
 import React, { useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
@@ -65,9 +66,13 @@ export const Welcome = () => {
 
 	return (
 		<>
-			<Page navbarVariant="logo-only">
+			<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
 				<Section className="flex flex-col justify-center flex-1 text-center">
-					<h1 className="mb-8">{t("PROFILE.PAGE_WELCOME.TITLE")}</h1>
+					<h1 className="mb-8 font-extrabold">
+						<Trans i18nKey="PROFILE.PAGE_WELCOME.TITLE">
+							Welcome to the <br /> ARK Desktop Wallet
+						</Trans>
+					</h1>
 
 					<div className="w-64 mx-auto lg:w-128">
 						<WelcomeBanner />
@@ -103,10 +108,14 @@ export const Welcome = () => {
 						)}
 
 						<div className="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row">
-							<Button>
-								<Icon name="Msq" width={20} height={20} />
-								<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
-							</Button>
+							<Tippy content={t("COMMON.COMING_SOON")}>
+								<div>
+									<Button disabled>
+										<Icon name="Msq" width={20} height={20} />
+										<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
+									</Button>
+								</div>
+							</Tippy>
 
 							<Button
 								variant="plain"

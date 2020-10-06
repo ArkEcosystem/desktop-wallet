@@ -7,7 +7,7 @@ import { transactionsMock, walletMock } from "./mocks";
 
 createFixture(`Delegate Registration action`);
 
-test("should fail delegate resignation submittion", async (t: any) => {
+test("should fail delegate resignation submission", async (t: any) => {
 	await goToProfile(t);
 	await goToMyRegistrations(t);
 	await goToResignDelegatePage(t);
@@ -61,5 +61,5 @@ test("should successfully submit delegate resignation", async (t) => {
 	const sendButton = "[data-testid=SendEntityResignation__send-button]";
 	await t.click(Selector(sendButton));
 
-	await t.expect(Selector("[data-testid=SendEntityResignation__fourth-step]").exists).ok();
+	await t.expect(Selector("[data-testid=SendDelegateResignation__summary-step]").exists).ok();
 });

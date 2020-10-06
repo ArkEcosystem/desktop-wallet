@@ -49,12 +49,12 @@ describe("Welcome", () => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--1");
+		const option = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--1");
 		act(() => {
-			fireEvent.click(resignOption);
+			fireEvent.click(option);
 		});
 
-		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "resign" });
+		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "resignDelegate" });
 	});
 
 	it("should handle update delegate dropdown action", async () => {
@@ -69,9 +69,9 @@ describe("Welcome", () => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--0");
+		const option = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--0");
 		act(() => {
-			fireEvent.click(resignOption);
+			fireEvent.click(option);
 		});
 
 		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "updateDelegate" });

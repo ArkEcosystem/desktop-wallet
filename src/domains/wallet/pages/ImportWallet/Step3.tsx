@@ -31,7 +31,7 @@ export const ThirdStep = ({ address, nameMaxLength }: { address: string; nameMax
 
 			<div>
 				<TransactionDetail
-					label={t("COMMON.NETWORK")}
+					label={t("COMMON.CRYPTOASSET")}
 					extra={<NetworkIcon size="lg" coin={network.coin()} network={network.id()} />}
 					borderPosition="bottom"
 					paddingPosition="bottom"

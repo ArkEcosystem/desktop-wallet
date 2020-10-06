@@ -27,7 +27,7 @@ const data = [
 
 const columns = [
 	{
-		Header: "Network",
+		Header: "Cryptoasset",
 	},
 	{
 		Header: "Name",
