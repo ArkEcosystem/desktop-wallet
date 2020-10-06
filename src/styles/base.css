@@ -1,5 +1,9 @@
 body {
-	@apply antialiased text-base font-sans bg-theme-background text-theme-text;
+	@apply antialiased text-base font-sans;
+}
+
+main {
+	@apply bg-theme-background text-theme-text;
 }
 
 .link {

@@ -1,10 +1,22 @@
 /* eslint-disable @typescript-eslint/require-await */
+// import electron from "electron";
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import React from "react";
 import { act, renderWithRouter, useDefaultNetMocks, waitFor } from "utils/testing-library";
 
 import { App } from "./App";
+
+jest.mock("electron", () => ({
+	remote: {
+		nativeTheme: {
+			shouldUseDarkColors: jest.fn(),
+		},
+		getCurrentWindow: () => ({
+			setContentProtection: jest.fn(),
+		}),
+	},
+}));
 
 describe("App", () => {
 	beforeAll(useDefaultNetMocks);
