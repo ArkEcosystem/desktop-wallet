@@ -60,7 +60,7 @@ const ModalContent = (props: ModalContentProps) => {
 	useEffect(() => {
 		const topClass = modalTopOffsetClass(modalRef?.current?.clientHeight, window.innerHeight);
 		setTopOffsetClass(topClass);
-	}, [window, modalRef, setTopOffsetClass, modalTopOffsetClass]);
+	}, [modalRef, setTopOffsetClass]);
 
 	return (
 		<ModalContainer
