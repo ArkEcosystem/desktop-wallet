@@ -19,10 +19,10 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -425,10 +425,10 @@ exports[`SendIpfs should navigate between steps 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -796,7 +796,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                           <div
                             class="text-sm font-semibold text-theme-neutral"
                           >
-                            Network
+                            Cryptoasset
                           </div>
                           <div
                             class="font-semibold"
@@ -1003,7 +1003,7 @@ exports[`SendIpfs should render 1st step 1`] = `
             data-testid="FormLabel"
             for="network"
           >
-            Network
+            Cryptoasset
             <div
               class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
               data-testid="FormLabel__required"
@@ -1042,7 +1042,7 @@ exports[`SendIpfs should render 1st step 1`] = `
                 class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="SendTransactionForm__network-input"
-                placeholder="Enter a network name"
+                placeholder="Enter a cryptoasset name"
                 value=""
               />
             </div>
@@ -1281,7 +1281,7 @@ exports[`SendIpfs should render 2nd step 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral"
           >
-            Network
+            Cryptoasset
           </div>
           <div
             class="font-semibold"
@@ -1570,10 +1570,10 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -1887,7 +1887,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                             data-testid="FormLabel"
                             for="network"
                           >
-                            Network
+                            Cryptoasset
                             <div
                               class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -1945,7 +1945,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 data-testid="SelectNetworkInput__input"
                                 disabled=""
                                 id="SendTransactionForm__network-input"
-                                placeholder="Enter a network name"
+                                placeholder="Enter a cryptoasset name"
                                 value="ARK Devnet"
                               />
                             </div>

@@ -93,7 +93,6 @@ describe("UpdateContact", () => {
 		const saveButton = getByTestId("contact-form__save-btn");
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
-		// Add network
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
 				target: { value: newAddress.address },
@@ -179,7 +178,6 @@ describe("UpdateContact", () => {
 		const saveButton = getByTestId("contact-form__save-btn");
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
-		// Add network
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
 				target: { value: newAddress.address },

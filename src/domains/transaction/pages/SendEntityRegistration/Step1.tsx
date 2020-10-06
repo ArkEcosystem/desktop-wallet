@@ -113,7 +113,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 
 			<FormField name="network">
 				<div className="mb-2">
-					<FormLabel label="Network" />
+					<FormLabel label={t("TRANSACTION.CRYPTOASSET")} />
 				</div>
 				<SelectNetwork
 					id="SendTransactionForm__network"
