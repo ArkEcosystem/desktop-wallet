@@ -11,13 +11,9 @@ import { useDeeplink } from "./use-deeplink";
 const history = createMemoryHistory();
 const walletURL = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
 
-jest.mock(
-	"electron",
-	() => ({
-		ipcRenderer: { on: jest.fn(), send: jest.fn(), removeListener: jest.fn() },
-	}),
-	{ virtual: true },
-);
+jest.mock("electron", () => ({
+	ipcRenderer: { on: jest.fn(), send: jest.fn(), removeListener: jest.fn() },
+}));
 
 describe("useDeeplink hook", () => {
 	const toastSpy = jest.spyOn(toasts, "warning").mockImplementationOnce((subject) => jest.fn(subject));
