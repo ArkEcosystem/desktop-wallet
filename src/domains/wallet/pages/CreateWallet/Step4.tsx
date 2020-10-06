@@ -36,7 +36,7 @@ export const FourthStep = ({ nameMaxLength }: { nameMaxLength: number }) => {
 			</div>
 
 			<TransactionDetail
-				label={t("COMMON.NETWORK")}
+				label={t("COMMON.CRYPTOASSET")}
 				borderPosition="bottom"
 				extra={<NetworkIcon size="lg" coin={network.coin()} network={network.id()} />}
 			>

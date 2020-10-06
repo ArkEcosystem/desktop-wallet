@@ -8,16 +8,29 @@ const translations = buildTranslations();
 createFixture(`Welcome Screen routing`);
 
 test("should load profiles welcome page", async (t) => {
-	await t.click(Selector("h1").withExactText(translations.COMMON.WELCOME));
+	await t.expect(Selector('[data-testid="Splash__text"]').exists).ok();
+	await t.expect(Selector('[data-testid="Splash__text"]').exists).notOk({ timeout: 10000 });
+
+	const title = await Selector("h1").textContent;
+
+	for (const part of translations.PROFILE.PAGE_WELCOME.TITLE.split("<1/>")) {
+		await t.expect(title).contains(part);
+	}
 });
 
 test("should return to welcome page when application is idle", async (t) => {
-	await t.click(Selector("h1").withExactText(translations.COMMON.WELCOME));
+	await t.expect(Selector('[data-testid="Splash__text"]').exists).ok();
+	await t.expect(Selector('[data-testid="Splash__text"]').exists).notOk({ timeout: 10000 });
+
+	const title = await Selector("h1").textContent;
+
+	for (const part of translations.PROFILE.PAGE_WELCOME.TITLE.split("<1/>")) {
+		await t.expect(title).contains(part);
+	}
 
 	await t.click(Selector("p").withText("John Doe"));
 
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 
-	await t.expect(Selector("h1").withExactText(translations.COMMON.WELCOME).exists).ok({ timeout: 80000 });
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).notOk();
+	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).notOk({ timeout: 80000 });
 });

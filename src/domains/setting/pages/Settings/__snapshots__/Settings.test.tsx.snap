@@ -19,10 +19,10 @@ exports[`Settings should change a password 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqARJ cEUUlB"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -426,43 +426,6 @@ exports[`Settings should change a password 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="mb-8"
-                    data-testid="Password-settings__success-alert"
-                  >
-                    <div
-                      class="flex rounded-lg overflow-hidden bg-theme-success"
-                    >
-                      <div
-                        class="sc-fznWOq gLSNjc flex items-center justify-center text-theme-success bg-theme-success-200"
-                      >
-                        <div
-                          class="sc-AxirZ bMjbpr"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            alert-success.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-fznMAR bUWrer flex-1 bg-theme-success-100 space-y-2"
-                      >
-                        <p
-                          class="text-lg font-bold text-theme-success"
-                          data-testid="alert__title"
-                        >
-                          Success
-                        </p>
-                        <div
-                          class="text-sm"
-                        >
-                          Your password has been successfully changed.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <form
                     class="space-y-8"
                     data-testid="Form"
@@ -647,10 +610,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqARJ cEUUlB"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -1217,18 +1180,18 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-309-label downshift-309-toggle-button"
+                                    aria-labelledby="downshift-348-label downshift-348-toggle-button"
                                     class="sc-fzoXWK dAGxql   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-309-toggle-button"
+                                    id="downshift-348-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-309-label"
+                                    aria-labelledby="downshift-348-label"
                                     class="sc-fzpmMD dhwOMv"
-                                    id="downshift-309-menu"
+                                    id="downshift-348-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -1263,7 +1226,8 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     <button
                       class="sc-AxhCb khNOPs"
                       color="primary"
-                      type="button"
+                      data-testid="Plugins-settings__submit-button"
+                      type="submit"
                     >
                       Save
                     </button>
@@ -1298,10 +1262,10 @@ exports[`Settings should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqARJ cEUUlB"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -2527,10 +2491,10 @@ exports[`Settings should render password settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqARJ cEUUlB"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -3073,10 +3037,10 @@ exports[`Settings should render peer settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqARJ cEUUlB"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -3607,7 +3571,7 @@ exports[`Settings should render peer settings 1`] = `
                                   class="flex flex-inline align-top "
                                 >
                                   <div>
-                                    Network
+                                    Cryptoasset
                                   </div>
                                 </div>
                               </th>
@@ -3929,7 +3893,8 @@ exports[`Settings should render peer settings 1`] = `
                     <button
                       class="sc-AxhCb khNOPs"
                       color="primary"
-                      type="button"
+                      data-testid="Peer-settings__submit-button"
+                      type="submit"
                     >
                       Save
                     </button>
@@ -3964,10 +3929,10 @@ exports[`Settings should render plugin settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqARJ cEUUlB"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -4534,18 +4499,18 @@ exports[`Settings should render plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-295-label downshift-295-toggle-button"
+                                    aria-labelledby="downshift-307-label downshift-307-toggle-button"
                                     class="sc-fzoXWK dAGxql   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-295-toggle-button"
+                                    id="downshift-307-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-295-label"
+                                    aria-labelledby="downshift-307-label"
                                     class="sc-fzpmMD dhwOMv"
-                                    id="downshift-295-menu"
+                                    id="downshift-307-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -4580,7 +4545,8 @@ exports[`Settings should render plugin settings 1`] = `
                     <button
                       class="sc-AxhCb khNOPs"
                       color="primary"
-                      type="button"
+                      data-testid="Plugins-settings__submit-button"
+                      type="submit"
                     >
                       Save
                     </button>
@@ -4615,10 +4581,10 @@ exports[`Settings should set a password 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqARJ cEUUlB"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -5019,43 +4985,6 @@ exports[`Settings should set a password 1`] = `
                         data-testid="header__subtitle"
                       >
                         Change the password used to access your profile below.
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mb-8"
-                    data-testid="Password-settings__success-alert"
-                  >
-                    <div
-                      class="flex rounded-lg overflow-hidden bg-theme-success"
-                    >
-                      <div
-                        class="sc-fznWOq gLSNjc flex items-center justify-center text-theme-success bg-theme-success-200"
-                      >
-                        <div
-                          class="sc-AxirZ bMjbpr"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            alert-success.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-fznMAR bUWrer flex-1 bg-theme-success-100 space-y-2"
-                      >
-                        <p
-                          class="text-lg font-bold text-theme-success"
-                          data-testid="alert__title"
-                        >
-                          Success
-                        </p>
-                        <div
-                          class="text-sm"
-                        >
-                          Your password has been successfully changed.
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -5224,7 +5153,7 @@ exports[`Settings should set a password 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Settings should show an error alert if the current password does not match 1`] = `
+exports[`Settings should show an error toast if the current password does not match 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -5243,10 +5172,10 @@ exports[`Settings should show an error alert if the current password does not ma
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqARJ cEUUlB"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -5647,43 +5576,6 @@ exports[`Settings should show an error alert if the current password does not ma
                         data-testid="header__subtitle"
                       >
                         Change the password used to access your profile below.
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mb-8"
-                    data-testid="Password-settings__error-alert"
-                  >
-                    <div
-                      class="flex rounded-lg overflow-hidden bg-theme-danger"
-                    >
-                      <div
-                        class="sc-fznWOq gLSNjc flex items-center justify-center text-theme-danger bg-theme-danger-200"
-                      >
-                        <div
-                          class="sc-AxirZ bMjbpr"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            alert-danger.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-fznMAR bUWrer flex-1 bg-theme-danger-100 space-y-2"
-                      >
-                        <p
-                          class="text-lg font-bold text-theme-danger"
-                          data-testid="alert__title"
-                        >
-                          Error
-                        </p>
-                        <div
-                          class="text-sm"
-                        >
-                          The current password does not match.
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -5870,10 +5762,10 @@ exports[`Settings should submit using default props 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqARJ cEUUlB"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -7171,10 +7063,10 @@ exports[`Settings should update profile 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqARJ cEUUlB"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>

@@ -19,6 +19,11 @@ export const TransactionRoutes = [
 		component: SendEntityRegistration,
 	},
 	{
+		path: "/profiles/:profileId/wallets/:walletId/:registrationType/send-entity-registration",
+		exact: true,
+		component: SendEntityRegistration,
+	},
+	{
 		path: "/profiles/:profileId/wallets/:walletId/send-entity-update",
 		exact: true,
 		component: SendEntityUpdate,

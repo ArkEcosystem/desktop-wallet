@@ -189,7 +189,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 
 			<SubForm>
 				<FormField name="network">
-					<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
+					<FormLabel>{t("CONTACTS.CONTACT_FORM.CRYPTOASSET")}</FormLabel>
 					<SelectNetwork
 						id="ContactForm__network"
 						networks={networks}
