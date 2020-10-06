@@ -1746,7 +1746,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
               data-testid="FormLabel"
               for="network"
             >
-              Network
+              Cryptoasset
               <div
                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
@@ -1785,7 +1785,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                   class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                   data-testid="SelectNetworkInput__input"
                   id="SendTransactionForm__network-input"
-                  placeholder="Enter a network name"
+                  placeholder="Enter a cryptoasset name"
                   value=""
                 />
               </div>
