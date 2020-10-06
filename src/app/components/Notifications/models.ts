@@ -6,6 +6,8 @@ export type EmptyPlaceholderProps = {
 export type Action = {
 	label: string;
 	value: string;
+	mountPath?: any;
+	isProtected?: boolean;
 };
 
 export type PluginNotification = {

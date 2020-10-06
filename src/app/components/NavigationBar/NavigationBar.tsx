@@ -12,6 +12,7 @@ import { Notifications } from "app/components/Notifications";
 import { Action, NotificationsProps } from "app/components/Notifications/models";
 import { SearchBarFilters } from "app/components/SearchBar/SearchBarFilters";
 import { useEnvironmentContext } from "app/contexts";
+import { SignIn } from "domains/profile/components/SignIn/SignIn";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
@@ -163,6 +164,7 @@ export const NavigationBar = ({
 
 	const [searchWalletIsOpen, setSearchWalletIsOpen] = useState(false);
 	const [receiveFundsIsOpen, setReceiveFundsIsOpen] = useState(false);
+	const [passwordProtectedAction, setPasswordProtectedAction] = useState<Action>();
 
 	const [selectedWallet, setSelectedWallet] = useState<SelectedWallet | undefined>();
 
@@ -177,6 +179,11 @@ export const NavigationBar = ({
 
 	const handleSelectWallet = (wallet: SelectedWallet) => {
 		setSelectedWallet(wallet);
+	};
+
+	const handleUserAction = (action: any) => {
+		if (profile?.usesPassword() && action.isProtected) return setPasswordProtectedAction(action);
+		return history.push(action.mountPath(profile?.id()));
 	};
 
 	const renderMenu = () => {
@@ -277,7 +284,7 @@ export const NavigationBar = ({
 									exchangeCurrency={getExchangeCurrency()}
 									avatarImage={profile?.avatar()}
 									userActions={userActions}
-									onUserAction={(action: any) => history.push(action.mountPath(profile?.id()))}
+									onUserAction={handleUserAction}
 								/>
 							</div>
 						</>
@@ -308,6 +315,19 @@ export const NavigationBar = ({
 						/>
 					)}
 				</>
+			)}
+
+			{profile && passwordProtectedAction && (
+				<SignIn
+					isOpen={!!passwordProtectedAction}
+					profile={profile}
+					onCancel={() => setPasswordProtectedAction(undefined)}
+					onClose={() => setPasswordProtectedAction(undefined)}
+					onSuccess={() => {
+						setPasswordProtectedAction(undefined);
+						history.push(passwordProtectedAction?.mountPath(profile?.id()));
+					}}
+				/>
 			)}
 		</NavWrapper>
 	);
@@ -359,6 +379,7 @@ NavigationBar.defaultProps = {
 			label: "Settings",
 			value: "settings",
 			mountPath: (profileId: string) => `/profiles/${profileId}/settings`,
+			isProtected: true,
 		},
 		{
 			label: "Support",
