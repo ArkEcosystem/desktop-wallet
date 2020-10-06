@@ -17,7 +17,7 @@ const defaultFilters = [
 
 const defaultEncode = "utf8";
 
-const shouldUseDarkColors = () => electron.nativeTheme.shouldUseDarkColors;
+const shouldUseDarkColors = () => electron.remote.nativeTheme.shouldUseDarkColors;
 
 const setScreenshotProtection = (enabled: boolean) => {
 	if (!electron.remote) {

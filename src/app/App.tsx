@@ -6,7 +6,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
-import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
@@ -16,10 +16,10 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { LedgerListener } from "domains/transaction/components/LedgerListener";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { matchPath, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
@@ -28,7 +28,6 @@ import { shouldUseDarkColors } from "utils/electron-utils";
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
 import { useNetworkStatus } from "./hooks";
-import { useActiveProfile } from "./hooks/env";
 import { useEnvSynchronizer } from "./hooks/use-synchronizer";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
@@ -37,6 +36,7 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
+	const [profile, setProfile] = useState<Profile | undefined>();
 
 	const { theme, setTheme } = useThemeContext();
 	const { pathname } = useLocation();
@@ -44,11 +44,11 @@ const Main = () => {
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
 
-	const setSystemTheme = () => {
+	const setSystemTheme = useCallback(() => {
 		setTheme(shouldUseDarkColors() ? "dark" : "light");
-	};
+	}, [setTheme]);
 
-	let activeProfile: any;
+	const match = useMemo(() => matchPath(pathname, { path: "/profiles/:profileId" }), [pathname]);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -62,22 +62,25 @@ const Main = () => {
 
 	useEffect(() => {
 		try {
-			activeProfile = useActiveProfile();
+			setProfile(env.profiles().findById((match?.params as any)?.profileId));
 		} catch {
-			activeProfile = undefined;
+			setProfile(undefined);
 		}
-	}, [location, useActiveProfile]);
+	}, [env, match, pathname]);
 
 	useEffect(() => {
-		if (activeProfile) {
-			setTheme(profile.settings().get(ProfileSetting.Theme);
+		if (profile) {
+			setTheme(profile.settings().get(ProfileSetting.Theme));
+		} else {
+			setSystemTheme();
 		}
-	}, [activeProfile, setTheme]);
+	}, [profile, setTheme, setSystemTheme]);
+
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	useLayoutEffect(() => setSystemTheme(), []);
 
 	useLayoutEffect(() => {
 		const boot = async () => {
-			setSystemTheme();
-
 			/* istanbul ignore next */
 			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
 			await env.verify(shouldUseFixture ? fixtureData : undefined);
@@ -91,18 +94,26 @@ const Main = () => {
 		boot();
 	}, [env, persist, runAll]);
 
-	if (showSplash) {
-		return <Splash />;
-	}
-
 	/* istanbul ignore next */
 	const className = __DEV__ ? "debug-screens" : "";
 
+	const renderContent = () => {
+		if (showSplash) {
+			return <Splash />;
+		}
+
+		if (!isOnline) {
+			return <Offline />;
+		}
+
+		return <RouterView routes={routes} middlewares={middlewares} />;
+	};
+
 	return (
-		<main className={`${theme} ${className}`}>
+		<main className={`theme-${theme} ${className}`}>
 			<ToastContainer />
 
-			{isOnline ? <RouterView routes={routes} middlewares={middlewares} /> : <Offline />}
+			{renderContent()}
 		</main>
 	);
 };
