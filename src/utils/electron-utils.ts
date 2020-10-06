@@ -17,6 +17,8 @@ const defaultFilters = [
 
 const defaultEncode = "utf8";
 
+const shouldUseDarkColors = () => electron.nativeTheme.shouldUseDarkColors;
+
 const setScreenshotProtection = (enabled: boolean) => {
 	if (!electron.remote) {
 		return;
@@ -75,4 +77,4 @@ const openExternal = (url: string) => electron.shell.openExternal(url);
 
 const isIdle = (idleTreshold: number) => electron.remote.powerMonitor.getSystemIdleTime() >= idleTreshold;
 
-export { isIdle, openExternal, openFile, saveFile, setScreenshotProtection };
+export { isIdle, openExternal, openFile, saveFile, setScreenshotProtection, shouldUseDarkColors };

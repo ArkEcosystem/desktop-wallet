@@ -23,6 +23,7 @@ import { useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
+import { shouldUseDarkColors } from "utils/electron-utils";
 
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
@@ -36,7 +37,7 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 
-	const { theme } = useThemeContext();
+	const { theme, setTheme } = useThemeContext();
 	const { pathname } = useLocation();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
@@ -54,6 +55,10 @@ const Main = () => {
 
 	useLayoutEffect(() => {
 		const boot = async () => {
+			if (shouldUseDarkColors()) {
+				setTheme("dark")
+			}
+
 			/* istanbul ignore next */
 			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
 			await env.verify(shouldUseFixture ? fixtureData : undefined);
