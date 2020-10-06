@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { toasts } from "app/services";
 import { buildTranslations } from "app/i18n/helpers";
+import { toasts } from "app/services";
 import electron from "electron";
 import os from "os";
 import React from "react";
@@ -538,7 +538,9 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("Password-settings__submit-button"));
 		});
 
-		expect(toastSpy).toHaveBeenCalledWith(`${translations.COMMON.ERROR}: ${translations.SETTINGS.PASSWORD.ERROR.MISMATCH}`);
+		expect(toastSpy).toHaveBeenCalledWith(
+			`${translations.COMMON.ERROR}: ${translations.SETTINGS.PASSWORD.ERROR.MISMATCH}`,
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

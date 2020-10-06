@@ -134,7 +134,9 @@ export const Plugins = ({ formConfig, onSuccess }: SettingsProps) => {
 				<Divider dashed />
 
 				<div className="flex justify-end w-full pt-2">
-					<Button data-testid="Plugins-settings__submit-button" type="submit">{t("COMMON.SAVE")}</Button>
+					<Button data-testid="Plugins-settings__submit-button" type="submit">
+						{t("COMMON.SAVE")}
+					</Button>
 				</div>
 			</Form>
 
