@@ -25,7 +25,7 @@ test("should create a profile and navigate to welcome screen", async (t) => {
 	await t.expect(getLocation()).contains("/profiles/create");
 
 	await t.typeText(nameInput, "Anne Doe");
-	await t.click(Selector("button").withText("Select Market Provider"));
+	await t.click(Selector("button").withText("CryptoCompare"));
 	await t.click(Selector("li.select-list-option").withText("CoinGecko"));
 	await t.click(Selector("button").withText("Select Currency"));
 	await t.click(Selector("li.select-list-option").withText("ETH"));
@@ -47,7 +47,7 @@ test("should create a profile with password and navigate to welcome screen", asy
 
 	await t.typeText(nameInput, "Joe Bloggs");
 	await t.typeText(Selector("input[name=password]"), "password");
-	await t.click(Selector("button").withText("Select Market Provider"));
+	await t.click(Selector("button").withText("CryptoCompare"));
 	await t.click(Selector("li.select-list-option").withText("CoinGecko"));
 	await t.click(Selector("button").withText("Select Currency"));
 	await t.click(Selector("li.select-list-option").withText("ETH"));
