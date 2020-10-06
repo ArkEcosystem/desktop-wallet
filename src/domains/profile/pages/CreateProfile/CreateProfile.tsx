@@ -43,18 +43,18 @@ export const CreateProfile = () => {
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelClass: "text-xl font-semibold",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
 			labelAddon: <Toggle ref={register()} name="isDarkMode" />,
 		},
 	];
 
-	const handleSubmit = async ({ name, password, currency, isDarkMode, marketProvider }: any) => {
+	const handleSubmit = async ({ name, password, currency, isDarkMode }: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
 
 		const profile = env.profiles().create(formattedName);
 
-		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.MarketProvider, "cryptocompare");
 		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 
@@ -78,7 +78,7 @@ export const CreateProfile = () => {
 					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
 					<div className="text-theme-neutral-dark">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
 
-					<div className="pb-4 mt-8">
+					<div className="mt-8">
 						<Tippy content={t("COMMON.COMING_SOON")}>
 							<div>
 								<Button className="w-full" disabled>
@@ -89,11 +89,14 @@ export const CreateProfile = () => {
 						</Tippy>
 					</div>
 
-					<Divider />
-
-					<Form context={form} onSubmit={handleSubmit} data-testid="CreateProfile__form">
-						<div className="mt-8">
-							<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
+					<Form
+						className="px-4 pt-4 pb-6 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200 sm:px-8 sm:pt-6 sm:pb-10"
+						context={form}
+						onSubmit={handleSubmit}
+						data-testid="CreateProfile__form"
+					>
+						<div className="mt-2">
+							<h3>{t("PROFILE.PAGE_CREATE_PROFILE.NEW_PROFILE")}</h3>
 
 							<SelectProfileImage value={avatarImage} name={name} onSelect={setAvatarImage} />
 
@@ -137,23 +140,6 @@ export const CreateProfile = () => {
 									<FormHelperText />
 								</FormField>
 
-								<FormField name="marketProvider">
-									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER")} />
-									<Select
-										placeholder={t("COMMON.SELECT_OPTION", {
-											option: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
-										})}
-										ref={register({
-											required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-												field: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
-											}).toString(),
-										})}
-										options={PlatformSdkChoices.marketProviders}
-										defaultValue="cryptocompare"
-									/>
-									<FormHelperText />
-								</FormField>
-
 								<FormField name="currency">
 									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
 									<Select
@@ -177,7 +163,6 @@ export const CreateProfile = () => {
 							</div>
 
 							<div className="mt-8">
-								<h2>{t("SETTINGS.GENERAL.OTHER.TITLE")}</h2>
 								<ListDivided items={otherItems} />
 							</div>
 
@@ -190,7 +175,7 @@ export const CreateProfile = () => {
 							</Button>
 
 							<Button type="submit" data-testid="CreateProfile__submit-button">
-								{t("COMMON.COMPLETE")}
+								{t("COMMON.CREATE")}
 							</Button>
 						</div>
 					</Form>

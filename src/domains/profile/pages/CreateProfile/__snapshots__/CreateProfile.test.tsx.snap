@@ -59,7 +59,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
               Sign in via MarketSquare or create a new Profile below.
             </div>
             <div
-              class="pb-4 mt-8"
+              class="mt-8"
             >
               <div>
                 <button
@@ -85,20 +85,16 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                 </button>
               </div>
             </div>
-            <div
-              class="sc-AxirZ jjvtQn border-theme-neutral-300"
-              type="horizontal"
-            />
             <form
-              class="space-y-8"
+              class="px-4 pt-4 pb-6 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200 sm:px-8 sm:pt-6 sm:pb-10"
               data-testid="CreateProfile__form"
             >
               <div
-                class="mt-8"
+                class="mt-2"
               >
-                <h2>
-                  Personal Details
-                </h2>
+                <h3>
+                  New Profile
+                </h3>
                 <div
                   class="group"
                 >
@@ -247,70 +243,6 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     <label
                       class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
-                      for="marketProvider"
-                    >
-                      Market Provider
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="marketProvider"
-                        readonly=""
-                        type="text"
-                        value="coincap"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-77-label downshift-77-toggle-button"
-                            class="sc-fzqARJ jnMeHK  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-77-toggle-button"
-                            type="button"
-                          >
-                            CoinCap
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-77-label"
-                            class="sc-fzqNqU izoylg"
-                            id="downshift-77-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
@@ -337,18 +269,18 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-78-label downshift-78-toggle-button"
+                            aria-labelledby="downshift-36-label downshift-36-toggle-button"
                             class="sc-fzqARJ jnMeHK  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-78-toggle-button"
+                            id="downshift-36-toggle-button"
                             type="button"
                           >
                             BTC (Ƀ)
                           </button>
                           <ul
-                            aria-labelledby="downshift-78-label"
+                            aria-labelledby="downshift-36-label"
                             class="sc-fzqNqU izoylg"
-                            id="downshift-78-menu"
+                            id="downshift-36-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -373,9 +305,6 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                 <div
                   class="mt-8"
                 >
-                  <h2>
-                    Other
-                  </h2>
                   <ul
                     class="sc-fzoiQi fjoJEQ"
                     data-testid="list-divided__items"
@@ -395,7 +324,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             class="flex items-center justify-between space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-neutral-dark"
+                              class="text-xl font-semibold"
                               data-testid="list-divided-item__label"
                             >
                               Dark Theme
@@ -451,7 +380,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
-                  Complete
+                  Create
                 </button>
               </div>
             </form>
@@ -522,7 +451,7 @@ exports[`CreateProfile should render 1`] = `
               Sign in via MarketSquare or create a new Profile below.
             </div>
             <div
-              class="pb-4 mt-8"
+              class="mt-8"
             >
               <div>
                 <button
@@ -548,20 +477,16 @@ exports[`CreateProfile should render 1`] = `
                 </button>
               </div>
             </div>
-            <div
-              class="sc-AxirZ jjvtQn border-theme-neutral-300"
-              type="horizontal"
-            />
             <form
-              class="space-y-8"
+              class="px-4 pt-4 pb-6 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200 sm:px-8 sm:pt-6 sm:pb-10"
               data-testid="CreateProfile__form"
             >
               <div
-                class="mt-8"
+                class="mt-2"
               >
-                <h2>
-                  Personal Details
-                </h2>
+                <h3>
+                  New Profile
+                </h3>
                 <div
                   class="group"
                 >
@@ -675,70 +600,6 @@ exports[`CreateProfile should render 1`] = `
                     <label
                       class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
-                      for="marketProvider"
-                    >
-                      Market Provider
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="marketProvider"
-                        readonly=""
-                        type="text"
-                        value="cryptocompare"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                            class="sc-fzqARJ jnMeHK  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-0-toggle-button"
-                            type="button"
-                          >
-                            CryptoCompare
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-0-label"
-                            class="sc-fzqNqU izoylg"
-                            id="downshift-0-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
@@ -765,18 +626,18 @@ exports[`CreateProfile should render 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                            aria-labelledby="downshift-0-label downshift-0-toggle-button"
                             class="sc-fzqARJ jnMeHK   "
                             data-testid="select-list__toggle-button"
-                            id="downshift-1-toggle-button"
+                            id="downshift-0-toggle-button"
                             type="button"
                           >
                             Select Currency
                           </button>
                           <ul
-                            aria-labelledby="downshift-1-label"
+                            aria-labelledby="downshift-0-label"
                             class="sc-fzqNqU izoylg"
-                            id="downshift-1-menu"
+                            id="downshift-0-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -801,9 +662,6 @@ exports[`CreateProfile should render 1`] = `
                 <div
                   class="mt-8"
                 >
-                  <h2>
-                    Other
-                  </h2>
                   <ul
                     class="sc-fzoiQi fjoJEQ"
                     data-testid="list-divided__items"
@@ -823,7 +681,7 @@ exports[`CreateProfile should render 1`] = `
                             class="flex items-center justify-between space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-neutral-dark"
+                              class="text-xl font-semibold"
                               data-testid="list-divided-item__label"
                             >
                               Dark Theme
@@ -879,7 +737,7 @@ exports[`CreateProfile should render 1`] = `
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
-                  Complete
+                  Create
                 </button>
               </div>
             </form>
@@ -950,7 +808,7 @@ exports[`CreateProfile should store profile 1`] = `
               Sign in via MarketSquare or create a new Profile below.
             </div>
             <div
-              class="pb-4 mt-8"
+              class="mt-8"
             >
               <div>
                 <button
@@ -976,20 +834,16 @@ exports[`CreateProfile should store profile 1`] = `
                 </button>
               </div>
             </div>
-            <div
-              class="sc-AxirZ jjvtQn border-theme-neutral-300"
-              type="horizontal"
-            />
             <form
-              class="space-y-8"
+              class="px-4 pt-4 pb-6 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200 sm:px-8 sm:pt-6 sm:pb-10"
               data-testid="CreateProfile__form"
             >
               <div
-                class="mt-8"
+                class="mt-2"
               >
-                <h2>
-                  Personal Details
-                </h2>
+                <h3>
+                  New Profile
+                </h3>
                 <div
                   class="group"
                 >
@@ -1132,70 +986,6 @@ exports[`CreateProfile should store profile 1`] = `
                     <label
                       class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
-                      for="marketProvider"
-                    >
-                      Market Provider
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="marketProvider"
-                        readonly=""
-                        type="text"
-                        value="coincap"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-3-label downshift-3-toggle-button"
-                            class="sc-fzqARJ jnMeHK  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-3-toggle-button"
-                            type="button"
-                          >
-                            CoinCap
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-3-label"
-                            class="sc-fzqNqU izoylg"
-                            id="downshift-3-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
@@ -1222,18 +1012,18 @@ exports[`CreateProfile should store profile 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-4-label downshift-4-toggle-button"
+                            aria-labelledby="downshift-1-label downshift-1-toggle-button"
                             class="sc-fzqARJ jnMeHK  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-4-toggle-button"
+                            id="downshift-1-toggle-button"
                             type="button"
                           >
                             BTC (Ƀ)
                           </button>
                           <ul
-                            aria-labelledby="downshift-4-label"
+                            aria-labelledby="downshift-1-label"
                             class="sc-fzqNqU izoylg"
-                            id="downshift-4-menu"
+                            id="downshift-1-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -1258,9 +1048,6 @@ exports[`CreateProfile should store profile 1`] = `
                 <div
                   class="mt-8"
                 >
-                  <h2>
-                    Other
-                  </h2>
                   <ul
                     class="sc-fzoiQi fjoJEQ"
                     data-testid="list-divided__items"
@@ -1280,7 +1067,7 @@ exports[`CreateProfile should store profile 1`] = `
                             class="flex items-center justify-between space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-neutral-dark"
+                              class="text-xl font-semibold"
                               data-testid="list-divided-item__label"
                             >
                               Dark Theme
@@ -1336,7 +1123,7 @@ exports[`CreateProfile should store profile 1`] = `
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
-                  Complete
+                  Create
                 </button>
               </div>
             </form>
@@ -1407,7 +1194,7 @@ exports[`CreateProfile should store profile with password 1`] = `
               Sign in via MarketSquare or create a new Profile below.
             </div>
             <div
-              class="pb-4 mt-8"
+              class="mt-8"
             >
               <div>
                 <button
@@ -1433,20 +1220,16 @@ exports[`CreateProfile should store profile with password 1`] = `
                 </button>
               </div>
             </div>
-            <div
-              class="sc-AxirZ jjvtQn border-theme-neutral-300"
-              type="horizontal"
-            />
             <form
-              class="space-y-8"
+              class="px-4 pt-4 pb-6 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200 sm:px-8 sm:pt-6 sm:pb-10"
               data-testid="CreateProfile__form"
             >
               <div
-                class="mt-8"
+                class="mt-2"
               >
-                <h2>
-                  Personal Details
-                </h2>
+                <h3>
+                  New Profile
+                </h3>
                 <div
                   class="group"
                 >
@@ -1595,70 +1378,6 @@ exports[`CreateProfile should store profile with password 1`] = `
                     <label
                       class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
-                      for="marketProvider"
-                    >
-                      Market Provider
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="marketProvider"
-                        readonly=""
-                        type="text"
-                        value="coincap"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-35-label downshift-35-toggle-button"
-                            class="sc-fzqARJ jnMeHK  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-35-toggle-button"
-                            type="button"
-                          >
-                            CoinCap
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-35-label"
-                            class="sc-fzqNqU izoylg"
-                            id="downshift-35-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
@@ -1685,18 +1404,18 @@ exports[`CreateProfile should store profile with password 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-36-label downshift-36-toggle-button"
+                            aria-labelledby="downshift-16-label downshift-16-toggle-button"
                             class="sc-fzqARJ jnMeHK  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-36-toggle-button"
+                            id="downshift-16-toggle-button"
                             type="button"
                           >
                             BTC (Ƀ)
                           </button>
                           <ul
-                            aria-labelledby="downshift-36-label"
+                            aria-labelledby="downshift-16-label"
                             class="sc-fzqNqU izoylg"
-                            id="downshift-36-menu"
+                            id="downshift-16-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -1721,9 +1440,6 @@ exports[`CreateProfile should store profile with password 1`] = `
                 <div
                   class="mt-8"
                 >
-                  <h2>
-                    Other
-                  </h2>
                   <ul
                     class="sc-fzoiQi fjoJEQ"
                     data-testid="list-divided__items"
@@ -1743,7 +1459,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             class="flex items-center justify-between space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-neutral-dark"
+                              class="text-xl font-semibold"
                               data-testid="list-divided-item__label"
                             >
                               Dark Theme
@@ -1799,7 +1515,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
-                  Complete
+                  Create
                 </button>
               </div>
             </form>
@@ -1870,7 +1586,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
               Sign in via MarketSquare or create a new Profile below.
             </div>
             <div
-              class="pb-4 mt-8"
+              class="mt-8"
             >
               <div>
                 <button
@@ -1896,20 +1612,16 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                 </button>
               </div>
             </div>
-            <div
-              class="sc-AxirZ jjvtQn border-theme-neutral-300"
-              type="horizontal"
-            />
             <form
-              class="space-y-8"
+              class="px-4 pt-4 pb-6 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200 sm:px-8 sm:pt-6 sm:pb-10"
               data-testid="CreateProfile__form"
             >
               <div
-                class="mt-8"
+                class="mt-2"
               >
-                <h2>
-                  Personal Details
-                </h2>
+                <h3>
+                  New Profile
+                </h3>
                 <div
                   class="group"
                 >
@@ -2058,70 +1770,6 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     <label
                       class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
-                      for="marketProvider"
-                    >
-                      Market Provider
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="marketProvider"
-                        readonly=""
-                        type="text"
-                        value="coincap"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-54-label downshift-54-toggle-button"
-                            class="sc-fzqARJ jnMeHK  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-54-toggle-button"
-                            type="button"
-                          >
-                            CoinCap
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-54-label"
-                            class="sc-fzqNqU izoylg"
-                            id="downshift-54-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
@@ -2148,18 +1796,18 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-55-label downshift-55-toggle-button"
+                            aria-labelledby="downshift-25-label downshift-25-toggle-button"
                             class="sc-fzqARJ jnMeHK  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-55-toggle-button"
+                            id="downshift-25-toggle-button"
                             type="button"
                           >
                             BTC (Ƀ)
                           </button>
                           <ul
-                            aria-labelledby="downshift-55-label"
+                            aria-labelledby="downshift-25-label"
                             class="sc-fzqNqU izoylg"
-                            id="downshift-55-menu"
+                            id="downshift-25-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -2184,9 +1832,6 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                 <div
                   class="mt-8"
                 >
-                  <h2>
-                    Other
-                  </h2>
                   <ul
                     class="sc-fzoiQi fjoJEQ"
                     data-testid="list-divided__items"
@@ -2206,7 +1851,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             class="flex items-center justify-between space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-neutral-dark"
+                              class="text-xl font-semibold"
                               data-testid="list-divided-item__label"
                             >
                               Dark Theme
@@ -2262,7 +1907,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
-                  Complete
+                  Create
                 </button>
               </div>
             </form>
