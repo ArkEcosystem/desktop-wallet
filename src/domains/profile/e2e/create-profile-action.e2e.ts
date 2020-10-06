@@ -14,7 +14,6 @@ test("should return an error when submit without required fields", async (t) => 
 
 	await t.click(Selector("button").withExactText(translations.COMMON.COMPLETE));
 	await t.click(Selector("fieldset p").withText("'Name' is required"));
-	await t.click(Selector("fieldset p").withText("'Market Provider' is required"));
 	await t.click(Selector("fieldset p").withText("'Currency' is required"));
 	await t.click(Selector("h1").withExactText(translations.PROFILE.PAGE_CREATE_PROFILE.TITLE));
 });
