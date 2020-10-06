@@ -482,13 +482,13 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           class="mb-0 md:text-4xl"
                           data-testid="header__title"
                         >
-                          Select a Network
+                          Select a Cryptoasset
                         </h1>
                         <div
                           class="text-theme-neutral-dark"
                           data-testid="header__subtitle"
                         >
-                          Select a Network to create your new wallet address
+                          Select a cryptoasset to create your new wallet address
                         </div>
                       </div>
                     </div>
@@ -500,7 +500,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                         data-testid="FormLabel"
                         for="network"
                       >
-                        Network
+                        Cryptoasset
                         <div
                           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
@@ -538,7 +538,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
-                              placeholder="Enter a network name"
+                              placeholder="Enter a cryptoasset name"
                               value=""
                             />
                           </div>
@@ -899,13 +899,13 @@ exports[`CreateWallet should render 1`] = `
                           class="mb-0 md:text-4xl"
                           data-testid="header__title"
                         >
-                          Select a Network
+                          Select a Cryptoasset
                         </h1>
                         <div
                           class="text-theme-neutral-dark"
                           data-testid="header__subtitle"
                         >
-                          Select a Network to create your new wallet address
+                          Select a cryptoasset to create your new wallet address
                         </div>
                       </div>
                     </div>
@@ -917,7 +917,7 @@ exports[`CreateWallet should render 1`] = `
                         data-testid="FormLabel"
                         for="network"
                       >
-                        Network
+                        Cryptoasset
                         <div
                           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
@@ -955,7 +955,7 @@ exports[`CreateWallet should render 1`] = `
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
-                              placeholder="Enter a network name"
+                              placeholder="Enter a cryptoasset name"
                               value=""
                             />
                           </div>
@@ -1016,13 +1016,13 @@ exports[`CreateWallet should render 1st step 1`] = `
           class="mb-0 md:text-4xl"
           data-testid="header__title"
         >
-          Select a Network
+          Select a Cryptoasset
         </h1>
         <div
           class="text-theme-neutral-dark"
           data-testid="header__subtitle"
         >
-          Select a Network to create your new wallet address
+          Select a cryptoasset to create your new wallet address
         </div>
       </div>
     </div>
@@ -1034,7 +1034,7 @@ exports[`CreateWallet should render 1st step 1`] = `
         data-testid="FormLabel"
         for="network"
       >
-        Network
+        Cryptoasset
         <div
           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
@@ -1072,7 +1072,7 @@ exports[`CreateWallet should render 1st step 1`] = `
               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="CreateWallet__network-input"
-              placeholder="Enter a network name"
+              placeholder="Enter a cryptoasset name"
               value=""
             />
           </div>
@@ -1128,7 +1128,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         <div
           class="text-sm font-semibold text-theme-neutral"
         >
-          Network
+          Cryptoasset
         </div>
         <div
           class="font-semibold"

@@ -1797,7 +1797,7 @@ exports[`Registration should go to review step after successfully filling form d
                             <div
                               class="text-sm font-semibold text-theme-neutral"
                             >
-                              Network
+                              Cryptoasset
                             </div>
                             <div
                               class="font-semibold"
@@ -2512,7 +2512,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             data-testid="FormLabel"
                             for="network"
                           >
-                            Network
+                            Cryptoasset
                             <div
                               class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -2570,7 +2570,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 data-testid="SelectNetworkInput__input"
                                 disabled=""
                                 id="SendTransactionForm__network-input"
-                                placeholder="Enter a network name"
+                                placeholder="Enter a cryptoasset name"
                                 value="ARK Devnet"
                               />
                             </div>
@@ -2790,7 +2790,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
             data-testid="FormLabel"
             for="network"
           >
-            Network
+            Cryptoasset
             <div
               class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
               data-testid="FormLabel__required"
@@ -2829,7 +2829,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="SendTransactionForm__network-input"
-                placeholder="Enter a network name"
+                placeholder="Enter a cryptoasset name"
                 value=""
               />
             </div>
@@ -3303,7 +3303,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                             <div
                               class="text-sm font-semibold text-theme-neutral"
                             >
-                              Network
+                              Cryptoasset
                             </div>
                             <div
                               class="font-semibold"
@@ -3556,7 +3556,7 @@ exports[`Registration should render 1st step 1`] = `
             data-testid="FormLabel"
             for="network"
           >
-            Network
+            Cryptoasset
             <div
               class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
               data-testid="FormLabel__required"
@@ -3595,7 +3595,7 @@ exports[`Registration should render 1st step 1`] = `
                 class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="SendTransactionForm__network-input"
-                placeholder="Enter a network name"
+                placeholder="Enter a cryptoasset name"
                 value=""
               />
             </div>
@@ -4050,7 +4050,7 @@ exports[`Registration should render registration form without selected wallet 1`
                             data-testid="FormLabel"
                             for="network"
                           >
-                            Network
+                            Cryptoasset
                             <div
                               class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -4089,7 +4089,7 @@ exports[`Registration should render registration form without selected wallet 1`
                                 class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 id="SendTransactionForm__network-input"
-                                placeholder="Enter a network name"
+                                placeholder="Enter a cryptoasset name"
                                 value=""
                               />
                             </div>
@@ -4235,7 +4235,7 @@ exports[`Registration should render registration form without selected wallet 1`
 </DocumentFragment>
 `;
 
-exports[`Registration should select network first and see select address input clickable 1`] = `
+exports[`Registration should select cryptoasset first and see select address input clickable 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -4553,7 +4553,7 @@ exports[`Registration should select network first and see select address input c
                             data-testid="FormLabel"
                             for="network"
                           >
-                            Network
+                            Cryptoasset
                             <div
                               class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -4611,7 +4611,7 @@ exports[`Registration should select network first and see select address input c
                                 class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 id="SendTransactionForm__network-input"
-                                placeholder="Enter a network name"
+                                placeholder="Enter a cryptoasset name"
                                 value="ARK Devnet"
                               />
                             </div>
@@ -4782,7 +4782,7 @@ exports[`Registration should select network first and see select address input c
 </DocumentFragment>
 `;
 
-exports[`Registration should select network with unavailable wallets and see select address input disabled 1`] = `
+exports[`Registration should select cryptoasset with unavailable wallets and see select address input disabled 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -5100,7 +5100,7 @@ exports[`Registration should select network with unavailable wallets and see sel
                             data-testid="FormLabel"
                             for="network"
                           >
-                            Network
+                            Cryptoasset
                             <div
                               class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -5158,7 +5158,7 @@ exports[`Registration should select network with unavailable wallets and see sel
                                 class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 id="SendTransactionForm__network-input"
-                                placeholder="Enter a network name"
+                                placeholder="Enter a cryptoasset name"
                                 value="ARK"
                               />
                             </div>
@@ -6841,7 +6841,7 @@ exports[`Registration should successfully register entity 1`] = `
                           <div
                             class="text-sm font-semibold text-theme-neutral"
                           >
-                            Network
+                            Cryptoasset
                           </div>
                           <div
                             class="font-semibold"

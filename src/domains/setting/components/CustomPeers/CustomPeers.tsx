@@ -24,13 +24,13 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeer
 		<Modal title={t("SETTINGS.MODAL_CUSTOM_PEER.TITLE")} size="xl" isOpen={isOpen} onClose={onClose}>
 			<Form context={form} onSubmit={onAddPeer}>
 				<FormField name="network" className="my-8">
-					<FormLabel>{t("SETTINGS.PEERS.NETWORK")}</FormLabel>
+					<FormLabel label={t("SETTINGS.PEERS.CRYPTOASSET")} />
 					<SelectNetwork id="CustomPeers__network" networks={networks} />
 					<FormHelperText />
 				</FormField>
 
 				<FormField name="name">
-					<FormLabel>{t("SETTINGS.PEERS.NAME")}</FormLabel>
+					<FormLabel label={t("SETTINGS.PEERS.NAME")} />
 					<Input
 						ref={form.register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
@@ -42,7 +42,7 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeer
 				</FormField>
 
 				<FormField name="peer-ip">
-					<FormLabel>{t("SETTINGS.PEERS.IP")}</FormLabel>
+					<FormLabel label={t("SETTINGS.PEERS.IP")} />
 					<Input
 						ref={form.register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
@@ -54,7 +54,7 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeer
 				</FormField>
 
 				<FormField name="peer-type">
-					<FormLabel>{t("SETTINGS.PEERS.TYPE")}</FormLabel>
+					<FormLabel label={t("SETTINGS.PEERS.TYPE")} />
 					<label htmlFor="multisig" className="inline-flex items-center">
 						<Checkbox />
 						<span className="ml-2 text-sm font-semibold text-theme-neutral-dark">
