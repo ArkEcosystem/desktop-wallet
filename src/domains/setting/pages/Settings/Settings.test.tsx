@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { translations as commonTranslations } from "app/i18n/common/i18n";
-import { translations as pluginTranslations } from "domains/plugin/i18n";
-import { translations as profileTranslations } from "domains/profile/i18n";
+import { buildTranslations } from "app/i18n/helpers";
+import { toasts } from "app/services";
 import electron from "electron";
 import os from "os";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
-import { translations } from "../../i18n";
 import { Settings } from "./Settings";
+
+const translations = buildTranslations();
 
 jest.setTimeout(8000);
 
@@ -49,7 +49,7 @@ describe("Settings", () => {
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -61,14 +61,11 @@ describe("Settings", () => {
 	});
 
 	it("should update profile", async () => {
-		let savedProfile: any = null;
 		const profilesCount = env.profiles().count();
-
-		const onSubmit = jest.fn((profile: any) => (savedProfile = profile));
 
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={onSubmit} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -110,30 +107,14 @@ describe("Settings", () => {
 		// Toggle Advanced Mode
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 		// Open Advanced Mode Modal
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER);
 		fireEvent.click(getByTestId("AdvancedMode__accept-button"));
 		// Toggle Update Ledger in Background
 		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));
-		});
-		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
-		expect(savedProfile.name()).toEqual("test profile");
-		expect(savedProfile.settings().all()).toEqual({
-			AVATAR: "data:image/png;base64,avatarImage",
-			NAME: "test profile",
-			LOCALE: "en-US",
-			BIP39_LOCALE: "chinese_simplified",
-			MARKET_PROVIDER: "coincap",
-			EXCHANGE_CURRENCY: "BTC",
-			TIME_FORMAT: "h:mm A",
-			SCREENSHOT_PROTECTION: true,
-			ADVANCED_MODE: true,
-			AUTOMATIC_SIGN_OUT_PERIOD: 1,
-			THEME: "light",
-			LEDGER_UPDATE_METHOD: true,
 		});
 
 		// Upload and remove avatar image
@@ -150,28 +131,12 @@ describe("Settings", () => {
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 		// Open Advanced Mode Modal
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER);
 		fireEvent.click(getByTestId("AdvancedMode__decline-button"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));
-		});
-
-		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
-		expect(savedProfile.name()).toEqual("test profile 2");
-		expect(savedProfile.settings().all()).toEqual({
-			NAME: "test profile 2",
-			LOCALE: "en-US",
-			BIP39_LOCALE: "chinese_simplified",
-			MARKET_PROVIDER: "coincap",
-			EXCHANGE_CURRENCY: "BTC",
-			TIME_FORMAT: "h:mm A",
-			SCREENSHOT_PROTECTION: true,
-			ADVANCED_MODE: false,
-			AUTOMATIC_SIGN_OUT_PERIOD: 1,
-			THEME: "dark",
-			LEDGER_UPDATE_METHOD: true,
 		});
 
 		// Not upload avatar image
@@ -187,8 +152,8 @@ describe("Settings", () => {
 
 		// Open & close Advanced Mode Modal
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER);
 		fireEvent.click(getByTestId("modal__close-btn"));
 
 		expect(env.profiles().count()).toEqual(profilesCount);
@@ -198,7 +163,7 @@ describe("Settings", () => {
 	it("should submit using default props", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -242,7 +207,7 @@ describe("Settings", () => {
 	])("should open & close reset profile modal (%s)", async (_, buttonId) => {
 		const { container, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -254,12 +219,12 @@ describe("Settings", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByText(commonTranslations.RESET_DATA));
+			fireEvent.click(getByText(translations.COMMON.RESET_DATA));
 		});
 
 		expect(getByTestId("modal__inner")).toBeInTheDocument();
-		expect(getByTestId("modal__inner")).toHaveTextContent(profileTranslations.MODAL_RESET_PROFILE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(profileTranslations.MODAL_RESET_PROFILE.DESCRIPTION);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PROFILE.MODAL_RESET_PROFILE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PROFILE.MODAL_RESET_PROFILE.DESCRIPTION);
 
 		await act(async () => {
 			fireEvent.click(getByTestId(buttonId));
@@ -269,9 +234,9 @@ describe("Settings", () => {
 	});
 
 	it("should render peer settings", async () => {
-		const { container, asFragment, findByText } = renderWithRouter(
+		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -279,14 +244,37 @@ describe("Settings", () => {
 		);
 
 		expect(container).toBeTruthy();
-		fireEvent.click(await findByText("Peer"));
+
+		fireEvent.click(await findByTestId("side-menu__item--Peer"));
+
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should submit peer settings form", async () => {
+		const toastSpy = jest.spyOn(toasts, "success");
+
+		const { findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		fireEvent.click(await findByTestId("side-menu__item--Peer"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("Peer-settings__submit-button"));
+		});
+
+		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PEERS.SUCCESS);
 	});
 
 	it("should render plugin settings", async () => {
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -294,14 +282,37 @@ describe("Settings", () => {
 		);
 
 		expect(container).toBeTruthy();
+
 		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
+
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should submit plugin settings form", async () => {
+		const toastSpy = jest.spyOn(toasts, "success");
+
+		const { findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("Plugins-settings__submit-button"));
+		});
+
+		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PLUGINS.SUCCESS);
 	});
 
 	it("should open & close modals in the plugin settings", async () => {
 		const { container, asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -318,7 +329,7 @@ describe("Settings", () => {
 		act(() => {
 			fireEvent.click(getByTestId("plugins__open-list"));
 		});
-		expect(getByTestId("modal__inner")).toHaveTextContent(pluginTranslations.MODAL_BLACKLIST_PLUGINS.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PLUGINS.MODAL_BLACKLIST_PLUGINS.TITLE);
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
@@ -329,7 +340,7 @@ describe("Settings", () => {
 		act(() => {
 			fireEvent.click(getByTestId("plugins__add-plugin"));
 		});
-		expect(getByTestId("modal__inner")).toHaveTextContent(pluginTranslations.MODAL_ADD_BLACKLIST_PLUGIN.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PLUGINS.MODAL_ADD_BLACKLIST_PLUGIN.TITLE);
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
@@ -340,7 +351,7 @@ describe("Settings", () => {
 	it("should add a plugin to the blacklist", async () => {
 		const { container, asFragment, getByTestId, getAllByTestId, getAllByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -360,7 +371,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("plugins__add-plugin"));
 		});
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(pluginTranslations.MODAL_ADD_BLACKLIST_PLUGIN.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PLUGINS.MODAL_ADD_BLACKLIST_PLUGIN.TITLE);
 
 		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(7));
 
@@ -383,7 +394,7 @@ describe("Settings", () => {
 		act(() => {
 			fireEvent.click(getByTestId("plugins__open-list"));
 		});
-		expect(getByTestId("modal__inner")).toHaveTextContent(pluginTranslations.MODAL_BLACKLIST_PLUGINS.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PLUGINS.MODAL_BLACKLIST_PLUGINS.TITLE);
 
 		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(1));
 
@@ -397,7 +408,7 @@ describe("Settings", () => {
 	it("should render password settings", async () => {
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -416,7 +427,7 @@ describe("Settings", () => {
 	it("should set a password", async () => {
 		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -443,10 +454,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("Password-settings__submit-button"));
 		});
 
-		await waitFor(() => {
-			expect(getByTestId(currentPasswordInput)).toBeInTheDocument();
-			expect(getByTestId("Password-settings__success-alert")).toBeInTheDocument();
-		});
+		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -454,7 +462,7 @@ describe("Settings", () => {
 	it("should change a password", async () => {
 		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -488,18 +496,17 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("Password-settings__submit-button"));
 		});
 
-		await waitFor(() => {
-			expect(getByTestId(currentPasswordInput)).toBeInTheDocument();
-			expect(getByTestId("Password-settings__success-alert")).toBeInTheDocument();
-		});
+		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should show an error alert if the current password does not match", async () => {
+	it("should show an error toast if the current password does not match", async () => {
+		const toastSpy = jest.spyOn(toasts, "error");
+
 		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -531,9 +538,9 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("Password-settings__submit-button"));
 		});
 
-		await waitFor(() => {
-			expect(getByTestId("Password-settings__error-alert")).toBeInTheDocument();
-		});
+		expect(toastSpy).toHaveBeenCalledWith(
+			`${translations.COMMON.ERROR}: ${translations.SETTINGS.PASSWORD.ERROR.MISMATCH}`,
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
