@@ -1,4 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import Tippy from "@tippyjs/react";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
@@ -107,10 +108,14 @@ export const Welcome = () => {
 						)}
 
 						<div className="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row">
-							<Button>
-								<Icon name="Msq" width={20} height={20} />
-								<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
-							</Button>
+							<Tippy content={t("COMMON.COMING_SOON")}>
+								<div>
+									<Button disabled>
+										<Icon name="Msq" width={20} height={20} />
+										<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
+									</Button>
+								</div>
+							</Tippy>
 
 							<Button
 								variant="plain"
