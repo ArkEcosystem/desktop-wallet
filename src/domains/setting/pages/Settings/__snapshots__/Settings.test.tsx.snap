@@ -6932,14 +6932,14 @@ exports[`Settings should submit using default props 1`] = `
                   </div>
                 </form>
                 <div
-                  class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+                  class="fixed inset-0 z-50 w-full h-full overflow-y-scroll flex items-center justify-center"
                 >
                   <div
                     class="fixed z-50 w-full h-full bg-black opacity-50"
                     data-testid="modal__overlay"
                   />
                   <div
-                    class="sc-fzplWN hXndMY absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+                    class="sc-fzplWN hXndMY absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
                     data-testid="modal__inner"
                   >
                     <div
