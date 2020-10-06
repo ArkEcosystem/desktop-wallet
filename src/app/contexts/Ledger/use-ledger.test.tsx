@@ -19,6 +19,7 @@ describe("Use Ledger", () => {
 			.reply(200, {
 				data: {
 					address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
+					balance: "0",
 				},
 			})
 			.persist();
@@ -83,6 +84,40 @@ describe("Use Ledger", () => {
 		await waitFor(() => expect(screen.queryByText("Test Error")).toBeInTheDocument());
 
 		listenSpy.mockReset();
+	});
+
+	it("should import ledger wallets", async () => {
+		const Component = () => {
+			const { importLedgerWallets } = useLedger(transport);
+			const wallets = profile.wallets().values();
+
+			const handleImport = async () => {
+				const wallets = [{ address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", index: 0 }];
+				await importLedgerWallets(wallets, wallet.coin(), profile);
+			};
+			return (
+				<div>
+					<ul>
+						{wallets.map((wallet) => (
+							<li key={wallet.id()}>
+								{`${wallet.address()}-${wallet.isLedger() ? "Ledger" : "Standard"}`}
+							</li>
+						))}
+					</ul>
+					<button onClick={handleImport}>Import</button>
+				</div>
+			);
+		};
+
+		render(<Component />);
+
+		act(() => {
+			fireEvent.click(screen.getByText("Import"));
+		});
+
+		await waitFor(() =>
+			expect(screen.queryByText("DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq-Ledger")).toBeInTheDocument(),
+		);
 	});
 
 	describe("Ledger Connection", () => {

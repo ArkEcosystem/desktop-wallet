@@ -1,15 +1,17 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Transport from "@ledgerhq/hw-transport";
 import retry from "async-retry";
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
 
+import { useEnvironmentContext } from "../Environment";
 import { defaultLedgerState, ledgerStateReducer } from "./Ledger.state";
 
 const formatDerivationPath = (coinType: number, index: number) => `44'/${coinType}'/${index}'/0/0`;
 
 export const useLedger = (transport: typeof Transport) => {
+	const { persist } = useEnvironmentContext();
 	const [state, dispatch] = useReducer(ledgerStateReducer, defaultLedgerState);
 	const abortRetryRef = useRef<boolean>(false);
 
@@ -30,6 +32,20 @@ export const useLedger = (transport: typeof Transport) => {
 				complete: () => void 0,
 			}),
 		[transport],
+	);
+
+	const importLedgerWallets = useCallback(
+		async (wallets: { address: string; index: number }[], coin: Coins.Coin, profile: Profile) => {
+			for (const { address, index } of wallets) {
+				const wallet = await profile
+					.wallets()
+					.importByAddress(address, coin.network().coin(), coin.network().id());
+				wallet.data().set(WalletFlag.Ledger, true);
+				wallet.data().set("LEDGER_INDEX", index);
+			}
+			await persist();
+		},
+		[persist],
 	);
 
 	const connect = useCallback(
@@ -148,5 +164,6 @@ export const useLedger = (transport: typeof Transport) => {
 		isBusy,
 		isConnected,
 		scanWallets,
+		importLedgerWallets,
 	};
 };
