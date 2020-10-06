@@ -6,13 +6,9 @@ import { act, renderWithRouter, useDefaultNetMocks, waitFor } from "utils/testin
 
 import { App } from "./App";
 
-jest.mock(
-	"electron",
-	() => ({
-		ipcRenderer: { on: jest.fn(), send: jest.fn(), removeListener: jest.fn() },
-	}),
-	{ virtual: true },
-);
+jest.mock("electron", () => ({
+	ipcRenderer: { on: jest.fn(), send: jest.fn(), removeListener: jest.fn() },
+}));
 
 describe("App", () => {
 	beforeAll(useDefaultNetMocks);
