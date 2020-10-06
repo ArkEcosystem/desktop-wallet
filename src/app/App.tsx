@@ -6,7 +6,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
@@ -28,6 +28,7 @@ import { shouldUseDarkColors } from "utils/electron-utils";
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
 import { useNetworkStatus } from "./hooks";
+import { useActiveProfile } from "./hooks/env";
 import { useEnvSynchronizer } from "./hooks/use-synchronizer";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
@@ -43,6 +44,12 @@ const Main = () => {
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
 
+	const setSystemTheme = () => {
+		setTheme(shouldUseDarkColors() ? "dark" : "light");
+	};
+
+	let activeProfile: any;
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [pathname]);
@@ -53,11 +60,23 @@ const Main = () => {
 		}
 	}, [showSplash, start]);
 
+	useEffect(() => {
+		try {
+			activeProfile = useActiveProfile();
+		} catch {
+			activeProfile = undefined;
+		}
+	}, [location, useActiveProfile]);
+
+	useEffect(() => {
+		if (activeProfile) {
+			setTheme(profile.settings().get(ProfileSetting.Theme);
+		}
+	}, [activeProfile, setTheme]);
+
 	useLayoutEffect(() => {
 		const boot = async () => {
-			if (shouldUseDarkColors()) {
-				setTheme("dark")
-			}
+			setSystemTheme();
 
 			/* istanbul ignore next */
 			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
