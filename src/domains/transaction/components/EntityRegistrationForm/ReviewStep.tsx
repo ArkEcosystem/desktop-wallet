@@ -57,7 +57,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			<div className="mt-4">
 				<TransactionDetail
 					border={false}
-					label={t("TRANSACTION.NETWORK")}
+					label={t("TRANSACTION.CRYPTOASSET")}
 					extra={<NetworkIcon coin={wallet.coinId()} network={wallet.networkId()} />}
 				>
 					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">

@@ -153,7 +153,7 @@ describe("SendTransfer", () => {
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 
-	it("should select network first and see select address input clickable", async () => {
+	it("should select cryptoasset first and see select address input clickable", async () => {
 		const history = createMemoryHistory();
 		let rendered: RenderResult;
 
@@ -189,7 +189,7 @@ describe("SendTransfer", () => {
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 
-	it("should display disabled address selection input if selected network has not available wallets", async () => {
+	it("should display disabled address selection input if selected cryptoasset has not available wallets", async () => {
 		const history = createMemoryHistory();
 		let rendered: RenderResult;
 

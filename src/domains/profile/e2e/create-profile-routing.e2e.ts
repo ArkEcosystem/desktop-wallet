@@ -16,5 +16,10 @@ test("should navigate to create profile and back to welcome screen", async (t) =
 
 	// Navigate back
 	await t.click(Selector("button").withExactText("Back"));
-	await t.click(Selector("h1").withExactText(translations.COMMON.WELCOME));
+
+	const title = await Selector("h1").textContent;
+
+	for (const part of translations.PROFILE.PAGE_WELCOME.TITLE.split("<1/>")) {
+		await t.expect(title).contains(part);
+	}
 });

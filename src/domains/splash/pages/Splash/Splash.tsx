@@ -51,14 +51,21 @@ export const Splash = ({ year }: any) => {
 					<div>
 						{currentYear} {t("SPLASH.COPYRIGHT")}
 					</div>
+
 					<Divider type="vertical" />
+
 					<div>{t("SPLASH.RIGHTS")}</div>
+
 					<Divider type="vertical" />
+
 					<LogoContainer>
-						<ARKLogo width={14} />
+						<ARKLogo width={18} />
 					</LogoContainer>
+
 					<div>{t("SPLASH.PRODUCT")}</div>
+
 					<Divider type="vertical" />
+
 					<div>
 						{t("SPLASH.VERSION")} {version}
 					</div>

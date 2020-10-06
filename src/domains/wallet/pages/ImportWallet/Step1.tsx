@@ -27,12 +27,12 @@ export const FirstStep = () => {
 	return (
 		<section data-testid="ImportWallet__first-step" className="space-y-8">
 			<Header
-				title={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.TITLE")}
-				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE")}
+				title={t("WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.TITLE")}
+				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE")}
 			/>
 
 			<FormField name="network">
-				<FormLabel label={t("COMMON.NETWORK")} />
+				<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				<SelectNetwork
 					id="ImportWallet__network"
 					networks={networks}

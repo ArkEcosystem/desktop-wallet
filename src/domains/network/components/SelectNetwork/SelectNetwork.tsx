@@ -177,6 +177,6 @@ export const SelectNetwork = ({
 
 SelectNetwork.defaultProps = {
 	networks: [],
-	placeholder: "Enter a network name",
+	placeholder: "Enter a cryptoasset name",
 	disabled: false,
 };

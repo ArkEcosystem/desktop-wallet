@@ -1,4 +1,5 @@
 import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -78,10 +79,14 @@ export const CreateProfile = () => {
 					<div className="text-theme-neutral-dark">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
 
 					<div className="pb-4 mt-8">
-						<Button className="w-full">
-							<Icon name="Msq" width={20} height={20} />
-							<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
-						</Button>
+						<Tippy content={t("COMMON.COMING_SOON")}>
+							<div>
+								<Button className="w-full" disabled>
+									<Icon name="Msq" width={20} height={20} />
+									<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
+								</Button>
+							</div>
+						</Tippy>
 					</div>
 
 					<Divider />
@@ -144,11 +149,7 @@ export const CreateProfile = () => {
 											}).toString(),
 										})}
 										options={PlatformSdkChoices.marketProviders}
-										onChange={() => {
-											if (form.errors.marketProvider) {
-												form.clearErrors("marketProvider");
-											}
-										}}
+										defaultValue="cryptocompare"
 									/>
 									<FormHelperText />
 								</FormField>
@@ -187,6 +188,7 @@ export const CreateProfile = () => {
 							<Button variant="plain" onClick={() => history.go(-1)}>
 								{t("COMMON.BACK")}
 							</Button>
+
 							<Button type="submit" data-testid="CreateProfile__submit-button">
 								{t("COMMON.COMPLETE")}
 							</Button>

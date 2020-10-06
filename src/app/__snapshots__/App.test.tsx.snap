@@ -29,14 +29,19 @@ exports[`App should close splash screen if not demo 1`] = `
                 class="flex items-center my-auto"
               >
                 <div
-                  class="sc-fznJRM bdJSCu"
+                  class="sc-fznJRM dWqptf"
                 >
                   <svg
-                    width="40"
+                    width="48"
                   >
                     ark-logo.svg
                   </svg>
                 </div>
+                <span
+                  class="text-2xl font-bold"
+                >
+                  Desktop Wallet
+                </span>
               </div>
             </div>
           </div>
@@ -51,9 +56,11 @@ exports[`App should close splash screen if not demo 1`] = `
               class="container py-16 mx-auto px-14"
             >
               <h1
-                class="mb-8"
+                class="mb-8 font-extrabold"
               >
-                Welcome to ARK
+                Welcome to the 
+                <br />
+                 ARK Desktop Wallet
               </h1>
               <div
                 class="w-64 mx-auto lg:w-128"
@@ -78,26 +85,29 @@ exports[`App should close splash screen if not demo 1`] = `
                 <div
                   class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
                 >
-                  <button
-                    class="sc-AxjAm kbZyZT"
-                    color="primary"
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxiKw dklFyP"
-                      height="20"
-                      width="20"
+                  <div>
+                    <button
+                      class="sc-AxjAm kbZyZT"
+                      color="primary"
+                      disabled=""
+                      type="button"
                     >
-                      <svg>
-                        msq.svg
-                      </svg>
-                    </div>
-                    <span
-                      class="ml-2"
-                    >
-                      Sign In via MarketSquare
-                    </span>
-                  </button>
+                      <div
+                        class="sc-AxiKw dklFyP"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="ml-2"
+                      >
+                        Sign In via MarketSquare
+                      </span>
+                    </button>
+                  </div>
                   <button
                     class="sc-AxjAm fPpool mt-2 md:mt-0"
                     color="primary"
@@ -145,14 +155,19 @@ exports[`App should render mock 1`] = `
                 class="flex items-center my-auto"
               >
                 <div
-                  class="sc-fznJRM bdJSCu"
+                  class="sc-fznJRM dWqptf"
                 >
                   <svg
-                    width="40"
+                    width="48"
                   >
                     ark-logo.svg
                   </svg>
                 </div>
+                <span
+                  class="text-2xl font-bold"
+                >
+                  Desktop Wallet
+                </span>
               </div>
             </div>
           </div>
@@ -167,9 +182,11 @@ exports[`App should render mock 1`] = `
               class="container py-16 mx-auto px-14"
             >
               <h1
-                class="mb-8"
+                class="mb-8 font-extrabold"
               >
-                Welcome to ARK
+                Welcome to the 
+                <br />
+                 ARK Desktop Wallet
               </h1>
               <div
                 class="w-64 mx-auto lg:w-128"
@@ -381,26 +398,29 @@ exports[`App should render mock 1`] = `
                 <div
                   class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
                 >
-                  <button
-                    class="sc-AxjAm kbZyZT"
-                    color="primary"
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxiKw dklFyP"
-                      height="20"
-                      width="20"
+                  <div>
+                    <button
+                      class="sc-AxjAm kbZyZT"
+                      color="primary"
+                      disabled=""
+                      type="button"
                     >
-                      <svg>
-                        msq.svg
-                      </svg>
-                    </div>
-                    <span
-                      class="ml-2"
-                    >
-                      Sign In via MarketSquare
-                    </span>
-                  </button>
+                      <div
+                        class="sc-AxiKw dklFyP"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="ml-2"
+                      >
+                        Sign In via MarketSquare
+                      </span>
+                    </button>
+                  </div>
                   <button
                     class="sc-AxjAm fPpool mt-2 md:mt-0"
                     color="primary"
@@ -448,14 +468,19 @@ exports[`App should render splash screen 1`] = `
                 class="flex items-center my-auto"
               >
                 <div
-                  class="sc-fznJRM bdJSCu"
+                  class="sc-fznJRM dWqptf"
                 >
                   <svg
-                    width="40"
+                    width="48"
                   >
                     ark-logo.svg
                   </svg>
                 </div>
+                <span
+                  class="text-2xl font-bold"
+                >
+                  Desktop Wallet
+                </span>
               </div>
             </div>
           </div>
@@ -470,9 +495,11 @@ exports[`App should render splash screen 1`] = `
               class="container py-16 mx-auto px-14"
             >
               <h1
-                class="mb-8"
+                class="mb-8 font-extrabold"
               >
-                Welcome to ARK
+                Welcome to the 
+                <br />
+                 ARK Desktop Wallet
               </h1>
               <div
                 class="w-64 mx-auto lg:w-128"
@@ -684,26 +711,29 @@ exports[`App should render splash screen 1`] = `
                 <div
                   class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
                 >
-                  <button
-                    class="sc-AxjAm kbZyZT"
-                    color="primary"
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxiKw dklFyP"
-                      height="20"
-                      width="20"
+                  <div>
+                    <button
+                      class="sc-AxjAm kbZyZT"
+                      color="primary"
+                      disabled=""
+                      type="button"
                     >
-                      <svg>
-                        msq.svg
-                      </svg>
-                    </div>
-                    <span
-                      class="ml-2"
-                    >
-                      Sign In via MarketSquare
-                    </span>
-                  </button>
+                      <div
+                        class="sc-AxiKw dklFyP"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="ml-2"
+                      >
+                        Sign In via MarketSquare
+                      </span>
+                    </button>
+                  </div>
                   <button
                     class="sc-AxjAm fPpool mt-2 md:mt-0"
                     color="primary"
@@ -747,10 +777,10 @@ exports[`App should render the offline screen if there is no internet connection
               class="flex items-center my-auto"
             >
               <div
-                class="sc-fznJRM bdJSCu"
+                class="sc-fznJRM dWqptf"
               >
                 <svg
-                  width="40"
+                  width="48"
                 >
                   ark-logo.svg
                 </svg>
@@ -827,14 +857,19 @@ exports[`App should render welcome screen after splash screen 1`] = `
                 class="flex items-center my-auto"
               >
                 <div
-                  class="sc-fznJRM bdJSCu"
+                  class="sc-fznJRM dWqptf"
                 >
                   <svg
-                    width="40"
+                    width="48"
                   >
                     ark-logo.svg
                   </svg>
                 </div>
+                <span
+                  class="text-2xl font-bold"
+                >
+                  Desktop Wallet
+                </span>
               </div>
             </div>
           </div>
@@ -849,9 +884,11 @@ exports[`App should render welcome screen after splash screen 1`] = `
               class="container py-16 mx-auto px-14"
             >
               <h1
-                class="mb-8"
+                class="mb-8 font-extrabold"
               >
-                Welcome to ARK
+                Welcome to the 
+                <br />
+                 ARK Desktop Wallet
               </h1>
               <div
                 class="w-64 mx-auto lg:w-128"
@@ -1063,26 +1100,29 @@ exports[`App should render welcome screen after splash screen 1`] = `
                 <div
                   class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
                 >
-                  <button
-                    class="sc-AxjAm kbZyZT"
-                    color="primary"
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxiKw dklFyP"
-                      height="20"
-                      width="20"
+                  <div>
+                    <button
+                      class="sc-AxjAm kbZyZT"
+                      color="primary"
+                      disabled=""
+                      type="button"
                     >
-                      <svg>
-                        msq.svg
-                      </svg>
-                    </div>
-                    <span
-                      class="ml-2"
-                    >
-                      Sign In via MarketSquare
-                    </span>
-                  </button>
+                      <div
+                        class="sc-AxiKw dklFyP"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="ml-2"
+                      >
+                        Sign In via MarketSquare
+                      </span>
+                    </button>
+                  </div>
                   <button
                     class="sc-AxjAm fPpool mt-2 md:mt-0"
                     color="primary"

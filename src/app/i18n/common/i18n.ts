@@ -27,6 +27,7 @@ export const translations: { [key: string]: any } = {
 	CANCEL: "Cancel",
 	CATEGORY: "Category",
 	CHOOSE: "Choose",
+	COMING_SOON: "Coming soon",
 	COMPLETE: "Complete",
 	COMPLETED: "Completed",
 	CONFIRM: "Confirm",
