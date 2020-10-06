@@ -70,11 +70,12 @@ const Main = () => {
 
 	useEffect(() => {
 		if (profile) {
-			setTheme(profile.settings().get(ProfileSetting.Theme));
+			const profileTheme = profile.settings().get(ProfileSetting.Theme);
+			profileTheme !== theme && setTheme(profileTheme);
 		} else {
 			setSystemTheme();
 		}
-	}, [profile, setTheme, setSystemTheme]);
+	}, [profile, pathname, setTheme, setSystemTheme]);
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useLayoutEffect(() => setSystemTheme(), []);
