@@ -35,10 +35,9 @@ import { FirstStep } from "./Step1";
 let profile: Profile;
 let wallet: ReadWriteWallet;
 let secondWallet: ReadWriteWallet;
+const history = createMemoryHistory();
 
 const renderPage = async (wallet?: ReadWriteWallet) => {
-	const history = createMemoryHistory();
-
 	const path = wallet
 		? "/profiles/:profileId/wallets/:walletId/send-entity-registration"
 		: "/profiles/:profileId/send-entity-registration";
@@ -130,7 +129,7 @@ describe("Registration", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select network first and see select address input clickable", async () => {
+	it("should select cryptoasset first and see select address input clickable", async () => {
 		const { getByTestId, asFragment } = await renderPage();
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
@@ -150,7 +149,7 @@ describe("Registration", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select network with unavailable wallets and see select address input disabled", async () => {
+	it("should select cryptoasset with unavailable wallets and see select address input disabled", async () => {
 		const { getByTestId, asFragment } = await renderPage();
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
@@ -490,6 +489,30 @@ describe("Registration", () => {
 		});
 	});
 
+	it("should register delegate as entity", async () => {
+		const delegateToEntityPath = `/profiles/${getDefaultProfileId()}/wallets/${secondWallet.id()}/delegate/send-entity-registration`;
+		history.push(delegateToEntityPath);
+
+		let renderedPage: any;
+		await act(async () => {
+			renderedPage = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/:registrationType/send-entity-registration">
+					<SendEntityRegistration />
+				</Route>,
+				{
+					routes: [delegateToEntityPath],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(renderedPage.getByTestId("Registration__form")).toBeTruthy());
+			await waitFor(() => expect(renderedPage.getByTestId("EntityRegistrationForm__entity-name")).toBeTruthy());
+			await waitFor(() =>
+				expect(renderedPage.getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("testwallet2"),
+			);
+		});
+	});
+
 	it("should error for invalid mnemonic", async () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
@@ -703,7 +726,7 @@ describe("Registration", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should go to review step after succesfully filling form data", async () => {
+	it("should go to review step after successfully filling form data", async () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
@@ -923,7 +946,7 @@ describe("Registration", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should succesfully register entity", async () => {
+	it("should successfully register entity", async () => {
 		const { asFragment, getByTestId, queryAllByTestId } = await renderPage(secondWallet);
 
 		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));

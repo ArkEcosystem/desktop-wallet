@@ -9,6 +9,7 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks/env";
+import { toasts } from "app/services";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
@@ -19,7 +20,6 @@ import { setScreenshotProtection } from "utils/electron-utils";
 type GeneralProps = {
 	env: Environment;
 	formConfig: any;
-	pageConfig: any;
 	onSubmit: (profile: Profile) => void;
 };
 
@@ -184,6 +184,8 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 		setScreenshotProtection(isScreenshotProtection);
 
 		await env.persist();
+
+		toasts.success(t("SETTINGS.GENERAL.SUCCESS"));
 
 		onSubmit(activeProfile);
 	};

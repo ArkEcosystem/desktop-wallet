@@ -48,7 +48,7 @@ test("should open and cancel contact update modal", async (t) => {
 		.notOk();
 });
 
-test("should succesfully update contact", async (t) => {
+test("should successfully update contact", async (t) => {
 	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Brian").exists).ok();
 	await t
 		.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Anne Doe").exists)

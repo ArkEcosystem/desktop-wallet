@@ -8,6 +8,7 @@ export const translations: { [key: string]: any } = {
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",
 	CONFIRMATIONS_COUNT: "{{count}} Confirmations",
+	CRYPTOASSET: "Cryptoasset",
 	DELEGATE: "Delegate",
 	DELEGATE_NAME: "Delegate Name",
 	DESCRIPTION: "Description",
@@ -257,6 +258,7 @@ export const translations: { [key: string]: any } = {
 
 	PAGE_RESIGN_REGISTRATION: {
 		ENTITY_NAME: "Entity Name",
+		ENTITY_TYPE: "Entity Type",
 		FIRST_STEP: {
 			DELEGATE: {
 				TITLE: "Delegate Resignation",

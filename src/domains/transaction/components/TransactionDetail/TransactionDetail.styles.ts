@@ -7,7 +7,7 @@ const getBorder = (border?: boolean, borderPosition?: "top" | "bottom" | "both")
 		? [
 				tw`border-dashed border-theme-neutral-300`,
 				borderPosition === "both"
-					? "border-t border-b"
+					? tw`border-t border-b`
 					: borderPosition === "top"
 					? tw`border-t`
 					: tw`border-b`,
