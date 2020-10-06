@@ -25,7 +25,7 @@ import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
 import { middlewares, RouterView, routes } from "../router";
-import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
+import { EnvironmentProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
 import { useNetworkStatus } from "./hooks";
 import { useEnvSynchronizer } from "./hooks/use-synchronizer";
 import { i18n } from "./i18n";
@@ -36,6 +36,7 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 
+	const { theme } = useThemeContext();
 	const { pathname } = useLocation();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
@@ -74,7 +75,7 @@ const Main = () => {
 	const className = __DEV__ ? "debug-screens" : "";
 
 	return (
-		<main className={className}>
+		<main className={`${theme} ${className}`}>
 			<ToastContainer />
 
 			{isOnline ? <RouterView routes={routes} middlewares={middlewares} /> : <Offline />}
@@ -117,7 +118,10 @@ export const App = () => {
 			<I18nextProvider i18n={i18n}>
 				<EnvironmentProvider env={env}>
 					<LedgerListener transport={LedgerTransportNodeHID} />
-					<Main />
+
+					<ThemeProvider>
+						<Main />
+					</ThemeProvider>
 				</EnvironmentProvider>
 			</I18nextProvider>
 		</ErrorBoundary>
