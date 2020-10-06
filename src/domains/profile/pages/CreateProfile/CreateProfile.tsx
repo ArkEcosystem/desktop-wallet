@@ -145,11 +145,6 @@ export const CreateProfile = () => {
 										})}
 										options={PlatformSdkChoices.marketProviders}
 										defaultValue="cryptocompare"
-										onChange={() => {
-											if (form.errors.marketProvider) {
-												form.clearErrors("marketProvider");
-											}
-										}}
 									/>
 									<FormHelperText />
 								</FormField>
