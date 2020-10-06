@@ -8,7 +8,7 @@ import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeletePr
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import { SignIn } from "domains/profile/components/SignIn/SignIn";
 import React, { useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
@@ -67,7 +67,11 @@ export const Welcome = () => {
 		<>
 			<Page navbarVariant="logo-only">
 				<Section className="flex flex-col justify-center flex-1 text-center">
-					<h1 className="mb-8">{t("PROFILE.PAGE_WELCOME.TITLE")}</h1>
+					<h1 className="mb-8 font-extrabold">
+						<Trans i18nKey="PROFILE.PAGE_WELCOME.TITLE">
+							Welcome to the <br /> ARK Desktop Wallet
+						</Trans>
+					</h1>
 
 					<div className="w-64 mx-auto lg:w-128">
 						<WelcomeBanner />
