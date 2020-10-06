@@ -6,7 +6,6 @@ import { Header } from "app/components/Header";
 import { InputAddress, InputPassword } from "app/components/Input";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useLedgerContext } from "app/contexts/Ledger/Ledger";
 import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -19,10 +18,6 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Coins.Network = getValues("network") || defaultNetwork;
-
-	// TODO: Waiting design
-	// eslint-disable-next-line
-	const { scanWallets, isAwaitingConnection, abortConnectionRetry } = useLedgerContext();
 
 	const { t } = useTranslation();
 
