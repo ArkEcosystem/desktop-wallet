@@ -6,7 +6,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
-import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
@@ -36,7 +36,7 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
-	const [profile, setProfile] = useState<Profile | undefined>();
+	const [profileTheme, setProfileTheme] = React.useState<string | undefined>();
 
 	const { theme, setTheme } = useThemeContext();
 	const { pathname } = useLocation();
@@ -62,20 +62,20 @@ const Main = () => {
 
 	useEffect(() => {
 		try {
-			setProfile(env.profiles().findById((match?.params as any)?.profileId));
+			const profile = env.profiles().findById((match?.params as any)?.profileId);
+			setProfileTheme(profile.settings().get(ProfileSetting.Theme));
 		} catch {
-			setProfile(undefined);
+			setProfileTheme(undefined);
 		}
 	}, [env, match, pathname]);
 
 	useEffect(() => {
-		if (profile) {
-			const profileTheme = profile.settings().get(ProfileSetting.Theme);
+		if (profileTheme) {
 			profileTheme !== theme && setTheme(profileTheme);
 		} else {
 			setSystemTheme();
 		}
-	}, [profile, pathname, setTheme, setSystemTheme]);
+	}, [pathname, profileTheme, setTheme, setSystemTheme, theme]);
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useLayoutEffect(() => setSystemTheme(), []);
