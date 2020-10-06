@@ -34,7 +34,7 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 	];
 
 	const handleSubmit = () => {
-		onSuccess();
+		onSuccess(t("SETTINGS.PEERS.SUCCESS"));
 	};
 
 	return (

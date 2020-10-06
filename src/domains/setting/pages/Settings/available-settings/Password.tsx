@@ -35,7 +35,7 @@ export const PasswordSettings = ({ env, formConfig, onSuccess, onError }: Settin
 
 		await env.persist();
 
-		onSuccess();
+		onSuccess(t("SETTINGS.PASSWORD.SUCCESS"));
 	};
 
 	return (

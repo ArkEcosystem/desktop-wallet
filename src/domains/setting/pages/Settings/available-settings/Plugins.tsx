@@ -121,7 +121,7 @@ export const Plugins = ({ formConfig, onSuccess }: SettingsProps) => {
 	];
 
 	const handleSubmit = () => {
-		onSuccess();
+		onSuccess(t("SETTINGS.PLUGINS.SUCCESS"));
 	};
 
 	return (

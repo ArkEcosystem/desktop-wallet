@@ -424,43 +424,6 @@ exports[`Settings should change a password 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="mb-8"
-                    data-testid="Password-settings__success-alert"
-                  >
-                    <div
-                      class="flex rounded-lg overflow-hidden bg-theme-success"
-                    >
-                      <div
-                        class="sc-fznxKY bjGeLb flex items-center justify-center text-theme-success bg-theme-success-200"
-                      >
-                        <div
-                          class="sc-AxirZ bMjbpr"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            alert-success.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-fzpmMD dUAAUD flex-1 bg-theme-success-100 space-y-2"
-                      >
-                        <p
-                          class="text-lg font-bold text-theme-success"
-                          data-testid="alert__title"
-                        >
-                          Success
-                        </p>
-                        <div
-                          class="text-sm"
-                        >
-                          Your password has been successfully changed.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <form
                     class="space-y-8"
                     data-testid="Form"
@@ -5001,43 +4964,6 @@ exports[`Settings should set a password 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="mb-8"
-                    data-testid="Password-settings__success-alert"
-                  >
-                    <div
-                      class="flex rounded-lg overflow-hidden bg-theme-success"
-                    >
-                      <div
-                        class="sc-fznxKY bjGeLb flex items-center justify-center text-theme-success bg-theme-success-200"
-                      >
-                        <div
-                          class="sc-AxirZ bMjbpr"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            alert-success.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-fzpmMD dUAAUD flex-1 bg-theme-success-100 space-y-2"
-                      >
-                        <p
-                          class="text-lg font-bold text-theme-success"
-                          data-testid="alert__title"
-                        >
-                          Success
-                        </p>
-                        <div
-                          class="text-sm"
-                        >
-                          Your password has been successfully changed.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <form
                     class="space-y-8"
                     data-testid="Form"
@@ -5624,43 +5550,6 @@ exports[`Settings should show an error alert if the current password does not ma
                         data-testid="header__subtitle"
                       >
                         Change the password used to access your profile below.
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mb-8"
-                    data-testid="Password-settings__error-alert"
-                  >
-                    <div
-                      class="flex rounded-lg overflow-hidden bg-theme-danger"
-                    >
-                      <div
-                        class="sc-fznxKY bjGeLb flex items-center justify-center text-theme-danger bg-theme-danger-200"
-                      >
-                        <div
-                          class="sc-AxirZ bMjbpr"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            alert-danger.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-fzpmMD dUAAUD flex-1 bg-theme-danger-100 space-y-2"
-                      >
-                        <p
-                          class="text-lg font-bold text-theme-danger"
-                          data-testid="alert__title"
-                        >
-                          Error
-                        </p>
-                        <div
-                          class="text-sm"
-                        >
-                          The current password does not match.
-                        </div>
                       </div>
                     </div>
                   </div>

@@ -80,6 +80,7 @@ export const translations: { [key: string]: any } = {
 		NAME: "Name",
 		IP: "IP",
 		TYPE: "Type",
+		SUCCESS: "Your peer settings have been updated",
 	},
 	PLUGINS: {
 		MENU_ITEM: "Plugins",
@@ -97,6 +98,7 @@ export const translations: { [key: string]: any } = {
 		},
 		ADD_PLUGIN: "Add Plugin",
 		OPEN_BLACKLIST: "Open List",
+		SUCCESS: "Your plugin settings have been updated",
 	},
 	MODAL_ADVANCED_MODE: {
 		TITLE: "Advanced Mode Disclaimer",

@@ -49,7 +49,7 @@ describe("Settings", () => {
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -61,14 +61,11 @@ describe("Settings", () => {
 	});
 
 	it("should update profile", async () => {
-		let savedProfile: any = null;
 		const profilesCount = env.profiles().count();
-
-		const onSubmit = jest.fn((profile: any) => (savedProfile = profile));
 
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={onSubmit} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -119,22 +116,6 @@ describe("Settings", () => {
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));
 		});
-		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
-		expect(savedProfile.name()).toEqual("test profile");
-		expect(savedProfile.settings().all()).toEqual({
-			AVATAR: "data:image/png;base64,avatarImage",
-			NAME: "test profile",
-			LOCALE: "en-US",
-			BIP39_LOCALE: "chinese_simplified",
-			MARKET_PROVIDER: "coincap",
-			EXCHANGE_CURRENCY: "BTC",
-			TIME_FORMAT: "h:mm A",
-			SCREENSHOT_PROTECTION: true,
-			ADVANCED_MODE: true,
-			AUTOMATIC_SIGN_OUT_PERIOD: 1,
-			THEME: "light",
-			LEDGER_UPDATE_METHOD: true,
-		});
 
 		// Upload and remove avatar image
 		await act(async () => {
@@ -156,22 +137,6 @@ describe("Settings", () => {
 
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));
-		});
-
-		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
-		expect(savedProfile.name()).toEqual("test profile 2");
-		expect(savedProfile.settings().all()).toEqual({
-			NAME: "test profile 2",
-			LOCALE: "en-US",
-			BIP39_LOCALE: "chinese_simplified",
-			MARKET_PROVIDER: "coincap",
-			EXCHANGE_CURRENCY: "BTC",
-			TIME_FORMAT: "h:mm A",
-			SCREENSHOT_PROTECTION: true,
-			ADVANCED_MODE: false,
-			AUTOMATIC_SIGN_OUT_PERIOD: 1,
-			THEME: "dark",
-			LEDGER_UPDATE_METHOD: true,
 		});
 
 		// Not upload avatar image
@@ -198,7 +163,7 @@ describe("Settings", () => {
 	it("should submit using default props", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -242,7 +207,7 @@ describe("Settings", () => {
 	])("should open & close reset profile modal (%s)", async (_, buttonId) => {
 		const { container, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -271,7 +236,7 @@ describe("Settings", () => {
 	it("should render peer settings", async () => {
 		const { container, asFragment, findByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -286,7 +251,7 @@ describe("Settings", () => {
 	it("should render plugin settings", async () => {
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -301,7 +266,7 @@ describe("Settings", () => {
 	it("should open & close modals in the plugin settings", async () => {
 		const { container, asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -340,7 +305,7 @@ describe("Settings", () => {
 	it("should add a plugin to the blacklist", async () => {
 		const { container, asFragment, getByTestId, getAllByTestId, getAllByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -397,7 +362,7 @@ describe("Settings", () => {
 	it("should render password settings", async () => {
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -416,7 +381,7 @@ describe("Settings", () => {
 	it("should set a password", async () => {
 		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -443,10 +408,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("Password-settings__submit-button"));
 		});
 
-		await waitFor(() => {
-			expect(getByTestId(currentPasswordInput)).toBeInTheDocument();
-			expect(getByTestId("Password-settings__success-alert")).toBeInTheDocument();
-		});
+		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -454,7 +416,7 @@ describe("Settings", () => {
 	it("should change a password", async () => {
 		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -488,10 +450,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("Password-settings__submit-button"));
 		});
 
-		await waitFor(() => {
-			expect(getByTestId(currentPasswordInput)).toBeInTheDocument();
-			expect(getByTestId("Password-settings__success-alert")).toBeInTheDocument();
-		});
+		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -499,7 +458,7 @@ describe("Settings", () => {
 	it("should show an error alert if the current password does not match", async () => {
 		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings onSubmit={jest.fn()} />
+				<Settings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -529,10 +488,6 @@ describe("Settings", () => {
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Password-settings__submit-button"));
-		});
-
-		await waitFor(() => {
-			expect(getByTestId("Password-settings__error-alert")).toBeInTheDocument();
 		});
 
 		expect(asFragment()).toMatchSnapshot();
