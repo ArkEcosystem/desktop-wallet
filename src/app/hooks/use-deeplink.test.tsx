@@ -29,14 +29,12 @@ describe("useDeeplink hook", () => {
 	};
 
 	it("should subscribe to deeplink listener", () => {
-		const ipcRendererSpy = jest
-			.spyOn(ipcRenderer, "on")
-			.mockImplementationOnce((event, callback) =>
-				callback(
-					event,
-					"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
-				),
-			);
+		ipcRenderer.on.mockImplementationOnce((event, callback) =>
+			callback(
+				event,
+				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+			),
+		);
 
 		const { getByText, history } = renderWithRouter(
 			<Route pathname="/">
@@ -49,14 +47,12 @@ describe("useDeeplink hook", () => {
 	});
 
 	it("should subscribe to deeplink listener and toast a warning to select a profile", () => {
-		const ipcRendererSpy = jest
-			.spyOn(ipcRenderer, "on")
-			.mockImplementationOnce((event, callback) =>
-				callback(
-					event,
-					"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
-				),
-			);
+		ipcRenderer.on.mockImplementationOnce((event, callback) =>
+			callback(
+				event,
+				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+			),
+		);
 
 		const { getByText, history } = renderWithRouter(
 			<Route pathname="/">
@@ -75,14 +71,12 @@ describe("useDeeplink hook", () => {
 	it("should subscribe to deeplink listener and toast a warning to select a wallet", () => {
 		window.history.pushState({}, "Deeplink Test", `/profiles/${getDefaultProfileId()}/dashboard`);
 
-		const ipcRendererSpy = jest
-			.spyOn(ipcRenderer, "on")
-			.mockImplementationOnce((event, callback) =>
-				callback(
-					event,
-					"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
-				),
-			);
+		ipcRenderer.on.mockImplementationOnce((event, callback) =>
+			callback(
+				event,
+				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+			),
+		);
 
 		const { getByText, history } = renderWithRouter(
 			<Route pathname="/profiles/:profileId">
@@ -105,14 +99,12 @@ describe("useDeeplink hook", () => {
 			`/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`,
 		);
 
-		const ipcRendererSpy = jest
-			.spyOn(ipcRenderer, "on")
-			.mockImplementationOnce((event, callback) =>
-				callback(
-					event,
-					"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
-				),
-			);
+		ipcRenderer.on.mockImplementationOnce((event, callback) =>
+			callback(
+				event,
+				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+			),
+		);
 
 		const { getByText, history } = renderWithRouter(
 			<Route pathname="/profiles/:profileId/wallets/:walletId">

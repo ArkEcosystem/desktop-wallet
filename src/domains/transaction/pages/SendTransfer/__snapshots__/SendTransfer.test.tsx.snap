@@ -93,7 +93,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                   type="button"
                 >
                   <div
-                    class="sc-AxiKw fFXzuz p-1"
+                    class="p-1 sc-AxiKw fFXzuz"
                     height="22"
                     width="22"
                   >
@@ -117,7 +117,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -140,7 +140,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -184,7 +184,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="-mr-2 sc-AxgMl eqWWwc border-theme-primary-contrast"
                 >
                   <span
                     class="text-theme-neutral-dark"
@@ -218,7 +218,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                     </span>
                   </div>
                   <span
-                    class="sc-AxhUy kTPsmA flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="flex items-center justify-center w-5 h-5 align-middle border-2 border-transparent rounded-full sc-AxhUy kTPsmA bg-theme-background bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                   >
                     <div
                       class="sc-AxiKw ksjdLL"
@@ -239,7 +239,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="container flex items-center py-5 mx-auto space-x-3 text-sm font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -268,7 +268,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -322,7 +322,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         class="space-y-8 SendTransactionForm"
                       >
                         <fieldset
-                          class="sc-AxirZ izhStr relative"
+                          class="relative sc-AxirZ izhStr"
                         >
                           <div
                             class="mb-2"
@@ -356,7 +356,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 data-testid="SelectNetworkInput"
                               >
                                 <div
-                                  class="sc-fzqBZW sc-fzqNJr gNHBIw px-4"
+                                  class="px-4 sc-fzqBZW sc-fzqNJr gNHBIw"
                                 >
                                   <div
                                     aria-label="ARK"
@@ -376,7 +376,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   </div>
                                 </div>
                                 <span
-                                  class="sc-fzqBZW iEnjyC py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                  class="py-3 font-normal border border-transparent opacity-50 pointer-events-none sc-fzqBZW iEnjyC pl-15"
                                   data-testid="SelectNetworkInput__typeahead"
                                 >
                                   ARK
@@ -387,7 +387,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   aria-controls="SendTransactionForm__network-menu"
                                   aria-labelledby="SendTransactionForm__network-label"
                                   autocomplete="off"
-                                  class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 pl-15"
                                   data-testid="SelectNetworkInput__input"
                                   id="SendTransactionForm__network-input"
                                   placeholder="Enter a cryptoasset name"
@@ -453,7 +453,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           </div>
                         </fieldset>
                         <fieldset
-                          class="sc-AxirZ izhStr relative"
+                          class="relative sc-AxirZ izhStr"
                         >
                           <div
                             class="mb-2"
@@ -481,7 +481,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 type="button"
                               >
                                 <div
-                                  class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+                                  class="mx-4 sc-AxgMl eLFBRi bg-theme-neutral-200 border-theme-neutral-200"
                                 />
                                 <div
                                   class="inline-block truncate align-middle"
@@ -501,7 +501,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 </div>
                               </button>
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                                class="hidden w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                                 data-testid="SelectAddress__input"
                                 name="senderAddress"
                                 readonly=""
@@ -548,7 +548,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 class="flex items-stretch select-buttons"
                               >
                                 <button
-                                  class="sc-AxjAm kbZyZT flex-1"
+                                  class="flex-1 sc-AxjAm kbZyZT"
                                   color="primary"
                                   data-testid="add-recipient-is-single-toggle"
                                   type="button"
@@ -556,7 +556,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   Single
                                 </button>
                                 <button
-                                  class="sc-AxjAm fPpool flex-1 border-l-0"
+                                  class="flex-1 border-l-0 sc-AxjAm fPpool"
                                   color="primary"
                                   data-testid="add-recipient-is-multiple-toggle"
                                   type="button"
@@ -566,13 +566,13 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               </div>
                             </div>
                             <div
-                              class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-6"
+                              class="mt-6 SubForm__SubFormWrapper-c4tqfs-0 gIKSHW"
                             >
                               <div
                                 class="space-y-8"
                               >
                                 <fieldset
-                                  class="sc-AxirZ izhStr relative mt-1"
+                                  class="relative mt-1 sc-AxirZ izhStr"
                                 >
                                   <div
                                     class="mb-2"
@@ -598,11 +598,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         class="absolute left-1"
                                       >
                                         <div
-                                          class="sc-AxgMl eLFBRi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                                          class="mx-3 sc-AxgMl eLFBRi bg-theme-neutral-200 border-theme-neutral-200"
                                         />
                                       </div>
                                       <input
-                                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                                        class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 pl-14 pr-11"
                                         data-testid="SelectRecipient__input"
                                         name="recipientAddress"
                                         type="text"
@@ -626,7 +626,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   </div>
                                 </fieldset>
                                 <fieldset
-                                  class="sc-AxirZ izhStr relative mt-1"
+                                  class="relative mt-1 sc-AxirZ izhStr"
                                 >
                                   <div
                                     class="mb-2"
@@ -647,7 +647,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                     class="sc-fzoLag hoOQgq"
                                   >
                                     <input
-                                      class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                                      class="w-full px-4 py-3 pr-20 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
@@ -672,7 +672,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           </div>
                         </div>
                         <fieldset
-                          class="sc-AxirZ izhStr relative"
+                          class="relative sc-AxirZ izhStr"
                         >
                           <div
                             class="mb-2"
@@ -693,7 +693,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             class="sc-fzoLag hoOQgq"
                           >
                             <input
-                              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
+                              class="w-full px-4 py-3 pr-24 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                               data-testid="Input__smartbridge"
                               maxlength="255"
                               name="smartbridge"
@@ -702,7 +702,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               value=""
                             />
                             <div
-                              class="sc-fzqBZW sc-fzoyAV icrEyZ px-2 text-sm pointer-events-none text-theme-neutral"
+                              class="px-2 text-sm pointer-events-none sc-fzqBZW sc-fzoyAV icrEyZ text-theme-neutral"
                               data-testid="InputCounter__counter"
                             >
                               0/255
@@ -710,7 +710,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           </div>
                         </fieldset>
                         <fieldset
-                          class="sc-AxirZ izhStr flex flex-col space-y-2"
+                          class="flex flex-col space-y-2 sc-AxirZ izhStr"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -734,7 +734,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 class="sc-fzoLag hoOQgq"
                               >
                                 <input
-                                  class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -781,7 +781,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               >
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -790,7 +790,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -799,7 +799,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -939,7 +939,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-AxiKw fFXzuz p-1"
+                    class="p-1 sc-AxiKw fFXzuz"
                     height="22"
                     width="22"
                   >
@@ -963,7 +963,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -986,7 +986,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -1030,7 +1030,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="-mr-2 sc-AxgMl eqWWwc border-theme-primary-contrast"
                 >
                   <span
                     class="text-theme-neutral-dark"
@@ -1064,7 +1064,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     </span>
                   </div>
                   <span
-                    class="sc-AxhUy kTPsmA flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="flex items-center justify-center w-5 h-5 align-middle border-2 border-transparent rounded-full sc-AxhUy kTPsmA bg-theme-background bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                   >
                     <div
                       class="sc-AxiKw ksjdLL"
@@ -1085,7 +1085,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="container flex items-center py-5 mx-auto space-x-3 text-sm font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1114,7 +1114,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1169,7 +1169,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="sc-AxirZ kMHTdH flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 sc-AxirZ kMHTdH"
                     >
                       <label
                         class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -1188,13 +1188,13 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                       >
                         <input
                           aria-invalid="true"
-                          class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          class="w-full px-4 py-3 pr-12 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
                         />
                         <div
-                          class="sc-fzqBZW sc-fzoyAV icrEyZ my-px mr-4"
+                          class="my-px mr-4 sc-fzqBZW sc-fzoyAV icrEyZ"
                         >
                           <button
                             class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -1233,7 +1233,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm kbZyZT space-x-2"
+                    class="space-x-2 sc-AxjAm kbZyZT"
                     color="primary"
                     data-testid="SendTransfer__button--submit"
                     disabled=""
@@ -1287,7 +1287,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
         class="space-y-8 SendTransactionForm"
       >
         <fieldset
-          class="sc-AxirZ izhStr relative"
+          class="relative sc-AxirZ izhStr"
         >
           <div
             class="mb-2"
@@ -1321,7 +1321,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                 data-testid="SelectNetworkInput"
               >
                 <div
-                  class="sc-fzqBZW sc-fzqNJr gNHBIw px-4"
+                  class="px-4 sc-fzqBZW sc-fzqNJr gNHBIw"
                 >
                   <div
                     class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
@@ -1333,7 +1333,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                   aria-controls="SendTransactionForm__network-menu"
                   aria-labelledby="SendTransactionForm__network-label"
                   autocomplete="off"
-                  class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 pl-15"
                   data-testid="SelectNetworkInput__input"
                   id="SendTransactionForm__network-input"
                   placeholder="Enter a cryptoasset name"
@@ -1350,7 +1350,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="sc-AxirZ izhStr relative"
+          class="relative sc-AxirZ izhStr"
         >
           <div
             class="mb-2"
@@ -1372,12 +1372,12 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
           >
             <div>
               <button
-                class="sc-fzpmMD jvETLY SelectAddress  "
+                class="sc-fzpmMD jvETLY SelectAddress "
                 data-testid="SelectAddress__wrapper"
                 type="button"
               >
                 <div
-                  class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+                  class="mx-4 sc-AxgMl eLFBRi bg-theme-neutral-200 border-theme-neutral-200"
                 />
                 <div
                   class="inline-block truncate align-middle"
@@ -1397,7 +1397,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                 </div>
               </button>
               <input
-                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                class="hidden w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                 data-testid="SelectAddress__input"
                 name="senderAddress"
                 readonly=""
@@ -1444,7 +1444,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                 class="flex items-stretch select-buttons"
               >
                 <button
-                  class="sc-AxjAm kbZyZT flex-1"
+                  class="flex-1 sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="add-recipient-is-single-toggle"
                   type="button"
@@ -1452,7 +1452,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                   Single
                 </button>
                 <button
-                  class="sc-AxjAm fPpool flex-1 border-l-0"
+                  class="flex-1 border-l-0 sc-AxjAm fPpool"
                   color="primary"
                   data-testid="add-recipient-is-multiple-toggle"
                   type="button"
@@ -1462,13 +1462,13 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               </div>
             </div>
             <div
-              class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-6"
+              class="mt-6 SubForm__SubFormWrapper-c4tqfs-0 gIKSHW"
             >
               <div
                 class="space-y-8"
               >
                 <fieldset
-                  class="sc-AxirZ izhStr relative mt-1"
+                  class="relative mt-1 sc-AxirZ izhStr"
                 >
                   <div
                     class="mb-2"
@@ -1494,11 +1494,11 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                         class="absolute left-1"
                       >
                         <div
-                          class="sc-AxgMl eLFBRi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                          class="mx-3 sc-AxgMl eLFBRi bg-theme-neutral-200 border-theme-neutral-200"
                         />
                       </div>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                        class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 pl-14 pr-11"
                         data-testid="SelectRecipient__input"
                         name="recipientAddress"
                         type="text"
@@ -1522,7 +1522,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                   </div>
                 </fieldset>
                 <fieldset
-                  class="sc-AxirZ izhStr relative mt-1"
+                  class="relative mt-1 sc-AxirZ izhStr"
                 >
                   <div
                     class="mb-2"
@@ -1543,7 +1543,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                     class="sc-fzoLag hoOQgq"
                   >
                     <input
-                      class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                      class="w-full px-4 py-3 pr-20 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                       data-testid="add-recipient__amount-input"
                       name="amount"
                       placeholder="Amount"
@@ -1568,7 +1568,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
           </div>
         </div>
         <fieldset
-          class="sc-AxirZ izhStr relative"
+          class="relative sc-AxirZ izhStr"
         >
           <div
             class="mb-2"
@@ -1589,7 +1589,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
             class="sc-fzoLag hoOQgq"
           >
             <input
-              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
+              class="w-full px-4 py-3 pr-24 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
               data-testid="Input__smartbridge"
               maxlength="255"
               name="smartbridge"
@@ -1598,7 +1598,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               value=""
             />
             <div
-              class="sc-fzqBZW sc-fzoyAV icrEyZ px-2 text-sm pointer-events-none text-theme-neutral"
+              class="px-2 text-sm pointer-events-none sc-fzqBZW sc-fzoyAV icrEyZ text-theme-neutral"
               data-testid="InputCounter__counter"
             >
               0/255
@@ -1606,7 +1606,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="sc-AxirZ izhStr flex flex-col space-y-2"
+          class="flex flex-col space-y-2 sc-AxirZ izhStr"
         >
           <label
             class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -1630,7 +1630,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                 class="sc-fzoLag hoOQgq"
               >
                 <input
-                  class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
@@ -1677,7 +1677,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               >
                 <button
                   aria-checked="true"
-                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1686,7 +1686,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1695,7 +1695,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -2260,13 +2260,13 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                class="flex-auto mt-4 mr-2 text-base font-semibold truncate text-theme-text max-w-24"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
               </span>
               <span
-                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                class="text-base font-semibold sc-fzpans kkFAbe text-theme-neutral-light"
                 data-testid="address__wallet-address"
               >
                 D8rr7B…s6YUYD
@@ -2309,7 +2309,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
             class="inline-block truncate align-middle"
           >
             <span
-              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+              class="text-base font-semibold sc-fzpans kkFAbe text-theme-text"
               data-testid="address__wallet-address"
             >
               D8rr7B…s6YUYD
@@ -2498,7 +2498,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
               class="flex items-center"
             >
               <a
-                class="sc-fzplWN bETMmw inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer sc-fzplWN bETMmw text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                 data-testid="Link"
                 rel="noopener noreferrer"
                 to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -2600,13 +2600,13 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                class="flex-auto mt-4 mr-2 text-base font-semibold truncate text-theme-text max-w-24"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
               </span>
               <span
-                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                class="text-base font-semibold sc-fzpans kkFAbe text-theme-neutral-light"
                 data-testid="address__wallet-address"
               >
                 D8rr7B…s6YUYD
@@ -2652,7 +2652,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                class="text-base font-semibold sc-fzpans kkFAbe text-theme-text"
                 data-testid="address__wallet-address"
               >
                 D5pVkh…xfKwSv
@@ -2813,7 +2813,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                   type="button"
                 >
                   <div
-                    class="sc-AxiKw fFXzuz p-1"
+                    class="p-1 sc-AxiKw fFXzuz"
                     height="22"
                     width="22"
                   >
@@ -2837,7 +2837,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -2860,7 +2860,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -2904,7 +2904,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="-mr-2 sc-AxgMl eqWWwc border-theme-primary-contrast"
                 >
                   <span
                     class="text-theme-neutral-dark"
@@ -2938,7 +2938,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                     </span>
                   </div>
                   <span
-                    class="sc-AxhUy kTPsmA flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="flex items-center justify-center w-5 h-5 align-middle border-2 border-transparent rounded-full sc-AxhUy kTPsmA bg-theme-background bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                   >
                     <div
                       class="sc-AxiKw ksjdLL"
@@ -2959,7 +2959,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="container flex items-center py-5 mx-auto space-x-3 text-sm font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2988,7 +2988,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3042,7 +3042,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                         class="space-y-8 SendTransactionForm"
                       >
                         <fieldset
-                          class="sc-AxirZ izhStr relative"
+                          class="relative sc-AxirZ izhStr"
                         >
                           <div
                             class="mb-2"
@@ -3076,7 +3076,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                 data-testid="SelectNetworkInput"
                               >
                                 <div
-                                  class="sc-fzqBZW sc-fzqNJr gNHBIw px-4"
+                                  class="px-4 sc-fzqBZW sc-fzqNJr gNHBIw"
                                 >
                                   <div
                                     class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
@@ -3088,7 +3088,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                   aria-controls="SendTransactionForm__network-menu"
                                   aria-labelledby="SendTransactionForm__network-label"
                                   autocomplete="off"
-                                  class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 pl-15"
                                   data-testid="SelectNetworkInput__input"
                                   id="SendTransactionForm__network-input"
                                   placeholder="Enter a cryptoasset name"
@@ -3105,7 +3105,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                           </div>
                         </fieldset>
                         <fieldset
-                          class="sc-AxirZ izhStr relative"
+                          class="relative sc-AxirZ izhStr"
                         >
                           <div
                             class="mb-2"
@@ -3127,12 +3127,12 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                           >
                             <div>
                               <button
-                                class="sc-fzpmMD jvETLY SelectAddress  "
+                                class="sc-fzpmMD jvETLY SelectAddress "
                                 data-testid="SelectAddress__wrapper"
                                 type="button"
                               >
                                 <div
-                                  class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+                                  class="mx-4 sc-AxgMl eLFBRi bg-theme-neutral-200 border-theme-neutral-200"
                                 />
                                 <div
                                   class="inline-block truncate align-middle"
@@ -3152,7 +3152,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                 </div>
                               </button>
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                                class="hidden w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                                 data-testid="SelectAddress__input"
                                 name="senderAddress"
                                 readonly=""
@@ -3199,7 +3199,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                 class="flex items-stretch select-buttons"
                               >
                                 <button
-                                  class="sc-AxjAm kbZyZT flex-1"
+                                  class="flex-1 sc-AxjAm kbZyZT"
                                   color="primary"
                                   data-testid="add-recipient-is-single-toggle"
                                   type="button"
@@ -3207,7 +3207,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                   Single
                                 </button>
                                 <button
-                                  class="sc-AxjAm fPpool flex-1 border-l-0"
+                                  class="flex-1 border-l-0 sc-AxjAm fPpool"
                                   color="primary"
                                   data-testid="add-recipient-is-multiple-toggle"
                                   type="button"
@@ -3217,13 +3217,13 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               </div>
                             </div>
                             <div
-                              class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-6"
+                              class="mt-6 SubForm__SubFormWrapper-c4tqfs-0 gIKSHW"
                             >
                               <div
                                 class="space-y-8"
                               >
                                 <fieldset
-                                  class="sc-AxirZ izhStr relative mt-1"
+                                  class="relative mt-1 sc-AxirZ izhStr"
                                 >
                                   <div
                                     class="mb-2"
@@ -3249,11 +3249,11 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                         class="absolute left-1"
                                       >
                                         <div
-                                          class="sc-AxgMl eLFBRi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                                          class="mx-3 sc-AxgMl eLFBRi bg-theme-neutral-200 border-theme-neutral-200"
                                         />
                                       </div>
                                       <input
-                                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                                        class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 pl-14 pr-11"
                                         data-testid="SelectRecipient__input"
                                         name="recipientAddress"
                                         type="text"
@@ -3277,7 +3277,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                   </div>
                                 </fieldset>
                                 <fieldset
-                                  class="sc-AxirZ izhStr relative mt-1"
+                                  class="relative mt-1 sc-AxirZ izhStr"
                                 >
                                   <div
                                     class="mb-2"
@@ -3298,7 +3298,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                     class="sc-fzoLag hoOQgq"
                                   >
                                     <input
-                                      class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                                      class="w-full px-4 py-3 pr-20 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
@@ -3323,7 +3323,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                           </div>
                         </div>
                         <fieldset
-                          class="sc-AxirZ izhStr relative"
+                          class="relative sc-AxirZ izhStr"
                         >
                           <div
                             class="mb-2"
@@ -3344,7 +3344,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                             class="sc-fzoLag hoOQgq"
                           >
                             <input
-                              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
+                              class="w-full px-4 py-3 pr-24 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                               data-testid="Input__smartbridge"
                               maxlength="255"
                               name="smartbridge"
@@ -3353,7 +3353,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               value=""
                             />
                             <div
-                              class="sc-fzqBZW sc-fzoyAV icrEyZ px-2 text-sm pointer-events-none text-theme-neutral"
+                              class="px-2 text-sm pointer-events-none sc-fzqBZW sc-fzoyAV icrEyZ text-theme-neutral"
                               data-testid="InputCounter__counter"
                             >
                               0/255
@@ -3361,7 +3361,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                           </div>
                         </fieldset>
                         <fieldset
-                          class="sc-AxirZ izhStr flex flex-col space-y-2"
+                          class="flex flex-col space-y-2 sc-AxirZ izhStr"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -3385,7 +3385,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                 class="sc-fzoLag hoOQgq"
                               >
                                 <input
-                                  class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -3432,7 +3432,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               >
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3441,7 +3441,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3450,7 +3450,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3590,7 +3590,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                   type="button"
                 >
                   <div
-                    class="sc-AxiKw fFXzuz p-1"
+                    class="p-1 sc-AxiKw fFXzuz"
                     height="22"
                     width="22"
                   >
@@ -3614,7 +3614,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -3637,7 +3637,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -3681,7 +3681,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="-mr-2 sc-AxgMl eqWWwc border-theme-primary-contrast"
                 >
                   <span
                     class="text-theme-neutral-dark"
@@ -3715,7 +3715,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                     </span>
                   </div>
                   <span
-                    class="sc-AxhUy kTPsmA flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="flex items-center justify-center w-5 h-5 align-middle border-2 border-transparent rounded-full sc-AxhUy kTPsmA bg-theme-background bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                   >
                     <div
                       class="sc-AxiKw ksjdLL"
@@ -3736,7 +3736,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="container flex items-center py-5 mx-auto space-x-3 text-sm font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -3765,7 +3765,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3819,7 +3819,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         class="space-y-8 SendTransactionForm"
                       >
                         <fieldset
-                          class="sc-AxirZ izhStr relative"
+                          class="relative sc-AxirZ izhStr"
                         >
                           <div
                             class="mb-2"
@@ -3853,7 +3853,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 data-testid="SelectNetworkInput"
                               >
                                 <div
-                                  class="sc-fzqBZW sc-fzqNJr gNHBIw px-4"
+                                  class="px-4 sc-fzqBZW sc-fzqNJr gNHBIw"
                                 >
                                   <div
                                     aria-label="ARK Devnet"
@@ -3873,7 +3873,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                   </div>
                                 </div>
                                 <span
-                                  class="sc-fzqBZW iEnjyC py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                  class="py-3 font-normal border border-transparent opacity-50 pointer-events-none sc-fzqBZW iEnjyC pl-15"
                                   data-testid="SelectNetworkInput__typeahead"
                                 >
                                   ARK Devnet
@@ -3884,7 +3884,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                   aria-controls="SendTransactionForm__network-menu"
                                   aria-labelledby="SendTransactionForm__network-label"
                                   autocomplete="off"
-                                  class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 pl-15"
                                   data-testid="SelectNetworkInput__input"
                                   id="SendTransactionForm__network-input"
                                   placeholder="Enter a cryptoasset name"
@@ -3926,7 +3926,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                           </div>
                         </fieldset>
                         <fieldset
-                          class="sc-AxirZ izhStr relative"
+                          class="relative sc-AxirZ izhStr"
                         >
                           <div
                             class="mb-2"
@@ -3948,12 +3948,12 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                           >
                             <div>
                               <button
-                                class="sc-fzpmMD jvETLY SelectAddress  "
+                                class="sc-fzpmMD jvETLY SelectAddress "
                                 data-testid="SelectAddress__wrapper"
                                 type="button"
                               >
                                 <div
-                                  class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+                                  class="mx-4 sc-AxgMl eLFBRi bg-theme-neutral-200 border-theme-neutral-200"
                                 />
                                 <div
                                   class="inline-block truncate align-middle"
@@ -3973,7 +3973,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 </div>
                               </button>
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                                class="hidden w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                                 data-testid="SelectAddress__input"
                                 name="senderAddress"
                                 readonly=""
@@ -4020,7 +4020,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 class="flex items-stretch select-buttons"
                               >
                                 <button
-                                  class="sc-AxjAm kbZyZT flex-1"
+                                  class="flex-1 sc-AxjAm kbZyZT"
                                   color="primary"
                                   data-testid="add-recipient-is-single-toggle"
                                   type="button"
@@ -4028,7 +4028,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                   Single
                                 </button>
                                 <button
-                                  class="sc-AxjAm fPpool flex-1 border-l-0"
+                                  class="flex-1 border-l-0 sc-AxjAm fPpool"
                                   color="primary"
                                   data-testid="add-recipient-is-multiple-toggle"
                                   type="button"
@@ -4038,13 +4038,13 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               </div>
                             </div>
                             <div
-                              class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-6"
+                              class="mt-6 SubForm__SubFormWrapper-c4tqfs-0 gIKSHW"
                             >
                               <div
                                 class="space-y-8"
                               >
                                 <fieldset
-                                  class="sc-AxirZ izhStr relative mt-1"
+                                  class="relative mt-1 sc-AxirZ izhStr"
                                 >
                                   <div
                                     class="mb-2"
@@ -4070,11 +4070,11 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                         class="absolute left-1"
                                       >
                                         <div
-                                          class="sc-AxgMl eLFBRi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                                          class="mx-3 sc-AxgMl eLFBRi bg-theme-neutral-200 border-theme-neutral-200"
                                         />
                                       </div>
                                       <input
-                                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                                        class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 pl-14 pr-11"
                                         data-testid="SelectRecipient__input"
                                         name="recipientAddress"
                                         type="text"
@@ -4098,7 +4098,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                   </div>
                                 </fieldset>
                                 <fieldset
-                                  class="sc-AxirZ izhStr relative mt-1"
+                                  class="relative mt-1 sc-AxirZ izhStr"
                                 >
                                   <div
                                     class="mb-2"
@@ -4119,7 +4119,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                     class="sc-fzoLag hoOQgq"
                                   >
                                     <input
-                                      class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                                      class="w-full px-4 py-3 pr-20 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
@@ -4144,7 +4144,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                           </div>
                         </div>
                         <fieldset
-                          class="sc-AxirZ izhStr relative"
+                          class="relative sc-AxirZ izhStr"
                         >
                           <div
                             class="mb-2"
@@ -4165,7 +4165,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                             class="sc-fzoLag hoOQgq"
                           >
                             <input
-                              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
+                              class="w-full px-4 py-3 pr-24 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                               data-testid="Input__smartbridge"
                               maxlength="255"
                               name="smartbridge"
@@ -4174,7 +4174,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               value=""
                             />
                             <div
-                              class="sc-fzqBZW sc-fzoyAV icrEyZ px-2 text-sm pointer-events-none text-theme-neutral"
+                              class="px-2 text-sm pointer-events-none sc-fzqBZW sc-fzoyAV icrEyZ text-theme-neutral"
                               data-testid="InputCounter__counter"
                             >
                               0/255
@@ -4182,7 +4182,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                           </div>
                         </fieldset>
                         <fieldset
-                          class="sc-AxirZ izhStr flex flex-col space-y-2"
+                          class="flex flex-col space-y-2 sc-AxirZ izhStr"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -4206,7 +4206,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 class="sc-fzoLag hoOQgq"
                               >
                                 <input
-                                  class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-fzokOt iLiRks bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -4253,7 +4253,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               >
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4262,7 +4262,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4271,7 +4271,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="relative px-5 transition-colors duration-300 border-transparent sc-fznxKY eTkpzl focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4411,7 +4411,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-AxiKw fFXzuz p-1"
+                    class="p-1 sc-AxiKw fFXzuz"
                     height="22"
                     width="22"
                   >
@@ -4435,7 +4435,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -4458,7 +4458,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -4502,7 +4502,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="-mr-2 sc-AxgMl eqWWwc border-theme-primary-contrast"
                 >
                   <span
                     class="text-theme-neutral-dark"
@@ -4536,7 +4536,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                     </span>
                   </div>
                   <span
-                    class="sc-AxhUy kTPsmA flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="flex items-center justify-center w-5 h-5 align-middle border-2 border-transparent rounded-full sc-AxhUy kTPsmA bg-theme-background bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                   >
                     <div
                       class="sc-AxiKw ksjdLL"
@@ -4557,7 +4557,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="container flex items-center py-5 mx-auto space-x-3 text-sm font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -4586,7 +4586,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4664,7 +4664,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                               class="flex items-center"
                             >
                               <a
-                                class="sc-fzplWN bETMmw inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                                class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer sc-fzplWN bETMmw text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/34b557950ed485985aad81ccefaa374b7c81150c52f8ef4621cbbb907b2c829c"
@@ -4766,13 +4766,13 @@ exports[`SendTransfer should send a multi payment 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                                class="flex-auto mt-4 mr-2 text-base font-semibold truncate text-theme-text max-w-24"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                class="text-base font-semibold sc-fzpans kkFAbe text-theme-neutral-light"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B…s6YUYD
@@ -4839,7 +4839,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                           role="columnheader"
                                         >
                                           <div
-                                            class="flex flex-inline align-top hidden"
+                                            class="flex hidden align-top flex-inline"
                                           >
                                             <div>
                                               Avatar
@@ -4853,7 +4853,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                           role="columnheader"
                                         >
                                           <div
-                                            class="flex flex-inline align-top hidden"
+                                            class="flex hidden align-top flex-inline"
                                           >
                                             <div>
                                               Address
@@ -4867,7 +4867,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                           role="columnheader"
                                         >
                                           <div
-                                            class="flex flex-inline align-top hidden"
+                                            class="flex hidden align-top flex-inline"
                                           >
                                             <div>
                                               Amount
@@ -4908,7 +4908,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                             class="inline-block truncate align-middle"
                                           >
                                             <span
-                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                              class="text-base font-semibold sc-fzpans kkFAbe text-theme-text"
                                               data-testid="address__wallet-address"
                                             >
                                               DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd
@@ -4959,7 +4959,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                             class="inline-block truncate align-middle"
                                           >
                                             <span
-                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                              class="text-base font-semibold sc-fzpans kkFAbe text-theme-text"
                                               data-testid="address__wallet-address"
                                             >
                                               D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP
@@ -5010,7 +5010,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                             class="inline-block truncate align-middle"
                                           >
                                             <span
-                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                              class="text-base font-semibold sc-fzpans kkFAbe text-theme-text"
                                               data-testid="address__wallet-address"
                                             >
                                               DA4RAKRngGDfgEA7L6nQjYVEKcZPgi8EdP
@@ -5061,7 +5061,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                             class="inline-block truncate align-middle"
                                           >
                                             <span
-                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                              class="text-base font-semibold sc-fzpans kkFAbe text-theme-text"
                                               data-testid="address__wallet-address"
                                             >
                                               DK52aX793nEMRpDvRVB2euBgGXiCpRfmwQ
@@ -5138,7 +5138,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool block"
+                    class="block sc-AxjAm fPpool"
                     color="primary"
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
@@ -5146,7 +5146,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm fPpool space-x-2"
+                    class="space-x-2 sc-AxjAm fPpool"
                     color="primary"
                     data-testid="SendTransfer__button--copy"
                     type="button"
@@ -5268,7 +5268,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-AxiKw fFXzuz p-1"
+                    class="p-1 sc-AxiKw fFXzuz"
                     height="22"
                     width="22"
                   >
@@ -5292,7 +5292,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -5315,7 +5315,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="p-1 sc-AxiKw fFXzuz"
                   height="22"
                   width="22"
                 >
@@ -5359,7 +5359,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="-mr-2 sc-AxgMl eqWWwc border-theme-primary-contrast"
                 >
                   <span
                     class="text-theme-neutral-dark"
@@ -5393,7 +5393,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     </span>
                   </div>
                   <span
-                    class="sc-AxhUy kTPsmA flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="flex items-center justify-center w-5 h-5 align-middle border-2 border-transparent rounded-full sc-AxhUy kTPsmA bg-theme-background bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                   >
                     <div
                       class="sc-AxiKw ksjdLL"
@@ -5414,7 +5414,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="container flex items-center py-5 mx-auto space-x-3 text-sm font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -5443,7 +5443,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5521,7 +5521,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                               class="flex items-center"
                             >
                               <a
-                                class="sc-fzplWN bETMmw inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                                class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer sc-fzplWN bETMmw text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -5623,13 +5623,13 @@ exports[`SendTransfer should send a single transfer 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                                class="flex-auto mt-4 mr-2 text-base font-semibold truncate text-theme-text max-w-24"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                class="text-base font-semibold sc-fzpans kkFAbe text-theme-neutral-light"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B…s6YUYD
@@ -5675,7 +5675,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                class="text-base font-semibold sc-fzpans kkFAbe text-theme-text"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -5745,7 +5745,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool block"
+                    class="block sc-AxjAm fPpool"
                     color="primary"
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
@@ -5753,7 +5753,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm fPpool space-x-2"
+                    class="space-x-2 sc-AxjAm fPpool"
                     color="primary"
                     data-testid="SendTransfer__button--copy"
                     type="button"
