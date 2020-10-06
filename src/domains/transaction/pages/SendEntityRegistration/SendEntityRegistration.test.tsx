@@ -940,12 +940,15 @@ describe("Registration", () => {
 		await addLink(media, "YouTube", "https://youtube.com/watch?v=123456");
 
 		await toggleLinkCollectionHeader(media);
+
 		// Select avatar
 		const firstMediaItem = within(media).getAllByTestId("LinkCollection__item")[0];
 
 		await act(async () => {
 			fireEvent.click(within(firstMediaItem).getByTestId("LinkCollection__selected"));
 		});
+
+		await toggleLinkCollectionHeader(media);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
