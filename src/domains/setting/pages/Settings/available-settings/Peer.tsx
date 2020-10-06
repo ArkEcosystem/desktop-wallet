@@ -53,7 +53,7 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 				</div>
 
 				<div className="flex justify-end w-full">
-					<Button>{t("COMMON.SAVE")}</Button>
+					<Button data-testid="Peer-settings__submit-button" type="submit">{t("COMMON.SAVE")}</Button>
 				</div>
 			</Form>
 		</>

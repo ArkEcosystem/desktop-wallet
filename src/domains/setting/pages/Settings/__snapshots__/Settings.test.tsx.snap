@@ -1176,18 +1176,18 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-309-label downshift-309-toggle-button"
+                                    aria-labelledby="downshift-348-label downshift-348-toggle-button"
                                     class="sc-fzoyTs buZKoP   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-309-toggle-button"
+                                    id="downshift-348-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-309-label"
+                                    aria-labelledby="downshift-348-label"
                                     class="sc-fzoNJl gPmoPk"
-                                    id="downshift-309-menu"
+                                    id="downshift-348-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -1222,7 +1222,8 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     <button
                       class="sc-AxhCb khNOPs"
                       color="primary"
-                      type="button"
+                      data-testid="Plugins-settings__submit-button"
+                      type="submit"
                     >
                       Save
                     </button>
@@ -3875,7 +3876,8 @@ exports[`Settings should render peer settings 1`] = `
                     <button
                       class="sc-AxhCb khNOPs"
                       color="primary"
-                      type="button"
+                      data-testid="Peer-settings__submit-button"
+                      type="submit"
                     >
                       Save
                     </button>
@@ -4478,18 +4480,18 @@ exports[`Settings should render plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-295-label downshift-295-toggle-button"
+                                    aria-labelledby="downshift-307-label downshift-307-toggle-button"
                                     class="sc-fzoyTs buZKoP   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-295-toggle-button"
+                                    id="downshift-307-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-295-label"
+                                    aria-labelledby="downshift-307-label"
                                     class="sc-fzoNJl gPmoPk"
-                                    id="downshift-295-menu"
+                                    id="downshift-307-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -4524,7 +4526,8 @@ exports[`Settings should render plugin settings 1`] = `
                     <button
                       class="sc-AxhCb khNOPs"
                       color="primary"
-                      type="button"
+                      data-testid="Plugins-settings__submit-button"
+                      type="submit"
                     >
                       Save
                     </button>
@@ -5129,7 +5132,7 @@ exports[`Settings should set a password 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Settings should show an error alert if the current password does not match 1`] = `
+exports[`Settings should show an error toast if the current password does not match 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
