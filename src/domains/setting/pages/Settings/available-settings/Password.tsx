@@ -3,14 +3,12 @@ import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form"
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
 import { useActiveProfile } from "app/hooks/env";
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { SettingsProps } from "../Settings.models";
 
 export const PasswordSettings = ({ env, formConfig, onSuccess, onError }: SettingsProps) => {
-	const [status, setStatus] = useState<Record<string, string> | null>(null);
-
 	const activeProfile = useActiveProfile();
 	const usesPassword = activeProfile.usesPassword();
 
