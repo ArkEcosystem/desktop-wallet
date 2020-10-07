@@ -1,20 +1,21 @@
 import { File } from "@arkecosystem/platform-sdk-ipfs";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
-import { Amount } from "app/components/Amount";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
 import { toasts } from "app/services";
 import { httpClient } from "app/services";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type SentStep = {
+type SummaryStepProps = {
 	transaction: SignedTransactionData;
+	wallet: ReadWriteWallet;
 };
 
-export const SentStep = ({ transaction }: SentStep) => {
+export const SummaryStep = ({ transaction, wallet }: SummaryStepProps) => {
 	const [ipfsData, setIpfsData] = useState<any>();
 	const { t } = useTranslation();
 
@@ -34,6 +35,8 @@ export const SentStep = ({ transaction }: SentStep) => {
 
 	return (
 		<>
+			{/* @TODO add TransactionType / TransactionEntityType component */}
+
 			<TransactionDetail
 				label={t("TRANSACTION.TRANSACTION_TYPE")}
 				extra={
@@ -42,7 +45,7 @@ export const SentStep = ({ transaction }: SentStep) => {
 					</Circle>
 				}
 			>
-				{t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION")}
+				{t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION")}
 			</TransactionDetail>
 
 			{transaction.data()?.asset?.data?.name && (
@@ -56,7 +59,7 @@ export const SentStep = ({ transaction }: SentStep) => {
 			</TransactionDetail>
 
 			{ipfsData && (
-				<div data-testid="SentStep__ipfs-data">
+				<div data-testid="SummaryStep__ipfs-data">
 					<TransactionDetail label={t("TRANSACTION.NAME")}>
 						{ipfsData?.data?.meta?.displayName}
 					</TransactionDetail>
@@ -73,18 +76,7 @@ export const SentStep = ({ transaction }: SentStep) => {
 				</div>
 			)}
 
-			<TransactionDetail
-				label={t("TRANSACTION.AMOUNT")}
-				extra={
-					<div className="ml-1 text-theme-danger">
-						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-							<Icon name="Sent" width={22} height={22} />
-						</Circle>
-					</div>
-				}
-			>
-				<Amount ticker="ARK" value={transaction.fee()} />
-			</TransactionDetail>
+			<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />
 		</>
 	);
 };
