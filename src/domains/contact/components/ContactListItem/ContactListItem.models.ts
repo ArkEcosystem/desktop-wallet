@@ -9,5 +9,6 @@ export type ContactListItemProps = {
 	contact: Contact;
 	options: Option[];
 	variant?: "condensed";
+	type?: string;
 	onAction?: (action: Option, address: any) => void;
 };

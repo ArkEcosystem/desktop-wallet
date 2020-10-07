@@ -28,6 +28,12 @@ export const SearchContact = ({
 	description,
 }: SearchContactProps) => {
 	const { t } = useTranslation();
+	const contacts = profile.contacts().values();
+	const wallets = profile.wallets().values();
+	const availableData: any = [];
+
+	contacts.map((contact) => availableData.push({ item: contact, type: "contact" }));
+	wallets.map((wallet) => availableData.push({ item: wallet, type: "wallet" }));
 
 	const columns = [
 		{
@@ -62,9 +68,15 @@ export const SearchContact = ({
 			onClose={onClose}
 			onSearch={onSearch}
 		>
-			<Table columns={columns} data={profile.contacts().values()}>
-				{(contact: any) => (
-					<ContactListItem contact={contact} variant="condensed" onAction={onAction} options={options} />
+			<Table columns={columns} data={availableData}>
+				{(data: any) => (
+					<ContactListItem
+						contact={data.item}
+						type={data.type}
+						variant="condensed"
+						onAction={onAction}
+						options={options}
+					/>
 				)}
 			</Table>
 		</SearchResource>

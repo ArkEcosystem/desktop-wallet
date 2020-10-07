@@ -11,6 +11,18 @@ const multiOptions = [...singleOption, { label: "Option 2", value: "option_2" }]
 
 let contact: Contact;
 
+const wallet = {
+	id: () => "id5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+	address: () => "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+	alias: () => "Test Wallet",
+	avatar: () => "data:image/png;base64,avatarImage",
+	coinId: () => "ARK",
+	networkId: () => "ark.devnet",
+	isDelegate: () => true,
+	isResignedDelegate: () => false,
+	hasSyncedWithNetwork: () => true,
+};
+
 describe("ContactListItem", () => {
 	beforeAll(() => {
 		const profile = env.profiles().findById(getDefaultProfileId());
@@ -22,6 +34,42 @@ describe("ContactListItem", () => {
 			<table>
 				<tbody>
 					<ContactListItem contact={contact} />
+				</tbody>
+			</table>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render using variant", () => {
+		const { asFragment } = render(
+			<table>
+				<tbody>
+					<ContactListItem contact={contact} variant="condensed" />
+				</tbody>
+			</table>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render a wallet", () => {
+		const { asFragment } = render(
+			<table>
+				<tbody>
+					<ContactListItem contact={wallet} type="wallet" />
+				</tbody>
+			</table>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render a wallet without tippy", () => {
+		const { asFragment } = render(
+			<table>
+				<tbody>
+					<ContactListItem contact={{ ...wallet, isDelegate: () => false }} type="wallet" />
 				</tbody>
 			</table>,
 		);
@@ -149,6 +197,30 @@ describe("ContactListItem", () => {
 			fireEvent.click(getByTestId("ContactListItem__one-option-button-0"));
 		});
 
-		expect(onAction).toHaveBeenCalledWith(singleOption[0], contact.addresses().values()[0]);
+		expect(onAction).toHaveBeenCalledWith(
+			{ label: "Option 1", value: "option_1" },
+			"D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+		);
+	});
+
+	it("should call onAction callback with given values in a wallet", () => {
+		const onAction = jest.fn();
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<ContactListItem contact={wallet} type="wallet" onAction={onAction} options={singleOption} />
+				</tbody>
+			</table>,
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId(`ContactListItem__one-option-button-${wallet.id()}`));
+		});
+
+		expect(onAction).toHaveBeenCalledWith(
+			{ label: "Option 1", value: "option_1" },
+			"D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+		);
 	});
 });

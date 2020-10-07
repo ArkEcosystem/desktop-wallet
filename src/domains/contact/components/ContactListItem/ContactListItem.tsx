@@ -14,13 +14,89 @@ import { useTranslation } from "react-i18next";
 
 import { ContactListItemProps, Option } from "./ContactListItem.models";
 
-export const ContactListItem = ({ contact, variant, onAction, options }: ContactListItemProps) => {
+export const ContactListItem = ({ contact, variant, type, onAction, options }: ContactListItemProps) => {
 	const { t } = useTranslation();
 
 	// TODO: add "Business", "Bridgechain"
-	const walletTypes: string[] = ["Delegate"];
+	const contactTypes: string[] = ["Delegate"];
 
 	const isCondensed = () => variant === "condensed";
+
+	const renderWalletRow = (contact: any) => {
+		console.log({ contact });
+
+		return (
+			<TableRow key={contact.id()} border>
+				<TableCell variant="start" className="w-1">
+					<div className="mr-4">
+						<AvatarWrapper data-testid="ContactListItem__user--avatar" size="lg" noShadow>
+							<img
+								src={`data:image/svg+xml;utf8,${contact.avatar()}`}
+								title={contact.alias()}
+								alt={contact.alias()}
+							/>
+							<span className="absolute text-sm font-semibold text-theme-background">
+								{contact.alias().slice(0, 2).toUpperCase()}
+							</span>
+						</AvatarWrapper>
+					</div>
+				</TableCell>
+
+				<TableCell>
+					<span className="font-semibold" data-testid="ContactListItem__name">
+						{contact.alias()}
+					</span>
+				</TableCell>
+
+				<TableCell innerClassName="justify-center">
+					<NetworkIcon coin={contact.coinId()} network={contact.networkId()} size="lg" noShadow />
+				</TableCell>
+
+				<TableCell className={`w-1`}>
+					<Avatar className="mr-4" address={contact.address()} size="lg" noShadow />
+				</TableCell>
+
+				<TableCell className="">
+					<Address address={contact.address()} maxChars={24} />
+				</TableCell>
+
+				{!isCondensed() && (
+					<TableCell className={""} innerClassName="space-x-2 text-sm font-bold justify-center">
+						{contact.hasSyncedWithNetwork() &&
+							contactTypes.map((type: string) =>
+								// @ts-ignore
+								contact[`is${type}`]() ? (
+									<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+										<Circle className="border-black" noShadow>
+											<Icon name={type} width={25} height={25} />
+										</Circle>
+									</Tippy>
+								) : null,
+							)}
+					</TableCell>
+				)}
+
+				<TableCell
+					variant="end"
+					className="border-b border-dashed border-theme-neutral-200"
+					innerClassName="justify-end"
+				>
+					<Button
+						data-testid={`ContactListItem__one-option-button-${contact.id()}`}
+						className="float-right"
+						variant="plain"
+						onClick={() => onAction?.(options[0], contact.address())}
+					>
+						{options[0]?.label}
+					</Button>
+				</TableCell>
+			</TableRow>
+		);
+	};
+
+	if (type === "wallet") {
+		return renderWalletRow(contact);
+	}
 
 	return (
 		<>
@@ -81,7 +157,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 									innerClassName="space-x-2 text-sm font-bold justify-center"
 								>
 									{address.hasSyncedWithNetwork() &&
-										walletTypes.map((type: string) =>
+										contactTypes.map((type: string) =>
 											// @ts-ignore
 											address[`is${type}`]() ? (
 												<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
@@ -105,7 +181,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 											</div>
 										}
 										options={options}
-										onSelect={(action: Option) => onAction?.(action, address)}
+										onSelect={(action: Option) => onAction?.(action, address.address())}
 									/>
 								)}
 
@@ -114,7 +190,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 										data-testid={`ContactListItem__one-option-button-${index}`}
 										className="float-right"
 										variant="plain"
-										onClick={() => onAction?.(options[0], address)}
+										onClick={() => onAction?.(options[0], address.address())}
 									>
 										{options[0]?.label}
 									</Button>
