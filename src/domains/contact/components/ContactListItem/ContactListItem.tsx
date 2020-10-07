@@ -1,4 +1,4 @@
-import { ContactAddress } from "@arkecosystem/platform-sdk-profiles";
+import { ContactAddress, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { AvatarWrapper } from "app/components/Avatar";
@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 
 import { ContactListItemProps, Option } from "./ContactListItem.models";
 
-export const ContactListItem = ({ contact, variant, type, onAction, options }: ContactListItemProps) => {
+export const ContactListItem = ({ item, variant, type, onAction, options }: ContactListItemProps) => {
 	const { t } = useTranslation();
 
 	// TODO: add "Business", "Bridgechain"
@@ -20,29 +20,31 @@ export const ContactListItem = ({ contact, variant, type, onAction, options }: C
 
 	const isCondensed = () => variant === "condensed";
 
-	const renderWalletRow = (contact: any) => (
-		<TableRow key={contact.id()} border>
+	const renderWalletRow = (wallet: ReadWriteWallet) => (
+		<TableRow key={wallet.id()} border>
 			<TableCell variant="start" className="w-1">
 				<div className="mr-4">
 					<AvatarWrapper data-testid="ContactListItem__user--avatar" size="lg" noShadow>
 						<img
-							src={`data:image/svg+xml;utf8,${contact.avatar()}`}
-							title={contact.alias()}
-							alt={contact.alias()}
+							src={`data:image/svg+xml;utf8,${wallet.avatar()}`}
+							title={wallet.alias()}
+							alt={wallet.alias()}
 						/>
-						<span className="absolute text-sm font-semibold text-theme-background">
-							{contact.alias().slice(0, 2).toUpperCase()}
-						</span>
+						{wallet && wallet.alias && (
+							<span className="absolute text-sm font-semibold text-theme-background">
+								{wallet?.alias()?.slice(0, 2)?.toUpperCase()}
+							</span>
+						)}
 					</AvatarWrapper>
 				</div>
 			</TableCell>
 
 			<TableCell className="">
-				<Address address={contact.address()} maxChars={24} />
+				<Address address={wallet.address()} maxChars={24} />
 			</TableCell>
 
 			<TableCell>
-				<span data-testid="ContactListItem__name">{contact.alias()}</span>
+				<span data-testid="ContactListItem__name">{wallet.alias()}</span>
 			</TableCell>
 
 			<TableCell>
@@ -51,11 +53,11 @@ export const ContactListItem = ({ contact, variant, type, onAction, options }: C
 
 			{!isCondensed() && (
 				<TableCell className={""} innerClassName="space-x-2 text-sm font-bold justify-center">
-					{contact.hasSyncedWithNetwork() &&
+					{wallet.hasSyncedWithNetwork() &&
 						contactTypes.map(
 							(type: string) =>
 								// @ts-ignore
-								contact[`is${type}`]() && (
+								wallet[`is${type}`]() && (
 									<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
 										<Circle className="border-black" noShadow>
 											<Icon name={type} width={25} height={25} />
@@ -72,10 +74,10 @@ export const ContactListItem = ({ contact, variant, type, onAction, options }: C
 				innerClassName="justify-end"
 			>
 				<Button
-					data-testid={`ContactListItem__one-option-button-${contact.id()}`}
+					data-testid={`ContactListItem__one-option-button-${wallet.id()}`}
 					className="float-right"
 					variant="plain"
-					onClick={() => onAction?.(options[0], contact.address())}
+					onClick={() => onAction?.(options[0], wallet.address())}
 				>
 					{options[0]?.label}
 				</Button>
@@ -84,32 +86,32 @@ export const ContactListItem = ({ contact, variant, type, onAction, options }: C
 	);
 
 	if (type === "wallet") {
-		return renderWalletRow(contact);
+		return renderWalletRow(item);
 	}
 
 	return (
 		<>
-			{contact
+			{item
 				.addresses()
 				.values()
 				.map((address: ContactAddress, index: number) => {
 					const borderClasses = () =>
-						index !== 0 && index !== contact.addresses().count() - 1
+						index !== 0 && index !== item.addresses().count() - 1
 							? "border-b border-dashed border-theme-neutral-200"
 							: "";
 
 					return (
-						<TableRow key={index} border={index === 0 || index === contact.addresses().count() - 1}>
+						<TableRow key={index} border={index === 0 || index === item.addresses().count() - 1}>
 							<TableCell variant="start" className="w-1">
 								<div className="mr-4">
 									<AvatarWrapper data-testid="ContactListItem__user--avatar" size="lg" noShadow>
 										<img
-											src={`data:image/svg+xml;utf8,${contact.avatar()}`}
-											title={contact.name()}
-											alt={contact.name()}
+											src={`data:image/svg+xml;utf8,${item.avatar()}`}
+											title={item.name()}
+											alt={item.name()}
 										/>
 										<span className="absolute text-sm font-semibold text-theme-background">
-											{contact.name().slice(0, 2).toUpperCase()}
+											{item.name().slice(0, 2).toUpperCase()}
 										</span>
 									</AvatarWrapper>
 								</div>
@@ -120,7 +122,7 @@ export const ContactListItem = ({ contact, variant, type, onAction, options }: C
 							</TableCell>
 
 							<TableCell>
-								<span data-testid="ContactListItem__name">{contact.name()}</span>
+								<span data-testid="ContactListItem__name">{item.name()}</span>
 							</TableCell>
 
 							<TableCell>

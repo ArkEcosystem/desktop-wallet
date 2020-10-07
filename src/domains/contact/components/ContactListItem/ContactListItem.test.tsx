@@ -33,7 +33,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} />
+					<ContactListItem item={contact} />
 				</tbody>
 			</table>,
 		);
@@ -45,7 +45,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} variant="condensed" />
+					<ContactListItem item={contact} variant="condensed" />
 				</tbody>
 			</table>,
 		);
@@ -57,7 +57,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={wallet} type="wallet" />
+					<ContactListItem item={wallet} type="wallet" />
 				</tbody>
 			</table>,
 		);
@@ -69,7 +69,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={{ ...wallet, isDelegate: () => false }} type="wallet" />
+					<ContactListItem item={{ ...wallet, isDelegate: () => false }} type="wallet" />
 				</tbody>
 			</table>,
 		);
@@ -95,7 +95,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} />
+					<ContactListItem item={contact} />
 				</tbody>
 			</table>,
 		);
@@ -107,7 +107,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} options={singleOption} />
+					<ContactListItem item={contact} options={singleOption} />
 				</tbody>
 			</table>,
 		);
@@ -119,7 +119,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} options={multiOptions} />
+					<ContactListItem item={contact} options={multiOptions} />
 				</tbody>
 			</table>,
 		);
@@ -133,7 +133,7 @@ describe("ContactListItem", () => {
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} onAction={onAction} options={singleOption} />
+					<ContactListItem item={contact} onAction={onAction} options={singleOption} />
 				</tbody>
 			</table>,
 		);
@@ -151,7 +151,7 @@ describe("ContactListItem", () => {
 		const { getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} onAction={onAction} options={multiOptions} />
+					<ContactListItem item={contact} onAction={onAction} options={multiOptions} />
 				</tbody>
 			</table>,
 		);
@@ -173,7 +173,7 @@ describe("ContactListItem", () => {
 		const { getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} options={multiOptions} />
+					<ContactListItem item={contact} options={multiOptions} />
 				</tbody>
 			</table>,
 		);
@@ -195,7 +195,7 @@ describe("ContactListItem", () => {
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} onAction={onAction} options={singleOption} />
+					<ContactListItem item={contact} onAction={onAction} options={singleOption} />
 				</tbody>
 			</table>,
 		);
@@ -216,7 +216,7 @@ describe("ContactListItem", () => {
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={wallet} type="wallet" onAction={onAction} options={singleOption} />
+					<ContactListItem item={wallet} type="wallet" onAction={onAction} options={singleOption} />
 				</tbody>
 			</table>,
 		);

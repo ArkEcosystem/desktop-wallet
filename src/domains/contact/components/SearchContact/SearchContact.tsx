@@ -66,7 +66,7 @@ export const SearchContact = ({
 			<Table columns={columns} data={availableData}>
 				{(data: any) => (
 					<ContactListItem
-						contact={data.item}
+						item={data.item}
 						type={data.type}
 						variant="condensed"
 						onAction={onAction}
