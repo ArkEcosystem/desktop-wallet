@@ -41,6 +41,9 @@ export const entityRegistration = (t: any) => ({
 		},
 	}),
 	description: () => ({
+		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+			field: t("COMMON.DESCRIPTION"),
+		}),
 		minLength: {
 			value: 3,
 			message: t("COMMON.VALIDATION.MIN_LENGTH", {
@@ -55,9 +58,6 @@ export const entityRegistration = (t: any) => ({
 				maxLength: 512,
 			}),
 		},
-		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.DESCRIPTION"),
-		}),
 	}),
 	website: () => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
@@ -66,7 +66,9 @@ export const entityRegistration = (t: any) => ({
 		validate: {
 			valid: (value: string) => {
 				if (!yup.string().url().isValidSync(value)) {
-					return t("TRANSACTION.INVALID_URL");
+					return t("COMMON.VALIDATION.FIELD_INVALID", {
+						field: t("COMMON.WEBSITE"),
+					}).toString();
 				}
 				return true;
 			},

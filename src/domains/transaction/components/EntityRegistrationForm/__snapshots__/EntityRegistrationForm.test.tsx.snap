@@ -10,24 +10,31 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
       <div
         data-testid="tab-pabel__active-panel"
       >
-        <div
+        <section
+          class="space-y-8"
           data-testid="ReviewStep"
         >
-          <h1
-            class="mb-0"
-          >
-            Transaction Review
-          </h1>
           <div
-            class="text-theme-neutral-dark"
+            class="flex items-end justify-between bg-theme-background"
           >
-            Check the information again before voting
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                Transaction Review
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                Check the information again before voting
+              </div>
+            </div>
           </div>
-          <div
-            class="mt-4"
-          >
+          <div>
             <div
-              class="sc-fznxsB fuLjex"
+              class="sc-fznxsB koiMhf"
               data-testid="TransactionDetail"
             >
               <div
@@ -41,16 +48,12 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  <div
-                    class="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24"
-                  >
-                    ARK Devnet
-                  </div>
+                  ARK Devnet
                 </div>
               </div>
               <div
                 aria-label="ARK Devnet"
-                class="sc-fzoXzr xTBid border-theme-primary-100 text-theme-primary-400"
+                class="sc-fzoXzr cICWRQ border-theme-primary-100 text-theme-primary-400"
                 data-testid="NetworkIcon-ARK-ark.devnet"
               >
                 <div
@@ -66,34 +69,34 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG pt-4"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="font-semibold"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
+                  <span
+                    class="mr-1"
+                  >
+                    Sender
+                  </span>
                   <div
-                    class="mb-2 text-sm font-semibold text-theme-neutral"
+                    class="sc-fzpjYC iaNNZb"
+                    color="warning"
                   >
                     <span
-                      class="mr-1"
+                      class="text-sm"
                     >
-                      Sender
+                      Your address
                     </span>
-                    <div
-                      class="sc-fzpjYC iaNNZb"
-                      color="warning"
-                    >
-                      <span
-                        class="text-sm"
-                      >
-                        Your address
-                      </span>
-                    </div>
                   </div>
+                </div>
+                <div
+                  class="font-semibold"
+                >
                   <div
                     class="inline-block truncate align-middle"
                   >
@@ -113,17 +116,21 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                data-testid="Avatar"
+                class="flex items-center -space-x-2"
               >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -137,27 +144,25 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                 <div
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Type
+                  Transaction Type
                 </div>
                 <div
                   class="font-semibold"
                 >
-                  TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION
+                  Business Registration
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-fzoXzr cICWRQ border-theme-text"
+              >
                 <div
-                  class="sc-fzoXzr cICWRQ border-black bg-theme-background"
+                  class="sc-AxhUy hSYVGy"
+                  height="20"
+                  width="20"
                 >
-                  <div
-                    class="sc-AxhUy hSYVGy"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      business.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    business.svg
+                  </svg>
                 </div>
               </div>
             </div>
@@ -236,7 +241,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG mb-2"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
@@ -246,7 +251,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -260,7 +265,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -280,7 +285,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG mb-2"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
@@ -290,7 +295,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -304,7 +309,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -334,7 +339,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -348,7 +353,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -367,7 +372,9 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="mt-2"
+            >
               <div
                 class="border rounded-lg border-theme-neutral-300"
               >
@@ -444,7 +451,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </form>
@@ -461,24 +468,31 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
       <div
         data-testid="tab-pabel__active-panel"
       >
-        <div
+        <section
+          class="space-y-8"
           data-testid="ReviewStep"
         >
-          <h1
-            class="mb-0"
-          >
-            Transaction Review
-          </h1>
           <div
-            class="text-theme-neutral-dark"
+            class="flex items-end justify-between bg-theme-background"
           >
-            Check the information again before voting
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                Transaction Review
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                Check the information again before voting
+              </div>
+            </div>
           </div>
-          <div
-            class="mt-4"
-          >
+          <div>
             <div
-              class="sc-fznxsB fuLjex"
+              class="sc-fznxsB koiMhf"
               data-testid="TransactionDetail"
             >
               <div
@@ -492,16 +506,12 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  <div
-                    class="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24"
-                  >
-                    ARK Devnet
-                  </div>
+                  ARK Devnet
                 </div>
               </div>
               <div
                 aria-label="ARK Devnet"
-                class="sc-fzoXzr xTBid border-theme-primary-100 text-theme-primary-400"
+                class="sc-fzoXzr cICWRQ border-theme-primary-100 text-theme-primary-400"
                 data-testid="NetworkIcon-ARK-ark.devnet"
               >
                 <div
@@ -517,34 +527,34 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG pt-4"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="font-semibold"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
+                  <span
+                    class="mr-1"
+                  >
+                    Sender
+                  </span>
                   <div
-                    class="mb-2 text-sm font-semibold text-theme-neutral"
+                    class="sc-fzpjYC iaNNZb"
+                    color="warning"
                   >
                     <span
-                      class="mr-1"
+                      class="text-sm"
                     >
-                      Sender
+                      Your address
                     </span>
-                    <div
-                      class="sc-fzpjYC iaNNZb"
-                      color="warning"
-                    >
-                      <span
-                        class="text-sm"
-                      >
-                        Your address
-                      </span>
-                    </div>
                   </div>
+                </div>
+                <div
+                  class="font-semibold"
+                >
                   <div
                     class="inline-block truncate align-middle"
                   >
@@ -564,17 +574,21 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                data-testid="Avatar"
+                class="flex items-center -space-x-2"
               >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -588,27 +602,25 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                 <div
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Type
+                  Transaction Type
                 </div>
                 <div
                   class="font-semibold"
                 >
-                  TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION
+                  Business Registration
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-fzoXzr cICWRQ border-theme-text"
+              >
                 <div
-                  class="sc-fzoXzr cICWRQ border-black bg-theme-background"
+                  class="sc-AxhUy hSYVGy"
+                  height="20"
+                  width="20"
                 >
-                  <div
-                    class="sc-AxhUy hSYVGy"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      business.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    business.svg
+                  </svg>
                 </div>
               </div>
             </div>
@@ -687,7 +699,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG mb-2"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
@@ -697,7 +709,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -711,7 +723,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -731,7 +743,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG mb-2"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
@@ -741,7 +753,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -755,7 +767,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -785,7 +797,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -799,7 +811,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -818,7 +830,9 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="mt-2"
+            >
               <div
                 class="border rounded-lg border-theme-neutral-300"
               >
@@ -895,7 +909,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </form>
@@ -912,24 +926,31 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
       <div
         data-testid="tab-pabel__active-panel"
       >
-        <div
+        <section
+          class="space-y-8"
           data-testid="ReviewStep"
         >
-          <h1
-            class="mb-0"
-          >
-            Transaction Review
-          </h1>
           <div
-            class="text-theme-neutral-dark"
+            class="flex items-end justify-between bg-theme-background"
           >
-            Check the information again before voting
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                Transaction Review
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                Check the information again before voting
+              </div>
+            </div>
           </div>
-          <div
-            class="mt-4"
-          >
+          <div>
             <div
-              class="sc-fznxsB fuLjex"
+              class="sc-fznxsB koiMhf"
               data-testid="TransactionDetail"
             >
               <div
@@ -943,16 +964,12 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
                 <div
                   class="font-semibold"
                 >
-                  <div
-                    class="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24"
-                  >
-                    ARK Devnet
-                  </div>
+                  ARK Devnet
                 </div>
               </div>
               <div
                 aria-label="ARK Devnet"
-                class="sc-fzoXzr xTBid border-theme-primary-100 text-theme-primary-400"
+                class="sc-fzoXzr cICWRQ border-theme-primary-100 text-theme-primary-400"
                 data-testid="NetworkIcon-ARK-ark.devnet"
               >
                 <div
@@ -968,34 +985,34 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG pt-4"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="font-semibold"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
+                  <span
+                    class="mr-1"
+                  >
+                    Sender
+                  </span>
                   <div
-                    class="mb-2 text-sm font-semibold text-theme-neutral"
+                    class="sc-fzpjYC iaNNZb"
+                    color="warning"
                   >
                     <span
-                      class="mr-1"
+                      class="text-sm"
                     >
-                      Sender
+                      Your address
                     </span>
-                    <div
-                      class="sc-fzpjYC iaNNZb"
-                      color="warning"
-                    >
-                      <span
-                        class="text-sm"
-                      >
-                        Your address
-                      </span>
-                    </div>
                   </div>
+                </div>
+                <div
+                  class="font-semibold"
+                >
                   <div
                     class="inline-block truncate align-middle"
                   >
@@ -1015,17 +1032,21 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                data-testid="Avatar"
+                class="flex items-center -space-x-2"
               >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -1039,27 +1060,25 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
                 <div
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Type
+                  Transaction Type
                 </div>
                 <div
                   class="font-semibold"
                 >
-                  TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION
+                  Business Registration
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-fzoXzr cICWRQ border-theme-text"
+              >
                 <div
-                  class="sc-fzoXzr cICWRQ border-black bg-theme-background"
+                  class="sc-AxhUy hSYVGy"
+                  height="20"
+                  width="20"
                 >
-                  <div
-                    class="sc-AxhUy hSYVGy"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      business.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    business.svg
+                  </svg>
                 </div>
               </div>
             </div>
@@ -1138,7 +1157,7 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG mb-2"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
@@ -1148,7 +1167,7 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -1162,7 +1181,7 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -1182,7 +1201,7 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG mb-2"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
@@ -1192,7 +1211,7 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -1206,7 +1225,7 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -1236,7 +1255,7 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -1250,7 +1269,7 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -1269,7 +1288,9 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="mt-2"
+            >
               <div
                 class="border rounded-lg border-theme-neutral-300"
               >
@@ -1346,7 +1367,7 @@ exports[`EntityRegistrationForm should render 3rd step without unknown providers
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </form>
@@ -1363,24 +1384,31 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
       <div
         data-testid="tab-pabel__active-panel"
       >
-        <div
+        <section
+          class="space-y-8"
           data-testid="ReviewStep"
         >
-          <h1
-            class="mb-0"
-          >
-            Transaction Review
-          </h1>
           <div
-            class="text-theme-neutral-dark"
+            class="flex items-end justify-between bg-theme-background"
           >
-            Check the information again before voting
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                Transaction Review
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                Check the information again before voting
+              </div>
+            </div>
           </div>
-          <div
-            class="mt-4"
-          >
+          <div>
             <div
-              class="sc-fznxsB fuLjex"
+              class="sc-fznxsB koiMhf"
               data-testid="TransactionDetail"
             >
               <div
@@ -1394,16 +1422,12 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  <div
-                    class="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24"
-                  >
-                    ARK Devnet
-                  </div>
+                  ARK Devnet
                 </div>
               </div>
               <div
                 aria-label="ARK Devnet"
-                class="sc-fzoXzr xTBid border-theme-primary-100 text-theme-primary-400"
+                class="sc-fzoXzr cICWRQ border-theme-primary-100 text-theme-primary-400"
                 data-testid="NetworkIcon-ARK-ark.devnet"
               >
                 <div
@@ -1419,34 +1443,34 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG pt-4"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="font-semibold"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
+                  <span
+                    class="mr-1"
+                  >
+                    Sender
+                  </span>
                   <div
-                    class="mb-2 text-sm font-semibold text-theme-neutral"
+                    class="sc-fzpjYC iaNNZb"
+                    color="warning"
                   >
                     <span
-                      class="mr-1"
+                      class="text-sm"
                     >
-                      Sender
+                      Your address
                     </span>
-                    <div
-                      class="sc-fzpjYC iaNNZb"
-                      color="warning"
-                    >
-                      <span
-                        class="text-sm"
-                      >
-                        Your address
-                      </span>
-                    </div>
                   </div>
+                </div>
+                <div
+                  class="font-semibold"
+                >
                   <div
                     class="inline-block truncate align-middle"
                   >
@@ -1466,17 +1490,21 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                data-testid="Avatar"
+                class="flex items-center -space-x-2"
               >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -1490,27 +1518,25 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                 <div
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Type
+                  Transaction Type
                 </div>
                 <div
                   class="font-semibold"
                 >
-                  TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION
+                  Business Registration
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-fzoXzr cICWRQ border-theme-text"
+              >
                 <div
-                  class="sc-fzoXzr cICWRQ border-black bg-theme-background"
+                  class="sc-AxhUy hSYVGy"
+                  height="20"
+                  width="20"
                 >
-                  <div
-                    class="sc-AxhUy hSYVGy"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      business.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    business.svg
+                  </svg>
                 </div>
               </div>
             </div>
@@ -1589,7 +1615,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG mb-2"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
@@ -1599,7 +1625,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -1613,7 +1639,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -1633,7 +1659,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
               </div>
             </div>
             <div
-              class="sc-fznxsB kuSncG mb-2"
+              class="sc-fznxsB kuSncG"
               data-testid="TransactionDetail"
             >
               <div
@@ -1643,7 +1669,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -1657,7 +1683,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -1687,7 +1713,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex flex-col"
+                    class="flex flex-col font-normal"
                     data-testid="LinkList"
                   >
                     <div
@@ -1701,7 +1727,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -1720,7 +1746,9 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="mt-2"
+            >
               <div
                 class="border rounded-lg border-theme-neutral-300"
               >
@@ -1797,7 +1825,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </form>
