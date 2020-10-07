@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LinkCollection should add and remove links 1`] = `
+exports[`LinkCollection should add links 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzqBZW kPkTEe flex flex-col font-normal"
+    class="sc-fzqBZW eEiUFK flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
@@ -37,7 +37,7 @@ exports[`LinkCollection should add and remove links 1`] = `
     >
       <div
         class="grid row-gap-4 col-gap-2"
-        style="grid-template-columns: 40% 60%;"
+        style="grid-template-columns: 2fr 3fr;"
       >
         <fieldset
           class="sc-AxirZ izhStr flex flex-col space-y-2"
@@ -128,18 +128,14 @@ exports[`LinkCollection should add and remove links 1`] = `
           class="sc-AxjAm fPpool col-span-2"
           color="primary"
           data-testid="LinkCollection__add-link"
+          disabled=""
           type="button"
         >
           Add Link
         </button>
       </div>
       <div
-        class="mt-8 mb-2 text-sm text-theme-neutral-dark"
-      >
-        Your media
-      </div>
-      <div
-        class="sc-fznKkj iLZSgh"
+        class="sc-fznKkj iLZSgh mt-4"
         role="table"
       >
         <table
@@ -228,7 +224,53 @@ exports[`LinkCollection should add and remove links 1`] = `
           </thead>
           <tbody
             role="rowgroup"
-          />
+          >
+            <tr
+              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300"
+              data-testid="LinkCollection__item"
+            >
+              <td
+                class="w-40"
+              >
+                <input
+                  name="links[0].type"
+                  type="hidden"
+                  value="twitter"
+                />
+                Twitter
+              </td>
+              <td
+                class="break-all align-middle"
+              >
+                <input
+                  name="links[0].value"
+                  type="hidden"
+                  value="https://twitter.com/arkecosystem"
+                />
+                https://twitter.com/arkecosystem
+              </td>
+              <td
+                class="w-16 text-right align-middle"
+              >
+                <button
+                  class="sc-AxjAm gBWztV"
+                  color="primary"
+                  data-testid="LinkCollection__remove-link"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxiKw dzBdqj"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      trash.svg
+                    </svg>
+                  </div>
+                </button>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -236,46 +278,10 @@ exports[`LinkCollection should add and remove links 1`] = `
 </DocumentFragment>
 `;
 
-exports[`LinkCollection should render 1`] = `
+exports[`LinkCollection should remove links 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzqBZW kPkTEe flex flex-col font-normal"
-    data-testid="LinkCollection"
-  >
-    <div
-      class="flex items-center justify-between cursor-pointer"
-      data-testid="LinkCollection__header"
-    >
-      <span
-        class="text-lg font-semibold"
-      >
-        Social Media
-      </span>
-      <div>
-        <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
-          height="10"
-          width="10"
-        >
-          <svg>
-            chevron-down.svg
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="mt-2 text-theme-neutral-dark"
-    >
-      Tell people more about yourself through social media
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`LinkCollection should select a specific link type 1`] = `
-<DocumentFragment>
-  <div
-    class="sc-fzqBZW kPkTEe flex flex-col font-normal"
+    class="sc-fzqBZW eEiUFK flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
@@ -309,7 +315,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
     >
       <div
         class="grid row-gap-4 col-gap-2"
-        style="grid-template-columns: 40% 60%;"
+        style="grid-template-columns: 2fr 3fr;"
       >
         <fieldset
           class="sc-AxirZ izhStr flex flex-col space-y-2"
@@ -343,16 +349,16 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 <button
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-labelledby="downshift-15-label downshift-15-toggle-button"
+                  aria-labelledby="downshift-13-label downshift-13-toggle-button"
                   class="sc-fzplWN jAabRP   "
                   data-testid="select-list__toggle-button"
-                  id="downshift-15-toggle-button"
+                  id="downshift-13-toggle-button"
                   type="button"
                 />
                 <ul
-                  aria-labelledby="downshift-15-label"
+                  aria-labelledby="downshift-13-label"
                   class="sc-fznyAO dPDaFu"
-                  id="downshift-15-menu"
+                  id="downshift-13-menu"
                   role="listbox"
                   tabindex="-1"
                 />
@@ -391,6 +397,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
             aria-invalid="false"
             class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
             data-testid="LinkCollection__input-link"
+            disabled=""
             name="value"
           />
         </fieldset>
@@ -398,18 +405,188 @@ exports[`LinkCollection should select a specific link type 1`] = `
           class="sc-AxjAm fPpool col-span-2"
           color="primary"
           data-testid="LinkCollection__add-link"
+          disabled=""
+          type="button"
+        >
+          Add Link
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`LinkCollection should render 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fzqBZW eEiUFK flex flex-col font-normal"
+    data-testid="LinkCollection"
+  >
+    <div
+      class="flex items-center justify-between cursor-pointer"
+      data-testid="LinkCollection__header"
+    >
+      <span
+        class="text-lg font-semibold"
+      >
+        Social Media
+      </span>
+      <div>
+        <div
+          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+          height="10"
+          width="10"
+        >
+          <svg>
+            chevron-down.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-2 text-theme-neutral-dark"
+    >
+      Tell people more about yourself through social media
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`LinkCollection should select a specific link type 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fzqBZW eEiUFK flex flex-col font-normal"
+    data-testid="LinkCollection"
+  >
+    <div
+      class="flex items-center justify-between cursor-pointer"
+      data-testid="LinkCollection__header"
+    >
+      <span
+        class="text-lg font-semibold"
+      >
+        Social Media
+      </span>
+      <div>
+        <div
+          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
+          height="10"
+          width="10"
+        >
+          <svg>
+            chevron-up.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-2 text-theme-neutral-dark"
+    >
+      Tell people more about yourself through social media
+    </div>
+    <div
+      class="mt-4"
+    >
+      <div
+        class="grid row-gap-4 col-gap-2"
+        style="grid-template-columns: 2fr 3fr;"
+      >
+        <fieldset
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
+        >
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="type"
+          >
+            Add media
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
+          <div
+            class="relative w-full"
+          >
+            <input
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+              data-testid="select-list__input"
+              name="type"
+              readonly=""
+              type="text"
+              value=""
+            />
+            <div
+              class="relative w-full cursor-pointer"
+            >
+              <div>
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-32-label downshift-32-toggle-button"
+                  class="sc-fzplWN jAabRP   "
+                  data-testid="select-list__toggle-button"
+                  id="downshift-32-toggle-button"
+                  type="button"
+                />
+                <ul
+                  aria-labelledby="downshift-32-label"
+                  class="sc-fznyAO dPDaFu"
+                  id="downshift-32-menu"
+                  role="listbox"
+                  tabindex="-1"
+                />
+              </div>
+              <div
+                class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
+              >
+                <div
+                  class="sc-AxiKw jNSjzx"
+                  height="5"
+                  width="7"
+                >
+                  <svg>
+                    caret-down.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
+        >
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="value"
+          >
+            Link
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
+          <input
+            aria-invalid="false"
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+            data-testid="LinkCollection__input-link"
+            disabled=""
+            name="value"
+          />
+        </fieldset>
+        <button
+          class="sc-AxjAm fPpool col-span-2"
+          color="primary"
+          data-testid="LinkCollection__add-link"
+          disabled=""
           type="button"
         >
           Add Link
         </button>
       </div>
       <div
-        class="mt-8 mb-2 text-sm text-theme-neutral-dark"
-      >
-        Your media
-      </div>
-      <div
-        class="sc-fznKkj iLZSgh"
+        class="sc-fznKkj iLZSgh mt-4"
         role="table"
       >
         <table
@@ -530,11 +707,11 @@ exports[`LinkCollection should select a specific link type 1`] = `
             role="rowgroup"
           >
             <tr
-              class="font-semibold border-b last:border-b-0 border-theme-neutral-200"
+              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300"
               data-testid="LinkCollection__item"
             >
               <td
-                class="w-16 text-center align-middle pb-6 pt-2"
+                class="w-16 text-center align-middle"
               >
                 <input
                   class="sc-fzpans ioBrsH"
@@ -544,7 +721,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 />
               </td>
               <td
-                class="w-40 pb-6 pt-2 align-middle"
+                class="w-40"
               >
                 <input
                   name="links[0].type"
@@ -554,7 +731,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 Twitter
               </td>
               <td
-                class="break-all align-middle pb-6 pt-2"
+                class="break-all align-middle"
               >
                 <input
                   name="links[0].value"
@@ -564,7 +741,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 testing link
               </td>
               <td
-                class="w-16 text-right align-middle pb-4"
+                class="w-16 text-right align-middle"
               >
                 <button
                   class="sc-AxjAm gBWztV"
@@ -585,14 +762,14 @@ exports[`LinkCollection should select a specific link type 1`] = `
               </td>
             </tr>
             <tr
-              class="font-semibold border-b last:border-b-0 border-theme-neutral-200"
+              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300"
               data-testid="LinkCollection__item"
             >
               <td
-                class="w-16 text-center align-middle py-6"
+                class="w-16 text-center align-middle"
               />
               <td
-                class="w-40 py-6"
+                class="w-40"
               >
                 <input
                   name="links[1].type"
@@ -602,7 +779,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 Facebook
               </td>
               <td
-                class="break-all align-middle py-6"
+                class="break-all align-middle"
               >
                 <input
                   name="links[1].value"
@@ -612,7 +789,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 testing link 2
               </td>
               <td
-                class="w-16 text-right align-middle false"
+                class="w-16 text-right align-middle"
               >
                 <button
                   class="sc-AxjAm gBWztV"
@@ -640,10 +817,10 @@ exports[`LinkCollection should select a specific link type 1`] = `
 </DocumentFragment>
 `;
 
-exports[`LinkCollection should toggle open/close of link collection 1`] = `
+exports[`LinkCollection should toggle open/close link collection 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzqBZW kPkTEe flex flex-col font-normal"
+    class="sc-fzqBZW eEiUFK flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div

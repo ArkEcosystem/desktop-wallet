@@ -1,4 +1,5 @@
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
 import { TextArea } from "app/components/TextArea";
 import { InputFee } from "domains/transaction/components/InputFee";
@@ -11,6 +12,7 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 const entityProvider = new EntityProvider();
+
 type FormStepProps = {
 	title?: string;
 	description?: string;
@@ -92,61 +94,59 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 	);
 
 	return (
-		<div data-testid="EntityRegistrationForm">
-			<h1 className="mb-0">{title || t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.TITLE")}</h1>
-			<div className="text-theme-neutral-dark">
-				{description || t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
-			</div>
+		<section data-testid="EntityRegistrationForm" className="space-y-8">
+			<Header
+				title={title || t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.TITLE")}
+				subtitle={description || t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
+			/>
+
+			{showEntityNameField && (
+				<FormField name="entityName">
+					<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
+					<Input
+						data-testid="EntityRegistrationForm__entity-name"
+						type="text"
+						onChange={handleInput}
+						defaultValue={getValues("entityName")}
+					/>
+					<FormHelperText />
+				</FormField>
+			)}
+
+			<FormField name="ipfsData.meta.displayName">
+				<FormLabel>{t("TRANSACTION.ENTITY.DISPLAY_NAME")}</FormLabel>
+				<Input
+					data-testid="EntityRegistrationForm__display-name"
+					type="text"
+					onChange={handleInput}
+					defaultValue={getValues("ipfsData.meta.displayName")}
+				/>
+				<FormHelperText />
+			</FormField>
+
+			<FormField name="ipfsData.meta.description">
+				<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
+				<TextArea
+					data-testid="EntityRegistrationForm__description"
+					onChange={handleInput}
+					defaultValue={getValues("ipfsData.meta.description")}
+				/>
+				<FormHelperText />
+			</FormField>
+
+			<FormField name="ipfsData.meta.website">
+				<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
+				<Input
+					data-testid="EntityRegistrationForm__website"
+					type="text"
+					onChange={handleInput}
+					defaultValue={getValues("ipfsData.meta.website")}
+				/>
+				<FormHelperText />
+			</FormField>
 
 			<div>
-				<div className="pb-8 mt-8">
-					{showEntityNameField && (
-						<FormField name="entityName" className="font-normal">
-							<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
-							<Input
-								data-testid="EntityRegistrationForm__entity-name"
-								type="text"
-								onChange={handleInput}
-								defaultValue={getValues("entityName")}
-							/>
-							<FormHelperText errorMessage={t("TRANSACTION.ENTITY.INVALID_NAME")} />
-						</FormField>
-					)}
-
-					<FormField name="ipfsData.meta.displayName" className="mt-8 font-normal">
-						<FormLabel>{t("TRANSACTION.ENTITY.DISPLAY_NAME")}</FormLabel>
-						<Input
-							data-testid="EntityRegistrationForm__display-name"
-							type="text"
-							onChange={handleInput}
-							defaultValue={getValues("ipfsData.meta.displayName")}
-						/>
-						<FormHelperText />
-					</FormField>
-
-					<FormField name="ipfsData.meta.description" className="mt-8 font-normal">
-						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
-						<TextArea
-							data-testid="EntityRegistrationForm__description"
-							onChange={handleInput}
-							defaultValue={getValues("ipfsData.meta.description")}
-						/>
-						<FormHelperText errorMessage={t("TRANSACTION.ENTITY.INVALID_DESCRIPTION")} />
-					</FormField>
-
-					<FormField name="ipfsData.meta.website" className="mt-8 font-normal">
-						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input
-							data-testid="EntityRegistrationForm__website"
-							type="text"
-							onChange={handleInput}
-							defaultValue={getValues("ipfsData.meta.website")}
-						/>
-						<FormHelperText />
-					</FormField>
-				</div>
-
-				<TransactionDetail className="pb-8">
+				<TransactionDetail>
 					<LinkCollection
 						title={t("TRANSACTION.REPOSITORIES.TITLE")}
 						description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
@@ -159,7 +159,7 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail className="pb-8">
+				<TransactionDetail>
 					<LinkCollection
 						title={t("TRANSACTION.SOCIAL_MEDIA.TITLE")}
 						description={t("TRANSACTION.SOCIAL_MEDIA.DESCRIPTION")}
@@ -172,7 +172,7 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail className="pb-8">
+				<TransactionDetail borderPosition="both">
 					<LinkCollection
 						title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
 						description={t("TRANSACTION.PHOTO_VIDEO.DESCRIPTION")}
@@ -187,23 +187,21 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 						data={[...(getValues("images") || []), ...(getValues("videos") || [])]}
 					/>
 				</TransactionDetail>
-
-				<TransactionDetail className="pt-6 pb-0">
-					<FormField name="fee">
-						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
-						<InputFee
-							min={fees.min}
-							avg={fees.avg}
-							max={fees.max}
-							defaultValue={fee || 0}
-							step={0.01}
-							onChange={(value: any) =>
-								setValue("fee", value, { shouldValidate: true, shouldDirty: true })
-							}
-						/>
-					</FormField>
-				</TransactionDetail>
 			</div>
-		</div>
+
+			<div>
+				<FormField name="fee">
+					<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
+					<InputFee
+						min={fees.min}
+						avg={fees.avg}
+						max={fees.max}
+						defaultValue={fee || 0}
+						step={0.01}
+						onChange={(value: any) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
+					/>
+				</FormField>
+			</div>
+		</section>
 	);
 };

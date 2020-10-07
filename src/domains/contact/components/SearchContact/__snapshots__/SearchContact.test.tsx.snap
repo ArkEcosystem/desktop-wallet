@@ -5,14 +5,14 @@ exports[`SearchContact should not render if not open 1`] = `<DocumentFragment />
 exports[`SearchContact should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw bHERBC absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxiKw bHERBC absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -306,9 +306,11 @@ exports[`SearchContact should render a modal 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class=""
+                    >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end "
+                        class="sc-fzplWN PBtuJ justify-end"
                       >
                         <div
                           class="relative"
@@ -443,9 +445,11 @@ exports[`SearchContact should render a modal 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class=""
+                    >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end "
+                        class="sc-fzplWN PBtuJ justify-end"
                       >
                         <div
                           class="relative"
@@ -553,9 +557,11 @@ exports[`SearchContact should render a modal 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="border-b border-dashed border-theme-neutral-200"
+                    >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end border-b border-dashed border-theme-neutral-200"
+                        class="sc-fzplWN PBtuJ justify-end"
                       />
                     </td>
                   </tr>
@@ -638,9 +644,11 @@ exports[`SearchContact should render a modal 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class=""
+                    >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end "
+                        class="sc-fzplWN PBtuJ justify-end"
                       />
                     </td>
                   </tr>
@@ -658,14 +666,14 @@ exports[`SearchContact should render a modal 1`] = `
 exports[`SearchContact should render a modal with custom title and description 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw bHERBC absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxiKw bHERBC absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -959,9 +967,11 @@ exports[`SearchContact should render a modal with custom title and description 1
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class=""
+                    >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end "
+                        class="sc-fzplWN PBtuJ justify-end"
                       >
                         <div
                           class="relative"
@@ -1096,9 +1106,11 @@ exports[`SearchContact should render a modal with custom title and description 1
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class=""
+                    >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end "
+                        class="sc-fzplWN PBtuJ justify-end"
                       >
                         <div
                           class="relative"
@@ -1206,9 +1218,11 @@ exports[`SearchContact should render a modal with custom title and description 1
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="border-b border-dashed border-theme-neutral-200"
+                    >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end border-b border-dashed border-theme-neutral-200"
+                        class="sc-fzplWN PBtuJ justify-end"
                       />
                     </td>
                   </tr>
@@ -1291,9 +1305,11 @@ exports[`SearchContact should render a modal with custom title and description 1
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class=""
+                    >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end "
+                        class="sc-fzplWN PBtuJ justify-end"
                       />
                     </td>
                   </tr>
