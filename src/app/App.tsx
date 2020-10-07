@@ -38,10 +38,12 @@ const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 
 	const { theme, setTheme } = useThemeContext();
-	const { pathname } = useLocation();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
+
+	const location = useLocation();
+	const pathname = (location as any).location?.pathname || location.pathname;
 
 	const setSystemTheme = useCallback(() => {
 		setTheme(shouldUseDarkColors() ? "dark" : "light");

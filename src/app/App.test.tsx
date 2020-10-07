@@ -82,8 +82,7 @@ describe("App", () => {
 
 		expect(history.location.pathname).toMatch(dashboardUrl);
 
-		// @TODO - WHY
-		// expect(getByTestId("Main")).toHaveClass("theme-light");
+		expect(getByTestId("Main")).toHaveClass("theme-light");
 	});
 
 	it("should close splash screen if not demo", async () => {
