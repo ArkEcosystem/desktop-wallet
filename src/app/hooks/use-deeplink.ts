@@ -3,10 +3,9 @@ import { toasts } from "app/services";
 import { ipcRenderer } from "electron";
 import { useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const useDeepLinkHandler = () => {
-	const location = useLocation();
 	const history = useHistory();
 	const { t } = useTranslation();
 	const uriService = new URI();
