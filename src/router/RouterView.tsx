@@ -30,7 +30,7 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 		}
 
 		setPreviousPathname(pathname);
-	}, [location]);
+	}, [location, previousPathname]);
 
 	const canActivate = React.useMemo(
 		() =>
