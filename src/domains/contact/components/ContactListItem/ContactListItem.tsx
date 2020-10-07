@@ -60,15 +60,16 @@ export const ContactListItem = ({ contact, variant, type, onAction, options }: C
 			{!isCondensed() && (
 				<TableCell className={""} innerClassName="space-x-2 text-sm font-bold justify-center">
 					{contact.hasSyncedWithNetwork() &&
-						contactTypes.map((type: string) =>
-							// @ts-ignore
-							contact[`is${type}`]() ? (
-								<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-									<Circle className="border-black" noShadow>
-										<Icon name={type} width={25} height={25} />
-									</Circle>
-								</Tippy>
-							) : null,
+						contactTypes.map(
+							(type: string) =>
+								// @ts-ignore
+								contact[`is${type}`]() && (
+									<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+										<Circle className="border-black" noShadow>
+											<Icon name={type} width={25} height={25} />
+										</Circle>
+									</Tippy>
+								),
 						)}
 				</TableCell>
 			)}
@@ -153,15 +154,16 @@ export const ContactListItem = ({ contact, variant, type, onAction, options }: C
 									innerClassName="space-x-2 text-sm font-bold justify-center"
 								>
 									{address.hasSyncedWithNetwork() &&
-										contactTypes.map((type: string) =>
-											// @ts-ignore
-											address[`is${type}`]() ? (
-												<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-													<Circle className="border-black" noShadow>
-														<Icon name={type} width={25} height={25} />
-													</Circle>
-												</Tippy>
-											) : null,
+										contactTypes.map(
+											(type: string) =>
+												// @ts-ignore
+												address[`is${type}`]() && (
+													<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+														<Circle className="border-black" noShadow>
+															<Icon name={type} width={25} height={25} />
+														</Circle>
+													</Tippy>
+												),
 										)}
 								</TableCell>
 							)}
