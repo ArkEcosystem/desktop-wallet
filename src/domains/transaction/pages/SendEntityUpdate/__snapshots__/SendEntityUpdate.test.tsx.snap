@@ -316,86 +316,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                     <div
                       class="flex items-end justify-between bg-theme-background"
                     >
-<<<<<<< HEAD
-                      Select the type of registration and the address you want to register with.
-                    </div>
-                    <div>
-                      <div
-                        class="pb-8 mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.displayName"
-                          >
-                            Display Name
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__display-name"
-                            name="ipfsData.meta.displayName"
-                            type="text"
-                            value="business2reg"
-                          />
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ kMHTdH mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.description"
-                          >
-                            Description
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <textarea
-                            aria-invalid="true"
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__description"
-                            name="ipfsData.meta.description"
-                          >
-                             
-                          </textarea>
-                          <p
-                            class="text-sm text-theme-danger"
-                          >
-                            Invalid Entity Description
-                          </p>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.website"
-                          >
-                            Website
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__website"
-                            name="ipfsData.meta.website"
-                            type="text"
-                            value="https://ark.io/"
-                          />
-                        </fieldset>
-=======
                       <div>
                         <h1
                           class="mb-0 md:text-4xl"
@@ -409,7 +329,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         >
                           Select the type of registration and the address you want to register with.
                         </div>
->>>>>>> develop
                       </div>
                     </div>
                     <fieldset
@@ -427,7 +346,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -450,7 +369,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                       </label>
                       <textarea
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -477,7 +396,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -486,11 +405,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                     </fieldset>
                     <div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -534,11 +449,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -582,11 +493,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj fbiPiw"
->>>>>>> develop
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -629,16 +536,10 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                           </div>
                         </div>
                       </div>
-<<<<<<< HEAD
-                      <div
-                        class="sc-fznyAO iykGTc pt-6 pb-0"
-                        data-testid="TransactionDetail"
-=======
                     </div>
                     <div>
                       <fieldset
                         class="sc-AxirZ izhStr flex flex-col space-y-2"
->>>>>>> develop
                       >
                         <label
                           class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -659,10 +560,10 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -692,60 +593,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                                 role="radio"
                                 type="button"
                               >
-<<<<<<< HEAD
-                                <div
-                                  class="flex-1"
-                                >
-                                  <div
-                                    class="sc-fzpjYC dHxzen"
-                                  >
-                                    <input
-                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                      data-testid="InputCurrency"
-                                      name="fee"
-                                      type="text"
-                                      value="0"
-                                    />
-                                  </div>
-                                </div>
-                                <div>
-                                  <div
-                                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                    data-testid="SelectionBar"
-                                    role="radiogroup"
-                                  >
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Min
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Average
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Max
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </fieldset>
-=======
                                 Average
                               </button>
                               <button
@@ -758,7 +605,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                                 Max
                               </button>
                             </div>
->>>>>>> develop
                           </div>
                         </div>
                       </fieldset>
@@ -1103,86 +949,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                     <div
                       class="flex items-end justify-between bg-theme-background"
                     >
-<<<<<<< HEAD
-                      Select the type of registration and the address you want to register with.
-                    </div>
-                    <div>
-                      <div
-                        class="pb-8 mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.displayName"
-                          >
-                            Display Name
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__display-name"
-                            name="ipfsData.meta.displayName"
-                            type="text"
-                            value="business2reg"
-                          />
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ kMHTdH mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.description"
-                          >
-                            Description
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <textarea
-                            aria-invalid="true"
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__description"
-                            name="ipfsData.meta.description"
-                          >
-                            ab
-                          </textarea>
-                          <p
-                            class="text-sm text-theme-danger"
-                          >
-                            Invalid Entity Description
-                          </p>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.website"
-                          >
-                            Website
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__website"
-                            name="ipfsData.meta.website"
-                            type="text"
-                            value="https://ark.io/"
-                          />
-                        </fieldset>
-=======
                       <div>
                         <h1
                           class="mb-0 md:text-4xl"
@@ -1196,7 +962,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         >
                           Select the type of registration and the address you want to register with.
                         </div>
->>>>>>> develop
                       </div>
                     </div>
                     <fieldset
@@ -1214,7 +979,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -1237,7 +1002,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                       </label>
                       <textarea
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -1264,7 +1029,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -1273,11 +1038,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                     </fieldset>
                     <div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1321,11 +1082,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1369,11 +1126,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj fbiPiw"
->>>>>>> develop
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1416,16 +1169,10 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                           </div>
                         </div>
                       </div>
-<<<<<<< HEAD
-                      <div
-                        class="sc-fznyAO iykGTc pt-6 pb-0"
-                        data-testid="TransactionDetail"
-=======
                     </div>
                     <div>
                       <fieldset
                         class="sc-AxirZ izhStr flex flex-col space-y-2"
->>>>>>> develop
                       >
                         <label
                           class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -1446,10 +1193,10 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -1479,60 +1226,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                                 role="radio"
                                 type="button"
                               >
-<<<<<<< HEAD
-                                <div
-                                  class="flex-1"
-                                >
-                                  <div
-                                    class="sc-fzpjYC dHxzen"
-                                  >
-                                    <input
-                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                      data-testid="InputCurrency"
-                                      name="fee"
-                                      type="text"
-                                      value="0"
-                                    />
-                                  </div>
-                                </div>
-                                <div>
-                                  <div
-                                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                    data-testid="SelectionBar"
-                                    role="radiogroup"
-                                  >
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Min
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Average
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Max
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </fieldset>
-=======
                                 Average
                               </button>
                               <button
@@ -1545,7 +1238,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                                 Max
                               </button>
                             </div>
->>>>>>> develop
                           </div>
                         </div>
                       </fieldset>
@@ -1895,77 +1587,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                           class="mb-0 md:text-4xl"
                           data-testid="header__title"
                         >
-<<<<<<< HEAD
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.displayName"
-                          >
-                            Display Name
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__display-name"
-                            name="ipfsData.meta.displayName"
-                            type="text"
-                            value="business2reg"
-                          />
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ kMHTdH mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.description"
-                          >
-                            Description
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <textarea
-                            aria-invalid="true"
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__description"
-                            name="ipfsData.meta.description"
-                          >
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                          </textarea>
-                          <p
-                            class="text-sm text-theme-danger"
-                          >
-                            Invalid Entity Description
-                          </p>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.website"
-                          >
-                            Website
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__website"
-                            name="ipfsData.meta.website"
-                            type="text"
-                            value="https://ark.io/"
-                          />
-                        </fieldset>
-=======
                           Update Business
                         </h1>
                         <div
@@ -1974,7 +1595,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         >
                           Select the type of registration and the address you want to register with.
                         </div>
->>>>>>> develop
                       </div>
                     </div>
                     <fieldset
@@ -1992,7 +1612,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -2015,7 +1635,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                       </label>
                       <textarea
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -2042,7 +1662,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -2051,11 +1671,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                     </fieldset>
                     <div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -2099,11 +1715,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -2147,11 +1759,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj fbiPiw"
->>>>>>> develop
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -2194,16 +1802,10 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                           </div>
                         </div>
                       </div>
-<<<<<<< HEAD
-                      <div
-                        class="sc-fznyAO iykGTc pt-6 pb-0"
-                        data-testid="TransactionDetail"
-=======
                     </div>
                     <div>
                       <fieldset
                         class="sc-AxirZ izhStr flex flex-col space-y-2"
->>>>>>> develop
                       >
                         <label
                           class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -2224,10 +1826,10 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -2257,60 +1859,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                                 role="radio"
                                 type="button"
                               >
-<<<<<<< HEAD
-                                <div
-                                  class="flex-1"
-                                >
-                                  <div
-                                    class="sc-fzpjYC dHxzen"
-                                  >
-                                    <input
-                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                      data-testid="InputCurrency"
-                                      name="fee"
-                                      type="text"
-                                      value="0"
-                                    />
-                                  </div>
-                                </div>
-                                <div>
-                                  <div
-                                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                    data-testid="SelectionBar"
-                                    role="radiogroup"
-                                  >
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Min
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Average
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Max
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </fieldset>
-=======
                                 Average
                               </button>
                               <button
@@ -2323,7 +1871,6 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                                 Max
                               </button>
                             </div>
->>>>>>> develop
                           </div>
                         </div>
                       </fieldset>
@@ -2668,86 +2215,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                     <div
                       class="flex items-end justify-between bg-theme-background"
                     >
-<<<<<<< HEAD
-                      Select the type of registration and the address you want to register with.
-                    </div>
-                    <div>
-                      <div
-                        class="pb-8 mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ kMHTdH mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.displayName"
-                          >
-                            Display Name
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            aria-invalid="true"
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__display-name"
-                            name="ipfsData.meta.displayName"
-                            type="text"
-                            value=" "
-                          />
-                          <p
-                            class="text-sm text-theme-danger"
-                          >
-                            'Name' should have at least 3 characters
-                          </p>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.description"
-                          >
-                            Description
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <textarea
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__description"
-                            name="ipfsData.meta.description"
-                          >
-                            Testing
-                          </textarea>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.website"
-                          >
-                            Website
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__website"
-                            name="ipfsData.meta.website"
-                            type="text"
-                            value="https://ark.io/"
-                          />
-                        </fieldset>
-=======
                       <div>
                         <h1
                           class="mb-0 md:text-4xl"
@@ -2761,7 +2228,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         >
                           Select the type of registration and the address you want to register with.
                         </div>
->>>>>>> develop
                       </div>
                     </div>
                     <fieldset
@@ -2780,7 +2246,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                       </label>
                       <input
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -2807,7 +2273,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <textarea
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -2829,7 +2295,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -2838,11 +2304,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                     </fieldset>
                     <div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -2886,11 +2348,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -2934,11 +2392,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj fbiPiw"
->>>>>>> develop
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -2981,16 +2435,10 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                           </div>
                         </div>
                       </div>
-<<<<<<< HEAD
-                      <div
-                        class="sc-fznyAO iykGTc pt-6 pb-0"
-                        data-testid="TransactionDetail"
-=======
                     </div>
                     <div>
                       <fieldset
                         class="sc-AxirZ izhStr flex flex-col space-y-2"
->>>>>>> develop
                       >
                         <label
                           class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -3011,10 +2459,10 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -3044,60 +2492,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                                 role="radio"
                                 type="button"
                               >
-<<<<<<< HEAD
-                                <div
-                                  class="flex-1"
-                                >
-                                  <div
-                                    class="sc-fzpjYC dHxzen"
-                                  >
-                                    <input
-                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                      data-testid="InputCurrency"
-                                      name="fee"
-                                      type="text"
-                                      value="0"
-                                    />
-                                  </div>
-                                </div>
-                                <div>
-                                  <div
-                                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                    data-testid="SelectionBar"
-                                    role="radiogroup"
-                                  >
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Min
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Average
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Max
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </fieldset>
-=======
                                 Average
                               </button>
                               <button
@@ -3110,7 +2504,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                                 Max
                               </button>
                             </div>
->>>>>>> develop
                           </div>
                         </div>
                       </fieldset>
@@ -3455,90 +2848,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                     <div
                       class="flex items-end justify-between bg-theme-background"
                     >
-<<<<<<< HEAD
-                      Select the type of registration and the address you want to register with.
-                    </div>
-                    <div>
-                      <div
-                        class="pb-8 mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ kMHTdH mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.displayName"
-                          >
-                            Display Name
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            aria-invalid="true"
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__display-name"
-                            name="ipfsData.meta.displayName"
-                            type="text"
-                            value="ab"
-                          />
-                          <p
-                            class="text-sm text-theme-danger"
-                          >
-                            'Name' should have at least 3 characters
-                          </p>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.description"
-                          >
-                            Description
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <textarea
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__description"
-                            name="ipfsData.meta.description"
-                          >
-                            Testing
-                          </textarea>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.website"
-                          >
-                            Website
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__website"
-                            name="ipfsData.meta.website"
-                            type="text"
-                            value="https://ark.io/"
-                          />
-                        </fieldset>
-                      </div>
-                      <div
-                        class="sc-fznyAO iykGTc pb-8"
-                        data-testid="TransactionDetail"
-=======
                       <div>
                         <h1
                           class="mb-0 md:text-4xl"
@@ -3561,7 +2870,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                         data-testid="FormLabel"
                         for="ipfsData.meta.displayName"
->>>>>>> develop
                       >
                         Display Name
                         <div
@@ -3571,7 +2879,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                       </label>
                       <input
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -3598,7 +2906,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <textarea
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -3620,7 +2928,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -3629,7 +2937,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                     </fieldset>
                     <div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -3673,11 +2981,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -3721,11 +3025,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj fbiPiw"
->>>>>>> develop
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -3768,16 +3068,10 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                           </div>
                         </div>
                       </div>
-<<<<<<< HEAD
-                      <div
-                        class="sc-fznyAO iykGTc pt-6 pb-0"
-                        data-testid="TransactionDetail"
-=======
                     </div>
                     <div>
                       <fieldset
                         class="sc-AxirZ izhStr flex flex-col space-y-2"
->>>>>>> develop
                       >
                         <label
                           class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -3798,10 +3092,10 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -3831,60 +3125,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                                 role="radio"
                                 type="button"
                               >
-<<<<<<< HEAD
-                                <div
-                                  class="flex-1"
-                                >
-                                  <div
-                                    class="sc-fzpjYC dHxzen"
-                                  >
-                                    <input
-                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                      data-testid="InputCurrency"
-                                      name="fee"
-                                      type="text"
-                                      value="0"
-                                    />
-                                  </div>
-                                </div>
-                                <div>
-                                  <div
-                                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                    data-testid="SelectionBar"
-                                    role="radiogroup"
-                                  >
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Min
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Average
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Max
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </fieldset>
-=======
                                 Average
                               </button>
                               <button
@@ -3897,7 +3137,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                                 Max
                               </button>
                             </div>
->>>>>>> develop
                           </div>
                         </div>
                       </fieldset>
@@ -4242,86 +3481,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                     <div
                       class="flex items-end justify-between bg-theme-background"
                     >
-<<<<<<< HEAD
-                      Select the type of registration and the address you want to register with.
-                    </div>
-                    <div>
-                      <div
-                        class="pb-8 mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ kMHTdH mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.displayName"
-                          >
-                            Display Name
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            aria-invalid="true"
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__display-name"
-                            name="ipfsData.meta.displayName"
-                            type="text"
-                            value="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                          />
-                          <p
-                            class="text-sm text-theme-danger"
-                          >
-                            'Name' should have at most 128 characters
-                          </p>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.description"
-                          >
-                            Description
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <textarea
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__description"
-                            name="ipfsData.meta.description"
-                          >
-                            Testing
-                          </textarea>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.website"
-                          >
-                            Website
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__website"
-                            name="ipfsData.meta.website"
-                            type="text"
-                            value="https://ark.io/"
-                          />
-                        </fieldset>
-=======
                       <div>
                         <h1
                           class="mb-0 md:text-4xl"
@@ -4335,7 +3494,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         >
                           Select the type of registration and the address you want to register with.
                         </div>
->>>>>>> develop
                       </div>
                     </div>
                     <fieldset
@@ -4354,7 +3512,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                       </label>
                       <input
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -4381,7 +3539,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <textarea
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -4403,7 +3561,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -4412,11 +3570,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                     </fieldset>
                     <div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -4460,11 +3614,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -4508,11 +3658,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj fbiPiw"
->>>>>>> develop
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -4555,16 +3701,10 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                           </div>
                         </div>
                       </div>
-<<<<<<< HEAD
-                      <div
-                        class="sc-fznyAO iykGTc pt-6 pb-0"
-                        data-testid="TransactionDetail"
-=======
                     </div>
                     <div>
                       <fieldset
                         class="sc-AxirZ izhStr flex flex-col space-y-2"
->>>>>>> develop
                       >
                         <label
                           class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -4585,10 +3725,10 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -4618,60 +3758,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                                 role="radio"
                                 type="button"
                               >
-<<<<<<< HEAD
-                                <div
-                                  class="flex-1"
-                                >
-                                  <div
-                                    class="sc-fzpjYC dHxzen"
-                                  >
-                                    <input
-                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                      data-testid="InputCurrency"
-                                      name="fee"
-                                      type="text"
-                                      value="0"
-                                    />
-                                  </div>
-                                </div>
-                                <div>
-                                  <div
-                                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                    data-testid="SelectionBar"
-                                    role="radiogroup"
-                                  >
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Min
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Average
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Max
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </fieldset>
-=======
                                 Average
                               </button>
                               <button
@@ -4684,7 +3770,6 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                                 Max
                               </button>
                             </div>
->>>>>>> develop
                           </div>
                         </div>
                       </fieldset>
@@ -5029,90 +4114,6 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                     <div
                       class="flex items-end justify-between bg-theme-background"
                     >
-<<<<<<< HEAD
-                      Select the type of registration and the address you want to register with.
-                    </div>
-                    <div>
-                      <div
-                        class="pb-8 mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.displayName"
-                          >
-                            Display Name
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__display-name"
-                            name="ipfsData.meta.displayName"
-                            type="text"
-                            value="business2reg"
-                          />
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.description"
-                          >
-                            Description
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <textarea
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__description"
-                            name="ipfsData.meta.description"
-                          >
-                            Testing
-                          </textarea>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ kMHTdH mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.website"
-                          >
-                            Website
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            aria-invalid="true"
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__website"
-                            name="ipfsData.meta.website"
-                            type="text"
-                            value="wrong url"
-                          />
-                          <p
-                            class="text-sm text-theme-danger"
-                          >
-                            Invalid URL
-                          </p>
-                        </fieldset>
-                      </div>
-                      <div
-                        class="sc-fznyAO iykGTc pb-8"
-                        data-testid="TransactionDetail"
-=======
                       <div>
                         <h1
                           class="mb-0 md:text-4xl"
@@ -5135,7 +4136,6 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                         class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                         data-testid="FormLabel"
                         for="ipfsData.meta.displayName"
->>>>>>> develop
                       >
                         Display Name
                         <div
@@ -5144,7 +4144,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -5166,7 +4166,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                         />
                       </label>
                       <textarea
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -5189,7 +4189,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                       </label>
                       <input
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -5203,11 +4203,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                     </fieldset>
                     <div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5251,11 +4247,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5299,11 +4291,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pt-6 pb-0"
-=======
-                        class="sc-fznKkj fbiPiw"
->>>>>>> develop
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5323,23 +4311,8 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                                 <span
                                   class="text-lg font-semibold"
                                 >
-<<<<<<< HEAD
-                                  <div
-                                    class="sc-fzpjYC dHxzen"
-                                  >
-                                    <input
-                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                      data-testid="InputCurrency"
-                                      name="fee"
-                                      type="text"
-                                      value="0"
-                                    />
-                                  </div>
-                                </div>
-=======
                                   Photo and Video
                                 </span>
->>>>>>> develop
                                 <div>
                                   <div
                                     class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
@@ -5352,943 +4325,12 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                                   </div>
                                 </div>
                               </div>
-<<<<<<< HEAD
-                            </fieldset>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex justify-end mt-8 space-x-3"
-                >
-                  <button
-                    class="sc-AxjAm kbZyZT"
-                    color="primary"
-                    data-testid="SendEntityUpdate__continue-button"
-                    type="button"
-                  >
-                    Continue
-                  </button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`SendEntityUpdate should handle download transaction button click on step 4 1`] = `
-<DocumentFragment>
-  <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-10"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center my-auto"
-          >
-            <div
-              class="sc-fzqARJ ktgHVM"
-            >
-              <svg
-                width="48"
-              >
-                ark-logo.svg
-              </svg>
-            </div>
-          </div>
-          <ul
-            class="flex h-20 mr-auto md:h-24"
-          >
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                title="Portfolio"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                title="Plugins"
-              >
-                Plugins
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                title="Exchange"
-              >
-                Exchange
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                title="News"
-              >
-                News
-              </a>
-            </li>
-          </ul>
-          <div
-            class="flex items-center my-auto space-x-4"
-          >
-            <div>
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="overflow-hidden rounded-lg"
-                >
-                  <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                    color="primary"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxiKw fFXzuz p-1"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
-                    >
-                      <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center overflow-hidden rounded-lg"
-            >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center overflow-hidden rounded-lg"
-            >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    receive.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-          </div>
-          <div
-            class="flex items-center my-auto ml-8 mr-4"
-          >
-            <div
-              class="text-right"
-            >
-              <div
-                class="text-xs font-medium text-theme-neutral"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-neutral-dark"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  91.43089801 BTC
-                </span>
-              </div>
-            </div>
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="ml-4 cursor-pointer"
-                data-testid="navbar__useractions"
-              >
-                <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
-                >
-                  <span
-                    class="text-theme-neutral-dark"
-                  >
-                    <div
-                      class="sc-AxiKw dzBdqj"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
-                >
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                  >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
-                    >
-                      JO
-                    </span>
-                  </div>
-                  <span
-                    class="sc-AxhUy kTPsmA flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-                  >
-                    <div
-                      class="sc-AxiKw ksjdLL"
-                      height="10"
-                      width="10"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                    <span />
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-AxiKw eKFBFH"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <div
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-neutral-dark"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Go back to Portfolio
-          </span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <form
-            class="max-w-xl mx-auto"
-            data-testid="Form"
-          >
-            <div>
-              <ul
-                class="sc-fzoXWK fKqATg"
-              >
-                <li
-                  class="sc-fzoNJl lleTTz"
-                />
-                <li
-                  class="sc-fzoNJl lleTTz"
-                />
-                <li
-                  class="sc-fzoNJl lleTTz"
-                />
-                <li
-                  class="sc-fzoNJl gpaoSa"
-                />
-              </ul>
-              <div
-                class="mt-8"
-              >
-                <div
-                  data-testid="tab-pabel__active-panel"
-                >
-                  <div
-                    class="space-y-8"
-                    data-testid="AuthenticationStep"
-                  >
-                    <div
-                      class="flex items-end justify-between bg-theme-background"
-                    >
-                      <div>
-                        <h1
-                          class="mb-0 md:text-4xl"
-                          data-testid="header__title"
-                        >
-                          Authenticate
-                        </h1>
-                        <div
-                          class="text-theme-neutral-dark"
-                          data-testid="header__subtitle"
-                        >
-                          Enter your twelve word mnemonic to authenticate the transaction.
-                        </div>
-                      </div>
-                    </div>
-                    <fieldset
-                      class="sc-AxirZ izhStr flex flex-col space-y-2"
-                    >
-                      <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                        data-testid="FormLabel"
-                        for="mnemonic"
-                      >
-                        Mnemonic
-                        <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
-                      </label>
-                      <div
-                        class="sc-fzpjYC dHxzen max-w-20"
-                        data-testid="InputPassword"
-                      >
-                        <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                          data-testid="AuthenticationStep__mnemonic"
-                          name="mnemonic"
-                          type="password"
-                        />
-                        <div
-                          class="sc-fzoyAV sc-fzoXzr YtqIf my-px mr-4"
-                        >
-                          <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                            data-testid="InputPassword__toggle"
-                            type="button"
-                          >
-                            <div
-                              class="sc-AxiKw dzBdqj"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                eye.svg
-                              </svg>
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </div>
-                </div>
-                <div
-                  class="flex justify-end mt-8 space-x-3"
-                >
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="SendEntityUpdate__back-button"
-                    type="button"
-                  >
-                    Back
-                  </button>
-                  <button
-                    class="sc-AxjAm kbZyZT space-x-2"
-                    color="primary"
-                    data-testid="SendEntityUpdate__send-button"
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxiKw dklFyP"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        send.svg
-                      </svg>
-                    </div>
-                    <span>
-                      Send
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`SendEntityUpdate should handle download transaction button click on step 4 2`] = `
-<DocumentFragment>
-  <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-10"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center my-auto"
-          >
-            <div
-              class="sc-fzqARJ ktgHVM"
-            >
-              <svg
-                width="48"
-              >
-                ark-logo.svg
-              </svg>
-            </div>
-          </div>
-          <ul
-            class="flex h-20 mr-auto md:h-24"
-          >
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                title="Portfolio"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                title="Plugins"
-              >
-                Plugins
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                title="Exchange"
-              >
-                Exchange
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                title="News"
-              >
-                News
-              </a>
-            </li>
-          </ul>
-          <div
-            class="flex items-center my-auto space-x-4"
-          >
-            <div>
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="overflow-hidden rounded-lg"
-                >
-                  <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                    color="primary"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxiKw fFXzuz p-1"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
-                    >
-                      <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center overflow-hidden rounded-lg"
-            >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center overflow-hidden rounded-lg"
-            >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    receive.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-          </div>
-          <div
-            class="flex items-center my-auto ml-8 mr-4"
-          >
-            <div
-              class="text-right"
-            >
-              <div
-                class="text-xs font-medium text-theme-neutral"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-neutral-dark"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  91.43089801 BTC
-                </span>
-              </div>
-            </div>
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="ml-4 cursor-pointer"
-                data-testid="navbar__useractions"
-              >
-                <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
-                >
-                  <span
-                    class="text-theme-neutral-dark"
-                  >
-                    <div
-                      class="sc-AxiKw dzBdqj"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
-                >
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                  >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
-                    >
-                      JO
-                    </span>
-                  </div>
-                  <span
-                    class="sc-AxhUy kTPsmA flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-                  >
-                    <div
-                      class="sc-AxiKw ksjdLL"
-                      height="10"
-                      width="10"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                    <span />
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-AxiKw eKFBFH"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <div
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-neutral-dark"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Go back to Portfolio
-          </span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <form
-            class="max-w-xl mx-auto"
-            data-testid="Form"
-          >
-            <div>
-              <ul
-                class="sc-fzoXWK fKqATg"
-              >
-                <li
-                  class="sc-fzoNJl lleTTz"
-                />
-                <li
-                  class="sc-fzoNJl lleTTz"
-                />
-                <li
-                  class="sc-fzoNJl lleTTz"
-                />
-                <li
-                  class="sc-fzoNJl lleTTz"
-                />
-              </ul>
-              <div
-                class="mt-8"
-              >
-                <div
-                  data-testid="tab-pabel__active-panel"
-                >
-                  <section
-                    class="space-y-8"
-                    data-testid="TransactionSuccessful"
-                  >
-                    <div
-                      class="flex items-end justify-between bg-theme-background"
-                    >
-                      <div>
-                        <h1
-                          class="mb-0 md:text-4xl"
-                          data-testid="header__title"
-                        >
-                          Transaction Sent
-                        </h1>
-                      </div>
-                    </div>
-                    <svg
-                      class="w-full"
-                    >
-                      transaction_successful.svg
-                    </svg>
-                    <p
-                      class="text-theme-neutral-dark"
-                    >
-                      Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
-                    </p>
-                    <div>
-                      <div
-                        class="sc-fznyAO iykGTc"
-                        data-testid="TransactionDetail"
-                      >
-                        <div
-                          class="flex-1 space-y-2"
-                        >
-                          <div
-                            class="text-sm font-semibold text-theme-neutral"
-                          >
-                            Transaction Type
-                          </div>
-                          <div
-                            class="font-semibold"
-                          >
-                            TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION
-                          </div>
-                        </div>
-                        <div
-                          class="sc-AxgMl eqWWwc border-black"
-                        >
-                          <div
-                            class="sc-AxiKw dklFyP"
-                            height="20"
-                            width="20"
-                          >
-                            <svg>
-                              business.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-fznyAO iykGTc"
-                        data-testid="TransactionDetail"
-                      >
-                        <div
-                          class="flex-1 space-y-2"
-                        >
-                          <div
-                            class="text-sm font-semibold text-theme-neutral"
-                          >
-                            IPFS Hash
-                          </div>
-                          <div
-                            class="font-semibold"
-                          >
-                            QmV1n5F9PuBE2ovW9jVfFpxyvWZxYHjSdfLrYL2nDcb1gW
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        data-testid="SentStep__ipfs-data"
-                      >
-                        <div
-                          class="sc-fznyAO iykGTc"
-                          data-testid="TransactionDetail"
-                        >
-                          <div
-                            class="flex-1 space-y-2"
-                          >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
-                              Name
-                            </div>
-                            <div
-                              class="font-semibold"
-                            />
-                          </div>
-                        </div>
-                        <div
-                          class="sc-fznyAO iykGTc"
-                          data-testid="TransactionDetail"
-                        >
-                          <div
-                            class="flex-1 space-y-2"
-                          >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
-                              Description
-                            </div>
-                            <div
-                              class="font-semibold"
-                            />
-                          </div>
-                        </div>
-                        <div
-                          class="sc-fznyAO iykGTc"
-                          data-testid="TransactionDetail"
-                        >
-                          <div
-                            class="flex-1 space-y-2"
-                          >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
-                              Website
-                            </div>
-                            <div
-                              class="font-semibold"
-                            >
-                              <a
-                                class="sc-fznKkj drQiih inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                                data-testid="Link"
-                                rel="noopener noreferrer"
-                                to="https://ark.io/"
-                              >
-                                <div
-                                  class="sc-AxiKw dzBdqj flex-shrink-0 "
-                                  data-testid="Link__external"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    redirect.svg
-                                  </svg>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-fznyAO iykGTc"
-                        data-testid="TransactionDetail"
-                      >
-                        <div
-                          class="flex-1 space-y-2"
-                        >
-                          <div
-                            class="text-sm font-semibold text-theme-neutral"
-                          >
-                            Amount
-                          </div>
-                          <div
-                            class="font-semibold"
-                          >
-                            <span
-                              data-testid="Amount"
-                            >
-                              5 ARK
-                            </span>
-=======
                               <div
                                 class="mt-2 text-theme-neutral-dark"
                               >
                                 Get more users and add more information about yourself
                               </div>
                             </div>
->>>>>>> develop
                           </div>
                         </div>
                       </div>
@@ -6316,10 +4358,10 @@ exports[`SendEntityUpdate should handle download transaction button click on ste
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -6722,11 +4764,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                     </div>
                     <div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO fQmAFD"
-=======
-                        class="sc-fznKkj cYdjTE"
->>>>>>> develop
+                        class="sc-fznyAO laljlJ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -6761,11 +4799,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pt-4"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -6937,11 +4971,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc mb-2"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -6985,11 +5015,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc mb-2"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -8347,80 +6373,6 @@ exports[`SendEntityUpdate should should go back 1`] = `
                     <div
                       class="flex items-end justify-between bg-theme-background"
                     >
-<<<<<<< HEAD
-                      Select the type of registration and the address you want to register with.
-                    </div>
-                    <div>
-                      <div
-                        class="pb-8 mt-8"
-                      >
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.displayName"
-                          >
-                            Display Name
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__display-name"
-                            name="ipfsData.meta.displayName"
-                            type="text"
-                            value="business2reg"
-                          />
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.description"
-                          >
-                            Description
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <textarea
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__description"
-                            name="ipfsData.meta.description"
-                          >
-                            Testing
-                          </textarea>
-                        </fieldset>
-                        <fieldset
-                          class="sc-AxirZ izhStr mt-8 font-normal"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="ipfsData.meta.website"
-                          >
-                            Website
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                            data-testid="EntityRegistrationForm__website"
-                            name="ipfsData.meta.website"
-                            type="text"
-                            value="https://ark.io/"
-                          />
-                        </fieldset>
-=======
                       <div>
                         <h1
                           class="mb-0 md:text-4xl"
@@ -8434,7 +6386,6 @@ exports[`SendEntityUpdate should should go back 1`] = `
                         >
                           Select the type of registration and the address you want to register with.
                         </div>
->>>>>>> develop
                       </div>
                     </div>
                     <fieldset
@@ -8452,7 +6403,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -8474,7 +6425,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                         />
                       </label>
                       <textarea
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -8496,7 +6447,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -8505,11 +6456,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                     </fieldset>
                     <div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -8553,11 +6500,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj bBFPlp"
->>>>>>> develop
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -8601,11 +6544,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc pb-8"
-=======
-                        class="sc-fznKkj fbiPiw"
->>>>>>> develop
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -8648,16 +6587,10 @@ exports[`SendEntityUpdate should should go back 1`] = `
                           </div>
                         </div>
                       </div>
-<<<<<<< HEAD
-                      <div
-                        class="sc-fznyAO iykGTc pt-6 pb-0"
-                        data-testid="TransactionDetail"
-=======
                     </div>
                     <div>
                       <fieldset
                         class="sc-AxirZ izhStr flex flex-col space-y-2"
->>>>>>> develop
                       >
                         <label
                           class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -8678,10 +6611,10 @@ exports[`SendEntityUpdate should should go back 1`] = `
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -8711,60 +6644,6 @@ exports[`SendEntityUpdate should should go back 1`] = `
                                 role="radio"
                                 type="button"
                               >
-<<<<<<< HEAD
-                                <div
-                                  class="flex-1"
-                                >
-                                  <div
-                                    class="sc-fzpjYC dHxzen"
-                                  >
-                                    <input
-                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                      data-testid="InputCurrency"
-                                      name="fee"
-                                      type="text"
-                                      value="0"
-                                    />
-                                  </div>
-                                </div>
-                                <div>
-                                  <div
-                                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                                    data-testid="SelectionBar"
-                                    role="radiogroup"
-                                  >
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Min
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Average
-                                    </button>
-                                    <button
-                                      aria-checked="true"
-                                      class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Max
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </fieldset>
-=======
                                 Average
                               </button>
                               <button
@@ -8777,7 +6656,6 @@ exports[`SendEntityUpdate should should go back 1`] = `
                                 Max
                               </button>
                             </div>
->>>>>>> develop
                           </div>
                         </div>
                       </fieldset>
@@ -10105,11 +7983,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
                         </div>
                       </div>
                       <div
-<<<<<<< HEAD
-                        class="sc-fznyAO iykGTc"
-=======
-                        class="sc-fznKkj DgeKj"
->>>>>>> develop
+                        class="sc-fznyAO hJHVee"
                         data-testid="TransactionDetail"
                       >
                         <div
