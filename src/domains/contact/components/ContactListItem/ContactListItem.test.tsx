@@ -85,6 +85,13 @@ describe("ContactListItem", () => {
 			address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
 		});
 
+		await contact.addresses().create({
+			coin: "ARK",
+			network: "ark.devnet",
+			name: "test2",
+			address: "DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
+		});
+
 		const { asFragment } = render(
 			<table>
 				<tbody>
