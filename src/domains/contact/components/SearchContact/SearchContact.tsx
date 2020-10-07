@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contact, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { SearchResource } from "app/components/SearchResource";
 import { Table } from "app/components/Table";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
@@ -30,7 +30,7 @@ export const SearchContact = ({
 	const { t } = useTranslation();
 	const contacts = profile.contacts().values();
 	const wallets = profile.wallets().values();
-	const availableData: any = [];
+	const availableData: { item: Contact | ReadWriteWallet; type: string }[] = [];
 
 	contacts.map((contact) => availableData.push({ item: contact, type: "contact" }));
 	wallets.map((wallet) => availableData.push({ item: wallet, type: "wallet" }));
