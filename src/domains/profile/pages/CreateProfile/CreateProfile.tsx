@@ -90,7 +90,7 @@ export const CreateProfile = () => {
 					</div>
 
 					<Form
-						className="px-4 pt-4 pb-6 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200 sm:px-8 sm:pt-6 sm:pb-10"
+						className="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200"
 						context={form}
 						onSubmit={handleSubmit}
 						data-testid="CreateProfile__form"
@@ -170,14 +170,14 @@ export const CreateProfile = () => {
 								</FormField>
 							</div>
 
-							<div className="mt-8">
+							<div className="pb-4 mt-8">
 								<ListDivided items={otherItems} />
 							</div>
 
 							<Divider />
 						</div>
 
-						<div className="flex justify-end mt-8 space-x-3">
+						<div className="flex justify-end pt-4 space-x-3">
 							<Button variant="plain" onClick={() => history.go(-1)}>
 								{t("COMMON.BACK")}
 							</Button>
