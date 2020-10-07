@@ -11,14 +11,7 @@ const useDeepLinkHandler = () => {
 	const { t } = useTranslation();
 	const uriService = new URI();
 
-	const navigate = useCallback(
-		(url: string, deeplinkSchema?: any) => {
-			if (url !== location.pathname) {
-				history.push(url, deeplinkSchema);
-			}
-		},
-		[history, location],
-	);
+	const navigate = useCallback((url: string, deeplinkSchema?: any) => history.push(url, deeplinkSchema), [history]);
 
 	const handler = useCallback(
 		(event: any, deeplink: string) => {
