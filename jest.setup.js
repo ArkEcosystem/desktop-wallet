@@ -1,6 +1,11 @@
 import MockDate from "mockdate";
 import { env } from "./src/utils/testing-library";
 
+jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
+	const { createTransportReplayer } = require("@ledgerhq/hw-transport-mocker");
+	return createTransportReplayer();
+});
+
 beforeAll(async () => {
 	await env.verify();
 	await env.boot();
