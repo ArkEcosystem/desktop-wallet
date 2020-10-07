@@ -98,4 +98,32 @@ describe("useDeeplink hook", () => {
 		);
 		expect(ipcRenderer.on).toBeCalledWith("process-url", expect.any(Function));
 	});
+
+	it("should subscribe to deeplink listener and navigate when no method found", () => {
+		window.history.pushState(
+			{},
+			"Deeplink Test",
+			`/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`,
+		);
+
+		ipcRenderer.on.mockImplementationOnce((event, callback) =>
+			callback(
+				event,
+				"ark:vote?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+			),
+		);
+
+		const { getByText, history } = renderWithRouter(
+			<Route pathname="/profiles/:profileId/wallets/:walletId">
+				<TestComponent />
+			</Route>,
+			{
+				routes: [walletURL],
+			},
+		);
+
+		expect(getByText("Deeplink tester")).toBeTruthy();
+		expect(history.location.pathname).toEqual("/");
+		expect(ipcRenderer.on).toBeCalledWith("process-url", expect.any(Function));
+	});
 });
