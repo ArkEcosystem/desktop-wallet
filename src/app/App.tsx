@@ -16,6 +16,7 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { LedgerListener } from "domains/transaction/components/LedgerListener";
+import electron from "electron";
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
@@ -23,7 +24,7 @@ import { matchPath, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
-import { shouldUseDarkColors } from "utils/electron-utils";
+import { Theme } from "types";
 
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
@@ -36,6 +37,7 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
+	const [useDarkColors, setUseDarkColors] = useState(false);
 
 	const { theme, setTheme } = useThemeContext();
 	const { env, persist } = useEnvironmentContext();
@@ -45,9 +47,13 @@ const Main = () => {
 	const location = useLocation();
 	const pathname = (location as any).location?.pathname || location.pathname;
 
-	const setSystemTheme = useCallback(() => {
-		setTheme(shouldUseDarkColors() ? "dark" : "light");
-	}, [setTheme]);
+	const nativeTheme = electron.remote.nativeTheme;
+
+	nativeTheme.on("updated", () => {
+		if (theme === "system") {
+			setUseDarkColors(nativeTheme.shouldUseDarkColors);
+		}
+	});
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -59,21 +65,30 @@ const Main = () => {
 		}
 	}, [showSplash, start]);
 
+	useEffect(() => {
+		setTheme(nativeTheme.themeSource);
+		setUseDarkColors(nativeTheme.shouldUseDarkColors);
+	}, [nativeTheme, setTheme, setUseDarkColors]);
+
+	const setSystemTheme = useCallback(() => {
+		nativeTheme.themeSource = "system";
+	}, [nativeTheme]);
+
 	const match = useMemo(() => matchPath(pathname, { path: "/profiles/:profileId" }), [pathname]);
 
 	useEffect(() => {
 		const profileId = (match?.params as any)?.profileId;
 
 		if (profileId && profileId !== "create") {
-			const profileTheme = env.profiles().findById(profileId).settings().get(ProfileSetting.Theme);
+			const profileTheme = env.profiles().findById(profileId).settings().get<Theme>(ProfileSetting.Theme)!;
 
 			if (profileTheme !== theme) {
-				setTheme(profileTheme);
+				nativeTheme.themeSource = profileTheme;
 			}
 		} else {
 			setSystemTheme();
 		}
-	}, [env, match, setTheme, setSystemTheme, theme]);
+	}, [env, match, nativeTheme, setSystemTheme, theme]);
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useLayoutEffect(() => setSystemTheme(), []);
@@ -109,7 +124,7 @@ const Main = () => {
 	};
 
 	return (
-		<main className={`theme-${theme} ${className}`} data-testid="Main">
+		<main className={`theme-${useDarkColors ? "dark" : "light"} ${className}`} data-testid="Main">
 			<ToastContainer />
 
 			{renderContent()}
