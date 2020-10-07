@@ -62,7 +62,7 @@ const Main = () => {
 	useEffect(() => {
 		const profileId = (match?.params as any)?.profileId;
 
-		if (profileId) {
+		if (profileId && profileId !== "create") {
 			const profileTheme = env.profiles().findById(profileId).settings().get(ProfileSetting.Theme);
 
 			if (profileTheme !== theme) {
