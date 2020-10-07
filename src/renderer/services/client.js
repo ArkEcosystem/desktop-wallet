@@ -494,7 +494,9 @@ export default class ClientService {
     }
 
     if (walletData) {
-      return walletData.vote || null
+      return walletData.attributes && walletData.attributes.vote
+        ? walletData.attributes.vote
+        : walletData.vote
     }
 
     return null
