@@ -40,8 +40,7 @@ export const useLedger = (transport: typeof Transport) => {
 				const wallet = await profile
 					.wallets()
 					.importByAddress(address, coin.network().coin(), coin.network().id());
-				wallet.data().set(WalletFlag.Ledger, true);
-				wallet.data().set("LEDGER_INDEX", index);
+				wallet.data().set(WalletFlag.Ledger, index);
 			}
 			await persist();
 		},
@@ -108,10 +107,6 @@ export const useLedger = (transport: typeof Transport) => {
 
 					try {
 						const identity = await coin.client().wallet(address);
-
-						if (!identity) {
-							throw new Error();
-						}
 
 						wallets.push({
 							address: identity.address(),

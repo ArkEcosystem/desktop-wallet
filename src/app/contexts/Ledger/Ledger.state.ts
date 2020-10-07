@@ -72,6 +72,7 @@ export const ledgerStateReducer = (state: State, action: Action): State => {
 				error: action.message,
 			};
 		}
+		/* istanbul ignore next */
 		default: {
 			throw new Error();
 		}
