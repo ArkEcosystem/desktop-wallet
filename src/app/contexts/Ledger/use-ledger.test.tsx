@@ -273,7 +273,7 @@ describe("Use Ledger", () => {
 			expect(screen.getByText("Waiting Device")).toBeInTheDocument();
 
 			act(() => {
-				jest.advanceTimersByTime(2000);
+				jest.runOnlyPendingTimers();
 			});
 
 			await waitFor(() => expect(screen.getByText("Failed")).toBeInTheDocument());
