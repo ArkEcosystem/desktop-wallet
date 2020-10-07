@@ -20,6 +20,15 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 
 	const { env } = useEnvironmentContext();
 	const [redirectUrl, setRedirectUrl] = React.useState<string | undefined>(undefined);
+	const [previousPathname, setPreviousPathname] = React.useState("");
+
+	React.useEffect(() => {
+		if (location.pathname !== previousPathname) {
+			window.scrollTo(0, 0);
+		}
+
+		setPreviousPathname(location.pathname);
+	}, [location]);
 
 	const canActivate = React.useMemo(
 		() =>
