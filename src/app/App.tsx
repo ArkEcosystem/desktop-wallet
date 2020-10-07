@@ -16,7 +16,7 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { LedgerListener } from "domains/transaction/components/LedgerListener";
-import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { matchPath, useLocation } from "react-router-dom";
@@ -36,7 +36,6 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
-	const [profileTheme, setProfileTheme] = React.useState<string | undefined>();
 
 	const { theme, setTheme } = useThemeContext();
 	const { pathname } = useLocation();
@@ -47,8 +46,6 @@ const Main = () => {
 	const setSystemTheme = useCallback(() => {
 		setTheme(shouldUseDarkColors() ? "dark" : "light");
 	}, [setTheme]);
-
-	const match = useMemo(() => matchPath(pathname, { path: "/profiles/:profileId" }), [pathname]);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -62,20 +59,18 @@ const Main = () => {
 
 	useEffect(() => {
 		try {
-			const profile = env.profiles().findById((match?.params as any)?.profileId);
-			setProfileTheme(profile.settings().get(ProfileSetting.Theme));
-		} catch {
-			setProfileTheme(undefined);
-		}
-	}, [env, match, pathname]);
+			const match = matchPath(pathname, { path: "/profiles/:profileId" });
 
-	useEffect(() => {
-		if (profileTheme) {
-			profileTheme !== theme && setTheme(profileTheme);
-		} else {
+			const profile = env.profiles().findById((match?.params as any)?.profileId);
+			const profileTheme = profile.settings().get(ProfileSetting.Theme);
+
+			if (profileTheme !== theme) {
+				setTheme(profile.settings().get(ProfileSetting.Theme));
+			}
+		} catch {
 			setSystemTheme();
 		}
-	}, [pathname, profileTheme, setTheme, setSystemTheme, theme]);
+	}, [env, pathname, setTheme, setSystemTheme, theme]);
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useLayoutEffect(() => setSystemTheme(), []);
@@ -111,7 +106,7 @@ const Main = () => {
 	};
 
 	return (
-		<main className={`theme-${theme} ${className}`}>
+		<main className={`theme-${theme} ${className}`} data-testid="Main">
 			<ToastContainer />
 
 			{renderContent()}

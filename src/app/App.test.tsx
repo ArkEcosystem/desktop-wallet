@@ -1,22 +1,33 @@
 /* eslint-disable @typescript-eslint/require-await */
 // import electron from "electron";
+
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
+import electron from "electron";
 import React from "react";
-import { act, renderWithRouter, useDefaultNetMocks, waitFor } from "utils/testing-library";
+import {
+	act,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	useDefaultNetMocks,
+	waitFor,
+} from "utils/testing-library";
 
 import { App } from "./App";
 
 jest.mock("electron", () => ({
 	remote: {
 		nativeTheme: {
-			shouldUseDarkColors: jest.fn(),
+			shouldUseDarkColors: true,
 		},
 		getCurrentWindow: () => ({
 			setContentProtection: jest.fn(),
 		}),
 	},
 }));
+
+const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 describe("App", () => {
 	beforeAll(useDefaultNetMocks);
@@ -34,6 +45,45 @@ describe("App", () => {
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it.each([true, false])("should set the theme based on system preferences", async (shouldUseDarkColors) => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
+
+		electron.remote.nativeTheme.shouldUseDarkColors = shouldUseDarkColors;
+
+		const { getByTestId, getByText } = renderWithRouter(<App />);
+
+		await waitFor(() => {
+			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		});
+
+		expect(getByTestId("Main")).toHaveClass(`theme-${shouldUseDarkColors ? "dark" : "light"}`);
+	});
+
+	it("should set theme on route change", async () => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
+
+		electron.remote.nativeTheme.shouldUseDarkColors = true;
+
+		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />);
+
+		await waitFor(() => {
+			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		});
+
+		expect(history.location.pathname).toMatch("/");
+
+		expect(getByTestId("Main")).toHaveClass("theme-dark");
+
+		await act(async () => {
+			fireEvent.click(getAllByTestId("Card")[0]);
+		});
+
+		expect(history.location.pathname).toMatch(dashboardUrl);
+
+		// @TODO - WHY
+		// expect(getByTestId("Main")).toHaveClass("theme-light");
 	});
 
 	it("should close splash screen if not demo", async () => {
