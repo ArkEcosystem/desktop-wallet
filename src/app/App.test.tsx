@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
+import { ipcRenderer } from "electron";
 import React from "react";
 import { act, renderWithRouter, useDefaultNetMocks, waitFor } from "utils/testing-library";
 
@@ -12,6 +13,10 @@ jest.mock("electron", () => ({
 
 describe("App", () => {
 	beforeAll(useDefaultNetMocks);
+
+	beforeEach(() => {
+		ipcRenderer.on.mockImplementationOnce((event, callback) => callback(event, null));
+	});
 
 	it("should render splash screen", async () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
