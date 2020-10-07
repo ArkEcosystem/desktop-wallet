@@ -57,20 +57,21 @@ const Main = () => {
 		}
 	}, [showSplash, start]);
 
-	useEffect(() => {
-		try {
-			const match = matchPath(pathname, { path: "/profiles/:profileId" });
+	const match = useMemo(() => matchPath(pathname, { path: "/profiles/:profileId" }), [pathname]);
 
-			const profile = env.profiles().findById((match?.params as any)?.profileId);
-			const profileTheme = profile.settings().get(ProfileSetting.Theme);
+	useEffect(() => {
+		const profileId = (match?.params as any)?.profileId;
+
+		if (profileId) {
+			const profileTheme = env.profiles().findById(profileId).settings().get(ProfileSetting.Theme);
 
 			if (profileTheme !== theme) {
-				setTheme(profile.settings().get(ProfileSetting.Theme));
+				setTheme(profileTheme);
 			}
-		} catch {
+		} else {
 			setSystemTheme();
 		}
-	}, [env, pathname, setTheme, setSystemTheme, theme]);
+	}, [env, match, setTheme, setSystemTheme, theme]);
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useLayoutEffect(() => setSystemTheme(), []);
