@@ -81,7 +81,7 @@ describe("SendTransfer", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	fit("should render 1st step with deeplink values and use them", async () => {
+	it("should render 1st step with deeplink values and use them", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const deeplinkProps: any = {
 			amount: "1.2",
