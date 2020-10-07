@@ -28,7 +28,7 @@ export const MyVoteTable = ({ maxVotes, votes, onContinue }: MyVoteTableProps) =
 			) : (
 				<>
 					<h2 className="pt-5 text-2xl font-bold">{t("VOTE.MY_VOTE_TABLE.TITLE")}</h2>
-					<EmptyBlock className="mt-2" message={t("VOTE.MY_VOTE_TABLE.NO_VOTE")} />
+					<EmptyBlock className="mt-3" message={t("VOTE.MY_VOTE_TABLE.NO_VOTE")} />
 				</>
 			)}
 		</div>
