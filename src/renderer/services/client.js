@@ -534,6 +534,10 @@ export default class ClientService {
   satisfiesCoreVersion (expectedVersion) {
     const network = store.getters['session/network']
 
+    if (!network) {
+      return false
+    }
+
     return semver.satisfies(semver.coerce(network.apiVersion), expectedVersion)
   }
 
