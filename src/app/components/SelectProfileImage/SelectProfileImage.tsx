@@ -25,7 +25,7 @@ const ProfileImageStyled = styled.div`
 		${tw`absolute rounded-full w-22 h-22 left-1 top-1`};
 	}
 
-	&:hover .upload-button {
+	&:hover .upload-button-overlay {
 		${tw`block`};
 
 		div {
@@ -90,7 +90,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 								)}
 
 								<div
-									className="absolute z-50 hidden overflow-hidden rounded-full upload-button w-22 h-22"
+									className="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
 									onClick={handleUploadImage}
 								>
 									<div className="flex items-center justify-center w-22 h-22">
