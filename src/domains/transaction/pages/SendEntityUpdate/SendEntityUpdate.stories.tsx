@@ -14,10 +14,7 @@ export default {
 export const Default = ({ env, profile }: { env: Environment; profile: Profile }) => (
 	<EnvironmentProvider env={env}>
 		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/transactions/update`]}>
-			<Route
-				path="/profiles/:profileId/transactions/update"
-				component={() => <SendEntityUpdate onDownload={() => alert("download")} />}
-			/>
+			<Route path="/profiles/:profileId/transactions/update" component={SendEntityUpdate} />
 		</MemoryRouter>
 	</EnvironmentProvider>
 );
