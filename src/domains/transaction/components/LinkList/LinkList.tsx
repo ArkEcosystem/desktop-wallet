@@ -41,7 +41,7 @@ const LinkItem = ({ link }: { link: ProviderEntityLink }) => (
 			<div>
 				<div className="text-sm font-semibold text-theme-neutral">{link.displayName}</div>
 
-				<Link to={link.value} className="inline-block mt-2 font-semibold link">
+				<Link to={link.value} className="inline-block mt-1 font-semibold link">
 					{link.value}
 				</Link>
 			</div>
@@ -62,7 +62,7 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 	}
 
 	return (
-		<div data-testid="LinkList" className="flex flex-col">
+		<div data-testid="LinkList" className="flex flex-col font-normal">
 			<div
 				data-testid="LinkList__header"
 				className="flex items-center justify-between cursor-pointer"
@@ -71,20 +71,19 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 				<span className="text-lg font-semibold">{title}</span>
 
 				<div>
-					{isExpanded && (
+					{isExpanded ? (
 						<Icon
 							name="ChevronUp"
 							width={10}
 							height={10}
 							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
 						/>
-					)}
-					{!isExpanded && (
+					) : (
 						<Icon
 							name="ChevronDown"
 							width={10}
 							height={10}
-							className="flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+							className="flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
 						/>
 					)}
 				</div>
