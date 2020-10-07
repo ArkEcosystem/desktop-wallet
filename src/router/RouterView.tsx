@@ -23,11 +23,13 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 	const [previousPathname, setPreviousPathname] = React.useState("");
 
 	React.useEffect(() => {
-		if (location.pathname !== previousPathname) {
+		const pathname = (location as any).location?.pathname || location.pathname;
+
+		if (pathname !== previousPathname) {
 			window.scrollTo(0, 0);
 		}
 
-		setPreviousPathname(location.pathname);
+		setPreviousPathname(pathname);
 	}, [location]);
 
 	const canActivate = React.useMemo(
