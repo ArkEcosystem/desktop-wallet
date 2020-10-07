@@ -72,7 +72,7 @@ export const CreateProfile = () => {
 	};
 
 	return (
-		<Page navbarVariant="logo-only">
+		<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
 			<Section className="flex flex-col justify-center flex-1">
 				<div className="max-w-lg mx-auto">
 					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
