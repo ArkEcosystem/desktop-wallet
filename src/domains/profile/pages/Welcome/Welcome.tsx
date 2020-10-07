@@ -74,7 +74,7 @@ export const Welcome = () => {
 						</Trans>
 					</h1>
 
-					<div className="w-64 mx-auto lg:w-128">
+					<div className="w-64 mx-auto lg:w-96">
 						<WelcomeBanner />
 					</div>
 
