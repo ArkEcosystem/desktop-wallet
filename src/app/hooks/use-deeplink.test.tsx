@@ -24,16 +24,14 @@ describe("useDeeplink hook", () => {
 		return <h1>Deeplink tester</h1>;
 	};
 
-	beforeEach(() => {
+	it("should subscribe to deeplink listener", () => {
 		ipcRenderer.on.mockImplementationOnce((event, callback) =>
 			callback(
 				event,
 				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
 			),
 		);
-	});
 
-	it("should subscribe to deeplink listener", () => {
 		const { getByText, history } = renderWithRouter(
 			<Route pathname="/">
 				<TestComponent />
@@ -45,6 +43,13 @@ describe("useDeeplink hook", () => {
 	});
 
 	it("should subscribe to deeplink listener and toast a warning to select a profile", () => {
+		ipcRenderer.on.mockImplementationOnce((event, callback) =>
+			callback(
+				event,
+				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+			),
+		);
+
 		const { getByText, history } = renderWithRouter(
 			<Route pathname="/">
 				<TestComponent />
@@ -60,6 +65,13 @@ describe("useDeeplink hook", () => {
 	});
 
 	it("should subscribe to deeplink listener and toast a warning to select a wallet", () => {
+		ipcRenderer.on.mockImplementationOnce((event, callback) =>
+			callback(
+				event,
+				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+			),
+		);
+
 		window.history.pushState({}, "Deeplink Test", `/profiles/${getDefaultProfileId()}/dashboard`);
 
 		const { getByText, history } = renderWithRouter(
@@ -77,6 +89,13 @@ describe("useDeeplink hook", () => {
 	});
 
 	it("should subscribe to deeplink listener and navigate", () => {
+		ipcRenderer.on.mockImplementationOnce((event, callback) =>
+			callback(
+				event,
+				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+			),
+		);
+
 		window.history.pushState(
 			{},
 			"Deeplink Test",
@@ -100,17 +119,17 @@ describe("useDeeplink hook", () => {
 	});
 
 	it("should subscribe to deeplink listener and navigate when no method found", () => {
-		window.history.pushState(
-			{},
-			"Deeplink Test",
-			`/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`,
-		);
-
 		ipcRenderer.on.mockImplementationOnce((event, callback) =>
 			callback(
 				event,
 				"ark:vote?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
 			),
+		);
+
+		window.history.pushState(
+			{},
+			"Deeplink Test",
+			`/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`,
 		);
 
 		const { getByText, history } = renderWithRouter(
