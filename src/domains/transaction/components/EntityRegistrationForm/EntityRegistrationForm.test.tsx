@@ -195,7 +195,13 @@ describe("EntityRegistrationForm", () => {
 			data: () => entityRegistrationFixture.data,
 		} as Contracts.SignedTransactionData;
 
-		render(<EntityRegistrationForm.transactionDetails transaction={transaction} translations={translations} />);
+		render(
+			<EntityRegistrationForm.transactionDetails
+				transaction={transaction}
+				translations={translations}
+				wallet={wallet}
+			/>,
+		);
 
 		expect(screen.getByText(entityRegistrationFixture.data.asset.data.ipfsData)).toBeInTheDocument();
 	});
