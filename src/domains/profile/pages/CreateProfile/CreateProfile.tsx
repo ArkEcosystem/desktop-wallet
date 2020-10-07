@@ -98,27 +98,35 @@ export const CreateProfile = () => {
 						<div className="mt-2">
 							<h3>{t("PROFILE.PAGE_CREATE_PROFILE.NEW_PROFILE")}</h3>
 
-							<SelectProfileImage value={avatarImage} name={name} onSelect={setAvatarImage} />
-
 							<div className="relative mt-8 space-y-8">
-								<FormField name="name">
-									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
-									<Input
-										ref={register({
-											required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-												field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-											}).toString(),
-											maxLength: {
-												value: nameMaxLength,
-												message: t("COMMON.VALIDATION.MAX_LENGTH", {
+								<div className="flex justify-between">
+									<FormField name="name" className="w-full mr-6">
+										<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
+										<Input
+											ref={register({
+												required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 													field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-													maxLength: nameMaxLength,
-												}),
-											},
-										})}
+												}).toString(),
+												maxLength: {
+													value: nameMaxLength,
+													message: t("COMMON.VALIDATION.MAX_LENGTH", {
+														field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
+														maxLength: nameMaxLength,
+													}),
+												},
+											})}
+										/>
+										<FormHelperText />
+									</FormField>
+
+									<SelectProfileImage
+										className="-mt-6"
+										value={avatarImage}
+										name={name}
+										showLabel={false}
+										onSelect={setAvatarImage}
 									/>
-									<FormHelperText />
-								</FormField>
+								</div>
 
 								<FormField name="password">
 									<FormLabel

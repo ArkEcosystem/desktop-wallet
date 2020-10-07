@@ -12,7 +12,9 @@ export const translations: { [key: string]: any } = {
 			CURRENCY: "Currency",
 			LANGUAGE: "Language",
 			MARKET_PROVIDER: "Market Provider",
+			REMOVE_AVATAR: "Remove Avatar",
 			TIME_FORMAT: "Time Format",
+			UPLOAD_AVATAR: "Upload Avatar",
 		},
 		SECURITY: {
 			TITLE: "Security",
