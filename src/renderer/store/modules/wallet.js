@@ -23,6 +23,10 @@ const sanitizeWallet = (wallet) => {
     if (wallet.attributes.vote) {
       wallet.vote = wallet.attributes.vote
     }
+
+    if (wallet.attributes.multiSignature) {
+      wallet.multiSignature = wallet.attributes.multiSignature
+    }
   }
 
   return wallet
