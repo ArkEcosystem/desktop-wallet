@@ -42,20 +42,15 @@ export const SearchContact = ({
 			className: "hidden",
 		},
 		{
+			Header: t("COMMON.ADDRESS"),
+		},
+		{
 			Header: t("COMMON.NAME"),
 			accessor: "name",
 		},
 		{
-			Header: t("COMMON.CRYPTOASSET"),
-			className: "justify-center",
-		},
-		{
-			Header: "Avatar",
-			disableSortBy: true,
-			className: "hidden",
-		},
-		{
-			Header: t("COMMON.ADDRESS"),
+			Header: t("COMMON.TYPE"),
+			accessor: "type",
 		},
 	];
 

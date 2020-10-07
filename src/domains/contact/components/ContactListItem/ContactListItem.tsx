@@ -1,14 +1,12 @@
 import { ContactAddress } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
-import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -39,22 +37,16 @@ export const ContactListItem = ({ contact, variant, type, onAction, options }: C
 				</div>
 			</TableCell>
 
-			<TableCell>
-				<span className="font-semibold" data-testid="ContactListItem__name">
-					{contact.alias()}
-				</span>
-			</TableCell>
-
-			<TableCell innerClassName="justify-center">
-				<NetworkIcon coin={contact.coinId()} network={contact.networkId()} size="lg" noShadow />
-			</TableCell>
-
-			<TableCell className={`w-1`}>
-				<Avatar className="mr-4" address={contact.address()} size="lg" noShadow />
-			</TableCell>
-
 			<TableCell className="">
 				<Address address={contact.address()} maxChars={24} />
+			</TableCell>
+
+			<TableCell>
+				<span data-testid="ContactListItem__name">{contact.alias()}</span>
+			</TableCell>
+
+			<TableCell>
+				<span data-testid="ContactListItem__type">{t("COMMON.MY_WALLET")}</span>
 			</TableCell>
 
 			{!isCondensed() && (
@@ -109,43 +101,30 @@ export const ContactListItem = ({ contact, variant, type, onAction, options }: C
 					return (
 						<TableRow key={index} border={index === 0 || index === contact.addresses().count() - 1}>
 							<TableCell variant="start" className="w-1">
-								{index === 0 && (
-									<div className="mr-4">
-										<AvatarWrapper data-testid="ContactListItem__user--avatar" size="lg" noShadow>
-											<img
-												src={`data:image/svg+xml;utf8,${contact.avatar()}`}
-												title={contact.name()}
-												alt={contact.name()}
-											/>
-											<span className="absolute text-sm font-semibold text-theme-background">
-												{contact.name().slice(0, 2).toUpperCase()}
-											</span>
-										</AvatarWrapper>
-									</div>
-								)}
-							</TableCell>
-
-							<TableCell>
-								{index === 0 && (
-									<span className="font-semibold" data-testid="ContactListItem__name">
-										{contact.name()}
-									</span>
-								)}
-							</TableCell>
-
-							<TableCell innerClassName="justify-center">
-								<NetworkIcon coin={address.coin()} network={address.network()} size="lg" noShadow />
-							</TableCell>
-
-							<TableCell
-								className={`w-1 ${borderClasses()}
-								`}
-							>
-								<Avatar className="mr-4" address={address.address()} size="lg" noShadow />
+								<div className="mr-4">
+									<AvatarWrapper data-testid="ContactListItem__user--avatar" size="lg" noShadow>
+										<img
+											src={`data:image/svg+xml;utf8,${contact.avatar()}`}
+											title={contact.name()}
+											alt={contact.name()}
+										/>
+										<span className="absolute text-sm font-semibold text-theme-background">
+											{contact.name().slice(0, 2).toUpperCase()}
+										</span>
+									</AvatarWrapper>
+								</div>
 							</TableCell>
 
 							<TableCell className={borderClasses()}>
 								<Address address={address.address()} maxChars={isCondensed() ? 24 : undefined} />
+							</TableCell>
+
+							<TableCell>
+								<span data-testid="ContactListItem__name">{contact.name()}</span>
+							</TableCell>
+
+							<TableCell>
+								<span data-testid="ContactListItem__type">{t("COMMON.CONTACT")}</span>
 							</TableCell>
 
 							{!isCondensed() && (
@@ -169,7 +148,7 @@ export const ContactListItem = ({ contact, variant, type, onAction, options }: C
 							)}
 
 							<TableCell variant="end" className={borderClasses()} innerClassName="justify-end">
-								{index === 0 && options?.length > 1 && (
+								{options?.length > 1 && (
 									<Dropdown
 										toggleContent={
 											<div className="float-right">
@@ -183,7 +162,7 @@ export const ContactListItem = ({ contact, variant, type, onAction, options }: C
 									/>
 								)}
 
-								{index === 0 && options?.length === 1 && (
+								{options?.length === 1 && (
 									<Button
 										data-testid={`ContactListItem__one-option-button-${index}`}
 										className="float-right"
