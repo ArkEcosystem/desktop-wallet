@@ -92,6 +92,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 								<div
 									className="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
 									onClick={handleUploadImage}
+									data-testid="SelectProfileImage__upload-button"
 								>
 									<div className="flex items-center justify-center w-22 h-22">
 										<Icon name="Upload" className="text-white" />
@@ -100,14 +101,14 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 							</ProfileImageStyled>
 						</Tippy>
 						{!isSvg && (
-							<Tippy content={t("SETTINGS.GENERAL.PERSONAL.REMOVE_AVATAR")}>
+							<Tippy content={t("SETTINGS.GENERAL.PERSONAL.DELETE_AVATAR")}>
 								<Button
-									data-testid="SelectProfileImage__remove-button"
 									size="icon"
 									color="danger"
 									variant="plain"
 									className="absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
 									onClick={() => onSelect("")}
+									data-testid="SelectProfileImage__remove-button"
 								>
 									<Icon name="Close" width={12} height={12} />
 								</Button>

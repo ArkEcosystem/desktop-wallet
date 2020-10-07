@@ -6,15 +6,15 @@ export const translations: { [key: string]: any } = {
 		PERSONAL: {
 			TITLE: "Personal Details",
 			PROFILE_IMAGE: "Profile Image",
+			DELETE_AVATAR: "Delete Avatar",
+			UPLOAD_AVATAR: "Upload Avatar",
 			NAME: "Name",
 			PASSWORD: "Password",
 			PASSPHRASE_LANGUAGE: "Passphrase Language",
 			CURRENCY: "Currency",
 			LANGUAGE: "Language",
 			MARKET_PROVIDER: "Market Provider",
-			REMOVE_AVATAR: "Remove Avatar",
 			TIME_FORMAT: "Time Format",
-			UPLOAD_AVATAR: "Upload Avatar",
 		},
 		SECURITY: {
 			TITLE: "Security",
