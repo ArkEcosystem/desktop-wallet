@@ -8,7 +8,7 @@ import { TransactionBuilderService } from './crypto/transaction-builder.service'
 import { TransactionSigner } from './crypto/transaction-signer'
 import BigNumber from '@/plugins/bignumber'
 import { camelToUpperSnake } from '@/utils'
-
+import semver from 'semver'
 export default class ClientService {
   /**
    * Generate a new connection instance.
@@ -343,11 +343,21 @@ export default class ClientService {
     let transactions = []
     let hadFailure = false
 
+    const search = (addressList) => {
+      if (this.satisfiesCoreVersion('>=3')) {
+        return this.client.api('transactions').all({
+          address: addressList.join(',')
+        })
+      }
+
+      return this.client.api('transactions').search({
+        addresses: addressList
+      })
+    }
+
     for (const addressChunk of chunk(addresses, 20)) {
       try {
-        const { body } = await this.client.api('transactions').search({
-          addresses: addressChunk
-        })
+        const { body } = await search(addressChunk)
         transactions.push(...body.data)
       } catch (error) {
         logger.error(error)
@@ -442,10 +452,20 @@ export default class ClientService {
   async fetchWallets (addresses) {
     const walletData = []
 
-    for (const addressChunk of chunk(addresses, 20)) {
-      const { body } = await this.client.api('wallets').search({
-        addresses: addressChunk
+    const search = (addressList) => {
+      if (this.satisfiesCoreVersion('>=3')) {
+        return this.client.api('wallets').all({
+          address: addressList.join(',')
+        })
+      }
+
+      return this.client.api('wallets').search({
+        addresses: addressList
       })
+    }
+
+    for (const addressChunk of chunk(addresses, 20)) {
+      const { body } = await search(addressChunk)
       walletData.push(...body.data)
     }
 
@@ -509,6 +529,12 @@ export default class ClientService {
       port: port || (isHttps ? '443' : '80'),
       isHttps
     }
+  }
+
+  satisfiesCoreVersion (expectedVersion) {
+    const network = store.getters['session/network']
+
+    return semver.satisfies(semver.coerce(network.apiVersion), expectedVersion)
   }
 
   async getNonceForAddress ({ address, networkId }) {
