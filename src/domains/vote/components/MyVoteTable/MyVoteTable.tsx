@@ -1,4 +1,5 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -27,7 +28,7 @@ export const MyVoteTable = ({ maxVotes, votes, onContinue }: MyVoteTableProps) =
 			) : (
 				<>
 					<h2 className="pt-5 text-2xl font-bold">{t("VOTE.MY_VOTE_TABLE.TITLE")}</h2>
-					<div className="text-theme-neutral-dark">{t("VOTE.MY_VOTE_TABLE.NO_VOTE")}</div>
+					<EmptyBlock className="mt-2" message={t("VOTE.MY_VOTE_TABLE.NO_VOTE")} />
 				</>
 			)}
 		</div>
