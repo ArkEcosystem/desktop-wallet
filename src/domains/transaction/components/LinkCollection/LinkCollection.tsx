@@ -34,6 +34,13 @@ const Wrapper = styled.div`
 	table th {
 		padding-bottom: 0;
 	}
+	table tr td {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+	table tr:first-child td {
+		padding-top: 0.25rem;
+	}
 `;
 
 export const LinkCollection = ({
@@ -48,31 +55,32 @@ export const LinkCollection = ({
 	onChoose,
 }: LinkCollectionProps) => {
 	const { t } = useTranslation();
+
 	const form = useForm<{ type: string; value: string; links: EntityLink[] }>({
+		mode: "onChange",
 		defaultValues: {
 			links: data,
 		},
 	});
-	const { control, register, setValue, getValues, handleSubmit, errors, clearErrors } = form;
+	const { clearErrors, control, errors, formState, handleSubmit, register, setValue, trigger, watch } = form;
 	const { fields, append, remove } = useFieldArray({
 		control,
 		name: "links",
 		keyName: "value",
 	});
 
+	const { type, value } = watch();
+
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [selected, setSelected] = useState((null as unknown) as EntityLink);
 
 	const getType = (value: string) => types.find((item) => item.value === value);
 
-	const validateProviderURL = (url: string) => {
-		const currentTypeValue = getValues("type");
-		return getType(currentTypeValue)!.validate(url);
-	};
+	const validateProviderURL = (url: string) => getType(type)!.validate(url);
 
-	const addLink = (link: EntityLink) => {
+	const addLink = async (link: EntityLink) => {
 		append(link);
-		setValue("value", "");
+		await Promise.resolve(setValue("value", "", { shouldValidate: true }));
 		clearErrors("value");
 	};
 
@@ -87,6 +95,14 @@ export const LinkCollection = ({
 	useEffect(() => {
 		onChoose?.(selected);
 	}, [selected, onChoose]);
+
+	const handleSelectType = async (selectedItem: any) => {
+		await Promise.resolve(setValue("type", selectedItem.value, { shouldValidate: true, shouldDirty: true }));
+
+		if (value) {
+			trigger("value");
+		}
+	};
 
 	const columns = [];
 
@@ -122,15 +138,14 @@ export const LinkCollection = ({
 				<span className="text-lg font-semibold">{title}</span>
 
 				<div>
-					{isExpanded && (
+					{isExpanded ? (
 						<Icon
 							name="ChevronUp"
 							width={10}
 							height={10}
 							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
 						/>
-					)}
-					{!isExpanded && (
+					) : (
 						<Icon
 							name="ChevronDown"
 							width={10}
@@ -148,12 +163,12 @@ export const LinkCollection = ({
 					<div
 						className="grid row-gap-4 col-gap-2"
 						style={{
-							gridTemplateColumns: "40% 60%",
+							gridTemplateColumns: "2fr 3fr",
 						}}
 					>
 						<FormField name="type">
 							<FormLabel label={`Add ${typeName}`} />
-							<Select options={types} ref={register({ required: true })} />
+							<Select options={types} ref={register({ required: true })} onChange={handleSelectType} />
 						</FormField>
 
 						<FormField name="value">
@@ -167,6 +182,7 @@ export const LinkCollection = ({
 									},
 								})}
 								isInvalid={!!errors?.value}
+								disabled={!type}
 							/>
 						</FormField>
 
@@ -175,72 +191,70 @@ export const LinkCollection = ({
 							className="col-span-2"
 							variant="plain"
 							type="button"
+							disabled={!value || !formState.isValid} // @TODO disable on duplicate entry
 							onClick={handleSubmit(({ type, value }) => addLink({ type, value }))}
 						>
 							{t("TRANSACTION.ADD_LINK")}
 						</Button>
 					</div>
 
-					<div className="mt-8 mb-2 text-sm text-theme-neutral-dark">Your {typeName}</div>
+					{fields && fields.length > 0 && (
+						<Table columns={columns} data={fields} className="mt-4">
+							{(rowData: any, rowIndex: any) => (
+								<tr
+									data-testid="LinkCollection__item"
+									key={rowData.value}
+									className="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300"
+								>
+									{selectionTypeTitle && (
+										<td className="w-16 text-center align-middle">
+											{selectionTypes && selectionTypes.includes(rowData.type) && (
+												<RadioButton
+													data-testid="LinkCollection__selected"
+													checked={
+														selected?.type === rowData.type &&
+														selected?.value === rowData.value
+													}
+													onChange={() => setSelected(rowData)}
+												/>
+											)}
+										</td>
+									)}
 
-					<Table columns={columns} data={fields}>
-						{(rowData: any, rowIndex: any) => (
-							<tr
-								data-testid="LinkCollection__item"
-								key={rowData.value}
-								className="font-semibold border-b last:border-b-0 border-theme-neutral-200"
-							>
-								{selectionTypeTitle && (
-									<td
-										className={`w-16 text-center align-middle ${
-											rowIndex > 0 ? "py-6" : "pb-6 pt-2"
-										}`}
-									>
-										{selectionTypes && selectionTypes.includes(rowData.type) && (
-											<RadioButton
-												data-testid="LinkCollection__selected"
-												checked={
-													selected?.type === rowData.type && selected?.value === rowData.value
-												}
-												onChange={() => setSelected(rowData)}
-											/>
-										)}
+									<td className="w-40">
+										<input
+											type="hidden"
+											name={`links[${rowIndex}].type`}
+											ref={register()}
+											defaultValue={rowData.type}
+										/>
+										{getType(rowData.type)!.label}
 									</td>
-								)}
 
-								<td className={`w-40 ${rowIndex > 0 ? "py-6" : "pb-6 pt-2 align-middle"}`}>
-									<input
-										type="hidden"
-										name={`links[${rowIndex}].type`}
-										ref={register()}
-										defaultValue={rowData.type}
-									/>
-									{getType(rowData.type)!.label}
-								</td>
+									<td className="break-all align-middle">
+										<input
+											type="hidden"
+											name={`links[${rowIndex}].value`}
+											ref={register()}
+											defaultValue={rowData.value}
+										/>
+										{rowData.value}
+									</td>
 
-								<td className={`break-all align-middle ${rowIndex > 0 ? "py-6" : "pb-6 pt-2"}`}>
-									<input
-										type="hidden"
-										name={`links[${rowIndex}].value`}
-										ref={register()}
-										defaultValue={rowData.value}
-									/>
-									{rowData.value}
-								</td>
-
-								<td className={`w-16 text-right align-middle ${rowIndex === 0 && "pb-4"}`}>
-									<Button
-										data-testid="LinkCollection__remove-link"
-										size="icon"
-										variant="plain"
-										onClick={() => removeLink(rowIndex)}
-									>
-										<Icon name="Trash" />
-									</Button>
-								</td>
-							</tr>
-						)}
-					</Table>
+									<td className="w-16 text-right align-middle">
+										<Button
+											data-testid="LinkCollection__remove-link"
+											size="icon"
+											variant="plain"
+											onClick={() => removeLink(rowIndex)}
+										>
+											<Icon name="Trash" />
+										</Button>
+									</td>
+								</tr>
+							)}
+						</Table>
+					)}
 				</div>
 			)}
 		</Wrapper>
