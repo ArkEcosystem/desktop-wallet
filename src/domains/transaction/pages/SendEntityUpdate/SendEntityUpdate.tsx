@@ -15,7 +15,7 @@ import { AuthenticationStep as ThirdStep } from "domains/transaction/components/
 import {
 	FormStep as FirstStep,
 	ReviewStep as SecondStep,
-	SentStep as FourthStep,
+	SummaryStep as FourthStep,
 } from "domains/transaction/components/EntityRegistrationForm";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect, useState } from "react";
@@ -27,10 +27,9 @@ import { fetchTxIpfsData, sendEntityUpdateTransaction } from "./utils";
 
 type SendEntityUpdateProps = {
 	formDefaultValues?: any;
-	onDownload: any;
 };
 
-export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUpdateProps) => {
+export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [activeTransaction, setActiveTransaction] = useState<TransactionData>();
 	const [savedTransaction, setSavedTransaction] = useState<SignedTransactionData>();
@@ -156,7 +155,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 				{isLoading && <Loader />}
 
 				{!isLoading && (
-					<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload?.(data)}>
+					<Form className="max-w-xl mx-auto" context={form} onSubmit={handleSubmit}>
 						<Tabs activeId={activeTab}>
 							<StepIndicator size={4} activeIndex={activeTab} />
 
@@ -171,7 +170,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 									/>
 								</TabPanel>
 								<TabPanel tabId={2}>
-									<SecondStep wallet={activeWallet} />
+									<SecondStep senderWallet={activeWallet} />
 								</TabPanel>
 								<TabPanel tabId={3}>
 									<ThirdStep wallet={activeWallet} />
@@ -179,7 +178,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 								<TabPanel tabId={4}>
 									{savedTransaction && (
 										<TransactionSuccessful senderWallet={activeWallet}>
-											<FourthStep transaction={savedTransaction} />
+											<FourthStep transaction={savedTransaction} wallet={activeWallet} />
 										</TransactionSuccessful>
 									)}
 								</TabPanel>
@@ -206,7 +205,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 										<Button
 											data-testid="SendEntityUpdate__send-button"
 											disabled={formState.isSubmitting}
-											onClick={form.handleSubmit(handleSubmit)}
+											type="submit"
 											className="space-x-2"
 										>
 											<Icon name="Send" width={20} height={20} />

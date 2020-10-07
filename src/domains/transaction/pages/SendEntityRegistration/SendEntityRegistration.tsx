@@ -206,7 +206,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 								</>
 							)}
 
-							<div className="flex justify-end mt-8 space-x-3">
+							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < stepCount && (
 									<Button
 										disabled={activeTab === 1}

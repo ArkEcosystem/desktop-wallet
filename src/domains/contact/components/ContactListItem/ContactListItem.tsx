@@ -77,7 +77,8 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 
 							{!isCondensed() && (
 								<TableCell
-									innerClassName={`space-x-2 text-sm font-bold justify-center ${borderClasses()}`}
+									className={borderClasses()}
+									innerClassName="space-x-2 text-sm font-bold justify-center"
 								>
 									{address.hasSyncedWithNetwork() &&
 										walletTypes.map((type: string) =>
@@ -93,7 +94,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 								</TableCell>
 							)}
 
-							<TableCell variant="end" innerClassName={`justify-end ${borderClasses()}`}>
+							<TableCell variant="end" className={borderClasses()} innerClassName="justify-end">
 								{index === 0 && options?.length > 1 && (
 									<Dropdown
 										toggleContent={
