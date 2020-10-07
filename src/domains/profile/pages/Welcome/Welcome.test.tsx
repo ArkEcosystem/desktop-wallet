@@ -103,6 +103,56 @@ describe("Welcome", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should navigate to profile settings with correct password", async () => {
+		const {
+			asFragment,
+			container,
+			findByTestId,
+			getByTestId,
+			getByText,
+			history,
+			getAllByTestId,
+		} = renderWithRouter(<Welcome />);
+
+		expect(container).toBeTruthy();
+
+		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+
+		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		const profileCardMenu = getAllByTestId("dropdown__toggle")[1];
+
+		act(() => {
+			fireEvent.click(profileCardMenu);
+		});
+
+		const settingsOption = getByTestId("dropdown__option--0");
+		expect(settingsOption).toBeTruthy();
+		expect(settingsOption).toHaveTextContent(commonTranslations.SETTINGS);
+
+		act(() => {
+			fireEvent.click(settingsOption);
+		});
+
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeInTheDocument());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: "password" } });
+		});
+
+		// wait for formState.isValid to be updated
+		await findByTestId("SignIn__submit-button");
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SignIn__submit-button"));
+		});
+
+		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/settings`);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should navigate to profile settings from profile card menu", () => {
 		const { container, getByText, asFragment, history, getByTestId, getAllByTestId } = renderWithRouter(
 			<Welcome />,
