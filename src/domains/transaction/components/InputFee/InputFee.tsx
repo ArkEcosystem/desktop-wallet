@@ -44,7 +44,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 		if (value && value !== fee) {
 			setFee(BigNumber.make(value).divide(1e8).toString());
 		}
-	}, [fee, value]);
+	}, [fee, value, defaultValue]);
 
 	return (
 		<div data-testid="InputFee" className="flex space-x-2">
