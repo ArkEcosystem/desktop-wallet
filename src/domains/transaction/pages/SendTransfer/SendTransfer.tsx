@@ -45,7 +45,7 @@ export const SendTransfer = () => {
 		register("senderAddress", sendTransfer.senderAddress());
 		register("fee", sendTransfer.fee());
 		register("smartbridge", sendTransfer.smartbridge());
-	}, [register]);
+	}, [register, sendTransfer]);
 
 	useEffect(() => {
 		if (!activeWallet?.address?.()) return;
