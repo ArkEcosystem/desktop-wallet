@@ -132,12 +132,12 @@ export const requestMocks = {
 	],
 };
 
-export const createFixture = (name: string, requestHooks?: RequestMock[]) =>
+export const createFixture = (name: string, requestHooks: RequestMock[] = []) =>
 	fixture(name)
 		.page(getPageURL())
 		.requestHooks(
 			// TODO: look for other URLs that are not mocked
-			...(requestHooks || [
+			...requestHooks.concat([
 				...requestMocks.configuration,
 				...requestMocks.delegates,
 				...requestMocks.transactions,
