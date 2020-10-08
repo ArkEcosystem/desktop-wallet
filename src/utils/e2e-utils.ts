@@ -146,8 +146,16 @@ export const createFixture = (name: string, requestHooks?: RequestMock[]) =>
 			mockRequest(
 				(request: any) => request.url.startsWith(BASEURL),
 				(request: any) => {
-					throw new Error(`Missing mock for ${request.url}`);
+					const mock: { url: string; method: string; body?: string } = {
+						url: request.url,
+						method: request.method,
+					};
+
+					if (request.method === "POST") {
+						mock.body = request.body.toString();
+					}
+
+					throw new Error(`\n-- Missing mock:\n${JSON.stringify(mock, undefined, 4)}`);
 				},
-				500,
 			),
 		);
