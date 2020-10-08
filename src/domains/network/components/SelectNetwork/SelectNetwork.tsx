@@ -31,7 +31,7 @@ export const SelectNetwork = ({
 	disabled,
 	selected,
 }: SelectNetworkProps) => {
-	const [items, setItems] = useState<any>([]);
+	const [items, setItems] = useState<Network[]>([]);
 
 	const extendedItems = useMemo(
 		() =>
@@ -149,7 +149,7 @@ export const SelectNetwork = ({
 				{isOpen &&
 					items
 						.filter((network: Network) => network.extra)
-						.map((item: any, index: number) => (
+						.map((item: Network, index: number) => (
 							<li
 								data-testid="SelectNetwork__NetworkIcon--container"
 								key={index}
