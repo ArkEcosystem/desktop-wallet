@@ -48,6 +48,7 @@ export const translations: { [key: string]: any } = {
 		NEW_PROFILE: "New Profile",
 		VALIDATION: {
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+			NAME_EXISTS: "Profile name already exists",
 		},
 	},
 	PAGE_MY_REGISTRATIONS: {

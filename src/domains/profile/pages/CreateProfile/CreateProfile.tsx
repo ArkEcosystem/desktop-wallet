@@ -23,7 +23,7 @@ export const CreateProfile = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const { watch, register } = form;
+	const { watch, register, setError } = form;
 	const name = watch("name");
 
 	const nameMaxLength = 42;
@@ -31,6 +31,7 @@ export const CreateProfile = () => {
 
 	const [avatarImage, setAvatarImage] = useState("");
 
+	const profiles = useMemo(() => env.profiles().values(), [env]);
 	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
 
 	useEffect(() => {
@@ -55,6 +56,14 @@ export const CreateProfile = () => {
 
 	const handleSubmit = async ({ name, password, currency, isDarkMode }: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
+		const profileExists = profiles.some((profile) => profile.name() === formattedName);
+
+		if (profileExists) {
+			return setError("name", {
+				type: "manual",
+				message: t("PROFILE.PAGE_CREATE_PROFILE.VALIDATION.NAME_EXISTS"),
+			});
+		}
 
 		const profile = env.profiles().create(formattedName);
 
