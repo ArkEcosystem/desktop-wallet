@@ -18,11 +18,16 @@ export type InputFeeProps = {
 export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }: InputFeeProps) => {
 	const { t } = useTranslation();
 
-	const minHuman = BigNumber.make(min).divide(1e8).toString();
-	const maxHuman = BigNumber.make(max).divide(1e8).toString();
-	const avgHuman = BigNumber.make(avg).divide(1e8).toString();
+	const toHuman = (value: string | number) => BigNumber.make(value).divide(1e8).toString();
 
-	const [fee, setFee] = useState<any>(avg);
+	const minHuman = toHuman(min);
+	const maxHuman = toHuman(max);
+	const avgHuman = toHuman(avg);
+
+	const defaultFeeValue = value || defaultValue || avg;
+	const defaultHuman = toHuman(defaultFeeValue);
+
+	const [fee, setFee] = useState<any>({ display: defaultHuman, value: defaultFeeValue });
 
 	const handleFeeChange = (currency: { display: string; value: string }) => {
 		setFee(currency);
@@ -30,7 +35,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 	};
 
 	useEffect(() => {
-		if (!value) {
+		if (!value && !defaultValue) {
 			setFee(BigNumber.make("0").times(1e8).toString());
 		}
 
