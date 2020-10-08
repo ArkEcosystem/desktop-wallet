@@ -14,6 +14,79 @@ export const scrollToBottom = ClientFunction(() => window.scrollTo({ top: docume
 
 const BASEURL = "https://dwallets.ark.io/api/";
 
+const walletMocks = () => {
+	const addresses = [
+		"D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+		"D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+		"D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+		"D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+		"D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+		"DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
+		"DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+		"D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
+		"DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
+		"DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
+		"D68sFcspN2LVd9HZpf98c7bXkNimK3M6AZ",
+	];
+
+	const publicKeys = ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"];
+
+	return [...addresses, ...publicKeys].map((identifier: string) =>
+		mockRequest(`https://dwallets.ark.io/api/wallets/${identifier}`, `coins/ark/wallets/${identifier}`),
+	);
+};
+
+const entityRegistrationMocks = () => {
+	const publicKeys = [
+		"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
+		"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+		"02e012f0a7cac12a74bdc17d844cbc9f637177b470019c32a53cef94c7a56e2ea9",
+	];
+
+	const types = {
+		0: "business",
+		3: "plugin",
+		4: "delegate",
+	};
+
+	const mocks: any = [];
+
+	for (const [key, type] of Object.entries(types)) {
+		mocks.push(
+			...publicKeys.map((identifier: string) =>
+				mockRequest(
+					(request: any) =>
+						request.url === "https://dwallets.ark.io/api/transactions/search" &&
+						request.method === "post" &&
+						request.body.toString() ===
+							`{"senderPublicKey":"${identifier}","type":6,"typeGroup":2,"asset":{"type":${key},"action":0}}`,
+					`coins/ark/transactions/${type}-registrations`,
+				),
+			),
+		);
+	}
+
+	return mocks;
+};
+
+const searchAddressesMocks = () => {
+	const addresses = [
+		"D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+		"DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
+		"DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
+	];
+
+	return addresses.map((address: string) =>
+		mockRequest(
+			(request: any) =>
+				request.url === "https://dwallets.ark.io/api/transactions/search?page=1&limit=15" &&
+				request.method === "post" &&
+				request.body.toString() === `{"addresses":["${address}"]}`,
+			`coins/ark/transactions/search/addresses-${address}`,
+		),
+	);
+};
+
 export const mockRequest = (url: string | object | Function, fixture: string | object | Function, statusCode = 200) =>
 	RequestMock()
 		.onRequestTo(url)
@@ -62,102 +135,15 @@ export const requestMocks = {
 		),
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/transaction-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions/search?limit=10", "coins/ark/transactions"),
-		mockRequest(
-			(request: any) =>
-				request.url === "https://dwallets.ark.io/api/transactions/search" &&
-				request.method === "post" &&
-				request.body.toString() ===
-					'{"senderPublicKey":"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51","type":6,"typeGroup":2,"asset":{"type":0,"action":0}}',
-			"coins/ark/transactions/business-registrations",
-		),
-		mockRequest(
-			(request: any) =>
-				request.url === "https://dwallets.ark.io/api/transactions/search" &&
-				request.method === "post" &&
-				request.body.toString() ===
-					'{"senderPublicKey":"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51","type":6,"typeGroup":2,"asset":{"type":3,"action":0}}',
-			"coins/ark/transactions/plugin-registrations",
-		),
-		mockRequest(
-			(request: any) =>
-				request.url === "https://dwallets.ark.io/api/transactions/search" &&
-				request.method === "post" &&
-				request.body.toString() ===
-					'{"senderPublicKey":"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc","type":6,"typeGroup":2,"asset":{"type":0,"action":0}}',
-			"coins/ark/transactions/empty-search",
-		),
-		mockRequest(
-			(request: any) =>
-				request.url === "https://dwallets.ark.io/api/transactions/search" &&
-				request.method === "post" &&
-				request.body.toString() ===
-					'{"senderPublicKey":"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc","type":6,"typeGroup":2,"asset":{"type":3,"action":0}}',
-			"coins/ark/transactions/empty-search",
-		),
-		mockRequest(
-			(request: any) =>
-				request.url === "https://dwallets.ark.io/api/transactions/search?page=1&limit=15" &&
-				request.method === "post" &&
-				request.body.toString() === '{"addresses":["D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"]}',
-			"coins/ark/transactions/search/addresses-D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-		),
-		mockRequest(
-			(request: any) =>
-				request.url === "https://dwallets.ark.io/api/transactions/search?page=1&limit=15" &&
-				request.method === "post" &&
-				request.body.toString() === '{"addresses":["DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS"]}',
-			"coins/ark/transactions/search/addresses-DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
-		),
-		mockRequest(
-			(request: any) =>
-				request.url === "https://dwallets.ark.io/api/transactions/search?page=1&limit=15" &&
-				request.method === "post" &&
-				request.body.toString() === '{"addresses":["DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"]}',
-			"coins/ark/transactions/search/addresses-DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
-		),
+
+		...entityRegistrationMocks(),
+
+		...searchAddressesMocks(),
 	],
 	wallets: [
-		mockRequest(
-			"https://dwallets.ark.io/api/wallets/D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
-			"coins/ark/wallets/D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
-		),
-		mockRequest(
-			"https://dwallets.ark.io/api/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
-			"coins/ark/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
-		),
-		mockRequest(
-			"https://dwallets.ark.io/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
-			"coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
-		),
-		mockRequest(
-			"https://dwallets.ark.io/api/wallets/034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
-			"coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
-		),
-		mockRequest(
-			"https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-			"coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-		),
-		mockRequest(
-			"https://dwallets.ark.io/api/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
-			"coins/ark/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
-		),
-		mockRequest(
-			"https://dwallets.ark.io/api/wallets/DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
-			"coins/ark/wallets/DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
-		),
-		mockRequest(
-			"https://dwallets.ark.io/api/wallets/D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
-			"coins/ark/wallets/D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
-		),
-		mockRequest(
-			"https://dwallets.ark.io/api/wallets/DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
-			"coins/ark/wallets/DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
-		),
-		mockRequest(
-			"https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
-			"coins/ark/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
-		),
 		mockRequest("https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes", "coins/ark/votes"),
+
+		...walletMocks(),
 	],
 };
 

@@ -1,11 +1,19 @@
 import { Selector } from "testcafe";
 
-import { createFixture } from "../../../utils/e2e-utils";
+import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToMyRegistrations, goToProfile } from "../../profile/e2e/common";
 import { goToResignDelegatePage } from "./common";
-import { transactionsMock, walletMock } from "./mocks";
 
-createFixture(`Delegate Registration action`);
+
+createFixture(`Delegate Resignation action`, [
+	mockRequest(
+		{
+			url: "https://dwallets.ark.io/api/transactions",
+			method: "POST",
+		},
+		{},
+	),
+]);
 
 test("should fail delegate resignation submission", async (t: any) => {
 	await goToProfile(t);
@@ -55,8 +63,8 @@ test("should successfully submit delegate resignation", async (t) => {
 		{ replace: true },
 	);
 
-	transactionsMock();
-	walletMock("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
+	// transactionsMock();
+	// walletMock("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
 
 	const sendButton = "[data-testid=SendEntityResignation__send-button]";
 	await t.click(Selector(sendButton));
