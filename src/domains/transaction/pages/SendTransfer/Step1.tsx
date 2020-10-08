@@ -1,7 +1,7 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputCounter } from "app/components/Input";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
@@ -58,6 +58,7 @@ export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; pro
 									setValue("smartbridge", e.target.value, { shouldDirty: true, shouldValidate: true })
 								}
 							/>
+							<FormHelperText />
 						</FormField>
 					</>
 				</SendTransactionForm>
