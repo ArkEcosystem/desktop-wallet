@@ -42,6 +42,10 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	useEffect(() => {
 		if ((!avatarImage || isSvg) && name) {
 			setAvatarImage(AvatarSDK.make(name));
+		} else {
+			if (isSvg && !name) {
+				setAvatarImage("");
+			}
 		}
 	}, [name, avatarImage, isSvg, setAvatarImage]);
 
