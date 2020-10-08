@@ -56,10 +56,6 @@ const Main = () => {
 	});
 
 	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [pathname]);
-
-	useEffect(() => {
 		if (!showSplash) {
 			start();
 		}

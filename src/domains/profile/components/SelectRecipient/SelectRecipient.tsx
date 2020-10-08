@@ -1,4 +1,4 @@
-import { ContactAddress, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { useFormField } from "app/components/Form/useFormField";
@@ -97,7 +97,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 					isOpen={isContactSearchOpen}
 					profile={profile}
 					options={[{ value: "select", label: selectActionLabel }]}
-					onAction={(_, address: ContactAddress) => onSelectProfile(address.address())}
+					onAction={(_, address: string) => onSelectProfile(address)}
 					onClose={() => setIsContactSearchOpen(false)}
 				/>
 			</div>

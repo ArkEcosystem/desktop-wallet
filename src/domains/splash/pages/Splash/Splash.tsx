@@ -25,7 +25,7 @@ export const Splash = ({ year }: any) => {
 	return (
 		<Page navbarVariant="logo-only">
 			<Section className="flex flex-col justify-center flex-1 text-center">
-				<div className="w-64 mx-auto lg:w-128">
+				<div className="w-64 mx-auto lg:w-96">
 					<WelcomeBanner />
 				</div>
 
