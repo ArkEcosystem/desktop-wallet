@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contact, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { SearchResource } from "app/components/SearchResource";
 import { Table } from "app/components/Table";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
@@ -28,6 +28,12 @@ export const SearchContact = ({
 	description,
 }: SearchContactProps) => {
 	const { t } = useTranslation();
+	const contacts = profile.contacts().values();
+	const wallets = profile.wallets().values();
+	const availableData: { item: Contact | ReadWriteWallet; type: string }[] = [];
+
+	contacts.map((contact) => availableData.push({ item: contact, type: "contact" }));
+	wallets.map((wallet) => availableData.push({ item: wallet, type: "wallet" }));
 
 	const columns = [
 		{
@@ -36,20 +42,15 @@ export const SearchContact = ({
 			className: "hidden",
 		},
 		{
+			Header: t("COMMON.ADDRESS"),
+		},
+		{
 			Header: t("COMMON.NAME"),
 			accessor: "name",
 		},
 		{
-			Header: t("COMMON.CRYPTOASSET"),
-			className: "justify-center",
-		},
-		{
-			Header: "Avatar",
-			disableSortBy: true,
-			className: "hidden",
-		},
-		{
-			Header: t("COMMON.ADDRESS"),
+			Header: t("COMMON.TYPE"),
+			accessor: "type",
 		},
 	];
 
@@ -62,9 +63,15 @@ export const SearchContact = ({
 			onClose={onClose}
 			onSearch={onSearch}
 		>
-			<Table columns={columns} data={profile.contacts().values()}>
-				{(contact: any) => (
-					<ContactListItem contact={contact} variant="condensed" onAction={onAction} options={options} />
+			<Table columns={columns} data={availableData}>
+				{(data: any) => (
+					<ContactListItem
+						item={data.item}
+						type={data.type}
+						variant="condensed"
+						onAction={onAction}
+						options={options}
+					/>
 				)}
 			</Table>
 		</SearchResource>

@@ -25,6 +25,7 @@ export const Welcome = () => {
 
 	const [deletingProfileId, setDeletingProfileId] = useState<string | undefined>();
 	const [selectedProfile, setSelectedProfile] = useState<Profile | undefined>();
+	const [requestedAction, setRequestedAction] = useState<any>();
 
 	const profileCardActions = [
 		{ label: t("COMMON.SETTINGS"), value: "setting" },
@@ -43,10 +44,32 @@ export const Welcome = () => {
 
 	const closeSignInModal = () => {
 		setSelectedProfile(undefined);
+		setRequestedAction(undefined);
 	};
 
-	const handleProfileCardAction = (profile: Profile, action: any) => {
+	const handleClick = (profile: Profile) => {
+		if (profile.usesPassword()) {
+			setSelectedProfile(profile);
+			setRequestedAction({ label: "Homepage", value: "home" });
+		} else {
+			navigateToProfile(profile.id());
+		}
+	};
+
+	const handleProfileAction = (profile: Profile, action: any) => {
+		if (profile.usesPassword()) {
+			setRequestedAction(action);
+			setSelectedProfile(profile);
+		} else {
+			handleRequestedAction(profile, action);
+		}
+	};
+
+	const handleRequestedAction = (profile: Profile, action: any) => {
 		switch (action?.value) {
+			case "home":
+				navigateToProfile(profile.id());
+				break;
 			case "setting":
 				navigateToProfile(profile.id(), "settings");
 				break;
@@ -54,14 +77,8 @@ export const Welcome = () => {
 				setDeletingProfileId(profile.id());
 				break;
 		}
-	};
 
-	const handleClick = (profile: Profile) => {
-		if (profile.usesPassword()) {
-			setSelectedProfile(profile);
-		} else {
-			navigateToProfile(profile.id());
-		}
+		closeSignInModal();
 	};
 
 	return (
@@ -74,7 +91,7 @@ export const Welcome = () => {
 						</Trans>
 					</h1>
 
-					<div className="w-64 mx-auto lg:w-128">
+					<div className="w-64 mx-auto lg:w-96">
 						<WelcomeBanner />
 					</div>
 
@@ -96,7 +113,7 @@ export const Welcome = () => {
 											key={index}
 											profile={profile}
 											actions={profileCardActions}
-											onSelect={(action: any) => handleProfileCardAction(profile, action)}
+											onSelect={(action: any) => handleProfileAction(profile, action)}
 										/>
 									))}
 								</div>
@@ -137,13 +154,13 @@ export const Welcome = () => {
 				onDelete={closeDeleteProfileModal}
 			/>
 
-			{selectedProfile && (
+			{selectedProfile && requestedAction && (
 				<SignIn
 					isOpen={!!selectedProfile}
 					profile={selectedProfile}
 					onCancel={closeSignInModal}
 					onClose={closeSignInModal}
-					onSuccess={() => navigateToProfile(selectedProfile.id())}
+					onSuccess={() => handleRequestedAction(selectedProfile, requestedAction)}
 				/>
 			)}
 		</>

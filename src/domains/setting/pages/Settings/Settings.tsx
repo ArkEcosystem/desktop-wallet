@@ -1,6 +1,7 @@
 import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
 import { useEnvironmentContext } from "app/contexts";
+import { useReloadPath } from "app/hooks";
 import { useActiveProfile } from "app/hooks/env";
 import { toasts } from "app/services";
 import React, { useState } from "react";
@@ -13,6 +14,8 @@ export const Settings = () => {
 	const [activeSettings, setActiveSettings] = useState("General");
 
 	const { env } = useEnvironmentContext();
+
+	const reloadPath = useReloadPath();
 
 	const form = useForm({ mode: "onChange" });
 	const { register, errors } = form;
@@ -45,6 +48,8 @@ export const Settings = () => {
 	];
 
 	const handleSuccess = (message?: string) => {
+		reloadPath();
+
 		toasts.success(message || t("SETTINGS.GENERAL.SUCCESS"));
 	};
 

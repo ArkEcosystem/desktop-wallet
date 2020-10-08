@@ -1671,7 +1671,7 @@ exports[`Settings should render 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group"
+                      class="group undefined"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
@@ -1682,34 +1682,10 @@ exports[`Settings should render 1`] = `
                         class="flex flex-row mt-2"
                       >
                         <div
-                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
-                        >
-                          <div
-                            class="overflow-hidden rounded-full w-22 h-22"
-                          >
-                            <button
-                              class="sc-AxhCb hPLjLy w-22 h-22"
-                              color="primary"
-                              data-testid="SelectProfileImage__upload-button"
-                              type="button"
-                            >
-                              <div
-                                class="sc-AxirZ iQaTP"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  upload.svg
-                                </svg>
-                              </div>
-                            </button>
-                          </div>
-                        </div>
-                        <div
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fznxKY jFfQKL"
+                            class="sc-fznxKY clIQbl"
                           >
                             <img
                               alt="Profile avatar"
@@ -1721,24 +1697,25 @@ exports[`Settings should render 1`] = `
                             >
                               JO
                             </span>
-                          </div>
-                          <button
-                            class="sc-AxhCb gmYZoQ absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
-                            color="danger"
-                            data-testid="SelectProfileImage__remove-button"
-                            disabled=""
-                            type="button"
-                          >
                             <div
-                              class="sc-AxirZ hDwaov"
-                              height="12"
-                              width="12"
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
                             >
-                              <svg>
-                                close.svg
-                              </svg>
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
+                              >
+                                <div
+                                  class="sc-AxirZ iQaTP text-white"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
                             </div>
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -6152,7 +6129,7 @@ exports[`Settings should submit using default props 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group"
+                      class="group undefined"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
@@ -6163,34 +6140,10 @@ exports[`Settings should submit using default props 1`] = `
                         class="flex flex-row mt-2"
                       >
                         <div
-                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
-                        >
-                          <div
-                            class="overflow-hidden rounded-full w-22 h-22"
-                          >
-                            <button
-                              class="sc-AxhCb hPLjLy w-22 h-22"
-                              color="primary"
-                              data-testid="SelectProfileImage__upload-button"
-                              type="button"
-                            >
-                              <div
-                                class="sc-AxirZ iQaTP"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  upload.svg
-                                </svg>
-                              </div>
-                            </button>
-                          </div>
-                        </div>
-                        <div
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fznxKY jFfQKL"
+                            class="sc-fznxKY clIQbl"
                           >
                             <img
                               alt="Profile avatar"
@@ -6202,24 +6155,25 @@ exports[`Settings should submit using default props 1`] = `
                             >
                               TE
                             </span>
-                          </div>
-                          <button
-                            class="sc-AxhCb gmYZoQ absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
-                            color="danger"
-                            data-testid="SelectProfileImage__remove-button"
-                            disabled=""
-                            type="button"
-                          >
                             <div
-                              class="sc-AxirZ hDwaov"
-                              height="12"
-                              width="12"
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
                             >
-                              <svg>
-                                close.svg
-                              </svg>
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
+                              >
+                                <div
+                                  class="sc-AxirZ iQaTP text-white"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
                             </div>
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -7444,7 +7398,7 @@ exports[`Settings should update profile 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group"
+                      class="group undefined"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
@@ -7455,34 +7409,10 @@ exports[`Settings should update profile 1`] = `
                         class="flex flex-row mt-2"
                       >
                         <div
-                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
-                        >
-                          <div
-                            class="overflow-hidden rounded-full w-22 h-22"
-                          >
-                            <button
-                              class="sc-AxhCb hPLjLy w-22 h-22"
-                              color="primary"
-                              data-testid="SelectProfileImage__upload-button"
-                              type="button"
-                            >
-                              <div
-                                class="sc-AxirZ iQaTP"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  upload.svg
-                                </svg>
-                              </div>
-                            </button>
-                          </div>
-                        </div>
-                        <div
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fznxKY jFfQKL"
+                            class="sc-fznxKY clIQbl"
                           >
                             <img
                               alt="Profile avatar"
@@ -7494,24 +7424,25 @@ exports[`Settings should update profile 1`] = `
                             >
                               TE
                             </span>
-                          </div>
-                          <button
-                            class="sc-AxhCb gmYZoQ absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
-                            color="danger"
-                            data-testid="SelectProfileImage__remove-button"
-                            disabled=""
-                            type="button"
-                          >
                             <div
-                              class="sc-AxirZ hDwaov"
-                              height="12"
-                              width="12"
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
                             >
-                              <svg>
-                                close.svg
-                              </svg>
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
+                              >
+                                <div
+                                  class="sc-AxirZ iQaTP text-white"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
                             </div>
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
