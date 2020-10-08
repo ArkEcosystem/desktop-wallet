@@ -12,4 +12,5 @@ export const LedgerProvider = ({ transport, children }: Props) => {
 	return <LedgerContext.Provider value={ledger}>{children}</LedgerContext.Provider>;
 };
 
+/* istanbul ignore next */
 export const useLedgerContext = (): ReturnType<typeof useLedger> => useContext(LedgerContext);

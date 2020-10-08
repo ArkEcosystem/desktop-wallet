@@ -35,6 +35,13 @@ describe("Use Ledger", () => {
 			["44'/111'/1'/0/0", wallet.publicKey()!],
 			["44'/111'/2'/0/0", "020aac4ec02d47d306b394b79d3351c56c1253cd67fe2c1a38ceba59b896d584d1"],
 		]);
+
+		jest.useFakeTimers();
+	});
+
+	afterEach(() => {
+		jest.runOnlyPendingTimers();
+		jest.useRealTimers();
 	});
 
 	it("should listen for device", async () => {
@@ -175,8 +182,6 @@ describe("Use Ledger", () => {
 				fireEvent.click(screen.getByText("Connect"));
 			});
 
-			await act(() => new Promise((r) => setTimeout(r, 100)));
-
 			act(() => {
 				fireEvent.click(screen.getByText("Abort"));
 			});
@@ -184,7 +189,7 @@ describe("Use Ledger", () => {
 			await waitFor(() => expect(screen.getByText("User aborted")).toBeInTheDocument());
 			await waitFor(() => expect(screen.queryByText("Waiting Device")).not.toBeInTheDocument());
 
-			expect(getPublicKeySpy).toHaveBeenCalledTimes(5);
+			expect(getPublicKeySpy).toHaveBeenCalledTimes(3);
 
 			getPublicKeySpy.mockReset();
 		});
@@ -207,7 +212,7 @@ describe("Use Ledger", () => {
 			await waitFor(() => expect(screen.queryByText("Waitig Device")).not.toBeInTheDocument());
 			await waitFor(() => expect(screen.queryByText("Failed")).toBeInTheDocument());
 
-			expect(getPublicKeySpy).toHaveBeenCalledTimes(4);
+			expect(getPublicKeySpy).toHaveBeenCalledTimes(5);
 
 			getPublicKeySpy.mockReset();
 		});
@@ -258,7 +263,7 @@ describe("Use Ledger", () => {
 		});
 
 		it("should fail to scan wallets", async () => {
-			jest.useFakeTimers();
+			jest.setTimeout(10000);
 
 			const getPublicKeySpy = jest
 				.spyOn(wallet.coin().ledger(), "getPublicKey")
@@ -272,13 +277,8 @@ describe("Use Ledger", () => {
 
 			expect(screen.getByText("Waiting Device")).toBeInTheDocument();
 
-			act(() => {
-				jest.runOnlyPendingTimers();
-			});
+			await waitFor(() => expect(screen.getByText("Failed")).toBeInTheDocument(), { timeout: 10000 });
 
-			await waitFor(() => expect(screen.getByText("Failed")).toBeInTheDocument());
-
-			jest.useRealTimers();
 			getPublicKeySpy.mockReset();
 		});
 	});
