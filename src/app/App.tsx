@@ -19,7 +19,6 @@ import { LedgerListener } from "domains/transaction/components/LedgerListener";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
-import { useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
@@ -36,14 +35,9 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 
-	const { pathname } = useLocation();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
-
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [pathname]);
 
 	useEffect(() => {
 		if (!showSplash) {

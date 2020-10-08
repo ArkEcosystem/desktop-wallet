@@ -128,11 +128,16 @@ export const translations: { [key: string]: any } = {
 		COPY_ADDRESS: "Copy Address",
 		COPY_PUBLIC_KEY: "Copy Public Key",
 		PENDING_TRANSACTIONS: "Pending Transactions",
-		TRANSACTION_HISTORY: "Transaction History",
 		YOUR_WALLETS: "Your Wallets",
 
 		STAR_WALLET: "Add to favorites",
 		UNSTAR_WALLET: "Remove from favorites",
+
+		TRANSACTION_HISTORY: {
+			TITLE: "Transactions History",
+			EMPTY_TEXT:
+				"This will display the history of your transactions. But you don't have more than one transaction at the moment.",
+		},
 
 		REGISTRATIONS: {
 			TITLE: "Registrations",

@@ -46,7 +46,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="max-w-lg mx-auto -mt-10"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -59,7 +59,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
               Sign in via MarketSquare or create a new Profile below.
             </div>
             <div
-              class="pb-4 mt-8"
+              class="mt-8"
             >
               <div>
                 <button
@@ -85,543 +85,87 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                 </button>
               </div>
             </div>
-            <div
-              class="sc-AxirZ jjvtQn border-theme-neutral-300"
-              type="horizontal"
-            />
             <form
-              class="space-y-8"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200"
               data-testid="CreateProfile__form"
             >
               <div
-                class="mt-8"
+                class="mt-2"
               >
-                <h2>
-                  Personal Details
-                </h2>
+                <h3>
+                  New Profile
+                </h3>
                 <div
-                  class="group"
+                  class="relative mt-8 space-y-8"
                 >
-                  <span
-                    class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
-                  >
-                    Profile Image
-                  </span>
                   <div
-                    class="flex flex-row mt-2"
+                    class="flex justify-between"
                   >
-                    <div
-                      class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
+                    <fieldset
+                      class="sc-AxiKw iQzisX w-full mr-6"
                     >
-                      <div
-                        class="overflow-hidden rounded-full w-22 h-22"
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="name"
                       >
-                        <button
-                          class="sc-AxjAm fPpool w-22 h-22"
-                          color="primary"
-                          data-testid="SelectProfileImage__upload-button"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxhCb fxrKLH"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              upload.svg
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                    <div
-                      class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
-                    >
-                      <div
-                        class="sc-fzoXWK idrRUY"
-                      >
-                        <img
-                          alt="Profile avatar"
-                          class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                        Name
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
                         />
-                        <span
-                          class="absolute text-2xl font-semibold text-theme-background"
-                        >
-                          TE
-                        </span>
-                      </div>
-                      <button
-                        class="sc-AxjAm cUmKa-D absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
-                        color="danger"
-                        data-testid="SelectProfileImage__remove-button"
-                        disabled=""
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxhCb koOqYD"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            close.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="relative mt-8 space-y-8"
-                >
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="name"
-                    >
-                      Name
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <input
-                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="Input"
-                      name="name"
-                    />
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="password"
-                    >
-                      Password
-                      <span
-                        class="ml-1 text-theme-neutral-light"
-                        data-testid="FormLabel__optional"
-                      >
-                        (optional)
-                      </span>
-                    </label>
-                    <div
-                      class="sc-AxmLO kuiknc max-w-20"
-                      data-testid="InputPassword"
-                    >
+                      </label>
                       <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="Input"
-                        name="password"
-                        type="password"
+                        name="name"
                       />
-                      <div
-                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
-                      >
-                        <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                          data-testid="InputPassword__toggle"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxhCb fxrKLH"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="marketProvider"
-                    >
-                      Market Provider
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
+                    </fieldset>
                     <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="marketProvider"
-                        readonly=""
-                        type="text"
-                        value="coincap"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-77-label downshift-77-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-77-toggle-button"
-                            type="button"
-                          >
-                            CoinCap
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-77-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-77-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="currency"
-                    >
-                      Currency
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        type="text"
-                        value="BTC"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-78-label downshift-78-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-78-toggle-button"
-                            type="button"
-                          >
-                            BTC (Ƀ)
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-78-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-78-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-                <div
-                  class="mt-8"
-                >
-                  <h2>
-                    Other
-                  </h2>
-                  <ul
-                    class="sc-fzqNqU iuWpXt"
-                    data-testid="list-divided__items"
-                  >
-                    <li
-                      class="flex flex-col w-full "
-                      data-testid="list-divided-item__wrapper"
+                      class="group -mt-6"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
-                        data-testid="list-divided-item__inner-wrapper"
+                        class="flex flex-row mt-2"
                       >
                         <div
-                          class="flex flex-col w-full space-y-2"
+                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="flex items-center justify-between space-x-5"
+                            class="sc-fzoXWK JKhnC"
                           >
+                            <img
+                              alt="Profile avatar"
+                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                            />
                             <span
-                              class="text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
+                              class="absolute text-2xl font-semibold text-theme-background"
                             >
-                              Dark Theme
+                              TE
                             </span>
-                            <span>
-                              <label
-                                class="flex"
+                            <div
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
+                            >
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
                               >
-                                <input
-                                  class="Toggle__Input-qyyifx-0 bXkHfF"
-                                  name="isDarkMode"
-                                  type="checkbox"
-                                />
                                 <div
-                                  class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                  class="sc-AxhCb fxrKLH text-white"
+                                  height="1em"
+                                  width="1em"
                                 >
-                                  <span
-                                    class="Toggle__HandleInner-qyyifx-2 chnbkf"
-                                  />
+                                  <svg>
+                                    upload.svg
+                                  </svg>
                                 </div>
-                              </label>
-                            </span>
+                              </div>
+                            </div>
                           </div>
-                          <span
-                            class="text-sm font-medium text-theme-neutral"
-                            data-testid="list-divided-item__label--description"
-                          >
-                            Enables a dark, high contrast color scheme.
-                          </span>
                         </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  class="sc-AxirZ jjvtQn border-theme-neutral-300"
-                  type="horizontal"
-                />
-              </div>
-              <div
-                class="flex justify-end mt-8 space-x-3"
-              >
-                <button
-                  class="sc-AxjAm fPpool"
-                  color="primary"
-                  type="button"
-                >
-                  Back
-                </button>
-                <button
-                  class="sc-AxjAm kbZyZT"
-                  color="primary"
-                  data-testid="CreateProfile__submit-button"
-                  type="submit"
-                >
-                  Complete
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`CreateProfile should render 1`] = `
-<DocumentFragment>
-  <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzoiQi jvzEyW"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-10"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center my-auto"
-          >
-            <div
-              class="sc-fzqARJ ktgHVM"
-            >
-              <svg
-                width="48"
-              >
-                ark-logo.svg
-              </svg>
-            </div>
-            <span
-              class="text-2xl font-bold"
-            >
-              Desktop Wallet
-            </span>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <div
-            class="max-w-lg mx-auto"
-          >
-            <h1
-              class="mb-0 md:text-4xl"
-            >
-              Create Profile
-            </h1>
-            <div
-              class="text-theme-neutral-dark"
-            >
-              Sign in via MarketSquare or create a new Profile below.
-            </div>
-            <div
-              class="pb-4 mt-8"
-            >
-              <div>
-                <button
-                  class="sc-AxjAm kbZyZT w-full"
-                  color="primary"
-                  disabled=""
-                  type="button"
-                >
-                  <div
-                    class="sc-AxhCb VoPpj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      msq.svg
-                    </svg>
-                  </div>
-                  <span
-                    class="ml-2"
-                  >
-                    Sign In via MarketSquare
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div
-              class="sc-AxirZ jjvtQn border-theme-neutral-300"
-              type="horizontal"
-            />
-            <form
-              class="space-y-8"
-              data-testid="CreateProfile__form"
-            >
-              <div
-                class="mt-8"
-              >
-                <h2>
-                  Personal Details
-                </h2>
-                <div
-                  class="group"
-                >
-                  <span
-                    class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
-                  >
-                    Profile Image
-                  </span>
-                  <div
-                    class="flex flex-row mt-2"
-                  >
-                    <div
-                      class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
-                    >
-                      <div
-                        class="overflow-hidden rounded-full w-22 h-22"
-                      >
-                        <button
-                          class="sc-AxjAm fPpool w-22 h-22"
-                          color="primary"
-                          data-testid="SelectProfileImage__upload-button"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxhCb fxrKLH"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              upload.svg
-                            </svg>
-                          </div>
-                        </button>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="relative mt-8 space-y-8"
-                >
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="name"
-                    >
-                      Name
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <input
-                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="Input"
-                      name="name"
-                    />
-                  </fieldset>
                   <fieldset
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
@@ -666,990 +210,6 @@ exports[`CreateProfile should render 1`] = `
                             </svg>
                           </div>
                         </button>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="marketProvider"
-                    >
-                      Market Provider
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="marketProvider"
-                        readonly=""
-                        type="text"
-                        value="cryptocompare"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-0-toggle-button"
-                            type="button"
-                          >
-                            CryptoCompare
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-0-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-0-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="currency"
-                    >
-                      Currency
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        type="text"
-                        value=""
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                            class="sc-fzoyTs buZKoP   "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-1-toggle-button"
-                            type="button"
-                          >
-                            Select Currency
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-1-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-1-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-                <div
-                  class="mt-8"
-                >
-                  <h2>
-                    Other
-                  </h2>
-                  <ul
-                    class="sc-fzqNqU iuWpXt"
-                    data-testid="list-divided__items"
-                  >
-                    <li
-                      class="flex flex-col w-full "
-                      data-testid="list-divided-item__wrapper"
-                    >
-                      <div
-                        class="flex justify-between flex-col items-start"
-                        data-testid="list-divided-item__inner-wrapper"
-                      >
-                        <div
-                          class="flex flex-col w-full space-y-2"
-                        >
-                          <div
-                            class="flex items-center justify-between space-x-5"
-                          >
-                            <span
-                              class="text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
-                            >
-                              Dark Theme
-                            </span>
-                            <span>
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  class="Toggle__Input-qyyifx-0 bXkHfF"
-                                  name="isDarkMode"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="Toggle__Handle-qyyifx-1 jXkMFJ"
-                                >
-                                  <span
-                                    class="Toggle__HandleInner-qyyifx-2 chnbkf"
-                                  />
-                                </div>
-                              </label>
-                            </span>
-                          </div>
-                          <span
-                            class="text-sm font-medium text-theme-neutral"
-                            data-testid="list-divided-item__label--description"
-                          >
-                            Enables a dark, high contrast color scheme.
-                          </span>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  class="sc-AxirZ jjvtQn border-theme-neutral-300"
-                  type="horizontal"
-                />
-              </div>
-              <div
-                class="flex justify-end mt-8 space-x-3"
-              >
-                <button
-                  class="sc-AxjAm fPpool"
-                  color="primary"
-                  type="button"
-                >
-                  Back
-                </button>
-                <button
-                  class="sc-AxjAm kbZyZT"
-                  color="primary"
-                  data-testid="CreateProfile__submit-button"
-                  type="submit"
-                >
-                  Complete
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`CreateProfile should store profile 1`] = `
-<DocumentFragment>
-  <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzoiQi jvzEyW"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-10"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center my-auto"
-          >
-            <div
-              class="sc-fzqARJ ktgHVM"
-            >
-              <svg
-                width="48"
-              >
-                ark-logo.svg
-              </svg>
-            </div>
-            <span
-              class="text-2xl font-bold"
-            >
-              Desktop Wallet
-            </span>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <div
-            class="max-w-lg mx-auto"
-          >
-            <h1
-              class="mb-0 md:text-4xl"
-            >
-              Create Profile
-            </h1>
-            <div
-              class="text-theme-neutral-dark"
-            >
-              Sign in via MarketSquare or create a new Profile below.
-            </div>
-            <div
-              class="pb-4 mt-8"
-            >
-              <div>
-                <button
-                  class="sc-AxjAm kbZyZT w-full"
-                  color="primary"
-                  disabled=""
-                  type="button"
-                >
-                  <div
-                    class="sc-AxhCb VoPpj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      msq.svg
-                    </svg>
-                  </div>
-                  <span
-                    class="ml-2"
-                  >
-                    Sign In via MarketSquare
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div
-              class="sc-AxirZ jjvtQn border-theme-neutral-300"
-              type="horizontal"
-            />
-            <form
-              class="space-y-8"
-              data-testid="CreateProfile__form"
-            >
-              <div
-                class="mt-8"
-              >
-                <h2>
-                  Personal Details
-                </h2>
-                <div
-                  class="group"
-                >
-                  <span
-                    class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
-                  >
-                    Profile Image
-                  </span>
-                  <div
-                    class="flex flex-row mt-2"
-                  >
-                    <div
-                      class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
-                    >
-                      <div
-                        class="overflow-hidden rounded-full w-22 h-22"
-                      >
-                        <button
-                          class="sc-AxjAm fPpool w-22 h-22"
-                          color="primary"
-                          data-testid="SelectProfileImage__upload-button"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxhCb fxrKLH"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              upload.svg
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                    <div
-                      class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
-                    >
-                      <div
-                        class="sc-fzoXWK idrRUY"
-                      >
-                        <img
-                          alt="Profile avatar"
-                          class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-                          src="data:image/png;base64,avatarImage"
-                        />
-                      </div>
-                      <button
-                        class="sc-AxjAm cUmKa-D absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
-                        color="danger"
-                        data-testid="SelectProfileImage__remove-button"
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxhCb koOqYD"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            close.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="relative mt-8 space-y-8"
-                >
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="name"
-                    >
-                      Name
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <input
-                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="Input"
-                      name="name"
-                    />
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="password"
-                    >
-                      Password
-                      <span
-                        class="ml-1 text-theme-neutral-light"
-                        data-testid="FormLabel__optional"
-                      >
-                        (optional)
-                      </span>
-                    </label>
-                    <div
-                      class="sc-AxmLO kuiknc max-w-20"
-                      data-testid="InputPassword"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
-                      <div
-                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
-                      >
-                        <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                          data-testid="InputPassword__toggle"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxhCb fxrKLH"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="marketProvider"
-                    >
-                      Market Provider
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="marketProvider"
-                        readonly=""
-                        type="text"
-                        value="coincap"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-3-label downshift-3-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-3-toggle-button"
-                            type="button"
-                          >
-                            CoinCap
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-3-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-3-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="currency"
-                    >
-                      Currency
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        type="text"
-                        value="BTC"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-4-label downshift-4-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-4-toggle-button"
-                            type="button"
-                          >
-                            BTC (Ƀ)
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-4-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-4-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-                <div
-                  class="mt-8"
-                >
-                  <h2>
-                    Other
-                  </h2>
-                  <ul
-                    class="sc-fzqNqU iuWpXt"
-                    data-testid="list-divided__items"
-                  >
-                    <li
-                      class="flex flex-col w-full "
-                      data-testid="list-divided-item__wrapper"
-                    >
-                      <div
-                        class="flex justify-between flex-col items-start"
-                        data-testid="list-divided-item__inner-wrapper"
-                      >
-                        <div
-                          class="flex flex-col w-full space-y-2"
-                        >
-                          <div
-                            class="flex items-center justify-between space-x-5"
-                          >
-                            <span
-                              class="text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
-                            >
-                              Dark Theme
-                            </span>
-                            <span>
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  class="Toggle__Input-qyyifx-0 bXkHfF"
-                                  name="isDarkMode"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="Toggle__Handle-qyyifx-1 jXkMFJ"
-                                >
-                                  <span
-                                    class="Toggle__HandleInner-qyyifx-2 chnbkf"
-                                  />
-                                </div>
-                              </label>
-                            </span>
-                          </div>
-                          <span
-                            class="text-sm font-medium text-theme-neutral"
-                            data-testid="list-divided-item__label--description"
-                          >
-                            Enables a dark, high contrast color scheme.
-                          </span>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  class="sc-AxirZ jjvtQn border-theme-neutral-300"
-                  type="horizontal"
-                />
-              </div>
-              <div
-                class="flex justify-end mt-8 space-x-3"
-              >
-                <button
-                  class="sc-AxjAm fPpool"
-                  color="primary"
-                  type="button"
-                >
-                  Back
-                </button>
-                <button
-                  class="sc-AxjAm kbZyZT"
-                  color="primary"
-                  data-testid="CreateProfile__submit-button"
-                  type="submit"
-                >
-                  Complete
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`CreateProfile should store profile with password 1`] = `
-<DocumentFragment>
-  <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzoiQi jvzEyW"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-10"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center my-auto"
-          >
-            <div
-              class="sc-fzqARJ ktgHVM"
-            >
-              <svg
-                width="48"
-              >
-                ark-logo.svg
-              </svg>
-            </div>
-            <span
-              class="text-2xl font-bold"
-            >
-              Desktop Wallet
-            </span>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <div
-            class="max-w-lg mx-auto"
-          >
-            <h1
-              class="mb-0 md:text-4xl"
-            >
-              Create Profile
-            </h1>
-            <div
-              class="text-theme-neutral-dark"
-            >
-              Sign in via MarketSquare or create a new Profile below.
-            </div>
-            <div
-              class="pb-4 mt-8"
-            >
-              <div>
-                <button
-                  class="sc-AxjAm kbZyZT w-full"
-                  color="primary"
-                  disabled=""
-                  type="button"
-                >
-                  <div
-                    class="sc-AxhCb VoPpj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      msq.svg
-                    </svg>
-                  </div>
-                  <span
-                    class="ml-2"
-                  >
-                    Sign In via MarketSquare
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div
-              class="sc-AxirZ jjvtQn border-theme-neutral-300"
-              type="horizontal"
-            />
-            <form
-              class="space-y-8"
-              data-testid="CreateProfile__form"
-            >
-              <div
-                class="mt-8"
-              >
-                <h2>
-                  Personal Details
-                </h2>
-                <div
-                  class="group"
-                >
-                  <span
-                    class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
-                  >
-                    Profile Image
-                  </span>
-                  <div
-                    class="flex flex-row mt-2"
-                  >
-                    <div
-                      class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
-                    >
-                      <div
-                        class="overflow-hidden rounded-full w-22 h-22"
-                      >
-                        <button
-                          class="sc-AxjAm fPpool w-22 h-22"
-                          color="primary"
-                          data-testid="SelectProfileImage__upload-button"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxhCb fxrKLH"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              upload.svg
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                    <div
-                      class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
-                    >
-                      <div
-                        class="sc-fzoXWK idrRUY"
-                      >
-                        <img
-                          alt="Profile avatar"
-                          class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-2xl font-semibold text-theme-background"
-                        >
-                          TE
-                        </span>
-                      </div>
-                      <button
-                        class="sc-AxjAm cUmKa-D absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
-                        color="danger"
-                        data-testid="SelectProfileImage__remove-button"
-                        disabled=""
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxhCb koOqYD"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            close.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="relative mt-8 space-y-8"
-                >
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="name"
-                    >
-                      Name
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <input
-                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="Input"
-                      name="name"
-                    />
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="password"
-                    >
-                      Password
-                      <span
-                        class="ml-1 text-theme-neutral-light"
-                        data-testid="FormLabel__optional"
-                      >
-                        (optional)
-                      </span>
-                    </label>
-                    <div
-                      class="sc-AxmLO kuiknc max-w-20"
-                      data-testid="InputPassword"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
-                      <div
-                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
-                      >
-                        <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                          data-testid="InputPassword__toggle"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxhCb fxrKLH"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="marketProvider"
-                    >
-                      Market Provider
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="marketProvider"
-                        readonly=""
-                        type="text"
-                        value="coincap"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-35-label downshift-35-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-35-toggle-button"
-                            type="button"
-                          >
-                            CoinCap
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-35-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-35-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -1719,11 +279,8 @@ exports[`CreateProfile should store profile with password 1`] = `
                   </fieldset>
                 </div>
                 <div
-                  class="mt-8"
+                  class="pb-4 mt-8"
                 >
-                  <h2>
-                    Other
-                  </h2>
                   <ul
                     class="sc-fzqNqU iuWpXt"
                     data-testid="list-divided__items"
@@ -1743,7 +300,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             class="flex items-center justify-between space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-neutral-dark"
+                              class="text-xl font-semibold"
                               data-testid="list-divided-item__label"
                             >
                               Dark Theme
@@ -1784,7 +341,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                 />
               </div>
               <div
-                class="flex justify-end mt-8 space-x-3"
+                class="flex justify-end pt-4 space-x-3"
               >
                 <button
                   class="sc-AxjAm fPpool"
@@ -1799,7 +356,1110 @@ exports[`CreateProfile should store profile with password 1`] = `
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
-                  Complete
+                  Create
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CreateProfile should render 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoiQi jvzEyW"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fzqARJ ktgHVM"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="max-w-lg mx-auto -mt-10"
+          >
+            <h1
+              class="mb-0 md:text-4xl"
+            >
+              Create Profile
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+            >
+              Sign in via MarketSquare or create a new Profile below.
+            </div>
+            <div
+              class="mt-8"
+            >
+              <div>
+                <button
+                  class="sc-AxjAm kbZyZT w-full"
+                  color="primary"
+                  disabled=""
+                  type="button"
+                >
+                  <div
+                    class="sc-AxhCb VoPpj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      msq.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Sign In via MarketSquare
+                  </span>
+                </button>
+              </div>
+            </div>
+            <form
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200"
+              data-testid="CreateProfile__form"
+            >
+              <div
+                class="mt-2"
+              >
+                <h3>
+                  New Profile
+                </h3>
+                <div
+                  class="relative mt-8 space-y-8"
+                >
+                  <div
+                    class="flex justify-between"
+                  >
+                    <fieldset
+                      class="sc-AxiKw iQzisX w-full mr-6"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="name"
+                      >
+                        Name
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        data-testid="Input"
+                        name="name"
+                      />
+                    </fieldset>
+                    <div
+                      class="group -mt-6"
+                    >
+                      <div
+                        class="flex flex-row mt-2"
+                      >
+                        <div
+                          class="flex items-center justify-center w-24 h-24 border-2 border-dashed rounded border-theme-primary-contrast"
+                        >
+                          <div
+                            class="overflow-hidden rounded-full w-22 h-22"
+                          >
+                            <button
+                              class="sc-AxjAm fPpool w-22 h-22"
+                              color="primary"
+                              data-testid="SelectProfileImage__upload-button"
+                              type="button"
+                            >
+                              <div
+                                class="sc-AxhCb fxrKLH text-theme-primary"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
+                      >
+                        (optional)
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                      data-testid="InputPassword"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="currency"
+                    >
+                      Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="relative w-full"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                        data-testid="select-list__input"
+                        name="currency"
+                        readonly=""
+                        type="text"
+                        value=""
+                      />
+                      <div
+                        class="relative w-full cursor-pointer"
+                      >
+                        <div>
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                            class="sc-fzoyTs buZKoP   "
+                            data-testid="select-list__toggle-button"
+                            id="downshift-0-toggle-button"
+                            type="button"
+                          >
+                            Select Currency
+                          </button>
+                          <ul
+                            aria-labelledby="downshift-0-label"
+                            class="sc-fzoNJl gPmoPk"
+                            id="downshift-0-menu"
+                            role="listbox"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
+                        >
+                          <div
+                            class="sc-AxhCb jfKWih"
+                            height="5"
+                            width="7"
+                          >
+                            <svg>
+                              caret-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="pb-4 mt-8"
+                >
+                  <ul
+                    class="sc-fzqNqU iuWpXt"
+                    data-testid="list-divided__items"
+                  >
+                    <li
+                      class="flex flex-col w-full "
+                      data-testid="list-divided-item__wrapper"
+                    >
+                      <div
+                        class="flex justify-between flex-col items-start"
+                        data-testid="list-divided-item__inner-wrapper"
+                      >
+                        <div
+                          class="flex flex-col w-full space-y-2"
+                        >
+                          <div
+                            class="flex items-center justify-between space-x-5"
+                          >
+                            <span
+                              class="text-xl font-semibold"
+                              data-testid="list-divided-item__label"
+                            >
+                              Dark Theme
+                            </span>
+                            <span>
+                              <label
+                                class="flex"
+                              >
+                                <input
+                                  class="Toggle__Input-qyyifx-0 bXkHfF"
+                                  name="isDarkMode"
+                                  type="checkbox"
+                                />
+                                <div
+                                  class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                >
+                                  <span
+                                    class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                  />
+                                </div>
+                              </label>
+                            </span>
+                          </div>
+                          <span
+                            class="text-sm font-medium text-theme-neutral"
+                            data-testid="list-divided-item__label--description"
+                          >
+                            Enables a dark, high contrast color scheme.
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="sc-AxirZ jjvtQn border-theme-neutral-300"
+                  type="horizontal"
+                />
+              </div>
+              <div
+                class="flex justify-end pt-4 space-x-3"
+              >
+                <button
+                  class="sc-AxjAm fPpool"
+                  color="primary"
+                  type="button"
+                >
+                  Back
+                </button>
+                <button
+                  class="sc-AxjAm kbZyZT"
+                  color="primary"
+                  data-testid="CreateProfile__submit-button"
+                  type="submit"
+                >
+                  Create
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CreateProfile should store profile 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoiQi jvzEyW"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fzqARJ ktgHVM"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="max-w-lg mx-auto -mt-10"
+          >
+            <h1
+              class="mb-0 md:text-4xl"
+            >
+              Create Profile
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+            >
+              Sign in via MarketSquare or create a new Profile below.
+            </div>
+            <div
+              class="mt-8"
+            >
+              <div>
+                <button
+                  class="sc-AxjAm kbZyZT w-full"
+                  color="primary"
+                  disabled=""
+                  type="button"
+                >
+                  <div
+                    class="sc-AxhCb VoPpj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      msq.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Sign In via MarketSquare
+                  </span>
+                </button>
+              </div>
+            </div>
+            <form
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200"
+              data-testid="CreateProfile__form"
+            >
+              <div
+                class="mt-2"
+              >
+                <h3>
+                  New Profile
+                </h3>
+                <div
+                  class="relative mt-8 space-y-8"
+                >
+                  <div
+                    class="flex justify-between"
+                  >
+                    <fieldset
+                      class="sc-AxiKw iQzisX w-full mr-6"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="name"
+                      >
+                        Name
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        data-testid="Input"
+                        name="name"
+                      />
+                    </fieldset>
+                    <div
+                      class="group -mt-6"
+                    >
+                      <div
+                        class="flex flex-row mt-2"
+                      >
+                        <div
+                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
+                        >
+                          <div
+                            class="sc-fzoXWK JKhnC"
+                          >
+                            <img
+                              alt="Profile avatar"
+                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              src="data:image/png;base64,avatarImage"
+                            />
+                            <div
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
+                            >
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
+                              >
+                                <div
+                                  class="sc-AxhCb fxrKLH text-white"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <button
+                            class="sc-AxjAm cUmKa-D absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
+                            color="danger"
+                            data-testid="SelectProfileImage__remove-button"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxhCb koOqYD"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                close.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
+                      >
+                        (optional)
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                      data-testid="InputPassword"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="currency"
+                    >
+                      Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="relative w-full"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                        data-testid="select-list__input"
+                        name="currency"
+                        readonly=""
+                        type="text"
+                        value="BTC"
+                      />
+                      <div
+                        class="relative w-full cursor-pointer"
+                      >
+                        <div>
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                            class="sc-fzoyTs buZKoP  is-selected "
+                            data-testid="select-list__toggle-button"
+                            id="downshift-1-toggle-button"
+                            type="button"
+                          >
+                            BTC (Ƀ)
+                          </button>
+                          <ul
+                            aria-labelledby="downshift-1-label"
+                            class="sc-fzoNJl gPmoPk"
+                            id="downshift-1-menu"
+                            role="listbox"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
+                        >
+                          <div
+                            class="sc-AxhCb jfKWih"
+                            height="5"
+                            width="7"
+                          >
+                            <svg>
+                              caret-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="pb-4 mt-8"
+                >
+                  <ul
+                    class="sc-fzqNqU iuWpXt"
+                    data-testid="list-divided__items"
+                  >
+                    <li
+                      class="flex flex-col w-full "
+                      data-testid="list-divided-item__wrapper"
+                    >
+                      <div
+                        class="flex justify-between flex-col items-start"
+                        data-testid="list-divided-item__inner-wrapper"
+                      >
+                        <div
+                          class="flex flex-col w-full space-y-2"
+                        >
+                          <div
+                            class="flex items-center justify-between space-x-5"
+                          >
+                            <span
+                              class="text-xl font-semibold"
+                              data-testid="list-divided-item__label"
+                            >
+                              Dark Theme
+                            </span>
+                            <span>
+                              <label
+                                class="flex"
+                              >
+                                <input
+                                  class="Toggle__Input-qyyifx-0 bXkHfF"
+                                  name="isDarkMode"
+                                  type="checkbox"
+                                />
+                                <div
+                                  class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                >
+                                  <span
+                                    class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                  />
+                                </div>
+                              </label>
+                            </span>
+                          </div>
+                          <span
+                            class="text-sm font-medium text-theme-neutral"
+                            data-testid="list-divided-item__label--description"
+                          >
+                            Enables a dark, high contrast color scheme.
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="sc-AxirZ jjvtQn border-theme-neutral-300"
+                  type="horizontal"
+                />
+              </div>
+              <div
+                class="flex justify-end pt-4 space-x-3"
+              >
+                <button
+                  class="sc-AxjAm fPpool"
+                  color="primary"
+                  type="button"
+                >
+                  Back
+                </button>
+                <button
+                  class="sc-AxjAm kbZyZT"
+                  color="primary"
+                  data-testid="CreateProfile__submit-button"
+                  type="submit"
+                >
+                  Create
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CreateProfile should store profile with password 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoiQi jvzEyW"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fzqARJ ktgHVM"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="max-w-lg mx-auto -mt-10"
+          >
+            <h1
+              class="mb-0 md:text-4xl"
+            >
+              Create Profile
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+            >
+              Sign in via MarketSquare or create a new Profile below.
+            </div>
+            <div
+              class="mt-8"
+            >
+              <div>
+                <button
+                  class="sc-AxjAm kbZyZT w-full"
+                  color="primary"
+                  disabled=""
+                  type="button"
+                >
+                  <div
+                    class="sc-AxhCb VoPpj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      msq.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Sign In via MarketSquare
+                  </span>
+                </button>
+              </div>
+            </div>
+            <form
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200"
+              data-testid="CreateProfile__form"
+            >
+              <div
+                class="mt-2"
+              >
+                <h3>
+                  New Profile
+                </h3>
+                <div
+                  class="relative mt-8 space-y-8"
+                >
+                  <div
+                    class="flex justify-between"
+                  >
+                    <fieldset
+                      class="sc-AxiKw iQzisX w-full mr-6"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="name"
+                      >
+                        Name
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        data-testid="Input"
+                        name="name"
+                      />
+                    </fieldset>
+                    <div
+                      class="group -mt-6"
+                    >
+                      <div
+                        class="flex flex-row mt-2"
+                      >
+                        <div
+                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
+                        >
+                          <div
+                            class="sc-fzoXWK JKhnC"
+                          >
+                            <img
+                              alt="Profile avatar"
+                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                            />
+                            <span
+                              class="absolute text-2xl font-semibold text-theme-background"
+                            >
+                              TE
+                            </span>
+                            <div
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
+                            >
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
+                              >
+                                <div
+                                  class="sc-AxhCb fxrKLH text-white"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
+                      >
+                        (optional)
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                      data-testid="InputPassword"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="currency"
+                    >
+                      Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="relative w-full"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                        data-testid="select-list__input"
+                        name="currency"
+                        readonly=""
+                        type="text"
+                        value="BTC"
+                      />
+                      <div
+                        class="relative w-full cursor-pointer"
+                      >
+                        <div>
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-16-label downshift-16-toggle-button"
+                            class="sc-fzoyTs buZKoP  is-selected "
+                            data-testid="select-list__toggle-button"
+                            id="downshift-16-toggle-button"
+                            type="button"
+                          >
+                            BTC (Ƀ)
+                          </button>
+                          <ul
+                            aria-labelledby="downshift-16-label"
+                            class="sc-fzoNJl gPmoPk"
+                            id="downshift-16-menu"
+                            role="listbox"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
+                        >
+                          <div
+                            class="sc-AxhCb jfKWih"
+                            height="5"
+                            width="7"
+                          >
+                            <svg>
+                              caret-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="pb-4 mt-8"
+                >
+                  <ul
+                    class="sc-fzqNqU iuWpXt"
+                    data-testid="list-divided__items"
+                  >
+                    <li
+                      class="flex flex-col w-full "
+                      data-testid="list-divided-item__wrapper"
+                    >
+                      <div
+                        class="flex justify-between flex-col items-start"
+                        data-testid="list-divided-item__inner-wrapper"
+                      >
+                        <div
+                          class="flex flex-col w-full space-y-2"
+                        >
+                          <div
+                            class="flex items-center justify-between space-x-5"
+                          >
+                            <span
+                              class="text-xl font-semibold"
+                              data-testid="list-divided-item__label"
+                            >
+                              Dark Theme
+                            </span>
+                            <span>
+                              <label
+                                class="flex"
+                              >
+                                <input
+                                  class="Toggle__Input-qyyifx-0 bXkHfF"
+                                  name="isDarkMode"
+                                  type="checkbox"
+                                />
+                                <div
+                                  class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                >
+                                  <span
+                                    class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                  />
+                                </div>
+                              </label>
+                            </span>
+                          </div>
+                          <span
+                            class="text-sm font-medium text-theme-neutral"
+                            data-testid="list-divided-item__label--description"
+                          >
+                            Enables a dark, high contrast color scheme.
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="sc-AxirZ jjvtQn border-theme-neutral-300"
+                  type="horizontal"
+                />
+              </div>
+              <div
+                class="flex justify-end pt-4 space-x-3"
+              >
+                <button
+                  class="sc-AxjAm fPpool"
+                  color="primary"
+                  type="button"
+                >
+                  Back
+                </button>
+                <button
+                  class="sc-AxjAm kbZyZT"
+                  color="primary"
+                  data-testid="CreateProfile__submit-button"
+                  type="submit"
+                >
+                  Create
                 </button>
               </div>
             </form>
@@ -1857,7 +1517,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="max-w-lg mx-auto -mt-10"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -1870,7 +1530,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
               Sign in via MarketSquare or create a new Profile below.
             </div>
             <div
-              class="pb-4 mt-8"
+              class="mt-8"
             >
               <div>
                 <button
@@ -1896,115 +1556,87 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                 </button>
               </div>
             </div>
-            <div
-              class="sc-AxirZ jjvtQn border-theme-neutral-300"
-              type="horizontal"
-            />
             <form
-              class="space-y-8"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200"
               data-testid="CreateProfile__form"
             >
               <div
-                class="mt-8"
+                class="mt-2"
               >
-                <h2>
-                  Personal Details
-                </h2>
-                <div
-                  class="group"
-                >
-                  <span
-                    class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
-                  >
-                    Profile Image
-                  </span>
-                  <div
-                    class="flex flex-row mt-2"
-                  >
-                    <div
-                      class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
-                    >
-                      <div
-                        class="overflow-hidden rounded-full w-22 h-22"
-                      >
-                        <button
-                          class="sc-AxjAm fPpool w-22 h-22"
-                          color="primary"
-                          data-testid="SelectProfileImage__upload-button"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxhCb fxrKLH"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              upload.svg
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                    <div
-                      class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
-                    >
-                      <div
-                        class="sc-fzoXWK idrRUY"
-                      >
-                        <img
-                          alt="Profile avatar"
-                          class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-2xl font-semibold text-theme-background"
-                        >
-                          TE
-                        </span>
-                      </div>
-                      <button
-                        class="sc-AxjAm cUmKa-D absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
-                        color="danger"
-                        data-testid="SelectProfileImage__remove-button"
-                        disabled=""
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxhCb koOqYD"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            close.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <h3>
+                  New Profile
+                </h3>
                 <div
                   class="relative mt-8 space-y-8"
                 >
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  <div
+                    class="flex justify-between"
                   >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="name"
+                    <fieldset
+                      class="sc-AxiKw iQzisX w-full mr-6"
                     >
-                      Name
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="name"
+                      >
+                        Name
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        data-testid="Input"
+                        name="name"
                       />
-                    </label>
-                    <input
-                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="Input"
-                      name="name"
-                    />
-                  </fieldset>
+                    </fieldset>
+                    <div
+                      class="group -mt-6"
+                    >
+                      <div
+                        class="flex flex-row mt-2"
+                      >
+                        <div
+                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
+                        >
+                          <div
+                            class="sc-fzoXWK JKhnC"
+                          >
+                            <img
+                              alt="Profile avatar"
+                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                            />
+                            <span
+                              class="absolute text-2xl font-semibold text-theme-background"
+                            >
+                              TE
+                            </span>
+                            <div
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
+                            >
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
+                              >
+                                <div
+                                  class="sc-AxhCb fxrKLH text-white"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <fieldset
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
@@ -2058,70 +1690,6 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     <label
                       class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
-                      for="marketProvider"
-                    >
-                      Market Provider
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="relative w-full"
-                    >
-                      <input
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                        data-testid="select-list__input"
-                        name="marketProvider"
-                        readonly=""
-                        type="text"
-                        value="coincap"
-                      />
-                      <div
-                        class="relative w-full cursor-pointer"
-                      >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-54-label downshift-54-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-54-toggle-button"
-                            type="button"
-                          >
-                            CoinCap
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-54-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-54-menu"
-                            role="listbox"
-                            tabindex="-1"
-                          />
-                        </div>
-                        <div
-                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                        >
-                          <div
-                            class="sc-AxhCb jfKWih"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                  >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                      data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
@@ -2148,18 +1716,18 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-55-label downshift-55-toggle-button"
+                            aria-labelledby="downshift-25-label downshift-25-toggle-button"
                             class="sc-fzoyTs buZKoP  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-55-toggle-button"
+                            id="downshift-25-toggle-button"
                             type="button"
                           >
                             BTC (Ƀ)
                           </button>
                           <ul
-                            aria-labelledby="downshift-55-label"
+                            aria-labelledby="downshift-25-label"
                             class="sc-fzoNJl gPmoPk"
-                            id="downshift-55-menu"
+                            id="downshift-25-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -2182,11 +1750,8 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                   </fieldset>
                 </div>
                 <div
-                  class="mt-8"
+                  class="pb-4 mt-8"
                 >
-                  <h2>
-                    Other
-                  </h2>
                   <ul
                     class="sc-fzqNqU iuWpXt"
                     data-testid="list-divided__items"
@@ -2206,7 +1771,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             class="flex items-center justify-between space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-neutral-dark"
+                              class="text-xl font-semibold"
                               data-testid="list-divided-item__label"
                             >
                               Dark Theme
@@ -2247,7 +1812,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                 />
               </div>
               <div
-                class="flex justify-end mt-8 space-x-3"
+                class="flex justify-end pt-4 space-x-3"
               >
                 <button
                   class="sc-AxjAm fPpool"
@@ -2262,7 +1827,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
-                  Complete
+                  Create
                 </button>
               </div>
             </form>

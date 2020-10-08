@@ -38,7 +38,7 @@ const baseSettings = {
 	EXCHANGE_CURRENCY: "BTC",
 	LEDGER_UPDATE_METHOD: false,
 	LOCALE: "en-US",
-	MARKET_PROVIDER: "coincap",
+	MARKET_PROVIDER: "cryptocompare",
 	NAME: "test profile",
 	SCREENSHOT_PROTECTION: true,
 	THEME: "light",
@@ -97,8 +97,6 @@ describe("CreateProfile", () => {
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
@@ -135,7 +133,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should store profile with password", async () => {
-		const { asFragment, container, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
 				<CreateProfile />
 			</EnvironmentProvider>,
@@ -148,8 +146,6 @@ describe("CreateProfile", () => {
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
 		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "test password" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		await act(async () => {
@@ -185,8 +181,6 @@ describe("CreateProfile", () => {
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		await act(async () => {
@@ -225,8 +219,6 @@ describe("CreateProfile", () => {
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		await act(async () => {
