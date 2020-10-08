@@ -52,7 +52,7 @@ export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; pro
 								type="text"
 								placeholder=" "
 								className="pr-24"
-								maxLength={255}
+								maxLengthLabel="255"
 								defaultValue={smartbridge}
 								onChange={(e: ChangeEvent<HTMLInputElement>) =>
 									setValue("smartbridge", e.target.value, { shouldDirty: true, shouldValidate: true })
