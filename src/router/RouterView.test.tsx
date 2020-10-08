@@ -33,6 +33,47 @@ describe("RouterView", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should scroll to top on route change", () => {
+		const windowSpy = jest.spyOn(window, "scrollTo");
+
+		const history = createMemoryHistory();
+		history.push("/test");
+
+		const { getByTestId } = render(
+			<Router history={history}>
+				<RouterView
+					routes={[
+						{ path: "/test", component: () => <h1>Test 1</h1> },
+						{ path: "/test2", component: () => <h1>Test 2</h1> },
+					]}
+				/>
+			</Router>,
+		);
+
+		history.push("/test2");
+		history.replace("/test");
+
+		expect(windowSpy).toHaveBeenCalledTimes(2);
+	});
+
+	it("should not scroll to top when route does not change", () => {
+		const windowSpy = jest.spyOn(window, "scrollTo");
+
+		const history = createMemoryHistory();
+		history.push("/test");
+
+		const { getByTestId } = render(
+			<Router history={history}>
+				<RouterView routes={[{ path: "/test", component: () => <h1>Test</h1> }]} />
+			</Router>,
+		);
+
+		history.push("/test");
+		history.replace("/test");
+
+		expect(windowSpy).toHaveBeenCalledTimes(1);
+	});
+
 	it("should block /test router", () => {
 		const handler = jest.fn(({ location }: MiddlewareParams) => location.pathname !== "/test");
 		const testMiddleware: Middleware = {

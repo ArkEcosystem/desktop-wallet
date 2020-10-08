@@ -29,6 +29,13 @@ jest.mock("electron", () => {
 	};
 });
 
+jest.mock("react-router-dom", () => ({
+	...jest.requireActual("react-router-dom"),
+	useHistory: () => ({
+		replace: jest.fn(),
+	}),
+}));
+
 jest.mock("fs", () => ({
 	readFileSync: jest.fn(() => "avatarImage"),
 }));
