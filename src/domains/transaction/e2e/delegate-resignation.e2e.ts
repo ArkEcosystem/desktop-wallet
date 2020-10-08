@@ -4,7 +4,6 @@ import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToMyRegistrations, goToProfile } from "../../profile/e2e/common";
 import { goToResignDelegatePage } from "./common";
 
-
 createFixture(`Delegate Resignation action`, [
 	mockRequest(
 		{
