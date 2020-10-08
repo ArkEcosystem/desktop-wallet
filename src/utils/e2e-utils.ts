@@ -47,6 +47,7 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/node/syncing", "coins/ark/syncing"),
 	],
 	delegates: [
+		mockRequest("https://dwallets.ark.io/api/delegates", "coins/ark/delegates-devnet"),
 		mockRequest("https://dwallets.ark.io/api/delegates?page=1", "coins/ark/delegates-devnet"),
 		mockRequest("https://dwallets.ark.io/api/delegates?page=2", "coins/ark/delegates-devnet"),
 		mockRequest("https://dwallets.ark.io/api/delegates?page=3", "coins/ark/delegates-devnet"),
