@@ -1,5 +1,6 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -33,6 +34,7 @@ export const Transactions = ({
 					transactions={transactions}
 					exchangeCurrency={exchangeCurrency}
 					showExplorerLinkColumn={false}
+					hideHeader={!isLoading && transactions.length === 0}
 					isLoading={isLoading}
 					onRowClick={onRowClick}
 				/>
@@ -49,7 +51,7 @@ export const Transactions = ({
 					</Button>
 				)}
 			</div>
-			{!isLoading && transactions.length === 0 && <div className="text-theme-neutral-dark">{emptyText}</div>}
+			{!isLoading && transactions.length === 0 && <EmptyBlock className="-mt-5" message={emptyText!} />}
 		</div>
 	);
 };
