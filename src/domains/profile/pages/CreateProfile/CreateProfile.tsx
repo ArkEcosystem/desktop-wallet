@@ -178,7 +178,7 @@ export const CreateProfile = () => {
 						</div>
 
 						<div className="flex justify-end pt-4 space-x-3">
-							<Button variant="plain" onClick={() => history.go(-1)}>
+							<Button variant="plain" onClick={() => history.push("/")}>
 								{t("COMMON.BACK")}
 							</Button>
 
