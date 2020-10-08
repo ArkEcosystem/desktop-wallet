@@ -90,6 +90,30 @@ export const requestMocks = {
 					'{"senderPublicKey":"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc","type":6,"typeGroup":2,"asset":{"type":3,"action":0}}',
 			"coins/ark/transactions/empty-search",
 		),
+		mockRequest(
+			(request: any) =>
+				request.url === "https://dwallets.ark.io/api/transactions/search?page=1&limit=15" &&
+				request.method === "post" &&
+				request.body.toString() ===
+					'{"addresses":["D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"]}',
+			"coins/ark/transactions/search/addresses-D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+		),
+		mockRequest(
+			(request: any) =>
+				request.url === "https://dwallets.ark.io/api/transactions/search?page=1&limit=15" &&
+				request.method === "post" &&
+				request.body.toString() ===
+					'{"addresses":["DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS"]}',
+			"coins/ark/transactions/search/addresses-DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
+		),
+		mockRequest(
+			(request: any) =>
+				request.url === "https://dwallets.ark.io/api/transactions/search?page=1&limit=15" &&
+				request.method === "post" &&
+				request.body.toString() ===
+					'{"addresses":["DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"]}',
+			"coins/ark/transactions/search/addresses-DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
+		),
 	],
 	wallets: [
 		mockRequest(
