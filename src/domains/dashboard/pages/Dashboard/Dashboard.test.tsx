@@ -189,7 +189,7 @@ describe("Dashboard", () => {
 			return { unsubscribe };
 		});
 
-		const { asFragment, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId, getByText, queryByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<LedgerProvider transport={transport}>
 					<Dashboard />
@@ -203,6 +203,18 @@ describe("Dashboard", () => {
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+
+		act(() => {
+			fireEvent.click(getByText("Import Ledger"));
+		});
+
+		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		await waitFor(() => expect(queryByTestId("LedgerWaitingDevice-description")).not.toBeInTheDocument());
 
 		act(() => {
 			fireEvent.click(getByText("Import Ledger"));
