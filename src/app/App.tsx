@@ -50,7 +50,8 @@ const Main = () => {
 	const nativeTheme = electron.remote.nativeTheme;
 
 	nativeTheme.on("updated", () => {
-		if (theme === "system") {
+		if (useDarkColors !== nativeTheme.shouldUseDarkColors) {
+			console.log("setting useDarkColors", nativeTheme.shouldUseDarkColors);
 			setUseDarkColors(nativeTheme.shouldUseDarkColors);
 		}
 	});
@@ -88,7 +89,7 @@ const Main = () => {
 		} else {
 			setSystemTheme();
 		}
-	}, [env, match, nativeTheme, setSystemTheme, theme]);
+	}, [env, match, nativeTheme.themeSource, setSystemTheme, theme]);
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useLayoutEffect(() => setSystemTheme(), []);
@@ -124,7 +125,7 @@ const Main = () => {
 	};
 
 	return (
-		<main className={`theme-${useDarkColors ? "dark" : "light"} ${className}`} data-testid="Main">
+		<main className={`theme-${nativeTheme.shouldUseDarkColors ? "dark" : "light"} ${className}`} data-testid="Main">
 			<ToastContainer />
 
 			{renderContent()}
