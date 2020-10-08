@@ -99,7 +99,7 @@ export const CreateProfile = () => {
 							<h3>{t("PROFILE.PAGE_CREATE_PROFILE.NEW_PROFILE")}</h3>
 
 							<div className="relative mt-8 space-y-8">
-								<div className="flex justify-between">
+								<div className="flex justify-between -mt-6">
 									<FormField name="name" className="w-full mr-6">
 										<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
 										<Input
