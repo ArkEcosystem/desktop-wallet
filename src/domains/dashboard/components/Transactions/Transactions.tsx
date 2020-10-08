@@ -52,8 +52,9 @@ export const Transactions = ({
 					</Button>
 				)}
 			</div>
+
 			{!isLoading && transactions.length === 0 && <EmptyBlock className="-mt-5" message={emptyText!} />}
-		</div>
+		</>
 	);
 };
 
