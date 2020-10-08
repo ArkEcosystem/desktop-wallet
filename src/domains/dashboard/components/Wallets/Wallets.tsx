@@ -1,6 +1,7 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { chunk } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
+import { LedgerWaitingDevice } from "app/components/Ledger/LedgerWaitingDevice";
 import { Slider } from "app/components/Slider";
 import { Table } from "app/components/Table";
 import { WalletCard } from "app/components/WalletCard";
@@ -19,6 +20,7 @@ type WalletsProps = {
 	viewType?: "grid" | "list";
 	onCreateWallet?: any;
 	onImportWallet?: any;
+	onImportLedgerWallet?: () => void;
 	onWalletAction?: any;
 };
 
@@ -34,12 +36,14 @@ export const Wallets = ({
 	filterProperties,
 	onCreateWallet,
 	onImportWallet,
+	onImportLedgerWallet,
 	onWalletAction,
 	walletsEmptyText,
 }: WalletsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 	const [allWallets, setAllWallets] = useState<any>(undefined);
 	const [hasMoreWallets, setHasMoreWallets] = useState<any>(wallets.length > 10);
+	const [isWaitingLedger, setIsWaitingLedger] = useState(false);
 
 	const activeProfile = useActiveProfile();
 
@@ -123,6 +127,13 @@ export const Wallets = ({
 		history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}`);
 	};
 
+	const onLedgerModalClose = (hasDeviceAvailable: boolean) => {
+		setIsWaitingLedger(false);
+		if (hasDeviceAvailable) {
+			onImportLedgerWallet?.();
+		}
+	};
+
 	return (
 		<div>
 			<div className="flex items-center justify-between pb-8">
@@ -131,6 +142,7 @@ export const Wallets = ({
 					<WalletsControls
 						onCreateWallet={onCreateWallet}
 						onImportWallet={onImportWallet}
+						onImportLedgerWallet={() => setIsWaitingLedger(true)}
 						onSelectGridView={() => setWalletsViewType("grid")}
 						onSelectListView={() => setWalletsViewType("list")}
 						filterProperties={filterProperties}
@@ -172,6 +184,8 @@ export const Wallets = ({
 					</div>
 				)}
 			</div>
+
+			{isWaitingLedger && <LedgerWaitingDevice isOpen={true} onClose={onLedgerModalClose} />}
 		</div>
 	);
 };

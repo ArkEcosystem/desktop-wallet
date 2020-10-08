@@ -1,4 +1,7 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import Transport, { Observer } from "@ledgerhq/hw-transport";
+import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
+import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -14,6 +17,8 @@ let emptyProfile: Profile;
 
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
+
+const transport: typeof Transport = createTransportReplayer(RecordStore.fromString(""));
 
 beforeEach(() => {
 	emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
@@ -174,6 +179,44 @@ describe("Dashboard", () => {
 		});
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should navigate to import ledger page", async () => {
+		const unsubscribe = jest.fn();
+		let observer: Observer<any>;
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
+			observer = obv;
+			return { unsubscribe };
+		});
+
+		const { asFragment, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<LedgerProvider transport={transport}>
+					<Dashboard />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+
+		act(() => {
+			fireEvent.click(getByText("Import Ledger"));
+		});
+
+		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+
+		act(() => {
+			observer!.next({ type: "add", descriptor: "" });
+		});
+
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`);
+		expect(asFragment()).toMatchSnapshot();
+		listenSpy.mockReset();
 	});
 
 	it("should navigate to import page", async () => {

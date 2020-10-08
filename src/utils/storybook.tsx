@@ -46,7 +46,7 @@ export const generateWallets = async ({
 
 			if (!index) {
 				wallets[index].toggleStarred();
-				wallets[index].data().set(WalletFlag.Ledger, true);
+				wallets[index].data().set(WalletFlag.LedgerIndex, 0);
 			}
 
 			wallets[index].settings().set(WalletSetting.Alias, `ARK Wallet ${index + 1}`);

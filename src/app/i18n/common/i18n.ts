@@ -251,4 +251,10 @@ export const translations: { [key: string]: any } = {
 		SUCCESS: "<bold>{{filePath}}</bold> was saved successfully",
 		ERROR: "Could not save file: {{error}}",
 	},
+
+	LEDGER_MODAL: {
+		TITLE: "Ledger Wallet",
+		CONNECT_DEVICE: "Connect your Ledger device to PC and confirm the input",
+		WAITING_DEVICE: "Waiting for Ledger device",
+	},
 };

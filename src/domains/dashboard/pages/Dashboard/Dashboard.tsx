@@ -129,6 +129,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 					<Wallets
 						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
 						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
+						onImportLedgerWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
 						viewType="grid"
 						title={t("COMMON.WALLETS")}
 						wallets={wallets}

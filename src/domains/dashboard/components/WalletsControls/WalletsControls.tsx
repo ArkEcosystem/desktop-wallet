@@ -10,6 +10,7 @@ type WalletsControlsProps = {
 	filterProperties?: FilterWalletsProps;
 	onCreateWallet?: any;
 	onImportWallet?: any;
+	onImportLedgerWallet?: () => void;
 	onSelectGridView?: any;
 	onSelectListView?: any;
 	viewType: "grid" | "list";
@@ -19,6 +20,7 @@ export const WalletsControls = ({
 	filterProperties,
 	onCreateWallet,
 	onImportWallet,
+	onImportLedgerWallet,
 	onSelectGridView,
 	onSelectListView,
 	viewType,
@@ -71,6 +73,13 @@ export const WalletsControls = ({
 					<div className="flex items-center justify-center mr-2 align-middle">
 						<Icon name="Import" />
 						<span className="ml-2">{t("DASHBOARD.WALLET_CONTROLS.IMPORT")}</span>
+					</div>
+				</Button>
+
+				<Button onClick={onImportLedgerWallet} variant="plain">
+					<div className="flex items-center justify-center mr-2 align-middle">
+						<Icon name="Ledger" />
+						<span className="ml-2">{t("DASHBOARD.WALLET_CONTROLS.IMPORT_LEDGER")}</span>
 					</div>
 				</Button>
 			</div>
