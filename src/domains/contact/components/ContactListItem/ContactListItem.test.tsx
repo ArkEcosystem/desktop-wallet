@@ -11,18 +11,6 @@ const multiOptions = [...singleOption, { label: "Option 2", value: "option_2" }]
 
 let contact: Contact;
 
-const wallet = {
-	id: () => "id5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
-	address: () => "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
-	alias: () => "Test Wallet",
-	avatar: () => "data:image/png;base64,avatarImage",
-	coinId: () => "ARK",
-	networkId: () => "ark.devnet",
-	isDelegate: () => true,
-	isResignedDelegate: () => false,
-	hasSyncedWithNetwork: () => true,
-};
-
 describe("ContactListItem", () => {
 	beforeAll(() => {
 		const profile = env.profiles().findById(getDefaultProfileId());
@@ -53,35 +41,11 @@ describe("ContactListItem", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a wallet", () => {
-		const { asFragment } = render(
-			<table>
-				<tbody>
-					<ContactListItem item={wallet} type="wallet" />
-				</tbody>
-			</table>,
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should render as my contacts template", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
 					<ContactListItem item={contact} template="contacts" />
-				</tbody>
-			</table>,
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render a wallet without tippy", () => {
-		const { asFragment } = render(
-			<table>
-				<tbody>
-					<ContactListItem item={{ ...wallet, isDelegate: () => false }} type="wallet" />
 				</tbody>
 			</table>,
 		);
