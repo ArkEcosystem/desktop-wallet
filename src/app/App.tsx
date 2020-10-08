@@ -51,7 +51,6 @@ const Main = () => {
 
 	nativeTheme.on("updated", () => {
 		if (useDarkColors !== nativeTheme.shouldUseDarkColors) {
-			console.log("setting useDarkColors", nativeTheme.shouldUseDarkColors);
 			setUseDarkColors(nativeTheme.shouldUseDarkColors);
 		}
 	});
@@ -125,7 +124,7 @@ const Main = () => {
 	};
 
 	return (
-		<main className={`theme-${nativeTheme.shouldUseDarkColors ? "dark" : "light"} ${className}`} data-testid="Main">
+		<main className={`theme-${useDarkColors ? "dark" : "light"} ${className}`} data-testid="Main">
 			<ToastContainer />
 
 			{renderContent()}

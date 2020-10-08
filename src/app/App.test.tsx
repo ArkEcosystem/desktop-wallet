@@ -67,7 +67,7 @@ describe("App", () => {
 		expect(getByTestId("Main")).toHaveClass(`theme-${shouldUseDarkColors ? "dark" : "light"}`);
 	});
 
-	it.only("should get the profile theme from the route", async () => {
+	it("should get the profile theme from the route", async () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
 
 		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />);
