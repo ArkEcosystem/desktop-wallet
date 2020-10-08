@@ -12,12 +12,32 @@ export const scrollTo = ClientFunction((top: number, left = 0, behavior = "auto"
 export const scrollToTop = ClientFunction(() => window.scrollTo({ top: 0 }));
 export const scrollToBottom = ClientFunction(() => window.scrollTo({ top: document.body.scrollHeight }));
 
-export const mockRequest = (url: string | object, fixture: string | object, statusCode = 200) =>
+const BASEURL = "https://dwallets.ark.io/api/";
+
+export const mockRequest = (url: string | object | Function, fixture: string | object | Function, statusCode = 200) =>
 	RequestMock()
 		.onRequestTo(url)
-		.respond(typeof fixture === "string" ? require(`../tests/fixtures/${fixture}.json`) : fixture, statusCode, {
-			"access-control-allow-origin": "*",
-		});
+		.respond(
+			(req: any, res: any) => {
+				const getBody = () => {
+					if (typeof fixture === "string") {
+						return require(`../tests/fixtures/${fixture}.json`);
+					}
+
+					if (typeof fixture === "function") {
+						return fixture(req);
+					}
+
+					return fixture;
+				};
+
+				return res.setBody(getBody());
+			},
+			statusCode,
+			{
+				"access-control-allow-origin": "*",
+			},
+		);
 
 export const requestMocks = {
 	configuration: [
@@ -122,4 +142,11 @@ export const createFixture = (name: string, requestHooks?: RequestMock[]) =>
 				...requestMocks.transactions,
 				...requestMocks.wallets,
 			]),
+			mockRequest(
+				(request: any) => request.url.startsWith(BASEURL),
+				(request: any) => {
+					throw new Error(`Missing mock for ${request.url}`);
+				},
+				500,
+			),
 		);
