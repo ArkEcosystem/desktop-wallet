@@ -153,6 +153,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 							<Table columns={listColumns} data={contacts}>
 								{(contact: Contact) => (
 									<ContactListItem
+										template="contacts"
 										item={contact}
 										options={contactOptions}
 										onAction={(action: { value: any }) =>

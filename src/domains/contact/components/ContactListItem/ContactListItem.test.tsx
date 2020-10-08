@@ -65,6 +65,18 @@ describe("ContactListItem", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render as my contacts template", () => {
+		const { asFragment } = render(
+			<table>
+				<tbody>
+					<ContactListItem item={contact} template="contacts" />
+				</tbody>
+			</table>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render a wallet without tippy", () => {
 		const { asFragment } = render(
 			<table>
