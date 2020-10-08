@@ -44,9 +44,7 @@ export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; pro
 						</div>
 
 						<FormField name="smartbridge" className="relative">
-							<div className="mb-2">
-								<FormLabel label="Smartbridge" />
-							</div>
+							<FormLabel label="Smartbridge" required={false} />
 							<InputCounter
 								data-testid="Input__smartbridge"
 								type="text"

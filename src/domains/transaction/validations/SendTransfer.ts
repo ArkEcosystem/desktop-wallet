@@ -10,9 +10,6 @@ export const sendTransfer = (t: any) => ({
 		}),
 	}),
 	smartbridge: () => ({
-		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.SMARTBRIDGE"),
-		}),
 		maxLength: {
 			value: 255,
 			message: t("COMMON.VALIDATION.MAX_LENGTH", {
