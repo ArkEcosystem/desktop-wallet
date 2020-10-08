@@ -94,24 +94,21 @@ export const requestMocks = {
 			(request: any) =>
 				request.url === "https://dwallets.ark.io/api/transactions/search?page=1&limit=15" &&
 				request.method === "post" &&
-				request.body.toString() ===
-					'{"addresses":["D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"]}',
+				request.body.toString() === '{"addresses":["D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"]}',
 			"coins/ark/transactions/search/addresses-D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 		),
 		mockRequest(
 			(request: any) =>
 				request.url === "https://dwallets.ark.io/api/transactions/search?page=1&limit=15" &&
 				request.method === "post" &&
-				request.body.toString() ===
-					'{"addresses":["DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS"]}',
+				request.body.toString() === '{"addresses":["DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS"]}',
 			"coins/ark/transactions/search/addresses-DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
 		),
 		mockRequest(
 			(request: any) =>
 				request.url === "https://dwallets.ark.io/api/transactions/search?page=1&limit=15" &&
 				request.method === "post" &&
-				request.body.toString() ===
-					'{"addresses":["DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"]}',
+				request.body.toString() === '{"addresses":["DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"]}',
 			"coins/ark/transactions/search/addresses-DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
 		),
 	],
