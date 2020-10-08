@@ -42,9 +42,10 @@ export const mockRequest = (url: string | object | Function, fixture: string | o
 export const requestMocks = {
 	configuration: [
 		mockRequest("https://dwallets.ark.io/api/node/configuration", "coins/ark/configuration-devnet"),
-		mockRequest("https://dwallets.ark.io/api/peers", "coins/ark/peers"),
 		mockRequest("https://dwallets.ark.io/api/node/configuration/crypto", "coins/ark/cryptoConfiguration"),
+		mockRequest("https://dwallets.ark.io/api/node/fees?days=30", "coins/ark/node-fees"),
 		mockRequest("https://dwallets.ark.io/api/node/syncing", "coins/ark/syncing"),
+		mockRequest("https://dwallets.ark.io/api/peers", "coins/ark/peers"),
 	],
 	delegates: [
 		mockRequest("https://dwallets.ark.io/api/delegates", "coins/ark/delegates-devnet"),
@@ -55,7 +56,7 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/delegates?page=5", "coins/ark/delegates-devnet"),
 	],
 	transactions: [
-		mockRequest("https://dwallets.ark.io/api/node/fees?days=30", "coins/ark/node-fees"),
+		mockRequest("https://dwallets.ark.io/api/transactions/df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da", "coins/ark/transactions/business-registration"),
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/transaction-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions/search?limit=10", "coins/ark/transactions"),
 		mockRequest(
