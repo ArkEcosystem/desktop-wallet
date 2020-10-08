@@ -46,7 +46,7 @@ exports[`LedgerWaitingDevice should emit false when closed by button 1`] = `
         >
           <div
             class="mt-8 text-center text-theme-neutral-dark"
-            data-testid="LedgerConfirmation-description"
+            data-testid="LedgerWaitingDevice-description"
           >
             Connect your Ledger device to PC and confirm the input
           </div>
@@ -64,7 +64,7 @@ exports[`LedgerWaitingDevice should emit false when closed by button 1`] = `
             />
             <span
               class="font-semibold text-black"
-              data-testid="LedgerConfirmation-loading_message"
+              data-testid="LedgerWaitingDevice-loading_message"
             >
               Waiting for Ledger device
             </span>
