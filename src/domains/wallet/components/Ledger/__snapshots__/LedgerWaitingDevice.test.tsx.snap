@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LedgerWaitingDevice should emit false when closed by button 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
+  >
+    <div
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="sc-AxiKw cTRlJa absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      data-testid="modal__inner"
+    >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Ledger Wallet
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <div
+            class="mt-8 text-center text-theme-neutral-dark"
+            data-testid="LedgerWaitingDevice-description"
+          >
+            Connect your Ledger to PC and confirm the input.
+          </div>
+          <svg
+            class="mx-auto my-8"
+          >
+            waiting-ledger-device.svg
+          </svg>
+          <div
+            class="inline-flex items-center justify-center w-full mt-8 space-x-3"
+          >
+            <div
+              class="sc-AxhCb irNmep"
+              color="primary"
+            />
+            <span
+              class="text-theme-text"
+              data-testid="LedgerWaitingDevice-loading_message"
+            >
+              Waiting for Ledger device...
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
