@@ -145,7 +145,7 @@ export const SendTransfer = () => {
 		},
 	];
 
-	console.log({ userNetworks, networks });
+	const availableNetworks = networks.filter((network) => userNetworks.includes(network.id()));
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
@@ -156,10 +156,7 @@ export const SendTransfer = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FormStep
-									networks={networks.filter((network) => userNetworks.includes(network.id()))}
-									profile={activeProfile}
-								/>
+								<FormStep networks={availableNetworks} profile={activeProfile} />
 							</TabPanel>
 
 							<TabPanel tabId={2}>
