@@ -217,6 +217,18 @@ describe("CreateProfile", () => {
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
+
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "" } });
+
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
