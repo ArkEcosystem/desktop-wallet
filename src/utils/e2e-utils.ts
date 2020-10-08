@@ -152,6 +152,10 @@ export const requestMocks = {
 			"https://dwallets.ark.io/api/wallets/DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
 			"coins/ark/wallets/DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
 		),
+		mockRequest(
+			"https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
+			"coins/ark/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
+		),
 		mockRequest("https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes", "coins/ark/votes"),
 	],
 };
