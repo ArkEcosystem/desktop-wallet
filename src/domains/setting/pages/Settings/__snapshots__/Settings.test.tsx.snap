@@ -589,6 +589,1283 @@ exports[`Settings should change a password 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Settings should not update profile if profile name exists 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fznxsB iAUYdH"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fznJRM dWqptf"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="overflow-hidden rounded-lg"
+              >
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--send"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-medium text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-AxhUy dHClEW -mr-2 border-theme-primary-contrast"
+                >
+                  <span
+                    class="text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      J
+                    </span>
+                  </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxirZ eKWnGz"
+        height="24"
+        width="13"
+      >
+        <svg>
+          arrow-left.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-3"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="flex flex-1 bg-theme-background"
+      >
+        <div
+          class="container flex mx-auto"
+        >
+          <div
+            class="px-10 my-16 border-r-1 border-theme-primary-contrast"
+          >
+            <div
+              class="sc-fzoiQi cwgLhd"
+            >
+              <ul>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--General"
+                >
+                  <div
+                    class="sc-fznWqX fGFCFC absolute top-0 left-0 rounded-lg bg-theme-primary"
+                  />
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          general.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-semibold"
+                    >
+                      General
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Peer"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          peer.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Peer
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Plugins"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          plugin.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Plugins
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="w-full ml-16"
+          >
+            <div
+              class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
+            >
+              <div
+                class="container py-16 mx-auto px-14"
+              >
+                <div
+                  class="flex items-end justify-between bg-theme-background"
+                >
+                  <div>
+                    <h1
+                      class="mb-0 md:text-4xl"
+                      data-testid="header__title"
+                    >
+                      Profile Settings
+                    </h1>
+                    <div
+                      class="text-theme-neutral-dark"
+                      data-testid="header__subtitle"
+                    >
+                      Customize your wallet to suit your needs.
+                    </div>
+                  </div>
+                </div>
+                <form
+                  class="space-y-8"
+                  data-testid="General-settings__form"
+                >
+                  <div
+                    class="relative mt-8"
+                  >
+                    <h2>
+                      Personal Details
+                    </h2>
+                    <div
+                      class="group undefined"
+                    >
+                      <span
+                        class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
+                      >
+                        Profile Image
+                      </span>
+                      <div
+                        class="flex flex-row mt-2"
+                      >
+                        <div
+                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
+                        >
+                          <div
+                            class="sc-fzoXWK JKhnC"
+                          >
+                            <img
+                              alt="Profile avatar"
+                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                            />
+                            <span
+                              class="absolute text-2xl font-semibold text-theme-background"
+                            >
+                              JA
+                            </span>
+                            <div
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
+                            >
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
+                              >
+                                <div
+                                  class="sc-AxirZ iQaTP text-white"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex justify-between w-full mt-8"
+                    >
+                      <div
+                        class="flex flex-col w-2/4"
+                      >
+                        <fieldset
+                          class="sc-fzqARJ iYCdOX flex flex-col space-y-2"
+                        >
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="name"
+                          >
+                            Name
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
+                          </label>
+                          <input
+                            aria-invalid="true"
+                            class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            data-testid="General-settings__input--name"
+                            name="name"
+                            type="text"
+                            value="J"
+                          />
+                          <p
+                            class="text-sm text-theme-danger"
+                          >
+                            Profile name already exists
+                          </p>
+                        </fieldset>
+                        <fieldset
+                          class="sc-fzqARJ vudFL mt-8"
+                        >
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="passphraseLanguage"
+                          >
+                            Passphrase Language
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
+                          </label>
+                          <div
+                            class="relative w-full"
+                          >
+                            <input
+                              class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              data-testid="select-list__input"
+                              name="passphraseLanguage"
+                              readonly=""
+                              type="text"
+                              value="chinese_simplified"
+                            />
+                            <div
+                              class="relative w-full cursor-pointer"
+                            >
+                              <div>
+                                <button
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-labelledby="downshift-141-label downshift-141-toggle-button"
+                                  class="sc-fzoyTs buZKoP  is-selected "
+                                  data-testid="select-list__toggle-button"
+                                  id="downshift-141-toggle-button"
+                                  type="button"
+                                >
+                                  Chinese Simplified
+                                </button>
+                                <ul
+                                  aria-labelledby="downshift-141-label"
+                                  class="sc-fzoNJl gPmoPk"
+                                  id="downshift-141-menu"
+                                  role="listbox"
+                                  tabindex="-1"
+                                />
+                              </div>
+                              <div
+                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                              >
+                                <div
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
+                                >
+                                  <svg>
+                                    caret-down.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <fieldset
+                          class="sc-fzqARJ vudFL mt-8"
+                        >
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="currency"
+                          >
+                            Currency
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
+                          </label>
+                          <div
+                            class="relative w-full"
+                          >
+                            <input
+                              class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              data-testid="select-list__input"
+                              name="currency"
+                              readonly=""
+                              type="text"
+                              value="BTC"
+                            />
+                            <div
+                              class="relative w-full cursor-pointer"
+                            >
+                              <div>
+                                <button
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-labelledby="downshift-142-label downshift-142-toggle-button"
+                                  class="sc-fzoyTs buZKoP  is-selected "
+                                  data-testid="select-list__toggle-button"
+                                  id="downshift-142-toggle-button"
+                                  type="button"
+                                >
+                                  BTC (Ƀ)
+                                </button>
+                                <ul
+                                  aria-labelledby="downshift-142-label"
+                                  class="sc-fzoNJl gPmoPk"
+                                  id="downshift-142-menu"
+                                  role="listbox"
+                                  tabindex="-1"
+                                />
+                              </div>
+                              <div
+                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                              >
+                                <div
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
+                                >
+                                  <svg>
+                                    caret-down.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <div
+                        class="flex flex-col w-2/4 ml-5"
+                      >
+                        <fieldset
+                          class="sc-fzqARJ vudFL flex flex-col space-y-2"
+                        >
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="language"
+                          >
+                            Language
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
+                          </label>
+                          <div
+                            class="relative w-full"
+                          >
+                            <input
+                              class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              data-testid="select-list__input"
+                              name="language"
+                              readonly=""
+                              type="text"
+                              value="en-US"
+                            />
+                            <div
+                              class="relative w-full cursor-pointer"
+                            >
+                              <div>
+                                <button
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-labelledby="downshift-143-label downshift-143-toggle-button"
+                                  class="sc-fzoyTs buZKoP  is-selected "
+                                  data-testid="select-list__toggle-button"
+                                  id="downshift-143-toggle-button"
+                                  type="button"
+                                >
+                                  English
+                                </button>
+                                <ul
+                                  aria-labelledby="downshift-143-label"
+                                  class="sc-fzoNJl gPmoPk"
+                                  id="downshift-143-menu"
+                                  role="listbox"
+                                  tabindex="-1"
+                                />
+                              </div>
+                              <div
+                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                              >
+                                <div
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
+                                >
+                                  <svg>
+                                    caret-down.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <fieldset
+                          class="sc-fzqARJ vudFL mt-8"
+                        >
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="marketProvider"
+                          >
+                            Market Provider
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
+                          </label>
+                          <div
+                            class="relative w-full"
+                          >
+                            <input
+                              class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              data-testid="select-list__input"
+                              name="marketProvider"
+                              readonly=""
+                              type="text"
+                              value="coincap"
+                            />
+                            <div
+                              class="relative w-full cursor-pointer"
+                            >
+                              <div>
+                                <button
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-labelledby="downshift-144-label downshift-144-toggle-button"
+                                  class="sc-fzoyTs buZKoP  is-selected "
+                                  data-testid="select-list__toggle-button"
+                                  id="downshift-144-toggle-button"
+                                  type="button"
+                                >
+                                  CoinCap
+                                </button>
+                                <ul
+                                  aria-labelledby="downshift-144-label"
+                                  class="sc-fzoNJl gPmoPk"
+                                  id="downshift-144-menu"
+                                  role="listbox"
+                                  tabindex="-1"
+                                />
+                              </div>
+                              <div
+                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                              >
+                                <div
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
+                                >
+                                  <svg>
+                                    caret-down.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <fieldset
+                          class="sc-fzqARJ vudFL mt-8"
+                        >
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="timeFormat"
+                          >
+                            Time Format
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
+                          </label>
+                          <div
+                            class="relative w-full"
+                          >
+                            <input
+                              class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              data-testid="select-list__input"
+                              name="timeFormat"
+                              readonly=""
+                              type="text"
+                              value="h:mm A"
+                            />
+                            <div
+                              class="relative w-full cursor-pointer"
+                            >
+                              <div>
+                                <button
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-labelledby="downshift-145-label downshift-145-toggle-button"
+                                  class="sc-fzoyTs buZKoP  is-selected "
+                                  data-testid="select-list__toggle-button"
+                                  id="downshift-145-toggle-button"
+                                  type="button"
+                                >
+                                  12h
+                                </button>
+                                <ul
+                                  aria-labelledby="downshift-145-label"
+                                  class="sc-fzoNJl gPmoPk"
+                                  id="downshift-145-menu"
+                                  role="listbox"
+                                  tabindex="-1"
+                                />
+                              </div>
+                              <div
+                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                              >
+                                <div
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
+                                >
+                                  <svg>
+                                    caret-down.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="relative mt-10"
+                  >
+                    <h2>
+                      Security
+                    </h2>
+                    <ul
+                      class="sc-fzqNqU iuWpXt"
+                      data-testid="list-divided__items"
+                    >
+                      <li
+                        class="flex flex-col w-full pb-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col w-full space-y-2"
+                          >
+                            <div
+                              class="flex items-center justify-between space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Screenshot Protection
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    checked=""
+                                    class="Toggle__Input-qyyifx-0 bXkHfF"
+                                    data-testid="General-settings__toggle--isScreenshotProtection"
+                                    name="isScreenshotProtection"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              This protection will protect your money from unwanted Screenshot you PC.
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="flex flex-col w-full py-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col w-full space-y-2"
+                          >
+                            <div
+                              class="flex items-center justify-between space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Advanced Mode
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="Toggle__Input-qyyifx-0 bXkHfF"
+                                    data-testid="General-settings__toggle--isAdvancedMode"
+                                    name="isAdvancedMode"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="flex flex-col w-full pt-8"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col w-full space-y-2"
+                          >
+                            <div
+                              class="flex items-center justify-between space-x-5"
+                            >
+                              <span
+                                data-testid="list-divided-item__label"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class=""
+                          data-testid="list-divided-item__content"
+                        >
+                          <fieldset
+                            class="sc-fzqARJ vudFL flex flex-col space-y-2"
+                          >
+                            <label
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              data-testid="FormLabel"
+                              for="automaticSignOutPeriod"
+                            >
+                              Automatic Sign Out Period
+                              <div
+                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                data-testid="FormLabel__required"
+                              />
+                            </label>
+                            <div
+                              class="relative w-full"
+                            >
+                              <input
+                                class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                                data-testid="select-list__input"
+                                name="automaticSignOutPeriod"
+                                readonly=""
+                                type="text"
+                                value="1"
+                              />
+                              <div
+                                class="relative w-full cursor-pointer"
+                              >
+                                <div>
+                                  <button
+                                    aria-expanded="false"
+                                    aria-haspopup="listbox"
+                                    aria-labelledby="downshift-146-label downshift-146-toggle-button"
+                                    class="sc-fzoyTs buZKoP  is-selected "
+                                    data-testid="select-list__toggle-button"
+                                    id="downshift-146-toggle-button"
+                                    type="button"
+                                  >
+                                    1 minute
+                                  </button>
+                                  <ul
+                                    aria-labelledby="downshift-146-label"
+                                    class="sc-fzoNJl gPmoPk"
+                                    id="downshift-146-menu"
+                                    role="listbox"
+                                    tabindex="-1"
+                                  />
+                                </div>
+                                <div
+                                  class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                                >
+                                  <div
+                                    class="sc-AxirZ eRmuSF"
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div
+                    class="relative mt-10"
+                  >
+                    <h2>
+                      Other
+                    </h2>
+                    <ul
+                      class="sc-fzqNqU iuWpXt"
+                      data-testid="list-divided__items"
+                    >
+                      <li
+                        class="flex flex-col w-full pb-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col w-full space-y-2"
+                          >
+                            <div
+                              class="flex items-center justify-between space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Dark Theme
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    checked=""
+                                    class="Toggle__Input-qyyifx-0 bXkHfF"
+                                    data-testid="General-settings__toggle--isDarkMode"
+                                    name="isDarkMode"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              Enables a dark, high contrast color scheme.
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="flex flex-col w-full pt-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col w-full space-y-2"
+                          >
+                            <div
+                              class="flex items-center justify-between space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Update Ledger in Background
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    checked=""
+                                    class="Toggle__Input-qyyifx-0 bXkHfF"
+                                    data-testid="General-settings__toggle--isUpdateLedger"
+                                    name="isUpdateLedger"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div
+                    class="flex justify-between w-full pt-2"
+                  >
+                    <button
+                      class="sc-AxhCb cWbcYc"
+                      color="danger"
+                      type="button"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          reset.svg
+                        </svg>
+                      </div>
+                      <span>
+                        Reset Data
+                      </span>
+                    </button>
+                    <div
+                      class="space-x-3"
+                    >
+                      <button
+                        class="sc-AxhCb hPLjLy"
+                        color="primary"
+                        type="button"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        class="sc-AxhCb khNOPs"
+                        color="primary"
+                        data-testid="General-settings__submit-button"
+                        type="submit"
+                      >
+                        Save
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                <div
+                  class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
+                >
+                  <div
+                    class="fixed z-50 w-full h-full bg-black opacity-50"
+                    data-testid="modal__overlay"
+                  />
+                  <div
+                    class="sc-fzplWN hXndMY absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+                    data-testid="modal__inner"
+                  >
+                    <div
+                      class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+                    >
+                      <button
+                        class="sc-AxhCb gcoSL w-11 h-11"
+                        color="primary"
+                        data-testid="modal__close-btn"
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxirZ fFqjhX"
+                          height="14"
+                          width="14"
+                        >
+                          <svg>
+                            cross-slim.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="relative"
+                    >
+                      <h2
+                        class="mb-0 text-3xl font-bold"
+                      >
+                        Advanced Mode Disclaimer
+                      </h2>
+                      <div
+                        class="flex-1"
+                      >
+                        <div
+                          class="mt-1 text-theme-neutral-dark"
+                        >
+                          By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.
+                        </div>
+                        <div
+                          class="flex justify-end mt-8 space-x-3"
+                        >
+                          <button
+                            class="sc-AxhCb hPLjLy"
+                            color="primary"
+                            data-testid="AdvancedMode__decline-button"
+                            type="button"
+                          >
+                            I Decline
+                          </button>
+                          <button
+                            class="sc-AxhCb khNOPs"
+                            color="primary"
+                            data-testid="AdvancedMode__accept-button"
+                            type="button"
+                          >
+                            I Accept
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Settings should open & close modals in the plugin settings 1`] = `
 <DocumentFragment>
   <div
@@ -1176,18 +2453,18 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-348-label downshift-348-toggle-button"
+                                    aria-labelledby="downshift-454-label downshift-454-toggle-button"
                                     class="sc-fzoyTs buZKoP   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-348-toggle-button"
+                                    id="downshift-454-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-348-label"
+                                    aria-labelledby="downshift-454-label"
                                     class="sc-fzoNJl gPmoPk"
-                                    id="downshift-348-menu"
+                                    id="downshift-454-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -4457,18 +5734,18 @@ exports[`Settings should render plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-307-label downshift-307-toggle-button"
+                                    aria-labelledby="downshift-413-label downshift-413-toggle-button"
                                     class="sc-fzoyTs buZKoP   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-307-toggle-button"
+                                    id="downshift-413-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-307-label"
+                                    aria-labelledby="downshift-413-label"
                                     class="sc-fzoNJl gPmoPk"
-                                    id="downshift-307-menu"
+                                    id="downshift-413-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -6237,18 +7514,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-141-label downshift-141-toggle-button"
+                                  aria-labelledby="downshift-247-label downshift-247-toggle-button"
                                   class="sc-fzoyTs buZKoP  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-141-toggle-button"
+                                  id="downshift-247-toggle-button"
                                   type="button"
                                 >
                                   Chinese Simplified
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-141-label"
+                                  aria-labelledby="downshift-247-label"
                                   class="sc-fzoNJl gPmoPk"
-                                  id="downshift-141-menu"
+                                  id="downshift-247-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6301,18 +7578,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-142-label downshift-142-toggle-button"
+                                  aria-labelledby="downshift-248-label downshift-248-toggle-button"
                                   class="sc-fzoyTs buZKoP  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-142-toggle-button"
+                                  id="downshift-248-toggle-button"
                                   type="button"
                                 >
                                   BTC (Ƀ)
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-142-label"
+                                  aria-labelledby="downshift-248-label"
                                   class="sc-fzoNJl gPmoPk"
-                                  id="downshift-142-menu"
+                                  id="downshift-248-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6369,18 +7646,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-143-label downshift-143-toggle-button"
+                                  aria-labelledby="downshift-249-label downshift-249-toggle-button"
                                   class="sc-fzoyTs buZKoP  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-143-toggle-button"
+                                  id="downshift-249-toggle-button"
                                   type="button"
                                 >
                                   English
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-143-label"
+                                  aria-labelledby="downshift-249-label"
                                   class="sc-fzoNJl gPmoPk"
-                                  id="downshift-143-menu"
+                                  id="downshift-249-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6433,18 +7710,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-144-label downshift-144-toggle-button"
+                                  aria-labelledby="downshift-250-label downshift-250-toggle-button"
                                   class="sc-fzoyTs buZKoP  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-144-toggle-button"
+                                  id="downshift-250-toggle-button"
                                   type="button"
                                 >
                                   CoinCap
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-144-label"
+                                  aria-labelledby="downshift-250-label"
                                   class="sc-fzoNJl gPmoPk"
-                                  id="downshift-144-menu"
+                                  id="downshift-250-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6497,18 +7774,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-145-label downshift-145-toggle-button"
+                                  aria-labelledby="downshift-251-label downshift-251-toggle-button"
                                   class="sc-fzoyTs buZKoP  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-145-toggle-button"
+                                  id="downshift-251-toggle-button"
                                   type="button"
                                 >
                                   12h
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-145-label"
+                                  aria-labelledby="downshift-251-label"
                                   class="sc-fzoNJl gPmoPk"
-                                  id="downshift-145-menu"
+                                  id="downshift-251-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6696,18 +7973,18 @@ exports[`Settings should submit using default props 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-146-label downshift-146-toggle-button"
+                                    aria-labelledby="downshift-252-label downshift-252-toggle-button"
                                     class="sc-fzoyTs buZKoP  is-selected "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-146-toggle-button"
+                                    id="downshift-252-toggle-button"
                                     type="button"
                                   >
                                     1 minute
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-146-label"
+                                    aria-labelledby="downshift-252-label"
                                     class="sc-fzoNJl gPmoPk"
-                                    id="downshift-146-menu"
+                                    id="downshift-252-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
