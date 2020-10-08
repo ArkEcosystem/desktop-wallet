@@ -16,6 +16,7 @@ describe("CreateContact", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		existingContact = profile.contacts().values()[0];
 	});
+
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(<CreateContact profile={profile} isOpen={false} onSave={onSave} />);
 
