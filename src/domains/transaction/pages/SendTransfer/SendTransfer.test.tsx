@@ -178,6 +178,10 @@ describe("SendTransfer", () => {
 			fireEvent.focus(rendered.getByTestId("SelectNetworkInput__input"));
 		});
 
+		act(() => {
+			fireEvent.change(rendered.getByTestId("SelectNetworkInput__input"), { target: { value: "ARK" } });
+		});
+
 		await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
 
 		act(() => {
@@ -185,7 +189,6 @@ describe("SendTransfer", () => {
 		});
 
 		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
-		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 
@@ -214,14 +217,17 @@ describe("SendTransfer", () => {
 			fireEvent.focus(rendered.getByTestId("SelectNetworkInput__input"));
 		});
 
-		await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
-
 		act(() => {
-			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.mainnet"));
+			fireEvent.change(rendered.getByTestId("SelectNetworkInput__input"), { target: { value: "ARK" } });
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
-		expect(rendered.getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
+		await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 

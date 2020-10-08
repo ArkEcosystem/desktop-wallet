@@ -359,8 +359,8 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   class="sc-fzqBZW sc-fzqNJr gNHBIw px-4"
                                 >
                                   <div
-                                    aria-label="ARK"
-                                    class="sc-AxgMl eLFBRi border-theme-danger-light text-theme-danger-400"
+                                    aria-label="ARK Devnet"
+                                    class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
                                     data-testid="SelectNetworkInput__network"
                                   >
                                     <div
@@ -379,7 +379,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   class="sc-fzqBZW iEnjyC py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                                   data-testid="SelectNetworkInput__typeahead"
                                 >
-                                  ARK
+                                  ARK Devnet
                                 </span>
                                 <input
                                   aria-activedescendant="SendTransactionForm__network-item-0"
@@ -391,7 +391,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   data-testid="SelectNetworkInput__input"
                                   id="SendTransactionForm__network-input"
                                   placeholder="Enter a cryptoasset name"
-                                  value="ARK"
+                                  value="ARK Devnet"
                                 />
                               </div>
                             </div>
@@ -409,32 +409,8 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 role="option"
                               >
                                 <div
-                                  aria-label="ARK"
-                                  class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
-                                  data-testid="NetworkIcon-ARK-ark.mainnet"
-                                >
-                                  <div
-                                    class="sc-AxiKw fubePL"
-                                    data-testid="NetworkIcon__icon"
-                                    height="26"
-                                    width="26"
-                                  >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                aria-selected="false"
-                                class="inline-block cursor-pointer"
-                                data-testid="SelectNetwork__NetworkIcon--container"
-                                id="SendTransactionForm__network-item-1"
-                                role="option"
-                              >
-                                <div
                                   aria-label="ARK Devnet"
-                                  class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                                  class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -475,9 +451,8 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           >
                             <div>
                               <button
-                                class="sc-fzpmMD jvETLY SelectAddress is-disabled "
+                                class="sc-fzpmMD jvETLY SelectAddress  "
                                 data-testid="SelectAddress__wrapper"
-                                disabled=""
                                 type="button"
                               >
                                 <div
@@ -3392,7 +3367,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                   ARK Devnet
                                 </span>
                                 <input
-                                  aria-activedescendant="SendTransactionForm__network-item-1"
+                                  aria-activedescendant="SendTransactionForm__network-item-0"
                                   aria-autocomplete="list"
                                   aria-controls="SendTransactionForm__network-menu"
                                   aria-labelledby="SendTransactionForm__network-label"
@@ -3412,7 +3387,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               role="listbox"
                             >
                               <li
-                                aria-selected="false"
+                                aria-selected="true"
                                 class="inline-block cursor-pointer"
                                 data-testid="SelectNetwork__NetworkIcon--container"
                                 id="SendTransactionForm__network-item-0"
