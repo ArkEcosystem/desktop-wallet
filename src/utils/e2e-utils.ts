@@ -56,7 +56,10 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/delegates?page=5", "coins/ark/delegates-devnet"),
 	],
 	transactions: [
-		mockRequest("https://dwallets.ark.io/api/transactions/df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da", "coins/ark/transactions/business-registration"),
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions/df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da",
+			"coins/ark/transactions/business-registration",
+		),
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/transaction-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions/search?limit=10", "coins/ark/transactions"),
 		mockRequest(
