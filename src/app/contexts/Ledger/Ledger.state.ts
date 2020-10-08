@@ -33,6 +33,7 @@ export const ledgerStateReducer = (state: State, action: Action): State => {
 		case "remove":
 			return {
 				...state,
+				isConnected: false,
 				device: undefined,
 			};
 		case "connected":
@@ -52,6 +53,7 @@ export const ledgerStateReducer = (state: State, action: Action): State => {
 		case "waiting": {
 			return {
 				...state,
+				error: undefined,
 				isBusy: false,
 				isWaiting: true,
 			};

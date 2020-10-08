@@ -7,12 +7,14 @@ import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
+import { useQueryParams } from "app/hooks";
 import { useActiveProfile } from "app/hooks/env";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
+import { LedgerConnectionStep } from "./LedgerConnectionStep";
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
@@ -20,6 +22,9 @@ import { ThirdStep } from "./Step3";
 export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [walletData, setWalletData] = useState<ReadWriteWallet | null>(null);
+
+	const queryParams = useQueryParams();
+	const isLedgerImport = !!queryParams.get("ledger");
 
 	const history = useHistory();
 	const { env, persist } = useEnvironmentContext();
@@ -125,14 +130,18 @@ export const ImportWallet = () => {
 					data-testid="ImportWallet__form"
 				>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={3} activeIndex={activeTab} />
+						<StepIndicator size={isLedgerImport ? 4 : 3} activeIndex={activeTab} />
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
 								<FirstStep />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep profile={activeProfile} />
+								{isLedgerImport ? (
+									<LedgerConnectionStep onConnect={() => handleNext()} />
+								) : (
+									<SecondStep profile={activeProfile} />
+								)}
 							</TabPanel>
 							<TabPanel tabId={3}>
 								<ThirdStep address={walletData?.address() as string} nameMaxLength={nameMaxLength} />

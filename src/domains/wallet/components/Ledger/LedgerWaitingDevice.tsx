@@ -5,7 +5,7 @@ import { useLedgerContext } from "app/contexts/Ledger/Ledger";
 import React, { useLayoutEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-const { WaitingLedgerDeviceBanner } = images.transaction.common;
+const { WaitingLedgerDevice } = images.wallet.common;
 
 export const LedgerWaitingDevice = ({
 	isOpen,
@@ -24,15 +24,15 @@ export const LedgerWaitingDevice = ({
 	}, [hasDeviceAvailable, onClose]);
 
 	return (
-		<Modal title={t("COMMON.LEDGER_MODAL.TITLE")} isOpen={isOpen} onClose={() => onClose(false)}>
+		<Modal title={t("WALLETS.MODAL_LEDGER_WALLET.TITLE")} isOpen={isOpen} onClose={() => onClose(false)}>
 			<div className="mt-8 text-center text-theme-neutral-dark" data-testid="LedgerWaitingDevice-description">
-				{t("COMMON.LEDGER_MODAL.CONNECT_DEVICE")}
+				{t("WALLETS.MODAL_LEDGER_WALLET.CONNECT_DEVICE")}
 			</div>
-			<WaitingLedgerDeviceBanner className="mx-auto my-8" />
+			<WaitingLedgerDevice className="mx-auto my-8" />
 			<div className="inline-flex items-center justify-center w-full mt-8 space-x-3">
 				<Spinner color="primary" />
-				<span className="font-semibold text-black" data-testid="LedgerWaitingDevice-loading_message">
-					{t("COMMON.LEDGER_MODAL.WAITING_DEVICE")}
+				<span className="text-theme-text" data-testid="LedgerWaitingDevice-loading_message">
+					{t("WALLETS.MODAL_LEDGER_WALLET.WAITING_DEVICE")}
 				</span>
 			</div>
 		</Modal>

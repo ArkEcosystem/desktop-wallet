@@ -11,7 +11,7 @@ import { defaultLedgerState, ledgerStateReducer } from "./Ledger.state";
 const formatDerivationPath = (coinType: number, index: number) => `44'/${coinType}'/${index}'/0/0`;
 
 export const useLedger = (transport: typeof Transport) => {
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const [state, dispatch] = useReducer(ledgerStateReducer, defaultLedgerState);
 	const abortRetryRef = useRef<boolean>(false);
 
@@ -48,32 +48,38 @@ export const useLedger = (transport: typeof Transport) => {
 	);
 
 	const connect = useCallback(
-		async (coin: Coins.Coin, retryOptions: retry.Options = { retries: 50, randomize: false, factor: 1 }) => {
+		async (
+			coin: string,
+			network: string,
+			retryOptions: retry.Options = { retries: 50, randomize: false, factor: 1 },
+		) => {
 			dispatch({ type: "waiting" });
 			abortRetryRef.current = false;
 
+			const instance = await env.coin(coin, network);
+
 			try {
-				const slip44 = coin.config().get<number>("network.crypto.slip44");
+				const slip44 = instance.config().get<number>("network.crypto.slip44");
 
 				const connectFn: retry.RetryFunction<void> = async (bail, attempts) => {
 					if (abortRetryRef.current && attempts > 1) {
 						bail(new Error("User aborted"));
 					}
 
-					await coin.ledger().connect(transport);
+					await instance.ledger().connect(transport);
 					// Ensure that the app is accessible
-					await coin.ledger().getPublicKey(formatDerivationPath(slip44, 0));
+					await instance.ledger().getPublicKey(formatDerivationPath(slip44, 0));
 				};
 
 				await retry(connectFn, retryOptions);
 				dispatch({ type: "connected" });
 			} catch (connectError) {
-				coin.ledger().disconnect();
+				instance.ledger().disconnect();
 				dispatch({ type: "failed", message: connectError.message });
 				throw connectError;
 			}
 		},
-		[transport],
+		[transport, env],
 	);
 
 	const disconnect = useCallback(async (coin: Coins.Coin) => {
@@ -82,12 +88,14 @@ export const useLedger = (transport: typeof Transport) => {
 	}, []);
 
 	const scanWallets = useCallback(
-		async (coin: Coins.Coin, profile: Profile) => {
-			const slip44 = coin.config().get<number>("network.crypto.slip44");
+		async (coin: string, network: string, profile: Profile) => {
 			const wallets: { address: string; balance: BigNumber; index: number }[] = [];
 
 			try {
-				await connect(coin);
+				await connect(coin, network);
+
+				const instance = await env.coin(coin, network);
+				const slip44 = instance.config().get<number>("network.crypto.slip44");
 
 				dispatch({ type: "busy" });
 
@@ -96,8 +104,8 @@ export const useLedger = (transport: typeof Transport) => {
 
 				while (hasMore) {
 					const path = formatDerivationPath(slip44, cursor);
-					const publicKey = await coin.ledger().getPublicKey(path);
-					const address = await coin.identity().address().fromPublicKey(publicKey);
+					const publicKey = await instance.ledger().getPublicKey(path);
+					const address = await instance.identity().address().fromPublicKey(publicKey);
 
 					// Already imported
 					if (profile.wallets().findByPublicKey(publicKey)) {
@@ -106,7 +114,7 @@ export const useLedger = (transport: typeof Transport) => {
 					}
 
 					try {
-						const identity = await coin.client().wallet(address);
+						const identity = await instance.client().wallet(address);
 
 						wallets.push({
 							address: identity.address(),
@@ -126,7 +134,7 @@ export const useLedger = (transport: typeof Transport) => {
 					cursor++;
 				}
 
-				await disconnect(coin);
+				await disconnect(instance);
 				return wallets;
 			} catch (e) {
 				dispatch({ type: "failed", message: e.message });
@@ -134,10 +142,10 @@ export const useLedger = (transport: typeof Transport) => {
 
 			return wallets;
 		},
-		[connect, disconnect],
+		[env, connect, disconnect],
 	);
 
-	const abortConnectionRetry = () => (abortRetryRef.current = true);
+	const abortConnectionRetry = useCallback(() => (abortRetryRef.current = true), []);
 	const isAwaitingConnection = useMemo(() => state.isWaiting && !state.isConnected, [state]);
 	const isAwaitingDeviceConfirmation = useMemo(() => state.isWaiting && state.isConnected, [state]);
 	const hasDeviceAvailable = useMemo(() => !!state.device, [state]);
@@ -152,13 +160,14 @@ export const useLedger = (transport: typeof Transport) => {
 	return {
 		abortConnectionRetry,
 		connect,
+		disconnect,
 		error,
 		hasDeviceAvailable,
+		importLedgerWallets,
 		isAwaitingConnection,
 		isAwaitingDeviceConfirmation,
 		isBusy,
 		isConnected,
 		scanWallets,
-		importLedgerWallets,
 	};
 };

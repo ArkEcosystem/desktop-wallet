@@ -1,13 +1,13 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { chunk } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
-import { LedgerWaitingDevice } from "app/components/Ledger/LedgerWaitingDevice";
 import { Slider } from "app/components/Slider";
 import { Table } from "app/components/Table";
 import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
 import { useActiveProfile } from "app/hooks/env";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
+import { LedgerWaitingDevice } from "domains/wallet/components/Ledger/LedgerWaitingDevice";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";

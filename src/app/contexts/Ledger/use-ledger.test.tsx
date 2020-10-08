@@ -102,6 +102,7 @@ describe("Use Ledger", () => {
 				const wallets = [{ address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", index: 0 }];
 				await importLedgerWallets(wallets, wallet.coin(), profile);
 			};
+
 			return (
 				<div>
 					<ul>
@@ -132,7 +133,7 @@ describe("Use Ledger", () => {
 			const { connect, isConnected, isAwaitingConnection, error, abortConnectionRetry } = useLedger(transport);
 			const handleConnect = async () => {
 				try {
-					await connect(wallet.coin(), { retries, randomize: false, minTimeout: 10 });
+					await connect(wallet.coinId(), wallet.networkId(), { retries, randomize: false, minTimeout: 10 });
 				} catch {
 					//
 				}
@@ -163,7 +164,7 @@ describe("Use Ledger", () => {
 
 			expect(screen.getByText("Waiting Device")).toBeInTheDocument();
 
-			await waitFor(() => expect(screen.queryByText("Waitig Device")).not.toBeInTheDocument());
+			await waitFor(() => expect(screen.queryByText("Waiting Device")).not.toBeInTheDocument());
 			await waitFor(() => expect(screen.queryByText("Connected")).toBeInTheDocument());
 
 			expect(getPublicKeySpy).toHaveBeenCalledTimes(1);
@@ -209,7 +210,7 @@ describe("Use Ledger", () => {
 
 			expect(screen.getByText("Waiting Device")).toBeInTheDocument();
 
-			await waitFor(() => expect(screen.queryByText("Waitig Device")).not.toBeInTheDocument());
+			await waitFor(() => expect(screen.queryByText("Waiting Device")).not.toBeInTheDocument());
 			await waitFor(() => expect(screen.queryByText("Failed")).toBeInTheDocument());
 
 			expect(getPublicKeySpy).toHaveBeenCalledTimes(5);
@@ -224,7 +225,7 @@ describe("Use Ledger", () => {
 			const [wallets, setWallets] = useState<any>([]);
 
 			const handleScan = async () => {
-				const wallets = await scanWallets(wallet.coin(), profile);
+				const wallets = await scanWallets(wallet.coinId(), wallet.networkId(), profile);
 				setWallets(wallets);
 			};
 
@@ -253,7 +254,7 @@ describe("Use Ledger", () => {
 				fireEvent.click(screen.getByText("Scan"));
 			});
 
-			expect(screen.getByText("Waiting Device")).toBeInTheDocument();
+			expect(screen.queryByText("Waiting Device")).toBeInTheDocument();
 
 			await waitFor(() => expect(screen.getByText("DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq")).toBeInTheDocument());
 			await waitFor(() => expect(screen.getByText("DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES")).toBeInTheDocument());
