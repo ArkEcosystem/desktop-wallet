@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Input } from "./Input";
 import { InputAddonEnd, InputGroup } from "./InputGroup";
 
-type Props = { maxLength: number; defaultValue?: string } & React.InputHTMLAttributes<any>;
+type Props = { maxLength?: number; maxLengthLabel?: string; defaultValue?: string } & React.InputHTMLAttributes<any>;
 
 export const InputCounter = React.forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
-	const [length, setLength] = React.useState(props.defaultValue?.length || 0);
+	const [length, setLength] = useState(props.defaultValue?.length || 0);
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setLength(event.target.value.length);
@@ -20,14 +20,14 @@ export const InputCounter = React.forwardRef<HTMLInputElement, Props>((props: Pr
 				type="text"
 				className="pr-18"
 				ref={ref}
-				onChange={handleChange}
 				{...props}
+				onChange={handleChange}
 			/>
 			<InputAddonEnd
 				data-testid="InputCounter__counter"
 				className="px-2 text-sm pointer-events-none text-theme-neutral"
 			>
-				{length}/{props.maxLength}
+				{length}/{props.maxLengthLabel}
 			</InputAddonEnd>
 		</InputGroup>
 	);
