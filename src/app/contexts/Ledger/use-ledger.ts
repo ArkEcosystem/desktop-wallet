@@ -40,7 +40,7 @@ export const useLedger = (transport: typeof Transport) => {
 				const wallet = await profile
 					.wallets()
 					.importByAddress(address, coin.network().coin(), coin.network().id());
-				wallet.data().set(WalletFlag.Ledger, index);
+				wallet.data().set(WalletFlag.LedgerIndex, index);
 			}
 			await persist();
 		},
