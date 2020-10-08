@@ -11,8 +11,8 @@ export type TransactionDetailProps = {
 	labelExtraColor?: "primary" | "success" | "danger" | "warning";
 	extra?: React.ReactNode;
 	border?: boolean;
-	borderPosition?: "top" | "bottom";
-	padding?: boolean;
+	borderPosition?: "top" | "bottom" | "both";
+	paddingPosition?: "top" | "bottom" | "both";
 	className?: string;
 };
 
@@ -27,13 +27,13 @@ export const TransactionDetail = ({
 	label,
 	labelExtra,
 	labelExtraColor,
-	padding,
+	paddingPosition,
 }: TransactionDetailProps) => (
 	<TransactionDetailStyled
 		data-testid="TransactionDetail"
 		border={border}
 		borderPosition={borderPosition}
-		padding={padding}
+		paddingPosition={paddingPosition}
 		className={className}
 	>
 		<div className="flex-1 space-y-2">

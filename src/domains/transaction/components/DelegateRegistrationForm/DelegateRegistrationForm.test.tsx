@@ -185,14 +185,15 @@ describe("DelegateRegistrationForm", () => {
 	it("should set fee", async () => {
 		const { asFragment, form, getByTestId, rerender } = await renderComponent({ fee: "100000000" });
 
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
+
 		await act(async () => {
-			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[2]);
-
-			waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
+
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should sign transaction", async () => {
@@ -296,11 +297,15 @@ describe("DelegateRegistrationForm", () => {
 			data: () => delegateRegistrationFixture.data,
 		} as Contracts.SignedTransactionData;
 
-		const { getByTestId, getByText } = render(
-			<DelegateRegistrationForm.transactionDetails transaction={transaction} translations={translations} />,
+		const { getByText } = render(
+			<DelegateRegistrationForm.transactionDetails
+				transaction={transaction}
+				translations={translations}
+				wallet={wallet}
+			/>,
 		);
 
 		expect(getByText("TRANSACTION.DELEGATE_NAME")).toBeTruthy();
-		expect(getByTestId("TransactionDetail")).toHaveTextContent("test_delegate");
+		expect(getByText("test_delegate")).toBeTruthy();
 	});
 });

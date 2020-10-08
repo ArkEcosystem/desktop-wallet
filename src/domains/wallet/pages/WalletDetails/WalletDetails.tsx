@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { Page, Section } from "app/components/Layout";
 import { Spinner } from "app/components/Spinner";
 import { useEnvironmentContext } from "app/contexts";
@@ -48,6 +49,15 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		hasMore,
 	} = useWalletTransactions(activeWallet, { limit: 15 });
 
+	const walletVotes = () => {
+		// Being synced in background and will be updated after persisting
+		try {
+			return activeWallet.votes();
+		} catch (e) {
+			return [];
+		}
+	};
+
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
 	const coinName = activeWallet.coinId();
@@ -66,6 +76,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 	useEffect(() => {
 		const fetchAllData = async () => {
+			setIsLoading(true);
 			await fetchInit();
 			setIsLoading(false);
 		};
@@ -153,7 +164,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					<div className="flex">
 						<div className="w-1/2 pr-12 border-r border-theme-neutral-300">
 							<WalletVote
-								votes={activeWallet.hasSyncedWithNetwork() ? activeWallet.votes() : []}
+								votes={activeWallet.hasSyncedWithNetwork() ? walletVotes() : []}
 								maxVotes={activeWallet.network().maximumVotesPerWallet()}
 								isLoading={isLoading}
 								onButtonClick={handleVoteButton}
@@ -193,15 +204,17 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					) : null}
 
 					<div>
-						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY")}</h2>
+						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}</h2>
 						<>
 							<TransactionTable
 								transactions={transactions}
 								exchangeCurrency={exchangeCurrency}
+								hideHeader={!isLoading && transactions.length === 0}
 								isLoading={isLoading}
 								skeletonRowsLimit={txSkeletonRowsLimit}
 								onRowClick={(row) => setTransactionModalItem(row)}
 							/>
+
 							{hasMore && (
 								<Button
 									data-testid="transactions__fetch-more-button"
@@ -211,6 +224,13 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 								>
 									{isLoadingTransactions ? <Spinner size="sm" /> : t("COMMON.VIEW_MORE")}
 								</Button>
+							)}
+
+							{!isLoading && transactions.length === 0 && (
+								<EmptyBlock
+									className="-mt-2"
+									message={t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.EMPTY_TEXT")}
+								/>
 							)}
 						</>
 					</div>

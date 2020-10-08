@@ -83,7 +83,7 @@ export const defaultNetMocks = () => {
 		.persist();
 
 	nock("https://min-api.cryptocompare.com")
-		.get("/data/dayAvg?fsym=DARK&tsym=btc&toTs=1593561600")
+		.get("/data/dayAvg?fsym=DARK&tsym=BTC&toTs=1593561600")
 		.reply(200, require("tests/fixtures/exchange/cryptocompare.json"))
 		.persist();
 };

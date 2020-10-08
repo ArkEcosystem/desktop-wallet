@@ -113,7 +113,7 @@ describe("WalletHeader", () => {
 			/>,
 		);
 
-		expect(getByText("arrowup.svg")).toBeTruthy();
+		expect(getByText("chevron-up.svg")).toBeTruthy();
 		expect(getByText(`${delta}%`)).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();

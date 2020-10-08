@@ -49,13 +49,13 @@ describe("Table", () => {
 			fireEvent.click(th);
 		});
 
-		expect(getByTestId("table__ArrowUp")).toBeTruthy();
+		expect(getByTestId("table__CaretUp")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(th);
 		});
 
-		expect(getByTestId("table__ArrowDown")).toBeTruthy();
+		expect(getByTestId("table__CaretDown")).toBeTruthy();
 	});
 
 	it("should hide header", () => {

@@ -31,12 +31,19 @@ export const SelectNetwork = ({
 	disabled,
 	selected,
 }: SelectNetworkProps) => {
-	const [items] = React.useState(() =>
-		networks.map((network) => {
-			const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
-			return Object.assign(network, { extra: extended });
-		}),
+	const extendedItems = React.useMemo(
+		() =>
+			networks.map((network) => {
+				const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
+				return Object.assign(network, { extra: extended });
+			}),
+		[networks],
 	);
+
+	const [items, setItems] = React.useState([...extendedItems]);
+
+	const isMatch = (inputValue: string, network: Network) =>
+		inputValue && network.extra?.displayName?.toLowerCase().startsWith(inputValue.toLowerCase());
 
 	const {
 		isOpen,
@@ -57,6 +64,10 @@ export const SelectNetwork = ({
 		itemToString,
 		onSelectedItemChange: ({ selectedItem }) => onSelect?.(selectedItem),
 		onInputValueChange: ({ inputValue, selectedItem }) => {
+			setItems(
+				inputValue ? extendedItems.filter((network: Network) => isMatch(inputValue, network)) : extendedItems,
+			);
+
 			// Clear selection when user is changing input,
 			// and input does not match previously selected item
 			if (selectedItem && selectedItem.extra?.displayName !== inputValue) {
@@ -69,21 +80,11 @@ export const SelectNetwork = ({
 		selectItem(selected || null);
 	}, [selectItem, selected]);
 
-	const isMatch = React.useCallback(
-		(network: Network) => {
-			if (!inputValue) return false;
-			return network.extra?.displayName?.toLowerCase().startsWith(inputValue.toLowerCase().trim());
-		},
-		[inputValue],
-	);
-
-	const inputMatches = React.useMemo(() => items.filter((network) => isMatch(network)), [items, isMatch]);
-
 	const inputTypeAhead = React.useMemo(() => {
-		if (inputMatches.length === 1) {
-			return [inputValue, inputMatches[0].extra?.displayName?.slice(inputValue.length)].join("");
+		if (inputValue && items.length) {
+			return [inputValue, items[0].extra?.displayName?.slice(inputValue.length)].join("");
 		}
-	}, [inputMatches, inputValue]);
+	}, [items, inputValue]);
 
 	const assetClassName = (network: Network) => {
 		// Selected is me. Show me green
@@ -98,7 +99,7 @@ export const SelectNetwork = ({
 		if (!inputValue) return undefined;
 
 		// Input entered, matching with input. Show normal colors
-		if (isMatch(network)) return undefined;
+		if (isMatch(inputValue, network)) return undefined;
 
 		// Disabled otherwise
 		return "text-theme-neutral-light";
@@ -117,8 +118,8 @@ export const SelectNetwork = ({
 						placeholder,
 						onFocus: openMenu,
 						onBlur: () => {
-							if (inputMatches.length > 0) {
-								selectItem(inputMatches[0]);
+							if (inputValue && items.length > 0) {
+								selectItem(items[0]);
 								closeMenu();
 							} else {
 								reset();
@@ -127,9 +128,11 @@ export const SelectNetwork = ({
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
 								// Select first match
-								if (inputMatches.length > 0) {
-									selectItem(inputMatches[0]);
-									closeMenu();
+								if (inputValue && items.length > 0) {
+									selectItem(items[0]);
+									if (event.key === "Enter") {
+										closeMenu();
+									}
 								}
 								event.preventDefault();
 								return;
@@ -138,33 +141,35 @@ export const SelectNetwork = ({
 					})}
 				/>
 			</div>
-			<ul {...getMenuProps()} className={isOpen ? "grid grid-cols-6 gap-6 mt-6" : "hidden"}>
+			<ul {...getMenuProps()} className={isOpen && items.length > 0 ? "grid grid-cols-6 gap-6 mt-6" : "hidden"}>
 				{isOpen &&
-					items.map((item, index) => (
-						<li
-							data-testid="SelectNetwork__NetworkIcon--container"
-							key={index}
-							className="inline-block cursor-pointer"
-							{...getItemProps({
-								item,
-								index,
-								disabled,
-								onMouseDown: () => {
-									selectItem(item);
-									closeMenu();
-								},
-							})}
-						>
-							<NetworkIcon
-								coin={item.coin()}
-								network={item.id()}
-								size="xl"
-								iconSize={26}
-								className={assetClassName(item)}
-								noShadow
-							/>
-						</li>
-					))}
+					items
+						.filter((network: Network) => network.extra)
+						.map((item, index) => (
+							<li
+								data-testid="SelectNetwork__NetworkIcon--container"
+								key={index}
+								className="inline-block cursor-pointer"
+								{...getItemProps({
+									item,
+									index,
+									disabled,
+									onMouseDown: () => {
+										selectItem(item);
+										closeMenu();
+									},
+								})}
+							>
+								<NetworkIcon
+									coin={item.coin()}
+									network={item.id()}
+									size="xl"
+									iconSize={26}
+									className={assetClassName(item)}
+									noShadow
+								/>
+							</li>
+						))}
 			</ul>
 		</div>
 	);
@@ -172,6 +177,6 @@ export const SelectNetwork = ({
 
 SelectNetwork.defaultProps = {
 	networks: [],
-	placeholder: "Enter a network name",
+	placeholder: "Enter a cryptoasset name",
 	disabled: false,
 };

@@ -19,10 +19,10 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -239,20 +239,20 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxhCb jOCPoe"
-        height="10"
-        width="19"
+        class="sc-AxhCb fcaRmH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -279,16 +279,16 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
           >
             <div>
               <ul
-                class="sc-fzqARJ kCbUYb"
+                class="sc-fzqNqU cqkwlE"
               >
                 <li
-                  class="sc-fzoiQi gZjCeK"
+                  class="sc-fzqARJ gtVVMA"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
               </ul>
               <div
@@ -309,13 +309,13 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                           class="mb-0 md:text-4xl"
                           data-testid="header__title"
                         >
-                          Select a Network
+                          Select a Cryptoasset
                         </h1>
                         <div
                           class="text-theme-neutral-dark"
                           data-testid="header__subtitle"
                         >
-                          Select a Network to import your existing wallet address
+                          Select a cryptoasset to import your existing wallet address
                         </div>
                       </div>
                     </div>
@@ -327,7 +327,7 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                         data-testid="FormLabel"
                         for="network"
                       >
-                        Network
+                        Cryptoasset
                         <div
                           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
@@ -365,7 +365,7 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
-                              placeholder="Enter a network name"
+                              placeholder="Enter a cryptoasset name"
                               value=""
                             />
                           </div>
@@ -431,10 +431,10 @@ exports[`ImportWallet should go to previous step 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -651,20 +651,20 @@ exports[`ImportWallet should go to previous step 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxhCb jOCPoe"
-        height="10"
-        width="19"
+        class="sc-AxhCb fcaRmH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -691,16 +691,16 @@ exports[`ImportWallet should go to previous step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzqARJ kCbUYb"
+                class="sc-fzqNqU cqkwlE"
               >
                 <li
-                  class="sc-fzoiQi gZjCeK"
+                  class="sc-fzqARJ gtVVMA"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
               </ul>
               <div
@@ -721,13 +721,13 @@ exports[`ImportWallet should go to previous step 1`] = `
                           class="mb-0 md:text-4xl"
                           data-testid="header__title"
                         >
-                          Select a Network
+                          Select a Cryptoasset
                         </h1>
                         <div
                           class="text-theme-neutral-dark"
                           data-testid="header__subtitle"
                         >
-                          Select a Network to import your existing wallet address
+                          Select a cryptoasset to import your existing wallet address
                         </div>
                       </div>
                     </div>
@@ -739,7 +739,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                         data-testid="FormLabel"
                         for="network"
                       >
-                        Network
+                        Cryptoasset
                         <div
                           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
@@ -777,7 +777,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
-                              placeholder="Enter a network name"
+                              placeholder="Enter a cryptoasset name"
                               value=""
                             />
                           </div>
@@ -843,10 +843,10 @@ exports[`ImportWallet should import by address 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -1063,20 +1063,20 @@ exports[`ImportWallet should import by address 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxhCb jOCPoe"
-        height="10"
-        width="19"
+        class="sc-AxhCb fcaRmH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -1103,16 +1103,16 @@ exports[`ImportWallet should import by address 1`] = `
           >
             <div>
               <ul
-                class="sc-fzqARJ kCbUYb"
+                class="sc-fzqNqU cqkwlE"
               >
                 <li
-                  class="sc-fzoiQi gZjCeK"
+                  class="sc-fzqARJ gtVVMA"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
               </ul>
               <div
@@ -1133,13 +1133,13 @@ exports[`ImportWallet should import by address 1`] = `
                           class="mb-0 md:text-4xl"
                           data-testid="header__title"
                         >
-                          Select a Network
+                          Select a Cryptoasset
                         </h1>
                         <div
                           class="text-theme-neutral-dark"
                           data-testid="header__subtitle"
                         >
-                          Select a Network to import your existing wallet address
+                          Select a cryptoasset to import your existing wallet address
                         </div>
                       </div>
                     </div>
@@ -1151,7 +1151,7 @@ exports[`ImportWallet should import by address 1`] = `
                         data-testid="FormLabel"
                         for="network"
                       >
-                        Network
+                        Cryptoasset
                         <div
                           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
@@ -1189,7 +1189,7 @@ exports[`ImportWallet should import by address 1`] = `
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
-                              placeholder="Enter a network name"
+                              placeholder="Enter a cryptoasset name"
                               value=""
                             />
                           </div>
@@ -1255,10 +1255,10 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -1475,20 +1475,20 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxhCb jOCPoe"
-        height="10"
-        width="19"
+        class="sc-AxhCb fcaRmH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -1515,16 +1515,16 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
           >
             <div>
               <ul
-                class="sc-fzqARJ kCbUYb"
+                class="sc-fzqNqU cqkwlE"
               >
                 <li
-                  class="sc-fzoiQi gZjCeK"
+                  class="sc-fzqARJ gtVVMA"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
               </ul>
               <div
@@ -1545,13 +1545,13 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                           class="mb-0 md:text-4xl"
                           data-testid="header__title"
                         >
-                          Select a Network
+                          Select a Cryptoasset
                         </h1>
                         <div
                           class="text-theme-neutral-dark"
                           data-testid="header__subtitle"
                         >
-                          Select a Network to import your existing wallet address
+                          Select a cryptoasset to import your existing wallet address
                         </div>
                       </div>
                     </div>
@@ -1563,7 +1563,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                         data-testid="FormLabel"
                         for="network"
                       >
-                        Network
+                        Cryptoasset
                         <div
                           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
@@ -1601,7 +1601,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
-                              placeholder="Enter a network name"
+                              placeholder="Enter a cryptoasset name"
                               value=""
                             />
                           </div>
@@ -1667,10 +1667,10 @@ exports[`ImportWallet should import by mnemonic 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -1887,20 +1887,20 @@ exports[`ImportWallet should import by mnemonic 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxhCb jOCPoe"
-        height="10"
-        width="19"
+        class="sc-AxhCb fcaRmH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -1927,16 +1927,16 @@ exports[`ImportWallet should import by mnemonic 1`] = `
           >
             <div>
               <ul
-                class="sc-fzqARJ kCbUYb"
+                class="sc-fzqNqU cqkwlE"
               >
                 <li
-                  class="sc-fzoiQi gZjCeK"
+                  class="sc-fzqARJ gtVVMA"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
               </ul>
               <div
@@ -1957,13 +1957,13 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                           class="mb-0 md:text-4xl"
                           data-testid="header__title"
                         >
-                          Select a Network
+                          Select a Cryptoasset
                         </h1>
                         <div
                           class="text-theme-neutral-dark"
                           data-testid="header__subtitle"
                         >
-                          Select a Network to import your existing wallet address
+                          Select a cryptoasset to import your existing wallet address
                         </div>
                       </div>
                     </div>
@@ -1975,7 +1975,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                         data-testid="FormLabel"
                         for="network"
                       >
-                        Network
+                        Cryptoasset
                         <div
                           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
@@ -2013,7 +2013,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
-                              placeholder="Enter a network name"
+                              placeholder="Enter a cryptoasset name"
                               value=""
                             />
                           </div>
@@ -2074,13 +2074,13 @@ exports[`ImportWallet should render 1st step 1`] = `
           class="mb-0 md:text-4xl"
           data-testid="header__title"
         >
-          Select a Network
+          Select a Cryptoasset
         </h1>
         <div
           class="text-theme-neutral-dark"
           data-testid="header__subtitle"
         >
-          Select a Network to import your existing wallet address
+          Select a cryptoasset to import your existing wallet address
         </div>
       </div>
     </div>
@@ -2092,7 +2092,7 @@ exports[`ImportWallet should render 1st step 1`] = `
         data-testid="FormLabel"
         for="network"
       >
-        Network
+        Cryptoasset
         <div
           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
@@ -2130,7 +2130,7 @@ exports[`ImportWallet should render 1st step 1`] = `
               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="ImportWallet__network-input"
-              placeholder="Enter a network name"
+              placeholder="Enter a cryptoasset name"
               value=""
             />
           </div>
@@ -2285,7 +2285,7 @@ exports[`ImportWallet should render 3st step 1`] = `
     </div>
     <div>
       <div
-        class="sc-fznKkj lhIbVJ pt-0"
+        class="sc-fznKkj kfQUkX"
         data-testid="TransactionDetail"
       >
         <div
@@ -2294,7 +2294,7 @@ exports[`ImportWallet should render 3st step 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral"
           >
-            Network
+            Cryptoasset
           </div>
           <div
             class="font-semibold"
@@ -2407,10 +2407,10 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -2627,20 +2627,20 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxhCb jOCPoe"
-        height="10"
-        width="19"
+        class="sc-AxhCb fcaRmH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -2667,16 +2667,16 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
           >
             <div>
               <ul
-                class="sc-fzqARJ kCbUYb"
+                class="sc-fzqNqU cqkwlE"
               >
                 <li
-                  class="sc-fzoiQi gZjCeK"
+                  class="sc-fzqARJ gtVVMA"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
               </ul>
               <div
@@ -2697,13 +2697,13 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                           class="mb-0 md:text-4xl"
                           data-testid="header__title"
                         >
-                          Select a Network
+                          Select a Cryptoasset
                         </h1>
                         <div
                           class="text-theme-neutral-dark"
                           data-testid="header__subtitle"
                         >
-                          Select a Network to import your existing wallet address
+                          Select a cryptoasset to import your existing wallet address
                         </div>
                       </div>
                     </div>
@@ -2715,7 +2715,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                         data-testid="FormLabel"
                         for="network"
                       >
-                        Network
+                        Cryptoasset
                         <div
                           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
@@ -2753,7 +2753,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
-                              placeholder="Enter a network name"
+                              placeholder="Enter a cryptoasset name"
                               value=""
                             />
                           </div>
@@ -2819,10 +2819,10 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -3039,20 +3039,20 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxhCb jOCPoe"
-        height="10"
-        width="19"
+        class="sc-AxhCb fcaRmH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -3079,16 +3079,16 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
           >
             <div>
               <ul
-                class="sc-fzqARJ kCbUYb"
+                class="sc-fzqNqU cqkwlE"
               >
                 <li
-                  class="sc-fzoiQi gZjCeK"
+                  class="sc-fzqARJ gtVVMA"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
                 <li
-                  class="sc-fzoiQi kdGDDv"
+                  class="sc-fzqARJ kKyaZJ"
                 />
               </ul>
               <div
@@ -3109,13 +3109,13 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                           class="mb-0 md:text-4xl"
                           data-testid="header__title"
                         >
-                          Select a Network
+                          Select a Cryptoasset
                         </h1>
                         <div
                           class="text-theme-neutral-dark"
                           data-testid="header__subtitle"
                         >
-                          Select a Network to import your existing wallet address
+                          Select a cryptoasset to import your existing wallet address
                         </div>
                       </div>
                     </div>
@@ -3127,7 +3127,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                         data-testid="FormLabel"
                         for="network"
                       >
-                        Network
+                        Cryptoasset
                         <div
                           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
@@ -3165,7 +3165,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
-                              placeholder="Enter a network name"
+                              placeholder="Enter a cryptoasset name"
                               value=""
                             />
                           </div>

@@ -12,10 +12,9 @@ import {
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 
-import { FormStep, ReviewStep } from "./";
-import { SentStep } from "./SentStep";
+import { FormStep, ReviewStep, SummaryStep } from "./";
 
-const FormStepsComponent = ({ activeTab, wallet }: SendEntityRegistrationComponent) => {
+const FormStepsComponent = ({ activeTab, wallet, title }: SendEntityRegistrationComponent) => {
 	const { register } = useFormContext();
 	const { entityRegistration } = useValidation();
 
@@ -37,17 +36,17 @@ const FormStepsComponent = ({ activeTab, wallet }: SendEntityRegistrationCompone
 	return (
 		<Tabs activeId={activeTab}>
 			<TabPanel tabId={2}>
-				<FormStep />
+				<FormStep title={title} />
 			</TabPanel>
 			<TabPanel tabId={3}>
-				<ReviewStep wallet={wallet} />
+				<ReviewStep senderWallet={wallet} />
 			</TabPanel>
 		</Tabs>
 	);
 };
 
-const transactionDetails = ({ transaction }: SendEntityRegistrationDetailsOptions) => (
-	<SentStep transaction={transaction} />
+const transactionDetails = ({ transaction, wallet }: SendEntityRegistrationDetailsOptions) => (
+	<SummaryStep transaction={transaction} wallet={wallet} />
 );
 
 FormStepsComponent.displayName = "EntityRegistrationForm";

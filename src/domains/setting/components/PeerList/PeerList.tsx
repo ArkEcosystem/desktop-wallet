@@ -18,7 +18,7 @@ export const PeerList = ({ peers, networks }: PeerListProps) => {
 
 	const columns = [
 		{
-			Header: t("SETTINGS.PEERS.NETWORK"),
+			Header: t("SETTINGS.PEERS.CRYPTOASSET"),
 		},
 		{
 			Header: t("SETTINGS.PEERS.NAME"),

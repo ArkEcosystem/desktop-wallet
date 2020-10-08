@@ -8,6 +8,7 @@ export const translations: { [key: string]: any } = {
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",
 	CONFIRMATIONS_COUNT: "{{count}} Confirmations",
+	CRYPTOASSET: "Cryptoasset",
 	DELEGATE: "Delegate",
 	DELEGATE_NAME: "Delegate Name",
 	DESCRIPTION: "Description",
@@ -76,10 +77,44 @@ export const translations: { [key: string]: any } = {
 	},
 
 	TRANSACTION_TYPES: {
-		BUSINESS_REGISTRATION: "Business Registration",
-		BUSINESS_UPDATE: "Business Update",
-		UNVOTE: "Unvote",
+		TRANSFER: "Transfer",
+		SECOND_SIGNATURE: "Second Signature",
+		DELEGATE_REGISTRATION: "Delegate Registration",
 		VOTE: "Vote",
+		UNVOTE: "Unvote",
+		MULTI_SIGNATURE: "Multisignature",
+		IPFS: "IPFS",
+		MULTI_PAYMENT: "Multipayment",
+		DELEGATE_RESIGNATION: "Delegate Resignation",
+		HTLC_LOCK: "Timelock",
+		HTLC_CLAIM: "Timelock Claim",
+		HTLC_REFUND: "Timelock Refund",
+		// Magistrate 2.0
+		ENTITY_REGISTRATION: "Entity Registration",
+		ENTITY_RESIGNATION: "Entity Resignation",
+		ENTITY_UPDATE: "Entity Update",
+		BUSINESS_ENTITY_REGISTRATION: "Business Registration",
+		BUSINESS_ENTITY_RESIGNATION: "Business Resignation",
+		BUSINESS_ENTITY_UPDATE: "Business Update",
+		PRODUCT_ENTITY_REGISTRATION: "Product Registration",
+		PRODUCT_ENTITY_RESIGNATION: "Product Resignation",
+		PRODUCT_ENTITY_UPDATE: "Product Update",
+		PLUGIN_ENTITY_REGISTRATION: "Plugin Registration",
+		PLUGIN_ENTITY_RESIGNATION: "Plugin Resignation",
+		PLUGIN_ENTITY_UPDATE: "Plugin Update",
+		MODULE_ENTITY_REGISTRATION: "Module Registration",
+		MODULE_ENTITY_RESIGNATION: "Module Resignation",
+		MODULE_ENTITY_UPDATE: "Module Update",
+		DELEGATE_ENTITY_REGISTRATION: "Delegate Registration (AIP36)",
+		DELEGATE_ENTITY_RESIGNATION: "Delegate Resignation (AIP36)",
+		DELEGATE_ENTITY_UPDATE: "Delegate Update",
+		// Magistrate 1.0
+		LEGACY_BUSINESS_REGISTRATION: "Business Registration (Legacy)",
+		LEGACY_BUSINESS_RESIGNATION: "Business Resignation (Legacy)",
+		LEGACY_BUSINESS_UPDATE: "Business Update (Legacy)",
+		LEGACY_BRIDGECHAIN_REGISTRATION: "Bridgechain Registration (Legacy)",
+		LEGACY_BRIDGECHAIN_RESIGNATION: "Bridgechain Resignation (Legacy)",
+		LEGACY_BRIDGECHAIN_UPDATE: "Bridgechain Update (Legacy)",
 	},
 
 	MODAL_TRANSFER_DETAIL: {
@@ -223,6 +258,7 @@ export const translations: { [key: string]: any } = {
 
 	PAGE_RESIGN_REGISTRATION: {
 		ENTITY_NAME: "Entity Name",
+		ENTITY_TYPE: "Entity Type",
 		FIRST_STEP: {
 			DELEGATE: {
 				TITLE: "Delegate Resignation",

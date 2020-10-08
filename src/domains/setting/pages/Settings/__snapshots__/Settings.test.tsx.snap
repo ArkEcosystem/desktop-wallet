@@ -19,10 +19,10 @@ exports[`Settings should change a password 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznJRM dWqptf"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -239,20 +239,20 @@ exports[`Settings should change a password 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
+        class="sc-AxirZ eKWnGz"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -421,43 +421,6 @@ exports[`Settings should change a password 1`] = `
                         data-testid="header__subtitle"
                       >
                         Change the password used to access your profile below.
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mb-8"
-                    data-testid="Password-settings__success-alert"
-                  >
-                    <div
-                      class="flex rounded-lg overflow-hidden bg-theme-success"
-                    >
-                      <div
-                        class="sc-fznxKY bjGeLb flex items-center justify-center text-theme-success bg-theme-success-200"
-                      >
-                        <div
-                          class="sc-AxirZ bMjbpr"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            alert-success.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-fzpmMD dUAAUD flex-1 bg-theme-success-100 space-y-2"
-                      >
-                        <p
-                          class="text-lg font-bold text-theme-success"
-                          data-testid="alert__title"
-                        >
-                          Success
-                        </p>
-                        <div
-                          class="text-sm"
-                        >
-                          Your password has been successfully changed.
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -645,10 +608,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznJRM dWqptf"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -865,20 +828,20 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
+        class="sc-AxirZ eKWnGz"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -1213,18 +1176,18 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-309-label downshift-309-toggle-button"
+                                    aria-labelledby="downshift-348-label downshift-348-toggle-button"
                                     class="sc-fzoyTs buZKoP   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-309-toggle-button"
+                                    id="downshift-348-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-309-label"
+                                    aria-labelledby="downshift-348-label"
                                     class="sc-fzoNJl gPmoPk"
-                                    id="downshift-309-menu"
+                                    id="downshift-348-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -1233,12 +1196,12 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                                 >
                                   <div
-                                    class="sc-AxirZ ZmpmT"
-                                    height="8"
-                                    width="8"
+                                    class="sc-AxirZ eRmuSF"
+                                    height="5"
+                                    width="7"
                                   >
                                     <svg>
-                                      arrowdown.svg
+                                      caret-down.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -1259,7 +1222,8 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     <button
                       class="sc-AxhCb khNOPs"
                       color="primary"
-                      type="button"
+                      data-testid="Plugins-settings__submit-button"
+                      type="submit"
                     >
                       Save
                     </button>
@@ -1294,10 +1258,10 @@ exports[`Settings should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznJRM dWqptf"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -1514,20 +1478,20 @@ exports[`Settings should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
+        class="sc-AxirZ eKWnGz"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -1707,7 +1671,7 @@ exports[`Settings should render 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group"
+                      class="group undefined"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
@@ -1718,34 +1682,10 @@ exports[`Settings should render 1`] = `
                         class="flex flex-row mt-2"
                       >
                         <div
-                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
-                        >
-                          <div
-                            class="overflow-hidden rounded-full w-22 h-22"
-                          >
-                            <button
-                              class="sc-AxhCb hPLjLy w-22 h-22"
-                              color="primary"
-                              data-testid="SelectProfileImage__upload-button"
-                              type="button"
-                            >
-                              <div
-                                class="sc-AxirZ iQaTP"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  upload.svg
-                                </svg>
-                              </div>
-                            </button>
-                          </div>
-                        </div>
-                        <div
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzoXWK idrRUY"
+                            class="sc-fzoXWK JKhnC"
                           >
                             <img
                               alt="Profile avatar"
@@ -1757,24 +1697,25 @@ exports[`Settings should render 1`] = `
                             >
                               JO
                             </span>
-                          </div>
-                          <button
-                            class="sc-AxhCb gmYZoQ absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
-                            color="danger"
-                            data-testid="SelectProfileImage__remove-button"
-                            disabled=""
-                            type="button"
-                          >
                             <div
-                              class="sc-AxirZ hDwaov"
-                              height="12"
-                              width="12"
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
                             >
-                              <svg>
-                                close.svg
-                              </svg>
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
+                              >
+                                <div
+                                  class="sc-AxirZ iQaTP text-white"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
                             </div>
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1858,12 +1799,12 @@ exports[`Settings should render 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -1922,12 +1863,12 @@ exports[`Settings should render 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -1990,12 +1931,12 @@ exports[`Settings should render 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -2054,12 +1995,12 @@ exports[`Settings should render 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -2118,12 +2059,12 @@ exports[`Settings should render 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -2317,12 +2258,12 @@ exports[`Settings should render 1`] = `
                                   class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                                 >
                                   <div
-                                    class="sc-AxirZ ZmpmT"
-                                    height="8"
-                                    width="8"
+                                    class="sc-AxirZ eRmuSF"
+                                    height="5"
+                                    width="7"
                                   >
                                     <svg>
-                                      arrowdown.svg
+                                      caret-down.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -2514,10 +2455,10 @@ exports[`Settings should render password settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznJRM dWqptf"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -2734,20 +2675,20 @@ exports[`Settings should render password settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
+        class="sc-AxirZ eKWnGz"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -3058,10 +2999,10 @@ exports[`Settings should render peer settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznJRM dWqptf"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -3278,20 +3219,20 @@ exports[`Settings should render peer settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
+        class="sc-AxirZ eKWnGz"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -3590,7 +3531,7 @@ exports[`Settings should render peer settings 1`] = `
                                   class="flex flex-inline align-top "
                                 >
                                   <div>
-                                    Network
+                                    Cryptoasset
                                   </div>
                                 </div>
                               </th>
@@ -3912,7 +3853,8 @@ exports[`Settings should render peer settings 1`] = `
                     <button
                       class="sc-AxhCb khNOPs"
                       color="primary"
-                      type="button"
+                      data-testid="Peer-settings__submit-button"
+                      type="submit"
                     >
                       Save
                     </button>
@@ -3947,10 +3889,10 @@ exports[`Settings should render plugin settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznJRM dWqptf"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -4167,20 +4109,20 @@ exports[`Settings should render plugin settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
+        class="sc-AxirZ eKWnGz"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -4515,18 +4457,18 @@ exports[`Settings should render plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-295-label downshift-295-toggle-button"
+                                    aria-labelledby="downshift-307-label downshift-307-toggle-button"
                                     class="sc-fzoyTs buZKoP   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-295-toggle-button"
+                                    id="downshift-307-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-295-label"
+                                    aria-labelledby="downshift-307-label"
                                     class="sc-fzoNJl gPmoPk"
-                                    id="downshift-295-menu"
+                                    id="downshift-307-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -4535,12 +4477,12 @@ exports[`Settings should render plugin settings 1`] = `
                                   class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                                 >
                                   <div
-                                    class="sc-AxirZ ZmpmT"
-                                    height="8"
-                                    width="8"
+                                    class="sc-AxirZ eRmuSF"
+                                    height="5"
+                                    width="7"
                                   >
                                     <svg>
-                                      arrowdown.svg
+                                      caret-down.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -4561,7 +4503,8 @@ exports[`Settings should render plugin settings 1`] = `
                     <button
                       class="sc-AxhCb khNOPs"
                       color="primary"
-                      type="button"
+                      data-testid="Plugins-settings__submit-button"
+                      type="submit"
                     >
                       Save
                     </button>
@@ -4596,10 +4539,10 @@ exports[`Settings should set a password 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznJRM dWqptf"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -4816,20 +4759,20 @@ exports[`Settings should set a password 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
+        class="sc-AxirZ eKWnGz"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -4998,43 +4941,6 @@ exports[`Settings should set a password 1`] = `
                         data-testid="header__subtitle"
                       >
                         Change the password used to access your profile below.
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mb-8"
-                    data-testid="Password-settings__success-alert"
-                  >
-                    <div
-                      class="flex rounded-lg overflow-hidden bg-theme-success"
-                    >
-                      <div
-                        class="sc-fznxKY bjGeLb flex items-center justify-center text-theme-success bg-theme-success-200"
-                      >
-                        <div
-                          class="sc-AxirZ bMjbpr"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            alert-success.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-fzpmMD dUAAUD flex-1 bg-theme-success-100 space-y-2"
-                      >
-                        <p
-                          class="text-lg font-bold text-theme-success"
-                          data-testid="alert__title"
-                        >
-                          Success
-                        </p>
-                        <div
-                          class="text-sm"
-                        >
-                          Your password has been successfully changed.
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -5203,7 +5109,7 @@ exports[`Settings should set a password 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Settings should show an error alert if the current password does not match 1`] = `
+exports[`Settings should show an error toast if the current password does not match 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -5222,10 +5128,10 @@ exports[`Settings should show an error alert if the current password does not ma
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznJRM dWqptf"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -5442,20 +5348,20 @@ exports[`Settings should show an error alert if the current password does not ma
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
+        class="sc-AxirZ eKWnGz"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -5624,43 +5530,6 @@ exports[`Settings should show an error alert if the current password does not ma
                         data-testid="header__subtitle"
                       >
                         Change the password used to access your profile below.
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mb-8"
-                    data-testid="Password-settings__error-alert"
-                  >
-                    <div
-                      class="flex rounded-lg overflow-hidden bg-theme-danger"
-                    >
-                      <div
-                        class="sc-fznxKY bjGeLb flex items-center justify-center text-theme-danger bg-theme-danger-200"
-                      >
-                        <div
-                          class="sc-AxirZ bMjbpr"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            alert-danger.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-fzpmMD dUAAUD flex-1 bg-theme-danger-100 space-y-2"
-                      >
-                        <p
-                          class="text-lg font-bold text-theme-danger"
-                          data-testid="alert__title"
-                        >
-                          Error
-                        </p>
-                        <div
-                          class="text-sm"
-                        >
-                          The current password does not match.
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -5847,10 +5716,10 @@ exports[`Settings should submit using default props 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznJRM dWqptf"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -6067,20 +5936,20 @@ exports[`Settings should submit using default props 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
+        class="sc-AxirZ eKWnGz"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -6260,7 +6129,7 @@ exports[`Settings should submit using default props 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group"
+                      class="group undefined"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
@@ -6271,34 +6140,10 @@ exports[`Settings should submit using default props 1`] = `
                         class="flex flex-row mt-2"
                       >
                         <div
-                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
-                        >
-                          <div
-                            class="overflow-hidden rounded-full w-22 h-22"
-                          >
-                            <button
-                              class="sc-AxhCb hPLjLy w-22 h-22"
-                              color="primary"
-                              data-testid="SelectProfileImage__upload-button"
-                              type="button"
-                            >
-                              <div
-                                class="sc-AxirZ iQaTP"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  upload.svg
-                                </svg>
-                              </div>
-                            </button>
-                          </div>
-                        </div>
-                        <div
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzoXWK idrRUY"
+                            class="sc-fzoXWK JKhnC"
                           >
                             <img
                               alt="Profile avatar"
@@ -6310,24 +6155,25 @@ exports[`Settings should submit using default props 1`] = `
                             >
                               TE
                             </span>
-                          </div>
-                          <button
-                            class="sc-AxhCb gmYZoQ absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
-                            color="danger"
-                            data-testid="SelectProfileImage__remove-button"
-                            disabled=""
-                            type="button"
-                          >
                             <div
-                              class="sc-AxirZ hDwaov"
-                              height="12"
-                              width="12"
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
                             >
-                              <svg>
-                                close.svg
-                              </svg>
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
+                              >
+                                <div
+                                  class="sc-AxirZ iQaTP text-white"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
                             </div>
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -6411,12 +6257,12 @@ exports[`Settings should submit using default props 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -6475,12 +6321,12 @@ exports[`Settings should submit using default props 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -6543,12 +6389,12 @@ exports[`Settings should submit using default props 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -6607,12 +6453,12 @@ exports[`Settings should submit using default props 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -6671,12 +6517,12 @@ exports[`Settings should submit using default props 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -6870,12 +6716,12 @@ exports[`Settings should submit using default props 1`] = `
                                   class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                                 >
                                   <div
-                                    class="sc-AxirZ ZmpmT"
-                                    height="8"
-                                    width="8"
+                                    class="sc-AxirZ eRmuSF"
+                                    height="5"
+                                    width="7"
                                   >
                                     <svg>
-                                      arrowdown.svg
+                                      caret-down.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -7040,14 +6886,14 @@ exports[`Settings should submit using default props 1`] = `
                   </div>
                 </form>
                 <div
-                  class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+                  class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
                 >
                   <div
                     class="fixed z-50 w-full h-full bg-black opacity-50"
                     data-testid="modal__overlay"
                   />
                   <div
-                    class="sc-fzplWN hXndMY absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+                    class="sc-fzplWN hXndMY absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
                     data-testid="modal__inner"
                   >
                     <div
@@ -7139,10 +6985,10 @@ exports[`Settings should update profile 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM bdJSCu"
+              class="sc-fznJRM dWqptf"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -7359,20 +7205,20 @@ exports[`Settings should update profile 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
+        class="sc-AxirZ eKWnGz"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -7552,7 +7398,7 @@ exports[`Settings should update profile 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group"
+                      class="group undefined"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
@@ -7563,34 +7409,10 @@ exports[`Settings should update profile 1`] = `
                         class="flex flex-row mt-2"
                       >
                         <div
-                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
-                        >
-                          <div
-                            class="overflow-hidden rounded-full w-22 h-22"
-                          >
-                            <button
-                              class="sc-AxhCb hPLjLy w-22 h-22"
-                              color="primary"
-                              data-testid="SelectProfileImage__upload-button"
-                              type="button"
-                            >
-                              <div
-                                class="sc-AxirZ iQaTP"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  upload.svg
-                                </svg>
-                              </div>
-                            </button>
-                          </div>
-                        </div>
-                        <div
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzoXWK idrRUY"
+                            class="sc-fzoXWK JKhnC"
                           >
                             <img
                               alt="Profile avatar"
@@ -7602,24 +7424,25 @@ exports[`Settings should update profile 1`] = `
                             >
                               TE
                             </span>
-                          </div>
-                          <button
-                            class="sc-AxhCb gmYZoQ absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
-                            color="danger"
-                            data-testid="SelectProfileImage__remove-button"
-                            disabled=""
-                            type="button"
-                          >
                             <div
-                              class="sc-AxirZ hDwaov"
-                              height="12"
-                              width="12"
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
                             >
-                              <svg>
-                                close.svg
-                              </svg>
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
+                              >
+                                <div
+                                  class="sc-AxirZ iQaTP text-white"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
                             </div>
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -7703,12 +7526,12 @@ exports[`Settings should update profile 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -7767,12 +7590,12 @@ exports[`Settings should update profile 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -7835,12 +7658,12 @@ exports[`Settings should update profile 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -7899,12 +7722,12 @@ exports[`Settings should update profile 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -7963,12 +7786,12 @@ exports[`Settings should update profile 1`] = `
                                 class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-AxirZ eRmuSF"
+                                  height="5"
+                                  width="7"
                                 >
                                   <svg>
-                                    arrowdown.svg
+                                    caret-down.svg
                                   </svg>
                                 </div>
                               </div>
@@ -8163,12 +7986,12 @@ exports[`Settings should update profile 1`] = `
                                   class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
                                 >
                                   <div
-                                    class="sc-AxirZ ZmpmT"
-                                    height="8"
-                                    width="8"
+                                    class="sc-AxirZ eRmuSF"
+                                    height="5"
+                                    width="7"
                                   >
                                     <svg>
-                                      arrowdown.svg
+                                      caret-down.svg
                                     </svg>
                                   </div>
                                 </div>

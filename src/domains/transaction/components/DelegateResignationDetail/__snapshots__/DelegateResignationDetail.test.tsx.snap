@@ -5,14 +5,14 @@ exports[`DelegateResignationDetail should not render if not open 1`] = `<Documen
 exports[`DelegateResignationDetail should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -47,7 +47,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 true "
+            class="sc-AxgMl cbajut"
             data-testid="TransactionDetail"
           >
             <div
@@ -79,13 +79,13 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-AxheI fniENP text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -113,7 +113,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -145,7 +145,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -168,7 +168,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -187,7 +187,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -229,7 +229,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -247,20 +247,20 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="sc-AxheI fniENP text-theme-primary-dark"
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4…9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="inline-block ml-5 text-theme-primary-300"
+                    class="flex ml-5 text-theme-primary-300"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -282,7 +282,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -300,20 +300,20 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="sc-AxheI fniENP text-theme-primary-dark"
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5…972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="inline-block ml-5 text-theme-primary-300"
+                    class="flex ml-5 text-theme-primary-300"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -344,14 +344,14 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
 exports[`DelegateResignationDetail should render as confirmed 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -386,7 +386,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 true "
+            class="sc-AxgMl cbajut"
             data-testid="TransactionDetail"
           >
             <div
@@ -418,13 +418,13 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-AxheI fniENP text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -452,7 +452,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -484,7 +484,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -507,7 +507,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -526,7 +526,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -568,7 +568,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -586,20 +586,20 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="sc-AxheI fniENP text-theme-primary-dark"
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4…9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="inline-block ml-5 text-theme-primary-300"
+                    class="flex ml-5 text-theme-primary-300"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -621,7 +621,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -639,20 +639,20 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
                   class="flex items-center"
                 >
                   <a
-                    class="sc-AxgMl fZdMHS inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="sc-AxheI fniENP text-theme-primary-dark"
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5…972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="inline-block ml-5 text-theme-primary-300"
+                    class="flex ml-5 text-theme-primary-300"
                   >
                     <div
                       class="inline-block cursor-pointer"

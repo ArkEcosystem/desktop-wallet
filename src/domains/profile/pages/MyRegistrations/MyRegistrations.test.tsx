@@ -1,3 +1,4 @@
+import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -37,6 +38,7 @@ describe("MyRegistrations", () => {
 
 	beforeEach(() => {
 		history.push(registrationsURL);
+		httpClient.clearCache();
 	});
 
 	it("should render empty state", async () => {
@@ -194,7 +196,46 @@ describe("MyRegistrations", () => {
 			fireEvent.click(resignOption);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/send-entity-registration`);
+		expect(history.location.pathname).toEqual(
+			`/profiles/${fixtureProfileId}/wallets/${delegateWalletId}/delegate/send-entity-registration`,
+		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should handle entity resignation dropdown action", async () => {
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() =>
+			expect(within(getByTestId("BusinessRegistrations")).getAllByTestId("TableRow")).toHaveLength(2),
+		);
+
+		const dropdownToggle = within(
+			within(getByTestId("BusinessRegistrations")).getAllByTestId("TableRow")[1],
+		).getByTestId("dropdown__toggle");
+		act(() => {
+			fireEvent.click(dropdownToggle);
+		});
+
+		const resignOption = within(
+			within(getByTestId("BusinessRegistrations")).getAllByTestId("TableRow")[1],
+		).getByTestId("dropdown__option--1");
+		act(() => {
+			fireEvent.click(resignOption);
+		});
+
+		const selectedEntityId = "df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da";
+
+		expect(history.location.pathname).toEqual(
+			`/profiles/${fixtureProfileId}/wallets/${delegateWalletId}/transactions/${selectedEntityId}/send-entity-resignation`,
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -423,6 +464,38 @@ describe("MyRegistrations", () => {
 
 		await waitFor(() =>
 			expect(within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toHaveLength(1),
+		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render entity delegate registrations", async () => {
+		nock.cleanAll();
+		nock("https://dwallets.ark.io")
+			.post("/api/transactions/search")
+			.query(true)
+			.reply(200, (_, { asset }: any) => {
+				if (asset.type === 4) {
+					return require("tests/fixtures/registrations/entity-delegates.json");
+				}
+
+				return { meta: {}, data: [] };
+			})
+			.persist();
+
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() =>
+			expect(
+				within(getByTestId("EntityDelegateRegistrations")).getAllByTestId("TableRow").length,
+			).toBeGreaterThan(0),
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});

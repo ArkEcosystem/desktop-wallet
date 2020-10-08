@@ -19,13 +19,13 @@ export const FourthStep = ({
 	return (
 		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			<TransactionDetail
-				className="pb-0"
 				label={t("TRANSACTION.IPFS_HASH")}
 				extra={
 					<Circle className="border-theme-text" size="lg">
 						<Icon name="Ipfs" width={23} height={23} />
 					</Circle>
 				}
+				paddingPosition="top"
 			>
 				{transaction.data().asset?.ipfs}
 			</TransactionDetail>

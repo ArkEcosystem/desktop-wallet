@@ -7,98 +7,103 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
       data-testid="tab-pabel__active-panel"
     >
       <section
+        class="space-y-8"
         data-testid="DelegateRegistrationForm__step--second"
       >
-        <h1
-          class="mb-0"
-        >
-          Register Delegate
-        </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="flex items-end justify-between bg-theme-background"
         >
-          Make up a name and register your delegate online.
+          <div>
+            <h1
+              class="mb-0 md:text-4xl"
+              data-testid="header__title"
+            >
+              Register Delegate
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Make up a name and register your delegate online.
+            </div>
+          </div>
         </div>
         <div
-          class="mt-6"
+          class="flex rounded-lg overflow-hidden bg-theme-warning"
         >
           <div
-            class="flex rounded-lg overflow-hidden bg-theme-warning"
+            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
           >
             <div
-              class="sc-AxhCb bRFYlX flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxirZ bMjbpr"
+              height="30"
+              width="30"
             >
-              <div
-                class="sc-AxirZ bMjbpr"
-                height="30"
-                width="30"
+              <svg>
+                alert-default.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+          >
+            <div
+              class="text-sm"
+            >
+              Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-AxgMl kdFVBs"
+          data-testid="TransactionDetail"
+        >
+          <div
+            class="flex-1 space-y-2"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                class="mr-1"
               >
-                <svg>
-                  alert-default.svg
-                </svg>
+                Sender
+              </span>
+              <div
+                class="sc-AxhUy kDFfAu"
+                color="warning"
+              >
+                <span
+                  class="text-sm"
+                >
+                  Your address
+                </span>
               </div>
             </div>
             <div
-              class="sc-AxiKw eRaQyX flex-1 bg-theme-warning-100 space-y-2"
+              class="font-semibold"
             >
               <div
-                class="text-sm"
+                class="inline-block truncate align-middle"
               >
-                Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+                <span
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  data-testid="address__wallet-name"
+                >
+                  ARK Wallet 1
+                </span>
+                <span
+                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  D8rr7B…s6YUYD
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="sc-fzoyAV dXDNVE mt-2"
-            data-testid="TransactionDetail"
+            class="flex items-center -space-x-2"
           >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex-1 space-y-2"
-                >
-                  <div
-                    class="text-theme-neutral"
-                  >
-                    <span
-                      class="mr-1 text-sm"
-                    >
-                      Sender
-                    </span>
-                    <div
-                      class="sc-fznKkj krlUGj"
-                      color="warning"
-                    >
-                      <span
-                        class="text-sm"
-                      >
-                        Your address
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                      data-testid="address__wallet-name"
-                    >
-                      ARK Wallet 1
-                    </span>
-                    <span
-                      class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D8rr7B…s6YUYD
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
               data-testid="Avatar"
@@ -114,138 +119,138 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="relative mt-8 space-y-8"
+        </div>
+        <div
+          class="space-y-8"
+        >
+          <fieldset
+            class="sc-fznZeY kYLJCb flex flex-col space-y-2"
           >
-            <fieldset
-              class="sc-AxgMl imcqFE flex flex-col space-y-2"
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="username"
             >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="username"
-              >
-                Delegate Name
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-              <input
-                aria-invalid="true"
-                class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                data-testid="Input__username"
-                name="username"
-                value="invalid delegate"
-              />
-              <p
-                class="text-sm text-theme-danger"
-              >
-                'Delegate Name' is invalid
-              </p>
-            </fieldset>
-            <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="fee"
-              >
-                Transaction Fee
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
+              Delegate Name
               <div
-                class="flex space-x-2"
-                data-testid="InputFee"
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <input
+              aria-invalid="true"
+              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+              data-testid="Input__username"
+              name="username"
+              value="invalid delegate"
+            />
+            <p
+              class="text-sm text-theme-danger"
+            >
+              'Delegate Name' is invalid
+            </p>
+          </fieldset>
+          <fieldset
+            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+          >
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="fee"
+            >
+              Transaction Fee
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <div
+              class="flex space-x-2"
+              data-testid="InputFee"
+            >
+              <div
+                class="flex-1"
               >
                 <div
-                  class="flex-1"
+                  class="sc-fzoLag hoOQgq"
                 >
+                  <input
+                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    data-testid="InputCurrency"
+                    name="fee"
+                    type="text"
+                    value="2"
+                  />
                   <div
-                    class="sc-fzoLsD rzdyj"
+                    class="absolute bottom-0 w-full px-1"
                   >
-                    <input
-                      class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="2"
-                    />
                     <div
-                      class="absolute bottom-0 w-full px-1"
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
                     >
                       <div
-                        class="flex flex-wrap justify-center"
-                        data-testid="Range"
+                        class="sc-fzoXzr dYWnKg"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpans jCtSxP"
-                          data-testid="Range__track"
-                          style="transform: scale(1); cursor: pointer;"
+                          class="sc-fzpjYC csTNzu"
+                          data-testid="Range__track__filled"
                         >
                           <div
-                            class="sc-fzplWN dLuLpb"
-                            data-testid="Range__track__filled"
-                          >
-                            <div
-                              aria-valuemax="10"
-                              aria-valuemin="0"
-                              aria-valuenow="2"
-                              class="sc-fznyAO caSzTt"
-                              data-testid="Range__thumb"
-                              draggable="false"
-                              role="slider"
-                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                              tabindex="0"
-                            />
-                          </div>
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="2"
+                            class="sc-fznxsB fjEYYX"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div
-                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                    data-testid="SelectionBar"
-                    role="radiogroup"
+              </div>
+              <div>
+                <div
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  data-testid="SelectionBar"
+                  role="radiogroup"
+                >
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
                   >
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Min
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Average
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Max
-                    </button>
-                  </div>
+                    Min
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
+                  </button>
                 </div>
               </div>
-            </fieldset>
-          </div>
+            </div>
+          </fieldset>
         </div>
       </section>
     </div>
@@ -260,98 +265,103 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
       data-testid="tab-pabel__active-panel"
     >
       <section
+        class="space-y-8"
         data-testid="DelegateRegistrationForm__step--second"
       >
-        <h1
-          class="mb-0"
-        >
-          Register Delegate
-        </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="flex items-end justify-between bg-theme-background"
         >
-          Make up a name and register your delegate online.
+          <div>
+            <h1
+              class="mb-0 md:text-4xl"
+              data-testid="header__title"
+            >
+              Register Delegate
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Make up a name and register your delegate online.
+            </div>
+          </div>
         </div>
         <div
-          class="mt-6"
+          class="flex rounded-lg overflow-hidden bg-theme-warning"
         >
           <div
-            class="flex rounded-lg overflow-hidden bg-theme-warning"
+            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
           >
             <div
-              class="sc-AxhCb bRFYlX flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxirZ bMjbpr"
+              height="30"
+              width="30"
             >
-              <div
-                class="sc-AxirZ bMjbpr"
-                height="30"
-                width="30"
+              <svg>
+                alert-default.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+          >
+            <div
+              class="text-sm"
+            >
+              Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-AxgMl kdFVBs"
+          data-testid="TransactionDetail"
+        >
+          <div
+            class="flex-1 space-y-2"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                class="mr-1"
               >
-                <svg>
-                  alert-default.svg
-                </svg>
+                Sender
+              </span>
+              <div
+                class="sc-AxhUy kDFfAu"
+                color="warning"
+              >
+                <span
+                  class="text-sm"
+                >
+                  Your address
+                </span>
               </div>
             </div>
             <div
-              class="sc-AxiKw eRaQyX flex-1 bg-theme-warning-100 space-y-2"
+              class="font-semibold"
             >
               <div
-                class="text-sm"
+                class="inline-block truncate align-middle"
               >
-                Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+                <span
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  data-testid="address__wallet-name"
+                >
+                  ARK Wallet 1
+                </span>
+                <span
+                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  D8rr7B…s6YUYD
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="sc-fzoyAV dXDNVE mt-2"
-            data-testid="TransactionDetail"
+            class="flex items-center -space-x-2"
           >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex-1 space-y-2"
-                >
-                  <div
-                    class="text-theme-neutral"
-                  >
-                    <span
-                      class="mr-1 text-sm"
-                    >
-                      Sender
-                    </span>
-                    <div
-                      class="sc-fznKkj krlUGj"
-                      color="warning"
-                    >
-                      <span
-                        class="text-sm"
-                      >
-                        Your address
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                      data-testid="address__wallet-name"
-                    >
-                      ARK Wallet 1
-                    </span>
-                    <span
-                      class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D8rr7B…s6YUYD
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
               data-testid="Avatar"
@@ -367,138 +377,138 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="relative mt-8 space-y-8"
+        </div>
+        <div
+          class="space-y-8"
+        >
+          <fieldset
+            class="sc-fznZeY kYLJCb flex flex-col space-y-2"
           >
-            <fieldset
-              class="sc-AxgMl imcqFE flex flex-col space-y-2"
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="username"
             >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="username"
-              >
-                Delegate Name
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-              <input
-                aria-invalid="true"
-                class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                data-testid="Input__username"
-                name="username"
-                value="thisisaveryveryverylongdelegatename"
-              />
-              <p
-                class="text-sm text-theme-danger"
-              >
-                'Delegate Name' should have at most 20 characters
-              </p>
-            </fieldset>
-            <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="fee"
-              >
-                Transaction Fee
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
+              Delegate Name
               <div
-                class="flex space-x-2"
-                data-testid="InputFee"
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <input
+              aria-invalid="true"
+              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+              data-testid="Input__username"
+              name="username"
+              value="thisisaveryveryverylongdelegatename"
+            />
+            <p
+              class="text-sm text-theme-danger"
+            >
+              'Delegate Name' should have at most 20 characters
+            </p>
+          </fieldset>
+          <fieldset
+            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+          >
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="fee"
+            >
+              Transaction Fee
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <div
+              class="flex space-x-2"
+              data-testid="InputFee"
+            >
+              <div
+                class="flex-1"
               >
                 <div
-                  class="flex-1"
+                  class="sc-fzoLag hoOQgq"
                 >
+                  <input
+                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    data-testid="InputCurrency"
+                    name="fee"
+                    type="text"
+                    value="2"
+                  />
                   <div
-                    class="sc-fzoLsD rzdyj"
+                    class="absolute bottom-0 w-full px-1"
                   >
-                    <input
-                      class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="2"
-                    />
                     <div
-                      class="absolute bottom-0 w-full px-1"
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
                     >
                       <div
-                        class="flex flex-wrap justify-center"
-                        data-testid="Range"
+                        class="sc-fzoXzr dYWnKg"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpans jCtSxP"
-                          data-testid="Range__track"
-                          style="transform: scale(1); cursor: pointer;"
+                          class="sc-fzpjYC csTNzu"
+                          data-testid="Range__track__filled"
                         >
                           <div
-                            class="sc-fzplWN dLuLpb"
-                            data-testid="Range__track__filled"
-                          >
-                            <div
-                              aria-valuemax="10"
-                              aria-valuemin="0"
-                              aria-valuenow="2"
-                              class="sc-fznyAO caSzTt"
-                              data-testid="Range__thumb"
-                              draggable="false"
-                              role="slider"
-                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                              tabindex="0"
-                            />
-                          </div>
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="2"
+                            class="sc-fznxsB fjEYYX"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div
-                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                    data-testid="SelectionBar"
-                    role="radiogroup"
+              </div>
+              <div>
+                <div
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  data-testid="SelectionBar"
+                  role="radiogroup"
+                >
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
                   >
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Min
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Average
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Max
-                    </button>
-                  </div>
+                    Min
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
+                  </button>
                 </div>
               </div>
-            </fieldset>
-          </div>
+            </div>
+          </fieldset>
         </div>
       </section>
     </div>
@@ -513,98 +523,103 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
       data-testid="tab-pabel__active-panel"
     >
       <section
+        class="space-y-8"
         data-testid="DelegateRegistrationForm__step--second"
       >
-        <h1
-          class="mb-0"
-        >
-          Register Delegate
-        </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="flex items-end justify-between bg-theme-background"
         >
-          Make up a name and register your delegate online.
+          <div>
+            <h1
+              class="mb-0 md:text-4xl"
+              data-testid="header__title"
+            >
+              Register Delegate
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Make up a name and register your delegate online.
+            </div>
+          </div>
         </div>
         <div
-          class="mt-6"
+          class="flex rounded-lg overflow-hidden bg-theme-warning"
         >
           <div
-            class="flex rounded-lg overflow-hidden bg-theme-warning"
+            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
           >
             <div
-              class="sc-AxhCb bRFYlX flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxirZ bMjbpr"
+              height="30"
+              width="30"
             >
-              <div
-                class="sc-AxirZ bMjbpr"
-                height="30"
-                width="30"
+              <svg>
+                alert-default.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+          >
+            <div
+              class="text-sm"
+            >
+              Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-AxgMl kdFVBs"
+          data-testid="TransactionDetail"
+        >
+          <div
+            class="flex-1 space-y-2"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                class="mr-1"
               >
-                <svg>
-                  alert-default.svg
-                </svg>
+                Sender
+              </span>
+              <div
+                class="sc-AxhUy kDFfAu"
+                color="warning"
+              >
+                <span
+                  class="text-sm"
+                >
+                  Your address
+                </span>
               </div>
             </div>
             <div
-              class="sc-AxiKw eRaQyX flex-1 bg-theme-warning-100 space-y-2"
+              class="font-semibold"
             >
               <div
-                class="text-sm"
+                class="inline-block truncate align-middle"
               >
-                Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+                <span
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  data-testid="address__wallet-name"
+                >
+                  ARK Wallet 1
+                </span>
+                <span
+                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  D8rr7B…s6YUYD
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="sc-fzoyAV dXDNVE mt-2"
-            data-testid="TransactionDetail"
+            class="flex items-center -space-x-2"
           >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex-1 space-y-2"
-                >
-                  <div
-                    class="text-theme-neutral"
-                  >
-                    <span
-                      class="mr-1 text-sm"
-                    >
-                      Sender
-                    </span>
-                    <div
-                      class="sc-fznKkj krlUGj"
-                      color="warning"
-                    >
-                      <span
-                        class="text-sm"
-                      >
-                        Your address
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                      data-testid="address__wallet-name"
-                    >
-                      ARK Wallet 1
-                    </span>
-                    <span
-                      class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D8rr7B…s6YUYD
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
               data-testid="Avatar"
@@ -620,138 +635,138 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
               </div>
             </div>
           </div>
-          <div
-            class="relative mt-8 space-y-8"
+        </div>
+        <div
+          class="space-y-8"
+        >
+          <fieldset
+            class="sc-fznZeY kYLJCb flex flex-col space-y-2"
           >
-            <fieldset
-              class="sc-AxgMl imcqFE flex flex-col space-y-2"
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="username"
             >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="username"
-              >
-                Delegate Name
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-              <input
-                aria-invalid="true"
-                class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                data-testid="Input__username"
-                name="username"
-                value="arkx"
-              />
-              <p
-                class="text-sm text-theme-danger"
-              >
-                'Delegate Name' already exists
-              </p>
-            </fieldset>
-            <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="fee"
-              >
-                Transaction Fee
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
+              Delegate Name
               <div
-                class="flex space-x-2"
-                data-testid="InputFee"
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <input
+              aria-invalid="true"
+              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+              data-testid="Input__username"
+              name="username"
+              value="arkx"
+            />
+            <p
+              class="text-sm text-theme-danger"
+            >
+              'Delegate Name' already exists
+            </p>
+          </fieldset>
+          <fieldset
+            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+          >
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="fee"
+            >
+              Transaction Fee
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <div
+              class="flex space-x-2"
+              data-testid="InputFee"
+            >
+              <div
+                class="flex-1"
               >
                 <div
-                  class="flex-1"
+                  class="sc-fzoLag hoOQgq"
                 >
+                  <input
+                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    data-testid="InputCurrency"
+                    name="fee"
+                    type="text"
+                    value="2"
+                  />
                   <div
-                    class="sc-fzoLsD rzdyj"
+                    class="absolute bottom-0 w-full px-1"
                   >
-                    <input
-                      class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="2"
-                    />
                     <div
-                      class="absolute bottom-0 w-full px-1"
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
                     >
                       <div
-                        class="flex flex-wrap justify-center"
-                        data-testid="Range"
+                        class="sc-fzoXzr dYWnKg"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpans jCtSxP"
-                          data-testid="Range__track"
-                          style="transform: scale(1); cursor: pointer;"
+                          class="sc-fzpjYC csTNzu"
+                          data-testid="Range__track__filled"
                         >
                           <div
-                            class="sc-fzplWN dLuLpb"
-                            data-testid="Range__track__filled"
-                          >
-                            <div
-                              aria-valuemax="10"
-                              aria-valuemin="0"
-                              aria-valuenow="2"
-                              class="sc-fznyAO caSzTt"
-                              data-testid="Range__thumb"
-                              draggable="false"
-                              role="slider"
-                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                              tabindex="0"
-                            />
-                          </div>
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="2"
+                            class="sc-fznxsB fjEYYX"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div
-                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                    data-testid="SelectionBar"
-                    role="radiogroup"
+              </div>
+              <div>
+                <div
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  data-testid="SelectionBar"
+                  role="radiogroup"
+                >
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
                   >
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Min
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Average
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Max
-                    </button>
-                  </div>
+                    Min
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
+                  </button>
                 </div>
               </div>
-            </fieldset>
-          </div>
+            </div>
+          </fieldset>
         </div>
       </section>
     </div>
@@ -766,98 +781,103 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
       data-testid="tab-pabel__active-panel"
     >
       <section
+        class="space-y-8"
         data-testid="DelegateRegistrationForm__step--second"
       >
-        <h1
-          class="mb-0"
-        >
-          Register Delegate
-        </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="flex items-end justify-between bg-theme-background"
         >
-          Make up a name and register your delegate online.
+          <div>
+            <h1
+              class="mb-0 md:text-4xl"
+              data-testid="header__title"
+            >
+              Register Delegate
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Make up a name and register your delegate online.
+            </div>
+          </div>
         </div>
         <div
-          class="mt-6"
+          class="flex rounded-lg overflow-hidden bg-theme-warning"
         >
           <div
-            class="flex rounded-lg overflow-hidden bg-theme-warning"
+            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
           >
             <div
-              class="sc-AxhCb bRFYlX flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxirZ bMjbpr"
+              height="30"
+              width="30"
             >
-              <div
-                class="sc-AxirZ bMjbpr"
-                height="30"
-                width="30"
+              <svg>
+                alert-default.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+          >
+            <div
+              class="text-sm"
+            >
+              Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-AxgMl kdFVBs"
+          data-testid="TransactionDetail"
+        >
+          <div
+            class="flex-1 space-y-2"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                class="mr-1"
               >
-                <svg>
-                  alert-default.svg
-                </svg>
+                Sender
+              </span>
+              <div
+                class="sc-AxhUy kDFfAu"
+                color="warning"
+              >
+                <span
+                  class="text-sm"
+                >
+                  Your address
+                </span>
               </div>
             </div>
             <div
-              class="sc-AxiKw eRaQyX flex-1 bg-theme-warning-100 space-y-2"
+              class="font-semibold"
             >
               <div
-                class="text-sm"
+                class="inline-block truncate align-middle"
               >
-                Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+                <span
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  data-testid="address__wallet-name"
+                >
+                  ARK Wallet 1
+                </span>
+                <span
+                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  D8rr7B…s6YUYD
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="sc-fzoyAV dXDNVE mt-2"
-            data-testid="TransactionDetail"
+            class="flex items-center -space-x-2"
           >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex-1 space-y-2"
-                >
-                  <div
-                    class="text-theme-neutral"
-                  >
-                    <span
-                      class="mr-1 text-sm"
-                    >
-                      Sender
-                    </span>
-                    <div
-                      class="sc-fznKkj krlUGj"
-                      color="warning"
-                    >
-                      <span
-                        class="text-sm"
-                      >
-                        Your address
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                      data-testid="address__wallet-name"
-                    >
-                      ARK Wallet 1
-                    </span>
-                    <span
-                      class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D8rr7B…s6YUYD
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
               data-testid="Avatar"
@@ -873,132 +893,132 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="relative mt-8 space-y-8"
+        </div>
+        <div
+          class="space-y-8"
+        >
+          <fieldset
+            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
-            <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="username"
             >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="username"
-              >
-                Delegate Name
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-              <input
-                class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                data-testid="Input__username"
-                name="username"
-                value=""
-              />
-            </fieldset>
-            <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="fee"
-              >
-                Transaction Fee
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
+              Delegate Name
               <div
-                class="flex space-x-2"
-                data-testid="InputFee"
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <input
+              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+              data-testid="Input__username"
+              name="username"
+              value=""
+            />
+          </fieldset>
+          <fieldset
+            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+          >
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="fee"
+            >
+              Transaction Fee
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <div
+              class="flex space-x-2"
+              data-testid="InputFee"
+            >
+              <div
+                class="flex-1"
               >
                 <div
-                  class="flex-1"
+                  class="sc-fzoLag hoOQgq"
                 >
+                  <input
+                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    data-testid="InputCurrency"
+                    name="fee"
+                    type="text"
+                    value="2"
+                  />
                   <div
-                    class="sc-fzoLsD rzdyj"
+                    class="absolute bottom-0 w-full px-1"
                   >
-                    <input
-                      class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="2"
-                    />
                     <div
-                      class="absolute bottom-0 w-full px-1"
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
                     >
                       <div
-                        class="flex flex-wrap justify-center"
-                        data-testid="Range"
+                        class="sc-fzoXzr dYWnKg"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpans jCtSxP"
-                          data-testid="Range__track"
-                          style="transform: scale(1); cursor: pointer;"
+                          class="sc-fzpjYC csTNzu"
+                          data-testid="Range__track__filled"
                         >
                           <div
-                            class="sc-fzplWN dLuLpb"
-                            data-testid="Range__track__filled"
-                          >
-                            <div
-                              aria-valuemax="10"
-                              aria-valuemin="0"
-                              aria-valuenow="2"
-                              class="sc-fznyAO caSzTt"
-                              data-testid="Range__thumb"
-                              draggable="false"
-                              role="slider"
-                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                              tabindex="0"
-                            />
-                          </div>
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="2"
+                            class="sc-fznxsB fjEYYX"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div
-                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                    data-testid="SelectionBar"
-                    role="radiogroup"
+              </div>
+              <div>
+                <div
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  data-testid="SelectionBar"
+                  role="radiogroup"
+                >
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
                   >
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Min
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Average
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Max
-                    </button>
-                  </div>
+                    Min
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
+                  </button>
                 </div>
               </div>
-            </fieldset>
-          </div>
+            </div>
+          </fieldset>
         </div>
       </section>
     </div>
@@ -1013,96 +1033,103 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
       data-testid="tab-pabel__active-panel"
     >
       <section
+        class="space-y-8"
         data-testid="DelegateRegistrationForm__step--third"
       >
-        <h1
-          class="mb-0"
-        >
-          Register Delegate
-        </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="flex items-end justify-between bg-theme-background"
         >
-          Make up a name and register your delegate online.
-        </div>
-        <div
-          class="sc-fzoyAV doLUQj"
-          data-testid="TransactionDetail"
-        >
-          <div
-            class="flex-1 space-y-2"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral"
+          <div>
+            <h1
+              class="mb-0 md:text-4xl"
+              data-testid="header__title"
             >
-              Network
-            </div>
+              Register Delegate
+            </h1>
             <div
-              class="font-semibold"
+              class="text-theme-neutral-dark"
+              data-testid="header__subtitle"
             >
-              ARK Devnet
-            </div>
-          </div>
-          <div
-            aria-label="ARK Devnet"
-            class="sc-AxhUy dHClEW border-theme-primary-100 text-theme-primary-400"
-            data-testid="NetworkIcon-ARK-ark.devnet"
-          >
-            <div
-              class="sc-AxirZ eEbZjj"
-              data-testid="NetworkIcon__icon"
-              height="20"
-              width="20"
-            >
-              <svg>
-                ark.svg
-              </svg>
+              Make up a name and register your delegate online.
             </div>
           </div>
         </div>
-        <div
-          class="sc-fzoyAV eovDFc"
-          data-testid="TransactionDetail"
-        >
+        <div>
           <div
-            class="flex-1 space-y-2"
+            class="sc-AxgMl codLYD"
+            data-testid="TransactionDetail"
           >
             <div
-              class="font-semibold"
+              class="flex-1 space-y-2"
             >
               <div
-                class="flex-1 space-y-2"
+                class="text-sm font-semibold text-theme-neutral"
               >
+                Cryptoasset
+              </div>
+              <div
+                class="font-semibold"
+              >
+                ARK Devnet
+              </div>
+            </div>
+            <div
+              aria-label="ARK Devnet"
+              class="sc-AxjAm bHAIY border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-ark.devnet"
+            >
+              <div
+                class="sc-AxirZ eEbZjj"
+                data-testid="NetworkIcon__icon"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-AxgMl iUTnJW"
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                <span
+                  class="mr-1"
+                >
+                  Sender
+                </span>
                 <div
-                  class="text-theme-neutral"
+                  class="sc-AxhUy kDFfAu"
+                  color="warning"
                 >
                   <span
-                    class="mr-1 text-sm"
+                    class="text-sm"
                   >
-                    Sender
+                    Your address
                   </span>
-                  <div
-                    class="sc-fznKkj krlUGj"
-                    color="warning"
-                  >
-                    <span
-                      class="text-sm"
-                    >
-                      Your address
-                    </span>
-                  </div>
                 </div>
+              </div>
+              <div
+                class="font-semibold"
+              >
                 <div
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                     data-testid="address__wallet-name"
                   >
                     ARK Wallet 1
                   </span>
                   <span
-                    class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -1110,127 +1137,118 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
                 </div>
               </div>
             </div>
+            <div
+              class="flex items-center -space-x-2"
+            >
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-            data-testid="Avatar"
+            class="sc-AxgMl iUTnJW"
+            data-testid="TransactionDetail"
           >
             <div
-              class="w-full h-full"
+              class="flex-1 space-y-2"
             >
-              <img
-                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+              <div
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                Delegate Name
+              </div>
+              <div
+                class="font-semibold"
               />
             </div>
           </div>
-        </div>
-        <div
-          class="sc-fzoyAV eovDFc"
-          data-testid="TransactionDetail"
-        >
           <div
-            class="flex-1 space-y-2"
+            class="mt-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral"
-            >
-              Delegate Name
-            </div>
-            <div
-              class="font-semibold"
-            />
-          </div>
-          <div
-            class="sc-AxhUy dHClEW bg-theme-background border-theme-text"
-          >
-            <div
-              class="sc-AxirZ cDsAQG"
-              height="25"
-              width="20"
-            >
-              <svg>
-                delegate.svg
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
-          class="mt-2"
-        >
-          <div
-            class="border rounded-lg border-theme-neutral-300"
-          >
-            <div
-              class="relative p-4"
+              class="border rounded-lg border-theme-neutral-300"
             >
               <div
-                class="flex divide-x divide-theme-neutral-300"
+                class="relative p-4"
               >
                 <div
-                  class="flex flex-col w-1/2 justify-center px-4 py-2"
-                >
-                  <span
-                    class="sc-fzqNJr japNxG"
-                  >
-                    Transaction Amount
-                  </span>
-                  <span
-                    class="mt-1 text-lg font-semibold"
-                    data-testid="total-amount-box__transaction-amount"
-                  >
-                    0 DARK
-                  </span>
-                </div>
-                <div
-                  class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
-                >
-                  <span
-                    class="sc-fzqNJr japNxG"
-                  >
-                    Transaction Fee
-                  </span>
-                  <span
-                    class="mt-1 text-lg font-semibold"
-                    data-testid="total-amount-box__transaction-fee"
-                  >
-                    NaN DARK
-                  </span>
-                </div>
-              </div>
-              <div
-                class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
-              >
-                <div
-                  class="py-2 ml-px bg-white"
+                  class="flex divide-x divide-theme-neutral-300"
                 >
                   <div
-                    class="sc-AxirZ fFqjhX"
-                    height="14"
-                    width="14"
+                    class="flex flex-col w-1/2 justify-center px-4 py-2"
                   >
-                    <svg>
-                      plus.svg
-                    </svg>
+                    <span
+                      class="sc-fznWqX crDlml"
+                    >
+                      Transaction Amount
+                    </span>
+                    <span
+                      class="mt-1 text-lg font-semibold"
+                      data-testid="total-amount-box__transaction-amount"
+                    >
+                      0 DARK
+                    </span>
+                  </div>
+                  <div
+                    class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
+                  >
+                    <span
+                      class="sc-fznWqX crDlml"
+                    >
+                      Transaction Fee
+                    </span>
+                    <span
+                      class="mt-1 text-lg font-semibold"
+                      data-testid="total-amount-box__transaction-fee"
+                    >
+                      NaN DARK
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+                >
+                  <div
+                    class="py-2 ml-px bg-white"
+                  >
+                    <div
+                      class="sc-AxirZ fFqjhX"
+                      height="14"
+                      width="14"
+                    >
+                      <svg>
+                        plus.svg
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 justfiy-center bg-theme-neutral-contrast"
-            >
-              <span
-                class="sc-fzqNJr japNxG"
+              <div
+                class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 justfiy-center bg-theme-neutral-contrast"
               >
-                Total Amount
-              </span>
-              <span
-                class="text-2xl font-bold"
-                data-testid="total-amount-box__total"
-              >
-                NaN DARK
-              </span>
+                <span
+                  class="sc-fznWqX crDlml"
+                >
+                  Total Amount
+                </span>
+                <span
+                  class="text-2xl font-bold"
+                  data-testid="total-amount-box__total"
+                >
+                  NaN DARK
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -1247,98 +1265,103 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
       data-testid="tab-pabel__active-panel"
     >
       <section
+        class="space-y-8"
         data-testid="DelegateRegistrationForm__step--second"
       >
-        <h1
-          class="mb-0"
-        >
-          Register Delegate
-        </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="flex items-end justify-between bg-theme-background"
         >
-          Make up a name and register your delegate online.
+          <div>
+            <h1
+              class="mb-0 md:text-4xl"
+              data-testid="header__title"
+            >
+              Register Delegate
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Make up a name and register your delegate online.
+            </div>
+          </div>
         </div>
         <div
-          class="mt-6"
+          class="flex rounded-lg overflow-hidden bg-theme-warning"
         >
           <div
-            class="flex rounded-lg overflow-hidden bg-theme-warning"
+            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
           >
             <div
-              class="sc-AxhCb bRFYlX flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxirZ bMjbpr"
+              height="30"
+              width="30"
             >
-              <div
-                class="sc-AxirZ bMjbpr"
-                height="30"
-                width="30"
+              <svg>
+                alert-default.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+          >
+            <div
+              class="text-sm"
+            >
+              Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-AxgMl kdFVBs"
+          data-testid="TransactionDetail"
+        >
+          <div
+            class="flex-1 space-y-2"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                class="mr-1"
               >
-                <svg>
-                  alert-default.svg
-                </svg>
+                Sender
+              </span>
+              <div
+                class="sc-AxhUy kDFfAu"
+                color="warning"
+              >
+                <span
+                  class="text-sm"
+                >
+                  Your address
+                </span>
               </div>
             </div>
             <div
-              class="sc-AxiKw eRaQyX flex-1 bg-theme-warning-100 space-y-2"
+              class="font-semibold"
             >
               <div
-                class="text-sm"
+                class="inline-block truncate align-middle"
               >
-                Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+                <span
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  data-testid="address__wallet-name"
+                >
+                  ARK Wallet 1
+                </span>
+                <span
+                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  D8rr7B…s6YUYD
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="sc-fzoyAV dXDNVE mt-2"
-            data-testid="TransactionDetail"
+            class="flex items-center -space-x-2"
           >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex-1 space-y-2"
-                >
-                  <div
-                    class="text-theme-neutral"
-                  >
-                    <span
-                      class="mr-1 text-sm"
-                    >
-                      Sender
-                    </span>
-                    <div
-                      class="sc-fznKkj krlUGj"
-                      color="warning"
-                    >
-                      <span
-                        class="text-sm"
-                      >
-                        Your address
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                      data-testid="address__wallet-name"
-                    >
-                      ARK Wallet 1
-                    </span>
-                    <span
-                      class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D8rr7B…s6YUYD
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
               data-testid="Avatar"
@@ -1354,132 +1377,132 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="relative mt-8 space-y-8"
+        </div>
+        <div
+          class="space-y-8"
+        >
+          <fieldset
+            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
-            <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="username"
             >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="username"
-              >
-                Delegate Name
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-              <input
-                class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                data-testid="Input__username"
-                name="username"
-                value=""
-              />
-            </fieldset>
-            <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="fee"
-              >
-                Transaction Fee
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
+              Delegate Name
               <div
-                class="flex space-x-2"
-                data-testid="InputFee"
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <input
+              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+              data-testid="Input__username"
+              name="username"
+              value=""
+            />
+          </fieldset>
+          <fieldset
+            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+          >
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="fee"
+            >
+              Transaction Fee
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <div
+              class="flex space-x-2"
+              data-testid="InputFee"
+            >
+              <div
+                class="flex-1"
               >
                 <div
-                  class="flex-1"
+                  class="sc-fzoLag hoOQgq"
                 >
+                  <input
+                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    data-testid="InputCurrency"
+                    name="fee"
+                    type="text"
+                    value="1"
+                  />
                   <div
-                    class="sc-fzoLsD rzdyj"
+                    class="absolute bottom-0 w-full px-1"
                   >
-                    <input
-                      class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="1"
-                    />
                     <div
-                      class="absolute bottom-0 w-full px-1"
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
                     >
                       <div
-                        class="flex flex-wrap justify-center"
-                        data-testid="Range"
+                        class="sc-fzoXzr dYWnKg"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpans jCtSxP"
-                          data-testid="Range__track"
-                          style="transform: scale(1); cursor: pointer;"
+                          class="sc-fzpjYC csTNzu"
+                          data-testid="Range__track__filled"
                         >
                           <div
-                            class="sc-fzplWN dLuLpb"
-                            data-testid="Range__track__filled"
-                          >
-                            <div
-                              aria-valuemax="10"
-                              aria-valuemin="0"
-                              aria-valuenow="1"
-                              class="sc-fznyAO caSzTt"
-                              data-testid="Range__thumb"
-                              draggable="false"
-                              role="slider"
-                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                              tabindex="0"
-                            />
-                          </div>
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="1"
+                            class="sc-fznxsB fjEYYX"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div
-                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                    data-testid="SelectionBar"
-                    role="radiogroup"
+              </div>
+              <div>
+                <div
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  data-testid="SelectionBar"
+                  role="radiogroup"
+                >
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
                   >
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Min
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Average
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Max
-                    </button>
-                  </div>
+                    Min
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
+                  </button>
                 </div>
               </div>
-            </fieldset>
-          </div>
+            </div>
+          </fieldset>
         </div>
       </section>
     </div>
@@ -1494,98 +1517,103 @@ exports[`DelegateRegistrationForm should set username 1`] = `
       data-testid="tab-pabel__active-panel"
     >
       <section
+        class="space-y-8"
         data-testid="DelegateRegistrationForm__step--second"
       >
-        <h1
-          class="mb-0"
-        >
-          Register Delegate
-        </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="flex items-end justify-between bg-theme-background"
         >
-          Make up a name and register your delegate online.
+          <div>
+            <h1
+              class="mb-0 md:text-4xl"
+              data-testid="header__title"
+            >
+              Register Delegate
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Make up a name and register your delegate online.
+            </div>
+          </div>
         </div>
         <div
-          class="mt-6"
+          class="flex rounded-lg overflow-hidden bg-theme-warning"
         >
           <div
-            class="flex rounded-lg overflow-hidden bg-theme-warning"
+            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
           >
             <div
-              class="sc-AxhCb bRFYlX flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxirZ bMjbpr"
+              height="30"
+              width="30"
             >
-              <div
-                class="sc-AxirZ bMjbpr"
-                height="30"
-                width="30"
+              <svg>
+                alert-default.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+          >
+            <div
+              class="text-sm"
+            >
+              Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-AxgMl kdFVBs"
+          data-testid="TransactionDetail"
+        >
+          <div
+            class="flex-1 space-y-2"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                class="mr-1"
               >
-                <svg>
-                  alert-default.svg
-                </svg>
+                Sender
+              </span>
+              <div
+                class="sc-AxhUy kDFfAu"
+                color="warning"
+              >
+                <span
+                  class="text-sm"
+                >
+                  Your address
+                </span>
               </div>
             </div>
             <div
-              class="sc-AxiKw eRaQyX flex-1 bg-theme-warning-100 space-y-2"
+              class="font-semibold"
             >
               <div
-                class="text-sm"
+                class="inline-block truncate align-middle"
               >
-                Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
+                <span
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  data-testid="address__wallet-name"
+                >
+                  ARK Wallet 1
+                </span>
+                <span
+                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  D8rr7B…s6YUYD
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="sc-fzoyAV dXDNVE mt-2"
-            data-testid="TransactionDetail"
+            class="flex items-center -space-x-2"
           >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex-1 space-y-2"
-                >
-                  <div
-                    class="text-theme-neutral"
-                  >
-                    <span
-                      class="mr-1 text-sm"
-                    >
-                      Sender
-                    </span>
-                    <div
-                      class="sc-fznKkj krlUGj"
-                      color="warning"
-                    >
-                      <span
-                        class="text-sm"
-                      >
-                        Your address
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                      data-testid="address__wallet-name"
-                    >
-                      ARK Wallet 1
-                    </span>
-                    <span
-                      class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D8rr7B…s6YUYD
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
               data-testid="Avatar"
@@ -1601,132 +1629,132 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="relative mt-8 space-y-8"
+        </div>
+        <div
+          class="space-y-8"
+        >
+          <fieldset
+            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
-            <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="username"
             >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="username"
-              >
-                Delegate Name
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-              <input
-                class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                data-testid="Input__username"
-                name="username"
-                value="test_delegate"
-              />
-            </fieldset>
-            <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="fee"
-              >
-                Transaction Fee
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
+              Delegate Name
               <div
-                class="flex space-x-2"
-                data-testid="InputFee"
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <input
+              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+              data-testid="Input__username"
+              name="username"
+              value="test_delegate"
+            />
+          </fieldset>
+          <fieldset
+            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+          >
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="fee"
+            >
+              Transaction Fee
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <div
+              class="flex space-x-2"
+              data-testid="InputFee"
+            >
+              <div
+                class="flex-1"
               >
                 <div
-                  class="flex-1"
+                  class="sc-fzoLag hoOQgq"
                 >
+                  <input
+                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    data-testid="InputCurrency"
+                    name="fee"
+                    type="text"
+                    value="2"
+                  />
                   <div
-                    class="sc-fzoLsD rzdyj"
+                    class="absolute bottom-0 w-full px-1"
                   >
-                    <input
-                      class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="2"
-                    />
                     <div
-                      class="absolute bottom-0 w-full px-1"
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
                     >
                       <div
-                        class="flex flex-wrap justify-center"
-                        data-testid="Range"
+                        class="sc-fzoXzr dYWnKg"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpans jCtSxP"
-                          data-testid="Range__track"
-                          style="transform: scale(1); cursor: pointer;"
+                          class="sc-fzpjYC csTNzu"
+                          data-testid="Range__track__filled"
                         >
                           <div
-                            class="sc-fzplWN dLuLpb"
-                            data-testid="Range__track__filled"
-                          >
-                            <div
-                              aria-valuemax="10"
-                              aria-valuemin="0"
-                              aria-valuenow="2"
-                              class="sc-fznyAO caSzTt"
-                              data-testid="Range__thumb"
-                              draggable="false"
-                              role="slider"
-                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                              tabindex="0"
-                            />
-                          </div>
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="2"
+                            class="sc-fznxsB fjEYYX"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div
-                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-                    data-testid="SelectionBar"
-                    role="radiogroup"
+              </div>
+              <div>
+                <div
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  data-testid="SelectionBar"
+                  role="radiogroup"
+                >
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
                   >
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Min
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Average
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzqBZW dJUDOf relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Max
-                    </button>
-                  </div>
+                    Min
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
+                  </button>
                 </div>
               </div>
-            </fieldset>
-          </div>
+            </div>
+          </fieldset>
         </div>
       </section>
     </div>

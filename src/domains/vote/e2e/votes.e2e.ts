@@ -93,7 +93,7 @@ test("should select network, address and delegate", async (t) => {
 	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES));
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
 
-	// Select network
+	// Select cryptoasset
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#Votes__network-item-1"));
 
@@ -124,7 +124,7 @@ test.requestHooks(walletMock, sendMock)("should send a vote transaction", async 
 	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES));
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
 
-	// Select network
+	// Select cryptoasset
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#Votes__network-item-1"));
 

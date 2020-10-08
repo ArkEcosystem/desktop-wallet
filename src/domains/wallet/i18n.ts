@@ -59,9 +59,9 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_CREATE_WALLET: {
-		NETWORK_STEP: {
-			TITLE: "Select a Network",
-			SUBTITLE: "Select a Network to create your new wallet address",
+		CRYPTOASSET_STEP: {
+			TITLE: "Select a Cryptoasset",
+			SUBTITLE: "Select a cryptoasset to create your new wallet address",
 		},
 
 		PASSPHRASE_STEP: {
@@ -92,9 +92,9 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_IMPORT_WALLET: {
-		NETWORK_STEP: {
-			TITLE: "Select a Network",
-			SUBTITLE: "Select a Network to import your existing wallet address",
+		CRYPTOASSET_STEP: {
+			TITLE: "Select a Cryptoasset",
+			SUBTITLE: "Select a cryptoasset to import your existing wallet address",
 		},
 
 		METHOD_STEP: {
@@ -128,11 +128,16 @@ export const translations: { [key: string]: any } = {
 		COPY_ADDRESS: "Copy Address",
 		COPY_PUBLIC_KEY: "Copy Public Key",
 		PENDING_TRANSACTIONS: "Pending Transactions",
-		TRANSACTION_HISTORY: "Transaction History",
 		YOUR_WALLETS: "Your Wallets",
 
 		STAR_WALLET: "Add to favorites",
 		UNSTAR_WALLET: "Remove from favorites",
+
+		TRANSACTION_HISTORY: {
+			TITLE: "Transactions History",
+			EMPTY_TEXT:
+				"This will display the history of your transactions. But you don't have more than one transaction at the moment.",
+		},
 
 		REGISTRATIONS: {
 			TITLE: "Registrations",

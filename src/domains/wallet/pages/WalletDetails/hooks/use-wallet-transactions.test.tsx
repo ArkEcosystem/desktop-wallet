@@ -12,7 +12,7 @@ describe("Wallet Transactions Hook", () => {
 	beforeAll(() => {
 		nock("https://dwallets.ark.io")
 			.post("/api/transactions/search")
-			.query({ page: "1", limit: "10" })
+			.query((params) => params.page === undefined || params.page === "1")
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
 				return {
@@ -85,5 +85,17 @@ describe("Wallet Transactions Hook", () => {
 
 		spyTransactions.mockRestore();
 		jest.useRealTimers();
+	});
+
+	it("should be no more on initial render", () => {
+		const Component = () => {
+			const { hasMore } = useWalletTransactions(wallet, { limit: 10 });
+
+			return <span>{hasMore ? "More" : "Empty"}</span>;
+		};
+
+		render(<Component />);
+
+		expect(screen.getByText("Empty")).toBeInTheDocument();
 	});
 });

@@ -1,6 +1,6 @@
 import "swiper/swiper-bundle.css";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import Swiper, { Pagination } from "swiper";
 
 Swiper.use([Pagination]);
@@ -15,8 +15,8 @@ type SliderProps = {
 
 const defaultOptions = {
 	// Custom component options
-	slideHeight: 180, // default slideheight (used for wallet cards),
-	// Wwiper options
+	slideHeight: 184, // default slideheight (used for wallet cards),
+	// Swiper options
 	slidesPerView: 1,
 	slidesPerColumn: 1,
 	touchStartPreventDefault: false,
@@ -33,14 +33,23 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 	// If items are less or equal than slidesPerView, use 1 row
 	swiperOptions.slidesPerColumn = data.length <= swiperOptions.slidesPerView ? 1 : swiperOptions.slidesPerColumn;
 
+	const showPagination = useMemo(() => data.length > swiperOptions.slidesPerView * swiperOptions.slidesPerColumn, [
+		data,
+		swiperOptions,
+	]);
+
 	// Swiper needs container height to be defined.
 	// `slideHeight` is required.
 	const getContainerHeight = () => {
-		const bottomOffsetRatio = swiperOptions.slidesPerView > 1 ? 1.2 : 1.3;
-		const paginationOffset = paginationPosition === "bottom-center" ? bottomOffsetRatio : 1; // offset for pagination.
+		const spacing = 20;
 
-		const containerHeight = swiperOptions.slidesPerColumn * swiperOptions.slideHeight * paginationOffset;
-		return containerHeight;
+		const paginationOffset = showPagination && paginationPosition === "bottom-center" ? spacing + 24 : 0;
+
+		return (
+			swiperOptions.slidesPerColumn * swiperOptions.slideHeight +
+			(data.length > swiperOptions.slidesPerView ? spacing : 0) +
+			paginationOffset
+		);
 	};
 
 	useEffect(() => {
@@ -55,8 +64,8 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 
 	return (
 		<div className="relative">
-			{paginationPosition === "top-right" && (
-				<div className="absolute right-0 w-auto space-x-2 -top-12 swiper-pagination" />
+			{showPagination && paginationPosition === "top-right" && (
+				<div className="absolute right-0 flex items-center w-auto h-6 space-x-2 -top-12 swiper-pagination" />
 			)}
 
 			<div className="swiper-container" style={{ height: `${getContainerHeight()}px` }}>
@@ -68,7 +77,9 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 					))}
 				</div>
 
-				{paginationPosition === "bottom-center" && <div className="swiper-pagination" />}
+				{showPagination && paginationPosition === "bottom-center" && (
+					<div className="flex items-center justify-center h-6 swiper-pagination important:bottom-0" />
+				)}
 			</div>
 		</div>
 	);

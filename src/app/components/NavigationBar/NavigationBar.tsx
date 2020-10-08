@@ -1,5 +1,6 @@
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { CURRENCIES } from "@arkecosystem/platform-sdk/dist/data";
 import { images } from "app/assets/images";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";
@@ -31,6 +32,7 @@ type MenuItem = {
 };
 
 type NavigationBarProps = {
+	title?: string;
 	profile?: Profile;
 	variant?: NavbarVariant;
 	menu?: MenuItem[];
@@ -82,63 +84,73 @@ const NotificationsDropdown = ({
 
 type UserInfoProps = {
 	avatarImage?: string;
-	currencyIcon?: string;
+	exchangeCurrency?: string;
 	onUserAction?: any;
 	userActions?: Action[];
 	userInitials?: string;
 };
 
-const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => (
-	<Dropdown
-		onSelect={onUserAction}
-		options={userActions}
-		toggleContent={(isOpen: boolean) => (
-			<div className="ml-4 cursor-pointer" data-testid="navbar__useractions">
-				<Circle className="-mr-2 border-theme-primary-contrast" size="lg">
-					<span className="text-theme-neutral-dark">{currencyIcon && <Icon name={currencyIcon} />}</span>
-				</Circle>
+const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => {
+	const tickerConfig: typeof CURRENCIES["BTC"] | undefined = CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
 
-				<div
-					className="relative inline-flex items-center justify-center align-middle rounded-full"
-					data-testid="navbar__user--avatar"
-				>
-					<AvatarWrapper size="lg">
-						{avatarImage?.endsWith("</svg>") ? (
-							<>
-								<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
-								<span className="absolute text-sm font-semibold text-theme-background">
-									{userInitials}
-								</span>
-							</>
-						) : (
-							<img
-								alt="Profile Avatar"
-								className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
-								src={avatarImage}
-							/>
-						)}
-					</AvatarWrapper>
+	return (
+		<Dropdown
+			onSelect={onUserAction}
+			options={userActions}
+			toggleContent={(isOpen: boolean) => (
+				<div className="ml-4 cursor-pointer" data-testid="navbar__useractions">
+					<Circle className="-mr-2 border-theme-primary-contrast" size="lg">
+						<span className="text-theme-neutral-dark">
+							{exchangeCurrency && (
+								<Icon
+									name={exchangeCurrency}
+									fallback={<span className="font-semibold">{tickerConfig?.symbol}</span>}
+								/>
+							)}
+						</span>
+					</Circle>
 
-					<Badge
-						className="bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-						position="right"
-						icon={isOpen ? "ChevronUp" : "ChevronDown"}
-						iconWidth={10}
-						iconHeight={10}
-					/>
+					<div
+						className="relative inline-flex items-center justify-center align-middle rounded-full"
+						data-testid="navbar__user--avatar"
+					>
+						<AvatarWrapper size="lg">
+							{avatarImage?.endsWith("</svg>") ? (
+								<>
+									<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
+									<span className="absolute text-sm font-semibold text-theme-background">
+										{userInitials}
+									</span>
+								</>
+							) : (
+								<img
+									alt="Profile Avatar"
+									className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+									src={avatarImage}
+								/>
+							)}
+						</AvatarWrapper>
+
+						<Badge
+							className="bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+							position="right"
+							icon={isOpen ? "ChevronUp" : "ChevronDown"}
+							iconWidth={10}
+							iconHeight={10}
+						/>
+					</div>
 				</div>
-			</div>
-		)}
-	/>
-);
+			)}
+		/>
+	);
+};
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center my-auto mr-4 text-white rounded-lg bg-logo`};
-	width: 50px;
-	height: 50px;
+	${tw`flex items-center justify-center my-auto mr-4 text-white bg-logo rounded h-12 w-12`};
 `;
 
 export const NavigationBar = ({
+	title,
 	profile,
 	variant,
 	menu,
@@ -193,7 +205,7 @@ export const NavigationBar = ({
 		return name ? (name as string).slice(0, 2).toUpperCase() : undefined;
 	};
 
-	const getCurrencyIcon = () => profile?.settings().get<string>(ProfileSetting.ExchangeCurrency);
+	const getExchangeCurrency = () => profile?.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
@@ -201,8 +213,10 @@ export const NavigationBar = ({
 				<div className="relative flex justify-between h-20 md:h-24">
 					<div className="flex items-center my-auto">
 						<LogoContainer>
-							<ARKLogo width={40} />
+							<ARKLogo width={48} />
 						</LogoContainer>
+
+						{title && <span className="text-2xl font-bold">{title}</span>}
 					</div>
 
 					{variant === "full" && (
@@ -260,7 +274,7 @@ export const NavigationBar = ({
 
 								<UserInfo
 									userInitials={getUserInitials()}
-									currencyIcon={getCurrencyIcon()}
+									exchangeCurrency={getExchangeCurrency()}
 									avatarImage={profile?.avatar()}
 									userActions={userActions}
 									onUserAction={(action: any) => history.push(action.mountPath(profile?.id()))}

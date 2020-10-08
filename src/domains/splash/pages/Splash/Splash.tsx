@@ -25,7 +25,7 @@ export const Splash = ({ year }: any) => {
 	return (
 		<Page navbarVariant="logo-only">
 			<Section className="flex flex-col justify-center flex-1 text-center">
-				<div className="w-64 mx-auto lg:w-128">
+				<div className="w-64 mx-auto lg:w-96">
 					<WelcomeBanner />
 				</div>
 
@@ -51,14 +51,21 @@ export const Splash = ({ year }: any) => {
 					<div>
 						{currentYear} {t("SPLASH.COPYRIGHT")}
 					</div>
+
 					<Divider type="vertical" />
+
 					<div>{t("SPLASH.RIGHTS")}</div>
+
 					<Divider type="vertical" />
+
 					<LogoContainer>
-						<ARKLogo width={14} />
+						<ARKLogo width={18} />
 					</LogoContainer>
+
 					<div>{t("SPLASH.PRODUCT")}</div>
+
 					<Divider type="vertical" />
+
 					<div>
 						{t("SPLASH.VERSION")} {version}
 					</div>

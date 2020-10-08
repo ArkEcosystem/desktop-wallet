@@ -1,4 +1,5 @@
 import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -42,18 +43,18 @@ export const CreateProfile = () => {
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelClass: "text-xl font-semibold",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
 			labelAddon: <Toggle ref={register()} name="isDarkMode" />,
 		},
 	];
 
-	const handleSubmit = async ({ name, password, currency, isDarkMode, marketProvider }: any) => {
+	const handleSubmit = async ({ name, password, currency, isDarkMode }: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
 
 		const profile = env.profiles().create(formattedName);
 
-		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.MarketProvider, "cryptocompare");
 		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 
@@ -71,46 +72,61 @@ export const CreateProfile = () => {
 	};
 
 	return (
-		<Page navbarVariant="logo-only">
+		<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
 			<Section className="flex flex-col justify-center flex-1">
-				<div className="max-w-lg mx-auto">
+				<div className="max-w-lg mx-auto -mt-10">
 					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
 					<div className="text-theme-neutral-dark">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
 
-					<div className="pb-4 mt-8">
-						<Button className="w-full">
-							<Icon name="Msq" width={20} height={20} />
-							<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
-						</Button>
+					<div className="mt-8">
+						<Tippy content={t("COMMON.COMING_SOON")}>
+							<div>
+								<Button className="w-full" disabled>
+									<Icon name="Msq" width={20} height={20} />
+									<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
+								</Button>
+							</div>
+						</Tippy>
 					</div>
 
-					<Divider />
-
-					<Form context={form} onSubmit={handleSubmit} data-testid="CreateProfile__form">
-						<div className="mt-8">
-							<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
-
-							<SelectProfileImage value={avatarImage} name={name} onSelect={setAvatarImage} />
+					<Form
+						className="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200"
+						context={form}
+						onSubmit={handleSubmit}
+						data-testid="CreateProfile__form"
+					>
+						<div className="mt-2">
+							<h3>{t("PROFILE.PAGE_CREATE_PROFILE.NEW_PROFILE")}</h3>
 
 							<div className="relative mt-8 space-y-8">
-								<FormField name="name">
-									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
-									<Input
-										ref={register({
-											required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-												field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-											}).toString(),
-											maxLength: {
-												value: nameMaxLength,
-												message: t("COMMON.VALIDATION.MAX_LENGTH", {
+								<div className="flex justify-between">
+									<FormField name="name" className="w-full mr-6">
+										<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
+										<Input
+											ref={register({
+												required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 													field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-													maxLength: nameMaxLength,
-												}),
-											},
-										})}
+												}).toString(),
+												maxLength: {
+													value: nameMaxLength,
+													message: t("COMMON.VALIDATION.MAX_LENGTH", {
+														field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
+														maxLength: nameMaxLength,
+													}),
+												},
+											})}
+										/>
+										<FormHelperText />
+									</FormField>
+
+									<SelectProfileImage
+										className="-mt-6"
+										value={avatarImage}
+										name={name}
+										showLabel={false}
+										onSelect={setAvatarImage}
 									/>
-									<FormHelperText />
-								</FormField>
+								</div>
 
 								<FormField name="password">
 									<FormLabel
@@ -128,27 +144,6 @@ export const CreateProfile = () => {
 												}),
 											},
 										})}
-									/>
-									<FormHelperText />
-								</FormField>
-
-								<FormField name="marketProvider">
-									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER")} />
-									<Select
-										placeholder={t("COMMON.SELECT_OPTION", {
-											option: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
-										})}
-										ref={register({
-											required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-												field: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
-											}).toString(),
-										})}
-										options={PlatformSdkChoices.marketProviders}
-										onChange={() => {
-											if (form.errors.marketProvider) {
-												form.clearErrors("marketProvider");
-											}
-										}}
 									/>
 									<FormHelperText />
 								</FormField>
@@ -175,20 +170,20 @@ export const CreateProfile = () => {
 								</FormField>
 							</div>
 
-							<div className="mt-8">
-								<h2>{t("SETTINGS.GENERAL.OTHER.TITLE")}</h2>
+							<div className="pb-4 mt-8">
 								<ListDivided items={otherItems} />
 							</div>
 
 							<Divider />
 						</div>
 
-						<div className="flex justify-end mt-8 space-x-3">
+						<div className="flex justify-end pt-4 space-x-3">
 							<Button variant="plain" onClick={() => history.go(-1)}>
 								{t("COMMON.BACK")}
 							</Button>
+
 							<Button type="submit" data-testid="CreateProfile__submit-button">
-								{t("COMMON.COMPLETE")}
+								{t("COMMON.CREATE")}
 							</Button>
 						</div>
 					</Form>

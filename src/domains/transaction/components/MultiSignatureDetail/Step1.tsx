@@ -64,6 +64,10 @@ export const FirstStep = ({ transaction }: { transaction: Transaction }) => {
 				{isExtendedTransation(transaction) && transaction.timestamp()}
 			</TransactionDetail>
 
+			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")} paddingPosition="top">
+				{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.WAITING_FOR_SIGNATURES")}
+			</TransactionDetail>
+
 			{canBeSigned ? (
 				<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")} className="pb-0">
 					{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.WAITING_FOR_SIGNATURES")}

@@ -5,20 +5,20 @@ exports[`Breadcrumbs should not render without crumbs 1`] = `<DocumentFragment /
 exports[`Breadcrumbs should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
+    class="flex items-center space-x-3 text-sm undefined text-theme-neutral-dark"
     data-testid="breadcrumbs__wrapper"
   >
     <div
-      class="sc-AxirZ hVzDKK"
-      height="10"
-      width="19"
+      class="sc-AxirZ eKWnGz"
+      height="24"
+      width="13"
     >
       <svg>
-        arrow-back.svg
+        arrow-left.svg
       </svg>
     </div>
     <div
-      class="space-x-2"
+      class="space-x-3"
     >
       <a
         class="text-theme-neutral-dark"
@@ -36,20 +36,20 @@ exports[`Breadcrumbs should render 1`] = `
 exports[`Breadcrumbs should render with custom classes 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-2 class-name text-theme-neutral"
+    class="flex items-center space-x-3 text-sm class-name text-theme-neutral"
     data-testid="breadcrumbs__wrapper"
   >
     <div
-      class="sc-AxirZ hVzDKK"
-      height="10"
-      width="19"
+      class="sc-AxirZ eKWnGz"
+      height="24"
+      width="13"
     >
       <svg>
-        arrow-back.svg
+        arrow-left.svg
       </svg>
     </div>
     <div
-      class="space-x-2"
+      class="space-x-3"
     >
       <a
         class=""
@@ -61,13 +61,13 @@ exports[`Breadcrumbs should render with custom classes 1`] = `
       </a>
       <span>
         <div
-          class="sc-AxjAm gHUxAL border-1 border-theme-neutral"
+          class="sc-AxjAm gHUxAL border-theme-neutral-300"
           type="vertical"
         />
       </span>
     </div>
     <div
-      class="space-x-2"
+      class="space-x-3"
     >
       <a
         class="text-theme-neutral-dark"

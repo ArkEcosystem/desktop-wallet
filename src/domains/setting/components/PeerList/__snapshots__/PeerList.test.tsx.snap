@@ -4,14 +4,14 @@ exports[`PeerList should add peer 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+      class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
     >
       <div
         class="fixed z-50 w-full h-full bg-black opacity-50"
         data-testid="modal__overlay"
       />
       <div
-        class="sc-fznZeY dyichR absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+        class="sc-fznZeY dyichR absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
         data-testid="modal__inner"
       >
         <div
@@ -57,7 +57,7 @@ exports[`PeerList should add peer 1`] = `
                   data-testid="FormLabel"
                   for="network"
                 >
-                  Network
+                  Cryptoasset
                   <div
                     class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"
@@ -95,7 +95,7 @@ exports[`PeerList should add peer 1`] = `
                         class="sc-Axmtr dEPowd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                         data-testid="SelectNetworkInput__input"
                         id="CustomPeers__network-input"
-                        placeholder="Enter a network name"
+                        placeholder="Enter a cryptoasset name"
                         value=""
                       />
                     </div>
@@ -217,7 +217,7 @@ exports[`PeerList should add peer 1`] = `
                 class="flex flex-inline align-top "
               >
                 <div>
-                  Network
+                  Cryptoasset
                 </div>
               </div>
             </th>
@@ -552,7 +552,7 @@ exports[`PeerList should render 1`] = `
                 class="flex flex-inline align-top "
               >
                 <div>
-                  Network
+                  Cryptoasset
                 </div>
               </div>
             </th>
@@ -887,7 +887,7 @@ exports[`PeerList should render with empty peer list 1`] = `
                 class="flex flex-inline align-top "
               >
                 <div>
-                  Network
+                  Cryptoasset
                 </div>
               </div>
             </th>

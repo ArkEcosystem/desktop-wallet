@@ -62,7 +62,7 @@ describe("Votes", () => {
 		const routePath = "/profiles/:profileId/votes";
 		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
 
-		expect(getAllByTestId("AddressRowSkeleton")).toBeTruthy();
+		expect(getAllByTestId("votes__message")).toBeTruthy();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		expect(selectNetworkInput).toBeTruthy();
@@ -112,7 +112,7 @@ describe("Votes", () => {
 		const routePath = "/profiles/:profileId/votes";
 		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
 
-		expect(getAllByTestId("AddressRowSkeleton")).toBeTruthy();
+		expect(getAllByTestId("votes__message")).toBeTruthy();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		expect(selectNetworkInput).toBeTruthy();
@@ -190,7 +190,7 @@ describe("Votes", () => {
 		const routePath = "/profiles/:profileId/votes";
 		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
 
-		expect(getAllByTestId("AddressRowSkeleton")).toBeTruthy();
+		expect(getAllByTestId("votes__message")).toBeTruthy();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		expect(selectNetworkInput).toBeTruthy();

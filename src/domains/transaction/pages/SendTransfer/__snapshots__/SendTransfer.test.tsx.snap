@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SendTransfer should display disabled address selection input if selected network has not available wallets 1`] = `
+exports[`SendTransfer should display disabled address selection input if selected cryptoasset has not available wallets 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -19,10 +19,10 @@ exports[`SendTransfer should display disabled address selection input if selecte
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -239,20 +239,20 @@ exports[`SendTransfer should display disabled address selection input if selecte
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -332,7 +332,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               data-testid="FormLabel"
                               for="network"
                             >
-                              Network
+                              Cryptoasset
                               <div
                                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -375,6 +375,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                     </div>
                                   </div>
                                 </div>
+                                <span
+                                  class="sc-fzqBZW iEnjyC py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                  data-testid="SelectNetworkInput__typeahead"
+                                >
+                                  ARK
+                                </span>
                                 <input
                                   aria-activedescendant="SendTransactionForm__network-item-0"
                                   aria-autocomplete="list"
@@ -384,7 +390,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                                   data-testid="SelectNetworkInput__input"
                                   id="SendTransactionForm__network-input"
-                                  placeholder="Enter a network name"
+                                  placeholder="Enter a cryptoasset name"
                                   value="ARK"
                                 />
                               </div>
@@ -439,54 +445,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   >
                                     <svg>
                                       ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                aria-selected="false"
-                                class="inline-block cursor-pointer"
-                                data-testid="SelectNetwork__NetworkIcon--container"
-                                id="SendTransactionForm__network-item-2"
-                                role="option"
-                              >
-                                <div
-                                  aria-label="Compendia"
-                                  class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
-                                >
-                                  <div
-                                    class="sc-AxiKw fubePL"
-                                    data-testid="NetworkIcon__icon"
-                                    height="26"
-                                    width="26"
-                                  >
-                                    <svg>
-                                      bind.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                aria-selected="false"
-                                class="inline-block cursor-pointer"
-                                data-testid="SelectNetwork__NetworkIcon--container"
-                                id="SendTransactionForm__network-item-3"
-                                role="option"
-                              >
-                                <div
-                                  aria-label="Compendia Testnet"
-                                  class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                  data-testid="NetworkIcon-ARK-compendia.testnet"
-                                >
-                                  <div
-                                    class="sc-AxiKw fubePL"
-                                    data-testid="NetworkIcon__icon"
-                                    height="26"
-                                    width="26"
-                                  >
-                                    <svg>
-                                      bind.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -693,8 +651,8 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
-                                      type="number"
-                                      value="0"
+                                      type="text"
+                                      value=""
                                     />
                                     <div
                                       class="sc-fzqBZW sc-fzoyAV icrEyZ"
@@ -744,14 +702,10 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               value=""
                             />
                             <div
-                              class="sc-fzqBZW sc-fzoyAV icrEyZ"
+                              class="sc-fzqBZW sc-fzoyAV icrEyZ px-2 text-sm pointer-events-none text-theme-neutral"
+                              data-testid="InputCounter__counter"
                             >
-                              <button
-                                class="px-4 text-theme-neutral-light focus:outline-none"
-                                type="button"
-                              >
-                                255 Max
-                              </button>
+                              0/255
                             </div>
                           </div>
                         </fieldset>
@@ -911,10 +865,10 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -1131,20 +1085,20 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -1343,7 +1297,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               data-testid="FormLabel"
               for="network"
             >
-              Network
+              Cryptoasset
               <div
                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
@@ -1382,7 +1336,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                   class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                   data-testid="SelectNetworkInput__input"
                   id="SendTransactionForm__network-input"
-                  placeholder="Enter a network name"
+                  placeholder="Enter a cryptoasset name"
                   value=""
                 />
               </div>
@@ -1593,8 +1547,8 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                       data-testid="add-recipient__amount-input"
                       name="amount"
                       placeholder="Amount"
-                      type="number"
-                      value="0"
+                      type="text"
+                      value=""
                     />
                     <div
                       class="sc-fzqBZW sc-fzoyAV icrEyZ"
@@ -1644,14 +1598,10 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               value=""
             />
             <div
-              class="sc-fzqBZW sc-fzoyAV icrEyZ"
+              class="sc-fzqBZW sc-fzoyAV icrEyZ px-2 text-sm pointer-events-none text-theme-neutral"
+              data-testid="InputCounter__counter"
             >
-              <button
-                class="px-4 text-theme-neutral-light focus:outline-none"
-                type="button"
-              >
-                255 Max
-              </button>
+              0/255
             </div>
           </div>
         </fieldset>
@@ -1789,7 +1739,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
         <div
           class="text-sm font-semibold text-theme-neutral"
         >
-          Network
+          Cryptoasset
         </div>
         <div
           class="font-semibold"
@@ -1850,7 +1800,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
@@ -2070,7 +2020,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
     </p>
     <div>
       <div
-        class="sc-fznKkj bQquPG pt-0"
+        class="sc-fznKkj cYdjTE"
         data-testid="TransactionDetail"
       >
         <div
@@ -2101,7 +2051,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
                 </span>
               </a>
               <span
-                class="inline-block ml-5 text-theme-primary-300"
+                class="flex ml-5 text-theme-primary-300"
               >
                 <div
                   class="inline-block cursor-pointer"
@@ -2132,7 +2082,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral"
           >
-            Network
+            Cryptoasset
           </div>
           <div
             class="font-semibold"
@@ -2190,7 +2140,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
@@ -2266,7 +2216,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
         </div>
       </div>
       <div
-        class="sc-fznKkj bBFPlp pb-0"
+        class="sc-fznKkj DgeKj"
         data-testid="TransactionDetail"
       >
         <div
@@ -2329,10 +2279,10 @@ exports[`SendTransfer should render registration form without selected wallet 1`
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -2549,20 +2499,20 @@ exports[`SendTransfer should render registration form without selected wallet 1`
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -2642,7 +2592,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               data-testid="FormLabel"
                               for="network"
                             >
-                              Network
+                              Cryptoasset
                               <div
                                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -2681,7 +2631,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                   class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                                   data-testid="SelectNetworkInput__input"
                                   id="SendTransactionForm__network-input"
-                                  placeholder="Enter a network name"
+                                  placeholder="Enter a cryptoasset name"
                                   value=""
                                 />
                               </div>
@@ -2892,8 +2842,8 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
-                                      type="number"
-                                      value="0"
+                                      type="text"
+                                      value=""
                                     />
                                     <div
                                       class="sc-fzqBZW sc-fzoyAV icrEyZ"
@@ -2943,14 +2893,10 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               value=""
                             />
                             <div
-                              class="sc-fzqBZW sc-fzoyAV icrEyZ"
+                              class="sc-fzqBZW sc-fzoyAV icrEyZ px-2 text-sm pointer-events-none text-theme-neutral"
+                              data-testid="InputCounter__counter"
                             >
-                              <button
-                                class="px-4 text-theme-neutral-light focus:outline-none"
-                                type="button"
-                              >
-                                255 Max
-                              </button>
+                              0/255
                             </div>
                           </div>
                         </fieldset>
@@ -3091,7 +3037,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
 </DocumentFragment>
 `;
 
-exports[`SendTransfer should select network first and see select address input clickable 1`] = `
+exports[`SendTransfer should select cryptoasset first and see select address input clickable 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -3110,10 +3056,10 @@ exports[`SendTransfer should select network first and see select address input c
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -3330,20 +3276,20 @@ exports[`SendTransfer should select network first and see select address input c
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -3423,7 +3369,7 @@ exports[`SendTransfer should select network first and see select address input c
                               data-testid="FormLabel"
                               for="network"
                             >
-                              Network
+                              Cryptoasset
                               <div
                                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -3481,7 +3427,7 @@ exports[`SendTransfer should select network first and see select address input c
                                   class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                                   data-testid="SelectNetworkInput__input"
                                   id="SendTransactionForm__network-input"
-                                  placeholder="Enter a network name"
+                                  placeholder="Enter a cryptoasset name"
                                   value="ARK Devnet"
                                 />
                               </div>
@@ -3500,30 +3446,6 @@ exports[`SendTransfer should select network first and see select address input c
                                 role="option"
                               >
                                 <div
-                                  aria-label="ARK"
-                                  class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                  data-testid="NetworkIcon-ARK-ark.mainnet"
-                                >
-                                  <div
-                                    class="sc-AxiKw fubePL"
-                                    data-testid="NetworkIcon__icon"
-                                    height="26"
-                                    width="26"
-                                  >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                aria-selected="true"
-                                class="inline-block cursor-pointer"
-                                data-testid="SelectNetwork__NetworkIcon--container"
-                                id="SendTransactionForm__network-item-1"
-                                role="option"
-                              >
-                                <div
                                   aria-label="ARK Devnet"
                                   class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
@@ -3536,54 +3458,6 @@ exports[`SendTransfer should select network first and see select address input c
                                   >
                                     <svg>
                                       ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                aria-selected="false"
-                                class="inline-block cursor-pointer"
-                                data-testid="SelectNetwork__NetworkIcon--container"
-                                id="SendTransactionForm__network-item-2"
-                                role="option"
-                              >
-                                <div
-                                  aria-label="Compendia"
-                                  class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
-                                >
-                                  <div
-                                    class="sc-AxiKw fubePL"
-                                    data-testid="NetworkIcon__icon"
-                                    height="26"
-                                    width="26"
-                                  >
-                                    <svg>
-                                      bind.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                aria-selected="false"
-                                class="inline-block cursor-pointer"
-                                data-testid="SelectNetwork__NetworkIcon--container"
-                                id="SendTransactionForm__network-item-3"
-                                role="option"
-                              >
-                                <div
-                                  aria-label="Compendia Testnet"
-                                  class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                  data-testid="NetworkIcon-ARK-compendia.testnet"
-                                >
-                                  <div
-                                    class="sc-AxiKw fubePL"
-                                    data-testid="NetworkIcon__icon"
-                                    height="26"
-                                    width="26"
-                                  >
-                                    <svg>
-                                      bind.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -3789,8 +3663,8 @@ exports[`SendTransfer should select network first and see select address input c
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
-                                      type="number"
-                                      value="0"
+                                      type="text"
+                                      value=""
                                     />
                                     <div
                                       class="sc-fzqBZW sc-fzoyAV icrEyZ"
@@ -3840,14 +3714,10 @@ exports[`SendTransfer should select network first and see select address input c
                               value=""
                             />
                             <div
-                              class="sc-fzqBZW sc-fzoyAV icrEyZ"
+                              class="sc-fzqBZW sc-fzoyAV icrEyZ px-2 text-sm pointer-events-none text-theme-neutral"
+                              data-testid="InputCounter__counter"
                             >
-                              <button
-                                class="px-4 text-theme-neutral-light focus:outline-none"
-                                type="button"
-                              >
-                                255 Max
-                              </button>
+                              0/255
                             </div>
                           </div>
                         </fieldset>
@@ -4007,10 +3877,10 @@ exports[`SendTransfer should send a multi payment 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -4227,20 +4097,20 @@ exports[`SendTransfer should send a multi payment 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -4316,7 +4186,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                     </p>
                     <div>
                       <div
-                        class="sc-fznKkj bQquPG pt-0"
+                        class="sc-fznKkj cYdjTE"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -4347,7 +4217,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                 </span>
                               </a>
                               <span
-                                class="inline-block ml-5 text-theme-primary-300"
+                                class="flex ml-5 text-theme-primary-300"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
@@ -4378,7 +4248,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                           <div
                             class="text-sm font-semibold text-theme-neutral"
                           >
-                            Network
+                            Cryptoasset
                           </div>
                           <div
                             class="font-semibold"
@@ -4436,7 +4306,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
@@ -4762,7 +4632,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp pb-0"
+                        class="sc-fznKkj DgeKj"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -4864,10 +4734,10 @@ exports[`SendTransfer should send a single transfer 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX kSivTB"
+              class="sc-fznWqX jXdzJo"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
@@ -5084,20 +4954,20 @@ exports[`SendTransfer should send a single transfer 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
+        class="sc-AxiKw eKFBFH"
+        height="24"
+        width="13"
       >
         <svg>
-          arrow-back.svg
+          arrow-left.svg
         </svg>
       </div>
       <div
-        class="space-x-2"
+        class="space-x-3"
       >
         <a
           class="text-theme-neutral-dark"
@@ -5173,7 +5043,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     </p>
                     <div>
                       <div
-                        class="sc-fznKkj bQquPG pt-0"
+                        class="sc-fznKkj cYdjTE"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5204,7 +5074,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                                 </span>
                               </a>
                               <span
-                                class="inline-block ml-5 text-theme-primary-300"
+                                class="flex ml-5 text-theme-primary-300"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
@@ -5235,7 +5105,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           <div
                             class="text-sm font-semibold text-theme-neutral"
                           >
-                            Network
+                            Cryptoasset
                           </div>
                           <div
                             class="font-semibold"
@@ -5293,7 +5163,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
@@ -5369,7 +5239,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp pb-0"
+                        class="sc-fznKkj DgeKj"
                         data-testid="TransactionDetail"
                       >
                         <div

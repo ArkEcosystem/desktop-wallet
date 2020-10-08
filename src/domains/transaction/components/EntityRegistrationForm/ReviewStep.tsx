@@ -1,14 +1,15 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
+import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
-import { Label } from "app/components/Label";
 import { Link } from "app/components/Link";
-import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { LinkList, ProviderEntityLink } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import {
+	TransactionDetail,
+	TransactionNetwork,
+	TransactionSender,
+} from "domains/transaction/components/TransactionDetail";
 import { EntityProvider } from "domains/transaction/entity/providers";
 import { evaluateFee } from "domains/transaction/utils";
 import React, { useMemo, useState } from "react";
@@ -19,7 +20,7 @@ import { EntityLink } from "../LinkCollection/LinkCollection.models";
 
 const entityProvider = new EntityProvider();
 
-export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
+export const ReviewStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 
 	const { getValues, watch } = useFormContext();
@@ -51,41 +52,32 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	}, [ipfsData]);
 
 	return (
-		<div data-testid="ReviewStep">
-			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.THIRD_STEP.TITLE")}</h1>
-			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.THIRD_STEP.DESCRIPTION")}</div>
-			<div className="mt-4">
-				<TransactionDetail
-					border={false}
-					label={t("TRANSACTION.NETWORK")}
-					extra={<NetworkIcon coin={wallet.coinId()} network={wallet.networkId()} />}
-				>
-					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
-						{wallet.network().name()}
-					</div>
-				</TransactionDetail>
+		<section data-testid="ReviewStep" className="space-y-8">
+			<Header
+				title={t("TRANSACTION.PAGE_REGISTRATION.THIRD_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_REGISTRATION.THIRD_STEP.DESCRIPTION")}
+			/>
 
-				<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />} className="pt-4">
-					<div className="mb-2 text-sm font-semibold text-theme-neutral">
-						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
-						<Label color="warning">
-							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
-						</Label>
-					</div>
-					<Address address={wallet.address()} walletName={wallet.alias()} />
-				</TransactionDetail>
+			<div>
+				<TransactionNetwork network={senderWallet.network()} border={false} paddingPosition="bottom" />
+
+				<TransactionSender
+					address={senderWallet.address()}
+					alias={senderWallet.alias()}
+					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
+				/>
+
+				{/* @TODO add TransactionType / TransactionEntityType component */}
 
 				<TransactionDetail
-					label={t("TRANSACTION.TYPE")}
+					label={t("TRANSACTION.TRANSACTION_TYPE")}
 					extra={
-						<div>
-							<Circle className="border-black bg-theme-background" size="lg">
-								<Icon name="Business" width={20} height={20} />
-							</Circle>
-						</div>
+						<Circle className="border-theme-text" size="lg">
+							<Icon name="Business" width={20} height={20} />
+						</Circle>
 					}
 				>
-					{t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION")}
+					{t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION")}
 				</TransactionDetail>
 
 				{ipfsData?.meta?.displayName && (
@@ -106,8 +98,8 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					</TransactionDetail>
 				)}
 
-				{ipfsData?.sourceControl && (
-					<TransactionDetail className="mb-2">
+				{ipfsData?.sourceControl?.length > 0 && (
+					<TransactionDetail>
 						<LinkList
 							title={t("TRANSACTION.REPOSITORIES.TITLE")}
 							description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
@@ -116,8 +108,8 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					</TransactionDetail>
 				)}
 
-				{ipfsData?.socialMedia && (
-					<TransactionDetail className="mb-2">
+				{ipfsData?.socialMedia?.length > 0 && (
+					<TransactionDetail>
 						<LinkList
 							title={t("TRANSACTION.SOCIAL_MEDIA.TITLE")}
 							description={t("TRANSACTION.SOCIAL_MEDIA.DESCRIPTION")}
@@ -136,10 +128,10 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					</TransactionDetail>
 				)}
 
-				<div>
-					<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
+				<div className="mt-2">
+					<TotalAmountBox fee={evaluateFee(fee)} ticker={senderWallet.currency()} />
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };

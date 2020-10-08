@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { render } from "testing-library";
+import { act, fireEvent, render } from "testing-library";
 
 import { Modal } from "./Modal";
+import { modalTopOffsetClass } from "./utils";
 
 describe("Modal", () => {
 	it("should not render if not open", () => {
@@ -19,6 +21,20 @@ describe("Modal", () => {
 		);
 
 		expect(getByTestId("modal__overlay")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should closed by the Esc key", async () => {
+		const onClose = jest.fn();
+		const { asFragment, getByTestId } = render(<Modal title="ark" isOpen={true} onClose={onClose} />);
+
+		expect(getByTestId("modal__overlay")).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.keyUp(getByTestId("modal__inner"), { key: "Escape", code: 27 });
+		});
+
+		expect(onClose).toHaveBeenCalled();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -82,5 +98,25 @@ describe("Modal", () => {
 		const { container } = render(<Modal title="ark" size="5xl" isOpen={true} />);
 
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a 5x large one", () => {
+		const { container } = render(<Modal title="ark" size="5xl" isOpen={true} />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should not add top offset class if modal content fits in window height", () => {
+		const modalHeightMock = 400;
+		const windowHeightMock = 1000;
+		const topOffsetClass = modalTopOffsetClass(modalHeightMock, windowHeightMock);
+		expect(topOffsetClass).toBe("");
+	});
+
+	it("should add top offset class if modal content is higher than window height", () => {
+		const modalHeightMock = 1000;
+		const windowHeightMock = 1000;
+		const topOffsetClass = modalTopOffsetClass(modalHeightMock, windowHeightMock);
+		expect(topOffsetClass).not.toBe("");
 	});
 });

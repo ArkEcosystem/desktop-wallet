@@ -153,7 +153,7 @@ describe("SendTransfer", () => {
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 
-	it("should select network first and see select address input clickable", async () => {
+	it("should select cryptoasset first and see select address input clickable", async () => {
 		const history = createMemoryHistory();
 		let rendered: RenderResult;
 
@@ -189,7 +189,7 @@ describe("SendTransfer", () => {
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 
-	it("should display disabled address selection input if selected network has not available wallets", async () => {
+	it("should display disabled address selection input if selected cryptoasset has not available wallets", async () => {
 		const history = createMemoryHistory();
 		let rendered: RenderResult;
 
@@ -266,7 +266,7 @@ describe("SendTransfer", () => {
 
 			// Amount
 			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue(80);
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.03551662");
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
@@ -494,7 +494,7 @@ describe("SendTransfer", () => {
 
 			// Amount
 			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue(80);
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue("13.03551662");
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });

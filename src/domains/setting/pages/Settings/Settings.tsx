@@ -1,21 +1,21 @@
 import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
 import { useEnvironmentContext } from "app/contexts";
+import { useReloadPath } from "app/hooks";
 import { useActiveProfile } from "app/hooks/env";
+import { toasts } from "app/services";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { availableSettings } from "./available-settings";
 
-type SettingsProps = {
-	onSubmit?: any;
-};
-
-export const Settings = ({ onSubmit }: SettingsProps) => {
+export const Settings = () => {
 	const [activeSettings, setActiveSettings] = useState("General");
 
 	const { env } = useEnvironmentContext();
+
+	const reloadPath = useReloadPath();
 
 	const form = useForm({ mode: "onChange" });
 	const { register, errors } = form;
@@ -47,6 +47,16 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 		},
 	];
 
+	const handleSuccess = (message?: string) => {
+		reloadPath();
+
+		toasts.success(message || t("SETTINGS.GENERAL.SUCCESS"));
+	};
+
+	const handleError = (errorMessage: string, message?: string) => {
+		toasts.error(`${message || t("COMMON.ERROR")}: ${errorMessage}`);
+	};
+
 	const renderSettings = () => {
 		const ActiveSettings = availableSettings[activeSettings];
 
@@ -54,7 +64,8 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 			<ActiveSettings
 				env={env}
 				formConfig={{ context: form, register, errors }}
-				onSubmit={(savedSettings: any) => onSubmit?.(savedSettings)}
+				onSuccess={handleSuccess}
+				onError={handleError}
 			/>
 		);
 	};

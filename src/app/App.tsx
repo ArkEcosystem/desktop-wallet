@@ -7,6 +7,8 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
+// @ts-ignore
+import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
 // import { XLM } from "@arkecosystem/platform-sdk-xlm";
 // import { XMR } from "@arkecosystem/platform-sdk-xmr";
@@ -17,7 +19,6 @@ import { LedgerListener } from "domains/transaction/components/LedgerListener";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
-import { useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
@@ -34,14 +35,9 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 
-	const { pathname } = useLocation();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
-
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [pathname]);
 
 	useEffect(() => {
 		if (!showSplash) {
@@ -114,7 +110,7 @@ export const App = () => {
 		<ErrorBoundary FallbackComponent={ApplicationError}>
 			<I18nextProvider i18n={i18n}>
 				<EnvironmentProvider env={env}>
-					<LedgerListener />
+					<LedgerListener transport={LedgerTransportNodeHID} />
 					<Main />
 				</EnvironmentProvider>
 			</I18nextProvider>

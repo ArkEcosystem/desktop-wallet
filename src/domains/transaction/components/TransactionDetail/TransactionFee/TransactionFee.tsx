@@ -3,19 +3,23 @@ import { Amount } from "app/components/Amount";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { TransactionDetail } from "../TransactionDetail";
+import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail";
 
 type TransactionFeeProps = {
 	currency: string;
 	value: BigNumber;
-};
+} & TransactionDetailProps;
 
-export const TransactionFee = ({ currency, value }: TransactionFeeProps) => {
+export const TransactionFee = ({ currency, value, ...props }: TransactionFeeProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>
+		<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")} {...props}>
 			<Amount ticker={currency} value={value} />
 		</TransactionDetail>
 	);
+};
+
+TransactionFee.defaultProps = {
+	borderPosition: "top",
 };

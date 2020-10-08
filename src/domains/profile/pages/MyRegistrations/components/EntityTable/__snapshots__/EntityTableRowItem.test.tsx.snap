@@ -55,7 +55,7 @@ exports[`EntityTableRowItem should render 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
@@ -126,34 +126,32 @@ exports[`EntityTableRowItem should render 1`] = `
             </span>
           </div>
         </td>
-        <td>
+        <td
+          class="w-22"
+        >
           <div
             class="sc-AxheI gQoesF justify-end"
           >
-            <button
-              class="sc-AxirZ iLClRf ml-16"
-              color="primary"
-              type="button"
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
             >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
+              <button
+                class="sc-AxirZ cjfLjy"
+                color="primary"
+                type="button"
               >
                 <div
-                  class="float-right outline-none cursor-pointer focus:outline-none"
+                  class="sc-AxhCb VoPpj"
+                  height="20"
+                  width="20"
                 >
-                  <div
-                    class="sc-AxhCb VoPpj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    settings.svg
+                  </svg>
                 </div>
-              </div>
-            </button>
+              </button>
+            </div>
           </div>
         </td>
       </tr>

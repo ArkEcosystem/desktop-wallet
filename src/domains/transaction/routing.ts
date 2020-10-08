@@ -19,9 +19,9 @@ export const TransactionRoutes = [
 		component: SendEntityRegistration,
 	},
 	{
-		path: "/profiles/:profileId/wallets/:walletId/send-entity-resignation",
+		path: "/profiles/:profileId/wallets/:walletId/:registrationType/send-entity-registration",
 		exact: true,
-		component: SendEntityResignation,
+		component: SendEntityRegistration,
 	},
 	{
 		path: "/profiles/:profileId/wallets/:walletId/send-entity-update",
@@ -29,9 +29,19 @@ export const TransactionRoutes = [
 		component: SendEntityUpdate,
 	},
 	{
+		path: "/profiles/:profileId/wallets/:walletId/send-entity-resignation",
+		exact: true,
+		component: SendEntityResignation,
+	},
+	{
 		path: "/profiles/:profileId/wallets/:walletId/transactions/:transactionId/send-entity-update",
 		exact: true,
 		component: SendEntityUpdate,
+	},
+	{
+		path: "/profiles/:profileId/wallets/:walletId/transactions/:transactionId/send-entity-resignation",
+		exact: true,
+		component: SendEntityResignation,
 	},
 	{
 		path: "/profiles/:profileId/wallets/:walletId/send-transfer",

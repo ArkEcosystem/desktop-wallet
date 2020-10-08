@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
@@ -45,6 +45,8 @@ describe("ImportWallet", () => {
 
 	beforeEach(() => {
 		profile = env.profiles().findById(fixtureProfileId);
+		profile.data().set(ProfileSetting.ExchangeCurrency, "BTC");
+		profile.data().set(ProfileSetting.MarketProvider, "cryptocompare");
 
 		const walletId = profile.wallets().findByAddress(randomAddress)?.id();
 
@@ -277,6 +279,8 @@ describe("ImportWallet", () => {
 				expect(profile.wallets().findByAddress(identityAddress)).toBeTruthy();
 			});
 		});
+
+		await waitFor(() => expect(profile.wallets().last()?.exchangeCurrency()).toBe("BTC"));
 	});
 
 	it("should import by address", async () => {
@@ -359,6 +363,8 @@ describe("ImportWallet", () => {
 				expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
 			});
 		});
+
+		await waitFor(() => expect(profile.wallets().findByAddress(randomAddress)?.exchangeCurrency()).toBe("BTC"));
 	});
 
 	it("should import by address and fill a wallet name", async () => {
@@ -370,9 +376,8 @@ describe("ImportWallet", () => {
 				explorer: "https://dexplorer.ark.io/",
 				currency: { ticker: "DARK", symbol: "DѦ" },
 				crypto: { slip44: 111 },
-				hosts: ["https://dwallets.ark.io"],
-				hostsMultiSignature: [],
-				voting: { enabled: false, maximum: 1, maximumPerTransaction: 1 },
+				networking: { hosts: ["https://dwallets.ark.io"], hostsMultiSignature: [] },
+				governance: { voting: { enabled: false, maximumPerWallet: 1, maximumPerTransaction: 1 } },
 			}),
 		]);
 
@@ -462,6 +467,8 @@ describe("ImportWallet", () => {
 
 			networkMock.mockRestore();
 		});
+
+		await waitFor(() => expect(profile.wallets().findByAddress(randomAddress)?.exchangeCurrency()).toBe("BTC"));
 	});
 
 	it("should show an error message for invalid address", async () => {
@@ -691,5 +698,7 @@ describe("ImportWallet", () => {
 				expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
 			});
 		});
+
+		await waitFor(() => expect(profile.wallets().first().exchangeCurrency()).toBe("BTC"));
 	});
 });
