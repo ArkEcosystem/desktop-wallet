@@ -3,7 +3,7 @@ import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import { useCombobox } from "downshift";
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 import { SelectNetworkInput } from "./SelectNetworkInput";
 
@@ -31,7 +31,9 @@ export const SelectNetwork = ({
 	disabled,
 	selected,
 }: SelectNetworkProps) => {
-	const extendedItems = React.useMemo(
+	const [items, setItems] = useState<any>([]);
+
+	const extendedItems = useMemo(
 		() =>
 			networks.map((network) => {
 				const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
@@ -40,7 +42,9 @@ export const SelectNetwork = ({
 		[networks],
 	);
 
-	const [items, setItems] = React.useState([...extendedItems]);
+	useEffect(() => {
+		setItems(extendedItems);
+	}, [extendedItems]);
 
 	const isMatch = (inputValue: string, network: Network) =>
 		inputValue && network.extra?.displayName?.toLowerCase().startsWith(inputValue.toLowerCase());
@@ -145,7 +149,7 @@ export const SelectNetwork = ({
 				{isOpen &&
 					items
 						.filter((network: Network) => network.extra)
-						.map((item, index) => (
+						.map((item: any, index: number) => (
 							<li
 								data-testid="SelectNetwork__NetworkIcon--container"
 								key={index}
