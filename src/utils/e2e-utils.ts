@@ -170,7 +170,7 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 				...requestMocks.transactions,
 				...requestMocks.wallets,
 				...postHooks,
-			]),
+			],
 			mockRequest(
 				(request: any) => request.url.startsWith(BASEURL),
 				(request: any) => {
