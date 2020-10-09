@@ -10,6 +10,13 @@ import { defaultLedgerState, ledgerStateReducer } from "./Ledger.state";
 
 const formatDerivationPath = (coinType: number, index: number) => `44'/${coinType}'/${index}'/0/0`;
 
+export type LedgerData = {
+	address: string;
+	balance: BigNumber;
+	index: number;
+	name?: string;
+};
+
 export const useLedger = (transport: typeof Transport) => {
 	const { env, persist } = useEnvironmentContext();
 	const [state, dispatch] = useReducer(ledgerStateReducer, defaultLedgerState);
@@ -35,12 +42,16 @@ export const useLedger = (transport: typeof Transport) => {
 	);
 
 	const importLedgerWallets = useCallback(
-		async (wallets: { address: string; index: number }[], coin: Coins.Coin, profile: Profile) => {
-			for (const { address, index } of wallets) {
+		async (wallets: LedgerData[], coin: Coins.Coin, profile: Profile) => {
+			for (const { address, index, name } of wallets) {
 				const wallet = await profile
 					.wallets()
 					.importByAddress(address, coin.network().coin(), coin.network().id());
 				wallet.data().set(WalletFlag.LedgerIndex, index);
+
+				if (name) {
+					wallet.setAlias(name);
+				}
 			}
 			await persist();
 		},
@@ -88,8 +99,8 @@ export const useLedger = (transport: typeof Transport) => {
 	}, []);
 
 	const scanWallets = useCallback(
-		async (coin: string, network: string, profile: Profile) => {
-			const wallets: { address: string; balance: BigNumber; index: number }[] = [];
+		async (coin: string, network: string, profile: Profile, onChange?: (wallet: LedgerData) => void) => {
+			const wallets: LedgerData[] = [];
 
 			try {
 				await connect(coin, network);
@@ -113,24 +124,25 @@ export const useLedger = (transport: typeof Transport) => {
 						continue;
 					}
 
+					let wallet: LedgerData;
 					try {
 						const identity = await instance.client().wallet(address);
-
-						wallets.push({
+						wallet = {
 							address: identity.address(),
 							balance: identity.balance(),
 							index: cursor,
-						});
+						};
 					} catch {
 						// New Cold Wallet
-						wallets.push({
+						wallet = {
 							address,
 							balance: BigNumber.ZERO,
 							index: cursor,
-						});
+						};
 						hasMore = false;
 					}
-
+					onChange?.(wallet);
+					wallets.push(wallet);
 					cursor++;
 				}
 
