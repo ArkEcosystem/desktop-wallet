@@ -7,6 +7,7 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
+import { toast } from "react-toastify";
 import DelegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
 import EntityRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-update.json";
 import IpfsFixture from "tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json";
@@ -97,7 +98,6 @@ describe("Registration", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		secondWallet = profile.wallets().findByAddress("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")!;
-
 		await profile.wallets().importByAddress("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", "ARK", "ark.devnet");
 
 		await syncDelegates();
@@ -796,6 +796,90 @@ describe("Registration", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("ReviewStep")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should error for insufficient funds", async () => {
+		const { asFragment, getByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__entity-name"), {
+				target: {
+					value: "Test-Entity-Name",
+				},
+			});
+		});
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("Test-Entity-Name"));
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__display-name"), {
+				target: {
+					value: "Test Entity Display Name",
+				},
+			});
+		});
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue("Test Entity Display Name"),
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__description"), {
+				target: {
+					value: "Test Entity Description",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__description")).toHaveValue("Test Entity Description"),
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__website"), {
+				target: {
+					value: "https://test-step.entity.com",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__website")).toHaveValue("https://test-step.entity.com"),
+		);
+
+		const toastMock = jest.spyOn(toast, "error");
+		const walletBalanceMock = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() =>
+			expect(toastMock).toHaveBeenCalledWith(
+				transactionTranslations.VALIDATION.INSUFFICIENT_FUNDS,
+				expect.anything(),
+			),
+		);
+
+		toastMock.mockRestore();
+		walletBalanceMock.mockRestore();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
