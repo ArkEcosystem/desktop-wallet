@@ -304,7 +304,7 @@ export const translations: { [key: string]: any } = {
 		},
 		SECOND_STEP: {
 			TITLE: "Transaction Review",
-			DESCRIPTION: "Review the ipfs transaction details before sending",
+			DESCRIPTION: "Review the IPFS transaction details before sending",
 		},
 	},
 
