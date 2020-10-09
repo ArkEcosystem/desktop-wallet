@@ -27,8 +27,9 @@ export const Transactions = ({
 	const { t } = useTranslation();
 
 	return (
-		<div className="bg-white">
+		<>
 			<div className="text-4xl font-bold">{title}</div>
+
 			<div className="pt-8">
 				<TransactionTable
 					transactions={transactions}
@@ -51,8 +52,9 @@ export const Transactions = ({
 					</Button>
 				)}
 			</div>
+
 			{!isLoading && transactions.length === 0 && <EmptyBlock className="-mt-5" message={emptyText!} />}
-		</div>
+		</>
 	);
 };
 
