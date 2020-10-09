@@ -44,15 +44,10 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
 
-	const mapFees = useCallback(() => {
-		const transactionFees = env.fees().all(activeWallet.coinId(), activeWallet.networkId());
-
-		return Object.entries(transactionFees).reduce((mapping, [transactionType, fees]) => {
-			mapping[transactionType] = fees;
-
-			return mapping;
-		}, {} as Record<string, any>);
-	}, [env, activeWallet]);
+	const getFeesByRegistrationType = useCallback(
+		(type: string) => env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), type),
+		[env, activeWallet],
+	);
 
 	useEffect(() => {
 		register("fee");
@@ -87,9 +82,12 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	}, [activeWallet, networks, setValue]);
 
 	useEffect(() => {
-		if (!activeWallet?.address?.()) return;
-		setValue("fees", mapFees());
-	}, [setValue, activeWallet, mapFees]);
+		if (!activeWallet?.address?.() || !registrationType?.value) return;
+
+		const fees = getFeesByRegistrationType(registrationType.value);
+		setValue("fees", fees);
+		setValue("fee", fees?.avg || fees?.static);
+	}, [setValue, activeWallet, registrationType, getFeesByRegistrationType]);
 
 	// When the wallet is already a delegate without entity registered and
 	// selects update delegate action, then entity registration is performed.
@@ -109,20 +107,32 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 			{ shouldValidate: true, shouldDirty: true },
 		);
 
-		const allFees = mapFees();
-		setValue("fees", allFees);
-		setValue("fee", allFees.entityRegistration.avg);
+		const fees = getFeesByRegistrationType("engityRegistration");
+
+		setValue("fees", fees);
+		setValue("fee", fees?.avg);
 
 		const delegate = env
 			.delegates()
 			.findByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address());
+
 		register("entityName");
 		setValue("entityName", delegate.username());
 
 		setEntityRegistrationTitle(t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_UPDATE"));
 
 		setActiveTab(2);
-	}, [getValues, mapFees, setValue, getValues, activeWallet, env, register, selectedRegistrationType, t]);
+	}, [
+		getValues,
+		setValue,
+		getValues,
+		activeWallet,
+		env,
+		register,
+		selectedRegistrationType,
+		t,
+		getFeesByRegistrationType,
+	]);
 
 	const submitForm = () =>
 		registrationForm!.signTransaction({
@@ -156,8 +166,6 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 		},
 	];
 
-	const feesByType = (type: string) => getValues("fees")[type];
-
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
@@ -181,11 +189,11 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 								/>
 							</TabPanel>
 
-							{activeTab > 1 && registrationForm && (
+							{activeTab > 1 && registrationForm && getValues("fees") && (
 								<registrationForm.component
 									title={entityRegistrationTitle}
 									activeTab={activeTab}
-									fees={feesByType(registrationType.value)}
+									fees={getValues("fees")}
 									wallet={activeWallet}
 									profile={activeProfile}
 								/>

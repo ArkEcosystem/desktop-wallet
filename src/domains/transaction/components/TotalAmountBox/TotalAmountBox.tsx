@@ -42,7 +42,7 @@ export const TotalAmountBox = ({ amount, fee, ticker }: Props) => {
 				</div>
 
 				<div className="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
-					<div className="py-2 ml-px bg-white">
+					<div className="py-2 ml-px bg-theme-background">
 						<Icon name="Plus" width={14} height={14} />
 					</div>
 				</div>

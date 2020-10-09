@@ -45,7 +45,7 @@ type NavigationBarProps = {
 
 const NavWrapper = styled.nav<{ noShadow?: boolean }>`
 	${defaultStyle}
-	${tw`sticky inset-x-0 top-0 bg-white`}
+	${tw`sticky inset-x-0 top-0 bg-theme-background`}
 	${({ noShadow }) => !noShadow && tw`shadow-md`};
 `;
 

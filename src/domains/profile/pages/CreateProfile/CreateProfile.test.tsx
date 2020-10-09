@@ -25,6 +25,7 @@ jest.mock("fs", () => ({
 
 let env: Environment;
 let showOpenDialogMock: jest.SpyInstance;
+
 const showOpenDialogParams = {
 	defaultPath: os.homedir(),
 	properties: ["openFile"],
@@ -46,9 +47,11 @@ const baseSettings = {
 };
 
 describe("CreateProfile", () => {
-	beforeEach(() => {
+	beforeAll(() => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	});
 
+	beforeEach(() => {
 		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
 			filePaths: ["filePath"],
 		}));
@@ -94,7 +97,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
-		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
@@ -103,11 +106,13 @@ describe("CreateProfile", () => {
 		});
 
 		let profiles = env.profiles().values();
+
 		expect(profiles.length).toEqual(1);
-		expect(profiles[0].name()).toEqual("test profile");
+		expect(profiles[0].name()).toEqual("test profile 1");
 		expect(profiles[0].settings().all()).toEqual({
 			...baseSettings,
 			AVATAR: "data:image/png;base64,avatarImage",
+			NAME: "test profile 1",
 		});
 		expect(profiles[0].usesPassword()).toBe(false);
 
@@ -132,6 +137,40 @@ describe("CreateProfile", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should not create new profile if profile name exists", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<CreateProfile />
+			</EnvironmentProvider>,
+			{
+				routes: ["/", "/profile/create"],
+				withProviders: false,
+			},
+		);
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
+
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "" } });
+
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should store profile with password", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
@@ -143,7 +182,7 @@ describe("CreateProfile", () => {
 			},
 		);
 
-		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 3" } });
 		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "test password" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
@@ -152,7 +191,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
-		expect(env.profiles().first().usesPassword()).toBe(true);
+		expect(env.profiles().values()[2].usesPassword()).toBe(true);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -179,18 +218,13 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("SelectProfileImage__remove-button"));
 		});
 
-		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 4" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
-
-		const profiles = env.profiles().values();
-		expect(profiles.length).toEqual(1);
-		expect(profiles[0].name()).toEqual("test profile");
-		expect(profiles[0].settings().all()).toEqual(baseSettings);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -217,18 +251,13 @@ describe("CreateProfile", () => {
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
-		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 5" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
-
-		const profiles = env.profiles().values();
-		expect(profiles.length).toEqual(1);
-		expect(profiles[0].name()).toEqual("test profile");
-		expect(profiles[0].settings().all()).toEqual(baseSettings);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
