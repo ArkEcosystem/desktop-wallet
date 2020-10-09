@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
+import { toast } from "react-toastify";
 import entityRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-update.json";
 import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
 import {
@@ -25,10 +27,8 @@ import { SendEntityResignation } from "../SendEntityResignation";
 let wallet: ReadWriteWallet;
 let profile: Profile;
 
-let resignationType: string;
-
 const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
-let resignationUrl;
+let resignationUrl: string;
 
 const history = createMemoryHistory();
 
@@ -117,6 +117,31 @@ describe("SendEntityResignation", () => {
 
 			expect(getByTestId("SendEntityResignation__review-step")).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
+		});
+
+		it("should error for insufficient funds", async () => {
+			history.push(resignationUrl, { type: "entity", entity });
+			const { asFragment, getByTestId } = renderPage("entity");
+
+			await waitFor(() => expect(getByTestId("SendEntityResignation__form-step")).toBeTruthy());
+
+			const toastMock = jest.spyOn(toast, "error");
+			const walletBalanceMock = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+
+			await waitFor(() =>
+				expect(toastMock).toHaveBeenCalledWith(
+					transactionTranslations.VALIDATION.INSUFFICIENT_FUNDS,
+					expect.anything(),
+				),
+			);
+			expect(asFragment()).toMatchSnapshot();
+
+			walletBalanceMock.mockRestore();
+			toastMock.mockRestore();
 		});
 
 		it("should successfully sign and submit an entity resignation transaction", async () => {

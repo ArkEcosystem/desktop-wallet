@@ -14,6 +14,7 @@ import IpfsFixture from "tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnP
 // @ts-ignore
 EntityRegistrationFixture.data.asset.data.name = "Test-Entity-Name";
 
+import { translations as transactionTranslations } from "domains/transaction/i18n";
 import {
 	act,
 	defaultNetMocks,
@@ -29,7 +30,6 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { translations as transactionTranslations } from "../../i18n";
 import { SendEntityRegistration } from "./SendEntityRegistration";
 import { FirstStep } from "./Step1";
 
@@ -878,9 +878,9 @@ describe("Registration", () => {
 			),
 		);
 
+		expect(asFragment()).toMatchSnapshot();
 		toastMock.mockRestore();
 		walletBalanceMock.mockRestore();
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should fill all data including link collections", async () => {
