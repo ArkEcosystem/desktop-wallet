@@ -1,10 +1,11 @@
 import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input, InputAddonEnd } from "app/components/Input";
-import { useSelect } from "downshift";
-import React, { useEffect, useState } from "react";
+import { SelectDropdownInput } from "app/components/SelectDropdown/SelectDropdownInput";
+import { useCombobox } from "downshift";
+import React, { useEffect, useMemo, useState } from "react";
 
-import { SelectOptionsList, SelectToggleButton } from "./styles";
+import { SelectOptionsList } from "./styles";
 
 type Option = {
 	label: string;
@@ -12,48 +13,75 @@ type Option = {
 };
 
 type SelectProps = {
+	options: Option[];
 	defaultValue?: string;
 	isInvalid?: boolean;
-	disabled?: any;
-	options: Option[];
+	disabled?: boolean;
 	onChange?: (selected: Option) => void;
 } & React.InputHTMLAttributes<any>;
 
 type SelectDropdownProps = {
-	placeholder?: string;
 	options: Option[];
+	placeholder?: string;
 	onSelectedItemChange: any;
 	disabled?: boolean;
 	isInvalid?: boolean;
 	defaultSelectedItem?: Option;
 } & React.InputHTMLAttributes<any>;
 
+export const itemToString = (item: Option | null) => item?.label || "";
+
 const SelectDropdown = ({
-	placeholder,
 	options,
+	placeholder,
 	onSelectedItemChange,
 	disabled,
 	isInvalid,
 	defaultSelectedItem,
 }: SelectDropdownProps) => {
+	const [items, setItems] = useState([...options]);
+
+	const isMatch = (inputValue: string, option: Option) =>
+		inputValue && option.label.toLowerCase().startsWith(inputValue.toLowerCase());
+
 	const {
 		isOpen,
-		selectedItem,
-		selectItem,
-		getToggleButtonProps,
-		getMenuProps,
-		highlightedIndex,
+		closeMenu,
+		openMenu,
+		getComboboxProps,
+		getLabelProps,
+		getInputProps,
 		getItemProps,
-	} = useSelect<Option>({
-		items: options,
+		getMenuProps,
+		selectItem,
+		selectedItem,
+		inputValue,
+		highlightedIndex,
+		reset,
+	} = useCombobox<Option | null>({
+		items,
+		itemToString,
 		onSelectedItemChange,
+		onInputValueChange: ({ inputValue, selectedItem }) => {
+			setItems(inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options);
+
+			// Clear selection when user is changing input,
+			// and input does not match previously selected item
+			if (selectedItem && selectedItem.label !== inputValue) {
+				reset();
+			}
+		},
 	});
 
 	useEffect(() => {
-		if (defaultSelectedItem && !selectedItem) {
-			selectItem(defaultSelectedItem);
+		selectItem(defaultSelectedItem || null);
+	}, [selectItem, defaultSelectedItem]);
+
+	const inputTypeAhead = useMemo(() => {
+		if (inputValue && items.length) {
+			return [inputValue, items[0].label.slice(inputValue.length)].join("");
 		}
-	}, [selectItem, selectedItem, defaultSelectedItem]);
+	}, [items, inputValue]);
 
 	const isOpenClassName = isOpen ? "is-open" : "";
 	const isSelectedClassName = selectedItem ? "is-selected" : "";
@@ -62,20 +90,40 @@ const SelectDropdown = ({
 
 	return (
 		<div className="relative w-full cursor-pointer">
-			<div>
-				<SelectToggleButton
-					data-testid="select-list__toggle-button"
-					{...getToggleButtonProps({
-						type: "button",
-						disabled,
-						className: toggleButtonClassName,
+			<div {...getComboboxProps()}>
+				<label {...getLabelProps()} />
+				<SelectDropdownInput
+					suggestion={inputTypeAhead}
+					disabled={disabled}
+					{...getInputProps({
+						placeholder,
+						onFocus: openMenu,
+						onBlur: () => {
+							if (inputValue && items.length > 0) {
+								selectItem(items[0]);
+								closeMenu();
+							} else {
+								reset();
+							}
+						},
+						onKeyDown: (event: any) => {
+							if (event.key === "Tab" || event.key === "Enter") {
+								// Select first match
+								if (inputValue && items.length > 0) {
+									selectItem(items[0]);
+									if (event.key === "Enter") {
+										closeMenu();
+									}
+								}
+								event.preventDefault();
+								return;
+							}
+						},
 					})}
-				>
-					{selectedItem?.label || placeholder}
-				</SelectToggleButton>
+				/>
 				<SelectOptionsList {...getMenuProps({ className: isOpenClassName })}>
 					{isOpen &&
-						options.map((item: Option, index: number) => (
+						items.map((item: Option, index: number) => (
 							<li
 								key={`${item.value}${index}`}
 								data-testid={`select-list__toggle-option-${index}`}
@@ -85,6 +133,10 @@ const SelectDropdown = ({
 									className: `select-list-option ${
 										highlightedIndex === index ? "is-highlighted" : ""
 									}`,
+									onMouseDown: () => {
+										selectItem(item);
+										closeMenu();
+									},
 								})}
 							>
 								<div className="select-list-option__label">{item.label}</div>
@@ -124,7 +176,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					defaultSelectedItem={defaultSelectedItem}
 					placeholder={placeholder}
 					isInvalid={isInvalidField}
-					onSelectedItemChange={({ selectedItem }: any) => {
+					onSelectedItemChange={({ selectedItem }: { selectedItem: Option }) => {
 						setSelected(selectedItem);
 						onChange?.(selectedItem);
 					}}
@@ -136,6 +188,8 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 
 Select.displayName = "Select";
 Select.defaultProps = {
-	defaultValue: "",
 	options: [],
+	defaultValue: "",
+	placeholder: "Select option",
+	disabled: false,
 };

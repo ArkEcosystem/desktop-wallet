@@ -3,7 +3,7 @@ import tw, { styled } from "twin.macro";
 export const SelectToggleButton = styled.button`
 	& {
 		min-height: 50px;
-		${tw`outline-none text-left w-full inline-block bg-theme-background appearance-none rounded border py-3 px-4 transition-colors duration-200 outline-none text-theme-neutral pr-12`}
+		${tw`inline-block w-full px-4 py-3 pr-12 text-left transition-colors duration-200 border rounded outline-none appearance-none bg-theme-background text-theme-neutral`}
 		${tw`border-theme-neutral-300`}
 	}
 
@@ -34,11 +34,11 @@ export const SelectToggleButton = styled.button`
 
 export const SelectOptionsList = styled.ul`
 	& {
-		${tw`absolute w-full z-10 top-14 rounded-lg shadow-xl bg-white outline-none`}
+		${tw`absolute z-10 w-full bg-white rounded-lg shadow-xl outline-none top-14`}
 	}
 
 	&.is-open {
-		${tw`py-6 max-h-128 overflow-y-auto`}
+		${tw`py-6 overflow-y-auto max-h-128`}
 	}
 
 	.select-list-option {
@@ -55,7 +55,7 @@ export const SelectOptionsList = styled.ul`
 		}
 
 		&.is-highlighted {
-			${tw`bg-theme-neutral-contrast -mt-px`};
+			${tw`-mt-px bg-theme-neutral-contrast`};
 			padding-top: 1px;
 
 			&:last-child {
