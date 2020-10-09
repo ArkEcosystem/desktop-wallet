@@ -7,6 +7,7 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
+import { toast } from "react-toastify";
 import {
 	env,
 	fireEvent,
@@ -286,6 +287,62 @@ describe("SendIpfs", () => {
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
+	});
+
+	it("should error for insufficient funds", async () => {
+		const history = createMemoryHistory();
+		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
+
+		history.push(ipfsURL);
+
+		let rendered: RenderResult;
+
+		const toastMock = jest.spyOn(toast, "error");
+		const walletBalanceMock = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
+					<SendIpfs />
+				</Route>,
+				{
+					routes: [ipfsURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__step--first`)).toBeTruthy());
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Hash
+			fireEvent.input(getByTestId("Input__hash"), {
+				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
+			});
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+			// Step 2
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+			await waitFor(() =>
+				expect(toastMock).toHaveBeenCalledWith(
+					transactionTranslations.VALIDATION.INSUFFICIENT_FUNDS,
+					expect.anything(),
+				),
+			);
+
+			expect(rendered.container).toMatchSnapshot();
+		});
+		walletBalanceMock.mockRestore();
+		toastMock.mockRestore();
 	});
 
 	it("should show an error if an invalid IPFS hash is entered", async () => {

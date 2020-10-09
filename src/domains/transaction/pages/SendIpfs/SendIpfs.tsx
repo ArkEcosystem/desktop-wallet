@@ -99,7 +99,7 @@ export const SendIpfs = () => {
 	};
 
 	const handleNext = () => {
-		if (activeTab === 2 && !hasSufficientFunds({ wallet: activeWallet, fee: getValues("fee") })) {
+		if (activeTab === 1 && !hasSufficientFunds({ wallet: activeWallet, fee: getValues("fee") })) {
 			return toasts.error(t("TRANSACTION.VALIDATION.INSUFFICIENT_FUNDS"));
 		}
 		setActiveTab(activeTab + 1);
