@@ -15,6 +15,9 @@ export const translations: { [key: string]: any } = {
 			LANGUAGE: "Language",
 			MARKET_PROVIDER: "Market Provider",
 			TIME_FORMAT: "Time Format",
+			VALIDATION: {
+				NAME_EXISTS: "Profile name already exists",
+			},
 		},
 		SECURITY: {
 			TITLE: "Security",

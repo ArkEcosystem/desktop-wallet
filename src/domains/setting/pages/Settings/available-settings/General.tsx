@@ -37,11 +37,16 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().get(ProfileSetting.AdvancedMode) || false,
 	);
 
+	const profiles = useMemo(() => env.profiles().values(), [env]);
 	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
 
 	useEffect(() => {
 		if ((!avatarImage || isSvg) && name) {
 			setAvatarImage(AvatarSDK.make(name));
+		} else {
+			if (isSvg && !name) {
+				setAvatarImage("");
+			}
 		}
 	}, [name, avatarImage, isSvg, setAvatarImage]);
 
@@ -157,6 +162,18 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		isUpdateLedger,
 	}: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
+
+		const profileExists = profiles.some(
+			(profile) =>
+				profile.name() === formattedName && activeProfile.settings().get(ProfileSetting.Name) !== formattedName,
+		);
+
+		if (profileExists) {
+			return context.setError("name", {
+				type: "manual",
+				message: t("SETTINGS.GENERAL.PERSONAL.VALIDATION.NAME_EXISTS"),
+			});
+		}
 
 		activeProfile.settings().set(ProfileSetting.Name, formattedName);
 		activeProfile.settings().set(ProfileSetting.Locale, language);
