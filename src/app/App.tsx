@@ -61,7 +61,7 @@ const Main = () => {
 	useEffect(() => {
 		const profileId = (match?.params as any)?.profileId;
 
-		if (profileId && profileId !== "create") {
+		if (profileId && profileId !== "create" && env.profiles().count()) {
 			const profileTheme = env.profiles().findById(profileId).settings().get<Theme>(ProfileSetting.Theme)!;
 			if (profileTheme !== theme) {
 				nativeTheme.themeSource = profileTheme;
@@ -81,9 +81,13 @@ const Main = () => {
 		const boot = async () => {
 			/* istanbul ignore next */
 			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
+			console.log("verifying");
 			await env.verify(shouldUseFixture ? fixtureData : undefined);
+			console.log("booting");
 			await env.boot();
+			console.log("runall");
 			await runAll();
+			console.log("persisting");
 			await persist();
 
 			setShowSplash(false);

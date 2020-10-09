@@ -3,8 +3,8 @@ import { RequestMock, Selector } from "testcafe";
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
-import { goToWallet } from "../../wallet/e2e/common";
-import { goToImportWalletPage, goToTransferPage } from "./common";
+import { goToWallet, importWallet } from "../../wallet/e2e/common";
+import { goToTransferPage } from "./common";
 
 const translations = buildTranslations();
 
@@ -79,8 +79,8 @@ test.requestHooks(walletMock, sendMock)("should send transfer successfully", asy
 	// Navigate to profile page
 	await goToProfile(t);
 
-	// Navigate to import wallet page
-	await goToImportWalletPage(t);
+	// Import wallet
+	await importWallet(t, "passphrase");
 
 	// Navigate to wallet details page
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();

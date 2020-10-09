@@ -3,7 +3,7 @@ import { RequestMock, Selector } from "testcafe";
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest, requestMocks } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
-import { goToImportWalletPage } from "./common";
+import { importWallet } from "../../wallet/e2e/common";
 
 const translations = buildTranslations();
 
@@ -75,8 +75,8 @@ test("should show an error if wrong mnemonic", async (t) => {
 	// Navigate to profile page
 	await goToProfile(t);
 
-	// Navigate to import wallet page
-	await goToImportWalletPage(t);
+	// Import wallet
+	await importWallet(t, "passphrase");
 
 	// Navigate to vote page
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
@@ -118,8 +118,8 @@ test.requestHooks(walletMock, sendMock)("should send a vote transaction", async 
 	// Navigate to profile page
 	await goToProfile(t);
 
-	// Navigate to import wallet page
-	await goToImportWalletPage(t);
+	// Import wallet
+	await importWallet(t, "passphrase");
 
 	// Navigate to vote page
 	await t.click(Selector('[data-testid="navbar__useractions"]'));

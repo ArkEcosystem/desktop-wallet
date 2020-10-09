@@ -10,7 +10,14 @@ createFixture(`Delegate Resignation action`, [
 			url: "https://dwallets.ark.io/api/transactions",
 			method: "POST",
 		},
-		{},
+		{
+			data: {
+				accept: ["transaction-id"],
+				broadcast: ["transaction-id"],
+				excess: [],
+				invalid: [],
+			},
+		},
 	),
 ]);
 
@@ -61,9 +68,6 @@ test("should successfully submit delegate resignation", async (t) => {
 		"merge warfare desk catch produce typical young submit enemy wool off card",
 		{ replace: true },
 	);
-
-	// transactionsMock();
-	// walletMock("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
 
 	const sendButton = "[data-testid=SendEntityResignation__send-button]";
 	await t.click(Selector(sendButton));

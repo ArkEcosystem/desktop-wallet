@@ -321,6 +321,7 @@ NavigationBar.defaultProps = {
 		pluginsHeader: "Plugins",
 		plugins: [],
 	},
+	// @TODO move this
 	menu: [
 		{
 			title: "Portfolio",
