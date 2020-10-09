@@ -1,35 +1,19 @@
-import { RequestMock, Selector } from "testcafe";
+import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture } from "../../../utils/e2e-utils";
+import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet, importWallet } from "../../wallet/e2e/common";
 import { goToTransferPage } from "./common";
 
 const translations = buildTranslations();
 
-const walletMock = RequestMock()
-	.onRequestTo("https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")
-	.respond(
+createFixture(`Single Transfer action`, [
+	mockRequest(
 		{
-			data: {
-				address: "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
-				nonce: "0",
-				balance: "2500000000",
-				isDelegate: false,
-				isResigned: false,
-				attributes: {},
-			},
+			url: "https://dwallets.ark.io/api/transactions",
+			method: "POST",
 		},
-		200,
-		{
-			"access-control-allow-origin": "*",
-		},
-	);
-
-const sendMock = RequestMock()
-	.onRequestTo("https://dwallets.ark.io/api/transactions")
-	.respond(
 		{
 			data: {
 				accept: ["transaction-id"],
@@ -38,13 +22,8 @@ const sendMock = RequestMock()
 				invalid: [],
 			},
 		},
-		200,
-		{
-			"access-control-allow-origin": "*",
-		},
-	);
-
-createFixture(`Single Transfer action`);
+	),
+]);
 
 test("should show an error if wrong mnemonic", async (t) => {
 	// Navigate to wallet page
@@ -75,7 +54,7 @@ test("should show an error if wrong mnemonic", async (t) => {
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
 });
 
-test.requestHooks(walletMock, sendMock)("should send transfer successfully", async (t) => {
+test("should send transfer successfully", async (t) => {
 	// Navigate to profile page
 	await goToProfile(t);
 
