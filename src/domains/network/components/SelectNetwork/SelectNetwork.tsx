@@ -44,7 +44,7 @@ export const SelectNetwork = ({
 
 	useEffect(() => {
 		setItems(extendedItems);
-	}, [extendedItems]);
+	}, [networks, extendedItems]);
 
 	const isMatch = (inputValue: string, network: Network) =>
 		inputValue && network.extra?.displayName?.toLowerCase().startsWith(inputValue.toLowerCase());
@@ -108,6 +108,8 @@ export const SelectNetwork = ({
 		// Disabled otherwise
 		return "text-theme-neutral-light";
 	};
+
+	console.log({ items });
 
 	return (
 		<div>

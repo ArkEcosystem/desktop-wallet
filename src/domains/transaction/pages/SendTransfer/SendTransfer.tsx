@@ -25,7 +25,6 @@ export const SendTransfer = () => {
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
-	const [userNetworks, setUserNetworks] = useState<string[]>([]);
 	// eslint-disable-next-line
 	const [_, copy] = useClipboard({
 		resetAfter: 1000,
@@ -61,15 +60,6 @@ export const SendTransfer = () => {
 			}
 		}
 	}, [activeWallet, networks, setValue]);
-
-	useEffect(() => {
-		const availableNetworks: string[] = [];
-		const wallets: any = activeProfile.wallets().values();
-		for (const wallet of wallets) {
-			availableNetworks.push(wallet.networkId());
-		}
-		setUserNetworks(availableNetworks);
-	}, [activeProfile]);
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
@@ -145,8 +135,6 @@ export const SendTransfer = () => {
 		},
 	];
 
-	const availableNetworks = networks.filter((network) => userNetworks.includes(network.id()));
-
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
@@ -156,7 +144,7 @@ export const SendTransfer = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FormStep networks={availableNetworks} profile={activeProfile} />
+								<FormStep networks={networks} profile={activeProfile} />
 							</TabPanel>
 
 							<TabPanel tabId={2}>
