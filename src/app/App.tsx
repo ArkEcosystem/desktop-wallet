@@ -6,7 +6,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
@@ -16,16 +16,18 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { LedgerListener } from "domains/transaction/components/LedgerListener";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import electron from "electron";
+import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { matchPath, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
+import { Theme } from "types";
 
 import { middlewares, RouterView, routes } from "../router";
-import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
+import { EnvironmentProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
 import { useNetworkStatus } from "./hooks";
 import { useEnvSynchronizer } from "./hooks/use-synchronizer";
 import { i18n } from "./i18n";
@@ -36,20 +38,44 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 
-	const { pathname } = useLocation();
+	const { theme, setTheme } = useThemeContext();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
 
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [pathname]);
+	const location = useLocation();
+	const pathname = (location as any).location?.pathname || location.pathname;
+
+	const nativeTheme = electron.remote.nativeTheme;
+
+	const useDarkMode = React.useMemo(() => theme === "dark", [theme]);
 
 	useEffect(() => {
 		if (!showSplash) {
 			start();
 		}
 	}, [showSplash, start]);
+
+	const match = useMemo(() => matchPath(pathname, { path: "/profiles/:profileId" }), [pathname]);
+
+	useEffect(() => {
+		const profileId = (match?.params as any)?.profileId;
+
+		if (profileId && profileId !== "create") {
+			const profileTheme = env.profiles().findById(profileId).settings().get<Theme>(ProfileSetting.Theme)!;
+			if (profileTheme !== theme) {
+				nativeTheme.themeSource = profileTheme;
+				setTheme(profileTheme);
+			}
+		} else {
+			nativeTheme.themeSource = "system";
+			setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");
+		}
+	}, [env, match, nativeTheme, theme, setTheme]);
+
+	useLayoutEffect(() => {
+		setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	useLayoutEffect(() => {
 		const boot = async () => {
@@ -66,18 +92,26 @@ const Main = () => {
 		boot();
 	}, [env, persist, runAll]);
 
-	if (showSplash) {
-		return <Splash />;
-	}
-
 	/* istanbul ignore next */
 	const className = __DEV__ ? "debug-screens" : "";
 
+	const renderContent = () => {
+		if (showSplash) {
+			return <Splash />;
+		}
+
+		if (!isOnline) {
+			return <Offline />;
+		}
+
+		return <RouterView routes={routes} middlewares={middlewares} />;
+	};
+
 	return (
-		<main className={className}>
+		<main className={`theme-${useDarkMode ? "dark" : "light"} ${className}`} data-testid="Main">
 			<ToastContainer />
 
-			{isOnline ? <RouterView routes={routes} middlewares={middlewares} /> : <Offline />}
+			{renderContent()}
 		</main>
 	);
 };
@@ -117,7 +151,10 @@ export const App = () => {
 			<I18nextProvider i18n={i18n}>
 				<EnvironmentProvider env={env}>
 					<LedgerListener transport={LedgerTransportNodeHID} />
-					<Main />
+
+					<ThemeProvider>
+						<Main />
+					</ThemeProvider>
 				</EnvironmentProvider>
 			</I18nextProvider>
 		</ErrorBoundary>

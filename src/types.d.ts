@@ -14,3 +14,5 @@ export type Position = "top" | "top-right" | "right" | "bottom-right" | "bottom"
 export type ButtonVariant = "solid" | "plain" | "outline" | "transparent";
 
 export type NavbarVariant = "full" | "logo-only";
+
+type Theme = "system" | "dark" | "light";

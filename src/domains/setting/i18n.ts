@@ -6,6 +6,8 @@ export const translations: { [key: string]: any } = {
 		PERSONAL: {
 			TITLE: "Personal Details",
 			PROFILE_IMAGE: "Profile Image",
+			DELETE_AVATAR: "Delete Avatar",
+			UPLOAD_AVATAR: "Upload Avatar",
 			NAME: "Name",
 			PASSWORD: "Password",
 			PASSPHRASE_LANGUAGE: "Passphrase Language",
@@ -13,6 +15,9 @@ export const translations: { [key: string]: any } = {
 			LANGUAGE: "Language",
 			MARKET_PROVIDER: "Market Provider",
 			TIME_FORMAT: "Time Format",
+			VALIDATION: {
+				NAME_EXISTS: "Profile name already exists",
+			},
 		},
 		SECURITY: {
 			TITLE: "Security",

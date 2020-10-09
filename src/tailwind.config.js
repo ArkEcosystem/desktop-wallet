@@ -144,6 +144,7 @@ module.exports = {
 			width: {
 				22: "5.5rem",
 				44: "11rem",
+				96: "24rem",
 				128: "32rem",
 				144: "36rem",
 				125: "31.25rem",
@@ -188,6 +189,9 @@ module.exports = {
 			},
 			listStyleType: {
 				circle: "circle",
+			},
+			screens: {
+				dark: { raw: "(prefers-color-scheme: dark)" },
 			},
 		},
 	},
