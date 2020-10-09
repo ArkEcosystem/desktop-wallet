@@ -330,6 +330,9 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Transaction Review",
 			DESCRIPTION: "Review the transaction details before sending",
 		},
+		VALIDATION: {
+			FEE_BELOW_MINIMUM: "The selected fee is below the minimum and may not be forged",
+		},
 	},
 
 	AUTHENTICATION_STEP: {
