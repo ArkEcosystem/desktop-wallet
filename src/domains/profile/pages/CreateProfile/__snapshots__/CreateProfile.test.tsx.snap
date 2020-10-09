@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateProfile should not upload avatar image 1`] = `
+exports[`CreateProfile should not create new profile if profile name exists 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -99,10 +99,10 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between"
+                    class="flex justify-between -mt-6"
                   >
                     <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                      class="sc-AxiKw HGhoX w-full mr-6"
                     >
                       <label
                         class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -116,10 +116,16 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         />
                       </label>
                       <input
+                        aria-invalid="true"
                         class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="Input"
                         name="name"
                       />
+                      <p
+                        class="text-sm text-theme-danger"
+                      >
+                        Profile name already exists
+                      </p>
                     </fieldset>
                     <div
                       class="group -mt-6"
@@ -136,7 +142,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             <img
                               alt="Profile avatar"
                               class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
                             />
                             <span
                               class="absolute text-2xl font-semibold text-theme-background"
@@ -245,18 +251,386 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-36-label downshift-36-toggle-button"
+                            aria-labelledby="downshift-16-label downshift-16-toggle-button"
                             class="sc-fzqARJ jnMeHK  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-36-toggle-button"
+                            id="downshift-16-toggle-button"
                             type="button"
                           >
                             BTC (Ƀ)
                           </button>
                           <ul
-                            aria-labelledby="downshift-36-label"
+                            aria-labelledby="downshift-16-label"
                             class="sc-fzqNqU izoylg"
-                            id="downshift-36-menu"
+                            id="downshift-16-menu"
+                            role="listbox"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
+                        >
+                          <div
+                            class="sc-AxhCb jfKWih"
+                            height="5"
+                            width="7"
+                          >
+                            <svg>
+                              caret-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="pb-4 mt-8"
+                >
+                  <ul
+                    class="sc-fzoiQi fjoJEQ"
+                    data-testid="list-divided__items"
+                  >
+                    <li
+                      class="flex flex-col w-full "
+                      data-testid="list-divided-item__wrapper"
+                    >
+                      <div
+                        class="flex justify-between flex-col items-start"
+                        data-testid="list-divided-item__inner-wrapper"
+                      >
+                        <div
+                          class="flex flex-col w-full space-y-2"
+                        >
+                          <div
+                            class="flex items-center justify-between space-x-5"
+                          >
+                            <span
+                              class="text-xl font-semibold"
+                              data-testid="list-divided-item__label"
+                            >
+                              Dark Theme
+                            </span>
+                            <span>
+                              <label
+                                class="flex"
+                              >
+                                <input
+                                  class="Toggle__Input-qyyifx-0 bXkHfF"
+                                  name="isDarkMode"
+                                  type="checkbox"
+                                />
+                                <div
+                                  class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                >
+                                  <span
+                                    class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                  />
+                                </div>
+                              </label>
+                            </span>
+                          </div>
+                          <span
+                            class="text-sm font-medium text-theme-neutral"
+                            data-testid="list-divided-item__label--description"
+                          >
+                            Enables a dark, high contrast color scheme.
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="sc-AxirZ jjvtQn border-theme-neutral-300"
+                  type="horizontal"
+                />
+              </div>
+              <div
+                class="flex justify-end pt-4 space-x-3"
+              >
+                <button
+                  class="sc-AxjAm fPpool"
+                  color="primary"
+                  type="button"
+                >
+                  Back
+                </button>
+                <button
+                  class="sc-AxjAm kbZyZT"
+                  color="primary"
+                  data-testid="CreateProfile__submit-button"
+                  type="submit"
+                >
+                  Create
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CreateProfile should not upload avatar image 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fznJRM jLnBRI"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fznWqX jXdzJo"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="max-w-lg mx-auto -mt-10"
+          >
+            <h1
+              class="mb-0 md:text-4xl"
+            >
+              Create Profile
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+            >
+              Sign in via MarketSquare or create a new Profile below.
+            </div>
+            <div
+              class="mt-8"
+            >
+              <div>
+                <button
+                  class="sc-AxjAm kbZyZT w-full"
+                  color="primary"
+                  disabled=""
+                  type="button"
+                >
+                  <div
+                    class="sc-AxhCb VoPpj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      msq.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Sign In via MarketSquare
+                  </span>
+                </button>
+              </div>
+            </div>
+            <form
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200"
+              data-testid="CreateProfile__form"
+            >
+              <div
+                class="mt-2"
+              >
+                <h3>
+                  New Profile
+                </h3>
+                <div
+                  class="relative mt-8 space-y-8"
+                >
+                  <div
+                    class="flex justify-between -mt-6"
+                  >
+                    <fieldset
+                      class="sc-AxiKw iQzisX w-full mr-6"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="name"
+                      >
+                        Name
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        data-testid="Input"
+                        name="name"
+                      />
+                    </fieldset>
+                    <div
+                      class="group -mt-6"
+                    >
+                      <div
+                        class="flex flex-row mt-2"
+                      >
+                        <div
+                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
+                        >
+                          <div
+                            class="sc-fzoyTs gznaRo"
+                          >
+                            <img
+                              alt="Profile avatar"
+                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"50\\" cx=\\"90\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                            />
+                            <span
+                              class="absolute text-2xl font-semibold text-theme-background"
+                            >
+                              TE
+                            </span>
+                            <div
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              data-testid="SelectProfileImage__upload-button"
+                            >
+                              <div
+                                class="flex items-center justify-center w-22 h-22"
+                              >
+                                <div
+                                  class="sc-AxhCb fxrKLH text-white"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
+                      >
+                        (optional)
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                      data-testid="InputPassword"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="currency"
+                    >
+                      Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="relative w-full"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                        data-testid="select-list__input"
+                        name="currency"
+                        readonly=""
+                        type="text"
+                        value="BTC"
+                      />
+                      <div
+                        class="relative w-full cursor-pointer"
+                      >
+                        <div>
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-52-label downshift-52-toggle-button"
+                            class="sc-fzqARJ jnMeHK  is-selected "
+                            data-testid="select-list__toggle-button"
+                            id="downshift-52-toggle-button"
+                            type="button"
+                          >
+                            BTC (Ƀ)
+                          </button>
+                          <ul
+                            aria-labelledby="downshift-52-label"
+                            class="sc-fzqNqU izoylg"
+                            id="downshift-52-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -375,7 +749,7 @@ exports[`CreateProfile should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM joVcmL"
+      class="sc-fznJRM jLnBRI"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -467,7 +841,7 @@ exports[`CreateProfile should render 1`] = `
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between"
+                    class="flex justify-between -mt-6"
                   >
                     <fieldset
                       class="sc-AxiKw iQzisX w-full mr-6"
@@ -731,7 +1105,7 @@ exports[`CreateProfile should store profile 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM joVcmL"
+      class="sc-fznJRM jLnBRI"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -823,7 +1197,7 @@ exports[`CreateProfile should store profile 1`] = `
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between"
+                    class="flex justify-between -mt-6"
                   >
                     <fieldset
                       class="sc-AxiKw iQzisX w-full mr-6"
@@ -1110,7 +1484,7 @@ exports[`CreateProfile should store profile with password 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM joVcmL"
+      class="sc-fznJRM jLnBRI"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1202,7 +1576,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between"
+                    class="flex justify-between -mt-6"
                   >
                     <fieldset
                       class="sc-AxiKw iQzisX w-full mr-6"
@@ -1239,7 +1613,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             <img
                               alt="Profile avatar"
                               class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                             />
                             <span
                               class="absolute text-2xl font-semibold text-theme-background"
@@ -1348,18 +1722,18 @@ exports[`CreateProfile should store profile with password 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-16-label downshift-16-toggle-button"
+                            aria-labelledby="downshift-32-label downshift-32-toggle-button"
                             class="sc-fzqARJ jnMeHK  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-16-toggle-button"
+                            id="downshift-32-toggle-button"
                             type="button"
                           >
                             BTC (Ƀ)
                           </button>
                           <ul
-                            aria-labelledby="downshift-16-label"
+                            aria-labelledby="downshift-32-label"
                             class="sc-fzqNqU izoylg"
-                            id="downshift-16-menu"
+                            id="downshift-32-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -1478,7 +1852,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM joVcmL"
+      class="sc-fznJRM jLnBRI"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1570,7 +1944,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between"
+                    class="flex justify-between -mt-6"
                   >
                     <fieldset
                       class="sc-AxiKw iQzisX w-full mr-6"
@@ -1607,7 +1981,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             <img
                               alt="Profile avatar"
                               class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"40\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                             />
                             <span
                               class="absolute text-2xl font-semibold text-theme-background"
@@ -1716,18 +2090,18 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-25-label downshift-25-toggle-button"
+                            aria-labelledby="downshift-41-label downshift-41-toggle-button"
                             class="sc-fzqARJ jnMeHK  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-25-toggle-button"
+                            id="downshift-41-toggle-button"
                             type="button"
                           >
                             BTC (Ƀ)
                           </button>
                           <ul
-                            aria-labelledby="downshift-25-label"
+                            aria-labelledby="downshift-41-label"
                             class="sc-fzqNqU izoylg"
-                            id="downshift-25-menu"
+                            id="downshift-41-menu"
                             role="listbox"
                             tabindex="-1"
                           />
