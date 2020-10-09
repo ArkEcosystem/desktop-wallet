@@ -12,7 +12,7 @@ export const scrollTo = ClientFunction((top: number, left = 0, behavior = "auto"
 export const scrollToTop = ClientFunction(() => window.scrollTo({ top: 0 }));
 export const scrollToBottom = ClientFunction(() => window.scrollTo({ top: document.body.scrollHeight }));
 
-const BASEURL = "https://dwallets.ark.io/api/";
+export const BASEURL = "https://dwallets.ark.io/api/";
 
 const walletMocks = () => {
 	const addresses = [
@@ -159,16 +159,17 @@ export const requestMocks = {
 	],
 };
 
-export const createFixture = (name: string, requestHooks: RequestMock[] = []) =>
+export const createFixture = (name: string, preHooks: RequestMock[] = [], postHooks: RequestMock[] = []) =>
 	fixture(name)
 		.page(getPageURL())
 		.requestHooks(
-			// TODO: look for other URLs that are not mocked
-			...requestHooks.concat([
+			...[
+				...preHooks,
 				...requestMocks.configuration,
 				...requestMocks.delegates,
 				...requestMocks.transactions,
 				...requestMocks.wallets,
+				...postHooks,
 			]),
 			mockRequest(
 				(request: any) => request.url.startsWith(BASEURL),

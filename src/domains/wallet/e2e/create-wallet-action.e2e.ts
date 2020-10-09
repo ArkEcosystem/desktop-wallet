@@ -1,9 +1,17 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
-import { createFixture } from "../../../utils/e2e-utils";
+import { BASEURL, createFixture, mockRequest } from "../../../utils/e2e-utils";
 
-createFixture(`Create Wallet action`);
+// match(new RegExp(base + "wallets\/([-0-9a-zA-Z]{1,34})"))
+
+createFixture(`Create Wallet action`, [], [
+	mockRequest(
+		(request: any) => !!request.url.match(new RegExp(BASEURL + "wallets\/([-0-9a-zA-Z]{1,34})")),
+		"coins/ark/wallets/not-found",
+		404,
+	),
+]);
 
 test("should create a wallet", async (t) => {
 	const mnemonicWords = [];
@@ -34,7 +42,7 @@ test("should create a wallet", async (t) => {
 		mnemonicWords.push(textContent.replace(/[0-9]+/, "").trim());
 	}
 	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
-
+~
 	// Confirm your password
 	await t.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled")).ok();
 	for (let i = 0; i < 3; i++) {
