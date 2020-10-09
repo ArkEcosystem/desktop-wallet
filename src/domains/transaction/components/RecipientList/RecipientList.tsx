@@ -41,7 +41,12 @@ const RecipientListItem = ({
 				</td>
 
 				<td className="py-4">
-					<Address address={address} walletName={walletName} maxChars={!walletName ? 0 : undefined} />
+					<Address
+						address={address}
+						walletName={walletName}
+						maxChars={!walletName ? 0 : undefined}
+						size="sm"
+					/>
 				</td>
 
 				<td className="py-4 text-right">
