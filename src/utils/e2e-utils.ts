@@ -36,7 +36,7 @@ const walletMocks = () => {
 	);
 };
 
-const entityRegistrationMocks = () => {
+const searchEntityRegistrationMocks = () => {
 	const publicKeys = [
 		"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
 		"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
@@ -99,6 +99,18 @@ const searchAddressesMocks = () => {
 	return mocks;
 };
 
+const businessRegistrations = () => {
+	const transactionIds = [
+		"df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da",
+		"075c83e721e910d24ab98fb4864789efaae5d29f50cd08a11145cd43f3dd4c4a",
+		"03e44853b26f450d5aba78e3fad390faa8ae9aa6995b1fa80b8d191516b52f1e",
+	];
+
+	return transactionIds.map((id: string) =>
+		mockRequest(`https://dwallets.ark.io/api/transactions/${id}`, "coins/ark/transactions/business-registration"),
+	);
+};
+
 export const mockRequest = (url: string | object | Function, fixture: string | object | Function, statusCode = 200) =>
 	RequestMock()
 		.onRequestTo(url)
@@ -141,14 +153,12 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/delegates?page=5", "coins/ark/delegates-devnet"),
 	],
 	transactions: [
-		mockRequest(
-			"https://dwallets.ark.io/api/transactions/df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da",
-			"coins/ark/transactions/business-registration",
-		),
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/transaction-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions/search?limit=10", "coins/ark/transactions"),
 
-		...entityRegistrationMocks(),
+		...businessRegistrations(),
+
+		...searchEntityRegistrationMocks(),
 
 		...searchAddressesMocks(),
 	],
