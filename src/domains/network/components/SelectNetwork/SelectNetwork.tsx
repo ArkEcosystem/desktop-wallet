@@ -109,8 +109,6 @@ export const SelectNetwork = ({
 		return "text-theme-neutral-light";
 	};
 
-	console.log({ items });
-
 	return (
 		<div>
 			<div data-testid="SelectNetwork" {...getComboboxProps()}>
