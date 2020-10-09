@@ -5,13 +5,17 @@ import { BASEURL, createFixture, mockRequest } from "../../../utils/e2e-utils";
 
 // match(new RegExp(base + "wallets\/([-0-9a-zA-Z]{1,34})"))
 
-createFixture(`Create Wallet action`, [], [
-	mockRequest(
-		(request: any) => !!request.url.match(new RegExp(BASEURL + "wallets/([-0-9a-zA-Z]{1,34})")),
-		"coins/ark/wallets/not-found",
-		404,
-	),
-]);
+createFixture(
+	`Create Wallet action`,
+	[],
+	[
+		mockRequest(
+			(request: any) => !!request.url.match(new RegExp(BASEURL + "wallets/([-0-9a-zA-Z]{1,34})")),
+			"coins/ark/wallets/not-found",
+			404,
+		),
+	],
+);
 
 test("should create a wallet", async (t) => {
 	const mnemonicWords = [];
@@ -42,9 +46,10 @@ test("should create a wallet", async (t) => {
 		mnemonicWords.push(textContent.replace(/[0-9]+/, "").trim());
 	}
 	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
-~
-	// Confirm your password
-	await t.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled")).ok();
+	~(
+		// Confirm your password
+		(await t.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled")).ok())
+	);
 	for (let i = 0; i < 3; i++) {
 		const selectWordPhrase = await Selector("[data-testid=MnemonicVerificationOptions__title]").textContent;
 		const wordNumber = selectWordPhrase.replace(/Select word #/, "");
