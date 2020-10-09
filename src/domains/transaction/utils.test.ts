@@ -1,5 +1,6 @@
+
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { env,getDefaultProfileId } from "testing-library";
+import { env, getDefaultProfileId } from "testing-library";
 
 import { evaluateFee, hasSufficientFunds } from "./utils";
 
@@ -42,6 +43,10 @@ describe("Transaction utils", () => {
 		});
 
 		it("should not have sufficient funds for given amount and fee", () => {
+			expect(hasSufficientFunds({ wallet: wallet, fee: 1000, amount: 1000000000000 })).toBe(false);
+		});
+
+		it("should not have sufficient funds for zero balance", () => {
 			expect(hasSufficientFunds({ wallet: emptyWallet, fee: 1, amount: 1 })).toBe(false);
 		});
 	});
