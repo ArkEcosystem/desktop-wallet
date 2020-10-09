@@ -59,7 +59,7 @@ describe("Wallets", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render one grid row when less than four wallets", () => {
+	it("should render one grid row when less than three wallets", () => {
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets wallets={new Array(1).fill(wallets[0])} filterProperties={filterProperties} />
@@ -70,11 +70,11 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(getAllByTestId("WalletCard__blank")).toHaveLength(3);
+		expect(getAllByTestId("WalletCard__blank")).toHaveLength(2);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render two grid rows when more than four wallets", () => {
+	it("should render two grid rows when more than three wallets", () => {
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets wallets={new Array(5).fill(wallets[0])} filterProperties={filterProperties} />
@@ -85,7 +85,7 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(getAllByTestId("WalletCard__blank")).toHaveLength(3);
+		expect(getAllByTestId("WalletCard__blank")).toHaveLength(1);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

@@ -7,7 +7,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -437,7 +437,7 @@ exports[`Registration should fill all data including link collections 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1028,7 +1028,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                                 role="radiogroup"
                               >
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -1037,7 +1037,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                                   Min
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -1046,7 +1046,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                                   Average
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -1099,7 +1099,7 @@ exports[`Registration should go to review step after successfully filling form d
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1674,7 +1674,7 @@ exports[`Registration should go to review step after successfully filling form d
                                     class="mt-1 text-lg font-semibold"
                                     data-testid="total-amount-box__transaction-fee"
                                   >
-                                    0 DARK
+                                    NaN DARK
                                   </span>
                                 </div>
                               </div>
@@ -1682,7 +1682,7 @@ exports[`Registration should go to review step after successfully filling form d
                                 class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
                               >
                                 <div
-                                  class="py-2 ml-px bg-white"
+                                  class="py-2 ml-px bg-theme-background"
                                 >
                                   <div
                                     class="sc-AxiKw kgmJgX"
@@ -1708,7 +1708,7 @@ exports[`Registration should go to review step after successfully filling form d
                                 class="text-2xl font-bold"
                                 data-testid="total-amount-box__total"
                               >
-                                0 DARK
+                                NaN DARK
                               </span>
                             </div>
                           </div>
@@ -1754,7 +1754,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2256,16 +2256,16 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             <button
                               aria-expanded="true"
                               aria-haspopup="listbox"
-                              aria-labelledby="downshift-35-label downshift-35-toggle-button"
+                              aria-labelledby="downshift-36-label downshift-36-toggle-button"
                               class="sc-fznxKY ftvzgS is-open  "
                               data-testid="select-list__toggle-button"
-                              id="downshift-35-toggle-button"
+                              id="downshift-36-toggle-button"
                               type="button"
                             />
                             <ul
-                              aria-labelledby="downshift-35-label"
+                              aria-labelledby="downshift-36-label"
                               class="sc-fznMAR hjPwmz is-open"
-                              id="downshift-35-menu"
+                              id="downshift-36-menu"
                               role="listbox"
                               tabindex="-1"
                             >
@@ -2273,7 +2273,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 aria-selected="false"
                                 class="select-list-option "
                                 data-testid="select-list__toggle-option-0"
-                                id="downshift-35-item-0"
+                                id="downshift-36-item-0"
                                 role="option"
                               >
                                 <div
@@ -2286,7 +2286,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 aria-selected="false"
                                 class="select-list-option "
                                 data-testid="select-list__toggle-option-1"
-                                id="downshift-35-item-1"
+                                id="downshift-36-item-1"
                                 role="option"
                               >
                                 <div
@@ -2545,7 +2545,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3041,7 +3041,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                 class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
                               >
                                 <div
-                                  class="py-2 ml-px bg-white"
+                                  class="py-2 ml-px bg-theme-background"
                                 >
                                   <div
                                     class="sc-AxiKw kgmJgX"
@@ -3325,7 +3325,7 @@ exports[`Registration should render registration form without selected wallet 1`
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3842,7 +3842,7 @@ exports[`Registration should select cryptoasset first and see select address inp
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4403,7 +4403,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4989,7 +4989,7 @@ exports[`Registration should select registration type & show form 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5462,7 +5462,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
-                                  value="2500000000"
+                                  value="25"
                                 />
                               </div>
                             </div>
@@ -5473,7 +5473,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                 role="radiogroup"
                               >
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -5482,7 +5482,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                   Min
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -5491,7 +5491,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                   Average
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -5545,7 +5545,7 @@ exports[`Registration should should go back and forth & correctly register field
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6100,7 +6100,7 @@ exports[`Registration should successfully register entity 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6808,7 +6808,7 @@ exports[`Registration should validate description 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7405,7 +7405,7 @@ exports[`Registration should validate description 1`] = `
                                 role="radiogroup"
                               >
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -7414,7 +7414,7 @@ exports[`Registration should validate description 1`] = `
                                   Min
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -7423,7 +7423,7 @@ exports[`Registration should validate description 1`] = `
                                   Average
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -7477,7 +7477,7 @@ exports[`Registration should validate display name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -8072,7 +8072,7 @@ exports[`Registration should validate display name 1`] = `
                                 role="radiogroup"
                               >
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -8081,7 +8081,7 @@ exports[`Registration should validate display name 1`] = `
                                   Min
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -8090,7 +8090,7 @@ exports[`Registration should validate display name 1`] = `
                                   Average
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -8144,7 +8144,7 @@ exports[`Registration should validate entity name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -8739,7 +8739,7 @@ exports[`Registration should validate entity name 1`] = `
                                 role="radiogroup"
                               >
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -8748,7 +8748,7 @@ exports[`Registration should validate entity name 1`] = `
                                   Min
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -8757,7 +8757,7 @@ exports[`Registration should validate entity name 1`] = `
                                   Average
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -8811,7 +8811,7 @@ exports[`Registration should validate website url 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi hnrrjG"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -9406,7 +9406,7 @@ exports[`Registration should validate website url 1`] = `
                                 role="radiogroup"
                               >
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -9415,7 +9415,7 @@ exports[`Registration should validate website url 1`] = `
                                   Min
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -9424,7 +9424,7 @@ exports[`Registration should validate website url 1`] = `
                                   Average
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"

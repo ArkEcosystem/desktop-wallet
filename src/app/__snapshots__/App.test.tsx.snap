@@ -3,7 +3,8 @@
 exports[`App should close splash screen if not demo 1`] = `
 <DocumentFragment>
   <main
-    class="debug-screens"
+    class="theme-dark debug-screens"
+    data-testid="Main"
   >
     <div
       class="Toastify"
@@ -17,7 +18,7 @@ exports[`App should close splash screen if not demo 1`] = `
       >
         <nav
           aria-labelledby="main menu"
-          class="sc-fzoiQi jvzEyW"
+          class="sc-fzoiQi gbbOUt"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
@@ -129,7 +130,8 @@ exports[`App should close splash screen if not demo 1`] = `
 exports[`App should render mock 1`] = `
 <DocumentFragment>
   <main
-    class="debug-screens"
+    class="theme-dark debug-screens"
+    data-testid="Main"
   >
     <div
       class="Toastify"
@@ -143,7 +145,7 @@ exports[`App should render mock 1`] = `
       >
         <nav
           aria-labelledby="main menu"
-          class="sc-fzoiQi jvzEyW"
+          class="sc-fzoiQi gbbOUt"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
@@ -442,7 +444,8 @@ exports[`App should render mock 1`] = `
 exports[`App should render splash screen 1`] = `
 <DocumentFragment>
   <main
-    class="debug-screens"
+    class="theme-dark debug-screens"
+    data-testid="Main"
   >
     <div
       class="Toastify"
@@ -456,7 +459,7 @@ exports[`App should render splash screen 1`] = `
       >
         <nav
           aria-labelledby="main menu"
-          class="sc-fzoiQi jvzEyW"
+          class="sc-fzoiQi gbbOUt"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
@@ -755,7 +758,8 @@ exports[`App should render splash screen 1`] = `
 exports[`App should render the offline screen if there is no internet connection 1`] = `
 <DocumentFragment>
   <main
-    class="debug-screens"
+    class="theme-dark debug-screens"
+    data-testid="Main"
   >
     <div
       class="Toastify"
@@ -765,7 +769,7 @@ exports[`App should render the offline screen if there is no internet connection
     >
       <nav
         aria-labelledby="main menu"
-        class="sc-fzoiQi jvzEyW"
+        class="sc-fzoiQi gbbOUt"
       >
         <div
           class="px-4 sm:px-6 lg:px-10"
@@ -831,7 +835,8 @@ exports[`App should render the offline screen if there is no internet connection
 exports[`App should render welcome screen after splash screen 1`] = `
 <DocumentFragment>
   <main
-    class="debug-screens"
+    class="theme-dark debug-screens"
+    data-testid="Main"
   >
     <div
       class="Toastify"
@@ -845,7 +850,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
       >
         <nav
           aria-labelledby="main menu"
-          class="sc-fzoiQi jvzEyW"
+          class="sc-fzoiQi gbbOUt"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
