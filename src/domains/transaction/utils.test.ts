@@ -1,4 +1,3 @@
-
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { env, getDefaultProfileId } from "testing-library";
 
