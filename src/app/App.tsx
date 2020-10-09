@@ -61,7 +61,7 @@ const Main = () => {
 	useEffect(() => {
 		const profileId = (match?.params as any)?.profileId;
 
-		if (profileId && profileId !== "create") {
+		if (!showSplash && profileId && profileId !== "create") {
 			const profileTheme = env.profiles().findById(profileId).settings().get<Theme>(ProfileSetting.Theme)!;
 			if (profileTheme !== theme) {
 				nativeTheme.themeSource = profileTheme;

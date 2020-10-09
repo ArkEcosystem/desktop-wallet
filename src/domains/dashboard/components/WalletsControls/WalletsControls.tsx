@@ -43,7 +43,7 @@ export const WalletsControls = ({
 
 	return (
 		<div data-testid="WalletControls" className="flex justify-end">
-			<div className="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast">
+			<div className="flex items-center pr-6 mr-6 border-r border-theme-primary-contrast">
 				<LayoutControls
 					onSelectGridView={onClickGridView}
 					onSelectListView={onClickListview}
@@ -52,7 +52,14 @@ export const WalletsControls = ({
 			</div>
 
 			<div className="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast">
-				<Dropdown toggleIcon="Filters">
+				<Dropdown
+					position="top"
+					toggleContent={
+						<div className="py-2 px-3 border-b-3 border-transparent hover:border-theme-danger-100 cursor-pointer">
+							<Icon name="Filters" width={20} height={20} />
+						</div>
+					}
+				>
 					<div className="px-10 py-7 w-128">
 						<FilterWallets {...filterProperties} />
 					</div>
