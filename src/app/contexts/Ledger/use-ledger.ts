@@ -14,6 +14,7 @@ export type LedgerData = {
 	address: string;
 	balance: BigNumber;
 	index: number;
+	isNew?: boolean;
 	name?: string;
 };
 
@@ -138,6 +139,7 @@ export const useLedger = (transport: typeof Transport) => {
 							address,
 							balance: BigNumber.ZERO,
 							index: cursor,
+							isNew: true,
 						};
 						hasMore = false;
 					}
