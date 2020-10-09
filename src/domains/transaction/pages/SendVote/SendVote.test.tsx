@@ -7,6 +7,7 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
+import { toast } from "react-toastify";
 import {
 	env,
 	fireEvent,
@@ -359,6 +360,67 @@ describe("SendVote", () => {
 		});
 	});
 
+	it("should error for insufficient funds", async () => {
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		let rendered: RenderResult;
+
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					fee: (0.1 * 1e8).toFixed(0),
+				},
+			}),
+		);
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+					<FormProvider {...form.current}>
+						<SendVote />
+					</FormProvider>
+				</Route>,
+				{
+					routes: [voteURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVote__step--first")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVote__step--first")).toHaveTextContent(delegateData[0].username),
+			);
+		});
+
+		const { getByTestId } = rendered!;
+
+		const toastMock = jest.spyOn(toast, "error");
+		const walletBalanceMock = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+		await act(async () => {
+			// Step 2
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+
+			await waitFor(() =>
+				expect(toastMock).toHaveBeenCalledWith(
+					transactionTranslations.VALIDATION.INSUFFICIENT_FUNDS,
+					expect.anything(),
+				),
+			);
+		});
+
+		walletBalanceMock.mockRestore();
+		toastMock.mockRestore();
+	});
 	it("should show error if wrong mnemonic", async () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
