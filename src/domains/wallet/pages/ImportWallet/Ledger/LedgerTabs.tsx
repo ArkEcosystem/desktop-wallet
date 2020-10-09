@@ -2,8 +2,9 @@ import { Button } from "app/components/Button";
 import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
+import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -61,7 +62,7 @@ const Paginator = ({
 
 			{activeIndex === size && (
 				<Button disabled={isNextDisabled} data-testid="Paginator__submit-button" onClick={onSubmit}>
-					{t("COMMON.GO_TO_WALLET")}
+					{t("COMMON.SAVE_FINISH")}
 				</Button>
 			)}
 		</div>
@@ -69,15 +70,46 @@ const Paginator = ({
 };
 
 export const LedgerTabs = () => {
-	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
-	const { getValues, formState } = useFormContext();
-	const { isValid } = formState;
+	const { t } = useTranslation();
+	const { env, persist } = useEnvironmentContext();
+	const { importLedgerWallets } = useLedgerContext();
 
+	const { getValues, formState, handleSubmit } = useFormContext();
+	const { isValid, isSubmitting } = formState;
 	const wallets = getValues("wallets");
 
 	const [activeTab, setActiveTab] = useState(1);
+
+	const importWallets = useCallback(
+		async ({ network, wallets }: any) => {
+			console.log(network, wallets);
+			const coin = await env.coin(network.coin(), network.id());
+			await importLedgerWallets(wallets, coin, activeProfile);
+		},
+		[importLedgerWallets, activeProfile, env],
+	);
+
+	const saveNames = async ({ names }: { names: Record<string, string> }) => {
+		for (const [address, name] of Object.entries(names)) {
+			if (name) {
+				const wallet = activeProfile.wallets().findByAddress(address);
+				wallet?.setAlias(name);
+			}
+		}
+		await persist();
+	};
+
+	const handleNext = useCallback(
+		async (newIndex: number) => {
+			if (newIndex === 4) {
+				await handleSubmit((data: any) => importWallets(data))();
+			}
+			setActiveTab(newIndex);
+		},
+		[handleSubmit, importWallets],
+	);
 
 	return (
 		<Tabs activeId={activeTab}>
@@ -102,8 +134,10 @@ export const LedgerTabs = () => {
 				size={4}
 				activeIndex={activeTab}
 				isNextDisabled={!isValid}
-				onNext={setActiveTab}
+				isNextLoading={isSubmitting}
+				onNext={handleNext}
 				onBack={setActiveTab}
+				onSubmit={handleSubmit((data: any) => saveNames(data))}
 			/>
 		</Tabs>
 	);

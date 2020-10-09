@@ -100,13 +100,6 @@ export const LedgerScanStep = ({ profile }: { profile: Profile }) => {
 		scan();
 	}, [scan]);
 
-	const handleCheckbox = (address: string) => {
-		setCheckedAddresses((prev) => {
-			const value = prev[address];
-			return { ...prev, [address]: !value };
-		});
-	};
-
 	return (
 		<section className="space-y-8">
 			<Header
