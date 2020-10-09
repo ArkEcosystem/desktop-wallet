@@ -163,14 +163,12 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 	fixture(name)
 		.page(getPageURL())
 		.requestHooks(
-			...[
-				...preHooks,
-				...requestMocks.configuration,
-				...requestMocks.delegates,
-				...requestMocks.transactions,
-				...requestMocks.wallets,
-				...postHooks,
-			],
+			...preHooks,
+			...requestMocks.configuration,
+			...requestMocks.delegates,
+			...requestMocks.transactions,
+			...requestMocks.wallets,
+			...postHooks,
 			mockRequest(
 				(request: any) => request.url.startsWith(BASEURL),
 				(request: any) => {
