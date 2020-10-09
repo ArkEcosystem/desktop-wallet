@@ -2,6 +2,7 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { httpClient } from "app/services";
+import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -448,6 +449,36 @@ describe("SendEntityUpdate", () => {
 
 		await waitFor(() => expect(getByTestId("ReviewStep")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should error for insufficient funds", async () => {
+		const { asFragment, getByTestId } = renderPage();
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
+		);
+
+		const toastMock = jest.spyOn(toast, "error");
+		const walletBalanceMock = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+
+		await waitFor(() =>
+			expect(toastMock).toHaveBeenCalledWith(
+				transactionTranslations.VALIDATION.INSUFFICIENT_FUNDS,
+				expect.anything(),
+			),
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+
+		walletBalanceMock.mockRestore();
+		toastMock.mockRestore();
 	});
 
 	it("should render 3rd step", async () => {
