@@ -8,7 +8,9 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useClipboard } from "app/hooks";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { toasts } from "app/services";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { hasSufficientFunds } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -97,6 +99,9 @@ export const SendIpfs = () => {
 	};
 
 	const handleNext = () => {
+		if (activeTab === 2 && !hasSufficientFunds({ wallet: activeWallet, fee: getValues("fee") })) {
+			return toasts.error(t("TRANSACTION.VALIDATION.INSUFFICIENT_FUNDS"));
+		}
 		setActiveTab(activeTab + 1);
 	};
 
