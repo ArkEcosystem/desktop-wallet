@@ -72,7 +72,6 @@ const Paginator = ({
 export const LedgerTabs = () => {
 	const activeProfile = useActiveProfile();
 
-	const { t } = useTranslation();
 	const { env, persist } = useEnvironmentContext();
 	const { importLedgerWallets } = useLedgerContext();
 
@@ -84,7 +83,6 @@ export const LedgerTabs = () => {
 
 	const importWallets = useCallback(
 		async ({ network, wallets }: any) => {
-			console.log(network, wallets);
 			const coin = await env.coin(network.coin(), network.id());
 			await importLedgerWallets(wallets, coin, activeProfile);
 		},
