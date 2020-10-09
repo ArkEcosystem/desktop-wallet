@@ -1,4 +1,4 @@
-import {  Selector } from "testcafe";
+import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
