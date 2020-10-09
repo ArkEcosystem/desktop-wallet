@@ -18,6 +18,7 @@ import {
 	SummaryStep as FourthStep,
 } from "domains/transaction/components/EntityRegistrationForm";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
+import { hasSufficientFunds } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -36,7 +37,7 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 	const [isLoading, setIsLoading] = useState(true);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues, shouldUnregister: false });
-	const { setValue, trigger, register, formState } = form;
+	const { setValue, getValues, trigger, register, formState } = form;
 	const { entityRegistration } = useValidation();
 
 	const { env } = useEnvironmentContext();
@@ -125,6 +126,10 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 		window.scrollTo({ top: 0, behavior: "smooth" });
 
 		if (!isValid) return;
+
+		if (activeTab === 1 && !hasSufficientFunds({ wallet: activeWallet, fee: getValues("fee") })) {
+			return toasts.error(t("TRANSACTION.VALIDATION.INSUFFICIENT_FUNDS"));
+		}
 
 		setActiveTab(activeTab + 1);
 	};
