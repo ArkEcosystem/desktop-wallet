@@ -376,48 +376,6 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                   </div>
                 </div>
               </div>
-              <div
-                class="swiper-slide"
-                style="height: 185px;"
-              >
-                <div
-                  class="w-64 inline-block w-full"
-                  data-testid="WalletCard__blank"
-                >
-                  <div
-                    class="sc-Axmtr hBWlGR"
-                    data-testid="Card"
-                  >
-                    <div
-                      class="p-2"
-                    >
-                      <div
-                        class="flex"
-                      >
-                        <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
-                        />
-                      </div>
-                      <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                      >
-                        New Wallet
-                      </div>
-                      <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
-                      >
-                        Balance
-                      </div>
-                    </div>
-                    <div
-                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -2082,48 +2040,6 @@ exports[`Wallets should render grid 1`] = `
                   </div>
                 </div>
               </div>
-              <div
-                class="swiper-slide"
-                style="height: 185px;"
-              >
-                <div
-                  class="w-64 inline-block w-full"
-                  data-testid="WalletCard__blank"
-                >
-                  <div
-                    class="sc-Axmtr hBWlGR"
-                    data-testid="Card"
-                  >
-                    <div
-                      class="p-2"
-                    >
-                      <div
-                        class="flex"
-                      >
-                        <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
-                        />
-                      </div>
-                      <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                      >
-                        New Wallet
-                      </div>
-                      <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
-                      >
-                        Balance
-                      </div>
-                    </div>
-                    <div
-                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -2642,7 +2558,7 @@ exports[`Wallets should render list 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Wallets should render one grid row when less than four wallets 1`] = `
+exports[`Wallets should render one grid row when less than three wallets 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -2978,48 +2894,6 @@ exports[`Wallets should render one grid row when less than four wallets 1`] = `
                   </div>
                 </div>
               </div>
-              <div
-                class="swiper-slide"
-                style="height: 185px;"
-              >
-                <div
-                  class="w-64 inline-block w-full"
-                  data-testid="WalletCard__blank"
-                >
-                  <div
-                    class="sc-Axmtr hBWlGR"
-                    data-testid="Card"
-                  >
-                    <div
-                      class="p-2"
-                    >
-                      <div
-                        class="flex"
-                      >
-                        <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
-                        />
-                      </div>
-                      <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                      >
-                        New Wallet
-                      </div>
-                      <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
-                      >
-                        Balance
-                      </div>
-                    </div>
-                    <div
-                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -3029,7 +2903,7 @@ exports[`Wallets should render one grid row when less than four wallets 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Wallets should render two grid rows when more than four wallets 1`] = `
+exports[`Wallets should render two grid rows when more than three wallets 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -3479,48 +3353,6 @@ exports[`Wallets should render two grid rows when more than four wallets 1`] = `
               >
                 <div
                   class="w-64 inline-block w-full"
-                  data-testid="WalletCard__blank"
-                >
-                  <div
-                    class="sc-Axmtr hBWlGR"
-                    data-testid="Card"
-                  >
-                    <div
-                      class="p-2"
-                    >
-                      <div
-                        class="flex"
-                      >
-                        <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
-                        />
-                      </div>
-                      <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                      >
-                        New Wallet
-                      </div>
-                      <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
-                      >
-                        Balance
-                      </div>
-                    </div>
-                    <div
-                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                style="height: 185px;"
-              >
-                <div
-                  class="w-64 inline-block w-full"
                   data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
                   <div
@@ -3608,48 +3440,6 @@ exports[`Wallets should render two grid rows when more than four wallets 1`] = `
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                style="height: 185px;"
-              >
-                <div
-                  class="w-64 inline-block w-full"
-                  data-testid="WalletCard__blank"
-                >
-                  <div
-                    class="sc-Axmtr hBWlGR"
-                    data-testid="Card"
-                  >
-                    <div
-                      class="p-2"
-                    >
-                      <div
-                        class="flex"
-                      >
-                        <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
-                        />
-                      </div>
-                      <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                      >
-                        New Wallet
-                      </div>
-                      <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
-                      >
-                        Balance
-                      </div>
-                    </div>
-                    <div
-                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                    />
                   </div>
                 </div>
               </div>
@@ -3956,48 +3746,6 @@ exports[`Wallets should render with empty wallets list 1`] = `
               class="h-full swiper-wrapper "
               style="transition: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
             >
-              <div
-                class="swiper-slide"
-                style="height: 185px;"
-              >
-                <div
-                  class="w-64 inline-block w-full"
-                  data-testid="WalletCard__blank"
-                >
-                  <div
-                    class="sc-Axmtr hBWlGR"
-                    data-testid="Card"
-                  >
-                    <div
-                      class="p-2"
-                    >
-                      <div
-                        class="flex"
-                      >
-                        <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
-                        />
-                      </div>
-                      <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                      >
-                        New Wallet
-                      </div>
-                      <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
-                      >
-                        Balance
-                      </div>
-                    </div>
-                    <div
-                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                    />
-                  </div>
-                </div>
-              </div>
               <div
                 class="swiper-slide"
                 style="height: 185px;"

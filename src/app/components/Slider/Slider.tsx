@@ -15,7 +15,7 @@ type SliderProps = {
 
 const defaultOptions = {
 	// Custom component options
-	slideHeight: 184, // default slideheight (used for wallet cards),
+	slideHeight: 185, // default slideheight (used for wallet cards),
 	// Swiper options
 	slidesPerView: 1,
 	slidesPerColumn: 1,
