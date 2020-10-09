@@ -9,8 +9,10 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { toasts } from "app/services";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/components/DelegateResignationForm";
+import { hasSufficientFunds } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -97,6 +99,9 @@ export const SendEntityResignation = ({ formDefaultData, passwordType }: any) =>
 	};
 
 	const handleNext = () => {
+		if (activeTab === 1 && !hasSufficientFunds({ wallet: activeWallet, fee: fees.static })) {
+			return toasts.error(t("TRANSACTION.VALIDATION.INSUFFICIENT_FUNDS"));
+		}
 		setActiveTab(activeTab + 1);
 	};
 
