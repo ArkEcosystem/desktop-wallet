@@ -2,6 +2,7 @@ import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { useEnvironmentContext } from "app/contexts";
+import { toasts } from "app/services";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
@@ -23,6 +24,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
+	const [isWarning, setIsWarning] = useState(false);
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
@@ -30,7 +32,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 
 	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "5",
-		min: "0",
+		min: "0.01",
 		avg: "1",
 		max: "2",
 	});
@@ -77,6 +79,21 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 
 		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
 	}, [profile, networks]);
+	const validateFee = () => {
+		if (!isWarning) {
+			setIsWarning(true);
+			setTimeout(() => {
+				const fee = getValues("fee");
+				if (fee?.value) {
+					if (Number(fee.value) < Number(fees.min)) {
+						toasts.warning(t("TRANSACTION.PAGE_TRANSACTION_SEND.VALIDATION.FEE_BELOW_MINIMUM"));
+					}
+
+					setIsWarning(false);
+				}
+			}, 1000);
+		}
+	};
 
 	return (
 		<div className="space-y-8 SendTransactionForm">
@@ -121,8 +138,9 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 					defaultValue={fee || 0}
 					value={fee || 0}
 					step={0.01}
-					onChange={(currency) => {
+					onChange={(currency: { display: string; value: string }) => {
 						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+						validateFee();
 					}}
 				/>
 			</FormField>
