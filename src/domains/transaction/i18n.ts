@@ -59,7 +59,7 @@ export const translations: { [key: string]: any } = {
 	MULTISIGNATURE: {
 		MIN_SIGNATURES: "Minimum Required Signatures",
 		PARTICIPANT_ADDRESS: "Participant Address",
-		PARTICIPANTS: "Multisiganture Participants",
+		PARTICIPANTS: "Multisignature Participants",
 		ADD_PARTICIPANT: "Add Participant",
 		OUT_OF_LENGTH: "out of {{ length }}",
 		ERROR: {
