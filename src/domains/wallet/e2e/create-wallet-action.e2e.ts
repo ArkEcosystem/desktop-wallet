@@ -7,7 +7,7 @@ import { BASEURL, createFixture, mockRequest } from "../../../utils/e2e-utils";
 
 createFixture(`Create Wallet action`, [], [
 	mockRequest(
-		(request: any) => !!request.url.match(new RegExp(BASEURL + "wallets\/([-0-9a-zA-Z]{1,34})")),
+		(request: any) => !!request.url.match(new RegExp(BASEURL + "wallets/([-0-9a-zA-Z]{1,34})")),
 		"coins/ark/wallets/not-found",
 		404,
 	),
