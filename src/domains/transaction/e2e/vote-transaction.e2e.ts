@@ -1,82 +1,60 @@
-import { RequestMock, Selector } from "testcafe";
+import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture, mockRequest, requestMocks } from "../../../utils/e2e-utils";
+import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
-import { goToImportWalletPage } from "./common";
+import { importWallet } from "../../wallet/e2e/common";
 
 const translations = buildTranslations();
 
-const requestMocksCopy = { ...requestMocks };
-
-const walletMock = RequestMock()
-	.onRequestTo("https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")
-	.respond(
-		{
-			data: {
-				address: "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
-				nonce: "0",
-				balance: "2500000000",
-				isDelegate: false,
-				isResigned: false,
-				attributes: {},
-			},
-		},
-		200,
-		{
-			"access-control-allow-origin": "*",
-		},
-	);
-
-const sendMock = RequestMock()
-	.onRequestTo("https://dwallets.ark.io/api/transactions")
-	.respond(
-		{
-			data: {
-				accept: ["transaction-id"],
-				broadcast: ["transaction-id"],
-				excess: [],
-				invalid: [],
-			},
-		},
-		200,
-		{
-			"access-control-allow-origin": "*",
-		},
-	);
-
-requestMocksCopy.wallets[3] = mockRequest("https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", {
-	data: {
-		address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-		publicKey: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
-		nonce: "245",
-		balance: "3375089801",
-		attributes: {
-			htlc: {
-				locks: {},
-				lockedBalance: "0",
-			},
-		},
-		multiSignature: {},
-		lockedBalance: "0",
-		isDelegate: false,
-		isResigned: false,
+const transactionMock = mockRequest(
+	{
+		url: "https://dwallets.ark.io/api/transactions",
+		method: "POST",
 	},
-});
+	{
+		data: {
+			accept: ["transaction-id"],
+			broadcast: ["transaction-id"],
+			excess: [],
+			invalid: [],
+		},
+	},
+);
 
-createFixture(`Votes`, [
-	...requestMocksCopy.configuration,
-	...requestMocksCopy.delegates,
-	...requestMocksCopy.transactions,
-	...requestMocksCopy.wallets,
-]);
+const walletMock = mockRequest(
+	{
+		url: "https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+		method: "POST",
+	},
+	{
+		data: {
+			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			publicKey: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+			nonce: "245",
+			balance: "3375089801",
+			attributes: {
+				htlc: {
+					locks: {},
+					lockedBalance: "0",
+				},
+			},
+			multiSignature: {},
+			lockedBalance: "0",
+			isDelegate: false,
+			isResigned: false,
+		},
+	},
+);
+
+createFixture(`Vote action`, [transactionMock, walletMock]);
 
 test("should show an error if wrong mnemonic", async (t) => {
 	// Navigate to profile page
 	await goToProfile(t);
 
-	// Navigate to import wallet page
-	await goToImportWalletPage(t);
+	// Import wallet
+	await importWallet(t, "passphrase");
 
 	// Navigate to vote page
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
@@ -107,19 +85,17 @@ test("should show an error if wrong mnemonic", async (t) => {
 
 	// Type wrong mnemonic
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });
-	await t.typeText(Selector("[data-testid=AuthenticationStep__second-mnemonic]"), "wrong mnemonic", {
-		replace: true,
-	});
+
 	await t.click(Selector("[data-testid=SendVote__button--submit]"));
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
 });
 
-test.requestHooks(walletMock, sendMock)("should send a vote transaction", async (t) => {
+test("should successfully send a vote transaction", async (t) => {
 	// Navigate to profile page
 	await goToProfile(t);
 
-	// Navigate to import wallet page
-	await goToImportWalletPage(t);
+	// Import wallet
+	await importWallet(t, "passphrase");
 
 	// Navigate to vote page
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
