@@ -4,6 +4,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
 <div>
   <section
     class="space-y-8"
+    data-testid="LedgerConnectionStep"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
@@ -129,6 +130,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
 <div>
   <section
     class="space-y-8"
+    data-testid="LedgerConnectionStep"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
