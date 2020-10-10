@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Wallets should change wallet view type from list to grid 1`] = `
+exports[`Wallets should change wallet view type from grid to list 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -17,45 +17,45 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
           data-testid="WalletControls"
         >
           <div
-            class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+            class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="flex items-center"
+              class="flex items-center space-x-1"
             >
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__grid"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="sc-AxirZ eLkhAQ"
-                    height="14"
-                    width="28"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      grid.svg
+                      grid-view.svg
                     </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__list"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                  class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="sc-AxirZ iSCFNs"
-                    height="14"
-                    width="24"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      list.svg
+                      list-view.svg
                     </svg>
                   </div>
                 </div>
@@ -63,23 +63,27 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
             </div>
           </div>
           <div
-            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+            class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="group"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -88,7 +92,7 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -112,7 +116,163 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
+              color="primary"
+              type="button"
+            >
+              <div
+                class="flex items-center justify-center mr-2 align-middle"
+              >
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    import.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Import
+                </span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-1"
+    >
+      <div>
+        <div
+          class="text-theme-neutral-dark"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Wallets should change wallet view type from list to grid 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="flex items-center justify-between pb-8"
+    >
+      <div
+        class="-mt-1 text-4xl font-bold"
+      />
+      <div
+        class="text-right"
+      >
+        <div
+          class="flex justify-end"
+          data-testid="WalletControls"
+        >
+          <div
+            class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <div
+                class="group"
+                data-testid="LayoutControls__grid"
+              >
+                <div
+                  class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
+                  data-testid="LayoutControls__grid--icon"
+                >
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      grid-view.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group"
+                data-testid="LayoutControls__list"
+              >
+                <div
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                  data-testid="LayoutControls__list--icon"
+                >
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      list-view.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="group"
+              >
+                <div
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                >
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="space-x-3"
+          >
+            <button
+              class="sc-AxjAm hXnHfM"
+              color="primary"
+              type="button"
+            >
+              <div
+                class="flex items-center justify-center mr-2 align-middle"
+              >
+                <div
+                  class="sc-AxirZ igJAf"
+                  height="1em"
+                  width="10"
+                >
+                  <svg>
+                    plus.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Create
+                </span>
+              </div>
+            </button>
+            <button
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -402,45 +562,45 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
           data-testid="WalletControls"
         >
           <div
-            class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+            class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="flex items-center"
+              class="flex items-center space-x-1"
             >
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__grid"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="sc-AxirZ eLkhAQ"
-                    height="14"
-                    width="28"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      grid.svg
+                      grid-view.svg
                     </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__list"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                  class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="sc-AxirZ iSCFNs"
-                    height="14"
-                    width="24"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      list.svg
+                      list-view.svg
                     </svg>
                   </div>
                 </div>
@@ -448,23 +608,27 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
             </div>
           </div>
           <div
-            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+            class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="group"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -473,7 +637,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -497,7 +661,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
               </div>
             </button>
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -1681,45 +1845,45 @@ exports[`Wallets should render grid 1`] = `
           data-testid="WalletControls"
         >
           <div
-            class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+            class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="flex items-center"
+              class="flex items-center space-x-1"
             >
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__grid"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                  class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="sc-AxirZ eLkhAQ"
-                    height="14"
-                    width="28"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      grid.svg
+                      grid-view.svg
                     </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__list"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="sc-AxirZ iSCFNs"
-                    height="14"
-                    width="24"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      list.svg
+                      list-view.svg
                     </svg>
                   </div>
                 </div>
@@ -1727,23 +1891,27 @@ exports[`Wallets should render grid 1`] = `
             </div>
           </div>
           <div
-            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+            class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="group"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1752,7 +1920,7 @@ exports[`Wallets should render grid 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -1776,7 +1944,7 @@ exports[`Wallets should render grid 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -2066,45 +2234,45 @@ exports[`Wallets should render list 1`] = `
           data-testid="WalletControls"
         >
           <div
-            class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+            class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="flex items-center"
+              class="flex items-center space-x-1"
             >
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__grid"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="sc-AxirZ eLkhAQ"
-                    height="14"
-                    width="28"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      grid.svg
+                      grid-view.svg
                     </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__list"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                  class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="sc-AxirZ iSCFNs"
-                    height="14"
-                    width="24"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      list.svg
+                      list-view.svg
                     </svg>
                   </div>
                 </div>
@@ -2112,23 +2280,27 @@ exports[`Wallets should render list 1`] = `
             </div>
           </div>
           <div
-            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+            class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="group"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2137,7 +2309,7 @@ exports[`Wallets should render list 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -2161,7 +2333,7 @@ exports[`Wallets should render list 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -2575,45 +2747,45 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
           data-testid="WalletControls"
         >
           <div
-            class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+            class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="flex items-center"
+              class="flex items-center space-x-1"
             >
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__grid"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                  class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="sc-AxirZ eLkhAQ"
-                    height="14"
-                    width="28"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      grid.svg
+                      grid-view.svg
                     </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__list"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="sc-AxirZ iSCFNs"
-                    height="14"
-                    width="24"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      list.svg
+                      list-view.svg
                     </svg>
                   </div>
                 </div>
@@ -2621,23 +2793,27 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
             </div>
           </div>
           <div
-            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+            class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="group"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2646,7 +2822,7 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -2670,7 +2846,7 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -2920,45 +3096,45 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
           data-testid="WalletControls"
         >
           <div
-            class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+            class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="flex items-center"
+              class="flex items-center space-x-1"
             >
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__grid"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                  class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="sc-AxirZ eLkhAQ"
-                    height="14"
-                    width="28"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      grid.svg
+                      grid-view.svg
                     </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__list"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="sc-AxirZ iSCFNs"
-                    height="14"
-                    width="24"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      list.svg
+                      list-view.svg
                     </svg>
                   </div>
                 </div>
@@ -2966,23 +3142,27 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
             </div>
           </div>
           <div
-            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+            class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="group"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2991,7 +3171,7 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -3015,7 +3195,7 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
               </div>
             </button>
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -3607,45 +3787,45 @@ exports[`Wallets should render with empty wallets list 1`] = `
           data-testid="WalletControls"
         >
           <div
-            class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+            class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="flex items-center"
+              class="flex items-center space-x-1"
             >
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__grid"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                  class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="sc-AxirZ eLkhAQ"
-                    height="14"
-                    width="28"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      grid.svg
+                      grid-view.svg
                     </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__list"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="sc-AxirZ iSCFNs"
-                    height="14"
-                    width="24"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      list.svg
+                      list-view.svg
                     </svg>
                   </div>
                 </div>
@@ -3653,23 +3833,27 @@ exports[`Wallets should render with empty wallets list 1`] = `
             </div>
           </div>
           <div
-            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+            class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="group"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3678,7 +3862,7 @@ exports[`Wallets should render with empty wallets list 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -3702,7 +3886,7 @@ exports[`Wallets should render with empty wallets list 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -3898,45 +4082,45 @@ exports[`Wallets should render with list view enabled as default 1`] = `
           data-testid="WalletControls"
         >
           <div
-            class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+            class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="flex items-center"
+              class="flex items-center space-x-1"
             >
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__grid"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="sc-AxirZ eLkhAQ"
-                    height="14"
-                    width="28"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      grid.svg
+                      grid-view.svg
                     </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__list"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                  class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="sc-AxirZ iSCFNs"
-                    height="14"
-                    width="24"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      list.svg
+                      list-view.svg
                     </svg>
                   </div>
                 </div>
@@ -3944,23 +4128,27 @@ exports[`Wallets should render with list view enabled as default 1`] = `
             </div>
           </div>
           <div
-            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+            class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="group"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3969,7 +4157,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -3993,7 +4181,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -4407,45 +4595,45 @@ exports[`Wallets should render with list view enabled as default and empty walle
           data-testid="WalletControls"
         >
           <div
-            class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+            class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="flex items-center"
+              class="flex items-center space-x-1"
             >
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__grid"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="sc-AxirZ eLkhAQ"
-                    height="14"
-                    width="28"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      grid.svg
+                      grid-view.svg
                     </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__list"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                  class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="sc-AxirZ iSCFNs"
-                    height="14"
-                    width="24"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      list.svg
+                      list-view.svg
                     </svg>
                   </div>
                 </div>
@@ -4453,23 +4641,27 @@ exports[`Wallets should render with list view enabled as default and empty walle
             </div>
           </div>
           <div
-            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+            class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="group"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -4478,7 +4670,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -4502,7 +4694,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
               </div>
             </button>
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -4916,45 +5108,45 @@ exports[`Wallets should show the view more button if there are more than 10 wall
           data-testid="WalletControls"
         >
           <div
-            class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+            class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="flex items-center"
+              class="flex items-center space-x-1"
             >
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__grid"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="sc-AxirZ eLkhAQ"
-                    height="14"
-                    width="28"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      grid.svg
+                      grid-view.svg
                     </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="inline-block"
+                class="group"
                 data-testid="LayoutControls__list"
               >
                 <div
-                  class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                  class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="sc-AxirZ iSCFNs"
-                    height="14"
-                    width="24"
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
                   >
                     <svg>
-                      list.svg
+                      list-view.svg
                     </svg>
                   </div>
                 </div>
@@ -4962,23 +5154,27 @@ exports[`Wallets should show the view more button if there are more than 10 wall
             </div>
           </div>
           <div
-            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+            class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="group"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -4987,7 +5183,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -5011,7 +5207,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
               </div>
             </button>
             <button
-              class="sc-AxjAm fPpool"
+              class="sc-AxjAm hXnHfM"
               color="primary"
               type="button"
             >
@@ -6280,7 +6476,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
             </table>
           </div>
           <button
-            class="sc-AxjAm fPpool w-full mt-10 mb-5"
+            class="sc-AxjAm hXnHfM w-full mt-10 mb-5"
             color="primary"
             data-testid="WalletsList__ViewMore"
             type="button"

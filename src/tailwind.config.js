@@ -198,6 +198,7 @@ module.exports = {
 	variants: {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
 		borderWidth: [...defaultConfig.variants.borderWidth, "first", "last"],
+		opacity: [...defaultConfig.variants.opacity, "group-hover"],
 	},
 	plugins: [tailwindUI, tailwindcssDebugScreens],
 };

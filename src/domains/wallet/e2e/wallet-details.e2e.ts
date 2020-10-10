@@ -57,6 +57,5 @@ test("should navigate from the bottom sheet", async (t) => {
 
 	// Transaction table and header changed
 	await t.expect(Selector("[data-testid=WalletHeader]").withText("ARK Wallet 2").exists).ok();
-	await t.expect(Selector("[data-testid=TransactionRow__ID]").exists).ok();
 	await t.expect(transactionTable.innerText).notEql(snapshot);
 });

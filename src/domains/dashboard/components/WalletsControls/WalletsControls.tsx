@@ -1,7 +1,7 @@
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
 import { Dropdown } from "app/components/Dropdown";
-import { LayoutControls } from "app/components/LayoutControls";
+import { ControlButton, LayoutControls } from "app/components/LayoutControls";
 import { FilterWallets, FilterWalletsProps } from "domains/dashboard/components/FilterWallets";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -43,7 +43,7 @@ export const WalletsControls = ({
 
 	return (
 		<div data-testid="WalletControls" className="flex justify-end">
-			<div className="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast">
+			<div className="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800">
 				<LayoutControls
 					onSelectGridView={onClickGridView}
 					onSelectListView={onClickListview}
@@ -51,8 +51,17 @@ export const WalletsControls = ({
 				/>
 			</div>
 
-			<div className="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast">
-				<Dropdown toggleIcon="Filters">
+			<div className="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800">
+				<Dropdown
+					dropdownClass="transform -translate-y-4"
+					toggleContent={
+						<div className="group">
+							<ControlButton>
+								<Icon name="Filters" width={20} height={20} />
+							</ControlButton>
+						</div>
+					}
+				>
 					<div className="px-10 py-7 w-128">
 						<FilterWallets {...filterProperties} />
 					</div>
