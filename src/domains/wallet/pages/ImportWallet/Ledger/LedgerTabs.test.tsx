@@ -65,6 +65,8 @@ describe("LedgerTabs", () => {
 	const submitSelector = () => screen.getByTestId("Paginator__submit-button");
 
 	it("should render connection step", async () => {
+		jest.setTimeout(10000);
+
 		const getPublicKeySpy = jest
 			.spyOn(wallet.coin().ledger(), "getPublicKey")
 			.mockRejectedValue(new Error("Failed"));
@@ -98,7 +100,7 @@ describe("LedgerTabs", () => {
 		});
 
 		await waitFor(() => expect(screen.getByTestId("LedgerConnectionStep")).toBeInTheDocument());
-		await waitFor(() => expect(screen.queryByText("Failed")).toBeInTheDocument());
+		await waitFor(() => expect(screen.queryByText("Failed")).toBeInTheDocument(), { timeout: 10000 });
 
 		act(() => {
 			fireEvent.click(backSelector());
