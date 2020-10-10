@@ -61,7 +61,7 @@ const Main = () => {
 	useEffect(() => {
 		const profileId = (match?.params as any)?.profileId;
 
-		if (profileId && profileId !== "create") {
+		if (!showSplash && profileId && profileId !== "create") {
 			const profileTheme = env.profiles().findById(profileId).settings().get<Theme>(ProfileSetting.Theme)!;
 			if (profileTheme !== theme) {
 				nativeTheme.themeSource = profileTheme;
@@ -71,7 +71,7 @@ const Main = () => {
 			nativeTheme.themeSource = "system";
 			setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");
 		}
-	}, [env, match, nativeTheme, theme, setTheme]);
+	}, [env, match, nativeTheme, theme, setTheme, showSplash]);
 
 	useLayoutEffect(() => {
 		setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");

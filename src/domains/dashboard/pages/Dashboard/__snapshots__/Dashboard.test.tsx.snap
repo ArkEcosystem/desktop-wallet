@@ -416,45 +416,45 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -462,23 +462,27 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -2361,60 +2365,18 @@ exports[`Dashboard should hide portfolio view 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
-                        >
-                          <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
-                          >
-                            <svg>
-                              grid.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block"
-                        data-testid="LayoutControls__list"
-                      >
-                        <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
-                          data-testid="LayoutControls__list--icon"
-                        >
-                          <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
-                          >
-                            <svg>
-                              list.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
-                  >
-                    <div
-                      class="relative"
-                    >
-                      <span>
-                        <div
-                          class="float-right outline-none cursor-pointer focus:outline-none"
                         >
                           <div
                             class="sc-AxirZ eEbZjj"
@@ -2422,13 +2384,59 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             width="20"
                           >
                             <svg>
-                              filters.svg
+                              grid-view.svg
                             </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="group"
+                        data-testid="LayoutControls__list"
+                      >
+                        <div
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                          data-testid="LayoutControls__list--icon"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              list-view.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                  >
+                    <div
+                      class="relative"
+                    >
+                      <span>
+                        <div
+                          class="group"
+                        >
+                          <div
+                            class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                          >
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                filters.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </span>
                       <div
-                        class="sc-AxgMl ctSkDc mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 undefined"
+                        class="sc-AxgMl ctSkDc mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 transform -translate-y-4"
                       >
                         <div
                           data-testid="dropdown__content"
@@ -4077,60 +4085,18 @@ exports[`Dashboard should hide transaction view 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
-                        >
-                          <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
-                          >
-                            <svg>
-                              grid.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block"
-                        data-testid="LayoutControls__list"
-                      >
-                        <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
-                          data-testid="LayoutControls__list--icon"
-                        >
-                          <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
-                          >
-                            <svg>
-                              list.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
-                  >
-                    <div
-                      class="relative"
-                    >
-                      <span>
-                        <div
-                          class="float-right outline-none cursor-pointer focus:outline-none"
                         >
                           <div
                             class="sc-AxirZ eEbZjj"
@@ -4138,13 +4104,59 @@ exports[`Dashboard should hide transaction view 1`] = `
                             width="20"
                           >
                             <svg>
-                              filters.svg
+                              grid-view.svg
                             </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="group"
+                        data-testid="LayoutControls__list"
+                      >
+                        <div
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                          data-testid="LayoutControls__list--icon"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              list-view.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                  >
+                    <div
+                      class="relative"
+                    >
+                      <span>
+                        <div
+                          class="group"
+                        >
+                          <div
+                            class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                          >
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                filters.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </span>
                       <div
-                        class="sc-AxgMl ctSkDc mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 undefined"
+                        class="sc-AxgMl ctSkDc mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 transform -translate-y-4"
                       >
                         <div
                           data-testid="dropdown__content"
@@ -5053,45 +5065,45 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -5099,23 +5111,27 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -6585,45 +6601,45 @@ exports[`Dashboard should render 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -6631,23 +6647,27 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -8117,45 +8137,45 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -8163,23 +8183,27 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -9649,45 +9673,45 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -9695,23 +9719,27 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -11181,45 +11209,45 @@ exports[`Dashboard should render wallets 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -11227,23 +11255,27 @@ exports[`Dashboard should render wallets 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -12673,45 +12705,45 @@ exports[`Dashboard should render with no wallets 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -12719,23 +12751,27 @@ exports[`Dashboard should render with no wallets 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
