@@ -33,7 +33,7 @@ export const translations: { [key: string]: any } = {
 	DASHBOARD_PAGE: {
 		CHART: {
 			TITLE: "Portfolio Chart",
-			PERCENTAGES_LABEL: "Total portfolio",
+			PERCENTAGES_LABEL: "Total Portfolio",
 		},
 	},
 };

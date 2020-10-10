@@ -3,7 +3,7 @@ import { Selector } from "testcafe";
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToMyRegistrations, goToProfile } from "../../profile/e2e/common";
-import { goToImportWalletPage } from "./common";
+import { importWallet } from "../../wallet/e2e/common";
 
 const IpfsFixture = require("../../../tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json");
 
@@ -68,7 +68,10 @@ test("should navigate to entity update form", async (t: any) => {
 	const passphrase = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
 
 	await goToProfile(t);
-	await goToImportWalletPage(t, { passphrase });
+
+	// Import wallet
+	await importWallet(t, "passphrase");
+
 	await goToMyRegistrations(t);
 
 	await goToSendEntityUpdate(t);
@@ -76,7 +79,10 @@ test("should navigate to entity update form", async (t: any) => {
 
 test("should fail validation in first step", async (t: any) => {
 	await goToProfile(t);
-	await goToImportWalletPage(t);
+
+	// Import wallet
+	await importWallet(t, "passphrase");
+
 	await goToMyRegistrations(t);
 	await goToSendEntityUpdate(t);
 
@@ -131,7 +137,10 @@ test("should fail validation in first step", async (t: any) => {
 
 test("should fail validation on submit to continue in first step", async (t: any) => {
 	await goToProfile(t);
-	await goToImportWalletPage(t);
+
+	// Import wallet
+	await importWallet(t, "passphrase");
+
 	await goToMyRegistrations(t);
 	await goToSendEntityUpdate(t);
 
@@ -150,7 +159,10 @@ test("should fail validation on submit to continue in first step", async (t: any
 
 test("should pass validation on submit and go to 2nd step", async (t: any) => {
 	await goToProfile(t);
-	await goToImportWalletPage(t);
+
+	// Import wallet
+	await importWallet(t, "passphrase");
+
 	await goToMyRegistrations(t);
 	await goToSendEntityUpdate(t);
 
@@ -175,7 +187,10 @@ test("should fail authentication and see error message in toast", async (t: any)
 	const passphrase = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
 
 	await goToProfile(t);
-	await goToImportWalletPage(t, { passphrase });
+
+	// Import wallet
+	await importWallet(t, "passphrase");
+
 	await goToMyRegistrations(t);
 	await goToSendEntityUpdate(t);
 
@@ -202,7 +217,10 @@ test("should successfully update entity", async (t: any) => {
 	const passphrase = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
 
 	await goToProfile(t);
-	await goToImportWalletPage(t, { passphrase });
+
+	// Import wallet
+	await importWallet(t, "passphrase");
+
 	await goToMyRegistrations(t);
 
 	await goToSendEntityUpdate(t);
