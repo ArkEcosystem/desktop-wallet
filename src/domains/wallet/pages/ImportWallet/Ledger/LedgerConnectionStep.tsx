@@ -94,7 +94,7 @@ export const LedgerConnectionStep = ({
 	);
 
 	return (
-		<section className="space-y-8">
+		<section data-testid="LedgerConnectionStep" className="space-y-8">
 			<Header
 				title={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_CONNECTION_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_CONNECTION_STEP.SUBTITLE")}

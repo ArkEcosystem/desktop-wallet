@@ -101,7 +101,7 @@ export const LedgerScanStep = ({ profile }: { profile: Profile }) => {
 	}, [scan]);
 
 	return (
-		<section className="space-y-8">
+		<section data-testid="LedgerScanStep" className="space-y-8">
 			<Header
 				title={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_CONNECTION_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_CONNECTION_STEP.SUBTITLE")}

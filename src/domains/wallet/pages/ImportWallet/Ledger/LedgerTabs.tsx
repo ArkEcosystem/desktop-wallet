@@ -13,7 +13,7 @@ import { LedgerConnectionStep } from "./LedgerConnectionStep";
 import { LedgerImportStep } from "./LedgerImportStep";
 import { LedgerScanStep } from "./LedgerScanStep";
 
-const Paginator = ({
+export const Paginator = ({
 	size,
 	activeIndex,
 	onBack,
@@ -69,7 +69,7 @@ const Paginator = ({
 	);
 };
 
-export const LedgerTabs = () => {
+export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	const activeProfile = useActiveProfile();
 
 	const { env, persist } = useEnvironmentContext();
@@ -77,9 +77,10 @@ export const LedgerTabs = () => {
 
 	const { getValues, formState, handleSubmit } = useFormContext();
 	const { isValid, isSubmitting } = formState;
+
 	const wallets = getValues("wallets");
 
-	const [activeTab, setActiveTab] = useState(1);
+	const [activeTab, setActiveTab] = useState<number>(activeIndex!);
 
 	const importWallets = useCallback(
 		async ({ network, wallets }: any) => {
@@ -139,4 +140,8 @@ export const LedgerTabs = () => {
 			/>
 		</Tabs>
 	);
+};
+
+LedgerTabs.defaultProps = {
+	activeIndex: 1,
 };

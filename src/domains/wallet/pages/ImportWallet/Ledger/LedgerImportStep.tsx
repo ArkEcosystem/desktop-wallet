@@ -19,7 +19,7 @@ export const LedgerImportStep = ({ wallets }: { wallets: LedgerData[] }) => {
 	const [network] = useState<Network>(() => watch("network"));
 
 	return (
-		<section className="space-y-8">
+		<section data-testid="LedgerImportStep" className="space-y-8">
 			<Header
 				title={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
