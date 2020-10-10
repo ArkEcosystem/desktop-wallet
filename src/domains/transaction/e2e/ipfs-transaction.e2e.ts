@@ -1,34 +1,18 @@
-import { RequestMock, Selector } from "testcafe";
+import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture } from "../../../utils/e2e-utils";
+import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
-import { goToWallet } from "../../wallet/e2e/common";
+import { goToWallet, importWallet } from "../../wallet/e2e/common";
 
 const translations = buildTranslations();
 
-const walletMock = RequestMock()
-	.onRequestTo("https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")
-	.respond(
+createFixture(`IPFS Transaction action`, [
+	mockRequest(
 		{
-			data: {
-				address: "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
-				nonce: "0",
-				balance: "2500000000",
-				isDelegate: false,
-				isResigned: false,
-				attributes: {},
-			},
+			url: "https://dwallets.ark.io/api/transactions",
+			method: "POST",
 		},
-		200,
-		{
-			"access-control-allow-origin": "*",
-		},
-	);
-
-const sendMock = RequestMock()
-	.onRequestTo("https://dwallets.ark.io/api/transactions")
-	.respond(
 		{
 			data: {
 				accept: ["transaction-id"],
@@ -37,13 +21,8 @@ const sendMock = RequestMock()
 				invalid: [],
 			},
 		},
-		200,
-		{
-			"access-control-allow-origin": "*",
-		},
-	);
-
-createFixture(`IPFS Transaction action`);
+	),
+]);
 
 test("should navigate to IPFS page", async (t) => {
 	// Navigate to wallet page
@@ -108,22 +87,12 @@ test("should show an error if wrong mnemonic", async (t) => {
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
 });
 
-test.requestHooks(walletMock, sendMock)("should send IPFS successfully", async (t) => {
+test("should send IPFS successfully", async (t) => {
 	// Navigate to profile page
 	await goToProfile(t);
 
-	// Navigate to import wallet page
-	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
-	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
-		.ok();
-	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#ImportWallet__network-item-1"));
-	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
-	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), "passphrase");
-	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
-	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), "Test Wallet");
-	await t.click(Selector("button").withExactText(translations.COMMON.GO_TO_WALLET));
+	// Import wallet
+	await importWallet(t, "passphrase");
 
 	// Navigate to wallet details page
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
