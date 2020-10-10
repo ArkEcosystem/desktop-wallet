@@ -131,7 +131,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 					</Section>
 				)}
 
-				<Section className="flex-1">
+				<Section className={!showTransactions ? "flex-1" : undefined}>
 					<Wallets
 						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
 						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
@@ -143,7 +143,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 				</Section>
 
 				{showTransactions && (
-					<Section data-testid="dashboard__transactions-view">
+					<Section className="flex-1" data-testid="dashboard__transactions-view">
 						<Transactions
 							transactions={allTransactions}
 							exchangeCurrency={exchangeCurrency}
