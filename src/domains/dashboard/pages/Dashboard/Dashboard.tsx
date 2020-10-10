@@ -117,15 +117,21 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 					<Section>
 						<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
 						<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-						<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
-						<PercentageBar
-							title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
-							data={portfolioPercentages}
-						/>
+
+						{!activeProfile.balance().isZero() && (
+							<>
+								<div className="pt-6 mb-2 border-b border-dashed border-theme-neutral-300" />
+
+								<PercentageBar
+									title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
+									data={portfolioPercentages}
+								/>
+							</>
+						)}
 					</Section>
 				)}
 
-				<Section className="flex-1">
+				<Section className={!showTransactions ? "flex-1" : undefined}>
 					<Wallets
 						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
 						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
@@ -137,7 +143,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 				</Section>
 
 				{showTransactions && (
-					<Section data-testid="dashboard__transactions-view">
+					<Section className="flex-1" data-testid="dashboard__transactions-view">
 						<Transactions
 							title={t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}
 							transactions={allTransactions}
