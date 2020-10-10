@@ -9,6 +9,7 @@ import { TransactionSigner } from './crypto/transaction-signer'
 import BigNumber from '@/plugins/bignumber'
 import { camelToUpperSnake } from '@/utils'
 import semver from 'semver'
+
 export default class ClientService {
   /**
    * Generate a new connection instance.
@@ -493,10 +494,12 @@ export default class ClientService {
       }
     }
 
-    if (walletData) {
-      return walletData.attributes && walletData.attributes.vote
-        ? walletData.attributes.vote
-        : walletData.vote
+    if (walletData && walletData.attributes && walletData.attributes.vote) {
+      return walletData.attributes.vote
+    }
+
+    if (walletData && walletData.vote) {
+      return walletData.vote
     }
 
     return null
