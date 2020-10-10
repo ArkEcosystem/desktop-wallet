@@ -674,28 +674,19 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         <fieldset
                           class="sc-AxirZ izhStr relative"
                         >
-                          <div
-                            class="mb-2"
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="smartbridge"
                           >
-                            <label
-                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                              data-testid="FormLabel"
-                              for="smartbridge"
-                            >
-                              Smartbridge
-                              <div
-                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
-                            </label>
-                          </div>
+                            Smartbridge
+                          </label>
                           <div
                             class="sc-fzoLag hoOQgq"
                           >
                             <input
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
                               data-testid="Input__smartbridge"
-                              maxlength="255"
                               name="smartbridge"
                               placeholder=" "
                               type="text"
@@ -1570,28 +1561,19 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
         <fieldset
           class="sc-AxirZ izhStr relative"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="smartbridge"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="smartbridge"
-            >
-              Smartbridge
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Smartbridge
+          </label>
           <div
             class="sc-fzoLag hoOQgq"
           >
             <input
               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="Input__smartbridge"
-              maxlength="255"
               name="smartbridge"
               placeholder=" "
               type="text"
@@ -2865,28 +2847,19 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                         <fieldset
                           class="sc-AxirZ izhStr relative"
                         >
-                          <div
-                            class="mb-2"
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="smartbridge"
                           >
-                            <label
-                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                              data-testid="FormLabel"
-                              for="smartbridge"
-                            >
-                              Smartbridge
-                              <div
-                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
-                            </label>
-                          </div>
+                            Smartbridge
+                          </label>
                           <div
                             class="sc-fzoLag hoOQgq"
                           >
                             <input
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
                               data-testid="Input__smartbridge"
-                              maxlength="255"
                               name="smartbridge"
                               placeholder=" "
                               type="text"
@@ -3686,28 +3659,19 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         <fieldset
                           class="sc-AxirZ izhStr relative"
                         >
-                          <div
-                            class="mb-2"
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="smartbridge"
                           >
-                            <label
-                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                              data-testid="FormLabel"
-                              for="smartbridge"
-                            >
-                              Smartbridge
-                              <div
-                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
-                            </label>
-                          </div>
+                            Smartbridge
+                          </label>
                           <div
                             class="sc-fzoLag hoOQgq"
                           >
                             <input
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
                               data-testid="Input__smartbridge"
-                              maxlength="255"
                               name="smartbridge"
                               placeholder=" "
                               type="text"
