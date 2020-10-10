@@ -71,7 +71,7 @@ const Main = () => {
 			nativeTheme.themeSource = "system";
 			setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");
 		}
-	}, [env, match, nativeTheme, theme, setTheme]);
+	}, [env, match, nativeTheme, theme, setTheme, showSplash]);
 
 	useLayoutEffect(() => {
 		setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");

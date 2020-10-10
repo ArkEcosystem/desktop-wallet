@@ -117,11 +117,17 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 					<Section>
 						<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
 						<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-						<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
-						<PercentageBar
-							title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
-							data={portfolioPercentages}
-						/>
+
+						{!activeProfile.balance().isZero() && (
+							<>
+								<div className="pt-6 mb-2 border-b border-dashed border-theme-neutral-300" />
+
+								<PercentageBar
+									title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
+									data={portfolioPercentages}
+								/>
+							</>
+						)}
 					</Section>
 				)}
 
