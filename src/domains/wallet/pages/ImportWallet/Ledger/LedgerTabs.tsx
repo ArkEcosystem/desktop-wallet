@@ -113,7 +113,7 @@ export const LedgerTabs = () => {
 		<Tabs activeId={activeTab}>
 			<StepIndicator size={4} activeIndex={activeTab} />
 
-			<div className="mt-8">
+			<div data-testid="LedgerTabs" className="mt-8">
 				<TabPanel tabId={1}>
 					<FirstStep />
 				</TabPanel>
