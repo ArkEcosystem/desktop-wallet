@@ -15,7 +15,6 @@ export type LedgerData = {
 	balance: BigNumber;
 	index: number;
 	isNew?: boolean;
-	name?: string;
 };
 
 export const useLedger = (transport: typeof Transport) => {
@@ -44,15 +43,11 @@ export const useLedger = (transport: typeof Transport) => {
 
 	const importLedgerWallets = useCallback(
 		async (wallets: LedgerData[], coin: Coins.Coin, profile: Profile) => {
-			for (const { address, index, name } of wallets) {
+			for (const { address, index } of wallets) {
 				const wallet = await profile
 					.wallets()
 					.importByAddress(address, coin.network().coin(), coin.network().id());
 				wallet.data().set(WalletFlag.LedgerIndex, index);
-
-				if (name) {
-					wallet.setAlias(name);
-				}
 			}
 			await persist();
 		},

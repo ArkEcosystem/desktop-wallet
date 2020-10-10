@@ -73,7 +73,7 @@ export const LedgerTable = ({
 export const LedgerScanStep = ({ profile }: { profile: Profile }) => {
 	const { t } = useTranslation();
 	const { watch, register, setValue } = useFormContext();
-	const { scanWallets, isBusy } = useLedgerContext();
+	const { scanWallets, isBusy, isAwaitingConnection } = useLedgerContext();
 
 	const [network] = useState<Network>(() => watch("network"));
 
@@ -119,10 +119,10 @@ export const LedgerScanStep = ({ profile }: { profile: Profile }) => {
 				data={ledgerWallets}
 			/>
 
-			{isBusy && (
+			{(isBusy || isAwaitingConnection) && (
 				<div className="inline-flex items-center justify-center w-full mt-8 space-x-3">
 					<Spinner color="primary" />
-					<span className="text-theme-text">Loading</span>
+					<span className="text-theme-text">{t("COMMON.LOADING_LEDGER")}</span>
 				</div>
 			)}
 		</section>

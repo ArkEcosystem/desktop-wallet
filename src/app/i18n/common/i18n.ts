@@ -83,6 +83,7 @@ export const translations: { [key: string]: any } = {
 	LINK: "Link",
 	LOAD: "Load",
 	LOADING: "Loading ...",
+	LOADING_LEDGER: "Loading Ledger...",
 	MARKETSQUARE: "MarketSquare",
 	MESSAGE: "Message",
 	MY_WALLET: "My Wallet",

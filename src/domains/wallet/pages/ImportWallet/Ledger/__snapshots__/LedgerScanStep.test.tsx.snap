@@ -1,0 +1,308 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LedgerScanStep should render 1`] = `
+<div>
+  <section
+    class="space-y-8"
+  >
+    <div
+      class="flex items-end justify-between bg-theme-background"
+    >
+      <div>
+        <h1
+          class="mb-0 md:text-4xl"
+          data-testid="header__title"
+        >
+          Opening of the app
+        </h1>
+        <div
+          class="text-theme-neutral-dark"
+          data-testid="header__subtitle"
+        >
+          Information from your device is expected
+        </div>
+      </div>
+    </div>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Cryptoasset
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="ImportWallet__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="ImportWallet__network-input"
+            id="ImportWallet__network-label"
+          />
+          <div
+            class="sc-fznyAO dnZZBi"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="sc-fzoLsD sc-fzpans kLdrHH px-4"
+            >
+              <div
+                aria-label="ARK Devnet"
+                class="sc-AxmLO hSwYaC border-theme-primary-100 text-theme-primary-400"
+                data-testid="SelectNetworkInput__network"
+              >
+                <div
+                  class="sc-AxhUy hSYVGy"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="ImportWallet__network-menu"
+              aria-labelledby="ImportWallet__network-label"
+              autocomplete="off"
+              class="sc-fzozJi fwEJKJ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              disabled=""
+              id="ImportWallet__network-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
+            />
+          </div>
+        </div>
+        <ul
+          aria-labelledby="ImportWallet__network-label"
+          class="hidden"
+          id="ImportWallet__network-menu"
+          role="listbox"
+        />
+      </div>
+    </fieldset>
+    <div
+      class="sc-AxgMl gqroiy"
+      role="table"
+    >
+      <table
+        cellpadding="0"
+        class="table-auto"
+      >
+        <thead>
+          <tr
+            role="row"
+          >
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--0"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top "
+              >
+                <div>
+                  Wallet
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhUy bOJNLB"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top "
+              >
+                <div>
+                  Balance
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhUy bOJNLB"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top "
+              >
+                <div>
+                  Select
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            class="sc-Axmtr gpPFXd group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="sc-AxheI hFrGzt space-x-3"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    DJpFwW…DJ28jq
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxheI heJeLD font-semibold"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 DARK
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxheI heJeLD justify-center"
+              >
+                <input
+                  class="sc-AxirZ dMNlTF"
+                  color="success"
+                  type="checkbox"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="sc-Axmtr gpPFXd group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="sc-AxheI hDMgmF space-x-3"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    DRgF3P…Ay23ES
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxheI fdnrQr font-semibold"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 DARK
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxheI fdnrQr justify-center"
+              >
+                <input
+                  class="sc-AxirZ dMNlTF"
+                  color="success"
+                  type="checkbox"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+`;
