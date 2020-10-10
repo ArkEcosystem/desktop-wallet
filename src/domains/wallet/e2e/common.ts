@@ -11,3 +11,26 @@ export const goToWallet = async (t: any, wallet = "D8rr7B1d6TL6pf14LgMz4sKp1VBMs
 	await t.click(Selector(`[data-testid=WalletCard__${wallet}]`));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 };
+
+export const importWallet = async (
+	t: any,
+	passphrase = "passphrase",
+	alias = "Test Wallet",
+	navigateToWallet = true,
+) => {
+	await t.click(Selector("a").withText("Portfolio")); // @TODO replace with i18n key
+	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
+	await t
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.ok();
+	await t.click('[data-testid="SelectNetworkInput__input"]');
+	await t.click(Selector("#ImportWallet__network-item-1"));
+	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
+	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), passphrase);
+	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
+	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
+
+	if (navigateToWallet) {
+		await t.click(Selector("button").withExactText(translations.COMMON.GO_TO_WALLET));
+	}
+};

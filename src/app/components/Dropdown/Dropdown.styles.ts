@@ -10,7 +10,7 @@ const getPosition = (position: string): any => {
 		case "bottom-left":
 			return tw`bottom-0 left-0`;
 		case "left":
-			return tw`left-0 `;
+			return tw`left-0`;
 		case "top-left":
 			return tw`top-0 left-0`;
 		case "top":

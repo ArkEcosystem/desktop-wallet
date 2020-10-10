@@ -89,6 +89,9 @@ export const translations: { [key: string]: any } = {
 	MOST_POPULAR: "Most popular",
 	MULTISIGNATURE: "Multisignature",
 	NAME: "Name",
+	SENDER_ADDRESS: "Sender address",
+	SMARTBRIDGE: "Smartbridge",
+	FEE: "FEE",
 	MNEMONIC: "Mnemonic",
 	SECOND_MNEMONIC: "2nd Mnemonic",
 	DESCRIPTION: "Description",
@@ -120,6 +123,7 @@ export const translations: { [key: string]: any } = {
 	RANK: "Rank",
 	RATING: "Rating",
 	RECIPIENT: "Recipient",
+	RECIPIENTS: "Recipients",
 	"RECIPIENT_#": "Recipient #{{count}}",
 	REGISTER: "Register",
 	REGISTRATIONS: "Registrations",
@@ -204,6 +208,7 @@ export const translations: { [key: string]: any } = {
 		MIN_LENGTH: "'{{field}}' should have at least {{minLength}} characters",
 		SUBJECT_INVALID: "The {{subject}} is invalid",
 		SUBJECT_MISMATCH: "The {{subject}} do not match",
+		MIN_RECIPIENTS: "At least one recipient is required",
 	},
 
 	DATETIME: {

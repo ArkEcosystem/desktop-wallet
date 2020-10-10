@@ -7,7 +7,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fznJRM fOVUHg"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -556,7 +556,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   Single
                                 </button>
                                 <button
-                                  class="sc-AxjAm fPpool flex-1 border-l-0"
+                                  class="sc-AxjAm hXnHfM flex-1 border-l-0"
                                   color="primary"
                                   data-testid="add-recipient-is-multiple-toggle"
                                   type="button"
@@ -674,28 +674,19 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         <fieldset
                           class="sc-AxirZ izhStr relative"
                         >
-                          <div
-                            class="mb-2"
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="smartbridge"
                           >
-                            <label
-                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                              data-testid="FormLabel"
-                              for="smartbridge"
-                            >
-                              Smartbridge
-                              <div
-                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
-                            </label>
-                          </div>
+                            Smartbridge
+                          </label>
                           <div
                             class="sc-fzoLag hoOQgq"
                           >
                             <input
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
                               data-testid="Input__smartbridge"
-                              maxlength="255"
                               name="smartbridge"
                               placeholder=" "
                               type="text"
@@ -818,7 +809,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool"
+                    class="sc-AxjAm hXnHfM"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     disabled=""
@@ -853,7 +844,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fznJRM fOVUHg"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1225,7 +1216,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool"
+                    class="sc-AxjAm hXnHfM"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     type="button"
@@ -1452,7 +1443,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                   Single
                 </button>
                 <button
-                  class="sc-AxjAm fPpool flex-1 border-l-0"
+                  class="sc-AxjAm hXnHfM flex-1 border-l-0"
                   color="primary"
                   data-testid="add-recipient-is-multiple-toggle"
                   type="button"
@@ -1570,28 +1561,19 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
         <fieldset
           class="sc-AxirZ izhStr relative"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="smartbridge"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="smartbridge"
-            >
-              Smartbridge
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Smartbridge
+          </label>
           <div
             class="sc-fzoLag hoOQgq"
           >
             <input
               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="Input__smartbridge"
-              maxlength="255"
               name="smartbridge"
               placeholder=" "
               type="text"
@@ -1955,7 +1937,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
             class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
           >
             <div
-              class="py-2 ml-px bg-white"
+              class="py-2 ml-px bg-theme-background"
             >
               <div
                 class="sc-AxiKw kgmJgX"
@@ -2267,7 +2249,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fznJRM fOVUHg"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2747,7 +2729,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                   Single
                                 </button>
                                 <button
-                                  class="sc-AxjAm fPpool flex-1 border-l-0"
+                                  class="sc-AxjAm hXnHfM flex-1 border-l-0"
                                   color="primary"
                                   data-testid="add-recipient-is-multiple-toggle"
                                   type="button"
@@ -2865,28 +2847,19 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                         <fieldset
                           class="sc-AxirZ izhStr relative"
                         >
-                          <div
-                            class="mb-2"
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="smartbridge"
                           >
-                            <label
-                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                              data-testid="FormLabel"
-                              for="smartbridge"
-                            >
-                              Smartbridge
-                              <div
-                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
-                            </label>
-                          </div>
+                            Smartbridge
+                          </label>
                           <div
                             class="sc-fzoLag hoOQgq"
                           >
                             <input
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
                               data-testid="Input__smartbridge"
-                              maxlength="255"
                               name="smartbridge"
                               placeholder=" "
                               type="text"
@@ -3009,7 +2982,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool"
+                    class="sc-AxjAm hXnHfM"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     disabled=""
@@ -3044,7 +3017,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fznJRM fOVUHg"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3568,7 +3541,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                   Single
                                 </button>
                                 <button
-                                  class="sc-AxjAm fPpool flex-1 border-l-0"
+                                  class="sc-AxjAm hXnHfM flex-1 border-l-0"
                                   color="primary"
                                   data-testid="add-recipient-is-multiple-toggle"
                                   type="button"
@@ -3686,28 +3659,19 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         <fieldset
                           class="sc-AxirZ izhStr relative"
                         >
-                          <div
-                            class="mb-2"
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="smartbridge"
                           >
-                            <label
-                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                              data-testid="FormLabel"
-                              for="smartbridge"
-                            >
-                              Smartbridge
-                              <div
-                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
-                            </label>
-                          </div>
+                            Smartbridge
+                          </label>
                           <div
                             class="sc-fzoLag hoOQgq"
                           >
                             <input
                               class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
                               data-testid="Input__smartbridge"
-                              maxlength="255"
                               name="smartbridge"
                               placeholder=" "
                               type="text"
@@ -3830,7 +3794,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool"
+                    class="sc-AxjAm hXnHfM"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     disabled=""
@@ -3865,7 +3829,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fznJRM fOVUHg"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4678,7 +4642,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool block"
+                    class="sc-AxjAm hXnHfM block"
                     color="primary"
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
@@ -4686,7 +4650,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm fPpool space-x-2"
+                    class="sc-AxjAm hXnHfM space-x-2"
                     color="primary"
                     data-testid="SendTransfer__button--copy"
                     type="button"
@@ -4722,7 +4686,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fznJRM fOVUHg"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5285,7 +5249,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool block"
+                    class="sc-AxjAm hXnHfM block"
                     color="primary"
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
@@ -5293,7 +5257,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm fPpool space-x-2"
+                    class="sc-AxjAm hXnHfM space-x-2"
                     color="primary"
                     data-testid="SendTransfer__button--copy"
                     type="button"
