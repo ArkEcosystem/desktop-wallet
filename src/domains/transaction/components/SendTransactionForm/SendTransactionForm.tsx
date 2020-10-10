@@ -1,5 +1,6 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { FormField, FormLabel } from "app/components/Form";
 import { useEnvironmentContext } from "app/contexts";
 import { toasts } from "app/services";
@@ -85,7 +86,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 			setTimeout(() => {
 				const fee = getValues("fee");
 				if (fee?.value) {
-					if (Number(fee.value) < Number(fees.min)) {
+					if (BigNumber.make(fee.value).isLessThan(fees.min)) {
 						toasts.warning(t("TRANSACTION.PAGE_TRANSACTION_SEND.VALIDATION.FEE_BELOW_MINIMUM"));
 					}
 
