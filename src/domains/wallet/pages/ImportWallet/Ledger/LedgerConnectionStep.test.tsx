@@ -61,7 +61,7 @@ describe("LedgerConnectionStep", () => {
 
 		await waitFor(() => expect(screen.queryByText("Open the ARK app on your device...")).toBeInTheDocument());
 
-		await waitFor(() => expect(onFailed).toHaveBeenCalled());
+		await waitFor(() => expect(onFailed).toHaveBeenCalled(), { timeout: 10000 });
 		await waitFor(() => expect(screen.queryByText("Failed")).toBeInTheDocument());
 
 		expect(container).toMatchSnapshot();
