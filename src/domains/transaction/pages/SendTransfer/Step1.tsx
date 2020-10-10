@@ -1,7 +1,7 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputCounter } from "app/components/Input";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
@@ -44,20 +44,19 @@ export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; pro
 						</div>
 
 						<FormField name="smartbridge" className="relative">
-							<div className="mb-2">
-								<FormLabel label="Smartbridge" />
-							</div>
+							<FormLabel label="Smartbridge" required={false} />
 							<InputCounter
 								data-testid="Input__smartbridge"
 								type="text"
 								placeholder=" "
 								className="pr-24"
-								maxLength={255}
+								maxLengthLabel="255"
 								defaultValue={smartbridge}
 								onChange={(e: ChangeEvent<HTMLInputElement>) =>
 									setValue("smartbridge", e.target.value, { shouldDirty: true, shouldValidate: true })
 								}
 							/>
+							<FormHelperText />
 						</FormField>
 					</>
 				</SendTransactionForm>
