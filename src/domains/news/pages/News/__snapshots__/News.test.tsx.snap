@@ -7,7 +7,7 @@ exports[`News should filter results based on category query and asset 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB jIViHY"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`News should filter results based on category query and asset 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -80,29 +80,38 @@ exports[`News should filter results based on category query and asset 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -327,7 +336,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                   data-testid="NewsCard"
                 >
                   <div
-                    class="sc-fzoyTs irAyXW bg-theme-background"
+                    class="sc-fzpmMD fpfTvT bg-theme-background"
                     data-testid="Card"
                   >
                     <div
@@ -415,7 +424,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         Major League Hacking is having another virtual workshop showcasing ARK technology on August 19th 2020. Anyone can join at 5PM EDT to Build a Blockchain Taco Shop with ARK!
 
                         <a
-                          class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io"
@@ -457,7 +466,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       class="flex flex-col space-y-5 text-theme-background"
                     >
                       <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://blockfolio.com/"
@@ -480,7 +489,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       class="flex mt-12 space-x-2"
                     >
                       <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
@@ -492,7 +501,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         </svg>
                       </a>
                       <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
@@ -511,14 +520,14 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="flex justify-center w-full"
               >
                 <div
-                  class="sc-fzoiQi isPSEp"
+                  class="sc-fzoyTs cIPXQW"
                   data-testid="Pagination"
                 >
                   <div
                     class="flex px-2 rounded bg-theme-primary-contrast"
                   >
                     <div
-                      class="sc-fzqARJ eRkNAm current-page"
+                      class="sc-fzoNJl duzFwd current-page"
                     >
                       1
                     </div>
@@ -540,7 +549,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                     class="flex items-center justify-between px-2 py-4 rounded-md shadow-xl"
                   >
                     <input
-                      class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
+                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
                       data-testid="NewsOptions__search"
                       maxlength="32"
                       placeholder="Search"
@@ -784,7 +793,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxhCb hPLjLy w-full"
+                      class="sc-AxhCb hvkszb w-full"
                       color="primary"
                       data-testid="NewsOptions__submit"
                       type="button"
@@ -810,7 +819,7 @@ exports[`News should filter results based on category query and asset 2`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB jIViHY"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -822,7 +831,7 @@ exports[`News should filter results based on category query and asset 2`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -883,29 +892,38 @@ exports[`News should filter results based on category query and asset 2`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -1130,7 +1148,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                   data-testid="NewsCard"
                 >
                   <div
-                    class="sc-fzoyTs irAyXW bg-theme-background"
+                    class="sc-fzpmMD fpfTvT bg-theme-background"
                     data-testid="Card"
                   >
                     <div
@@ -1217,7 +1235,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       >
                         Recently we released our all-in-one toolkit the ARK Platform SDK, along with an overview and what blockchain projects it will initially support. Today we are going into more details on a technical level. 
                         <a
-                          class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461"
@@ -1259,7 +1277,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       class="flex flex-col space-y-5 text-theme-background"
                     >
                       <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://blockfolio.com/"
@@ -1282,7 +1300,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       class="flex mt-12 space-x-2"
                     >
                       <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
@@ -1294,7 +1312,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                         </svg>
                       </a>
                       <a
-                        class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
@@ -1313,49 +1331,49 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="flex justify-center w-full"
               >
                 <div
-                  class="sc-fzoiQi isPSEp"
+                  class="sc-fzoyTs cIPXQW"
                   data-testid="Pagination"
                 >
                   <div
                     class="flex px-2 rounded bg-theme-primary-contrast"
                   >
                     <div
-                      class="sc-fzqARJ eRkNAm current-page"
+                      class="sc-fzoNJl duzFwd current-page"
                     >
                       1
                     </div>
                     <div
-                      class="sc-fzqARJ eRkNAm"
+                      class="sc-fzoNJl duzFwd"
                     >
                       2
                     </div>
                     <div
-                      class="sc-fzqARJ eRkNAm"
+                      class="sc-fzoNJl duzFwd"
                     >
                       3
                     </div>
                     <div
-                      class="sc-fzqARJ eRkNAm"
+                      class="sc-fzoNJl duzFwd"
                     >
                       4
                     </div>
                     <div
-                      class="sc-fzqARJ eRkNAm"
+                      class="sc-fzoNJl duzFwd"
                     >
                       5
                     </div>
                     <div
-                      class="sc-fzqARJ eRkNAm"
+                      class="sc-fzoNJl duzFwd"
                     >
                       6
                     </div>
                     <div
-                      class="sc-fzqARJ eRkNAm"
+                      class="sc-fzoNJl duzFwd"
                     >
                       7
                     </div>
                     <div
-                      class="sc-fzqNqU idItZy"
+                      class="sc-fzoXWK fTTBwS"
                     >
                       <span>
                         ...
@@ -1363,7 +1381,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxhCb hPLjLy"
+                    class="sc-AxhCb hvkszb"
                     color="primary"
                     data-testid="Pagination__next"
                     type="button"
@@ -1380,7 +1398,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     </div>
                   </button>
                   <button
-                    class="sc-AxhCb hPLjLy"
+                    class="sc-AxhCb hvkszb"
                     color="primary"
                     data-testid="Pagination__last"
                     type="button"
@@ -1412,7 +1430,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     class="flex items-center justify-between px-2 py-4 rounded-md shadow-xl"
                   >
                     <input
-                      class="sc-fznZeY fiSkzP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
+                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
                       data-testid="NewsOptions__search"
                       maxlength="32"
                       placeholder="Search"
@@ -1651,7 +1669,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxhCb hPLjLy w-full"
+                      class="sc-AxhCb hvkszb w-full"
                       color="primary"
                       data-testid="NewsOptions__submit"
                       type="button"

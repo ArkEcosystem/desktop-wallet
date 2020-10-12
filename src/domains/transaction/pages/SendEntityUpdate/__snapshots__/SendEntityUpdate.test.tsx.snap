@@ -7,7 +7,7 @@ exports[`SendEntityUpdate should error for insufficient funds 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`SendEntityUpdate should error for insufficient funds 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -79,29 +79,38 @@ exports[`SendEntityUpdate should error for insufficient funds 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -279,19 +288,19 @@ exports[`SendEntityUpdate should error for insufficient funds 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -337,7 +346,7 @@ exports[`SendEntityUpdate should error for insufficient funds 1`] = `
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -359,7 +368,7 @@ exports[`SendEntityUpdate should error for insufficient funds 1`] = `
                         />
                       </label>
                       <textarea
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -381,7 +390,7 @@ exports[`SendEntityUpdate should error for insufficient funds 1`] = `
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -390,7 +399,7 @@ exports[`SendEntityUpdate should error for insufficient funds 1`] = `
                     </fieldset>
                     <div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -434,7 +443,7 @@ exports[`SendEntityUpdate should error for insufficient funds 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -478,7 +487,7 @@ exports[`SendEntityUpdate should error for insufficient funds 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj fbiPiw"
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -545,10 +554,10 @@ exports[`SendEntityUpdate should error for insufficient funds 1`] = `
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -625,7 +634,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -637,7 +646,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -697,29 +706,38 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -897,19 +915,19 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -955,7 +973,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -978,7 +996,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                       </label>
                       <textarea
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -1005,7 +1023,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -1014,7 +1032,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                     </fieldset>
                     <div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1058,7 +1076,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1102,7 +1120,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj fbiPiw"
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1169,10 +1187,10 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -1249,7 +1267,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1261,7 +1279,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -1321,29 +1339,38 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -1521,19 +1548,19 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -1579,7 +1606,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -1602,7 +1629,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                       </label>
                       <textarea
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -1629,7 +1656,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -1638,7 +1665,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                     </fieldset>
                     <div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1682,7 +1709,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1726,7 +1753,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj fbiPiw"
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1793,10 +1820,10 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -1873,7 +1900,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1885,7 +1912,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -1945,29 +1972,38 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -2145,19 +2181,19 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -2203,7 +2239,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -2226,7 +2262,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                       </label>
                       <textarea
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -2253,7 +2289,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -2262,7 +2298,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                     </fieldset>
                     <div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -2306,7 +2342,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -2350,7 +2386,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj fbiPiw"
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -2417,10 +2453,10 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -2497,7 +2533,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2509,7 +2545,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -2569,29 +2605,38 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -2769,19 +2814,19 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -2828,7 +2873,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                       </label>
                       <input
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -2855,7 +2900,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <textarea
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -2877,7 +2922,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -2886,7 +2931,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                     </fieldset>
                     <div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -2930,7 +2975,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -2974,7 +3019,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj fbiPiw"
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -3041,10 +3086,10 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -3121,7 +3166,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3133,7 +3178,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -3193,29 +3238,38 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -3393,19 +3447,19 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -3452,7 +3506,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                       </label>
                       <input
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -3479,7 +3533,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <textarea
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -3501,7 +3555,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -3510,7 +3564,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                     </fieldset>
                     <div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -3554,7 +3608,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -3598,7 +3652,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj fbiPiw"
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -3665,10 +3719,10 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -3745,7 +3799,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3757,7 +3811,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -3817,29 +3871,38 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -4017,19 +4080,19 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -4076,7 +4139,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                       </label>
                       <input
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -4103,7 +4166,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <textarea
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -4125,7 +4188,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -4134,7 +4197,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                     </fieldset>
                     <div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -4178,7 +4241,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -4222,7 +4285,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj fbiPiw"
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -4289,10 +4352,10 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -4369,7 +4432,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4381,7 +4444,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -4441,29 +4504,38 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -4641,19 +4713,19 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -4699,7 +4771,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -4721,7 +4793,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                         />
                       </label>
                       <textarea
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -4744,7 +4816,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                       </label>
                       <input
                         aria-invalid="true"
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -4758,7 +4830,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                     </fieldset>
                     <div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -4802,7 +4874,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -4846,7 +4918,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj fbiPiw"
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -4913,10 +4985,10 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -4993,7 +5065,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5005,7 +5077,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -5065,29 +5137,38 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -5265,19 +5346,19 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -5304,13 +5385,13 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                           class="text-theme-neutral-dark"
                           data-testid="header__subtitle"
                         >
-                          Check the information again before voting
+                          Review the registration details before sending
                         </div>
                       </div>
                     </div>
                     <div>
                       <div
-                        class="sc-fznKkj cYdjTE"
+                        class="sc-fznyAO laljlJ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5345,7 +5426,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5411,7 +5492,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5443,7 +5524,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5462,7 +5543,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5481,7 +5562,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5496,7 +5577,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                             class="font-semibold"
                           >
                             <a
-                              class="sc-fzplWN bETMmw inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                              class="sc-fznKkj drQiih inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="Link"
                               rel="noopener noreferrer"
                               to="https://ark.io/"
@@ -5517,7 +5598,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5561,7 +5642,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5605,7 +5686,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp mb-2"
+                        class="sc-fznyAO iykGTc mb-2"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -5733,7 +5814,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool"
+                    class="sc-AxjAm hXnHfM"
                     color="primary"
                     data-testid="SendEntityUpdate__back-button"
                     type="button"
@@ -5766,7 +5847,7 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5778,7 +5859,7 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -5838,29 +5919,38 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -6038,19 +6128,19 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -6096,17 +6186,17 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
                         />
                       </label>
                       <div
-                        class="sc-fzoLag hoOQgq max-w-20"
+                        class="sc-fzpjYC dHxzen max-w-20"
                         data-testid="InputPassword"
                       >
                         <input
-                          class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
                         />
                         <div
-                          class="sc-fzqBZW sc-fzoyAV icrEyZ my-px mr-4"
+                          class="sc-fzoyAV sc-fzoXzr YtqIf my-px mr-4"
                         >
                           <button
                             class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -6132,7 +6222,7 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool"
+                    class="sc-AxjAm hXnHfM"
                     color="primary"
                     data-testid="SendEntityUpdate__back-button"
                     type="button"
@@ -6176,7 +6266,7 @@ exports[`SendEntityUpdate should require mnemonic field input 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6188,7 +6278,7 @@ exports[`SendEntityUpdate should require mnemonic field input 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -6248,29 +6338,38 @@ exports[`SendEntityUpdate should require mnemonic field input 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -6448,19 +6547,19 @@ exports[`SendEntityUpdate should require mnemonic field input 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -6506,18 +6605,18 @@ exports[`SendEntityUpdate should require mnemonic field input 1`] = `
                         />
                       </label>
                       <div
-                        class="sc-fzoLag hoOQgq max-w-20"
+                        class="sc-fzpjYC dHxzen max-w-20"
                         data-testid="InputPassword"
                       >
                         <input
                           aria-invalid="true"
-                          class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
                         />
                         <div
-                          class="sc-fzqBZW sc-fzoyAV icrEyZ my-px mr-4"
+                          class="sc-fzoyAV sc-fzoXzr YtqIf my-px mr-4"
                         >
                           <button
                             class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -6548,7 +6647,7 @@ exports[`SendEntityUpdate should require mnemonic field input 1`] = `
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool"
+                    class="sc-AxjAm hXnHfM"
                     color="primary"
                     data-testid="SendEntityUpdate__back-button"
                     type="button"
@@ -6592,7 +6691,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6604,7 +6703,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -6664,29 +6763,38 @@ exports[`SendEntityUpdate should should go back 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -6864,19 +6972,19 @@ exports[`SendEntityUpdate should should go back 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -6922,7 +7030,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__display-name"
                         name="ipfsData.meta.displayName"
                         type="text"
@@ -6944,7 +7052,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                         />
                       </label>
                       <textarea
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__description"
                         name="ipfsData.meta.description"
                       >
@@ -6966,7 +7074,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                         />
                       </label>
                       <input
-                        class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                         data-testid="EntityRegistrationForm__website"
                         name="ipfsData.meta.website"
                         type="text"
@@ -6975,7 +7083,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                     </fieldset>
                     <div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -7019,7 +7127,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -7063,7 +7171,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj fbiPiw"
+                        class="sc-fznyAO jJXFwZ"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -7130,10 +7238,10 @@ exports[`SendEntityUpdate should should go back 1`] = `
                             class="flex-1"
                           >
                             <div
-                              class="sc-fzoLag hoOQgq"
+                              class="sc-fzpjYC dHxzen"
                             >
                               <input
-                                class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -7210,7 +7318,7 @@ exports[`SendEntityUpdate should show error message when wrong mnemonic is enter
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7222,7 +7330,7 @@ exports[`SendEntityUpdate should show error message when wrong mnemonic is enter
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -7282,29 +7390,38 @@ exports[`SendEntityUpdate should show error message when wrong mnemonic is enter
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -7482,19 +7599,19 @@ exports[`SendEntityUpdate should show error message when wrong mnemonic is enter
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -7540,17 +7657,17 @@ exports[`SendEntityUpdate should show error message when wrong mnemonic is enter
                         />
                       </label>
                       <div
-                        class="sc-fzoLag hoOQgq max-w-20"
+                        class="sc-fzpjYC dHxzen max-w-20"
                         data-testid="InputPassword"
                       >
                         <input
-                          class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
                         />
                         <div
-                          class="sc-fzqBZW sc-fzoyAV icrEyZ my-px mr-4"
+                          class="sc-fzoyAV sc-fzoXzr YtqIf my-px mr-4"
                         >
                           <button
                             class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -7576,7 +7693,7 @@ exports[`SendEntityUpdate should show error message when wrong mnemonic is enter
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool"
+                    class="sc-AxjAm hXnHfM"
                     color="primary"
                     data-testid="SendEntityUpdate__back-button"
                     type="button"
@@ -7620,7 +7737,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7632,7 +7749,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -7692,29 +7809,38 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -7892,19 +8018,19 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -7950,17 +8076,17 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
                         />
                       </label>
                       <div
-                        class="sc-fzoLag hoOQgq max-w-20"
+                        class="sc-fzpjYC dHxzen max-w-20"
                         data-testid="InputPassword"
                       >
                         <input
-                          class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
                         />
                         <div
-                          class="sc-fzqBZW sc-fzoyAV icrEyZ my-px mr-4"
+                          class="sc-fzoyAV sc-fzoXzr YtqIf my-px mr-4"
                         >
                           <button
                             class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -7986,7 +8112,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fPpool"
+                    class="sc-AxjAm hXnHfM"
                     color="primary"
                     data-testid="SendEntityUpdate__back-button"
                     type="button"
@@ -8030,7 +8156,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -8042,7 +8168,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -8102,29 +8228,38 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw fFXzuz p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -8302,19 +8437,19 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoNJl lleTTz"
                 />
               </ul>
               <div
@@ -8351,7 +8486,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
                     </p>
                     <div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -8383,7 +8518,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj bBFPlp"
+                        class="sc-fznyAO iykGTc"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -8405,7 +8540,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
                         data-testid="SummaryStep__ipfs-data"
                       >
                         <div
-                          class="sc-fznKkj bBFPlp"
+                          class="sc-fznyAO iykGTc"
                           data-testid="TransactionDetail"
                         >
                           <div
@@ -8422,7 +8557,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
                           </div>
                         </div>
                         <div
-                          class="sc-fznKkj bBFPlp"
+                          class="sc-fznyAO iykGTc"
                           data-testid="TransactionDetail"
                         >
                           <div
@@ -8439,7 +8574,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
                           </div>
                         </div>
                         <div
-                          class="sc-fznKkj bBFPlp"
+                          class="sc-fznyAO iykGTc"
                           data-testid="TransactionDetail"
                         >
                           <div
@@ -8454,7 +8589,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
                               class="font-semibold"
                             >
                               <a
-                                class="sc-fzplWN bETMmw inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                                class="sc-fznKkj drQiih inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://ark.io/"
@@ -8475,7 +8610,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
                         </div>
                       </div>
                       <div
-                        class="sc-fznKkj DgeKj"
+                        class="sc-fznyAO hJHVee"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -8507,7 +8642,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
                     class="flex justify-end space-x-3"
                   >
                     <button
-                      class="sc-AxjAm fPpool"
+                      class="sc-AxjAm hXnHfM"
                       color="primary"
                       data-testid="SendEntityUpdate__wallet-button"
                       type="button"
@@ -8515,7 +8650,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 2
                       Back to Wallet
                     </button>
                     <button
-                      class="sc-AxjAm fPpool space-x-2"
+                      class="sc-AxjAm hXnHfM space-x-2"
                       color="primary"
                       data-testid="SendEntityUpdate__download-button"
                       type="submit"

@@ -1,6 +1,7 @@
 import { ReactComponent as AlertDanger } from "./alert-danger.svg";
 import { ReactComponent as AlertDefault } from "./alert-default.svg";
 import { ReactComponent as AlertSuccess } from "./alert-success.svg";
+import { ReactComponent as ArkLogo } from "./ark-logo.svg";
 import { ReactComponent as ArrowLeft } from "./arrow-left.svg";
 import { ReactComponent as ArrowRight } from "./arrow-right.svg";
 import { ReactComponent as Article } from "./article.svg";
@@ -46,7 +47,7 @@ import { ReactComponent as General } from "./general.svg";
 import { ReactComponent as GitHub } from "./github.svg";
 import { ReactComponent as GitLab } from "./gitlab.svg";
 import { ReactComponent as Grant } from "./grant.svg";
-import { ReactComponent as Grid } from "./grid.svg";
+import { ReactComponent as GridView } from "./grid-view.svg";
 import { ReactComponent as Import } from "./import.svg";
 import { ReactComponent as Instagram } from "./instagram.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
@@ -54,7 +55,7 @@ import { ReactComponent as Key } from "./key.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
 import { ReactComponent as Link } from "./link.svg";
 import { ReactComponent as LinkedIn } from "./linkedin.svg";
-import { ReactComponent as List } from "./list.svg";
+import { ReactComponent as ListView } from "./list-view.svg";
 import { ReactComponent as LoaderLogo } from "./loader-logo.svg";
 import { ReactComponent as Lock } from "./lock.svg";
 import { ReactComponent as Medium } from "./medium.svg";
@@ -152,7 +153,7 @@ export const SvgCollection: any = {
 	GitHub,
 	GitLab,
 	Grant,
-	Grid,
+	GridView,
 	Import,
 	Instagram,
 	Ipfs,
@@ -160,7 +161,7 @@ export const SvgCollection: any = {
 	Ledger,
 	Link,
 	LinkedIn,
-	List,
+	ListView,
 	LoaderLogo,
 	Lock,
 	Medium,
@@ -209,5 +210,6 @@ export const SvgCollection: any = {
 	Vote,
 	Voted,
 	VoteUnvote,
+	ArkLogo,
 	...Currencies,
 };

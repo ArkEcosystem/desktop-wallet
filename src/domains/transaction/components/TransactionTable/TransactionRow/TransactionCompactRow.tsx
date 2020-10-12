@@ -1,6 +1,7 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { TableCell, TableRow } from "app/components/Table";
 import React from "react";
+import { Size } from "types";
 
 import { TransactionRowAmount } from "./TransactionRowAmount";
 import { TransactionRowMode } from "./TransactionRowMode";
@@ -9,9 +10,10 @@ import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 type Props = {
 	transaction: ExtendedTransactionData;
 	walletName?: string;
+	iconSize?: Size;
 } & React.HTMLProps<any>;
 
-export const TransactionCompactRow = ({ transaction, walletName, ...props }: Props) => {
+export const TransactionCompactRow = ({ transaction, walletName, iconSize, ...props }: Props) => {
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 
 	return (
@@ -21,7 +23,7 @@ export const TransactionCompactRow = ({ transaction, walletName, ...props }: Pro
 			{...props}
 		>
 			<TableCell variant="start" className="w-24">
-				<TransactionRowMode transaction={transaction} circleShadowColor={shadowColor} />
+				<TransactionRowMode transaction={transaction} circleShadowColor={shadowColor} iconSize={iconSize} />
 			</TableCell>
 
 			<TableCell>

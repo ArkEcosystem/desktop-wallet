@@ -33,12 +33,11 @@ describe("PluginManagerControls", () => {
 		const gridIcon = getByTestId("LayoutControls__grid--icon");
 		const listIcon = getByTestId("LayoutControls__list--icon");
 
-		expect(gridIcon).toHaveClass("text-theme-danger-300");
-		expect(listIcon).not.toHaveClass("text-theme-danger-300");
-
 		act(() => {
 			fireEvent.click(listIcon);
 		});
+
+		expect(result.current.viewType).toBe("list");
 
 		rerender(
 			<PluginManagerControls
@@ -48,8 +47,7 @@ describe("PluginManagerControls", () => {
 			/>,
 		);
 
-		expect(gridIcon).not.toHaveClass("text-theme-danger-300");
-		expect(listIcon).toHaveClass("text-theme-danger-300");
+		expect(result.current.viewType).toBe("list");
 
 		act(() => {
 			fireEvent.click(gridIcon);
@@ -63,8 +61,7 @@ describe("PluginManagerControls", () => {
 			/>,
 		);
 
-		expect(gridIcon).toHaveClass("text-theme-danger-300");
-		expect(listIcon).not.toHaveClass("text-theme-danger-300");
+		expect(result.current.viewType).toBe("grid");
 
 		expect(asFragment()).toMatchSnapshot();
 	});
