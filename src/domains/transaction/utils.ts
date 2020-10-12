@@ -14,7 +14,7 @@ export const evaluateFee = (fee: any) => {
 };
 
 export const hasSufficientFunds = ({ wallet, fee = 0, amount = 0 }: SufficientFundsParams) => {
-	if (wallet.balance().isEqualTo(0)) return false;
+	if (wallet.balance().isZero()) return false;
 
 	const feeValue = evaluateFee(fee);
 	const total = feeValue.plus(amount);
