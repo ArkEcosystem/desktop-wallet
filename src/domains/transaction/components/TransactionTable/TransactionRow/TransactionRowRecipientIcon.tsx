@@ -3,6 +3,7 @@ import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import React from "react";
+import { Size } from "types";
 
 type Props = {
 	type: string;
@@ -10,11 +11,21 @@ type Props = {
 	recipients?: Contracts.MultiPaymentRecipient[];
 	className?: string;
 	circleShadowColor?: string;
+	size?: Size;
 };
 
-const Wrapper = ({ children, ...props }: { children: React.ReactNode; className?: string; shadowColor?: string }) => (
+const Wrapper = ({
+	children,
+	size,
+	...props
+}: {
+	children: React.ReactNode;
+	className?: string;
+	shadowColor?: string;
+	size?: Size;
+}) => (
 	<Circle
-		size="lg"
+		size={size}
 		data-testid="TransactionRowRecipientIcon"
 		className={"border-theme-neutral-900 text-theme-neutral-900"}
 		{...props}
@@ -23,7 +34,14 @@ const Wrapper = ({ children, ...props }: { children: React.ReactNode; className?
 	</Circle>
 );
 
-export const TransactionRowRecipientIcon = ({ type, recipient, recipients, className, circleShadowColor }: Props) => {
+export const TransactionRowRecipientIcon = ({
+	type,
+	recipient,
+	recipients,
+	className,
+	circleShadowColor,
+	size,
+}: Props) => {
 	const transactionIcon: Record<string, string> = {
 		transfer: "Transfer",
 		secondSignature: "Key",
@@ -64,19 +82,19 @@ export const TransactionRowRecipientIcon = ({ type, recipient, recipients, class
 	};
 
 	if (type === "transfer") {
-		return <Avatar size="lg" address={recipient} shadowColor={circleShadowColor} />;
+		return <Avatar size={size} address={recipient} shadowColor={circleShadowColor} />;
 	}
 
 	if (type === "multiPayment") {
 		return (
-			<Wrapper className={className} shadowColor={circleShadowColor}>
+			<Wrapper className={className} shadowColor={circleShadowColor} size={size}>
 				<span>{recipients!.length}</span>
 			</Wrapper>
 		);
 	}
 
 	return (
-		<Wrapper shadowColor={circleShadowColor}>
+		<Wrapper shadowColor={circleShadowColor} size={size}>
 			<Icon name={transactionIcon[type]} />
 		</Wrapper>
 	);
@@ -84,4 +102,5 @@ export const TransactionRowRecipientIcon = ({ type, recipient, recipients, class
 
 TransactionRowRecipientIcon.defaultProps = {
 	recipients: [],
+	size: "lg",
 };

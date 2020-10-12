@@ -7,7 +7,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB jIViHY"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -80,29 +80,38 @@ exports[`Exchange should not render filler exchange cards 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -285,7 +294,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -331,7 +340,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -377,7 +386,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -423,7 +432,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO flex col-span-2"
+                      class="sc-fzqNqU dHAfqR flex col-span-2"
                       data-testid="Card"
                     >
                       <div
@@ -485,7 +494,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB jIViHY"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -497,7 +506,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -558,29 +567,38 @@ exports[`Exchange should open & close add exchange modal 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -763,7 +781,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -809,7 +827,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -855,7 +873,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -901,7 +919,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO flex col-span-2"
+                      class="sc-fzqNqU dHAfqR flex col-span-2"
                       data-testid="Card"
                     >
                       <div
@@ -963,7 +981,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB jIViHY"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -975,7 +993,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -1036,29 +1054,38 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -1244,7 +1271,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               </div>
             </div>
             <div
-              class="sc-fznWqX bOa-dgO flex col-span-2"
+              class="sc-fzqNqU dHAfqR flex col-span-2"
               data-testid="Card"
             >
               <div
@@ -1293,7 +1320,7 @@ exports[`Exchange should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB jIViHY"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1305,7 +1332,7 @@ exports[`Exchange should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -1366,29 +1393,38 @@ exports[`Exchange should render 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -1574,7 +1610,7 @@ exports[`Exchange should render 1`] = `
               </div>
             </div>
             <div
-              class="sc-fznWqX bOa-dgO flex col-span-2"
+              class="sc-fzqNqU dHAfqR flex col-span-2"
               data-testid="Card"
             >
               <div
@@ -1623,7 +1659,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB jIViHY"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1635,7 +1671,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -1696,29 +1732,38 @@ exports[`Exchange should render filler exchange cards 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -1904,7 +1949,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -1950,7 +1995,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -1996,7 +2041,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -2042,7 +2087,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -2088,7 +2133,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO flex col-span-2"
+                      class="sc-fzqNqU dHAfqR flex col-span-2"
                       data-testid="Card"
                     >
                       <div
@@ -2115,7 +2160,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX pplWv"
+                      class="sc-fzqNqU fYvljQ"
                       data-testid="Card"
                     >
                       <div
@@ -2136,7 +2181,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX pplWv"
+                      class="sc-fzqNqU fYvljQ"
                       data-testid="Card"
                     >
                       <div
@@ -2157,7 +2202,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX pplWv"
+                      class="sc-fzqNqU fYvljQ"
                       data-testid="Card"
                     >
                       <div
@@ -2213,7 +2258,7 @@ exports[`Exchange should render with exchanges 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB jIViHY"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2225,7 +2270,7 @@ exports[`Exchange should render with exchanges 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -2286,29 +2331,38 @@ exports[`Exchange should render with exchanges 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -2491,7 +2545,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -2537,7 +2591,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -2583,7 +2637,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -2629,7 +2683,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO flex col-span-2"
+                      class="sc-fzqNqU dHAfqR flex col-span-2"
                       data-testid="Card"
                     >
                       <div
@@ -2691,7 +2745,7 @@ exports[`Exchange should select exchange 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB jIViHY"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2703,7 +2757,7 @@ exports[`Exchange should select exchange 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -2764,29 +2818,38 @@ exports[`Exchange should select exchange 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -2969,7 +3032,7 @@ exports[`Exchange should select exchange 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX cndoHw"
+                      class="sc-fzqNqU yQkib"
                       data-testid="Card"
                     >
                       <div
@@ -3015,7 +3078,7 @@ exports[`Exchange should select exchange 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -3061,7 +3124,7 @@ exports[`Exchange should select exchange 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO"
+                      class="sc-fzqNqU dHAfqR"
                       data-testid="Card"
                     >
                       <div
@@ -3107,7 +3170,7 @@ exports[`Exchange should select exchange 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznWqX bOa-dgO flex col-span-2"
+                      class="sc-fzqNqU dHAfqR flex col-span-2"
                       data-testid="Card"
                     >
                       <div

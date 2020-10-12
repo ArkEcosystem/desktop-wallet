@@ -1,6 +1,7 @@
 import { ReactComponent as AlertDanger } from "./alert-danger.svg";
 import { ReactComponent as AlertDefault } from "./alert-default.svg";
 import { ReactComponent as AlertSuccess } from "./alert-success.svg";
+import { ReactComponent as ArkLogo } from "./ark-logo.svg";
 import { ReactComponent as ArrowLeft } from "./arrow-left.svg";
 import { ReactComponent as ArrowRight } from "./arrow-right.svg";
 import { ReactComponent as Article } from "./article.svg";
@@ -209,5 +210,6 @@ export const SvgCollection: any = {
 	Vote,
 	Voted,
 	VoteUnvote,
+	ArkLogo,
 	...Currencies,
 };
