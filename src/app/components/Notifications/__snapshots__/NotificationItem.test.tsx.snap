@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notifications should render notification item 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        data-testid="NotificationItem"
+      >
+        <td
+          class="w-8 h-8"
+        >
+          <div
+            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+          />
+        </td>
+        <td>
+          <div>
+            <span
+              class="font-bold text-md text-theme-neutral-600"
+            >
+              ARK Explorer
+            </span>
+            <span
+              class="text-md text-theme-neutral-600"
+            >
+               
+              - update v2.5.6
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+            data-testid="NotificationItem__action"
+          >
+            Update
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Notifications should render with custom action name 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        data-testid="NotificationItem"
+      >
+        <td
+          class="w-8 h-8"
+        >
+          <div
+            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+          />
+        </td>
+        <td>
+          <div>
+            <span
+              class="font-bold text-md text-theme-neutral-600"
+            >
+              New plugin updates
+            </span>
+            <span
+              class="text-md text-theme-neutral-600"
+            >
+               
+              test
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+            data-testid="NotificationItem__action"
+          >
+            custom action name
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
