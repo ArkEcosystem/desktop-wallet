@@ -23,10 +23,10 @@ describe("MyRegistrations", () => {
 			.post("/api/transactions/search")
 			.query(true)
 			.reply(200, (_, { asset }: any) => {
-				if (asset.type === 0) {
+				if (asset?.type === 0) {
 					return require("tests/fixtures/registrations/businesses.json");
 				}
-				if (asset.type === 3) {
+				if (asset?.type === 3) {
 					return require("tests/fixtures/registrations/plugins.json");
 				}
 				return { meta: {}, data: [] };
@@ -59,7 +59,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should render delegate registrations", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -76,7 +76,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should render business registrations", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -94,7 +94,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should render plugin registrations", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -133,7 +133,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should handle delegate resignation dropdown action", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -168,7 +168,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should handle delegate update dropdown action", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -240,7 +240,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should handle entity update dropdown action", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -277,7 +277,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should search and find delegate wallet", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -312,7 +312,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should search and find business entity", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -349,7 +349,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should search and find plugin entity", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -386,7 +386,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should search and see empty results screen", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -425,7 +425,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should reset search results when clicking search reset button", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
