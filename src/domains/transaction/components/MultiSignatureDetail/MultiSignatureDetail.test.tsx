@@ -1,26 +1,26 @@
 import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { act, fireEvent, render } from "testing-library";
+import { TransactionFixture } from "tests/fixtures/transactions";
+import { act, fireEvent, render } from "utils/testing-library";
 
 // i18n
 import { translations } from "../../i18n";
 import { MultiSignatureDetail } from "./MultiSignatureDetail";
 import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
 describe("MultiSignatureDetail", () => {
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(<MultiSignatureDetail isOpen={false} onCancel={() => void 0} />);
+		const { asFragment, getByTestId } = render(<MultiSignatureDetail transaction={TransactionFixture} isOpen={false} onCancel={() => void 0} />);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal and get to step 3", async () => {
+	it.only("should render a modal and get to step 3", async () => {
 		const { asFragment, findByTestId, getByTestId } = render(
-			<MultiSignatureDetail isOpen={true} onCancel={() => void 0} />,
+			<MultiSignatureDetail transaction={TransactionFixture} isOpen={true} onCancel={() => void 0} />,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE);
@@ -46,7 +46,7 @@ describe("MultiSignatureDetail", () => {
 
 	it("should render a modal and go back", async () => {
 		const { asFragment, findByTestId, getByTestId } = render(
-			<MultiSignatureDetail isOpen={true} onCancel={() => void 0} />,
+			<MultiSignatureDetail transaction={TransactionFixture} isOpen={true} onCancel={() => void 0} />,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE);
@@ -69,7 +69,7 @@ describe("MultiSignatureDetail", () => {
 	});
 
 	it("should render 1st step", () => {
-		const { asFragment, getByTestId } = render(<FirstStep />);
+		const { asFragment, getByTestId } = render(<FirstStep transaction={TransactionFixture} />);
 
 		expect(getByTestId("MultiSignatureDetail__first-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -89,7 +89,7 @@ describe("MultiSignatureDetail", () => {
 	});
 
 	it("should render 3rd step", () => {
-		const { asFragment, getByTestId } = render(<ThirdStep />);
+		const { asFragment, getByTestId } = render(<ThirdStep transaction={TransactionFixture} />);
 
 		expect(getByTestId("MultiSignatureDetail__third-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();

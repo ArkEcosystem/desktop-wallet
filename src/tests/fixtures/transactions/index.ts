@@ -8,6 +8,10 @@ const wallet = {
 	exchangeCurrency: () => "BTC",
 	isDelegate: () => true,
 	isResignedDelegate: () => false,
+	transaction: () => ({
+		canBeSigned: () => false,
+		isAwaitingOurSignature: () => false
+	})
 };
 
 export const TransactionFixture = {

@@ -15,13 +15,13 @@ import { Signatures } from "./Signatures";
 type Transaction = ExtendedTransactionData | Contracts.SignedTransactionData;
 
 const isExtendedTransation = (transaction: Transaction): transaction is ExtendedTransactionData =>
-	!!(transaction as ExtendedTransactionData).isConfirmed;
+	"isConfirmed" in transaction;
 
 export const FirstStep = ({ transaction }: { transaction: Transaction }) => {
 	const { t } = useTranslation();
-	const canBeSigned = !isExtendedTransation(transaction)
-		? transaction.isMultiSignature()
-		: transaction.wallet().transaction().canBeSigned(transaction.id());
+	const canBeSigned = isExtendedTransation(transaction)
+		? transaction.wallet().transaction().canBeSigned(transaction.id())
+		: transaction.isMultiSignature()
 
 	return (
 		<section data-testid="MultiSignatureDetail__first-step">
@@ -60,9 +60,7 @@ export const FirstStep = ({ transaction }: { transaction: Transaction }) => {
 				/>
 			</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>
-				{isExtendedTransation(transaction) && transaction.timestamp()}
-			</TransactionDetail>
+
 
 			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")} paddingPosition="top">
 				{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.WAITING_FOR_SIGNATURES")}
