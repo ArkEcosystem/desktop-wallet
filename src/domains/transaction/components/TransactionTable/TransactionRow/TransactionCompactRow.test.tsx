@@ -18,6 +18,19 @@ describe("TransactionCompactRow", () => {
 		expect(getByTestId("TransactionRowAmount")).toBeTruthy();
 	});
 
+	it("should show transaction with custom icons size", () => {
+		const { getByTestId } = renderWithRouter(
+			<table>
+				<tbody>
+					<TransactionCompactRow transaction={TransactionFixture} iconSize="sm" />
+				</tbody>
+			</table>,
+		);
+		expect(getByTestId("TransactionRowMode")).toBeTruthy();
+		expect(getByTestId("address__wallet-address")).toBeTruthy();
+		expect(getByTestId("TransactionRowAmount")).toBeTruthy();
+	});
+
 	it("should set shadow color on mouse events", () => {
 		const setState = jest.fn();
 		const useStateSpy = jest.spyOn(React, "useState");
