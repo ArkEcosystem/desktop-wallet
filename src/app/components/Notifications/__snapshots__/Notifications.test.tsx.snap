@@ -1,12 +1,292 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Notifications should render 1`] = `
+exports[`Notifications should emit transactionClick event 1`] = `
 <div>
-  <div>
+  <div
+    class="styles__NotificationsWrapper-fnayqc-0 iUAjZu"
+    data-testid="NotificationsWrapper"
+  >
+    <div
+      class="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
+    >
+      Plugins
+    </div>
+    <div
+      class="sc-AxirZ foACTB"
+      role="table"
+    >
+      <table
+        cellpadding="0"
+        class="table-auto"
+      >
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            data-testid="NotificationItem"
+          >
+            <td
+              class="w-8 h-8"
+            >
+              <div
+                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+              />
+            </td>
+            <td>
+              <div>
+                <span
+                  class="font-bold text-md text-theme-neutral-600"
+                >
+                  ARK Explorer
+                </span>
+                <span
+                  class="text-md text-theme-neutral-600"
+                >
+                   
+                  - update v2.5.6
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+                data-testid="NotificationItem__action"
+              >
+                Update
+              </div>
+            </td>
+          </tr>
+          <tr
+            data-testid="NotificationItem"
+          >
+            <td
+              class="w-8 h-8"
+            >
+              <div
+                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+              />
+            </td>
+            <td>
+              <div>
+                <span
+                  class="font-bold text-md text-theme-neutral-600"
+                >
+                  ARK Avatars
+                </span>
+                <span
+                  class="text-md text-theme-neutral-600"
+                >
+                   
+                  - update v4
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+                data-testid="NotificationItem__action"
+              >
+                Update
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="mt-4"
+    >
+      <div
+        class="sticky z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
+      >
+        Transactions
+      </div>
+      <div
+        class="sc-AxirZ foACTB"
+        role="table"
+      >
+        <table
+          cellpadding="0"
+          class="table-auto"
+        >
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              class="sc-AxhCb bTyNEn group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-24"
+              >
+                <div
+                  class="sc-AxiKw gtaXRk"
+                >
+                  <div
+                    class="flex items-center -space-x-1"
+                    data-testid="TransactionRowMode"
+                  >
+                    <div
+                      class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        data-testid="TransactionRowMode__Received"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          received.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxiKw cNDILm"
+                >
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B…s6YUYD
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxiKw bQCFMo justify-end"
+                >
+                  <div
+                    class="sc-AxhUy eCrePA"
+                    color="success"
+                    data-testid="TransactionRowAmount"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      20 DARK
+                    </span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="sc-AxhCb bTyNEn group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-24"
+              >
+                <div
+                  class="sc-AxiKw gtaXRk"
+                >
+                  <div
+                    class="flex items-center -space-x-1"
+                    data-testid="TransactionRowMode"
+                  >
+                    <div
+                      class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        data-testid="TransactionRowMode__Received"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          received.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxiKw cNDILm"
+                >
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B…s6YUYD
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxiKw bQCFMo justify-end"
+                >
+                  <div
+                    class="sc-AxhUy eCrePA"
+                    color="success"
+                    data-testid="TransactionRowAmount"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      0.0000001 DARK
+                    </span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Notifications should render with empty notifications 1`] = `
+<div>
+  <div
+    class="styles__NotificationsWrapper-fnayqc-0 iUAjZu"
+  >
     <div
       class="p-6 mb-5 border-2 border-theme-neutral-200 text-md rounded-xl text-theme-neutral-dark"
     >
-      You have no notifications at this time.
+      You have no notifications at this time
     </div>
     <div>
       <div
@@ -37,11 +317,14 @@ exports[`Notifications should render 1`] = `
 </div>
 `;
 
-exports[`Notifications should render plugins 1`] = `
+exports[`Notifications should render with plugins 1`] = `
 <div>
-  <div>
+  <div
+    class="styles__NotificationsWrapper-fnayqc-0 iUAjZu"
+    data-testid="NotificationsWrapper"
+  >
     <div
-      class="mb-2 text-sm font-bold text-theme-neutral"
+      class="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
     >
       Plugins
     </div>
@@ -56,38 +339,71 @@ exports[`Notifications should render plugins 1`] = `
         <tbody
           role="rowgroup"
         >
-          <tr>
+          <tr
+            data-testid="NotificationItem"
+          >
             <td
-              class="w-8"
+              class="w-8 h-8"
             >
               <div
-                class="flex p-2 mr-4 rounded-lg bg-logo"
-              >
-                <img
-                  alt="ARK Explorer"
-                  src="/static/media/ark-logo.bafd72bb.png"
-                />
-              </div>
+                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+              />
             </td>
             <td>
-              <span
-                class="font-bold text-md text-theme-neutral-600"
-              >
-                ARK Explorer
-              </span>
-              <span
-                class="text-md text-theme-neutral-600"
-              >
-                 
-                - update v2.5.6
-              </span>
+              <div>
+                <span
+                  class="font-bold text-md text-theme-neutral-600"
+                >
+                  ARK Explorer
+                </span>
+                <span
+                  class="text-md text-theme-neutral-600"
+                >
+                   
+                  - update v2.5.6
+                </span>
+              </div>
             </td>
             <td>
               <div
                 class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
-                data-testid="notifications__plugin-action"
+                data-testid="NotificationItem__action"
               >
-                Update now
+                Update
+              </div>
+            </td>
+          </tr>
+          <tr
+            data-testid="NotificationItem"
+          >
+            <td
+              class="w-8 h-8"
+            >
+              <div
+                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+              />
+            </td>
+            <td>
+              <div>
+                <span
+                  class="font-bold text-md text-theme-neutral-600"
+                >
+                  ARK Avatars
+                </span>
+                <span
+                  class="text-md text-theme-neutral-600"
+                >
+                   
+                  - update v4
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+                data-testid="NotificationItem__action"
+              >
+                Update
               </div>
             </td>
           </tr>
@@ -95,58 +411,13 @@ exports[`Notifications should render plugins 1`] = `
       </table>
     </div>
     <div
-      class="mb-2 text-sm font-bold mt-9 text-theme-neutral"
-    />
-    <div
-      class="relative"
-      data-testid="TransactionTable"
+      class="mt-4"
     >
       <div
-        class="sc-AxirZ foACTB"
-        role="table"
+        class="sticky z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
       >
-        <table
-          cellpadding="0"
-          class="table-auto"
-        >
-          <tbody
-            role="rowgroup"
-          />
-        </table>
+        Transactions
       </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Notifications should render transactions 1`] = `
-<div>
-  <div>
-    <div
-      class="mb-2 text-sm font-bold text-theme-neutral"
-    >
-      Transactions
-    </div>
-    <div
-      class="sc-AxirZ foACTB"
-      role="table"
-    >
-      <table
-        cellpadding="0"
-        class="table-auto"
-      >
-        <tbody
-          role="rowgroup"
-        />
-      </table>
-    </div>
-    <div
-      class="mb-2 text-sm font-bold mt-9 text-theme-neutral"
-    />
-    <div
-      class="relative"
-      data-testid="TransactionTable"
-    >
       <div
         class="sc-AxirZ foACTB"
         role="table"
@@ -173,30 +444,30 @@ exports[`Notifications should render transactions 1`] = `
                     data-testid="TransactionRowMode"
                   >
                     <div
-                      class="sc-AxgMl eqWWwc border-theme-danger-contrast text-theme-danger"
+                      class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
                     >
                       <div
                         class="sc-AxjAm cpczEI"
-                        data-testid="TransactionRowMode__Sent"
+                        data-testid="TransactionRowMode__Received"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          sent.svg
+                          received.svg
                         </svg>
                       </div>
                     </div>
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
                       data-testid="Avatar"
                     >
                       <div
                         class="w-full h-full"
                       >
                         <img
-                          alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                          title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         />
                       </div>
                     </div>
@@ -214,7 +485,7 @@ exports[`Notifications should render transactions 1`] = `
                       class="sc-AxheI fniENP text-theme-text font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      ASuusX…GQ3kqT
+                      D8rr7B…s6YUYD
                     </span>
                   </div>
                 </div>
@@ -224,14 +495,371 @@ exports[`Notifications should render transactions 1`] = `
                   class="sc-AxiKw bQCFMo justify-end"
                 >
                   <div
-                    class="sc-AxhUy gRLEpJ"
-                    color="danger"
+                    class="sc-AxhUy eCrePA"
+                    color="success"
                     data-testid="TransactionRowAmount"
                   >
                     <span
                       data-testid="Amount"
                     >
-                      121 
+                      20 DARK
+                    </span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="sc-AxhCb bTyNEn group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-24"
+              >
+                <div
+                  class="sc-AxiKw gtaXRk"
+                >
+                  <div
+                    class="flex items-center -space-x-1"
+                    data-testid="TransactionRowMode"
+                  >
+                    <div
+                      class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        data-testid="TransactionRowMode__Received"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          received.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxiKw cNDILm"
+                >
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B…s6YUYD
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxiKw bQCFMo justify-end"
+                >
+                  <div
+                    class="sc-AxhUy eCrePA"
+                    color="success"
+                    data-testid="TransactionRowAmount"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      0.0000001 DARK
+                    </span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Notifications should render with transactions and plugins 1`] = `
+<div>
+  <div
+    class="styles__NotificationsWrapper-fnayqc-0 iUAjZu"
+    data-testid="NotificationsWrapper"
+  >
+    <div
+      class="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
+    >
+      Plugins
+    </div>
+    <div
+      class="sc-AxirZ foACTB"
+      role="table"
+    >
+      <table
+        cellpadding="0"
+        class="table-auto"
+      >
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            data-testid="NotificationItem"
+          >
+            <td
+              class="w-8 h-8"
+            >
+              <div
+                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+              />
+            </td>
+            <td>
+              <div>
+                <span
+                  class="font-bold text-md text-theme-neutral-600"
+                >
+                  ARK Explorer
+                </span>
+                <span
+                  class="text-md text-theme-neutral-600"
+                >
+                   
+                  - update v2.5.6
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+                data-testid="NotificationItem__action"
+              >
+                Update
+              </div>
+            </td>
+          </tr>
+          <tr
+            data-testid="NotificationItem"
+          >
+            <td
+              class="w-8 h-8"
+            >
+              <div
+                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+              />
+            </td>
+            <td>
+              <div>
+                <span
+                  class="font-bold text-md text-theme-neutral-600"
+                >
+                  ARK Avatars
+                </span>
+                <span
+                  class="text-md text-theme-neutral-600"
+                >
+                   
+                  - update v4
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+                data-testid="NotificationItem__action"
+              >
+                Update
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="mt-4"
+    >
+      <div
+        class="sticky z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
+      >
+        Transactions
+      </div>
+      <div
+        class="sc-AxirZ foACTB"
+        role="table"
+      >
+        <table
+          cellpadding="0"
+          class="table-auto"
+        >
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              class="sc-AxhCb bTyNEn group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-24"
+              >
+                <div
+                  class="sc-AxiKw gtaXRk"
+                >
+                  <div
+                    class="flex items-center -space-x-1"
+                    data-testid="TransactionRowMode"
+                  >
+                    <div
+                      class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        data-testid="TransactionRowMode__Received"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          received.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxiKw cNDILm"
+                >
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B…s6YUYD
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxiKw bQCFMo justify-end"
+                >
+                  <div
+                    class="sc-AxhUy eCrePA"
+                    color="success"
+                    data-testid="TransactionRowAmount"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      20 DARK
+                    </span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="sc-AxhCb bTyNEn group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-24"
+              >
+                <div
+                  class="sc-AxiKw gtaXRk"
+                >
+                  <div
+                    class="flex items-center -space-x-1"
+                    data-testid="TransactionRowMode"
+                  >
+                    <div
+                      class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        data-testid="TransactionRowMode__Received"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          received.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxiKw cNDILm"
+                >
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B…s6YUYD
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxiKw bQCFMo justify-end"
+                >
+                  <div
+                    class="sc-AxhUy eCrePA"
+                    color="success"
+                    data-testid="TransactionRowAmount"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      0.0000001 DARK
                     </span>
                   </div>
                 </div>

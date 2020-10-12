@@ -11,7 +11,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -23,7 +23,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -83,29 +83,38 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxhCb draJkT p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxhCb draJkT p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -1400,14 +1409,14 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
               class="flex justify-center w-full mt-10 "
             >
               <div
-                class="sc-fzqARJ eKBrhv"
+                class="sc-fzoNJl jViIw"
                 data-testid="Pagination"
               >
                 <div
                   class="flex px-2 rounded bg-theme-primary-contrast"
                 >
                   <div
-                    class="sc-fzqNqU iWOVop current-page"
+                    class="sc-fzoXWK cruCZl current-page"
                   >
                     1
                   </div>
@@ -1429,7 +1438,7 @@ exports[`Votes should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1441,7 +1450,7 @@ exports[`Votes should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -1501,29 +1510,38 @@ exports[`Votes should render 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxhCb draJkT p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxhCb draJkT p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -2818,14 +2836,14 @@ exports[`Votes should render 1`] = `
               class="flex justify-center w-full mt-10 "
             >
               <div
-                class="sc-fzqARJ eKBrhv"
+                class="sc-fzoNJl jViIw"
                 data-testid="Pagination"
               >
                 <div
                   class="flex px-2 rounded bg-theme-primary-contrast"
                 >
                   <div
-                    class="sc-fzqNqU iWOVop current-page"
+                    class="sc-fzoXWK cruCZl current-page"
                   >
                     1
                   </div>
@@ -2847,7 +2865,7 @@ exports[`Votes should select a delegate 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2859,7 +2877,7 @@ exports[`Votes should select a delegate 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -2919,29 +2937,38 @@ exports[`Votes should select a delegate 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxhCb draJkT p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxhCb draJkT p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -4236,14 +4263,14 @@ exports[`Votes should select a delegate 1`] = `
               class="flex justify-center w-full mt-10 mb-24"
             >
               <div
-                class="sc-fzqARJ eKBrhv"
+                class="sc-fzoNJl jViIw"
                 data-testid="Pagination"
               >
                 <div
                   class="flex px-2 rounded bg-theme-primary-contrast"
                 >
                   <div
-                    class="sc-fzqNqU iWOVop current-page"
+                    class="sc-fzoXWK cruCZl current-page"
                   >
                     1
                   </div>
@@ -4398,7 +4425,7 @@ exports[`Votes should select an address without vote 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM fOVUHg"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4410,7 +4437,7 @@ exports[`Votes should select an address without vote 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -4470,29 +4497,38 @@ exports[`Votes should select an address without vote 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxhCb draJkT p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxhCb draJkT p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -5767,14 +5803,14 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex justify-center w-full mt-10 "
             >
               <div
-                class="sc-fzqARJ eKBrhv"
+                class="sc-fzoNJl jViIw"
                 data-testid="Pagination"
               >
                 <div
                   class="flex px-2 rounded bg-theme-primary-contrast"
                 >
                   <div
-                    class="sc-fzqNqU iWOVop current-page"
+                    class="sc-fzoXWK cruCZl current-page"
                   >
                     1
                   </div>
