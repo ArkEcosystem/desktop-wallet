@@ -201,7 +201,7 @@ export const translations: { [key: string]: any } = {
 		},
 		THIRD_STEP: {
 			TITLE: "Transaction Review",
-			DESCRIPTION: "Check the information again before voting",
+			DESCRIPTION: "Review the registration details before sending",
 		},
 	},
 
@@ -304,7 +304,7 @@ export const translations: { [key: string]: any } = {
 		},
 		SECOND_STEP: {
 			TITLE: "Transaction Review",
-			DESCRIPTION: "Check the information again before voting",
+			DESCRIPTION: "Review the IPFS transaction details before sending",
 		},
 	},
 
@@ -326,7 +326,7 @@ export const translations: { [key: string]: any } = {
 		},
 		SECOND_STEP: {
 			TITLE: "Transaction Review",
-			DESCRIPTION: "Check the information again before voting",
+			DESCRIPTION: "Review the transaction details before sending",
 		},
 	},
 
