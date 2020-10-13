@@ -22,22 +22,21 @@ type SelectProps = {
 
 type SelectDropdownProps = {
 	options: Option[];
-	placeholder?: string;
-	onSelectedItemChange: any;
-	disabled?: boolean;
-	isInvalid?: boolean;
 	defaultSelectedItem?: Option;
+	placeholder?: string;
+	isInvalid?: boolean;
+	disabled?: boolean;
+	onSelectedItemChange: any;
 } & React.InputHTMLAttributes<any>;
 
 export const itemToString = (item: Option | null) => item?.label || "";
 
 const SelectDropdown = ({
 	options,
-	placeholder,
-	onSelectedItemChange,
-	disabled,
-	isInvalid,
 	defaultSelectedItem,
+	placeholder,
+	disabled,
+	onSelectedItemChange,
 }: SelectDropdownProps) => {
 	const [items, setItems] = useState([...options]);
 
@@ -54,7 +53,6 @@ const SelectDropdown = ({
 		getItemProps,
 		getMenuProps,
 		selectItem,
-		selectedItem,
 		inputValue,
 		highlightedIndex,
 		reset,
@@ -83,11 +81,6 @@ const SelectDropdown = ({
 		}
 	}, [items, inputValue]);
 
-	const isOpenClassName = isOpen ? "is-open" : "";
-	const isSelectedClassName = selectedItem ? "is-selected" : "";
-	const isInvalidClassName = isInvalid ? "is-invalid" : "";
-	const toggleButtonClassName = `${isOpenClassName} ${isSelectedClassName} ${isInvalidClassName}`;
-
 	return (
 		<div className="relative w-full cursor-pointer">
 			<div {...getComboboxProps()}>
@@ -106,7 +99,7 @@ const SelectDropdown = ({
 								reset();
 							}
 						},
-						onKeyDown: (event: any) => {
+						onKeyDown: (event) => {
 							if (event.key === "Tab" || event.key === "Enter") {
 								// Select first match
 								if (inputValue && items.length > 0) {
@@ -121,17 +114,19 @@ const SelectDropdown = ({
 						},
 					})}
 				/>
-				<SelectOptionsList {...getMenuProps({ className: isOpenClassName })}>
+				<SelectOptionsList {...getMenuProps({ className: isOpen ? "is-open" : "" })}>
 					{isOpen &&
-						items.map((item: Option, index: number) => (
+						options.map((item: Option, index: number) => (
 							<li
 								key={`${item.value}${index}`}
 								data-testid={`select-list__toggle-option-${index}`}
 								{...getItemProps({
-									item,
 									index,
+									item,
 									className: `select-list-option ${
-										highlightedIndex === index ? "is-highlighted" : ""
+										item.label === inputValue || (!inputValue && highlightedIndex === index)
+											? "is-highlighted"
+											: ""
 									}`,
 									onMouseDown: () => {
 										selectItem(item);
@@ -152,7 +147,7 @@ const SelectDropdown = ({
 };
 
 export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
-	({ isInvalid, placeholder, onChange, defaultValue, options, disabled }: SelectProps, ref) => {
+	({ options, defaultValue, placeholder, isInvalid, disabled, onChange }: SelectProps, ref) => {
 		const defaultSelectedItem = options.find((option: Option) => option.value === defaultValue);
 		const [selected, setSelected] = useState(defaultSelectedItem);
 
@@ -167,8 +162,8 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					ref={ref}
 					value={selected?.value || ""}
 					className="sr-only"
-					readOnly
 					isInvalid={isInvalidField}
+					readOnly
 				/>
 				<SelectDropdown
 					disabled={disabled}
