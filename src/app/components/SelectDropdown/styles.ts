@@ -35,5 +35,11 @@ export const SelectOptionsList = styled.ul`
 				${tw`border-b border-theme-neutral-contrast`};
 			}
 		}
+
+		&.is-empty {
+			&:hover {
+				${tw`bg-white cursor-default`}
+			}
+		}
 	}
 `;

@@ -130,25 +130,31 @@ const SelectDropdown = ({
 				/>
 				<SelectOptionsList {...getMenuProps({ className: isOpen ? "is-open" : "" })}>
 					{isOpen &&
-						data.map((item: Option, index: number) => (
-							<li
-								key={`${item.value}${index}`}
-								data-testid={`select-list__toggle-option-${index}`}
-								{...getItemProps({
-									index,
-									item,
-									className: `select-list-option ${
-										item.label === inputValue || (!inputValue && highlightedIndex === index)
-											? "is-highlighted"
-											: ""
-									}`,
-									onMouseDown: () => {
-										selectItem(item);
-										closeMenu();
-									},
-								})}
-							>
-								<div className="select-list-option__label">{item.label}</div>
+						(data.length > 0 ? (
+							data.map((item: Option, index: number) => (
+								<li
+									key={`${item.value}${index}`}
+									data-testid={`select-list__toggle-option-${index}`}
+									{...getItemProps({
+										index,
+										item,
+										className: `select-list-option ${
+											item.label === inputValue || (!inputValue && highlightedIndex === index)
+												? "is-highlighted"
+												: ""
+										}`,
+										onMouseDown: () => {
+											selectItem(item);
+											closeMenu();
+										},
+									})}
+								>
+									<div className="select-list-option__label">{item.label}</div>
+								</li>
+							))
+						) : (
+							<li className="select-list-option is-empty" data-testid="select-list__empty-option">
+								No Options
 							</li>
 						))}
 				</SelectOptionsList>
