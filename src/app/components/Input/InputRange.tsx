@@ -52,9 +52,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		}
 
 		useEffect(() => {
-			if (value) {
-				setValues([value]);
-			}
+			setValues([value]);
 		}, [value]);
 
 		return (
