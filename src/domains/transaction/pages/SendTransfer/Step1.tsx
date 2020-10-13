@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 
 export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; profile: Profile }) => {
 	const { t } = useTranslation();
-	const { getValues, setValue, watch } = useFormContext();
+	const { getValues, setValue, watch, clearErrors } = useFormContext();
 	const { recipients, smartbridge } = getValues();
 	const { senderAddress, fee } = watch();
 
@@ -36,9 +36,10 @@ export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; pro
 								assetSymbol={senderWallet?.currency()}
 								maxAvailableAmount={maxAmount}
 								profile={profile}
-								onChange={(recipients: RecipientListItem[]) =>
-									setValue("recipients", recipients, { shouldValidate: true, shouldDirty: true })
-								}
+								onChange={(recipients: RecipientListItem[]) => {
+									clearErrors("amount");
+									setValue("recipients", recipients, { shouldValidate: true, shouldDirty: true });
+								}}
 								recipients={recipients}
 							/>
 						</div>
