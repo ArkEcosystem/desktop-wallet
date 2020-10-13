@@ -8,7 +8,6 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
-import { toasts } from "app/services";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
 import { hasSufficientFunds } from "domains/transaction/utils";
@@ -41,7 +40,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
-	const { formState, getValues, register, setValue, unregister } = form;
+	const { formState, getValues, register, setValue, unregister, setError } = form;
 	const { registrationType } = getValues();
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
@@ -159,7 +158,13 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 
 	const handleNext = () => {
 		if (activeTab === 2 && !hasSufficientFunds({ wallet: activeWallet, fee: getValues("fee") })) {
-			return toasts.error(t("TRANSACTION.VALIDATION.INSUFFICIENT_FUNDS"));
+			return setError("fee", {
+				type: "manual",
+				message: t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+					balance: activeWallet.balance().toHuman(),
+					coinId: activeWallet.coinId(),
+				}),
+			});
 		}
 
 		setActiveTab(activeTab + 1);
