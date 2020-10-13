@@ -1,7 +1,7 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
-import { FormField, FormLabel, SubForm } from "app/components/Form";
+import { FormField, FormHelperText,FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputAddonEnd, InputCurrency, InputGroup } from "app/components/Input";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
@@ -199,6 +199,7 @@ export const AddRecipient = ({
 								</button>
 							</InputAddonEnd>
 						</InputGroup>
+						<FormHelperText />
 					</FormField>
 				</div>
 
