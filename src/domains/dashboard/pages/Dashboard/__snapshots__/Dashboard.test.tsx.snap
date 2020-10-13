@@ -2351,14 +2351,31 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="text-theme-secondary-text"
                             data-testid="TransactionRowAmount"
                           >
-                            0 BTC
-                          </span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                            <span
+                              data-testid="TransactionRow__currency"
+                            >
+                              <span
+                                class="text-theme-neutral-dark"
+                                data-testid="TransactionRowAmount"
+                              >
+                                0 BTC
+                              </span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <button
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
+                color="primary"
+                data-testid="transactions__fetch-more-button"
+                type="button"
+              >
+                View More
+              </button>
             </div>
           </div>
           <button
@@ -4104,14 +4121,31 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             class="text-theme-secondary-text"
                             data-testid="TransactionRowAmount"
                           >
-                            0 BTC
-                          </span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                            <span
+                              data-testid="TransactionRow__currency"
+                            >
+                              <span
+                                class="text-theme-neutral-dark"
+                                data-testid="TransactionRowAmount"
+                              >
+                                0 BTC
+                              </span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <button
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
+                color="primary"
+                data-testid="transactions__fetch-more-button"
+                type="button"
+              >
+                View More
+              </button>
             </div>
           </div>
           <button
@@ -6885,14 +6919,31 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             class="text-theme-secondary-text"
                             data-testid="TransactionRowAmount"
                           >
-                            0 BTC
-                          </span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                            <span
+                              data-testid="TransactionRow__currency"
+                            >
+                              <span
+                                class="text-theme-neutral-dark"
+                                data-testid="TransactionRowAmount"
+                              >
+                                0 BTC
+                              </span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <button
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
+                color="primary"
+                data-testid="transactions__fetch-more-button"
+                type="button"
+              >
+                View More
+              </button>
             </div>
           </div>
           <button
@@ -8605,14 +8656,31 @@ exports[`Dashboard should render 1`] = `
                             class="text-theme-secondary-text"
                             data-testid="TransactionRowAmount"
                           >
-                            0 BTC
-                          </span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                            <span
+                              data-testid="TransactionRow__currency"
+                            >
+                              <span
+                                class="text-theme-neutral-dark"
+                                data-testid="TransactionRowAmount"
+                              >
+                                0 BTC
+                              </span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <button
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
+                color="primary"
+                data-testid="transactions__fetch-more-button"
+                type="button"
+              >
+                View More
+              </button>
             </div>
           </div>
           <button
@@ -10325,14 +10393,31 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             class="text-theme-secondary-text"
                             data-testid="TransactionRowAmount"
                           >
-                            0 BTC
-                          </span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                            <span
+                              data-testid="TransactionRow__currency"
+                            >
+                              <span
+                                class="text-theme-neutral-dark"
+                                data-testid="TransactionRowAmount"
+                              >
+                                0 BTC
+                              </span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <button
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
+                color="primary"
+                data-testid="transactions__fetch-more-button"
+                type="button"
+              >
+                View More
+              </button>
             </div>
           </div>
           <button
@@ -12045,14 +12130,69 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             class="text-theme-secondary-text"
                             data-testid="TransactionRowAmount"
                           >
-                            0 BTC
-                          </span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                            <div
+                              class="inline-flex p-1 align-middle"
+                              data-testid="TransactionRowConfirmation"
+                            >
+                              <div
+                                class="sc-AxirZ iQaTP text-theme-success"
+                                data-testid="TransactionRowConfirmation__confirmed"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  ok.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="sc-Axmtr hmHaow justify-end"
+                          >
+                            <div
+                              class="sc-fzozJi iTqYGz"
+                              color="success"
+                              data-testid="TransactionRowAmount"
+                            >
+                              <span
+                                data-testid="Amount"
+                              >
+                                50,000 DARK
+                              </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="sc-Axmtr ftZuYa justify-end"
+                          >
+                            <span
+                              data-testid="TransactionRow__currency"
+                            >
+                              <span
+                                class="text-theme-neutral-dark"
+                                data-testid="TransactionRowAmount"
+                              >
+                                0 BTC
+                              </span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <button
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
+                color="primary"
+                data-testid="transactions__fetch-more-button"
+                type="button"
+              >
+                View More
+              </button>
             </div>
           </div>
           <button
@@ -13765,14 +13905,31 @@ exports[`Dashboard should render wallets 1`] = `
                             class="text-theme-secondary-text"
                             data-testid="TransactionRowAmount"
                           >
-                            0 BTC
-                          </span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                            <span
+                              data-testid="TransactionRow__currency"
+                            >
+                              <span
+                                class="text-theme-neutral-dark"
+                                data-testid="TransactionRowAmount"
+                              >
+                                0 BTC
+                              </span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <button
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
+                color="primary"
+                data-testid="transactions__fetch-more-button"
+                type="button"
+              >
+                View More
+              </button>
             </div>
           </div>
           <button
