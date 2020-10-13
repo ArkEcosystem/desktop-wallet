@@ -4,6 +4,7 @@ import { Input, InputAddonEnd } from "app/components/Input";
 import { SelectDropdownInput } from "app/components/SelectDropdown/SelectDropdownInput";
 import { useCombobox } from "downshift";
 import React, { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { SelectOptionsList } from "./styles";
 
@@ -38,6 +39,8 @@ const SelectDropdown = ({
 	disabled,
 	onSelectedItemChange,
 }: SelectDropdownProps) => {
+	const { t } = useTranslation();
+
 	const [items, setItems] = useState([...options]);
 	const [isTyping, setIsTyping] = useState(false);
 
@@ -154,7 +157,7 @@ const SelectDropdown = ({
 							))
 						) : (
 							<li className="select-list-option is-empty" data-testid="select-list__empty-option">
-								No Options
+								{t("COMMON.NO_OPTIONS")}
 							</li>
 						))}
 				</SelectOptionsList>
