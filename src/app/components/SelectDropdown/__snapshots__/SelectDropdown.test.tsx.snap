@@ -15,22 +15,37 @@ exports[`SelectDropdown should render 1`] = `
     <div
       class="relative w-full cursor-pointer"
     >
-      <div>
-        <button
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label downshift-0-toggle-button"
-          class="sc-fzozJi hEMsew   "
-          data-testid="select-list__toggle-button"
-          id="downshift-0-toggle-button"
-          type="button"
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-owns="downshift-1-menu"
+        role="combobox"
+      >
+        <label
+          for="downshift-0-input"
+          id="downshift-1-label"
         />
+        <div
+          class="sc-AxgMl cZbWSE"
+          data-testid="SelectDropdownInput"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-1-menu"
+            aria-labelledby="downshift-1-label"
+            autocomplete="off"
+            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+            data-testid="SelectDropdownInput__input"
+            id="downshift-0-input"
+            placeholder="Select option"
+            value=""
+          />
+        </div>
         <ul
-          aria-labelledby="downshift-0-label"
-          class="sc-fzoLsD XSmGT"
-          id="downshift-0-menu"
+          aria-labelledby="downshift-1-label"
+          class="sc-fzozJi hiAEj"
+          id="downshift-1-menu"
           role="listbox"
-          tabindex="-1"
         />
       </div>
       <div
@@ -66,23 +81,38 @@ exports[`SelectDropdown should render disabled 1`] = `
     <div
       class="relative w-full cursor-pointer"
     >
-      <div>
-        <button
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-2-label downshift-2-toggle-button"
-          class="sc-fzozJi hEMsew   "
-          data-testid="select-list__toggle-button"
-          disabled=""
-          id="downshift-2-toggle-button"
-          type="button"
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-owns="downshift-9-menu"
+        role="combobox"
+      >
+        <label
+          for="downshift-8-input"
+          id="downshift-9-label"
         />
+        <div
+          class="sc-AxgMl cZbWSE"
+          data-testid="SelectDropdownInput"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-9-menu"
+            aria-labelledby="downshift-9-label"
+            autocomplete="off"
+            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+            data-testid="SelectDropdownInput__input"
+            disabled=""
+            id="downshift-8-input"
+            placeholder="Select option"
+            value=""
+          />
+        </div>
         <ul
-          aria-labelledby="downshift-2-label"
-          class="sc-fzoLsD XSmGT"
-          id="downshift-2-menu"
+          aria-labelledby="downshift-9-label"
+          class="sc-fzozJi hiAEj"
+          id="downshift-9-menu"
           role="listbox"
-          tabindex="-1"
         />
       </div>
       <div
@@ -119,22 +149,37 @@ exports[`SelectDropdown should render invalid 1`] = `
     <div
       class="relative w-full cursor-pointer"
     >
-      <div>
-        <button
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-1-label downshift-1-toggle-button"
-          class="sc-fzozJi hEMsew   is-invalid"
-          data-testid="select-list__toggle-button"
-          id="downshift-1-toggle-button"
-          type="button"
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-owns="downshift-5-menu"
+        role="combobox"
+      >
+        <label
+          for="downshift-4-input"
+          id="downshift-5-label"
         />
+        <div
+          class="sc-AxgMl cZbWSE"
+          data-testid="SelectDropdownInput"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-5-menu"
+            aria-labelledby="downshift-5-label"
+            autocomplete="off"
+            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+            data-testid="SelectDropdownInput__input"
+            id="downshift-4-input"
+            placeholder="Select option"
+            value=""
+          />
+        </div>
         <ul
-          aria-labelledby="downshift-1-label"
-          class="sc-fzoLsD XSmGT"
-          id="downshift-1-menu"
+          aria-labelledby="downshift-5-label"
+          class="sc-fzozJi hiAEj"
+          id="downshift-5-menu"
           role="listbox"
-          tabindex="-1"
         />
       </div>
       <div
@@ -170,22 +215,37 @@ exports[`SelectDropdown should render with empty options 1`] = `
     <div
       class="relative w-full cursor-pointer"
     >
-      <div>
-        <button
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-6-label downshift-6-toggle-button"
-          class="sc-fzozJi hEMsew   "
-          data-testid="select-list__toggle-button"
-          id="downshift-6-toggle-button"
-          type="button"
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-owns="downshift-23-menu"
+        role="combobox"
+      >
+        <label
+          for="downshift-22-input"
+          id="downshift-23-label"
         />
+        <div
+          class="sc-AxgMl cZbWSE"
+          data-testid="SelectDropdownInput"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-23-menu"
+            aria-labelledby="downshift-23-label"
+            autocomplete="off"
+            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+            data-testid="SelectDropdownInput__input"
+            id="downshift-22-input"
+            placeholder="Select option"
+            value=""
+          />
+        </div>
         <ul
-          aria-labelledby="downshift-6-label"
-          class="sc-fzoLsD XSmGT"
-          id="downshift-6-menu"
+          aria-labelledby="downshift-23-label"
+          class="sc-fzozJi hiAEj"
+          id="downshift-23-menu"
           role="listbox"
-          tabindex="-1"
         />
       </div>
       <div
@@ -221,24 +281,43 @@ exports[`SelectDropdown should render with initial default value 1`] = `
     <div
       class="relative w-full cursor-pointer"
     >
-      <div>
-        <button
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-3-label downshift-3-toggle-button"
-          class="sc-fzozJi hEMsew  is-selected "
-          data-testid="select-list__toggle-button"
-          id="downshift-3-toggle-button"
-          type="button"
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-owns="downshift-13-menu"
+        role="combobox"
+      >
+        <label
+          for="downshift-12-input"
+          id="downshift-13-label"
+        />
+        <div
+          class="sc-AxgMl cZbWSE"
+          data-testid="SelectDropdownInput"
         >
-          Option 3
-        </button>
+          <span
+            class="sc-AxiKw isrMEQ py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+            data-testid="SelectDropdownInput__typeahead"
+          >
+            Option 3
+          </span>
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-13-menu"
+            aria-labelledby="downshift-13-label"
+            autocomplete="off"
+            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+            data-testid="SelectDropdownInput__input"
+            id="downshift-12-input"
+            placeholder="Select option"
+            value="Option 3"
+          />
+        </div>
         <ul
-          aria-labelledby="downshift-3-label"
-          class="sc-fzoLsD XSmGT"
-          id="downshift-3-menu"
+          aria-labelledby="downshift-13-label"
+          class="sc-fzozJi hiAEj"
+          id="downshift-13-menu"
           role="listbox"
-          tabindex="-1"
         />
       </div>
       <div
@@ -274,22 +353,37 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
     <div
       class="relative w-full cursor-pointer"
     >
-      <div>
-        <button
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-7-label downshift-7-toggle-button"
-          class="sc-fzozJi hEMsew   "
-          data-testid="select-list__toggle-button"
-          id="downshift-7-toggle-button"
-          type="button"
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-owns="downshift-27-menu"
+        role="combobox"
+      >
+        <label
+          for="downshift-26-input"
+          id="downshift-27-label"
         />
+        <div
+          class="sc-AxgMl cZbWSE"
+          data-testid="SelectDropdownInput"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-27-menu"
+            aria-labelledby="downshift-27-label"
+            autocomplete="off"
+            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+            data-testid="SelectDropdownInput__input"
+            id="downshift-26-input"
+            placeholder="Select option"
+            value=""
+          />
+        </div>
         <ul
-          aria-labelledby="downshift-7-label"
-          class="sc-fzoLsD XSmGT"
-          id="downshift-7-menu"
+          aria-labelledby="downshift-27-label"
+          class="sc-fzozJi hiAEj"
+          id="downshift-27-menu"
           role="listbox"
-          tabindex="-1"
         />
       </div>
       <div
@@ -325,22 +419,37 @@ exports[`SelectDropdown should render with wrong default value 1`] = `
     <div
       class="relative w-full cursor-pointer"
     >
-      <div>
-        <button
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-5-label downshift-5-toggle-button"
-          class="sc-fzozJi hEMsew   "
-          data-testid="select-list__toggle-button"
-          id="downshift-5-toggle-button"
-          type="button"
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-owns="downshift-19-menu"
+        role="combobox"
+      >
+        <label
+          for="downshift-18-input"
+          id="downshift-19-label"
         />
+        <div
+          class="sc-AxgMl cZbWSE"
+          data-testid="SelectDropdownInput"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-19-menu"
+            aria-labelledby="downshift-19-label"
+            autocomplete="off"
+            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+            data-testid="SelectDropdownInput__input"
+            id="downshift-18-input"
+            placeholder="Select option"
+            value=""
+          />
+        </div>
         <ul
-          aria-labelledby="downshift-5-label"
-          class="sc-fzoLsD XSmGT"
-          id="downshift-5-menu"
+          aria-labelledby="downshift-19-label"
+          class="sc-fzozJi hiAEj"
+          id="downshift-19-menu"
           role="listbox"
-          tabindex="-1"
         />
       </div>
       <div

@@ -211,12 +211,12 @@ exports[`Settings should change a password 1`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background"
                     >
-                      TE
+                      J
                     </span>
                   </div>
                   <span
@@ -2088,12 +2088,12 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background"
                     >
-                      TE
+                      J
                     </span>
                   </div>
                   <span
@@ -2462,24 +2462,38 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                               <div
                                 class="relative w-full cursor-pointer"
                               >
-                                <div>
-                                  <button
-                                    aria-expanded="false"
-                                    aria-haspopup="listbox"
-                                    aria-labelledby="downshift-454-label downshift-454-toggle-button"
-                                    class="sc-fzoXWK dAGxql   "
-                                    data-testid="select-list__toggle-button"
-                                    id="downshift-454-toggle-button"
-                                    type="button"
+                                <div
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="downshift-751-menu"
+                                  role="combobox"
+                                >
+                                  <label
+                                    for="downshift-750-input"
+                                    id="downshift-751-label"
+                                  />
+                                  <div
+                                    class="sc-fzpjYC dHxzen"
+                                    data-testid="SelectDropdownInput"
                                   >
-                                    Select Plugin Source
-                                  </button>
+                                    <input
+                                      aria-autocomplete="list"
+                                      aria-controls="downshift-751-menu"
+                                      aria-labelledby="downshift-751-label"
+                                      autocomplete="off"
+                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                                      data-testid="SelectDropdownInput__input"
+                                      id="downshift-750-input"
+                                      name="load-plugins"
+                                      placeholder="Select Plugin Source"
+                                      value=""
+                                    />
+                                  </div>
                                   <ul
-                                    aria-labelledby="downshift-454-label"
-                                    class="sc-fzpmMD dhwOMv"
-                                    id="downshift-454-menu"
+                                    aria-labelledby="downshift-751-label"
+                                    class="sc-fzoXWK edrIhW"
+                                    id="downshift-751-menu"
                                     role="listbox"
-                                    tabindex="-1"
                                   />
                                 </div>
                                 <div
@@ -2984,7 +2998,7 @@ exports[`Settings should render 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fznxKY clIQbl"
+                            class="sc-fzpmMD dqyPMh"
                           >
                             <img
                               alt="Profile avatar"
@@ -3074,24 +3088,44 @@ exports[`Settings should render 1`] = `
                             <div
                               class="relative w-full cursor-pointer"
                             >
-                              <div>
-                                <button
-                                  aria-expanded="false"
-                                  aria-haspopup="listbox"
-                                  aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                                  class="sc-fzoXWK dAGxql  is-selected "
-                                  data-testid="select-list__toggle-button"
-                                  id="downshift-0-toggle-button"
-                                  type="button"
+                              <div
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="downshift-1-menu"
+                                role="combobox"
+                              >
+                                <label
+                                  for="downshift-0-input"
+                                  id="downshift-1-label"
+                                />
+                                <div
+                                  class="sc-fzpjYC dHxzen"
+                                  data-testid="SelectDropdownInput"
                                 >
-                                  English
-                                </button>
+                                  <span
+                                    class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    data-testid="SelectDropdownInput__typeahead"
+                                  >
+                                    English
+                                  </span>
+                                  <input
+                                    aria-autocomplete="list"
+                                    aria-controls="downshift-1-menu"
+                                    aria-labelledby="downshift-1-label"
+                                    autocomplete="off"
+                                    class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                                    data-testid="SelectDropdownInput__input"
+                                    id="downshift-0-input"
+                                    name="passphraseLanguage"
+                                    placeholder="Select Passphrase Language"
+                                    value="English"
+                                  />
+                                </div>
                                 <ul
-                                  aria-labelledby="downshift-0-label"
-                                  class="sc-fzpmMD dhwOMv"
-                                  id="downshift-0-menu"
+                                  aria-labelledby="downshift-1-label"
+                                  class="sc-fzoXWK edrIhW"
+                                  id="downshift-1-menu"
                                   role="listbox"
-                                  tabindex="-1"
                                 />
                               </div>
                               <div
@@ -3138,24 +3172,44 @@ exports[`Settings should render 1`] = `
                             <div
                               class="relative w-full cursor-pointer"
                             >
-                              <div>
-                                <button
-                                  aria-expanded="false"
-                                  aria-haspopup="listbox"
-                                  aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                                  class="sc-fzoXWK dAGxql  is-selected "
-                                  data-testid="select-list__toggle-button"
-                                  id="downshift-1-toggle-button"
-                                  type="button"
+                              <div
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="downshift-3-menu"
+                                role="combobox"
+                              >
+                                <label
+                                  for="downshift-2-input"
+                                  id="downshift-3-label"
+                                />
+                                <div
+                                  class="sc-fzpjYC dHxzen"
+                                  data-testid="SelectDropdownInput"
                                 >
-                                  BTC (Ƀ)
-                                </button>
+                                  <span
+                                    class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    data-testid="SelectDropdownInput__typeahead"
+                                  >
+                                    BTC (Ƀ)
+                                  </span>
+                                  <input
+                                    aria-autocomplete="list"
+                                    aria-controls="downshift-3-menu"
+                                    aria-labelledby="downshift-3-label"
+                                    autocomplete="off"
+                                    class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                                    data-testid="SelectDropdownInput__input"
+                                    id="downshift-2-input"
+                                    name="currency"
+                                    placeholder="Select Currency"
+                                    value="BTC (Ƀ)"
+                                  />
+                                </div>
                                 <ul
-                                  aria-labelledby="downshift-1-label"
-                                  class="sc-fzpmMD dhwOMv"
-                                  id="downshift-1-menu"
+                                  aria-labelledby="downshift-3-label"
+                                  class="sc-fzoXWK edrIhW"
+                                  id="downshift-3-menu"
                                   role="listbox"
-                                  tabindex="-1"
                                 />
                               </div>
                               <div
@@ -3206,24 +3260,44 @@ exports[`Settings should render 1`] = `
                             <div
                               class="relative w-full cursor-pointer"
                             >
-                              <div>
-                                <button
-                                  aria-expanded="false"
-                                  aria-haspopup="listbox"
-                                  aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                                  class="sc-fzoXWK dAGxql  is-selected "
-                                  data-testid="select-list__toggle-button"
-                                  id="downshift-2-toggle-button"
-                                  type="button"
+                              <div
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="downshift-5-menu"
+                                role="combobox"
+                              >
+                                <label
+                                  for="downshift-4-input"
+                                  id="downshift-5-label"
+                                />
+                                <div
+                                  class="sc-fzpjYC dHxzen"
+                                  data-testid="SelectDropdownInput"
                                 >
-                                  English
-                                </button>
+                                  <span
+                                    class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    data-testid="SelectDropdownInput__typeahead"
+                                  >
+                                    English
+                                  </span>
+                                  <input
+                                    aria-autocomplete="list"
+                                    aria-controls="downshift-5-menu"
+                                    aria-labelledby="downshift-5-label"
+                                    autocomplete="off"
+                                    class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                                    data-testid="SelectDropdownInput__input"
+                                    id="downshift-4-input"
+                                    name="language"
+                                    placeholder="Select Language"
+                                    value="English"
+                                  />
+                                </div>
                                 <ul
-                                  aria-labelledby="downshift-2-label"
-                                  class="sc-fzpmMD dhwOMv"
-                                  id="downshift-2-menu"
+                                  aria-labelledby="downshift-5-label"
+                                  class="sc-fzoXWK edrIhW"
+                                  id="downshift-5-menu"
                                   role="listbox"
-                                  tabindex="-1"
                                 />
                               </div>
                               <div
@@ -3270,24 +3344,44 @@ exports[`Settings should render 1`] = `
                             <div
                               class="relative w-full cursor-pointer"
                             >
-                              <div>
-                                <button
-                                  aria-expanded="false"
-                                  aria-haspopup="listbox"
-                                  aria-labelledby="downshift-3-label downshift-3-toggle-button"
-                                  class="sc-fzoXWK dAGxql  is-selected "
-                                  data-testid="select-list__toggle-button"
-                                  id="downshift-3-toggle-button"
-                                  type="button"
+                              <div
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="downshift-7-menu"
+                                role="combobox"
+                              >
+                                <label
+                                  for="downshift-6-input"
+                                  id="downshift-7-label"
+                                />
+                                <div
+                                  class="sc-fzpjYC dHxzen"
+                                  data-testid="SelectDropdownInput"
                                 >
-                                  CryptoCompare
-                                </button>
+                                  <span
+                                    class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    data-testid="SelectDropdownInput__typeahead"
+                                  >
+                                    CryptoCompare
+                                  </span>
+                                  <input
+                                    aria-autocomplete="list"
+                                    aria-controls="downshift-7-menu"
+                                    aria-labelledby="downshift-7-label"
+                                    autocomplete="off"
+                                    class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                                    data-testid="SelectDropdownInput__input"
+                                    id="downshift-6-input"
+                                    name="marketProvider"
+                                    placeholder="Select Market Provider"
+                                    value="CryptoCompare"
+                                  />
+                                </div>
                                 <ul
-                                  aria-labelledby="downshift-3-label"
-                                  class="sc-fzpmMD dhwOMv"
-                                  id="downshift-3-menu"
+                                  aria-labelledby="downshift-7-label"
+                                  class="sc-fzoXWK edrIhW"
+                                  id="downshift-7-menu"
                                   role="listbox"
-                                  tabindex="-1"
                                 />
                               </div>
                               <div
@@ -3334,24 +3428,44 @@ exports[`Settings should render 1`] = `
                             <div
                               class="relative w-full cursor-pointer"
                             >
-                              <div>
-                                <button
-                                  aria-expanded="false"
-                                  aria-haspopup="listbox"
-                                  aria-labelledby="downshift-4-label downshift-4-toggle-button"
-                                  class="sc-fzoXWK dAGxql  is-selected "
-                                  data-testid="select-list__toggle-button"
-                                  id="downshift-4-toggle-button"
-                                  type="button"
+                              <div
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="downshift-9-menu"
+                                role="combobox"
+                              >
+                                <label
+                                  for="downshift-8-input"
+                                  id="downshift-9-label"
+                                />
+                                <div
+                                  class="sc-fzpjYC dHxzen"
+                                  data-testid="SelectDropdownInput"
                                 >
-                                  12h
-                                </button>
+                                  <span
+                                    class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    data-testid="SelectDropdownInput__typeahead"
+                                  >
+                                    12h
+                                  </span>
+                                  <input
+                                    aria-autocomplete="list"
+                                    aria-controls="downshift-9-menu"
+                                    aria-labelledby="downshift-9-label"
+                                    autocomplete="off"
+                                    class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                                    data-testid="SelectDropdownInput__input"
+                                    id="downshift-8-input"
+                                    name="timeFormat"
+                                    placeholder="Select Time Format"
+                                    value="12h"
+                                  />
+                                </div>
                                 <ul
-                                  aria-labelledby="downshift-4-label"
-                                  class="sc-fzpmMD dhwOMv"
-                                  id="downshift-4-menu"
+                                  aria-labelledby="downshift-9-label"
+                                  class="sc-fzoXWK edrIhW"
+                                  id="downshift-9-menu"
                                   role="listbox"
-                                  tabindex="-1"
                                 />
                               </div>
                               <div
@@ -3533,24 +3647,44 @@ exports[`Settings should render 1`] = `
                               <div
                                 class="relative w-full cursor-pointer"
                               >
-                                <div>
-                                  <button
-                                    aria-expanded="false"
-                                    aria-haspopup="listbox"
-                                    aria-labelledby="downshift-5-label downshift-5-toggle-button"
-                                    class="sc-fzoXWK dAGxql  is-selected "
-                                    data-testid="select-list__toggle-button"
-                                    id="downshift-5-toggle-button"
-                                    type="button"
+                                <div
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="downshift-11-menu"
+                                  role="combobox"
+                                >
+                                  <label
+                                    for="downshift-10-input"
+                                    id="downshift-11-label"
+                                  />
+                                  <div
+                                    class="sc-fzpjYC dHxzen"
+                                    data-testid="SelectDropdownInput"
                                   >
-                                    1 minute
-                                  </button>
+                                    <span
+                                      class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                      data-testid="SelectDropdownInput__typeahead"
+                                    >
+                                      1 minute
+                                    </span>
+                                    <input
+                                      aria-autocomplete="list"
+                                      aria-controls="downshift-11-menu"
+                                      aria-labelledby="downshift-11-label"
+                                      autocomplete="off"
+                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                                      data-testid="SelectDropdownInput__input"
+                                      id="downshift-10-input"
+                                      name="automaticSignOutPeriod"
+                                      placeholder="Select Automatic Sign Out Period"
+                                      value="1 minute"
+                                    />
+                                  </div>
                                   <ul
-                                    aria-labelledby="downshift-5-label"
-                                    class="sc-fzpmMD dhwOMv"
-                                    id="downshift-5-menu"
+                                    aria-labelledby="downshift-11-label"
+                                    class="sc-fzoXWK edrIhW"
+                                    id="downshift-11-menu"
                                     role="listbox"
-                                    tabindex="-1"
                                   />
                                 </div>
                                 <div
@@ -3946,12 +4080,12 @@ exports[`Settings should render password settings 1`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background"
                     >
-                      TE
+                      J
                     </span>
                   </div>
                   <span
@@ -4492,12 +4626,12 @@ exports[`Settings should render peer settings 1`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background"
                     >
-                      TE
+                      J
                     </span>
                   </div>
                   <span
@@ -5384,12 +5518,12 @@ exports[`Settings should render plugin settings 1`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background"
                     >
-                      TE
+                      J
                     </span>
                   </div>
                   <span
@@ -5758,24 +5892,38 @@ exports[`Settings should render plugin settings 1`] = `
                               <div
                                 class="relative w-full cursor-pointer"
                               >
-                                <div>
-                                  <button
-                                    aria-expanded="false"
-                                    aria-haspopup="listbox"
-                                    aria-labelledby="downshift-413-label downshift-413-toggle-button"
-                                    class="sc-fzoXWK dAGxql   "
-                                    data-testid="select-list__toggle-button"
-                                    id="downshift-413-toggle-button"
-                                    type="button"
+                                <div
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="downshift-641-menu"
+                                  role="combobox"
+                                >
+                                  <label
+                                    for="downshift-640-input"
+                                    id="downshift-641-label"
+                                  />
+                                  <div
+                                    class="sc-fzpjYC dHxzen"
+                                    data-testid="SelectDropdownInput"
                                   >
-                                    Select Plugin Source
-                                  </button>
+                                    <input
+                                      aria-autocomplete="list"
+                                      aria-controls="downshift-641-menu"
+                                      aria-labelledby="downshift-641-label"
+                                      autocomplete="off"
+                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                                      data-testid="SelectDropdownInput__input"
+                                      id="downshift-640-input"
+                                      name="load-plugins"
+                                      placeholder="Select Plugin Source"
+                                      value=""
+                                    />
+                                  </div>
                                   <ul
-                                    aria-labelledby="downshift-413-label"
-                                    class="sc-fzpmMD dhwOMv"
-                                    id="downshift-413-menu"
+                                    aria-labelledby="downshift-641-label"
+                                    class="sc-fzoXWK edrIhW"
+                                    id="downshift-641-menu"
                                     role="listbox"
-                                    tabindex="-1"
                                   />
                                 </div>
                                 <div
@@ -6036,12 +6184,12 @@ exports[`Settings should set a password 1`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background"
                     >
-                      TE
+                      J
                     </span>
                   </div>
                   <span
@@ -6627,12 +6775,12 @@ exports[`Settings should show an error toast if the current password does not ma
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background"
                     >
-                      TE
+                      J
                     </span>
                   </div>
                   <span

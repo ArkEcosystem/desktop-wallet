@@ -971,24 +971,38 @@ exports[`CreateProfile should render 1`] = `
                       <div
                         class="relative w-full cursor-pointer"
                       >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                            class="sc-fzoyTs buZKoP   "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-0-toggle-button"
-                            type="button"
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="downshift-1-menu"
+                          role="combobox"
+                        >
+                          <label
+                            for="downshift-0-input"
+                            id="downshift-1-label"
+                          />
+                          <div
+                            class="sc-AxmLO kuiknc"
+                            data-testid="SelectDropdownInput"
                           >
-                            Select Currency
-                          </button>
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="downshift-1-menu"
+                              aria-labelledby="downshift-1-label"
+                              autocomplete="off"
+                              class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                              data-testid="SelectDropdownInput__input"
+                              id="downshift-0-input"
+                              name="currency"
+                              placeholder="Select Currency"
+                              value=""
+                            />
+                          </div>
                           <ul
-                            aria-labelledby="downshift-0-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-0-menu"
+                            aria-labelledby="downshift-1-label"
+                            class="sc-fzoyTs bGjmHs"
+                            id="downshift-1-menu"
                             role="listbox"
-                            tabindex="-1"
                           />
                         </div>
                         <div
