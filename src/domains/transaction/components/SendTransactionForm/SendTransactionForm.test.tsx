@@ -2,6 +2,7 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { httpClient } from "app/services";
+import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -82,6 +83,42 @@ describe("SendTransactionForm", () => {
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+			expect(rendered.container).toMatchSnapshot();
+		});
+	});
+
+	it("should warn about a fee lower than minimum", async () => {
+		const { result: form } = renderHook(() => useForm());
+		form.current.register("fee");
+		form.current.register("senderAddress");
+		form.current.setValue("senderAddress", wallet.address());
+		form.current.setValue("fee", defaultFee);
+
+		let rendered: any;
+
+		await act(async () => {
+			rendered = render(
+				<FormProvider {...form.current}>
+					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
+				</FormProvider>,
+			);
+		});
+
+		const { getByTestId, getByText } = rendered;
+
+		await act(async () => {
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
+
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "0.0001" } });
+			await waitFor(() =>
+				expect(
+					getByText(transactionTranslations.PAGE_TRANSACTION_SEND.VALIDATION.FEE_BELOW_MINIMUM),
+				).toBeTruthy(),
+			);
 
 			expect(rendered.container).toMatchSnapshot();
 		});
