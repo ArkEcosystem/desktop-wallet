@@ -7,7 +7,6 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { toast } from "react-toastify";
 import DelegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
 import EntityRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-update.json";
 import IpfsFixture from "tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json";
@@ -864,22 +863,15 @@ describe("Registration", () => {
 			expect(getByTestId("EntityRegistrationForm__website")).toHaveValue("https://test-step.entity.com"),
 		);
 
-		const toastMock = jest.spyOn(toast, "error");
 		const walletBalanceMock = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
 
 		act(() => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
 		});
 
-		await waitFor(() =>
-			expect(toastMock).toHaveBeenCalledWith(
-				transactionTranslations.VALIDATION.INSUFFICIENT_FUNDS,
-				expect.anything(),
-			),
-		);
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveAttribute("aria-invalid"));
 
 		expect(asFragment()).toMatchSnapshot();
-		toastMock.mockRestore();
 		walletBalanceMock.mockRestore();
 	});
 
