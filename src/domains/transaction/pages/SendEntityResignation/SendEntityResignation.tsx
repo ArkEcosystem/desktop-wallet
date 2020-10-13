@@ -9,7 +9,6 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
-import { toasts } from "app/services";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/components/DelegateResignationForm";
 import { hasSufficientFunds } from "domains/transaction/utils";
@@ -100,7 +99,13 @@ export const SendEntityResignation = ({ formDefaultData, passwordType }: any) =>
 
 	const handleNext = () => {
 		if (activeTab === 1 && !hasSufficientFunds({ wallet: activeWallet, fee: fees.static })) {
-			return toasts.error(t("TRANSACTION.VALIDATION.INSUFFICIENT_FUNDS"));
+			return setError("fee", {
+				type: "manual",
+				message: t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+					balance: activeWallet.balance().toHuman(),
+					coinId: activeWallet.coinId(),
+				}),
+			});
 		}
 		setActiveTab(activeTab + 1);
 	};
