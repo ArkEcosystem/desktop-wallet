@@ -4,6 +4,7 @@ import { useFormField } from "./useFormField";
 
 type FormHelperTextProps = {
 	isInvalid?: boolean;
+	isWarning?: boolean;
 	errorMessage?: React.ReactNode;
 	children?: React.ReactNode;
 };
@@ -15,6 +16,10 @@ export function FormHelperText({ children, ...props }: FormHelperTextProps) {
 
 	if (isInvalid) {
 		return <p className="text-sm text-theme-danger">{errorMessage}</p>;
+	}
+
+	if (props.isWarning) {
+		return <p className="text-sm text-theme-warning">{errorMessage}</p>;
 	}
 
 	if (children) {

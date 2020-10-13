@@ -33,6 +33,18 @@ describe("FormHelperText", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render warning message", () => {
+		const hintMessage = "Test Message";
+		const errorMessage = "Error Message";
+		const { queryByText, asFragment } = render(
+			<FormHelperText errorMessage={errorMessage} isWarning>
+				{hintMessage}
+			</FormHelperText>,
+		);
+		expect(queryByText(errorMessage)).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should not render if nothing is provided", () => {
 		const { asFragment } = render(<FormHelperText />);
 		expect(asFragment()).toMatchInlineSnapshot("<DocumentFragment />");
