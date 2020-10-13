@@ -9,7 +9,6 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useQueryParams } from "app/hooks";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
-import { toasts } from "app/services";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { hasSufficientFunds } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useState } from "react";
@@ -91,7 +90,13 @@ export const SendVote = () => {
 
 	const handleNext = () => {
 		if (activeTab === 1 && !hasSufficientFunds({ wallet: activeWallet, fee: getValues("fee") })) {
-			return toasts.error(t("TRANSACTION.VALIDATION.INSUFFICIENT_FUNDS"));
+			return setError("fee", {
+				type: "manual",
+				message: t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+					balance: activeWallet.balance().toHuman(),
+					coinId: activeWallet.coinId(),
+				}),
+			});
 		}
 		setActiveTab(activeTab + 1);
 	};
