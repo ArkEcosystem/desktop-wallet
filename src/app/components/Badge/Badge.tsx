@@ -1,5 +1,5 @@
 import { Icon } from "app/components/Icon";
-import React from "react";
+import React, { forwardRef } from "react";
 import { styled } from "twin.macro";
 import { Position } from "types";
 
@@ -16,12 +16,16 @@ type BadgeProps = {
 
 export const Wrapper = styled.span<BadgeProps>(getStyles);
 
-export const Badge = ({ className, children, icon, iconWidth, iconHeight, position }: BadgeProps) => (
-	<Wrapper position={position} className={`${defaultClasses} ${className}`}>
-		{!!icon && <Icon name={icon} width={iconWidth} height={iconHeight} />}
-		<span>{children}</span>
-	</Wrapper>
+export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
+	({ className, children, icon, iconWidth, iconHeight, position, ...props }: BadgeProps, ref) => (
+		<Wrapper ref={ref} position={position} className={`${defaultClasses} ${className}`}>
+			{!!icon && <Icon name={icon} width={iconWidth} height={iconHeight} />}
+			<span>{children}</span>
+		</Wrapper>
+	),
 );
+
+Badge.displayName = "Badge";
 
 Badge.defaultProps = {
 	iconWidth: 12,
