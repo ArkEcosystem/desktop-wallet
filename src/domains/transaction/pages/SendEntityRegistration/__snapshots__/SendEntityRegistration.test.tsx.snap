@@ -180,7 +180,7 @@ exports[`Registration should error for insufficient funds 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  558,328.61444556 BTC
                 </span>
               </div>
             </div>
@@ -559,7 +559,7 @@ exports[`Registration should error for insufficient funds 1`] = `
                       </div>
                       <div>
                         <fieldset
-                          class="sc-AxirZ izhStr flex flex-col space-y-2"
+                          class="sc-AxirZ kMHTdH flex flex-col space-y-2"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -583,6 +583,7 @@ exports[`Registration should error for insufficient funds 1`] = `
                                 class="sc-fzpjYC dHxzen"
                               >
                                 <input
+                                  aria-invalid="true"
                                   class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
@@ -627,6 +628,11 @@ exports[`Registration should error for insufficient funds 1`] = `
                               </div>
                             </div>
                           </div>
+                          <p
+                            class="text-sm text-theme-danger"
+                          >
+                            The balance it too low (0.00000000 ARK)
+                          </p>
                         </fieldset>
                       </div>
                     </section>
@@ -647,6 +653,7 @@ exports[`Registration should error for insufficient funds 1`] = `
                     class="sc-AxjAm kbZyZT"
                     color="primary"
                     data-testid="Registration__continue-button"
+                    disabled=""
                     type="button"
                   >
                     Continue

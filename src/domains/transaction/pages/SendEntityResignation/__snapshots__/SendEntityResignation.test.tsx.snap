@@ -2872,7 +2872,7 @@ exports[`SendEntityResignation Entity Resignation should error for insufficient 
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  33.75089801 BTC
                 </span>
               </div>
             </div>
@@ -3142,7 +3142,7 @@ exports[`SendEntityResignation Entity Resignation should error for insufficient 
                         class="space-y-8"
                       >
                         <fieldset
-                          class="sc-AxirZ izhStr font-normal"
+                          class="sc-AxirZ kMHTdH font-normal"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -3166,6 +3166,7 @@ exports[`SendEntityResignation Entity Resignation should error for insufficient 
                                 class="sc-fzpjYC dHxzen"
                               >
                                 <input
+                                  aria-invalid="true"
                                   class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
@@ -3210,6 +3211,11 @@ exports[`SendEntityResignation Entity Resignation should error for insufficient 
                               </div>
                             </div>
                           </div>
+                          <p
+                            class="text-sm text-theme-danger"
+                          >
+                            The balance it too low (0.00000000 ARK)
+                          </p>
                         </fieldset>
                       </div>
                     </div>
@@ -3230,6 +3236,7 @@ exports[`SendEntityResignation Entity Resignation should error for insufficient 
                       class="sc-AxjAm kbZyZT"
                       color="primary"
                       data-testid="SendEntityResignation__continue-button"
+                      disabled=""
                       type="button"
                     >
                       Continue
