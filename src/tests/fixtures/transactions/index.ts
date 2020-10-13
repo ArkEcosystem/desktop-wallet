@@ -10,8 +10,8 @@ const wallet = {
 	isResignedDelegate: () => false,
 	transaction: () => ({
 		canBeSigned: () => false,
-		isAwaitingOurSignature: () => false
-	})
+		isAwaitingOurSignature: () => false,
+	}),
 };
 
 export const TransactionFixture = {
