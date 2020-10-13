@@ -7,7 +7,6 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { toast } from "react-toastify";
 import {
 	env,
 	fireEvent,
@@ -279,22 +278,15 @@ describe("SendTransfer", () => {
 			fireEvent.click(fees[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
-			const toastMock = jest.spyOn(toast, "error");
 			const walletBalanceMock = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
 
 			// Step 2
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 
-			await waitFor(() =>
-				expect(toastMock).toHaveBeenCalledWith(
-					transactionTranslations.VALIDATION.INSUFFICIENT_FUNDS,
-					expect.anything(),
-				),
-			);
+			await waitFor(() => expect(getByTestId("add-recipient__amount-input")).toHaveAttribute("aria-invalid"));
 
 			expect(rendered.container).toMatchSnapshot();
 			walletBalanceMock.mockRestore();
-			toastMock.mockRestore();
 		});
 	});
 
