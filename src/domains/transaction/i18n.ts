@@ -368,5 +368,6 @@ export const translations: { [key: string]: any } = {
 
 	VALIDATION: {
 		INSUFFICIENT_FUNDS: "You have not enough funds to proceed with this transaction",
+		LOW_BALANCE: "The balance it too low ({{balance}} {{ coinId }})",
 	},
 };

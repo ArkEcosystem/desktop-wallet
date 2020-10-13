@@ -10,7 +10,6 @@ import { useEnvironmentContext } from "app/contexts";
 import { useClipboard } from "app/hooks";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { useValidation } from "app/hooks/validations";
-import { toasts } from "app/services";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import { hasSufficientFunds } from "domains/transaction/utils";
@@ -135,7 +134,13 @@ export const SendTransfer = () => {
 			activeTab === 1 &&
 			!hasSufficientFunds({ wallet: activeWallet, fee: getValues("fee"), amount: recipientsTotalAmount() })
 		) {
-			return toasts.error(t("TRANSACTION.VALIDATION.INSUFFICIENT_FUNDS"));
+			return setError("amount", {
+				type: "manual",
+				message: t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+					balance: activeWallet.balance().toHuman(),
+					coinId: activeWallet.coinId(),
+				}),
+			});
 		}
 
 		setActiveTab(activeTab + 1);
