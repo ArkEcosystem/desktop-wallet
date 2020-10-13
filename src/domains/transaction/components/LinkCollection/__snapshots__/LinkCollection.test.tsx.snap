@@ -3,7 +3,7 @@
 exports[`LinkCollection should add links 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzqBZW eEiUFK flex flex-col font-normal"
+    class="sc-fzokOt lkSsTn flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
@@ -65,33 +65,68 @@ exports[`LinkCollection should add links 1`] = `
               value="twitter"
             />
             <div
-              class="relative w-full cursor-pointer"
+              class="relative w-full"
             >
-              <div>
-                <button
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                  class="sc-fzplWN jAabRP  is-selected "
-                  data-testid="select-list__toggle-button"
-                  id="downshift-1-toggle-button"
-                  type="button"
-                >
-                  Twitter
-                </button>
-                <ul
-                  aria-labelledby="downshift-1-label"
-                  class="sc-fznyAO dPDaFu"
-                  id="downshift-1-menu"
-                  role="listbox"
-                  tabindex="-1"
+              <div
+                aria-expanded="true"
+                aria-haspopup="listbox"
+                aria-owns="downshift-5-menu"
+                role="combobox"
+              >
+                <label
+                  for="downshift-4-input"
+                  id="downshift-5-label"
                 />
+                <div
+                  class="sc-Axmtr jzhOwR"
+                  data-testid="SelectDropdownInput"
+                >
+                  <span
+                    class="sc-AxhUy escgqZ py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                    data-testid="SelectDropdownInput__typeahead"
+                  >
+                    Twitter
+                  </span>
+                  <input
+                    aria-activedescendant="downshift-5-item-0"
+                    aria-autocomplete="list"
+                    aria-controls="downshift-5-menu"
+                    aria-labelledby="downshift-5-label"
+                    autocomplete="off"
+                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                    data-testid="SelectDropdownInput__input"
+                    id="downshift-4-input"
+                    name="type"
+                    placeholder="Select option"
+                    value="Twitter"
+                  />
+                </div>
+                <ul
+                  aria-labelledby="downshift-5-label"
+                  class="sc-fzplWN cDHryc is-open"
+                  id="downshift-5-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="true"
+                    class="select-list-option is-highlighted"
+                    data-testid="select-list__toggle-option-0"
+                    id="downshift-5-item-0"
+                    role="option"
+                  >
+                    <div
+                      class="select-list-option__label"
+                    >
+                      Twitter
+                    </div>
+                  </li>
+                </ul>
               </div>
               <div
                 class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
               >
                 <div
-                  class="sc-AxiKw jNSjzx"
+                  class="sc-AxiKw jNSjzx transform rotate-180"
                   height="5"
                   width="7"
                 >
@@ -135,7 +170,7 @@ exports[`LinkCollection should add links 1`] = `
         </button>
       </div>
       <div
-        class="sc-fznKkj iLZSgh mt-4"
+        class="sc-fznyAO eiMfGs mt-4"
         role="table"
       >
         <table
@@ -343,17 +378,17 @@ exports[`LinkCollection should remove links 1`] = `
               value=""
             />
             <div
-              class="relative w-full cursor-pointer"
+              class="relative w-full"
             >
               <div
                 aria-expanded="false"
                 aria-haspopup="listbox"
-                aria-owns="downshift-9-menu"
+                aria-owns="downshift-33-menu"
                 role="combobox"
               >
                 <label
-                  for="downshift-8-input"
-                  id="downshift-9-label"
+                  for="downshift-32-input"
+                  id="downshift-33-label"
                 />
                 <div
                   class="sc-Axmtr jzhOwR"
@@ -361,21 +396,21 @@ exports[`LinkCollection should remove links 1`] = `
                 >
                   <input
                     aria-autocomplete="list"
-                    aria-controls="downshift-9-menu"
-                    aria-labelledby="downshift-9-label"
+                    aria-controls="downshift-33-menu"
+                    aria-labelledby="downshift-33-label"
                     autocomplete="off"
                     class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
                     data-testid="SelectDropdownInput__input"
-                    id="downshift-8-input"
+                    id="downshift-32-input"
                     name="type"
                     placeholder="Select option"
                     value=""
                   />
                 </div>
                 <ul
-                  aria-labelledby="downshift-9-label"
+                  aria-labelledby="downshift-33-label"
                   class="sc-fzplWN cDHryc"
-                  id="downshift-9-menu"
+                  id="downshift-33-menu"
                   role="listbox"
                 />
               </div>
@@ -533,17 +568,17 @@ exports[`LinkCollection should select a specific link type 1`] = `
               value=""
             />
             <div
-              class="relative w-full cursor-pointer"
+              class="relative w-full"
             >
               <div
                 aria-expanded="false"
                 aria-haspopup="listbox"
-                aria-owns="downshift-25-menu"
+                aria-owns="downshift-89-menu"
                 role="combobox"
               >
                 <label
-                  for="downshift-24-input"
-                  id="downshift-25-label"
+                  for="downshift-88-input"
+                  id="downshift-89-label"
                 />
                 <div
                   class="sc-Axmtr jzhOwR"
@@ -551,21 +586,21 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 >
                   <input
                     aria-autocomplete="list"
-                    aria-controls="downshift-25-menu"
-                    aria-labelledby="downshift-25-label"
+                    aria-controls="downshift-89-menu"
+                    aria-labelledby="downshift-89-label"
                     autocomplete="off"
                     class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
                     data-testid="SelectDropdownInput__input"
-                    id="downshift-24-input"
+                    id="downshift-88-input"
                     name="type"
                     placeholder="Select option"
                     value=""
                   />
                 </div>
                 <ul
-                  aria-labelledby="downshift-25-label"
+                  aria-labelledby="downshift-89-label"
                   class="sc-fzplWN cDHryc"
-                  id="downshift-25-menu"
+                  id="downshift-89-menu"
                   role="listbox"
                 />
               </div>

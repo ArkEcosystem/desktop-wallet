@@ -137,7 +137,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzoXWK JKhnC"
+                            class="sc-fzoNJl fmQYQu"
                           >
                             <img
                               alt="Profile avatar"
@@ -245,33 +245,289 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                         value="BTC"
                       />
                       <div
-                        class="relative w-full cursor-pointer"
+                        class="relative w-full"
                       >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-16-label downshift-16-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-16-toggle-button"
-                            type="button"
-                          >
-                            BTC (Ƀ)
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-16-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-16-menu"
-                            role="listbox"
-                            tabindex="-1"
+                        <div
+                          aria-expanded="true"
+                          aria-haspopup="listbox"
+                          aria-owns="downshift-35-menu"
+                          role="combobox"
+                        >
+                          <label
+                            for="downshift-34-input"
+                            id="downshift-35-label"
                           />
+                          <div
+                            class="sc-AxmLO kuiknc"
+                            data-testid="SelectDropdownInput"
+                          >
+                            <span
+                              class="sc-AxgMl mMYyr py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              data-testid="SelectDropdownInput__typeahead"
+                            >
+                              BTC (Ƀ)
+                            </span>
+                            <input
+                              aria-activedescendant="downshift-35-item-0"
+                              aria-autocomplete="list"
+                              aria-controls="downshift-35-menu"
+                              aria-labelledby="downshift-35-label"
+                              autocomplete="off"
+                              class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                              data-testid="SelectDropdownInput__input"
+                              id="downshift-34-input"
+                              name="currency"
+                              placeholder="Select Currency"
+                              value="BTC (Ƀ)"
+                            />
+                          </div>
+                          <ul
+                            aria-labelledby="downshift-35-label"
+                            class="sc-fzoyTs bGjmHs is-open"
+                            id="downshift-35-menu"
+                            role="listbox"
+                          >
+                            <li
+                              aria-selected="true"
+                              class="select-list-option is-highlighted"
+                              data-testid="select-list__toggle-option-0"
+                              id="downshift-35-item-0"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BTC (Ƀ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-1"
+                              id="downshift-35-item-1"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                ETH (Ξ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-2"
+                              id="downshift-35-item-2"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                LTC (Ł)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-3"
+                              id="downshift-35-item-3"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                AUD (A$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-4"
+                              id="downshift-35-item-4"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BRL (R$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-5"
+                              id="downshift-35-item-5"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CAD (C$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-6"
+                              id="downshift-35-item-6"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CHF (CHF)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-7"
+                              id="downshift-35-item-7"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CNY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-8"
+                              id="downshift-35-item-8"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                EUR (€)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-9"
+                              id="downshift-35-item-9"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                GBP (£)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-10"
+                              id="downshift-35-item-10"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                HKD (HK$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-11"
+                              id="downshift-35-item-11"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                IDR (IDR)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-12"
+                              id="downshift-35-item-12"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                INR (₹)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-13"
+                              id="downshift-35-item-13"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                JPY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-14"
+                              id="downshift-35-item-14"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                KRW (₩)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-15"
+                              id="downshift-35-item-15"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                MXN (MX$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-16"
+                              id="downshift-35-item-16"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                RUB (₽)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-17"
+                              id="downshift-35-item-17"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                USD ($)
+                              </div>
+                            </li>
+                          </ul>
                         </div>
                         <div
                           class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-AxhCb jfKWih"
+                            class="sc-AxhCb jfKWih transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -505,7 +761,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzoXWK JKhnC"
+                            class="sc-fzoNJl fmQYQu"
                           >
                             <img
                               alt="Profile avatar"
@@ -613,33 +869,289 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         value="BTC"
                       />
                       <div
-                        class="relative w-full cursor-pointer"
+                        class="relative w-full"
                       >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-52-label downshift-52-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-52-toggle-button"
-                            type="button"
-                          >
-                            BTC (Ƀ)
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-52-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-52-menu"
-                            role="listbox"
-                            tabindex="-1"
+                        <div
+                          aria-expanded="true"
+                          aria-haspopup="listbox"
+                          aria-owns="downshift-111-menu"
+                          role="combobox"
+                        >
+                          <label
+                            for="downshift-110-input"
+                            id="downshift-111-label"
                           />
+                          <div
+                            class="sc-AxmLO kuiknc"
+                            data-testid="SelectDropdownInput"
+                          >
+                            <span
+                              class="sc-AxgMl mMYyr py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              data-testid="SelectDropdownInput__typeahead"
+                            >
+                              BTC (Ƀ)
+                            </span>
+                            <input
+                              aria-activedescendant="downshift-111-item-0"
+                              aria-autocomplete="list"
+                              aria-controls="downshift-111-menu"
+                              aria-labelledby="downshift-111-label"
+                              autocomplete="off"
+                              class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                              data-testid="SelectDropdownInput__input"
+                              id="downshift-110-input"
+                              name="currency"
+                              placeholder="Select Currency"
+                              value="BTC (Ƀ)"
+                            />
+                          </div>
+                          <ul
+                            aria-labelledby="downshift-111-label"
+                            class="sc-fzoyTs bGjmHs is-open"
+                            id="downshift-111-menu"
+                            role="listbox"
+                          >
+                            <li
+                              aria-selected="true"
+                              class="select-list-option is-highlighted"
+                              data-testid="select-list__toggle-option-0"
+                              id="downshift-111-item-0"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BTC (Ƀ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-1"
+                              id="downshift-111-item-1"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                ETH (Ξ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-2"
+                              id="downshift-111-item-2"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                LTC (Ł)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-3"
+                              id="downshift-111-item-3"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                AUD (A$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-4"
+                              id="downshift-111-item-4"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BRL (R$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-5"
+                              id="downshift-111-item-5"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CAD (C$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-6"
+                              id="downshift-111-item-6"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CHF (CHF)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-7"
+                              id="downshift-111-item-7"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CNY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-8"
+                              id="downshift-111-item-8"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                EUR (€)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-9"
+                              id="downshift-111-item-9"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                GBP (£)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-10"
+                              id="downshift-111-item-10"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                HKD (HK$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-11"
+                              id="downshift-111-item-11"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                IDR (IDR)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-12"
+                              id="downshift-111-item-12"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                INR (₹)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-13"
+                              id="downshift-111-item-13"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                JPY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-14"
+                              id="downshift-111-item-14"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                KRW (₩)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-15"
+                              id="downshift-111-item-15"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                MXN (MX$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-16"
+                              id="downshift-111-item-16"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                RUB (₽)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-17"
+                              id="downshift-111-item-17"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                USD ($)
+                              </div>
+                            </li>
+                          </ul>
                         </div>
                         <div
                           class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-AxhCb jfKWih"
+                            class="sc-AxhCb jfKWih transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -969,7 +1481,7 @@ exports[`CreateProfile should render 1`] = `
                         value=""
                       />
                       <div
-                        class="relative w-full cursor-pointer"
+                        class="relative w-full"
                       >
                         <div
                           aria-expanded="false"
@@ -1243,7 +1755,7 @@ exports[`CreateProfile should store profile 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzoXWK JKhnC"
+                            class="sc-fzoNJl fmQYQu"
                           >
                             <img
                               alt="Profile avatar"
@@ -1362,33 +1874,289 @@ exports[`CreateProfile should store profile 1`] = `
                         value="BTC"
                       />
                       <div
-                        class="relative w-full cursor-pointer"
+                        class="relative w-full"
                       >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-1-toggle-button"
-                            type="button"
-                          >
-                            BTC (Ƀ)
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-1-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-1-menu"
-                            role="listbox"
-                            tabindex="-1"
+                        <div
+                          aria-expanded="true"
+                          aria-haspopup="listbox"
+                          aria-owns="downshift-5-menu"
+                          role="combobox"
+                        >
+                          <label
+                            for="downshift-4-input"
+                            id="downshift-5-label"
                           />
+                          <div
+                            class="sc-AxmLO kuiknc"
+                            data-testid="SelectDropdownInput"
+                          >
+                            <span
+                              class="sc-AxgMl mMYyr py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              data-testid="SelectDropdownInput__typeahead"
+                            >
+                              BTC (Ƀ)
+                            </span>
+                            <input
+                              aria-activedescendant="downshift-5-item-0"
+                              aria-autocomplete="list"
+                              aria-controls="downshift-5-menu"
+                              aria-labelledby="downshift-5-label"
+                              autocomplete="off"
+                              class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                              data-testid="SelectDropdownInput__input"
+                              id="downshift-4-input"
+                              name="currency"
+                              placeholder="Select Currency"
+                              value="BTC (Ƀ)"
+                            />
+                          </div>
+                          <ul
+                            aria-labelledby="downshift-5-label"
+                            class="sc-fzoyTs bGjmHs is-open"
+                            id="downshift-5-menu"
+                            role="listbox"
+                          >
+                            <li
+                              aria-selected="true"
+                              class="select-list-option is-highlighted"
+                              data-testid="select-list__toggle-option-0"
+                              id="downshift-5-item-0"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BTC (Ƀ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-1"
+                              id="downshift-5-item-1"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                ETH (Ξ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-2"
+                              id="downshift-5-item-2"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                LTC (Ł)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-3"
+                              id="downshift-5-item-3"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                AUD (A$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-4"
+                              id="downshift-5-item-4"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BRL (R$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-5"
+                              id="downshift-5-item-5"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CAD (C$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-6"
+                              id="downshift-5-item-6"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CHF (CHF)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-7"
+                              id="downshift-5-item-7"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CNY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-8"
+                              id="downshift-5-item-8"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                EUR (€)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-9"
+                              id="downshift-5-item-9"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                GBP (£)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-10"
+                              id="downshift-5-item-10"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                HKD (HK$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-11"
+                              id="downshift-5-item-11"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                IDR (IDR)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-12"
+                              id="downshift-5-item-12"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                INR (₹)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-13"
+                              id="downshift-5-item-13"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                JPY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-14"
+                              id="downshift-5-item-14"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                KRW (₩)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-15"
+                              id="downshift-5-item-15"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                MXN (MX$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-16"
+                              id="downshift-5-item-16"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                RUB (₽)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-17"
+                              id="downshift-5-item-17"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                USD ($)
+                              </div>
+                            </li>
+                          </ul>
                         </div>
                         <div
                           class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-AxhCb jfKWih"
+                            class="sc-AxhCb jfKWih transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -1622,7 +2390,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzoXWK JKhnC"
+                            class="sc-fzoNJl fmQYQu"
                           >
                             <img
                               alt="Profile avatar"
@@ -1730,33 +2498,289 @@ exports[`CreateProfile should store profile with password 1`] = `
                         value="BTC"
                       />
                       <div
-                        class="relative w-full cursor-pointer"
+                        class="relative w-full"
                       >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-32-label downshift-32-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-32-toggle-button"
-                            type="button"
-                          >
-                            BTC (Ƀ)
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-32-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-32-menu"
-                            role="listbox"
-                            tabindex="-1"
+                        <div
+                          aria-expanded="true"
+                          aria-haspopup="listbox"
+                          aria-owns="downshift-67-menu"
+                          role="combobox"
+                        >
+                          <label
+                            for="downshift-66-input"
+                            id="downshift-67-label"
                           />
+                          <div
+                            class="sc-AxmLO kuiknc"
+                            data-testid="SelectDropdownInput"
+                          >
+                            <span
+                              class="sc-AxgMl mMYyr py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              data-testid="SelectDropdownInput__typeahead"
+                            >
+                              BTC (Ƀ)
+                            </span>
+                            <input
+                              aria-activedescendant="downshift-67-item-0"
+                              aria-autocomplete="list"
+                              aria-controls="downshift-67-menu"
+                              aria-labelledby="downshift-67-label"
+                              autocomplete="off"
+                              class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                              data-testid="SelectDropdownInput__input"
+                              id="downshift-66-input"
+                              name="currency"
+                              placeholder="Select Currency"
+                              value="BTC (Ƀ)"
+                            />
+                          </div>
+                          <ul
+                            aria-labelledby="downshift-67-label"
+                            class="sc-fzoyTs bGjmHs is-open"
+                            id="downshift-67-menu"
+                            role="listbox"
+                          >
+                            <li
+                              aria-selected="true"
+                              class="select-list-option is-highlighted"
+                              data-testid="select-list__toggle-option-0"
+                              id="downshift-67-item-0"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BTC (Ƀ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-1"
+                              id="downshift-67-item-1"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                ETH (Ξ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-2"
+                              id="downshift-67-item-2"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                LTC (Ł)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-3"
+                              id="downshift-67-item-3"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                AUD (A$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-4"
+                              id="downshift-67-item-4"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BRL (R$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-5"
+                              id="downshift-67-item-5"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CAD (C$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-6"
+                              id="downshift-67-item-6"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CHF (CHF)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-7"
+                              id="downshift-67-item-7"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CNY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-8"
+                              id="downshift-67-item-8"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                EUR (€)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-9"
+                              id="downshift-67-item-9"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                GBP (£)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-10"
+                              id="downshift-67-item-10"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                HKD (HK$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-11"
+                              id="downshift-67-item-11"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                IDR (IDR)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-12"
+                              id="downshift-67-item-12"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                INR (₹)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-13"
+                              id="downshift-67-item-13"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                JPY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-14"
+                              id="downshift-67-item-14"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                KRW (₩)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-15"
+                              id="downshift-67-item-15"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                MXN (MX$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-16"
+                              id="downshift-67-item-16"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                RUB (₽)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-17"
+                              id="downshift-67-item-17"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                USD ($)
+                              </div>
+                            </li>
+                          </ul>
                         </div>
                         <div
                           class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-AxhCb jfKWih"
+                            class="sc-AxhCb jfKWih transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -1990,7 +3014,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzoXWK JKhnC"
+                            class="sc-fzoNJl fmQYQu"
                           >
                             <img
                               alt="Profile avatar"
@@ -2098,33 +3122,289 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         value="BTC"
                       />
                       <div
-                        class="relative w-full cursor-pointer"
+                        class="relative w-full"
                       >
-                        <div>
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-labelledby="downshift-41-label downshift-41-toggle-button"
-                            class="sc-fzoyTs buZKoP  is-selected "
-                            data-testid="select-list__toggle-button"
-                            id="downshift-41-toggle-button"
-                            type="button"
-                          >
-                            BTC (Ƀ)
-                          </button>
-                          <ul
-                            aria-labelledby="downshift-41-label"
-                            class="sc-fzoNJl gPmoPk"
-                            id="downshift-41-menu"
-                            role="listbox"
-                            tabindex="-1"
+                        <div
+                          aria-expanded="true"
+                          aria-haspopup="listbox"
+                          aria-owns="downshift-87-menu"
+                          role="combobox"
+                        >
+                          <label
+                            for="downshift-86-input"
+                            id="downshift-87-label"
                           />
+                          <div
+                            class="sc-AxmLO kuiknc"
+                            data-testid="SelectDropdownInput"
+                          >
+                            <span
+                              class="sc-AxgMl mMYyr py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              data-testid="SelectDropdownInput__typeahead"
+                            >
+                              BTC (Ƀ)
+                            </span>
+                            <input
+                              aria-activedescendant="downshift-87-item-0"
+                              aria-autocomplete="list"
+                              aria-controls="downshift-87-menu"
+                              aria-labelledby="downshift-87-label"
+                              autocomplete="off"
+                              class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                              data-testid="SelectDropdownInput__input"
+                              id="downshift-86-input"
+                              name="currency"
+                              placeholder="Select Currency"
+                              value="BTC (Ƀ)"
+                            />
+                          </div>
+                          <ul
+                            aria-labelledby="downshift-87-label"
+                            class="sc-fzoyTs bGjmHs is-open"
+                            id="downshift-87-menu"
+                            role="listbox"
+                          >
+                            <li
+                              aria-selected="true"
+                              class="select-list-option is-highlighted"
+                              data-testid="select-list__toggle-option-0"
+                              id="downshift-87-item-0"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BTC (Ƀ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-1"
+                              id="downshift-87-item-1"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                ETH (Ξ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-2"
+                              id="downshift-87-item-2"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                LTC (Ł)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-3"
+                              id="downshift-87-item-3"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                AUD (A$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-4"
+                              id="downshift-87-item-4"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BRL (R$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-5"
+                              id="downshift-87-item-5"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CAD (C$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-6"
+                              id="downshift-87-item-6"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CHF (CHF)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-7"
+                              id="downshift-87-item-7"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CNY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-8"
+                              id="downshift-87-item-8"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                EUR (€)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-9"
+                              id="downshift-87-item-9"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                GBP (£)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-10"
+                              id="downshift-87-item-10"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                HKD (HK$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-11"
+                              id="downshift-87-item-11"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                IDR (IDR)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-12"
+                              id="downshift-87-item-12"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                INR (₹)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-13"
+                              id="downshift-87-item-13"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                JPY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-14"
+                              id="downshift-87-item-14"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                KRW (₩)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-15"
+                              id="downshift-87-item-15"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                MXN (MX$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-16"
+                              id="downshift-87-item-16"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                RUB (₽)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option "
+                              data-testid="select-list__toggle-option-17"
+                              id="downshift-87-item-17"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                USD ($)
+                              </div>
+                            </li>
+                          </ul>
                         </div>
                         <div
                           class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-AxhCb jfKWih"
+                            class="sc-AxhCb jfKWih transform rotate-180"
                             height="5"
                             width="7"
                           >

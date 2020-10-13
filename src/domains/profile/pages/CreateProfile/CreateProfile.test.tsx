@@ -98,7 +98,13 @@ describe("CreateProfile", () => {
 		});
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		});
+
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		await act(async () => {
@@ -161,7 +167,13 @@ describe("CreateProfile", () => {
 		});
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		});
+
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		await act(async () => {
@@ -184,7 +196,13 @@ describe("CreateProfile", () => {
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 3" } });
 		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "test password" } });
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		});
+
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		await act(async () => {
@@ -219,7 +237,13 @@ describe("CreateProfile", () => {
 		});
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 4" } });
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		});
+
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		await act(async () => {
@@ -252,7 +276,13 @@ describe("CreateProfile", () => {
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 5" } });
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		});
+
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		await act(async () => {

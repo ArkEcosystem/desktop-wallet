@@ -59,10 +59,10 @@ describe("SelectDropdown", () => {
 		const options = [{ label: "Option 1", value: "1" }];
 		const { getByTestId } = render(<Select options={options} defaultValue="3" />);
 
-		const toggle = getByTestId("select-list__toggle-button");
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
 		act(() => {
-			fireEvent.click(toggle);
+			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
 		});
 
 		const firstOption = getByTestId("select-list__toggle-option-0");
@@ -77,10 +77,10 @@ describe("SelectDropdown", () => {
 		const options = [{ label: "Option 1", value: "1" }];
 		const { getByTestId } = render(<Select options={options} defaultValue="3" />);
 
-		const toggle = getByTestId("select-list__toggle-button");
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
 		act(() => {
-			fireEvent.click(toggle);
+			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
 		});
 
 		const firstOption = getByTestId("select-list__toggle-option-0");
@@ -97,22 +97,18 @@ describe("SelectDropdown", () => {
 		const options = [{ label: "Option 1", value: "1" }];
 		const { getByTestId } = render(<Select options={options} defaultValue="3" />);
 
-		const toggle = getByTestId("select-list__toggle-button");
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
 		act(() => {
-			fireEvent.click(toggle);
+			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
+		});
+
+		act(() => {
+			fireEvent.keyDown(selectDropdown, { key: "Tab", code: 9 });
 		});
 
 		const firstOption = getByTestId("select-list__toggle-option-0");
 		expect(firstOption).toBeTruthy();
-
-		act(() => {
-			fireEvent.mouseOver(firstOption);
-		});
-
-		act(() => {
-			fireEvent.keyDown(toggle, { key: "ArrowDown", code: 40 });
-		});
 
 		expect(firstOption).toHaveClass("is-highlighted");
 	});
@@ -121,10 +117,18 @@ describe("SelectDropdown", () => {
 		const options = [{ label: "Option 1", value: "1" }];
 		const { getByTestId } = render(<Select options={options} defaultValue="3" />);
 
-		const toggle = getByTestId("select-list__toggle-button");
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
 		act(() => {
-			fireEvent.click(toggle);
+			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
+		});
+
+		act(() => {
+			fireEvent.keyDown(selectDropdown, { key: "Tab", code: 9 });
+		});
+
+		act(() => {
+			fireEvent.keyDown(selectDropdown, { key: "Backspace", code: 8 });
 		});
 
 		const firstOption = getByTestId("select-list__toggle-option-0");
@@ -135,7 +139,7 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(toggle, { key: "ArrowDown", code: 40 });
+			fireEvent.keyDown(selectDropdown, { key: "ArrowDown", code: 40 });
 		});
 
 		expect(firstOption).toHaveClass("is-highlighted");

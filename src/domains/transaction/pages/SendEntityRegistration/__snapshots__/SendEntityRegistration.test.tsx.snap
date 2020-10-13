@@ -865,7 +865,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -909,7 +909,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -953,7 +953,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -1651,7 +1651,7 @@ exports[`Registration should go to review step after successfully filling form d
                                   class="flex flex-col w-1/2 justify-center px-4 py-2"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Amount
                                   </span>
@@ -1666,7 +1666,7 @@ exports[`Registration should go to review step after successfully filling form d
                                   class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Fee
                                   </span>
@@ -1700,7 +1700,7 @@ exports[`Registration should go to review step after successfully filling form d
                               class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 justfiy-center bg-theme-neutral-contrast"
                             >
                               <span
-                                class="sc-fzolEj gcosPd"
+                                class="sc-fznWOq evvoWC"
                               >
                                 Total Amount
                               </span>
@@ -2170,7 +2170,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg hKoddb SelectAddress  "
+                            class="sc-fzolEj kkRTJY SelectAddress  "
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -2250,50 +2250,46 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
-                          <div>
-                            <button
-                              aria-expanded="true"
-                              aria-haspopup="listbox"
-                              aria-labelledby="downshift-36-label downshift-36-toggle-button"
-                              class="sc-fznxKY ftvzgS is-open  "
-                              data-testid="select-list__toggle-button"
-                              id="downshift-36-toggle-button"
-                              type="button"
+                          <div
+                            aria-expanded="true"
+                            aria-haspopup="listbox"
+                            aria-owns="downshift-79-menu"
+                            role="combobox"
+                          >
+                            <label
+                              for="downshift-78-input"
+                              id="downshift-79-label"
                             />
+                            <div
+                              class="sc-fzpjYC dHxzen"
+                              data-testid="SelectDropdownInput"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-79-menu"
+                                aria-labelledby="downshift-79-label"
+                                autocomplete="off"
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-78-input"
+                                name="registrationType"
+                                placeholder="Select option"
+                                value="Delegate"
+                              />
+                            </div>
                             <ul
-                              aria-labelledby="downshift-36-label"
-                              class="sc-fznMAR hjPwmz is-open"
-                              id="downshift-36-menu"
+                              aria-labelledby="downshift-79-label"
+                              class="sc-fznxKY erNwxN is-open"
+                              id="downshift-79-menu"
                               role="listbox"
-                              tabindex="-1"
                             >
                               <li
-                                aria-selected="false"
-                                class="select-list-option "
-                                data-testid="select-list__toggle-option-0"
-                                id="downshift-36-item-0"
-                                role="option"
+                                class="select-list-option is-empty"
+                                data-testid="select-list__empty-option"
                               >
-                                <div
-                                  class="select-list-option__label"
-                                >
-                                  Business
-                                </div>
-                              </li>
-                              <li
-                                aria-selected="false"
-                                class="select-list-option "
-                                data-testid="select-list__toggle-option-1"
-                                id="downshift-36-item-1"
-                                role="option"
-                              >
-                                <div
-                                  class="select-list-option__label"
-                                >
-                                  MultiSignature
-                                </div>
+                                No options
                               </li>
                             </ul>
                           </div>
@@ -2434,7 +2430,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
       >
         <div>
           <button
-            class="sc-fzqBkg hKoddb SelectAddress  "
+            class="sc-fzolEj kkRTJY SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -2496,33 +2492,68 @@ exports[`Registration should not set fee if no fee options 1`] = `
           value="delegateRegistration"
         />
         <div
-          class="relative w-full cursor-pointer"
+          class="relative w-full"
         >
-          <div>
-            <button
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-15-label downshift-15-toggle-button"
-              class="sc-fznxKY ftvzgS  is-selected "
-              data-testid="select-list__toggle-button"
-              id="downshift-15-toggle-button"
-              type="button"
-            >
-              Delegate
-            </button>
-            <ul
-              aria-labelledby="downshift-15-label"
-              class="sc-fznMAR hjPwmz"
-              id="downshift-15-menu"
-              role="listbox"
-              tabindex="-1"
+          <div
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-owns="downshift-33-menu"
+            role="combobox"
+          >
+            <label
+              for="downshift-32-input"
+              id="downshift-33-label"
             />
+            <div
+              class="sc-fzpjYC dHxzen"
+              data-testid="SelectDropdownInput"
+            >
+              <span
+                class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                data-testid="SelectDropdownInput__typeahead"
+              >
+                Delegate
+              </span>
+              <input
+                aria-activedescendant="downshift-33-item-0"
+                aria-autocomplete="list"
+                aria-controls="downshift-33-menu"
+                aria-labelledby="downshift-33-label"
+                autocomplete="off"
+                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                data-testid="SelectDropdownInput__input"
+                id="downshift-32-input"
+                name="registrationType"
+                placeholder="Select option"
+                value="Delegate"
+              />
+            </div>
+            <ul
+              aria-labelledby="downshift-33-label"
+              class="sc-fznxKY erNwxN is-open"
+              id="downshift-33-menu"
+              role="listbox"
+            >
+              <li
+                aria-selected="true"
+                class="select-list-option is-highlighted"
+                data-testid="select-list__toggle-option-0"
+                id="downshift-33-item-0"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Delegate
+                </div>
+              </li>
+            </ul>
           </div>
           <div
             class="sc-fzoyAV sc-fzoXzr YtqIf w-10 pointer-events-none text-theme-neutral"
           >
             <div
-              class="sc-AxiKw jNSjzx"
+              class="sc-AxiKw jNSjzx transform rotate-180"
               height="5"
               width="7"
             >
@@ -3010,7 +3041,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                   class="flex flex-col w-1/2 justify-center px-4 py-2"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Amount
                                   </span>
@@ -3025,7 +3056,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                   class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Fee
                                   </span>
@@ -3059,7 +3090,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                               class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 justfiy-center bg-theme-neutral-contrast"
                             >
                               <span
-                                class="sc-fzolEj gcosPd"
+                                class="sc-fznWOq evvoWC"
                               >
                                 Total Amount
                               </span>
@@ -3214,7 +3245,7 @@ exports[`Registration should render 1st step 1`] = `
       >
         <div>
           <button
-            class="sc-fzqBkg hKoddb SelectAddress  "
+            class="sc-fzolEj kkRTJY SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -3276,33 +3307,68 @@ exports[`Registration should render 1st step 1`] = `
           value="delegateRegistration"
         />
         <div
-          class="relative w-full cursor-pointer"
+          class="relative w-full"
         >
-          <div>
-            <button
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-10-label downshift-10-toggle-button"
-              class="sc-fznxKY ftvzgS  is-selected "
-              data-testid="select-list__toggle-button"
-              id="downshift-10-toggle-button"
-              type="button"
-            >
-              Delegate
-            </button>
-            <ul
-              aria-labelledby="downshift-10-label"
-              class="sc-fznMAR hjPwmz"
-              id="downshift-10-menu"
-              role="listbox"
-              tabindex="-1"
+          <div
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-owns="downshift-21-menu"
+            role="combobox"
+          >
+            <label
+              for="downshift-20-input"
+              id="downshift-21-label"
             />
+            <div
+              class="sc-fzpjYC dHxzen"
+              data-testid="SelectDropdownInput"
+            >
+              <span
+                class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                data-testid="SelectDropdownInput__typeahead"
+              >
+                Delegate
+              </span>
+              <input
+                aria-activedescendant="downshift-21-item-0"
+                aria-autocomplete="list"
+                aria-controls="downshift-21-menu"
+                aria-labelledby="downshift-21-label"
+                autocomplete="off"
+                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
+                data-testid="SelectDropdownInput__input"
+                id="downshift-20-input"
+                name="registrationType"
+                placeholder="Select option"
+                value="Delegate"
+              />
+            </div>
+            <ul
+              aria-labelledby="downshift-21-label"
+              class="sc-fznxKY erNwxN is-open"
+              id="downshift-21-menu"
+              role="listbox"
+            >
+              <li
+                aria-selected="true"
+                class="select-list-option is-highlighted"
+                data-testid="select-list__toggle-option-0"
+                id="downshift-21-item-0"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Delegate
+                </div>
+              </li>
+            </ul>
           </div>
           <div
             class="sc-fzoyAV sc-fzoXzr YtqIf w-10 pointer-events-none text-theme-neutral"
           >
             <div
-              class="sc-AxiKw jNSjzx"
+              class="sc-AxiKw jNSjzx transform rotate-180"
               height="5"
               width="7"
             >
@@ -3784,7 +3850,7 @@ exports[`Registration should render registration form without selected wallet 1`
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
                           <div
                             aria-expanded="false"
@@ -4361,7 +4427,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
                           <div
                             aria-expanded="false"
@@ -4963,7 +5029,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
                           <div
                             aria-expanded="false"
@@ -5369,7 +5435,7 @@ exports[`Registration should select registration type & show form 1`] = `
                         class="flex rounded-lg overflow-hidden bg-theme-warning"
                       >
                         <div
-                          class="sc-fzoxKX habbCf flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="sc-fzqPZZ hQmpwy flex items-center justify-center text-theme-warning bg-theme-warning-200"
                         >
                           <div
                             class="sc-AxiKw iRsrJT"
@@ -5382,7 +5448,7 @@ exports[`Registration should select registration type & show form 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-fzqPZZ jgngte flex-1 bg-theme-warning-100 space-y-2"
+                          class="sc-fzqBkg czMUCU flex-1 bg-theme-warning-100 space-y-2"
                         >
                           <div
                             class="text-sm"
@@ -5925,7 +5991,7 @@ exports[`Registration should should go back and forth & correctly register field
                         class="flex rounded-lg overflow-hidden bg-theme-warning"
                       >
                         <div
-                          class="sc-fzoxKX habbCf flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="sc-fzqPZZ hQmpwy flex items-center justify-center text-theme-warning bg-theme-warning-200"
                         >
                           <div
                             class="sc-AxiKw iRsrJT"
@@ -5938,7 +6004,7 @@ exports[`Registration should should go back and forth & correctly register field
                           </div>
                         </div>
                         <div
-                          class="sc-fzqPZZ jgngte flex-1 bg-theme-warning-100 space-y-2"
+                          class="sc-fzqBkg czMUCU flex-1 bg-theme-warning-100 space-y-2"
                         >
                           <div
                             class="text-sm"
@@ -7290,7 +7356,7 @@ exports[`Registration should validate description 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -7334,7 +7400,7 @@ exports[`Registration should validate description 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -7378,7 +7444,7 @@ exports[`Registration should validate description 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -7957,7 +8023,7 @@ exports[`Registration should validate display name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8001,7 +8067,7 @@ exports[`Registration should validate display name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8045,7 +8111,7 @@ exports[`Registration should validate display name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8624,7 +8690,7 @@ exports[`Registration should validate entity name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8668,7 +8734,7 @@ exports[`Registration should validate entity name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8712,7 +8778,7 @@ exports[`Registration should validate entity name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -9291,7 +9357,7 @@ exports[`Registration should validate website url 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -9335,7 +9401,7 @@ exports[`Registration should validate website url 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -9379,7 +9445,7 @@ exports[`Registration should validate website url 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="sc-fznMAR ecTYIw flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div

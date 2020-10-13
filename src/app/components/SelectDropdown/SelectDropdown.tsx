@@ -30,7 +30,7 @@ type SelectDropdownProps = {
 	onSelectedItemChange: any;
 } & React.InputHTMLAttributes<any>;
 
-export const itemToString = (item: Option | null) => item?.label || "";
+const itemToString = (item: Option | null) => item?.label || "";
 
 const SelectDropdown = ({
 	options,
@@ -98,7 +98,7 @@ const SelectDropdown = ({
 	const data = isTyping ? items : options;
 
 	return (
-		<div className="relative w-full cursor-pointer">
+		<div className="relative w-full">
 			<div {...getComboboxProps()}>
 				<label {...getLabelProps()} />
 				<SelectDropdownInput
@@ -189,14 +189,17 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					readOnly
 				/>
 				<SelectDropdown
-					disabled={disabled}
 					options={options}
 					defaultSelectedItem={defaultSelectedItem}
 					placeholder={placeholder}
+					disabled={disabled}
 					isInvalid={isInvalidField}
 					onSelectedItemChange={({ selectedItem }: { selectedItem: Option }) => {
 						setSelected(selectedItem);
-						onChange?.(selectedItem);
+
+						if (selectedItem) {
+							onChange?.(selectedItem);
+						}
 					}}
 				/>
 			</div>
