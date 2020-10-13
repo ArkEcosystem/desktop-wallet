@@ -7,7 +7,6 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { toast } from "react-toastify";
 import {
 	env,
 	fireEvent,
@@ -297,7 +296,6 @@ describe("SendIpfs", () => {
 
 		let rendered: RenderResult;
 
-		const toastMock = jest.spyOn(toast, "error");
 		const walletBalanceMock = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
 
 		await act(async () => {
@@ -332,17 +330,11 @@ describe("SendIpfs", () => {
 			// Step 2
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
 
-			await waitFor(() =>
-				expect(toastMock).toHaveBeenCalledWith(
-					transactionTranslations.VALIDATION.INSUFFICIENT_FUNDS,
-					expect.anything(),
-				),
-			);
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveAttribute("aria-invalid"));
 
 			expect(rendered.container).toMatchSnapshot();
 		});
 		walletBalanceMock.mockRestore();
-		toastMock.mockRestore();
 	});
 
 	it("should show an error if an invalid IPFS hash is entered", async () => {
