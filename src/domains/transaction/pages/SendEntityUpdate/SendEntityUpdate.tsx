@@ -37,7 +37,7 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 	const [isLoading, setIsLoading] = useState(true);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues, shouldUnregister: false });
-	const { setValue, getValues, trigger, register, formState } = form;
+	const { setValue, getValues, trigger, register, formState, setError } = form;
 	const { entityRegistration } = useValidation();
 
 	const { env } = useEnvironmentContext();
@@ -128,7 +128,13 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 		if (!isValid) return;
 
 		if (activeTab === 1 && !hasSufficientFunds({ wallet: activeWallet, fee: getValues("fee") })) {
-			return toasts.error(t("TRANSACTION.VALIDATION.INSUFFICIENT_FUNDS"));
+			return setError("fee", {
+				type: "manual",
+				message: t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+					balance: activeWallet.balance().toHuman(),
+					coinId: activeWallet.coinId(),
+				}),
+			});
 		}
 
 		setActiveTab(activeTab + 1);
