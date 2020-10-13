@@ -1,9 +1,8 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { useEnvironmentContext } from "app/contexts";
-import { toasts } from "app/services";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
@@ -24,8 +23,8 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
-	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
-	const [isWarning, setIsWarning] = useState(false);
+	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);=
+	const [feeWarning, setFeeWarning] = useState("");
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
@@ -81,19 +80,16 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
 	}, [profile, networks]);
 	const validateFee = () => {
-		if (!isWarning) {
-			setIsWarning(true);
-			setTimeout(() => {
-				const fee = getValues("fee");
-				if (fee?.value) {
-					if (BigNumber.make(fee.value).isLessThan(fees.min)) {
-						toasts.warning(t("TRANSACTION.PAGE_TRANSACTION_SEND.VALIDATION.FEE_BELOW_MINIMUM"));
-					}
+		const fee = getValues("fee");
+		if (fee?.value) {
+			if (BigNumber.make(fee.value).isLessThan(fees.min)) {
+				return setFeeWarning(t("TRANSACTION.PAGE_TRANSACTION_SEND.VALIDATION.FEE_BELOW_MINIMUM"));
+			}
 
-					setIsWarning(false);
-				}
-			}, 1000);
+			return setFeeWarning("");
 		}
+
+		return setFeeWarning("");
 	};
 
 	return (
@@ -144,6 +140,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 						validateFee();
 					}}
 				/>
+				{feeWarning && <FormHelperText isWarning errorMessage={feeWarning} />}
 			</FormField>
 		</div>
 	);
