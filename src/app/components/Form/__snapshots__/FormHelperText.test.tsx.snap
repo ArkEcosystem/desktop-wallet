@@ -19,3 +19,13 @@ exports[`FormHelperText should render hint text 1`] = `
   </p>
 </DocumentFragment>
 `;
+
+exports[`FormHelperText should render warning message 1`] = `
+<DocumentFragment>
+  <p
+    class="text-sm text-theme-warning"
+  >
+    Error Message
+  </p>
+</DocumentFragment>
+`;
