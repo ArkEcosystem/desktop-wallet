@@ -39,6 +39,7 @@ const SelectDropdown = ({
 	onSelectedItemChange,
 }: SelectDropdownProps) => {
 	const [items, setItems] = useState([...options]);
+	const [isTyping, setIsTyping] = useState(false);
 
 	const isMatch = (inputValue: string, option: Option) =>
 		inputValue && option.label.toLowerCase().startsWith(inputValue.toLowerCase());
@@ -60,8 +61,18 @@ const SelectDropdown = ({
 		items,
 		itemToString,
 		onSelectedItemChange,
-		onInputValueChange: ({ inputValue, selectedItem }) => {
+		onInputValueChange: ({ inputValue, selectedItem, type }) => {
 			setItems(inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options);
+
+			if (type === "__input_change__") {
+				setIsTyping(true);
+			} else {
+				setIsTyping(false);
+			}
+
+			if (!inputValue) {
+				openMenu();
+			}
 
 			// Clear selection when user is changing input,
 			// and input does not match previously selected item
@@ -81,6 +92,8 @@ const SelectDropdown = ({
 		}
 	}, [items, inputValue]);
 
+	const data = isTyping ? items : options;
+
 	return (
 		<div className="relative w-full cursor-pointer">
 			<div {...getComboboxProps()}>
@@ -90,6 +103,7 @@ const SelectDropdown = ({
 					disabled={disabled}
 					{...getInputProps({
 						placeholder,
+						className: "cursor-default",
 						onFocus: openMenu,
 						onBlur: () => {
 							if (inputValue && items.length > 0) {
@@ -116,7 +130,7 @@ const SelectDropdown = ({
 				/>
 				<SelectOptionsList {...getMenuProps({ className: isOpen ? "is-open" : "" })}>
 					{isOpen &&
-						options.map((item: Option, index: number) => (
+						data.map((item: Option, index: number) => (
 							<li
 								key={`${item.value}${index}`}
 								data-testid={`select-list__toggle-option-${index}`}
