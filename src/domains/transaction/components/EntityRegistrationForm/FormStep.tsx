@@ -202,6 +202,7 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 							setValue("fee", currency, { shouldValidate: true, shouldDirty: true })
 						}
 					/>
+					<FormHelperText />
 				</FormField>
 			</div>
 		</section>
