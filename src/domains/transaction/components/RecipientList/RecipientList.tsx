@@ -27,6 +27,7 @@ const RecipientListItem = ({
 	variant,
 	walletName,
 	onRemove,
+	showAmount,
 }: RecipientListItemProps) => {
 	const { t } = useTranslation();
 
@@ -41,18 +42,15 @@ const RecipientListItem = ({
 				</td>
 
 				<td className="py-4">
-					<Address
-						address={address}
-						walletName={walletName}
-						maxChars={!walletName ? 0 : undefined}
-						size="sm"
-					/>
+					<Address address={address} walletName={walletName} maxChars={!walletName ? 0 : undefined} />
 				</td>
 
 				<td className="py-4 text-right">
-					<Label color="danger">
-						<Amount ticker={assetSymbol!} value={amount} />
-					</Label>
+					{showAmount && (
+						<Label color="danger">
+							<Amount ticker={assetSymbol!} value={amount} />
+						</Label>
+					)}
 				</td>
 			</tr>
 		);
@@ -131,6 +129,7 @@ export const RecipientList = ({ assetSymbol, isEditable, recipients, variant, on
 };
 
 RecipientList.defaultProps = {
+	showAmount: true,
 	recipients: [],
 	isEditable: false,
 };
