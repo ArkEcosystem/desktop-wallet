@@ -92,7 +92,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   data-testid="FormLabel"
                   for=""
                 >
-                  Multisiganture Participants
+                  Multisignature Participants
                   <div
                     class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"
@@ -541,7 +541,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                 <div
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Multisiganture Participants
+                  Multisignature Participants
                 </div>
                 <div
                   class="font-semibold"
@@ -646,18 +646,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                             </td>
                             <td
                               class="py-4 text-right"
-                            >
-                              <div
-                                class="sc-AxgMl eXChH"
-                                color="danger"
-                              >
-                                <span
-                                  data-testid="Amount"
-                                >
-                                  33.75089801 DARK
-                                </span>
-                              </div>
-                            </td>
+                            />
                           </tr>
                           <tr
                             class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
@@ -697,18 +686,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                             </td>
                             <td
                               class="py-4 text-right"
-                            >
-                              <div
-                                class="sc-AxgMl eXChH"
-                                color="danger"
-                              >
-                                <span
-                                  data-testid="Amount"
-                                >
-                                  57.68 DARK
-                                </span>
-                              </div>
-                            </td>
+                            />
                           </tr>
                         </tbody>
                       </table>

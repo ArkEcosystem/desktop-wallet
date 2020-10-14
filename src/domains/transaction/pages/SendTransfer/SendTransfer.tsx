@@ -13,7 +13,7 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 import { FormStep } from "./Step1";
 import { ReviewStep } from "./Step2";
@@ -22,6 +22,8 @@ import { SummaryStep } from "./Step4";
 export const SendTransfer = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
+	const location = useLocation();
+	const { state } = location;
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
@@ -60,6 +62,10 @@ export const SendTransfer = () => {
 			}
 		}
 	}, [activeWallet, networks, setValue]);
+
+	useEffect(() => {
+		if (state?.memo) setValue("smartbridge", state.memo);
+	}, [state, setValue]);
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
@@ -144,7 +150,7 @@ export const SendTransfer = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FormStep networks={networks} profile={activeProfile} />
+								<FormStep networks={networks} profile={activeProfile} deeplinkProps={state} />
 							</TabPanel>
 
 							<TabPanel tabId={2}>
