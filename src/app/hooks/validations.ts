@@ -1,6 +1,7 @@
 import { useEnvironmentContext } from "app/contexts";
 import {
 	authentication,
+	common,
 	delegateRegistration,
 	entityRegistration,
 	sendTransfer,
@@ -14,6 +15,7 @@ export const useValidation = () => {
 
 	return useMemo(
 		() => ({
+			common: common(t),
 			authentication: authentication(t),
 			delegateRegistration: delegateRegistration(t),
 			entityRegistration: entityRegistration(t),
