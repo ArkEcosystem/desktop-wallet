@@ -7,6 +7,7 @@ import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { EntityLink } from "domains/transaction/components/LinkCollection/LinkCollection.models";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { EntityProvider } from "domains/transaction/entity/providers";
+import { validateFee } from "domains/transaction/validations";
 import React, { ChangeEvent, useCallback, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -21,6 +22,7 @@ type FormStepProps = {
 
 export const FormStep = ({ title, description, showEntityNameField = true }: FormStepProps) => {
 	const [selectedAvatar, setSelectedAvatar] = useState<EntityLink | undefined>();
+	const [feeWarning, setFeeWarning] = useState<string>("");
 
 	const { t } = useTranslation();
 
@@ -198,10 +200,12 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 						max={fees.max}
 						defaultValue={fee || 0}
 						step={0.01}
-						onChange={(currency) =>
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
-						}
+						onChange={(currency) => {
+							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+							setFeeWarning(validateFee(currency, fees.min));
+						}}
 					/>
+					{feeWarning && <FormHelperText isWarning warningMessage={t(feeWarning)} />}
 				</FormField>
 			</div>
 		</section>

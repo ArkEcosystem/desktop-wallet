@@ -7,6 +7,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useValidation } from "app/hooks";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TransactionSender } from "domains/transaction/components/TransactionDetail";
+import { validateFee } from "domains/transaction/validations";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -14,7 +15,7 @@ import { useTranslation } from "react-i18next";
 export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
-
+	const [feeWarning, setFeeWarning] = useState<string>("");
 	const { delegateRegistration } = useValidation();
 
 	const { getValues, register, setValue, watch } = useFormContext();
@@ -82,8 +83,10 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 						step={step}
 						onChange={(currency) => {
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+							setFeeWarning(validateFee(currency, fees.min));
 						}}
 					/>
+					{feeWarning && <FormHelperText isWarning warningMessage={t(feeWarning)} />}
 				</FormField>
 			</div>
 		</section>

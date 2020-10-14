@@ -1,11 +1,11 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { useEnvironmentContext } from "app/contexts";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
+import { validateFee } from "domains/transaction/validations";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -79,18 +79,6 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 
 		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
 	}, [profile, networks]);
-	const validateFee = () => {
-		const fee = getValues("fee");
-		if (fee?.value) {
-			if (BigNumber.make(fee.value).isLessThan(fees.min)) {
-				return setFeeWarning(t("TRANSACTION.PAGE_TRANSACTION_SEND.VALIDATION.FEE_BELOW_MINIMUM"));
-			}
-
-			return setFeeWarning("");
-		}
-
-		return setFeeWarning("");
-	};
 
 	return (
 		<div className="space-y-8 SendTransactionForm">
@@ -137,10 +125,10 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 					step={0.01}
 					onChange={(currency: { display: string; value: string }) => {
 						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
-						validateFee();
+						setFeeWarning(validateFee(getValues("fee"), fees.min));
 					}}
 				/>
-				{feeWarning && <FormHelperText isWarning warningMessage={feeWarning} />}
+				{feeWarning && <FormHelperText isWarning warningMessage={t(feeWarning)} />}
 			</FormField>
 		</div>
 	);

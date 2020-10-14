@@ -1,8 +1,9 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
-import React, { ChangeEvent, useCallback, useEffect } from "react";
+import { validateFee } from "domains/transaction/validations";
+import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -23,6 +24,7 @@ export const FormStep = ({
 	const { t } = useTranslation();
 	const { setValue, getValues, register } = useFormContext();
 	const { participants, fee, minParticipants } = getValues();
+	const [feeWarning, setFeeWarning] = useState<string>("");
 
 	useEffect(() => {
 		register("participants", { required: true, validate: (value) => Array.isArray(value) && value.length > 1 });
@@ -87,10 +89,12 @@ export const FormStep = ({
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={step}
-						onChange={(currency) =>
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
-						}
+						onChange={(currency) => {
+							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+							validateFee(currency, fees.min);
+						}}
 					/>
+					{feeWarning && <FormHelperText isWarning warningMessage={t(feeWarning)} />}
 				</FormField>
 			</div>
 		</section>

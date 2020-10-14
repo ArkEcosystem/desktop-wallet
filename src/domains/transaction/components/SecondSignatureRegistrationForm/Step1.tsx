@@ -2,9 +2,10 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { TransactionSender } from "domains/transaction/components/TransactionDetail";
+import { validateFee } from "domains/transaction/validations";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -21,6 +22,7 @@ export const GenerationStep = ({
 	step?: number;
 }) => {
 	const { t } = useTranslation();
+	const [feeWarning, setFeeWarning] = useState<string>("");
 
 	const { getValues, setValue, register, watch } = useFormContext();
 
@@ -68,8 +70,10 @@ export const GenerationStep = ({
 						step={step}
 						onChange={(currency) => {
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+							setFeeWarning(validateFee(currency, fees.min));
 						}}
 					/>
+					{feeWarning && <FormHelperText isWarning warningMessage={t(feeWarning)} />}
 				</FormField>
 			</div>
 		</section>

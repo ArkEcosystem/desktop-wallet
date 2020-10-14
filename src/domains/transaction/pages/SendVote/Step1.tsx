@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { useEnvironmentContext } from "app/contexts";
 import { InputFee } from "domains/transaction/components/InputFee";
@@ -9,6 +9,7 @@ import {
 	TransactionNetwork,
 	TransactionSender,
 } from "domains/transaction/components/TransactionDetail";
+import { validateFee } from "domains/transaction/validations";
 import { VoteList } from "domains/vote/components/VoteList";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -27,6 +28,7 @@ export const FirstStep = ({
 }) => {
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
+	const [feeWarning, setFeeWarning] = useState<string>("");
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
@@ -91,8 +93,10 @@ export const FirstStep = ({
 							step={0.01}
 							onChange={(currency) => {
 								setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+								setFeeWarning(validateFee(currency, fees.min));
 							}}
 						/>
+						{feeWarning && <FormHelperText isWarning warningMessage={t(feeWarning)} />}
 					</FormField>
 				</TransactionDetail>
 			</div>
