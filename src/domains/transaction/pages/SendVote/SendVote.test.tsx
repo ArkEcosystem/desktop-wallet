@@ -72,8 +72,6 @@ describe("SendVote", () => {
 		nock.disableNetConnect();
 
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 			.get("/api/transactions/d819c5199e323a62a4349948ff075edde91e509028329f66ec76b8518ad1e493")
 			.reply(200, voteFixture)
 			.get("/api/transactions/32e5278cb72f24f2c04c4797dbfbffa7072f6a30e016093fdd3f7660a2ee2faf")

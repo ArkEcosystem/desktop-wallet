@@ -48,7 +48,8 @@ describe("SendIpfs", () => {
 		wallet = profile.wallets().values()[0];
 
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
+			.get("/api/transactions")
+			.query({ address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" })
 			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 			.get("/api/transactions/1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e")
 			.reply(200, ipfsFixture);

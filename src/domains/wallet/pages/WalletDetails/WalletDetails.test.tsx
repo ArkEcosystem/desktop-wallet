@@ -82,8 +82,8 @@ describe("WalletDetails", () => {
 				error: "Not Found",
 				message: "Wallet not found",
 			})
-			.post("/api/transactions/search")
-			.query(true)
+			.get("/api/transactions")
+			.query((params) => !!params.address)
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
 				return {
