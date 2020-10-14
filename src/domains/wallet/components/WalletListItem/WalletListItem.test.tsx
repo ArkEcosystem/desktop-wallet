@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "testing-library";
+import { fireEvent, render } from "testing-library";
 
 import { WalletListItem } from "./WalletListItem";
 
@@ -30,6 +30,21 @@ describe("Wallet List Item", () => {
 			</table>,
 		);
 
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render and trigger on action on click", () => {
+		const onAction = jest.fn();
+		const { asFragment, getByTestId } = render(
+			<table>
+				<tbody>
+					<WalletListItem wallet={wallet} options={options} onAction={onAction} />
+				</tbody>
+			</table>,
+		);
+		fireEvent.click(getByTestId(`ContactListItem__one-option-button-${wallet.id()}`));
+
+		expect(onAction).toHaveBeenCalled();
 		expect(asFragment()).toMatchSnapshot();
 	});
 

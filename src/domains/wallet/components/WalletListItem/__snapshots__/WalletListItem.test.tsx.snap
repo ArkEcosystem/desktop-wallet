@@ -118,6 +118,124 @@ exports[`Wallet List Item should render 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Wallet List Item should render and trigger on action on click 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="sc-AxheI kPnUtS group"
+        data-testid="TableRow"
+      >
+        <td
+          class="w-1"
+        >
+          <div
+            class="sc-AxgMl CJDGv"
+          >
+            <div
+              class="mr-4"
+            >
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                data-testid="ContactListItem__user--avatar"
+              >
+                <img
+                  alt="Test Wallet"
+                  src="data:image/svg+xml;utf8,data:image/png;base64,avatarImage"
+                  title="Test Wallet"
+                />
+                <span
+                  class="absolute text-sm font-semibold text-theme-background"
+                >
+                  TE
+                </span>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="sc-AxgMl jMsVEB"
+          >
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D5sRKWckH4…gyC3cvJtwb
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jMsVEB"
+          >
+            <span
+              data-testid="ContactListItem__name"
+            >
+              Test Wallet
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jMsVEB"
+          >
+            <span
+              data-testid="ContactListItem__type"
+            >
+              My Wallet
+            </span>
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="sc-AxgMl jMsVEB space-x-2 text-sm font-bold justify-center"
+          >
+            <div
+              class="sc-AxiKw bZmbqI border-black"
+            >
+              <div
+                class="sc-AxhCb gZVKaf"
+                height="25"
+                width="25"
+              >
+                <svg>
+                  delegate.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            class="sc-AxgMl hkmjkT justify-end"
+          >
+            <button
+              class="sc-AxirZ jCYjLj float-right"
+              color="primary"
+              data-testid="ContactListItem__one-option-button-id5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+              type="button"
+            >
+              Option 1
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
 exports[`Wallet List Item should render as condensend 1`] = `
 <DocumentFragment>
   <table>
