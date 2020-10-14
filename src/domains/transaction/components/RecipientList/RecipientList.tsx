@@ -96,7 +96,14 @@ const RecipientListItem = ({
 	);
 };
 
-export const RecipientList = ({ assetSymbol, isEditable, recipients, variant, onRemove }: RecipientListProps) => {
+export const RecipientList = ({
+	assetSymbol,
+	isEditable,
+	recipients,
+	variant,
+	onRemove,
+	showAmount,
+}: RecipientListProps) => {
 	const onRemoveRecipient = (address: string) => {
 		if (typeof onRemove === "function") return onRemove(address);
 	};
@@ -113,6 +120,7 @@ export const RecipientList = ({ assetSymbol, isEditable, recipients, variant, on
 			<Table columns={columns} data={recipients}>
 				{(recipient: RecipientListItemProps, index: number) => (
 					<RecipientListItem
+						showAmount={showAmount}
 						address={recipient.address}
 						amount={recipient.amount}
 						assetSymbol={assetSymbol}

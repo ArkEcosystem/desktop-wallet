@@ -16,6 +16,7 @@ export type RecipientList = {
 	assetSymbol: string;
 	isEditable?: boolean;
 	recipients?: RecipientListItem[];
+	showAmount?: boolean;
 	variant?: "condensed";
 	onRemove?: (address: string) => void;
 };
