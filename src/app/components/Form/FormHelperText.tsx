@@ -6,6 +6,7 @@ type FormHelperTextProps = {
 	isInvalid?: boolean;
 	isWarning?: boolean;
 	errorMessage?: React.ReactNode;
+	warningMessage?: React.ReactNode;
 	children?: React.ReactNode;
 };
 
@@ -19,7 +20,7 @@ export function FormHelperText({ children, ...props }: FormHelperTextProps) {
 	}
 
 	if (props.isWarning) {
-		return <p className="text-sm text-theme-warning">{errorMessage}</p>;
+		return <p className="text-sm text-theme-warning">{props.warningMessage}</p>;
 	}
 
 	if (children) {

@@ -140,7 +140,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 						validateFee();
 					}}
 				/>
-				{feeWarning && <FormHelperText isWarning errorMessage={feeWarning} />}
+				{feeWarning && <FormHelperText isWarning warningMessage={feeWarning} />}
 			</FormField>
 		</div>
 	);
