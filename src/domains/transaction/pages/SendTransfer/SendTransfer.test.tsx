@@ -11,6 +11,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	getDefaultWalletId,
 	render,
 	RenderResult,
 	renderWithRouter,
@@ -28,6 +29,7 @@ import { ReviewStep } from "./Step2";
 import { SummaryStep } from "./Step4";
 
 const fixtureProfileId = getDefaultProfileId();
+const fixtureWalletId = getDefaultWalletId();
 
 const createTransactionMultipleMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
@@ -74,6 +76,27 @@ describe("SendTransfer", () => {
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
 				<FormStep networks={[]} profile={profile} />
+			</FormProvider>,
+		);
+
+		expect(getByTestId("SendTransfer__step--first")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render 1st step with deeplink values and use them", async () => {
+		const { result: form } = renderHook(() => useForm());
+		const deeplinkProps: any = {
+			amount: "1.2",
+			coin: "ark",
+			memo: "ARK",
+			method: "transfer",
+			network: "mainnet",
+			recipient: "DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9",
+		};
+
+		const { getByTestId, asFragment } = render(
+			<FormProvider {...form.current}>
+				<FormStep networks={[]} profile={profile} deeplinkProps={deeplinkProps} />
 			</FormProvider>,
 		);
 
@@ -139,6 +162,30 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+		});
+
+		expect(rendered.asFragment()).toMatchSnapshot();
+	});
+
+	it("should render form and use location state", async () => {
+		const history = createMemoryHistory();
+		let rendered: RenderResult;
+
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
+		history.push(transferURL, { memo: "ARK" });
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 					<SendTransfer />
 				</Route>,
 				{

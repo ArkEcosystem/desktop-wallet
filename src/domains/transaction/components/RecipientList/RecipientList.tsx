@@ -27,6 +27,7 @@ const RecipientListItem = ({
 	variant,
 	walletName,
 	onRemove,
+	showAmount,
 }: RecipientListItemProps) => {
 	const { t } = useTranslation();
 
@@ -45,9 +46,11 @@ const RecipientListItem = ({
 				</td>
 
 				<td className="py-4 text-right">
-					<Label color="danger">
-						<Amount ticker={assetSymbol!} value={amount} />
-					</Label>
+					{showAmount && (
+						<Label color="danger">
+							<Amount ticker={assetSymbol!} value={amount} />
+						</Label>
+					)}
 				</td>
 			</tr>
 		);
@@ -93,7 +96,14 @@ const RecipientListItem = ({
 	);
 };
 
-export const RecipientList = ({ assetSymbol, isEditable, recipients, variant, onRemove }: RecipientListProps) => {
+export const RecipientList = ({
+	assetSymbol,
+	isEditable,
+	recipients,
+	variant,
+	onRemove,
+	showAmount,
+}: RecipientListProps) => {
 	const onRemoveRecipient = (address: string) => {
 		if (typeof onRemove === "function") return onRemove(address);
 	};
@@ -110,6 +120,7 @@ export const RecipientList = ({ assetSymbol, isEditable, recipients, variant, on
 			<Table columns={columns} data={recipients}>
 				{(recipient: RecipientListItemProps, index: number) => (
 					<RecipientListItem
+						showAmount={showAmount}
 						address={recipient.address}
 						amount={recipient.amount}
 						assetSymbol={assetSymbol}
@@ -126,6 +137,7 @@ export const RecipientList = ({ assetSymbol, isEditable, recipients, variant, on
 };
 
 RecipientList.defaultProps = {
+	showAmount: true,
 	recipients: [],
 	isEditable: false,
 };
