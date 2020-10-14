@@ -4,6 +4,7 @@
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
+import nock from "nock";
 import React from "react";
 import {
 	act,
@@ -31,7 +32,15 @@ jest.mock("electron", () => ({
 const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 describe("App", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
+
+		nock("https://dwallets.ark.io")
+			.post("/api/transactions/search")
+			.query(true)
+			.reply(200, require("tests/fixtures/coins/ark/notification-transactions.json"))
+			.persist();
+	});
 
 	it("should render splash screen", async () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";

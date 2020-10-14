@@ -1,138 +1,103 @@
-import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { waitFor } from "@testing-library/react";
+import nock from "nock";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, render } from "testing-library";
+import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
+const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/notification-transactions.json");
 
-import { Notifications } from "./Notifications";
+import { markAsRead, Notifications } from "./";
 
-const plugins = [
-	{
-		logoUrl: "/static/media/ark-logo.bafd72bb.png",
-		logoClassName: "flex p-2 mr-4 rounded-lg bg-logo",
-		title: "ARK Explorer",
-		description: "- update v2.5.6",
-		action: {
-			label: "Update now",
-			value: "update",
-		},
-	},
-];
-
-const transactions = [
-	{
-		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
-		blockId: () => "71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9",
-		type: () => "transfer",
-		timestamp: () => DateTime.fromUnix(1596213281),
-		confirmations: () => BigNumber.make(10),
-		votes: () => ["10"],
-		unvotes: () => ["10"],
-		sender: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		recipient: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		recipients: () => [],
-		amount: () => BigNumber.make(100),
-		fee: () => BigNumber.make(21),
-		memo: () => "Test",
-		asset: () => ({ a: "b" }),
-		isConfirmed: () => false,
-		isSent: () => true,
-		isReceived: () => false,
-		isTransfer: () => true,
-		isSecondSignature: () => false,
-		isMultiSignature: () => false,
-		isDelegateRegistration: () => false,
-		isDelegateResignation: () => false,
-		isVote: () => false,
-		isUnvote: () => false,
-		isIpfs: () => false,
-		isMultiPayment: () => false,
-		isHtlcLock: () => false,
-		isHtlcClaim: () => false,
-		isHtlcRefund: () => false,
-
-		isEntityRegistration: () => false,
-		isEntityResignation: () => false,
-		isEntityUpdate: () => false,
-		isBusinessEntityRegistration: () => false,
-		isBusinessEntityResignation: () => false,
-		isBusinessEntityUpdate: () => false,
-		isDeveloperEntityRegistration: () => false,
-		isDeveloperEntityResignation: () => false,
-		isDeveloperEntityUpdate: () => false,
-		isCorePluginEntityRegistration: () => false,
-		isCorePluginEntityResignation: () => false,
-		isCorePluginEntityUpdate: () => false,
-		isDesktopPluginEntityRegistration: () => false,
-		isDesktopPluginEntityResignation: () => false,
-		isDesktopPluginEntityUpdate: () => false,
-		isDelegateEntityRegistration: () => false,
-		isDelegateEntityResignation: () => false,
-		isDelegateEntityUpdate: () => false,
-		isLegacyBusinessRegistration: () => false,
-		isLegacyBusinessResignation: () => false,
-		isLegacyBusinessUpdate: () => false,
-		isLegacyBridgechainRegistration: () => false,
-		isLegacyBridgechainResignation: () => false,
-		isLegacyBridgechainUpdate: () => false,
-		toObject: () => ({ a: "b" }),
-		hasPassed: () => true,
-		hasFailed: () => false,
-		getMeta: () => "",
-		setMeta: () => "",
-		total: () => BigNumber.make(121).times(1e8),
-		convertedTotal: () => BigNumber.ZERO,
-		wallet: () => undefined,
-		coin: () => undefined,
-		data: () => undefined,
-	},
-];
+let profile: Profile;
 
 describe("Notifications", () => {
-	it("should render", () => {
-		const { container } = render(<Notifications />);
+	beforeEach(() => {
+		nock("https://dwallets.ark.io")
+			.get("/api/transactions/ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b")
+			.reply(200, { data: NotificationTransactionsFixtures.data[0] })
+			.get("/api/transactions/1a767ebc0cc53246b9105a9f09b6c2ffa7baedcc7e632c8c1bac58f8f17389f6")
+			.reply(200, { data: NotificationTransactionsFixtures.data[1] });
+
+		profile = env.profiles().findById(getDefaultProfileId());
+	});
+
+	it("should render with plugins", async () => {
+		const { container, queryAllByTestId } = render(<Notifications profile={profile} />);
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).not.toHaveLength(0));
+
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render plugins", () => {
-		const { container } = render(<Notifications pluginsHeader="Plugins" plugins={plugins} />);
+	it("should render with transactions and plugins", async () => {
+		const { container, getAllByTestId, queryAllByTestId } = render(<Notifications profile={profile} />);
+
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode").length).toBeGreaterThan(0));
+
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render transactions", () => {
-		const { container } = render(<Notifications pluginsHeader="Transactions" transactions={transactions} />);
-		expect(container).toMatchSnapshot();
-	});
+	it("should emit onNotificationAction event", async () => {
+		const onNotificationAction = jest.fn();
 
-	it("should emit onAction event when plugin action clicked", () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(<Notifications pluginsHeader="Plugins" plugins={plugins} onAction={fn} />);
-		const toggle = getByTestId("notifications__plugin-action");
-		act(() => {
-			fireEvent.click(toggle);
-		});
-		expect(fn).toBeCalled();
-	});
-
-	it("should not emit onAction event when plugin action clicked and allback not provided", () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(<Notifications pluginsHeader="Plugins" plugins={plugins} />);
-		const toggle = getByTestId("notifications__plugin-action");
-		act(() => {
-			fireEvent.click(toggle);
-		});
-		expect(fn).not.toBeCalled();
-	});
-
-	it("should emit onAction event when transaction was clicked", () => {
-		const fn = jest.fn();
-		const { getByRole } = render(
-			<Notifications transactionsHeader="Transactions" transactions={transactions} onAction={fn} />,
+		const { getAllByTestId, queryAllByTestId } = render(
+			<Notifications profile={profile} onNotificationAction={onNotificationAction} />,
 		);
-		const toggle = getByRole("row");
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode").length).toBeGreaterThan(0));
+
 		act(() => {
-			fireEvent.click(toggle);
+			fireEvent.click(getAllByTestId("NotificationItem__action")[1]);
 		});
-		expect(fn).toBeCalled();
+
+		await waitFor(() => expect(onNotificationAction).toHaveBeenCalled());
+	});
+
+	it("should emit transactionClick event", async () => {
+		const onTransactionClick = jest.fn();
+
+		const all = profile.notifications().count();
+
+		const { container, getAllByTestId, queryAllByTestId } = render(
+			<Notifications profile={profile} onTransactionClick={onTransactionClick} />,
+		);
+
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode").length).toBeGreaterThan(0));
+
+		act(() => {
+			fireEvent.click(getAllByTestId("TransactionRowMode")[0]);
+		});
+
+		await waitFor(() => expect(onTransactionClick).toHaveBeenCalled());
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should mark notification as read", () => {
+		const notification = profile.notifications().first();
+		expect(notification.read_at).toBeUndefined();
+		const isVisible = true;
+		markAsRead(isVisible, notification.id, profile, env);
+		expect(profile.notifications().get(notification.id).read_at).toBeTruthy();
+	});
+
+	it("should not mark notification if is already read", () => {
+		const notification = profile.notifications().last();
+		expect(notification.read_at).toBeUndefined();
+		const isVisible = true;
+
+		markAsRead(isVisible, notification.id, profile, env);
+		const firstReadAt = profile.notifications().get(notification.id).read_at;
+		expect(firstReadAt).toBeTruthy();
+
+		markAsRead(isVisible, notification.id, profile, env);
+		expect(profile.notifications().get(notification.id).read_at).toEqual(firstReadAt);
+	});
+
+	it("should render with empty notifications", async () => {
+		profile.notifications().flush();
+		const { container, queryAllByTestId } = render(<Notifications profile={profile} />);
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(0));
+		expect(container).toMatchSnapshot();
 	});
 });
