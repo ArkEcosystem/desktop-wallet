@@ -1,5 +1,5 @@
 import { useEnvironmentContext } from "app/contexts";
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { RouteConfig } from "react-router-config";
 import { Redirect, Route, Switch, useHistory, useLocation } from "react-router-dom";
 import { styled } from "twin.macro";
