@@ -8,6 +8,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useClipboard } from "app/hooks";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useValidation } from "app/hooks/validations";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -38,14 +39,15 @@ export const SendTransfer = () => {
 	const form = useForm({ mode: "onChange" });
 	const { clearErrors, formState, getValues, register, setError, setValue } = form;
 	const { isValid } = formState;
+	const { sendTransfer } = useValidation();
 
 	useEffect(() => {
-		register("network", { required: true });
-		register("recipients", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 });
-		register("senderAddress", { required: true });
-		register("fee", { required: true });
-		register("smartbridge");
-	}, [register]);
+		register("network", sendTransfer.network());
+		register("recipients", sendTransfer.recipients());
+		register("senderAddress", sendTransfer.senderAddress());
+		register("fee", sendTransfer.fee());
+		register("smartbridge", sendTransfer.smartbridge());
+	}, [register, sendTransfer]);
 
 	useEffect(() => {
 		if (!activeWallet?.address?.()) return;

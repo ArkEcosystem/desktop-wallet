@@ -7,7 +7,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -80,29 +80,38 @@ exports[`Dashboard should fetch more transactions 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -259,7 +268,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznWqX jhDrBX text-theme-neutral-300 pb"
+              class="sc-fzqNqU hclvxA text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -352,7 +361,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
             <div />
           </div>
           <div
-            class="pt-6 mb-2 border-b border-dotted border-theme-neutral-200"
+            class="pt-6 mb-2 border-b border-dashed border-theme-neutral-300"
           />
           <div>
             <div
@@ -361,7 +370,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
               <div
                 class="py-4 text-lg font-bold text-theme-neutral-800"
               >
-                Total portfolio
+                Total Portfolio
               </div>
               <div
                 class="flex justify-end flex-1 space-x-3"
@@ -394,7 +403,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -416,45 +425,45 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -462,23 +471,27 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -487,7 +500,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -511,7 +524,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -564,7 +577,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -660,7 +673,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -742,49 +755,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoiQi AaFUd"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div
-                                class="flex"
-                              >
-                                <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                              >
-                                New Wallet
-                              </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzoiQi AaFUd"
+                            class="sc-fzoyTs irAyXW"
                             data-testid="Card"
                           >
                             <div
@@ -826,7 +797,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -835,13 +806,11 @@ exports[`Dashboard should fetch more transactions 1`] = `
             class="bg-white"
           >
             <div
-              class="text-4xl font-bold"
+              class="mb-8 text-4xl font-bold"
             >
               Transactions History
             </div>
-            <div
-              class="pt-8"
-            >
+            <div>
               <div
                 class="relative"
                 data-testid="TransactionTable"
@@ -2126,7 +2095,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb hPLjLy w-full mt-10 mb-5"
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -2149,7 +2118,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2161,7 +2130,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -2222,29 +2191,38 @@ exports[`Dashboard should hide portfolio view 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -2385,7 +2363,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2407,60 +2385,18 @@ exports[`Dashboard should hide portfolio view 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
-                        >
-                          <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
-                          >
-                            <svg>
-                              grid.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block"
-                        data-testid="LayoutControls__list"
-                      >
-                        <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
-                          data-testid="LayoutControls__list--icon"
-                        >
-                          <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
-                          >
-                            <svg>
-                              list.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
-                  >
-                    <div
-                      class="relative"
-                    >
-                      <span>
-                        <div
-                          class="float-right outline-none cursor-pointer focus:outline-none"
                         >
                           <div
                             class="sc-AxirZ eEbZjj"
@@ -2468,13 +2404,59 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             width="20"
                           >
                             <svg>
-                              filters.svg
+                              grid-view.svg
                             </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="group"
+                        data-testid="LayoutControls__list"
+                      >
+                        <div
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                          data-testid="LayoutControls__list--icon"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              list-view.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                  >
+                    <div
+                      class="relative"
+                    >
+                      <span>
+                        <div
+                          class="group"
+                        >
+                          <div
+                            class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                          >
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                filters.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </span>
                       <div
-                        class="sc-AxgMl ctSkDc mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 undefined"
+                        class="sc-AxgMl ctSkDc mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 transform -translate-y-4"
                       >
                         <div
                           data-testid="dropdown__content"
@@ -2662,7 +2644,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -2686,7 +2668,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -2739,7 +2721,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -2835,7 +2817,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -2917,49 +2899,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoiQi AaFUd"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div
-                                class="flex"
-                              >
-                                <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                              >
-                                New Wallet
-                              </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzoiQi AaFUd"
+                            class="sc-fzoyTs irAyXW"
                             data-testid="Card"
                           >
                             <div
@@ -3001,7 +2941,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3010,13 +2950,11 @@ exports[`Dashboard should hide portfolio view 1`] = `
             class="bg-white"
           >
             <div
-              class="text-4xl font-bold"
+              class="mb-8 text-4xl font-bold"
             >
               Transactions History
             </div>
-            <div
-              class="pt-8"
-            >
+            <div>
               <div
                 class="relative"
                 data-testid="TransactionTable"
@@ -3737,7 +3675,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb hPLjLy w-full mt-10 mb-5"
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -3760,7 +3698,7 @@ exports[`Dashboard should hide transaction view 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3772,7 +3710,7 @@ exports[`Dashboard should hide transaction view 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -3833,29 +3771,38 @@ exports[`Dashboard should hide transaction view 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -4012,7 +3959,7 @@ exports[`Dashboard should hide transaction view 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznWqX jhDrBX text-theme-neutral-300 pb"
+              class="sc-fzqNqU hclvxA text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -4105,7 +4052,7 @@ exports[`Dashboard should hide transaction view 1`] = `
             <div />
           </div>
           <div
-            class="pt-6 mb-2 border-b border-dotted border-theme-neutral-200"
+            class="pt-6 mb-2 border-b border-dashed border-theme-neutral-300"
           />
           <div>
             <div
@@ -4114,7 +4061,7 @@ exports[`Dashboard should hide transaction view 1`] = `
               <div
                 class="py-4 text-lg font-bold text-theme-neutral-800"
               >
-                Total portfolio
+                Total Portfolio
               </div>
               <div
                 class="flex justify-end flex-1 space-x-3"
@@ -4169,60 +4116,18 @@ exports[`Dashboard should hide transaction view 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
-                        >
-                          <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
-                          >
-                            <svg>
-                              grid.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block"
-                        data-testid="LayoutControls__list"
-                      >
-                        <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
-                          data-testid="LayoutControls__list--icon"
-                        >
-                          <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
-                          >
-                            <svg>
-                              list.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
-                  >
-                    <div
-                      class="relative"
-                    >
-                      <span>
-                        <div
-                          class="float-right outline-none cursor-pointer focus:outline-none"
                         >
                           <div
                             class="sc-AxirZ eEbZjj"
@@ -4230,13 +4135,59 @@ exports[`Dashboard should hide transaction view 1`] = `
                             width="20"
                           >
                             <svg>
-                              filters.svg
+                              grid-view.svg
                             </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="group"
+                        data-testid="LayoutControls__list"
+                      >
+                        <div
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                          data-testid="LayoutControls__list--icon"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              list-view.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                  >
+                    <div
+                      class="relative"
+                    >
+                      <span>
+                        <div
+                          class="group"
+                        >
+                          <div
+                            class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                          >
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                filters.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </span>
                       <div
-                        class="sc-AxgMl ctSkDc mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 undefined"
+                        class="sc-AxgMl ctSkDc mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 transform -translate-y-4"
                       >
                         <div
                           data-testid="dropdown__content"
@@ -4424,7 +4375,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -4448,7 +4399,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -4501,7 +4452,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -4597,7 +4548,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -4679,49 +4630,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoiQi AaFUd"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div
-                                class="flex"
-                              >
-                                <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                              >
-                                New Wallet
-                              </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzoiQi AaFUd"
+                            class="sc-fzoyTs irAyXW"
                             data-testid="Card"
                           >
                             <div
@@ -4778,7 +4687,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4790,7 +4699,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -4851,29 +4760,38 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -5030,7 +4948,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznWqX jhDrBX text-theme-neutral-300 pb"
+              class="sc-fzqNqU hclvxA text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -5123,7 +5041,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             <div />
           </div>
           <div
-            class="pt-6 mb-2 border-b border-dotted border-theme-neutral-200"
+            class="pt-6 mb-2 border-b border-dashed border-theme-neutral-300"
           />
           <div>
             <div
@@ -5132,7 +5050,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               <div
                 class="py-4 text-lg font-bold text-theme-neutral-800"
               >
-                Total portfolio
+                Total Portfolio
               </div>
               <div
                 class="flex justify-end flex-1 space-x-3"
@@ -5165,7 +5083,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5187,45 +5105,45 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -5233,23 +5151,27 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -5258,7 +5180,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -5282,7 +5204,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -5335,7 +5257,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -5431,7 +5353,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -5513,49 +5435,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoiQi AaFUd"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div
-                                class="flex"
-                              >
-                                <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                              >
-                                New Wallet
-                              </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzoiQi AaFUd"
+                            class="sc-fzoyTs irAyXW"
                             data-testid="Card"
                           >
                             <div
@@ -5597,7 +5477,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5606,13 +5486,11 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             class="bg-white"
           >
             <div
-              class="text-4xl font-bold"
+              class="mb-8 text-4xl font-bold"
             >
               Transactions History
             </div>
-            <div
-              class="pt-8"
-            >
+            <div>
               <div
                 class="relative"
                 data-testid="TransactionTable"
@@ -6333,7 +6211,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb hPLjLy w-full mt-10 mb-5"
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -6356,7 +6234,7 @@ exports[`Dashboard should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6368,7 +6246,7 @@ exports[`Dashboard should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -6429,29 +6307,38 @@ exports[`Dashboard should render 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -6608,7 +6495,7 @@ exports[`Dashboard should render 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznWqX jhDrBX text-theme-neutral-300 pb"
+              class="sc-fzqNqU hclvxA text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -6701,7 +6588,7 @@ exports[`Dashboard should render 1`] = `
             <div />
           </div>
           <div
-            class="pt-6 mb-2 border-b border-dotted border-theme-neutral-200"
+            class="pt-6 mb-2 border-b border-dashed border-theme-neutral-300"
           />
           <div>
             <div
@@ -6710,7 +6597,7 @@ exports[`Dashboard should render 1`] = `
               <div
                 class="py-4 text-lg font-bold text-theme-neutral-800"
               >
-                Total portfolio
+                Total Portfolio
               </div>
               <div
                 class="flex justify-end flex-1 space-x-3"
@@ -6743,7 +6630,7 @@ exports[`Dashboard should render 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -6765,45 +6652,45 @@ exports[`Dashboard should render 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -6811,23 +6698,27 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -6836,7 +6727,7 @@ exports[`Dashboard should render 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -6860,7 +6751,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -6913,7 +6804,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -7009,7 +6900,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -7091,49 +6982,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoiQi AaFUd"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div
-                                class="flex"
-                              >
-                                <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                              >
-                                New Wallet
-                              </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzoiQi AaFUd"
+                            class="sc-fzoyTs irAyXW"
                             data-testid="Card"
                           >
                             <div
@@ -7175,7 +7024,7 @@ exports[`Dashboard should render 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -7184,13 +7033,11 @@ exports[`Dashboard should render 1`] = `
             class="bg-white"
           >
             <div
-              class="text-4xl font-bold"
+              class="mb-8 text-4xl font-bold"
             >
               Transactions History
             </div>
-            <div
-              class="pt-8"
-            >
+            <div>
               <div
                 class="relative"
                 data-testid="TransactionTable"
@@ -7911,7 +7758,7 @@ exports[`Dashboard should render 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb hPLjLy w-full mt-10 mb-5"
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -7934,7 +7781,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7946,7 +7793,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -8007,29 +7854,38 @@ exports[`Dashboard should render portfolio chart 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -8186,7 +8042,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznWqX jhDrBX text-theme-neutral-300 pb"
+              class="sc-fzqNqU hclvxA text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -8279,7 +8135,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
             <div />
           </div>
           <div
-            class="pt-6 mb-2 border-b border-dotted border-theme-neutral-200"
+            class="pt-6 mb-2 border-b border-dashed border-theme-neutral-300"
           />
           <div>
             <div
@@ -8288,7 +8144,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               <div
                 class="py-4 text-lg font-bold text-theme-neutral-800"
               >
-                Total portfolio
+                Total Portfolio
               </div>
               <div
                 class="flex justify-end flex-1 space-x-3"
@@ -8321,7 +8177,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -8343,45 +8199,45 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -8389,23 +8245,27 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -8414,7 +8274,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -8438,7 +8298,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -8491,7 +8351,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -8587,7 +8447,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -8669,49 +8529,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoiQi AaFUd"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div
-                                class="flex"
-                              >
-                                <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                              >
-                                New Wallet
-                              </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzoiQi AaFUd"
+                            class="sc-fzoyTs irAyXW"
                             data-testid="Card"
                           >
                             <div
@@ -8753,7 +8571,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -8762,13 +8580,11 @@ exports[`Dashboard should render portfolio chart 1`] = `
             class="bg-white"
           >
             <div
-              class="text-4xl font-bold"
+              class="mb-8 text-4xl font-bold"
             >
               Transactions History
             </div>
-            <div
-              class="pt-8"
-            >
+            <div>
               <div
                 class="relative"
                 data-testid="TransactionTable"
@@ -9489,7 +9305,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb hPLjLy w-full mt-10 mb-5"
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -9512,7 +9328,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -9524,7 +9340,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -9585,29 +9401,38 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -9764,7 +9589,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznWqX jhDrBX text-theme-neutral-300 pb"
+              class="sc-fzqNqU hclvxA text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -9857,7 +9682,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             <div />
           </div>
           <div
-            class="pt-6 mb-2 border-b border-dotted border-theme-neutral-200"
+            class="pt-6 mb-2 border-b border-dashed border-theme-neutral-300"
           />
           <div>
             <div
@@ -9866,7 +9691,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               <div
                 class="py-4 text-lg font-bold text-theme-neutral-800"
               >
-                Total portfolio
+                Total Portfolio
               </div>
               <div
                 class="flex justify-end flex-1 space-x-3"
@@ -9899,7 +9724,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -9921,45 +9746,45 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -9967,23 +9792,27 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -9992,7 +9821,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -10016,7 +9845,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -10069,7 +9898,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -10165,7 +9994,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -10247,49 +10076,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoiQi AaFUd"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div
-                                class="flex"
-                              >
-                                <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                              >
-                                New Wallet
-                              </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzoiQi AaFUd"
+                            class="sc-fzoyTs irAyXW"
                             data-testid="Card"
                           >
                             <div
@@ -10331,7 +10118,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -10340,13 +10127,11 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             class="bg-white"
           >
             <div
-              class="text-4xl font-bold"
+              class="mb-8 text-4xl font-bold"
             >
               Transactions History
             </div>
-            <div
-              class="pt-8"
-            >
+            <div>
               <div
                 class="relative"
                 data-testid="TransactionTable"
@@ -11067,7 +10852,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb hPLjLy w-full mt-10 mb-5"
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -11090,7 +10875,7 @@ exports[`Dashboard should render wallets 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11102,7 +10887,7 @@ exports[`Dashboard should render wallets 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -11163,29 +10948,38 @@ exports[`Dashboard should render wallets 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -11342,7 +11136,7 @@ exports[`Dashboard should render wallets 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznWqX jhDrBX text-theme-neutral-300 pb"
+              class="sc-fzqNqU hclvxA text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -11435,7 +11229,7 @@ exports[`Dashboard should render wallets 1`] = `
             <div />
           </div>
           <div
-            class="pt-6 mb-2 border-b border-dotted border-theme-neutral-200"
+            class="pt-6 mb-2 border-b border-dashed border-theme-neutral-300"
           />
           <div>
             <div
@@ -11444,7 +11238,7 @@ exports[`Dashboard should render wallets 1`] = `
               <div
                 class="py-4 text-lg font-bold text-theme-neutral-800"
               >
-                Total portfolio
+                Total Portfolio
               </div>
               <div
                 class="flex justify-end flex-1 space-x-3"
@@ -11477,7 +11271,7 @@ exports[`Dashboard should render wallets 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -11499,45 +11293,45 @@ exports[`Dashboard should render wallets 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -11545,23 +11339,27 @@ exports[`Dashboard should render wallets 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -11570,7 +11368,7 @@ exports[`Dashboard should render wallets 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -11594,7 +11392,7 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -11647,7 +11445,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -11743,7 +11541,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzoiQi NGlcg"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
@@ -11825,49 +11623,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoiQi AaFUd"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div
-                                class="flex"
-                              >
-                                <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                              >
-                                New Wallet
-                              </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzoiQi AaFUd"
+                            class="sc-fzoyTs irAyXW"
                             data-testid="Card"
                           >
                             <div
@@ -11909,7 +11665,7 @@ exports[`Dashboard should render wallets 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -11918,13 +11674,11 @@ exports[`Dashboard should render wallets 1`] = `
             class="bg-white"
           >
             <div
-              class="text-4xl font-bold"
+              class="mb-8 text-4xl font-bold"
             >
               Transactions History
             </div>
-            <div
-              class="pt-8"
-            >
+            <div>
               <div
                 class="relative"
                 data-testid="TransactionTable"
@@ -12645,7 +12399,7 @@ exports[`Dashboard should render wallets 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb hPLjLy w-full mt-10 mb-5"
+                class="sc-AxhCb hvkszb w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -12668,7 +12422,7 @@ exports[`Dashboard should render with no wallets 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznxsB iAUYdH"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -12680,7 +12434,7 @@ exports[`Dashboard should render with no wallets 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznJRM dWqptf"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -12741,29 +12495,31 @@ exports[`Dashboard should render with no wallets 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -12920,7 +12676,7 @@ exports[`Dashboard should render with no wallets 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznWqX jhDrBX text-theme-neutral-300 pb"
+              class="sc-fzqNqU hclvxA text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -13012,30 +12768,10 @@ exports[`Dashboard should render with no wallets 1`] = `
             </div>
             <div />
           </div>
-          <div
-            class="pt-6 mb-2 border-b border-dotted border-theme-neutral-200"
-          />
-          <div>
-            <div
-              class="flex space-x-3"
-            >
-              <div
-                class="py-4 text-lg font-bold text-theme-neutral-800"
-              >
-                Total portfolio
-              </div>
-              <div
-                class="flex justify-end flex-1 space-x-3"
-              />
-            </div>
-            <div
-              class="flex -space-x-1"
-            />
-          </div>
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -13057,45 +12793,45 @@ exports[`Dashboard should render with no wallets 1`] = `
                   data-testid="WalletControls"
                 >
                   <div
-                    class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
-                      class="flex items-center"
+                      class="flex items-center space-x-1"
                     >
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="sc-AxirZ eLkhAQ"
-                            height="14"
-                            width="28"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              grid.svg
+                              grid-view.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="inline-block"
+                        class="group"
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="sc-AxirZ iSCFNs"
-                            height="14"
-                            width="24"
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
                           >
                             <svg>
-                              list.svg
+                              list-view.svg
                             </svg>
                           </div>
                         </div>
@@ -13103,23 +12839,27 @@ exports[`Dashboard should render with no wallets 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
+                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
                       data-testid="dropdown__toggle"
                     >
                       <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="group"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                         >
-                          <svg>
-                            filters.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              filters.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -13128,7 +12868,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -13152,7 +12892,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb hPLjLy"
+                      class="sc-AxhCb hvkszb"
                       color="primary"
                       type="button"
                     >
@@ -13205,7 +12945,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoiQi AaFUd"
+                            class="sc-fzoyTs irAyXW"
                             data-testid="Card"
                           >
                             <div
@@ -13247,7 +12987,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoiQi AaFUd"
+                            class="sc-fzoyTs irAyXW"
                             data-testid="Card"
                           >
                             <div
@@ -13289,49 +13029,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoiQi AaFUd"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div
-                                class="flex"
-                              >
-                                <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                              >
-                                New Wallet
-                              </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzoiQi AaFUd"
+                            class="sc-fzoyTs irAyXW"
                             data-testid="Card"
                           >
                             <div
@@ -13373,7 +13071,7 @@ exports[`Dashboard should render with no wallets 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -13382,13 +13080,11 @@ exports[`Dashboard should render with no wallets 1`] = `
             class="bg-white"
           >
             <div
-              class="text-4xl font-bold"
+              class="mb-8 text-4xl font-bold"
             >
               Transactions History
             </div>
-            <div
-              class="pt-8"
-            >
+            <div>
               <div
                 class="relative"
                 data-testid="TransactionTable"

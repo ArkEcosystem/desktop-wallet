@@ -31,6 +31,7 @@ export const translations: { [key: string]: any } = {
 	COMPLETE: "Complete",
 	COMPLETED: "Completed",
 	CONFIRM: "Confirm",
+	CONTACT: "Contact",
 	CONTACTS: "Contacts",
 	CONTINUE: "Continue",
 	COPY: "Copy",
@@ -84,9 +85,13 @@ export const translations: { [key: string]: any } = {
 	LOADING: "Loading ...",
 	MARKETSQUARE: "MarketSquare",
 	MESSAGE: "Message",
+	MY_WALLET: "My Wallet",
 	MOST_POPULAR: "Most popular",
 	MULTISIGNATURE: "Multisignature",
 	NAME: "Name",
+	SENDER_ADDRESS: "Sender address",
+	SMARTBRIDGE: "Smartbridge",
+	FEE: "FEE",
 	MNEMONIC: "Mnemonic",
 	SECOND_MNEMONIC: "2nd Mnemonic",
 	DESCRIPTION: "Description",
@@ -118,6 +123,7 @@ export const translations: { [key: string]: any } = {
 	RANK: "Rank",
 	RATING: "Rating",
 	RECIPIENT: "Recipient",
+	RECIPIENTS: "Recipients",
 	"RECIPIENT_#": "Recipient #{{count}}",
 	REGISTER: "Register",
 	REGISTRATIONS: "Registrations",
@@ -204,6 +210,7 @@ export const translations: { [key: string]: any } = {
 		MIN_LENGTH: "'{{field}}' should have at least {{minLength}} characters",
 		SUBJECT_INVALID: "The {{subject}} is invalid",
 		SUBJECT_MISMATCH: "The {{subject}} do not match",
+		MIN_RECIPIENTS: "At least one recipient is required",
 	},
 
 	DATETIME: {
@@ -250,5 +257,14 @@ export const translations: { [key: string]: any } = {
 	SAVE_FILE: {
 		SUCCESS: "<bold>{{filePath}}</bold> was saved successfully",
 		ERROR: "Could not save file: {{error}}",
+	},
+	NOTIFICATIONS: {
+		ACTIONS: {
+			READ_CHANGELOG: "Read Changelog",
+			UPDATE: "Update",
+		},
+		PLUGINS_TITLE: "Plugins",
+		TRANSACTIONS_TITLE: "Transactions",
+		EMPTY: "You have no notifications at this time",
 	},
 };

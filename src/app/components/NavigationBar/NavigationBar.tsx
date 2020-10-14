@@ -8,8 +8,8 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { Notifications } from "app/components/Notifications";
-import { Action, NotificationsProps } from "app/components/Notifications/models";
+import { NotificationsDropdown } from "app/components/Notifications";
+import { Action } from "app/components/Notifications/models";
 import { SearchBarFilters } from "app/components/SearchBar/SearchBarFilters";
 import { useEnvironmentContext } from "app/contexts";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
@@ -38,49 +38,14 @@ type NavigationBarProps = {
 	menu?: MenuItem[];
 	userActions?: Action[];
 	avatarImage?: string;
-	notifications?: any;
 	onUserAction?: any;
-	onNotificationAction?: any;
 };
 
 const NavWrapper = styled.nav<{ noShadow?: boolean }>`
 	${defaultStyle}
-	${tw`sticky inset-x-0 top-0 bg-white`}
+	${tw`sticky inset-x-0 top-0 bg-theme-background`}
 	${({ noShadow }) => !noShadow && tw`shadow-md`};
 `;
-
-const NotificationsDropdown = ({
-	pluginsHeader,
-	plugins,
-	transactionsHeader,
-	transactions,
-	onAction,
-}: NotificationsProps) => (
-	<Dropdown
-		toggleContent={
-			<div className="overflow-hidden rounded-lg">
-				<Button
-					variant="transparent"
-					size="icon"
-					className="text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-					data-testid="navbar__buttons--notifications"
-				>
-					<Icon name="Notification" width={22} height={22} className="p-1" />
-				</Button>
-			</div>
-		}
-	>
-		<div className="p-8 py-3 mt-2 w-128">
-			<Notifications
-				pluginsHeader={pluginsHeader}
-				plugins={plugins}
-				transactionsHeader={transactionsHeader}
-				transactions={transactions}
-				onAction={onAction}
-			/>
-		</div>
-	</Dropdown>
-);
 
 type UserInfoProps = {
 	avatarImage?: string;
@@ -149,15 +114,7 @@ const LogoContainer = styled.div`
 	${tw`flex items-center justify-center my-auto mr-4 text-white bg-logo rounded h-12 w-12`};
 `;
 
-export const NavigationBar = ({
-	title,
-	profile,
-	variant,
-	menu,
-	userActions,
-	notifications,
-	onNotificationAction,
-}: NavigationBarProps) => {
+export const NavigationBar = ({ title, profile, variant, menu, userActions }: NavigationBarProps) => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
@@ -224,7 +181,7 @@ export const NavigationBar = ({
 							<ul className="flex h-20 mr-auto md:h-24">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
-								<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
+								{profile && <NotificationsDropdown profile={profile} />}
 
 								<div className="h-8 border-r border-theme-neutral-200" />
 
@@ -315,12 +272,6 @@ export const NavigationBar = ({
 
 NavigationBar.defaultProps = {
 	variant: "full",
-	notifications: {
-		transactionsHeader: "Transactions",
-		transactions: [],
-		pluginsHeader: "Plugins",
-		plugins: [],
-	},
 	menu: [
 		{
 			title: "Portfolio",

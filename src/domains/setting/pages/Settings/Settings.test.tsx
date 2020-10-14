@@ -29,12 +29,20 @@ jest.mock("electron", () => {
 	};
 });
 
+jest.mock("react-router-dom", () => ({
+	...jest.requireActual("react-router-dom"),
+	useHistory: () => ({
+		replace: jest.fn(),
+	}),
+}));
+
 jest.mock("fs", () => ({
 	readFileSync: jest.fn(() => "avatarImage"),
 }));
 
 let profile: Profile;
 let showOpenDialogMock: jest.SpyInstance;
+
 const showOpenDialogParams = {
 	defaultPath: os.homedir(),
 	properties: ["openFile"],
@@ -157,6 +165,58 @@ describe("Settings", () => {
 		fireEvent.click(getByTestId("modal__close-btn"));
 
 		expect(env.profiles().count()).toEqual(profilesCount);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should not update profile if profile name exists", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "J" } });
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__submit-button"));
+		});
+
+		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "" } });
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__submit-button"));
+		});
+
+		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "Jane Doe" } });
+		// Select Language
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Passphrase Language
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Market Provider
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[2]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Currency
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[3]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Time Format
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[4]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Toggle Screenshot Protection
+		fireEvent.click(getByTestId("General-settings__toggle--isScreenshotProtection"));
+		// Toggle Advanced Mode
+		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+		// Toggle Update Ledger in Background
+		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__submit-button"));
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 

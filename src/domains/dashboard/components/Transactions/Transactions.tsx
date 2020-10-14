@@ -1,17 +1,20 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
-	title: string;
+	title?: string;
 	transactions: ExtendedTransactionData[];
 	exchangeCurrency?: string;
 	fetchMoreAction?: Function;
 	onRowClick?: (row: ExtendedTransactionData) => void;
 	emptyText?: string;
 	isLoading?: boolean;
+	hideHeader?: boolean;
+	isCompact?: boolean;
 };
 
 export const Transactions = ({
@@ -21,20 +24,23 @@ export const Transactions = ({
 	emptyText,
 	fetchMoreAction,
 	isLoading,
+	isCompact,
 	onRowClick,
 }: TransactionsProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<div className="bg-white">
-			<div className="text-4xl font-bold">{title}</div>
-			<div className="pt-8">
+			{title && <div className="mb-8 text-4xl font-bold">{title}</div>}
+			<div>
 				<TransactionTable
 					transactions={transactions}
 					exchangeCurrency={exchangeCurrency}
 					showExplorerLinkColumn={false}
+					hideHeader={!isLoading && transactions.length === 0}
 					isLoading={isLoading}
 					onRowClick={onRowClick}
+					isCompact={isCompact}
 				/>
 
 				{transactions.length > 0 && (
@@ -49,13 +55,13 @@ export const Transactions = ({
 					</Button>
 				)}
 			</div>
-			{!isLoading && transactions.length === 0 && <div className="text-theme-neutral-dark">{emptyText}</div>}
+
+			{!isLoading && transactions.length === 0 && <EmptyBlock className="-mt-5" message={emptyText!} />}
 		</div>
 	);
 };
 
 Transactions.defaultProps = {
-	title: "Transactions History",
 	emptyText:
 		"This will display the history of your transactions. But you don't have more than one transaction at the moment.",
 	transactions: [],

@@ -15,7 +15,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -27,7 +27,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -87,29 +87,38 @@ exports[`MyRegistrations should render business registrations 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -620,7 +629,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -771,7 +780,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -1071,7 +1080,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -1222,7 +1231,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -1373,7 +1382,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -1524,7 +1533,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -1841,7 +1850,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm gBWztV"
+                              class="sc-AxjAm bIQEgQ"
                               color="primary"
                               type="button"
                             >
@@ -1878,7 +1887,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1890,7 +1899,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -1950,29 +1959,38 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -2483,7 +2501,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -2634,7 +2652,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -2934,7 +2952,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -3085,7 +3103,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -3236,7 +3254,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -3387,7 +3405,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -3704,7 +3722,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm gBWztV"
+                              class="sc-AxjAm bIQEgQ"
                               color="primary"
                               type="button"
                             >
@@ -3741,7 +3759,7 @@ exports[`MyRegistrations should render empty state 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3753,7 +3771,7 @@ exports[`MyRegistrations should render empty state 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -3813,29 +3831,31 @@ exports[`MyRegistrations should render empty state 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -4105,7 +4125,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4117,7 +4137,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -4177,29 +4197,38 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -4710,7 +4739,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -4861,7 +4890,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -4897,7 +4926,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4909,7 +4938,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -4969,29 +4998,38 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -5502,7 +5540,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -5653,7 +5691,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -5953,7 +5991,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -6104,7 +6142,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -6255,7 +6293,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -6406,7 +6444,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -6723,7 +6761,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm gBWztV"
+                              class="sc-AxjAm bIQEgQ"
                               color="primary"
                               type="button"
                             >
@@ -6760,7 +6798,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6772,7 +6810,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -6832,29 +6870,38 @@ exports[`MyRegistrations should reset search results when clicking search reset 
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -7051,7 +7098,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                   class="relative"
                 >
                   <div
-                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 bg-white rounded-md shadow-xl -bottom-4 -right-6"
+                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
                     data-testid="header-search-bar__input"
                   >
                     <button
@@ -7381,7 +7428,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -7532,7 +7579,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -7832,7 +7879,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -7983,7 +8030,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -8134,7 +8181,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -8285,7 +8332,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -8602,7 +8649,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm gBWztV"
+                              class="sc-AxjAm bIQEgQ"
                               color="primary"
                               type="button"
                             >
@@ -8639,7 +8686,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -8651,7 +8698,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -8711,29 +8758,38 @@ exports[`MyRegistrations should search and find business entity 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -8930,7 +8986,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                   class="relative"
                 >
                   <div
-                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 bg-white rounded-md shadow-xl -bottom-4 -right-6"
+                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
                     data-testid="header-search-bar__input"
                   >
                     <button
@@ -9260,7 +9316,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -9560,7 +9616,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -9711,7 +9767,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -9747,7 +9803,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -9759,7 +9815,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -9819,29 +9875,38 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -10038,7 +10103,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                   class="relative"
                 >
                   <div
-                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 bg-white rounded-md shadow-xl -bottom-4 -right-6"
+                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
                     data-testid="header-search-bar__input"
                   >
                     <button
@@ -10368,7 +10433,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -10519,7 +10584,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -10819,7 +10884,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -10970,7 +11035,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -11121,7 +11186,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -11272,7 +11337,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -11589,7 +11654,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm gBWztV"
+                              class="sc-AxjAm bIQEgQ"
                               color="primary"
                               type="button"
                             >
@@ -11626,7 +11691,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11638,7 +11703,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -11698,29 +11763,38 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -11917,7 +11991,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                   class="relative"
                 >
                   <div
-                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 bg-white rounded-md shadow-xl -bottom-4 -right-6"
+                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
                     data-testid="header-search-bar__input"
                   >
                     <button
@@ -12247,7 +12321,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -12547,7 +12621,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -12698,7 +12772,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm gBWztV"
+                            class="sc-AxjAm bIQEgQ"
                             color="primary"
                             type="button"
                           >
@@ -12734,7 +12808,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fznJRM jfPUjT"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -12746,7 +12820,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fznWqX jXdzJo"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -12806,29 +12880,38 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
           <div
             class="flex items-center my-auto space-x-4"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
+            <div>
               <div
-                class="overflow-hidden rounded-lg"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                  color="primary"
-                  data-testid="navbar__buttons--notifications"
-                  type="button"
+                <div
+                  class="overflow-hidden rounded-lg"
                 >
-                  <div
-                    class="sc-AxirZ hmuEJr p-1"
-                    height="22"
-                    width="22"
+                  <button
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    color="primary"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
                   >
-                    <svg>
-                      notification.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxirZ hmuEJr p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -13025,7 +13108,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
                   class="relative"
                 >
                   <div
-                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 bg-white rounded-md shadow-xl -bottom-4 -right-6"
+                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
                     data-testid="header-search-bar__input"
                   >
                     <button

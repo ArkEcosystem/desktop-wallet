@@ -74,9 +74,9 @@ export const Wallets = ({
 
 	const walletSliderOptions = {
 		slideHeight: 185,
-		slidesPerView: 4,
+		slidesPerView: 3,
 		slidesPerColumn: 2,
-		slidesPerGroup: 4,
+		slidesPerGroup: 3,
 		spaceBetween: 20,
 	};
 

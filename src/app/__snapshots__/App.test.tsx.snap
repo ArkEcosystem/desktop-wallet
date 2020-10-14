@@ -3,7 +3,8 @@
 exports[`App should close splash screen if not demo 1`] = `
 <DocumentFragment>
   <main
-    class="debug-screens"
+    class="theme-dark debug-screens"
+    data-testid="Main"
   >
     <div
       class="Toastify"
@@ -17,7 +18,7 @@ exports[`App should close splash screen if not demo 1`] = `
       >
         <nav
           aria-labelledby="main menu"
-          class="sc-fznxsB TOSSz"
+          class="sc-fzoiQi gbbOUt"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
@@ -29,7 +30,7 @@ exports[`App should close splash screen if not demo 1`] = `
                 class="flex items-center my-auto"
               >
                 <div
-                  class="sc-fznJRM dWqptf"
+                  class="sc-fzqARJ ktgHVM"
                 >
                   <svg
                     width="48"
@@ -63,7 +64,7 @@ exports[`App should close splash screen if not demo 1`] = `
                  ARK Desktop Wallet
               </h1>
               <div
-                class="w-64 mx-auto lg:w-128"
+                class="w-64 mx-auto lg:w-96"
               >
                 <svg>
                   welcome-banner.svg
@@ -109,7 +110,7 @@ exports[`App should close splash screen if not demo 1`] = `
                     </button>
                   </div>
                   <button
-                    class="sc-AxjAm fPpool mt-2 md:mt-0"
+                    class="sc-AxjAm hXnHfM mt-2 md:mt-0"
                     color="primary"
                     type="button"
                   >
@@ -129,7 +130,8 @@ exports[`App should close splash screen if not demo 1`] = `
 exports[`App should render mock 1`] = `
 <DocumentFragment>
   <main
-    class="debug-screens"
+    class="theme-dark debug-screens"
+    data-testid="Main"
   >
     <div
       class="Toastify"
@@ -143,7 +145,7 @@ exports[`App should render mock 1`] = `
       >
         <nav
           aria-labelledby="main menu"
-          class="sc-fznxsB TOSSz"
+          class="sc-fzoiQi gbbOUt"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
@@ -155,7 +157,7 @@ exports[`App should render mock 1`] = `
                 class="flex items-center my-auto"
               >
                 <div
-                  class="sc-fznJRM dWqptf"
+                  class="sc-fzqARJ ktgHVM"
                 >
                   <svg
                     width="48"
@@ -189,7 +191,7 @@ exports[`App should render mock 1`] = `
                  ARK Desktop Wallet
               </h1>
               <div
-                class="w-64 mx-auto lg:w-128"
+                class="w-64 mx-auto lg:w-96"
               >
                 <svg>
                   welcome-banner.svg
@@ -215,7 +217,7 @@ exports[`App should render mock 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="sc-fzoyTs jrscbD"
+                      class="sc-fzoXWK jHILxp"
                       data-testid="Card"
                     >
                       <div
@@ -307,7 +309,7 @@ exports[`App should render mock 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="sc-fzoyTs jrscbD"
+                      class="sc-fzoXWK jHILxp"
                       data-testid="Card"
                     >
                       <div
@@ -422,7 +424,7 @@ exports[`App should render mock 1`] = `
                     </button>
                   </div>
                   <button
-                    class="sc-AxjAm fPpool mt-2 md:mt-0"
+                    class="sc-AxjAm hXnHfM mt-2 md:mt-0"
                     color="primary"
                     type="button"
                   >
@@ -442,7 +444,8 @@ exports[`App should render mock 1`] = `
 exports[`App should render splash screen 1`] = `
 <DocumentFragment>
   <main
-    class="debug-screens"
+    class="theme-dark debug-screens"
+    data-testid="Main"
   >
     <div
       class="Toastify"
@@ -456,7 +459,7 @@ exports[`App should render splash screen 1`] = `
       >
         <nav
           aria-labelledby="main menu"
-          class="sc-fznxsB TOSSz"
+          class="sc-fzoiQi gbbOUt"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
@@ -468,7 +471,7 @@ exports[`App should render splash screen 1`] = `
                 class="flex items-center my-auto"
               >
                 <div
-                  class="sc-fznJRM dWqptf"
+                  class="sc-fzqARJ ktgHVM"
                 >
                   <svg
                     width="48"
@@ -502,7 +505,7 @@ exports[`App should render splash screen 1`] = `
                  ARK Desktop Wallet
               </h1>
               <div
-                class="w-64 mx-auto lg:w-128"
+                class="w-64 mx-auto lg:w-96"
               >
                 <svg>
                   welcome-banner.svg
@@ -528,7 +531,7 @@ exports[`App should render splash screen 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="sc-fzoyTs jrscbD"
+                      class="sc-fzoXWK jHILxp"
                       data-testid="Card"
                     >
                       <div
@@ -620,7 +623,7 @@ exports[`App should render splash screen 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="sc-fzoyTs jrscbD"
+                      class="sc-fzoXWK jHILxp"
                       data-testid="Card"
                     >
                       <div
@@ -735,7 +738,7 @@ exports[`App should render splash screen 1`] = `
                     </button>
                   </div>
                   <button
-                    class="sc-AxjAm fPpool mt-2 md:mt-0"
+                    class="sc-AxjAm hXnHfM mt-2 md:mt-0"
                     color="primary"
                     type="button"
                   >
@@ -755,7 +758,8 @@ exports[`App should render splash screen 1`] = `
 exports[`App should render the offline screen if there is no internet connection 1`] = `
 <DocumentFragment>
   <main
-    class="debug-screens"
+    class="theme-dark debug-screens"
+    data-testid="Main"
   >
     <div
       class="Toastify"
@@ -765,7 +769,7 @@ exports[`App should render the offline screen if there is no internet connection
     >
       <nav
         aria-labelledby="main menu"
-        class="sc-fznxsB TOSSz"
+        class="sc-fzoiQi gbbOUt"
       >
         <div
           class="px-4 sm:px-6 lg:px-10"
@@ -777,7 +781,7 @@ exports[`App should render the offline screen if there is no internet connection
               class="flex items-center my-auto"
             >
               <div
-                class="sc-fznJRM dWqptf"
+                class="sc-fzqARJ ktgHVM"
               >
                 <svg
                   width="48"
@@ -831,7 +835,8 @@ exports[`App should render the offline screen if there is no internet connection
 exports[`App should render welcome screen after splash screen 1`] = `
 <DocumentFragment>
   <main
-    class="debug-screens"
+    class="theme-dark debug-screens"
+    data-testid="Main"
   >
     <div
       class="Toastify"
@@ -845,7 +850,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
       >
         <nav
           aria-labelledby="main menu"
-          class="sc-fznxsB TOSSz"
+          class="sc-fzoiQi gbbOUt"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
@@ -857,7 +862,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                 class="flex items-center my-auto"
               >
                 <div
-                  class="sc-fznJRM dWqptf"
+                  class="sc-fzqARJ ktgHVM"
                 >
                   <svg
                     width="48"
@@ -891,7 +896,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                  ARK Desktop Wallet
               </h1>
               <div
-                class="w-64 mx-auto lg:w-128"
+                class="w-64 mx-auto lg:w-96"
               >
                 <svg>
                   welcome-banner.svg
@@ -917,7 +922,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="sc-fzoyTs jrscbD"
+                      class="sc-fzoXWK jHILxp"
                       data-testid="Card"
                     >
                       <div
@@ -1009,7 +1014,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="sc-fzoyTs jrscbD"
+                      class="sc-fzoXWK jHILxp"
                       data-testid="Card"
                     >
                       <div
@@ -1124,7 +1129,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                     </button>
                   </div>
                   <button
-                    class="sc-AxjAm fPpool mt-2 md:mt-0"
+                    class="sc-AxjAm hXnHfM mt-2 md:mt-0"
                     color="primary"
                     type="button"
                   >
