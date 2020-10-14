@@ -36,19 +36,17 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
-	const { pathname } = useLocation();
+	const location = useLocation();
 	const { theme, setTheme } = useThemeContext();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
-	useDeeplink();
 
-	const location = useLocation();
 	const pathname = (location as any).location?.pathname || location.pathname;
-
 	const nativeTheme = electron.remote.nativeTheme;
-
 	const useDarkMode = React.useMemo(() => theme === "dark", [theme]);
+
+	useDeeplink();
 
 	useEffect(() => {
 		if (!showSplash) {
