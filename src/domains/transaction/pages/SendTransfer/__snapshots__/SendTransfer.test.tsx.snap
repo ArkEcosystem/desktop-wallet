@@ -1741,11 +1741,11 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                 id="SendTransactionForm__network-label"
               />
               <div
-                class="sc-fznxsB hhZPAY"
+                class="sc-fzpjYC dHxzen"
                 data-testid="SelectNetworkInput"
               >
                 <div
-                  class="sc-fzoLag sc-fzoXzr jnLryM px-4"
+                  class="sc-fzoyAV sc-fzoLag grqxuS px-4"
                 >
                   <div
                     class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
@@ -1757,7 +1757,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                   aria-controls="SendTransactionForm__network-menu"
                   aria-labelledby="SendTransactionForm__network-label"
                   autocomplete="off"
-                  class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                   data-testid="SelectNetworkInput__input"
                   id="SendTransactionForm__network-input"
                   placeholder="Enter a cryptoasset name"
@@ -1801,7 +1801,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                 type="button"
               >
                 <div
-                  class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-200"
                 />
                 <div
                   class="inline-block truncate align-middle"
@@ -1821,7 +1821,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                 </div>
               </button>
               <input
-                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
                 data-testid="SelectAddress__input"
                 name="senderAddress"
                 readonly=""
@@ -1876,7 +1876,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                   Single
                 </button>
                 <button
-                  class="sc-AxjAm joLCoM flex-1 border-l-0"
+                  class="sc-AxjAm hXnHfM flex-1 border-l-0"
                   color="primary"
                   data-testid="add-recipient-is-multiple-toggle"
                   type="button"
@@ -1933,7 +1933,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                         </div>
                       </div>
                       <input
-                        class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
                         data-testid="SelectRecipient__input"
                         name="recipientAddress"
                         type="text"
@@ -1975,10 +1975,10 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                     </label>
                   </div>
                   <div
-                    class="sc-fznxsB hhZPAY"
+                    class="sc-fzpjYC dHxzen"
                   >
                     <input
-                      class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
                       data-testid="add-recipient__amount-input"
                       name="amount"
                       placeholder="Amount"
@@ -1986,7 +1986,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                       value="1.2"
                     />
                     <div
-                      class="sc-fzoLag sc-fzpjYC fdEbuY"
+                      class="sc-fzoyAV sc-fzoXzr YtqIf"
                     >
                       <button
                         class="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
@@ -2006,17 +2006,17 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
           class="sc-AxirZ izhStr relative"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="smartbridge"
           >
             Smartbridge
           </label>
           <div
-            class="sc-fznxsB hhZPAY"
+            class="sc-fzpjYC dHxzen"
           >
             <input
-              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="Input__smartbridge"
               name="smartbridge"
               placeholder=" "
@@ -2024,7 +2024,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
               value=""
             />
             <div
-              class="sc-fzoLag sc-fzpjYC fdEbuY px-2 text-sm pointer-events-none text-theme-neutral"
+              class="sc-fzoyAV sc-fzoXzr YtqIf px-2 text-sm pointer-events-none text-theme-neutral"
               data-testid="InputCounter__counter"
             >
               0/255
@@ -2053,10 +2053,10 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
               class="flex-1"
             >
               <div
-                class="sc-fznxsB hhZPAY"
+                class="sc-fzpjYC dHxzen"
               >
                 <input
-                  class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
@@ -2070,19 +2070,19 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                     data-testid="Range"
                   >
                     <div
-                      class="sc-fznJRM kQDqMk"
+                      class="sc-fznxsB iIkzuE"
                       data-testid="Range__track"
                       style="transform: scale(1); cursor: pointer;"
                     >
                       <div
-                        class="sc-fznWqX cugARS"
+                        class="sc-fznJRM csJQgR"
                         data-testid="Range__track__filled"
                       >
                         <div
                           aria-valuemax="2e-8"
                           aria-valuemin="0"
                           aria-valuenow="0"
-                          class="sc-fzoiQi kEqFhK"
+                          class="sc-fznWqX dbpdEg"
                           data-testid="Range__thumb"
                           draggable="false"
                           role="slider"
@@ -2191,7 +2191,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
       </div>
     </div>
     <div
-      class="sc-fznyAO ismzvh"
+      class="sc-fznyAO iykGTc"
       data-testid="TransactionDetail"
     >
       <div
@@ -2257,7 +2257,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
       </div>
     </div>
     <div
-      class="sc-fznyAO ismzvh"
+      class="sc-fznyAO iykGTc"
       data-testid="TransactionDetail"
     >
       <div
@@ -2299,7 +2299,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
       </div>
     </div>
     <div
-      class="sc-fznyAO ismzvh"
+      class="sc-fznyAO iykGTc"
       data-testid="TransactionDetail"
     >
       <div
@@ -2499,7 +2499,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
         </div>
       </div>
       <div
-        class="sc-fznyAO ismzvh"
+        class="sc-fznyAO iykGTc"
         data-testid="TransactionDetail"
       >
         <div
@@ -2534,7 +2534,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
         </div>
       </div>
       <div
-        class="sc-fznyAO ismzvh"
+        class="sc-fznyAO iykGTc"
         data-testid="TransactionDetail"
       >
         <div
@@ -2600,7 +2600,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
         </div>
       </div>
       <div
-        class="sc-fznyAO ismzvh"
+        class="sc-fznyAO iykGTc"
         data-testid="TransactionDetail"
       >
         <div
@@ -2642,7 +2642,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
         </div>
       </div>
       <div
-        class="sc-fznyAO dQFpdT"
+        class="sc-fznyAO hJHVee"
         data-testid="TransactionDetail"
       >
         <div
@@ -2693,7 +2693,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzoiQi bBgYbl"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2705,7 +2705,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
                 width="48"
@@ -2774,7 +2774,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2789,7 +2789,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2974,19 +2974,19 @@ exports[`SendTransfer should render form and use location state 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoNJl fLBodk"
+                class="sc-fzoyTs cPoNle"
               >
                 <li
-                  class="sc-fzoyTs gSSopp"
+                  class="sc-fzqNqU jDKVmr"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzqNqU iyMmQK"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzqNqU iyMmQK"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzqNqU iyMmQK"
                 />
               </ul>
               <div
@@ -3047,11 +3047,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 id="SendTransactionForm__network-label"
                               />
                               <div
-                                class="sc-fznxsB hhZPAY"
+                                class="sc-fzpjYC dHxzen"
                                 data-testid="SelectNetworkInput"
                               >
                                 <div
-                                  class="sc-fzoLag sc-fzoXzr jnLryM px-4"
+                                  class="sc-fzoyAV sc-fzoLag grqxuS px-4"
                                 >
                                   <div
                                     aria-label="ARK Devnet"
@@ -3071,7 +3071,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   </div>
                                 </div>
                                 <span
-                                  class="sc-fzoLag buWfop py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                  class="sc-fzoyAV gCfUUB py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                                   data-testid="SelectNetworkInput__typeahead"
                                 >
                                   ARK Devnet
@@ -3081,7 +3081,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   aria-controls="SendTransactionForm__network-menu"
                                   aria-labelledby="SendTransactionForm__network-label"
                                   autocomplete="off"
-                                  class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                                   data-testid="SelectNetworkInput__input"
                                   disabled=""
                                   id="SendTransactionForm__network-input"
@@ -3164,7 +3164,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 </div>
                               </button>
                               <input
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
                                 data-testid="SelectAddress__input"
                                 name="senderAddress"
                                 readonly=""
@@ -3219,7 +3219,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   Single
                                 </button>
                                 <button
-                                  class="sc-AxjAm joLCoM flex-1 border-l-0"
+                                  class="sc-AxjAm hXnHfM flex-1 border-l-0"
                                   color="primary"
                                   data-testid="add-recipient-is-multiple-toggle"
                                   type="button"
@@ -3265,7 +3265,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                         />
                                       </div>
                                       <input
-                                        class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
                                         data-testid="SelectRecipient__input"
                                         name="recipientAddress"
                                         type="text"
@@ -3307,10 +3307,10 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                     </label>
                                   </div>
                                   <div
-                                    class="sc-fznxsB hhZPAY"
+                                    class="sc-fzpjYC dHxzen"
                                   >
                                     <input
-                                      class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
@@ -3318,7 +3318,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                       value="0"
                                     />
                                     <div
-                                      class="sc-fzoLag sc-fzpjYC fdEbuY"
+                                      class="sc-fzoyAV sc-fzoXzr YtqIf"
                                     >
                                       <button
                                         class="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
@@ -3338,17 +3338,17 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           class="sc-AxirZ izhStr relative"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="smartbridge"
                           >
                             Smartbridge
                           </label>
                           <div
-                            class="sc-fznxsB hhZPAY"
+                            class="sc-fzpjYC dHxzen"
                           >
                             <input
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
                               data-testid="Input__smartbridge"
                               name="smartbridge"
                               placeholder=" "
@@ -3356,7 +3356,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               value="ARK"
                             />
                             <div
-                              class="sc-fzoLag sc-fzpjYC fdEbuY px-2 text-sm pointer-events-none text-theme-neutral"
+                              class="sc-fzoyAV sc-fzoXzr YtqIf px-2 text-sm pointer-events-none text-theme-neutral"
                               data-testid="InputCounter__counter"
                             >
                               0/255
@@ -3385,10 +3385,10 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               class="flex-1"
                             >
                               <div
-                                class="sc-fznxsB hhZPAY"
+                                class="sc-fzpjYC dHxzen"
                               >
                                 <input
-                                  class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -3402,19 +3402,19 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                     data-testid="Range"
                                   >
                                     <div
-                                      class="sc-fznJRM kQDqMk"
+                                      class="sc-fznxsB iIkzuE"
                                       data-testid="Range__track"
                                       style="transform: scale(1); cursor: pointer;"
                                     >
                                       <div
-                                        class="sc-fznWqX cugARS"
+                                        class="sc-fznJRM csJQgR"
                                         data-testid="Range__track__filled"
                                       >
                                         <div
                                           aria-valuemax="6.63"
                                           aria-valuemin="0.00357"
                                           aria-valuenow="0.71538139"
-                                          class="sc-fzoiQi kEqFhK"
+                                          class="sc-fznWqX dbpdEg"
                                           data-testid="Range__thumb"
                                           draggable="false"
                                           role="slider"
@@ -3472,7 +3472,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm hXnHfM"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     disabled=""
