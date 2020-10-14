@@ -88,9 +88,9 @@ const searchAddressesMocks = () => {
 				mockRequest(
 					(request: any) =>
 						(request.url ===
-							`https://dwallets.ark.io/api/transactions/search?page=${page}&limit=${limit}&address=${address}` ||
+							`https://dwallets.ark.io/api/transactions?page=${page}&limit=${limit}&address=${address}` ||
 							request.url ===
-								`https://dwallets.ark.io/api/transactions/search?limit=${limit}&address=${address}`) &&
+								`https://dwallets.ark.io/api/transactions?limit=${limit}&address=${address}`) &&
 						request.method === "get",
 					`coins/ark/transactions/search/addresses-${address}-${page}-${limit}`,
 				),

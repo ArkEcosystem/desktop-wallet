@@ -11,7 +11,7 @@ describe("Wallet Transactions Hook", () => {
 
 	beforeAll(() => {
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
+			.get("/api/transactions")
 			.query((params) => params.page === undefined || params.page === "1")
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
@@ -20,7 +20,7 @@ describe("Wallet Transactions Hook", () => {
 					data: data.slice(0, 1),
 				};
 			})
-			.post("/api/transactions/search")
+			.get("/api/transactions")
 			.query({ page: "2", limit: "10" })
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
