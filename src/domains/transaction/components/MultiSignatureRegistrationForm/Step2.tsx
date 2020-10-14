@@ -54,6 +54,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 				<TransactionDetail border={false} label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")}>
 					<RecipientList
+						showAmount={false}
 						variant="condensed"
 						recipients={participants.map((item: Participant) => ({
 							...item,
