@@ -35,13 +35,13 @@ describe("FormHelperText", () => {
 
 	it("should render warning message", () => {
 		const hintMessage = "Test Message";
-		const errorMessage = "Error Message";
+		const warningMessage = "Warning Message";
 		const { queryByText, asFragment } = render(
-			<FormHelperText errorMessage={errorMessage} isWarning>
+			<FormHelperText warningMessage={warningMessage} isWarning>
 				{hintMessage}
 			</FormHelperText>,
 		);
-		expect(queryByText(errorMessage)).toBeTruthy();
+		expect(queryByText(warningMessage)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
