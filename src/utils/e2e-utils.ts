@@ -156,6 +156,8 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/transaction-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions/search?limit=10", "coins/ark/transactions"),
 		mockRequest("https://dwallets.ark.io/api/transactions/search?limit=20", "coins/ark/transactions"),
+		mockRequest("https://dwallets.ark.io/api/transactions?limit=10", "coins/ark/transactions"),
+		mockRequest("https://dwallets.ark.io/api/transactions?limit=20", "coins/ark/transactions"),
 
 		...businessRegistrations(),
 
