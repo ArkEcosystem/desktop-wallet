@@ -29,7 +29,6 @@ import { Theme } from "types";
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
 import { useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
-import { useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
 
