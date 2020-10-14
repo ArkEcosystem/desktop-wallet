@@ -1,4 +1,5 @@
 import React from "react";
+import { render } from "testing-library";
 
 import { WalletListItem } from "./WalletListItem";
 
@@ -14,12 +15,17 @@ const wallet = {
 	hasSyncedWithNetwork: () => true,
 };
 
+const options = [
+	{ label: "Option 1", value: "1" },
+	{ label: "Option 2", value: "2" },
+];
+
 describe("Wallet List Item", () => {
 	it("should render", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<WalletListItem wallet={wallet} />
+					<WalletListItem wallet={wallet} options={options} />
 				</tbody>
 			</table>,
 		);
@@ -31,7 +37,7 @@ describe("Wallet List Item", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<WalletListItem wallet={wallet} isCondensed />
+					<WalletListItem wallet={wallet} isCondensed options={options} />
 				</tbody>
 			</table>,
 		);
@@ -43,7 +49,7 @@ describe("Wallet List Item", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<WalletListItem wallet={{ ...wallet, isDelegate: () => false }} />
+					<WalletListItem wallet={{ ...wallet, isDelegate: () => false }} options={options} />
 				</tbody>
 			</table>,
 		);
