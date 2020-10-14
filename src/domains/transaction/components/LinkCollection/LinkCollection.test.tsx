@@ -64,7 +64,7 @@ describe("LinkCollection", () => {
 	it("should add links", async () => {
 		const onChange = jest.fn();
 
-		const { asFragment, getAllByTestId, getByTestId } = render(
+		const { asFragment, getByTestId } = render(
 			<LinkCollection
 				title="Social Media"
 				description="Tell people more about yourself through social media"
