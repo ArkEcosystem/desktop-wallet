@@ -7,6 +7,7 @@ import { useActiveProfile } from "app/hooks";
 import React, { useCallback, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 import { FirstStep } from "../Step1";
 import { LedgerConnectionStep } from "./LedgerConnectionStep";
@@ -72,6 +73,7 @@ export const Paginator = ({
 export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	const activeProfile = useActiveProfile();
 
+	const history = useHistory();
 	const { env, persist } = useEnvironmentContext();
 	const { importLedgerWallets } = useLedgerContext();
 
@@ -98,6 +100,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 			}
 		}
 		await persist();
+		history.push(`/profiles/${activeProfile.id()}/dashboard`);
 	};
 
 	const handleNext = useCallback(

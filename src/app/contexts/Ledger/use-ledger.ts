@@ -103,6 +103,7 @@ export const useLedger = (transport: typeof Transport) => {
 
 				const instance = await env.coin(coin, network);
 				const slip44 = instance.config().get<number>("network.crypto.slip44");
+				console.log(slip44);
 
 				dispatch({ type: "busy" });
 
@@ -115,7 +116,7 @@ export const useLedger = (transport: typeof Transport) => {
 					const address = await instance.identity().address().fromPublicKey(publicKey);
 
 					// Already imported
-					if (profile.wallets().findByPublicKey(publicKey)) {
+					if (profile.wallets().findByAddress(address)) {
 						cursor++;
 						continue;
 					}
