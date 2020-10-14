@@ -8,7 +8,6 @@ import { TruncateMiddle } from "app/components/TruncateMiddle";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { MultiSignatureDetail } from "../../MultiSignatureDetail";
 import { BaseTransactionRowAmount } from "../TransactionRow/TransactionRowAmount";
 import { BaseTransactionRowInfo } from "../TransactionRow/TransactionRowInfo";
 import { BaseTransactionRowMode } from "../TransactionRow/TransactionRowMode";
@@ -19,6 +18,7 @@ type SignedTransactionData = Contracts.SignedTransactionData;
 type Props = {
 	transactions: SignedTransactionData[];
 	wallet: ReadWriteWallet;
+	onClick: (transaction: SignedTransactionData) => void;
 };
 
 const getType = (transaction: SignedTransactionData): string => {
@@ -103,13 +103,8 @@ const Row = ({
 	);
 };
 
-export const SignedTransactionTable = ({ transactions, wallet }: Props) => {
+export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props) => {
 	const { t } = useTranslation();
-	const [showModal, setShowModal] = useState<SignedTransactionData | undefined>(undefined);
-
-	const handleClick = (transaction: Contracts.SignedTransactionData) => {
-		setShowModal(transaction);
-	};
 
 	const columns = [
 		{
@@ -149,18 +144,9 @@ export const SignedTransactionTable = ({ transactions, wallet }: Props) => {
 		<div data-testid="SignedTransactionTable" className="relative">
 			<Table columns={columns} data={transactions}>
 				{(transaction: SignedTransactionData) => (
-					<Row transaction={transaction} wallet={wallet} onSign={handleClick} onRowClick={handleClick} />
+					<Row transaction={transaction} wallet={wallet} onSign={onClick} onRowClick={onClick} />
 				)}
 			</Table>
-
-			{showModal && (
-				<MultiSignatureDetail
-					transaction={showModal}
-					isOpen={!!showModal}
-					wallet={wallet}
-					onClose={() => setShowModal(undefined)}
-				/>
-			)}
 		</div>
 	);
 };
