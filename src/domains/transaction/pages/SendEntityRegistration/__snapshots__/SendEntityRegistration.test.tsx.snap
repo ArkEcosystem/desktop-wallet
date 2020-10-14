@@ -2256,16 +2256,16 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             <button
                               aria-expanded="true"
                               aria-haspopup="listbox"
-                              aria-labelledby="downshift-36-label downshift-36-toggle-button"
+                              aria-labelledby="downshift-34-label downshift-34-toggle-button"
                               class="sc-fznxKY ftvzgS is-open  "
                               data-testid="select-list__toggle-button"
-                              id="downshift-36-toggle-button"
+                              id="downshift-34-toggle-button"
                               type="button"
                             />
                             <ul
-                              aria-labelledby="downshift-36-label"
+                              aria-labelledby="downshift-34-label"
                               class="sc-fznMAR hjPwmz is-open"
-                              id="downshift-36-menu"
+                              id="downshift-34-menu"
                               role="listbox"
                               tabindex="-1"
                             >
@@ -2273,7 +2273,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 aria-selected="false"
                                 class="select-list-option "
                                 data-testid="select-list__toggle-option-0"
-                                id="downshift-36-item-0"
+                                id="downshift-34-item-0"
                                 role="option"
                               >
                                 <div
@@ -2286,7 +2286,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 aria-selected="false"
                                 class="select-list-option "
                                 data-testid="select-list__toggle-option-1"
-                                id="downshift-36-item-1"
+                                id="downshift-34-item-1"
                                 role="option"
                               >
                                 <div
@@ -2502,18 +2502,18 @@ exports[`Registration should not set fee if no fee options 1`] = `
             <button
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-labelledby="downshift-15-label downshift-15-toggle-button"
+              aria-labelledby="downshift-13-label downshift-13-toggle-button"
               class="sc-fznxKY ftvzgS  is-selected "
               data-testid="select-list__toggle-button"
-              id="downshift-15-toggle-button"
+              id="downshift-13-toggle-button"
               type="button"
             >
               Delegate
             </button>
             <ul
-              aria-labelledby="downshift-15-label"
+              aria-labelledby="downshift-13-label"
               class="sc-fznMAR hjPwmz"
-              id="downshift-15-menu"
+              id="downshift-13-menu"
               role="listbox"
               tabindex="-1"
             />
@@ -3282,18 +3282,18 @@ exports[`Registration should render 1st step 1`] = `
             <button
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-labelledby="downshift-10-label downshift-10-toggle-button"
+              aria-labelledby="downshift-8-label downshift-8-toggle-button"
               class="sc-fznxKY ftvzgS  is-selected "
               data-testid="select-list__toggle-button"
-              id="downshift-10-toggle-button"
+              id="downshift-8-toggle-button"
               type="button"
             >
               Delegate
             </button>
             <ul
-              aria-labelledby="downshift-10-label"
+              aria-labelledby="downshift-8-label"
               class="sc-fznMAR hjPwmz"
-              id="downshift-10-menu"
+              id="downshift-8-menu"
               role="listbox"
               tabindex="-1"
             />
@@ -4218,7 +4218,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                               ARK Devnet
                             </span>
                             <input
-                              aria-activedescendant="SendTransactionForm__network-item-1"
+                              aria-activedescendant="SendTransactionForm__network-item-0"
                               aria-autocomplete="list"
                               aria-controls="SendTransactionForm__network-menu"
                               aria-labelledby="SendTransactionForm__network-label"
@@ -4238,7 +4238,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                           role="listbox"
                         >
                           <li
-                            aria-selected="false"
+                            aria-selected="true"
                             class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="SendTransactionForm__network-item-0"
@@ -6093,7 +6093,9 @@ exports[`Registration should should go back and forth & correctly register field
 </DocumentFragment>
 `;
 
-exports[`Registration should successfully register entity 1`] = `
+exports[`Registration should successfully register entity 1`] = `<DocumentFragment />`;
+
+exports[`Registration should successfully register entity 2`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
