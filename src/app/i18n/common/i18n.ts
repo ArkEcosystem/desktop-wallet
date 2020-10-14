@@ -139,6 +139,8 @@ export const translations: { [key: string]: any } = {
 	SELECTED: "Selected",
 	SELECT_ALL: "Select All",
 	SELECT_OPTION: "Select {{option}}",
+	SELECT_A_PROFILE: "You should select a profile to access this URL",
+	SELECT_A_WALLET: "You should select a wallet to deeplink transactions",
 	SEND: "Send",
 	SETTINGS: "Settings",
 	SHOW: "Show",

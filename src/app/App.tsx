@@ -28,8 +28,8 @@ import { Theme } from "types";
 
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
+import { useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
 import { useNetworkStatus } from "./hooks";
-import { useEnvSynchronizer } from "./hooks/use-synchronizer";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
 
@@ -37,11 +37,12 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
-
+	const { pathname } = useLocation();
 	const { theme, setTheme } = useThemeContext();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
+	useDeeplink();
 
 	const location = useLocation();
 	const pathname = (location as any).location?.pathname || location.pathname;
