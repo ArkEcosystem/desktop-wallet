@@ -276,11 +276,11 @@ describe("Registration", () => {
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
 
 		await act(async () => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
@@ -317,12 +317,13 @@ describe("Registration", () => {
 	});
 
 	it("should not have delegate option if wallet is a delegate", async () => {
-		const { asFragment, getByTestId } = await renderPage(secondWallet);
+		const { asFragment, getByTestId, queryByText } = await renderPage(secondWallet);
 
 		await act(async () => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
-		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue(""));
+		await waitFor(() => expect(queryByText("Business")).toBeInTheDocument());
+		await waitFor(() => expect(queryByText("Delegate")).not.toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 

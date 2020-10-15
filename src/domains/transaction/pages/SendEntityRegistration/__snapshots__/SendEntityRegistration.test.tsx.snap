@@ -2255,12 +2255,12 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                           <div
                             aria-expanded="true"
                             aria-haspopup="listbox"
-                            aria-owns="downshift-79-menu"
+                            aria-owns="downshift-77-menu"
                             role="combobox"
                           >
                             <label
-                              for="downshift-78-input"
-                              id="downshift-79-label"
+                              for="downshift-76-input"
+                              id="downshift-77-label"
                             />
                             <div
                               class="sc-fzpjYC dHxzen"
@@ -2268,28 +2268,48 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="downshift-79-menu"
-                                aria-labelledby="downshift-79-label"
+                                aria-controls="downshift-77-menu"
+                                aria-labelledby="downshift-77-label"
                                 autocomplete="off"
                                 class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 cursor-default"
                                 data-testid="SelectDropdownInput__input"
-                                id="downshift-78-input"
+                                id="downshift-76-input"
                                 name="registrationType"
                                 placeholder="Select option"
-                                value="Delegate"
+                                value=""
                               />
                             </div>
                             <ul
-                              aria-labelledby="downshift-79-label"
+                              aria-labelledby="downshift-77-label"
                               class="sc-fznxKY erNwxN is-open"
-                              id="downshift-79-menu"
+                              id="downshift-77-menu"
                               role="listbox"
                             >
                               <li
-                                class="select-list-option is-empty"
-                                data-testid="select-list__empty-option"
+                                aria-selected="false"
+                                class="select-list-option cursor-default "
+                                data-testid="select-list__toggle-option-0"
+                                id="downshift-77-item-0"
+                                role="option"
                               >
-                                No options
+                                <div
+                                  class="select-list-option__label"
+                                >
+                                  Business
+                                </div>
+                              </li>
+                              <li
+                                aria-selected="false"
+                                class="select-list-option cursor-default "
+                                data-testid="select-list__toggle-option-1"
+                                id="downshift-77-item-1"
+                                role="option"
+                              >
+                                <div
+                                  class="select-list-option__label"
+                                >
+                                  MultiSignature
+                                </div>
                               </li>
                             </ul>
                           </div>
