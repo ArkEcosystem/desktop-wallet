@@ -141,7 +141,7 @@ const SelectDropdown = ({
 									{...getItemProps({
 										index,
 										item,
-										className: `select-list-option ${
+										className: `select-list-option cursor-default ${
 											item.label === inputValue || (!inputValue && highlightedIndex === index)
 												? "is-highlighted"
 												: ""
