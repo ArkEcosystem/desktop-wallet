@@ -9,6 +9,7 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
+import { WalletListItem } from "domains/wallet/components/WalletListItem";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -16,7 +17,6 @@ import { ContactListItemProps, Option } from "./ContactListItem.models";
 
 export const ContactListItem = ({ item, variant, type, template, onAction, options }: ContactListItemProps) => {
 	const { t } = useTranslation();
-
 	// TODO: add "Business", "Bridgechain"
 	const contactTypes: string[] = ["Delegate"];
 
@@ -128,6 +128,10 @@ export const ContactListItem = ({ item, variant, type, template, onAction, optio
 
 	if (template === "contacts") {
 		return renderMyContactsTemplate();
+	}
+
+	if (type === "wallet") {
+		return <WalletListItem wallet={item} isCondensed={isCondensed()} options={options} />;
 	}
 
 	return (
