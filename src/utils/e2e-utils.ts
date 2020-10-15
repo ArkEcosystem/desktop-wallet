@@ -107,7 +107,10 @@ const businessRegistrations = () => {
 	];
 
 	return transactionIds.map((id: string) =>
-		mockRequest(`https://dwallets.ark.io/api/transactions/${id}`, "coins/ark/devnet/transactions/business-registration"),
+		mockRequest(
+			`https://dwallets.ark.io/api/transactions/${id}`,
+			"coins/ark/devnet/transactions/business-registration",
+		),
 	);
 };
 
@@ -164,7 +167,10 @@ export const requestMocks = {
 		...searchAddressesMocks(),
 	],
 	wallets: [
-		mockRequest("https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes", "coins/ark/devnet/votes"),
+		mockRequest(
+			"https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes",
+			"coins/ark/devnet/votes",
+		),
 
 		...walletMocks(),
 	],
