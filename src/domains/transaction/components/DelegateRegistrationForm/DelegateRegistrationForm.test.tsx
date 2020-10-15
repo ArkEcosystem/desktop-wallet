@@ -5,7 +5,7 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import delegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
+import delegateRegistrationFixture from "tests/fixtures/coins/ark/devnet/transactions/delegate-registration.json";
 import {
 	env,
 	fireEvent,
