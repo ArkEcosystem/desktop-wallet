@@ -9,7 +9,6 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import { WalletListItem } from "domains/wallet/components/WalletListItem";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -126,10 +125,6 @@ export const ContactListItem = ({ item, variant, type, template, onAction, optio
 				})}
 		</>
 	);
-
-	if (type === "wallet") {
-		return <WalletListItem wallet={item} isCondensed={isCondensed()} onAction={onAction} options={options} />;
-	}
 
 	if (template === "contacts") {
 		return renderMyContactsTemplate();
