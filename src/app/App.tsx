@@ -28,7 +28,7 @@ import { Theme } from "types";
 
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
-import { useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
+import { useDarkMode, useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
 
@@ -44,7 +44,8 @@ const Main = () => {
 
 	const pathname = (location as any).location?.pathname || location.pathname;
 	const nativeTheme = electron.remote.nativeTheme;
-	const useDarkMode = React.useMemo(() => theme === "dark", [theme]);
+	
+	const isDark = useDarkMode();
 
 	useDeeplink();
 
@@ -79,13 +80,9 @@ const Main = () => {
 		const boot = async () => {
 			/* istanbul ignore next */
 			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
-			console.log("verifying");
 			await env.verify(shouldUseFixture ? fixtureData : undefined);
-			console.log("booting");
 			await env.boot();
-			console.log("runall");
 			await runAll();
-			console.log("persisting");
 			await persist();
 
 			setShowSplash(false);
@@ -110,7 +107,7 @@ const Main = () => {
 	};
 
 	return (
-		<main className={`theme-${useDarkMode ? "dark" : "light"} ${className}`} data-testid="Main">
+		<main className={`theme-${isDark ? "dark" : "light"} ${className}`} data-testid="Main">
 			<ToastContainer />
 
 			{renderContent()}
