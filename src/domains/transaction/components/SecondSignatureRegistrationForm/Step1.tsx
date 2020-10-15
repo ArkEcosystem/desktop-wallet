@@ -73,7 +73,9 @@ export const GenerationStep = ({
 							setFeeWarning(validateFee(currency, fees.min));
 						}}
 					/>
-					{feeWarning && <FormHelperText isWarning warningMessage={t(feeWarning)} />}
+					{feeWarning && (
+						/* istanbul ignore next */ <FormHelperText isWarning warningMessage={t(feeWarning)} />
+					)}
 				</FormField>
 			</div>
 		</section>

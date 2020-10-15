@@ -86,7 +86,9 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 							setFeeWarning(validateFee(currency, fees.min));
 						}}
 					/>
-					{feeWarning && <FormHelperText isWarning warningMessage={t(feeWarning)} />}
+					{feeWarning && (
+						/* istanbul ignore next */ <FormHelperText isWarning warningMessage={t(feeWarning)} />
+					)}
 				</FormField>
 			</div>
 		</section>
