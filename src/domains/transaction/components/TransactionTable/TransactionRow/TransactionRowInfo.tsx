@@ -6,7 +6,7 @@ import React from "react";
 type Props = {
 	memo?: string;
 	isMultiSignature: boolean;
-	isLedger: boolean;
+	isLedger?: boolean;
 };
 
 const VendorField = ({ vendorField }: { vendorField: string | undefined }) => (
