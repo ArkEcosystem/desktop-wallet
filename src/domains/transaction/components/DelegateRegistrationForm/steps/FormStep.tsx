@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FormStep = ({ fees, wallet }: any) => {
+export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 
@@ -79,7 +79,7 @@ export const FormStep = ({ fees, wallet }: any) => {
 						max={fees.max}
 						defaultValue={fee}
 						value={fee}
-						step={0.01}
+						step={step}
 						onChange={(currency: { display: string; value: string }) => {
 							setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
 						}}
