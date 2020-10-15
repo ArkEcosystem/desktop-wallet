@@ -40,7 +40,7 @@ describe("App", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions")
 			.query({ limit: 20 })
-			.reply(200, require("tests/fixtures/coins/ark/notification-transactions.json"))
+			.reply(200, require("tests/fixtures/coins/ark/devnet/notification-transactions.json"))
 			.persist();
 	});
 

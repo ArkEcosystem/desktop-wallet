@@ -14,7 +14,7 @@ describe("Wallet Transactions Hook", () => {
 			.get("/api/transactions")
 			.query((params) => params.page === undefined || params.page === "1")
 			.reply(200, () => {
-				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
+				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				return {
 					meta,
 					data: data.slice(0, 1),
@@ -23,7 +23,7 @@ describe("Wallet Transactions Hook", () => {
 			.get("/api/transactions")
 			.query({ page: "2", limit: "10", address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" })
 			.reply(200, () => {
-				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
+				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				return {
 					meta,
 					data: data.slice(1, 3),

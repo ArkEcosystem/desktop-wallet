@@ -18,9 +18,9 @@ import {
 	waitFor,
 	within,
 } from "testing-library";
-import { data as delegateData } from "tests/fixtures/coins/ark/delegates-devnet.json";
-import unvoteFixture from "tests/fixtures/coins/ark/transactions/unvote.json";
-import voteFixture from "tests/fixtures/coins/ark/transactions/vote.json";
+import { data as delegateData } from "tests/fixtures/coins/ark/devnet/delegates.json";
+import unvoteFixture from "tests/fixtures/coins/ark/devnet/transactions/unvote.json";
+import voteFixture from "tests/fixtures/coins/ark/devnet/transactions/vote.json";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendVote } from "../SendVote";

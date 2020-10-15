@@ -2,8 +2,8 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
 import nock from "nock";
 import React from "react";
-import walletFixture from "tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
-import coldWalletFixture from "tests/fixtures/coins/ark/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P.json";
+import walletFixture from "tests/fixtures/coins/ark/devnet/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
+import coldWalletFixture from "tests/fixtures/coins/ark/devnet/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P.json";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { AddParticipant } from "./AddParticipant";

@@ -10,6 +10,7 @@ import {
 	fireEvent,
 	getDefaultProfileId,
 	renderWithRouter,
+	syncDelegates,
 	useDefaultNetMocks,
 	waitFor,
 	within,
@@ -24,24 +25,36 @@ let emptyProfile: Profile;
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
-beforeEach(() => {
-	emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-	dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
-	history.push(dashboardURL);
-
+beforeAll(async () => {
 	useDefaultNetMocks();
+
+	nock("https://neoscan.io/api/main_net/v1/")
+		.get("/get_last_transactions_by_address/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX/1")
+		.reply(200, []);
 
 	nock("https://dwallets.ark.io")
 		.get("/api/transactions")
 		.query(true)
 		.reply(200, () => {
-			const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
+			const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 			return {
 				meta,
 				data: data.slice(0, 2),
 			};
 		})
 		.persist();
+
+	const profile = env.profiles().findById(fixtureProfileId);
+	const wallet = await profile.wallets().importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
+
+	await syncDelegates();
+	await wallet.syncVotes();
+});
+
+beforeEach(() => {
+	emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+	dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
+	history.push(dashboardURL);
 });
 
 describe("Dashboard", () => {
