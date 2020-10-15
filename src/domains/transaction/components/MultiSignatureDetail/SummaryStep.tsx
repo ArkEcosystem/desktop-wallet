@@ -25,6 +25,9 @@ export const SummaryStep = ({
 }) => {
 	const { t } = useTranslation();
 	const [senderAddress, setSenderAddress] = useState("");
+	const participants = transaction
+		.get<{ publicKeys: string[] }>("multiSignature")
+		.publicKeys.filter((pubKey) => pubKey !== wallet.publicKey());
 
 	useEffect(() => {
 		const sync = async () => {
@@ -66,7 +69,7 @@ export const SummaryStep = ({
 			</TransactionDetail>
 
 			<div className="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-light">
-				<Signatures transaction={transaction} wallet={wallet} />
+				<Signatures transactionId={transaction.id()} publicKeys={participants} wallet={wallet} />
 			</div>
 		</section>
 	);

@@ -1,12 +1,11 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Avatar } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const PendingBadge = () => {
+const WaitingBadge = () => {
 	const { t } = useTranslation();
 	return (
 		<Tippy content={t("COMMON.AWAITING_SIGNATURE")}>
@@ -25,15 +24,30 @@ const SignedBadge = () => {
 };
 
 const ParticipantStatus = ({
+	transactionId,
 	publicKey,
-	transaction,
 	wallet,
 }: {
+	transactionId: string;
 	publicKey: string;
-	transaction: Contracts.SignedTransactionData;
 	wallet: ReadWriteWallet;
 }) => {
-	const isPending = wallet.transaction().isAwaitingSignatureByPublicKey(transaction.id(), publicKey);
+	const isPending = useMemo(() => {
+		try {
+			return !!wallet.transaction().transaction(transactionId);
+		} catch {
+			return false;
+		}
+	}, [wallet, transactionId]);
+
+	const isAwaitingSignature = useMemo(() => {
+		try {
+			return wallet.transaction().isAwaitingSignatureByPublicKey(transactionId, publicKey);
+		} catch {
+			return false;
+		}
+	}, [wallet, transactionId, publicKey]);
+
 	const [address, setAddress] = useState("");
 
 	useEffect(() => {
@@ -52,22 +66,21 @@ const ParticipantStatus = ({
 				</div>
 			</Tippy>
 
-			{isPending ? <PendingBadge /> : <SignedBadge />}
+			{isPending && <div>{isAwaitingSignature ? <WaitingBadge /> : <SignedBadge />}</div>}
 		</div>
 	);
 };
 
 export const Signatures = ({
+	transactionId,
 	wallet,
-	transaction,
+	publicKeys,
 }: {
+	transactionId: string;
 	wallet: ReadWriteWallet;
-	transaction: Contracts.SignedTransactionData;
+	publicKeys: string[];
 }) => {
 	const { t } = useTranslation();
-	const participants = transaction
-		.get<{ publicKeys: string[]; min: number }>("multiSignature")
-		.publicKeys.filter((pubKey) => pubKey !== wallet.publicKey());
 
 	return (
 		<div>
@@ -78,19 +91,23 @@ export const Signatures = ({
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">{t("COMMON.YOU")}</div>
 
 					<div className="pr-6 mr-2 border-r border-theme-neutral-300">
-						<ParticipantStatus publicKey={wallet.publicKey()!} wallet={wallet} transaction={transaction} />
+						<ParticipantStatus
+							transactionId={transactionId}
+							publicKey={wallet.publicKey()!}
+							wallet={wallet}
+						/>
 					</div>
 				</div>
 
 				<div>
 					<div className="mb-2 ml-2 text-sm font-semibold text-theme-neutral">{t("COMMON.OTHER")}</div>
 					<ul className="flex ml-2 space-x-4">
-						{participants.map((publicKey) => (
+						{publicKeys.map((publicKey) => (
 							<ParticipantStatus
 								key={publicKey}
+								transactionId={transactionId}
 								publicKey={publicKey}
 								wallet={wallet}
-								transaction={transaction}
 							/>
 						))}
 					</ul>

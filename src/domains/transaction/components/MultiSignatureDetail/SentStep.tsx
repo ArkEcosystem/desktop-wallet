@@ -17,6 +17,9 @@ export const SentStep = ({
 	wallet: ReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
+	const participants = transaction
+		.get<{ publicKeys: string[] }>("multiSignature")
+		.publicKeys.filter((pubKey) => pubKey !== wallet.publicKey());
 
 	return (
 		<section>
@@ -27,7 +30,7 @@ export const SentStep = ({
 			<p className="text-theme-neutral-dark">{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.STEP_3.DESCRIPTION")}</p>
 
 			<div className="mt-4">
-				<Signatures transaction={transaction} wallet={wallet} />
+				<Signatures publicKeys={participants} transactionId={transaction.id()} wallet={wallet} />
 			</div>
 		</section>
 	);

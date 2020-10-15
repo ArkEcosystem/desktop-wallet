@@ -61,6 +61,7 @@ const signTransaction = async ({
 
 	try {
 		const transactionId = await senderWallet!.transaction().signMultiSignature({
+			nonce: senderWallet!.nonce().plus(1).toString(),
 			fee,
 			from: senderAddress,
 			sign: {

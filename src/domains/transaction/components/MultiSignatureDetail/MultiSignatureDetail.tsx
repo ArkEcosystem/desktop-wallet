@@ -6,7 +6,7 @@ import { Modal } from "app/components/Modal";
 import { Spinner } from "app/components/Spinner";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -73,14 +73,25 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 
 	const [activeStep, setActiveStep] = useState(1);
 
+	const needsFinalSignature = useMemo(() => wallet.coin().multiSignature().needsFinalSignature(transaction), [
+		wallet,
+		transaction,
+	]);
+	const isAwaitingOurSignature = wallet.transaction().isAwaitingOurSignature(transaction.id());
+
 	const addSignature = useCallback(
 		async ({ mnemonic }: { mnemonic: string }) => {
 			await wallet.transaction().addSignature(transaction.id(), mnemonic);
 			await wallet.transaction().sync();
+
+			if (needsFinalSignature) {
+				await wallet.transaction().broadcast(transaction.id());
+			}
+
 			await persist();
 			setActiveStep(3);
 		},
-		[transaction, wallet, persist],
+		[transaction, wallet, persist, needsFinalSignature],
 	);
 
 	return (
@@ -99,7 +110,7 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 						<SentStep transaction={transaction} wallet={wallet} />
 					</TabPanel>
 
-					{wallet.transaction().isAwaitingOurSignature(transaction.id()) && (
+					{(isAwaitingOurSignature || needsFinalSignature) && (
 						<Paginator
 							activeStep={activeStep}
 							onCancel={onClose}

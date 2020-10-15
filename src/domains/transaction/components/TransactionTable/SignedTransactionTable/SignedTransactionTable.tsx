@@ -5,7 +5,7 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { BaseTransactionRowAmount } from "../TransactionRow/TransactionRowAmount";
@@ -45,6 +45,20 @@ const Row = ({
 }) => {
 	const { t } = useTranslation();
 	const [shadowColor, setShadowColor] = useState("--theme-background-color");
+
+	const needsFinalSignature = useMemo(() => {
+		try {
+			return (
+				wallet.coin().multiSignature().needsFinalSignature(transaction) &&
+				!wallet.transaction().isAwaitingOtherSignatures(transaction.id())
+			);
+		} catch {
+			return false;
+		}
+	}, [wallet, transaction]);
+
+	const isAwaitingOurSignature = wallet.transaction().isAwaitingOurSignature(transaction.id());
+
 	return (
 		<TableRow
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
@@ -92,7 +106,7 @@ const Row = ({
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end">
-				{wallet.transaction().isAwaitingOurSignature(transaction.id()) ? (
+				{isAwaitingOurSignature || needsFinalSignature ? (
 					<Button data-testid="TransactionRow__sign" variant="plain" onClick={() => onSign?.(transaction)}>
 						<Icon name="Edit" />
 						<span>{t("COMMON.SIGN")}</span>
