@@ -45,7 +45,7 @@ export class HttpClient extends Http.Request {
 			let response;
 
 			if (method === "GET") {
-				response = await fetch(url, this._options);
+				response = await fetch(url);
 			}
 
 			if (method === "POST") {
