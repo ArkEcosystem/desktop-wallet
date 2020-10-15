@@ -35,7 +35,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -47,7 +47,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -58,7 +58,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -69,7 +69,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -181,7 +181,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -351,7 +351,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer active"
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                       data-testid="PluginManagerNavigationBar__home"
                       title="Home"
                     >
@@ -367,7 +367,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__game"
                       title="Game"
                     >
@@ -388,7 +388,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__utility"
                       title="Utility"
                     >
@@ -409,7 +409,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__themes"
                       title="Themes"
                     >
@@ -430,7 +430,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__other"
                       title="Other"
                     >
@@ -450,7 +450,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 class="flex h-24"
               >
                 <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
@@ -805,11 +805,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -954,11 +956,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -1103,11 +1107,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -1252,11 +1258,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -1401,11 +1409,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -1562,11 +1572,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -1723,11 +1735,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -2151,11 +2165,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -2300,11 +2316,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -2449,11 +2467,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -2598,11 +2618,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -2747,11 +2769,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -2908,11 +2932,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -3069,11 +3095,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -3496,11 +3524,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -3645,11 +3675,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -3794,11 +3826,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -3943,11 +3977,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -4092,11 +4128,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -4253,11 +4291,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -4414,11 +4454,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -4615,7 +4657,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -4627,7 +4669,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -4638,7 +4680,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -4649,7 +4691,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -4761,7 +4803,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -4931,7 +4973,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer active"
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                       data-testid="PluginManagerNavigationBar__home"
                       title="Home"
                     >
@@ -4947,7 +4989,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__game"
                       title="Game"
                     >
@@ -4968,7 +5010,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__utility"
                       title="Utility"
                     >
@@ -4989,7 +5031,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__themes"
                       title="Themes"
                     >
@@ -5010,7 +5052,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__other"
                       title="Other"
                     >
@@ -5030,7 +5072,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                 class="flex h-24"
               >
                 <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
@@ -5385,11 +5427,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -5534,11 +5578,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -5683,11 +5729,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -5832,11 +5880,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -5981,11 +6031,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -6142,11 +6194,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -6303,11 +6357,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -6731,11 +6787,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -6880,11 +6938,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -7029,11 +7089,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -7178,11 +7240,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -7327,11 +7391,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -7488,11 +7554,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -7649,11 +7717,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -8076,11 +8146,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -8225,11 +8297,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -8374,11 +8448,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -8523,11 +8599,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -8672,11 +8750,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -8833,11 +8913,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -8994,11 +9076,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -9195,7 +9279,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -9207,7 +9291,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -9218,7 +9302,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -9229,7 +9313,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -9341,7 +9425,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -9511,7 +9595,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__home"
                       title="Home"
                     >
@@ -9527,7 +9611,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer active"
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                       data-testid="PluginManagerNavigationBar__game"
                       title="Game"
                     >
@@ -9548,7 +9632,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__utility"
                       title="Utility"
                     >
@@ -9569,7 +9653,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__themes"
                       title="Themes"
                     >
@@ -9590,7 +9674,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__other"
                       title="Other"
                     >
@@ -9610,7 +9694,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                 class="flex h-24"
               >
                 <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
@@ -9938,11 +10022,13 @@ exports[`PluginManager should delete plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -10087,11 +10173,13 @@ exports[`PluginManager should delete plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -10236,11 +10324,13 @@ exports[`PluginManager should delete plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -10385,11 +10475,13 @@ exports[`PluginManager should delete plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -10534,11 +10626,13 @@ exports[`PluginManager should delete plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -10695,11 +10789,13 @@ exports[`PluginManager should delete plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -10856,11 +10952,13 @@ exports[`PluginManager should delete plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -11072,7 +11170,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -11084,7 +11182,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -11095,7 +11193,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -11106,7 +11204,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -11218,7 +11316,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -11388,7 +11486,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer active"
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                       data-testid="PluginManagerNavigationBar__home"
                       title="Home"
                     >
@@ -11404,7 +11502,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__game"
                       title="Game"
                     >
@@ -11425,7 +11523,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__utility"
                       title="Utility"
                     >
@@ -11446,7 +11544,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__themes"
                       title="Themes"
                     >
@@ -11467,7 +11565,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__other"
                       title="Other"
                     >
@@ -11487,7 +11585,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                 class="flex h-24"
               >
                 <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
@@ -13546,7 +13644,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -13558,7 +13656,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -13569,7 +13667,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -13580,7 +13678,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -13692,7 +13790,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -13862,7 +13960,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__home"
                       title="Home"
                     >
@@ -13878,7 +13976,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer active"
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                       data-testid="PluginManagerNavigationBar__game"
                       title="Game"
                     >
@@ -13899,7 +13997,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__utility"
                       title="Utility"
                     >
@@ -13920,7 +14018,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__themes"
                       title="Themes"
                     >
@@ -13941,7 +14039,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__other"
                       title="Other"
                     >
@@ -13961,7 +14059,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                 class="flex h-24"
               >
                 <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
@@ -14289,11 +14387,13 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -14438,11 +14538,13 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -14587,11 +14689,13 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -14736,11 +14840,13 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -14885,11 +14991,13 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -15046,11 +15154,13 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -15207,11 +15317,13 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                         <div
                           class="sc-fzokOt ftMTsH"
                         >
-                          <svg
+                          <div
                             class="w-15 h-15"
                           >
-                            changenow-logo.svg
-                          </svg>
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -15578,7 +15690,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -15590,7 +15702,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -15601,7 +15713,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -15612,7 +15724,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -15724,7 +15836,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -15894,7 +16006,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer active"
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                       data-testid="PluginManagerNavigationBar__home"
                       title="Home"
                     >
@@ -15910,7 +16022,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__game"
                       title="Game"
                     >
@@ -15931,7 +16043,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__utility"
                       title="Utility"
                     >
@@ -15952,7 +16064,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__themes"
                       title="Themes"
                     >
@@ -15973,7 +16085,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__other"
                       title="Other"
                     >
@@ -15993,7 +16105,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                 class="flex h-24"
               >
                 <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
@@ -16348,11 +16460,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -16497,11 +16611,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -16646,11 +16762,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -16795,11 +16913,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -16944,11 +17064,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -17105,11 +17227,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -17266,11 +17390,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -17694,11 +17820,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -17843,11 +17971,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -17992,11 +18122,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -18141,11 +18273,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -18290,11 +18424,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -18451,11 +18587,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -18612,11 +18750,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -19039,11 +19179,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -19188,11 +19330,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -19337,11 +19481,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -19486,11 +19632,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -19635,11 +19783,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -19796,11 +19946,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -19957,11 +20109,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                               <div
                                 class="sc-fzokOt ftMTsH"
                               >
-                                <svg
+                                <div
                                   class="w-15 h-15"
                                 >
-                                  changenow-logo.svg
-                                </svg>
+                                  <svg>
+                                    changenow-logo.svg
+                                  </svg>
+                                </div>
                               </div>
                             </td>
                             <td>
@@ -20313,7 +20467,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -20325,7 +20479,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -20336,7 +20490,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -20347,7 +20501,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -20459,7 +20613,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -20629,7 +20783,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer active"
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                       data-testid="PluginManagerNavigationBar__home"
                       title="Home"
                     >
@@ -20645,7 +20799,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__game"
                       title="Game"
                     >
@@ -20666,7 +20820,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__utility"
                       title="Utility"
                     >
@@ -20687,7 +20841,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__themes"
                       title="Themes"
                     >
@@ -20708,7 +20862,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__other"
                       title="Other"
                     >
@@ -20728,7 +20882,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                 class="flex h-24"
               >
                 <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
@@ -22942,7 +23096,7 @@ exports[`PluginManager should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -22954,7 +23108,7 @@ exports[`PluginManager should render 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -22965,7 +23119,7 @@ exports[`PluginManager should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -22976,7 +23130,7 @@ exports[`PluginManager should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -23088,7 +23242,7 @@ exports[`PluginManager should render 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -23258,7 +23412,7 @@ exports[`PluginManager should render 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer active"
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                       data-testid="PluginManagerNavigationBar__home"
                       title="Home"
                     >
@@ -23274,7 +23428,7 @@ exports[`PluginManager should render 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__game"
                       title="Game"
                     >
@@ -23295,7 +23449,7 @@ exports[`PluginManager should render 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__utility"
                       title="Utility"
                     >
@@ -23316,7 +23470,7 @@ exports[`PluginManager should render 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__themes"
                       title="Themes"
                     >
@@ -23337,7 +23491,7 @@ exports[`PluginManager should render 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__other"
                       title="Other"
                     >
@@ -23357,7 +23511,7 @@ exports[`PluginManager should render 1`] = `
                 class="flex h-24"
               >
                 <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
@@ -25416,7 +25570,7 @@ exports[`PluginManager should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -25428,7 +25582,7 @@ exports[`PluginManager should search for plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -25439,7 +25593,7 @@ exports[`PluginManager should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -25450,7 +25604,7 @@ exports[`PluginManager should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -25562,7 +25716,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -25717,7 +25871,7 @@ exports[`PluginManager should search for plugin 1`] = `
                       class="flex-1 mx-4"
                     >
                       <input
-                        class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pt-2 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pt-2 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value="test"
@@ -25784,7 +25938,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer active"
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                       data-testid="PluginManagerNavigationBar__home"
                       title="Home"
                     >
@@ -25800,7 +25954,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__game"
                       title="Game"
                     >
@@ -25821,7 +25975,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__utility"
                       title="Utility"
                     >
@@ -25842,7 +25996,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__themes"
                       title="Themes"
                     >
@@ -25863,7 +26017,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__other"
                       title="Other"
                     >
@@ -25883,7 +26037,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="flex h-24"
               >
                 <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
@@ -27944,7 +28098,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -27956,7 +28110,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -27967,7 +28121,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -27978,7 +28132,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -28090,7 +28244,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -28260,7 +28414,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__home"
                       title="Home"
                     >
@@ -28276,7 +28430,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer active"
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                       data-testid="PluginManagerNavigationBar__game"
                       title="Game"
                     >
@@ -28297,7 +28451,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__utility"
                       title="Utility"
                     >
@@ -28318,7 +28472,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__themes"
                       title="Themes"
                     >
@@ -28339,7 +28493,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__other"
                       title="Other"
                     >
@@ -28359,7 +28513,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                 class="flex h-24"
               >
                 <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
@@ -29122,7 +29276,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -29134,7 +29288,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -29145,7 +29299,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -29156,7 +29310,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -29268,7 +29422,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -29438,7 +29592,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer active"
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                       data-testid="PluginManagerNavigationBar__home"
                       title="Home"
                     >
@@ -29454,7 +29608,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__game"
                       title="Game"
                     >
@@ -29475,7 +29629,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__utility"
                       title="Utility"
                     >
@@ -29496,7 +29650,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__themes"
                       title="Themes"
                     >
@@ -29517,7 +29671,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     class="flex"
                   >
                     <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                       data-testid="PluginManagerNavigationBar__other"
                       title="Other"
                     >
@@ -29537,7 +29691,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 class="flex h-24"
               >
                 <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer "
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >

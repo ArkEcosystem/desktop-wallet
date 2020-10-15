@@ -60,11 +60,13 @@ exports[`ExchangeCard should render 1`] = `
       <div
         class="mr-4"
       >
-        <svg
+        <div
           class="w-12 h-12"
         >
-          changenow-logo.svg
-        </svg>
+          <svg>
+            changenow-logo.svg
+          </svg>
+        </div>
       </div>
       <div
         class="truncate"

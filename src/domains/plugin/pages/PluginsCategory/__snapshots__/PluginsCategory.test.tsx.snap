@@ -35,7 +35,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -47,7 +47,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -58,7 +58,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -69,7 +69,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -181,7 +181,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -678,11 +678,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -827,11 +829,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -976,11 +980,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -1125,11 +1131,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -1274,11 +1282,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -1435,11 +1445,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -1596,11 +1608,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -1813,7 +1827,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1825,7 +1839,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1836,7 +1850,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1847,7 +1861,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1959,7 +1973,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -2456,11 +2470,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -2605,11 +2621,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -2754,11 +2772,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -2903,11 +2923,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -3052,11 +3074,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -3213,11 +3237,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -3374,11 +3400,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -3591,7 +3619,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -3603,7 +3631,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -3614,7 +3642,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -3625,7 +3653,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -3737,7 +3765,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -4649,7 +4677,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -4661,7 +4689,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -4672,7 +4700,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -4683,7 +4711,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -4795,7 +4823,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -5292,11 +5320,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -5441,11 +5471,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -5590,11 +5622,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -5739,11 +5773,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -5888,11 +5924,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -6049,11 +6087,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -6210,11 +6250,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -6582,7 +6624,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -6594,7 +6636,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -6605,7 +6647,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -6616,7 +6658,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -6728,7 +6770,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -7795,7 +7837,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -7807,7 +7849,7 @@ exports[`PluginsCategory should render 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -7818,7 +7860,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -7829,7 +7871,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -7941,7 +7983,7 @@ exports[`PluginsCategory should render 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -8853,7 +8895,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -8865,7 +8907,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -8876,7 +8918,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -8887,7 +8929,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -8999,7 +9041,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -9181,7 +9223,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                       class="flex-1 mx-4"
                     >
                       <input
-                        class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pt-2 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pt-2 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value="test"
@@ -9961,7 +10003,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -9973,7 +10015,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -9984,7 +10026,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -9995,7 +10037,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -10107,7 +10149,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -11019,7 +11061,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -11031,7 +11073,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -11042,7 +11084,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -11053,7 +11095,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -11165,7 +11207,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -11662,11 +11704,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -11811,11 +11855,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -11960,11 +12006,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -12109,11 +12157,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -12258,11 +12308,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -12419,11 +12471,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -12580,11 +12634,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="sc-fzokOt ftMTsH"
                           >
-                            <svg
+                            <div
                               class="w-15 h-15"
                             >
-                              changenow-logo.svg
-                            </svg>
+                              <svg>
+                                changenow-logo.svg
+                              </svg>
+                            </div>
                           </div>
                         </td>
                         <td>
