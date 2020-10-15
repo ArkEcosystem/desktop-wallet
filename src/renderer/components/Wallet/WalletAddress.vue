@@ -608,7 +608,7 @@ export default {
     },
 
     isUnvote () {
-      return this.asset && this.asset.votes[0].charAt(0) === '-'
+      return this.asset && this.asset.votes && this.asset.votes[0].charAt(0) === '-'
     },
 
     votePublicKey () {
