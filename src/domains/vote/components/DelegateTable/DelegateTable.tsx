@@ -14,15 +14,26 @@ type DelegateTableProps = {
 	delegates: ReadOnlyWallet[];
 	maxVotes: number;
 	votes?: ReadOnlyWallet[];
+	selectedUnvoteAddresses?: string[];
+	selectedVoteAddresses?: string[];
 	itemsPerPage?: number;
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
-export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage, onContinue }: DelegateTableProps) => {
+export const DelegateTable = ({
+	title,
+	delegates,
+	maxVotes,
+	votes,
+	selectedUnvoteAddresses,
+	selectedVoteAddresses,
+	itemsPerPage,
+	onContinue,
+}: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [currentPage, setCurrentPage] = useState(1);
-	const [selectedUnvotes, setSelectedUnvotes] = useState<string[]>([]);
-	const [selectedVotes, setSelectedVotes] = useState<string[]>([]);
+	const [selectedUnvotes, setSelectedUnvotes] = useState<string[]>(selectedUnvoteAddresses || []);
+	const [selectedVotes, setSelectedVotes] = useState<string[]>(selectedVoteAddresses || []);
 	const [isVoteDisabled, setIsVoteDisabled] = useState(false);
 
 	const columns = [
@@ -277,5 +288,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage,
 DelegateTable.defaultProps = {
 	delegates: [],
 	votes: [],
+	selectedUnvoteAddresses: [],
+	selectedVoteAddresses: [],
 	itemsPerPage: 51,
 };

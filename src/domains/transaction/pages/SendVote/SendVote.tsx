@@ -7,8 +7,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useQueryParams } from "app/hooks";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -85,7 +84,20 @@ export const SendVote = () => {
 
 	const handleBack = () => {
 		if (activeTab === 1) {
-			history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`);
+			const params = new URLSearchParams();
+
+			if (unvoteAddresses) {
+				params.append("unvotes", unvoteAddresses.join());
+			}
+
+			if (voteAddresses) {
+				params.append("votes", voteAddresses.join());
+			}
+
+			return history.push({
+				pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`,
+				search: `?${params}`,
+			});
 		}
 
 		setActiveTab(activeTab - 1);

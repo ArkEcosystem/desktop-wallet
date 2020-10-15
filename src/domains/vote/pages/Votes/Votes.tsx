@@ -10,7 +10,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
@@ -95,6 +95,10 @@ export const Votes = () => {
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+
+	const queryParams = useQueryParams();
+	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
+	const voteAddresses = queryParams.get("votes")?.split(",");
 
 	const [tabItem, setTabItem] = useState("delegate");
 	const [network, setNetwork] = useState<Coins.Network | null>(null);
@@ -248,6 +252,8 @@ export const Votes = () => {
 							delegates={delegates}
 							maxVotes={network.maximumVotesPerWallet()}
 							votes={votes}
+							selectedUnvoteAddresses={unvoteAddresses}
+							selectedVoteAddresses={voteAddresses}
 							onContinue={handleContinue}
 						/>
 					) : (
