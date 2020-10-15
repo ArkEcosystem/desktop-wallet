@@ -5,24 +5,22 @@ exports[`Transactions should render with 1`] = `
   <div
     class="bg-white"
   >
-    <div>
+    <div
+      class="relative"
+      data-testid="TransactionTable"
+    >
       <div
-        class="relative"
-        data-testid="TransactionTable"
+        class="sc-AxiKw gGhpZ"
+        role="table"
       >
-        <div
-          class="sc-AxiKw kebiLh"
-          role="table"
+        <table
+          cellpadding="0"
+          class="table-auto"
         >
-          <table
-            cellpadding="0"
-            class="table-auto"
-          >
-            <tbody
-              role="rowgroup"
-            />
-          </table>
-        </div>
+          <tbody
+            role="rowgroup"
+          />
+        </table>
       </div>
     </div>
     <div
@@ -44,24 +42,22 @@ exports[`Transactions should render with custom title 1`] = `
     >
       Transaction history
     </div>
-    <div>
+    <div
+      class="relative"
+      data-testid="TransactionTable"
+    >
       <div
-        class="relative"
-        data-testid="TransactionTable"
+        class="sc-AxiKw gGhpZ"
+        role="table"
       >
-        <div
-          class="sc-AxiKw kebiLh"
-          role="table"
+        <table
+          cellpadding="0"
+          class="table-auto"
         >
-          <table
-            cellpadding="0"
-            class="table-auto"
-          >
-            <tbody
-              role="rowgroup"
-            />
-          </table>
-        </div>
+          <tbody
+            role="rowgroup"
+          />
+        </table>
       </div>
     </div>
     <div

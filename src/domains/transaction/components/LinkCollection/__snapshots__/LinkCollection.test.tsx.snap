@@ -135,7 +135,7 @@ exports[`LinkCollection should add links 1`] = `
         </button>
       </div>
       <div
-        class="sc-fznKkj iLZSgh mt-4"
+        class="sc-fznKkj fDNmAt -mt-3"
         role="table"
       >
         <table
@@ -144,10 +144,11 @@ exports[`LinkCollection should add links 1`] = `
         >
           <thead>
             <tr
+              class="border-b border-theme-neutral-300"
               role="row"
             >
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -177,7 +178,7 @@ exports[`LinkCollection should add links 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -207,7 +208,7 @@ exports[`LinkCollection should add links 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -586,7 +587,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
         </button>
       </div>
       <div
-        class="sc-fznKkj iLZSgh mt-4"
+        class="sc-fznKkj fDNmAt -mt-3"
         role="table"
       >
         <table
@@ -595,10 +596,11 @@ exports[`LinkCollection should select a specific link type 1`] = `
         >
           <thead>
             <tr
+              class="border-b border-theme-neutral-300"
               role="row"
             >
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -628,7 +630,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -658,7 +660,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -688,7 +690,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
