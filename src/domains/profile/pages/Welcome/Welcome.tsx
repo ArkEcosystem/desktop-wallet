@@ -1,7 +1,7 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
-import { ThemedImage } from "app/components/ThemedImage";
+import { Image } from "app/components/Image";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
@@ -91,7 +91,7 @@ export const Welcome = () => {
 					</h1>
 
 					<div className="w-64 mx-auto lg:w-96">
-						<ThemedImage name="WelcomeBanner" />
+						<Image name="WelcomeBanner" />
 					</div>
 
 					<div className="max-w-lg mx-auto mt-8 md:max-w-xl">

@@ -1,4 +1,4 @@
-import { images } from "app/assets/images";
+import { Image } from "app/components/Image";
 import { Header } from "app/components/Header";
 import { Page, Section } from "app/components/Layout";
 import { Slider } from "app/components/Slider";
@@ -11,9 +11,6 @@ import { useTranslation } from "react-i18next";
 type ExchangeProps = {
 	exchanges: any[];
 };
-
-const ExchangeCardsBanner = images.exchange.pages.Exchange.ExchangeCardsBanner;
-const NoExchangesBanner = images.exchange.pages.Exchange.NoExchangesBanner;
 
 const NoExchangesList = ({ onAddExchange }: { onAddExchange: any }) => {
 	const { t } = useTranslation();
@@ -123,12 +120,12 @@ export const Exchange = ({ exchanges }: ExchangeProps) => {
 				<Section className="flex-1">
 					{exchanges.length ? (
 						<div className="text-center">
-							<ExchangeCardsBanner className="mx-auto" />
+							<Image name="ExchangeCardsBanner" domain="exchange" className="mx-auto" />
 
 							<div className="mt-8 text-theme-neutral-dark">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
 						</div>
 					) : (
-						<NoExchangesBanner className="mx-auto" />
+						<Image name="NoExchangesBanner" domain="exchange" className="mx-auto" />
 					)}
 				</Section>
 			</Page>

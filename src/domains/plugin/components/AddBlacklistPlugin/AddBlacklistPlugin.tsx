@@ -1,4 +1,4 @@
-import { images } from "app/assets/images";
+import { Image } from "app/components/Image";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
@@ -16,8 +16,6 @@ type AddBlacklistPluginProps = {
 	onClose?: any;
 	handleBlacklist?: any;
 };
-
-const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
 export const AddBlacklistPlugin = ({
 	isOpen,
@@ -79,7 +77,9 @@ export const AddBlacklistPlugin = ({
 					{(rowData: any) => (
 						<TableRow>
 							<TableCell className="w-16">
-								<ChangeNowLogo className="w-12 h-12" />
+								<div className="w-12 h-12">
+									<Image name="ChangeNowLogo" domain="exchange" />
+								</div>
 							</TableCell>
 
 							<TableCell>

@@ -26,7 +26,7 @@ export const Reply = ({ date, content }: ReplyProps) => {
 				</div>
 
 				<div className="flex items-center space-x-3 divide-x divide-theme-neutral-light">
-					<span className="text-lg font-semibold text-theme-neutral-900">
+					<span className="text-lg font-semibold text-theme-text">
 						{t("PLUGINS.DEVELOPER_RESPONSE")}
 					</span>
 

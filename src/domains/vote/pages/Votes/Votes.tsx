@@ -30,7 +30,7 @@ const Tabs = ({ selected, onClick }: TabsProps) => {
 	const getTabItemClass = (item: string) =>
 		selected === item
 			? "theme-neutral-900 border-theme-primary-dark"
-			: "text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent";
+			: "text-theme-neutral-dark hover:text-theme-text border-transparent";
 
 	return (
 		<ul className="flex h-20 mr-auto -mt-5 -mb-5" data-testid="Tabs">

@@ -202,7 +202,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage,
 								<div className="px-8 border-r border-theme-neutral-300">
 									<div className="inline-flex">
 										<Circle
-											className="mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+											className="mr-2 bg-theme-background border-theme-text text-theme-text"
 											size="lg"
 										>
 											<Icon name="Vote" className="text-xl" />
@@ -210,7 +210,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage,
 										<div className="flex flex-col">
 											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
 											<div
-												className="text-theme-neutral-900"
+												className="text-theme-text"
 												data-testid="DelegateTable__footer--votes"
 											>
 												{selectedVotes.length}
@@ -222,7 +222,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage,
 								<div className="px-8 border-r border-theme-neutral-300">
 									<div className="inline-flex">
 										<Circle
-											className="mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+											className="mr-2 bg-theme-background border-theme-text text-theme-text"
 											size="lg"
 										>
 											<Icon name="Unvote" className="text-xl" />
@@ -230,7 +230,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage,
 										<div className="flex flex-col">
 											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.UNVOTES")}</div>
 											<div
-												className="text-theme-neutral-900"
+												className="text-theme-text"
 												data-testid="DelegateTable__footer--unvotes"
 											>
 												{selectedUnvotes.length}
@@ -242,7 +242,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage,
 								<div className="px-8">
 									<div className="inline-flex">
 										<Circle
-											className="mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+											className="mr-2 bg-theme-background border-theme-text text-theme-text"
 											size="lg"
 										>
 											<Icon name="VoteUnvote" className="text-xl" />
@@ -250,7 +250,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage,
 										<div className="flex flex-col">
 											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
 											<div
-												className="text-theme-neutral-900"
+												className="text-theme-text"
 												data-testid="DelegateTable__footer--total"
 											>
 												{maxVotes === 1 ? "1/1" : getTotalVotes()}

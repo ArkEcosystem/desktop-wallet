@@ -2,7 +2,7 @@ import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { images } from "app/assets/images";
 import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Divider } from "app/components/Divider";
-import { ThemedImage } from "app/components/ThemedImage";
+import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -27,7 +27,7 @@ export const Splash = ({ year }: any) => {
 		<Page navbarVariant="logo-only">
 			<Section className="flex flex-col justify-center flex-1 text-center">
 				<div className="w-64 mx-auto lg:w-96">
-					<ThemedImage name="WelcomeBanner" />
+					<Image name="WelcomeBanner" />
 				</div>
 
 				<div data-testid="Splash__text" className="mt-8">
