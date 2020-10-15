@@ -5,7 +5,7 @@ import { Slider } from "app/components/Slider";
 import { Table } from "app/components/Table";
 import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
