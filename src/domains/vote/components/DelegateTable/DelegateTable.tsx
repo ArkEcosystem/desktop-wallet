@@ -288,7 +288,5 @@ export const DelegateTable = ({
 DelegateTable.defaultProps = {
 	delegates: [],
 	votes: [],
-	selectedUnvoteAddresses: [],
-	selectedVoteAddresses: [],
 	itemsPerPage: 51,
 };
