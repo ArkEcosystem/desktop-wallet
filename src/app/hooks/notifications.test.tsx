@@ -10,7 +10,7 @@ const TransactionsFixture = require("tests/fixtures/coins/ark/transactions.json"
 describe("Notifications Hook", () => {
 	beforeAll(() => {
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
+			.get("/api/transactions")
 			.query(true)
 			.reply(200, {
 				data: [...NotificationsTransactionsFixture.data, ...TransactionsFixture.data],
