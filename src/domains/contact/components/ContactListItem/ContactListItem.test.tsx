@@ -185,25 +185,4 @@ describe("ContactListItem", () => {
 			"D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
 		);
 	});
-
-	it("should call onAction callback with given values in a wallet", () => {
-		const onAction = jest.fn();
-
-		const { getByTestId } = render(
-			<table>
-				<tbody>
-					<ContactListItem item={wallet} type="wallet" onAction={onAction} options={singleOption} />
-				</tbody>
-			</table>,
-		);
-
-		act(() => {
-			fireEvent.click(getByTestId(`ContactListItem__one-option-button-${wallet.id()}`));
-		});
-
-		expect(onAction).toHaveBeenCalledWith(
-			{ label: "Option 1", value: "option_1" },
-			"D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
-		);
-	});
 });

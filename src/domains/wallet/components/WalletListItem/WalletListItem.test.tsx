@@ -44,7 +44,7 @@ describe("Wallet List Item", () => {
 		);
 		fireEvent.click(getByTestId(`ContactListItem__one-option-button-${wallet.id()}`));
 
-		expect(onAction).toHaveBeenCalled();
+		expect(onAction).toHaveBeenCalledWith({ label: "Option 1", value: "1" }, "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
