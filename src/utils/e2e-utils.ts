@@ -32,7 +32,7 @@ const walletMocks = () => {
 	const publicKeys = ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"];
 
 	return [...addresses, ...publicKeys].map((identifier: string) =>
-		mockRequest(`https://dwallets.ark.io/api/wallets/${identifier}`, `coins/ark/wallets/${identifier}`),
+		mockRequest(`https://dwallets.ark.io/api/wallets/${identifier}`, `coins/ark/devnet/wallets/${identifier}`),
 	);
 };
 
@@ -56,7 +56,7 @@ const entityRegistrationMocks = () => {
 			...publicKeys.map((identifier: string) =>
 				mockRequest(
 					`https://dwallets.ark.io/api/transactions?senderPublicKey=${identifier}&type=6&typeGroup=2&asset.type=${key}&asset.action=0`,
-					`coins/ark/transactions/${type}-registrations`,
+					`coins/ark/devnet/transactions/${type}-registrations`,
 				),
 			),
 		);
@@ -90,7 +90,7 @@ const searchAddressesMocks = () => {
 						request.url ===
 							`https://dwallets.ark.io/api/transactions?page=${page}&limit=${limit}&address=${address}` ||
 						request.url === `https://dwallets.ark.io/api/transactions?limit=${limit}&address=${address}`,
-					`coins/ark/transactions/byAddress/${address}-${page}-${limit}`,
+					`coins/ark/devnet/transactions/byAddress/${address}-${page}-${limit}`,
 				),
 			),
 		);
@@ -107,7 +107,7 @@ const businessRegistrations = () => {
 	];
 
 	return transactionIds.map((id: string) =>
-		mockRequest(`https://dwallets.ark.io/api/transactions/${id}`, "coins/ark/transactions/business-registration"),
+		mockRequest(`https://dwallets.ark.io/api/transactions/${id}`, "coins/ark/devnet/transactions/business-registration"),
 	);
 };
 
@@ -138,24 +138,24 @@ export const mockRequest = (url: string | object | Function, fixture: string | o
 
 export const requestMocks = {
 	configuration: [
-		mockRequest("https://dwallets.ark.io/api/node/configuration", "coins/ark/configuration-devnet"),
-		mockRequest("https://dwallets.ark.io/api/node/configuration/crypto", "coins/ark/cryptoConfiguration"),
-		mockRequest("https://dwallets.ark.io/api/node/fees?days=30", "coins/ark/node-fees"),
-		mockRequest("https://dwallets.ark.io/api/node/syncing", "coins/ark/syncing"),
-		mockRequest("https://dwallets.ark.io/api/peers", "coins/ark/peers"),
+		mockRequest("https://dwallets.ark.io/api/node/configuration", "coins/ark/devnet/configuration-devnet"),
+		mockRequest("https://dwallets.ark.io/api/node/configuration/crypto", "coins/ark/devnet/cryptoConfiguration"),
+		mockRequest("https://dwallets.ark.io/api/node/fees?days=30", "coins/ark/devnet/node-fees"),
+		mockRequest("https://dwallets.ark.io/api/node/syncing", "coins/ark/devnet/syncing"),
+		mockRequest("https://dwallets.ark.io/api/peers", "coins/ark/devnet/peers"),
 	],
 	delegates: [
-		mockRequest("https://dwallets.ark.io/api/delegates", "coins/ark/delegates-devnet"),
-		mockRequest("https://dwallets.ark.io/api/delegates?page=1", "coins/ark/delegates-devnet"),
-		mockRequest("https://dwallets.ark.io/api/delegates?page=2", "coins/ark/delegates-devnet"),
-		mockRequest("https://dwallets.ark.io/api/delegates?page=3", "coins/ark/delegates-devnet"),
-		mockRequest("https://dwallets.ark.io/api/delegates?page=4", "coins/ark/delegates-devnet"),
-		mockRequest("https://dwallets.ark.io/api/delegates?page=5", "coins/ark/delegates-devnet"),
+		mockRequest("https://dwallets.ark.io/api/delegates", "coins/ark/devnet/delegates-devnet"),
+		mockRequest("https://dwallets.ark.io/api/delegates?page=1", "coins/ark/devnet/delegates-devnet"),
+		mockRequest("https://dwallets.ark.io/api/delegates?page=2", "coins/ark/devnet/delegates-devnet"),
+		mockRequest("https://dwallets.ark.io/api/delegates?page=3", "coins/ark/devnet/delegates-devnet"),
+		mockRequest("https://dwallets.ark.io/api/delegates?page=4", "coins/ark/devnet/delegates-devnet"),
+		mockRequest("https://dwallets.ark.io/api/delegates?page=5", "coins/ark/devnet/delegates-devnet"),
 	],
 	transactions: [
-		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/transaction-fees"),
-		mockRequest("https://dwallets.ark.io/api/transactions?limit=10", "coins/ark/transactions"),
-		mockRequest("https://dwallets.ark.io/api/transactions?limit=20", "coins/ark/transactions"),
+		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/devnet/transaction-fees"),
+		mockRequest("https://dwallets.ark.io/api/transactions?limit=10", "coins/ark/devnet/transactions"),
+		mockRequest("https://dwallets.ark.io/api/transactions?limit=20", "coins/ark/devnet/transactions"),
 
 		...businessRegistrations(),
 
@@ -164,7 +164,7 @@ export const requestMocks = {
 		...searchAddressesMocks(),
 	],
 	wallets: [
-		mockRequest("https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes", "coins/ark/votes"),
+		mockRequest("https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes", "coins/ark/devnet/votes"),
 
 		...walletMocks(),
 	],
