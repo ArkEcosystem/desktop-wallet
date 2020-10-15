@@ -200,11 +200,11 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = rendered!;
 
 		await renderHookAct(async () => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
 			await waitFor(() =>
 				expect(setValueSpy).toHaveBeenNthCalledWith(
@@ -249,11 +249,11 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = rendered!;
 
 		await renderHookAct(async () => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
 			await waitFor(() =>
 				expect(setValueSpy).toHaveBeenNthCalledWith(
@@ -334,11 +334,11 @@ describe("Registration", () => {
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
 
 		await act(async () => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
@@ -377,11 +377,11 @@ describe("Registration", () => {
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
 
 		await act(async () => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
@@ -425,10 +425,10 @@ describe("Registration", () => {
 
 		await act(async () => {
 			// Step 1
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 			// Step 2
@@ -521,10 +521,10 @@ describe("Registration", () => {
 
 		await act(async () => {
 			// Step 1
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 			// Step 2
@@ -579,7 +579,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -609,7 +609,7 @@ describe("Registration", () => {
 		const { getByTestId, getAllByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -638,7 +638,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -668,7 +668,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -700,7 +700,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -730,7 +730,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -803,7 +803,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId, getAllByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -960,7 +960,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
