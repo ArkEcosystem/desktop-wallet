@@ -141,19 +141,19 @@ export const mockRequest = (url: string | object | Function, fixture: string | o
 
 export const requestMocks = {
 	configuration: [
-		mockRequest("https://dwallets.ark.io/api/node/configuration", "coins/ark/devnet/configuration-devnet"),
+		mockRequest("https://dwallets.ark.io/api/node/configuration", "coins/ark/devnet/configuration"),
 		mockRequest("https://dwallets.ark.io/api/node/configuration/crypto", "coins/ark/devnet/cryptoConfiguration"),
 		mockRequest("https://dwallets.ark.io/api/node/fees?days=30", "coins/ark/devnet/node-fees"),
 		mockRequest("https://dwallets.ark.io/api/node/syncing", "coins/ark/devnet/syncing"),
 		mockRequest("https://dwallets.ark.io/api/peers", "coins/ark/devnet/peers"),
 	],
 	delegates: [
-		mockRequest("https://dwallets.ark.io/api/delegates", "coins/ark/devnet/delegates-devnet"),
-		mockRequest("https://dwallets.ark.io/api/delegates?page=1", "coins/ark/devnet/delegates-devnet"),
-		mockRequest("https://dwallets.ark.io/api/delegates?page=2", "coins/ark/devnet/delegates-devnet"),
-		mockRequest("https://dwallets.ark.io/api/delegates?page=3", "coins/ark/devnet/delegates-devnet"),
-		mockRequest("https://dwallets.ark.io/api/delegates?page=4", "coins/ark/devnet/delegates-devnet"),
-		mockRequest("https://dwallets.ark.io/api/delegates?page=5", "coins/ark/devnet/delegates-devnet"),
+		mockRequest("https://dwallets.ark.io/api/delegates", "coins/ark/devnet/delegates"),
+		mockRequest("https://dwallets.ark.io/api/delegates?page=1", "coins/ark/devnet/delegates"),
+		mockRequest("https://dwallets.ark.io/api/delegates?page=2", "coins/ark/devnet/delegates"),
+		mockRequest("https://dwallets.ark.io/api/delegates?page=3", "coins/ark/devnet/delegates"),
+		mockRequest("https://dwallets.ark.io/api/delegates?page=4", "coins/ark/devnet/delegates"),
+		mockRequest("https://dwallets.ark.io/api/delegates?page=5", "coins/ark/devnet/delegates"),
 	],
 	transactions: [
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/devnet/transaction-fees"),
