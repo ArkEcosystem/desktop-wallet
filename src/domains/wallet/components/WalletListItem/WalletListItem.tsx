@@ -31,7 +31,7 @@ export const WalletListItem = ({ wallet, isCondensed, onAction, options }: Props
 		<TableRow key={wallet.id()} border>
 			<TableCell variant="start" className="w-1">
 				<div className="mr-4">
-					<AvatarWrapper data-testid="ContactListItem__user--avatar" size="lg" noShadow>
+					<AvatarWrapper data-testid="WalletListItem__user--avatar" size="lg" noShadow>
 						<img
 							src={`data:image/svg+xml;utf8,${wallet.avatar()}`}
 							title={wallet.alias()}
@@ -51,11 +51,11 @@ export const WalletListItem = ({ wallet, isCondensed, onAction, options }: Props
 			</TableCell>
 
 			<TableCell>
-				<span data-testid="ContactListItem__name">{wallet.alias()}</span>
+				<span data-testid="WalletListItem__name">{wallet.alias()}</span>
 			</TableCell>
 
 			<TableCell>
-				<span data-testid="ContactListItem__type">{t("COMMON.MY_WALLET")}</span>
+				<span data-testid="WalletListItem__type">{t("COMMON.MY_WALLET")}</span>
 			</TableCell>
 
 			{!isCondensed && (
@@ -81,7 +81,7 @@ export const WalletListItem = ({ wallet, isCondensed, onAction, options }: Props
 				innerClassName="justify-end"
 			>
 				<Button
-					data-testid={`ContactListItem__one-option-button-${wallet.id()}`}
+					data-testid={`WalletListItem__one-option-button-${wallet.id()}`}
 					className="float-right"
 					variant="plain"
 					onClick={() => onAction?.(options[0], wallet.address())}
