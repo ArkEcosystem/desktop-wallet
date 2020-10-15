@@ -18,9 +18,9 @@ import {
 	waitFor,
 	within,
 } from "testing-library";
-import { data as delegateData } from "tests/fixtures/coins/ark/delegates-devnet.json";
-import unvoteFixture from "tests/fixtures/coins/ark/transactions/unvote.json";
-import voteFixture from "tests/fixtures/coins/ark/transactions/vote.json";
+import { data as delegateData } from "tests/fixtures/coins/ark/devnet/delegates.json";
+import unvoteFixture from "tests/fixtures/coins/ark/devnet/transactions/unvote.json";
+import voteFixture from "tests/fixtures/coins/ark/devnet/transactions/vote.json";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendVote } from "../SendVote";
@@ -72,8 +72,6 @@ describe("SendVote", () => {
 		nock.disableNetConnect();
 
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 			.get("/api/transactions/d819c5199e323a62a4349948ff075edde91e509028329f66ec76b8518ad1e493")
 			.reply(200, voteFixture)
 			.get("/api/transactions/32e5278cb72f24f2c04c4797dbfbffa7072f6a30e016093fdd3f7660a2ee2faf")

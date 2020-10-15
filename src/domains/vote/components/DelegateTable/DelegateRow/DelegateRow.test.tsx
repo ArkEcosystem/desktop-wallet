@@ -2,7 +2,7 @@ import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { translations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
-import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
+import { data } from "tests/fixtures/coins/ark/devnet/delegates.json";
 
 import { DelegateRow } from "./DelegateRow";
 
