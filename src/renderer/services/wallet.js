@@ -172,12 +172,11 @@ export default class WalletService {
    *
    * Check that a passphrase is valid.
    * @param {String} passhrase
-   * @param {Number} pubKeyHash - also known as address or network version
    * @return {Boolean}
    */
-  static validatePassphrase (passphrase, pubKeyHash) {
+  static validatePassphrase (passphrase) {
     const publicKey = Identities.Keys.fromPassphrase(CryptoUtils.normalizePassphrase(passphrase)).publicKey
-    return Identities.PublicKey.validate(publicKey, pubKeyHash)
+    return Identities.PublicKey.verify(publicKey)
   }
 
   /**
