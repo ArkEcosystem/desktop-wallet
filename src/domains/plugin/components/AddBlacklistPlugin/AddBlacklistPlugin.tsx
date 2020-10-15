@@ -1,6 +1,6 @@
-import { Image } from "app/components/Image";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
 import { SearchBar } from "app/components/SearchBar";
@@ -77,9 +77,7 @@ export const AddBlacklistPlugin = ({
 					{(rowData: any) => (
 						<TableRow>
 							<TableCell className="w-16">
-								<div className="w-12 h-12">
-									<Image name="ChangeNowLogo" domain="exchange" />
-								</div>
+								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
 							</TableCell>
 
 							<TableCell>

@@ -1,7 +1,7 @@
 import { images } from "app/assets/images";
-import { Image } from "app/components/Image";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
 import { Table, TableCell, TableRow } from "app/components/Table";
@@ -65,9 +65,7 @@ export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 					{(rowData: any) => (
 						<TableRow>
 							<TableCell className="w-16">
-								<div className="w-12 h-12">
-									<Image name="ChangeNowLogo" domain="exchange" />
-								</div>
+								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
 							</TableCell>
 
 							<TableCell>

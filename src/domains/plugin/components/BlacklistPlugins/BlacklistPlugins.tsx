@@ -1,6 +1,6 @@
 import { images } from "app/assets/images";
-import { Image } from "app/components/Image";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import React, { useEffect, useState } from "react";
@@ -60,9 +60,7 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose, blacklisted }: Blac
 					{(rowData: any) => (
 						<TableRow>
 							<TableCell variant="start" className="w-16">
-								<div className="w-12 h-12">
-									<Image name="ChangeNowLogo" domain="exchange" />
-								</div>
+								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
 							</TableCell>
 
 							<TableCell>
