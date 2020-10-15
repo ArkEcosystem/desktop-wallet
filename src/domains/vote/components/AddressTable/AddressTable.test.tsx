@@ -18,7 +18,7 @@ describe("AddressTable", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
-			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
+			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.persist();
 
 		await syncDelegates();

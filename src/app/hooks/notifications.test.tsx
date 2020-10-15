@@ -4,13 +4,13 @@ import { env, getDefaultProfileId } from "utils/testing-library";
 
 import { useNotifications } from "./notifications";
 
-const NotificationsTransactionsFixture = require("tests/fixtures/coins/ark/notification-transactions.json");
-const TransactionsFixture = require("tests/fixtures/coins/ark/transactions.json");
+const NotificationsTransactionsFixture = require("tests/fixtures/coins/ark/devnet/notification-transactions.json");
+const TransactionsFixture = require("tests/fixtures/coins/ark/devnet/transactions.json");
 
 describe("Notifications Hook", () => {
 	beforeAll(() => {
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
+			.get("/api/transactions")
 			.query(true)
 			.reply(200, {
 				data: [...NotificationsTransactionsFixture.data, ...TransactionsFixture.data],

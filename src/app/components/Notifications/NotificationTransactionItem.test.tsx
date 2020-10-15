@@ -5,7 +5,7 @@ import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "utils/testing-library";
 
 import { NotificationTransactionItem } from "./NotificationTransactionItem";
-const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/notification-transactions.json");
+const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/devnet/notification-transactions.json");
 
 let profile: Profile;
 let notification: any;
