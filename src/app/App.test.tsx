@@ -38,8 +38,8 @@ describe("App", () => {
 		useDefaultNetMocks();
 
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.query(true)
+			.get("/api/transactions")
+			.query({ limit: 20 })
 			.reply(200, require("tests/fixtures/coins/ark/notification-transactions.json"))
 			.persist();
 	});
