@@ -36,7 +36,7 @@ const walletMocks = () => {
 	);
 };
 
-const searchEntityRegistrationMocks = () => {
+const entityRegistrationMocks = () => {
 	const publicKeys = [
 		"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
 		"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
@@ -55,11 +55,7 @@ const searchEntityRegistrationMocks = () => {
 		mocks.push(
 			...publicKeys.map((identifier: string) =>
 				mockRequest(
-					(request: any) =>
-						request.url === "https://dwallets.ark.io/api/transactions/search" &&
-						request.method === "post" &&
-						request.body.toString() ===
-							`{"senderPublicKey":"${identifier}","type":6,"typeGroup":2,"asset":{"type":${key},"action":0}}`,
+					`https://dwallets.ark.io/api/transactions?senderPublicKey=${identifier}&type=6&typeGroup=2&asset.type=${key}&asset.action=0`,
 					`coins/ark/transactions/${type}-registrations`,
 				),
 			),
@@ -72,12 +68,16 @@ const searchEntityRegistrationMocks = () => {
 const searchAddressesMocks = () => {
 	const addresses = {
 		D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD: [
+			{ page: 1, limit: 10 },
 			{ page: 1, limit: 15 },
 			{ page: 2, limit: 15 },
 		],
 		DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS: [{ page: 1, limit: 15 }],
 		DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P: [{ page: 1, limit: 15 }],
-		D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb: [{ page: 1, limit: 15 }],
+		D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb: [
+			{ page: 1, limit: 10 },
+			{ page: 1, limit: 15 },
+		],
 	};
 
 	const mocks: any = [];
@@ -87,12 +87,10 @@ const searchAddressesMocks = () => {
 			...configs.map(({ page, limit }: { page: number; limit: number }) =>
 				mockRequest(
 					(request: any) =>
-						(request.url ===
+						request.url ===
 							`https://dwallets.ark.io/api/transactions?page=${page}&limit=${limit}&address=${address}` ||
-							request.url ===
-								`https://dwallets.ark.io/api/transactions?limit=${limit}&address=${address}`) &&
-						request.method === "get",
-					`coins/ark/transactions/search/addresses-${address}-${page}-${limit}`,
+						request.url === `https://dwallets.ark.io/api/transactions?limit=${limit}&address=${address}`,
+					`coins/ark/transactions/byAddress/${address}-${page}-${limit}`,
 				),
 			),
 		);
@@ -156,14 +154,12 @@ export const requestMocks = {
 	],
 	transactions: [
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/transaction-fees"),
-		mockRequest("https://dwallets.ark.io/api/transactions/search?limit=10", "coins/ark/transactions"),
-		mockRequest("https://dwallets.ark.io/api/transactions/search?limit=20", "coins/ark/transactions"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=10", "coins/ark/transactions"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=20", "coins/ark/transactions"),
 
 		...businessRegistrations(),
 
-		...searchEntityRegistrationMocks(),
+		...entityRegistrationMocks(),
 
 		...searchAddressesMocks(),
 	],
