@@ -103,7 +103,6 @@ export const useLedger = (transport: typeof Transport) => {
 
 				const instance = await env.coin(coin, network);
 				const slip44 = instance.config().get<number>("network.crypto.slip44");
-				console.log(slip44);
 
 				dispatch({ type: "busy" });
 
