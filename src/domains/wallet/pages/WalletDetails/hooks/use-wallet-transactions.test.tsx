@@ -11,19 +11,19 @@ describe("Wallet Transactions Hook", () => {
 
 	beforeAll(() => {
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
+			.get("/api/transactions")
 			.query((params) => params.page === undefined || params.page === "1")
 			.reply(200, () => {
-				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
+				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				return {
 					meta,
 					data: data.slice(0, 1),
 				};
 			})
-			.post("/api/transactions/search")
-			.query({ page: "2", limit: "10" })
+			.get("/api/transactions")
+			.query({ page: "2", limit: "10", address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" })
 			.reply(200, () => {
-				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
+				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				return {
 					meta,
 					data: data.slice(1, 3),
@@ -31,6 +31,7 @@ describe("Wallet Transactions Hook", () => {
 			})
 			.persist();
 	});
+
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();

@@ -9,7 +9,7 @@ import nock from "nock";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 import { Router } from "react-router-dom";
-import delegate from "tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
+import delegate from "tests/fixtures/coins/ark/devnet/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
@@ -53,35 +53,50 @@ export const getDefaultWalletId = () => Object.keys(Object.values(fixtureData.pr
 export const defaultNetMocks = () => {
 	nock.disableNetConnect();
 
+	// devnet
 	nock("https://dwallets.ark.io")
 		.get("/api/node/configuration")
-		.reply(200, require("../tests/fixtures/coins/ark/configuration-devnet.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/configuration.json"))
 		.get("/api/peers")
-		.reply(200, require("../tests/fixtures/coins/ark/peers.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/peers.json"))
 		.get("/api/node/configuration/crypto")
-		.reply(200, require("../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/cryptoConfiguration.json"))
 		.get("/api/node/syncing")
-		.reply(200, require("../tests/fixtures/coins/ark/syncing.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/syncing.json"))
 		.get("/api/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
-		.reply(200, require("../tests/fixtures/coins/ark/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"))
 		.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
 		.reply(200, delegate)
 		.get("/api/wallets/034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192")
 		.reply(200, delegate)
 		.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
-		.reply(200, require("../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
 		.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes")
-		.reply(200, require("../tests/fixtures/coins/ark/votes.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/votes.json"))
 		.get("/api/delegates")
 		.query(true)
-		.reply(200, require("../tests/fixtures/coins/ark/delegates-devnet.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/delegates.json"))
 		.get(/\/api\/delegates\/.+/)
 		.reply(200, delegate)
 		.get("/api/node/fees")
 		.query(true)
-		.reply(200, require("../tests/fixtures/coins/ark/node-fees.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/node-fees.json"))
 		.get("/api/transactions/fees")
-		.reply(200, require("../tests/fixtures/coins/ark/transaction-fees.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/transaction-fees.json"))
+		.persist();
+
+	// mainnet
+	nock("https://wallets.ark.io")
+		.get("/api/node/configuration")
+		.reply(200, require("../tests/fixtures/coins/ark/mainnet/configuration.json"))
+		.get("/api/peers")
+		.reply(200, require("../tests/fixtures/coins/ark/mainnet/peers.json"))
+		.get("/api/node/configuration/crypto")
+		.reply(200, require("../tests/fixtures/coins/ark/mainnet/cryptoConfiguration.json"))
+		.get("/api/node/syncing")
+		.reply(200, require("../tests/fixtures/coins/ark/mainnet/syncing.json"))
+		.get("/api/wallets/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX")
+		.reply(200, require("../tests/fixtures/coins/ark/mainnet/wallets/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX.json"))
 		.persist();
 
 	nock("https://min-api.cryptocompare.com")
