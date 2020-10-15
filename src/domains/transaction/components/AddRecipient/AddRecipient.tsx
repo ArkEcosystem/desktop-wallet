@@ -8,7 +8,7 @@ import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import React, { useEffect, useMemo, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { AddRecipientProps, ToggleButtonProps } from "./AddRecipient.models";
@@ -78,8 +78,9 @@ export const AddRecipient = ({
 		defaultValues.recipientAddress = addedRecipients[0].address;
 	}
 
-	const form = useForm({ defaultValues });
-	const { getValues, setValue, register } = form;
+	const form = useFormContext();
+	const { getValues, setValue, register, formState } = form;
+	console.log("Add recipient isValid", formState.isValid);
 
 	useEffect(() => {
 		register("amount");
@@ -164,7 +165,11 @@ export const AddRecipient = ({
 
 						<SelectRecipient
 							address={recipientAddress}
-							ref={register}
+							ref={register({
+								validate: {
+									valid: (value: string) => value === "a" ? true : "Error reee",
+								},
+							})}
 							profile={profile}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address);
