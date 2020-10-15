@@ -4,7 +4,7 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
+import walletMock from "tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 import {
 	act,
 	env,
@@ -67,7 +67,7 @@ describe("WalletDetails", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
-			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
+			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.get(`/api/wallets/${unvotedWallet.address()}`)
 			.reply(200, walletMock)
 			.get(`/api/wallets/${blankWallet.address()}`)
@@ -82,10 +82,10 @@ describe("WalletDetails", () => {
 				error: "Not Found",
 				message: "Wallet not found",
 			})
-			.post("/api/transactions/search")
-			.query(true)
+			.get("/api/transactions")
+			.query((params) => !!params.address)
 			.reply(200, () => {
-				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
+				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				return {
 					meta,
 					data: data.slice(0, 1),

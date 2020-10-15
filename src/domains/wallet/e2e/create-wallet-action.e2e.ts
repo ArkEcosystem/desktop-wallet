@@ -11,7 +11,7 @@ createFixture(
 	[
 		mockRequest(
 			(request: any) => !!request.url.match(new RegExp(BASEURL + "wallets/([-0-9a-zA-Z]{1,34})")),
-			"coins/ark/wallets/not-found",
+			"coins/ark/devnet/wallets/not-found",
 			404,
 		),
 	],
