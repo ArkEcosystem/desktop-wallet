@@ -1,11 +1,21 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture } from "../../../utils/e2e-utils";
+import { BASEURL, createFixture, mockRequest } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
-createFixture(`Import Wallet action`);
+createFixture(
+	`Import Wallet action`,
+	[],
+	[
+		mockRequest(
+			(request: any) => !!request.url.match(new RegExp(BASEURL + "wallets/([-0-9a-zA-Z]{1,34})")),
+			"coins/ark/devnet/wallets/not-found",
+			404,
+		),
+	],
+);
 
 test("should import a wallet by mnemonic", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
@@ -106,7 +116,7 @@ test("should show an error message for invalid address", async (t) => {
 });
 
 test("should show an error message for duplicate address", async (t) => {
-	let addressInput: Selector;
+	let passphraseInput: Selector;
 
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
@@ -126,13 +136,10 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
-	// Use the address only
-	await t.click(Selector("input[name=isAddressOnly]").parent());
+	// Input passphrase
+	passphraseInput = Selector("input[name=passphrase]");
 
-	// Input address
-	addressInput = Selector("input[name=address]");
-
-	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", { replace: true, speed: 1, paste: true });
+	await t.typeText(passphraseInput, "imaginary passphrase", { replace: true, paste: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
 	// Try to import a duplicate wallet
@@ -153,16 +160,13 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
-	// Use the address only
-	await t.click(Selector("input[name=isAddressOnly]").parent());
+	// Input passphrase
+	passphraseInput = Selector("input[name=passphrase]");
 
-	// Input address
-	addressInput = Selector("input[name=address]");
-
-	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", { replace: true, speed: 1, paste: true });
+	await t.typeText(passphraseInput, "imaginary passphrase", { replace: true, paste: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
 	await t
-		.expect(Selector("fieldset p").withText("Address D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib already exists").exists)
+		.expect(Selector("fieldset p").withText("Address DH4Xyyt5zPqM9KwUkevUZPbzM3KjjW8fp5 already exists").exists)
 		.ok();
 });

@@ -6,7 +6,7 @@ import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import multiSignatureFixture from "tests/fixtures/coins/ark/transactions/multisignature-registration.json";
+import multiSignatureFixture from "tests/fixtures/coins/ark/devnet/transactions/multisignature-registration.json";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, syncFees, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";

@@ -13,8 +13,8 @@ describe("BusinessRegistrationsTable", () => {
 		nock("https://dwallets.ark.io")
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
 			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"))
-			.post("/api/transactions/search")
-			.query(true)
+			.get("/api/transactions")
+			.query((params) => !!params.senderPublicKey)
 			.reply(200, require("tests/fixtures/registrations/businesses.json"));
 
 		profile = env.profiles().findById(getDefaultProfileId());

@@ -1,7 +1,7 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { render } from "testing-library";
-import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
+import { data } from "tests/fixtures/coins/ark/devnet/delegates.json";
 
 import { VoteList } from "./VoteList";
 
