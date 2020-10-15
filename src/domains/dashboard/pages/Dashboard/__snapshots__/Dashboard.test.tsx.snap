@@ -181,7 +181,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  50,114.21127898 BTC
                 </span>
               </div>
             </div>
@@ -380,13 +380,13 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   data-testid="item-percentage"
                 >
                   <div
-                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-400"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-400"
                   />
                   <div
                     class="inline-block text-sm text-base font-semibold text-theme-neutral-dark"
                   >
                     <span>
-                      DARK - 100%
+                      ARK - 100%
                     </span>
                   </div>
                 </div>
@@ -396,7 +396,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="flex -space-x-1"
             >
               <div
-                class="h-1 rounded-sm bg-theme-primary-400"
+                class="h-1 rounded-sm bg-theme-danger-400"
               />
             </div>
           </div>
@@ -752,35 +752,69 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                          data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                         >
                           <div
-                            class="sc-fzoyTs irAyXW"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
-                              class="p-2"
+                              class="relative p-2"
                             >
                               <div
-                                class="flex"
+                                class="-space-x-2"
                               >
                                 <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
+                                  aria-label="ARK"
+                                  class="sc-AxhUy dHClEW border-theme-danger-light text-theme-danger-400"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                    />
+                                  </div>
+                                </div>
                               </div>
                               <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                                class="flex mt-6 truncate max-w-12"
                               >
-                                New Wallet
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AdVS…LoiX
+                                  </span>
+                                </div>
                               </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
+                              <span
+                                class="font-bold text-theme-neutral-900"
+                                data-testid="Amount"
                               >
-                                Balance
-                              </div>
+                                50,114.21127898 ARK
+                              </span>
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
@@ -2292,7 +2326,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  50,114.21127898 BTC
                 </span>
               </div>
             </div>
@@ -2896,35 +2930,69 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                          data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                         >
                           <div
-                            class="sc-fzoyTs irAyXW"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
-                              class="p-2"
+                              class="relative p-2"
                             >
                               <div
-                                class="flex"
+                                class="-space-x-2"
                               >
                                 <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
+                                  aria-label="ARK"
+                                  class="sc-AxhUy dHClEW border-theme-danger-light text-theme-danger-400"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                    />
+                                  </div>
+                                </div>
                               </div>
                               <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                                class="flex mt-6 truncate max-w-12"
                               >
-                                New Wallet
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AdVS…LoiX
+                                  </span>
+                                </div>
                               </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
+                              <span
+                                class="font-bold text-theme-neutral-900"
+                                data-testid="Amount"
                               >
-                                Balance
-                              </div>
+                                50,114.21127898 ARK
+                              </span>
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
@@ -3872,7 +3940,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  50,114.21127898 BTC
                 </span>
               </div>
             </div>
@@ -4071,13 +4139,13 @@ exports[`Dashboard should hide transaction view 1`] = `
                   data-testid="item-percentage"
                 >
                   <div
-                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-400"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-400"
                   />
                   <div
                     class="inline-block text-sm text-base font-semibold text-theme-neutral-dark"
                   >
                     <span>
-                      DARK - 100%
+                      ARK - 100%
                     </span>
                   </div>
                 </div>
@@ -4087,7 +4155,7 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="flex -space-x-1"
             >
               <div
-                class="h-1 rounded-sm bg-theme-primary-400"
+                class="h-1 rounded-sm bg-theme-danger-400"
               />
             </div>
           </div>
@@ -4627,35 +4695,69 @@ exports[`Dashboard should hide transaction view 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                          data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                         >
                           <div
-                            class="sc-fzoyTs irAyXW"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
-                              class="p-2"
+                              class="relative p-2"
                             >
                               <div
-                                class="flex"
+                                class="-space-x-2"
                               >
                                 <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
+                                  aria-label="ARK"
+                                  class="sc-AxhUy dHClEW border-theme-danger-light text-theme-danger-400"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                    />
+                                  </div>
+                                </div>
                               </div>
                               <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                                class="flex mt-6 truncate max-w-12"
                               >
-                                New Wallet
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AdVS…LoiX
+                                  </span>
+                                </div>
                               </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
+                              <span
+                                class="font-bold text-theme-neutral-900"
+                                data-testid="Amount"
                               >
-                                Balance
-                              </div>
+                                50,114.21127898 ARK
+                              </span>
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
@@ -4861,7 +4963,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  50,114.21127898 BTC
                 </span>
               </div>
             </div>
@@ -5060,13 +5162,13 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   data-testid="item-percentage"
                 >
                   <div
-                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-400"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-400"
                   />
                   <div
                     class="inline-block text-sm text-base font-semibold text-theme-neutral-dark"
                   >
                     <span>
-                      DARK - 100%
+                      ARK - 100%
                     </span>
                   </div>
                 </div>
@@ -5076,7 +5178,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="flex -space-x-1"
             >
               <div
-                class="h-1 rounded-sm bg-theme-primary-400"
+                class="h-1 rounded-sm bg-theme-danger-400"
               />
             </div>
           </div>
@@ -5432,35 +5534,69 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                          data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                         >
                           <div
-                            class="sc-fzoyTs irAyXW"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
-                              class="p-2"
+                              class="relative p-2"
                             >
                               <div
-                                class="flex"
+                                class="-space-x-2"
                               >
                                 <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
+                                  aria-label="ARK"
+                                  class="sc-AxhUy dHClEW border-theme-danger-light text-theme-danger-400"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                    />
+                                  </div>
+                                </div>
                               </div>
                               <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                                class="flex mt-6 truncate max-w-12"
                               >
-                                New Wallet
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AdVS…LoiX
+                                  </span>
+                                </div>
                               </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
+                              <span
+                                class="font-bold text-theme-neutral-900"
+                                data-testid="Amount"
                               >
-                                Balance
-                              </div>
+                                50,114.21127898 ARK
+                              </span>
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
@@ -6408,7 +6544,7 @@ exports[`Dashboard should render 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  50,114.21127898 BTC
                 </span>
               </div>
             </div>
@@ -6607,13 +6743,13 @@ exports[`Dashboard should render 1`] = `
                   data-testid="item-percentage"
                 >
                   <div
-                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-400"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-400"
                   />
                   <div
                     class="inline-block text-sm text-base font-semibold text-theme-neutral-dark"
                   >
                     <span>
-                      DARK - 100%
+                      ARK - 100%
                     </span>
                   </div>
                 </div>
@@ -6623,7 +6759,7 @@ exports[`Dashboard should render 1`] = `
               class="flex -space-x-1"
             >
               <div
-                class="h-1 rounded-sm bg-theme-primary-400"
+                class="h-1 rounded-sm bg-theme-danger-400"
               />
             </div>
           </div>
@@ -6979,35 +7115,69 @@ exports[`Dashboard should render 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                          data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                         >
                           <div
-                            class="sc-fzoyTs irAyXW"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
-                              class="p-2"
+                              class="relative p-2"
                             >
                               <div
-                                class="flex"
+                                class="-space-x-2"
                               >
                                 <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
+                                  aria-label="ARK"
+                                  class="sc-AxhUy dHClEW border-theme-danger-light text-theme-danger-400"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                    />
+                                  </div>
+                                </div>
                               </div>
                               <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                                class="flex mt-6 truncate max-w-12"
                               >
-                                New Wallet
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AdVS…LoiX
+                                  </span>
+                                </div>
                               </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
+                              <span
+                                class="font-bold text-theme-neutral-900"
+                                data-testid="Amount"
                               >
-                                Balance
-                              </div>
+                                50,114.21127898 ARK
+                              </span>
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
@@ -7955,7 +8125,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  50,114.21127898 BTC
                 </span>
               </div>
             </div>
@@ -8154,13 +8324,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   data-testid="item-percentage"
                 >
                   <div
-                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-400"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-400"
                   />
                   <div
                     class="inline-block text-sm text-base font-semibold text-theme-neutral-dark"
                   >
                     <span>
-                      DARK - 100%
+                      ARK - 100%
                     </span>
                   </div>
                 </div>
@@ -8170,7 +8340,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex -space-x-1"
             >
               <div
-                class="h-1 rounded-sm bg-theme-primary-400"
+                class="h-1 rounded-sm bg-theme-danger-400"
               />
             </div>
           </div>
@@ -8526,35 +8696,69 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                          data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                         >
                           <div
-                            class="sc-fzoyTs irAyXW"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
-                              class="p-2"
+                              class="relative p-2"
                             >
                               <div
-                                class="flex"
+                                class="-space-x-2"
                               >
                                 <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
+                                  aria-label="ARK"
+                                  class="sc-AxhUy dHClEW border-theme-danger-light text-theme-danger-400"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                    />
+                                  </div>
+                                </div>
                               </div>
                               <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                                class="flex mt-6 truncate max-w-12"
                               >
-                                New Wallet
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AdVS…LoiX
+                                  </span>
+                                </div>
                               </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
+                              <span
+                                class="font-bold text-theme-neutral-900"
+                                data-testid="Amount"
                               >
-                                Balance
-                              </div>
+                                50,114.21127898 ARK
+                              </span>
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
@@ -9502,7 +9706,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  50,114.21127898 BTC
                 </span>
               </div>
             </div>
@@ -9701,13 +9905,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   data-testid="item-percentage"
                 >
                   <div
-                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-400"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-400"
                   />
                   <div
                     class="inline-block text-sm text-base font-semibold text-theme-neutral-dark"
                   >
                     <span>
-                      DARK - 100%
+                      ARK - 100%
                     </span>
                   </div>
                 </div>
@@ -9717,7 +9921,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="flex -space-x-1"
             >
               <div
-                class="h-1 rounded-sm bg-theme-primary-400"
+                class="h-1 rounded-sm bg-theme-danger-400"
               />
             </div>
           </div>
@@ -10073,35 +10277,69 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                          data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                         >
                           <div
-                            class="sc-fzoyTs irAyXW"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
-                              class="p-2"
+                              class="relative p-2"
                             >
                               <div
-                                class="flex"
+                                class="-space-x-2"
                               >
                                 <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
+                                  aria-label="ARK"
+                                  class="sc-AxhUy dHClEW border-theme-danger-light text-theme-danger-400"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                    />
+                                  </div>
+                                </div>
                               </div>
                               <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                                class="flex mt-6 truncate max-w-12"
                               >
-                                New Wallet
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AdVS…LoiX
+                                  </span>
+                                </div>
                               </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
+                              <span
+                                class="font-bold text-theme-neutral-900"
+                                data-testid="Amount"
                               >
-                                Balance
-                              </div>
+                                50,114.21127898 ARK
+                              </span>
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
@@ -11049,7 +11287,7 @@ exports[`Dashboard should render wallets 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  50,114.21127898 BTC
                 </span>
               </div>
             </div>
@@ -11248,13 +11486,13 @@ exports[`Dashboard should render wallets 1`] = `
                   data-testid="item-percentage"
                 >
                   <div
-                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-400"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-400"
                   />
                   <div
                     class="inline-block text-sm text-base font-semibold text-theme-neutral-dark"
                   >
                     <span>
-                      DARK - 100%
+                      ARK - 100%
                     </span>
                   </div>
                 </div>
@@ -11264,7 +11502,7 @@ exports[`Dashboard should render wallets 1`] = `
               class="flex -space-x-1"
             >
               <div
-                class="h-1 rounded-sm bg-theme-primary-400"
+                class="h-1 rounded-sm bg-theme-danger-400"
               />
             </div>
           </div>
@@ -11620,35 +11858,69 @@ exports[`Dashboard should render wallets 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                          data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                         >
                           <div
-                            class="sc-fzoyTs irAyXW"
+                            class="sc-fzoyTs jrscbD"
                             data-testid="Card"
                           >
                             <div
-                              class="p-2"
+                              class="relative p-2"
                             >
                               <div
-                                class="flex"
+                                class="-space-x-2"
                               >
                                 <div
-                                  class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
-                                />
+                                  aria-label="ARK"
+                                  class="sc-AxhUy dHClEW border-theme-danger-light text-theme-danger-400"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
-                                  class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
-                                />
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                    />
+                                  </div>
+                                </div>
                               </div>
                               <div
-                                class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                                class="flex mt-6 truncate max-w-12"
                               >
-                                New Wallet
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AdVS…LoiX
+                                  </span>
+                                </div>
                               </div>
-                              <div
-                                class="text-md text-theme-primary-contrast font-bold undefined"
+                              <span
+                                class="font-bold text-theme-neutral-900"
+                                data-testid="Amount"
                               >
-                                Balance
-                              </div>
+                                50,114.21127898 ARK
+                              </span>
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"

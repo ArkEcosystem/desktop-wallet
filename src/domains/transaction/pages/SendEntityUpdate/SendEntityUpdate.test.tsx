@@ -7,7 +7,7 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { toast } from "react-toastify";
-import EntityUpdateTransactionFixture from "tests/fixtures/coins/ark/transactions/entity-update.json";
+import EntityUpdateTransactionFixture from "tests/fixtures/coins/ark/devnet/transactions/entity-update.json";
 import IpfsFixture from "tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json";
 import BusinessEntities from "tests/fixtures/registrations/businesses.json";
 import {

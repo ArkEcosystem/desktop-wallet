@@ -7,7 +7,7 @@ import { Form } from "app/components/Form";
 import nock from "nock";
 import React from "react";
 import { useForm } from "react-hook-form";
-import entityRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-registration.json";
+import entityRegistrationFixture from "tests/fixtures/coins/ark/devnet/transactions/entity-registration.json";
 import { env, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { EntityRegistrationForm } from "./EntityRegistrationForm";

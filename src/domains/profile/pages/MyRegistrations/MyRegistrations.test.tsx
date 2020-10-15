@@ -20,17 +20,15 @@ describe("MyRegistrations", () => {
 		nock("https://dwallets.ark.io")
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
 			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"))
-			.post("/api/transactions/search")
-			.query(true)
-			.reply(200, (_, { asset }: any) => {
-				if (asset?.type === 0) {
-					return require("tests/fixtures/registrations/businesses.json");
-				}
-				if (asset?.type === 3) {
-					return require("tests/fixtures/registrations/plugins.json");
-				}
-				return { meta: {}, data: [] };
-			})
+			.get("/api/transactions")
+			.query((params) => params["asset.type"] === "0")
+			.reply(200, require("tests/fixtures/registrations/businesses.json"))
+			.get("/api/transactions")
+			.query((params) => params["asset.type"] === "3")
+			.reply(200, require("tests/fixtures/registrations/plugins.json"))
+			.get("/api/transactions")
+			.query((params) => !!params["asset.type"])
+			.reply(200, { meta: {}, data: [] })
 			.persist();
 
 		await syncDelegates();
@@ -471,16 +469,9 @@ describe("MyRegistrations", () => {
 	it("should render entity delegate registrations", async () => {
 		nock.cleanAll();
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.query(true)
-			.reply(200, (_, { asset }: any) => {
-				if (asset.type === 4) {
-					return require("tests/fixtures/registrations/entity-delegates.json");
-				}
-
-				return { meta: {}, data: [] };
-			})
-			.persist();
+			.get("/api/transactions")
+			.query((params) => params["asset.type"] === "4")
+			.reply(200, require("tests/fixtures/registrations/entity-delegates.json"));
 
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
