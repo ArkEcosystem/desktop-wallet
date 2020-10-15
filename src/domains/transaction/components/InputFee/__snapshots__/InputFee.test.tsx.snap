@@ -16,7 +16,7 @@ exports[`InputFee should render 1`] = `
           class="sc-AxjAm ikaeZA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
           data-testid="InputCurrency"
           type="text"
-          value="5"
+          value="2"
         />
         <div
           class="absolute bottom-0 w-full px-1"
@@ -37,7 +37,7 @@ exports[`InputFee should render 1`] = `
                 <div
                   aria-valuemax="10"
                   aria-valuemin="1"
-                  aria-valuenow="5"
+                  aria-valuenow="2"
                   class="sc-AxmLO jJCZzX"
                   data-testid="Range__thumb"
                   draggable="false"
@@ -196,7 +196,7 @@ exports[`InputFee should update fee when clicking on avg 1`] = `
           class="sc-AxjAm ikaeZA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
           data-testid="InputCurrency"
           type="text"
-          value="5"
+          value="2"
         />
         <div
           class="absolute bottom-0 w-full px-1"
@@ -217,7 +217,7 @@ exports[`InputFee should update fee when clicking on avg 1`] = `
                 <div
                   aria-valuemax="10"
                   aria-valuemin="1"
-                  aria-valuenow="5"
+                  aria-valuenow="2"
                   class="sc-AxmLO jJCZzX"
                   data-testid="Range__thumb"
                   draggable="false"
@@ -286,7 +286,7 @@ exports[`InputFee should update fee when clicking on max 1`] = `
           class="sc-AxjAm ikaeZA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
           data-testid="InputCurrency"
           type="text"
-          value="5"
+          value="2"
         />
         <div
           class="absolute bottom-0 w-full px-1"
@@ -307,7 +307,7 @@ exports[`InputFee should update fee when clicking on max 1`] = `
                 <div
                   aria-valuemax="10"
                   aria-valuemin="1"
-                  aria-valuenow="5"
+                  aria-valuenow="2"
                   class="sc-AxmLO jJCZzX"
                   data-testid="Range__thumb"
                   draggable="false"
@@ -376,7 +376,7 @@ exports[`InputFee should update fee when clicking on min 1`] = `
           class="sc-AxjAm ikaeZA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
           data-testid="InputCurrency"
           type="text"
-          value="1"
+          value="2"
         />
         <div
           class="absolute bottom-0 w-full px-1"
@@ -397,7 +397,7 @@ exports[`InputFee should update fee when clicking on min 1`] = `
                 <div
                   aria-valuemax="10"
                   aria-valuemin="1"
-                  aria-valuenow="1"
+                  aria-valuenow="2"
                   class="sc-AxmLO jJCZzX"
                   data-testid="Range__thumb"
                   draggable="false"
@@ -418,7 +418,7 @@ exports[`InputFee should update fee when clicking on min 1`] = `
         role="radiogroup"
       >
         <button
-          aria-checked="true"
+          aria-checked="false"
           class="sc-fzozJi cqpCRb relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
           data-testid="SelectionBarOption"
           role="radio"

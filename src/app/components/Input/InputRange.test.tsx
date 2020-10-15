@@ -1,20 +1,20 @@
 import React from "react";
-import { fireEvent, render, waitFor } from "testing-library";
+import { act, fireEvent, render, waitFor } from "testing-library";
 
 import { InputRange } from "./InputRange";
 
 const properties = {
-	defaultValue: (5 * 1e8).toFixed(0),
-	min: "1",
+	value: 5,
 	max: "10",
+	min: "0",
+	avg: "0",
 	step: 1,
 };
-
 describe("InputRange", () => {
-	it("should render with default value", () => {
+	it("should render with default value", async () => {
 		const { asFragment, getByTestId } = render(<InputRange {...properties} />);
 
-		waitFor(() => {
+		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("5");
 			expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "5");
 		});
@@ -26,7 +26,9 @@ describe("InputRange", () => {
 		const { getByTestId } = render(<InputRange {...properties} />);
 		const input = getByTestId("InputCurrency");
 
-		fireEvent.change(input, { target: { value: "9" } });
+		act(() => {
+			fireEvent.change(input, { target: { value: "9" } });
+		});
 
 		expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "9");
 		expect(input).toHaveValue("9");
