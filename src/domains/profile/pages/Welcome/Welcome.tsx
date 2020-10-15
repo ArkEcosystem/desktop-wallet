@@ -1,8 +1,8 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
-import { Image } from "app/components/Image";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeleteProfile";
@@ -12,7 +12,6 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
-
 
 export const Welcome = () => {
 	const context = useEnvironmentContext();

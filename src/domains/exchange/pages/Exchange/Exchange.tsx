@@ -1,5 +1,5 @@
-import { Image } from "app/components/Image";
 import { Header } from "app/components/Header";
+import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { Slider } from "app/components/Slider";
 import { useActiveProfile } from "app/hooks/env";

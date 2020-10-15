@@ -1,5 +1,5 @@
-import { Image } from "app/components/Image";
 import { Button } from "app/components/Button";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
 import { Table, TableCell, TableRow } from "app/components/Table";

@@ -1,6 +1,6 @@
-import { Image } from "app/components/Image";
 import { Card } from "app/components/Card";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { ReviewRating } from "app/components/ReviewRating";
 import React from "react";
 import { useTranslation } from "react-i18next";

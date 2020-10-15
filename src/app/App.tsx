@@ -44,7 +44,7 @@ const Main = () => {
 
 	const pathname = (location as any).location?.pathname || location.pathname;
 	const nativeTheme = electron.remote.nativeTheme;
-	
+
 	const isDark = useDarkMode();
 
 	useDeeplink();

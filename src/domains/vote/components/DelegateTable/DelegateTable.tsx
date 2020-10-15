@@ -209,10 +209,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage,
 										</Circle>
 										<div className="flex flex-col">
 											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
-											<div
-												className="text-theme-text"
-												data-testid="DelegateTable__footer--votes"
-											>
+											<div className="text-theme-text" data-testid="DelegateTable__footer--votes">
 												{selectedVotes.length}
 											</div>
 										</div>
@@ -249,10 +246,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, itemsPerPage,
 										</Circle>
 										<div className="flex flex-col">
 											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
-											<div
-												className="text-theme-text"
-												data-testid="DelegateTable__footer--total"
-											>
+											<div className="text-theme-text" data-testid="DelegateTable__footer--total">
 												{maxVotes === 1 ? "1/1" : getTotalVotes()}
 											</div>
 										</div>
