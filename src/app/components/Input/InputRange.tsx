@@ -6,6 +6,7 @@ import { getTrackBackground } from "react-range";
 
 import { InputCurrency } from "./InputCurrency";
 import { InputGroup } from "./InputGroup";
+import { sanitizeStep } from "./utils";
 
 type Props = {
 	avg: any;
@@ -51,9 +52,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		}
 
 		useEffect(() => {
-			if (value) {
-				setValues([value]);
-			}
+			setValues([value]);
 		}, [value]);
 
 		return (
@@ -77,7 +76,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 					<div className="absolute bottom-0 w-full px-1">
 						<Range
 							colors={["var(--theme-color-primary)", "transparent"]}
-							step={step}
+							step={sanitizeStep({ min: Number(min), max: Number(max), step })}
 							min={Number(min)}
 							max={Number(max)}
 							onChange={handleRange}

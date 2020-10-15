@@ -11,7 +11,15 @@ import { useTranslation } from "react-i18next";
 
 import { InputFee } from "../InputFee";
 
-export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFee; wallet: ReadWriteWallet }) => {
+export const GenerationStep = ({
+	fees,
+	wallet,
+	step = 0.001,
+}: {
+	fees: Contracts.TransactionFee;
+	wallet: ReadWriteWallet;
+	step?: number;
+}) => {
 	const { t } = useTranslation();
 
 	const { getValues, setValue, register, watch } = useFormContext();
@@ -57,7 +65,7 @@ export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFe
 						max={fees.max}
 						defaultValue={fee || 0}
 						value={fee || 0}
-						step={0.01}
+						step={step}
 						onChange={(currency: { display: string; value: string }) => {
 							setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
 						}}

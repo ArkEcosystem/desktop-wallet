@@ -7,8 +7,8 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import DelegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
-import EntityRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-update.json";
+import DelegateRegistrationFixture from "tests/fixtures/coins/ark/devnet/transactions/delegate-registration.json";
+import EntityRegistrationFixture from "tests/fixtures/coins/ark/devnet/transactions/entity-update.json";
 import IpfsFixture from "tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json";
 // @ts-ignore
 EntityRegistrationFixture.data.asset.data.name = "Test-Entity-Name";
@@ -110,7 +110,7 @@ describe("Registration", () => {
 
 		nock("https://dwallets.ark.io")
 			.get("/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")
-			.reply(200, require("tests/fixtures/coins/ark/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
+			.reply(200, require("tests/fixtures/coins/ark/devnet/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
 
 		nock("https://platform.ark.io/api")
 			.get("/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV")

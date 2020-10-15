@@ -13,7 +13,7 @@ describe("Welcome", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
-			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
+			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
 			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
 
