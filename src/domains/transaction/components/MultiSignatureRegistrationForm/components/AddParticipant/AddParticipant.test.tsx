@@ -2,8 +2,8 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
 import nock from "nock";
 import React from "react";
-import walletFixture from "tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
-import coldWalletFixture from "tests/fixtures/coins/ark/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P.json";
+import walletFixture from "tests/fixtures/coins/ark/devnet/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
+import coldWalletFixture from "tests/fixtures/coins/ark/devnet/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P.json";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { AddParticipant } from "./AddParticipant";
@@ -20,7 +20,10 @@ describe("Add Participant", () => {
 	});
 
 	it("should fail to find", async () => {
-		nock("https://dwallets.ark.io").post("/api/wallets/search").reply(404);
+		nock("https://dwallets.ark.io")
+			.get("/api/wallets")
+			.query({ address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib" })
+			.reply(404);
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
 
 		act(() => {
@@ -46,7 +49,8 @@ describe("Add Participant", () => {
 
 	it("should fail with cold wallet", async () => {
 		nock("https://dwallets.ark.io")
-			.post("/api/wallets/search")
+			.get("/api/wallets")
+			.query({ address: "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P" })
 			.reply(200, {
 				meta: { count: 1, pageCount: 1, totalCount: 1 },
 				data: [coldWalletFixture.data],
@@ -111,7 +115,8 @@ describe("Add Participant", () => {
 
 	it("should fail if cannot find the address remotely", async () => {
 		nock("https://dwallets.ark.io")
-			.post("/api/wallets/search")
+			.get("/api/wallets")
+			.query({ address: "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20" })
 			.reply(200, {
 				meta: { count: 0, pageCount: 1, totalCount: 0 },
 				data: [],
@@ -174,7 +179,8 @@ describe("Add Participant", () => {
 
 	it("should work with a remote wallet", async () => {
 		const scope = nock("https://dwallets.ark.io")
-			.post("/api/wallets/search")
+			.get("/api/wallets")
+			.query((params) => !!params.address)
 			.reply(200, {
 				meta: { count: 1, pageCount: 1, totalCount: 1 },
 				data: [walletFixture.data],

@@ -9,7 +9,7 @@
 					"network": "ark.devnet",
 					"networkConfig": {
 						"crypto": {
-							"slip44": 111
+							"slip44": 1
 						},
 						"networking": {
 							"hosts": ["https://dwallets.ark.io"],
@@ -40,7 +40,7 @@
 					"network": "ark.devnet",
 					"networkConfig": {
 						"crypto": {
-							"slip44": 111
+							"slip44": 1
 						},
 						"networking": {
 							"hosts": ["https://dwallets.ark.io"],
@@ -111,12 +111,45 @@
 				}
 			},
 			"notifications": {
-				"b183aef3-2dba-471a-a588-0fcf8f01b645": {
-					"id": "b183aef3-2dba-471a-a588-0fcf8f01b645",
-					"icon": "warning",
-					"name": "Ledger Update Available",
-					"body": "...",
-					"action": "Read Changelog"
+				"29fdd62d-1c28-4d2c-b46f-667868c5afe1": {
+					"id": "29fdd62d-1c28-4d2c-b46f-667868c5afe1",
+					"icon": "ArkLogo",
+					"name": "ARK Explorer",
+					"type": "plugin",
+					"body": "- update v2.5.6",
+					"action": "update"
+				},
+				"327de355-0c56-48ab-b893-ae14d1dbbd67": {
+					"id": "327de355-0c56-48ab-b893-ae14d1dbbd67",
+					"icon": "ArkLogo",
+					"name": "ARK Avatars",
+					"type": "plugin",
+					"body": "- update v4",
+					"action": "update"
+				},
+				"e4224b2f-7e24-486e-b2ff-8173ccaafc8e": {
+					"id": "e4224b2f-7e24-486e-b2ff-8173ccaafc8e",
+					"icon": "",
+					"name": "",
+					"body": "",
+					"action": "",
+					"type": "transaction",
+					"meta": {
+						"transactionId": "ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b",
+						"walletAddress": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+					}
+				},
+				"51cf2d3e-92f1-4bd6-9c10-f261558b3bee": {
+					"id": "51cf2d3e-92f1-4bd6-9c10-f261558b3bee",
+					"icon": "",
+					"name": "",
+					"body": "",
+					"action": "",
+					"type": "transaction",
+					"meta": {
+						"transactionId": "1a767ebc0cc53246b9105a9f09b6c2ffa7baedcc7e632c8c1bac58f8f17389f6",
+						"walletAddress": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+					}
 				}
 			},
 			"plugins": {

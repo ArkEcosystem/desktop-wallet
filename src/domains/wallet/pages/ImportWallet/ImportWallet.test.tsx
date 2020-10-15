@@ -42,7 +42,7 @@ describe("ImportWallet", () => {
 
 		nock("https://dwallets.ark.io")
 			.get("/api/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P")
-			.reply(200, require("tests/fixtures/coins/ark/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P.json"))
+			.reply(200, require("tests/fixtures/coins/ark/devnet/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P.json"))
 			.persist();
 	});
 

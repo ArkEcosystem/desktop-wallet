@@ -140,6 +140,8 @@ export const translations: { [key: string]: any } = {
 	SELECTED: "Selected",
 	SELECT_ALL: "Select All",
 	SELECT_OPTION: "Select {{option}}",
+	SELECT_A_PROFILE: "You should select a profile to access this URL",
+	SELECT_A_WALLET: "You should select a wallet to deeplink transactions",
 	SEND: "Send",
 	SETTINGS: "Settings",
 	SHOW: "Show",
@@ -256,5 +258,14 @@ export const translations: { [key: string]: any } = {
 	SAVE_FILE: {
 		SUCCESS: "<bold>{{filePath}}</bold> was saved successfully",
 		ERROR: "Could not save file: {{error}}",
+	},
+	NOTIFICATIONS: {
+		ACTIONS: {
+			READ_CHANGELOG: "Read Changelog",
+			UPDATE: "Update",
+		},
+		PLUGINS_TITLE: "Plugins",
+		TRANSACTIONS_TITLE: "Transactions",
+		EMPTY: "You have no notifications at this time",
 	},
 };

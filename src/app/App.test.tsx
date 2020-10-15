@@ -3,7 +3,9 @@
 
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
+import { ipcRenderer } from "electron";
 import electron from "electron";
+import nock from "nock";
 import React from "react";
 import {
 	act,
@@ -17,6 +19,7 @@ import {
 import { App } from "./App";
 
 jest.mock("electron", () => ({
+	ipcRenderer: { on: jest.fn(), send: jest.fn(), removeListener: jest.fn() },
 	remote: {
 		nativeTheme: {
 			shouldUseDarkColors: true,
@@ -31,7 +34,19 @@ jest.mock("electron", () => ({
 const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 describe("App", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
+
+		nock("https://dwallets.ark.io")
+			.get("/api/transactions")
+			.query({ limit: 20 })
+			.reply(200, require("tests/fixtures/coins/ark/devnet/notification-transactions.json"))
+			.persist();
+	});
+
+	beforeEach(() => {
+		ipcRenderer.on.mockImplementationOnce((event, callback) => callback(event, null));
+	});
 
 	it("should render splash screen", async () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";

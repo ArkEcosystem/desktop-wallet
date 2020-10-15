@@ -214,4 +214,15 @@ describe("TransactionTable", () => {
 		fireEvent.click(rows[0]);
 		expect(onClick).toHaveBeenCalledWith(transactions[0]);
 	});
+
+	it("should emit action on the compact row click", () => {
+		const onClick = jest.fn();
+		const { getAllByTestId } = renderWithRouter(
+			// @ts-ignore - TODO: brittle fixtures
+			<TransactionTable transactions={transactions} onRowClick={onClick} isCompact />,
+		);
+		const rows = getAllByTestId("TableRow");
+		fireEvent.click(rows[0]);
+		expect(onClick).toHaveBeenCalledWith(transactions[0]);
+	});
 });

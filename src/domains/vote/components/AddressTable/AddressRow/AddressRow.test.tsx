@@ -3,7 +3,7 @@ import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk
 import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates, waitFor } from "testing-library";
-import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
+import walletMock from "tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 
 import { AddressRow } from "./AddressRow";
 
@@ -35,7 +35,7 @@ describe("AddressRow", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
-			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
+			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.get(`/api/wallets/${unvotedWallet.address()}`)
 			.reply(200, walletMock)
 			.get(`/api/wallets/${blankWallet.address()}`)

@@ -7,7 +7,17 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "utils/testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	syncDelegates,
+	useDefaultNetMocks,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
 import { balances } from "../../data";
 import { Dashboard } from "./Dashboard";
@@ -20,23 +30,36 @@ let dashboardURL: string;
 
 const transport: typeof Transport = createTransportReplayer(RecordStore.fromString(""));
 
-beforeEach(() => {
-	emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-	dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
-	history.push(dashboardURL);
-	nock.disableNetConnect();
+beforeAll(async () => {
+	useDefaultNetMocks();
+
+	nock("https://neoscan.io/api/main_net/v1/")
+		.get("/get_last_transactions_by_address/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX/1")
+		.reply(200, []);
 
 	nock("https://dwallets.ark.io")
-		.post("/api/transactions/search")
+		.get("/api/transactions")
 		.query(true)
 		.reply(200, () => {
-			const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
+			const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 			return {
 				meta,
 				data: data.slice(0, 2),
 			};
 		})
 		.persist();
+
+	const profile = env.profiles().findById(fixtureProfileId);
+	const wallet = await profile.wallets().importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
+
+	await syncDelegates();
+	await wallet.syncVotes();
+});
+
+beforeEach(() => {
+	emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+	dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
+	history.push(dashboardURL);
 });
 
 describe("Dashboard", () => {
@@ -107,7 +130,6 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		act(() => {
@@ -132,7 +154,6 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -148,7 +169,6 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -164,7 +184,6 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
@@ -242,7 +261,6 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		act(() => {
@@ -264,7 +282,6 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		fireEvent.click(getByText("Create"));

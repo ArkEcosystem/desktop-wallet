@@ -33,15 +33,19 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 	const availableNetworks = useMemo(
 		() =>
-			env.availableNetworks().map((network) => {
-				const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
-				return Object.assign(network, { extra: extended });
-			}),
+			env
+				.availableNetworks()
+				.filter((network) => network.isLive())
+				.map((network) => {
+					const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
+					return Object.assign(network, { extra: extended });
+				}),
 		[env],
 	);
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 	const balancePerCoin = useMemo(() => activeProfile.walletAggregate().balancePerCoin(), [activeProfile]);
+
 	const portfolioPercentages = useMemo(() => {
 		const data: BarItem[] = [];
 
@@ -148,6 +152,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 				{showTransactions && (
 					<Section className="flex-1" data-testid="dashboard__transactions-view">
 						<Transactions
+							title={t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}
 							transactions={allTransactions}
 							exchangeCurrency={exchangeCurrency}
 							fetchMoreAction={fetchTransactions}

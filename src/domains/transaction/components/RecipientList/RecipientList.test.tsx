@@ -51,6 +51,13 @@ describe("RecipientList", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render without amount column", () => {
+		const { container } = render(
+			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" showAmount={false} />,
+		);
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should call onRemove callback to remove recipient", async () => {
 		const onRemove = jest.fn();
 

@@ -1,5 +1,5 @@
 import { useEnvironmentContext } from "app/contexts";
-import React from "react";
+import React, { useMemo } from "react";
 import { RouteConfig } from "react-router-config";
 import { Redirect, Route, Switch, useHistory, useLocation } from "react-router-dom";
 import { styled } from "twin.macro";
@@ -17,7 +17,6 @@ type Props = {
 export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 	const location = useLocation();
 	const history = useHistory();
-
 	const { env } = useEnvironmentContext();
 	const [redirectUrl, setRedirectUrl] = React.useState<string | undefined>(undefined);
 	const [previousPathname, setPreviousPathname] = React.useState("");
@@ -32,7 +31,7 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 		setPreviousPathname(pathname);
 	}, [location, previousPathname]);
 
-	const canActivate = React.useMemo(
+	const canActivate = useMemo(
 		() =>
 			middlewares!.every((middleware) =>
 				middleware.handler({ location, env, redirect: setRedirectUrl, history }),

@@ -11,6 +11,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	getDefaultWalletId,
 	render,
 	RenderResult,
 	renderWithRouter,
@@ -18,8 +19,8 @@ import {
 	waitFor,
 	within,
 } from "testing-library";
-import transactionMultipleFixture from "tests/fixtures/coins/ark/transactions/transfer-multiple.json";
-import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
+import transactionMultipleFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer-multiple.json";
+import transactionFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer.json";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendTransfer } from "./SendTransfer";
@@ -28,6 +29,7 @@ import { ReviewStep } from "./Step2";
 import { SummaryStep } from "./Step4";
 
 const fixtureProfileId = getDefaultProfileId();
+const fixtureWalletId = getDefaultWalletId();
 
 const createTransactionMultipleMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
@@ -59,8 +61,9 @@ beforeAll(async () => {
 	wallet = profile.wallets().values()[0];
 
 	nock("https://dwallets.ark.io")
-		.post("/api/transactions/search")
-		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+		.get("/api/transactions")
+		.query((params) => !!params.address)
+		.reply(200, require("tests/fixtures/coins/ark/devnet/transactions.json"))
 		.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
 		.reply(200, transactionFixture);
 
@@ -74,6 +77,27 @@ describe("SendTransfer", () => {
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
 				<FormStep networks={[]} profile={profile} />
+			</FormProvider>,
+		);
+
+		expect(getByTestId("SendTransfer__step--first")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render 1st step with deeplink values and use them", async () => {
+		const { result: form } = renderHook(() => useForm());
+		const deeplinkProps: any = {
+			amount: "1.2",
+			coin: "ark",
+			memo: "ARK",
+			method: "transfer",
+			network: "mainnet",
+			recipient: "DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9",
+		};
+
+		const { getByTestId, asFragment } = render(
+			<FormProvider {...form.current}>
+				<FormStep networks={[]} profile={profile} deeplinkProps={deeplinkProps} />
 			</FormProvider>,
 		);
 
@@ -139,6 +163,30 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+		});
+
+		expect(rendered.asFragment()).toMatchSnapshot();
+	});
+
+	it("should render form and use location state", async () => {
+		const history = createMemoryHistory();
+		let rendered: RenderResult;
+
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
+		history.push(transferURL, { memo: "ARK" });
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 					<SendTransfer />
 				</Route>,
 				{
@@ -341,8 +389,6 @@ describe("SendTransfer", () => {
 
 	it("should send a multi payment", async () => {
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 			.get("/api/transactions/34b557950ed485985aad81ccefaa374b7c81150c52f8ef4621cbbb907b2c829c")
 			.reply(200, transactionMultipleFixture);
 
