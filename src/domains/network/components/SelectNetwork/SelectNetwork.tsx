@@ -96,6 +96,7 @@ export const SelectNetwork = ({
 			return "text-theme-success-500 border-theme-success-200";
 		}
 		// Selection is made but not me. Show me disabled
+		/* istanbul ignore next */
 		if (selectedItem && selectedItem.extra?.displayName !== network.extra?.displayName)
 			return "text-theme-neutral-light";
 
