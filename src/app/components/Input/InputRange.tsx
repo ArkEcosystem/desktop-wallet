@@ -55,6 +55,8 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 			setValues([value]);
 		}, [value]);
 
+		const minValue = Number(trackBackgroundMinValue < Number(min) ? trackBackgroundMinValue : min);
+
 		return (
 			<InputGroup>
 				<InputCurrency
@@ -62,7 +64,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						background: getTrackBackground({
 							values: [trackBackgroundMinValue],
 							colors: ["rgba(var(--theme-color-primary-rgb), 0.1)", "transparent"],
-							min: Number(min),
+							min: minValue,
 							max: Number(max),
 						}),
 					}}
@@ -77,7 +79,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						<Range
 							colors={["var(--theme-color-primary)", "transparent"]}
 							step={sanitizeStep({ min: Number(min), max: Number(max), step })}
-							min={Number(min)}
+							min={minValue}
 							max={Number(max)}
 							onChange={handleRange}
 							values={rangeValues}
