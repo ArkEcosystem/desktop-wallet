@@ -1,6 +1,7 @@
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
 import { Table } from "app/components/Table";
@@ -14,7 +15,6 @@ type FeaturedPluginsProps = {
 };
 
 const { BestPluginsBanner } = images.plugin.common;
-const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
 export const FeaturedPlugins = ({ isOpen, plugins, onClose }: FeaturedPluginsProps) => {
 	const { t } = useTranslation();
@@ -63,7 +63,7 @@ export const FeaturedPlugins = ({ isOpen, plugins, onClose }: FeaturedPluginsPro
 					{(rowData: any) => (
 						<tr className="border-b border-dashed border-theme-neutral-200">
 							<td className="w-16">
-								<ChangeNowLogo className="w-12 h-12" />
+								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
 							</td>
 
 							<td>

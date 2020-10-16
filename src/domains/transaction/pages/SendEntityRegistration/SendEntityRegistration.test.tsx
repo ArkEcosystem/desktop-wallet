@@ -158,14 +158,13 @@ describe("Registration", () => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
-		expect(getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(asFragment()).toMatchSnapshot();
 	});
 

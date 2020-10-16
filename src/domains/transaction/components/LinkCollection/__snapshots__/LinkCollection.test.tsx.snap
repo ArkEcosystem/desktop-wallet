@@ -57,7 +57,7 @@ exports[`LinkCollection should add links 1`] = `
             class="relative w-full"
           >
             <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
               data-testid="select-list__input"
               name="type"
               readonly=""
@@ -72,7 +72,7 @@ exports[`LinkCollection should add links 1`] = `
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                  class="sc-fzplWN jAabRP  is-selected "
+                  class="sc-fzplWN gBhoSz  is-selected "
                   data-testid="select-list__toggle-button"
                   id="downshift-1-toggle-button"
                   type="button"
@@ -119,7 +119,7 @@ exports[`LinkCollection should add links 1`] = `
           </label>
           <input
             aria-invalid="false"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
             data-testid="LinkCollection__input-link"
             name="value"
           />
@@ -135,7 +135,7 @@ exports[`LinkCollection should add links 1`] = `
         </button>
       </div>
       <div
-        class="sc-fznKkj iLZSgh mt-4"
+        class="sc-fznKkj fDNmAt -mt-3"
         role="table"
       >
         <table
@@ -144,10 +144,11 @@ exports[`LinkCollection should add links 1`] = `
         >
           <thead>
             <tr
+              class="border-b border-theme-neutral-300"
               role="row"
             >
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -177,7 +178,7 @@ exports[`LinkCollection should add links 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -207,7 +208,7 @@ exports[`LinkCollection should add links 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -335,7 +336,7 @@ exports[`LinkCollection should remove links 1`] = `
             class="relative w-full"
           >
             <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
               data-testid="select-list__input"
               name="type"
               readonly=""
@@ -350,7 +351,7 @@ exports[`LinkCollection should remove links 1`] = `
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-labelledby="downshift-13-label downshift-13-toggle-button"
-                  class="sc-fzplWN jAabRP   "
+                  class="sc-fzplWN gBhoSz   "
                   data-testid="select-list__toggle-button"
                   id="downshift-13-toggle-button"
                   type="button"
@@ -395,7 +396,7 @@ exports[`LinkCollection should remove links 1`] = `
           </label>
           <input
             aria-invalid="false"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
             data-testid="LinkCollection__input-link"
             disabled=""
             name="value"
@@ -509,7 +510,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
             class="relative w-full"
           >
             <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
               data-testid="select-list__input"
               name="type"
               readonly=""
@@ -524,7 +525,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-labelledby="downshift-32-label downshift-32-toggle-button"
-                  class="sc-fzplWN jAabRP   "
+                  class="sc-fzplWN gBhoSz   "
                   data-testid="select-list__toggle-button"
                   id="downshift-32-toggle-button"
                   type="button"
@@ -569,7 +570,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
           </label>
           <input
             aria-invalid="false"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
             data-testid="LinkCollection__input-link"
             disabled=""
             name="value"
@@ -586,7 +587,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
         </button>
       </div>
       <div
-        class="sc-fznKkj iLZSgh mt-4"
+        class="sc-fznKkj fDNmAt -mt-3"
         role="table"
       >
         <table
@@ -595,10 +596,11 @@ exports[`LinkCollection should select a specific link type 1`] = `
         >
           <thead>
             <tr
+              class="border-b border-theme-neutral-300"
               role="row"
             >
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -628,7 +630,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -658,7 +660,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -688,7 +690,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral"
+                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"

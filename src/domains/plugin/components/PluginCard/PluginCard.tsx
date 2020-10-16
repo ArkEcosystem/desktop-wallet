@@ -1,6 +1,6 @@
-import { images } from "app/assets/images";
 import { Card } from "app/components/Card";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { ReviewRating } from "app/components/ReviewRating";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -22,8 +22,6 @@ const PluginImageContainer = styled.div`
 		}
 	`}
 `;
-
-const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
 
 export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardProps) => {
 	const { t } = useTranslation();
@@ -50,7 +48,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 			>
 				<div className="my-auto font-semibold">
 					<PluginImageContainer>
-						<ChangeNowLogo />
+						<Image name="ChangeNowLogo" domain="exchange" />
 					</PluginImageContainer>
 
 					<div className="flex items-center mb-2 space-x-2 text-lg text-theme-primary">

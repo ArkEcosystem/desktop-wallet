@@ -1,6 +1,7 @@
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
 import { Table, TableCell, TableRow } from "app/components/Table";
@@ -14,7 +15,6 @@ type BestPluginsProps = {
 };
 
 const { BestPluginsBanner } = images.plugin.common;
-const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
 export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 	const { t } = useTranslation();
@@ -65,7 +65,7 @@ export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 					{(rowData: any) => (
 						<TableRow>
 							<TableCell className="w-16">
-								<ChangeNowLogo className="w-12 h-12" />
+								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
 							</TableCell>
 
 							<TableCell>

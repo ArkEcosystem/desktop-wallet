@@ -5,7 +5,7 @@ import { Slider } from "app/components/Slider";
 import { Table } from "app/components/Table";
 import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -125,7 +125,7 @@ export const Wallets = ({
 
 	return (
 		<div>
-			<div className="flex items-center justify-between pb-8">
+			<div className="flex items-center justify-between mb-8">
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls

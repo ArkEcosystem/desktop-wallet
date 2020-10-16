@@ -35,7 +35,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -46,7 +46,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -57,7 +57,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -68,7 +68,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -355,7 +355,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
             data-testid="ContactList"
           >
             <div
-              class="sc-fznZeY dcwvzV"
+              class="sc-fznZeY cLCsMF -mt-3"
               role="table"
             >
               <table
@@ -364,10 +364,11 @@ exports[`Contacts with contacts should render with contacts 1`] = `
               >
                 <thead>
                   <tr
+                    class="border-b border-theme-neutral-300"
                     role="row"
                   >
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -381,7 +382,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -411,7 +412,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -425,7 +426,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -439,7 +440,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -453,7 +454,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
@@ -479,7 +480,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzokOt ftMTsH"
+                        class="sc-fzokOt iFdobo"
                       >
                         <div
                           class="mr-4"
@@ -504,7 +505,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt lauRYh"
+                        class="sc-fzokOt krOiom"
                       >
                         <span
                           class="font-semibold"
@@ -541,7 +542,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
 								"
                     >
                       <div
-                        class="sc-fzokOt lauRYh"
+                        class="sc-fzokOt krOiom"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -563,7 +564,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzokOt lauRYh"
+                        class="sc-fzokOt krOiom"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -581,7 +582,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzokOt lauRYh space-x-2 text-sm font-bold justify-center"
+                        class="sc-fzokOt krOiom space-x-2 text-sm font-bold justify-center"
                       >
                         <div
                           class="sc-fznyAO fPLRkd border-black"
@@ -602,7 +603,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzokOt iOhiPL justify-end"
+                        class="sc-fzokOt bQuLhg justify-end"
                       >
                         <div
                           class="relative"
@@ -639,7 +640,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzokOt ftMTsH"
+                        class="sc-fzokOt iFdobo"
                       >
                         <div
                           class="mr-4"
@@ -664,7 +665,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt lauRYh"
+                        class="sc-fzokOt krOiom"
                       >
                         <span
                           class="font-semibold"
@@ -701,7 +702,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
 								"
                     >
                       <div
-                        class="sc-fzokOt lauRYh"
+                        class="sc-fzokOt krOiom"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -723,7 +724,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzokOt lauRYh"
+                        class="sc-fzokOt krOiom"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -741,14 +742,14 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzokOt lauRYh space-x-2 text-sm font-bold justify-center"
+                        class="sc-fzokOt krOiom space-x-2 text-sm font-bold justify-center"
                       />
                     </td>
                     <td
                       class=""
                     >
                       <div
-                        class="sc-fzokOt iOhiPL justify-end"
+                        class="sc-fzokOt bQuLhg justify-end"
                       >
                         <div
                           class="relative"
@@ -842,7 +843,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-neutral-200"
                     >
                       <div
-                        class="sc-fzokOt lauRYh"
+                        class="sc-fzokOt krOiom"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -860,7 +861,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-neutral-200"
                     >
                       <div
-                        class="sc-fzokOt lauRYh space-x-2 text-sm font-bold justify-center"
+                        class="sc-fzokOt krOiom space-x-2 text-sm font-bold justify-center"
                       />
                     </td>
                     <td
@@ -936,7 +937,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzokOt lauRYh"
+                        class="sc-fzokOt krOiom"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -954,7 +955,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzokOt lauRYh space-x-2 text-sm font-bold justify-center"
+                        class="sc-fzokOt krOiom space-x-2 text-sm font-bold justify-center"
                       />
                     </td>
                     <td
@@ -973,7 +974,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzokOt ftMTsH"
+                        class="sc-fzokOt iFdobo"
                       >
                         <div
                           class="mr-4"
@@ -998,7 +999,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt lauRYh"
+                        class="sc-fzokOt krOiom"
                       >
                         <span
                           class="font-semibold"
@@ -1035,7 +1036,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
 								"
                     >
                       <div
-                        class="sc-fzokOt lauRYh"
+                        class="sc-fzokOt krOiom"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -1057,7 +1058,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzokOt lauRYh"
+                        class="sc-fzokOt krOiom"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -1075,14 +1076,14 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzokOt lauRYh space-x-2 text-sm font-bold justify-center"
+                        class="sc-fzokOt krOiom space-x-2 text-sm font-bold justify-center"
                       />
                     </td>
                     <td
                       class=""
                     >
                       <div
-                        class="sc-fzokOt iOhiPL justify-end"
+                        class="sc-fzokOt bQuLhg justify-end"
                       >
                         <div
                           class="relative"
@@ -1157,7 +1158,7 @@ exports[`Contacts without contacts should render empty 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1168,7 +1169,7 @@ exports[`Contacts without contacts should render empty 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1179,7 +1180,7 @@ exports[`Contacts without contacts should render empty 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1190,7 +1191,7 @@ exports[`Contacts without contacts should render empty 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >

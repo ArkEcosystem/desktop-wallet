@@ -2,7 +2,7 @@ import { File } from "@arkecosystem/platform-sdk-ipfs";
 import { Enums, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { filter, isEmpty } from "@arkecosystem/utils";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { useValidation } from "app/hooks/validations";
+import { useValidation } from "app/hooks";
 import { httpClient } from "app/services";
 import {
 	SendEntityRegistrationComponent,
