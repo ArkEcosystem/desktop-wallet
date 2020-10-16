@@ -5,7 +5,7 @@ import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { AddBlacklistPlugin } from "domains/plugin/components/AddBlacklistPlugin";
 import { BlacklistPlugins } from "domains/plugin/components/BlacklistPlugins";
 import React, { useEffect, useState } from "react";

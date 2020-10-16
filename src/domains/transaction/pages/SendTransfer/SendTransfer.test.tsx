@@ -262,14 +262,14 @@ describe("SendTransfer", () => {
 			fireEvent.focus(rendered.getByTestId("SelectNetworkInput__input"));
 		});
 
-		await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
+		await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.mainnet"));
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
-		expect(rendered.getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
+		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 

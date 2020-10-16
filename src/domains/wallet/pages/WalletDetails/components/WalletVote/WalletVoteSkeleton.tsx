@@ -12,7 +12,7 @@ export const WalletVoteSkeleton = () => (
 			<span className="text-sm font-semibold text-theme-neutral">
 				<Skeleton height={6} width={120} />
 			</span>
-			<div className="w-full font-semibold text-theme-neutral-900">
+			<div className="w-full font-semibold text-theme-text">
 				<Skeleton height={6} width="50%" />
 				<Skeleton height={6} width="10%" className="ml-4" />
 			</div>

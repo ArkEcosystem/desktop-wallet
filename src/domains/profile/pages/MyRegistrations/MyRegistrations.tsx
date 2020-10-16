@@ -7,7 +7,7 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { Loader } from "app/components/Loader";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";

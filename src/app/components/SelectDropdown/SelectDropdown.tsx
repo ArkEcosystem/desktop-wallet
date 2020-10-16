@@ -1,10 +1,12 @@
 import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input, InputAddonEnd } from "app/components/Input";
-import { useSelect } from "downshift";
-import React, { useEffect, useState } from "react";
+import { SelectDropdownInput } from "app/components/SelectDropdown/SelectDropdownInput";
+import { useCombobox } from "downshift";
+import React, { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
-import { SelectOptionsList, SelectToggleButton } from "./styles";
+import { SelectOptionsList } from "./styles";
 
 type Option = {
 	label: string;
@@ -12,82 +14,150 @@ type Option = {
 };
 
 type SelectProps = {
+	options: Option[];
 	defaultValue?: string;
 	isInvalid?: boolean;
-	disabled?: any;
-	options: Option[];
+	disabled?: boolean;
 	onChange?: (selected: Option) => void;
 } & React.InputHTMLAttributes<any>;
 
 type SelectDropdownProps = {
-	placeholder?: string;
 	options: Option[];
-	onSelectedItemChange: any;
-	disabled?: boolean;
-	isInvalid?: boolean;
 	defaultSelectedItem?: Option;
+	placeholder?: string;
+	isInvalid?: boolean;
+	disabled?: boolean;
+	onSelectedItemChange: any;
 } & React.InputHTMLAttributes<any>;
 
+const itemToString = (item: Option | null) => item?.label || "";
+
 const SelectDropdown = ({
-	placeholder,
 	options,
-	onSelectedItemChange,
-	disabled,
-	isInvalid,
 	defaultSelectedItem,
+	placeholder,
+	disabled,
+	onSelectedItemChange,
 }: SelectDropdownProps) => {
+	const { t } = useTranslation();
+
+	const [items, setItems] = useState([...options]);
+	const [isTyping, setIsTyping] = useState(false);
+
+	const isMatch = (inputValue: string, option: Option) =>
+		inputValue && option.label.toLowerCase().startsWith(inputValue.toLowerCase());
+
 	const {
 		isOpen,
-		selectedItem,
-		selectItem,
-		getToggleButtonProps,
-		getMenuProps,
-		highlightedIndex,
+		closeMenu,
+		openMenu,
+		getComboboxProps,
+		getLabelProps,
+		getInputProps,
 		getItemProps,
-	} = useSelect<Option>({
-		items: options,
+		getMenuProps,
+		selectItem,
+		inputValue,
+		highlightedIndex,
+		reset,
+	} = useCombobox<Option | null>({
+		items,
+		itemToString,
 		onSelectedItemChange,
+		onInputValueChange: ({ inputValue, selectedItem, type }) => {
+			setItems(inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options);
+
+			if (type === "__input_change__") {
+				setIsTyping(true);
+			} else {
+				setIsTyping(false);
+			}
+
+			if (!inputValue) {
+				openMenu();
+			}
+
+			// Clear selection when user is changing input,
+			// and input does not match previously selected item
+			if (selectedItem && selectedItem.label !== inputValue) {
+				reset();
+			}
+		},
 	});
 
 	useEffect(() => {
-		if (defaultSelectedItem && !selectedItem) {
-			selectItem(defaultSelectedItem);
-		}
-	}, [selectItem, selectedItem, defaultSelectedItem]);
+		selectItem(defaultSelectedItem || null);
+	}, [selectItem, defaultSelectedItem]);
 
-	const isOpenClassName = isOpen ? "is-open" : "";
-	const isSelectedClassName = selectedItem ? "is-selected" : "";
-	const isInvalidClassName = isInvalid ? "is-invalid" : "";
-	const toggleButtonClassName = `${isOpenClassName} ${isSelectedClassName} ${isInvalidClassName}`;
+	const inputTypeAhead = useMemo(() => {
+		if (inputValue && items.length) {
+			return [inputValue, items[0].label.slice(inputValue.length)].join("");
+		}
+	}, [items, inputValue]);
+
+	const data = isTyping ? items : options;
 
 	return (
-		<div className="relative w-full cursor-pointer">
-			<div>
-				<SelectToggleButton
-					data-testid="select-list__toggle-button"
-					{...getToggleButtonProps({
-						type: "button",
-						disabled,
-						className: toggleButtonClassName,
+		<div className="relative w-full">
+			<div {...getComboboxProps()}>
+				<label {...getLabelProps()} />
+				<SelectDropdownInput
+					suggestion={inputTypeAhead}
+					disabled={disabled}
+					{...getInputProps({
+						placeholder,
+						className: "cursor-default",
+						onFocus: openMenu,
+						onBlur: () => {
+							if (inputValue && items.length > 0) {
+								selectItem(items[0]);
+								closeMenu();
+							} else {
+								reset();
+							}
+						},
+						onKeyDown: (event) => {
+							if (event.key === "Tab" || event.key === "Enter") {
+								// Select first match
+								if (inputValue && items.length > 0) {
+									selectItem(items[0]);
+									if (event.key === "Enter") {
+										closeMenu();
+									}
+								}
+								event.preventDefault();
+								return;
+							}
+						},
 					})}
-				>
-					{selectedItem?.label || placeholder}
-				</SelectToggleButton>
-				<SelectOptionsList {...getMenuProps({ className: isOpenClassName })}>
+				/>
+				<SelectOptionsList {...getMenuProps({ className: isOpen ? "is-open" : "" })}>
 					{isOpen &&
-						options.map((item: Option, index: number) => (
-							<li
-								key={`${item.value}${index}`}
-								data-testid={`select-list__toggle-option-${index}`}
-								{...getItemProps({
-									item,
-									index,
-									className: `select-list-option ${
-										highlightedIndex === index ? "is-highlighted" : ""
-									}`,
-								})}
-							>
-								<div className="select-list-option__label">{item.label}</div>
+						(data.length > 0 ? (
+							data.map((item: Option, index: number) => (
+								<li
+									key={`${item.value}${index}`}
+									data-testid={`select-list__toggle-option-${index}`}
+									{...getItemProps({
+										index,
+										item,
+										className: `select-list-option cursor-default ${
+											item.label === inputValue || (!inputValue && highlightedIndex === index)
+												? "is-highlighted"
+												: ""
+										}`,
+										onMouseDown: () => {
+											selectItem(item);
+											closeMenu();
+										},
+									})}
+								>
+									<div className="select-list-option__label">{item.label}</div>
+								</li>
+							))
+						) : (
+							<li className="select-list-option is-empty" data-testid="select-list__empty-option">
+								{t("COMMON.NO_OPTIONS")}
 							</li>
 						))}
 				</SelectOptionsList>
@@ -100,7 +170,7 @@ const SelectDropdown = ({
 };
 
 export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
-	({ isInvalid, placeholder, onChange, defaultValue, options, disabled }: SelectProps, ref) => {
+	({ options, defaultValue, placeholder, isInvalid, disabled, onChange }: SelectProps, ref) => {
 		const defaultSelectedItem = options.find((option: Option) => option.value === defaultValue);
 		const [selected, setSelected] = useState(defaultSelectedItem);
 
@@ -115,18 +185,21 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					ref={ref}
 					value={selected?.value || ""}
 					className="sr-only"
-					readOnly
 					isInvalid={isInvalidField}
+					readOnly
 				/>
 				<SelectDropdown
-					disabled={disabled}
 					options={options}
 					defaultSelectedItem={defaultSelectedItem}
 					placeholder={placeholder}
+					disabled={disabled}
 					isInvalid={isInvalidField}
-					onSelectedItemChange={({ selectedItem }: any) => {
+					onSelectedItemChange={({ selectedItem }: { selectedItem: Option }) => {
 						setSelected(selectedItem);
-						onChange?.(selectedItem);
+
+						if (selectedItem) {
+							onChange?.(selectedItem);
+						}
 					}}
 				/>
 			</div>
@@ -136,6 +209,8 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 
 Select.displayName = "Select";
 Select.defaultProps = {
-	defaultValue: "",
 	options: [],
+	defaultValue: "",
+	placeholder: "Select option",
+	disabled: false,
 };

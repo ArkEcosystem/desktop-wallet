@@ -5,7 +5,7 @@ import { EmptyBlock } from "app/components/EmptyBlock";
 import { Page, Section } from "app/components/Layout";
 import { Spinner } from "app/components/Spinner";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
@@ -195,7 +195,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					</div>
 				</Section>
 
-				<Section>
+				<Section className="flex-1">
 					{pendingTransactions.length ? (
 						<div className="mb-16">
 							<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
@@ -215,7 +215,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 								onRowClick={(row) => setTransactionModalItem(row)}
 							/>
 
-							{hasMore && (
+							{transactions.length > 0 && hasMore && (
 								<Button
 									data-testid="transactions__fetch-more-button"
 									variant="plain"

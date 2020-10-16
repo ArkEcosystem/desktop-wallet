@@ -2,7 +2,7 @@ import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
-import { useValidation } from "app/hooks/validations";
+import { useValidation } from "app/hooks";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import React from "react";
 import { useFormContext } from "react-hook-form";

@@ -3,7 +3,7 @@ import { Collapse, CollapseToggleButton } from "app/components/Collapse";
 import { Icon } from "app/components/Icon";
 import { Table } from "app/components/Table";
 import { WalletListItem } from "app/components/WalletListItem";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import { useTranslation } from "react-i18next";
