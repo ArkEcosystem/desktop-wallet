@@ -537,7 +537,7 @@ exports[`SendTransactionForm should warn about a fee lower than minimum 1`] = `
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               disabled=""
               id="SendTransactionForm__network-input"
@@ -620,7 +620,7 @@ exports[`SendTransactionForm should warn about a fee lower than minimum 1`] = `
             </div>
           </button>
           <input
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -655,7 +655,7 @@ exports[`SendTransactionForm should warn about a fee lower than minimum 1`] = `
             class="sc-Axmtr jzhOwR"
           >
             <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
               data-testid="InputCurrency"
               name="fee"
               type="text"
@@ -679,7 +679,7 @@ exports[`SendTransactionForm should warn about a fee lower than minimum 1`] = `
                   >
                     <div
                       aria-valuemax="6.63"
-                      aria-valuemin="0.00357"
+                      aria-valuemin="0.0001"
                       aria-valuenow="0.0001"
                       class="sc-fzoLsD iBGNss"
                       data-testid="Range__thumb"
