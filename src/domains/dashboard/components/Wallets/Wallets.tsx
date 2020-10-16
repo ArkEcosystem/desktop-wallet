@@ -125,7 +125,7 @@ export const Wallets = ({
 
 	return (
 		<div>
-			<div className="flex items-center justify-between pb-8">
+			<div className="flex items-center justify-between mb-8">
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls

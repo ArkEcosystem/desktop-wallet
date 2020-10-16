@@ -32,29 +32,27 @@ export const Transactions = ({
 	return (
 		<div className="bg-white">
 			{title && <div className="mb-8 text-4xl font-bold">{title}</div>}
-			<div>
-				<TransactionTable
-					transactions={transactions}
-					exchangeCurrency={exchangeCurrency}
-					showExplorerLinkColumn={false}
-					hideHeader={!isLoading && transactions.length === 0}
-					isLoading={isLoading}
-					onRowClick={onRowClick}
-					isCompact={isCompact}
-				/>
 
-				{transactions.length > 0 && (
-					<Button
-						data-testid="transactions__fetch-more-button"
-						variant="plain"
-						className="w-full mt-10 mb-5"
-						disabled={isLoading}
-						onClick={() => fetchMoreAction && fetchMoreAction()}
-					>
-						{isLoading ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
-					</Button>
-				)}
-			</div>
+			<TransactionTable
+				transactions={transactions}
+				exchangeCurrency={exchangeCurrency}
+				hideHeader={!isLoading && transactions.length === 0}
+				isLoading={isLoading}
+				onRowClick={onRowClick}
+				isCompact={isCompact}
+			/>
+
+			{transactions.length > 0 && (
+				<Button
+					data-testid="transactions__fetch-more-button"
+					variant="plain"
+					className="w-full mt-10 mb-5"
+					disabled={isLoading}
+					onClick={() => fetchMoreAction && fetchMoreAction()}
+				>
+					{isLoading ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
+				</Button>
+			)}
 
 			{!isLoading && transactions.length === 0 && <EmptyBlock className="-mt-5" message={emptyText!} />}
 		</div>
