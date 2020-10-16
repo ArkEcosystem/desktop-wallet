@@ -36,23 +36,29 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 
 	const getSortIconName = (isSorted: boolean, isSortedDesc: boolean) => {
 		if (isSorted) {
-			return isSortedDesc ? "CaretDown" : "CaretUp";
+			return isSortedDesc ? "ChevronDown" : "ChevronUp";
 		}
 
 		return "Sort";
 	};
 
 	return (
-		<TableWrapper {...getTableProps({ className })}>
+		<TableWrapper {...getTableProps({ className })} className={!hideHeader ? "-mt-3" : ""}>
 			<table cellPadding={0} className="table-auto">
 				{!hideHeader && (
 					<thead>
 						{headerGroups.map((headerGroup: any, index: number) => (
-							<tr key={index} {...headerGroup.getHeaderGroupProps()}>
+							<tr
+								className="border-b border-theme-neutral-300"
+								key={index}
+								{...headerGroup.getHeaderGroupProps()}
+							>
 								{headerGroup.headers.map((column: any, thIndex: number) => (
 									<th
 										key={thIndex}
-										className="text-sm text-left select-none text-theme-neutral"
+										className={`relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold ${
+											!column.className?.includes("invisible") ? "hasBorder" : ""
+										}`}
 										data-testid={`table__th--${thIndex}`}
 										{...column.getHeaderProps(column.getSortByToggleProps())}
 									>
@@ -68,8 +74,8 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 												>
 													<Icon
 														name={getSortIconName(column.isSorted, column.isSortedDesc)}
-														width={column.isSorted ? 10 : 15}
-														height={column.isSorted ? 10 : 12}
+														width={column.isSorted ? "0.75rem" : 15}
+														height={column.isSorted ? "0.75rem" : 12}
 													/>
 												</div>
 											)}

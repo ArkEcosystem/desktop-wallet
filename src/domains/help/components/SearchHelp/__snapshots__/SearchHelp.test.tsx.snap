@@ -85,7 +85,7 @@ exports[`SearchHelp should render a modal 1`] = `
                   class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
                 >
                   <input
-                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="What would you like to search for?"
                   />
@@ -112,7 +112,7 @@ exports[`SearchHelp should render a modal 1`] = `
               class="mt-8"
             >
               <div
-                class="sc-fzplWN bQDGiE"
+                class="sc-fzplWN hwZmyA -mt-3"
                 role="table"
               >
                 <table
@@ -121,10 +121,11 @@ exports[`SearchHelp should render a modal 1`] = `
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -154,7 +155,7 @@ exports[`SearchHelp should render a modal 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -193,7 +194,7 @@ exports[`SearchHelp should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-fznyAO flMqkx pr-8"
+                          class="sc-fznyAO eYCWEm pr-8"
                         >
                           <div
                             class="font-semibold"
@@ -209,7 +210,7 @@ exports[`SearchHelp should render a modal 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-fznyAO gkWUHf text-sm justify-end"
+                          class="sc-fznyAO kyHgqc text-sm justify-end"
                         >
                           <div>
                             Plugin
@@ -222,7 +223,7 @@ exports[`SearchHelp should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-fznyAO flMqkx pr-8"
+                          class="sc-fznyAO eYCWEm pr-8"
                         >
                           <div
                             class="font-semibold"
@@ -238,7 +239,7 @@ exports[`SearchHelp should render a modal 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-fznyAO gkWUHf text-sm justify-end"
+                          class="sc-fznyAO kyHgqc text-sm justify-end"
                         >
                           <div>
                             Plugin
@@ -251,7 +252,7 @@ exports[`SearchHelp should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-fznyAO flMqkx pr-8"
+                          class="sc-fznyAO eYCWEm pr-8"
                         >
                           <div
                             class="font-semibold"
@@ -267,7 +268,7 @@ exports[`SearchHelp should render a modal 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-fznyAO gkWUHf text-sm justify-end"
+                          class="sc-fznyAO kyHgqc text-sm justify-end"
                         >
                           <div>
                             Plugin
@@ -370,7 +371,7 @@ exports[`SearchHelp should render a modal 2`] = `
                   class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
                 >
                   <input
-                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="What would you like to search for?"
                   />
@@ -397,7 +398,7 @@ exports[`SearchHelp should render a modal 2`] = `
               class="mt-8"
             >
               <div
-                class="sc-fzplWN bQDGiE"
+                class="sc-fzplWN hwZmyA -mt-3"
                 role="table"
               >
                 <table
@@ -406,10 +407,11 @@ exports[`SearchHelp should render a modal 2`] = `
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -439,7 +441,7 @@ exports[`SearchHelp should render a modal 2`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"

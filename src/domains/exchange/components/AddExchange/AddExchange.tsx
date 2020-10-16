@@ -1,5 +1,5 @@
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
 import { Table, TableCell, TableRow } from "app/components/Table";
@@ -10,9 +10,6 @@ type AddExchangeProps = {
 	isOpen: boolean;
 	onClose?: any;
 };
-
-const AddExchangeBanner = images.exchange.components.AddExchange.AddExchangeBanner;
-const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
 
 export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 	const { t } = useTranslation();
@@ -81,7 +78,7 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 		<Modal
 			title={t("EXCHANGE.MODAL_ADD_EXCHANGE.TITLE")}
 			description={t("EXCHANGE.MODAL_ADD_EXCHANGE.DESCRIPTION")}
-			banner={<AddExchangeBanner className="h-full" />}
+			banner={<Image name="AddExchangeBanner" domain="exchange" />}
 			size="4xl"
 			isOpen={isOpen}
 			onClose={onClose}
@@ -91,7 +88,9 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 					{(rowData: any) => (
 						<TableRow>
 							<TableCell variant="start" className="w-18">
-								<ChangeNowLogo className="w-12 h-12" />
+								<div className="w-12 h-12">
+									<Image name="ChangeNowLogo" domain="exchange" />
+								</div>
 							</TableCell>
 
 							<TableCell>

@@ -83,6 +83,133 @@ describe("SendVote", () => {
 		jest.useRealTimers();
 	});
 
+	it("should return to the select a delegate page to vote", async () => {
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+					<SendVote />
+				</Route>,
+				{
+					routes: [voteURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVote__step--first")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVote__step--first")).toHaveTextContent(delegateData[0].username),
+			);
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Back to select a delegate page
+			await waitFor(() => expect(getByTestId("SendVote__button--back")).toBeTruthy());
+			fireEvent.click(getByTestId("SendVote__button--back"));
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should return to the select a delegate page to unvote", async () => {
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			unvotes: delegateData[1].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+					<SendVote />
+				</Route>,
+				{
+					routes: [voteURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVote__step--first")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVote__step--first")).toHaveTextContent(delegateData[1].username),
+			);
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Back to select a delegate page
+			await waitFor(() => expect(getByTestId("SendVote__button--back")).toBeTruthy());
+			fireEvent.click(getByTestId("SendVote__button--back"));
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should return to the select a delegate page to unvote/vote", async () => {
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			unvotes: delegateData[1].address,
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+					<SendVote />
+				</Route>,
+				{
+					routes: [voteURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVote__step--first")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVote__step--first")).toHaveTextContent(delegateData[0].username),
+			);
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Back to select a delegate page
+			await waitFor(() => expect(getByTestId("SendVote__button--back")).toBeTruthy());
+			fireEvent.click(getByTestId("SendVote__button--back"));
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
 	it("should send a unvote & vote transaction", async () => {
 		const votesMock = jest.spyOn(wallet, "votes").mockImplementation(() => [
 			new ReadOnlyWallet({

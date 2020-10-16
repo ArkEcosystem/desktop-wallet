@@ -22,6 +22,22 @@ describe("TransactionRowInfo", () => {
 		expect(getByTestId("TransactionRowInfo__multiSignature")).toBeTruthy();
 	});
 
+	it("should show ledger", () => {
+		const { getByTestId } = render(
+			<TransactionRowInfo
+				transaction={{
+					...TransactionFixture,
+					wallet: () => ({
+						...TransactionFixture.wallet(),
+						isLedger: () => true,
+					}),
+					isMultiSignature: () => true,
+				}}
+			/>,
+		);
+		expect(getByTestId("TransactionRowInfo__ledger")).toBeTruthy();
+	});
+
 	it("should show all", () => {
 		const { getByTestId } = render(
 			<TransactionRowInfo

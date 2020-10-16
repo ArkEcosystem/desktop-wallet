@@ -1,7 +1,7 @@
 import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { uniqBy } from "@arkecosystem/utils";
-import { useSynchronizer } from "app/hooks/use-synchronizer";
+import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limit: number }) => {
@@ -12,6 +12,7 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 	});
 
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
+	const [itemCount, setItemCount] = useState<number>(0);
 	const [nextPage, setNextPage] = useState<string | number | undefined>();
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -23,6 +24,7 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 
 			const response = await wallet.transactions({ limit, cursor });
 
+			setItemCount(response.items().length);
 			setNextPage(response.nextPage());
 			setTransactions((prev) => [...prev, ...response.items()]);
 			setIsLoading(false);
@@ -33,12 +35,13 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 	const fetchMore = useCallback(() => sync(nextPage), [nextPage, sync]);
 
 	const fetchInit = useCallback(async () => {
+		setItemCount(0);
 		setNextPage(undefined);
 		setTransactions([]);
 		await sync(1);
 	}, [sync]);
 
-	const hasMore = nextPage !== undefined;
+	const hasMore = itemCount === limit && nextPage !== undefined;
 
 	/**
 	 * Run periodically every 30 seconds to check for new transactions

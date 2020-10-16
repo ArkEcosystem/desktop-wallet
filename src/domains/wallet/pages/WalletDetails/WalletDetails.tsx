@@ -200,7 +200,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					</div>
 				</Section>
 
-				<Section>
+				<Section className="flex-1">
 					{pendingTransactions.length ? (
 						<div className="mb-16">
 							<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
@@ -224,7 +224,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 								onRowClick={(row) => setTransactionModalItem(row)}
 							/>
 
-							{hasMore && (
+							{transactions.length > 0 && hasMore && (
 								<Button
 									data-testid="transactions__fetch-more-button"
 									variant="plain"

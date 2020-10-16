@@ -1,5 +1,5 @@
 import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { DelegateRegistrationDetail } from "domains/transaction/components/DelegateRegistrationDetail";
 import { DelegateResignationDetail } from "domains/transaction/components/DelegateResignationDetail";
 import { EntityDetail } from "domains/transaction/components/EntityDetail";
