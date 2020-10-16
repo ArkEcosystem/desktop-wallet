@@ -1,4 +1,6 @@
-export const sendTransfer = (t: any) => ({
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
+export const sendTransfer = (t: any, env: Environment) => ({
 	fee: () => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("COMMON.FEE"),
@@ -31,6 +33,20 @@ export const sendTransfer = (t: any) => ({
 			valid: (value: string) => {
 				if (Array.isArray(value) && value.length > 0) return true;
 				return t("COMMON.VALIDATION.MIN_RECIPIENTS");
+			},
+		},
+	}),
+	recipientAddress: (network: Coins.Network) => ({
+		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+			field: t("COMMON.RECIPIENT"),
+		}),
+		validate: {
+			valid: async (address: string) => {
+				if (!network) return true; // skip if network is not set
+
+				const instance: Coins.Coin = await env.coin(network?.coin(), network?.id());
+				const isValidAddress: boolean = await instance.identity().address().validate(address);
+				return isValidAddress || t("COMMON.VALIDATION.RECIPIENT_INVALID");
 			},
 		},
 	}),
