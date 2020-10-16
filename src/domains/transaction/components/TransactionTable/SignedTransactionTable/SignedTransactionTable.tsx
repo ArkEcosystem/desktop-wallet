@@ -18,7 +18,7 @@ type SignedTransactionData = Contracts.SignedTransactionData;
 type Props = {
 	transactions: SignedTransactionData[];
 	wallet: ReadWriteWallet;
-	onClick: (transaction: SignedTransactionData) => void;
+	onClick?: (transaction: SignedTransactionData) => void;
 };
 
 const getType = (transaction: SignedTransactionData): string => {

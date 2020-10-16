@@ -169,7 +169,7 @@ exports[`Signed Transaction Table should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxhUy iIfeGO group"
+            class="sc-AxhUy loGswa group"
             data-testid="TableRow"
           >
             <td>
@@ -180,7 +180,141 @@ exports[`Signed Transaction Table should render 1`] = `
                   class="sc-AxgMl fFPQpl"
                   data-testid="TruncateMiddle"
                 >
-                  ee4175…3ecefe
+                  6e74b0…208002
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-48"
+            >
+              <div
+                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+              >
+                <span
+                  data-testid="TransactionRow__timestamp"
+                >
+                  31 Jul 2020 16:34:41
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-32"
+            >
+              <div
+                class="sc-AxhCb kdNpYF"
+              >
+                <div
+                  class="flex items-center -space-x-1"
+                  data-testid="TransactionRowMode"
+                >
+                  <div
+                    class="sc-Axmtr klQcdg border-theme-danger-contrast text-theme-danger"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      data-testid="TransactionRowMode__Sent"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb kdNpYF"
+              >
+                <div
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxgMl fFPQpl text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B…s6YUYD
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb kdNpYF justify-center"
+              >
+                <div
+                  class="inline-flex space-x-1 align-middle"
+                  data-testid="TransactionRowInfo"
+                />
+              </div>
+            </td>
+            <td
+              class="w-16"
+            >
+              <div
+                class="sc-AxhCb kdNpYF justify-center truncate"
+              >
+                <span
+                  class="text-theme-success-500"
+                >
+                  Ready
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-56"
+            >
+              <div
+                class="sc-AxhCb kdNpYF justify-end"
+              >
+                <div
+                  class="sc-AxheI kinEEx"
+                  color="danger"
+                  data-testid="TransactionRowAmount"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    0.00000002 DARK
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb dazjdf justify-end"
+              />
+            </td>
+          </tr>
+          <tr
+            class="sc-AxhUy loGswa group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="sc-AxhCb osoeH"
+              >
+                <span
+                  class="sc-AxgMl fFPQpl"
+                  data-testid="TruncateMiddle"
+                >
+                  e4d245…150377
                 </span>
               </div>
             </td>
@@ -279,20 +413,18 @@ exports[`Signed Transaction Table should render 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxhCb kdNpYF justify-center"
+                class="sc-AxhCb kdNpYF justify-center truncate"
               >
-                <div
-                  class="sc-AxirZ iQaTP text-theme-danger-400"
-                  height="1em"
-                  width="1em"
+                <span
+                  class="text-theme-success-500"
                 >
-                  <svg>
-                    edit.svg
-                  </svg>
-                </div>
+                  Final Signature
+                </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-56"
+            >
               <div
                 class="sc-AxhCb kdNpYF justify-end"
               >
@@ -304,10 +436,139 @@ exports[`Signed Transaction Table should render 1`] = `
                   <span
                     data-testid="Amount"
                   >
-                    0.00000002 DARK
+                    15 DARK
                   </span>
                 </div>
               </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb dazjdf justify-end"
+              />
+            </td>
+          </tr>
+          <tr
+            class="sc-AxhUy loGswa group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="sc-AxhCb osoeH"
+              >
+                <span
+                  class="sc-AxgMl fFPQpl"
+                  data-testid="TruncateMiddle"
+                >
+                  439c3c…1ad29c
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-48"
+            >
+              <div
+                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+              >
+                <span
+                  data-testid="TransactionRow__timestamp"
+                >
+                  31 Jul 2020 16:34:41
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-32"
+            >
+              <div
+                class="sc-AxhCb kdNpYF"
+              >
+                <div
+                  class="flex items-center -space-x-1"
+                  data-testid="TransactionRowMode"
+                >
+                  <div
+                    class="sc-Axmtr klQcdg border-theme-danger-contrast text-theme-danger"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      data-testid="TransactionRowMode__Sent"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-Axmtr wghwp bg-theme-background font-semibold border-theme-danger-contrast text-theme-danger"
+                    data-testid="TransactionRowRecipientIcon"
+                  >
+                    <span>
+                      2
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb kdNpYF"
+              >
+                <span
+                  class="font-semibold text-theme-text"
+                  data-testid="TransactionRowRecipientLabel"
+                >
+                  Multipayment
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb kdNpYF justify-center"
+              >
+                <div
+                  class="inline-flex space-x-1 align-middle"
+                  data-testid="TransactionRowInfo"
+                />
+              </div>
+            </td>
+            <td
+              class="w-16"
+            >
+              <div
+                class="sc-AxhCb kdNpYF justify-center truncate"
+              >
+                <span
+                  class="text-theme-success-500"
+                >
+                  Ready
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-56"
+            >
+              <div
+                class="sc-AxhCb kdNpYF justify-end"
+              >
+                <div
+                  class="sc-AxheI kinEEx"
+                  color="danger"
+                  data-testid="TransactionRowAmount"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    0.00000001 DARK
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb dazjdf justify-end"
+              />
             </td>
           </tr>
         </tbody>
@@ -317,7 +578,7 @@ exports[`Signed Transaction Table should render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Signed Transaction Table should show a transfer 1`] = `
+exports[`Signed Transaction Table should show as awaiting other wallets signatures 1`] = `
 <DocumentFragment>
   <div
     class="relative"
@@ -486,7 +747,7 @@ exports[`Signed Transaction Table should show a transfer 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxhUy iIfeGO group"
+            class="sc-AxhUy loGswa group"
             data-testid="TableRow"
           >
             <td>
@@ -497,7 +758,7 @@ exports[`Signed Transaction Table should show a transfer 1`] = `
                   class="sc-AxgMl fFPQpl"
                   data-testid="TruncateMiddle"
                 >
-                  ee4175…3ecefe
+                  6e74b0…208002
                 </span>
               </div>
             </td>
@@ -585,20 +846,18 @@ exports[`Signed Transaction Table should show a transfer 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxhCb kdNpYF justify-center"
+                class="sc-AxhCb kdNpYF justify-center truncate"
               >
-                <div
-                  class="sc-AxirZ iQaTP text-theme-danger-400"
-                  height="1em"
-                  width="1em"
+                <span
+                  class="text-theme-danger-500"
                 >
-                  <svg>
-                    edit.svg
-                  </svg>
-                </div>
+                  3 more signature(s)
+                </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-56"
+            >
               <div
                 class="sc-AxhCb kdNpYF justify-end"
               >
@@ -614,6 +873,629 @@ exports[`Signed Transaction Table should show a transfer 1`] = `
                   </span>
                 </div>
               </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb dazjdf justify-end"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Signed Transaction Table should show as awaiting the wallet signature 1`] = `
+<DocumentFragment>
+  <div
+    class="relative"
+    data-testid="SignedTransactionTable"
+  >
+    <div
+      class="sc-AxiKw gGhpZ -mt-3"
+      role="table"
+    >
+      <table
+        cellpadding="0"
+        class="table-auto"
+      >
+        <thead>
+          <tr
+            class="border-b border-theme-neutral-300"
+            role="row"
+          >
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--0"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top "
+              >
+                <div>
+                  ID
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top "
+              >
+                <div>
+                  Date
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxirZ jMwzyA"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top invisible"
+              >
+                <div>
+                  Type
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--3"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top "
+              >
+                <div>
+                  Recipient
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--4"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Info
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--5"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--6"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
+              >
+                <div>
+                  Amount
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxirZ jMwzyA"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+              colspan="1"
+              data-testid="table__th--7"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top invisible w-24"
+              >
+                <div>
+                  Sign
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            class="sc-AxhUy loGswa group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="sc-AxhCb osoeH"
+              >
+                <span
+                  class="sc-AxgMl fFPQpl"
+                  data-testid="TruncateMiddle"
+                >
+                  6e74b0…208002
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-48"
+            >
+              <div
+                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+              >
+                <span
+                  data-testid="TransactionRow__timestamp"
+                >
+                  31 Jul 2020 16:34:41
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-32"
+            >
+              <div
+                class="sc-AxhCb kdNpYF"
+              >
+                <div
+                  class="flex items-center -space-x-1"
+                  data-testid="TransactionRowMode"
+                >
+                  <div
+                    class="sc-Axmtr klQcdg border-theme-danger-contrast text-theme-danger"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      data-testid="TransactionRowMode__Sent"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb kdNpYF"
+              >
+                <div
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxgMl fFPQpl text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B…s6YUYD
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb kdNpYF justify-center"
+              >
+                <div
+                  class="inline-flex space-x-1 align-middle"
+                  data-testid="TransactionRowInfo"
+                />
+              </div>
+            </td>
+            <td
+              class="w-16"
+            >
+              <div
+                class="sc-AxhCb kdNpYF justify-center truncate"
+              >
+                <span
+                  class="text-theme-danger-500"
+                >
+                  Your Signature
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-56"
+            >
+              <div
+                class="sc-AxhCb kdNpYF justify-end"
+              >
+                <div
+                  class="sc-AxheI kinEEx"
+                  color="danger"
+                  data-testid="TransactionRowAmount"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    0.00000002 DARK
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb dazjdf justify-end"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Signed Transaction Table should show as final signature 1`] = `
+<DocumentFragment>
+  <div
+    class="relative"
+    data-testid="SignedTransactionTable"
+  >
+    <div
+      class="sc-AxiKw gGhpZ -mt-3"
+      role="table"
+    >
+      <table
+        cellpadding="0"
+        class="table-auto"
+      >
+        <thead>
+          <tr
+            class="border-b border-theme-neutral-300"
+            role="row"
+          >
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--0"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top "
+              >
+                <div>
+                  ID
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top "
+              >
+                <div>
+                  Date
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxirZ jMwzyA"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top invisible"
+              >
+                <div>
+                  Type
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--3"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top "
+              >
+                <div>
+                  Recipient
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--4"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Info
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--5"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--6"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
+              >
+                <div>
+                  Amount
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxirZ jMwzyA"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+              colspan="1"
+              data-testid="table__th--7"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top invisible w-24"
+              >
+                <div>
+                  Sign
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            class="sc-AxhUy loGswa group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="sc-AxhCb osoeH"
+              >
+                <span
+                  class="sc-AxgMl fFPQpl"
+                  data-testid="TruncateMiddle"
+                >
+                  6e74b0…208002
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-48"
+            >
+              <div
+                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+              >
+                <span
+                  data-testid="TransactionRow__timestamp"
+                >
+                  31 Jul 2020 16:34:41
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-32"
+            >
+              <div
+                class="sc-AxhCb kdNpYF"
+              >
+                <div
+                  class="flex items-center -space-x-1"
+                  data-testid="TransactionRowMode"
+                >
+                  <div
+                    class="sc-Axmtr klQcdg border-theme-danger-contrast text-theme-danger"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      data-testid="TransactionRowMode__Sent"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb kdNpYF"
+              >
+                <div
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxgMl fFPQpl text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B…s6YUYD
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb kdNpYF justify-center"
+              >
+                <div
+                  class="inline-flex space-x-1 align-middle"
+                  data-testid="TransactionRowInfo"
+                />
+              </div>
+            </td>
+            <td
+              class="w-16"
+            >
+              <div
+                class="sc-AxhCb kdNpYF justify-center truncate"
+              >
+                <span
+                  class="text-theme-success-500"
+                >
+                  Final Signature
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-56"
+            >
+              <div
+                class="sc-AxhCb kdNpYF justify-end"
+              >
+                <div
+                  class="sc-AxheI kinEEx"
+                  color="danger"
+                  data-testid="TransactionRowAmount"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    0.00000002 DARK
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb dazjdf justify-end"
+              />
             </td>
           </tr>
         </tbody>
@@ -792,7 +1674,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxhUy iIfeGO group"
+            class="sc-AxhUy loGswa group"
             data-testid="TableRow"
           >
             <td>
@@ -803,7 +1685,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
                   class="sc-AxgMl fFPQpl"
                   data-testid="TruncateMiddle"
                 >
-                  ee4175…3ecefe
+                  e4d245…150377
                 </span>
               </div>
             </td>
@@ -902,20 +1784,18 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxhCb kdNpYF justify-center"
+                class="sc-AxhCb kdNpYF justify-center truncate"
               >
-                <div
-                  class="sc-AxirZ iQaTP text-theme-danger-400"
-                  height="1em"
-                  width="1em"
+                <span
+                  class="text-theme-success-500"
                 >
-                  <svg>
-                    edit.svg
-                  </svg>
-                </div>
+                  Final Signature
+                </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-56"
+            >
               <div
                 class="sc-AxhCb kdNpYF justify-end"
               >
@@ -927,7 +1807,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
                   <span
                     data-testid="Amount"
                   >
-                    0.00000002 DARK
+                    15 DARK
                   </span>
                 </div>
               </div>
