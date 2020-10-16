@@ -6,7 +6,7 @@ on:
 
 jobs:
     eslint:
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         steps:
             - uses: actions/checkout@v2
@@ -24,12 +24,6 @@ jobs:
                   path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
                   key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
                   restore-keys: ${{ runner.os }}-yarn-
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
             - name: Install (Yarn)
               run: yarn install --frozen-lockfile
@@ -43,7 +37,7 @@ jobs:
                   branch: ${{ github.head_ref }}
 
     rustywind:
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         steps:
             - uses: actions/checkout@v2
@@ -61,12 +55,6 @@ jobs:
                   path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
                   key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
                   restore-keys: ${{ runner.os }}-yarn-
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
             - name: Install (Yarn)
               run: yarn install --frozen-lockfile
