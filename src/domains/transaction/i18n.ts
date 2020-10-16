@@ -365,4 +365,8 @@ export const translations: { [key: string]: any } = {
 		DESCRIPTION:
 			"Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:",
 	},
+
+	VALIDATION: {
+		LOW_BALANCE: "The balance it too low ({{balance}} {{ coinId }})",
+	},
 };
