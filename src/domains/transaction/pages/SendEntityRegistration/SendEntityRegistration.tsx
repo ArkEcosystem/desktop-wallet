@@ -27,10 +27,11 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	const { t } = useTranslation();
 	const history = useHistory();
 
-	const [activeTab, setActiveTab] = React.useState(1);
+	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
-	const [registrationForm, setRegistrationForm] = React.useState<SendEntityRegistrationForm>();
+	const [registrationForm, setRegistrationForm] = useState<SendEntityRegistrationForm>();
 	const [entityRegistrationTitle, setEntityRegistrationTitle] = useState<string>();
+	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
 	const { registrationType: selectedRegistrationType } = useParams();
 
 	const { env } = useEnvironmentContext();
@@ -134,6 +135,16 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 		getFeesByRegistrationType,
 	]);
 
+	useEffect(() => {
+		const userNetworks: string[] = [];
+		const wallets: any = activeProfile.wallets().values();
+		for (const wallet of wallets) {
+			userNetworks.push(wallet.networkId());
+		}
+
+		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
+	}, [activeProfile, networks]);
+
 	const submitForm = () =>
 		registrationForm!.signTransaction({
 			env,
@@ -181,7 +192,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 						<div className="mt-8">
 							<TabPanel tabId={1}>
 								<FirstStep
-									networks={networks}
+									networks={availableNetworks}
 									profile={activeProfile}
 									wallet={activeWallet}
 									setRegistrationForm={setRegistrationForm}

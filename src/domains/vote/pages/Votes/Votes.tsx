@@ -102,6 +102,7 @@ export const Votes = () => {
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
+	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
 
 	const crumbs = [
 		{
@@ -167,6 +168,16 @@ export const Votes = () => {
 		}
 	}, [activeWallet, loadDelegates, hasWalletId]);
 
+	useEffect(() => {
+		const userNetworks: string[] = [];
+		const wallets: any = activeProfile.wallets().values();
+		for (const wallet of wallets) {
+			userNetworks.push(wallet.networkId());
+		}
+
+		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
+	}, [activeProfile, networks]);
+
 	const handleSelectNetwork = (networkData?: Coins.Network | null) => {
 		if (!networkData || networkData.id() !== network?.id()) {
 			setTabItem("delegate");
@@ -220,7 +231,7 @@ export const Votes = () => {
 						</div>
 						<SelectNetwork
 							id="Votes__network"
-							networks={networks}
+							networks={availableNetworks}
 							selected={network!}
 							placeholder={t("COMMON.SELECT_OPTION", { option: t("COMMON.CRYPTOASSET") })}
 							onSelect={handleSelectNetwork}

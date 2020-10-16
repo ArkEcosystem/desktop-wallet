@@ -4218,7 +4218,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                               ARK Devnet
                             </span>
                             <input
-                              aria-activedescendant="SendTransactionForm__network-item-1"
+                              aria-activedescendant="SendTransactionForm__network-item-0"
                               aria-autocomplete="list"
                               aria-controls="SendTransactionForm__network-menu"
                               aria-labelledby="SendTransactionForm__network-label"
@@ -4238,7 +4238,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                           role="listbox"
                         >
                           <li
-                            aria-selected="false"
+                            aria-selected="true"
                             class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="SendTransactionForm__network-item-0"
@@ -4756,8 +4756,8 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                               class="sc-fzoyAV sc-fzoLag grqxuS px-4"
                             >
                               <div
-                                aria-label="ARK"
-                                class="sc-AxgMl eLFBRi border-theme-danger-light text-theme-danger-400"
+                                aria-label="ARK Devnet"
+                                class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
                                 data-testid="SelectNetworkInput__network"
                               >
                                 <div
@@ -4776,7 +4776,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                               class="sc-fzoyAV gCfUUB py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                               data-testid="SelectNetworkInput__typeahead"
                             >
-                              ARK
+                              ARK Devnet
                             </span>
                             <input
                               aria-activedescendant="SendTransactionForm__network-item-0"
@@ -4788,7 +4788,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                               data-testid="SelectNetworkInput__input"
                               id="SendTransactionForm__network-input"
                               placeholder="Enter a cryptoasset name"
-                              value="ARK"
+                              value="ARK Devnet"
                             />
                           </div>
                         </div>
@@ -4806,32 +4806,8 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                             role="option"
                           >
                             <div
-                              aria-label="ARK"
-                              class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
-                              data-testid="NetworkIcon-ARK-ark.mainnet"
-                            >
-                              <div
-                                class="sc-AxiKw fubePL"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  ark.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="SendTransactionForm__network-item-1"
-                            role="option"
-                          >
-                            <div
                               aria-label="ARK Devnet"
-                              class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                              class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
                               data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
@@ -4868,9 +4844,8 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg hKoddb SelectAddress is-disabled "
+                            class="sc-fzqBkg hKoddb SelectAddress  "
                             data-testid="SelectAddress__wrapper"
-                            disabled=""
                             type="button"
                           >
                             <div

@@ -75,7 +75,7 @@ test("should successfully send a vote transaction", async (t) => {
 
 	// Select cryptoasset
 	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#Votes__network-item-1"));
+	await t.click(Selector("#Votes__network-item-0"));
 
 	// Select address
 	await t.expect(Selector("h2").withText(translations.VOTE.ADDRESS_TABLE.TITLE).exists).ok();
