@@ -65,33 +65,68 @@ exports[`LinkCollection should add links 1`] = `
               value="twitter"
             />
             <div
-              class="relative w-full cursor-pointer"
+              class="relative w-full"
             >
-              <div>
-                <button
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                  class="sc-fzplWN gBhoSz  is-selected "
-                  data-testid="select-list__toggle-button"
-                  id="downshift-1-toggle-button"
-                  type="button"
-                >
-                  Twitter
-                </button>
-                <ul
-                  aria-labelledby="downshift-1-label"
-                  class="sc-fznyAO dPDaFu"
-                  id="downshift-1-menu"
-                  role="listbox"
-                  tabindex="-1"
+              <div
+                aria-expanded="true"
+                aria-haspopup="listbox"
+                aria-owns="downshift-5-menu"
+                role="combobox"
+              >
+                <label
+                  for="downshift-4-input"
+                  id="downshift-5-label"
                 />
+                <div
+                  class="sc-Axmtr jzhOwR"
+                  data-testid="SelectDropdownInput"
+                >
+                  <span
+                    class="sc-AxhUy escgqZ py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                    data-testid="SelectDropdownInput__typeahead"
+                  >
+                    Twitter
+                  </span>
+                  <input
+                    aria-activedescendant="downshift-5-item-0"
+                    aria-autocomplete="list"
+                    aria-controls="downshift-5-menu"
+                    aria-labelledby="downshift-5-label"
+                    autocomplete="off"
+                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                    data-testid="SelectDropdownInput__input"
+                    id="downshift-4-input"
+                    name="type"
+                    placeholder="Select option"
+                    value="Twitter"
+                  />
+                </div>
+                <ul
+                  aria-labelledby="downshift-5-label"
+                  class="sc-fznyAO iPPKQM is-open"
+                  id="downshift-5-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="true"
+                    class="select-list-option cursor-default is-highlighted"
+                    data-testid="select-list__toggle-option-0"
+                    id="downshift-5-item-0"
+                    role="option"
+                  >
+                    <div
+                      class="select-list-option__label"
+                    >
+                      Twitter
+                    </div>
+                  </li>
+                </ul>
               </div>
               <div
                 class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
               >
                 <div
-                  class="sc-AxiKw jNSjzx"
+                  class="sc-AxiKw jNSjzx transform rotate-180"
                   height="5"
                   width="7"
                 >
@@ -344,24 +379,40 @@ exports[`LinkCollection should remove links 1`] = `
               value=""
             />
             <div
-              class="relative w-full cursor-pointer"
+              class="relative w-full"
             >
-              <div>
-                <button
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-13-label downshift-13-toggle-button"
-                  class="sc-fzplWN gBhoSz   "
-                  data-testid="select-list__toggle-button"
-                  id="downshift-13-toggle-button"
-                  type="button"
+              <div
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-owns="downshift-33-menu"
+                role="combobox"
+              >
+                <label
+                  for="downshift-32-input"
+                  id="downshift-33-label"
                 />
+                <div
+                  class="sc-Axmtr jzhOwR"
+                  data-testid="SelectDropdownInput"
+                >
+                  <input
+                    aria-autocomplete="list"
+                    aria-controls="downshift-33-menu"
+                    aria-labelledby="downshift-33-label"
+                    autocomplete="off"
+                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                    data-testid="SelectDropdownInput__input"
+                    id="downshift-32-input"
+                    name="type"
+                    placeholder="Select option"
+                    value=""
+                  />
+                </div>
                 <ul
-                  aria-labelledby="downshift-13-label"
-                  class="sc-fznyAO dPDaFu"
-                  id="downshift-13-menu"
+                  aria-labelledby="downshift-33-label"
+                  class="sc-fznyAO iPPKQM"
+                  id="downshift-33-menu"
                   role="listbox"
-                  tabindex="-1"
                 />
               </div>
               <div
@@ -518,24 +569,40 @@ exports[`LinkCollection should select a specific link type 1`] = `
               value=""
             />
             <div
-              class="relative w-full cursor-pointer"
+              class="relative w-full"
             >
-              <div>
-                <button
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-32-label downshift-32-toggle-button"
-                  class="sc-fzplWN gBhoSz   "
-                  data-testid="select-list__toggle-button"
-                  id="downshift-32-toggle-button"
-                  type="button"
+              <div
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-owns="downshift-89-menu"
+                role="combobox"
+              >
+                <label
+                  for="downshift-88-input"
+                  id="downshift-89-label"
                 />
+                <div
+                  class="sc-Axmtr jzhOwR"
+                  data-testid="SelectDropdownInput"
+                >
+                  <input
+                    aria-autocomplete="list"
+                    aria-controls="downshift-89-menu"
+                    aria-labelledby="downshift-89-label"
+                    autocomplete="off"
+                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                    data-testid="SelectDropdownInput__input"
+                    id="downshift-88-input"
+                    name="type"
+                    placeholder="Select option"
+                    value=""
+                  />
+                </div>
                 <ul
-                  aria-labelledby="downshift-32-label"
-                  class="sc-fznyAO dPDaFu"
-                  id="downshift-32-menu"
+                  aria-labelledby="downshift-89-label"
+                  class="sc-fznyAO iPPKQM"
+                  id="downshift-89-menu"
                   role="listbox"
-                  tabindex="-1"
                 />
               </div>
               <div

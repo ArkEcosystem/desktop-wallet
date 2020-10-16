@@ -2250,30 +2250,46 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
-                          <div>
-                            <button
-                              aria-expanded="true"
-                              aria-haspopup="listbox"
-                              aria-labelledby="downshift-36-label downshift-36-toggle-button"
-                              class="sc-fznxKY cTteAa is-open  "
-                              data-testid="select-list__toggle-button"
-                              id="downshift-36-toggle-button"
-                              type="button"
+                          <div
+                            aria-expanded="true"
+                            aria-haspopup="listbox"
+                            aria-owns="downshift-73-menu"
+                            role="combobox"
+                          >
+                            <label
+                              for="downshift-72-input"
+                              id="downshift-73-label"
                             />
+                            <div
+                              class="sc-fzpjYC dHxzen"
+                              data-testid="SelectDropdownInput"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-73-menu"
+                                aria-labelledby="downshift-73-label"
+                                autocomplete="off"
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-72-input"
+                                name="registrationType"
+                                placeholder="Select option"
+                                value=""
+                              />
+                            </div>
                             <ul
-                              aria-labelledby="downshift-36-label"
-                              class="sc-fznMAR hjPwmz is-open"
-                              id="downshift-36-menu"
+                              aria-labelledby="downshift-73-label"
+                              class="sc-fznMAR ewmSwp is-open"
+                              id="downshift-73-menu"
                               role="listbox"
-                              tabindex="-1"
                             >
                               <li
                                 aria-selected="false"
-                                class="select-list-option "
+                                class="select-list-option cursor-default "
                                 data-testid="select-list__toggle-option-0"
-                                id="downshift-36-item-0"
+                                id="downshift-73-item-0"
                                 role="option"
                               >
                                 <div
@@ -2284,9 +2300,9 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               </li>
                               <li
                                 aria-selected="false"
-                                class="select-list-option "
+                                class="select-list-option cursor-default "
                                 data-testid="select-list__toggle-option-1"
-                                id="downshift-36-item-1"
+                                id="downshift-73-item-1"
                                 role="option"
                               >
                                 <div
@@ -2496,33 +2512,94 @@ exports[`Registration should not set fee if no fee options 1`] = `
           value="delegateRegistration"
         />
         <div
-          class="relative w-full cursor-pointer"
+          class="relative w-full"
         >
-          <div>
-            <button
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-15-label downshift-15-toggle-button"
-              class="sc-fznxKY cTteAa  is-selected "
-              data-testid="select-list__toggle-button"
-              id="downshift-15-toggle-button"
-              type="button"
-            >
-              Delegate
-            </button>
-            <ul
-              aria-labelledby="downshift-15-label"
-              class="sc-fznMAR hjPwmz"
-              id="downshift-15-menu"
-              role="listbox"
-              tabindex="-1"
+          <div
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-owns="downshift-31-menu"
+            role="combobox"
+          >
+            <label
+              for="downshift-30-input"
+              id="downshift-31-label"
             />
+            <div
+              class="sc-fzpjYC dHxzen"
+              data-testid="SelectDropdownInput"
+            >
+              <span
+                class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                data-testid="SelectDropdownInput__typeahead"
+              >
+                Delegate
+              </span>
+              <input
+                aria-activedescendant="downshift-31-item-1"
+                aria-autocomplete="list"
+                aria-controls="downshift-31-menu"
+                aria-labelledby="downshift-31-label"
+                autocomplete="off"
+                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                data-testid="SelectDropdownInput__input"
+                id="downshift-30-input"
+                name="registrationType"
+                placeholder="Select option"
+                value="Delegate"
+              />
+            </div>
+            <ul
+              aria-labelledby="downshift-31-label"
+              class="sc-fznMAR ewmSwp is-open"
+              id="downshift-31-menu"
+              role="listbox"
+            >
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-0"
+                id="downshift-31-item-0"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Business
+                </div>
+              </li>
+              <li
+                aria-selected="true"
+                class="select-list-option cursor-default is-highlighted"
+                data-testid="select-list__toggle-option-1"
+                id="downshift-31-item-1"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Delegate
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-2"
+                id="downshift-31-item-2"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Second Signature
+                </div>
+              </li>
+            </ul>
           </div>
           <div
             class="sc-fzoyAV sc-fzoXzr YtqIf w-10 pointer-events-none text-theme-neutral"
           >
             <div
-              class="sc-AxiKw jNSjzx"
+              class="sc-AxiKw jNSjzx transform rotate-180"
               height="5"
               width="7"
             >
@@ -3276,33 +3353,94 @@ exports[`Registration should render 1st step 1`] = `
           value="delegateRegistration"
         />
         <div
-          class="relative w-full cursor-pointer"
+          class="relative w-full"
         >
-          <div>
-            <button
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-10-label downshift-10-toggle-button"
-              class="sc-fznxKY cTteAa  is-selected "
-              data-testid="select-list__toggle-button"
-              id="downshift-10-toggle-button"
-              type="button"
-            >
-              Delegate
-            </button>
-            <ul
-              aria-labelledby="downshift-10-label"
-              class="sc-fznMAR hjPwmz"
-              id="downshift-10-menu"
-              role="listbox"
-              tabindex="-1"
+          <div
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-owns="downshift-21-menu"
+            role="combobox"
+          >
+            <label
+              for="downshift-20-input"
+              id="downshift-21-label"
             />
+            <div
+              class="sc-fzpjYC dHxzen"
+              data-testid="SelectDropdownInput"
+            >
+              <span
+                class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                data-testid="SelectDropdownInput__typeahead"
+              >
+                Delegate
+              </span>
+              <input
+                aria-activedescendant="downshift-21-item-1"
+                aria-autocomplete="list"
+                aria-controls="downshift-21-menu"
+                aria-labelledby="downshift-21-label"
+                autocomplete="off"
+                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                data-testid="SelectDropdownInput__input"
+                id="downshift-20-input"
+                name="registrationType"
+                placeholder="Select option"
+                value="Delegate"
+              />
+            </div>
+            <ul
+              aria-labelledby="downshift-21-label"
+              class="sc-fznMAR ewmSwp is-open"
+              id="downshift-21-menu"
+              role="listbox"
+            >
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-0"
+                id="downshift-21-item-0"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Business
+                </div>
+              </li>
+              <li
+                aria-selected="true"
+                class="select-list-option cursor-default is-highlighted"
+                data-testid="select-list__toggle-option-1"
+                id="downshift-21-item-1"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Delegate
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-2"
+                id="downshift-21-item-2"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Second Signature
+                </div>
+              </li>
+            </ul>
           </div>
           <div
             class="sc-fzoyAV sc-fzoXzr YtqIf w-10 pointer-events-none text-theme-neutral"
           >
             <div
-              class="sc-AxiKw jNSjzx"
+              class="sc-AxiKw jNSjzx transform rotate-180"
               height="5"
               width="7"
             >
@@ -3784,24 +3922,40 @@ exports[`Registration should render registration form without selected wallet 1`
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
-                          <div>
-                            <button
-                              aria-expanded="false"
-                              aria-haspopup="listbox"
-                              aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                              class="sc-fznxKY cTteAa   "
-                              data-testid="select-list__toggle-button"
-                              id="downshift-0-toggle-button"
-                              type="button"
+                          <div
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-owns="downshift-1-menu"
+                            role="combobox"
+                          >
+                            <label
+                              for="downshift-0-input"
+                              id="downshift-1-label"
                             />
+                            <div
+                              class="sc-fzpjYC dHxzen"
+                              data-testid="SelectDropdownInput"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-1-menu"
+                                aria-labelledby="downshift-1-label"
+                                autocomplete="off"
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-0-input"
+                                name="registrationType"
+                                placeholder="Select option"
+                                value=""
+                              />
+                            </div>
                             <ul
-                              aria-labelledby="downshift-0-label"
-                              class="sc-fznMAR hjPwmz"
-                              id="downshift-0-menu"
+                              aria-labelledby="downshift-1-label"
+                              class="sc-fznMAR ewmSwp"
+                              id="downshift-1-menu"
                               role="listbox"
-                              tabindex="-1"
                             />
                           </div>
                           <div
@@ -4345,24 +4499,40 @@ exports[`Registration should select cryptoasset first and see select address inp
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
-                          <div>
-                            <button
-                              aria-expanded="false"
-                              aria-haspopup="listbox"
-                              aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                              class="sc-fznxKY cTteAa   "
-                              data-testid="select-list__toggle-button"
-                              id="downshift-2-toggle-button"
-                              type="button"
+                          <div
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-owns="downshift-5-menu"
+                            role="combobox"
+                          >
+                            <label
+                              for="downshift-4-input"
+                              id="downshift-5-label"
                             />
+                            <div
+                              class="sc-fzpjYC dHxzen"
+                              data-testid="SelectDropdownInput"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-5-menu"
+                                aria-labelledby="downshift-5-label"
+                                autocomplete="off"
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-4-input"
+                                name="registrationType"
+                                placeholder="Select option"
+                                value=""
+                              />
+                            </div>
                             <ul
-                              aria-labelledby="downshift-2-label"
-                              class="sc-fznMAR hjPwmz"
-                              id="downshift-2-menu"
+                              aria-labelledby="downshift-5-label"
+                              class="sc-fznMAR ewmSwp"
+                              id="downshift-5-menu"
                               role="listbox"
-                              tabindex="-1"
                             />
                           </div>
                           <div
@@ -4906,24 +5076,40 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
-                          <div>
-                            <button
-                              aria-expanded="false"
-                              aria-haspopup="listbox"
-                              aria-labelledby="downshift-6-label downshift-6-toggle-button"
-                              class="sc-fznxKY cTteAa   "
-                              data-testid="select-list__toggle-button"
-                              id="downshift-6-toggle-button"
-                              type="button"
+                          <div
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-owns="downshift-13-menu"
+                            role="combobox"
+                          >
+                            <label
+                              for="downshift-12-input"
+                              id="downshift-13-label"
                             />
+                            <div
+                              class="sc-fzpjYC dHxzen"
+                              data-testid="SelectDropdownInput"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-13-menu"
+                                aria-labelledby="downshift-13-label"
+                                autocomplete="off"
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-12-input"
+                                name="registrationType"
+                                placeholder="Select option"
+                                value=""
+                              />
+                            </div>
                             <ul
-                              aria-labelledby="downshift-6-label"
-                              class="sc-fznMAR hjPwmz"
-                              id="downshift-6-menu"
+                              aria-labelledby="downshift-13-label"
+                              class="sc-fznMAR ewmSwp"
+                              id="downshift-13-menu"
                               role="listbox"
-                              tabindex="-1"
                             />
                           </div>
                           <div
