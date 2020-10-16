@@ -82,7 +82,7 @@ export const DelegateRow = ({
 						}`}
 					>
 						<Icon
-							name="Ok"
+							name="StatusOk"
 							className={`text-xs ${!isSelectedUnvote ? "text-theme-primary" : "text-theme-danger"}`}
 						/>
 					</div>

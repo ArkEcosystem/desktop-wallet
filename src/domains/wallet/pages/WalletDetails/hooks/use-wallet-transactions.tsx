@@ -1,7 +1,7 @@
 import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { uniqBy } from "@arkecosystem/utils";
-import { useSynchronizer } from "app/hooks/use-synchronizer";
+import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limit: number }) => {

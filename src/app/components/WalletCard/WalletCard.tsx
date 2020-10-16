@@ -6,7 +6,7 @@ import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 import { useTranslation } from "react-i18next";

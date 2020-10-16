@@ -690,7 +690,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               data-testid="TransactionTable"
             >
               <div
-                class="sc-AxheI isFJyk"
+                class="sc-AxheI gbMMiE -mt-3"
                 role="table"
               >
                 <table
@@ -699,10 +699,11 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -716,7 +717,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -746,7 +747,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -760,7 +761,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
@@ -774,7 +775,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--4"
                         role="columnheader"
@@ -788,7 +789,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -802,7 +803,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--6"
                         role="columnheader"
@@ -832,7 +833,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--7"
                         role="columnheader"
@@ -856,7 +857,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     >
                       <td>
                         <div
-                          class="sc-Axmtr egluiO"
+                          class="sc-Axmtr gOfPTF"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -881,7 +882,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         class="w-48"
                       >
                         <div
-                          class="sc-Axmtr hmHaow text-sm text-theme-neutral-600"
+                          class="sc-Axmtr kJpthz text-sm text-theme-neutral-600"
                         >
                           <span
                             data-testid="TransactionRow__timestamp"
@@ -894,7 +895,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         class="w-32"
                       >
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -933,7 +934,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="inline-block truncate align-middle"
@@ -949,7 +950,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -961,20 +962,20 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
                             data-testid="TransactionRowConfirmation"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj text-theme-success"
+                              class="sc-AxiKw fFXzuz text-theme-success"
                               data-testid="TransactionRowConfirmation__confirmed"
-                              height="1em"
-                              width="1em"
+                              height="22"
+                              width="22"
                             >
                               <svg>
-                                ok.svg
+                                status-ok.svg
                               </svg>
                             </div>
                           </div>
@@ -982,7 +983,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-end"
+                          class="sc-Axmtr kJpthz justify-end"
                         >
                           <div
                             class="sc-fzozJi iTqYGz"
@@ -999,7 +1000,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ftZuYa justify-end"
+                          class="sc-Axmtr hbxXZh justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -1095,7 +1096,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxheI isFJyk"
+            class="sc-AxheI gbMMiE -mt-3"
             role="table"
           >
             <table
@@ -1104,10 +1105,11 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -1137,7 +1139,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -1167,7 +1169,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -1181,7 +1183,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -1211,7 +1213,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -1251,7 +1253,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1287,7 +1289,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1309,7 +1311,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1318,7 +1320,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1329,7 +1331,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1345,7 +1347,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1381,7 +1383,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1397,7 +1399,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1406,7 +1408,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1417,7 +1419,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1433,7 +1435,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1469,7 +1471,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1485,7 +1487,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1494,7 +1496,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1505,7 +1507,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1521,7 +1523,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 >
                   <td>
                     <div
-                      class="sc-Axmtr lokVNe -space-x-2"
+                      class="sc-Axmtr kmkULx -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1557,7 +1559,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg"
+                      class="sc-Axmtr eyhOa-D"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1573,7 +1575,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eyhOa-D text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1596,7 +1598,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg font-semibold justify-end"
+                      class="sc-Axmtr eyhOa-D font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1607,7 +1609,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr gfSbSa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr XuwAZ justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -2281,7 +2283,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               data-testid="TransactionTable"
             >
               <div
-                class="sc-AxheI isFJyk"
+                class="sc-AxheI gbMMiE -mt-3"
                 role="table"
               >
                 <table
@@ -2290,10 +2292,11 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -2307,7 +2310,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -2337,7 +2340,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -2351,7 +2354,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
@@ -2365,7 +2368,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--4"
                         role="columnheader"
@@ -2379,7 +2382,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -2393,7 +2396,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--6"
                         role="columnheader"
@@ -2423,7 +2426,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--7"
                         role="columnheader"
@@ -2447,7 +2450,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     >
                       <td>
                         <div
-                          class="sc-Axmtr egluiO"
+                          class="sc-Axmtr gOfPTF"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2472,7 +2475,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="w-48"
                       >
                         <div
-                          class="sc-Axmtr hmHaow text-sm text-theme-neutral-600"
+                          class="sc-Axmtr kJpthz text-sm text-theme-neutral-600"
                         >
                           <span
                             data-testid="TransactionRow__timestamp"
@@ -2485,7 +2488,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="w-32"
                       >
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -2524,7 +2527,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="inline-block truncate align-middle"
@@ -2540,7 +2543,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -2552,20 +2555,20 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
                             data-testid="TransactionRowConfirmation"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj text-theme-success"
+                              class="sc-AxiKw fFXzuz text-theme-success"
                               data-testid="TransactionRowConfirmation__confirmed"
-                              height="1em"
-                              width="1em"
+                              height="22"
+                              width="22"
                             >
                               <svg>
-                                ok.svg
+                                status-ok.svg
                               </svg>
                             </div>
                           </div>
@@ -2573,7 +2576,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-end"
+                          class="sc-Axmtr kJpthz justify-end"
                         >
                           <div
                             class="sc-fzozJi iTqYGz"
@@ -2590,7 +2593,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ftZuYa justify-end"
+                          class="sc-Axmtr hbxXZh justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -3199,11 +3202,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       class="sc-AxiKw dzBdqj text-theme-neutral"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        status-clock.svg
-                      </svg>
-                    </div>
+                    />
                   </div>
                   <button
                     class="sc-AxjAm hXnHfM ml-auto"
@@ -3331,7 +3330,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               data-testid="TransactionTable"
             >
               <div
-                class="sc-AxheI isFJyk"
+                class="sc-AxheI gbMMiE -mt-3"
                 role="table"
               >
                 <table
@@ -3340,10 +3339,11 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -3357,7 +3357,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -3387,7 +3387,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -3401,7 +3401,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
@@ -3415,7 +3415,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--4"
                         role="columnheader"
@@ -3429,7 +3429,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -3443,7 +3443,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--6"
                         role="columnheader"
@@ -3473,7 +3473,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--7"
                         role="columnheader"
@@ -3497,7 +3497,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr egluiO"
+                          class="sc-Axmtr gOfPTF"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3522,7 +3522,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         class="w-48"
                       >
                         <div
-                          class="sc-Axmtr hmHaow text-sm text-theme-neutral-600"
+                          class="sc-Axmtr kJpthz text-sm text-theme-neutral-600"
                         >
                           <span
                             data-testid="TransactionRow__timestamp"
@@ -3535,7 +3535,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         class="w-32"
                       >
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -3574,7 +3574,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="inline-block truncate align-middle"
@@ -3590,7 +3590,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -3602,20 +3602,20 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
                             data-testid="TransactionRowConfirmation"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj text-theme-success"
+                              class="sc-AxiKw fFXzuz text-theme-success"
                               data-testid="TransactionRowConfirmation__confirmed"
-                              height="1em"
-                              width="1em"
+                              height="22"
+                              width="22"
                             >
                               <svg>
-                                ok.svg
+                                status-ok.svg
                               </svg>
                             </div>
                           </div>
@@ -3623,7 +3623,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-end"
+                          class="sc-Axmtr kJpthz justify-end"
                         >
                           <div
                             class="sc-fzozJi iTqYGz"
@@ -3640,7 +3640,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ftZuYa justify-end"
+                          class="sc-Axmtr hbxXZh justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -3736,7 +3736,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxheI isFJyk"
+            class="sc-AxheI gbMMiE -mt-3"
             role="table"
           >
             <table
@@ -3745,10 +3745,11 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -3778,7 +3779,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -3808,7 +3809,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -3822,7 +3823,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -3852,7 +3853,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -3892,7 +3893,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr lokVNe -space-x-2"
+                      class="sc-Axmtr kmkULx -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -3928,7 +3929,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg"
+                      class="sc-Axmtr eyhOa-D"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -3944,7 +3945,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eyhOa-D text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -3967,7 +3968,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg font-semibold justify-end"
+                      class="sc-Axmtr eyhOa-D font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -3978,7 +3979,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr gfSbSa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr XuwAZ justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -3994,7 +3995,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -4030,7 +4031,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -4052,7 +4053,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -4061,7 +4062,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -4072,7 +4073,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4088,7 +4089,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -4124,7 +4125,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -4140,7 +4141,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -4149,7 +4150,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -4160,7 +4161,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4176,7 +4177,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -4212,7 +4213,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -4228,7 +4229,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -4237,7 +4238,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -4248,7 +4249,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4842,11 +4843,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       class="sc-AxiKw dzBdqj text-theme-neutral"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        status-clock.svg
-                      </svg>
-                    </div>
+                    />
                   </div>
                   <button
                     class="sc-AxjAm hXnHfM ml-auto"
@@ -4974,7 +4971,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               data-testid="TransactionTable"
             >
               <div
-                class="sc-AxheI isFJyk"
+                class="sc-AxheI gbMMiE -mt-3"
                 role="table"
               >
                 <table
@@ -4983,10 +4980,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -5000,7 +4998,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -5030,7 +5028,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -5044,7 +5042,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
@@ -5058,7 +5056,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--4"
                         role="columnheader"
@@ -5072,7 +5070,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -5086,7 +5084,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--6"
                         role="columnheader"
@@ -5116,7 +5114,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--7"
                         role="columnheader"
@@ -5140,7 +5138,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr egluiO"
+                          class="sc-Axmtr gOfPTF"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -5165,7 +5163,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         class="w-48"
                       >
                         <div
-                          class="sc-Axmtr hmHaow text-sm text-theme-neutral-600"
+                          class="sc-Axmtr kJpthz text-sm text-theme-neutral-600"
                         >
                           <span
                             data-testid="TransactionRow__timestamp"
@@ -5178,7 +5176,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         class="w-32"
                       >
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -5217,7 +5215,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="inline-block truncate align-middle"
@@ -5233,7 +5231,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -5245,20 +5243,20 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
                             data-testid="TransactionRowConfirmation"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj text-theme-success"
+                              class="sc-AxiKw fFXzuz text-theme-success"
                               data-testid="TransactionRowConfirmation__confirmed"
-                              height="1em"
-                              width="1em"
+                              height="22"
+                              width="22"
                             >
                               <svg>
-                                ok.svg
+                                status-ok.svg
                               </svg>
                             </div>
                           </div>
@@ -5266,7 +5264,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-end"
+                          class="sc-Axmtr kJpthz justify-end"
                         >
                           <div
                             class="sc-fzozJi iTqYGz"
@@ -5283,7 +5281,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ftZuYa justify-end"
+                          class="sc-Axmtr hbxXZh justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -5379,7 +5377,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxheI isFJyk"
+            class="sc-AxheI gbMMiE -mt-3"
             role="table"
           >
             <table
@@ -5388,10 +5386,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -5421,7 +5420,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -5451,7 +5450,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -5465,7 +5464,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -5495,7 +5494,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -5535,7 +5534,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr lokVNe -space-x-2"
+                      class="sc-Axmtr kmkULx -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -5571,7 +5570,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg"
+                      class="sc-Axmtr eyhOa-D"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5587,7 +5586,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eyhOa-D text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5610,7 +5609,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg font-semibold justify-end"
+                      class="sc-Axmtr eyhOa-D font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5621,7 +5620,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr gfSbSa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr XuwAZ justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5637,7 +5636,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -5673,7 +5672,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5695,7 +5694,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5704,7 +5703,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5715,7 +5714,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5731,7 +5730,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -5767,7 +5766,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5783,7 +5782,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5792,7 +5791,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5803,7 +5802,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5819,7 +5818,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -5855,7 +5854,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5871,7 +5870,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5880,7 +5879,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5891,7 +5890,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6487,11 +6486,7 @@ exports[`WalletDetails should render 1`] = `
                       class="sc-AxiKw dzBdqj text-theme-neutral"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        status-clock.svg
-                      </svg>
-                    </div>
+                    />
                   </div>
                   <button
                     class="sc-AxjAm hXnHfM ml-auto"
@@ -6619,7 +6614,7 @@ exports[`WalletDetails should render 1`] = `
               data-testid="TransactionTable"
             >
               <div
-                class="sc-AxheI isFJyk"
+                class="sc-AxheI gbMMiE -mt-3"
                 role="table"
               >
                 <table
@@ -6628,10 +6623,11 @@ exports[`WalletDetails should render 1`] = `
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -6645,7 +6641,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -6675,7 +6671,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -6689,7 +6685,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
@@ -6703,7 +6699,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--4"
                         role="columnheader"
@@ -6717,7 +6713,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -6731,7 +6727,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--6"
                         role="columnheader"
@@ -6761,7 +6757,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--7"
                         role="columnheader"
@@ -6785,7 +6781,7 @@ exports[`WalletDetails should render 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr egluiO"
+                          class="sc-Axmtr gOfPTF"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -6810,7 +6806,7 @@ exports[`WalletDetails should render 1`] = `
                         class="w-48"
                       >
                         <div
-                          class="sc-Axmtr hmHaow text-sm text-theme-neutral-600"
+                          class="sc-Axmtr kJpthz text-sm text-theme-neutral-600"
                         >
                           <span
                             data-testid="TransactionRow__timestamp"
@@ -6823,7 +6819,7 @@ exports[`WalletDetails should render 1`] = `
                         class="w-32"
                       >
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -6862,7 +6858,7 @@ exports[`WalletDetails should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="inline-block truncate align-middle"
@@ -6878,7 +6874,7 @@ exports[`WalletDetails should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -6890,20 +6886,20 @@ exports[`WalletDetails should render 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
                             data-testid="TransactionRowConfirmation"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj text-theme-success"
+                              class="sc-AxiKw fFXzuz text-theme-success"
                               data-testid="TransactionRowConfirmation__confirmed"
-                              height="1em"
-                              width="1em"
+                              height="22"
+                              width="22"
                             >
                               <svg>
-                                ok.svg
+                                status-ok.svg
                               </svg>
                             </div>
                           </div>
@@ -6911,7 +6907,7 @@ exports[`WalletDetails should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-end"
+                          class="sc-Axmtr kJpthz justify-end"
                         >
                           <div
                             class="sc-fzozJi iTqYGz"
@@ -6928,7 +6924,7 @@ exports[`WalletDetails should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ftZuYa justify-end"
+                          class="sc-Axmtr hbxXZh justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -7024,7 +7020,7 @@ exports[`WalletDetails should render 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxheI isFJyk"
+            class="sc-AxheI gbMMiE -mt-3"
             role="table"
           >
             <table
@@ -7033,10 +7029,11 @@ exports[`WalletDetails should render 1`] = `
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -7066,7 +7063,7 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -7096,7 +7093,7 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -7110,7 +7107,7 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -7140,7 +7137,7 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -7180,7 +7177,7 @@ exports[`WalletDetails should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr lokVNe -space-x-2"
+                      class="sc-Axmtr kmkULx -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -7216,7 +7213,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg"
+                      class="sc-Axmtr eyhOa-D"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -7238,7 +7235,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eyhOa-D text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -7261,7 +7258,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg font-semibold justify-end"
+                      class="sc-Axmtr eyhOa-D font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -7272,7 +7269,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr gfSbSa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr XuwAZ justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -7288,7 +7285,7 @@ exports[`WalletDetails should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -7324,7 +7321,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -7346,7 +7343,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -7355,7 +7352,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -7366,7 +7363,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -7382,7 +7379,7 @@ exports[`WalletDetails should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -7418,7 +7415,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -7434,7 +7431,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -7443,7 +7440,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -7454,7 +7451,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -7470,7 +7467,7 @@ exports[`WalletDetails should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -7506,7 +7503,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -7522,7 +7519,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -7531,7 +7528,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -7542,7 +7539,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -8223,7 +8220,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               data-testid="TransactionTable"
             >
               <div
-                class="sc-AxheI isFJyk"
+                class="sc-AxheI gbMMiE -mt-3"
                 role="table"
               >
                 <table
@@ -8232,10 +8229,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -8249,7 +8247,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -8279,7 +8277,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -8293,7 +8291,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
@@ -8307,7 +8305,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--4"
                         role="columnheader"
@@ -8321,7 +8319,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -8335,7 +8333,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--6"
                         role="columnheader"
@@ -8365,7 +8363,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--7"
                         role="columnheader"
@@ -8389,7 +8387,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr egluiO"
+                          class="sc-Axmtr gOfPTF"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -8414,7 +8412,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         class="w-48"
                       >
                         <div
-                          class="sc-Axmtr hmHaow text-sm text-theme-neutral-600"
+                          class="sc-Axmtr kJpthz text-sm text-theme-neutral-600"
                         >
                           <span
                             data-testid="TransactionRow__timestamp"
@@ -8427,7 +8425,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         class="w-32"
                       >
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -8466,7 +8464,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="inline-block truncate align-middle"
@@ -8482,7 +8480,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -8494,20 +8492,20 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
                             data-testid="TransactionRowConfirmation"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj text-theme-success"
+                              class="sc-AxiKw fFXzuz text-theme-success"
                               data-testid="TransactionRowConfirmation__confirmed"
-                              height="1em"
-                              width="1em"
+                              height="22"
+                              width="22"
                             >
                               <svg>
-                                ok.svg
+                                status-ok.svg
                               </svg>
                             </div>
                           </div>
@@ -8515,7 +8513,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-end"
+                          class="sc-Axmtr kJpthz justify-end"
                         >
                           <div
                             class="sc-fzozJi iTqYGz"
@@ -8532,7 +8530,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ftZuYa justify-end"
+                          class="sc-Axmtr hbxXZh justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -8628,7 +8626,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxheI isFJyk"
+            class="sc-AxheI gbMMiE -mt-3"
             role="table"
           >
             <table
@@ -8637,10 +8635,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -8670,7 +8669,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -8700,7 +8699,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -8714,7 +8713,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -8744,7 +8743,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -8784,7 +8783,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -8820,7 +8819,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -8842,7 +8841,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -8865,7 +8864,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -8876,7 +8875,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -8892,7 +8891,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -8928,7 +8927,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -8950,7 +8949,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -8959,7 +8958,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -8970,7 +8969,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -8986,7 +8985,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -9022,7 +9021,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -9038,7 +9037,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -9047,7 +9046,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -9058,7 +9057,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -9074,7 +9073,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr lokVNe -space-x-2"
+                      class="sc-Axmtr kmkULx -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -9110,7 +9109,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg"
+                      class="sc-Axmtr eyhOa-D"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -9126,7 +9125,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eyhOa-D text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -9135,7 +9134,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg font-semibold justify-end"
+                      class="sc-Axmtr eyhOa-D font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -9146,7 +9145,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr gfSbSa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr XuwAZ justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -9827,7 +9826,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               data-testid="TransactionTable"
             >
               <div
-                class="sc-AxheI isFJyk"
+                class="sc-AxheI gbMMiE -mt-3"
                 role="table"
               >
                 <table
@@ -9836,10 +9835,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -9853,7 +9853,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -9883,7 +9883,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -9897,7 +9897,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
@@ -9911,7 +9911,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--4"
                         role="columnheader"
@@ -9925,7 +9925,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -9939,7 +9939,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--6"
                         role="columnheader"
@@ -9969,7 +9969,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--7"
                         role="columnheader"
@@ -9993,7 +9993,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr egluiO"
+                          class="sc-Axmtr gOfPTF"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -10018,7 +10018,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         class="w-48"
                       >
                         <div
-                          class="sc-Axmtr hmHaow text-sm text-theme-neutral-600"
+                          class="sc-Axmtr kJpthz text-sm text-theme-neutral-600"
                         >
                           <span
                             data-testid="TransactionRow__timestamp"
@@ -10031,7 +10031,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         class="w-32"
                       >
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -10070,7 +10070,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="inline-block truncate align-middle"
@@ -10086,7 +10086,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -10098,20 +10098,20 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
                             data-testid="TransactionRowConfirmation"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj text-theme-success"
+                              class="sc-AxiKw fFXzuz text-theme-success"
                               data-testid="TransactionRowConfirmation__confirmed"
-                              height="1em"
-                              width="1em"
+                              height="22"
+                              width="22"
                             >
                               <svg>
-                                ok.svg
+                                status-ok.svg
                               </svg>
                             </div>
                           </div>
@@ -10119,7 +10119,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-end"
+                          class="sc-Axmtr kJpthz justify-end"
                         >
                           <div
                             class="sc-fzozJi iTqYGz"
@@ -10136,7 +10136,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ftZuYa justify-end"
+                          class="sc-Axmtr hbxXZh justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -10232,7 +10232,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxheI isFJyk"
+            class="sc-AxheI gbMMiE -mt-3"
             role="table"
           >
             <table
@@ -10241,10 +10241,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -10274,7 +10275,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -10304,7 +10305,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -10318,7 +10319,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -10348,7 +10349,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -10388,7 +10389,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -10424,7 +10425,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -10446,7 +10447,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -10469,7 +10470,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -10480,7 +10481,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -10496,7 +10497,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -10532,7 +10533,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -10554,7 +10555,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -10563,7 +10564,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -10574,7 +10575,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -10590,7 +10591,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr lokVNe -space-x-2"
+                      class="sc-Axmtr kmkULx -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -10626,7 +10627,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg"
+                      class="sc-Axmtr eyhOa-D"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -10642,7 +10643,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eyhOa-D text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -10651,7 +10652,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg font-semibold justify-end"
+                      class="sc-Axmtr eyhOa-D font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -10662,7 +10663,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr gfSbSa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr XuwAZ justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -10678,7 +10679,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -10714,7 +10715,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -10730,7 +10731,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -10739,7 +10740,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -10750,7 +10751,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -11344,11 +11345,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       class="sc-AxiKw dzBdqj text-theme-neutral"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        status-clock.svg
-                      </svg>
-                    </div>
+                    />
                   </div>
                   <button
                     class="sc-AxjAm hXnHfM ml-auto"
@@ -11476,7 +11473,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               data-testid="TransactionTable"
             >
               <div
-                class="sc-AxheI isFJyk"
+                class="sc-AxheI gbMMiE -mt-3"
                 role="table"
               >
                 <table
@@ -11485,10 +11482,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -11502,7 +11500,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -11532,7 +11530,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -11546,7 +11544,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
@@ -11560,7 +11558,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--4"
                         role="columnheader"
@@ -11574,7 +11572,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -11588,7 +11586,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--6"
                         role="columnheader"
@@ -11618,7 +11616,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--7"
                         role="columnheader"
@@ -11642,7 +11640,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr egluiO"
+                          class="sc-Axmtr gOfPTF"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -11667,7 +11665,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         class="w-48"
                       >
                         <div
-                          class="sc-Axmtr hmHaow text-sm text-theme-neutral-600"
+                          class="sc-Axmtr kJpthz text-sm text-theme-neutral-600"
                         >
                           <span
                             data-testid="TransactionRow__timestamp"
@@ -11680,7 +11678,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         class="w-32"
                       >
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -11719,7 +11717,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="inline-block truncate align-middle"
@@ -11735,7 +11733,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -11747,20 +11745,20 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
                             data-testid="TransactionRowConfirmation"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj text-theme-success"
+                              class="sc-AxiKw fFXzuz text-theme-success"
                               data-testid="TransactionRowConfirmation__confirmed"
-                              height="1em"
-                              width="1em"
+                              height="22"
+                              width="22"
                             >
                               <svg>
-                                ok.svg
+                                status-ok.svg
                               </svg>
                             </div>
                           </div>
@@ -11768,7 +11766,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-end"
+                          class="sc-Axmtr kJpthz justify-end"
                         >
                           <div
                             class="sc-fzozJi iTqYGz"
@@ -11785,7 +11783,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ftZuYa justify-end"
+                          class="sc-Axmtr hbxXZh justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -11881,7 +11879,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxheI isFJyk"
+            class="sc-AxheI gbMMiE -mt-3"
             role="table"
           >
             <table
@@ -11890,10 +11888,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -11923,7 +11922,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -11953,7 +11952,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -11967,7 +11966,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -11997,7 +11996,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -12037,7 +12036,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr lokVNe -space-x-2"
+                      class="sc-Axmtr kmkULx -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -12073,7 +12072,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg"
+                      class="sc-Axmtr eyhOa-D"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -12089,7 +12088,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eyhOa-D text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -12112,7 +12111,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg font-semibold justify-end"
+                      class="sc-Axmtr eyhOa-D font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -12123,7 +12122,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr gfSbSa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr XuwAZ justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -12139,7 +12138,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -12175,7 +12174,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -12197,7 +12196,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -12206,7 +12205,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -12217,7 +12216,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -12233,7 +12232,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -12269,7 +12268,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -12285,7 +12284,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -12294,7 +12293,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -12305,7 +12304,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -12321,7 +12320,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -12357,7 +12356,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -12373,7 +12372,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -12382,7 +12381,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -12393,7 +12392,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -12989,11 +12988,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       class="sc-AxiKw dzBdqj text-theme-neutral"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        status-clock.svg
-                      </svg>
-                    </div>
+                    />
                   </div>
                   <button
                     class="sc-AxjAm hXnHfM ml-auto"
@@ -13121,7 +13116,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               data-testid="TransactionTable"
             >
               <div
-                class="sc-AxheI isFJyk"
+                class="sc-AxheI gbMMiE -mt-3"
                 role="table"
               >
                 <table
@@ -13130,10 +13125,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -13147,7 +13143,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -13177,7 +13173,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -13191,7 +13187,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
@@ -13205,7 +13201,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--4"
                         role="columnheader"
@@ -13219,7 +13215,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -13233,7 +13229,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--6"
                         role="columnheader"
@@ -13263,7 +13259,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--7"
                         role="columnheader"
@@ -13287,7 +13283,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr egluiO"
+                          class="sc-Axmtr gOfPTF"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -13312,7 +13308,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="w-48"
                       >
                         <div
-                          class="sc-Axmtr hmHaow text-sm text-theme-neutral-600"
+                          class="sc-Axmtr kJpthz text-sm text-theme-neutral-600"
                         >
                           <span
                             data-testid="TransactionRow__timestamp"
@@ -13325,7 +13321,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="w-32"
                       >
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -13364,7 +13360,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow"
+                          class="sc-Axmtr kJpthz"
                         >
                           <div
                             class="inline-block truncate align-middle"
@@ -13380,7 +13376,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -13392,20 +13388,20 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr hmHaow justify-center"
+                          class="sc-Axmtr kJpthz justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
                             data-testid="TransactionRowConfirmation"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj text-theme-success"
+                              class="sc-AxiKw fFXzuz text-theme-success"
                               data-testid="TransactionRowConfirmation__confirmed"
-                              height="1em"
-                              width="1em"
+                              height="22"
+                              width="22"
                             >
                               <svg>
-                                ok.svg
+                                status-ok.svg
                               </svg>
                             </div>
                           </div>
@@ -13413,7 +13409,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr hmHaow justify-end"
+                          class="sc-Axmtr kJpthz justify-end"
                         >
                           <div
                             class="sc-fzozJi iTqYGz"
@@ -13430,7 +13426,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ftZuYa justify-end"
+                          class="sc-Axmtr hbxXZh justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -13526,7 +13522,7 @@ exports[`WalletDetails should update wallet name 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxheI isFJyk"
+            class="sc-AxheI gbMMiE -mt-3"
             role="table"
           >
             <table
@@ -13535,10 +13531,11 @@ exports[`WalletDetails should update wallet name 1`] = `
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -13568,7 +13565,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -13598,7 +13595,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -13612,7 +13609,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -13642,7 +13639,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -13682,7 +13679,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr lokVNe -space-x-2"
+                      class="sc-Axmtr kmkULx -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -13718,7 +13715,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg"
+                      class="sc-Axmtr eyhOa-D"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -13740,7 +13737,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eyhOa-D text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -13763,7 +13760,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr fdONKg font-semibold justify-end"
+                      class="sc-Axmtr eyhOa-D font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -13774,7 +13771,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr gfSbSa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr XuwAZ justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -13790,7 +13787,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -13826,7 +13823,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -13848,7 +13845,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -13857,7 +13854,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -13868,7 +13865,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -13884,7 +13881,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -13920,7 +13917,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -13936,7 +13933,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -13945,7 +13942,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -13956,7 +13953,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -13972,7 +13969,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr egluiO -space-x-2"
+                      class="sc-Axmtr gOfPTF -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -14008,7 +14005,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow"
+                      class="sc-Axmtr kJpthz"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -14024,7 +14021,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr kJpthz text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -14033,7 +14030,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr hmHaow font-semibold justify-end"
+                      class="sc-Axmtr kJpthz font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -14044,7 +14041,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr ftZuYa justify-end text-theme-neutral-light"
+                      class="sc-Axmtr hbxXZh justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"

@@ -7,7 +7,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
