@@ -74,7 +74,7 @@ exports[`SearchContact should render a modal 1`] = `
                   class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
                 >
                   <input
-                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="Search..."
                   />
@@ -98,7 +98,7 @@ exports[`SearchContact should render a modal 1`] = `
             class="mt-8"
           >
             <div
-              class="sc-fzpans khsYbJ"
+              class="sc-fzpans dPCoLV -mt-3"
               role="table"
             >
               <table
@@ -107,10 +107,11 @@ exports[`SearchContact should render a modal 1`] = `
               >
                 <thead>
                   <tr
+                    class="border-b border-theme-neutral-300"
                     role="row"
                   >
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -124,7 +125,7 @@ exports[`SearchContact should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -138,7 +139,7 @@ exports[`SearchContact should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -168,7 +169,7 @@ exports[`SearchContact should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -210,7 +211,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -237,7 +238,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -253,7 +254,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -264,7 +265,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -277,7 +278,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <div
                           class="relative"
@@ -314,7 +315,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -341,7 +342,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -357,7 +358,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -368,7 +369,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -381,7 +382,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <div
                           class="relative"
@@ -418,7 +419,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -445,7 +446,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="border-b border-dashed border-theme-neutral-200"
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -461,7 +462,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -472,7 +473,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -485,7 +486,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="border-b border-dashed border-theme-neutral-200"
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <div
                           class="relative"
@@ -522,7 +523,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -549,7 +550,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -565,7 +566,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -576,7 +577,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -589,7 +590,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <div
                           class="relative"
@@ -626,7 +627,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -653,7 +654,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -669,7 +670,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -680,7 +681,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -693,7 +694,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="border-b border-dashed border-theme-neutral-200"
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <button
                           class="sc-AxjAm hXnHfM float-right"
@@ -714,7 +715,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -741,7 +742,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class=""
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -757,7 +758,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -768,7 +769,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -781,7 +782,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="border-b border-dashed border-theme-neutral-200"
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <button
                           class="sc-AxjAm hXnHfM float-right"
@@ -877,7 +878,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                   class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
                 >
                   <input
-                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="Search..."
                   />
@@ -901,7 +902,7 @@ exports[`SearchContact should render a modal with custom title and description 1
             class="mt-8"
           >
             <div
-              class="sc-fzpans khsYbJ"
+              class="sc-fzpans dPCoLV -mt-3"
               role="table"
             >
               <table
@@ -910,10 +911,11 @@ exports[`SearchContact should render a modal with custom title and description 1
               >
                 <thead>
                   <tr
+                    class="border-b border-theme-neutral-300"
                     role="row"
                   >
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -927,7 +929,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -941,7 +943,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -971,7 +973,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -1013,7 +1015,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -1040,7 +1042,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class=""
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -1056,7 +1058,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -1067,7 +1069,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -1080,7 +1082,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class=""
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <div
                           class="relative"
@@ -1117,7 +1119,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -1144,7 +1146,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class=""
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -1160,7 +1162,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -1171,7 +1173,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -1184,7 +1186,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class=""
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <div
                           class="relative"
@@ -1221,7 +1223,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -1248,7 +1250,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class="border-b border-dashed border-theme-neutral-200"
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -1264,7 +1266,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -1275,7 +1277,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -1288,7 +1290,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class="border-b border-dashed border-theme-neutral-200"
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <div
                           class="relative"
@@ -1325,7 +1327,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -1352,7 +1354,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class=""
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -1368,7 +1370,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -1379,7 +1381,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -1392,7 +1394,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class=""
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <div
                           class="relative"
@@ -1429,7 +1431,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -1456,7 +1458,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class=""
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -1472,7 +1474,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -1483,7 +1485,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -1496,7 +1498,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class="border-b border-dashed border-theme-neutral-200"
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <button
                           class="sc-AxjAm hXnHfM float-right"
@@ -1517,7 +1519,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class="w-1"
                     >
                       <div
-                        class="sc-fzplWN jpmHPF"
+                        class="sc-fzplWN fpgSXe"
                       >
                         <div
                           class="mr-4"
@@ -1544,7 +1546,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class=""
                     >
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <div
                           class="inline-block truncate align-middle"
@@ -1560,7 +1562,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__name"
@@ -1571,7 +1573,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN ffxBmL"
+                        class="sc-fzplWN bpVNCE"
                       >
                         <span
                           data-testid="ContactListItem__type"
@@ -1584,7 +1586,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class="border-b border-dashed border-theme-neutral-200"
                     >
                       <div
-                        class="sc-fzplWN PBtuJ justify-end"
+                        class="sc-fzplWN ehVqqy justify-end"
                       >
                         <button
                           class="sc-AxjAm hXnHfM float-right"

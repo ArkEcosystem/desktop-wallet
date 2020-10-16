@@ -93,7 +93,7 @@ exports[`CustomPeers should render a modal 1`] = `
                       aria-controls="CustomPeers__network-menu"
                       aria-labelledby="CustomPeers__network-label"
                       autocomplete="off"
-                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                       data-testid="SelectNetworkInput__input"
                       id="CustomPeers__network-input"
                       placeholder="Enter a cryptoasset name"
@@ -124,7 +124,7 @@ exports[`CustomPeers should render a modal 1`] = `
                 />
               </label>
               <input
-                class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 name="name"
               />
@@ -144,7 +144,7 @@ exports[`CustomPeers should render a modal 1`] = `
                 />
               </label>
               <input
-                class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 name="peer-ip"
               />

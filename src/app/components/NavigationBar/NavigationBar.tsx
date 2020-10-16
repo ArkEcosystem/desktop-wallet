@@ -148,7 +148,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 					<NavLink
 						to={menuItem.mountPath(profile.id())}
 						title={menuItem.title}
-						className="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+						className="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
 					>
 						{menuItem.title}
 					</NavLink>

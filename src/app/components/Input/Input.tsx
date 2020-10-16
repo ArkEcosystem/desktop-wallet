@@ -36,7 +36,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 		return (
 			<InputStyled
 				data-testid="Input"
-				className={`overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 ${
+				className={`overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 ${
 					className || ""
 				}`}
 				name={fieldContext?.name}

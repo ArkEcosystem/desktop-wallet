@@ -6,7 +6,7 @@ exports[`PluginList should render 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="sc-AxheI isFJyk"
+      class="sc-AxheI gbMMiE -mt-3"
       role="table"
     >
       <table
@@ -15,10 +15,11 @@ exports[`PluginList should render 1`] = `
       >
         <thead>
           <tr
+            class="border-b border-theme-neutral-300"
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -32,7 +33,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -62,7 +63,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -92,7 +93,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -122,7 +123,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -152,7 +153,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -182,7 +183,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -212,7 +213,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -226,7 +227,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -252,7 +253,7 @@ exports[`PluginList should render 1`] = `
               class="w-20"
             >
               <div
-                class="sc-Axmtr egluiO"
+                class="sc-Axmtr gOfPTF"
               >
                 <svg
                   class="w-15 h-15"
@@ -263,7 +264,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow space-x-2"
+                class="sc-Axmtr kJpthz space-x-2"
               >
                 <a
                   class="font-semibold link"
@@ -284,7 +285,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow pr-16"
+                class="sc-Axmtr kJpthz pr-16"
               >
                 <span>
                   ARK.io
@@ -293,7 +294,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   Utility
@@ -302,7 +303,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex"
@@ -337,7 +338,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   v 1.3.8
@@ -346,7 +347,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   4.2 MB
@@ -355,7 +356,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex w-6 h-6 mx-auto"
@@ -380,7 +381,7 @@ exports[`PluginList should render 1`] = `
               class="w-16"
             >
               <div
-                class="sc-Axmtr ftZuYa justify-end"
+                class="sc-Axmtr hbxXZh justify-end"
               >
                 <button
                   class="sc-AxjAm hXnHfM"
@@ -401,7 +402,7 @@ exports[`PluginList should render 1`] = `
               class="w-20"
             >
               <div
-                class="sc-Axmtr egluiO"
+                class="sc-Axmtr gOfPTF"
               >
                 <svg
                   class="w-15 h-15"
@@ -412,7 +413,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow space-x-2"
+                class="sc-Axmtr kJpthz space-x-2"
               >
                 <a
                   class="font-semibold link"
@@ -433,7 +434,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow pr-16"
+                class="sc-Axmtr kJpthz pr-16"
               >
                 <span>
                   ARK.io
@@ -442,7 +443,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   Other
@@ -451,7 +452,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex"
@@ -486,7 +487,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   v 1.3.8
@@ -495,7 +496,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   163 KB
@@ -504,7 +505,7 @@ exports[`PluginList should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -529,7 +530,7 @@ exports[`PluginList should render 1`] = `
               class="w-16"
             >
               <div
-                class="sc-Axmtr ftZuYa justify-end"
+                class="sc-Axmtr hbxXZh justify-end"
               >
                 <div
                   class="relative"
@@ -585,7 +586,7 @@ exports[`PluginList should render without pagination 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="sc-AxheI isFJyk"
+      class="sc-AxheI gbMMiE -mt-3"
       role="table"
     >
       <table
@@ -594,10 +595,11 @@ exports[`PluginList should render without pagination 1`] = `
       >
         <thead>
           <tr
+            class="border-b border-theme-neutral-300"
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -611,7 +613,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -641,7 +643,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -671,7 +673,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -701,7 +703,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -731,7 +733,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -761,7 +763,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -791,7 +793,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -805,7 +807,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -831,7 +833,7 @@ exports[`PluginList should render without pagination 1`] = `
               class="w-20"
             >
               <div
-                class="sc-Axmtr egluiO"
+                class="sc-Axmtr gOfPTF"
               >
                 <svg
                   class="w-15 h-15"
@@ -842,7 +844,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow space-x-2"
+                class="sc-Axmtr kJpthz space-x-2"
               >
                 <a
                   class="font-semibold link"
@@ -863,7 +865,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow pr-16"
+                class="sc-Axmtr kJpthz pr-16"
               >
                 <span>
                   ARK.io
@@ -872,7 +874,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   Utility
@@ -881,7 +883,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex"
@@ -916,7 +918,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   v 1.3.8
@@ -925,7 +927,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   4.2 MB
@@ -934,7 +936,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex w-6 h-6 mx-auto"
@@ -959,7 +961,7 @@ exports[`PluginList should render without pagination 1`] = `
               class="w-16"
             >
               <div
-                class="sc-Axmtr ftZuYa justify-end"
+                class="sc-Axmtr hbxXZh justify-end"
               >
                 <button
                   class="sc-AxjAm hXnHfM"
@@ -980,7 +982,7 @@ exports[`PluginList should render without pagination 1`] = `
               class="w-20"
             >
               <div
-                class="sc-Axmtr egluiO"
+                class="sc-Axmtr gOfPTF"
               >
                 <svg
                   class="w-15 h-15"
@@ -991,7 +993,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow space-x-2"
+                class="sc-Axmtr kJpthz space-x-2"
               >
                 <a
                   class="font-semibold link"
@@ -1012,7 +1014,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow pr-16"
+                class="sc-Axmtr kJpthz pr-16"
               >
                 <span>
                   ARK.io
@@ -1021,7 +1023,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   Other
@@ -1030,7 +1032,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex"
@@ -1065,7 +1067,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   v 1.3.8
@@ -1074,7 +1076,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   163 KB
@@ -1083,7 +1085,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -1108,7 +1110,7 @@ exports[`PluginList should render without pagination 1`] = `
               class="w-16"
             >
               <div
-                class="sc-Axmtr ftZuYa justify-end"
+                class="sc-Axmtr hbxXZh justify-end"
               >
                 <div
                   class="relative"
@@ -1146,7 +1148,7 @@ exports[`PluginList should split by page 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="sc-AxheI isFJyk"
+      class="sc-AxheI gbMMiE -mt-3"
       role="table"
     >
       <table
@@ -1155,10 +1157,11 @@ exports[`PluginList should split by page 1`] = `
       >
         <thead>
           <tr
+            class="border-b border-theme-neutral-300"
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1172,7 +1175,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1202,7 +1205,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1232,7 +1235,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -1262,7 +1265,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -1292,7 +1295,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -1322,7 +1325,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -1352,7 +1355,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -1366,7 +1369,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -1392,7 +1395,7 @@ exports[`PluginList should split by page 1`] = `
               class="w-20"
             >
               <div
-                class="sc-Axmtr egluiO"
+                class="sc-Axmtr gOfPTF"
               >
                 <svg
                   class="w-15 h-15"
@@ -1403,7 +1406,7 @@ exports[`PluginList should split by page 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow space-x-2"
+                class="sc-Axmtr kJpthz space-x-2"
               >
                 <a
                   class="font-semibold link"
@@ -1424,7 +1427,7 @@ exports[`PluginList should split by page 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow pr-16"
+                class="sc-Axmtr kJpthz pr-16"
               >
                 <span>
                   ARK.io
@@ -1433,7 +1436,7 @@ exports[`PluginList should split by page 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   Other
@@ -1442,7 +1445,7 @@ exports[`PluginList should split by page 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex"
@@ -1477,7 +1480,7 @@ exports[`PluginList should split by page 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   v 1.3.8
@@ -1486,7 +1489,7 @@ exports[`PluginList should split by page 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   163 KB
@@ -1495,7 +1498,7 @@ exports[`PluginList should split by page 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -1520,7 +1523,7 @@ exports[`PluginList should split by page 1`] = `
               class="w-16"
             >
               <div
-                class="sc-Axmtr ftZuYa justify-end"
+                class="sc-Axmtr hbxXZh justify-end"
               >
                 <div
                   class="relative"
@@ -1598,7 +1601,7 @@ exports[`PluginList should trigger delete 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="sc-AxheI isFJyk"
+      class="sc-AxheI gbMMiE -mt-3"
       role="table"
     >
       <table
@@ -1607,10 +1610,11 @@ exports[`PluginList should trigger delete 1`] = `
       >
         <thead>
           <tr
+            class="border-b border-theme-neutral-300"
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1624,7 +1628,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1654,7 +1658,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1684,7 +1688,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -1714,7 +1718,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -1744,7 +1748,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -1774,7 +1778,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -1804,7 +1808,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -1818,7 +1822,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -1844,7 +1848,7 @@ exports[`PluginList should trigger delete 1`] = `
               class="w-20"
             >
               <div
-                class="sc-Axmtr egluiO"
+                class="sc-Axmtr gOfPTF"
               >
                 <svg
                   class="w-15 h-15"
@@ -1855,7 +1859,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow space-x-2"
+                class="sc-Axmtr kJpthz space-x-2"
               >
                 <a
                   class="font-semibold link"
@@ -1876,7 +1880,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow pr-16"
+                class="sc-Axmtr kJpthz pr-16"
               >
                 <span>
                   ARK.io
@@ -1885,7 +1889,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   Utility
@@ -1894,7 +1898,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex"
@@ -1929,7 +1933,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   v 1.3.8
@@ -1938,7 +1942,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   4.2 MB
@@ -1947,7 +1951,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex w-6 h-6 mx-auto"
@@ -1972,7 +1976,7 @@ exports[`PluginList should trigger delete 1`] = `
               class="w-16"
             >
               <div
-                class="sc-Axmtr ftZuYa justify-end"
+                class="sc-Axmtr hbxXZh justify-end"
               >
                 <button
                   class="sc-AxjAm hXnHfM"
@@ -1993,7 +1997,7 @@ exports[`PluginList should trigger delete 1`] = `
               class="w-20"
             >
               <div
-                class="sc-Axmtr egluiO"
+                class="sc-Axmtr gOfPTF"
               >
                 <svg
                   class="w-15 h-15"
@@ -2004,7 +2008,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow space-x-2"
+                class="sc-Axmtr kJpthz space-x-2"
               >
                 <a
                   class="font-semibold link"
@@ -2025,7 +2029,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow pr-16"
+                class="sc-Axmtr kJpthz pr-16"
               >
                 <span>
                   ARK.io
@@ -2034,7 +2038,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   Other
@@ -2043,7 +2047,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex"
@@ -2078,7 +2082,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   v 1.3.8
@@ -2087,7 +2091,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   163 KB
@@ -2096,7 +2100,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -2121,7 +2125,7 @@ exports[`PluginList should trigger delete 1`] = `
               class="w-16"
             >
               <div
-                class="sc-Axmtr ftZuYa justify-end"
+                class="sc-Axmtr hbxXZh justify-end"
               >
                 <div
                   class="relative"
@@ -2177,7 +2181,7 @@ exports[`PluginList should trigger install 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="sc-AxheI isFJyk"
+      class="sc-AxheI gbMMiE -mt-3"
       role="table"
     >
       <table
@@ -2186,10 +2190,11 @@ exports[`PluginList should trigger install 1`] = `
       >
         <thead>
           <tr
+            class="border-b border-theme-neutral-300"
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -2203,7 +2208,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -2233,7 +2238,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -2263,7 +2268,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -2293,7 +2298,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -2323,7 +2328,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -2353,7 +2358,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -2383,7 +2388,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -2397,7 +2402,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -2423,7 +2428,7 @@ exports[`PluginList should trigger install 1`] = `
               class="w-20"
             >
               <div
-                class="sc-Axmtr egluiO"
+                class="sc-Axmtr gOfPTF"
               >
                 <svg
                   class="w-15 h-15"
@@ -2434,7 +2439,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow space-x-2"
+                class="sc-Axmtr kJpthz space-x-2"
               >
                 <a
                   class="font-semibold link"
@@ -2455,7 +2460,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow pr-16"
+                class="sc-Axmtr kJpthz pr-16"
               >
                 <span>
                   ARK.io
@@ -2464,7 +2469,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   Utility
@@ -2473,7 +2478,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex"
@@ -2508,7 +2513,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   v 1.3.8
@@ -2517,7 +2522,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   4.2 MB
@@ -2526,7 +2531,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex w-6 h-6 mx-auto"
@@ -2551,7 +2556,7 @@ exports[`PluginList should trigger install 1`] = `
               class="w-16"
             >
               <div
-                class="sc-Axmtr ftZuYa justify-end"
+                class="sc-Axmtr hbxXZh justify-end"
               >
                 <button
                   class="sc-AxjAm hXnHfM"
@@ -2572,7 +2577,7 @@ exports[`PluginList should trigger install 1`] = `
               class="w-20"
             >
               <div
-                class="sc-Axmtr egluiO"
+                class="sc-Axmtr gOfPTF"
               >
                 <svg
                   class="w-15 h-15"
@@ -2583,7 +2588,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow space-x-2"
+                class="sc-Axmtr kJpthz space-x-2"
               >
                 <a
                   class="font-semibold link"
@@ -2604,7 +2609,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow pr-16"
+                class="sc-Axmtr kJpthz pr-16"
               >
                 <span>
                   ARK.io
@@ -2613,7 +2618,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   Other
@@ -2622,7 +2627,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex"
@@ -2657,7 +2662,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   v 1.3.8
@@ -2666,7 +2671,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <span>
                   163 KB
@@ -2675,7 +2680,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
             <td>
               <div
-                class="sc-Axmtr hmHaow"
+                class="sc-Axmtr kJpthz"
               >
                 <div
                   class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -2700,7 +2705,7 @@ exports[`PluginList should trigger install 1`] = `
               class="w-16"
             >
               <div
-                class="sc-Axmtr ftZuYa justify-end"
+                class="sc-Axmtr hbxXZh justify-end"
               >
                 <div
                   class="relative"
