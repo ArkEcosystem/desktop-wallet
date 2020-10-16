@@ -10,7 +10,7 @@ type Props = {
 };
 
 const VendorField = ({ vendorField }: { vendorField: string | undefined }) => (
-	<Tippy content={vendorField}>
+	<Tippy className="break-all" content={vendorField}>
 		<span className="p-1">
 			<Icon data-testid="TransactionRowInfo__vendorField" name="Smartbridge" width={17} height={16} />
 		</span>
