@@ -1,10 +1,10 @@
-import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { DelegateMapper, Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
-import { getDefaultProfileId, renderWithRouter, syncDelegates } from "utils/testing-library";
+import { env, getDefaultProfileId, renderWithRouter, syncDelegates } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { TransactionDetailModal } from "./TransactionDetailModal";
@@ -15,6 +15,9 @@ const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
 describe("TransactionDetailModal", () => {
+	let profile: Profile;
+	let wallet: ReadWriteWallet;
+
 	beforeAll(async () => {
 		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
@@ -29,6 +32,8 @@ describe("TransactionDetailModal", () => {
 	beforeEach(() => {
 		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().first();
 	});
 
 	it("should not render if not open", () => {
@@ -85,6 +90,9 @@ describe("TransactionDetailModal", () => {
 						...TransactionFixture,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "multiSignature",
+						min: () => 3,
+						publicKeys: () => [wallet.publicKey()],
+						wallet: () => wallet,
 					}}
 				/>
 				,

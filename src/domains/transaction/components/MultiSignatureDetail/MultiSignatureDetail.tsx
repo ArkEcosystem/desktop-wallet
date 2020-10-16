@@ -6,6 +6,7 @@ import { Modal } from "app/components/Modal";
 import { Spinner } from "app/components/Spinner";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
+import { toasts } from "app/services";
 import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -78,23 +79,31 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 	const canBeSigned = wallet.transaction().canBeSigned(transaction.id());
 
 	const broadcast = useCallback(async () => {
-		if (wallet.transaction().canBeBroadcasted(transaction.id())) {
-			await wallet.transaction().broadcast(transaction.id());
+		try {
+			if (wallet.transaction().canBeBroadcasted(transaction.id())) {
+				await wallet.transaction().broadcast(transaction.id());
+			}
+			await persist();
+			setActiveStep(3);
+		} catch {
+			toasts.error(t("TRANSACTION.MULTISIGNATURE.ERROR.FAILED_TO_BROADCAST"));
 		}
-		await persist();
-		setActiveStep(3);
-	}, [wallet, transaction, persist]);
+	}, [wallet, transaction, persist, t]);
 
 	const addSignature = useCallback(
 		async ({ mnemonic }: { mnemonic: string }) => {
-			if (wallet.transaction().canBeSigned(transaction.id())) {
-				await wallet.transaction().addSignature(transaction.id(), mnemonic);
-				await wallet.transaction().sync();
-			}
+			try {
+				if (wallet.transaction().canBeSigned(transaction.id())) {
+					await wallet.transaction().addSignature(transaction.id(), mnemonic);
+					await wallet.transaction().sync();
+				}
 
-			await broadcast();
+				await broadcast();
+			} catch {
+				toasts.error(t("TRANSACTION.MULTISIGNATURE.ERROR.FAILED_TO_SIGN"));
+			}
 		},
-		[transaction, wallet, broadcast],
+		[transaction, wallet, broadcast, t],
 	);
 
 	return (

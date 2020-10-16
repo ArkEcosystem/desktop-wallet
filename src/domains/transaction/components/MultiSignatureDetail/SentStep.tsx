@@ -17,9 +17,10 @@ export const SentStep = ({
 	wallet: ReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
-	const participants = transaction
-		.get<{ publicKeys: string[] }>("multiSignature")
-		.publicKeys.filter((pubKey) => pubKey !== wallet.publicKey());
+	const participants =
+		transaction
+			.get<{ publicKeys?: string[] }>("multiSignature")
+			?.publicKeys?.filter((pubKey) => pubKey !== wallet.publicKey()) || [];
 
 	return (
 		<section>
