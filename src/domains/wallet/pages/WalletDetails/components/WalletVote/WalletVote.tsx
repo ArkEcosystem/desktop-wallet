@@ -92,7 +92,7 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 						{rank ? (
 							<Tippy content={`#${rank}`} placement="right">
 								<span>
-									<Icon name="Ok" className="text-theme-success" />
+									<Icon name="StatusOk" className="text-theme-success" />
 								</span>
 							</Tippy>
 						) : (

@@ -4,7 +4,7 @@ import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
-import { useValidation } from "app/hooks/validations";
+import { useValidation } from "app/hooks";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TransactionSender } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";

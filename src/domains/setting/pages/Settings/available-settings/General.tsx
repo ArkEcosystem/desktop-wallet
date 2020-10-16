@@ -8,7 +8,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";

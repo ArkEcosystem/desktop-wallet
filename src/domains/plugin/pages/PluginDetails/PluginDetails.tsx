@@ -1,6 +1,6 @@
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { Comments } from "domains/plugin/components/Comments";
 import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";

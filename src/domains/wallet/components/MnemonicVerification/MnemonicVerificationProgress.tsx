@@ -40,7 +40,7 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 		>
 			{isComplete ? (
 				<span className="text-lg text-theme-success">
-					<Icon name="Ok" />
+					<Icon name="StatusOk" />
 				</span>
 			) : (
 				<span>{t("WALLETS.MNEMONIC_VERIFICATION.WORD_NUMBER", { position: wordPosition })}</span>

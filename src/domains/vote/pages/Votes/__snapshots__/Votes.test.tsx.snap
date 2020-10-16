@@ -39,7 +39,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -50,7 +50,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -61,7 +61,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -72,7 +72,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -394,7 +394,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     aria-controls="Votes__network-menu"
                     aria-labelledby="Votes__network-label"
                     autocomplete="off"
-                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                     data-testid="SelectNetworkInput__input"
                     id="Votes__network-input"
                     placeholder="Select Cryptoasset"
@@ -422,7 +422,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
               class="relative flex items-center"
             >
               <input
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 disabled=""
                 type="text"
@@ -500,7 +500,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
             />
           </li>
           <li
-            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-text border-transparent"
             data-testid="Tab__item--vote"
           >
             My Vote
@@ -522,7 +522,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt kCxAsC"
+              class="sc-fzokOt dDfosy -mt-3"
               role="table"
             >
               <table
@@ -531,10 +531,11 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
               >
                 <thead>
                   <tr
+                    class="border-b border-theme-neutral-300"
                     role="row"
                   >
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -548,7 +549,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -578,7 +579,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -592,7 +593,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -622,7 +623,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -652,7 +653,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
@@ -666,7 +667,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
@@ -696,7 +697,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--7"
                       role="columnheader"
@@ -726,7 +727,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--8"
                       role="columnheader"
@@ -756,7 +757,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--9"
                       role="columnheader"
@@ -786,7 +787,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--10"
                       role="columnheader"
@@ -828,7 +829,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW bg-theme-primary-50"
+                        class="sc-fzqBZW hcubxN bg-theme-primary-50"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -848,7 +849,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX font-bold bg-theme-primary-50"
                       >
                         <span>
                           arkx
@@ -859,7 +860,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center bg-theme-primary-50"
                       >
                         <div
                           class="flex items-center justify-center p-2 rounded-full bg-theme-primary-100"
@@ -870,7 +871,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                             width="1em"
                           >
                             <svg>
-                              ok.svg
+                              status-ok.svg
                             </svg>
                           </div>
                         </div>
@@ -880,7 +881,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           #
@@ -891,7 +892,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           %
@@ -902,7 +903,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center bg-theme-primary-50"
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -919,7 +920,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
@@ -930,7 +931,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
@@ -941,7 +942,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
@@ -952,7 +953,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
@@ -963,7 +964,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end bg-theme-primary-50"
+                        class="sc-fzqBZW dRKtlx justify-end bg-theme-primary-50"
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -984,7 +985,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -1004,7 +1005,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           genesis_42
@@ -1015,14 +1016,14 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #2
@@ -1033,7 +1034,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -1044,7 +1045,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -1061,7 +1062,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1072,7 +1073,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1083,7 +1084,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1094,7 +1095,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1105,7 +1106,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -1126,7 +1127,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -1146,7 +1147,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           genesis_17
@@ -1157,14 +1158,14 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #3
@@ -1175,7 +1176,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -1186,7 +1187,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -1203,7 +1204,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1214,7 +1215,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1225,7 +1226,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1236,7 +1237,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1247,7 +1248,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -1268,7 +1269,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -1288,7 +1289,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           testwallet2
@@ -1299,14 +1300,14 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #
@@ -1317,7 +1318,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -1328,7 +1329,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -1345,7 +1346,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1356,7 +1357,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1367,7 +1368,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1378,7 +1379,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -1389,7 +1390,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -1466,7 +1467,7 @@ exports[`Votes should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1477,7 +1478,7 @@ exports[`Votes should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1488,7 +1489,7 @@ exports[`Votes should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1499,7 +1500,7 @@ exports[`Votes should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1821,7 +1822,7 @@ exports[`Votes should render 1`] = `
                     aria-controls="Votes__network-menu"
                     aria-labelledby="Votes__network-label"
                     autocomplete="off"
-                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                     data-testid="SelectNetworkInput__input"
                     id="Votes__network-input"
                     placeholder="Select Cryptoasset"
@@ -1849,7 +1850,7 @@ exports[`Votes should render 1`] = `
               class="relative flex items-center"
             >
               <input
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 disabled=""
                 type="text"
@@ -1927,7 +1928,7 @@ exports[`Votes should render 1`] = `
             />
           </li>
           <li
-            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-text border-transparent"
             data-testid="Tab__item--vote"
           >
             My Vote
@@ -1949,7 +1950,7 @@ exports[`Votes should render 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt kCxAsC"
+              class="sc-fzokOt dDfosy -mt-3"
               role="table"
             >
               <table
@@ -1958,10 +1959,11 @@ exports[`Votes should render 1`] = `
               >
                 <thead>
                   <tr
+                    class="border-b border-theme-neutral-300"
                     role="row"
                   >
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -1975,7 +1977,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -2005,7 +2007,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -2019,7 +2021,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -2049,7 +2051,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -2079,7 +2081,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
@@ -2093,7 +2095,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
@@ -2123,7 +2125,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--7"
                       role="columnheader"
@@ -2153,7 +2155,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--8"
                       role="columnheader"
@@ -2183,7 +2185,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--9"
                       role="columnheader"
@@ -2213,7 +2215,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--10"
                       role="columnheader"
@@ -2255,7 +2257,7 @@ exports[`Votes should render 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW bg-theme-primary-50"
+                        class="sc-fzqBZW hcubxN bg-theme-primary-50"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -2275,7 +2277,7 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX font-bold bg-theme-primary-50"
                       >
                         <span>
                           arkx
@@ -2286,7 +2288,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center bg-theme-primary-50"
                       >
                         <div
                           class="flex items-center justify-center p-2 rounded-full bg-theme-primary-100"
@@ -2297,7 +2299,7 @@ exports[`Votes should render 1`] = `
                             width="1em"
                           >
                             <svg>
-                              ok.svg
+                              status-ok.svg
                             </svg>
                           </div>
                         </div>
@@ -2307,7 +2309,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           #
@@ -2318,7 +2320,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           %
@@ -2329,7 +2331,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center bg-theme-primary-50"
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -2346,7 +2348,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
@@ -2357,7 +2359,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
@@ -2368,7 +2370,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
@@ -2379,7 +2381,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark bg-theme-primary-50"
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
@@ -2390,7 +2392,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end bg-theme-primary-50"
+                        class="sc-fzqBZW dRKtlx justify-end bg-theme-primary-50"
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -2411,7 +2413,7 @@ exports[`Votes should render 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -2431,7 +2433,7 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           genesis_42
@@ -2442,14 +2444,14 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #2
@@ -2460,7 +2462,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -2471,7 +2473,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -2488,7 +2490,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2499,7 +2501,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2510,7 +2512,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2521,7 +2523,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2532,7 +2534,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -2553,7 +2555,7 @@ exports[`Votes should render 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -2573,7 +2575,7 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           genesis_17
@@ -2584,14 +2586,14 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #3
@@ -2602,7 +2604,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -2613,7 +2615,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -2630,7 +2632,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2641,7 +2643,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2652,7 +2654,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2663,7 +2665,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2674,7 +2676,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -2695,7 +2697,7 @@ exports[`Votes should render 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -2715,7 +2717,7 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           testwallet2
@@ -2726,14 +2728,14 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #
@@ -2744,7 +2746,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -2755,7 +2757,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -2772,7 +2774,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2783,7 +2785,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2794,7 +2796,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2805,7 +2807,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -2816,7 +2818,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -2893,7 +2895,7 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -2904,7 +2906,7 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -2915,7 +2917,7 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -2926,7 +2928,7 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -3248,7 +3250,7 @@ exports[`Votes should select a delegate 1`] = `
                     aria-controls="Votes__network-menu"
                     aria-labelledby="Votes__network-label"
                     autocomplete="off"
-                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                     data-testid="SelectNetworkInput__input"
                     id="Votes__network-input"
                     placeholder="Select Cryptoasset"
@@ -3276,7 +3278,7 @@ exports[`Votes should select a delegate 1`] = `
               class="relative flex items-center"
             >
               <input
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 disabled=""
                 type="text"
@@ -3354,7 +3356,7 @@ exports[`Votes should select a delegate 1`] = `
             />
           </li>
           <li
-            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-text border-transparent"
             data-testid="Tab__item--vote"
           >
             My Vote
@@ -3376,7 +3378,7 @@ exports[`Votes should select a delegate 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt kCxAsC"
+              class="sc-fzokOt dDfosy -mt-3"
               role="table"
             >
               <table
@@ -3385,10 +3387,11 @@ exports[`Votes should select a delegate 1`] = `
               >
                 <thead>
                   <tr
+                    class="border-b border-theme-neutral-300"
                     role="row"
                   >
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -3402,7 +3405,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -3432,7 +3435,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -3446,7 +3449,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -3476,7 +3479,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -3506,7 +3509,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
@@ -3520,7 +3523,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
@@ -3550,7 +3553,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--7"
                       role="columnheader"
@@ -3580,7 +3583,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--8"
                       role="columnheader"
@@ -3610,7 +3613,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--9"
                       role="columnheader"
@@ -3640,7 +3643,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--10"
                       role="columnheader"
@@ -3682,7 +3685,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW bg-theme-danger-50"
+                        class="sc-fzqBZW hcubxN bg-theme-danger-50"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -3702,7 +3705,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold bg-theme-danger-50"
+                        class="sc-fzqBZW eDxgbX font-bold bg-theme-danger-50"
                       >
                         <span>
                           arkx
@@ -3713,7 +3716,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center bg-theme-danger-50"
+                        class="sc-fzqBZW eDxgbX justify-center bg-theme-danger-50"
                       >
                         <div
                           class="flex items-center justify-center p-2 rounded-full bg-theme-danger-100"
@@ -3724,7 +3727,7 @@ exports[`Votes should select a delegate 1`] = `
                             width="1em"
                           >
                             <svg>
-                              ok.svg
+                              status-ok.svg
                             </svg>
                           </div>
                         </div>
@@ -3734,7 +3737,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           #
@@ -3745,7 +3748,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           %
@@ -3756,7 +3759,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center bg-theme-danger-50"
+                        class="sc-fzqBZW eDxgbX justify-center bg-theme-danger-50"
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -3773,7 +3776,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           ...
@@ -3784,7 +3787,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           ...
@@ -3795,7 +3798,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           ...
@@ -3806,7 +3809,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark bg-theme-danger-50"
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           ...
@@ -3817,7 +3820,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end bg-theme-danger-50"
+                        class="sc-fzqBZW dRKtlx justify-end bg-theme-danger-50"
                       >
                         <button
                           class="sc-fznKkj dMzuSY"
@@ -3838,7 +3841,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -3858,7 +3861,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           genesis_42
@@ -3869,14 +3872,14 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #2
@@ -3887,7 +3890,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -3898,7 +3901,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -3915,7 +3918,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -3926,7 +3929,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -3937,7 +3940,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -3948,7 +3951,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -3959,7 +3962,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -3980,7 +3983,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -4000,7 +4003,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           genesis_17
@@ -4011,14 +4014,14 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #3
@@ -4029,7 +4032,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -4040,7 +4043,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -4057,7 +4060,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -4068,7 +4071,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -4079,7 +4082,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -4090,7 +4093,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -4101,7 +4104,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -4122,7 +4125,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -4142,7 +4145,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           testwallet2
@@ -4153,14 +4156,14 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #
@@ -4171,7 +4174,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -4182,7 +4185,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -4199,7 +4202,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -4210,7 +4213,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -4221,7 +4224,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -4232,7 +4235,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -4243,7 +4246,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -4297,7 +4300,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-text text-theme-text"
                         >
                           <div
                             class="sc-AxhCb fxrKLH text-xl"
@@ -4318,7 +4321,7 @@ exports[`Votes should select a delegate 1`] = `
                             Votes
                           </div>
                           <div
-                            class="text-theme-neutral-900"
+                            class="text-theme-text"
                             data-testid="DelegateTable__footer--votes"
                           >
                             0
@@ -4333,7 +4336,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-text text-theme-text"
                         >
                           <div
                             class="sc-AxhCb fxrKLH text-xl"
@@ -4354,7 +4357,7 @@ exports[`Votes should select a delegate 1`] = `
                             Unvotes
                           </div>
                           <div
-                            class="text-theme-neutral-900"
+                            class="text-theme-text"
                             data-testid="DelegateTable__footer--unvotes"
                           >
                             1
@@ -4369,7 +4372,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-text text-theme-text"
                         >
                           <div
                             class="sc-AxhCb fxrKLH text-xl"
@@ -4390,7 +4393,7 @@ exports[`Votes should select a delegate 1`] = `
                             Total
                           </div>
                           <div
-                            class="text-theme-neutral-900"
+                            class="text-theme-text"
                             data-testid="DelegateTable__footer--total"
                           >
                             1/1
@@ -4453,7 +4456,7 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -4464,7 +4467,7 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -4475,7 +4478,7 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -4486,7 +4489,7 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -4808,7 +4811,7 @@ exports[`Votes should select an address without vote 1`] = `
                     aria-controls="Votes__network-menu"
                     aria-labelledby="Votes__network-label"
                     autocomplete="off"
-                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                     data-testid="SelectNetworkInput__input"
                     id="Votes__network-input"
                     placeholder="Select Cryptoasset"
@@ -4836,7 +4839,7 @@ exports[`Votes should select an address without vote 1`] = `
               class="relative flex items-center"
             >
               <input
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 disabled=""
                 type="text"
@@ -4908,7 +4911,7 @@ exports[`Votes should select an address without vote 1`] = `
             />
           </li>
           <li
-            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-text border-transparent"
             data-testid="Tab__item--vote"
           >
             My Vote
@@ -4930,7 +4933,7 @@ exports[`Votes should select an address without vote 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt kCxAsC"
+              class="sc-fzokOt dDfosy -mt-3"
               role="table"
             >
               <table
@@ -4939,10 +4942,11 @@ exports[`Votes should select an address without vote 1`] = `
               >
                 <thead>
                   <tr
+                    class="border-b border-theme-neutral-300"
                     role="row"
                   >
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -4956,7 +4960,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -4986,7 +4990,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -5000,7 +5004,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -5030,7 +5034,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -5060,7 +5064,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
@@ -5074,7 +5078,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
@@ -5104,7 +5108,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--7"
                       role="columnheader"
@@ -5134,7 +5138,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--8"
                       role="columnheader"
@@ -5164,7 +5168,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--9"
                       role="columnheader"
@@ -5194,7 +5198,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--10"
                       role="columnheader"
@@ -5236,7 +5240,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -5256,7 +5260,7 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           arkx
@@ -5267,14 +5271,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #
@@ -5285,7 +5289,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -5296,7 +5300,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -5313,7 +5317,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5324,7 +5328,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5335,7 +5339,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5346,7 +5350,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5357,7 +5361,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -5378,7 +5382,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -5398,7 +5402,7 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           genesis_42
@@ -5409,14 +5413,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #2
@@ -5427,7 +5431,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -5438,7 +5442,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -5455,7 +5459,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5466,7 +5470,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5477,7 +5481,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5488,7 +5492,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5499,7 +5503,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -5520,7 +5524,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -5540,7 +5544,7 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           genesis_17
@@ -5551,14 +5555,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #3
@@ -5569,7 +5573,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -5580,7 +5584,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -5597,7 +5601,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5608,7 +5612,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5619,7 +5623,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5630,7 +5634,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5641,7 +5645,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"
@@ -5662,7 +5666,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW fyRzwW"
+                        class="sc-fzqBZW hcubxN"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -5682,7 +5686,7 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW fRovnQ font-bold "
+                        class="sc-fzqBZW eDxgbX font-bold "
                       >
                         <span>
                           testwallet2
@@ -5693,14 +5697,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #
@@ -5711,7 +5715,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
@@ -5722,7 +5726,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center "
+                        class="sc-fzqBZW eDxgbX justify-center "
                       >
                         <div
                           class="sc-AxhCb fxrKLH text-xl text-theme-primary"
@@ -5739,7 +5743,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5750,7 +5754,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5761,7 +5765,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5772,7 +5776,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                        class="sc-fzqBZW eDxgbX justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
@@ -5783,7 +5787,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW cSiZQG justify-end "
+                        class="sc-fzqBZW dRKtlx justify-end "
                       >
                         <button
                           class="sc-fznKkj ipJUHj"

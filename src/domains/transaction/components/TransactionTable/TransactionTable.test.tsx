@@ -172,6 +172,15 @@ describe("TransactionTable", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render without explorer link column", () => {
+		const { getAllByTestId, asFragment } = renderWithRouter(
+			// @ts-ignore - TODO: brittle fixtures
+			<TransactionTable transactions={transactions} showExplorerLinkColumn={false} />,
+		);
+		expect(() => getAllByTestId("TransactionRow__ID")).toThrow(/Unable to find an element by/);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render compact", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
 			// @ts-ignore - TODO: brittle fixtures

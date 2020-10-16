@@ -58,7 +58,7 @@ describe("WalletVote", () => {
 			/>,
 		);
 
-		expect(getByText("ok.svg")).toBeTruthy();
+		expect(getByText("status-ok.svg")).toBeTruthy();
 		expect(getAllByTestId("Avatar")).toHaveLength(1);
 		expect(getByText(votes[0].username())).toBeTruthy();
 	});
