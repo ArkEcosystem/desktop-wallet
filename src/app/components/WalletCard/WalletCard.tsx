@@ -110,7 +110,7 @@ export const WalletCard = ({
 					<Amount
 						value={wallet.balance()}
 						ticker={wallet.network().ticker()}
-						className="font-bold text-theme-neutral-900"
+						className="font-bold text-theme-text"
 					/>
 				</div>
 			</Card>

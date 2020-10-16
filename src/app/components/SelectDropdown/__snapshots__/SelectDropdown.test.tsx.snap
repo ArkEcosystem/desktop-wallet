@@ -6,7 +6,7 @@ exports[`SelectDropdown should render 1`] = `
     class="relative w-full"
   >
     <input
-      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -20,7 +20,7 @@ exports[`SelectDropdown should render 1`] = `
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="downshift-0-label downshift-0-toggle-button"
-          class="sc-fzozJi hEMsew   "
+          class="sc-fzozJi iueuKQ   "
           data-testid="select-list__toggle-button"
           id="downshift-0-toggle-button"
           type="button"
@@ -57,7 +57,7 @@ exports[`SelectDropdown should render disabled 1`] = `
     class="relative w-full"
   >
     <input
-      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -71,7 +71,7 @@ exports[`SelectDropdown should render disabled 1`] = `
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="downshift-2-label downshift-2-toggle-button"
-          class="sc-fzozJi hEMsew   "
+          class="sc-fzozJi iueuKQ   "
           data-testid="select-list__toggle-button"
           disabled=""
           id="downshift-2-toggle-button"
@@ -110,7 +110,7 @@ exports[`SelectDropdown should render invalid 1`] = `
   >
     <input
       aria-invalid="true"
-      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -124,7 +124,7 @@ exports[`SelectDropdown should render invalid 1`] = `
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="downshift-1-label downshift-1-toggle-button"
-          class="sc-fzozJi hEMsew   is-invalid"
+          class="sc-fzozJi iueuKQ   is-invalid"
           data-testid="select-list__toggle-button"
           id="downshift-1-toggle-button"
           type="button"
@@ -161,7 +161,7 @@ exports[`SelectDropdown should render with empty options 1`] = `
     class="relative w-full"
   >
     <input
-      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -175,7 +175,7 @@ exports[`SelectDropdown should render with empty options 1`] = `
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="downshift-6-label downshift-6-toggle-button"
-          class="sc-fzozJi hEMsew   "
+          class="sc-fzozJi iueuKQ   "
           data-testid="select-list__toggle-button"
           id="downshift-6-toggle-button"
           type="button"
@@ -212,7 +212,7 @@ exports[`SelectDropdown should render with initial default value 1`] = `
     class="relative w-full"
   >
     <input
-      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -226,7 +226,7 @@ exports[`SelectDropdown should render with initial default value 1`] = `
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="downshift-3-label downshift-3-toggle-button"
-          class="sc-fzozJi hEMsew  is-selected "
+          class="sc-fzozJi iueuKQ  is-selected "
           data-testid="select-list__toggle-button"
           id="downshift-3-toggle-button"
           type="button"
@@ -265,7 +265,7 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
     class="relative w-full"
   >
     <input
-      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -279,7 +279,7 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="downshift-7-label downshift-7-toggle-button"
-          class="sc-fzozJi hEMsew   "
+          class="sc-fzozJi iueuKQ   "
           data-testid="select-list__toggle-button"
           id="downshift-7-toggle-button"
           type="button"
@@ -316,7 +316,7 @@ exports[`SelectDropdown should render with wrong default value 1`] = `
     class="relative w-full"
   >
     <input
-      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -330,7 +330,7 @@ exports[`SelectDropdown should render with wrong default value 1`] = `
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="downshift-5-label downshift-5-toggle-button"
-          class="sc-fzozJi hEMsew   "
+          class="sc-fzozJi iueuKQ   "
           data-testid="select-list__toggle-button"
           id="downshift-5-toggle-button"
           type="button"

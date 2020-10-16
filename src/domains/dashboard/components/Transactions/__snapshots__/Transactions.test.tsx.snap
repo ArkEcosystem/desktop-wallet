@@ -2,15 +2,23 @@
 
 exports[`Transactions should render with 1`] = `
 <div>
+<<<<<<< HEAD
+  <div>
+=======
   <div
     class="bg-white"
   >
+>>>>>>> develop
     <div
       class="relative"
       data-testid="TransactionTable"
     >
       <div
+<<<<<<< HEAD
+        class="sc-AxiKw kebiLh"
+=======
         class="sc-AxiKw gGhpZ"
+>>>>>>> develop
         role="table"
       >
         <table
@@ -23,11 +31,11 @@ exports[`Transactions should render with 1`] = `
         </table>
       </div>
     </div>
-    <div
-      class="border border-solid border-theme-neutral-300 p-6 rounded-lg text-theme-neutral-dark -mt-5"
-    >
-      This will display the history of your transactions. But you don't have more than one transaction at the moment.
-    </div>
+  </div>
+  <div
+    class="border border-solid border-theme-neutral-300 p-6 rounded-lg text-theme-neutral-dark -mt-5"
+  >
+    This will display the history of your transactions. But you don't have more than one transaction at the moment.
   </div>
 </div>
 `;
@@ -35,11 +43,19 @@ exports[`Transactions should render with 1`] = `
 exports[`Transactions should render with custom title 1`] = `
 <div>
   <div
-    class="bg-white"
+    class="mb-8 text-4xl font-bold"
   >
+    Transaction history
+  </div>
+  <div>
     <div
-      class="mb-8 text-4xl font-bold"
+      class="relative"
+      data-testid="TransactionTable"
     >
+<<<<<<< HEAD
+      <div
+        class="sc-AxiKw kebiLh"
+=======
       Transaction history
     </div>
     <div
@@ -48,6 +64,7 @@ exports[`Transactions should render with custom title 1`] = `
     >
       <div
         class="sc-AxiKw gGhpZ"
+>>>>>>> develop
         role="table"
       >
         <table
@@ -60,26 +77,34 @@ exports[`Transactions should render with custom title 1`] = `
         </table>
       </div>
     </div>
-    <div
-      class="border border-solid border-theme-neutral-300 p-6 rounded-lg text-theme-neutral-dark -mt-5"
-    >
-      This will display the history of your transactions. But you don't have more than one transaction at the moment.
-    </div>
+  </div>
+  <div
+    class="border border-solid border-theme-neutral-300 p-6 rounded-lg text-theme-neutral-dark -mt-5"
+  >
+    This will display the history of your transactions. But you don't have more than one transaction at the moment.
   </div>
 </div>
 `;
 
 exports[`Transactions should render with with transactions 1`] = `
 <div>
+<<<<<<< HEAD
+  <div>
+=======
   <div
     class="bg-white"
   >
+>>>>>>> develop
     <div
       class="relative"
       data-testid="TransactionTable"
     >
       <div
+<<<<<<< HEAD
+        class="sc-AxiKw kebiLh"
+=======
         class="sc-AxiKw gGhpZ -mt-3"
+>>>>>>> develop
         role="table"
       >
         <table
@@ -88,6 +113,15 @@ exports[`Transactions should render with with transactions 1`] = `
         >
           <thead>
             <tr
+<<<<<<< HEAD
+              role="row"
+            >
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
+=======
               class="border-b border-theme-neutral-300"
               role="row"
             >
@@ -110,6 +144,7 @@ exports[`Transactions should render with with transactions 1`] = `
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
+>>>>>>> develop
                 style="cursor: pointer;"
                 title="Toggle SortBy"
               >
@@ -136,9 +171,15 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </th>
               <th
+<<<<<<< HEAD
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--1"
+=======
                 class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
                 colspan="1"
                 data-testid="table__th--2"
+>>>>>>> develop
                 role="columnheader"
               >
                 <div
@@ -150,9 +191,15 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </th>
               <th
+<<<<<<< HEAD
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--2"
+=======
                 class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--3"
+>>>>>>> develop
                 role="columnheader"
               >
                 <div
@@ -164,7 +211,28 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </th>
               <th
+<<<<<<< HEAD
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--3"
+=======
                 class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                colspan="1"
+                data-testid="table__th--4"
+>>>>>>> develop
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-center"
+                >
+                  <div>
+                    Info
+<<<<<<< HEAD
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--4"
                 role="columnheader"
@@ -173,7 +241,21 @@ exports[`Transactions should render with with transactions 1`] = `
                   class="flex flex-inline align-top justify-center"
                 >
                   <div>
-                    Info
+                    Status
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--5"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top justify-end"
+=======
                   </div>
                 </div>
               </th>
@@ -271,6 +353,88 @@ exports[`Transactions should render with with transactions 1`] = `
               >
                 <div
                   class="sc-AxhCb kdNpYF"
+>>>>>>> develop
+                >
+                  <div>
+                    Amount
+                  </div>
+                  <div
+<<<<<<< HEAD
+                    class="flex items-center ml-2 text-theme-color-neutral"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-AxirZ jMwzyA"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+=======
+                    class="flex items-center -space-x-1"
+                    data-testid="TransactionRowMode"
+                  >
+                    <div
+                      class="sc-AxheI hiopcG border-theme-danger-contrast text-theme-danger"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        data-testid="TransactionRowMode__Sent"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
+>>>>>>> develop
+                    </div>
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                          title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<<<<<<< HEAD
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              class="sc-AxhUy loGswa group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-48"
+              >
+                <div
+                  class="sc-AxhCb xlrPM text-sm text-theme-neutral-600"
+                >
+                  <span
+                    data-testid="TransactionRow__timestamp"
+                  >
+                    31 Jul 2020 16:34:41
+                  </span>
+                </div>
+              </td>
+              <td
+                class="w-32"
+              >
+                <div
+                  class="sc-AxhCb bdHkpa"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -303,9 +467,7 @@ exports[`Transactions should render with with transactions 1`] = `
                           title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         />
                       </div>
-                    </div>
-                  </div>
-                </div>
+=======
               </td>
               <td>
                 <div
@@ -367,12 +529,43 @@ exports[`Transactions should render with with transactions 1`] = `
                       <svg>
                         status-pending.svg
                       </svg>
+>>>>>>> develop
                     </div>
                   </div>
                 </div>
               </td>
               <td>
                 <div
+<<<<<<< HEAD
+                  class="sc-AxhCb bdHkpa"
+                >
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      ASuusX…GQ3kqT
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxhCb bdHkpa justify-center"
+                >
+                  <div
+                    class="inline-flex space-x-1 align-middle"
+                    data-testid="TransactionRowInfo"
+                  >
+                    <span
+                      class="p-1"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        data-testid="TransactionRowInfo__vendorField"
+=======
                   class="sc-AxhCb kdNpYF justify-end"
                 >
                   <div
@@ -450,6 +643,131 @@ exports[`Transactions should render with with transactions 1`] = `
                       <div
                         class="sc-AxirZ iQaTP"
                         data-testid="TransactionRowMode__Sent"
+>>>>>>> develop
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+<<<<<<< HEAD
+                          smartbridge.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="w-16"
+              >
+                <div
+                  class="sc-AxhCb bdHkpa justify-center"
+                >
+                  <div
+                    class="inline-flex p-1 align-middle"
+                    data-testid="TransactionRowConfirmation"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP text-theme-warning"
+                      data-testid="TransactionRowConfirmation__pending"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        status-clock.svg
+                      </svg>
+=======
+                          sent.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                          title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        />
+                      </div>
+>>>>>>> develop
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+<<<<<<< HEAD
+                  class="sc-AxhCb bdHkpa justify-end"
+                >
+                  <div
+                    class="sc-AxgMl eXChH"
+                    color="danger"
+                    data-testid="TransactionRowAmount"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+=======
+                  class="sc-AxhCb kdNpYF"
+                >
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      ASuusX…GQ3kqT
+>>>>>>> develop
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+<<<<<<< HEAD
+                  class="sc-AxhCb fhxLXM justify-end"
+                />
+              </td>
+            </tr>
+            <tr
+              class="sc-AxhUy loGswa group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-48"
+              >
+                <div
+                  class="sc-AxhCb xlrPM text-sm text-theme-neutral-600"
+                >
+                  <span
+                    data-testid="TransactionRow__timestamp"
+                  >
+                    31 Jul 2020 16:34:41
+                  </span>
+                </div>
+              </td>
+              <td
+                class="w-32"
+              >
+                <div
+                  class="sc-AxhCb bdHkpa"
+                >
+                  <div
+                    class="flex items-center -space-x-1"
+                    data-testid="TransactionRowMode"
+                  >
+                    <div
+                      class="sc-AxheI hiopcG border-theme-danger-contrast text-theme-danger"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        data-testid="TransactionRowMode__Sent"
                         height="1em"
                         width="1em"
                       >
@@ -471,28 +789,7 @@ exports[`Transactions should render with with transactions 1`] = `
                           title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         />
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div
-                  class="sc-AxhCb kdNpYF"
-                >
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      ASuusX…GQ3kqT
-                    </span>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div
+=======
                   class="sc-AxhCb kdNpYF justify-center"
                 >
                   <div
@@ -535,12 +832,43 @@ exports[`Transactions should render with with transactions 1`] = `
                       <svg>
                         status-pending.svg
                       </svg>
+>>>>>>> develop
                     </div>
                   </div>
                 </div>
               </td>
               <td>
                 <div
+<<<<<<< HEAD
+                  class="sc-AxhCb bdHkpa"
+                >
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      ASuusX…GQ3kqT
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxhCb bdHkpa justify-center"
+                >
+                  <div
+                    class="inline-flex space-x-1 align-middle"
+                    data-testid="TransactionRowInfo"
+                  >
+                    <span
+                      class="p-1"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        data-testid="TransactionRowInfo__vendorField"
+=======
                   class="sc-AxhCb kdNpYF justify-end"
                 >
                   <div
@@ -618,10 +946,39 @@ exports[`Transactions should render with with transactions 1`] = `
                       <div
                         class="sc-AxirZ iQaTP"
                         data-testid="TransactionRowMode__Sent"
+>>>>>>> develop
                         height="1em"
                         width="1em"
                       >
                         <svg>
+<<<<<<< HEAD
+                          smartbridge.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="w-16"
+              >
+                <div
+                  class="sc-AxhCb bdHkpa justify-center"
+                >
+                  <div
+                    class="inline-flex p-1 align-middle"
+                    data-testid="TransactionRowConfirmation"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP text-theme-warning"
+                      data-testid="TransactionRowConfirmation__pending"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        status-clock.svg
+                      </svg>
+=======
                           sent.svg
                         </svg>
                       </div>
@@ -639,12 +996,26 @@ exports[`Transactions should render with with transactions 1`] = `
                           voted.svg
                         </svg>
                       </div>
+>>>>>>> develop
                     </div>
                   </div>
                 </div>
               </td>
               <td>
                 <div
+<<<<<<< HEAD
+                  class="sc-AxhCb bdHkpa justify-end"
+                >
+                  <div
+                    class="sc-AxgMl eXChH"
+                    color="danger"
+                    data-testid="TransactionRowAmount"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+=======
                   class="sc-AxhCb kdNpYF"
                 >
                   <span
@@ -676,10 +1047,103 @@ exports[`Transactions should render with with transactions 1`] = `
                           smartbridge.svg
                         </svg>
                       </div>
+>>>>>>> develop
                     </span>
                   </div>
                 </div>
               </td>
+<<<<<<< HEAD
+              <td>
+                <div
+                  class="sc-AxhCb fhxLXM justify-end"
+                />
+              </td>
+            </tr>
+            <tr
+              class="sc-AxhUy loGswa group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-48"
+              >
+                <div
+                  class="sc-AxhCb xlrPM text-sm text-theme-neutral-600"
+                >
+                  <span
+                    data-testid="TransactionRow__timestamp"
+                  >
+                    31 Jul 2020 16:34:41
+                  </span>
+                </div>
+              </td>
+              <td
+                class="w-32"
+              >
+                <div
+                  class="sc-AxhCb bdHkpa"
+                >
+                  <div
+                    class="flex items-center -space-x-1"
+                    data-testid="TransactionRowMode"
+                  >
+                    <div
+                      class="sc-AxheI hiopcG border-theme-danger-contrast text-theme-danger"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        data-testid="TransactionRowMode__Sent"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxheI hiopcG border-theme-text text-theme-text"
+                      data-testid="TransactionRowRecipientIcon"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          voted.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxhCb bdHkpa"
+                >
+                  <span
+                    class="font-semibold text-theme-text"
+                    data-testid="TransactionRowRecipientLabel"
+                  >
+                    Vote
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxhCb bdHkpa justify-center"
+                >
+                  <div
+                    class="inline-flex space-x-1 align-middle"
+                    data-testid="TransactionRowInfo"
+                  >
+                    <span
+                      class="p-1"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        data-testid="TransactionRowInfo__vendorField"
+=======
               <td
                 class="w-16"
               >
@@ -782,10 +1246,39 @@ exports[`Transactions should render with with transactions 1`] = `
                       <div
                         class="sc-AxirZ iQaTP"
                         data-testid="TransactionRowMode__Sent"
+>>>>>>> develop
                         height="1em"
                         width="1em"
                       >
                         <svg>
+<<<<<<< HEAD
+                          smartbridge.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="w-16"
+              >
+                <div
+                  class="sc-AxhCb bdHkpa justify-center"
+                >
+                  <div
+                    class="inline-flex p-1 align-middle"
+                    data-testid="TransactionRowConfirmation"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP text-theme-warning"
+                      data-testid="TransactionRowConfirmation__pending"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        status-clock.svg
+                      </svg>
+=======
                           sent.svg
                         </svg>
                       </div>
@@ -803,12 +1296,151 @@ exports[`Transactions should render with with transactions 1`] = `
                           delegate.svg
                         </svg>
                       </div>
+>>>>>>> develop
                     </div>
                   </div>
                 </div>
               </td>
               <td>
                 <div
+<<<<<<< HEAD
+                  class="sc-AxhCb bdHkpa justify-end"
+                >
+                  <div
+                    class="sc-AxgMl eXChH"
+                    color="danger"
+                    data-testid="TransactionRowAmount"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxhCb fhxLXM justify-end"
+                />
+              </td>
+            </tr>
+            <tr
+              class="sc-AxhUy loGswa group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-48"
+              >
+                <div
+                  class="sc-AxhCb xlrPM text-sm text-theme-neutral-600"
+                >
+                  <span
+                    data-testid="TransactionRow__timestamp"
+                  >
+                    31 Jul 2020 16:34:41
+                  </span>
+                </div>
+              </td>
+              <td
+                class="w-32"
+              >
+                <div
+                  class="sc-AxhCb bdHkpa"
+                >
+                  <div
+                    class="flex items-center -space-x-1"
+                    data-testid="TransactionRowMode"
+                  >
+                    <div
+                      class="sc-AxheI hiopcG border-theme-danger-contrast text-theme-danger"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        data-testid="TransactionRowMode__Sent"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxheI hiopcG border-theme-text text-theme-text"
+                      data-testid="TransactionRowRecipientIcon"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          delegate.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxhCb bdHkpa"
+                >
+                  <span
+                    class="font-semibold text-theme-text"
+                    data-testid="TransactionRowRecipientLabel"
+                  >
+                    Delegate Registration
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxhCb bdHkpa justify-center"
+                >
+                  <div
+                    class="inline-flex space-x-1 align-middle"
+                    data-testid="TransactionRowInfo"
+                  >
+                    <span
+                      class="p-1"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        data-testid="TransactionRowInfo__vendorField"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          smartbridge.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="w-16"
+              >
+                <div
+                  class="sc-AxhCb bdHkpa justify-center"
+                >
+                  <div
+                    class="inline-flex p-1 align-middle"
+                    data-testid="TransactionRowConfirmation"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP text-theme-warning"
+                      data-testid="TransactionRowConfirmation__pending"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        status-clock.svg
+                      </svg>
+                    </div>
+=======
                   class="sc-AxhCb kdNpYF"
                 >
                   <span
@@ -881,12 +1513,34 @@ exports[`Transactions should render with with transactions 1`] = `
                     >
                       121 
                     </span>
+>>>>>>> develop
                   </div>
                 </div>
               </td>
               <td>
                 <div
+<<<<<<< HEAD
+                  class="sc-AxhCb bdHkpa justify-end"
+                >
+                  <div
+                    class="sc-AxgMl eXChH"
+                    color="danger"
+                    data-testid="TransactionRowAmount"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-AxhCb fhxLXM justify-end"
+=======
                   class="sc-AxhCb dazjdf justify-end"
+>>>>>>> develop
                 />
               </td>
             </tr>

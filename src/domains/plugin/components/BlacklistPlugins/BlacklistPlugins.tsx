@@ -1,5 +1,6 @@
 import { images } from "app/assets/images";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import React, { useEffect, useState } from "react";
@@ -13,7 +14,6 @@ type BlacklistPluginsProps = {
 };
 
 const { BestPluginsBanner } = images.plugin.common;
-const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
 export const BlacklistPlugins = ({ isOpen, plugins, onClose, blacklisted }: BlacklistPluginsProps) => {
 	const [blacklistedPlugins, setBlacklistedPlugins] = useState<any>([]);
@@ -60,7 +60,7 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose, blacklisted }: Blac
 					{(rowData: any) => (
 						<TableRow>
 							<TableCell variant="start" className="w-16">
-								<ChangeNowLogo className="w-12 h-12" />
+								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
 							</TableCell>
 
 							<TableCell>

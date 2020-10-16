@@ -28,7 +28,7 @@ export const SelectToggleButton = styled.button`
 	}
 
 	&.is-selected {
-		${tw`text-theme-neutral-900`}
+		${tw`text-theme-text`}
 	}
 `;
 

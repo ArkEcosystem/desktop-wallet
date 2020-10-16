@@ -50,12 +50,12 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 	return (
 		<div className="w-full">
 			<div className="flex items-center mt-5 text-sm font-semibold text-theme-neutral">
-				<span className="text-theme-neutral-900">{t("COMMON.SORT_BY")}:</span>
+				<span className="text-theme-text">{t("COMMON.SORT_BY")}:</span>
 				<div className="flex items-center ml-2 space-x-3 divide-x divide-theme-neutral-light">
 					{["Best", "Date", "Most Popular"].map((sortType: string, index: number) => (
 						<span className={`cursor-pointer ${index > 0 ? "pl-3" : null}`} key={index}>
 							{sortBy.type === sortType ? (
-								<span className="flex items-center space-x-1 text-theme-neutral-900">
+								<span className="flex items-center space-x-1 text-theme-text">
 									<span>{t(`COMMON.${transformType(sortType)}`)}</span>
 									<Icon
 										name={sortBy.direction === "asc" ? "ChevronUp" : "ChevronDown"}
