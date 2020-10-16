@@ -5,7 +5,7 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { BaseTransactionRowAmount } from "../TransactionRow/TransactionRowAmount";
@@ -29,7 +29,32 @@ const getType = (transaction: SignedTransactionData): string => {
 		return "multiSignature";
 	}
 
+	if (type === 6) {
+		return "multiPayment";
+	}
+
 	return "transfer";
+};
+
+const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transaction: SignedTransactionData }) => {
+	if (wallet.transaction().isAwaitingOurSignature(transaction.id())) {
+		return <span className="text-theme-danger-500">Your Signature</span>;
+	}
+
+	if (wallet.transaction().isAwaitingOtherSignatures(transaction.id())) {
+		return (
+			<span className="text-theme-danger-500">{`${wallet
+				.coin()
+				.multiSignature()
+				.remainingSignatureCount(transaction)} more signature(s)`}</span>
+		);
+	}
+
+	if (wallet.coin().multiSignature().isMultiSignatureReady(transaction)) {
+		return <span className="text-theme-success-500">Ready</span>;
+	}
+
+	return <span className="text-theme-success-500">Final Signature</span>;
 };
 
 const Row = ({
@@ -46,18 +71,10 @@ const Row = ({
 	const { t } = useTranslation();
 	const [shadowColor, setShadowColor] = useState("--theme-background-color");
 
-	const needsFinalSignature = useMemo(() => {
-		try {
-			return (
-				wallet.coin().multiSignature().needsFinalSignature(transaction) &&
-				!wallet.transaction().isAwaitingOtherSignatures(transaction.id())
-			);
-		} catch {
-			return false;
-		}
-	}, [wallet, transaction]);
-
-	const isAwaitingOurSignature = wallet.transaction().isAwaitingOurSignature(transaction.id());
+	const recipient = transaction.get<string>("recipientId");
+	const recipients = transaction.get<{ payments?: any }>("asset")?.payments;
+	const canBeSigned = wallet.transaction().canBeSigned(transaction.id());
+	const type = getType(transaction);
 
 	return (
 		<TableRow
@@ -79,22 +96,23 @@ const Row = ({
 			<TableCell className="w-32">
 				<BaseTransactionRowMode
 					isSent={true}
-					type={getType(transaction)}
-					recipient={transaction.recipient()}
+					type={type}
+					recipient={recipient}
 					circleShadowColor={shadowColor}
+					recipients={recipients}
 				/>
 			</TableCell>
 
 			<TableCell>
-				<BaseTransactionRowRecipientLabel type={getType(transaction)} recipient={transaction.recipient()} />
+				<BaseTransactionRowRecipientLabel type={type} recipient={recipient} />
 			</TableCell>
 
 			<TableCell innerClassName="justify-center">
 				<BaseTransactionRowInfo isMultiSignature={transaction.isMultiSignature()} />
 			</TableCell>
 
-			<TableCell className="w-16" innerClassName="justify-center">
-				<Icon name="Edit" className="text-theme-danger-400" />
+			<TableCell className="w-16" innerClassName="justify-center truncate">
+				<StatusLabel wallet={wallet} transaction={transaction} />
 			</TableCell>
 
 			<TableCell className="w-56" innerClassName="justify-end">
@@ -106,7 +124,7 @@ const Row = ({
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end">
-				{isAwaitingOurSignature || needsFinalSignature ? (
+				{canBeSigned ? (
 					<Button data-testid="TransactionRow__sign" variant="plain" onClick={() => onSign?.(transaction)}>
 						<Icon name="Edit" />
 						<span>{t("COMMON.SIGN")}</span>

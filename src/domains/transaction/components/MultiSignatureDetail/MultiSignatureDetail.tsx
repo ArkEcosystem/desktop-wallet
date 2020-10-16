@@ -6,7 +6,7 @@ import { Modal } from "app/components/Modal";
 import { Spinner } from "app/components/Spinner";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -65,6 +65,7 @@ const Paginator = (props: {
 };
 
 export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: MultiSignatureDetailProps) => {
+	const { t } = useTranslation();
 	const { persist } = useEnvironmentContext();
 	const form = useForm({ mode: "onChange" });
 
@@ -73,25 +74,27 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 
 	const [activeStep, setActiveStep] = useState(1);
 
-	const needsFinalSignature = useMemo(() => wallet.coin().multiSignature().needsFinalSignature(transaction), [
-		wallet,
-		transaction,
-	]);
-	const isAwaitingOurSignature = wallet.transaction().isAwaitingOurSignature(transaction.id());
+	const canBeBroadascated = wallet.transaction().canBeBroadcasted(transaction.id());
+	const canBeSigned = wallet.transaction().canBeSigned(transaction.id());
+
+	const broadcast = useCallback(async () => {
+		if (wallet.transaction().canBeBroadcasted(transaction.id())) {
+			await wallet.transaction().broadcast(transaction.id());
+		}
+		await persist();
+		setActiveStep(3);
+	}, [wallet, transaction, persist]);
 
 	const addSignature = useCallback(
 		async ({ mnemonic }: { mnemonic: string }) => {
-			await wallet.transaction().addSignature(transaction.id(), mnemonic);
-			await wallet.transaction().sync();
-
-			if (needsFinalSignature) {
-				await wallet.transaction().broadcast(transaction.id());
+			if (wallet.transaction().canBeSigned(transaction.id())) {
+				await wallet.transaction().addSignature(transaction.id(), mnemonic);
+				await wallet.transaction().sync();
 			}
 
-			await persist();
-			setActiveStep(3);
+			await broadcast();
 		},
-		[transaction, wallet, persist, needsFinalSignature],
+		[transaction, wallet, broadcast],
 	);
 
 	return (
@@ -103,14 +106,25 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 					</TabPanel>
 
 					<TabPanel tabId={2}>
-						<AuthenticationStep wallet={wallet} />
+						<AuthenticationStep wallet={wallet} skipSecondSignature />
 					</TabPanel>
 
 					<TabPanel tabId={3}>
 						<SentStep transaction={transaction} wallet={wallet} />
 					</TabPanel>
 
-					{(isAwaitingOurSignature || needsFinalSignature) && (
+					{canBeBroadascated && !canBeSigned && activeStep === 1 && (
+						<div className="flex justify-center mt-8 space-x-2">
+							<Button
+								data-testid="MultiSignatureDetail__broadcast"
+								onClick={handleSubmit(() => broadcast())}
+							>
+								{isSubmitting ? <Spinner size="sm" /> : t("COMMON.SEND")}
+							</Button>
+						</div>
+					)}
+
+					{canBeSigned && (
 						<Paginator
 							activeStep={activeStep}
 							onCancel={onClose}

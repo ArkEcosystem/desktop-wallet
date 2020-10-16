@@ -78,6 +78,8 @@ const signTransaction = async ({
 		});
 
 		await senderWallet!.transaction().broadcast(transactionId);
+
+		await senderWallet!.transaction().sync();
 		await senderWallet!.transaction().addSignature(transactionId, mnemonic);
 
 		await env.persist();

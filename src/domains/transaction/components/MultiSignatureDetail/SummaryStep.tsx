@@ -1,13 +1,16 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Clipboard } from "app/components/Clipboard";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
 import {
+	TransactionAmount,
 	TransactionDetail,
 	TransactionFee,
+	TransactionRecipients,
 	TransactionSender,
 	TransactionTimestamp,
 } from "domains/transaction/components/TransactionDetail";
@@ -15,6 +18,21 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Signatures } from "./Signatures";
+
+const getType = (transaction: Contracts.SignedTransactionData): string => {
+	const type = transaction.get<number>("type");
+	const typeGroup = transaction.get<number>("typeGroup");
+
+	if (type === 4 && typeGroup === 1) {
+		return "multiSignature";
+	}
+
+	if (type === 6) {
+		return "multiPayment";
+	}
+
+	return "transfer";
+};
 
 export const SummaryStep = ({
 	wallet,
@@ -25,9 +43,23 @@ export const SummaryStep = ({
 }) => {
 	const { t } = useTranslation();
 	const [senderAddress, setSenderAddress] = useState("");
+
+	// TODO: Move this helpers to SignedData on platform-sdk
 	const participants = transaction
 		.get<{ publicKeys: string[] }>("multiSignature")
 		.publicKeys.filter((pubKey) => pubKey !== wallet.publicKey());
+
+	const recipient = transaction.get<string>("recipientId");
+	const recipients = transaction
+		.get<{ payments: Record<string, string>[] }>("asset")
+		?.payments?.map((item) => ({ address: item.recipientId, amount: BigNumber.make(item.amount) }));
+
+	const type = getType(transaction);
+	const titles: Record<string, string> = {
+		transfer: "COMMON.TRANSFER",
+		multiSignature: "COMMON.MULTISIGNATURE",
+		multiPayment: "TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT",
+	};
 
 	useEffect(() => {
 		const sync = async () => {
@@ -39,7 +71,7 @@ export const SummaryStep = ({
 
 	return (
 		<section>
-			<Header title={t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE")} />
+			<Header title={t(titles[type])} />
 
 			<TransactionSender
 				address={senderAddress}
@@ -47,6 +79,16 @@ export const SummaryStep = ({
 				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
 				border={false}
 			/>
+
+			<TransactionRecipients
+				currency={wallet.currency()}
+				recipient={{ address: recipient }}
+				recipients={recipients}
+			/>
+
+			{!transaction.amount().isZero() && (
+				<TransactionAmount amount={transaction.amount()} currency={wallet.currency()} isSent={true} />
+			)}
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 
