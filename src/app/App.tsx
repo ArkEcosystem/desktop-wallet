@@ -15,9 +15,9 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
-import { PluginManagerWrapper, usePluginManager } from "plugins/use-manager";
 import { LedgerListener } from "domains/transaction/components/LedgerListener";
 import electron from "electron";
+import { PluginManagerWrapper, usePluginManager } from "plugins/use-manager";
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
@@ -82,7 +82,7 @@ const Main = () => {
 		const boot = async () => {
 			/* istanbul ignore next */
 			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
-				await env.verify(shouldUseFixture ? fixtureData : undefined);
+			await env.verify(shouldUseFixture ? fixtureData : undefined);
 			await env.boot();
 			await runAll();
 			await persist();
@@ -112,11 +112,13 @@ const Main = () => {
 			return <Offline />;
 		}
 
-		return <RouterView
-			routes={allRoutes}
-			middlewares={middlewares}
-			wrapper={(props) => <PluginManagerWrapper pluginManager={pluginManager} {...props} />}
-		/>;
+		return (
+			<RouterView
+				routes={allRoutes}
+				middlewares={middlewares}
+				wrapper={(props) => <PluginManagerWrapper pluginManager={pluginManager} {...props} />}
+			/>
+		);
 	};
 
 	return (
