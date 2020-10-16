@@ -198,6 +198,83 @@ describe("DelegateTable", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render with a delegate to vote", () => {
+		const delegateAddress = delegates[0].address()!;
+
+		const onContinue = jest.fn();
+		const { container, asFragment, getByTestId } = render(
+			<DelegateTable
+				delegates={delegates}
+				maxVotes={1}
+				selectedVoteAddresses={[delegateAddress]}
+				onContinue={onContinue}
+			/>,
+		);
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("DelegateTable__continue-button"));
+		});
+
+		expect(container).toBeTruthy();
+		expect(onContinue).toHaveBeenCalledWith([], [delegateAddress]);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with a delegate to unvote", () => {
+		const delegateAddress = delegates[0].address()!;
+
+		const onContinue = jest.fn();
+		const { container, asFragment, getByTestId } = render(
+			<DelegateTable
+				delegates={delegates}
+				maxVotes={1}
+				selectedUnvoteAddresses={[delegateAddress]}
+				onContinue={onContinue}
+			/>,
+		);
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("DelegateTable__continue-button"));
+		});
+
+		expect(container).toBeTruthy();
+		expect(onContinue).toHaveBeenCalledWith([delegateAddress], []);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with a delegate to unvote/vote", () => {
+		const unvoteAddress = delegates[0].address()!;
+		const voteAddress = delegates[1].address()!;
+
+		const onContinue = jest.fn();
+		const { container, asFragment, getByTestId } = render(
+			<DelegateTable
+				delegates={delegates}
+				maxVotes={1}
+				votes={votes}
+				selectedUnvoteAddresses={[unvoteAddress]}
+				selectedVoteAddresses={[voteAddress]}
+				onContinue={onContinue}
+			/>,
+		);
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--unvotes")).toHaveTextContent("1");
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("1");
+
+		act(() => {
+			fireEvent.click(getByTestId("DelegateTable__continue-button"));
+		});
+
+		expect(container).toBeTruthy();
+		expect(onContinue).toHaveBeenCalledWith([unvoteAddress], [voteAddress]);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should emit action on continue button to unvote", () => {
 		const delegateAddress = votes[0].address()!;
 

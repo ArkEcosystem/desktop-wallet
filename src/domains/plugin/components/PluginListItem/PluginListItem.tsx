@@ -1,7 +1,7 @@
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { ReviewRating } from "app/components/ReviewRating";
 import { TableCell, TableRow } from "app/components/Table";
 import React from "react";
@@ -13,15 +13,13 @@ type PluginListItemProps = {
 	plugin: any;
 };
 
-const { ChangeNowLogo } = images.exchange.components.AddExchange;
-
 export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<TableRow>
 			<TableCell variant="start" className="w-20">
-				<ChangeNowLogo className="w-15 h-15" />
+				<Image name="ChangeNowLogo" domain="exchange" className="w-15 h-15" />
 			</TableCell>
 
 			<TableCell innerClassName="space-x-2">

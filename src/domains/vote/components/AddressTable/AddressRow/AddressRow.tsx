@@ -125,7 +125,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 			</TableCell>
 
 			<TableCell innerClassName="justify-center">
-				{hasVotes && <Icon name="Ok" className="text-theme-success" data-testid="AddressRow__status" />}
+				{hasVotes && <Icon name="StatusOk" className="text-theme-success" data-testid="AddressRow__status" />}
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end">

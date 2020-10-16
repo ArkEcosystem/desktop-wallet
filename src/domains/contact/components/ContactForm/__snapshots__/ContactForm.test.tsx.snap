@@ -21,7 +21,7 @@ exports[`ContactForm should select 1`] = `
         />
       </label>
       <input
-        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value=""
@@ -73,7 +73,7 @@ exports[`ContactForm should select 1`] = `
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -108,7 +108,7 @@ exports[`ContactForm should select 1`] = `
           class="sc-AxmLO kuiknc max-w-20"
         >
           <input
-            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="contact-form__address-input"
             name="address"
             type="text"
@@ -199,7 +199,7 @@ exports[`ContactForm should select with errors 1`] = `
       </label>
       <input
         aria-invalid="true"
-        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value=""
@@ -256,7 +256,7 @@ exports[`ContactForm should select with errors 1`] = `
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -291,7 +291,7 @@ exports[`ContactForm should select with errors 1`] = `
           class="sc-AxmLO kuiknc max-w-20"
         >
           <input
-            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="contact-form__address-input"
             name="address"
             type="text"
@@ -381,7 +381,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         />
       </label>
       <input
-        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value=""
@@ -433,7 +433,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -468,7 +468,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           class="sc-AxmLO kuiknc max-w-20"
         >
           <input
-            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="contact-form__address-input"
             name="address"
             type="text"
@@ -558,7 +558,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         />
       </label>
       <input
-        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value="Brian"
@@ -610,7 +610,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -645,7 +645,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           class="sc-AxmLO kuiknc max-w-20"
         >
           <input
-            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="contact-form__address-input"
             name="address"
             type="text"

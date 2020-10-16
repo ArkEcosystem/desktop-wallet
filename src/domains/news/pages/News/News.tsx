@@ -6,7 +6,7 @@ import { Header } from "app/components/Header";
 import { Page, Section } from "app/components/Layout";
 import { Pagination } from "app/components/Pagination";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { httpClient } from "app/services";
 import { BlockfolioAd } from "domains/news/components/BlockfolioAd";
 import { NewsCard, NewsCardSkeleton } from "domains/news/components/NewsCard";

@@ -11,7 +11,7 @@ exports[`AddressTable should render 1`] = `
       Select Address
     </h2>
     <div
-      class="sc-AxirZ foACTB"
+      class="sc-AxirZ fgUA-Dx -mt-3"
       role="table"
     >
       <table
@@ -20,10 +20,11 @@ exports[`AddressTable should render 1`] = `
       >
         <thead>
           <tr
+            class="border-b border-theme-neutral-300"
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -37,7 +38,7 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -67,7 +68,7 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -81,7 +82,7 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -111,7 +112,7 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -125,7 +126,7 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -155,7 +156,7 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -185,7 +186,7 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -199,7 +200,7 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -213,7 +214,7 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -239,7 +240,7 @@ exports[`AddressTable should render 1`] = `
               class="w-1"
             >
               <div
-                class="sc-AxiKw gtaXRk"
+                class="sc-AxiKw kPBQtr"
               >
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -261,7 +262,7 @@ exports[`AddressTable should render 1`] = `
               class="w-20"
             >
               <div
-                class="sc-AxiKw cNDILm"
+                class="sc-AxiKw lfBQQd"
               >
                 <div
                   class="inline-block truncate align-middle"
@@ -285,7 +286,7 @@ exports[`AddressTable should render 1`] = `
               class="w-20"
             >
               <div
-                class="sc-AxiKw cNDILm justify-center text-sm font-bold"
+                class="sc-AxiKw lfBQQd justify-center text-sm font-bold"
               >
                 <div
                   class="inline-flex items-center space-x-2"
@@ -308,7 +309,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw cNDILm justify-end font-bold text-theme-neutral-dark"
+                class="sc-AxiKw lfBQQd justify-end font-bold text-theme-neutral-dark"
               >
                 <span
                   data-testid="Amount"
@@ -321,7 +322,7 @@ exports[`AddressTable should render 1`] = `
               class="w-24"
             >
               <div
-                class="sc-AxiKw cNDILm justify-end"
+                class="sc-AxiKw lfBQQd justify-end"
               >
                 <div
                   class="mr-4"
@@ -345,7 +346,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw cNDILm font-bold"
+                class="sc-AxiKw lfBQQd font-bold"
               >
                 <span>
                   arkx
@@ -354,7 +355,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw cNDILm justify-center font-bold text-theme-neutral-dark"
+                class="sc-AxiKw lfBQQd justify-center font-bold text-theme-neutral-dark"
               >
                 <span>
                   #
@@ -363,7 +364,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw cNDILm justify-center"
+                class="sc-AxiKw lfBQQd justify-center"
               >
                 <div
                   class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -379,7 +380,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw cNDILm justify-center"
+                class="sc-AxiKw lfBQQd justify-center"
               >
                 <div
                   class="sc-AxjAm cpczEI text-theme-success"
@@ -388,14 +389,14 @@ exports[`AddressTable should render 1`] = `
                   width="1em"
                 >
                   <svg>
-                    ok.svg
+                    status-ok.svg
                   </svg>
                 </div>
               </div>
             </td>
             <td>
               <div
-                class="sc-AxiKw bQCFMo justify-end"
+                class="sc-AxiKw fGKrFr justify-end"
               >
                 <button
                   class="sc-AxgMl hAIrFE"
@@ -426,7 +427,7 @@ exports[`AddressTable should render with empty list 1`] = `
       Select Address
     </h2>
     <div
-      class="sc-AxirZ foACTB"
+      class="sc-AxirZ fgUA-Dx -mt-3"
       role="table"
     >
       <table
@@ -435,10 +436,11 @@ exports[`AddressTable should render with empty list 1`] = `
       >
         <thead>
           <tr
+            class="border-b border-theme-neutral-300"
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -452,7 +454,7 @@ exports[`AddressTable should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -482,7 +484,7 @@ exports[`AddressTable should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -496,7 +498,7 @@ exports[`AddressTable should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -526,7 +528,7 @@ exports[`AddressTable should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -540,7 +542,7 @@ exports[`AddressTable should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -570,7 +572,7 @@ exports[`AddressTable should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -600,7 +602,7 @@ exports[`AddressTable should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -614,7 +616,7 @@ exports[`AddressTable should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -628,7 +630,7 @@ exports[`AddressTable should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"

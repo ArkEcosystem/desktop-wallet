@@ -151,7 +151,7 @@ exports[`ContactUs should render a modal 1`] = `
                 />
               </label>
               <input
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 name="name"
               />
@@ -171,7 +171,7 @@ exports[`ContactUs should render a modal 1`] = `
                 />
               </label>
               <input
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 name="email"
               />
@@ -194,7 +194,7 @@ exports[`ContactUs should render a modal 1`] = `
                 class="relative w-full"
               >
                 <input
-                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                   data-testid="select-list__input"
                   name="subject"
                   readonly=""
@@ -202,26 +202,40 @@ exports[`ContactUs should render a modal 1`] = `
                   value=""
                 />
                 <div
-                  class="relative w-full cursor-pointer"
+                  class="relative w-full"
                 >
-                  <div>
-                    <button
-                      aria-expanded="false"
-                      aria-haspopup="listbox"
-                      aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                      class="sc-fznyAO clcORT   "
-                      data-testid="select-list__toggle-button"
-                      id="downshift-0-toggle-button"
-                      type="button"
+                  <div
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="downshift-1-menu"
+                    role="combobox"
+                  >
+                    <label
+                      for="downshift-0-input"
+                      id="downshift-1-label"
+                    />
+                    <div
+                      class="sc-AxmLO kuiknc"
+                      data-testid="SelectDropdownInput"
                     >
-                      Select
-                    </button>
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="downshift-1-menu"
+                        aria-labelledby="downshift-1-label"
+                        autocomplete="off"
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                        data-testid="SelectDropdownInput__input"
+                        id="downshift-0-input"
+                        name="subject"
+                        placeholder="Select"
+                        value=""
+                      />
+                    </div>
                     <ul
-                      aria-labelledby="downshift-0-label"
-                      class="sc-fznKkj iVkfZr"
-                      id="downshift-0-menu"
+                      aria-labelledby="downshift-1-label"
+                      class="sc-fznKkj hxMaMB"
+                      id="downshift-1-menu"
                       role="listbox"
-                      tabindex="-1"
                     />
                   </div>
                   <div
@@ -255,7 +269,7 @@ exports[`ContactUs should render a modal 1`] = `
                 />
               </label>
               <textarea
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="TextArea"
                 name="message"
               />

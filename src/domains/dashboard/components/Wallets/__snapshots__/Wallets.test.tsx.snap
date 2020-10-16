@@ -4,7 +4,7 @@ exports[`Wallets should change wallet view type from grid to list 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="flex items-center justify-between pb-8"
+      class="flex items-center justify-between mb-8"
     >
       <div
         class="-mt-1 text-4xl font-bold"
@@ -184,7 +184,7 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="flex items-center justify-between pb-8"
+      class="flex items-center justify-between mb-8"
     >
       <div
         class="-mt-1 text-4xl font-bold"
@@ -434,7 +434,7 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-neutral-900"
+                        class="font-bold text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -530,7 +530,7 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-neutral-900"
+                        class="font-bold text-theme-text"
                         data-testid="Amount"
                       >
                         57.68 DARK
@@ -597,7 +597,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
 <DocumentFragment>
   <div>
     <div
-      class="flex items-center justify-between pb-8"
+      class="flex items-center justify-between mb-8"
     >
       <div
         class="-mt-1 text-4xl font-bold"
@@ -768,7 +768,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw kebiLh"
+            class="sc-AxiKw gGhpZ -mt-3"
             role="table"
           >
             <table
@@ -777,10 +777,11 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -810,7 +811,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -840,7 +841,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -854,7 +855,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -884,7 +885,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -924,7 +925,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -960,7 +961,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -982,7 +983,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1005,7 +1006,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1016,7 +1017,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1032,7 +1033,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1068,7 +1069,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1090,7 +1091,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1113,7 +1114,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1124,7 +1125,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1140,7 +1141,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1176,7 +1177,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1198,7 +1199,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1221,7 +1222,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1232,7 +1233,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1248,7 +1249,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1284,7 +1285,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1306,7 +1307,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1329,7 +1330,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1340,7 +1341,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1356,7 +1357,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1392,7 +1393,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1414,7 +1415,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1437,7 +1438,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1448,7 +1449,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1464,7 +1465,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1500,7 +1501,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1522,7 +1523,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1545,7 +1546,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1556,7 +1557,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1572,7 +1573,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1608,7 +1609,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1630,7 +1631,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1653,7 +1654,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1664,7 +1665,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1680,7 +1681,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1716,7 +1717,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1738,7 +1739,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1761,7 +1762,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1772,7 +1773,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1788,7 +1789,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -1824,7 +1825,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1846,7 +1847,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1869,7 +1870,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1880,7 +1881,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1904,7 +1905,7 @@ exports[`Wallets should render grid 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="flex items-center justify-between pb-8"
+      class="flex items-center justify-between mb-8"
     >
       <div
         class="-mt-1 text-4xl font-bold"
@@ -2154,7 +2155,7 @@ exports[`Wallets should render grid 1`] = `
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-neutral-900"
+                        class="font-bold text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -2250,7 +2251,7 @@ exports[`Wallets should render grid 1`] = `
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-neutral-900"
+                        class="font-bold text-theme-text"
                         data-testid="Amount"
                       >
                         57.68 DARK
@@ -2317,7 +2318,7 @@ exports[`Wallets should render list 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="flex items-center justify-between pb-8"
+      class="flex items-center justify-between mb-8"
     >
       <div
         class="-mt-1 text-4xl font-bold"
@@ -2488,7 +2489,7 @@ exports[`Wallets should render list 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw kebiLh"
+            class="sc-AxiKw gGhpZ -mt-3"
             role="table"
           >
             <table
@@ -2497,10 +2498,11 @@ exports[`Wallets should render list 1`] = `
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -2530,7 +2532,7 @@ exports[`Wallets should render list 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -2560,7 +2562,7 @@ exports[`Wallets should render list 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -2574,7 +2576,7 @@ exports[`Wallets should render list 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -2604,7 +2606,7 @@ exports[`Wallets should render list 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -2644,7 +2646,7 @@ exports[`Wallets should render list 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -2680,7 +2682,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -2702,7 +2704,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -2725,7 +2727,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -2736,7 +2738,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -2752,7 +2754,7 @@ exports[`Wallets should render list 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -2788,7 +2790,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -2810,7 +2812,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -2819,7 +2821,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -2830,7 +2832,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -2854,7 +2856,7 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="flex items-center justify-between pb-8"
+      class="flex items-center justify-between mb-8"
     >
       <div
         class="-mt-1 text-4xl font-bold"
@@ -3104,7 +3106,7 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-neutral-900"
+                        class="font-bold text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -3227,7 +3229,7 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
 <DocumentFragment>
   <div>
     <div
-      class="flex items-center justify-between pb-8"
+      class="flex items-center justify-between mb-8"
     >
       <div
         class="-mt-1 text-4xl font-bold"
@@ -3477,7 +3479,7 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-neutral-900"
+                        class="font-bold text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -3573,7 +3575,7 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-neutral-900"
+                        class="font-bold text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -3669,7 +3671,7 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-neutral-900"
+                        class="font-bold text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -3765,7 +3767,7 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-neutral-900"
+                        class="font-bold text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -3861,7 +3863,7 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-neutral-900"
+                        class="font-bold text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -3942,7 +3944,7 @@ exports[`Wallets should render with empty wallets list 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="flex items-center justify-between pb-8"
+      class="flex items-center justify-between mb-8"
     >
       <div
         class="-mt-1 text-4xl font-bold"
@@ -4261,7 +4263,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="flex items-center justify-between pb-8"
+      class="flex items-center justify-between mb-8"
     >
       <div
         class="-mt-1 text-4xl font-bold"
@@ -4432,7 +4434,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw kebiLh"
+            class="sc-AxiKw gGhpZ -mt-3"
             role="table"
           >
             <table
@@ -4441,10 +4443,11 @@ exports[`Wallets should render with list view enabled as default 1`] = `
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -4474,7 +4477,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -4504,7 +4507,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -4518,7 +4521,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -4548,7 +4551,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -4588,7 +4591,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -4624,7 +4627,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -4646,7 +4649,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -4669,7 +4672,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -4680,7 +4683,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4696,7 +4699,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -4732,7 +4735,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -4754,7 +4757,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -4763,7 +4766,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -4774,7 +4777,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4798,7 +4801,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
 <DocumentFragment>
   <div>
     <div
-      class="flex items-center justify-between pb-8"
+      class="flex items-center justify-between mb-8"
     >
       <div
         class="-mt-1 text-4xl font-bold"
@@ -4969,7 +4972,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw kebiLh"
+            class="sc-AxiKw gGhpZ -mt-3"
             role="table"
           >
             <table
@@ -4978,10 +4981,11 @@ exports[`Wallets should render with list view enabled as default and empty walle
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -5011,7 +5015,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -5041,7 +5045,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -5055,7 +5059,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -5085,7 +5089,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -5125,7 +5129,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -5161,7 +5165,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5183,7 +5187,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5206,7 +5210,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5217,7 +5221,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5233,7 +5237,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -5269,7 +5273,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5291,7 +5295,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5300,7 +5304,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5311,7 +5315,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5335,7 +5339,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
 <DocumentFragment>
   <div>
     <div
-      class="flex items-center justify-between pb-8"
+      class="flex items-center justify-between mb-8"
     >
       <div
         class="-mt-1 text-4xl font-bold"
@@ -5506,7 +5510,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw kebiLh"
+            class="sc-AxiKw gGhpZ -mt-3"
             role="table"
           >
             <table
@@ -5515,10 +5519,11 @@ exports[`Wallets should show the view more button if there are more than 10 wall
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -5548,7 +5553,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -5578,7 +5583,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -5592,7 +5597,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -5622,7 +5627,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -5662,7 +5667,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -5698,7 +5703,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5720,7 +5725,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5743,7 +5748,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5754,7 +5759,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5770,7 +5775,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -5806,7 +5811,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5828,7 +5833,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5851,7 +5856,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5862,7 +5867,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5878,7 +5883,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -5914,7 +5919,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -5936,7 +5941,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5959,7 +5964,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5970,7 +5975,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5986,7 +5991,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -6022,7 +6027,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -6044,7 +6049,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6067,7 +6072,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6078,7 +6083,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6094,7 +6099,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -6130,7 +6135,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -6152,7 +6157,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6175,7 +6180,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6186,7 +6191,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6202,7 +6207,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -6238,7 +6243,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -6260,7 +6265,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6283,7 +6288,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6294,7 +6299,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6310,7 +6315,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -6346,7 +6351,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -6368,7 +6373,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6391,7 +6396,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6402,7 +6407,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6418,7 +6423,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -6454,7 +6459,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -6476,7 +6481,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6499,7 +6504,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6510,7 +6515,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6526,7 +6531,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -6562,7 +6567,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -6584,7 +6589,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6607,7 +6612,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6618,7 +6623,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6634,7 +6639,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM -space-x-2"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
                         aria-label="ARK Devnet"
@@ -6670,7 +6675,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa"
+                      class="sc-AxhCb kdNpYF"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -6692,7 +6697,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6715,7 +6720,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdHkpa font-semibold justify-end"
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6726,7 +6731,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb fhxLXM justify-end text-theme-neutral-light"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"

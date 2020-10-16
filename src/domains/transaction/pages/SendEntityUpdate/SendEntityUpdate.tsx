@@ -8,8 +8,7 @@ import { Loader } from "app/components/Loader";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
-import { useValidation } from "app/hooks/validations";
+import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { toasts } from "app/services";
 import { AuthenticationStep as ThirdStep } from "domains/transaction/components/AuthenticationStep";
 import {

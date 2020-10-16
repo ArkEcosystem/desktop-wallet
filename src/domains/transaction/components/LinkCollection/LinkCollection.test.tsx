@@ -64,7 +64,7 @@ describe("LinkCollection", () => {
 	it("should add links", async () => {
 		const onChange = jest.fn();
 
-		const { asFragment, getAllByTestId, getByTestId } = render(
+		const { asFragment, getByTestId } = render(
 			<LinkCollection
 				title="Social Media"
 				description="Tell people more about yourself through social media"
@@ -76,16 +76,16 @@ describe("LinkCollection", () => {
 
 		fireEvent.click(getByTestId("LinkCollection__header"));
 
-		const toggle = getByTestId("select-list__toggle-button");
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
-			fireEvent.click(toggle);
+			fireEvent.change(selectDropdown, { target: { value: "Twitter" } });
 		});
 
 		expect(getByTestId("LinkCollection__add-link")).toBeDisabled();
 		expect(getByTestId("LinkCollection__input-link")).toBeDisabled();
 
-		const firstOption = getByTestId("select-list__toggle-option-1");
+		const firstOption = getByTestId("select-list__toggle-option-0");
 		expect(firstOption).toBeTruthy();
 
 		await act(async () => {
@@ -170,10 +170,10 @@ describe("LinkCollection", () => {
 
 		fireEvent.click(getByTestId("LinkCollection__header"));
 
-		const toggle = getByTestId("select-list__toggle-button");
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
-			fireEvent.click(toggle);
+			fireEvent.change(selectDropdown, { target: { value: "Test" } });
 		});
 
 		await act(async () => {
@@ -217,15 +217,17 @@ describe("LinkCollection", () => {
 
 		fireEvent.click(getByTestId("LinkCollection__header"));
 
-		const toggle = getByTestId("select-list__toggle-button");
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
-			fireEvent.click(toggle);
+			fireEvent.change(selectDropdown, { target: { value: "TestEntity 1" } });
 		});
 
 		await act(async () => {
 			fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("test-entity-1");
 
 		const input = getByTestId("LinkCollection__input-link");
 		const button = getByTestId("LinkCollection__add-link");
@@ -242,12 +244,20 @@ describe("LinkCollection", () => {
 		expect(button).toBeEnabled();
 
 		await act(async () => {
-			fireEvent.click(toggle);
+			fireEvent.change(selectDropdown, { target: { value: "TestEntity 3" } });
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "TestEntity 2" } });
 		});
 
 		await act(async () => {
-			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("test-entity-2");
 
 		await waitFor(() => expect(input).toBeInvalid());
 		expect(button).toBeDisabled();

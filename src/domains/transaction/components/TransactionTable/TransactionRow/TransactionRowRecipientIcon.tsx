@@ -27,7 +27,7 @@ const Wrapper = ({
 	<Circle
 		size={size}
 		data-testid="TransactionRowRecipientIcon"
-		className={"border-theme-neutral-900 text-theme-neutral-900"}
+		className={"border-theme-text text-theme-text"}
 		{...props}
 	>
 		{children}

@@ -27,7 +27,7 @@ import { Theme } from "types";
 
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, LedgerProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
-import { useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
+import { useDarkMode, useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
 
@@ -43,7 +43,8 @@ const Main = () => {
 
 	const pathname = (location as any).location?.pathname || location.pathname;
 	const nativeTheme = electron.remote.nativeTheme;
-	const useDarkMode = React.useMemo(() => theme === "dark", [theme]);
+
+	const isDark = useDarkMode();
 
 	useDeeplink();
 
@@ -105,7 +106,7 @@ const Main = () => {
 	};
 
 	return (
-		<main className={`theme-${useDarkMode ? "dark" : "light"} ${className}`} data-testid="Main">
+		<main className={`theme-${isDark ? "dark" : "light"} ${className}`} data-testid="Main">
 			<ToastContainer />
 
 			{renderContent()}

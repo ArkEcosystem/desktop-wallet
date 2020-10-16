@@ -7,7 +7,7 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { CreateContact, DeleteContact, UpdateContact } from "domains/contact/components";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
 import React, { useEffect, useState } from "react";
@@ -153,6 +153,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 							<Table columns={listColumns} data={contacts}>
 								{(contact: Contact) => (
 									<ContactListItem
+										template="contacts"
 										item={contact}
 										options={contactOptions}
 										onAction={(action: { value: any }) =>

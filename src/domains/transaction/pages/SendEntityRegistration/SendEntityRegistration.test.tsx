@@ -158,14 +158,13 @@ describe("Registration", () => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
-		expect(getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -200,7 +199,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = rendered!;
 
 		await renderHookAct(async () => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
@@ -249,7 +248,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = rendered!;
 
 		await renderHookAct(async () => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
@@ -276,7 +275,7 @@ describe("Registration", () => {
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
 
 		await act(async () => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
@@ -320,7 +319,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId, queryByText } = await renderPage(secondWallet);
 
 		await act(async () => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 		await waitFor(() => expect(queryByText("Business")).toBeInTheDocument());
 		await waitFor(() => expect(queryByText("Delegate")).not.toBeInTheDocument());
@@ -334,7 +333,7 @@ describe("Registration", () => {
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
 
 		await act(async () => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
@@ -377,7 +376,7 @@ describe("Registration", () => {
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
 
 		await act(async () => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
@@ -425,7 +424,7 @@ describe("Registration", () => {
 
 		await act(async () => {
 			// Step 1
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
 			fireEvent.click(getByTestId("select-list__toggle-option-1"));
@@ -521,7 +520,7 @@ describe("Registration", () => {
 
 		await act(async () => {
 			// Step 1
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
 
 			fireEvent.click(getByTestId("select-list__toggle-option-1"));
@@ -579,7 +578,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -609,7 +608,7 @@ describe("Registration", () => {
 		const { getByTestId, getAllByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -638,7 +637,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -668,7 +667,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -700,7 +699,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -730,7 +729,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -803,7 +802,7 @@ describe("Registration", () => {
 		const { asFragment, getByTestId, getAllByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
@@ -874,17 +873,18 @@ describe("Registration", () => {
 		const addLink = async (collection: any, optionLabel: string, inputValue: string) => {
 			await toggleLinkCollectionHeader(collection);
 
-			const selectButton = within(collection).getByTestId("select-list__toggle-button");
+			const selectDropdown = within(collection).getByTestId("SelectDropdownInput__input");
 
 			await act(async () => {
-				fireEvent.click(selectButton);
+				fireEvent.change(selectDropdown, { target: { value: optionLabel } });
 			});
+
+			const firstOption = getByTestId("select-list__toggle-option-0");
+			await waitFor(() => expect(firstOption).toBeTruthy());
 
 			await act(async () => {
-				fireEvent.click(within(collection).getByText(optionLabel), { selector: ["role=option"] });
+				fireEvent.click(firstOption);
 			});
-
-			await waitFor(() => expect(selectButton).toHaveTextContent(optionLabel));
 
 			const input = within(collection).getByTestId("LinkCollection__input-link");
 
@@ -959,7 +959,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-button"));
+			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
