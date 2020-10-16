@@ -1,14 +1,14 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
-import { FormField, FormHelperText,FormLabel, SubForm } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputAddonEnd, InputCurrency, InputGroup } from "app/components/Input";
 import { useValidation } from "app/hooks";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import React, {  useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -55,14 +55,7 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 	);
 };
 
-export const AddRecipient = ({
-	maxAvailableAmount,
-	assetSymbol,
-	isSingleRecipient,
-	profile,
-	recipients,
-	onChange,
-}: AddRecipientProps) => {
+export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipients, onChange }: AddRecipientProps) => {
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
 	const [displayAmount, setDisplayAmount] = useState<string | undefined>();
@@ -71,11 +64,17 @@ export const AddRecipient = ({
 	const { t } = useTranslation();
 	const { sendTransfer } = useValidation();
 	const { getValues, setValue, register, trigger, watch } = useFormContext();
-	const { recipientAddress, amount, network } = watch();
+	const { recipientAddress, amount, network, senderAddress, fee } = watch();
 
-	useEffect(() => {
-		register("amount", sendTransfer.amount());
-	}, [register]);
+	const senderWalletBalance = useMemo(
+		() => profile.wallets().findByAddress(senderAddress)?.balance() || BigNumber.ZERO,
+		[senderAddress],
+	);
+
+	const availableAmount = useMemo(
+		() => addedRecipients.reduce((sum, item) => sum.minus(item.amount), senderWalletBalance),
+		[senderWalletBalance, addedRecipients],
+	);
 
 	useEffect(() => {
 		const setValidationState = async () => {
@@ -85,10 +84,9 @@ export const AddRecipient = ({
 		setValidationState();
 	}, [amount, recipientAddress, trigger]);
 
-	const availableAmount = useMemo(
-		() => addedRecipients.reduce((sum, item) => sum.minus(item.amount), maxAvailableAmount),
-		[maxAvailableAmount, addedRecipients],
-	);
+	useEffect(() => {
+		register("amount", sendTransfer.amount(network, availableAmount));
+	}, [register, availableAmount]);
 
 	const clearFields = () => {
 		setDisplayAmount("0.0");
@@ -100,14 +98,10 @@ export const AddRecipient = ({
 		const recipientAddress = getValues("recipientAddress");
 		const amount = getValues("amount");
 
-		if (!isSingle) {
-			return;
-		}
+		if (!isSingle) return;
 
 		if (!recipientAddress || !BigNumber.make(amount).toNumber()) {
-			onChange?.([]);
-
-			return;
+			return onChange?.([]);
 		}
 
 		onChange?.([
