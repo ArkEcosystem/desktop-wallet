@@ -54,7 +54,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                       />
                     </div>
                     <input
-                      class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                      class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
                       data-testid="SelectRecipient__input"
                       name="address"
                       type="text"
@@ -92,7 +92,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   data-testid="FormLabel"
                   for=""
                 >
-                  Multisiganture Participants
+                  Multisignature Participants
                   <div
                     class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"
@@ -102,7 +102,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   class="sc-fznyAO hLRmQw"
                 >
                   <div
-                    class="sc-fzoLsD iJRFsx"
+                    class="sc-fzoLsD czMSTN -mt-3"
                     role="table"
                   >
                     <table
@@ -111,10 +111,11 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                     >
                       <thead>
                         <tr
+                          class="border-b border-theme-neutral-300"
                           role="row"
                         >
                           <th
-                            class="text-sm text-left select-none text-theme-neutral"
+                            class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--0"
                             role="columnheader"
@@ -128,7 +129,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                             </div>
                           </th>
                           <th
-                            class="text-sm text-left select-none text-theme-neutral"
+                            class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--1"
                             role="columnheader"
@@ -142,7 +143,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                             </div>
                           </th>
                           <th
-                            class="text-sm text-left select-none text-theme-neutral"
+                            class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--2"
                             role="columnheader"
@@ -156,7 +157,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                             </div>
                           </th>
                           <th
-                            class="text-sm text-left select-none text-theme-neutral"
+                            class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--3"
                             role="columnheader"
@@ -282,7 +283,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                 class="sc-fzqNJr gmzgI"
               >
                 <input
-                  class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                   data-testid="MultiSignatureRegistrationForm__min-participants"
                   name="minParticipants"
                   type="number"
@@ -320,7 +321,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                     class="sc-fzqNJr gmzgI"
                   >
                     <input
-                      class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                      class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -541,7 +542,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                 <div
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Multisiganture Participants
+                  Multisignature Participants
                 </div>
                 <div
                   class="font-semibold"
@@ -550,7 +551,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                     class="sc-fznyAO hLRmQw"
                   >
                     <div
-                      class="sc-fzoLsD iJRFsx"
+                      class="sc-fzoLsD czMSTN -mt-3"
                       role="table"
                     >
                       <table
@@ -559,10 +560,11 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                       >
                         <thead>
                           <tr
+                            class="border-b border-theme-neutral-300"
                             role="row"
                           >
                             <th
-                              class="text-sm text-left select-none text-theme-neutral"
+                              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--0"
                               role="columnheader"
@@ -576,7 +578,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                               </div>
                             </th>
                             <th
-                              class="text-sm text-left select-none text-theme-neutral"
+                              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--1"
                               role="columnheader"
@@ -590,7 +592,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                               </div>
                             </th>
                             <th
-                              class="text-sm text-left select-none text-theme-neutral"
+                              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--2"
                               role="columnheader"
@@ -646,18 +648,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                             </td>
                             <td
                               class="py-4 text-right"
-                            >
-                              <div
-                                class="sc-AxgMl eXChH"
-                                color="danger"
-                              >
-                                <span
-                                  data-testid="Amount"
-                                >
-                                  33.75089801 DARK
-                                </span>
-                              </div>
-                            </td>
+                            />
                           </tr>
                           <tr
                             class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
@@ -697,18 +688,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                             </td>
                             <td
                               class="py-4 text-right"
-                            >
-                              <div
-                                class="sc-AxgMl eXChH"
-                                color="danger"
-                              >
-                                <span
-                                  data-testid="Amount"
-                                >
-                                  57.68 DARK
-                                </span>
-                              </div>
-                            </td>
+                            />
                           </tr>
                         </tbody>
                       </table>

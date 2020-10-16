@@ -1,5 +1,5 @@
 import { Icon } from "app/components/Icon";
-import { clickOutsideHandler } from "app/hooks/click-outside";
+import { clickOutsideHandler } from "app/hooks";
 import React, { useEffect, useRef, useState } from "react";
 import { styled } from "twin.macro";
 import { Position, Size } from "types";

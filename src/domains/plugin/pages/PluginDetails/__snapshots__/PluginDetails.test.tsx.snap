@@ -35,7 +35,7 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -47,7 +47,7 @@ exports[`PluginDetails should render properly 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -58,7 +58,7 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -69,7 +69,7 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -181,7 +181,7 @@ exports[`PluginDetails should render properly 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -697,7 +697,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
                   >
                     <span
-                      class="text-theme-neutral-900"
+                      class="text-theme-text"
                     >
                       Sort by:
                     </span>
@@ -708,7 +708,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="cursor-pointer null"
                       >
                         <span
-                          class="flex items-center space-x-1 text-theme-neutral-900"
+                          class="flex items-center space-x-1 text-theme-text"
                         >
                           <span>
                             Best
@@ -922,7 +922,7 @@ exports[`PluginDetails should render properly 1`] = `
                               class="flex items-center space-x-3 divide-x divide-theme-neutral-light"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-neutral-900"
+                                class="text-lg font-semibold text-theme-text"
                               >
                                 Developer response
                               </span>
@@ -1517,7 +1517,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1529,7 +1529,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1540,7 +1540,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1551,7 +1551,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1663,7 +1663,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -2211,7 +2211,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
                   >
                     <span
-                      class="text-theme-neutral-900"
+                      class="text-theme-text"
                     >
                       Sort by:
                     </span>
@@ -2222,7 +2222,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="cursor-pointer null"
                       >
                         <span
-                          class="flex items-center space-x-1 text-theme-neutral-900"
+                          class="flex items-center space-x-1 text-theme-text"
                         >
                           <span>
                             Best
@@ -2436,7 +2436,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                               class="flex items-center space-x-3 divide-x divide-theme-neutral-light"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-neutral-900"
+                                class="text-lg font-semibold text-theme-text"
                               >
                                 Developer response
                               </span>

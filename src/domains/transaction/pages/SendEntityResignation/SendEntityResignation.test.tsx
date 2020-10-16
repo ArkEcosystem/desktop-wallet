@@ -5,8 +5,8 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import entityRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-update.json";
-import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
+import entityRegistrationFixture from "tests/fixtures/coins/ark/devnet/transactions/entity-update.json";
+import transactionFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer.json";
 import {
 	act,
 	defaultNetMocks,

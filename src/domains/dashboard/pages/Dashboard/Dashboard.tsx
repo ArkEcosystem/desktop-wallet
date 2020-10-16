@@ -4,7 +4,7 @@ import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { BarItem, PercentageBar } from "app/components/PercentageBar";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import { getNetworkExtendedData } from "domains/network/helpers";
@@ -33,15 +33,19 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 	const availableNetworks = useMemo(
 		() =>
-			env.availableNetworks().map((network) => {
-				const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
-				return Object.assign(network, { extra: extended });
-			}),
+			env
+				.availableNetworks()
+				.filter((network) => network.isLive())
+				.map((network) => {
+					const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
+					return Object.assign(network, { extra: extended });
+				}),
 		[env],
 	);
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 	const balancePerCoin = useMemo(() => activeProfile.walletAggregate().balancePerCoin(), [activeProfile]);
+
 	const portfolioPercentages = useMemo(() => {
 		const data: BarItem[] = [];
 

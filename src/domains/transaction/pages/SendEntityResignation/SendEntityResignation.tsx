@@ -8,7 +8,7 @@ import { Loader } from "app/components/Loader";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/components/DelegateResignationForm";
 import { hasSufficientFunds } from "domains/transaction/utils";

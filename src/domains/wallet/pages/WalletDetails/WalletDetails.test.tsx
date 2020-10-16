@@ -4,7 +4,7 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
+import walletMock from "tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 import {
 	act,
 	env,
@@ -42,11 +42,9 @@ const renderPage = async () => {
 		},
 	);
 
-	const { getAllByTestId } = rendered;
+	const { getByTestId } = rendered;
 
-	await waitFor(() =>
-		expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(1),
-	);
+	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(15));
 
 	return rendered;
 };
@@ -67,7 +65,7 @@ describe("WalletDetails", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
-			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
+			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.get(`/api/wallets/${unvotedWallet.address()}`)
 			.reply(200, walletMock)
 			.get(`/api/wallets/${blankWallet.address()}`)
@@ -82,15 +80,9 @@ describe("WalletDetails", () => {
 				error: "Not Found",
 				message: "Wallet not found",
 			})
-			.post("/api/transactions/search")
-			.query(true)
-			.reply(200, () => {
-				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
-				return {
-					meta,
-					data: data.slice(0, 1),
-				};
-			})
+			.get("/api/transactions")
+			.query((params) => !!params.address)
+			.reply(200, () => require("tests/fixtures/coins/ark/devnet/transactions.json"))
 			.persist();
 	});
 
@@ -257,8 +249,6 @@ describe("WalletDetails", () => {
 	it("should open detail modal on transaction row click", async () => {
 		const { asFragment, getByTestId } = await renderPage();
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(1));
-
 		act(() => {
 			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
 		});
@@ -284,7 +274,7 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => {
-			expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(2);
+			expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(30);
 		});
 	});
 

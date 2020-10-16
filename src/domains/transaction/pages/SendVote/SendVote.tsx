@@ -7,8 +7,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useQueryParams } from "app/hooks";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { hasSufficientFunds } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useState } from "react";
@@ -85,6 +84,23 @@ export const SendVote = () => {
 	];
 
 	const handleBack = () => {
+		if (activeTab === 1) {
+			const params = new URLSearchParams();
+
+			if (unvoteAddresses) {
+				params.append("unvotes", unvoteAddresses.join());
+			}
+
+			if (voteAddresses) {
+				params.append("votes", voteAddresses.join());
+			}
+
+			return history.push({
+				pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`,
+				search: `?${params}`,
+			});
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
@@ -235,9 +251,7 @@ export const SendVote = () => {
 								{activeTab < 4 && (
 									<>
 										<Button
-											disabled={
-												activeTab === 1 || (activeTab === 3 ? formState.isSubmitting : false)
-											}
+											disabled={activeTab === 3 ? formState.isSubmitting : false}
 											variant="plain"
 											onClick={handleBack}
 											data-testid="SendVote__button--back"

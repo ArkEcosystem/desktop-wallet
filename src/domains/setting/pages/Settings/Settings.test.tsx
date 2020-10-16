@@ -92,24 +92,6 @@ describe("Settings", () => {
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
-		// Select Language
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Passphrase Language
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Market Provider
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[2]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Currency
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[3]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Time Format
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[4]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Automatic Sign Out Period
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[5]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		// Toggle Screenshot Protection
 		fireEvent.click(getByTestId("General-settings__toggle--isScreenshotProtection"));
 		// Toggle Advanced Mode
@@ -169,7 +151,7 @@ describe("Settings", () => {
 	});
 
 	it("should not update profile if profile name exists", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
 			</Route>,
@@ -191,67 +173,6 @@ describe("Settings", () => {
 		});
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "Jane Doe" } });
-		// Select Language
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Passphrase Language
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Market Provider
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[2]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Currency
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[3]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Time Format
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[4]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Toggle Screenshot Protection
-		fireEvent.click(getByTestId("General-settings__toggle--isScreenshotProtection"));
-		// Toggle Advanced Mode
-		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
-		// Toggle Update Ledger in Background
-		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
-
-		await act(async () => {
-			fireEvent.click(getByTestId("General-settings__submit-button"));
-		});
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should submit using default props", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
-		// Select Language
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Passphrase Language
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Market Provider
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[2]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Currency
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[3]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Time Format
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[4]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Toggle Screenshot Protection
-		fireEvent.click(getByTestId("General-settings__toggle--isScreenshotProtection"));
-		// Toggle Advanced Mode
-		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
-		// Toggle Update Ledger in Background
-		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));

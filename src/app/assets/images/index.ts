@@ -9,6 +9,7 @@ import { wallet } from "domains/wallet/images";
 
 import { ReactComponent as ARKLogo } from "./ark-logo.svg";
 import { ReactComponent as ConfirmedBanner } from "./confirmed-banner.svg";
+import { ReactComponent as WelcomeBannerDark } from "./dark/welcome-banner.svg";
 import { ReactComponent as DeleteBanner } from "./delete-banner.svg";
 import { ReactComponent as MistakeBanner } from "./mistake-banner.svg";
 import { ReactComponent as NoResultsBanner } from "./no-results.svg";
@@ -25,6 +26,7 @@ export const images = {
 		RegisterBanner,
 		SuccessBanner,
 		WelcomeBanner,
+		WelcomeBannerDark,
 		NoResultsBanner,
 	},
 	contacts,

@@ -5,7 +5,13 @@ import { fireEvent, renderWithRouter } from "utils/testing-library";
 import { TransactionRow } from "./TransactionRow";
 
 describe("TransactionRow", () => {
-	const fixture = { ...TransactionFixture, wallet: () => ({ currency: () => "DARK" }) };
+	const fixture = {
+		...TransactionFixture,
+		wallet: () => ({
+			...TransactionFixture.wallet(),
+			currency: () => "DARK",
+		}),
+	};
 
 	it("should show transaction", () => {
 		const { getByTestId } = renderWithRouter(

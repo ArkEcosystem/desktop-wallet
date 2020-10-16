@@ -8,6 +8,7 @@ export type RecipientListItem = {
 	listIndex?: number;
 	variant?: "condensed";
 	walletName?: string;
+	showAmount?: boolean;
 	onRemove?: (address: string) => void;
 };
 
@@ -15,6 +16,7 @@ export type RecipientList = {
 	assetSymbol: string;
 	isEditable?: boolean;
 	recipients?: RecipientListItem[];
+	showAmount?: boolean;
 	variant?: "condensed";
 	onRemove?: (address: string) => void;
 };

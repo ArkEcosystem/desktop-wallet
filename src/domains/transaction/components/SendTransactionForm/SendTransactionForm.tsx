@@ -22,6 +22,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
+	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
@@ -67,6 +68,16 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-transfer`);
 	};
 
+	useEffect(() => {
+		const userNetworks: string[] = [];
+		const wallets: any = profile.wallets().values();
+		for (const wallet of wallets) {
+			userNetworks.push(wallet.networkId());
+		}
+
+		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
+	}, [profile, networks]);
+
 	return (
 		<div className="space-y-8 SendTransactionForm">
 			<FormField name="network" className="relative">
@@ -75,7 +86,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 				</div>
 				<SelectNetwork
 					id="SendTransactionForm__network"
-					networks={networks}
+					networks={availableNetworks}
 					selected={network}
 					disabled={!!senderAddress}
 					onSelect={(selectedNetwork: Coins.Network | null | undefined) =>

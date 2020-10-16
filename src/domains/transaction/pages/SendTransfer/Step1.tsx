@@ -10,7 +10,15 @@ import React, { ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; profile: Profile }) => {
+export const FormStep = ({
+	networks,
+	profile,
+	deeplinkProps,
+}: {
+	networks: Coins.Network[];
+	profile: Profile;
+	deeplinkProps: any;
+}) => {
 	const { t } = useTranslation();
 	const { getValues, setValue, watch, clearErrors } = useFormContext();
 	const { recipients, smartbridge } = getValues();
@@ -19,6 +27,19 @@ export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; pro
 	const feeSatoshi = fee?.display ? fee.value : fee;
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 	const maxAmount = senderWallet ? BigNumber.make(senderWallet.balance()).minus(feeSatoshi) : BigNumber.ZERO;
+
+	const getRecipients = () => {
+		if (deeplinkProps?.recipient && deeplinkProps?.amount) {
+			return [
+				{
+					address: deeplinkProps.recipient,
+					amount: BigNumber.make(deeplinkProps.amount),
+				},
+			];
+		}
+
+		return recipients;
+	};
 
 	return (
 		<section data-testid="SendTransfer__step--first">
@@ -40,7 +61,7 @@ export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; pro
 									clearErrors("amount");
 									setValue("recipients", recipients, { shouldValidate: true, shouldDirty: true });
 								}}
-								recipients={recipients}
+								recipients={getRecipients()}
 							/>
 						</div>
 

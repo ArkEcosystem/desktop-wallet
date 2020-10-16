@@ -2,7 +2,7 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

@@ -18,7 +18,7 @@ import {
 	waitFor,
 	within,
 } from "testing-library";
-import ipfsFixture from "tests/fixtures/coins/ark/transactions/ipfs.json";
+import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendIpfs } from "./SendIpfs";
@@ -48,8 +48,9 @@ describe("SendIpfs", () => {
 		wallet = profile.wallets().values()[0];
 
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+			.get("/api/transactions")
+			.query({ address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" })
+			.reply(200, require("tests/fixtures/coins/ark/devnet/transactions.json"))
 			.get("/api/transactions/1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e")
 			.reply(200, ipfsFixture);
 

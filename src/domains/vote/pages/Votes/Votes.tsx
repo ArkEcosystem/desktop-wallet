@@ -10,7 +10,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
@@ -30,7 +30,7 @@ const Tabs = ({ selected, onClick }: TabsProps) => {
 	const getTabItemClass = (item: string) =>
 		selected === item
 			? "theme-neutral-900 border-theme-primary-dark"
-			: "text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent";
+			: "text-theme-neutral-dark hover:text-theme-text border-transparent";
 
 	return (
 		<ul className="flex h-20 mr-auto -mt-5 -mb-5" data-testid="Tabs">
@@ -96,12 +96,17 @@ export const Votes = () => {
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
+	const queryParams = useQueryParams();
+	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
+	const voteAddresses = queryParams.get("votes")?.split(",");
+
 	const [tabItem, setTabItem] = useState("delegate");
 	const [network, setNetwork] = useState<Coins.Network | null>(null);
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
+	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
 
 	const crumbs = [
 		{
@@ -167,6 +172,16 @@ export const Votes = () => {
 		}
 	}, [activeWallet, loadDelegates, hasWalletId]);
 
+	useEffect(() => {
+		const userNetworks: string[] = [];
+		const wallets: any = activeProfile.wallets().values();
+		for (const wallet of wallets) {
+			userNetworks.push(wallet.networkId());
+		}
+
+		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
+	}, [activeProfile, networks]);
+
 	const handleSelectNetwork = (networkData?: Coins.Network | null) => {
 		if (!networkData || networkData.id() !== network?.id()) {
 			setTabItem("delegate");
@@ -220,7 +235,7 @@ export const Votes = () => {
 						</div>
 						<SelectNetwork
 							id="Votes__network"
-							networks={networks}
+							networks={availableNetworks}
 							selected={network!}
 							placeholder={t("COMMON.SELECT_OPTION", { option: t("COMMON.CRYPTOASSET") })}
 							onSelect={handleSelectNetwork}
@@ -248,6 +263,8 @@ export const Votes = () => {
 							delegates={delegates}
 							maxVotes={network.maximumVotesPerWallet()}
 							votes={votes}
+							selectedUnvoteAddresses={unvoteAddresses}
+							selectedVoteAddresses={voteAddresses}
 							onContinue={handleContinue}
 						/>
 					) : (

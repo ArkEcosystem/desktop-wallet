@@ -704,7 +704,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -715,7 +715,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -726,7 +726,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -737,7 +737,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -849,7 +849,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -1024,7 +1024,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
                       >
                         <input
                           aria-invalid="true"
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
@@ -1134,7 +1134,7 @@ exports[`Registration should fill all data including link collections 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1145,7 +1145,7 @@ exports[`Registration should fill all data including link collections 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1156,7 +1156,7 @@ exports[`Registration should fill all data including link collections 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1167,7 +1167,7 @@ exports[`Registration should fill all data including link collections 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1279,7 +1279,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -1449,7 +1449,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__entity-name"
                           name="entityName"
                           type="text"
@@ -1471,7 +1471,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__display-name"
                           name="ipfsData.meta.displayName"
                           type="text"
@@ -1493,7 +1493,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                           />
                         </label>
                         <textarea
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__description"
                           name="ipfsData.meta.description"
                         >
@@ -1515,7 +1515,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__website"
                           name="ipfsData.meta.website"
                           type="text"
@@ -1682,7 +1682,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                                 class="sc-fzpjYC dHxzen"
                               >
                                 <input
-                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -1796,7 +1796,7 @@ exports[`Registration should go to review step after successfully filling form d
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1807,7 +1807,7 @@ exports[`Registration should go to review step after successfully filling form d
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1818,7 +1818,7 @@ exports[`Registration should go to review step after successfully filling form d
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1829,7 +1829,7 @@ exports[`Registration should go to review step after successfully filling form d
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1941,7 +1941,7 @@ exports[`Registration should go to review step after successfully filling form d
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -2451,7 +2451,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -2462,7 +2462,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -2473,7 +2473,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -2484,7 +2484,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -2596,7 +2596,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -2803,7 +2803,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               aria-controls="SendTransactionForm__network-menu"
                               aria-labelledby="SendTransactionForm__network-label"
                               autocomplete="off"
-                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               disabled=""
                               id="SendTransactionForm__network-input"
@@ -2882,7 +2882,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             </div>
                           </button>
                           <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                             data-testid="SelectAddress__input"
                             name="senderAddress"
                             readonly=""
@@ -2911,7 +2911,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                         class="relative w-full"
                       >
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                           data-testid="select-list__input"
                           name="registrationType"
                           readonly=""
@@ -2919,30 +2919,46 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
-                          <div>
-                            <button
-                              aria-expanded="true"
-                              aria-haspopup="listbox"
-                              aria-labelledby="downshift-36-label downshift-36-toggle-button"
-                              class="sc-fznxKY ftvzgS is-open  "
-                              data-testid="select-list__toggle-button"
-                              id="downshift-36-toggle-button"
-                              type="button"
+                          <div
+                            aria-expanded="true"
+                            aria-haspopup="listbox"
+                            aria-owns="downshift-73-menu"
+                            role="combobox"
+                          >
+                            <label
+                              for="downshift-72-input"
+                              id="downshift-73-label"
                             />
+                            <div
+                              class="sc-fzpjYC dHxzen"
+                              data-testid="SelectDropdownInput"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-73-menu"
+                                aria-labelledby="downshift-73-label"
+                                autocomplete="off"
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-72-input"
+                                name="registrationType"
+                                placeholder="Select option"
+                                value=""
+                              />
+                            </div>
                             <ul
-                              aria-labelledby="downshift-36-label"
-                              class="sc-fznMAR hjPwmz is-open"
-                              id="downshift-36-menu"
+                              aria-labelledby="downshift-73-label"
+                              class="sc-fznMAR ewmSwp is-open"
+                              id="downshift-73-menu"
                               role="listbox"
-                              tabindex="-1"
                             >
                               <li
                                 aria-selected="false"
-                                class="select-list-option "
+                                class="select-list-option cursor-default "
                                 data-testid="select-list__toggle-option-0"
-                                id="downshift-36-item-0"
+                                id="downshift-73-item-0"
                                 role="option"
                               >
                                 <div
@@ -2953,9 +2969,9 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               </li>
                               <li
                                 aria-selected="false"
-                                class="select-list-option "
+                                class="select-list-option cursor-default "
                                 data-testid="select-list__toggle-option-1"
-                                id="downshift-36-item-1"
+                                id="downshift-73-item-1"
                                 role="option"
                               >
                                 <div
@@ -3068,7 +3084,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
@@ -3128,7 +3144,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
             </div>
           </button>
           <input
-            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -3157,7 +3173,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
         class="relative w-full"
       >
         <input
-          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
           data-testid="select-list__input"
           name="registrationType"
           readonly=""
@@ -3165,33 +3181,94 @@ exports[`Registration should not set fee if no fee options 1`] = `
           value="delegateRegistration"
         />
         <div
-          class="relative w-full cursor-pointer"
+          class="relative w-full"
         >
-          <div>
-            <button
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-15-label downshift-15-toggle-button"
-              class="sc-fznxKY ftvzgS  is-selected "
-              data-testid="select-list__toggle-button"
-              id="downshift-15-toggle-button"
-              type="button"
-            >
-              Delegate
-            </button>
-            <ul
-              aria-labelledby="downshift-15-label"
-              class="sc-fznMAR hjPwmz"
-              id="downshift-15-menu"
-              role="listbox"
-              tabindex="-1"
+          <div
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-owns="downshift-31-menu"
+            role="combobox"
+          >
+            <label
+              for="downshift-30-input"
+              id="downshift-31-label"
             />
+            <div
+              class="sc-fzpjYC dHxzen"
+              data-testid="SelectDropdownInput"
+            >
+              <span
+                class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                data-testid="SelectDropdownInput__typeahead"
+              >
+                Delegate
+              </span>
+              <input
+                aria-activedescendant="downshift-31-item-1"
+                aria-autocomplete="list"
+                aria-controls="downshift-31-menu"
+                aria-labelledby="downshift-31-label"
+                autocomplete="off"
+                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                data-testid="SelectDropdownInput__input"
+                id="downshift-30-input"
+                name="registrationType"
+                placeholder="Select option"
+                value="Delegate"
+              />
+            </div>
+            <ul
+              aria-labelledby="downshift-31-label"
+              class="sc-fznMAR ewmSwp is-open"
+              id="downshift-31-menu"
+              role="listbox"
+            >
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-0"
+                id="downshift-31-item-0"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Business
+                </div>
+              </li>
+              <li
+                aria-selected="true"
+                class="select-list-option cursor-default is-highlighted"
+                data-testid="select-list__toggle-option-1"
+                id="downshift-31-item-1"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Delegate
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-2"
+                id="downshift-31-item-2"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Second Signature
+                </div>
+              </li>
+            </ul>
           </div>
           <div
             class="sc-fzoyAV sc-fzoXzr YtqIf w-10 pointer-events-none text-theme-neutral"
           >
             <div
-              class="sc-AxiKw jNSjzx"
+              class="sc-AxiKw jNSjzx transform rotate-180"
               height="5"
               width="7"
             >
@@ -3242,7 +3319,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -3253,7 +3330,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -3264,7 +3341,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -3275,7 +3352,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -3387,7 +3464,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -3848,7 +3925,7 @@ exports[`Registration should render 1st step 1`] = `
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
@@ -3908,7 +3985,7 @@ exports[`Registration should render 1st step 1`] = `
             </div>
           </button>
           <input
-            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -3937,7 +4014,7 @@ exports[`Registration should render 1st step 1`] = `
         class="relative w-full"
       >
         <input
-          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
           data-testid="select-list__input"
           name="registrationType"
           readonly=""
@@ -3945,33 +4022,94 @@ exports[`Registration should render 1st step 1`] = `
           value="delegateRegistration"
         />
         <div
-          class="relative w-full cursor-pointer"
+          class="relative w-full"
         >
-          <div>
-            <button
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-10-label downshift-10-toggle-button"
-              class="sc-fznxKY ftvzgS  is-selected "
-              data-testid="select-list__toggle-button"
-              id="downshift-10-toggle-button"
-              type="button"
-            >
-              Delegate
-            </button>
-            <ul
-              aria-labelledby="downshift-10-label"
-              class="sc-fznMAR hjPwmz"
-              id="downshift-10-menu"
-              role="listbox"
-              tabindex="-1"
+          <div
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-owns="downshift-21-menu"
+            role="combobox"
+          >
+            <label
+              for="downshift-20-input"
+              id="downshift-21-label"
             />
+            <div
+              class="sc-fzpjYC dHxzen"
+              data-testid="SelectDropdownInput"
+            >
+              <span
+                class="sc-fzoyAV gCfUUB py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                data-testid="SelectDropdownInput__typeahead"
+              >
+                Delegate
+              </span>
+              <input
+                aria-activedescendant="downshift-21-item-1"
+                aria-autocomplete="list"
+                aria-controls="downshift-21-menu"
+                aria-labelledby="downshift-21-label"
+                autocomplete="off"
+                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                data-testid="SelectDropdownInput__input"
+                id="downshift-20-input"
+                name="registrationType"
+                placeholder="Select option"
+                value="Delegate"
+              />
+            </div>
+            <ul
+              aria-labelledby="downshift-21-label"
+              class="sc-fznMAR ewmSwp is-open"
+              id="downshift-21-menu"
+              role="listbox"
+            >
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-0"
+                id="downshift-21-item-0"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Business
+                </div>
+              </li>
+              <li
+                aria-selected="true"
+                class="select-list-option cursor-default is-highlighted"
+                data-testid="select-list__toggle-option-1"
+                id="downshift-21-item-1"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Delegate
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-2"
+                id="downshift-21-item-2"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Second Signature
+                </div>
+              </li>
+            </ul>
           </div>
           <div
             class="sc-fzoyAV sc-fzoXzr YtqIf w-10 pointer-events-none text-theme-neutral"
           >
             <div
-              class="sc-AxiKw jNSjzx"
+              class="sc-AxiKw jNSjzx transform rotate-180"
               height="5"
               width="7"
             >
@@ -4022,7 +4160,7 @@ exports[`Registration should render registration form without selected wallet 1`
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -4033,7 +4171,7 @@ exports[`Registration should render registration form without selected wallet 1`
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -4044,7 +4182,7 @@ exports[`Registration should render registration form without selected wallet 1`
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -4055,7 +4193,7 @@ exports[`Registration should render registration form without selected wallet 1`
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -4167,7 +4305,7 @@ exports[`Registration should render registration form without selected wallet 1`
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -4356,7 +4494,7 @@ exports[`Registration should render registration form without selected wallet 1`
                               aria-controls="SendTransactionForm__network-menu"
                               aria-labelledby="SendTransactionForm__network-label"
                               autocomplete="off"
-                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="SendTransactionForm__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -4416,7 +4554,7 @@ exports[`Registration should render registration form without selected wallet 1`
                             </div>
                           </button>
                           <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                             data-testid="SelectAddress__input"
                             name="senderAddress"
                             readonly=""
@@ -4445,7 +4583,7 @@ exports[`Registration should render registration form without selected wallet 1`
                         class="relative w-full"
                       >
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                           data-testid="select-list__input"
                           name="registrationType"
                           readonly=""
@@ -4453,24 +4591,40 @@ exports[`Registration should render registration form without selected wallet 1`
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
-                          <div>
-                            <button
-                              aria-expanded="false"
-                              aria-haspopup="listbox"
-                              aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                              class="sc-fznxKY ftvzgS   "
-                              data-testid="select-list__toggle-button"
-                              id="downshift-0-toggle-button"
-                              type="button"
+                          <div
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-owns="downshift-1-menu"
+                            role="combobox"
+                          >
+                            <label
+                              for="downshift-0-input"
+                              id="downshift-1-label"
                             />
+                            <div
+                              class="sc-fzpjYC dHxzen"
+                              data-testid="SelectDropdownInput"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-1-menu"
+                                aria-labelledby="downshift-1-label"
+                                autocomplete="off"
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-0-input"
+                                name="registrationType"
+                                placeholder="Select option"
+                                value=""
+                              />
+                            </div>
                             <ul
-                              aria-labelledby="downshift-0-label"
-                              class="sc-fznMAR hjPwmz"
-                              id="downshift-0-menu"
+                              aria-labelledby="downshift-1-label"
+                              class="sc-fznMAR ewmSwp"
+                              id="downshift-1-menu"
                               role="listbox"
-                              tabindex="-1"
                             />
                           </div>
                           <div
@@ -4539,7 +4693,7 @@ exports[`Registration should select cryptoasset first and see select address inp
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -4550,7 +4704,7 @@ exports[`Registration should select cryptoasset first and see select address inp
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -4561,7 +4715,7 @@ exports[`Registration should select cryptoasset first and see select address inp
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -4572,7 +4726,7 @@ exports[`Registration should select cryptoasset first and see select address inp
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -4684,7 +4838,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -4887,12 +5041,12 @@ exports[`Registration should select cryptoasset first and see select address inp
                               ARK Devnet
                             </span>
                             <input
-                              aria-activedescendant="SendTransactionForm__network-item-1"
+                              aria-activedescendant="SendTransactionForm__network-item-0"
                               aria-autocomplete="list"
                               aria-controls="SendTransactionForm__network-menu"
                               aria-labelledby="SendTransactionForm__network-label"
                               autocomplete="off"
-                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="SendTransactionForm__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -4907,7 +5061,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                           role="listbox"
                         >
                           <li
-                            aria-selected="false"
+                            aria-selected="true"
                             class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="SendTransactionForm__network-item-0"
@@ -4977,7 +5131,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                             </div>
                           </button>
                           <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                             data-testid="SelectAddress__input"
                             name="senderAddress"
                             readonly=""
@@ -5006,7 +5160,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                         class="relative w-full"
                       >
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                           data-testid="select-list__input"
                           name="registrationType"
                           readonly=""
@@ -5014,24 +5168,40 @@ exports[`Registration should select cryptoasset first and see select address inp
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
-                          <div>
-                            <button
-                              aria-expanded="false"
-                              aria-haspopup="listbox"
-                              aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                              class="sc-fznxKY ftvzgS   "
-                              data-testid="select-list__toggle-button"
-                              id="downshift-2-toggle-button"
-                              type="button"
+                          <div
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-owns="downshift-5-menu"
+                            role="combobox"
+                          >
+                            <label
+                              for="downshift-4-input"
+                              id="downshift-5-label"
                             />
+                            <div
+                              class="sc-fzpjYC dHxzen"
+                              data-testid="SelectDropdownInput"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-5-menu"
+                                aria-labelledby="downshift-5-label"
+                                autocomplete="off"
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-4-input"
+                                name="registrationType"
+                                placeholder="Select option"
+                                value=""
+                              />
+                            </div>
                             <ul
-                              aria-labelledby="downshift-2-label"
-                              class="sc-fznMAR hjPwmz"
-                              id="downshift-2-menu"
+                              aria-labelledby="downshift-5-label"
+                              class="sc-fznMAR ewmSwp"
+                              id="downshift-5-menu"
                               role="listbox"
-                              tabindex="-1"
                             />
                           </div>
                           <div
@@ -5100,7 +5270,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -5111,7 +5281,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -5122,7 +5292,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -5133,7 +5303,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -5245,7 +5415,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -5425,8 +5595,8 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                               class="sc-fzoyAV sc-fzoLag grqxuS px-4"
                             >
                               <div
-                                aria-label="ARK"
-                                class="sc-AxgMl eLFBRi border-theme-danger-light text-theme-danger-400"
+                                aria-label="ARK Devnet"
+                                class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
                                 data-testid="SelectNetworkInput__network"
                               >
                                 <div
@@ -5445,7 +5615,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                               class="sc-fzoyAV gCfUUB py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                               data-testid="SelectNetworkInput__typeahead"
                             >
-                              ARK
+                              ARK Devnet
                             </span>
                             <input
                               aria-activedescendant="SendTransactionForm__network-item-0"
@@ -5453,11 +5623,11 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                               aria-controls="SendTransactionForm__network-menu"
                               aria-labelledby="SendTransactionForm__network-label"
                               autocomplete="off"
-                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="SendTransactionForm__network-input"
                               placeholder="Enter a cryptoasset name"
-                              value="ARK"
+                              value="ARK Devnet"
                             />
                           </div>
                         </div>
@@ -5475,32 +5645,8 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                             role="option"
                           >
                             <div
-                              aria-label="ARK"
-                              class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
-                              data-testid="NetworkIcon-ARK-ark.mainnet"
-                            >
-                              <div
-                                class="sc-AxiKw fubePL"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  ark.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="SendTransactionForm__network-item-1"
-                            role="option"
-                          >
-                            <div
                               aria-label="ARK Devnet"
-                              class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                              class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
                               data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
@@ -5537,9 +5683,8 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg hKoddb SelectAddress is-disabled "
+                            class="sc-fzqBkg hKoddb SelectAddress  "
                             data-testid="SelectAddress__wrapper"
-                            disabled=""
                             type="button"
                           >
                             <div
@@ -5563,7 +5708,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                             </div>
                           </button>
                           <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                             data-testid="SelectAddress__input"
                             name="senderAddress"
                             readonly=""
@@ -5592,7 +5737,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                         class="relative w-full"
                       >
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                           data-testid="select-list__input"
                           name="registrationType"
                           readonly=""
@@ -5600,24 +5745,40 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                           value=""
                         />
                         <div
-                          class="relative w-full cursor-pointer"
+                          class="relative w-full"
                         >
-                          <div>
-                            <button
-                              aria-expanded="false"
-                              aria-haspopup="listbox"
-                              aria-labelledby="downshift-6-label downshift-6-toggle-button"
-                              class="sc-fznxKY ftvzgS   "
-                              data-testid="select-list__toggle-button"
-                              id="downshift-6-toggle-button"
-                              type="button"
+                          <div
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-owns="downshift-13-menu"
+                            role="combobox"
+                          >
+                            <label
+                              for="downshift-12-input"
+                              id="downshift-13-label"
                             />
+                            <div
+                              class="sc-fzpjYC dHxzen"
+                              data-testid="SelectDropdownInput"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-13-menu"
+                                aria-labelledby="downshift-13-label"
+                                autocomplete="off"
+                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-12-input"
+                                name="registrationType"
+                                placeholder="Select option"
+                                value=""
+                              />
+                            </div>
                             <ul
-                              aria-labelledby="downshift-6-label"
-                              class="sc-fznMAR hjPwmz"
-                              id="downshift-6-menu"
+                              aria-labelledby="downshift-13-label"
+                              class="sc-fznMAR ewmSwp"
+                              id="downshift-13-menu"
                               role="listbox"
-                              tabindex="-1"
                             />
                           </div>
                           <div
@@ -5686,7 +5847,7 @@ exports[`Registration should select registration type & show form 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -5697,7 +5858,7 @@ exports[`Registration should select registration type & show form 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -5708,7 +5869,7 @@ exports[`Registration should select registration type & show form 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -5719,7 +5880,7 @@ exports[`Registration should select registration type & show form 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -5831,7 +5992,7 @@ exports[`Registration should select registration type & show form 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -6096,7 +6257,7 @@ exports[`Registration should select registration type & show form 1`] = `
                             />
                           </label>
                           <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                             data-testid="Input__username"
                             name="username"
                             value=""
@@ -6127,7 +6288,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                 class="sc-fzpjYC dHxzen"
                               >
                                 <input
-                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -6242,7 +6403,7 @@ exports[`Registration should should go back and forth & correctly register field
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -6253,7 +6414,7 @@ exports[`Registration should should go back and forth & correctly register field
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -6264,7 +6425,7 @@ exports[`Registration should should go back and forth & correctly register field
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -6275,7 +6436,7 @@ exports[`Registration should should go back and forth & correctly register field
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -6387,7 +6548,7 @@ exports[`Registration should should go back and forth & correctly register field
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -6652,7 +6813,7 @@ exports[`Registration should should go back and forth & correctly register field
                             />
                           </label>
                           <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                             data-testid="Input__username"
                             name="username"
                             value="test_delegate"
@@ -6683,7 +6844,7 @@ exports[`Registration should should go back and forth & correctly register field
                                 class="sc-fzpjYC dHxzen"
                               >
                                 <input
-                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -6797,7 +6958,7 @@ exports[`Registration should successfully register entity 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -6808,7 +6969,7 @@ exports[`Registration should successfully register entity 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -6819,7 +6980,7 @@ exports[`Registration should successfully register entity 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -6830,7 +6991,7 @@ exports[`Registration should successfully register entity 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -6942,7 +7103,7 @@ exports[`Registration should successfully register entity 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -7505,7 +7666,7 @@ exports[`Registration should validate description 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -7516,7 +7677,7 @@ exports[`Registration should validate description 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -7527,7 +7688,7 @@ exports[`Registration should validate description 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -7538,7 +7699,7 @@ exports[`Registration should validate description 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -7650,7 +7811,7 @@ exports[`Registration should validate description 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -7820,7 +7981,7 @@ exports[`Registration should validate description 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__entity-name"
                           name="entityName"
                           type="text"
@@ -7842,7 +8003,7 @@ exports[`Registration should validate description 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__display-name"
                           name="ipfsData.meta.displayName"
                           type="text"
@@ -7865,7 +8026,7 @@ exports[`Registration should validate description 1`] = `
                         </label>
                         <textarea
                           aria-invalid="true"
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__description"
                           name="ipfsData.meta.description"
                         >
@@ -7892,7 +8053,7 @@ exports[`Registration should validate description 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__website"
                           name="ipfsData.meta.website"
                           type="text"
@@ -8059,7 +8220,7 @@ exports[`Registration should validate description 1`] = `
                                 class="sc-fzpjYC dHxzen"
                               >
                                 <input
-                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -8174,7 +8335,7 @@ exports[`Registration should validate display name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -8185,7 +8346,7 @@ exports[`Registration should validate display name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -8196,7 +8357,7 @@ exports[`Registration should validate display name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -8207,7 +8368,7 @@ exports[`Registration should validate display name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -8319,7 +8480,7 @@ exports[`Registration should validate display name 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -8489,7 +8650,7 @@ exports[`Registration should validate display name 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__entity-name"
                           name="entityName"
                           type="text"
@@ -8512,7 +8673,7 @@ exports[`Registration should validate display name 1`] = `
                         </label>
                         <input
                           aria-invalid="true"
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__display-name"
                           name="ipfsData.meta.displayName"
                           type="text"
@@ -8539,7 +8700,7 @@ exports[`Registration should validate display name 1`] = `
                           />
                         </label>
                         <textarea
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__description"
                           name="ipfsData.meta.description"
                         />
@@ -8559,7 +8720,7 @@ exports[`Registration should validate display name 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__website"
                           name="ipfsData.meta.website"
                           type="text"
@@ -8726,7 +8887,7 @@ exports[`Registration should validate display name 1`] = `
                                 class="sc-fzpjYC dHxzen"
                               >
                                 <input
-                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -8841,7 +9002,7 @@ exports[`Registration should validate entity name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -8852,7 +9013,7 @@ exports[`Registration should validate entity name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -8863,7 +9024,7 @@ exports[`Registration should validate entity name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -8874,7 +9035,7 @@ exports[`Registration should validate entity name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -8986,7 +9147,7 @@ exports[`Registration should validate entity name 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -9157,7 +9318,7 @@ exports[`Registration should validate entity name 1`] = `
                         </label>
                         <input
                           aria-invalid="true"
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__entity-name"
                           name="entityName"
                           type="text"
@@ -9184,7 +9345,7 @@ exports[`Registration should validate entity name 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__display-name"
                           name="ipfsData.meta.displayName"
                           type="text"
@@ -9206,7 +9367,7 @@ exports[`Registration should validate entity name 1`] = `
                           />
                         </label>
                         <textarea
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__description"
                           name="ipfsData.meta.description"
                         />
@@ -9226,7 +9387,7 @@ exports[`Registration should validate entity name 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__website"
                           name="ipfsData.meta.website"
                           type="text"
@@ -9393,7 +9554,7 @@ exports[`Registration should validate entity name 1`] = `
                                 class="sc-fzpjYC dHxzen"
                               >
                                 <input
-                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -9508,7 +9669,7 @@ exports[`Registration should validate website url 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -9519,7 +9680,7 @@ exports[`Registration should validate website url 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -9530,7 +9691,7 @@ exports[`Registration should validate website url 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -9541,7 +9702,7 @@ exports[`Registration should validate website url 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -9653,7 +9814,7 @@ exports[`Registration should validate website url 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  558,362.36534357 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -9823,7 +9984,7 @@ exports[`Registration should validate website url 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__entity-name"
                           name="entityName"
                           type="text"
@@ -9845,7 +10006,7 @@ exports[`Registration should validate website url 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__display-name"
                           name="ipfsData.meta.displayName"
                           type="text"
@@ -9867,7 +10028,7 @@ exports[`Registration should validate website url 1`] = `
                           />
                         </label>
                         <textarea
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__description"
                           name="ipfsData.meta.description"
                         />
@@ -9888,7 +10049,7 @@ exports[`Registration should validate website url 1`] = `
                         </label>
                         <input
                           aria-invalid="true"
-                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                          class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="EntityRegistrationForm__website"
                           name="ipfsData.meta.website"
                           type="text"
@@ -10060,7 +10221,7 @@ exports[`Registration should validate website url 1`] = `
                                 class="sc-fzpjYC dHxzen"
                               >
                                 <input
-                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
