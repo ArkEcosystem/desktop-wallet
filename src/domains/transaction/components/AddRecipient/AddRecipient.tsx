@@ -1,13 +1,14 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
-import { FormField, FormLabel, SubForm } from "app/components/Form";
+import { FormField, FormHelperText,FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputAddonEnd, InputCurrency, InputGroup } from "app/components/Input";
+import { useValidation } from "app/hooks";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import React, { useEffect, useMemo, useState } from "react";
+import React, {  useEffect, useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -65,44 +66,32 @@ export const AddRecipient = ({
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
 	const [displayAmount, setDisplayAmount] = useState<string | undefined>();
-	const [recipientsAmount, setRecipientsAmount] = useState<any>();
+	const [isSubFormStateValid, setSubFormState] = useState<boolean>(false);
 
 	const { t } = useTranslation();
-
-	const defaultValues: any = {
-		recipientAddress: null,
-		isSingle: isSingleRecipient,
-	};
-
-	if (isSingle && addedRecipients.length) {
-		defaultValues.recipientAddress = addedRecipients[0].address;
-	}
-
-	const form = useFormContext();
-	const { getValues, setValue, register, formState } = form;
-	console.log("Add recipient isValid", formState.isValid);
+	const { sendTransfer } = useValidation();
+	const { getValues, setValue, register, trigger, watch } = useFormContext();
+	const { recipientAddress, amount, network } = watch();
 
 	useEffect(() => {
-		register("amount");
+		register("amount", sendTransfer.amount());
 	}, [register]);
 
 	useEffect(() => {
-		setRecipientsAmount(
-			recipients
-				?.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue.amount), 0)
-				.toString(),
-		);
-	}, [recipients, displayAmount]);
+		const setValidationState = async () => {
+			const isValidFields = await trigger(["amount", "recipientAddress"]);
+			setSubFormState(isValidFields);
+		};
+		setValidationState();
+	}, [amount, recipientAddress, trigger]);
 
 	const availableAmount = useMemo(
 		() => addedRecipients.reduce((sum, item) => sum.minus(item.amount), maxAvailableAmount),
 		[maxAvailableAmount, addedRecipients],
 	);
 
-	const { recipientAddress, amount } = form.watch();
-
 	const clearFields = () => {
-		setDisplayAmount(undefined);
+		setDisplayAmount("0.0");
 		setValue("amount", undefined);
 		setValue("recipientAddress", null);
 	};
@@ -110,6 +99,7 @@ export const AddRecipient = ({
 	const singleRecipientOnChange = () => {
 		const recipientAddress = getValues("recipientAddress");
 		const amount = getValues("amount");
+
 		if (!isSingle) {
 			return;
 		}
@@ -128,7 +118,7 @@ export const AddRecipient = ({
 		]);
 	};
 
-	const onAddRecipient = (address: string, amount: number) => {
+	const handleAddRecipient = (address: string, amount: number) => {
 		addedRecipients.push({
 			amount: BigNumber.make(amount),
 			address,
@@ -138,7 +128,7 @@ export const AddRecipient = ({
 		clearFields();
 	};
 
-	const onRemoveRecipient = (address: string) => {
+	const handleRemoveRecipient = (address: string) => {
 		const index = addedRecipients.findIndex((addedRecipient: any) => addedRecipient.address === address);
 		const newRecipients = addedRecipients.concat();
 		newRecipients.splice(index, 1);
@@ -165,17 +155,14 @@ export const AddRecipient = ({
 
 						<SelectRecipient
 							address={recipientAddress}
-							ref={register({
-								validate: {
-									valid: (value: string) => value === "a" ? true : "Error reee",
-								},
-							})}
+							ref={register(sendTransfer.recipientAddress(network))}
 							profile={profile}
 							onChange={(address: any) => {
-								setValue("recipientAddress", address);
+								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
 								singleRecipientOnChange();
 							}}
 						/>
+						<FormHelperText />
 					</FormField>
 
 					<FormField name="amount" className="relative mt-1">
@@ -185,10 +172,9 @@ export const AddRecipient = ({
 						<InputGroup>
 							<InputCurrency
 								data-testid="add-recipient__amount-input"
-								name="amount"
 								placeholder={t("COMMON.AMOUNT")}
 								className="pr-20"
-								value={displayAmount || recipientsAmount}
+								value={displayAmount}
 								onChange={(currency) => {
 									setDisplayAmount(currency.display);
 									setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
@@ -213,15 +199,17 @@ export const AddRecipient = ({
 								</button>
 							</InputAddonEnd>
 						</InputGroup>
+						<FormHelperText />
 					</FormField>
 				</div>
 
 				{!isSingle && displayAmount && !!recipientAddress && (
 					<Button
+						disabled={!isSubFormStateValid}
 						data-testid="add-recipient__add-btn"
 						variant="plain"
 						className="w-full mt-4"
-						onClick={() => onAddRecipient(recipientAddress as string, amount)}
+						onClick={() => handleAddRecipient(recipientAddress as string, amount)}
 					>
 						{t("TRANSACTION.ADD_RECIPIENT")}
 					</Button>
@@ -233,7 +221,7 @@ export const AddRecipient = ({
 					<RecipientList
 						recipients={addedRecipients}
 						isEditable={true}
-						onRemove={onRemoveRecipient}
+						onRemove={handleRemoveRecipient}
 						assetSymbol={assetSymbol}
 					/>
 				</div>
