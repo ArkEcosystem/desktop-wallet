@@ -195,7 +195,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					</div>
 				</Section>
 
-				<Section>
+				<Section className="flex-1">
 					{pendingTransactions.length ? (
 						<div className="mb-16">
 							<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>

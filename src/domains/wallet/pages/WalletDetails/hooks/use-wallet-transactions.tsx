@@ -11,6 +11,7 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 	});
 
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
+	const [hasItems, setHasItems] = useState<boolean>(false);
 	const [nextPage, setNextPage] = useState<string | number | undefined>();
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -22,6 +23,7 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 
 			const response = await wallet.transactions({ limit, cursor });
 
+			setHasItems(!!response.items().length);
 			setNextPage(response.nextPage());
 			setTransactions((prev) => [...prev, ...response.items()]);
 			setIsLoading(false);
@@ -37,7 +39,7 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 		await sync(1);
 	}, [sync]);
 
-	const hasMore = nextPage !== undefined;
+	const hasMore = hasItems && nextPage !== undefined;
 
 	/**
 	 * Run periodically every 30 seconds to check for new transactions
