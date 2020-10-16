@@ -119,7 +119,9 @@ describe("Signed Transaction Table", () => {
 	it("should show as final signature", async () => {
 		const isAwaitingOurSignatureMock = jest
 			.spyOn(wallet.coin().multiSignature(), "isMultiSignatureReady")
-			.mockImplementation(() => false);
+			.mockImplementation(() => {
+				throw new Error();
+			});
 
 		const { asFragment } = render(<SignedTransactionTable transactions={[fixtures.transfer]} wallet={wallet} />);
 		await waitFor(() => expect(screen.getByText("Final Signature")).toBeInTheDocument());
@@ -143,6 +145,21 @@ describe("Signed Transaction Table", () => {
 		expect(onClick).toHaveBeenCalled();
 		expect(asFragment()).toMatchSnapshot();
 
-		awaitingMock.mockRestore();
+		awaitingMock.mockReset();
+	});
+
+	it("should set shadow colors on mouse events", async () => {
+		render(<SignedTransactionTable transactions={[fixtures.multiSignature]} wallet={wallet} />);
+		act(() => {
+			fireEvent.mouseEnter(screen.getAllByRole("row")[1]);
+		});
+
+		await waitFor(() => expect(screen.getAllByRole("row")[1]).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.mouseLeave(screen.getAllByRole("row")[1]);
+		});
+
+		await waitFor(() => expect(screen.getAllByRole("row")[1]).toBeInTheDocument());
 	});
 });

@@ -5,7 +5,7 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { BaseTransactionRowAmount } from "../TransactionRow/TransactionRowAmount";
@@ -37,6 +37,14 @@ const getType = (transaction: SignedTransactionData): string => {
 };
 
 const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transaction: SignedTransactionData }) => {
+	const isMultiSignatureReady = useMemo(() => {
+		try {
+			return wallet.coin().multiSignature().isMultiSignatureReady(transaction);
+		} catch {
+			return false;
+		}
+	}, [wallet, transaction]);
+
 	if (wallet.transaction().isAwaitingOurSignature(transaction.id())) {
 		return <span className="text-theme-danger-500">Your Signature</span>;
 	}
@@ -50,7 +58,7 @@ const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transac
 		);
 	}
 
-	if (wallet.coin().multiSignature().isMultiSignatureReady(transaction)) {
+	if (isMultiSignatureReady) {
 		return <span className="text-theme-success-500">Ready</span>;
 	}
 

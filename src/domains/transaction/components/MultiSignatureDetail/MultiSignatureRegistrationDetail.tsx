@@ -9,7 +9,7 @@ import {
 	TransactionSender,
 	TransactionTimestamp,
 } from "domains/transaction/components/TransactionDetail";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type MultisignatureRegistrationDetailProps = {
@@ -25,7 +25,7 @@ export const MultiSignatureRegistrationDetail = ({
 }: MultisignatureRegistrationDetailProps) => {
 	const { t } = useTranslation();
 
-	const wallet = useMemo(() => transaction.wallet(), [transaction]);
+	const wallet = transaction.wallet();
 	const [participants, setParticipants] = useState<string[]>([]);
 
 	useEffect(() => {
@@ -41,12 +41,7 @@ export const MultiSignatureRegistrationDetail = ({
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE")} isOpen={isOpen} onClose={onClose}>
-			<TransactionSender
-				address={transaction.sender()}
-				alias={wallet.alias()}
-				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
-				border={false}
-			/>
+			<TransactionSender address={transaction.sender()} alias={wallet.alias()} border={false} />
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 
