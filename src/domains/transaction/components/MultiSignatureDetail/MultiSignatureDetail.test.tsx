@@ -1,4 +1,5 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { toasts } from "app/services";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
@@ -123,12 +124,23 @@ describe("MultiSignatureDetail", () => {
 	it("should show send button when able to broadcast", async () => {
 		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+		// @ts-ignore
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue(void 0);
 
 		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
 
 		await waitFor(() => expect(screen.getByTestId("MultiSignatureDetail__broadcast")));
 
 		expect(container).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("MultiSignatureDetail__broadcast"));
+		});
+
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(screen.getByText(translations.SUCCESS.TITLE)).toBeInTheDocument());
+
+		broadcastMock.mockRestore();
 	});
 
 	it("should show paginator when able to sign", async () => {
@@ -136,6 +148,18 @@ describe("MultiSignatureDetail", () => {
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);
 
 		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.getByTestId("Paginator__sign")));
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__sign"));
+		});
+
+		await waitFor(() => expect(screen.getByTestId("AuthenticationStep")));
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__back"));
+		});
 
 		await waitFor(() => expect(screen.getByTestId("Paginator__sign")));
 
@@ -147,9 +171,7 @@ describe("MultiSignatureDetail", () => {
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);
 
 		const onClose = jest.fn();
-		const { container } = render(
-			<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen onClose={onClose} />,
-		);
+		render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen onClose={onClose} />);
 
 		await waitFor(() => expect(screen.getByTestId("Paginator__cancel")));
 
@@ -179,6 +201,7 @@ describe("MultiSignatureDetail", () => {
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);
 		jest.spyOn(wallet.transaction(), "sync").mockResolvedValue(void 0);
 
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast");
 		const addSignatureMock = jest.spyOn(wallet.transaction(), "addSignature").mockResolvedValue(void 0);
 
 		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
@@ -206,8 +229,49 @@ describe("MultiSignatureDetail", () => {
 		});
 
 		await waitFor(() => expect(addSignatureMock).toHaveBeenCalled());
+		await waitFor(() => expect(broadcastMock).not.toHaveBeenCalled());
 		await waitFor(() => expect(screen.getByText(translations.SUCCESS.TITLE)).toBeInTheDocument());
 
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should fail to sign transaction after authentication page", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);
+		jest.spyOn(wallet.transaction(), "sync").mockResolvedValue(void 0);
+
+		const addSignatureMock = jest
+			.spyOn(wallet.transaction(), "addSignature")
+			.mockRejectedValue(new Error("Failed"));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast");
+		const toastsMock = jest.spyOn(toasts, "error");
+
+		render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.getByTestId("Paginator__sign")));
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__sign"));
+		});
+
+		await waitFor(() => expect(screen.getByTestId("AuthenticationStep")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: "my mnemonic",
+				},
+			});
+		});
+
+		await waitFor(() => expect(screen.getByTestId("Paginator__continue")).not.toBeDisabled(), { timeout: 1000 });
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__continue"));
+		});
+
+		await waitFor(() => expect(addSignatureMock).toHaveBeenCalled());
+		await waitFor(() => expect(toastsMock).toHaveBeenCalled());
+		await waitFor(() => expect(broadcastMock).not.toHaveBeenCalled());
 	});
 });

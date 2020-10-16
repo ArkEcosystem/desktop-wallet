@@ -48,7 +48,7 @@ const Paginator = (props: {
 
 			{props.activeStep === 2 && (
 				<>
-					<Button data-testid="Paginator__cancel" variant="plain" onClick={props.onBack}>
+					<Button data-testid="Paginator__back" variant="plain" onClick={props.onBack}>
 						{t("COMMON.BACK")}
 					</Button>
 

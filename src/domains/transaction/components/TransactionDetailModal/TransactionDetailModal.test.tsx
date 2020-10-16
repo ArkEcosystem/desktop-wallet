@@ -4,7 +4,7 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
-import { env, getDefaultProfileId, renderWithRouter, syncDelegates } from "utils/testing-library";
+import { env, getDefaultProfileId, renderWithRouter, syncDelegates, waitFor } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { TransactionDetailModal } from "./TransactionDetailModal";
@@ -81,7 +81,7 @@ describe("TransactionDetailModal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a multi signature modal", () => {
+	it("should render a multi signature modal", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
@@ -103,7 +103,11 @@ describe("TransactionDetailModal", () => {
 			},
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE);
+		await waitFor(() =>
+			expect(getByTestId("modal__inner")).toHaveTextContent(
+				translations.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE,
+			),
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
