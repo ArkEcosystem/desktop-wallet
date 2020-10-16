@@ -10,7 +10,7 @@ on:
 
 jobs:
     build-and-upload:
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -51,10 +51,16 @@ jobs:
                   name: build
                   path: ${{ github.workspace }}/build
 
+            - name: Upload Build Artifacts
+              uses: actions/upload-artifact@v2
+              with:
+                  name: node_modules
+                  path: ${{ github.workspace }}/node_modules
+
     contacts-routing:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -83,14 +89,17 @@ jobs:
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/contacts-routing.e2e.ts
@@ -105,7 +114,7 @@ jobs:
     create-contact:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -128,20 +137,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/create-contact.e2e.ts
@@ -156,7 +173,7 @@ jobs:
     delete-contact:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -179,20 +196,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/delete-contact.e2e.ts
@@ -207,7 +232,7 @@ jobs:
     update-contact:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -230,20 +255,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/update-contact.e2e.ts
@@ -258,7 +291,7 @@ jobs:
     dashboard-routing:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -281,20 +314,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/dashboard/e2e/dashboard-routing.e2e.ts
@@ -309,7 +350,7 @@ jobs:
     navbar-routing:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -332,20 +373,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/dashboard/e2e/navbar-routing.e2e.ts
@@ -360,7 +409,7 @@ jobs:
     filtering:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -383,20 +432,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/news/e2e/filtering.e2e.ts
@@ -411,7 +468,7 @@ jobs:
     news-routing:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -434,20 +491,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/news/e2e/news-routing.e2e.ts
@@ -462,7 +527,7 @@ jobs:
     plugins-routing:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -485,20 +550,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/plugin/e2e/plugins-routing.e2e.ts
@@ -513,7 +586,7 @@ jobs:
     create-profile-action:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -536,20 +609,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/create-profile-action.e2e.ts
@@ -564,7 +645,7 @@ jobs:
     create-profile-routing:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -587,20 +668,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/create-profile-routing.e2e.ts
@@ -615,7 +704,7 @@ jobs:
     delete-profile-action:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -638,20 +727,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/delete-profile-action.e2e.ts
@@ -666,7 +763,7 @@ jobs:
     my-registrations-routing:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -689,20 +786,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/my-registrations-routing.e2e.ts
@@ -717,7 +822,7 @@ jobs:
     navigate-profile-settings:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -740,20 +845,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/navigate-profile-settings.e2e.ts
@@ -768,7 +881,7 @@ jobs:
     welcome-screen:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -791,20 +904,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/welcome-screen.e2e.ts
@@ -819,7 +940,7 @@ jobs:
     save-settings:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -842,20 +963,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/setting/e2e/save-settings.e2e.ts
@@ -870,7 +999,7 @@ jobs:
     settings-routing:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -893,20 +1022,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/setting/e2e/settings-routing.e2e.ts
@@ -921,7 +1058,7 @@ jobs:
     splash-screen:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -944,20 +1081,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/splash/e2e/splash-screen.e2e.ts
@@ -972,7 +1117,7 @@ jobs:
     delegate-registration:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -995,20 +1140,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/delegate-registration.e2e.ts
@@ -1023,7 +1176,7 @@ jobs:
     delegate-resignation:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1046,20 +1199,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/delegate-resignation.e2e.ts
@@ -1074,7 +1235,7 @@ jobs:
     multiple-transfer:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1097,20 +1258,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/multiple-transfer.e2e.ts
@@ -1125,7 +1294,7 @@ jobs:
     single-transfer:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1148,20 +1317,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/single-transfer.e2e.ts
@@ -1176,7 +1353,7 @@ jobs:
     transactions-routing:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1199,20 +1376,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/transactions-routing.e2e.ts
@@ -1227,7 +1412,7 @@ jobs:
     votes:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1250,20 +1435,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/vote/e2e/votes.e2e.ts
@@ -1278,7 +1471,7 @@ jobs:
     create-wallet-action:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1301,20 +1494,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/create-wallet-action.e2e.ts
@@ -1329,7 +1530,7 @@ jobs:
     delete-wallet-action:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1352,20 +1553,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/delete-wallet-action.e2e.ts
@@ -1380,7 +1589,7 @@ jobs:
     import-wallet-action:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1403,20 +1612,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/import-wallet-action.e2e.ts
@@ -1431,7 +1648,7 @@ jobs:
     sign-message-action:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1454,20 +1671,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/sign-message-action.e2e.ts
@@ -1482,7 +1707,7 @@ jobs:
     update-wallet-name-action:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1505,20 +1730,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/update-wallet-name-action.e2e.ts
@@ -1533,7 +1766,7 @@ jobs:
     verify-message-action:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1556,20 +1789,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/verify-message-action.e2e.ts
@@ -1584,7 +1825,7 @@ jobs:
     wallet-details:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1607,20 +1848,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/wallet-details.e2e.ts
@@ -1635,7 +1884,7 @@ jobs:
     wallets-routing:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1658,20 +1907,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/wallets-routing.e2e.ts
@@ -1686,7 +1943,7 @@ jobs:
     ipfs-transaction:
         needs: build-and-upload
 
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -1709,20 +1966,28 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Update System
               run: sudo apt-get update
 
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
+            - name: Download Build
               uses: actions/download-artifact@v2
               with:
                   name: build
                   path: ${{ github.workspace }}/build
+
+            - name: Download Modules
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/node_modules
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/ipfs-transaction.e2e.ts
