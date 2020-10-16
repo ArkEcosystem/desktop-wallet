@@ -7,6 +7,7 @@ const wallet = {
 	currency: () => "ARK",
 	exchangeCurrency: () => "BTC",
 	isDelegate: () => true,
+	isLedger: () => false,
 	isResignedDelegate: () => false,
 };
 

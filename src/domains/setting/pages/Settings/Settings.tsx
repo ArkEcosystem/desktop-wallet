@@ -1,8 +1,7 @@
 import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
 import { useEnvironmentContext } from "app/contexts";
-import { useReloadPath } from "app/hooks";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile, useReloadPath } from "app/hooks";
 import { toasts } from "app/services";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";

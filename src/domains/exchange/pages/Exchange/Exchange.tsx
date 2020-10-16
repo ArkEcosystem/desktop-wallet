@@ -2,7 +2,7 @@ import { images } from "app/assets/images";
 import { Header } from "app/components/Header";
 import { Page, Section } from "app/components/Layout";
 import { Slider } from "app/components/Slider";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { AddExchange } from "domains/exchange/components/AddExchange";
 import { AddExchangeCard, BlankExchangeCard, ExchangeCard } from "domains/exchange/components/ExchangeCard";
 import React, { useState } from "react";
