@@ -215,7 +215,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 								onRowClick={(row) => setTransactionModalItem(row)}
 							/>
 
-							{hasMore && (
+							{transactions.length > 0 && hasMore && (
 								<Button
 									data-testid="transactions__fetch-more-button"
 									variant="plain"
