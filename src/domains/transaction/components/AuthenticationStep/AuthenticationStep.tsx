@@ -63,5 +63,5 @@ export const AuthenticationStep = ({
 };
 
 AuthenticationStep.defaultProps = {
-	skipSecondSiganture: false,
+	skipSecondSignature: false,
 };
