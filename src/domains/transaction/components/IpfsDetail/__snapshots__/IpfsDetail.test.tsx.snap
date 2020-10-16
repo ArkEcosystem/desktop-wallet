@@ -5,14 +5,14 @@ exports[`IpfsDetail should not render if not open 1`] = `<DocumentFragment />`;
 exports[`IpfsDetail should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -47,7 +47,7 @@ exports[`IpfsDetail should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl cbajut"
             data-testid="TransactionDetail"
           >
             <div
@@ -61,20 +61,29 @@ exports[`IpfsDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                Wallet 1
-                <span
-                  class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B…s6YUYD
-                </span>
+                  <span
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    Test Wallet
+                  </span>
+                  <span
+                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B…s6YUYD
+                  </span>
+                </div>
               </div>
             </div>
             <div
-              class="flex items-center"
+              class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm bLfakz -mr-2 border-black"
+                class="sc-AxjAm bHAIY border-theme-text"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -87,7 +96,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -103,7 +112,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -117,12 +126,16 @@ exports[`IpfsDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                21.00000000 BTC
+                <span
+                  data-testid="Amount"
+                >
+                  21 ARK
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -136,20 +149,16 @@ exports[`IpfsDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <div
-                  class="flex justify-between"
-                >
-                  QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
-                </div>
+                QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
               </div>
             </div>
             <div
-              class="sc-AxjAm bLfakz border-black"
+              class="sc-AxjAm bHAIY border-theme-text"
             >
               <div
-                class="sc-AxirZ lfxaA-d"
-                height="24"
-                width="22"
+                class="sc-AxirZ hRnNmp"
+                height="23"
+                width="21"
               >
                 <svg>
                   ipfs.svg
@@ -158,7 +167,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -177,7 +186,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -194,7 +203,9 @@ exports[`IpfsDetail should render a modal 1`] = `
                 <div
                   class="flex"
                 >
-                  Not Confirmed
+                  <span>
+                    Not confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                   >
@@ -217,7 +228,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -231,30 +242,46 @@ exports[`IpfsDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxhUy kMyssT text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  ee4175…3ecefe
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      ee4175091d9f4…9d09bcf3ecefe
+                    </span>
+                  </a>
+                  <span
+                    class="flex ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -268,25 +295,41 @@ exports[`IpfsDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxhUy kMyssT text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  71fd1a…5d67e9
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      71fd1a494ded5…972b8075d67e9
+                    </span>
+                  </a>
+                  <span
+                    class="flex ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -300,14 +343,14 @@ exports[`IpfsDetail should render a modal 1`] = `
 exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -342,7 +385,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl cbajut"
             data-testid="TransactionDetail"
           >
             <div
@@ -356,19 +399,23 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxhUy kMyssT text-theme-neutral"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B…s6YUYD
-                </span>
+                  <span
+                    class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                </div>
               </div>
             </div>
             <div
-              class="flex items-center"
+              class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm bLfakz -mr-2 border-black"
+                class="sc-AxjAm bHAIY border-theme-text"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -381,7 +428,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -397,7 +444,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -411,12 +458,16 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               <div
                 class="font-semibold"
               >
-                21.00000000 BTC
+                <span
+                  data-testid="Amount"
+                >
+                  21 ARK
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -430,20 +481,16 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               <div
                 class="font-semibold"
               >
-                <div
-                  class="flex justify-between"
-                >
-                  QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
-                </div>
+                QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
               </div>
             </div>
             <div
-              class="sc-AxjAm bLfakz border-black"
+              class="sc-AxjAm bHAIY border-theme-text"
             >
               <div
-                class="sc-AxirZ lfxaA-d"
-                height="24"
-                width="22"
+                class="sc-AxirZ hRnNmp"
+                height="23"
+                width="21"
               >
                 <svg>
                   ipfs.svg
@@ -452,7 +499,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -471,7 +518,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -488,7 +535,9 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                 <div
                   class="flex"
                 >
-                  Not Confirmed
+                  <span>
+                    Not confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                   >
@@ -511,7 +560,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -525,30 +574,46 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxhUy kMyssT text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  ee4175…3ecefe
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      ee4175091d9f4…9d09bcf3ecefe
+                    </span>
+                  </a>
+                  <span
+                    class="flex ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -562,25 +627,41 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxhUy kMyssT text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  71fd1a…5d67e9
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      71fd1a494ded5…972b8075d67e9
+                    </span>
+                  </a>
+                  <span
+                    class="flex ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -594,14 +675,14 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
 exports[`IpfsDetail should render as confirmed 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -636,7 +717,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl cbajut"
             data-testid="TransactionDetail"
           >
             <div
@@ -650,20 +731,29 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                Wallet 1
-                <span
-                  class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B…s6YUYD
-                </span>
+                  <span
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    Test Wallet
+                  </span>
+                  <span
+                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B…s6YUYD
+                  </span>
+                </div>
               </div>
             </div>
             <div
-              class="flex items-center"
+              class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm bLfakz -mr-2 border-black"
+                class="sc-AxjAm bHAIY border-theme-text"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -676,7 +766,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -692,7 +782,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -706,12 +796,16 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                21.00000000 BTC
+                <span
+                  data-testid="Amount"
+                >
+                  21 ARK
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -725,20 +819,16 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                <div
-                  class="flex justify-between"
-                >
-                  QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
-                </div>
+                QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
               </div>
             </div>
             <div
-              class="sc-AxjAm bLfakz border-black"
+              class="sc-AxjAm bHAIY border-theme-text"
             >
               <div
-                class="sc-AxirZ lfxaA-d"
-                height="24"
-                width="22"
+                class="sc-AxirZ hRnNmp"
+                height="23"
+                width="21"
               >
                 <svg>
                   ipfs.svg
@@ -747,7 +837,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -766,7 +856,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -783,7 +873,9 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                 <div
                   class="flex"
                 >
-                  Well Confirmed
+                  <span>
+                    Well confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
                   >
@@ -806,7 +898,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -820,30 +912,46 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxhUy kMyssT text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  ee4175…3ecefe
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      ee4175091d9f4…9d09bcf3ecefe
+                    </span>
+                  </a>
+                  <span
+                    class="flex ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -857,25 +965,41 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxhUy kMyssT text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  71fd1a…5d67e9
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      71fd1a494ded5…972b8075d67e9
+                    </span>
+                  </a>
+                  <span
+                    class="flex ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>

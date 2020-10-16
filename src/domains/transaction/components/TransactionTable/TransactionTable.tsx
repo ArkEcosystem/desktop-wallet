@@ -10,6 +10,7 @@ type Props = {
 	transactions: ExtendedTransactionData[];
 	exchangeCurrency?: string;
 	showSignColumn?: boolean;
+	showExplorerLinkColumn?: boolean;
 	hideHeader?: boolean;
 	isCompact?: boolean;
 	onRowClick?: (row: ExtendedTransactionData) => void;
@@ -21,6 +22,7 @@ export const TransactionTable = ({
 	transactions,
 	exchangeCurrency,
 	showSignColumn,
+	showExplorerLinkColumn,
 	hideHeader,
 	isCompact,
 	onRowClick,
@@ -30,9 +32,6 @@ export const TransactionTable = ({
 	const { t } = useTranslation();
 
 	const commonColumns = [
-		{
-			Header: t("COMMON.ID"),
-		},
 		{
 			Header: t("COMMON.DATE"),
 			accessor: "timestamp",
@@ -54,8 +53,8 @@ export const TransactionTable = ({
 		},
 		{
 			Header: t("COMMON.AMOUNT"),
-			className: "justify-end",
 			accessor: "amount",
+			className: "justify-end",
 		},
 	];
 
@@ -64,7 +63,7 @@ export const TransactionTable = ({
 			return [
 				{
 					Header: t("COMMON.TYPE"),
-					className: "invisible",
+					className: "hidden",
 				},
 				{
 					Header: t("COMMON.RECIPIENT"),
@@ -77,6 +76,12 @@ export const TransactionTable = ({
 			];
 		}
 
+		if (showExplorerLinkColumn) {
+			commonColumns.unshift({
+				Header: t("COMMON.ID"),
+			});
+		}
+
 		if (exchangeCurrency) {
 			return [...commonColumns, { Header: t("COMMON.CURRENCY"), className: "w-24 justify-end float-right" }];
 		}
@@ -86,7 +91,7 @@ export const TransactionTable = ({
 		}
 
 		return commonColumns;
-	}, [commonColumns, exchangeCurrency, showSignColumn, isCompact, t]);
+	}, [commonColumns, exchangeCurrency, showExplorerLinkColumn, showSignColumn, isCompact, t]);
 
 	const showSkeleton = useMemo(() => isLoading && transactions.length === 0, [transactions, isLoading]);
 
@@ -94,7 +99,7 @@ export const TransactionTable = ({
 	const data = showSkeleton ? skeletonRows : transactions;
 
 	return (
-		<div className="relative">
+		<div data-testid="TransactionTable" className="relative">
 			<Table hideHeader={hideHeader} columns={columns} data={data}>
 				{(row: ExtendedTransactionData) =>
 					isCompact ? (
@@ -105,6 +110,7 @@ export const TransactionTable = ({
 							onClick={() => onRowClick?.(row)}
 							transaction={row}
 							exchangeCurrency={exchangeCurrency}
+							showExplorerLink={showExplorerLinkColumn}
 							showSign={showSignColumn}
 							isSignaturePending={row.isMultiSignature && showSignColumn}
 						/>
@@ -117,6 +123,7 @@ export const TransactionTable = ({
 
 TransactionTable.defaultProps = {
 	showSignColumn: false,
+	showExplorerLinkColumn: true,
 	isCompact: false,
 	hideHeader: false,
 	isLoading: false,

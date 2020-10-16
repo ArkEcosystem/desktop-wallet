@@ -57,7 +57,7 @@ describe("ContactForm", () => {
 		});
 	});
 
-	it("should select network", () => {
+	it("should select cryptoasset", () => {
 		const { getByTestId } = renderWithRouter(
 			<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />,
 		);
@@ -92,7 +92,7 @@ describe("ContactForm", () => {
 				target: { value: "name" },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
@@ -125,7 +125,7 @@ describe("ContactForm", () => {
 				target: { value: "name" },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
@@ -161,7 +161,7 @@ describe("ContactForm", () => {
 				target: { value: validArkDevnetAddress },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
@@ -180,7 +180,7 @@ describe("ContactForm", () => {
 				target: { value: validArkDevnetAddress },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
@@ -238,7 +238,7 @@ describe("ContactForm", () => {
 				target: { value: "name" },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
@@ -267,7 +267,7 @@ describe("ContactForm", () => {
 			);
 
 			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NAME);
-			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NETWORK);
+			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.CRYPTOASSET);
 			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.ADDRESS);
 			expect(getByTestId("contact-form__save-btn")).toBeTruthy();
 			expect(() => getAllByTestId("contact-form__address-list")).toThrow(/Unable to find an element by/);
@@ -287,7 +287,7 @@ describe("ContactForm", () => {
 			const { asFragment, getAllByTestId, getByTestId } = renderContext;
 
 			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NAME);
-			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NETWORK);
+			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.CRYPTOASSET);
 			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.ADDRESS);
 			expect(getByTestId("contact-form__address-list")).toBeTruthy();
 			expect(getByTestId("contact-form__save-btn")).toBeTruthy();

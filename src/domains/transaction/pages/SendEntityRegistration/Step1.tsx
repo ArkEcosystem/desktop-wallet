@@ -1,10 +1,13 @@
-import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Enums, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
+import { Header } from "app/components/Header";
 import { Select } from "app/components/SelectDropdown";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
-import { BusinessRegistrationForm } from "domains/transaction/components/BusinessRegistrationForm/BusinessRegistrationForm";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm/DelegateRegistrationForm";
+import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
+import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -15,8 +18,9 @@ import { SendEntityRegistrationType } from "./SendEntityRegistration.models";
 
 const registrationComponents: any = {
 	delegateRegistration: DelegateRegistrationForm,
-	businessRegistration: BusinessRegistrationForm,
+	entityRegistration: EntityRegistrationForm,
 	secondSignature: SecondSignatureRegistrationForm,
+	multiSignature: MultiSignatureRegistrationForm,
 };
 
 const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
@@ -24,18 +28,14 @@ const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrat
 
 	return (
 		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
-			<div className="mb-2">
-				<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
-			</div>
-			<div>
-				<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
-			</div>
+			<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
+			<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
 		</FormField>
 	);
 };
 
 type FirstStepProps = {
-	networks: NetworkData[];
+	networks: Coins.Network[];
 	profile: Profile;
 	wallet: ReadWriteWallet;
 	setRegistrationForm: any;
@@ -50,7 +50,8 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 
 	const registrationTypes: SendEntityRegistrationType[] = [
 		{
-			value: "businessRegistration",
+			value: "entityRegistration",
+			type: Enums.EntityType.Business,
 			label: "Business",
 		},
 	];
@@ -59,6 +60,13 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		registrationTypes.push({
 			value: "delegateRegistration",
 			label: "Delegate",
+		});
+	}
+
+	if (!wallet.isMultiSignature?.()) {
+		registrationTypes.push({
+			value: "multiSignature",
+			label: "MultiSignature",
 		});
 	}
 
@@ -81,66 +89,62 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 	}, [network, profile]);
 
 	const onSelectSender = (address: any) => {
-		setValue("senderAddress", address, true);
+		setValue("senderAddress", address, { shouldValidate: true, shouldDirty: true });
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
 		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-entity-registration`);
 	};
 
 	const onSelectType = (selectedItem: SendEntityRegistrationType) => {
-		setValue("registrationType", selectedItem.value, true);
+		setValue("registrationType", selectedItem, { shouldValidate: true, shouldDirty: true });
 		setRegistrationForm(registrationComponents[selectedItem.value]);
 
 		if (fees[selectedItem.value]) {
-			setValue("fee", fees[selectedItem.value].avg, true);
+			setValue("fee", fees[selectedItem.value].avg, { shouldValidate: true, shouldDirty: true });
 		}
 	};
 
 	return (
-		<div data-testid="Registration__first-step">
-			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.TITLE")}</h1>
-			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.DESCRIPTION")}</div>
+		<section data-testid="Registration__first-step" className="space-y-8">
+			<Header
+				title={t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.DESCRIPTION")}
+			/>
 
-			<div className="mt-8 space-y-8">
-				<FormField name="network" className="relative">
-					<div className="mb-2">
-						<FormLabel label="Network" />
-					</div>
-					<SelectNetwork
-						id="SendTransactionForm__network"
-						networks={networks}
-						selected={network}
-						disabled={!!senderAddress}
-						onSelect={(selectedNetwork: NetworkData | null | undefined) =>
-							setValue("network", selectedNetwork)
-						}
-					/>
-				</FormField>
-
-				<FormField name="senderAddress" className="relative">
-					<div className="mb-2">
-						<FormLabel label="Sender" />
-					</div>
-
-					<div data-testid="sender-address">
-						<SelectAddress
-							address={senderAddress}
-							wallets={wallets}
-							disabled={wallets.length === 0}
-							onChange={onSelectSender}
-						/>
-					</div>
-				</FormField>
-
-				<RegistrationTypeDropdown
-					selectedType={registrationTypes.find(
-						(type: SendEntityRegistrationType) => type.value === registrationType,
-					)}
-					registrationTypes={registrationTypes}
-					onChange={onSelectType}
-					className="mt-8"
+			<FormField name="network">
+				<div className="mb-2">
+					<FormLabel label={t("TRANSACTION.CRYPTOASSET")} />
+				</div>
+				<SelectNetwork
+					id="SendTransactionForm__network"
+					networks={networks}
+					selected={network}
+					disabled={!!senderAddress}
+					onSelect={(selectedNetwork: Coins.Network | null | undefined) =>
+						setValue("network", selectedNetwork)
+					}
 				/>
-			</div>
-		</div>
+			</FormField>
+
+			<FormField name="senderAddress">
+				<FormLabel label="Sender" />
+				<div data-testid="sender-address">
+					<SelectAddress
+						address={senderAddress}
+						wallets={wallets}
+						disabled={wallets.length === 0}
+						onChange={onSelectSender}
+					/>
+				</div>
+			</FormField>
+
+			<RegistrationTypeDropdown
+				selectedType={registrationTypes.find(
+					(type: SendEntityRegistrationType) => type.value === registrationType?.value,
+				)}
+				registrationTypes={registrationTypes}
+				onChange={onSelectType}
+			/>
+		</section>
 	);
 };

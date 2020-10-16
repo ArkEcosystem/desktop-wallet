@@ -13,13 +13,15 @@ type Props = {
 };
 
 export const AvatarWrapper = styled.div<{ shadowColor?: string; size?: string; noShadow?: boolean }>`
-	${tw`relative inline-flex items-center justify-center overflow-hidden align-middle rounded-full`}
+	${tw`transition-all duration-100 relative inline-flex items-center justify-center overflow-hidden align-middle rounded-full`}
 	${({ size }) => {
 		switch (size) {
 			case "sm":
 				return tw`w-8 h-8`;
 			case "lg":
 				return tw`w-11 h-11`;
+			case "xl":
+				return tw`w-16 h-16`;
 			default:
 				return tw`w-10 h-10`;
 		}

@@ -12,6 +12,11 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Delete Profile",
 		DESCRIPTION: "Do you really want to delete this profile? Once deleted, you will not be able to restore it.",
 	},
+	MODAL_RESET_PROFILE: {
+		TITLE: "Reset Profile Data",
+		DESCRIPTION: "Do you really want to reset this profile? Once reset, you will not be able to restore it.",
+		SUCCESS: "Your profile was reset successfully",
+	},
 	MODAL_REPOSITORIES: {
 		TITLE: "Repository",
 		BitBucket: "Bitbucket",
@@ -40,8 +45,9 @@ export const translations: { [key: string]: any } = {
 	PAGE_CREATE_PROFILE: {
 		TITLE: "Create Profile",
 		DESCRIPTION: "Sign in via MarketSquare or create a new Profile below.",
+		NEW_PROFILE: "New Profile",
 		VALIDATION: {
-			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+			NAME_EXISTS: "Profile name already exists",
 		},
 	},
 	PAGE_MY_REGISTRATIONS: {
@@ -68,7 +74,7 @@ export const translations: { [key: string]: any } = {
 		WEBSITE: "Website",
 	},
 	PAGE_WELCOME: {
-		TITLE: "Welcome to ARK",
+		TITLE: "Welcome to the <1/> ARK Desktop Wallet",
 		HAS_NO_PROFILES: "Sign in via MarketSquare or create a new Profile to get started.",
 		HAS_PROFILES:
 			"Choose from an existing Profile below, sign in via MarketSquare or create a new Profile to get started.",

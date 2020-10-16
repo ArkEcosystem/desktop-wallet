@@ -2,7 +2,7 @@ import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
-import { TransactionDetail } from "app/components/TransactionDetail";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -46,7 +46,7 @@ export const FirstStep = () => {
 
 			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>14.04.2020 21:42:40</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")} className="pb-0">
+			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")} paddingPosition="top">
 				{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.WAITING_FOR_SIGNATURES")}
 			</TransactionDetail>
 

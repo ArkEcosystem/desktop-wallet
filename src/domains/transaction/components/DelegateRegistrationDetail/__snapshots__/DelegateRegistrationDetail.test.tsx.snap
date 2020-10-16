@@ -5,21 +5,21 @@ exports[`DelegateRegistrationDetail should not render if not open 1`] = `<Docume
 exports[`DelegateRegistrationDetail should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -47,7 +47,7 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 true "
+            class="sc-AxgMl cbajut"
             data-testid="TransactionDetail"
           >
             <div
@@ -56,38 +56,48 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Account
+                <span
+                  class="mr-1"
+                >
+                  Sender
+                </span>
+                <div
+                  class="sc-AxhUy kDFfAu"
+                  color="warning"
+                >
+                  <span
+                    class="text-sm"
+                  >
+                    Your address
+                  </span>
+                </div>
               </div>
               <div
                 class="font-semibold"
               >
-                Ark Wallet
-                <span
-                  class="sc-AxgMl fFPQpl ml-2 text-theme-neutral"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B…s6YUYD
-                </span>
+                  <span
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    Test Wallet
+                  </span>
+                  <span
+                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B…s6YUYD
+                  </span>
+                </div>
               </div>
             </div>
             <div
-              class="flex items-center"
+              class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm bLfakz -mr-2 border-black"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -103,7 +113,7 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -112,21 +122,16 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Amount
+                Delegate Name
               </div>
               <div
                 class="font-semibold"
               >
-                <div
-                  class="sc-AxiKw BrXzA"
-                  color="danger"
-                >
-                  121.00000000 undefined
-                </div>
+                Ark Wallet
               </div>
             </div>
             <div
-              class="sc-AxjAm bLfakz border-theme-danger-200 text-theme-danger-dark"
+              class="sc-AxjAm bHAIY border-theme-text"
             >
               <div
                 class="sc-AxirZ dCVESD"
@@ -134,13 +139,13 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
                 width="25"
               >
                 <svg>
-                  sent.svg
+                  delegate.svg
                 </svg>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -154,12 +159,16 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                21.00000000 undefined
+                <span
+                  data-testid="Amount"
+                >
+                  21 ARK
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -178,7 +187,7 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -195,7 +204,9 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
                 <div
                   class="flex"
                 >
-                  Not Confirmed
+                  <span>
+                    Not confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                   >
@@ -218,7 +229,7 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -232,30 +243,46 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  ee4175…3ecefe
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      ee4175091d9f4…9d09bcf3ecefe
+                    </span>
+                  </a>
+                  <span
+                    class="flex ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -269,25 +296,41 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  71fd1a…5d67e9
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      71fd1a494ded5…972b8075d67e9
+                    </span>
+                  </a>
+                  <span
+                    class="flex ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -301,21 +344,21 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
 exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -343,7 +386,7 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
           class="flex-1"
         >
           <div
-            class="flex items-center py-6 true "
+            class="sc-AxgMl cbajut"
             data-testid="TransactionDetail"
           >
             <div
@@ -352,38 +395,48 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Account
+                <span
+                  class="mr-1"
+                >
+                  Sender
+                </span>
+                <div
+                  class="sc-AxhUy kDFfAu"
+                  color="warning"
+                >
+                  <span
+                    class="text-sm"
+                  >
+                    Your address
+                  </span>
+                </div>
               </div>
               <div
                 class="font-semibold"
               >
-                Ark Wallet
-                <span
-                  class="sc-AxgMl fFPQpl ml-2 text-theme-neutral"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B…s6YUYD
-                </span>
+                  <span
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    Test Wallet
+                  </span>
+                  <span
+                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B…s6YUYD
+                  </span>
+                </div>
               </div>
             </div>
             <div
-              class="flex items-center"
+              class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm bLfakz -mr-2 border-black"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -399,7 +452,7 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -408,21 +461,16 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Amount
+                Delegate Name
               </div>
               <div
                 class="font-semibold"
               >
-                <div
-                  class="sc-AxiKw BrXzA"
-                  color="danger"
-                >
-                  121.00000000 undefined
-                </div>
+                Ark Wallet
               </div>
             </div>
             <div
-              class="sc-AxjAm bLfakz border-theme-danger-200 text-theme-danger-dark"
+              class="sc-AxjAm bHAIY border-theme-text"
             >
               <div
                 class="sc-AxirZ dCVESD"
@@ -430,13 +478,13 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
                 width="25"
               >
                 <svg>
-                  sent.svg
+                  delegate.svg
                 </svg>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -450,12 +498,16 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                21.00000000 undefined
+                <span
+                  data-testid="Amount"
+                >
+                  21 ARK
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -474,7 +526,7 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -491,7 +543,9 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
                 <div
                   class="flex"
                 >
-                  Well Confirmed
+                  <span>
+                    Well confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
                   >
@@ -514,7 +568,7 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -528,30 +582,46 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  ee4175…3ecefe
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      ee4175091d9f4…9d09bcf3ecefe
+                    </span>
+                  </a>
+                  <span
+                    class="flex ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            class="sc-AxgMl iUTnJW"
             data-testid="TransactionDetail"
           >
             <div
@@ -565,25 +635,41 @@ exports[`DelegateRegistrationDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="flex items-center"
                 >
-                  71fd1a…5d67e9
-                </span>
-                <span
-                  class="inline-block ml-4 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                  <a
+                    class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </span>
+                    <span
+                      class="sc-Axmtr hBVTto text-theme-primary-dark"
+                      data-testid="TruncateMiddle"
+                    >
+                      71fd1a494ded5…972b8075d67e9
+                    </span>
+                  </a>
+                  <span
+                    class="flex ml-5 text-theme-primary-300"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>

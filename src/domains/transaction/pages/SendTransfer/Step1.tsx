@@ -1,17 +1,45 @@
-import { NetworkData, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormLabel } from "app/components/Form";
-import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { InputCounter } from "app/components/Input";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
-import React from "react";
+import React, { ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; profile: Profile }) => {
+export const FormStep = ({
+	networks,
+	profile,
+	deeplinkProps,
+}: {
+	networks: Coins.Network[];
+	profile: Profile;
+	deeplinkProps: any;
+}) => {
 	const { t } = useTranslation();
-	const { getValues, setValue } = useFormContext();
+	const { getValues, setValue, watch } = useFormContext();
 	const { recipients, smartbridge } = getValues();
+	const { senderAddress, fee } = watch();
+
+	const feeSatoshi = fee?.display ? fee.value : fee;
+	const senderWallet = profile.wallets().findByAddress(senderAddress);
+	const maxAmount = senderWallet ? BigNumber.make(senderWallet.balance()).minus(feeSatoshi) : BigNumber.ZERO;
+
+	const getRecipients = () => {
+		if (deeplinkProps?.recipient && deeplinkProps?.amount) {
+			return [
+				{
+					address: deeplinkProps.recipient,
+					amount: BigNumber.make(deeplinkProps.amount),
+				},
+			];
+		}
+
+		return recipients;
+	};
 
 	return (
 		<section data-testid="SendTransfer__step--first">
@@ -26,33 +54,30 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 					<>
 						<div data-testid="recipient-address">
 							<AddRecipient
-								maxAvailableAmount={80}
+								assetSymbol={senderWallet?.currency()}
+								maxAvailableAmount={maxAmount}
 								profile={profile}
-								onChange={(recipients: RecipientListItem[]) => setValue("recipients", recipients, true)}
-								recipients={recipients}
+								onChange={(recipients: RecipientListItem[]) =>
+									setValue("recipients", recipients, { shouldValidate: true, shouldDirty: true })
+								}
+								recipients={getRecipients()}
 							/>
 						</div>
 
 						<FormField name="smartbridge" className="relative">
-							<div className="mb-2">
-								<FormLabel label="Smartbridge" />
-							</div>
-							<InputGroup>
-								<Input
-									data-testid="Input__smartbridge"
-									type="text"
-									placeholder=" "
-									className="pr-24"
-									maxLength={255}
-									defaultValue={smartbridge}
-									onChange={(event: any) => setValue("smartbridge", event.target.value, true)}
-								/>
-								<InputAddonEnd>
-									<button type="button" className="px-4 text-theme-neutral-light focus:outline-none">
-										255 Max
-									</button>
-								</InputAddonEnd>
-							</InputGroup>
+							<FormLabel label="Smartbridge" required={false} />
+							<InputCounter
+								data-testid="Input__smartbridge"
+								type="text"
+								placeholder=" "
+								className="pr-24"
+								maxLengthLabel="255"
+								defaultValue={smartbridge}
+								onChange={(e: ChangeEvent<HTMLInputElement>) =>
+									setValue("smartbridge", e.target.value, { shouldDirty: true, shouldValidate: true })
+								}
+							/>
+							<FormHelperText />
 						</FormField>
 					</>
 				</SendTransactionForm>

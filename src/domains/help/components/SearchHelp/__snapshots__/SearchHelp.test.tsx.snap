@@ -5,14 +5,14 @@ exports[`SearchHelp should not render if not open 1`] = `<DocumentFragment />`;
 exports[`SearchHelp should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb kNSjES absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb kNSjES absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -59,7 +59,7 @@ exports[`SearchHelp should render a modal 1`] = `
               data-testid="SearchBar"
             >
               <div
-                class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
+                class="flex items-center px-10 py-6 rounded shadow-xl bg-theme-background"
               >
                 <div
                   class="flex items-center pr-8 my-1"
@@ -70,13 +70,13 @@ exports[`SearchHelp should render a modal 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <span
-                      class="font-semibold cursor-pointer select-none"
+                      class="flex font-semibold cursor-pointer select-none"
                     >
                       All
                       <svg
                         class="inline-block w-2 ml-2 text-black"
                       >
-                        arrowdown.svg
+                        chevron-down.svg
                       </svg>
                     </span>
                   </div>
@@ -85,7 +85,7 @@ exports[`SearchHelp should render a modal 1`] = `
                   class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
                 >
                   <input
-                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="What would you like to search for?"
                   />
@@ -112,18 +112,20 @@ exports[`SearchHelp should render a modal 1`] = `
               class="mt-8"
             >
               <div
-                class="sc-fzplWN tcxiV"
+                class="sc-fzplWN hwZmyA -mt-3"
                 role="table"
               >
                 <table
+                  cellpadding="0"
                   class="table-auto"
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -153,7 +155,7 @@ exports[`SearchHelp should render a modal 1`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -188,77 +190,89 @@ exports[`SearchHelp should render a modal 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-theme-neutral-200"
+                      class="transition-colors duration-100 border-b border-dashed last:border-b-0 border-theme-neutral-200 group"
                     >
-                      <td
-                        class="py-4 pr-8"
-                      >
+                      <td>
                         <div
-                          class="font-semibold"
+                          class="sc-fznyAO eYCWEm pr-8"
                         >
-                          How do I install the plugin?
-                        </div>
-                        <div
-                          class="mt-2 text-sm text-theme-neutral-dark"
-                        >
-                          ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
+                          <div
+                            class="font-semibold"
+                          >
+                            How do I install the plugin?
+                          </div>
+                          <div
+                            class="mt-2 text-sm text-theme-neutral-dark"
+                          >
+                            ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
+                          </div>
                         </div>
                       </td>
-                      <td
-                        class="py-4 text-sm text-right align-top"
-                      >
-                        <div>
-                          Plugin
+                      <td>
+                        <div
+                          class="sc-fznyAO kyHgqc text-sm justify-end"
+                        >
+                          <div>
+                            Plugin
+                          </div>
                         </div>
                       </td>
                     </tr>
                     <tr
-                      class="border-b border-theme-neutral-200"
+                      class="transition-colors duration-100 border-b border-dashed last:border-b-0 border-theme-neutral-200 group"
                     >
-                      <td
-                        class="py-4 pr-8"
-                      >
+                      <td>
                         <div
-                          class="font-semibold"
+                          class="sc-fznyAO eYCWEm pr-8"
                         >
-                          Installing the side plugin
-                        </div>
-                        <div
-                          class="mt-2 text-sm text-theme-neutral-dark"
-                        >
-                          ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
+                          <div
+                            class="font-semibold"
+                          >
+                            Installing the side plugin
+                          </div>
+                          <div
+                            class="mt-2 text-sm text-theme-neutral-dark"
+                          >
+                            ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
+                          </div>
                         </div>
                       </td>
-                      <td
-                        class="py-4 text-sm text-right align-top"
-                      >
-                        <div>
-                          Plugin
+                      <td>
+                        <div
+                          class="sc-fznyAO kyHgqc text-sm justify-end"
+                        >
+                          <div>
+                            Plugin
+                          </div>
                         </div>
                       </td>
                     </tr>
                     <tr
-                      class="border-b border-theme-neutral-200"
+                      class="transition-colors duration-100 border-b border-dashed last:border-b-0 border-theme-neutral-200 group"
                     >
-                      <td
-                        class="py-4 pr-8"
-                      >
+                      <td>
                         <div
-                          class="font-semibold"
+                          class="sc-fznyAO eYCWEm pr-8"
                         >
-                          If the plugin is not installed, what do we do?
-                        </div>
-                        <div
-                          class="mt-2 text-sm text-theme-neutral-dark"
-                        >
-                          ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
+                          <div
+                            class="font-semibold"
+                          >
+                            If the plugin is not installed, what do we do?
+                          </div>
+                          <div
+                            class="mt-2 text-sm text-theme-neutral-dark"
+                          >
+                            ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
+                          </div>
                         </div>
                       </td>
-                      <td
-                        class="py-4 text-sm text-right align-top"
-                      >
-                        <div>
-                          Plugin
+                      <td>
+                        <div
+                          class="sc-fznyAO kyHgqc text-sm justify-end"
+                        >
+                          <div>
+                            Plugin
+                          </div>
                         </div>
                       </td>
                     </tr>
@@ -277,14 +291,14 @@ exports[`SearchHelp should render a modal 1`] = `
 exports[`SearchHelp should render a modal 2`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb kNSjES absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb kNSjES absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -331,7 +345,7 @@ exports[`SearchHelp should render a modal 2`] = `
               data-testid="SearchBar"
             >
               <div
-                class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
+                class="flex items-center px-10 py-6 rounded shadow-xl bg-theme-background"
               >
                 <div
                   class="flex items-center pr-8 my-1"
@@ -342,13 +356,13 @@ exports[`SearchHelp should render a modal 2`] = `
                     data-testid="dropdown__toggle"
                   >
                     <span
-                      class="font-semibold cursor-pointer select-none"
+                      class="flex font-semibold cursor-pointer select-none"
                     >
                       Delegate
                       <svg
                         class="inline-block w-2 ml-2 text-black"
                       >
-                        arrowdown.svg
+                        chevron-down.svg
                       </svg>
                     </span>
                   </div>
@@ -357,7 +371,7 @@ exports[`SearchHelp should render a modal 2`] = `
                   class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
                 >
                   <input
-                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="What would you like to search for?"
                   />
@@ -384,18 +398,20 @@ exports[`SearchHelp should render a modal 2`] = `
               class="mt-8"
             >
               <div
-                class="sc-fzplWN tcxiV"
+                class="sc-fzplWN hwZmyA -mt-3"
                 role="table"
               >
                 <table
+                  cellpadding="0"
                   class="table-auto"
                 >
                   <thead>
                     <tr
+                      class="border-b border-theme-neutral-300"
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -425,7 +441,7 @@ exports[`SearchHelp should render a modal 2`] = `
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral"
+                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"

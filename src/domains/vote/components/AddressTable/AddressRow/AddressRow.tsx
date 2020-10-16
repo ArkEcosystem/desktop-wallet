@@ -7,6 +7,7 @@ import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { TableCell, TableRow } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -45,6 +46,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 		const loadVotes = () => {
 			if (!hasProperty(wallet, "isLoading")) {
 				let votes: ReadOnlyWallet[] = [];
+
 				try {
 					votes = wallet.votes();
 				} catch {
@@ -58,23 +60,23 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 		loadVotes();
 	}, [env, wallet]);
 
-	const hasVotes = votes && votes?.length > 0;
+	const hasVotes = votes.length > 0;
 
 	if (isLoading) {
 		return <AddressRowSkeleton />;
 	}
 
 	return (
-		<tr className="border-b border-dotted border-theme-neutral-300">
-			<td className="py-5">
-				<Avatar address={wallet.address()} />
-			</td>
+		<TableRow>
+			<TableCell variant="start" className="w-1">
+				<Avatar className="mr-4" size="lg" address={wallet.address()} noShadow />
+			</TableCell>
 
-			<td className="w-20 py-5">
+			<TableCell className="w-20">
 				<Address address={wallet.address()} walletName={wallet.alias()} maxChars={22} />
-			</td>
+			</TableCell>
 
-			<td className="w-20 py-5 text-sm font-bold text-center align-middle">
+			<TableCell className="w-20" innerClassName="justify-center text-sm font-bold">
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
 						walletTypes.map((type: string) =>
@@ -88,54 +90,54 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 							) : null,
 						)}
 				</div>
-			</td>
+			</TableCell>
 
-			<td className="py-5 font-bold text-theme-neutral-dark">
+			<TableCell innerClassName="justify-end font-bold text-theme-neutral-dark">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
-			</td>
+			</TableCell>
 
-			<td className="py-5">
-				{hasVotes ? <Avatar address={votes[0].address()} /> : <Circle className="border-theme-neutral-300" />}
-			</td>
+			<TableCell className="w-24" innerClassName="justify-end">
+				<div className="mr-4">
+					{hasVotes ? (
+						<Avatar size="lg" address={votes[0].address()} noShadow />
+					) : (
+						<Circle size="lg" className="border-theme-neutral-300" noShadow />
+					)}
+				</div>
+			</TableCell>
 
-			<td className="py-5 font-bold">
+			<TableCell innerClassName="font-bold">
 				{hasVotes ? (
 					<span>{votes[0].username()}</span>
 				) : (
 					<span className="text-theme-neutral-light">{t("COMMON.NOT_AVAILABLE")}</span>
 				)}
-			</td>
+			</TableCell>
 
-			<td className="py-5 font-bold text-theme-neutral-dark">{hasVotes && <span>#{votes[0].rank()}</span>}</td>
+			<TableCell innerClassName="justify-center font-bold text-theme-neutral-dark">
+				{hasVotes && <span>#{votes[0].rank()}</span>}
+			</TableCell>
 
-			<td className="py-5">
+			<TableCell innerClassName="justify-center">
 				{hasVotes && (
-					<div className="flex justify-center h-full" data-testid="AddressRow__profile">
-						<Icon name="Msq" className="text-xl text-theme-primary" />
-					</div>
+					<Icon name="Msq" className="text-xl text-theme-primary" data-testid="AddressRow__profile" />
 				)}
-			</td>
+			</TableCell>
 
-			<td className="py-5">
-				{hasVotes && (
-					<div className="flex justify-center h-full" data-testid="AddressRow__status">
-						<Icon name="Ok" className="text-theme-success" />
-					</div>
-				)}
-			</td>
+			<TableCell innerClassName="justify-center">
+				{hasVotes && <Icon name="StatusOk" className="text-theme-success" data-testid="AddressRow__status" />}
+			</TableCell>
 
-			<td className="py-5">
-				<div className="text-right">
-					<Button
-						variant="plain"
-						onClick={() => onSelect?.(wallet.address())}
-						data-testid={`AddressRow__select-${index}`}
-					>
-						{t("COMMON.SELECT")}
-					</Button>
-				</div>
-			</td>
-		</tr>
+			<TableCell variant="end" innerClassName="justify-end">
+				<Button
+					variant="plain"
+					onClick={() => onSelect?.(wallet.address())}
+					data-testid={`AddressRow__select-${index}`}
+				>
+					{t("COMMON.SELECT")}
+				</Button>
+			</TableCell>
+		</TableRow>
 	);
 };
 

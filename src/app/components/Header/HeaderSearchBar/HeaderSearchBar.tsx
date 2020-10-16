@@ -9,31 +9,36 @@ type HeaderSearchBarProps = {
 	label?: string;
 	children?: React.ReactNode;
 	onSearch?: any;
+	onReset?: () => void;
 	extra?: React.ReactNode;
+	debounceTimeout?: number;
 };
 
 const SearchBarInputWrapper = styled.div`
 	min-width: 24rem;
 `;
 
-export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra }: HeaderSearchBarProps) => {
+export const HeaderSearchBar = ({
+	placeholder,
+	children,
+	label,
+	onSearch,
+	extra,
+	onReset,
+	debounceTimeout = 500,
+}: HeaderSearchBarProps) => {
 	const [searchbarVisible, setSearchbarVisible] = useState(false);
 	const [query, setQuery] = useState("");
 
-	const debouncedQuery = useDebounce(query, 500);
-
 	const ref = useRef(null);
-
 	useEffect(() => clickOutsideHandler(ref, () => setSearchbarVisible(false)), [ref]);
 
-	useEffect(() => {
-		if (debouncedQuery) {
-			onSearch(debouncedQuery);
-		}
-	}, [onSearch, debouncedQuery]);
+	const debouncedQuery = useDebounce(query, debounceTimeout);
+	useEffect(() => onSearch?.(debouncedQuery), [onSearch, debouncedQuery]);
 
-	const resetQuery = () => {
+	const handleQueryReset = () => {
 		setQuery("");
+		onReset?.();
 	};
 
 	return (
@@ -59,7 +64,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 				<SearchBarInputWrapper
 					data-testid="header-search-bar__input"
 					ref={ref}
-					className="absolute flex items-center px-6 py-4 bg-white rounded-md shadow-xl -bottom-4 -right-6"
+					className="absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
 				>
 					{extra && (
 						<div className="flex items-center">
@@ -68,11 +73,11 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 						</div>
 					)}
 
-					<button data-testid="header-search-bar__reset" onClick={resetQuery}>
+					<button data-testid="header-search-bar__reset" onClick={handleQueryReset}>
 						<Icon className="text-theme-neutral" name="CrossSlim" width={12} height={12} />
 					</button>
 
-					<div className="mx-4">
+					<div className="flex-1 mx-4">
 						<Input
 							className="pt-2 border-none shadow-none HeaderSearchBar__input"
 							placeholder={placeholder}

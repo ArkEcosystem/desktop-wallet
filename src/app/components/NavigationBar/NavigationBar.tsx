@@ -1,5 +1,6 @@
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { CURRENCIES } from "@arkecosystem/platform-sdk/dist/data";
 import { images } from "app/assets/images";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";
@@ -7,8 +8,8 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { Notifications } from "app/components/Notifications";
-import { Action, NotificationsProps } from "app/components/Notifications/models";
+import { NotificationsDropdown } from "app/components/Notifications";
+import { Action } from "app/components/Notifications/models";
 import { SearchBarFilters } from "app/components/SearchBar/SearchBarFilters";
 import { useEnvironmentContext } from "app/contexts";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
@@ -31,121 +32,89 @@ type MenuItem = {
 };
 
 type NavigationBarProps = {
+	title?: string;
 	profile?: Profile;
 	variant?: NavbarVariant;
 	menu?: MenuItem[];
 	userActions?: Action[];
 	avatarImage?: string;
-	notifications?: any;
 	onUserAction?: any;
-	onNotificationAction?: any;
 };
 
 const NavWrapper = styled.nav<{ noShadow?: boolean }>`
 	${defaultStyle}
-	${tw`sticky inset-x-0 top-0 bg-white`}
+	${tw`sticky inset-x-0 top-0 bg-theme-background`}
 	${({ noShadow }) => !noShadow && tw`shadow-md`};
 `;
 
-const NotificationsDropdown = ({
-	pluginsHeader,
-	plugins,
-	transactionsHeader,
-	transactions,
-	onAction,
-}: NotificationsProps) => (
-	<Dropdown
-		toggleContent={
-			<div className="overflow-hidden rounded-lg">
-				<Button
-					variant="transparent"
-					size="icon"
-					className="text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-					data-testid="navbar__buttons--notifications"
-				>
-					<Icon name="Notification" width={22} height={22} className="p-1" />
-				</Button>
-			</div>
-		}
-	>
-		<div className="p-8 py-3 mt-2 w-128">
-			<Notifications
-				pluginsHeader={pluginsHeader}
-				plugins={plugins}
-				transactionsHeader={transactionsHeader}
-				transactions={transactions}
-				onAction={onAction}
-			/>
-		</div>
-	</Dropdown>
-);
-
 type UserInfoProps = {
 	avatarImage?: string;
-	currencyIcon?: string;
+	exchangeCurrency?: string;
 	onUserAction?: any;
 	userActions?: Action[];
 	userInitials?: string;
 };
 
-const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => (
-	<Dropdown
-		onSelect={onUserAction}
-		options={userActions}
-		toggleContent={(isOpen: boolean) => (
-			<div className="ml-4 cursor-pointer" data-testid="navbar__useractions">
-				<Circle className="-mr-2 border-theme-primary-contrast" size="lg">
-					<span className="text-theme-neutral-dark">{currencyIcon && <Icon name={currencyIcon} />}</span>
-				</Circle>
+const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => {
+	const tickerConfig: typeof CURRENCIES["BTC"] | undefined = CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
 
-				<div
-					className="relative inline-flex items-center justify-center align-middle rounded-full"
-					data-testid="navbar__user--avatar"
-				>
-					<AvatarWrapper size="lg">
-						{avatarImage?.endsWith("</svg>") ? (
-							<>
-								<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
-								<span className="absolute text-sm font-semibold text-theme-background">
-									{userInitials}
-								</span>
-							</>
-						) : (
-							<img
-								alt="Profile Avatar"
-								className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
-								src={avatarImage}
-							/>
-						)}
-					</AvatarWrapper>
+	return (
+		<Dropdown
+			onSelect={onUserAction}
+			options={userActions}
+			toggleContent={(isOpen: boolean) => (
+				<div className="ml-4 cursor-pointer" data-testid="navbar__useractions">
+					<Circle className="-mr-2 border-theme-primary-contrast" size="lg">
+						<span className="text-theme-neutral-dark">
+							{exchangeCurrency && (
+								<Icon
+									name={exchangeCurrency}
+									fallback={<span className="font-semibold">{tickerConfig?.symbol}</span>}
+								/>
+							)}
+						</span>
+					</Circle>
 
-					<Badge
-						className="bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-						position="right"
-						icon={isOpen ? "ChevronUp" : "ChevronDown"}
-						iconWidth={10}
-						iconHeight={10}
-					/>
+					<div
+						className="relative inline-flex items-center justify-center align-middle rounded-full"
+						data-testid="navbar__user--avatar"
+					>
+						<AvatarWrapper size="lg">
+							{avatarImage?.endsWith("</svg>") ? (
+								<>
+									<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
+									<span className="absolute text-sm font-semibold text-theme-background">
+										{userInitials}
+									</span>
+								</>
+							) : (
+								<img
+									alt="Profile Avatar"
+									className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+									src={avatarImage}
+								/>
+							)}
+						</AvatarWrapper>
+
+						<Badge
+							className="bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+							position="right"
+							icon={isOpen ? "ChevronUp" : "ChevronDown"}
+							iconWidth={10}
+							iconHeight={10}
+						/>
+					</div>
 				</div>
-			</div>
-		)}
-	/>
-);
+			)}
+		/>
+	);
+};
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center my-auto mr-4 text-white rounded-lg bg-logo`};
-	width: 50px;
-	height: 50px;
+	${tw`flex items-center justify-center my-auto mr-4 text-white bg-logo rounded h-12 w-12`};
 `;
 
-export const NavigationBar = ({
-	profile,
-	variant,
-	menu,
-	userActions,
-	notifications,
-	onNotificationAction,
-}: NavigationBarProps) => {
+export const NavigationBar = ({ title, profile, variant, menu, userActions }: NavigationBarProps) => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
@@ -179,7 +148,7 @@ export const NavigationBar = ({
 					<NavLink
 						to={menuItem.mountPath(profile.id())}
 						title={menuItem.title}
-						className="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+						className="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
 					>
 						{menuItem.title}
 					</NavLink>
@@ -193,17 +162,7 @@ export const NavigationBar = ({
 		return name ? (name as string).slice(0, 2).toUpperCase() : undefined;
 	};
 
-	const getCurrencyIcon = () => {
-		// TODO get full name from SDK
-		const currencyIcons: Record<string, string> = {
-			btc: "Bitcoin",
-			eth: "Ethereum",
-		};
-
-		const currency = profile?.settings().get(ProfileSetting.ExchangeCurrency);
-
-		return currency ? currencyIcons[(currency as string).toLowerCase()] : undefined;
-	};
+	const getExchangeCurrency = () => profile?.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
@@ -211,8 +170,10 @@ export const NavigationBar = ({
 				<div className="relative flex justify-between h-20 md:h-24">
 					<div className="flex items-center my-auto">
 						<LogoContainer>
-							<ARKLogo width={40} />
+							<ARKLogo width={48} />
 						</LogoContainer>
+
+						{title && <span className="text-2xl font-bold">{title}</span>}
 					</div>
 
 					{variant === "full" && (
@@ -220,7 +181,7 @@ export const NavigationBar = ({
 							<ul className="flex h-20 mr-auto md:h-24">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
-								<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
+								{profile && <NotificationsDropdown profile={profile} />}
 
 								<div className="h-8 border-r border-theme-neutral-200" />
 
@@ -270,7 +231,7 @@ export const NavigationBar = ({
 
 								<UserInfo
 									userInitials={getUserInitials()}
-									currencyIcon={getCurrencyIcon()}
+									exchangeCurrency={getExchangeCurrency()}
 									avatarImage={profile?.avatar()}
 									userActions={userActions}
 									onUserAction={(action: any) => history.push(action.mountPath(profile?.id()))}
@@ -311,12 +272,6 @@ export const NavigationBar = ({
 
 NavigationBar.defaultProps = {
 	variant: "full",
-	notifications: {
-		transactionsHeader: "Transactions",
-		transactions: [],
-		pluginsHeader: "Plugins",
-		plugins: [],
-	},
 	menu: [
 		{
 			title: "Portfolio",

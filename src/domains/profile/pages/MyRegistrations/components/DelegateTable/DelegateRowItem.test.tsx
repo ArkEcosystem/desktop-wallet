@@ -13,7 +13,7 @@ describe("DelegateRowItem", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
-			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
+			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
 			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
 
@@ -34,7 +34,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -64,7 +64,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 
 		expect(getByTestId("DelegateRowItem__address")).toBeTruthy();
 		expect(getByTestId("DelegateRowItem__username")).toBeTruthy();
@@ -87,7 +87,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -100,7 +100,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -114,7 +114,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 		expect(getByTestId("DelegateRowItem__actions")).toBeTruthy();
 
 		const dropdownToggle = getByTestId("dropdown__toggle");
@@ -127,7 +127,7 @@ describe("DelegateRowItem", () => {
 			fireEvent.click(resignOption);
 		});
 
-		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "resign" });
+		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "resignDelegate" });
 	});
 
 	it("should handle delegate update action", async () => {
@@ -140,7 +140,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 		expect(getByTestId("DelegateRowItem__actions")).toBeTruthy();
 
 		const dropdownToggle = getByTestId("dropdown__toggle");
@@ -153,6 +153,27 @@ describe("DelegateRowItem", () => {
 			fireEvent.click(resignOption);
 		});
 
-		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "update" });
+		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "updateDelegate" });
+	});
+
+	it("should set shadow color on mouse events", () => {
+		const setState = jest.fn();
+		const useStateSpy = jest.spyOn(React, "useState");
+
+		useStateSpy.mockImplementation((state) => [state, setState]);
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<DelegateRowItem wallet={delegates[0]} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.mouseEnter(getByTestId("TableRow"));
+		fireEvent.mouseLeave(getByTestId("TableRow"));
+
+		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
+		expect(setState).toHaveBeenCalledWith("");
 	});
 });

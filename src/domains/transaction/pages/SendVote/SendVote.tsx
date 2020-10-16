@@ -7,23 +7,26 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useQueryParams } from "app/hooks";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
+import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
 import { FourthStep } from "./Step4";
 
 export const SendVote = () => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
+	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+
 	const networks = useMemo(() => env.availableNetworks(), [env]);
+
 	const queryParams = useQueryParams();
 	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
 	const voteAddresses = queryParams.get("votes")?.split(",");
@@ -34,18 +37,18 @@ export const SendVote = () => {
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearError, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
@@ -80,6 +83,23 @@ export const SendVote = () => {
 	];
 
 	const handleBack = () => {
+		if (activeTab === 1) {
+			const params = new URLSearchParams();
+
+			if (unvoteAddresses) {
+				params.append("unvotes", unvoteAddresses.join());
+			}
+
+			if (voteAddresses) {
+				params.append("votes", voteAddresses.join());
+			}
+
+			return history.push({
+				pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`,
+				search: `?${params}`,
+			});
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
@@ -87,9 +107,31 @@ export const SendVote = () => {
 		setActiveTab(activeTab + 1);
 	};
 
+	const confirmSendVote = (type: "unvote" | "vote") =>
+		new Promise((resolve) => {
+			const interval = setInterval(async () => {
+				let isConfirmed = false;
+
+				await activeWallet.syncVotes();
+				const walletVotes = activeWallet.votes();
+
+				isConfirmed =
+					type === "unvote"
+						? !walletVotes.find((vote) => vote.address() === unvotes[0].address())
+						: !!walletVotes.find((vote) => vote.address() === votes[0].address());
+
+				if (isConfirmed) {
+					clearInterval(interval);
+					resolve();
+				}
+
+				return;
+			}, 1000);
+		});
+
 	const submitForm = async () => {
-		clearError("mnemonic");
-		const { fee, mnemonic, senderAddress } = getValues();
+		clearErrors("mnemonic");
+		const { fee, mnemonic, secondMnemonic, senderAddress } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		try {
@@ -98,6 +140,7 @@ export const SendVote = () => {
 				from: senderAddress,
 				sign: {
 					mnemonic,
+					secondMnemonic,
 				},
 			};
 
@@ -113,6 +156,8 @@ export const SendVote = () => {
 
 				await env.persist();
 
+				await confirmSendVote("unvote");
+
 				const voteTransactionId = await senderWallet!.transaction().signVote({
 					...voteTransactionInput,
 					data: {
@@ -125,11 +170,16 @@ export const SendVote = () => {
 				await env.persist();
 
 				setTransaction(senderWallet!.transaction().transaction(voteTransactionId));
+
+				handleNext();
+
+				await confirmSendVote("vote");
 			} else {
+				const isUnvote = unvotes.length > 0;
 				const transactionId = await senderWallet!.transaction().signVote({
 					...voteTransactionInput,
 					data: {
-						vote: unvotes.length > 0 ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
+						vote: isUnvote ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
 					},
 				});
 
@@ -138,14 +188,16 @@ export const SendVote = () => {
 				await env.persist();
 
 				setTransaction(senderWallet!.transaction().transaction(transactionId));
-			}
 
-			handleNext();
+				handleNext();
+
+				await confirmSendVote(isUnvote ? "unvote" : "vote");
+			}
 		} catch (error) {
 			console.error("Could not vote: ", error);
 
 			setValue("mnemonic", "");
-			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	};
 
@@ -174,7 +226,7 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<ThirdStep />
+								<AuthenticationStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<FourthStep
@@ -185,11 +237,11 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 
-							<div className="flex justify-end mt-8 space-x-3">
+							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < 4 && (
 									<>
 										<Button
-											disabled={activeTab === 1}
+											disabled={activeTab === 3 ? formState.isSubmitting : false}
 											variant="plain"
 											onClick={handleBack}
 											data-testid="SendVote__button--back"
@@ -210,10 +262,12 @@ export const SendVote = () => {
 										{activeTab === 3 && (
 											<Button
 												type="submit"
-												disabled={!formState.isValid}
 												data-testid="SendVote__button--submit"
+												disabled={!formState.isValid || formState.isSubmitting}
+												className="space-x-2"
 											>
-												{t("COMMON.SEND")}
+												<Icon name="Send" width={20} height={20} />
+												<span>{t("COMMON.SEND")}</span>
 											</Button>
 										)}
 									</>
@@ -221,16 +275,24 @@ export const SendVote = () => {
 
 								{activeTab === 4 && (
 									<>
-										<Button variant="plain" data-testid="SendVote__button--back-to-wallet">
+										<Button
+											data-testid="SendVote__button--back-to-wallet"
+											variant="plain"
+											onClick={() =>
+												history.push(
+													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+												)
+											}
+										>
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 										<Button
 											variant="plain"
 											className="space-x-2"
-											data-testid="SendVote__button--copy"
+											data-testid="SendVote__button--download"
 										>
-											<Icon name="Copy" />
-											<span>{t("COMMON.COPY")}</span>
+											<Icon name="Download" />
+											<span>{t("COMMON.DOWNLOAD")}</span>
 										</Button>
 									</>
 								)}

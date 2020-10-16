@@ -18,104 +18,57 @@ exports[`SendTransactionForm should render 1`] = `
           data-testid="FormLabel"
           for="network"
         >
-          Network
+          Cryptoasset
           <div
             class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
       </div>
-      <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="SendTransactionForm__network-menu"
-        data-testid="SelectNetwork"
-        role="combobox"
-      >
-        <label
-          for="SendTransactionForm__network-input"
-          id="SendTransactionForm__network-label"
-        />
+      <div>
         <div
-          class="sc-Axmtr jzhOwR"
-          data-testid="SelectNetworkInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="SendTransactionForm__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
         >
+          <label
+            for="SendTransactionForm__network-input"
+            id="SendTransactionForm__network-label"
+          />
           <div
-            class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            class="sc-Axmtr jzhOwR"
+            data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-AxirZ HSPq border-theme-neutral-light text-theme-neutral"
-              data-testid="SelectNetworkInput__network"
+              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            >
+              <div
+                class="sc-AxirZ fuoUNN border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransactionForm__network-menu"
+              aria-labelledby="SendTransactionForm__network-label"
+              autocomplete="off"
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="SendTransactionForm__network-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
             />
           </div>
-          <input
-            aria-autocomplete="list"
-            aria-controls="SendTransactionForm__network-menu"
-            aria-labelledby="SendTransactionForm__network-label"
-            autocomplete="off"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-            data-testid="SelectNetworkInput__input"
-            id="SendTransactionForm__network-input"
-            placeholder="Enter a network name"
-            value=""
-          />
         </div>
+        <ul
+          aria-labelledby="SendTransactionForm__network-label"
+          class="hidden"
+          id="SendTransactionForm__network-menu"
+          role="listbox"
+        />
       </div>
-      <ul
-        aria-labelledby="SendTransactionForm__network-label"
-        class="grid grid-cols-6 gap-6 mt-6"
-        id="SendTransactionForm__network-menu"
-        role="listbox"
-      >
-        <li
-          aria-selected="false"
-          class="inline-block cursor-pointer"
-          data-testid="SelectNetwork__NetworkIcon--container"
-          id="SendTransactionForm__network-item-0"
-          role="option"
-        >
-          <div
-            aria-label="Ark"
-            class="sc-AxirZ jatHdy border-theme-danger-light text-theme-danger-400"
-            data-testid="NetworkIcon-ARK-mainnet"
-          >
-            <div
-              class="sc-AxiKw fubePL"
-              data-testid="NetworkIcon__icon"
-              height="26"
-              width="26"
-            >
-              <svg>
-                ark.svg
-              </svg>
-            </div>
-          </div>
-        </li>
-        <li
-          aria-selected="false"
-          class="inline-block cursor-pointer"
-          data-testid="SelectNetwork__NetworkIcon--container"
-          id="SendTransactionForm__network-item-1"
-          role="option"
-        >
-          <div
-            aria-label="Ark Devnet"
-            class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
-            data-testid="NetworkIcon-ARK-devnet"
-          >
-            <div
-              class="sc-AxiKw fubePL"
-              data-testid="NetworkIcon__icon"
-              height="26"
-              width="26"
-            >
-              <svg>
-                ark.svg
-              </svg>
-            </div>
-          </div>
-        </li>
-      </ul>
     </fieldset>
     <fieldset
       class="sc-AxjAm fmGClo relative"
@@ -140,12 +93,15 @@ exports[`SendTransactionForm should render 1`] = `
       >
         <div>
           <button
-            class="sc-fznZeY jUYMgc SelectAddress  "
+            class="sc-fzqBZW iKvOTi SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
             <div
-              class="sc-AxirZ HSPq mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+              class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+            />
+            <div
+              class="inline-block truncate align-middle"
             />
             <div
               class="absolute flex items-center space-x-3 right-4"
@@ -162,7 +118,7 @@ exports[`SendTransactionForm should render 1`] = `
             </div>
           </button>
           <input
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -197,7 +153,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="sc-Axmtr jzhOwR"
           >
             <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
               data-testid="InputCurrency"
               name="fee"
               type="text"
@@ -243,8 +199,8 @@ exports[`SendTransactionForm should render 1`] = `
             role="radiogroup"
           >
             <button
-              aria-checked="false"
-              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+              aria-checked="true"
+              class="sc-fzqNJr dLZgRW relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"
@@ -253,7 +209,7 @@ exports[`SendTransactionForm should render 1`] = `
             </button>
             <button
               aria-checked="false"
-              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+              class="sc-fzqNJr dLZgRW relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"
@@ -262,7 +218,7 @@ exports[`SendTransactionForm should render 1`] = `
             </button>
             <button
               aria-checked="false"
-              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+              class="sc-fzqNJr dLZgRW relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"
@@ -293,107 +249,58 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           data-testid="FormLabel"
           for="network"
         >
-          Network
+          Cryptoasset
           <div
             class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
       </div>
-      <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="SendTransactionForm__network-menu"
-        data-testid="SelectNetwork"
-        role="combobox"
-      >
-        <label
-          for="SendTransactionForm__network-input"
-          id="SendTransactionForm__network-label"
-        />
+      <div>
         <div
-          class="sc-Axmtr jzhOwR"
-          data-testid="SelectNetworkInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="SendTransactionForm__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
         >
+          <label
+            for="SendTransactionForm__network-input"
+            id="SendTransactionForm__network-label"
+          />
           <div
-            class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            class="sc-Axmtr jzhOwR"
+            data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-AxirZ HSPq border-theme-neutral-light text-theme-neutral"
-              data-testid="SelectNetworkInput__network"
+              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            >
+              <div
+                class="sc-AxirZ fuoUNN border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransactionForm__network-menu"
+              aria-labelledby="SendTransactionForm__network-label"
+              autocomplete="off"
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              disabled=""
+              id="SendTransactionForm__network-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
             />
           </div>
-          <input
-            aria-autocomplete="list"
-            aria-controls="SendTransactionForm__network-menu"
-            aria-labelledby="SendTransactionForm__network-label"
-            autocomplete="off"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-            data-testid="SelectNetworkInput__input"
-            disabled=""
-            id="SendTransactionForm__network-input"
-            placeholder="Enter a network name"
-            value=""
-          />
         </div>
+        <ul
+          aria-labelledby="SendTransactionForm__network-label"
+          class="hidden"
+          id="SendTransactionForm__network-menu"
+          role="listbox"
+        />
       </div>
-      <ul
-        aria-labelledby="SendTransactionForm__network-label"
-        class="grid grid-cols-6 gap-6 mt-6"
-        id="SendTransactionForm__network-menu"
-        role="listbox"
-      >
-        <li
-          aria-selected="false"
-          class="inline-block cursor-pointer"
-          data-testid="SelectNetwork__NetworkIcon--container"
-          disabled=""
-          id="SendTransactionForm__network-item-0"
-          role="option"
-        >
-          <div
-            aria-label="Ark"
-            class="sc-AxirZ jatHdy border-theme-danger-light text-theme-danger-400"
-            data-testid="NetworkIcon-ARK-mainnet"
-          >
-            <div
-              class="sc-AxiKw fubePL"
-              data-testid="NetworkIcon__icon"
-              height="26"
-              width="26"
-            >
-              <svg>
-                ark.svg
-              </svg>
-            </div>
-          </div>
-        </li>
-        <li
-          aria-selected="false"
-          class="inline-block cursor-pointer"
-          data-testid="SelectNetwork__NetworkIcon--container"
-          disabled=""
-          id="SendTransactionForm__network-item-1"
-          role="option"
-        >
-          <div
-            aria-label="Ark Devnet"
-            class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
-            data-testid="NetworkIcon-ARK-devnet"
-          >
-            <div
-              class="sc-AxiKw fubePL"
-              data-testid="NetworkIcon__icon"
-              height="26"
-              width="26"
-            >
-              <svg>
-                ark.svg
-              </svg>
-            </div>
-          </div>
-        </li>
-      </ul>
     </fieldset>
     <fieldset
       class="sc-AxjAm fmGClo relative"
@@ -418,12 +325,12 @@ exports[`SendTransactionForm should select fill out form 1`] = `
       >
         <div>
           <button
-            class="sc-fznZeY jUYMgc SelectAddress  "
+            class="sc-fzqBZW iKvOTi SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw mx-4"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-4"
               data-testid="Avatar"
             >
               <div
@@ -461,7 +368,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             </div>
           </button>
           <input
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -496,7 +403,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             class="sc-Axmtr jzhOwR"
           >
             <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
               data-testid="InputCurrency"
               name="fee"
               type="text"
@@ -543,7 +450,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           >
             <button
               aria-checked="false"
-              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+              class="sc-fzqNJr dLZgRW relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"
@@ -552,7 +459,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             </button>
             <button
               aria-checked="true"
-              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+              class="sc-fzqNJr dLZgRW relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"
@@ -561,7 +468,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             </button>
             <button
               aria-checked="false"
-              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+              class="sc-fzqNJr dLZgRW relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"

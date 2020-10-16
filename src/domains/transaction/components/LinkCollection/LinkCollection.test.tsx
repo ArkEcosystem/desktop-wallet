@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/require-await */
+import { waitFor } from "@testing-library/react";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
 
@@ -7,14 +9,17 @@ const types = [
 	{
 		label: "Facebook",
 		value: "facebook",
+		validate: jest.fn(() => true),
 	},
 	{
 		label: "Twitter",
 		value: "twitter",
+		validate: jest.fn(() => true),
 	},
 	{
 		label: "Instagram",
 		value: "instagram",
+		validate: jest.fn(() => true),
 	},
 ];
 
@@ -33,7 +38,7 @@ describe("LinkCollection", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should toggle open/close of link collection", () => {
+	it("should toggle open/close link collection", () => {
 		const { asFragment, getByTestId } = render(
 			<LinkCollection
 				title="Social Media"
@@ -56,70 +61,223 @@ describe("LinkCollection", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should add and remove links", () => {
+	it("should add links", async () => {
+		const onChange = jest.fn();
+
 		const { asFragment, getByTestId } = render(
 			<LinkCollection
 				title="Social Media"
 				description="Tell people more about yourself through social media"
 				types={types}
 				typeName="media"
+				onChange={onChange}
 			/>,
 		);
 
 		fireEvent.click(getByTestId("LinkCollection__header"));
 
-		const toggle = getByTestId("select-list__toggle-button");
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
-		act(() => {
-			fireEvent.click(toggle);
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "Twitter" } });
 		});
-		const firstOption = getByTestId("select-list__toggle-option-1");
+
+		expect(getByTestId("LinkCollection__add-link")).toBeDisabled();
+		expect(getByTestId("LinkCollection__input-link")).toBeDisabled();
+
+		const firstOption = getByTestId("select-list__toggle-option-0");
 		expect(firstOption).toBeTruthy();
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(firstOption);
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("twitter");
 
-		const linkField = getByTestId("LinkCollection__input-link");
-		act(() => {
-			fireEvent.change(linkField, {
+		await waitFor(() => expect(getByTestId("LinkCollection__input-link")).toBeEnabled());
+
+		const value = "https://twitter.com/arkecosystem";
+
+		await act(async () => {
+			fireEvent.input(getByTestId("LinkCollection__input-link"), {
 				target: {
-					value: "testing link",
+					value,
 				},
 			});
 		});
 
-		expect(linkField).toHaveValue("testing link");
+		await waitFor(() => expect(getByTestId("LinkCollection__add-link")).toBeEnabled());
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("LinkCollection__add-link"));
 		});
 
-		expect(getByTestId("LinkCollection")).toHaveTextContent("Twitter");
-		expect(getByTestId("LinkCollection")).toHaveTextContent("testing link");
+		await waitFor(() => expect(onChange).toHaveBeenCalledWith([{ value, type: "twitter" }]));
 
-		fireEvent.click(getByTestId("LinkCollection__remove-link"));
-
-		expect(getByTestId("LinkCollection")).not.toHaveTextContent("twitter");
-		expect(getByTestId("LinkCollection")).not.toHaveTextContent("testing link");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should remove links", async () => {
+		const onChange = jest.fn();
+
+		const data = [{ type: "twitter", value: "https//twitter.com/arkecosystem" }];
+
+		const { asFragment, getAllByTestId, getByTestId } = render(
+			<LinkCollection
+				title="Social Media"
+				description="Tell people more about yourself through social media"
+				types={types}
+				data={data}
+				typeName="media"
+				onChange={onChange}
+			/>,
+		);
+
+		fireEvent.click(getByTestId("LinkCollection__header"));
+
+		expect(() => getAllByTestId("LinkCollection__item").toHaveLength(1));
+
+		expect(getByTestId("LinkCollection__item")).toHaveTextContent("Twitter");
+		expect(getByTestId("LinkCollection__item")).toHaveTextContent(data[0].value);
+
+		fireEvent.click(getByTestId("LinkCollection__remove-link"));
+		expect(onChange).toHaveBeenCalledWith([]);
+
+		expect(() => getByTestId("LinkCollection__item")).toThrow(/Unable to find an element by/);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should trigger validation before adding a link", async () => {
+		const onChange = jest.fn();
+		const validate = jest.fn(() => false);
+
+		const { getByTestId } = render(
+			<LinkCollection
+				title="Social Media"
+				description="Tell people more about yourself through social media"
+				types={[
+					{
+						label: "TestEntity",
+						value: "test-entity",
+						validate,
+					},
+				]}
+				typeName="media"
+				onChange={onChange}
+			/>,
+		);
+
+		fireEvent.click(getByTestId("LinkCollection__header"));
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "Test" } });
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("LinkCollection__input-link"), {
+				target: {
+					value: "invalid link",
+				},
+			});
+		});
+
+		await waitFor(() => expect(validate).toHaveBeenCalledWith("invalid link"));
+	});
+
+	it("should trigger validation when changing the type", async () => {
+		const onChange = jest.fn();
+
+		const { getByTestId } = render(
+			<LinkCollection
+				title="Social Media"
+				description="Tell people more about yourself through social media"
+				types={[
+					{
+						label: "TestEntity 1",
+						value: "test-entity-1",
+						validate: jest.fn(() => true),
+					},
+					{
+						label: "TestEntity 2",
+						value: "test-entity-2",
+						validate: jest.fn(() => false),
+					},
+				]}
+				typeName="media"
+				onChange={onChange}
+			/>,
+		);
+
+		fireEvent.click(getByTestId("LinkCollection__header"));
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "TestEntity 1" } });
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("test-entity-1");
+
+		const input = getByTestId("LinkCollection__input-link");
+		const button = getByTestId("LinkCollection__add-link");
+
+		act(() => {
+			fireEvent.input(input, {
+				target: {
+					value: "invalid link",
+				},
+			});
+		});
+
+		await waitFor(() => expect(input).toBeValid());
+		expect(button).toBeEnabled();
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "TestEntity 3" } });
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "TestEntity 2" } });
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("test-entity-2");
+
+		await waitFor(() => expect(input).toBeInvalid());
+		expect(button).toBeDisabled();
+	});
+
 	it("should select a specific link type", () => {
+		const onChoose = jest.fn();
 		const { asFragment, getAllByTestId, getByTestId } = render(
 			<LinkCollection
 				title="Social Media"
 				description="Tell people more about yourself through social media"
 				types={types}
 				data={[
-					{ link: "testing link", type: "twitter" },
-					{ link: "testing link 2", type: "facebook" },
+					{ value: "testing link", type: "twitter" },
+					{ value: "testing link 2", type: "facebook" },
 				]}
 				typeName="media"
 				selectionTypes={["twitter"]}
 				selectionTypeTitle="Primary"
+				onChoose={onChoose}
 			/>,
 		);
 
@@ -127,6 +285,7 @@ describe("LinkCollection", () => {
 		fireEvent.click(getAllByTestId("LinkCollection__selected")[0]);
 
 		expect(getByTestId("LinkCollection")).toBeTruthy();
+		expect(onChoose).toHaveBeenCalledWith({ type: "twitter", value: "testing link" });
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

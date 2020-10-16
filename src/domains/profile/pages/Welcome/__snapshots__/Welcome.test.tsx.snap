@@ -7,7 +7,7 @@ exports[`Welcome should change route to create profile 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV gFhcPB"
+      class="sc-fzoiQi gbbOUt"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,34 +19,41 @@ exports[`Welcome should change route to create profile 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag gzuhWQ"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
             </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex flex-col flex-1 space-y-5 "
+      class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
         >
           <h1
-            class="mb-8"
+            class="mb-8 font-extrabold"
           >
-            Welcome to ARK
+            Welcome to the 
+            <br />
+             ARK Desktop Wallet
           </h1>
           <div
-            class="w-64 mx-auto lg:w-128"
+            class="w-64 mx-auto lg:w-96"
           >
             <svg>
               welcome-banner.svg
@@ -72,7 +79,7 @@ exports[`Welcome should change route to create profile 1`] = `
                 data-testid="ProfileCard"
               >
                 <div
-                  class="sc-fzpjYC dyUAaG"
+                  class="sc-fzqNqU dHAfqR"
                   data-testid="Card"
                 >
                   <div
@@ -85,7 +92,7 @@ exports[`Welcome should change route to create profile 1`] = `
                         class="flex items-center"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                           data-testid="profile-card__user--avatar"
                         >
                           <img
@@ -112,7 +119,7 @@ exports[`Welcome should change route to create profile 1`] = `
                             data-testid="profile-card__user--name"
                           >
                             <span
-                              class="sc-fznxsB gYUFJI"
+                              class="sc-fzoyTs fDFfvK"
                             >
                               Jane Doe
                             </span>
@@ -163,28 +170,31 @@ exports[`Welcome should change route to create profile 1`] = `
             <div
               class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
             >
-              <button
-                class="sc-AxjAm kbZyZT"
-                color="primary"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+              <div>
+                <button
+                  class="sc-AxjAm kbZyZT"
+                  color="primary"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    msq.svg
-                  </svg>
-                </div>
-                <span
-                  class="ml-2"
-                >
-                  Sign In via MarketSquare
-                </span>
-              </button>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      msq.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Sign In via MarketSquare
+                  </span>
+                </button>
+              </div>
               <button
-                class="sc-AxjAm fPpool mt-2 md:mt-0"
+                class="sc-AxjAm hXnHfM mt-2 md:mt-0"
                 color="primary"
                 type="button"
               >
@@ -206,7 +216,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV gFhcPB"
+      class="sc-fzoiQi gbbOUt"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -218,34 +228,41 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag gzuhWQ"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
             </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex flex-col flex-1 space-y-5 "
+      class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
         >
           <h1
-            class="mb-8"
+            class="mb-8 font-extrabold"
           >
-            Welcome to ARK
+            Welcome to the 
+            <br />
+             ARK Desktop Wallet
           </h1>
           <div
-            class="w-64 mx-auto lg:w-128"
+            class="w-64 mx-auto lg:w-96"
           >
             <svg>
               welcome-banner.svg
@@ -271,7 +288,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                 data-testid="ProfileCard"
               >
                 <div
-                  class="sc-fzpjYC dyUAaG"
+                  class="sc-fzqNqU dHAfqR"
                   data-testid="Card"
                 >
                   <div
@@ -284,7 +301,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                         class="flex items-center"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                           data-testid="profile-card__user--avatar"
                         >
                           <img
@@ -311,7 +328,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                             data-testid="profile-card__user--name"
                           >
                             <span
-                              class="sc-fznxsB gYUFJI"
+                              class="sc-fzoyTs fDFfvK"
                             >
                               John Doe
                             </span>
@@ -333,7 +350,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                             class="font-semibold text-theme-text"
                             data-testid="profile-card__user--balance"
                           >
-                            91.43089801 BTC
+                            0 BTC
                           </span>
                         </div>
                       </div>
@@ -363,7 +380,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                 data-testid="ProfileCard"
               >
                 <div
-                  class="sc-fzpjYC dyUAaG"
+                  class="sc-fzqNqU dHAfqR"
                   data-testid="Card"
                 >
                   <div
@@ -376,7 +393,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                         class="flex items-center"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                           data-testid="profile-card__user--avatar"
                         >
                           <img
@@ -403,7 +420,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                             data-testid="profile-card__user--name"
                           >
                             <span
-                              class="sc-fznxsB gYUFJI"
+                              class="sc-fzoyTs fDFfvK"
                             >
                               Jane Doe
                             </span>
@@ -454,28 +471,31 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
             <div
               class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
             >
-              <button
-                class="sc-AxjAm kbZyZT"
-                color="primary"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+              <div>
+                <button
+                  class="sc-AxjAm kbZyZT"
+                  color="primary"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    msq.svg
-                  </svg>
-                </div>
-                <span
-                  class="ml-2"
-                >
-                  Sign In via MarketSquare
-                </span>
-              </button>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      msq.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Sign In via MarketSquare
+                  </span>
+                </button>
+              </div>
               <button
-                class="sc-AxjAm fPpool mt-2 md:mt-0"
+                class="sc-AxjAm hXnHfM mt-2 md:mt-0"
                 color="primary"
                 type="button"
               >
@@ -497,7 +517,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV gFhcPB"
+      class="sc-fzoiQi gbbOUt"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -509,34 +529,41 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag gzuhWQ"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
             </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex flex-col flex-1 space-y-5 "
+      class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
         >
           <h1
-            class="mb-8"
+            class="mb-8 font-extrabold"
           >
-            Welcome to ARK
+            Welcome to the 
+            <br />
+             ARK Desktop Wallet
           </h1>
           <div
-            class="w-64 mx-auto lg:w-128"
+            class="w-64 mx-auto lg:w-96"
           >
             <svg>
               welcome-banner.svg
@@ -562,7 +589,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                 data-testid="ProfileCard"
               >
                 <div
-                  class="sc-fzpjYC dyUAaG"
+                  class="sc-fzqNqU dHAfqR"
                   data-testid="Card"
                 >
                   <div
@@ -575,7 +602,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                         class="flex items-center"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                           data-testid="profile-card__user--avatar"
                         >
                           <img
@@ -602,7 +629,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                             data-testid="profile-card__user--name"
                           >
                             <span
-                              class="sc-fznxsB gYUFJI"
+                              class="sc-fzoyTs fDFfvK"
                             >
                               John Doe
                             </span>
@@ -624,7 +651,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                             class="font-semibold text-theme-text"
                             data-testid="profile-card__user--balance"
                           >
-                            91.43089801 BTC
+                            0 BTC
                           </span>
                         </div>
                       </div>
@@ -654,7 +681,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                 data-testid="ProfileCard"
               >
                 <div
-                  class="sc-fzpjYC dyUAaG"
+                  class="sc-fzqNqU dHAfqR"
                   data-testid="Card"
                 >
                   <div
@@ -667,7 +694,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                         class="flex items-center"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                           data-testid="profile-card__user--avatar"
                         >
                           <img
@@ -694,7 +721,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                             data-testid="profile-card__user--name"
                           >
                             <span
-                              class="sc-fznxsB gYUFJI"
+                              class="sc-fzoyTs fDFfvK"
                             >
                               Jane Doe
                             </span>
@@ -745,28 +772,31 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
             <div
               class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
             >
-              <button
-                class="sc-AxjAm kbZyZT"
-                color="primary"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+              <div>
+                <button
+                  class="sc-AxjAm kbZyZT"
+                  color="primary"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    msq.svg
-                  </svg>
-                </div>
-                <span
-                  class="ml-2"
-                >
-                  Sign In via MarketSquare
-                </span>
-              </button>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      msq.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Sign In via MarketSquare
+                  </span>
+                </button>
+              </div>
               <button
-                class="sc-AxjAm fPpool mt-2 md:mt-0"
+                class="sc-AxjAm hXnHfM mt-2 md:mt-0"
                 color="primary"
                 type="button"
               >
@@ -774,195 +804,6 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
               </button>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
-  >
-    <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="sc-fzoLsD cmfoZS absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
-      data-testid="modal__inner"
-    >
-      <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
-      >
-        <button
-          class="sc-AxjAm goVygI w-11 h-11"
-          color="primary"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-AxirZ fFqjhX"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Sign In
-        </h2>
-        <div
-          class="flex-1"
-        >
-          <div
-            class="mt-1 text-theme-neutral-dark"
-          >
-            Sign in to access your profile.
-          </div>
-          <div
-            class="mt-8"
-          >
-            <div
-              class="flex flex-row justify-between w-full"
-            >
-              <div
-                class="flex items-center"
-              >
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                  data-testid="profile-card__user--avatar"
-                >
-                  <img
-                    alt="Jane Doe"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                    title="Jane Doe"
-                  />
-                  <span
-                    class="absolute text-sm font-semibold text-theme-background"
-                  >
-                    JA
-                  </span>
-                </div>
-                <div
-                  class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                >
-                  <p
-                    class="text-sm font-semibold text-theme-neutral"
-                  >
-                    Name
-                  </p>
-                  <p
-                    class="font-semibold text-theme-text"
-                    data-testid="profile-card__user--name"
-                  >
-                    <span
-                      class="sc-fznxsB gYUFJI"
-                    >
-                      Jane Doe
-                    </span>
-                  </p>
-                </div>
-              </div>
-              <div
-                class="flex items-center"
-              >
-                <div
-                  class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                >
-                  <p
-                    class="text-sm font-semibold text-theme-neutral"
-                  >
-                    Total balance
-                  </p>
-                  <span
-                    class="font-semibold text-theme-neutral"
-                  >
-                    N/A
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxiKw kXkCOd border-theme-neutral-300"
-            type="horizontal"
-          />
-          <form
-            class="mt-8"
-            data-testid="Form"
-          >
-            <fieldset
-              class="sc-fznJRM fLviWY flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="password"
-              >
-                Password
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-              <div
-                class="sc-fznZeY exqqJj max-w-20"
-                data-testid="InputPassword"
-              >
-                <input
-                  class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                  data-testid="SignIn__input--password"
-                  name="password"
-                  type="password"
-                />
-                <div
-                  class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
-                >
-                  <button
-                    class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                    data-testid="InputPassword__toggle"
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        eye.svg
-                      </svg>
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </fieldset>
-            <div
-              class="flex justify-end mt-8 space-x-3"
-            >
-              <button
-                class="sc-AxjAm fPpool"
-                color="primary"
-                data-testid="SignIn__cancel-button"
-                type="button"
-              >
-                Cancel
-              </button>
-              <button
-                class="sc-AxjAm kbZyZT"
-                color="primary"
-                data-testid="SignIn__submit-button"
-                type="submit"
-              >
-                Sign In
-              </button>
-            </div>
-          </form>
         </div>
       </div>
     </div>
@@ -977,7 +818,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV gFhcPB"
+      class="sc-fzoiQi gbbOUt"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -989,34 +830,41 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag gzuhWQ"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
             </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex flex-col flex-1 space-y-5 "
+      class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
         >
           <h1
-            class="mb-8"
+            class="mb-8 font-extrabold"
           >
-            Welcome to ARK
+            Welcome to the 
+            <br />
+             ARK Desktop Wallet
           </h1>
           <div
-            class="w-64 mx-auto lg:w-128"
+            class="w-64 mx-auto lg:w-96"
           >
             <svg>
               welcome-banner.svg
@@ -1042,7 +890,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                 data-testid="ProfileCard"
               >
                 <div
-                  class="sc-fzpjYC dyUAaG"
+                  class="sc-fzqNqU dHAfqR"
                   data-testid="Card"
                 >
                   <div
@@ -1055,7 +903,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                         class="flex items-center"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                           data-testid="profile-card__user--avatar"
                         >
                           <img
@@ -1082,7 +930,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                             data-testid="profile-card__user--name"
                           >
                             <span
-                              class="sc-fznxsB gYUFJI"
+                              class="sc-fzoyTs fDFfvK"
                             >
                               John Doe
                             </span>
@@ -1104,7 +952,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                             class="font-semibold text-theme-text"
                             data-testid="profile-card__user--balance"
                           >
-                            91.43089801 BTC
+                            0 BTC
                           </span>
                         </div>
                       </div>
@@ -1134,7 +982,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                 data-testid="ProfileCard"
               >
                 <div
-                  class="sc-fzpjYC dyUAaG"
+                  class="sc-fzqNqU dHAfqR"
                   data-testid="Card"
                 >
                   <div
@@ -1147,7 +995,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                         class="flex items-center"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                           data-testid="profile-card__user--avatar"
                         >
                           <img
@@ -1174,7 +1022,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                             data-testid="profile-card__user--name"
                           >
                             <span
-                              class="sc-fznxsB gYUFJI"
+                              class="sc-fzoyTs fDFfvK"
                             >
                               Jane Doe
                             </span>
@@ -1225,28 +1073,332 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
             <div
               class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
             >
+              <div>
+                <button
+                  class="sc-AxjAm kbZyZT"
+                  color="primary"
+                  disabled=""
+                  type="button"
+                >
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      msq.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Sign In via MarketSquare
+                  </span>
+                </button>
+              </div>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm hXnHfM mt-2 md:mt-0"
                 color="primary"
                 type="button"
               >
-                <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    msq.svg
-                  </svg>
-                </div>
-                <span
-                  class="ml-2"
-                >
-                  Sign In via MarketSquare
-                </span>
+                Create Profile
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Welcome should navigate to profile settings with correct password 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoiQi gbbOUt"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fzqARJ ktgHVM"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1 text-center"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <h1
+            class="mb-8 font-extrabold"
+          >
+            Welcome to the 
+            <br />
+             ARK Desktop Wallet
+          </h1>
+          <div
+            class="w-64 mx-auto lg:w-96"
+          >
+            <svg>
+              welcome-banner.svg
+            </svg>
+          </div>
+          <div
+            class="max-w-lg mx-auto mt-8 md:max-w-xl"
+          >
+            <h2
+              class="mx-4 text-xl font-bold md:text-2xl"
+            >
+              Select Profile
+            </h2>
+            <p
+              class="text-sm text-theme-neutral-dark md:text-base"
+            >
+              Choose from an existing Profile below, sign in via MarketSquare or create a new Profile to get started.
+            </p>
+            <div
+              class="mt-8 space-y-3"
+            >
+              <div
+                data-testid="ProfileCard"
+              >
+                <div
+                  class="sc-fzqNqU dHAfqR"
+                  data-testid="Card"
+                >
+                  <div
+                    class="relative p-2 sm:flex sm:items-center"
+                  >
+                    <div
+                      class="flex flex-row justify-between w-full"
+                    >
+                      <div
+                        class="flex items-center"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="profile-card__user--avatar"
+                        >
+                          <img
+                            alt="John Doe"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                            title="John Doe"
+                          />
+                          <span
+                            class="absolute text-sm font-semibold text-theme-background"
+                          >
+                            JO
+                          </span>
+                        </div>
+                        <div
+                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
+                        >
+                          <p
+                            class="text-sm font-semibold text-theme-neutral"
+                          >
+                            Name
+                          </p>
+                          <p
+                            class="font-semibold text-theme-text"
+                            data-testid="profile-card__user--name"
+                          >
+                            <span
+                              class="sc-fzoyTs fDFfvK"
+                            >
+                              John Doe
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center"
+                      >
+                        <div
+                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+                        >
+                          <p
+                            class="text-sm font-semibold text-theme-neutral"
+                          >
+                            Total balance
+                          </p>
+                          <span
+                            class="font-semibold text-theme-text"
+                            data-testid="profile-card__user--balance"
+                          >
+                            0 BTC
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                  >
+                    <div
+                      class="relative"
+                      data-testid="dropdown__toggle"
+                    >
+                      <div
+                        class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
+                        height="20"
+                        width="4"
+                      >
+                        <svg>
+                          settings.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-testid="ProfileCard"
+              >
+                <div
+                  class="sc-fzqNqU dHAfqR"
+                  data-testid="Card"
+                >
+                  <div
+                    class="relative p-2 sm:flex sm:items-center"
+                  >
+                    <div
+                      class="flex flex-row justify-between w-full"
+                    >
+                      <div
+                        class="flex items-center"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="profile-card__user--avatar"
+                        >
+                          <img
+                            alt="Jane Doe"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                            title="Jane Doe"
+                          />
+                          <span
+                            class="absolute text-sm font-semibold text-theme-background"
+                          >
+                            JA
+                          </span>
+                        </div>
+                        <div
+                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
+                        >
+                          <p
+                            class="text-sm font-semibold text-theme-neutral"
+                          >
+                            Name
+                          </p>
+                          <p
+                            class="font-semibold text-theme-text"
+                            data-testid="profile-card__user--name"
+                          >
+                            <span
+                              class="sc-fzoyTs fDFfvK"
+                            >
+                              Jane Doe
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center"
+                      >
+                        <div
+                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+                        >
+                          <p
+                            class="text-sm font-semibold text-theme-neutral"
+                          >
+                            Total balance
+                          </p>
+                          <span
+                            class="font-semibold text-theme-neutral"
+                          >
+                            N/A
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                  >
+                    <div
+                      class="relative"
+                      data-testid="dropdown__toggle"
+                    >
+                      <div
+                        class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
+                        height="20"
+                        width="4"
+                      >
+                        <svg>
+                          settings.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
+            >
+              <div>
+                <button
+                  class="sc-AxjAm kbZyZT"
+                  color="primary"
+                  disabled=""
+                  type="button"
+                >
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      msq.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Sign In via MarketSquare
+                  </span>
+                </button>
+              </div>
               <button
-                class="sc-AxjAm fPpool mt-2 md:mt-0"
+                class="sc-AxjAm hXnHfM mt-2 md:mt-0"
                 color="primary"
                 type="button"
               >
@@ -1268,7 +1420,7 @@ exports[`Welcome should render with profiles 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV gFhcPB"
+      class="sc-fzoiQi gbbOUt"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1280,34 +1432,41 @@ exports[`Welcome should render with profiles 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag gzuhWQ"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
             </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex flex-col flex-1 space-y-5 "
+      class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
         >
           <h1
-            class="mb-8"
+            class="mb-8 font-extrabold"
           >
-            Welcome to ARK
+            Welcome to the 
+            <br />
+             ARK Desktop Wallet
           </h1>
           <div
-            class="w-64 mx-auto lg:w-128"
+            class="w-64 mx-auto lg:w-96"
           >
             <svg>
               welcome-banner.svg
@@ -1333,7 +1492,7 @@ exports[`Welcome should render with profiles 1`] = `
                 data-testid="ProfileCard"
               >
                 <div
-                  class="sc-fzpjYC dyUAaG"
+                  class="sc-fzqNqU dHAfqR"
                   data-testid="Card"
                 >
                   <div
@@ -1346,7 +1505,7 @@ exports[`Welcome should render with profiles 1`] = `
                         class="flex items-center"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                           data-testid="profile-card__user--avatar"
                         >
                           <img
@@ -1373,7 +1532,7 @@ exports[`Welcome should render with profiles 1`] = `
                             data-testid="profile-card__user--name"
                           >
                             <span
-                              class="sc-fznxsB gYUFJI"
+                              class="sc-fzoyTs fDFfvK"
                             >
                               John Doe
                             </span>
@@ -1395,7 +1554,7 @@ exports[`Welcome should render with profiles 1`] = `
                             class="font-semibold text-theme-text"
                             data-testid="profile-card__user--balance"
                           >
-                            91.43089801 BTC
+                            0 BTC
                           </span>
                         </div>
                       </div>
@@ -1425,7 +1584,7 @@ exports[`Welcome should render with profiles 1`] = `
                 data-testid="ProfileCard"
               >
                 <div
-                  class="sc-fzpjYC dyUAaG"
+                  class="sc-fzqNqU dHAfqR"
                   data-testid="Card"
                 >
                   <div
@@ -1438,7 +1597,7 @@ exports[`Welcome should render with profiles 1`] = `
                         class="flex items-center"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                           data-testid="profile-card__user--avatar"
                         >
                           <img
@@ -1465,7 +1624,7 @@ exports[`Welcome should render with profiles 1`] = `
                             data-testid="profile-card__user--name"
                           >
                             <span
-                              class="sc-fznxsB gYUFJI"
+                              class="sc-fzoyTs fDFfvK"
                             >
                               Jane Doe
                             </span>
@@ -1516,28 +1675,31 @@ exports[`Welcome should render with profiles 1`] = `
             <div
               class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
             >
-              <button
-                class="sc-AxjAm kbZyZT"
-                color="primary"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+              <div>
+                <button
+                  class="sc-AxjAm kbZyZT"
+                  color="primary"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    msq.svg
-                  </svg>
-                </div>
-                <span
-                  class="ml-2"
-                >
-                  Sign In via MarketSquare
-                </span>
-              </button>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      msq.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Sign In via MarketSquare
+                  </span>
+                </button>
+              </div>
               <button
-                class="sc-AxjAm fPpool mt-2 md:mt-0"
+                class="sc-AxjAm hXnHfM mt-2 md:mt-0"
                 color="primary"
                 type="button"
               >
@@ -1559,7 +1721,7 @@ exports[`Welcome should render without profiles 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV gFhcPB"
+      class="sc-fzoiQi gbbOUt"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1571,34 +1733,41 @@ exports[`Welcome should render without profiles 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag gzuhWQ"
+              class="sc-fzqARJ ktgHVM"
             >
               <svg
-                width="40"
+                width="48"
               >
                 ark-logo.svg
               </svg>
             </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex flex-col flex-1 space-y-5 "
+      class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
         >
           <h1
-            class="mb-8"
+            class="mb-8 font-extrabold"
           >
-            Welcome to ARK
+            Welcome to the 
+            <br />
+             ARK Desktop Wallet
           </h1>
           <div
-            class="w-64 mx-auto lg:w-128"
+            class="w-64 mx-auto lg:w-96"
           >
             <svg>
               welcome-banner.svg
@@ -1620,28 +1789,31 @@ exports[`Welcome should render without profiles 1`] = `
             <div
               class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
             >
-              <button
-                class="sc-AxjAm kbZyZT"
-                color="primary"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+              <div>
+                <button
+                  class="sc-AxjAm kbZyZT"
+                  color="primary"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    msq.svg
-                  </svg>
-                </div>
-                <span
-                  class="ml-2"
-                >
-                  Sign In via MarketSquare
-                </span>
-              </button>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      msq.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Sign In via MarketSquare
+                  </span>
+                </button>
+              </div>
               <button
-                class="sc-AxjAm fPpool mt-2 md:mt-0"
+                class="sc-AxjAm hXnHfM mt-2 md:mt-0"
                 color="primary"
                 type="button"
               >

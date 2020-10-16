@@ -1,8 +1,8 @@
 export const translations: { [key: string]: any } = {
 	FILTER_WALLETS: {
-		NETWORK: {
-			TITLE: "Filter Network",
-			DESCRIPTION: "Select the types of networks",
+		CRYPTOASSET: {
+			TITLE: "Filter Cryptoasset",
+			DESCRIPTION: "Select the types of cryptoassets",
 		},
 		WALLETS: {
 			TITLE: "Your Wallets",
@@ -32,7 +32,7 @@ export const translations: { [key: string]: any } = {
 	DASHBOARD_PAGE: {
 		CHART: {
 			TITLE: "Portfolio Chart",
-			PERCENTAGES_LABEL: "Total portfolio",
+			PERCENTAGES_LABEL: "Total Portfolio",
 		},
 	},
 };

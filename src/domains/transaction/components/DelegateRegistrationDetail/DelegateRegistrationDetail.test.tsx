@@ -2,7 +2,6 @@ import React from "react";
 import { render } from "testing-library";
 import { TransactionFixture } from "tests/fixtures/transactions";
 
-// i18n
 import { translations } from "../../i18n";
 import { DelegateRegistrationDetail } from "./DelegateRegistrationDetail";
 

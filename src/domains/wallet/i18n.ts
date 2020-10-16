@@ -59,9 +59,9 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_CREATE_WALLET: {
-		NETWORK_STEP: {
-			TITLE: "Select a Network",
-			SUBTITLE: "Select a Network to create your new wallet address",
+		CRYPTOASSET_STEP: {
+			TITLE: "Select a Cryptoasset",
+			SUBTITLE: "Select a cryptoasset to create your new wallet address",
 		},
 
 		PASSPHRASE_STEP: {
@@ -69,8 +69,8 @@ export const translations: { [key: string]: any } = {
 			WARNING:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.",
 			DOWNLOAD: {
-				TITLE: "Your password in the file",
-				DESCRIPTION: "You can also download and store safely your passphrase.",
+				TITLE: "Download Your Passphrase",
+				DESCRIPTION: "You can also download and safely store your passphrase.",
 			},
 		},
 
@@ -92,9 +92,9 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_IMPORT_WALLET: {
-		NETWORK_STEP: {
-			TITLE: "Select a Network",
-			SUBTITLE: "Select a Network to import your existing wallet address",
+		CRYPTOASSET_STEP: {
+			TITLE: "Select a Cryptoasset",
+			SUBTITLE: "Select a cryptoasset to import your existing wallet address",
 		},
 
 		METHOD_STEP: {
@@ -125,27 +125,29 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_WALLET_DETAILS: {
+		COPY_ADDRESS: "Copy Address",
+		COPY_PUBLIC_KEY: "Copy Public Key",
 		PENDING_TRANSACTIONS: "Pending Transactions",
-		TRANSACTION_HISTORY: "Transaction History",
 		YOUR_WALLETS: "Your Wallets",
 
 		STAR_WALLET: "Add to favorites",
 		UNSTAR_WALLET: "Remove from favorites",
 
+		TRANSACTION_HISTORY: {
+			TITLE: "Transactions History",
+			EMPTY_TEXT:
+				"This will display the history of your transactions. But you don't have more than one transaction at the moment.",
+		},
+
 		REGISTRATIONS: {
 			TITLE: "Registrations",
-			EMPTY: {
-				LABEL: "Type Registrations",
-				DESCRIPTION: "You haven't registered more than one type of registration.",
-			},
+			EMPTY_DESCRIPTION: "You have no active registrations",
 		},
 
 		VOTES: {
 			TITLE: "My Vote",
-			EMPTY: {
-				LABEL: "Address Delegate",
-				DESCRIPTION: "You haven't voted for more than one delegate yet.",
-			},
+			TITLE_plural: "My Votes",
+			EMPTY_DESCRIPTION: "You have not yet voted for a Delegate",
 		},
 
 		OPTIONS: {

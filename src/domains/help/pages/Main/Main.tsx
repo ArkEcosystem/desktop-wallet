@@ -3,7 +3,7 @@ import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -65,15 +65,8 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 
 	const { t } = useTranslation();
 
-	const crumbs = [
-		{
-			route: `/profiles/${activeProfile.id()}/support`,
-			label: t("HELP.GO_BACK_TO_HELP_SUPPORT"),
-		},
-	];
-
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section>
 				<Header
 					title={t("HELP.PAGE_SUPPORT.TITLE")}

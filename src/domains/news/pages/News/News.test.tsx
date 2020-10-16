@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Blockfolio, BlockfolioResponse } from "@arkecosystem/platform-sdk-news";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -8,7 +9,6 @@ import { Route } from "react-router-dom";
 import { act, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { assets } from "../../data";
-import { translations } from "../../i18n";
 import { News } from "./News";
 
 const history = createMemoryHistory();
@@ -50,7 +50,7 @@ describe("News", () => {
 			})
 			.get("/coins/ark/signals?query=NoResult&page=1")
 			.reply(200, require("tests/fixtures/news/empty-response.json"))
-			.get("/coins/ark/signals?query=Hacking&page=1&category=Technical")
+			.get("/coins/ark/signals?categories=Technical&query=Hacking&page=1")
 			.reply(200, require("tests/fixtures/news/filtered.json"))
 			.persist();
 
@@ -149,12 +149,12 @@ describe("News", () => {
 
 		await waitFor(() => {
 			expect(queryAllByTestId("NewsCard")).toHaveLength(0);
-			expect(queryAllByTestId("News__empty-results")).toHaveLength(1);
+			expect(queryAllByTestId("EmptyResults")).toHaveLength(1);
 		});
 	});
 
 	it("should filter results based on category query and asset", async () => {
-		const { getAllByTestId, getByTestId, asFragment } = renderWithRouter(
+		const { getAllByTestId, getByTestId, getByText, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/news">
 				<News />
 			</Route>,
@@ -174,8 +174,36 @@ describe("News", () => {
 					value: "Hacking",
 				},
 			});
-			fireEvent.click(getByTestId(`NewsOptions__category-${translations.CATEGORIES.TECHNICAL}`));
+		});
+
+		for (const category of ["Marketing", "Community", "Emergency"]) {
+			act(() => {
+				fireEvent.click(getByTestId(`NewsOptions__category-${category}`));
+			});
+		}
+
+		act(() => {
 			fireEvent.click(getByTestId("network__option--0"));
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("NewsOptions__submit"));
+		});
+
+		await waitFor(() => {
+			expect(getAllByTestId("NewsCard")).toHaveLength(1);
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.change(getByTestId("NewsOptions__search"), {
+				target: {
+					value: "",
+				},
+			});
+
+			fireEvent.click(getByText(commonTranslations.SELECT_ALL));
 		});
 
 		act(() => {

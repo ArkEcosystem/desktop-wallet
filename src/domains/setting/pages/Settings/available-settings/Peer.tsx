@@ -4,20 +4,14 @@ import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
-import { useActiveProfile } from "app/hooks/env";
 import { PeerList } from "domains/setting/components/PeerList";
 import { networks, peers } from "domains/setting/data";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type PeerProps = {
-	formConfig: any;
-	onSubmit?: any;
-};
+import { SettingsProps } from "../Settings.models";
 
-export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const activeProfile = useActiveProfile()!;
+export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();
 
 	const peerItems = [
@@ -39,11 +33,15 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 		},
 	];
 
+	const handleSubmit = () => {
+		onSuccess(t("SETTINGS.PEERS.SUCCESS"));
+	};
+
 	return (
 		<>
 			<Header title={t("SETTINGS.PEERS.TITLE")} subtitle={t("SETTINGS.PEERS.SUBTITLE")} />
 
-			<Form id="peer-settings__form" context={formConfig.context} onSubmit={onSubmit} className="mt-8">
+			<Form id="peer-settings__form" context={formConfig.context} onSubmit={handleSubmit} className="mt-8">
 				<ListDivided items={peerItems} />
 
 				<div className="pt-8">
@@ -55,7 +53,9 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 				</div>
 
 				<div className="flex justify-end w-full">
-					<Button>{t("COMMON.SAVE")}</Button>
+					<Button data-testid="Peer-settings__submit-button" type="submit">
+						{t("COMMON.SAVE")}
+					</Button>
 				</div>
 			</Form>
 		</>

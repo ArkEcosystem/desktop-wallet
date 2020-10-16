@@ -1,5 +1,9 @@
 body {
-	@apply antialiased text-base font-sans bg-theme-background text-theme-text;
+	@apply antialiased text-base font-sans;
+}
+
+main {
+	@apply bg-theme-background text-theme-text;
 }
 
 .link {
@@ -8,4 +12,8 @@ body {
 
 .link:hover {
 	@apply text-theme-primary-500;
+}
+
+.important\:bottom-0 {
+	bottom: 0 !important;
 }

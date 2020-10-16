@@ -5,18 +5,77 @@ exports[`DelegateRowItem should render 1`] = `
   <table>
     <tbody>
       <tr
-        class="border-b border-dashed border-theme-neutral-light"
-        data-testid="DelegateRowItem"
+        class="sc-AxheI kPnUtS group"
+        data-testid="TableRow"
       >
         <td
-          class="w-24 py-6"
-          data-testid="DelegateRowItem__address"
+          class="w-24"
         >
           <div
-            class="flex items-center"
+            class="sc-AxgMl eObzhI"
           >
-            <div
-              class="sc-AxirZ cZokSJ border-theme-neutral-800"
+            <span
+              class="flex items-center"
+              data-testid="DelegateRowItem__address"
+            >
+              <div
+                class="sc-AxirZ fFfSST border-theme-neutral-800"
+              >
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    business.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                    title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  />
+                </div>
+              </div>
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold"
+          >
+            <span
+              data-testid="DelegateRowItem__username"
+            >
+              testwallet2
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark"
+          >
+            <span
+              data-testid="DelegateRowItem__rank"
+            >
+              #
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold justify-center text-theme-primary"
+          >
+            <span
+              data-testid="DelegateRowItem__msq"
             >
               <div
                 class="sc-AxiKw fFXzuz"
@@ -24,129 +83,76 @@ exports[`DelegateRowItem should render 1`] = `
                 width="22"
               >
                 <svg>
-                  business.svg
+                  msq.svg
                 </svg>
               </div>
-            </div>
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full"
-              >
-                <img
-                  alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                  title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                />
-              </div>
-            </div>
+            </span>
           </div>
         </td>
-        <td
-          class="font-semibold"
-          data-testid="DelegateRowItem__username"
-        >
-          <span>
-            testwallet2
-          </span>
-        </td>
-        <td
-          class="font-semibold text-theme-neutral-dark"
-          data-testid="DelegateRowItem__rank"
-        >
-          <span>
-            #
-          </span>
-        </td>
-        <td
-          class="font-semibold text-center text-theme-primary"
-          data-testid="DelegateRowItem__msq"
-        >
-          <span
-            class="flex justify-center"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu text-theme-neutral-light justify-center"
           >
-            <div
-              class="sc-AxiKw fFXzuz"
-              height="22"
-              width="22"
+            <span
+              data-testid="DelegateRowItem__status"
             >
-              <svg>
-                msq.svg
-              </svg>
-            </div>
-          </span>
+              <div
+                class="sc-AxiKw dzBdqj text-theme-neutral"
+                height="1em"
+                width="1em"
+              />
+            </span>
+          </div>
         </td>
-        <td
-          class="text-theme-neutral-light"
-          data-testid="DelegateRowItem__status"
-        >
-          <span
-            class="flex justify-center"
-          >
-            <div
-              class="sc-AxiKw dzBdqj ml-2 text-theme-neutral"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                status-clock.svg
-              </svg>
-            </div>
-          </span>
-        </td>
-        <td
-          class="text-theme-neutral-light"
-          data-testid="DelegateRowItem__forged"
-        >
-          <span
-            class="flex justify-end"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark justify-end"
           >
             <span
               class="whitespace-no-wrap"
-            >
-              2,450.643 Ѧ
-            </span>
-          </span>
-        </td>
-        <td
-          class="font-semibold text-theme-neutral-dark"
-          data-testid="DelegateRowItem__votes"
-        >
-          <div
-            class="flex items-center justify-end"
-          >
-            <small
-              class="text-theme-neutral"
-            >
-              2,43%
-            </small>
-            <span
-              class="ml-1 whitespace-no-wrap"
+              data-testid="DelegateRowItem__forged"
             >
               2,450.643 Ѧ
             </span>
           </div>
         </td>
-        <td
-          class="align-middle"
-          data-testid="DelegateRowItem__actions"
-        >
-          <span
-            class="flex justify-end"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark justify-end"
           >
-            <button
-              class="sc-AxjAm bXCWLY ml-16"
-              color="primary"
-              type="button"
+            <span
+              data-testid="DelegateRowItem__votes"
+            >
+              <small
+                class="text-theme-neutral"
+              >
+                2,43%
+              </small>
+              <span
+                class="ml-1 whitespace-no-wrap"
+              >
+                2,450.643 Ѧ
+              </span>
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-22"
+        >
+          <div
+            class="sc-AxgMl iwmQfA justify-end"
+          >
+            <span
+              data-testid="DelegateRowItem__actions"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
-                <div
-                  class="float-right outline-none cursor-pointer focus:outline-none"
+                <button
+                  class="sc-AxjAm bIQEgQ"
+                  color="primary"
+                  type="button"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -157,10 +163,10 @@ exports[`DelegateRowItem should render 1`] = `
                       settings.svg
                     </svg>
                   </div>
-                </div>
+                </button>
               </div>
-            </button>
-          </span>
+            </span>
+          </div>
         </td>
       </tr>
     </tbody>
@@ -173,18 +179,77 @@ exports[`DelegateRowItem should render all columns 1`] = `
   <table>
     <tbody>
       <tr
-        class="border-b border-dashed border-theme-neutral-light"
-        data-testid="DelegateRowItem"
+        class="sc-AxheI kPnUtS group"
+        data-testid="TableRow"
       >
         <td
-          class="w-24 py-6"
-          data-testid="DelegateRowItem__address"
+          class="w-24"
         >
           <div
-            class="flex items-center"
+            class="sc-AxgMl eObzhI"
           >
-            <div
-              class="sc-AxirZ cZokSJ border-theme-neutral-800"
+            <span
+              class="flex items-center"
+              data-testid="DelegateRowItem__address"
+            >
+              <div
+                class="sc-AxirZ fFfSST border-theme-neutral-800"
+              >
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    business.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                    title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  />
+                </div>
+              </div>
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold"
+          >
+            <span
+              data-testid="DelegateRowItem__username"
+            >
+              testwallet2
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark"
+          >
+            <span
+              data-testid="DelegateRowItem__rank"
+            >
+              #
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold justify-center text-theme-primary"
+          >
+            <span
+              data-testid="DelegateRowItem__msq"
             >
               <div
                 class="sc-AxiKw fFXzuz"
@@ -192,129 +257,76 @@ exports[`DelegateRowItem should render all columns 1`] = `
                 width="22"
               >
                 <svg>
-                  business.svg
+                  msq.svg
                 </svg>
               </div>
-            </div>
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full"
-              >
-                <img
-                  alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                  title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                />
-              </div>
-            </div>
+            </span>
           </div>
         </td>
-        <td
-          class="font-semibold"
-          data-testid="DelegateRowItem__username"
-        >
-          <span>
-            testwallet2
-          </span>
-        </td>
-        <td
-          class="font-semibold text-theme-neutral-dark"
-          data-testid="DelegateRowItem__rank"
-        >
-          <span>
-            #
-          </span>
-        </td>
-        <td
-          class="font-semibold text-center text-theme-primary"
-          data-testid="DelegateRowItem__msq"
-        >
-          <span
-            class="flex justify-center"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu text-theme-neutral-light justify-center"
           >
-            <div
-              class="sc-AxiKw fFXzuz"
-              height="22"
-              width="22"
+            <span
+              data-testid="DelegateRowItem__status"
             >
-              <svg>
-                msq.svg
-              </svg>
-            </div>
-          </span>
+              <div
+                class="sc-AxiKw dzBdqj text-theme-neutral"
+                height="1em"
+                width="1em"
+              />
+            </span>
+          </div>
         </td>
-        <td
-          class="text-theme-neutral-light"
-          data-testid="DelegateRowItem__status"
-        >
-          <span
-            class="flex justify-center"
-          >
-            <div
-              class="sc-AxiKw dzBdqj ml-2 text-theme-neutral"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                status-clock.svg
-              </svg>
-            </div>
-          </span>
-        </td>
-        <td
-          class="text-theme-neutral-light"
-          data-testid="DelegateRowItem__forged"
-        >
-          <span
-            class="flex justify-end"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark justify-end"
           >
             <span
               class="whitespace-no-wrap"
-            >
-              2,450.643 Ѧ
-            </span>
-          </span>
-        </td>
-        <td
-          class="font-semibold text-theme-neutral-dark"
-          data-testid="DelegateRowItem__votes"
-        >
-          <div
-            class="flex items-center justify-end"
-          >
-            <small
-              class="text-theme-neutral"
-            >
-              2,43%
-            </small>
-            <span
-              class="ml-1 whitespace-no-wrap"
+              data-testid="DelegateRowItem__forged"
             >
               2,450.643 Ѧ
             </span>
           </div>
         </td>
-        <td
-          class="align-middle"
-          data-testid="DelegateRowItem__actions"
-        >
-          <span
-            class="flex justify-end"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark justify-end"
           >
-            <button
-              class="sc-AxjAm bXCWLY ml-16"
-              color="primary"
-              type="button"
+            <span
+              data-testid="DelegateRowItem__votes"
+            >
+              <small
+                class="text-theme-neutral"
+              >
+                2,43%
+              </small>
+              <span
+                class="ml-1 whitespace-no-wrap"
+              >
+                2,450.643 Ѧ
+              </span>
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-22"
+        >
+          <div
+            class="sc-AxgMl iwmQfA justify-end"
+          >
+            <span
+              data-testid="DelegateRowItem__actions"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
-                <div
-                  class="float-right outline-none cursor-pointer focus:outline-none"
+                <button
+                  class="sc-AxjAm bIQEgQ"
+                  color="primary"
+                  type="button"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -325,10 +337,10 @@ exports[`DelegateRowItem should render all columns 1`] = `
                       settings.svg
                     </svg>
                   </div>
-                </div>
+                </button>
               </div>
-            </button>
-          </span>
+            </span>
+          </div>
         </td>
       </tr>
     </tbody>
@@ -341,18 +353,77 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
   <table>
     <tbody>
       <tr
-        class="border-b border-dashed border-theme-neutral-light"
-        data-testid="DelegateRowItem"
+        class="sc-AxheI kPnUtS group"
+        data-testid="TableRow"
       >
         <td
-          class="w-24 py-6"
-          data-testid="DelegateRowItem__address"
+          class="w-24"
         >
           <div
-            class="flex items-center"
+            class="sc-AxgMl eObzhI"
           >
-            <div
-              class="sc-AxirZ cZokSJ border-theme-neutral-800"
+            <span
+              class="flex items-center"
+              data-testid="DelegateRowItem__address"
+            >
+              <div
+                class="sc-AxirZ fFfSST border-theme-neutral-800"
+              >
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    business.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                    title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  />
+                </div>
+              </div>
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold"
+          >
+            <span
+              data-testid="DelegateRowItem__username"
+            >
+              testwallet2
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark"
+          >
+            <span
+              data-testid="DelegateRowItem__rank"
+            >
+              #
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold justify-center text-theme-primary"
+          >
+            <span
+              data-testid="DelegateRowItem__msq"
             >
               <div
                 class="sc-AxiKw fFXzuz"
@@ -360,129 +431,80 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
                 width="22"
               >
                 <svg>
-                  business.svg
+                  msq.svg
                 </svg>
               </div>
-            </div>
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full"
-              >
-                <img
-                  alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                  title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                />
-              </div>
-            </div>
+            </span>
           </div>
         </td>
-        <td
-          class="font-semibold"
-          data-testid="DelegateRowItem__username"
-        >
-          <span>
-            testwallet2
-          </span>
-        </td>
-        <td
-          class="font-semibold text-theme-neutral-dark"
-          data-testid="DelegateRowItem__rank"
-        >
-          <span>
-            #
-          </span>
-        </td>
-        <td
-          class="font-semibold text-center text-theme-primary"
-          data-testid="DelegateRowItem__msq"
-        >
-          <span
-            class="flex justify-center"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu text-theme-neutral-light justify-center"
           >
-            <div
-              class="sc-AxiKw fFXzuz"
-              height="22"
-              width="22"
+            <span
+              data-testid="DelegateRowItem__status"
             >
-              <svg>
-                msq.svg
-              </svg>
-            </div>
-          </span>
+              <div
+                class="sc-AxiKw iRsrJT text-theme-success"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  checkmark.svg
+                </svg>
+              </div>
+            </span>
+          </div>
         </td>
-        <td
-          class="text-theme-neutral-light"
-          data-testid="DelegateRowItem__status"
-        >
-          <span
-            class="flex justify-center"
-          >
-            <div
-              class="sc-AxiKw iRsrJT ml-1 text-theme-success"
-              height="30"
-              width="30"
-            >
-              <svg>
-                checkmark.svg
-              </svg>
-            </div>
-          </span>
-        </td>
-        <td
-          class="text-theme-neutral-light"
-          data-testid="DelegateRowItem__forged"
-        >
-          <span
-            class="flex justify-end"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark justify-end"
           >
             <span
               class="whitespace-no-wrap"
-            >
-              2,450.643 Ѧ
-            </span>
-          </span>
-        </td>
-        <td
-          class="font-semibold text-theme-neutral-dark"
-          data-testid="DelegateRowItem__votes"
-        >
-          <div
-            class="flex items-center justify-end"
-          >
-            <small
-              class="text-theme-neutral"
-            >
-              2,43%
-            </small>
-            <span
-              class="ml-1 whitespace-no-wrap"
+              data-testid="DelegateRowItem__forged"
             >
               2,450.643 Ѧ
             </span>
           </div>
         </td>
-        <td
-          class="align-middle"
-          data-testid="DelegateRowItem__actions"
-        >
-          <span
-            class="flex justify-end"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark justify-end"
           >
-            <button
-              class="sc-AxjAm bXCWLY ml-16"
-              color="primary"
-              type="button"
+            <span
+              data-testid="DelegateRowItem__votes"
+            >
+              <small
+                class="text-theme-neutral"
+              >
+                2,43%
+              </small>
+              <span
+                class="ml-1 whitespace-no-wrap"
+              >
+                2,450.643 Ѧ
+              </span>
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-22"
+        >
+          <div
+            class="sc-AxgMl iwmQfA justify-end"
+          >
+            <span
+              data-testid="DelegateRowItem__actions"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
-                <div
-                  class="float-right outline-none cursor-pointer focus:outline-none"
+                <button
+                  class="sc-AxjAm bIQEgQ"
+                  color="primary"
+                  type="button"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -493,10 +515,10 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
                       settings.svg
                     </svg>
                   </div>
-                </div>
+                </button>
               </div>
-            </button>
-          </span>
+            </span>
+          </div>
         </td>
       </tr>
     </tbody>
@@ -509,18 +531,77 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
   <table>
     <tbody>
       <tr
-        class="border-b border-dashed border-theme-neutral-light"
-        data-testid="DelegateRowItem"
+        class="sc-AxheI kPnUtS group"
+        data-testid="TableRow"
       >
         <td
-          class="w-24 py-6"
-          data-testid="DelegateRowItem__address"
+          class="w-24"
         >
           <div
-            class="flex items-center"
+            class="sc-AxgMl eObzhI"
           >
-            <div
-              class="sc-AxirZ cZokSJ border-theme-neutral-800"
+            <span
+              class="flex items-center"
+              data-testid="DelegateRowItem__address"
+            >
+              <div
+                class="sc-AxirZ fFfSST border-theme-neutral-800"
+              >
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    business.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                    title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  />
+                </div>
+              </div>
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold"
+          >
+            <span
+              data-testid="DelegateRowItem__username"
+            >
+              testwallet2
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark"
+          >
+            <span
+              data-testid="DelegateRowItem__rank"
+            >
+              #
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold justify-center text-theme-primary"
+          >
+            <span
+              data-testid="DelegateRowItem__msq"
             >
               <div
                 class="sc-AxiKw fFXzuz"
@@ -528,129 +609,76 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
                 width="22"
               >
                 <svg>
-                  business.svg
+                  msq.svg
                 </svg>
               </div>
-            </div>
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full"
-              >
-                <img
-                  alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                  title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                />
-              </div>
-            </div>
+            </span>
           </div>
         </td>
-        <td
-          class="font-semibold"
-          data-testid="DelegateRowItem__username"
-        >
-          <span>
-            testwallet2
-          </span>
-        </td>
-        <td
-          class="font-semibold text-theme-neutral-dark"
-          data-testid="DelegateRowItem__rank"
-        >
-          <span>
-            #
-          </span>
-        </td>
-        <td
-          class="font-semibold text-center text-theme-primary"
-          data-testid="DelegateRowItem__msq"
-        >
-          <span
-            class="flex justify-center"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu text-theme-neutral-light justify-center"
           >
-            <div
-              class="sc-AxiKw fFXzuz"
-              height="22"
-              width="22"
+            <span
+              data-testid="DelegateRowItem__status"
             >
-              <svg>
-                msq.svg
-              </svg>
-            </div>
-          </span>
+              <div
+                class="sc-AxiKw dzBdqj text-theme-neutral"
+                height="1em"
+                width="1em"
+              />
+            </span>
+          </div>
         </td>
-        <td
-          class="text-theme-neutral-light"
-          data-testid="DelegateRowItem__status"
-        >
-          <span
-            class="flex justify-center"
-          >
-            <div
-              class="sc-AxiKw dzBdqj ml-2 text-theme-neutral"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                status-clock.svg
-              </svg>
-            </div>
-          </span>
-        </td>
-        <td
-          class="text-theme-neutral-light"
-          data-testid="DelegateRowItem__forged"
-        >
-          <span
-            class="flex justify-end"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark justify-end"
           >
             <span
               class="whitespace-no-wrap"
-            >
-              2,450.643 Ѧ
-            </span>
-          </span>
-        </td>
-        <td
-          class="font-semibold text-theme-neutral-dark"
-          data-testid="DelegateRowItem__votes"
-        >
-          <div
-            class="flex items-center justify-end"
-          >
-            <small
-              class="text-theme-neutral"
-            >
-              2,43%
-            </small>
-            <span
-              class="ml-1 whitespace-no-wrap"
+              data-testid="DelegateRowItem__forged"
             >
               2,450.643 Ѧ
             </span>
           </div>
         </td>
-        <td
-          class="align-middle"
-          data-testid="DelegateRowItem__actions"
-        >
-          <span
-            class="flex justify-end"
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-semibold text-theme-neutral-dark justify-end"
           >
-            <button
-              class="sc-AxjAm bXCWLY ml-16"
-              color="primary"
-              type="button"
+            <span
+              data-testid="DelegateRowItem__votes"
+            >
+              <small
+                class="text-theme-neutral"
+              >
+                2,43%
+              </small>
+              <span
+                class="ml-1 whitespace-no-wrap"
+              >
+                2,450.643 Ѧ
+              </span>
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-22"
+        >
+          <div
+            class="sc-AxgMl iwmQfA justify-end"
+          >
+            <span
+              data-testid="DelegateRowItem__actions"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
-                <div
-                  class="float-right outline-none cursor-pointer focus:outline-none"
+                <button
+                  class="sc-AxjAm bIQEgQ"
+                  color="primary"
+                  type="button"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -661,10 +689,10 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
                       settings.svg
                     </svg>
                   </div>
-                </div>
+                </button>
               </div>
-            </button>
-          </span>
+            </span>
+          </div>
         </td>
       </tr>
     </tbody>

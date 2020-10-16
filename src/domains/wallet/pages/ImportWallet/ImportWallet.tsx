@@ -1,11 +1,13 @@
-import { NetworkData, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
+import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -20,7 +22,7 @@ export const ImportWallet = () => {
 	const [walletData, setWalletData] = useState<ReadWriteWallet | null>(null);
 
 	const history = useHistory();
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();
 
@@ -28,6 +30,8 @@ export const ImportWallet = () => {
 
 	const form = useForm({ mode: "onChange" });
 	const { formState } = form;
+	const { isSubmitting, isValid } = formState;
+
 	const nameMaxLength = 42;
 
 	const crumbs = [
@@ -45,13 +49,41 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab + 1);
 	};
 
+	const syncNewWallet = async (network: Coins.Network, wallet: ReadWriteWallet) => {
+		const votes = async () => {
+			if (network.allowsVoting()) {
+				try {
+					env.delegates().all(network.coin(), network.id());
+				} catch {
+					// Sync network delegates for the first time
+					await env.delegates().sync(network.coin(), network.id());
+				}
+				await wallet.syncVotes();
+			}
+		};
+
+		const fees = async () => {
+			try {
+				env.fees().all(network.coin(), network.id());
+			} catch {
+				// Sync network fees for the first time
+				await env.fees().sync(network.coin(), network.id());
+			}
+		};
+
+		const rates = () => env.exchangeRates().syncCoinByProfile(activeProfile, wallet.currency(), [wallet]);
+
+		await Promise.allSettled([votes(), rates(), fees()]);
+		await persist();
+	};
+
 	const handleSubmit = async ({
 		network,
 		passphrase,
 		address,
 		name,
 	}: {
-		network: NetworkData;
+		network: Coins.Network;
 		passphrase: string;
 		address: string;
 		name: string;
@@ -66,9 +98,10 @@ export const ImportWallet = () => {
 			}
 
 			setWalletData(wallet);
-
-			await wallet.syncVotes();
 			await persist();
+
+			// Run in background
+			syncNewWallet(network, wallet);
 
 			setActiveTab(activeTab + 1);
 		} else {
@@ -94,7 +127,7 @@ export const ImportWallet = () => {
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={3} activeIndex={activeTab} />
 
-						<div className="mt-4">
+						<div className="mt-8">
 							<TabPanel tabId={1}>
 								<FirstStep />
 							</TabPanel>
@@ -108,7 +141,7 @@ export const ImportWallet = () => {
 							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < 3 && (
 									<Button
-										disabled={activeTab === 1 || formState.isSubmitting}
+										disabled={activeTab === 1 || isSubmitting}
 										variant="plain"
 										onClick={handleBack}
 										data-testid="ImportWallet__back-button"
@@ -119,7 +152,7 @@ export const ImportWallet = () => {
 
 								{activeTab === 1 && (
 									<Button
-										disabled={!formState.isValid}
+										disabled={!isValid}
 										onClick={handleNext}
 										data-testid="ImportWallet__continue-button"
 									>
@@ -129,21 +162,27 @@ export const ImportWallet = () => {
 
 								{activeTab === 2 && (
 									<Button
-										disabled={!formState.isValid || formState.isSubmitting}
+										disabled={!isValid || isSubmitting}
 										type="submit"
-										data-testid="ImportWallet__gotowallet-button"
+										data-testid="ImportWallet__continue-button"
 									>
-										{t("COMMON.GO_TO_WALLET")}
+										{isSubmitting ? (
+											<span className="px-3">
+												<Spinner size="sm" />
+											</span>
+										) : (
+											t("COMMON.CONTINUE")
+										)}
 									</Button>
 								)}
 
 								{activeTab === 3 && (
 									<Button
-										disabled={formState.isSubmitting}
+										disabled={isSubmitting}
 										type="submit"
-										data-testid="ImportWallet__save-button"
+										data-testid="ImportWallet__gotowallet-button"
 									>
-										{t("COMMON.SAVE_FINISH")}
+										{t("COMMON.GO_TO_WALLET")}
 									</Button>
 								)}
 							</div>

@@ -48,7 +48,7 @@ test("should open and cancel contact update modal", async (t) => {
 		.notOk();
 });
 
-test("should succesfully update contact", async (t) => {
+test("should successfully update contact", async (t) => {
 	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Brian").exists).ok();
 	await t
 		.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Anne Doe").exists)
@@ -101,6 +101,7 @@ test("should error for invalid address", async (t) => {
 		)
 		.ok();
 
+	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#ContactForm__network-item-1"));
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "invalid address");
@@ -135,6 +136,7 @@ test("should error on duplicate address addition", async (t) => {
 		)
 		.ok();
 
+	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#ContactForm__network-item-1"));
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
@@ -164,6 +166,7 @@ test("should error if contact name is already taken", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, newContact);
 
+	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector("#ContactForm__network-item-1"));
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');

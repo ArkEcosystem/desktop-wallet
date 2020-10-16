@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResetProfile should render 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
+  >
+    <div
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="sc-AxiKw cTRlJa absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      data-testid="modal__inner"
+    >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Reset Profile Data
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <svg
+            class="w-3/5 m-auto my-8"
+          >
+            delete-banner.svg
+          </svg>
+          <div
+            class="mt-1 text-theme-neutral-dark"
+          >
+            Do you really want to reset this profile? Once reset, you will not be able to restore it.
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <button
+              class="sc-AxjAm hXnHfM"
+              color="primary"
+              data-testid="ResetProfile__cancel-button"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="sc-AxjAm kbZyZT"
+              color="primary"
+              data-testid="ResetProfile__submit-button"
+              type="submit"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  reset.svg
+                </svg>
+              </div>
+              <span>
+                Reset Data
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

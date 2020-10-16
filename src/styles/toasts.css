@@ -1,11 +1,11 @@
 @import "react-toastify/dist/ReactToastify.css";
 
 .Toastify__toast-container {
-	@apply w-128 p-0 mr-10 mb-10;
+	@apply max-w-128 p-0 mr-10 mb-10;
 }
 
 .Toastify__toast {
-	@apply p-0 rounded shadow-md text-theme-text;
+	@apply p-0 rounded shadow-md text-sm text-theme-text;
 	min-height: 3.5rem;
 }
 

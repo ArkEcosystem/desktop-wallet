@@ -6,7 +6,9 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+// @ts-ignore
+import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
 // import { XLM } from "@arkecosystem/platform-sdk-xlm";
 // import { XMR } from "@arkecosystem/platform-sdk-xmr";
@@ -14,71 +16,82 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { PluginManagerWrapper, usePluginManager } from "plugins/use-manager";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import { LedgerListener } from "domains/transaction/components/LedgerListener";
+import electron from "electron";
+import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { matchPath, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
+import { Theme } from "types";
 
 import { middlewares, RouterView, routes } from "../router";
-import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
-import { useNetworkStatus } from "./hooks";
+import { EnvironmentProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
+import { useDarkMode, useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
-import { httpClient, Scheduler } from "./services";
+import { httpClient } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production";
 
-type Props = {
-	syncInterval?: number;
-};
-
-const Main = ({ syncInterval }: Props) => {
+const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
-
-	const { pathname } = useLocation();
+	const location = useLocation();
+	const { theme, setTheme } = useThemeContext();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 	const pluginManager = usePluginManager();
+	const { start, runAll } = useEnvSynchronizer();
+
+	const pathname = (location as any).location?.pathname || location.pathname;
+	const nativeTheme = electron.remote.nativeTheme;
+
+	const isDark = useDarkMode();
+
+	useDeeplink();
 
 	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [pathname]);
+		if (!showSplash) {
+			start();
+		}
+	}, [showSplash, start]);
+
+	const match = useMemo(() => matchPath(pathname, { path: "/profiles/:profileId" }), [pathname]);
+
+	useEffect(() => {
+		const profileId = (match?.params as any)?.profileId;
+
+		if (profileId && profileId !== "create" && env.profiles().count()) {
+			const profileTheme = env.profiles().findById(profileId).settings().get<Theme>(ProfileSetting.Theme)!;
+			if (profileTheme !== theme) {
+				nativeTheme.themeSource = profileTheme;
+				setTheme(profileTheme);
+			}
+		} else {
+			nativeTheme.themeSource = "system";
+			setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");
+		}
+	}, [env, match, nativeTheme, theme, setTheme, showSplash]);
 
 	useLayoutEffect(() => {
-		const syncDelegates = async () => await env.delegates().syncAll();
-		const syncFees = async () => await env.fees().syncAll();
-		const syncExchangeRates = async () => await env.exchangeRates().syncAll();
-		const syncWallets = async () => await env.wallets().syncAll();
+		setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+	useLayoutEffect(() => {
 		const boot = async () => {
-			const scheduler = new Scheduler(syncInterval);
-
 			/* istanbul ignore next */
-			const shouldUseFixture: boolean =
-				process.env.REACT_APP_BUILD_MODE === "demo" ||
-				// TestCafe doesn't expose environment variables.
-				(process.env.NODE_ENV === "production" && process.env.PUBLIC_URL === ".");
-
-			await pluginManager.boot();
-
-			await env.verify(shouldUseFixture ? fixtureData : undefined);
+			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
+				await env.verify(shouldUseFixture ? fixtureData : undefined);
 			await env.boot();
-			await Promise.allSettled([syncDelegates(), syncWallets(), syncFees(), syncExchangeRates()]);
+			await runAll();
 			await persist();
-
-			scheduler.schedule([syncDelegates, syncFees, syncWallets, syncExchangeRates], persist);
 
 			setShowSplash(false);
 		};
 
 		boot();
-	}, [env, persist, syncInterval]);
-
-	if (showSplash) {
-		return <Splash />;
-	}
+	}, [env, persist, runAll]);
 
 	/* istanbul ignore next */
 	const className = __DEV__ ? "debug-screens" : "";
@@ -90,29 +103,32 @@ const Main = ({ syncInterval }: Props) => {
 	 */
 	const pluginsRoutes = pluginManager.services().route().all();
 	const allRoutes = [...pluginsRoutes, ...routes];
+	const renderContent = () => {
+		if (showSplash) {
+			return <Splash />;
+		}
+
+		if (!isOnline) {
+			return <Offline />;
+		}
+
+		return <RouterView
+			routes={allRoutes}
+			middlewares={middlewares}
+			wrapper={(props) => <PluginManagerWrapper pluginManager={pluginManager} {...props} />}
+		/>;
+	};
 
 	return (
-		<main className={className}>
+		<main className={`theme-${isDark ? "dark" : "light"} ${className}`} data-testid="Main">
 			<ToastContainer />
 
-			{isOnline ? (
-				<RouterView
-					routes={allRoutes}
-					middlewares={middlewares}
-					wrapper={(props) => <PluginManagerWrapper pluginManager={pluginManager} {...props} />}
-				/>
-			) : (
-				<Offline />
-			)}
+			{renderContent()}
 		</main>
 	);
 };
 
-Main.defaultProps = {
-	syncInterval: 300000,
-};
-
-export const App = ({ syncInterval }: Props) => {
+export const App = () => {
 	/**
 	 * Ensure that the Environment object will not be recreated when the state changes,
 	 * as the data is stored in memory by the `DataRepository`.
@@ -146,13 +162,13 @@ export const App = ({ syncInterval }: Props) => {
 		<ErrorBoundary FallbackComponent={ApplicationError}>
 			<I18nextProvider i18n={i18n}>
 				<EnvironmentProvider env={env}>
-					<Main syncInterval={syncInterval} />
+					<LedgerListener transport={LedgerTransportNodeHID} />
+
+					<ThemeProvider>
+						<Main />
+					</ThemeProvider>
 				</EnvironmentProvider>
 			</I18nextProvider>
 		</ErrorBoundary>
 	);
-};
-
-App.defaultProps = {
-	syncInterval: 300000,
 };

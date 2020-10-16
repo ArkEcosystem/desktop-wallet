@@ -3,7 +3,7 @@ import React from "react";
 import { Select } from "./SelectDropdown";
 
 export default {
-	title: "App / Components / Select",
+	title: "App / Components / Select Dropdown",
 };
 
 export const Dropdown = () => {
@@ -21,16 +21,18 @@ export const Dropdown = () => {
 			value: "3",
 		},
 	];
+
 	return (
 		<div className="max-w-xs space-y-4">
-			<Select placeholder="Select option" options={options} />
-			<Select placeholder="Invalid" isInvalid options={options} />
-			<Select placeholder="Disabled" disabled options={options} />
+			<Select options={options} placeholder="Select option" />
+			<Select options={options} placeholder="Invalid" isInvalid />
+			<Select options={options} placeholder="Disabled" disabled />
+
 			<div className="mt-4">With default value</div>
 			<Select placeholder="Disabled" options={options} defaultValue="3" />
 
 			<div className="mt-4">With default value (disabled)</div>
-			<Select placeholder="Disabled" disabled options={options} defaultValue="3" />
+			<Select options={options} defaultValue="3" placeholder="Disabled" disabled />
 		</div>
 	);
 };

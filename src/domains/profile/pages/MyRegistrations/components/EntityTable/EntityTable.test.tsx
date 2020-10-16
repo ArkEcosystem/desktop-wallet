@@ -13,8 +13,8 @@ describe("BusinessRegistrationsTable", () => {
 		nock("https://dwallets.ark.io")
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
 			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"))
-			.post("/api/transactions/search")
-			.query(true)
+			.get("/api/transactions")
+			.query((params) => !!params.senderPublicKey)
 			.reply(200, require("tests/fixtures/registrations/businesses.json"));
 
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -25,19 +25,24 @@ describe("BusinessRegistrationsTable", () => {
 
 	it("should render empty state", () => {
 		const { getAllByTestId, asFragment } = render(
-			<EntityTable entities={[]} title="Entity table" nameColumnHeader="Entity name" />,
+			<EntityTable entities={[]} title="Entity table" type="entity" nameColumnHeader="Entity name" />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();
-		expect(() => getAllByTestId("EntityTableRowItem")).toThrow(/Unable to find an element by/);
+		expect(() => getAllByTestId("TableRow")).toThrow(/Unable to find an element by/);
 	});
 
 	it("should render registrations", async () => {
 		const { getAllByTestId, asFragment } = render(
-			<EntityTable entities={entityRegistrations} title="Entity table" nameColumnHeader="Entity name" />,
+			<EntityTable
+				entities={entityRegistrations}
+				title="Entity table"
+				type="entity"
+				nameColumnHeader="Entity name"
+			/>,
 		);
 
-		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -47,57 +52,29 @@ describe("BusinessRegistrationsTable", () => {
 			<EntityTable
 				entities={entityRegistrations}
 				title="Entity table"
+				type="entity"
 				nameColumnHeader="Entity name"
 				onAction={onAction}
 			/>,
 		);
 		expect(asFragment()).toMatchSnapshot();
 
-		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 
-		const dropdownToggle = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__option--1");
+		const resignOption = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--0");
 		act(() => {
 			fireEvent.click(resignOption);
 		});
 
 		expect(onAction).toBeCalledWith({
 			walletId: entityRegistrations[0].wallet().id(),
-			txId: entityRegistrations[0].id(),
-			action: "resign",
-		});
-	});
-
-	it("should handle resign dropdown action", async () => {
-		const onAction = jest.fn();
-		const { asFragment, getAllByTestId } = render(
-			<EntityTable
-				entities={entityRegistrations}
-				title="Entity table"
-				nameColumnHeader="Entity name"
-				onAction={onAction}
-			/>,
-		);
-		expect(asFragment()).toMatchSnapshot();
-
-		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
-
-		const dropdownToggle = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__toggle");
-		act(() => {
-			fireEvent.click(dropdownToggle);
-		});
-
-		const resignOption = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__option--0");
-		act(() => {
-			fireEvent.click(resignOption);
-		});
-
-		expect(onAction).toBeCalledWith({
-			walletId: entityRegistrations[0].wallet().id(),
+			entity: entityRegistrations[0],
+			type: "entity",
 			txId: entityRegistrations[0].id(),
 			action: "update",
 		});

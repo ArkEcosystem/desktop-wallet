@@ -1,6 +1,16 @@
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
+const wallet = {
+	address: () => "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+	alias: () => "Test Wallet",
+	currency: () => "ARK",
+	exchangeCurrency: () => "BTC",
+	isDelegate: () => true,
+	isLedger: () => false,
+	isResignedDelegate: () => false,
+};
+
 export const TransactionFixture = {
 	id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 	blockId: () => "71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9",
@@ -13,6 +23,7 @@ export const TransactionFixture = {
 	recipient: () => "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 	recipients: () => [],
 	amount: () => BigNumber.make(100).times(1e8),
+	convertedAmount: () => BigNumber.ZERO,
 	fee: () => BigNumber.make(21).times(1e8),
 	memo: () => "Test",
 	asset: () => ({ a: "b" }),
@@ -37,15 +48,15 @@ export const TransactionFixture = {
 	isBusinessEntityRegistration: () => false,
 	isBusinessEntityResignation: () => false,
 	isBusinessEntityUpdate: () => false,
-	isDeveloperEntityRegistration: () => false,
-	isDeveloperEntityResignation: () => false,
-	isDeveloperEntityUpdate: () => false,
-	isCorePluginEntityRegistration: () => false,
-	isCorePluginEntityResignation: () => false,
-	isCorePluginEntityUpdate: () => false,
-	isDesktopPluginEntityRegistration: () => false,
-	isDesktopPluginEntityResignation: () => false,
-	isDesktopPluginEntityUpdate: () => false,
+	isProductEntityRegistration: () => false,
+	isProductEntityResignation: () => false,
+	isProductEntityUpdate: () => false,
+	isPluginEntityRegistration: () => false,
+	isPluginEntityResignation: () => false,
+	isPluginEntityUpdate: () => false,
+	isModuleEntityRegistration: () => false,
+	isModuleEntityResignation: () => false,
+	isModuleEntityUpdate: () => false,
 	isDelegateEntityRegistration: () => false,
 	isDelegateEntityResignation: () => false,
 	isDelegateEntityUpdate: () => false,
@@ -65,9 +76,11 @@ export const TransactionFixture = {
 	// @ts-ignore
 	explorerLink: () =>
 		"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+	explorerLinkForBlock: () =>
+		"https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9",
 	total: () => BigNumber.make(121).times(1e8),
 	convertedTotal: () => BigNumber.ZERO,
-	wallet: () => undefined,
+	wallet: () => wallet,
 	coin: () => undefined,
 	data: () => undefined,
 };

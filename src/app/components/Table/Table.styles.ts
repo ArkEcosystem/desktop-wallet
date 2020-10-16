@@ -5,14 +5,16 @@ export const defaultTableStyle = `
 		width: 100%;
 		border: none;
 
-		th {
-			margin: 0;
-			padding-bottom: 12px;
-			font-weight: 600;
+		thead {
+			th.hasBorder:not(:last-child):after {
+				content: "";
+			    height: 50%;
+			    position: absolute;
+			    right: 0;
+			    top: 25%;
+			    border-left-width: 1px;
+			    border-color: var(--theme-color-neutral-300);
+			}
 		}
-
-        tr:last-child, tr:last-child > td {
-            border-bottom: none;
-        }
 	}
 `;

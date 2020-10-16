@@ -13,6 +13,7 @@ type DeleteProfileProps = {
 
 export const DeleteProfile = ({ isOpen, onClose, onCancel, onDelete, profileId }: DeleteProfileProps) => {
 	const { t } = useTranslation();
+
 	const { env, persist } = useEnvironmentContext();
 
 	const handleDelete = async () => {

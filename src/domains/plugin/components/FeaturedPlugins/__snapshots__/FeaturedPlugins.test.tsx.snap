@@ -5,14 +5,14 @@ exports[`FeaturedPlugins should not render if not open 1`] = `<DocumentFragment 
 exports[`FeaturedPlugins should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxiKw jCpCzv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -68,18 +68,20 @@ exports[`FeaturedPlugins should render a modal 1`] = `
             class="mt-8 -mb-6"
           >
             <div
-              class="sc-AxhCb tChBQ"
+              class="sc-AxhCb ebDgDV -mt-3"
               role="table"
             >
               <table
+                cellpadding="0"
                 class="table-auto"
               >
                 <thead>
                   <tr
+                    class="border-b border-theme-neutral-300"
                     role="row"
                   >
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -93,7 +95,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -123,7 +125,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -153,7 +155,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -183,7 +185,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -213,7 +215,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
@@ -266,6 +268,15 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                             official-ark-plugin.svg
                           </svg>
                         </div>
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            grant.svg
+                          </svg>
+                        </div>
                       </div>
                     </td>
                     <td
@@ -315,7 +326,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       class="w-16"
                     >
                       <button
-                        class="sc-AxjAm fPpool"
+                        class="sc-AxjAm hXnHfM"
                         color="primary"
                         type="button"
                       >
@@ -398,7 +409,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       class="w-16"
                     >
                       <button
-                        class="sc-AxjAm fPpool"
+                        class="sc-AxjAm hXnHfM"
                         color="primary"
                         type="button"
                       >
@@ -481,7 +492,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       class="w-16"
                     >
                       <button
-                        class="sc-AxjAm fPpool"
+                        class="sc-AxjAm hXnHfM"
                         color="primary"
                         type="button"
                       >
@@ -573,7 +584,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       class="w-16"
                     >
                       <button
-                        class="sc-AxjAm fPpool"
+                        class="sc-AxjAm hXnHfM"
                         color="primary"
                         type="button"
                       >

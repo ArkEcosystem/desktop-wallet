@@ -6,8 +6,8 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useClipboard } from "app/hooks";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet, useClipboard } from "app/hooks";
+import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -15,7 +15,6 @@ import { useHistory } from "react-router-dom";
 
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
 import { FourthStep } from "./Step4";
 
 export const SendIpfs = () => {
@@ -34,7 +33,7 @@ export const SendIpfs = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearError, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -47,11 +46,11 @@ export const SendIpfs = () => {
 				t("TRANSACTION.INPUT_IPFS_HASH.VALIDATION.NOT_VALID").toString(),
 		});
 
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
@@ -59,8 +58,9 @@ export const SendIpfs = () => {
 	}, [activeWallet, networks, register, setValue, t]);
 
 	const submitForm = async () => {
-		clearError("mnemonic");
-		const { fee, mnemonic, senderAddress, hash } = getValues();
+		clearErrors("mnemonic");
+
+		const { fee, mnemonic, secondMnemonic, senderAddress, hash } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		try {
@@ -69,6 +69,7 @@ export const SendIpfs = () => {
 				from: senderAddress,
 				sign: {
 					mnemonic,
+					secondMnemonic,
 				},
 				data: {
 					hash,
@@ -86,7 +87,7 @@ export const SendIpfs = () => {
 			console.error("Could not create transaction: ", error);
 
 			setValue("mnemonic", "");
-			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	};
 
@@ -124,7 +125,7 @@ export const SendIpfs = () => {
 								<SecondStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<ThirdStep />
+								<AuthenticationStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<FourthStep transaction={transaction} senderWallet={activeWallet} />

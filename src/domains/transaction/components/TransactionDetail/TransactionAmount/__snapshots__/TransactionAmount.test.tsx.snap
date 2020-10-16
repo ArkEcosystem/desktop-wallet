@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionAmount should render 1`] = `
+<div>
+  <div
+    class="sc-AxhCb duqBKZ"
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Amount
+      </div>
+      <div
+        class="font-semibold"
+      >
+        <div
+          class="sc-AxiKw djbzVd"
+          color="success"
+        >
+          <span
+            data-testid="Amount"
+          >
+            0.00000001 DARK
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm bHAIY border-theme-success-300 text-theme-success"
+    >
+      <div
+        class="sc-AxirZ caNxxo"
+        height="21"
+        width="15"
+      >
+        <svg>
+          received.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransactionAmount should render currency amount 1`] = `
+<div>
+  <div
+    class="sc-AxhCb duqBKZ"
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Amount
+      </div>
+      <div
+        class="font-semibold"
+      >
+        <div
+          class="sc-AxiKw djbzVd"
+          color="success"
+        >
+          <span
+            data-testid="Amount"
+          >
+            0.00000001 DARK
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm bHAIY border-theme-success-300 text-theme-success"
+    >
+      <div
+        class="sc-AxirZ caNxxo"
+        height="21"
+        width="15"
+      >
+        <svg>
+          received.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransactionAmount should render label for multiple recipients 1`] = `
+<div>
+  <div
+    class="sc-AxhCb duqBKZ"
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Amount
+      </div>
+      <div
+        class="font-semibold"
+      >
+        <div
+          class="sc-AxiKw djbzVd"
+          color="success"
+        >
+          <span
+            data-testid="Amount"
+          >
+            0.00000001 DARK
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm bHAIY border-theme-success-300 text-theme-success"
+    >
+      <div
+        class="sc-AxirZ caNxxo"
+        height="21"
+        width="15"
+      >
+        <svg>
+          received.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransactionAmount should render label for multiple recipients 2`] = `
+<div>
+  <div
+    class="sc-AxhCb duqBKZ"
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Total Amount
+      </div>
+      <div
+        class="font-semibold"
+      >
+        <div
+          class="sc-AxiKw djbzVd"
+          color="success"
+        >
+          <span
+            data-testid="Amount"
+          >
+            0.00000001 DARK
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm bHAIY border-theme-success-300 text-theme-success"
+    >
+      <div
+        class="sc-AxirZ caNxxo"
+        height="21"
+        width="15"
+      >
+        <svg>
+          received.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

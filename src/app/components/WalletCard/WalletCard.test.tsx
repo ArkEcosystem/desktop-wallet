@@ -21,7 +21,7 @@ describe("Wallet Card", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(WalletFlag.Starred, true);
-		wallet.data().set(WalletFlag.Ledger, true);
+		wallet.data().set(WalletFlag.LedgerIndex, true);
 	});
 
 	it("should render", () => {
@@ -41,7 +41,7 @@ describe("Wallet Card", () => {
 	it("should render blank", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard isBlank />
+				<WalletCard />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -57,7 +57,7 @@ describe("Wallet Card", () => {
 
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard coinClass="border-theme-warning-200" wallet={wallet} />,
+				<WalletCard wallet={wallet} />,
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -73,7 +73,7 @@ describe("Wallet Card", () => {
 
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard coinClass="border-theme-warning-200" wallet={wallet} />
+				<WalletCard wallet={wallet} />
 			</Route>,
 			{
 				routes: [dashboardURL],

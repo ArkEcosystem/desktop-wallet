@@ -6,19 +6,23 @@ export default { title: "Domains / Transaction / Components / LinkList" };
 
 const links = [
 	{
-		link: "http://github.com/robank",
+		displayName: "GitHub",
+		value: "http://github.com/robank",
 		type: "github",
 	},
 	{
-		link: "http://gitlab.com/robank",
+		displayName: "GitLab",
+		value: "http://gitlab.com/robank",
 		type: "gitlab",
 	},
 	{
-		link: "http://bitbucket.com/robank",
+		displayName: "BitBucket",
+		value: "http://bitbucket.com/robank",
 		type: "bitbucket",
 	},
 	{
-		link: "http://npmjs.com/robank",
+		displayName: "NPM",
+		value: "http://npmjs.com/robank",
 		type: "npm",
 	},
 ];

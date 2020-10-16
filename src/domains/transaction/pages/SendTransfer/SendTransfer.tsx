@@ -6,22 +6,22 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useClipboard } from "app/hooks";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet, useClipboard, useValidation } from "app/hooks";
+import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
-// import { FourthStep } from "./Step4";
-import { FifthStep } from "./Step5";
+import { FormStep } from "./Step1";
+import { ReviewStep } from "./Step2";
+import { SummaryStep } from "./Step4";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
+	const location = useLocation();
+	const { state } = location;
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
@@ -35,34 +35,40 @@ export const SendTransfer = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearError, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue } = form;
+	const { isValid } = formState;
+	const { sendTransfer } = useValidation();
 
 	useEffect(() => {
-		register("network", { required: true });
-		register("recipients", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 });
-		register("senderAddress", { required: true });
-		register("fee", { required: true });
-		register("smartbridge");
-	}, [register]);
+		register("network", sendTransfer.network());
+		register("recipients", sendTransfer.recipients());
+		register("senderAddress", sendTransfer.senderAddress());
+		register("fee", sendTransfer.fee());
+		register("smartbridge", sendTransfer.smartbridge());
+	}, [register, sendTransfer]);
 
 	useEffect(() => {
 		if (!activeWallet?.address?.()) return;
 
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
 		}
 	}, [activeWallet, networks, setValue]);
 
-	const submitForm = async () => {
-		clearError("mnemonic");
+	useEffect(() => {
+		if (state?.memo) setValue("smartbridge", state.memo);
+	}, [state, setValue]);
 
-		const { fee, mnemonic, recipients, senderAddress, smartbridge } = getValues();
+	const submitForm = async () => {
+		clearErrors("mnemonic");
+
+		const { fee, mnemonic, secondMnemonic, recipients, senderAddress, smartbridge } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		const isMultiPayment = recipients.length > 1;
@@ -71,6 +77,7 @@ export const SendTransfer = () => {
 			from: senderAddress,
 			sign: {
 				mnemonic,
+				secondMnemonic,
 			},
 		};
 
@@ -109,7 +116,7 @@ export const SendTransfer = () => {
 			console.error("Could not create transaction: ", error);
 
 			setValue("mnemonic", "");
-			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	};
 
@@ -137,23 +144,23 @@ export const SendTransfer = () => {
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={5} activeIndex={activeTab} />
+						<StepIndicator size={4} activeIndex={activeTab} />
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep networks={networks} profile={activeProfile} />
+								<FormStep networks={networks} profile={activeProfile} deeplinkProps={state} />
 							</TabPanel>
 
 							<TabPanel tabId={2}>
-								<SecondStep wallet={activeWallet} />
+								<ReviewStep wallet={activeWallet} />
 							</TabPanel>
 
 							<TabPanel tabId={3}>
-								<ThirdStep />
+								<AuthenticationStep wallet={activeWallet} />
 							</TabPanel>
 
 							<TabPanel tabId={4}>
-								<FifthStep transaction={transaction} senderWallet={activeWallet} />
+								<SummaryStep transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
@@ -171,7 +178,7 @@ export const SendTransfer = () => {
 										{activeTab < 3 && (
 											<Button
 												data-testid="SendTransfer__button--continue"
-												disabled={!formState.isValid}
+												disabled={!isValid}
 												onClick={handleNext}
 											>
 												{t("COMMON.CONTINUE")}
@@ -182,9 +189,11 @@ export const SendTransfer = () => {
 											<Button
 												type="submit"
 												data-testid="SendTransfer__button--submit"
-												disabled={!formState.isValid}
+												disabled={!isValid}
+												className="space-x-2"
 											>
-												{t("TRANSACTION.SIGN_CONTINUE")}
+												<Icon name="Send" width={20} height={20} />
+												<span>{t("COMMON.SEND")}</span>
 											</Button>
 										)}
 									</>

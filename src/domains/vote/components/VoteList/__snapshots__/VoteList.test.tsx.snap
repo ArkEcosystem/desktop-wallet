@@ -3,146 +3,119 @@
 exports[`VoteList should render 1`] = `
 <DocumentFragment>
   <div
-    class="-my-5"
+    class="-my-2"
   >
     <div
-      class="flex items-center py-6 true "
-      data-testid="TransactionDetail"
+      class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
     >
       <div
-        class="flex-1 space-y-2"
+        class="py-4 space-x-4"
       >
         <div
-          class="font-semibold"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+          data-testid="Avatar"
         >
           <div
-            class="space-x-2"
+            class="w-full h-full"
           >
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gQpELD"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full"
-              >
-                <img
-                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                />
-              </div>
-            </div>
-            <div
-              class="inline-block truncate align-middle"
-            >
-              <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                data-testid="address__wallet-name"
-              >
-                arkx
-              </span>
-              <span
-                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                data-testid="address__wallet-address"
-              >
-                D61mfS…J3Dyib
-              </span>
-            </div>
+            <img
+              alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+              title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+            />
           </div>
+        </div>
+        <div
+          class="inline-block truncate align-middle"
+        >
+          <span
+            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+            data-testid="address__wallet-name"
+          >
+            arkx
+          </span>
+          <span
+            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+            data-testid="address__wallet-address"
+          >
+            D61mfS…J3Dyib
+          </span>
         </div>
       </div>
     </div>
     <div
-      class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-      data-testid="TransactionDetail"
+      class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
     >
       <div
-        class="flex-1 space-y-2"
+        class="py-4 space-x-4"
       >
         <div
-          class="font-semibold"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+          data-testid="Avatar"
         >
           <div
-            class="space-x-2"
+            class="w-full h-full"
           >
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gQpELD"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full"
-              >
-                <img
-                  alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                  title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                />
-              </div>
-            </div>
-            <div
-              class="inline-block truncate align-middle"
-            >
-              <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                data-testid="address__wallet-name"
-              >
-                genesis_42
-              </span>
-              <span
-                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                data-testid="address__wallet-address"
-              >
-                D5L5zX…d6iWVr
-              </span>
-            </div>
+            <img
+              alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+              title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+            />
           </div>
+        </div>
+        <div
+          class="inline-block truncate align-middle"
+        >
+          <span
+            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+            data-testid="address__wallet-name"
+          >
+            genesis_42
+          </span>
+          <span
+            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+            data-testid="address__wallet-address"
+          >
+            D5L5zX…d6iWVr
+          </span>
         </div>
       </div>
     </div>
     <div
-      class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-      data-testid="TransactionDetail"
+      class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
     >
       <div
-        class="flex-1 space-y-2"
+        class="py-4 space-x-4"
       >
         <div
-          class="font-semibold"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+          data-testid="Avatar"
         >
           <div
-            class="space-x-2"
+            class="w-full h-full"
           >
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gQpELD"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full"
-              >
-                <img
-                  alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                  title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                />
-              </div>
-            </div>
-            <div
-              class="inline-block truncate align-middle"
-            >
-              <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                data-testid="address__wallet-name"
-              >
-                genesis_17
-              </span>
-              <span
-                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                data-testid="address__wallet-address"
-              >
-                DRgF3P…Ay23ES
-              </span>
-            </div>
+            <img
+              alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+              title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+            />
           </div>
+        </div>
+        <div
+          class="inline-block truncate align-middle"
+        >
+          <span
+            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+            data-testid="address__wallet-name"
+          >
+            genesis_17
+          </span>
+          <span
+            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+            data-testid="address__wallet-address"
+          >
+            DRgF3P…Ay23ES
+          </span>
         </div>
       </div>
     </div>
@@ -153,7 +126,7 @@ exports[`VoteList should render 1`] = `
 exports[`VoteList should render with empty list 1`] = `
 <DocumentFragment>
   <div
-    class="-my-5"
+    class="-my-2"
   />
 </DocumentFragment>
 `;

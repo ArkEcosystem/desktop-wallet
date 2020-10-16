@@ -1,4 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { Enums } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -6,57 +7,75 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
-import React, { useEffect, useMemo, useState } from "react";
+import { useActiveProfile, useActiveWallet } from "app/hooks";
+import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import { SendEntityRegistrationForm } from "./SendEntityRegistration.models";
 import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
-export const SendEntityRegistration = () => {
+type SendEntityRegistrationProps = {
+	formDefaultValues?: any;
+};
+
+export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistrationProps) => {
 	const { t } = useTranslation();
 	const history = useHistory();
 
-	const [activeTab, setActiveTab] = React.useState(1);
+	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
-	const [registrationForm, setRegistrationForm] = React.useState<SendEntityRegistrationForm>();
+	const [registrationForm, setRegistrationForm] = useState<SendEntityRegistrationForm>();
+	const [entityRegistrationTitle, setEntityRegistrationTitle] = useState<string>();
+	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
+	const { registrationType: selectedRegistrationType } = useParams();
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
 	const { formState, getValues, register, setValue, unregister } = form;
-	const { registrationType, senderAddress } = getValues();
+	const { registrationType } = getValues();
 
-	const [fees, setFees] = useState<any>({
-		static: "5",
-		min: "0",
-		avg: "1",
-		max: "2",
-	});
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
+
+	const getFeesByRegistrationType = useCallback(
+		(type: string) => env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), type),
+		[env, activeWallet],
+	);
 
 	useEffect(() => {
 		register("fee");
+		register("fees");
+
 		register("network", { required: true });
 		register("registrationType", { required: true });
 		register("senderAddress", { required: true });
+
+		register("ipfsData");
+		register("ipfsData.images");
+		register("ipfsData.videos");
+		register("ipfsData.sourceControl");
+		register("ipfsData.socialMedia");
+		register("ipfsData.meta.displayName");
+		register("ipfsData.meta.description");
+		register("ipfsData.meta.website");
 	}, [register]);
 
 	useEffect(() => {
 		if (!activeWallet?.address?.()) return;
 
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
@@ -64,21 +83,67 @@ export const SendEntityRegistration = () => {
 	}, [activeWallet, networks, setValue]);
 
 	useEffect(() => {
-		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
-		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
+		if (!activeWallet?.address?.() || !registrationType?.value) return;
 
-		if (senderWallet) {
-			const transactionFees = env.fees().all(senderWallet.coinId(), senderWallet.networkId());
+		const fees = getFeesByRegistrationType(registrationType.value);
+		setValue("fees", fees);
+		setValue("fee", fees?.avg || fees?.static);
+	}, [setValue, activeWallet, registrationType, getFeesByRegistrationType]);
 
-			const fees = Object.entries(transactionFees).reduce((mapping, [transactionType, fees]) => {
-				mapping[transactionType] = fees;
+	// When the wallet is already a delegate without entity registered and
+	// selects update delegate action, then entity registration is performed.
+	// This effect sets the appropriate data (fees, entityName, form title) and redirects to step 2
+	// to internally perform entity registration while the user experiences update action.
+	useEffect(() => {
+		if (selectedRegistrationType !== "delegate") return;
 
-				return mapping;
-			}, {} as Record<string, any>);
+		setRegistrationForm(EntityRegistrationForm);
+		setValue(
+			"registrationType",
+			{
+				value: "entityRegistration",
+				type: Enums.EntityType.Business,
+				label: "Business",
+			},
+			{ shouldValidate: true, shouldDirty: true },
+		);
 
-			setFees(fees);
+		const fees = getFeesByRegistrationType("engityRegistration");
+
+		setValue("fees", fees);
+		setValue("fee", fees?.avg);
+
+		const delegate = env
+			.delegates()
+			.findByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address());
+
+		register("entityName");
+		setValue("entityName", delegate.username());
+
+		setEntityRegistrationTitle(t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_UPDATE"));
+
+		setActiveTab(2);
+	}, [
+		getValues,
+		setValue,
+		getValues,
+		activeWallet,
+		env,
+		register,
+		selectedRegistrationType,
+		t,
+		getFeesByRegistrationType,
+	]);
+
+	useEffect(() => {
+		const userNetworks: string[] = [];
+		const wallets: any = activeProfile.wallets().values();
+		for (const wallet of wallets) {
+			userNetworks.push(wallet.networkId());
 		}
-	}, [env, setFees, setValue, activeProfile, senderAddress]);
+
+		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
+	}, [activeProfile, networks]);
 
 	const submitForm = () =>
 		registrationForm!.signTransaction({
@@ -88,6 +153,7 @@ export const SendEntityRegistration = () => {
 			profile: activeProfile,
 			setTransaction,
 			translations: t,
+			type: registrationType.type,
 		});
 
 	const handleBack = () => {
@@ -106,7 +172,7 @@ export const SendEntityRegistration = () => {
 
 	const crumbs = [
 		{
-			route: `/wallets/${activeProfile.id()}/dashboard`,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
@@ -126,26 +192,28 @@ export const SendEntityRegistration = () => {
 						<div className="mt-8">
 							<TabPanel tabId={1}>
 								<FirstStep
-									networks={networks}
+									networks={availableNetworks}
 									profile={activeProfile}
 									wallet={activeWallet}
 									setRegistrationForm={setRegistrationForm}
-									fees={fees}
+									fees={getValues("fees")}
 								/>
 							</TabPanel>
 
-							{activeTab > 1 && registrationForm && (
+							{activeTab > 1 && registrationForm && getValues("fees") && (
 								<registrationForm.component
+									title={entityRegistrationTitle}
 									activeTab={activeTab}
-									fees={fees[registrationType]}
+									fees={getValues("fees")}
 									wallet={activeWallet}
+									profile={activeProfile}
 								/>
 							)}
 
-							{registrationForm && fees[registrationType] && (
+							{registrationForm && (
 								<>
 									<TabPanel tabId={stepCount - 1}>
-										<SecondStep passwordType="mnemonic" wallet={activeWallet} />
+										<AuthenticationStep wallet={activeWallet} />
 									</TabPanel>
 									<TabPanel tabId={stepCount}>
 										<ThirdStep
@@ -157,7 +225,7 @@ export const SendEntityRegistration = () => {
 								</>
 							)}
 
-							<div className="flex justify-end mt-8 space-x-3">
+							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < stepCount && (
 									<Button
 										disabled={activeTab === 1}
@@ -222,4 +290,27 @@ export const SendEntityRegistration = () => {
 			</Section>
 		</Page>
 	);
+};
+
+SendEntityRegistration.defaultProps = {
+	formDefaultValues: {
+		fees: {
+			static: "5",
+			min: "0",
+			avg: "1",
+			max: "2",
+		},
+		fee: "0",
+		ipfsData: {
+			meta: {
+				displayName: undefined,
+				description: undefined,
+				website: undefined,
+			},
+			images: [],
+			videos: [],
+			sourceControl: [],
+			socialMedia: [],
+		},
+	},
 };

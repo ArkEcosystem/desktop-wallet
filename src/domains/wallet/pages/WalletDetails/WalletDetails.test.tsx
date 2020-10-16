@@ -4,8 +4,17 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
+import walletMock from "tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	syncDelegates,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
 import { WalletDetails } from "./WalletDetails";
 
@@ -32,7 +41,11 @@ const renderPage = async () => {
 			history,
 		},
 	);
-	await waitFor(() => expect(rendered.queryAllByTestId("TransactionRow")).toHaveLength(2));
+
+	const { getByTestId } = rendered;
+
+	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(15));
+
 	return rendered;
 };
 
@@ -40,16 +53,19 @@ describe("WalletDetails", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
-		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
+		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "ark.devnet");
+		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "ark.devnet");
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
+		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "ark.devnet");
+
+		await syncDelegates();
+		await wallet.syncVotes();
 
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
-			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
+			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.get(`/api/wallets/${unvotedWallet.address()}`)
 			.reply(200, walletMock)
 			.get(`/api/wallets/${blankWallet.address()}`)
@@ -64,15 +80,9 @@ describe("WalletDetails", () => {
 				error: "Not Found",
 				message: "Wallet not found",
 			})
-			.post("/api/transactions/search")
-			.query(true)
-			.reply(200, () => {
-				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
-				return {
-					meta,
-					data: data.slice(0, 1),
-				};
-			})
+			.get("/api/transactions")
+			.query((params) => !!params.address)
+			.reply(200, () => require("tests/fixtures/coins/ark/devnet/transactions.json"))
 			.persist();
 	});
 
@@ -86,7 +96,6 @@ describe("WalletDetails", () => {
 
 		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -96,8 +105,57 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId } = await renderPage();
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(blankWallet.address());
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should navigate to vote page when clicking on WalletVote button (unvote)", async () => {
+		const historySpy = jest.spyOn(history, "push");
+
+		const { getByTestId, queryAllByTestId } = await renderPage();
+
+		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletVote__button"));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith({
+			pathname: `/profiles/${profile.id()}/wallets/${wallet.id()}/send-vote`,
+			search: `?unvotes=${wallet.votes()[0].address()}`,
+		});
+	});
+
+	it("should navigate to new registration page when clicking on WalletRegistrations button (register)", async () => {
+		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
+		history.push(walletUrl);
+
+		const historySpy = jest.spyOn(history, "push");
+
+		const { getByTestId, queryAllByTestId } = await renderPage();
+
+		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletRegistrations__button"));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(
+			`/profiles/${profile.id()}/wallets/${blankWallet.id()}/send-entity-registration`,
+		);
+	});
+
+	it("should navigate to registrations page when clicking on WalletRegistrations button (show all)", async () => {
+		const historySpy = jest.spyOn(history, "push");
+
+		const { getByTestId, queryAllByTestId } = await renderPage();
+
+		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletRegistrations__button"));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/registrations`);
 	});
 
 	it("should render when wallet hasn't voted", async () => {
@@ -106,7 +164,6 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId } = await renderPage();
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(unvotedWallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -189,47 +246,36 @@ describe("WalletDetails", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should open detail modal on transaction row click", async () => {
+		const { asFragment, getByTestId } = await renderPage();
+
+		act(() => {
+			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
+		});
+
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should fetch more transactions", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
 
 		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
-		const pendingFetchMoreBtn = getByTestId("pending-transactions__fetch-more-button");
 		const fetchMoreTransactionsBtn = getByTestId("transactions__fetch-more-button");
-
-		act(() => {
-			fireEvent.click(pendingFetchMoreBtn);
-		});
 
 		act(() => {
 			fireEvent.click(fetchMoreTransactionsBtn);
 		});
 
 		await waitFor(() => {
-			expect(getAllByTestId("TransactionRow")).toHaveLength(6);
+			expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(30);
 		});
-	});
-
-	it("should render with timers", async () => {
-		jest.useFakeTimers();
-
-		const { asFragment, getAllByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletDetails txSkeletonRowsLimit={1} />
-			</Route>,
-			{
-				routes: [walletUrl],
-				history,
-			},
-		);
-
-		await act(async () => {
-			jest.advanceTimersByTime(30000);
-		});
-
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
-		expect(asFragment()).toMatchSnapshot();
-		jest.useRealTimers();
 	});
 
 	it("should delete wallet", async () => {
@@ -266,8 +312,21 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId, queryAllByTestId } = await renderPage();
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet2.address());
 		expect(queryAllByTestId("WalletBottomSheetMenu")).toHaveLength(0);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should not fail if the votes have not yet been synchronized", async () => {
+		const newWallet = await profile.wallets().importByMnemonic("test mnemonic", "ARK", "ark.devnet");
+		nock("https://dwallets.ark.io").get(`/api/wallets/${newWallet.address()}`).reply(200, walletMock);
+
+		await newWallet.syncIdentity();
+
+		walletUrl = `/profiles/${profile.id()}/wallets/${newWallet.id()}`;
+		history.push(walletUrl);
+
+		const { asFragment } = await renderPage();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

@@ -5,12 +5,13 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	getDefaultWalletId,
 	render,
 	RenderResult,
 	renderWithRouter,
@@ -18,18 +19,17 @@ import {
 	waitFor,
 	within,
 } from "testing-library";
-import transactionMultipleFixture from "tests/fixtures/coins/ark/transactions/transfer-multiple.json";
-import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
+import transactionMultipleFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer-multiple.json";
+import transactionFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer.json";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendTransfer } from "./SendTransfer";
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
-import { FourthStep } from "./Step4";
-import { FifthStep } from "./Step5";
+import { FormStep } from "./Step1";
+import { ReviewStep } from "./Step2";
+import { SummaryStep } from "./Step4";
 
 const fixtureProfileId = getDefaultProfileId();
+const fixtureWalletId = getDefaultWalletId();
 
 const createTransactionMultipleMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
@@ -61,29 +61,51 @@ beforeAll(async () => {
 	wallet = profile.wallets().values()[0];
 
 	nock("https://dwallets.ark.io")
-		.post("/api/transactions/search")
-		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+		.get("/api/transactions")
+		.query((params) => !!params.address)
+		.reply(200, require("tests/fixtures/coins/ark/devnet/transactions.json"))
 		.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
 		.reply(200, transactionFixture);
 
 	await syncFees();
 });
 
-describe("Transaction Send", () => {
-	it("should render 1st step", async () => {
+describe("SendTransfer", () => {
+	it("should render 1st step (form)", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
-				<FirstStep networks={[]} profile={profile} />
-			</FormContext>,
+			<FormProvider {...form.current}>
+				<FormStep networks={[]} profile={profile} />
+			</FormProvider>,
 		);
 
 		expect(getByTestId("SendTransfer__step--first")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 2nd step", async () => {
+	it("should render 1st step with deeplink values and use them", async () => {
+		const { result: form } = renderHook(() => useForm());
+		const deeplinkProps: any = {
+			amount: "1.2",
+			coin: "ark",
+			memo: "ARK",
+			method: "transfer",
+			network: "mainnet",
+			recipient: "DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9",
+		};
+
+		const { getByTestId, asFragment } = render(
+			<FormProvider {...form.current}>
+				<FormStep networks={[]} profile={profile} deeplinkProps={deeplinkProps} />
+			</FormProvider>,
+		);
+
+		expect(getByTestId("SendTransfer__step--first")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render 2nd step (review)", async () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
@@ -91,7 +113,7 @@ describe("Transaction Send", () => {
 					recipients: [
 						{
 							address: wallet.address(),
-							amount: (1 * 1e8).toFixed(0),
+							amount: BigNumber.make(1 * 1e8),
 						},
 					],
 					senderAddress: wallet.address(),
@@ -101,9 +123,9 @@ describe("Transaction Send", () => {
 		);
 
 		const { asFragment, container, getByTestId } = render(
-			<FormContext {...form.current}>
-				<SecondStep wallet={wallet} />
-			</FormContext>,
+			<FormProvider {...form.current}>
+				<ReviewStep wallet={wallet} />
+			</FormProvider>,
 		);
 
 		expect(getByTestId("SendTransfer__step--second")).toBeTruthy();
@@ -114,41 +136,17 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 3rd step", async () => {
-		const { result: form } = renderHook(() => useForm());
-		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
-				<ThirdStep />
-			</FormContext>,
-		);
-
-		expect(getByTestId("SendTransfer__step--third")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render 4th step", async () => {
-		const { result: form } = renderHook(() => useForm());
-
-		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
-				<FourthStep />
-			</FormContext>,
-		);
-
-		expect(getByTestId("SendTransfer__step--fourth")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render 5th step", async () => {
+	it("should render 4th step (summary)", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const transaction = (await wallet.transactions()).findById(
 			"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
 		);
+
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
-				<FifthStep transaction={transaction!} />
-			</FormContext>,
+			<FormProvider {...form.current}>
+				<SummaryStep transaction={transaction!} senderWallet={wallet} />
+			</FormProvider>,
 		);
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
@@ -179,7 +177,31 @@ describe("Transaction Send", () => {
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 
-	it("should select network first and see select address input clickable", async () => {
+	it("should render form and use location state", async () => {
+		const history = createMemoryHistory();
+		let rendered: RenderResult;
+
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
+		history.push(transferURL, { memo: "ARK" });
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+		});
+
+		expect(rendered.asFragment()).toMatchSnapshot();
+	});
+
+	it("should select cryptoasset first and see select address input clickable", async () => {
 		const history = createMemoryHistory();
 		let rendered: RenderResult;
 
@@ -201,15 +223,21 @@ describe("Transaction Send", () => {
 		});
 
 		act(() => {
-			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-devnet"));
+			fireEvent.focus(rendered.getByTestId("SelectNetworkInput__input"));
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark Devnet");
+		await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 
-	it("should display disabled address selection input if selected network has not available wallets", async () => {
+	it("should display disabled address selection input if selected cryptoasset has not available wallets", async () => {
 		const history = createMemoryHistory();
 		let rendered: RenderResult;
 
@@ -231,11 +259,17 @@ describe("Transaction Send", () => {
 		});
 
 		act(() => {
-			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-mainnet"));
+			fireEvent.focus(rendered.getByTestId("SelectNetworkInput__input"));
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark");
-		expect(rendered.getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
+		await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
+		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 
@@ -265,7 +299,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			await waitFor(() =>
-				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
 			);
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
@@ -280,7 +314,7 @@ describe("Transaction Send", () => {
 
 			// Amount
 			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue(80);
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.03551662");
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
@@ -298,7 +332,7 @@ describe("Transaction Send", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 			// Back to Step 2
 			fireEvent.click(getByTestId("SendTransfer__button--back"));
@@ -306,8 +340,8 @@ describe("Transaction Send", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--third")).toBeTruthy());
-			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
@@ -321,7 +355,7 @@ describe("Transaction Send", () => {
 			fireEvent.click(getByTestId("SendTransfer__button--submit"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e77…2f1b89abb49877");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877");
 
 			// Copy Transaction
 			const copyMock = jest.fn();
@@ -355,8 +389,6 @@ describe("Transaction Send", () => {
 
 	it("should send a multi payment", async () => {
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 			.get("/api/transactions/34b557950ed485985aad81ccefaa374b7c81150c52f8ef4621cbbb907b2c829c")
 			.reply(200, transactionMultipleFixture);
 
@@ -385,7 +417,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			await waitFor(() =>
-				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
 			);
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
@@ -425,7 +457,7 @@ describe("Transaction Send", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 			// Back to Step 2
 			fireEvent.click(getByTestId("SendTransfer__button--back"));
@@ -433,8 +465,8 @@ describe("Transaction Send", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--third")).toBeTruthy());
-			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
@@ -448,7 +480,7 @@ describe("Transaction Send", () => {
 			fireEvent.click(getByTestId("SendTransfer__button--submit"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("34b557950ed485…cbbb907b2c829c");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("34b557950ed48…bbb907b2c829c");
 
 			// Copy Transaction
 			const copyMock = jest.fn();
@@ -508,7 +540,7 @@ describe("Transaction Send", () => {
 
 			// Amount
 			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue(80);
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue("13.03551662");
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
@@ -526,7 +558,7 @@ describe("Transaction Send", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 			// Back to Step 2
 			fireEvent.click(getByTestId("SendTransfer__button--back"));
@@ -534,8 +566,8 @@ describe("Transaction Send", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--third")).toBeTruthy());
-			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
@@ -551,9 +583,7 @@ describe("Transaction Send", () => {
 			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
 			await waitFor(() =>
-				expect(getByTestId("SendTransfer__step--third")).toHaveTextContent(
-					transactionTranslations.INVALID_MNEMONIC,
-				),
+				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
 			);
 
 			signMock.mockRestore();

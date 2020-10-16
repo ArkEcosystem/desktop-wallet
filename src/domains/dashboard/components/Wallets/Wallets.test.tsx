@@ -2,7 +2,7 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, within } from "utils/testing-library";
 
 import { networks } from "../../data";
 import { Wallets } from "./Wallets";
@@ -59,10 +59,10 @@ describe("Wallets", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render many wallets on grid", () => {
+	it("should render one grid row when less than three wallets", () => {
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={new Array(10).fill(wallets[0])} filterProperties={filterProperties} />
+				<Wallets wallets={new Array(1).fill(wallets[0])} filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -70,7 +70,22 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(() => getAllByTestId("WalletCard__blank")).toThrow(/^Unable to find an element by/);
+		expect(getAllByTestId("WalletCard__blank")).toHaveLength(2);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render two grid rows when more than three wallets", () => {
+		const { asFragment, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets wallets={new Array(5).fill(wallets[0])} filterProperties={filterProperties} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getAllByTestId("WalletCard__blank")).toHaveLength(1);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -89,7 +104,7 @@ describe("Wallets", () => {
 	});
 
 	it("should redirect when clicking on row", () => {
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets wallets={wallets} viewType="list" filterProperties={filterProperties} />
 			</Route>,
@@ -100,7 +115,7 @@ describe("Wallets", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId(`WalletListItem__${wallets[0].address()}`));
+			fireEvent.click(within(getByTestId("WalletTable")).getByText(wallets[0].alias()));
 		});
 
 		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallets[0].id()}`);
@@ -149,7 +164,7 @@ describe("Wallets", () => {
 	});
 
 	it("should change wallet view type from list to grid", () => {
-		const { asFragment, findByTestId, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
 			</Route>,
@@ -161,16 +176,19 @@ describe("Wallets", () => {
 
 		const toggle = getByTestId("LayoutControls__grid--icon");
 
+		expect(() => getAllByTestId("Card")).toThrow(/Unable to find an element by/);
+
 		act(() => {
 			fireEvent.click(toggle);
 		});
 
-		expect(toggle).toHaveClass("text-theme-danger-300");
+		expect(getAllByTestId("Card")).toHaveLength(3);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should change wallet view type from grid to list", () => {
-		const { getByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets viewType="grid" wallets={[]} filterProperties={filterProperties} />
 			</Route>,
@@ -179,13 +197,18 @@ describe("Wallets", () => {
 				history,
 			},
 		);
+
 		const toggle = getByTestId("LayoutControls__list--icon");
+
+		expect(getAllByTestId("Card")).toHaveLength(3);
 
 		act(() => {
 			fireEvent.click(toggle);
 		});
 
-		expect(toggle).toHaveClass("text-theme-danger-300");
+		expect(() => getAllByTestId("Card")).toThrow(/Unable to find an element by/);
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should hide the view more button if there are less than 10 wallets", () => {

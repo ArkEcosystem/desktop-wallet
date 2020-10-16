@@ -5,14 +5,14 @@ exports[`AddBlacklistPlugin should not render if not open 1`] = `<DocumentFragme
 exports[`AddBlacklistPlugin should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxiKw jCpCzv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -59,7 +59,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
               data-testid="SearchBar"
             >
               <div
-                class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
+                class="flex items-center px-10 py-6 rounded shadow-xl bg-theme-background"
               >
                 <div
                   class="sc-AxirZ iQaTP w-4 mr-8 text-theme-neutral-300"
@@ -74,7 +74,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                   class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
                 >
                   <input
-                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="Search for a plugin"
                   />
@@ -98,32 +98,34 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
             class="mt-8 -mb-6"
           >
             <div
-              class="sc-fzpans dvOscU"
+              class="sc-fzpans dPCoLV -mt-3"
               role="table"
             >
               <table
+                cellpadding="0"
                 class="table-auto"
               >
                 <thead>
                   <tr
+                    class="border-b border-theme-neutral-300"
                     role="row"
                   >
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                           
+                          Logo
                         </div>
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -153,7 +155,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -183,7 +185,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -213,16 +215,16 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral"
+                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                            
+                          Actions
                         </div>
                       </div>
                     </th>
@@ -232,349 +234,426 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dashed border-theme-neutral-200"
+                    class="sc-fznyAO cInDKW group"
+                    data-testid="TableRow"
                   >
                     <td
                       class="w-16"
                     >
-                      <svg
-                        class="w-12 h-12"
+                      <div
+                        class="sc-fzplWN bpVNCE"
                       >
-                        changenow-logo.svg
-                      </svg>
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
                     </td>
                     <td>
                       <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                        class="sc-fzplWN bpVNCE"
                       >
-                        ARK Explorer
-                      </div>
-                      <div
-                        class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-dark"
-                        >
-                          ARK Ecosystem
-                        </span>
                         <div
-                          class="sc-AxirZ fkjLBb"
-                          height="15"
-                          width="15"
+                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                         >
-                          <svg>
-                            official-ark-plugin.svg
-                          </svg>
+                          ARK Explorer
+                        </div>
+                        <div
+                          class="inline-flex items-center space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-dark"
+                          >
+                            ARK Ecosystem
+                          </span>
+                          <div
+                            class="sc-AxirZ fkjLBb"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              official-ark-plugin.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxirZ hPsuTj"
+                            height="16"
+                            width="16"
+                          >
+                            <svg>
+                              grant.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-10 text-center text-theme-neutral-dark"
-                    >
-                      Utility
-                    </td>
-                    <td
-                      class="py-10 text-theme-neutral-dark"
-                    >
-                      <span
-                        class="flex justify-center"
+                    <td>
+                      <div
+                        class="sc-fzplWN bpVNCE text-theme-neutral-dark justify-center"
                       >
-                        <div
-                          class="flex"
-                          data-testid="ReviewRating"
-                        >
+                        <span>
+                          Utility
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzplWN bpVNCE text-theme-neutral-dark"
+                      >
+                        <span>
                           <div
-                            class="relative my-auto"
+                            class="flex"
+                            data-testid="ReviewRating"
                           >
                             <div
-                              class="absolute overflow-hidden"
-                              style="width: 89.99999999999999%;"
+                              class="relative my-auto"
                             >
+                              <div
+                                class="absolute overflow-hidden"
+                                style="width: 89.99999999999999%;"
+                              >
+                                <svg
+                                  class="text-theme-warning-400 w-3"
+                                >
+                                  star.svg
+                                </svg>
+                              </div>
                               <svg
-                                class="text-theme-warning-400 w-3"
+                                class="text-theme-neutral w-3"
                               >
                                 star.svg
                               </svg>
                             </div>
-                            <svg
-                              class="text-theme-neutral w-3"
+                            <span
+                              class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                             >
-                              star.svg
-                            </svg>
+                              4.6
+                            </span>
                           </div>
-                          <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                          >
-                            4.6
-                          </span>
-                        </div>
-                      </span>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16"
                     >
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        type="button"
+                      <div
+                        class="sc-fzplWN bpVNCE"
                       >
-                        Add
-                      </button>
+                        <button
+                          class="sc-AxjAm hXnHfM"
+                          color="primary"
+                          type="button"
+                        >
+                          Add
+                        </button>
+                      </div>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-200"
+                    class="sc-fznyAO cInDKW group"
+                    data-testid="TableRow"
                   >
                     <td
                       class="w-16"
                     >
-                      <svg
-                        class="w-12 h-12"
+                      <div
+                        class="sc-fzplWN bpVNCE"
                       >
-                        changenow-logo.svg
-                      </svg>
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
                     </td>
                     <td>
                       <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                        class="sc-fzplWN bpVNCE"
                       >
-                        Animal Avatars
-                      </div>
-                      <div
-                        class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-dark"
+                        <div
+                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                         >
-                          Breno Polanski
+                          Animal Avatars
+                        </div>
+                        <div
+                          class="inline-flex items-center space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-dark"
+                          >
+                            Breno Polanski
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzplWN bpVNCE text-theme-neutral-dark justify-center"
+                      >
+                        <span>
+                          Utility
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="py-10 text-center text-theme-neutral-dark"
-                    >
-                      Utility
-                    </td>
-                    <td
-                      class="py-10 text-theme-neutral-dark"
-                    >
-                      <span
-                        class="flex justify-center"
+                    <td>
+                      <div
+                        class="sc-fzplWN bpVNCE text-theme-neutral-dark"
                       >
-                        <div
-                          class="flex"
-                          data-testid="ReviewRating"
-                        >
+                        <span>
                           <div
-                            class="relative my-auto"
+                            class="flex"
+                            data-testid="ReviewRating"
                           >
                             <div
-                              class="absolute overflow-hidden"
-                              style="width: 89.99999999999999%;"
+                              class="relative my-auto"
                             >
+                              <div
+                                class="absolute overflow-hidden"
+                                style="width: 89.99999999999999%;"
+                              >
+                                <svg
+                                  class="text-theme-warning-400 w-3"
+                                >
+                                  star.svg
+                                </svg>
+                              </div>
                               <svg
-                                class="text-theme-warning-400 w-3"
+                                class="text-theme-neutral w-3"
                               >
                                 star.svg
                               </svg>
                             </div>
-                            <svg
-                              class="text-theme-neutral w-3"
+                            <span
+                              class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                             >
-                              star.svg
-                            </svg>
+                              4.6
+                            </span>
                           </div>
-                          <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                          >
-                            4.6
-                          </span>
-                        </div>
-                      </span>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16"
                     >
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        type="button"
+                      <div
+                        class="sc-fzplWN bpVNCE"
                       >
-                        Add
-                      </button>
+                        <button
+                          class="sc-AxjAm hXnHfM"
+                          color="primary"
+                          type="button"
+                        >
+                          Add
+                        </button>
+                      </div>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-200"
+                    class="sc-fznyAO cInDKW group"
+                    data-testid="TableRow"
                   >
                     <td
                       class="w-16"
                     >
-                      <svg
-                        class="w-12 h-12"
+                      <div
+                        class="sc-fzplWN bpVNCE"
                       >
-                        changenow-logo.svg
-                      </svg>
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
                     </td>
                     <td>
                       <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                        class="sc-fzplWN bpVNCE"
                       >
-                        ChangeNOW Plugin
-                      </div>
-                      <div
-                        class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-dark"
+                        <div
+                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                         >
-                          ChangeNOW
+                          ChangeNOW Plugin
+                        </div>
+                        <div
+                          class="inline-flex items-center space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-dark"
+                          >
+                            ChangeNOW
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzplWN bpVNCE text-theme-neutral-dark justify-center"
+                      >
+                        <span>
+                          Other
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="py-10 text-center text-theme-neutral-dark"
-                    >
-                      Other
-                    </td>
-                    <td
-                      class="py-10 text-theme-neutral-dark"
-                    >
-                      <span
-                        class="flex justify-center"
+                    <td>
+                      <div
+                        class="sc-fzplWN bpVNCE text-theme-neutral-dark"
                       >
-                        <div
-                          class="flex"
-                          data-testid="ReviewRating"
-                        >
+                        <span>
                           <div
-                            class="relative my-auto"
+                            class="flex"
+                            data-testid="ReviewRating"
                           >
                             <div
-                              class="absolute overflow-hidden"
-                              style="width: 95%;"
+                              class="relative my-auto"
                             >
+                              <div
+                                class="absolute overflow-hidden"
+                                style="width: 95%;"
+                              >
+                                <svg
+                                  class="text-theme-warning-400 w-3"
+                                >
+                                  star.svg
+                                </svg>
+                              </div>
                               <svg
-                                class="text-theme-warning-400 w-3"
+                                class="text-theme-neutral w-3"
                               >
                                 star.svg
                               </svg>
                             </div>
-                            <svg
-                              class="text-theme-neutral w-3"
+                            <span
+                              class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                             >
-                              star.svg
-                            </svg>
+                              4.8
+                            </span>
                           </div>
-                          <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                          >
-                            4.8
-                          </span>
-                        </div>
-                      </span>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16"
                     >
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        type="button"
+                      <div
+                        class="sc-fzplWN bpVNCE"
                       >
-                        Add
-                      </button>
+                        <button
+                          class="sc-AxjAm hXnHfM"
+                          color="primary"
+                          type="button"
+                        >
+                          Add
+                        </button>
+                      </div>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-200"
+                    class="sc-fznyAO cInDKW group"
+                    data-testid="TableRow"
                   >
                     <td
                       class="w-16"
                     >
-                      <svg
-                        class="w-12 h-12"
+                      <div
+                        class="sc-fzplWN bpVNCE"
                       >
-                        changenow-logo.svg
-                      </svg>
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
                     </td>
                     <td>
                       <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                        class="sc-fzplWN bpVNCE"
                       >
-                        Bold Ninja
-                      </div>
-                      <div
-                        class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-dark"
-                        >
-                          Delegate Fun
-                        </span>
                         <div
-                          class="sc-AxirZ hPsuTj"
-                          height="16"
-                          width="16"
+                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                         >
-                          <svg>
-                            grant.svg
-                          </svg>
+                          Bold Ninja
+                        </div>
+                        <div
+                          class="inline-flex items-center space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-dark"
+                          >
+                            Delegate Fun
+                          </span>
+                          <div
+                            class="sc-AxirZ hPsuTj"
+                            height="16"
+                            width="16"
+                          >
+                            <svg>
+                              grant.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-10 text-center text-theme-neutral-dark"
-                    >
-                      Game
-                    </td>
-                    <td
-                      class="py-10 text-theme-neutral-dark"
-                    >
-                      <span
-                        class="flex justify-center"
+                    <td>
+                      <div
+                        class="sc-fzplWN bpVNCE text-theme-neutral-dark justify-center"
                       >
-                        <div
-                          class="flex"
-                          data-testid="ReviewRating"
-                        >
+                        <span>
+                          Game
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzplWN bpVNCE text-theme-neutral-dark"
+                      >
+                        <span>
                           <div
-                            class="relative my-auto"
+                            class="flex"
+                            data-testid="ReviewRating"
                           >
                             <div
-                              class="absolute overflow-hidden"
-                              style="width: 97.50000000000001%;"
+                              class="relative my-auto"
                             >
+                              <div
+                                class="absolute overflow-hidden"
+                                style="width: 97.50000000000001%;"
+                              >
+                                <svg
+                                  class="text-theme-warning-400 w-3"
+                                >
+                                  star.svg
+                                </svg>
+                              </div>
                               <svg
-                                class="text-theme-warning-400 w-3"
+                                class="text-theme-neutral w-3"
                               >
                                 star.svg
                               </svg>
                             </div>
-                            <svg
-                              class="text-theme-neutral w-3"
+                            <span
+                              class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                             >
-                              star.svg
-                            </svg>
+                              4.9
+                            </span>
                           </div>
-                          <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                          >
-                            4.9
-                          </span>
-                        </div>
-                      </span>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16"
                     >
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        type="button"
+                      <div
+                        class="sc-fzplWN bpVNCE"
                       >
-                        Add
-                      </button>
+                        <button
+                          class="sc-AxjAm hXnHfM"
+                          color="primary"
+                          type="button"
+                        >
+                          Add
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 </tbody>

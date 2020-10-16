@@ -1,8 +1,10 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
+
+import { modalTopOffsetClass } from "./utils";
 
 type ModalProps = {
 	children: React.ReactNode;
@@ -51,53 +53,64 @@ const ModalContainer = styled.div<{ size?: Size }>`
 	}}
 `;
 
-const ModalContent = (props: ModalContentProps) => (
-	<ModalContainer
-		size={props.size}
-		className="absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
-		data-testid="modal__inner"
-	>
-		<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900">
-			<Button
-				data-testid="modal__close-btn"
-				variant="transparent"
-				size="icon"
-				onClick={props.onClose}
-				className="w-11 h-11"
-			>
-				<Icon name="CrossSlim" width={14} height={14} />
-			</Button>
-		</div>
+const ModalContent = (props: ModalContentProps) => {
+	const [topOffsetClass, setTopOffsetClass] = useState<string>();
+	const modalRef = useRef<any>();
 
-		<div className="relative">
-			{props.banner ? (
-				<div className="relative h-56 mb-10 -mx-10 -mt-10">
-					{props.banner}
+	useEffect(() => {
+		const topClass = modalTopOffsetClass(modalRef?.current?.clientHeight, window.innerHeight);
+		setTopOffsetClass(topClass);
+	}, [modalRef, setTopOffsetClass]);
 
-					<div className="absolute bottom-0 left-0 mb-10 ml-10">
-						<h2
-							className={`text-5xl font-extrabold leading-tight m-0 ${
-								props.titleClass || "text-theme-text"
-							}`}
-						>
-							{props.title}
-						</h2>
-					</div>
-				</div>
-			) : (
-				<h2 className="mb-0 text-3xl font-bold">{props.title}</h2>
-			)}
-
-			<div className="flex-1">
-				{props.image}
-
-				{props.description && <div className="mt-1 text-theme-neutral-dark">{props.description}</div>}
-
-				{props.children}
+	return (
+		<ModalContainer
+			ref={modalRef}
+			size={props.size}
+			className={`absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background ${topOffsetClass}`}
+			data-testid="modal__inner"
+		>
+			<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900">
+				<Button
+					data-testid="modal__close-btn"
+					variant="transparent"
+					size="icon"
+					onClick={props.onClose}
+					className="w-11 h-11"
+				>
+					<Icon name="CrossSlim" width={14} height={14} />
+				</Button>
 			</div>
-		</div>
-	</ModalContainer>
-);
+
+			<div className="relative">
+				{props.banner ? (
+					<div className="relative h-56 mb-10 -mx-10 -mt-10">
+						{props.banner}
+
+						<div className="absolute bottom-0 left-0 mb-10 ml-10">
+							<h2
+								className={`text-5xl font-extrabold leading-tight m-0 ${
+									props.titleClass || "text-theme-text"
+								}`}
+							>
+								{props.title}
+							</h2>
+						</div>
+					</div>
+				) : (
+					<h2 className="mb-0 text-3xl font-bold">{props.title}</h2>
+				)}
+
+				<div className="flex-1">
+					{props.image}
+
+					{props.description && <div className="mt-1 text-theme-neutral-dark">{props.description}</div>}
+
+					{props.children}
+				</div>
+			</div>
+		</ModalContainer>
+	);
+};
 
 interface BodyRightOffset {
 	[key: string]: string;
@@ -127,12 +140,29 @@ export const Modal = (props: ModalProps) => {
 		};
 	}, [props.isOpen]);
 
+	const onEscKey = useCallback(
+		(event: KeyboardEvent) => {
+			if (event.key === "Escape") {
+				props.onClose();
+			}
+		},
+		[props],
+	);
+
+	useEffect(() => {
+		document.addEventListener("keyup", onEscKey, false);
+
+		return () => {
+			document.removeEventListener("keyup", onEscKey);
+		};
+	}, [onEscKey]);
+
 	if (!props.isOpen) {
 		return <></>;
 	}
 
 	return (
-		<div className="fixed inset-0 z-50 w-full h-full overflow-y-scroll">
+		<div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll">
 			<div
 				className="fixed z-50 w-full h-full bg-black opacity-50"
 				data-testid="modal__overlay"

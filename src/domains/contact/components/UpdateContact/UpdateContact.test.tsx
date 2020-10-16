@@ -73,7 +73,7 @@ describe("UpdateContact", () => {
 
 		const newAddress = {
 			name: "Test name",
-			network: "devnet",
+			network: "ark.devnet",
 			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 			coin: "ARK",
 		};
@@ -93,13 +93,12 @@ describe("UpdateContact", () => {
 		const saveButton = getByTestId("contact-form__save-btn");
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
-		// Add network
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
 				target: { value: newAddress.address },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
@@ -153,7 +152,7 @@ describe("UpdateContact", () => {
 		const newName = "Updated name";
 		const newAddress = {
 			name: "Test Address",
-			network: "devnet",
+			network: "ark.devnet",
 			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 			coin: "ARK",
 		};
@@ -179,13 +178,12 @@ describe("UpdateContact", () => {
 		const saveButton = getByTestId("contact-form__save-btn");
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
-		// Add network
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
 				target: { value: newAddress.address },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 

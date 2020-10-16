@@ -5,7 +5,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import {
 	env,
@@ -18,13 +18,12 @@ import {
 	waitFor,
 	within,
 } from "testing-library";
-import ipfsFixture from "tests/fixtures/coins/ark/transactions/ipfs.json";
+import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendIpfs } from "./SendIpfs";
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
 import { FourthStep } from "./Step4";
 
 const fixtureProfileId = getDefaultProfileId();
@@ -49,8 +48,9 @@ describe("SendIpfs", () => {
 		wallet = profile.wallets().values()[0];
 
 		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+			.get("/api/transactions")
+			.query({ address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" })
+			.reply(200, require("tests/fixtures/coins/ark/devnet/transactions.json"))
 			.get("/api/transactions/1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e")
 			.reply(200, ipfsFixture);
 
@@ -60,9 +60,9 @@ describe("SendIpfs", () => {
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<FirstStep networks={[]} profile={profile} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("SendIpfs__step--first")).toBeTruthy();
@@ -81,9 +81,9 @@ describe("SendIpfs", () => {
 		);
 
 		const { asFragment, container, getByTestId } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<SecondStep wallet={wallet} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("SendIpfs__step--second")).toBeTruthy();
@@ -94,18 +94,6 @@ describe("SendIpfs", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 3rd step", async () => {
-		const { result: form } = renderHook(() => useForm());
-		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
-				<ThirdStep />
-			</FormContext>,
-		);
-
-		expect(getByTestId("SendIpfs__step--third")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should render 4th step", async () => {
 		const { result: form } = renderHook(() => useForm());
 
@@ -113,9 +101,9 @@ describe("SendIpfs", () => {
 			"1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e",
 		);
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<FourthStep transaction={transaction!} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
@@ -148,7 +136,7 @@ describe("SendIpfs", () => {
 
 		await act(async () => {
 			await waitFor(() =>
-				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
 			);
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
@@ -159,10 +147,9 @@ describe("SendIpfs", () => {
 			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 			// Fee
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 			// Step 2
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
@@ -170,7 +157,7 @@ describe("SendIpfs", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-			await waitFor(() => expect(getByTestId("SendIpfs__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 			// Back to Step 2
 			fireEvent.click(getByTestId("SendIpfs__button--back"));
@@ -178,8 +165,8 @@ describe("SendIpfs", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-			await waitFor(() => expect(getByTestId("SendIpfs__step--third")).toBeTruthy());
-			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
@@ -193,7 +180,7 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("SendIpfs__button--submit"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a7…6db3d69131067e");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a…db3d69131067");
 
 			// Copy Transaction
 			const copyMock = jest.fn();
@@ -268,7 +255,7 @@ describe("SendIpfs", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-			await waitFor(() => expect(getByTestId("SendIpfs__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 			// Back to Step 2
 			fireEvent.click(getByTestId("SendIpfs__button--back"));
@@ -276,8 +263,8 @@ describe("SendIpfs", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-			await waitFor(() => expect(getByTestId("SendIpfs__step--third")).toBeTruthy());
-			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
@@ -293,9 +280,7 @@ describe("SendIpfs", () => {
 			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
 			await waitFor(() =>
-				expect(getByTestId("SendIpfs__step--third")).toHaveTextContent(
-					transactionTranslations.INVALID_MNEMONIC,
-				),
+				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
 			);
 
 			signMock.mockRestore();

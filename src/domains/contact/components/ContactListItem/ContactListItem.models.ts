@@ -1,13 +1,13 @@
-import { Contact } from "@arkecosystem/platform-sdk-profiles";
-
 export type Option = {
 	label: string;
 	value: string | number;
 };
 
 export type ContactListItemProps = {
-	contact: Contact;
+	item: any;
 	options: Option[];
 	variant?: "condensed";
+	type?: string;
+	template?: string;
 	onAction?: (action: Option, address: any) => void;
 };

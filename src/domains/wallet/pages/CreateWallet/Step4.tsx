@@ -1,19 +1,27 @@
-import { NetworkData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
-import { Divider } from "app/components/Divider";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { getNetworkExtendedData } from "domains/network/helpers";
-import React from "react";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const FourthStep = ({ nameMaxLength }: { nameMaxLength: number }) => {
-	const { getValues, register } = useFormContext();
-	const network: NetworkData = getValues("network");
-	const wallet: ReadWriteWallet = getValues("wallet");
+	const { getValues, register, watch } = useFormContext();
+
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultNetwork] = useState(() => watch("network"));
+	const network: Coins.Network = getValues("network") || defaultNetwork;
+
+	const [defaultWallet] = useState(() => watch("wallet"));
+	const wallet: ReadWriteWallet = getValues("wallet") || defaultWallet;
+
 	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
 
 	const { t } = useTranslation();
@@ -27,33 +35,23 @@ export const FourthStep = ({ nameMaxLength }: { nameMaxLength: number }) => {
 				/>
 			</div>
 
-			<ul>
-				<li className="flex justify-between">
-					<div>
-						<p className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.NETWORK")}</p>
-						<p data-testid="CreateWallet__network-name" className="text-lg font-medium">
-							{networkConfig?.displayName}
-						</p>
-					</div>
-					<NetworkIcon coin={network.coin()} network={network.id()} />
-				</li>
-				<li>
-					<Divider dashed />
-				</li>
-				<li className="flex justify-between">
-					<div>
-						<p className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.ADDRESS")}</p>
-						<p data-testid="CreateWallet__wallet-address" className="text-lg font-medium">
-							{wallet.address()}
-						</p>
-					</div>
-					<Avatar address={wallet.address()} />
-				</li>
-			</ul>
+			<TransactionDetail
+				label={t("COMMON.CRYPTOASSET")}
+				borderPosition="bottom"
+				extra={<NetworkIcon size="lg" coin={network.coin()} network={network.id()} />}
+			>
+				{networkConfig?.displayName}
+			</TransactionDetail>
 
-			<Divider dashed />
+			<TransactionDetail
+				label={t("COMMON.ADDRESS")}
+				borderPosition="bottom"
+				extra={<Avatar size="lg" address={wallet.address()} />}
+			>
+				<Address address={wallet.address()} maxChars={0} />
+			</TransactionDetail>
 
-			<FormField name="name">
+			<FormField name="name" className="mt-8">
 				<FormLabel label={t("WALLETS.PAGE_CREATE_WALLET.WALLET_NAME")} required={false} optional />
 				<Input
 					data-testid="CreateWallet__wallet-name"

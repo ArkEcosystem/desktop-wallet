@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -23,6 +24,16 @@ describe("NavigationBar", () => {
 		const { container, asFragment } = renderWithRouter(<NavigationBar profile={profile} />);
 
 		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with title", () => {
+		const title = "Desktop Wallet";
+
+		const { container, asFragment } = renderWithRouter(<NavigationBar title={title} profile={profile} />);
+
+		expect(container).toBeTruthy();
+		expect(container).toHaveTextContent(title);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -94,6 +105,16 @@ describe("NavigationBar", () => {
 		const { getByTestId } = renderWithRouter(<NavigationBar profile={profile} />);
 
 		expect(getByTestId("navbar__user--avatar")).toBeTruthy();
+	});
+
+	it("should render the navbar with exchange currency", () => {
+		profile.settings().set(ProfileSetting.ExchangeCurrency, "BRL");
+
+		const { getByText } = renderWithRouter(<NavigationBar profile={profile} />);
+
+		expect(getByText("R$")).toBeTruthy();
+
+		profile.settings().set(ProfileSetting.ExchangeCurrency, "BTC");
 	});
 
 	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support"])(

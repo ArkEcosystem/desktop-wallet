@@ -128,6 +128,7 @@ module.exports = {
 			maxWidth: {
 				"1/4": "25%",
 				"8xl": "85rem",
+				128: "32rem",
 			},
 			maxHeight: {
 				"17e": "4.25em",
@@ -143,6 +144,7 @@ module.exports = {
 			width: {
 				22: "5.5rem",
 				44: "11rem",
+				96: "24rem",
 				128: "32rem",
 				144: "36rem",
 				125: "31.25rem",
@@ -188,11 +190,16 @@ module.exports = {
 			listStyleType: {
 				circle: "circle",
 			},
+			screens: {
+				dark: { raw: "(prefers-color-scheme: dark)" },
+			},
 		},
 	},
 	variants: {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
 		borderWidth: [...defaultConfig.variants.borderWidth, "first", "last"],
+		opacity: [...defaultConfig.variants.opacity, "group-hover"],
+		padding: [...defaultConfig.variants.padding, "first", "last"],
 	},
 	plugins: [tailwindUI, tailwindcssDebugScreens],
 };

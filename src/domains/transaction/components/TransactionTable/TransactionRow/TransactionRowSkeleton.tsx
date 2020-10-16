@@ -7,7 +7,11 @@ type Props = {
 } & React.HTMLProps<any>;
 
 export const TransactionRowSkeleton = ({ showSign, showCurrency, ...props }: Props) => (
-	<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300" {...props}>
+	<tr
+		data-testid="TransactionRow"
+		className="border-b border-dotted last:border-b-0 border-theme-neutral-300"
+		{...props}
+	>
 		<td className="w-16 py-6">
 			<Skeleton width={24} height={24} />
 		</td>

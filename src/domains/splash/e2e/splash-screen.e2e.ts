@@ -22,5 +22,10 @@ test("should show splash screen", async (t) => {
 test("should show welcome screen after splash screen", async (t) => {
 	await t.expect(Selector('[data-testid="Splash__text"]').exists).ok();
 	await t.expect(Selector('[data-testid="Splash__text"]').exists).notOk({ timeout: 10000 });
-	await t.expect(Selector("h1").withExactText(translations.COMMON.WELCOME).exists).ok();
+
+	const title = await Selector("h1").textContent;
+
+	for (const part of translations.PROFILE.PAGE_WELCOME.TITLE.split("<1/>")) {
+		await t.expect(title).contains(part);
+	}
 }).clientScripts({ content: mockWindowNavigator });

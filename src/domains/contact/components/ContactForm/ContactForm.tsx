@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Contact, ContactAddress, NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Contact, ContactAddress } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -25,8 +25,8 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 	>
 		<div className="mr-4">
 			<div className="flex items-center -space-x-1">
-				<NetworkIcon coin={address.coin} network={address.network} />
-				<Avatar address={address.address} />
+				<NetworkIcon coin={address.coin} network={address.network} size="lg" />
+				<Avatar address={address.address} size="lg" />
 			</div>
 		</div>
 
@@ -71,7 +71,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 
 type ContactFormProps = {
 	contact?: Contact;
-	networks: NetworkData[];
+	networks: Coins.Network[];
 	onCancel?: any;
 	onChange?: any;
 	onDelete?: any;
@@ -100,7 +100,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
-	const { watch, register } = form;
+	const { register, setError, setValue, watch } = form;
 	const { name, network, address } = watch();
 
 	useEffect(() => {
@@ -109,21 +109,24 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 
 	useEffect(() => {
 		for (const [field, message] of Object.entries(errors)) {
-			form.setError(field, message as string);
+			setError(field, { type: "manual", message: message as string });
 		}
-	}, [form, errors]);
+	}, [errors, setError]);
 
 	const handleAddAddress = async () => {
 		const addressExists = addresses.some((addr) => addr.address === address);
 		if (addressExists) {
-			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_EXISTS", { address }));
+			return setError("address", {
+				type: "manual",
+				message: t("CONTACTS.VALIDATION.ADDRESS_EXISTS", { address }),
+			});
 		}
 
 		const instance: Coins.Coin = await env.coin(network.coin(), network.id());
 		const isValidAddress: boolean = await instance.identity().address().validate(address);
 
 		if (!isValidAddress) {
-			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID"));
+			return setError("address", { type: "manual", message: t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID") });
 		}
 
 		setAddresses(
@@ -135,8 +138,8 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 			}),
 		);
 
-		form.setValue("network", null);
-		form.setValue("address", null);
+		setValue("network", null);
+		setValue("address", null);
 	};
 
 	const handleRemoveAddress = (item: any) => {
@@ -145,8 +148,8 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 		);
 	};
 
-	const handleSelectNetwork = (network?: NetworkData | null) => {
-		form.setValue("network", network, true);
+	const handleSelectNetwork = (network?: Coins.Network | null) => {
+		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
 
 	const isNameValid = useMemo(() => !!name?.trim() && !form.errors?.name, [name, form.errors]);
@@ -166,7 +169,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 				<FormLabel>{t("CONTACTS.CONTACT_FORM.NAME")}</FormLabel>
 				<Input
 					data-testid="contact-form__name-input"
-					ref={form.register({
+					ref={register({
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("CONTACTS.CONTACT_FORM.NAME"),
 						}).toString(),
@@ -186,7 +189,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 
 			<SubForm>
 				<FormField name="network">
-					<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
+					<FormLabel>{t("CONTACTS.CONTACT_FORM.CRYPTOASSET")}</FormLabel>
 					<SelectNetwork
 						id="ContactForm__network"
 						networks={networks}
@@ -201,7 +204,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 
 					<InputAddress
 						useDefaultRules={false}
-						registerRef={form.register}
+						registerRef={register}
 						onChange={() => onChange?.("address", address)}
 						data-testid="contact-form__address-input"
 					/>

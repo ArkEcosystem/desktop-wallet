@@ -1,4 +1,5 @@
-import { Contact, NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Contact } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
@@ -6,7 +7,7 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { CreateContact, DeleteContact, UpdateContact } from "domains/contact/components";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
 import React, { useEffect, useState } from "react";
@@ -55,7 +56,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	const [contactAction, setContactAction] = useState<string | null>(null);
 	const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
 
-	const [availableNetworks] = useState<NetworkData[]>(env.availableNetworks());
+	const [availableNetworks] = useState<Coins.Network[]>(env.availableNetworks());
 
 	const { t } = useTranslation();
 
@@ -84,17 +85,25 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	const listColumns = [
 		{
-			Header: t("COMMON.NAME"),
-			accessor: "name",
-			className: "pl-13",
+			Header: "ContactAvatar",
+			disableSortBy: true,
+			className: "hidden",
 		},
 		{
-			Header: t("COMMON.NETWORK"),
+			Header: t("COMMON.NAME"),
+			accessor: "name",
+		},
+		{
+			Header: t("COMMON.CRYPTOASSET"),
 			className: "justify-center",
 		},
 		{
+			Header: "Avatar",
+			disableSortBy: true,
+			className: "hidden",
+		},
+		{
 			Header: t("COMMON.ADDRESS"),
-			className: "pl-13",
 		},
 		{
 			Header: t("COMMON.ACCOUNT_TYPE"),
@@ -144,7 +153,8 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 							<Table columns={listColumns} data={contacts}>
 								{(contact: Contact) => (
 									<ContactListItem
-										contact={contact}
+										template="contacts"
+										item={contact}
 										options={contactOptions}
 										onAction={(action: { value: any }) =>
 											handleContactAction(action.value, contact)

@@ -5,14 +5,14 @@ exports[`UpdateWalletName should not render if not open 1`] = `<DocumentFragment
 exports[`UpdateWalletName should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans hGJZle absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-fzpans hGJZle absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -71,7 +71,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
                 Name
               </label>
               <input
-                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -80,7 +80,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fPpool"
+                class="sc-AxjAm hXnHfM"
                 color="primary"
                 type="button"
               >
@@ -106,14 +106,14 @@ exports[`UpdateWalletName should render a modal 1`] = `
 exports[`UpdateWalletName should render form input with existing name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans hGJZle absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-fzpans hGJZle absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background undefined"
       data-testid="modal__inner"
     >
       <div
@@ -172,7 +172,7 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
                 Name
               </label>
               <input
-                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -181,7 +181,7 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fPpool"
+                class="sc-AxjAm hXnHfM"
                 color="primary"
                 type="button"
               >
@@ -207,14 +207,14 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
 exports[`UpdateWalletName should show error message when name consists only of whitespace 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans hGJZle absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-fzpans hGJZle absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -274,21 +274,21 @@ exports[`UpdateWalletName should show error message when name consists only of w
               </label>
               <input
                 aria-invalid="true"
-                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
               <p
                 class="text-sm text-theme-danger"
               >
-                Name is invalid
+                'Name' is invalid
               </p>
             </fieldset>
             <div
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fPpool"
+                class="sc-AxjAm hXnHfM"
                 color="primary"
                 type="button"
               >
@@ -315,14 +315,14 @@ exports[`UpdateWalletName should show error message when name consists only of w
 exports[`UpdateWalletName should show error message when name exceeds 42 characters 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans hGJZle absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-fzpans hGJZle absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -382,7 +382,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               </label>
               <input
                 aria-invalid="true"
-                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -396,7 +396,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fPpool"
+                class="sc-AxjAm hXnHfM"
                 color="primary"
                 type="button"
               >

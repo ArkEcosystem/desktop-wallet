@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Formatted Address should not render without address 1`] = `<div />`;
+exports[`Formatted Address should not render without address 1`] = `
+<div>
+  <div
+    class="inline-block truncate align-middle"
+  />
+</div>
+`;
 
 exports[`Formatted Address should render address only 1`] = `
 <div>
@@ -23,7 +29,7 @@ exports[`Formatted Address should render with normal font 1`] = `
     class="inline-block truncate align-middle"
   >
     <span
-      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-normal text-base"
+      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-normal text-base"
       data-testid="address__wallet-name"
     >
       Sample Wallet
@@ -44,7 +50,7 @@ exports[`Formatted Address should render with wallet name 1`] = `
     class="inline-block truncate align-middle"
   >
     <span
-      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
       data-testid="address__wallet-name"
     >
       Sample Wallet

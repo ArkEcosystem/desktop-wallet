@@ -5,7 +5,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -79,7 +79,7 @@ export const CreateWallet = () => {
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
-						<div className="mt-4">
+						<div className="mt-8">
 							<TabPanel tabId={1}>
 								<FirstStep env={env} profile={activeProfile} />
 							</TabPanel>
@@ -100,7 +100,7 @@ export const CreateWallet = () => {
 									variant="plain"
 									onClick={handleBack}
 								>
-									Back
+									{t("COMMON.BACK")}
 								</Button>
 
 								{activeTab < 4 && (

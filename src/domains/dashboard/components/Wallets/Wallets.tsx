@@ -1,10 +1,11 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { chunk } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Slider } from "app/components/Slider";
 import { Table } from "app/components/Table";
 import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -19,6 +20,11 @@ type WalletsProps = {
 	onCreateWallet?: any;
 	onImportWallet?: any;
 	onWalletAction?: any;
+};
+
+type GridWallet = {
+	wallet?: ReadWriteWallet;
+	isBlank?: boolean;
 };
 
 export const Wallets = ({
@@ -68,25 +74,39 @@ export const Wallets = ({
 
 	const walletSliderOptions = {
 		slideHeight: 185,
-		slidesPerView: 4,
+		slidesPerView: 3,
 		slidesPerColumn: 2,
-		slidesPerGroup: 4,
+		slidesPerGroup: 3,
 		spaceBetween: 20,
 	};
 
 	// Grid
 	const loadGridWallets = () => {
-		const walletObjects = wallets.map((wallet) => ({ wallet }));
-		const walletsPerPage = walletSliderOptions.slidesPerView;
+		const walletObjects = wallets.map((wallet: ReadWriteWallet) => ({ wallet }));
 
-		if (wallets.length < walletsPerPage) {
-			const blankWalletsLength = walletsPerPage - wallets.length;
-			const blankWalletsCards = new Array(blankWalletsLength).fill({ isBlank: true });
-
-			return [...walletObjects, ...blankWalletsCards];
+		if (walletObjects.length <= walletSliderOptions.slidesPerView) {
+			return walletObjects.concat(
+				new Array(walletSliderOptions.slidesPerView - walletObjects.length).fill({ isBlank: true }),
+			);
 		}
 
-		return walletObjects;
+		const walletsPerPage = walletSliderOptions.slidesPerView * 2;
+		const desiredLength = Math.ceil(walletObjects.length / walletsPerPage) * walletsPerPage;
+
+		walletObjects.push(...new Array(desiredLength - walletObjects.length).fill({ isBlank: true }));
+
+		const result: GridWallet[] = [];
+
+		for (const page of chunk(walletObjects, walletsPerPage)) {
+			const firstHalf = page.slice(0, walletsPerPage / 2);
+			const secondHalf = page.slice(walletsPerPage / 2, page.length);
+
+			for (let i = 0; i < firstHalf.length; i++) {
+				result.push(firstHalf[i], secondHalf[i]);
+			}
+		}
+
+		return result;
 	};
 
 	// List
@@ -99,13 +119,13 @@ export const Wallets = ({
 		setHasMoreWallets(false);
 	};
 
-	const handleRowClick = (walletId: string) => {
+	const handleClick = (walletId: string) => {
 		history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}`);
 	};
 
 	return (
 		<div>
-			<div className="flex items-center justify-between pb-8">
+			<div className="flex items-center justify-between mb-8">
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls
@@ -131,9 +151,9 @@ export const Wallets = ({
 				{walletsViewType === "list" && (
 					<div>
 						{wallets.length > 0 && (
-							<div>
+							<div data-testid="WalletTable">
 								<Table columns={listColumns} data={loadListWallets()}>
-									{(rowData: any) => <WalletListItem {...rowData} onRowClick={handleRowClick} />}
+									{(rowData: any) => <WalletListItem {...rowData} onClick={handleClick} />}
 								</Table>
 
 								{hasMoreWallets && (

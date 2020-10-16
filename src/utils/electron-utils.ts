@@ -7,6 +7,7 @@ type DialogOptions = {
 	filters?: FileFilter | FileFilter[];
 	restrictToPath?: string;
 	encoding?: "utf-8" | "base64";
+	returnBasename?: boolean;
 };
 
 const defaultFilters = [
@@ -48,7 +49,7 @@ const saveFile = async (raw: any, defaultPath?: string, options?: DialogOptions)
 
 	writeFileSync(filePath, raw, encode);
 
-	return filePath;
+	return options?.returnBasename ? path.basename(filePath) : filePath;
 };
 
 const openFile = async (defaultPath?: string | null, options?: DialogOptions) => {

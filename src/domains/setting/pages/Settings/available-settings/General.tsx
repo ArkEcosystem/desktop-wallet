@@ -1,4 +1,4 @@
-import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -8,32 +8,47 @@ import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { PlatformSdkChoices } from "data";
+import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { setScreenshotProtection } from "utils/electron-utils";
 
-type GeneralProps = {
-	env: Environment;
-	formConfig: any;
-	pageConfig: any;
-	onSubmit: (profile: Profile) => void;
-};
+import { SettingsProps } from "../Settings.models";
 
-export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
-	const activeProfile = useActiveProfile()!;
+export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
+	const activeProfile = useActiveProfile();
+
 	const { t } = useTranslation();
 
 	const { context, register } = formConfig;
+	const name = context.watch("name", activeProfile.settings().get(ProfileSetting.Name));
+
 	const nameMaxLength = 42;
 
 	const [avatarImage, setAvatarImage] = useState(activeProfile.settings().get(ProfileSetting.Avatar) || "");
+
 	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
+	const [isResetProfileOpen, setIsResetProfileOpen] = useState(false);
+
 	const [isAdvancedMode, setIsAdvancedMode] = useState(
 		activeProfile.settings().get(ProfileSetting.AdvancedMode) || false,
 	);
+
+	const profiles = useMemo(() => env.profiles().values(), [env]);
+	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
+
+	useEffect(() => {
+		if ((!avatarImage || isSvg) && name) {
+			setAvatarImage(AvatarSDK.make(name));
+		} else {
+			if (isSvg && !name) {
+				setAvatarImage("");
+			}
+		}
+	}, [name, avatarImage, isSvg, setAvatarImage]);
 
 	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
@@ -148,7 +163,18 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	}: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
 
-		activeProfile.settings().set(ProfileSetting.Avatar, avatarImage);
+		const profileExists = profiles.some(
+			(profile) =>
+				profile.name() === formattedName && activeProfile.settings().get(ProfileSetting.Name) !== formattedName,
+		);
+
+		if (profileExists) {
+			return context.setError("name", {
+				type: "manual",
+				message: t("SETTINGS.GENERAL.PERSONAL.VALIDATION.NAME_EXISTS"),
+			});
+		}
+
 		activeProfile.settings().set(ProfileSetting.Name, formattedName);
 		activeProfile.settings().set(ProfileSetting.Locale, language);
 		activeProfile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
@@ -161,11 +187,17 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
 
+		if (!avatarImage || isSvg) {
+			activeProfile.settings().forget(ProfileSetting.Avatar);
+		} else {
+			activeProfile.settings().set(ProfileSetting.Avatar, avatarImage);
+		}
+
 		setScreenshotProtection(isScreenshotProtection);
 
 		await env.persist();
 
-		onSubmit(activeProfile);
+		onSuccess();
 	};
 
 	return (
@@ -176,7 +208,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 				<div className="relative mt-8">
 					<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 
-					<SelectProfileImage value={avatarImage} onSelect={setAvatarImage} />
+					<SelectProfileImage value={avatarImage} name={name} onSelect={setAvatarImage} />
 
 					<div className="flex justify-between w-full mt-8">
 						<div className="flex flex-col w-2/4">
@@ -303,7 +335,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 				</div>
 
 				<div className="flex justify-between w-full pt-2">
-					<Button color="danger" variant="plain">
+					<Button onClick={() => setIsResetProfileOpen(true)} color="danger" variant="plain">
 						<Icon name="Reset" />
 						<span>{t("COMMON.RESET_DATA")}</span>
 					</Button>
@@ -321,6 +353,14 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 				onClose={() => handleAdvancedMode(false)}
 				onDecline={() => handleAdvancedMode(false)}
 				onAccept={() => handleAdvancedMode(true)}
+			/>
+
+			<ResetProfile
+				isOpen={isResetProfileOpen}
+				profile={activeProfile}
+				onCancel={() => setIsResetProfileOpen(false)}
+				onClose={() => setIsResetProfileOpen(false)}
+				onReset={() => setIsResetProfileOpen(false)}
 			/>
 		</>
 	);

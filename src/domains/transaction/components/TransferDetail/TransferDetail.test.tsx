@@ -1,4 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { env, getDefaultProfileId, render } from "testing-library";
@@ -56,6 +57,7 @@ describe("TransferDetail", () => {
 				transaction={{
 					...TransactionFixture,
 					isConfirmed: () => true,
+					confirmations: () => BigNumber.ONE,
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
 				}}
 				ticker="BTC"
@@ -63,7 +65,7 @@ describe("TransferDetail", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-		expect(getByText("Well Confirmed")).toBeTruthy();
+		expect(getByText("Well confirmed")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 

@@ -6,147 +6,30 @@ exports[`TransactionSuccessful should render 1`] = `
     class="space-y-8"
     data-testid="TransactionSuccessful"
   >
-    <div>
-      <h1
-        class="mb-0"
-      >
-        Transaction Sent
-      </h1>
-      <div
-        class="grid grid-flow-row gap-2"
-      >
-        <div
-          class="w-full my-10"
+    <div
+      class="flex items-end justify-between bg-theme-background"
+    >
+      <div>
+        <h1
+          class="mb-0 md:text-4xl"
+          data-testid="header__title"
         >
-          <svg
-            class="w-full"
-          >
-            transaction_successful.svg
-          </svg>
-        </div>
-        <p
-          class="mb-4 text-theme-neutral-dark"
-        >
-          Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
-        </p>
-        <div
-          class="flex items-center py-6 true "
-          data-testid="TransactionDetail"
-        >
-          <div
-            class="flex-1 space-y-2"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral"
-            >
-              ID
-            </div>
-            <div
-              class="font-semibold"
-            >
-              <div
-                class="flex items-center"
-              >
-                <span
-                  class="ml-5"
-                >
-                  <div
-                    class="inline-block cursor-pointer"
-                    data-testid="clipboard__wrapper"
-                  >
-                    <div
-                      class="text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-          data-testid="TransactionDetail"
-        >
-          <div
-            class="flex-1 space-y-2"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral"
-            >
-              Network
-            </div>
-            <div
-              class="font-semibold"
-            >
-              undefined undefined
-            </div>
-          </div>
-          <div
-            class="ml-1 text-theme-danger"
-          >
-            <div
-              class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-light"
-            />
-          </div>
-        </div>
-        <div
-          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-          data-testid="TransactionDetail"
-        >
-          <div
-            class="flex-1 space-y-2"
-          >
-            <div
-              class="font-semibold"
-            >
-              <div
-                class="mb-2 text-sm font-semibold text-theme-neutral"
-              >
-                <span
-                  class="mr-1"
-                >
-                  Sender
-                </span>
-                <div
-                  class="sc-AxhCb jwGgjn"
-                  color="warning"
-                >
-                  <span
-                    class="text-sm"
-                  >
-                    Your address
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-            data-testid="Avatar"
-          >
-            <div
-              class="w-full h-full"
-            >
-              <img
-                alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-              />
-            </div>
-          </div>
-        </div>
-        <div />
+          Transaction Sent
+        </h1>
       </div>
+    </div>
+    <svg
+      class="w-full"
+    >
+      transaction_successful.svg
+    </svg>
+    <p
+      class="text-theme-neutral-dark"
+    >
+      Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
+    </p>
+    <div>
+      <div />
     </div>
   </section>
 </DocumentFragment>

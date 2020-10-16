@@ -3,18 +3,20 @@
 exports[`Table should render 1`] = `
 <div>
   <div
-    class="sc-AxirZ kYeMxY"
+    class="sc-AxirZ fgUA-Dx -mt-3"
     role="table"
   >
     <table
+      cellpadding="0"
       class="table-auto"
     >
       <thead>
         <tr
+          class="border-b border-theme-neutral-300"
           role="row"
         >
           <th
-            class="text-sm text-left select-none text-theme-neutral"
+            class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
@@ -44,7 +46,7 @@ exports[`Table should render 1`] = `
             </div>
           </th>
           <th
-            class="text-sm text-left select-none text-theme-neutral"
+            class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
@@ -95,18 +97,20 @@ exports[`Table should render 1`] = `
 exports[`Table should render empty rows if template not provided 1`] = `
 <div>
   <div
-    class="sc-AxirZ kYeMxY"
+    class="sc-AxirZ fgUA-Dx -mt-3"
     role="table"
   >
     <table
+      cellpadding="0"
       class="table-auto"
     >
       <thead>
         <tr
+          class="border-b border-theme-neutral-300"
           role="row"
         >
           <th
-            class="text-sm text-left select-none text-theme-neutral"
+            class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
@@ -136,7 +140,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
             </div>
           </th>
           <th
-            class="text-sm text-left select-none text-theme-neutral"
+            class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"

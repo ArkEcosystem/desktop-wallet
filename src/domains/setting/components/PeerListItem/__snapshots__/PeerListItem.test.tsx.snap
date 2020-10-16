@@ -5,45 +5,44 @@ exports[`PeerListItem should render 1`] = `
   <table>
     <tbody>
       <tr
-        class="border-b border-theme-neutral-200"
+        class="sc-AxgMl fRZhDw group"
+        data-testid="TableRow"
       >
-        <td
-          class="inline-flex items-center py-4 mt-1"
-        >
+        <td>
           <div
-            class="sc-AxjAm bLfakz"
+            class="sc-AxhUy eVWnwu space-x-2"
           >
             <div
-              class="sc-AxirZ iQaTP"
-              height="1em"
-              width="1em"
+              class="sc-AxjAm hwbTAP"
             >
-              <svg>
-                btc.svg
-              </svg>
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              />
             </div>
+            <span>
+              BITCOIN
+            </span>
           </div>
-          <span
-            class="ml-2"
-          >
-            BITCOIN
-          </span>
         </td>
-        <td
-          class="py-1"
-        >
-          <span />
-        </td>
-        <td
-          class="py-1"
-        >
-          <span />
-        </td>
-        <td
-          class="py-1 text-theme-neutral"
-        >
+        <td>
           <div
-            class="flex justify-center h-full"
+            class="sc-AxhUy RRbSA"
+          >
+            <span />
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhUy RRbSA"
+          >
+            <span />
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhUy RRbSA text-theme-neutral justify-center"
           >
             <div
               class="sc-AxirZ iQaTP"
@@ -52,10 +51,12 @@ exports[`PeerListItem should render 1`] = `
             />
           </div>
         </td>
-        <td
-          class="text-theme-neutral-300"
-        >
-          0
+        <td>
+          <div
+            class="sc-AxhUy iWqFsK text-theme-neutral-300"
+          >
+            0
+          </div>
         </td>
       </tr>
     </tbody>

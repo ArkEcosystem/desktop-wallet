@@ -65,7 +65,7 @@ describe("Contacts", () => {
 					target: { value: "name" },
 				});
 
-				fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+				fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 			});
 
 			await act(async () => {
@@ -330,8 +330,7 @@ describe("Contacts", () => {
 
 	describe("without contacts", () => {
 		beforeEach(async () => {
-			firstContactId = profile.contacts().values()[0].id();
-			profile.contacts().forget(firstContactId);
+			profile.contacts().flush();
 
 			const contactsURL = `/profiles/${profile.id()}/contacts`;
 			history.push(contactsURL);

@@ -1,46 +1,25 @@
-export const categories = [
-	{
-		name: "All",
-		isSelected: true,
-	},
-	{
-		name: "Technical",
-		isSelected: false,
-	},
-	{
-		name: "Marketing",
-		isSelected: false,
-	},
-	{
-		name: "Community",
-		isSelected: false,
-	},
-	{
-		name: "Emergency",
-		isSelected: false,
-	},
-];
+export const AVAILABLE_CATEGORIES = ["Technical", "Marketing", "Community", "Emergency"];
 
 export const assets = [
 	{
-		name: "Ark",
+		name: "ARK",
 		isSelected: true,
-		coin: "ark",
+		coin: "ARK",
 	},
 	{
 		name: "Ethereum",
 		isSelected: false,
-		coin: "eth",
+		coin: "ETH",
 	},
 	{
 		name: "Bitcoin",
 		isSelected: false,
-		coin: "btc",
+		coin: "BTC",
 	},
 	{
 		name: "Lisk",
 		isSelected: false,
-		coin: "lsk",
+		coin: "LSK",
 	},
 ];
 
@@ -48,21 +27,21 @@ export const coins: any = {
 	eth: {
 		name: "Ethereum",
 		coin: "ETH",
-		network: "mainnet",
+		network: "eth.mainnet",
 	},
 	ark: {
 		name: "ARK Ecosystem",
 		coin: "ARK",
-		network: "mainnet",
+		network: "ark.mainnet",
 	},
 	btc: {
 		name: "Bitcoin",
 		coin: "BTC",
-		network: "livenet",
+		network: "btc.livenet",
 	},
 	lsk: {
 		name: "Lisk",
 		coin: "LSK",
-		network: "mainnet",
+		network: "lsk.mainnet",
 	},
 };

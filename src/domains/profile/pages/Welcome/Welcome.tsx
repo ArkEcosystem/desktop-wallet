@@ -1,18 +1,17 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { images } from "app/assets/images";
+import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeleteProfile";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import { SignIn } from "domains/profile/components/SignIn/SignIn";
 import React, { useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
-
-const { WelcomeBanner } = images.common;
 
 export const Welcome = () => {
 	const context = useEnvironmentContext();
@@ -24,6 +23,7 @@ export const Welcome = () => {
 
 	const [deletingProfileId, setDeletingProfileId] = useState<string | undefined>();
 	const [selectedProfile, setSelectedProfile] = useState<Profile | undefined>();
+	const [requestedAction, setRequestedAction] = useState<any>();
 
 	const profileCardActions = [
 		{ label: t("COMMON.SETTINGS"), value: "setting" },
@@ -42,10 +42,32 @@ export const Welcome = () => {
 
 	const closeSignInModal = () => {
 		setSelectedProfile(undefined);
+		setRequestedAction(undefined);
 	};
 
-	const handleProfileCardAction = (profile: Profile, action: any) => {
+	const handleClick = (profile: Profile) => {
+		if (profile.usesPassword()) {
+			setSelectedProfile(profile);
+			setRequestedAction({ label: "Homepage", value: "home" });
+		} else {
+			navigateToProfile(profile.id());
+		}
+	};
+
+	const handleProfileAction = (profile: Profile, action: any) => {
+		if (profile.usesPassword()) {
+			setRequestedAction(action);
+			setSelectedProfile(profile);
+		} else {
+			handleRequestedAction(profile, action);
+		}
+	};
+
+	const handleRequestedAction = (profile: Profile, action: any) => {
 		switch (action?.value) {
+			case "home":
+				navigateToProfile(profile.id());
+				break;
 			case "setting":
 				navigateToProfile(profile.id(), "settings");
 				break;
@@ -53,24 +75,22 @@ export const Welcome = () => {
 				setDeletingProfileId(profile.id());
 				break;
 		}
-	};
 
-	const handleClick = (profile: Profile) => {
-		if (profile.usesPassword()) {
-			setSelectedProfile(profile);
-		} else {
-			navigateToProfile(profile.id());
-		}
+		closeSignInModal();
 	};
 
 	return (
 		<>
-			<Page navbarVariant="logo-only">
+			<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
 				<Section className="flex flex-col justify-center flex-1 text-center">
-					<h1 className="mb-8">{t("PROFILE.PAGE_WELCOME.TITLE")}</h1>
+					<h1 className="mb-8 font-extrabold">
+						<Trans i18nKey="PROFILE.PAGE_WELCOME.TITLE">
+							Welcome to the <br /> ARK Desktop Wallet
+						</Trans>
+					</h1>
 
-					<div className="w-64 mx-auto lg:w-128">
-						<WelcomeBanner />
+					<div className="w-64 mx-auto lg:w-96">
+						<Image name="WelcomeBanner" />
 					</div>
 
 					<div className="max-w-lg mx-auto mt-8 md:max-w-xl">
@@ -91,7 +111,7 @@ export const Welcome = () => {
 											key={index}
 											profile={profile}
 											actions={profileCardActions}
-											onSelect={(action: any) => handleProfileCardAction(profile, action)}
+											onSelect={(action: any) => handleProfileAction(profile, action)}
 										/>
 									))}
 								</div>
@@ -103,10 +123,14 @@ export const Welcome = () => {
 						)}
 
 						<div className="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row">
-							<Button>
-								<Icon name="Msq" width={20} height={20} />
-								<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
-							</Button>
+							<Tippy content={t("COMMON.COMING_SOON")}>
+								<div>
+									<Button disabled>
+										<Icon name="Msq" width={20} height={20} />
+										<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
+									</Button>
+								</div>
+							</Tippy>
 
 							<Button
 								variant="plain"
@@ -128,13 +152,13 @@ export const Welcome = () => {
 				onDelete={closeDeleteProfileModal}
 			/>
 
-			{selectedProfile && (
+			{selectedProfile && requestedAction && (
 				<SignIn
 					isOpen={!!selectedProfile}
 					profile={selectedProfile}
 					onCancel={closeSignInModal}
 					onClose={closeSignInModal}
-					onSuccess={() => navigateToProfile(selectedProfile.id())}
+					onSuccess={() => handleRequestedAction(selectedProfile, requestedAction)}
 				/>
 			)}
 		</>

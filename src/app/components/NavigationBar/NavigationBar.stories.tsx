@@ -1,5 +1,5 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import React from "react";
@@ -11,11 +11,9 @@ export default { title: "App / Components / NavigationBar" };
 
 const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 const profile = env.profiles().create("Test profile");
-profile.settings().set(ProfileSetting.ExchangeCurrency, "btc");
 
 export const Default = () => {
 	const notifications = {
-		pluginsHeader: "Plugin Jun 16, 2020",
 		plugins: [
 			{
 				logoClassName: "w-8 h-8 p-2 mr-4 rounded-lg bg-logo",
@@ -27,7 +25,6 @@ export const Default = () => {
 				},
 			},
 		],
-		transactionsHeader: "Transaction Jun 16, 2020",
 		transactions: [
 			{
 				id: "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
@@ -56,30 +53,13 @@ export const Default = () => {
 
 	return (
 		<EnvironmentProvider env={env}>
-			<NavigationBar
-				profile={profile}
-				onUserAction={(action: any) => alert(action.label)}
-				notifications={notifications}
-				onNotificationAction={(actionName: string) => alert(actionName)}
-			/>
+			<NavigationBar profile={profile} onUserAction={(action: any) => alert(action.label)} />
 		</EnvironmentProvider>
 	);
 };
 
-export const EmptyNotifications = () => {
-	const notifications = {
-		pluginsHeader: "Plugin Jun 16, 2020",
-		transactionsHeader: "Transaction Jun 16, 2020",
-	};
-
-	return (
-		<EnvironmentProvider env={env}>
-			<NavigationBar
-				profile={profile}
-				onUserAction={(action: any) => alert(action.label)}
-				notifications={notifications}
-				onNotificationAction={(actionName: string) => alert(actionName)}
-			/>
-		</EnvironmentProvider>
-	);
-};
+export const EmptyNotifications = () => (
+	<EnvironmentProvider env={env}>
+		<NavigationBar profile={profile} onUserAction={(action: any) => alert(action.label)} />
+	</EnvironmentProvider>
+);

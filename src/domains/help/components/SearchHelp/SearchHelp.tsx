@@ -1,6 +1,6 @@
 import { SearchBarOptions } from "app/components/SearchBar/SearchBarOptions";
 import { SearchResource } from "app/components/SearchResource";
-import { Table } from "app/components/Table";
+import { Table, TableCell } from "app/components/Table";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -53,16 +53,16 @@ export const SearchHelp = ({ isOpen, data, onClose, onSearch }: SearchHelpProps)
 			<div className="mt-8">
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
-						<tr className="border-b border-theme-neutral-200">
-							<td className="py-4 pr-8">
+						<tr className="transition-colors duration-100 border-b border-dashed last:border-b-0 border-theme-neutral-200 group">
+							<TableCell variant="start" innerClassName="pr-8">
 								<div className="font-semibold">{rowData.title}</div>
 
 								<div className="mt-2 text-sm text-theme-neutral-dark">{rowData.description}</div>
-							</td>
+							</TableCell>
 
-							<td className="py-4 text-sm text-right align-top">
+							<TableCell innerClassName="text-sm justify-end">
 								<div>{t(`COMMON.${rowData.category.toUpperCase()}`)}</div>
-							</td>
+							</TableCell>
 						</tr>
 					)}
 				</Table>

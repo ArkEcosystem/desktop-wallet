@@ -5,11 +5,11 @@ import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { LayoutControls } from "app/components/LayoutControls";
 import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type PluginsCategoryProps = {
@@ -25,47 +25,57 @@ type PluginsProps = {
 };
 
 const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
+	const activeProfile = useActiveProfile();
+	const [blacklist, setBlacklist] = useState<any>([]);
+
+	useEffect(() => {
+		setBlacklist(Array.from(activeProfile.plugins().blacklist()));
+	}, [activeProfile]);
+
 	const plugins = [];
 	for (let i = 0; i < 4; i++) {
-		plugins.push(
-			{
-				id: `ark-explorer-${i}`,
-				name: "ARK Explorer",
-				author: "ARK.io",
-				category: "utility",
-				rating: 4.2,
-				version: "1.3.8",
-				size: "4.2 MB",
-				isInstalled: false,
-				isOfficial: true,
-			},
-			{
-				id: `ark-avatars-${i}`,
-				name: "ARK Avatars",
-				author: "ARK.io",
-				category: "other",
-				rating: 3.8,
-				version: "1.3.8",
-				size: "163 KB",
-				isInstalled: true,
-				isGrant: true,
-			},
-		);
+		plugins.push({
+			id: i,
+			name: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			rating: 4.2,
+			version: "1.3.8",
+			size: "4.2 MB",
+			isInstalled: false,
+			isOfficial: true,
+		});
 	}
+
+	for (let i = 5; i < 8; i++) {
+		plugins.push({
+			id: i,
+			name: "ARK Avatars",
+			author: "ARK.io",
+			category: "other",
+			rating: 3.8,
+			version: "1.3.8",
+			size: "163 KB",
+			isInstalled: true,
+			isGrant: true,
+		});
+	}
+
+	const pluginList = plugins.filter((plugin: any) => !blacklist.find((id: any) => plugin.id === id));
 
 	return (
 		<div>
 			<div data-testid="PluginsCategory__plugins">
 				{viewType === "grid" && (
 					<PluginGrid
-						plugins={plugins}
+						plugins={pluginList}
 						onSelect={() => console.log("selected")}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={true} />
+					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={true} />
 				)}
 			</div>
 		</div>
@@ -74,40 +84,10 @@ const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
 
 export const PluginsCategory = ({ title, description, initialViewType }: PluginsCategoryProps) => {
 	const activeProfile = useActiveProfile();
+	const { t } = useTranslation();
 
 	const [viewType, setViewType] = useState(initialViewType);
 	const [installPlugin, setInstallPlugin] = useState(false);
-
-	const { t } = useTranslation();
-
-	const plugins = [];
-
-	for (let i = 0; i < 10; i++) {
-		plugins.push(
-			{
-				id: `ark-explorer-${i}`,
-				name: "ARK Explorer",
-				author: "ARK.io",
-				category: "utility",
-				rating: 4.2,
-				version: "1.3.8",
-				size: "4.2 MB",
-				isInstalled: false,
-				isOfficial: true,
-			},
-			{
-				id: `ark-avatars-${i}`,
-				name: "ARK Avatars",
-				author: "ARK.io",
-				category: "other",
-				rating: 3.8,
-				version: "1.3.8",
-				size: "163 KB",
-				isInstalled: true,
-				isGrant: true,
-			},
-		);
-	}
 
 	const crumbs = [
 		{

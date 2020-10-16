@@ -5,14 +5,14 @@ exports[`SignIn should not render if not open 1`] = `<DocumentFragment />`;
 exports[`SignIn should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzplWN jxRzUr absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-fzplWN jxRzUr absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -61,7 +61,7 @@ exports[`SignIn should render a modal 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                   data-testid="profile-card__user--avatar"
                 >
                   <img
@@ -142,7 +142,7 @@ exports[`SignIn should render a modal 1`] = `
                 data-testid="InputPassword"
               >
                 <input
-                  class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                  class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                   data-testid="SignIn__input--password"
                   name="password"
                   type="password"
@@ -172,7 +172,7 @@ exports[`SignIn should render a modal 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fPpool"
+                class="sc-AxjAm hXnHfM"
                 color="primary"
                 data-testid="SignIn__cancel-button"
                 type="button"

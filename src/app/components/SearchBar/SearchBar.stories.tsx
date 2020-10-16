@@ -32,7 +32,7 @@ export const WithOptions = () => {
 
 export const WithFilters = () => {
 	const networks = [
-		{ name: "Ark", isSelected: true },
+		{ name: "ARK", isSelected: true },
 		{ name: "Ethereum", isSelected: true },
 		{ name: "Bitcoin", isSelected: false },
 	];

@@ -8,6 +8,7 @@ type Props = {
 	width: number | string;
 	height: number | string;
 	as?: React.ElementType;
+	fallback?: React.ReactNode;
 } & React.HTMLProps<any>;
 
 type WrapperProps = {
@@ -22,12 +23,12 @@ const Wrapper = styled.div(({ width, height }: WrapperProps) => ({
 	},
 }));
 
-export const Icon = ({ name, width, height, ...props }: Props) => {
+export const Icon = ({ name, width, height, fallback, ...props }: Props) => {
 	const Svg = SvgCollection[name];
 
 	return (
 		<Wrapper width={width} height={height} {...props}>
-			{Svg && <Svg />}
+			{Svg ? <Svg /> : fallback}
 		</Wrapper>
 	);
 };

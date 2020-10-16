@@ -16,6 +16,7 @@ describe("CreateContact", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		existingContact = profile.contacts().values()[0];
 	});
+
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(<CreateContact profile={profile} isOpen={false} onSave={onSave} />);
 
@@ -53,7 +54,7 @@ describe("CreateContact", () => {
 				target: { value: existingContact.name() },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 

@@ -13,7 +13,7 @@ describe("Welcome", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
-			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
+			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
 			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
 
@@ -33,7 +33,7 @@ describe("Welcome", () => {
 	it("should render delegates", async () => {
 		const { asFragment, getAllByTestId } = render(<DelegateTable wallets={delegates} />);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -42,19 +42,19 @@ describe("Welcome", () => {
 		const { asFragment, getAllByTestId } = render(<DelegateTable wallets={delegates} onAction={onAction} />);
 		expect(asFragment()).toMatchSnapshot();
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 
-		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--1");
+		const option = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--1");
 		act(() => {
-			fireEvent.click(resignOption);
+			fireEvent.click(option);
 		});
 
-		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "resign" });
+		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "resignDelegate" });
 	});
 
 	it("should handle update delegate dropdown action", async () => {
@@ -62,18 +62,18 @@ describe("Welcome", () => {
 		const { asFragment, getAllByTestId } = render(<DelegateTable wallets={delegates} onAction={onAction} />);
 		expect(asFragment()).toMatchSnapshot();
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 
-		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--0");
+		const option = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--0");
 		act(() => {
-			fireEvent.click(resignOption);
+			fireEvent.click(option);
 		});
 
-		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "update" });
+		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "updateDelegate" });
 	});
 });

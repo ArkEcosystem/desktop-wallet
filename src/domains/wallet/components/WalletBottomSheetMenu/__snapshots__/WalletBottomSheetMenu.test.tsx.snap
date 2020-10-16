@@ -30,7 +30,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral-dark"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-dark"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -63,20 +63,23 @@ exports[`WalletBottomSheetMenu should render 1`] = `
       >
         <div
           class="container mx-auto px-14"
+          data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw eDwAKA"
+            class="sc-AxiKw gGhpZ -mt-3"
             role="table"
           >
             <table
+              cellpadding="0"
               class="table-auto"
             >
               <thead>
                 <tr
+                  class="border-b border-theme-neutral-300"
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -106,7 +109,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -136,7 +139,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -150,7 +153,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -180,7 +183,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral"
+                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -215,20 +218,21 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
-                  data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  class="sc-AxhUy loGswa group"
+                  data-testid="TableRow"
                 >
-                  <td
-                    class="py-6 mt-1"
-                  >
+                  <td>
                     <div
-                      class="flex"
+                      class="sc-AxhCb eJlyuP -space-x-2"
                     >
                       <div
-                        class="sc-AxhUy dSLmHc"
+                        aria-label="ARK Devnet"
+                        class="sc-AxheI cUzwjK border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxjAm buCJuk"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -238,7 +242,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 dxvPns"
                         data-testid="Avatar"
                       >
                         <div
@@ -253,81 +257,90 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                       </div>
                     </div>
                   </td>
-                  <td
-                    class="py-1"
-                  >
+                  <td>
                     <div
-                      class="inline-block truncate align-middle"
+                      class="sc-AxhCb uWmxZ"
                     >
-                      <span
-                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                        data-testid="address__wallet-name"
+                      <div
+                        class="inline-block truncate align-middle"
                       >
-                        ARK Wallet 1
-                      </span>
-                      <span
-                        class="sc-AxhCb ccMvAG text-theme-neutral-light font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        D8rr7B1d6…VBMs6YUYD
-                      </span>
-                    </div>
-                  </td>
-                  <td
-                    class="py-1 text-sm font-bold text-center align-middle"
-                  >
-                    <div
-                      class="inline-flex items-center space-x-2"
-                    >
-                      <span
-                        class="text-theme-neutral-600"
-                      >
-                        <div
-                          class="sc-AxjAm vZRQY"
-                          height="16"
-                          width="16"
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          data-testid="address__wallet-name"
                         >
-                          <svg>
-                            multisig.svg
-                          </svg>
-                        </div>
+                          ARK Wallet 1
+                        </span>
+                        <span
+                          class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D8rr7B1d6…VBMs6YUYD
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="sc-AxhCb uWmxZ text-sm font-bold text-center align-middle"
+                    >
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      >
+                        <span
+                          class="text-theme-neutral-600"
+                        >
+                          <div
+                            class="sc-AxjAm vZRQY"
+                            height="16"
+                            width="16"
+                          >
+                            <svg>
+                              multisig.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="sc-AxhCb uWmxZ font-semibold justify-end"
+                    >
+                      <span
+                        data-testid="Amount"
+                      >
+                        33.75089801 DARK
                       </span>
                     </div>
                   </td>
-                  <td
-                    class="font-semibold text-right"
-                  >
-                    <span
-                      data-testid="Amount"
+                  <td>
+                    <div
+                      class="sc-AxhCb dwWrbv justify-end text-theme-neutral-light"
                     >
-                      33.75089801 DARK
-                    </span>
-                  </td>
-                  <td
-                    class="text-right text-theme-neutral-light"
-                  >
-                    <span
-                      data-testid="Amount"
-                    >
-                      0 BTC
-                    </span>
+                      <span
+                        data-testid="Amount"
+                      >
+                        0 BTC
+                      </span>
+                    </div>
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
-                  data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  class="sc-AxhUy loGswa group"
+                  data-testid="TableRow"
                 >
-                  <td
-                    class="py-6 mt-1"
-                  >
+                  <td>
                     <div
-                      class="flex"
+                      class="sc-AxhCb osoeH -space-x-2"
                     >
                       <div
-                        class="sc-AxhUy dSLmHc"
+                        aria-label="ARK Devnet"
+                        class="sc-AxheI hiopcG border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxjAm buCJuk"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -337,7 +350,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                         data-testid="Avatar"
                       >
                         <div
@@ -352,50 +365,58 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                       </div>
                     </div>
                   </td>
-                  <td
-                    class="py-1"
-                  >
+                  <td>
                     <div
-                      class="inline-block truncate align-middle"
+                      class="sc-AxhCb kdNpYF"
+                    >
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          ARK Wallet 2
+                        </span>
+                        <span
+                          class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D5sRKWckH…yC3cvJtwb
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                    >
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="sc-AxhCb kdNpYF font-semibold justify-end"
                     >
                       <span
-                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                        data-testid="address__wallet-name"
+                        data-testid="Amount"
                       >
-                        ARK Wallet 2
-                      </span>
-                      <span
-                        class="sc-AxhCb ccMvAG text-theme-neutral-light font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        D5sRKWckH…yC3cvJtwb
+                        57.68 DARK
                       </span>
                     </div>
                   </td>
-                  <td
-                    class="py-1 text-sm font-bold text-center align-middle"
-                  >
+                  <td>
                     <div
-                      class="inline-flex items-center space-x-2"
-                    />
-                  </td>
-                  <td
-                    class="font-semibold text-right"
-                  >
-                    <span
-                      data-testid="Amount"
+                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
                     >
-                      57.68 DARK
-                    </span>
-                  </td>
-                  <td
-                    class="text-right text-theme-neutral-light"
-                  >
-                    <span
-                      data-testid="Amount"
-                    >
-                      0 BTC
-                    </span>
+                      <span
+                        data-testid="Amount"
+                      >
+                        0 BTC
+                      </span>
+                    </div>
                   </td>
                 </tr>
               </tbody>

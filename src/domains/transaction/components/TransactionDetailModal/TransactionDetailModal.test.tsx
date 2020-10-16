@@ -1,3 +1,4 @@
+import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -5,7 +6,6 @@ import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
 import { getDefaultProfileId, renderWithRouter, syncDelegates } from "utils/testing-library";
 
-// i18n
 import { translations } from "../../i18n";
 import { TransactionDetailModal } from "./TransactionDetailModal";
 
@@ -20,7 +20,7 @@ describe("TransactionDetailModal", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
-			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
+			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.persist();
 
 		await syncDelegates();
@@ -54,7 +54,7 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a transfer modal", () => {
-		const { asFragment, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
@@ -108,6 +108,13 @@ describe("TransactionDetailModal", () => {
 						...TransactionFixture,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "multiPayment",
+						wallet: () => ({
+							alias: () => "Test Wallet",
+							currency: () => "ARK",
+							exchangeCurrency: () => "BTC",
+							isDelegate: () => true,
+							isResignedDelegate: () => false,
+						}),
 					}}
 				/>
 				,
@@ -149,7 +156,17 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a vote modal", () => {
-		const { asFragment, getByTestId, getByText } = renderWithRouter(
+		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+			votes.map(
+				(vote: string, index: number) =>
+					new ReadOnlyWallet({
+						address: vote,
+						username: `delegate-${index}`,
+					}),
+			),
+		);
+
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
@@ -172,6 +189,16 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a unvote modal", () => {
+		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+			votes.map(
+				(vote: string, index: number) =>
+					new ReadOnlyWallet({
+						address: vote,
+						username: `delegate-${index}`,
+					}),
+			),
+		);
+
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
@@ -215,6 +242,83 @@ describe("TransactionDetailModal", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render a delegate resignation modal", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<TransactionDetailModal
+					isOpen={true}
+					transactionItem={{
+						...TransactionFixture,
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						type: () => "delegateResignation",
+						wallet: () => ({
+							...TransactionFixture.wallet(),
+							username: () => "ARK Wallet",
+						}),
+					}}
+				/>
+				,
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELEGATE_RESIGNATION_DETAIL.TITLE);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render a second signature modal", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<TransactionDetailModal
+					isOpen={true}
+					transactionItem={{
+						...TransactionFixture,
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						type: () => "secondSignature",
+					}}
+				/>
+				,
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SECOND_SIGNATURE_DETAIL.TITLE);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render a entity modal", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<TransactionDetailModal
+					isOpen={true}
+					transactionItem={{
+						...TransactionFixture,
+						isTransfer: () => false,
+						isBusinessEntityRegistration: () => true,
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						type: () => "entityRegistration",
+					}}
+				/>
+				,
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			translations.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION,
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

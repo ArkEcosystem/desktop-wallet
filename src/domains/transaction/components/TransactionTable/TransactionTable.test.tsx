@@ -151,7 +151,7 @@ describe("TransactionTable", () => {
 	it("should render", () => {
 		// @ts-ignore - TODO: brittle fixtures
 		const { getAllByTestId, asFragment } = renderWithRouter(<TransactionTable transactions={transactions} />);
-		expect(getAllByTestId("TransactionRow")).toHaveLength(transactions.length);
+		expect(getAllByTestId("TableRow")).toHaveLength(transactions.length);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -172,12 +172,21 @@ describe("TransactionTable", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render without explorer link column", () => {
+		const { getAllByTestId, asFragment } = renderWithRouter(
+			// @ts-ignore - TODO: brittle fixtures
+			<TransactionTable transactions={transactions} showExplorerLinkColumn={false} />,
+		);
+		expect(() => getAllByTestId("TransactionRow__ID")).toThrow(/Unable to find an element by/);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render compact", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
 			// @ts-ignore - TODO: brittle fixtures
 			<TransactionTable transactions={transactions} isCompact />,
 		);
-		expect(getAllByTestId("TransactionCompactRow")).toHaveLength(transactions.length);
+		expect(getAllByTestId("TableRow")).toHaveLength(transactions.length);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -210,7 +219,18 @@ describe("TransactionTable", () => {
 			// @ts-ignore - TODO: brittle fixtures
 			<TransactionTable transactions={transactions} onRowClick={onClick} />,
 		);
-		const rows = getAllByTestId("TransactionRow");
+		const rows = getAllByTestId("TableRow");
+		fireEvent.click(rows[0]);
+		expect(onClick).toHaveBeenCalledWith(transactions[0]);
+	});
+
+	it("should emit action on the compact row click", () => {
+		const onClick = jest.fn();
+		const { getAllByTestId } = renderWithRouter(
+			// @ts-ignore - TODO: brittle fixtures
+			<TransactionTable transactions={transactions} onRowClick={onClick} isCompact />,
+		);
+		const rows = getAllByTestId("TableRow");
 		fireEvent.click(rows[0]);
 		expect(onClick).toHaveBeenCalledWith(transactions[0]);
 	});

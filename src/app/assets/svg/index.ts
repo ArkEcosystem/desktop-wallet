@@ -1,24 +1,33 @@
 import { ReactComponent as AlertDanger } from "./alert-danger.svg";
 import { ReactComponent as AlertDefault } from "./alert-default.svg";
 import { ReactComponent as AlertSuccess } from "./alert-success.svg";
-import { ReactComponent as ArrowBack } from "./arrow-back.svg";
-import { ReactComponent as ArrowDown } from "./arrowdown.svg";
-import { ReactComponent as ArrowUp } from "./arrowup.svg";
+import { ReactComponent as ArkLogo } from "./ark-logo.svg";
+import { ReactComponent as ArrowLeft } from "./arrow-left.svg";
+import { ReactComponent as ArrowRight } from "./arrow-right.svg";
 import { ReactComponent as Article } from "./article.svg";
 import { ReactComponent as Back } from "./back.svg";
 import { ReactComponent as BitBucket } from "./bitbucket.svg";
 import { ReactComponent as Blockfolio } from "./blockfolio.svg";
 import { ReactComponent as Bridgechain } from "./bridgechain.svg";
 import { ReactComponent as Business } from "./business.svg";
+import { ReactComponent as CaretDown } from "./caret-down.svg";
+import { ReactComponent as CaretUp } from "./caret-up.svg";
 import { ReactComponent as ChartActiveDot } from "./chart-active-dot.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
+import { ReactComponent as ChevronLeftDouble } from "./chevron-left-double.svg";
+import { ReactComponent as ChevronLeft } from "./chevron-left.svg";
+import { ReactComponent as ChevronRightDouble } from "./chevron-right-double.svg";
+import { ReactComponent as ChevronRight } from "./chevron-right.svg";
 import { ReactComponent as ChevronUp } from "./chevron-up.svg";
 import { ReactComponent as Close } from "./close.svg";
+import { ReactComponent as CopyAddress } from "./copy-address.svg";
+import { ReactComponent as CopyKey } from "./copy-key.svg";
 import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { Currencies } from "./currencies";
 import { ReactComponent as Dash } from "./dash.svg";
+import { ReactComponent as DelegateResigned } from "./delegate-resigned.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
@@ -38,7 +47,7 @@ import { ReactComponent as General } from "./general.svg";
 import { ReactComponent as GitHub } from "./github.svg";
 import { ReactComponent as GitLab } from "./gitlab.svg";
 import { ReactComponent as Grant } from "./grant.svg";
-import { ReactComponent as Grid } from "./grid.svg";
+import { ReactComponent as GridView } from "./grid-view.svg";
 import { ReactComponent as Import } from "./import.svg";
 import { ReactComponent as Instagram } from "./instagram.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
@@ -46,7 +55,7 @@ import { ReactComponent as Key } from "./key.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
 import { ReactComponent as Link } from "./link.svg";
 import { ReactComponent as LinkedIn } from "./linkedin.svg";
-import { ReactComponent as List } from "./list.svg";
+import { ReactComponent as ListView } from "./list-view.svg";
 import { ReactComponent as LoaderLogo } from "./loader-logo.svg";
 import { ReactComponent as Lock } from "./lock.svg";
 import { ReactComponent as Medium } from "./medium.svg";
@@ -55,7 +64,6 @@ import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
 import { ReactComponent as Npm } from "./npm.svg";
 import { ReactComponent as OfficialArkPlugin } from "./official-ark-plugin.svg";
-import { ReactComponent as Ok } from "./ok.svg";
 import { ReactComponent as PaginationFirst } from "./pagination-first.svg";
 import { ReactComponent as PaginationLast } from "./pagination-last.svg";
 import { ReactComponent as Peer } from "./peer.svg";
@@ -85,41 +93,57 @@ import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as StarOutline } from "./star-outline.svg";
 import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as StarsOutline } from "./stars-outline.svg";
-import { ReactComponent as StatusClock } from "./status-clock.svg";
+import { ReactComponent as StatusOk } from "./status-ok.svg";
+import { ReactComponent as StatusPending } from "./status-pending.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
+import { ReactComponent as Unvote } from "./unvote.svg";
 import { ReactComponent as Update } from "./update.svg";
 import { ReactComponent as Upload } from "./upload.svg";
 import { ReactComponent as User } from "./user.svg";
+import { ReactComponent as VoteUnvote } from "./vote-unvote.svg";
+import { ReactComponent as Vote } from "./vote.svg";
 import { ReactComponent as Voted } from "./voted.svg";
 
 export const SvgCollection: any = {
 	AlertDanger,
 	AlertDefault,
 	AlertSuccess,
-	ArrowBack,
-	ArrowDown,
-	ArrowUp,
+	ArrowLeft,
+	ArrowRight,
+	Article,
 	Back,
 	BitBucket,
 	Blockfolio,
 	Bridgechain,
 	Business,
+	CaretDown,
+	CaretUp,
+	ChartActiveDot,
 	Checkmark,
 	ChevronDown,
+	ChevronLeft,
+	ChevronLeftDouble,
+	ChevronRight,
+	ChevronRightDouble,
 	ChevronUp,
 	Close,
 	Copy,
+	CopyAddress,
+	CopyKey,
 	CrossSlim,
 	Dash,
 	Delegate,
+	DelegateResigned,
 	Discord,
 	Download,
 	Edit,
 	Entity,
+	Exchange,
 	Explorer,
 	Eye,
 	EyeOff,
+	EyeTag,
 	Facebook,
 	File,
 	FilePassword,
@@ -129,7 +153,7 @@ export const SvgCollection: any = {
 	GitHub,
 	GitLab,
 	Grant,
-	Grid,
+	GridView,
 	Import,
 	Instagram,
 	Ipfs,
@@ -137,20 +161,27 @@ export const SvgCollection: any = {
 	Ledger,
 	Link,
 	LinkedIn,
-	List,
+	ListView,
+	LoaderLogo,
 	Lock,
 	Medium,
 	Msq,
 	Multisig,
+	Notification,
 	Npm,
 	OfficialArkPlugin,
-	Ok,
 	PaginationFirst,
 	PaginationLast,
 	Peer,
+	Placeholder,
 	Plugin,
+	Plugins,
 	Plus,
+	Portfolio,
+	PortfolioTag,
+	Profile,
 	Qrcode,
+	QuestionMark,
 	Receive,
 	Received,
 	Reddit,
@@ -168,24 +199,17 @@ export const SvgCollection: any = {
 	Star,
 	StarOutline,
 	StarsOutline,
-	StatusClock,
+	StatusOk,
+	StatusPending,
 	Trash,
 	Twitter,
+	Unvote,
 	Update,
 	Upload,
-	Voted,
-	Notification,
 	User,
-	Exchange,
-	Plugins,
-	Profile,
-	Portfolio,
-	PortfolioTag,
-	Article,
-	EyeTag,
-	ChartActiveDot,
-	Placeholder,
-	QuestionMark,
-	LoaderLogo,
+	Vote,
+	Voted,
+	VoteUnvote,
+	ArkLogo,
 	...Currencies,
 };

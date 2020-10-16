@@ -6,6 +6,8 @@ export const translations: { [key: string]: any } = {
 		PERSONAL: {
 			TITLE: "Personal Details",
 			PROFILE_IMAGE: "Profile Image",
+			DELETE_AVATAR: "Delete Avatar",
+			UPLOAD_AVATAR: "Upload Avatar",
 			NAME: "Name",
 			PASSWORD: "Password",
 			PASSPHRASE_LANGUAGE: "Passphrase Language",
@@ -13,6 +15,9 @@ export const translations: { [key: string]: any } = {
 			LANGUAGE: "Language",
 			MARKET_PROVIDER: "Market Provider",
 			TIME_FORMAT: "Time Format",
+			VALIDATION: {
+				NAME_EXISTS: "Profile name already exists",
+			},
 		},
 		SECURITY: {
 			TITLE: "Security",
@@ -41,6 +46,8 @@ export const translations: { [key: string]: any } = {
 					"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
 			},
 		},
+		SUCCESS: "Your profile settings have been updated",
+		ERROR: "Your profile settings could not be updated",
 	},
 	PASSWORD: {
 		MENU_ITEM: "Password",
@@ -73,11 +80,12 @@ export const translations: { [key: string]: any } = {
 			DESCRIPTION:
 				"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
 		},
+		CRYPTOASSET: "Cryptoasset",
 		ADD_PEER: "Add Peer",
-		NETWORK: "Network",
 		NAME: "Name",
 		IP: "IP",
 		TYPE: "Type",
+		SUCCESS: "Your peer settings have been updated",
 	},
 	PLUGINS: {
 		MENU_ITEM: "Plugins",
@@ -95,6 +103,7 @@ export const translations: { [key: string]: any } = {
 		},
 		ADD_PLUGIN: "Add Plugin",
 		OPEN_BLACKLIST: "Open List",
+		SUCCESS: "Your plugin settings have been updated",
 	},
 	MODAL_ADVANCED_MODE: {
 		TITLE: "Advanced Mode Disclaimer",

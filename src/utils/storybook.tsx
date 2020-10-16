@@ -34,9 +34,9 @@ export const generateWallets = async ({
 
 	try {
 		promises.push(
-			profile.wallets().importByAddress("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax", "ARK", "devnet"),
-			profile.wallets().importByAddress("D8vwEEvKgMPVvvK2Zwzyb5uHzRadurCcKq", "ARK", "devnet"),
-			profile.wallets().importByAddress("DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", "ARK", "devnet"),
+			profile.wallets().importByAddress("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax", "ARK", "ark.devnet"),
+			profile.wallets().importByAddress("D8vwEEvKgMPVvvK2Zwzyb5uHzRadurCcKq", "ARK", "ark.devnet"),
+			profile.wallets().importByAddress("DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", "ARK", "ark.devnet"),
 		);
 
 		const wallets = await Promise.all(promises);
@@ -46,7 +46,7 @@ export const generateWallets = async ({
 
 			if (!index) {
 				wallets[index].toggleStarred();
-				wallets[index].data().set(WalletFlag.Ledger, true);
+				wallets[index].data().set(WalletFlag.LedgerIndex, true);
 			}
 
 			wallets[index].settings().set(WalletSetting.Alias, `ARK Wallet ${index + 1}`);

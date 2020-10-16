@@ -3,7 +3,7 @@ import { Collapse, CollapseToggleButton } from "app/components/Collapse";
 import { Icon } from "app/components/Icon";
 import { Table } from "app/components/Table";
 import { WalletListItem } from "app/components/WalletListItem";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -23,7 +23,15 @@ const Backdrop = ({ isVisible }: { isVisible: boolean }) => (
 	</AnimatePresence>
 );
 
-const WalletTable = ({ wallets, onRowClick }: { wallets: ReadWriteWallet[]; onRowClick: any }) => {
+const WalletTable = ({
+	wallets,
+	activeWalletId,
+	onRowClick,
+}: {
+	wallets: ReadWriteWallet[];
+	activeWalletId: string;
+	onRowClick: any;
+}) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -53,7 +61,9 @@ const WalletTable = ({ wallets, onRowClick }: { wallets: ReadWriteWallet[]; onRo
 
 	return (
 		<Table columns={columns} data={wallets}>
-			{(wallet: ReadWriteWallet) => <WalletListItem wallet={wallet} onRowClick={onRowClick} />}
+			{(wallet: ReadWriteWallet) => (
+				<WalletListItem wallet={wallet} activeWalletId={activeWalletId} onClick={onRowClick} />
+			)}
 		</Table>
 	);
 };
@@ -120,8 +130,12 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 
 				<Collapse isOpen={isOpen} maxHeight="20rem">
 					<div className="py-8 bg-theme-background">
-						<div className="container mx-auto px-14">
-							<WalletTable wallets={wallets} onRowClick={handleRowClick} />
+						<div data-testid="WalletTable" className="container mx-auto px-14">
+							<WalletTable
+								wallets={wallets}
+								activeWalletId={activeWallet.id()}
+								onRowClick={handleRowClick}
+							/>
 						</div>
 					</div>
 				</Collapse>

@@ -1,8 +1,8 @@
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
-import { Table } from "app/components/Table";
+import { Table, TableCell, TableRow } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -11,11 +11,9 @@ type AddExchangeProps = {
 	onClose?: any;
 };
 
-const AddExchangeBanner = images.exchange.components.AddExchange.AddExchangeBanner;
-const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
-
 export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 	const { t } = useTranslation();
+
 	const data = [
 		{
 			name: "ChangeNOW Plugin",
@@ -49,8 +47,9 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 
 	const columns = [
 		{
-			Header: " ",
+			Header: "Logo",
 			disableSortBy: true,
+			className: "hidden",
 		},
 		{
 			Header: t("COMMON.NAME"),
@@ -69,8 +68,9 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 			accessor: "version",
 		},
 		{
-			Header: "  ",
+			Header: "Actions",
 			disableSortBy: true,
+			className: "hidden",
 		},
 	];
 
@@ -78,7 +78,7 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 		<Modal
 			title={t("EXCHANGE.MODAL_ADD_EXCHANGE.TITLE")}
 			description={t("EXCHANGE.MODAL_ADD_EXCHANGE.DESCRIPTION")}
-			banner={<AddExchangeBanner className="h-full" />}
+			banner={<Image name="AddExchangeBanner" domain="exchange" />}
 			size="4xl"
 			isOpen={isOpen}
 			onClose={onClose}
@@ -86,30 +86,38 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 			<div className="mt-8 -mb-6">
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
-						<tr className="border-b border-dashed border-theme-neutral-200">
-							<td className="text-center w-18">
-								<ChangeNowLogo className="w-12 h-12" />
-							</td>
-
-							<td>
-								<div className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
-									{rowData.name}
+						<TableRow>
+							<TableCell variant="start" className="w-18">
+								<div className="w-12 h-12">
+									<Image name="ChangeNowLogo" domain="exchange" />
 								</div>
-								<div>{rowData.description}</div>
-							</td>
+							</TableCell>
 
-							<td className="py-10">{rowData.category}</td>
+							<TableCell>
+								<div className="flex flex-col">
+									<div className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
+										{rowData.name}
+									</div>
+									<div>{rowData.description}</div>
+								</div>
+							</TableCell>
 
-							<td className="py-10">
+							<TableCell>
+								<span>{rowData.category}</span>
+							</TableCell>
+
+							<TableCell>
 								<ReviewRating rating={rowData.rating} />
-							</td>
+							</TableCell>
 
-							<td className="py-10">v {rowData.version}</td>
+							<TableCell>
+								<span>v {rowData.version}</span>
+							</TableCell>
 
-							<td className="w-16">
+							<TableCell variant="end" className="w-16" innerClassName="justify-end">
 								<Button variant="plain">{t("COMMON.INSTALL")}</Button>
-							</td>
-						</tr>
+							</TableCell>
+						</TableRow>
 					)}
 				</Table>
 			</div>

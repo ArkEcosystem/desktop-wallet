@@ -1,26 +1,29 @@
 import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { sortByDesc } from "@arkecosystem/utils";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
-import { PercentageBar } from "app/components/PercentageBar";
-import { useActiveProfile } from "app/hooks/env";
+import { BarItem, PercentageBar } from "app/components/PercentageBar";
+import { useEnvironmentContext } from "app/contexts";
+import { useActiveProfile } from "app/hooks";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
+import { getNetworkExtendedData } from "domains/network/helpers";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { balances, portfolioPercentages } from "../../data";
+import { balances } from "../../data";
 
 type DashboardProps = {
 	balances?: any;
 	networks?: any;
-	portfolioPercentages?: any[];
 };
 
-export const Dashboard = ({ networks, portfolioPercentages, balances }: DashboardProps) => {
-	const activeProfile = useActiveProfile();
+export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const history = useHistory();
+	const { env } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
 
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
@@ -28,10 +31,42 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
 
-	const { t } = useTranslation();
+	const availableNetworks = useMemo(
+		() =>
+			env
+				.availableNetworks()
+				.filter((network) => network.isLive())
+				.map((network) => {
+					const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
+					return Object.assign(network, { extra: extended });
+				}),
+		[env],
+	);
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
+	const balancePerCoin = useMemo(() => activeProfile.walletAggregate().balancePerCoin(), [activeProfile]);
+
+	const portfolioPercentages = useMemo(() => {
+		const data: BarItem[] = [];
+
+		for (const coin of Object.keys(balancePerCoin)) {
+			for (const network of availableNetworks) {
+				if (network.extra && network.ticker() === coin) {
+					data.push({
+						color: network.extra.textClass.replace("text-theme-", ""),
+						label: coin,
+						percentage: Number(balancePerCoin[coin].percentage),
+					});
+				}
+			}
+		}
+
+		return sortByDesc([...data], "percentage");
+	}, [availableNetworks, balancePerCoin]);
+
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
+
+	const { t } = useTranslation();
 
 	const fetchTransactions = async (flush = false) => {
 		if (flush) {
@@ -86,15 +121,21 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 					<Section>
 						<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
 						<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-						<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
-						<PercentageBar
-							title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
-							data={portfolioPercentages}
-						/>
+
+						{!activeProfile.balance().isZero() && (
+							<>
+								<div className="pt-6 mb-2 border-b border-dashed border-theme-neutral-300" />
+
+								<PercentageBar
+									title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
+									data={portfolioPercentages}
+								/>
+							</>
+						)}
 					</Section>
 				)}
 
-				<Section className="flex-1">
+				<Section className={!showTransactions ? "flex-1" : undefined}>
 					<Wallets
 						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
 						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
@@ -106,8 +147,9 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 				</Section>
 
 				{showTransactions && (
-					<Section data-testid="dashboard__transactions-view">
+					<Section className="flex-1" data-testid="dashboard__transactions-view">
 						<Transactions
+							title={t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}
 							transactions={allTransactions}
 							exchangeCurrency={exchangeCurrency}
 							fetchMoreAction={fetchTransactions}
@@ -117,9 +159,10 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 					</Section>
 				)}
 			</Page>
+
 			{transactionModalItem && (
 				<TransactionDetailModal
-					isOpen={Boolean(transactionModalItem)}
+					isOpen={!!transactionModalItem}
 					transactionItem={transactionModalItem}
 					onClose={() => setTransactionModalItem(undefined)}
 				/>
@@ -130,5 +173,4 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 Dashboard.defaultProps = {
 	balances,
-	portfolioPercentages,
 };

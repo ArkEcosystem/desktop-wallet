@@ -5,14 +5,14 @@ exports[`ReceiveFunds should not render if not open 1`] = `<DocumentFragment />`
 exports[`ReceiveFunds should not render qrcode without an address 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -50,7 +50,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
             data-testid="ReceiveFunds__info"
           >
             <div
-              class="flex items-center py-6 border-b border-dashed border-theme-neutral-300 "
+              class="sc-AxgMl YAtIa"
               data-testid="TransactionDetail"
             >
               <div
@@ -89,7 +89,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxjAm bDDbwS -mr-2"
+                class="sc-AxjAm bHAIY -mr-2"
               >
                 <div
                   class="sc-AxirZ eEbZjj"
@@ -102,7 +102,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -130,14 +130,14 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
 exports[`ReceiveFunds should render with a wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -175,7 +175,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
             data-testid="ReceiveFunds__info"
           >
             <div
-              class="flex items-center py-6 border-b border-dashed border-theme-neutral-300 "
+              class="sc-AxgMl YAtIa"
               data-testid="TransactionDetail"
             >
               <div
@@ -193,7 +193,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxjAm bDDbwS ml-4"
+                class="sc-AxjAm bHAIY ml-4"
               >
                 <div
                   class="sc-AxirZ eEbZjj"
@@ -211,7 +211,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
             data-testid="ReceiveFunds__info"
           >
             <div
-              class="flex items-center py-6 border-b border-dashed border-theme-neutral-300 "
+              class="sc-AxgMl YAtIa"
               data-testid="TransactionDetail"
             >
               <div
@@ -251,7 +251,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -286,14 +286,14 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
 exports[`ReceiveFunds should render without a wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -331,7 +331,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
             data-testid="ReceiveFunds__info"
           >
             <div
-              class="flex items-center py-6 border-b border-dashed border-theme-neutral-300 "
+              class="sc-AxgMl YAtIa"
               data-testid="TransactionDetail"
             >
               <div
@@ -371,7 +371,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxjAm bDDbwS -mr-2"
+                class="sc-AxjAm bHAIY -mr-2"
               >
                 <div
                   class="sc-AxirZ eEbZjj"
@@ -384,7 +384,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div

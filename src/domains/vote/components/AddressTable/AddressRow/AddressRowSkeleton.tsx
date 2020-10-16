@@ -3,19 +3,21 @@ import React from "react";
 import Skeleton from "react-loading-skeleton";
 
 export const AddressRowSkeleton = () => (
-	<tr className="border-b border-dotted border-theme-neutral-300" data-testid="AddressRowSkeleton">
+	<tr data-testid="AddressRowSkeleton" className="border-b border-dotted last:border-b-0 border-theme-neutral-300">
 		<td className="py-5">
 			<Circle className="bg-theme-neutral-200 border-theme-neutral-200" />
 		</td>
 
-		<td className="w-20 py-5">
+		<td className="py-5">
 			<Skeleton width="80%" height={6} className="mt-4" />
 		</td>
 
 		<td className="w-20 py-5" />
 
 		<td className="py-5">
-			<Skeleton width="40%" height={6} className="mt-4" />
+			<div className="flex justify-end h-full">
+				<Skeleton width={50} height={6} className="mt-4 mr-5" />
+			</div>
 		</td>
 
 		<td className="py-5">
@@ -27,7 +29,9 @@ export const AddressRowSkeleton = () => (
 		</td>
 
 		<td className="py-5">
-			<Skeleton width="30%" height={6} className="mt-4" />
+			<div className="flex justify-center h-full">
+				<Skeleton width={30} height={6} className="mt-4" />
+			</div>
 		</td>
 
 		<td className="py-5">

@@ -9,7 +9,7 @@ exports[`Comments should render properly 1`] = `
       class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
     >
       <span
-        class="text-theme-neutral-900"
+        class="text-theme-text"
       >
         Sort by:
       </span>
@@ -20,7 +20,7 @@ exports[`Comments should render properly 1`] = `
           class="cursor-pointer null"
         >
           <span
-            class="flex items-center space-x-1 text-theme-neutral-900"
+            class="flex items-center space-x-1 text-theme-text"
           >
             <span>
               Best
@@ -31,7 +31,7 @@ exports[`Comments should render properly 1`] = `
               width="7"
             >
               <svg>
-                arrowdown.svg
+                chevron-down.svg
               </svg>
             </div>
           </span>
@@ -234,7 +234,7 @@ exports[`Comments should render properly 1`] = `
                 class="flex items-center space-x-3 divide-x divide-theme-neutral-light"
               >
                 <span
-                  class="text-lg font-semibold text-theme-neutral-900"
+                  class="text-lg font-semibold text-theme-text"
                 >
                   Developer response
                 </span>
@@ -450,7 +450,7 @@ exports[`Comments should render properly 1`] = `
           </div>
         </div>
         <button
-          class="sc-AxirZ dXpJau"
+          class="sc-AxirZ jCYjLj"
           color="primary"
           data-testid="Pagination__next"
           type="button"

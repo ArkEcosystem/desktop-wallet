@@ -134,3 +134,4 @@ app.on("open-url", (event, url) => {
 });
 
 app.setAsDefaultProtocolClient("ark", process.execPath, ["--"]);
+app.allowRendererProcessReuse = false;

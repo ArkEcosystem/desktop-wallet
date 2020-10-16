@@ -2,7 +2,7 @@ import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, renderWithRouter } from "testing-library";
 
 import { WalletListItem } from "./WalletListItem";
 
@@ -21,11 +21,11 @@ describe("WalletListItem", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(WalletFlag.Starred, true);
-		wallet.data().set(WalletFlag.Ledger, true);
+		wallet.data().set(WalletFlag.LedgerIndex, true);
 	});
 
 	it("should render", () => {
-		const { container, getAllByTestId } = renderWithRouter(
+		const { container, getByText } = renderWithRouter(
 			<table>
 				<tbody>
 					<Route path="/profiles/:profileId/dashboard">
@@ -39,12 +39,14 @@ describe("WalletListItem", () => {
 			},
 		);
 
-		expect(getAllByTestId(`WalletListItem__${wallet.address()}`)).toBeTruthy();
+		expect(getByText(wallet.alias())).toBeTruthy();
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should trigger onAction callback if provided", () => {
-		const fn = jest.fn();
+		const onAction = jest.fn();
+
 		const options = [
 			{ label: "Option 1", value: "1" },
 			{ label: "Option 2", value: "2" },
@@ -54,7 +56,7 @@ describe("WalletListItem", () => {
 			<table>
 				<tbody>
 					<Route path="/profiles/:profileId/dashboard">
-						<WalletListItem wallet={wallet} actions={options} onAction={fn} />
+						<WalletListItem wallet={wallet} actions={options} onAction={onAction} />
 					</Route>
 				</tbody>
 			</table>,
@@ -78,7 +80,7 @@ describe("WalletListItem", () => {
 		});
 
 		expect(container.querySelectorAll("ul").length).toEqual(0);
-		expect(fn).toHaveBeenCalled();
+		expect(onAction).toHaveBeenCalled();
 	});
 
 	it("should ignore onAction callback if not provided", () => {
@@ -118,13 +120,13 @@ describe("WalletListItem", () => {
 	});
 
 	it("should click a wallet and redirect to it", () => {
-		const { getByTestId } = renderWithRouter(
+		const { getByText } = renderWithRouter(
 			<table>
 				<tbody>
 					<Route path="/profiles/:profileId/dashboard">
 						<WalletListItem
 							wallet={wallet}
-							onRowClick={() => history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}`)}
+							onClick={() => history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}`)}
 						/>
 					</Route>
 				</tbody>
@@ -138,9 +140,40 @@ describe("WalletListItem", () => {
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/dashboard`);
 
 		act(() => {
-			fireEvent.click(getByTestId(`WalletListItem__${wallet.address()}`));
+			fireEvent.click(getByText(wallet.alias()));
 		});
 
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 	});
+
+	it.each(["ac38fe6d-4b67-4ef1-85be-17c5f6841129", "fake id"])(
+		"should set shadow color on mouse events",
+		(activeWalletId) => {
+			const setState = jest.fn();
+			const useStateSpy = jest.spyOn(React, "useState");
+
+			useStateSpy.mockImplementation((state) => [state, setState]);
+
+			const { asFragment, getByText } = render(
+				<table>
+					<tbody>
+						<WalletListItem wallet={wallet} activeWalletId={activeWalletId} />
+					</tbody>
+				</table>,
+			);
+
+			expect(asFragment()).toMatchSnapshot();
+
+			fireEvent.mouseEnter(getByText(wallet.alias()));
+			fireEvent.mouseLeave(getByText(wallet.alias()));
+
+			expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
+
+			if (wallet.id() === activeWalletId) {
+				expect(setState).toHaveBeenCalledWith("--theme-color-success-100");
+			} else {
+				expect(setState).toHaveBeenCalledWith("--theme-background-color");
+			}
+		},
+	);
 });

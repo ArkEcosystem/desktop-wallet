@@ -1,26 +1,33 @@
 import { images } from "app/assets/images";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
-import { Table } from "app/components/Table";
-import React from "react";
+import { Table, TableCell, TableRow } from "app/components/Table";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type BlacklistPluginsProps = {
 	isOpen: boolean;
 	plugins: any;
 	onClose?: any;
+	blacklisted?: any;
 };
 
 const { BestPluginsBanner } = images.plugin.common;
-const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
-export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsProps) => {
+export const BlacklistPlugins = ({ isOpen, plugins, onClose, blacklisted }: BlacklistPluginsProps) => {
+	const [blacklistedPlugins, setBlacklistedPlugins] = useState<any>([]);
 	const { t } = useTranslation();
+
+	useEffect(() => {
+		setBlacklistedPlugins(blacklisted.map((id: any) => plugins.find((plugin: any) => id === plugin.id)));
+	}, [plugins, blacklisted]);
 
 	const columns = [
 		{
-			Header: " ",
+			Header: "Logo",
 			disableSortBy: true,
+			className: "hidden",
 		},
 		{
 			Header: t("COMMON.NAME"),
@@ -32,8 +39,9 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 			className: "justify-end",
 		},
 		{
-			Header: "  ",
+			Header: "Actions",
 			disableSortBy: true,
+			className: "hidden",
 		},
 	];
 
@@ -48,14 +56,14 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 			onClose={onClose}
 		>
 			<div className="mt-8 -mb-6">
-				<Table columns={columns} data={plugins}>
+				<Table columns={columns} data={blacklistedPlugins}>
 					{(rowData: any) => (
-						<tr className="border-b border-dashed border-theme-neutral-200">
-							<td className="w-16">
-								<ChangeNowLogo className="w-12 h-12" />
-							</td>
+						<TableRow>
+							<TableCell variant="start" className="w-16">
+								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
+							</TableCell>
 
-							<td>
+							<TableCell>
 								<div className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
 									{rowData.name}
 								</div>
@@ -64,12 +72,12 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
-							</td>
+							</TableCell>
 
-							<td className="py-10 text-right text-theme-neutral-dark">
-								{t(`PLUGINS.CATEGORIES.${rowData.category.toUpperCase()}`)}
-							</td>
-						</tr>
+							<TableCell variant="end" innerClassName="justify-end text-theme-neutral-dark">
+								{t(`PLUGINS.CATEGORIES.${rowData.category?.toUpperCase()}`)}
+							</TableCell>
+						</TableRow>
 					)}
 				</Table>
 			</div>
@@ -80,4 +88,5 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 BlacklistPlugins.defaultProps = {
 	isOpen: false,
 	plugins: [],
+	blacklisted: [],
 };

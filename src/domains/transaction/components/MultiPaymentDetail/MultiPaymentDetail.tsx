@@ -1,193 +1,68 @@
-import { Avatar } from "app/components/Avatar";
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
-import { Label } from "app/components/Label";
-// UI Elements
 import { Modal } from "app/components/Modal";
-import { TransactionDetail } from "app/components/TransactionDetail";
-import { TruncateMiddle } from "app/components/TruncateMiddle";
-import { Recipient } from "domains/transaction/components/Recipient";
-import React from "react";
+import {
+	TransactionAmount,
+	TransactionConfirmations,
+	TransactionExplorerLink,
+	TransactionFee,
+	TransactionMemo,
+	TransactionRecipients,
+	TransactionSender,
+	TransactionTimestamp,
+} from "domains/transaction/components/TransactionDetail";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 type MultiPaymentDetailProps = {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: any;
-	ticker?: string;
-	walletAlias?: string;
 };
 
-const renderConfirmationStatus = (isConfirmed: boolean) => {
-	if (!isConfirmed) {
-		return (
-			<div className="flex">
-				Not Confirmed
-				<div className="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500">
-					<div className="m-auto">
-						<Icon name="CrossSlim" width={12} height={12} />
-					</div>
-				</div>
-			</div>
-		);
-	}
-
-	return (
-		<div className="flex">
-			Well Confirmed
-			<div className="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500">
-				<div className="m-auto">
-					<Icon name="Checkmark" width={15} height={15} />
-				</div>
-			</div>
-		</div>
-	);
-};
-
-export const MultiPaymentDetail = (props: MultiPaymentDetailProps) => {
+export const MultiPaymentDetail = ({ isOpen, transaction, onClose }: MultiPaymentDetailProps) => {
 	const { t } = useTranslation();
 
-	const renderSender = () => {
-		if (props.walletAlias) {
-			return (
-				<TransactionDetail
-					label={t("TRANSACTION.SENDER")}
-					extra={
-						<div className="flex items-center">
-							<Circle className="-mr-2 border-black">
-								<Icon name="Delegate" width={25} height={25} />
-							</Circle>
-							<Avatar address={props.transaction.sender()} />
-						</div>
-					}
-				>
-					{props.walletAlias}
-					<TruncateMiddle text={props.transaction.sender()} className="ml-2 text-theme-neutral" />
-				</TransactionDetail>
-			);
-		}
-
-		return (
-			<TransactionDetail
-				label={t("TRANSACTION.SENDER")}
-				extra={
-					<div className="flex items-center">
-						<Circle className="-mr-2 border-black">
-							<Icon name="Delegate" width={25} height={25} />
-						</Circle>
-						<Avatar address={props.transaction.sender()} />
-					</div>
-				}
-			>
-				<TruncateMiddle text={props.transaction.sender()} className="text-theme-neutral" />
-			</TransactionDetail>
-		);
-	};
-
-	const renderAmount = () => {
-		if (props.transaction.isSent()) {
-			return (
-				<TransactionDetail
-					label={t("TRANSACTION.AMOUNT")}
-					extra={
-						<Circle className="border-theme-danger-200 text-theme-danger-dark">
-							<Icon name="Sent" width={25} height={25} />
-						</Circle>
-					}
-				>
-					<Label color="danger">{`${props.transaction
-						.amount()
-						.toHuman()} ${props.ticker?.toUpperCase()}`}</Label>
-				</TransactionDetail>
-			);
-		}
-
-		return (
-			<TransactionDetail
-				label={t("TRANSACTION.AMOUNT")}
-				extra={
-					<Circle className="border-theme-success-200 text-theme-success-dark">
-						<Icon name="Received" width={25} height={25} />
-					</Circle>
-				}
-			>
-				<Label color="success">{`${props.transaction
-					.amount()
-					.toHuman()} ${props.ticker?.toUpperCase()}`}</Label>
-			</TransactionDetail>
-		);
-	};
+	const wallet = useMemo(() => transaction.wallet(), [transaction]);
 
 	return (
-		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
-			{renderSender()}
+		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
+			<TransactionSender
+				address={transaction.sender()}
+				alias={wallet.alias()}
+				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+				border={false}
+			/>
 
-			<TransactionDetail label={t("TRANSACTION.RECIPIENTS")} className="last:pb-0">
-				<div className="flex justify-between text-sm font-semibold text-theme-neutral">
-					<div className="ml-12">{t("COMMON.ADDRESS")}</div>
-					<div className="ml-12">{t("TRANSACTION.AMOUNT")}</div>
-				</div>
+			<TransactionRecipients currency={wallet.currency()} recipients={transaction.recipients()} />
 
-				{props.transaction.recipients().map((recipient: any, index: number) => {
-					const getClassName = () => {
-						const totalRecipients = props.transaction.recipients().length;
+			<TransactionAmount
+				amount={transaction.amount()}
+				convertedAmount={transaction.convertedAmount()}
+				currency={wallet.currency()}
+				exchangeCurrency={wallet.exchangeCurrency()}
+				isMultiPayment={true}
+				isSent={transaction.isSent()}
+			/>
 
-						if (index === 0) return "pt-2";
-						if (index === totalRecipients - 1) return "pb-0";
+			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 
-						return "";
-					};
+			{transaction.memo() && <TransactionMemo memo={transaction.memo()} />}
 
-					return (
-						<Recipient
-							border={!(index === 0)}
-							className={getClassName()}
-							key={recipient.address}
-							address={recipient.address}
-							amount={`${recipient.amount.toHuman()} ${props.ticker?.toUpperCase()}`}
-						/>
-					);
-				})}
-			</TransactionDetail>
+			<TransactionTimestamp timestamp={transaction.timestamp()} />
 
-			{renderAmount()}
+			<TransactionConfirmations
+				isConfirmed={transaction.isConfirmed()}
+				confirmations={transaction.confirmations()}
+			/>
 
-			<TransactionDetail
-				label={t("TRANSACTION.TRANSACTION_FEE")}
-			>{`${props.transaction.fee().toHuman()} ${props.ticker?.toUpperCase()}`}</TransactionDetail>
+			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
 
-			{props.transaction.memo() && (
-				<TransactionDetail label={t("TRANSACTION.SMARTBRIDGE")}>
-					<div className="flex justify-between">
-						{props.transaction.memo()}
-						<Icon name="Smartbridge" width={20} height={20} />
-					</div>
-				</TransactionDetail>
+			{transaction.blockId() && (
+				<TransactionExplorerLink
+					id={transaction.blockId()}
+					link={transaction.explorerLinkForBlock()}
+					variant="block"
+				/>
 			)}
-
-			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>
-				{props.transaction.timestamp()!.format("DD.MM.YYYY HH:mm:ss")}
-			</TransactionDetail>
-
-			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
-				{renderConfirmationStatus(props.transaction.isConfirmed())}
-			</TransactionDetail>
-
-			<TransactionDetail label={t("TRANSACTION.ID")}>
-				<TruncateMiddle text={props.transaction.id()} className="text-theme-primary-dark" />
-
-				<span className="inline-block ml-4 text-theme-primary-300">
-					<Icon name="Copy" />
-				</span>
-			</TransactionDetail>
-
-			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
-				<TruncateMiddle text={props.transaction.blockId()} className="text-theme-primary-dark" />
-
-				<span className="inline-block ml-4 text-theme-primary-300">
-					<Icon name="Copy" />
-				</span>
-			</TransactionDetail>
 		</Modal>
 	);
 };

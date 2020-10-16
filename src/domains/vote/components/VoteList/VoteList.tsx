@@ -1,7 +1,6 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
-import { TransactionDetail } from "app/components/TransactionDetail";
 import React from "react";
 
 type VoteListProps = {
@@ -9,14 +8,14 @@ type VoteListProps = {
 };
 
 export const VoteList = ({ votes }: VoteListProps) => (
-	<div className="-my-5">
+	<div className="-my-2">
 		{votes?.map((vote: ReadOnlyWallet, index: number) => (
-			<TransactionDetail key={index} border={index !== 0}>
-				<div className="space-x-2">
+			<div key={index} className="border-b border-dashed last:border-b-0 border-theme-neutral-300">
+				<div className="py-4 space-x-4">
 					<Avatar size="sm" address={vote.address()} />
 					<Address address={vote.address()} walletName={vote.username()} />
 				</div>
-			</TransactionDetail>
+			</div>
 		))}
 	</div>
 );

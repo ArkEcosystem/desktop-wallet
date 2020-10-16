@@ -3,14 +3,14 @@
 exports[`VerifyMessage should render 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fznyAO ioJhAT absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-fznyAO ioJhAT absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -116,13 +116,17 @@ exports[`VerifyMessage should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxirZ evPsEn flex-1 bg-theme-warning-100"
+                    class="sc-AxirZ evPsEn flex-1 bg-theme-warning-100 space-y-2"
                   >
-                    <span
-                      class="text-sm font-medium"
+                    <div
+                      class="text-sm"
                     >
-                      Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}
-                    </span>
+                      <span
+                        class="text-sm font-medium"
+                      >
+                        Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <div
@@ -143,7 +147,7 @@ exports[`VerifyMessage should render 1`] = `
                       />
                     </label>
                     <input
-                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                       data-testid="VerifyMessage_message-content"
                       name="signed-message-content"
                       type="text"
@@ -156,7 +160,7 @@ exports[`VerifyMessage should render 1`] = `
                 class="flex justify-end space-x-3"
               >
                 <button
-                  class="sc-AxhCb hPLjLy"
+                  class="sc-AxhCb hvkszb"
                   color="primary"
                   data-testid="VerifyMessage__cancel"
                   type="button"
@@ -184,14 +188,14 @@ exports[`VerifyMessage should render 1`] = `
 exports[`VerifyMessage should render the non verify address content 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fznyAO ioJhAT absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-fznyAO ioJhAT absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -295,7 +299,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__message-input"
                     name="message"
                     type="text"
@@ -316,7 +320,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__signatory-input"
                     disabled=""
                     name="signatory"
@@ -339,7 +343,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__signature-input"
                     name="signature"
                     type="text"
@@ -350,7 +354,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="flex justify-end space-x-3"
               >
                 <button
-                  class="sc-AxhCb hPLjLy"
+                  class="sc-AxhCb hvkszb"
                   color="primary"
                   data-testid="VerifyMessage__cancel"
                   type="button"

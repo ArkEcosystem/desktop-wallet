@@ -29,9 +29,5 @@ export const translations: { [key: string]: any } = {
 	PAGE_NEWS: {
 		TITLE: "Blockchain News",
 		POWERED_BY: "Powered by",
-		RESULT_NOT_FOUND: {
-			TITLE: "No results",
-			DESCRIPTION: "No results found. Refine your search and try again",
-		},
 	},
 };

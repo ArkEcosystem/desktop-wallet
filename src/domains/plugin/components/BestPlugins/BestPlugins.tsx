@@ -1,9 +1,10 @@
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
-import { Table } from "app/components/Table";
+import { Table, TableCell, TableRow } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -14,15 +15,15 @@ type BestPluginsProps = {
 };
 
 const { BestPluginsBanner } = images.plugin.common;
-const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
 export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 	const { t } = useTranslation();
 
 	const columns = [
 		{
-			Header: " ",
+			Header: "Logo",
 			disableSortBy: true,
+			className: "hidden",
 		},
 		{
 			Header: t("COMMON.NAME"),
@@ -44,8 +45,9 @@ export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 			className: "justify-center",
 		},
 		{
-			Header: "  ",
+			Header: "Actions",
 			disableSortBy: true,
+			className: "hidden",
 		},
 	];
 
@@ -61,12 +63,12 @@ export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 			<div className="mt-8 -mb-6">
 				<Table columns={columns} data={plugins}>
 					{(rowData: any) => (
-						<tr className="border-b border-dashed border-theme-neutral-200">
-							<td className="w-16">
-								<ChangeNowLogo className="w-12 h-12" />
-							</td>
+						<TableRow>
+							<TableCell className="w-16">
+								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
+							</TableCell>
 
-							<td>
+							<TableCell>
 								<div className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
 									{rowData.name}
 								</div>
@@ -75,22 +77,24 @@ export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
-							</td>
+							</TableCell>
 
-							<td className="py-10 text-center text-theme-neutral-dark">
+							<TableCell className="text-theme-neutral-dark">
 								{t(`PLUGINS.CATEGORIES.${rowData.category.toUpperCase()}`)}
-							</td>
+							</TableCell>
 
-							<td className="flex justify-center py-10 text-theme-neutral-dark">
+							<TableCell className="text-theme-neutral-dark">
 								<ReviewRating rating={rowData.rating} width={3} />
-							</td>
+							</TableCell>
 
-							<td className="py-10 text-center text-theme-neutral-dark">v {rowData.version}</td>
+							<TableCell className="text-theme-neutral-dark">
+								<span>v {rowData.version}</span>
+							</TableCell>
 
-							<td className="w-16">
+							<TableCell innerClassName="justify-end">
 								<Button variant="plain">{t("COMMON.INSTALL")}</Button>
-							</td>
-						</tr>
+							</TableCell>
+						</TableRow>
 					)}
 				</Table>
 			</div>

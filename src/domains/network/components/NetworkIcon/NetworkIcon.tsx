@@ -10,10 +10,11 @@ type Props = {
 	network?: string;
 	as?: React.ElementType;
 	size?: Size;
-	noShadow?: boolean;
 	className?: string;
 	iconSize?: number;
 	showTooltip?: boolean;
+	noShadow?: boolean;
+	shadowColor?: string;
 };
 
 const Placeholder = (props: CircleProps) => (
@@ -50,4 +51,5 @@ export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, .
 
 NetworkIcon.defaultProps = {
 	showTooltip: true,
+	iconSize: 20,
 };

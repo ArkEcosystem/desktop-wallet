@@ -1,9 +1,12 @@
 import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import { DelegateRegistrationDetail } from "domains/transaction/components/DelegateRegistrationDetail";
+import { DelegateResignationDetail } from "domains/transaction/components/DelegateResignationDetail";
+import { EntityDetail } from "domains/transaction/components/EntityDetail";
 import { IpfsDetail } from "domains/transaction/components/IpfsDetail";
 import { MultiPaymentDetail } from "domains/transaction/components/MultiPaymentDetail";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
+import { SecondSignatureDetail } from "domains/transaction/components/SecondSignatureDetail";
 import { TransferDetail } from "domains/transaction/components/TransferDetail";
 import { VoteDetail } from "domains/transaction/components/VoteDetail";
 import React from "react";
@@ -16,10 +19,10 @@ type TransactionDetailModalProps = {
 
 export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProps) => {
 	const activeProfile = useActiveProfile();
+
 	const ticker = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!;
-	const walletAlias = transactionItem!.isSent()
-		? activeProfile.wallets().findByAddress(transactionItem!.sender())?.alias()
-		: activeProfile.wallets().findByAddress(transactionItem!.recipient())?.alias();
+	const walletAlias = activeProfile.wallets().findByAddress(transactionItem!.sender())?.alias();
+	const recipientWalletAlias = activeProfile.wallets().findByAddress(transactionItem!.recipient())?.alias();
 
 	const transactionType = transactionItem?.type();
 	let TransactionModal;
@@ -40,9 +43,20 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 		case "delegateRegistration":
 			TransactionModal = DelegateRegistrationDetail;
 			break;
+		case "delegateResignation":
+			TransactionModal = DelegateResignationDetail;
+			break;
 		case "vote":
 		case "unvote":
 			TransactionModal = VoteDetail;
+			break;
+		case "secondSignature":
+			TransactionModal = SecondSignatureDetail;
+			break;
+		case "entityRegistration":
+		case "entityResignation":
+		case "entityUpdate":
+			TransactionModal = EntityDetail;
 			break;
 
 		default:
@@ -56,10 +70,11 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 	return (
 		<TransactionModal
 			isOpen={isOpen}
-			onClose={onClose}
 			transaction={transactionItem}
 			ticker={ticker}
 			walletAlias={walletAlias}
+			recipientWalletAlias={recipientWalletAlias}
+			onClose={onClose}
 		/>
 	);
 };

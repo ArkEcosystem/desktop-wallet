@@ -5,13 +5,21 @@ import { fireEvent, renderWithRouter } from "utils/testing-library";
 import { TransactionRow } from "./TransactionRow";
 
 describe("TransactionRow", () => {
+	const fixture = {
+		...TransactionFixture,
+		wallet: () => ({
+			...TransactionFixture.wallet(),
+			currency: () => "DARK",
+		}),
+	};
+
 	it("should show transaction", () => {
 		const { getByTestId } = renderWithRouter(
 			<table>
 				<tbody>
 					<TransactionRow
 						// @ts-ignore
-						transaction={{ ...TransactionFixture, wallet: () => ({ currency: () => "DARK" }) }}
+						transaction={fixture}
 					/>
 				</tbody>
 			</table>,
@@ -30,7 +38,7 @@ describe("TransactionRow", () => {
 			<table>
 				<tbody>
 					{/* @ts-ignore */}
-					<TransactionRow transaction={TransactionFixture} exchangeCurrency="BTC" />
+					<TransactionRow transaction={fixture} exchangeCurrency="BTC" />
 				</tbody>
 			</table>,
 		);
@@ -45,7 +53,7 @@ describe("TransactionRow", () => {
 				<tbody>
 					<TransactionRow
 						// @ts-ignore
-						transaction={TransactionFixture}
+						transaction={fixture}
 						exchangeCurrency="BTC"
 						onSign={onSign}
 						isSignaturePending
@@ -57,7 +65,7 @@ describe("TransactionRow", () => {
 		expect(onSign).toHaveBeenCalled();
 	});
 
-	it("should set backgroundColor on mouse events", () => {
+	it("should set shadow color on mouse events", () => {
 		const setState = jest.fn();
 		const useStateSpy = jest.spyOn(React, "useState");
 
@@ -67,15 +75,15 @@ describe("TransactionRow", () => {
 			<table>
 				<tbody>
 					{/* @ts-ignore */}
-					<TransactionRow transaction={TransactionFixture} exchangeCurrency="BTC" />
+					<TransactionRow transaction={fixture} exchangeCurrency="BTC" />
 				</tbody>
 			</table>,
 		);
 
-		fireEvent.mouseEnter(getByTestId("TransactionRow"));
-		fireEvent.mouseLeave(getByTestId("TransactionRow"));
+		fireEvent.mouseEnter(getByTestId("TableRow"));
+		fireEvent.mouseLeave(getByTestId("TableRow"));
 
-		expect(setState).toHaveBeenCalledWith("--theme-color-success-100");
+		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
 		expect(setState).toHaveBeenCalledWith("");
 	});
 });

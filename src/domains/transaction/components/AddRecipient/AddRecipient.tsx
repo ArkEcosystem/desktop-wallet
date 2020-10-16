@@ -3,11 +3,11 @@ import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
+import { InputAddonEnd, InputCurrency, InputGroup } from "app/components/Input";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -56,50 +56,64 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 
 export const AddRecipient = ({
 	maxAvailableAmount,
-	availableAmount,
 	assetSymbol,
 	isSingleRecipient,
 	profile,
 	recipients,
 	onChange,
 }: AddRecipientProps) => {
-	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients || []);
+	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
-	const magnitude = 8;
-	const fraction = Math.pow(10, magnitude * -1);
+	const [displayAmount, setDisplayAmount] = useState<string | undefined>();
+	const [recipientsAmount, setRecipientsAmount] = useState<any>();
 
 	const { t } = useTranslation();
 
 	const defaultValues: any = {
-		amount: availableAmount,
 		recipientAddress: null,
 		isSingle: isSingleRecipient,
 	};
 
 	if (isSingle && addedRecipients.length) {
 		defaultValues.recipientAddress = addedRecipients[0].address;
-		defaultValues.amount = BigNumber.make(addedRecipients[0].amount).toHuman(8);
 	}
 
 	const form = useForm({ defaultValues });
-
 	const { getValues, setValue, register } = form;
+
+	useEffect(() => {
+		register("amount");
+	}, [register]);
+
+	useEffect(() => {
+		setRecipientsAmount(
+			recipients
+				?.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue.amount), 0)
+				.toString(),
+		);
+	}, [recipients, displayAmount]);
+
+	const availableAmount = useMemo(
+		() => addedRecipients.reduce((sum, item) => sum.minus(item.amount), maxAvailableAmount),
+		[maxAvailableAmount, addedRecipients],
+	);
+
 	const { recipientAddress, amount } = form.watch();
 
 	const clearFields = () => {
-		setValue("amount", 0);
+		setDisplayAmount(undefined);
+		setValue("amount", undefined);
 		setValue("recipientAddress", null);
 	};
 
 	const singleRecipientOnChange = () => {
 		const recipientAddress = getValues("recipientAddress");
 		const amount = getValues("amount");
-
 		if (!isSingle) {
 			return;
 		}
 
-		if (!recipientAddress || !amount) {
+		if (!recipientAddress || !BigNumber.make(amount).toNumber()) {
 			onChange?.([]);
 
 			return;
@@ -107,7 +121,7 @@ export const AddRecipient = ({
 
 		onChange?.([
 			{
-				amount: BigNumber.make(amount).divide(fraction).toFixed(0),
+				amount: BigNumber.make(amount),
 				address: recipientAddress,
 			},
 		]);
@@ -115,7 +129,7 @@ export const AddRecipient = ({
 
 	const onAddRecipient = (address: string, amount: number) => {
 		addedRecipients.push({
-			amount: BigNumber.make(amount).divide(fraction).toFixed(0),
+			amount: BigNumber.make(amount),
 			address,
 		});
 		setAddressRecipients(addedRecipients);
@@ -164,22 +178,28 @@ export const AddRecipient = ({
 							<FormLabel label={t("COMMON.AMOUNT")} />
 						</div>
 						<InputGroup>
-							<Input
+							<InputCurrency
 								data-testid="add-recipient__amount-input"
-								type="number"
 								name="amount"
 								placeholder={t("COMMON.AMOUNT")}
 								className="pr-20"
-								ref={register}
-								onChange={singleRecipientOnChange}
-								defaultValue={amount}
+								value={displayAmount || recipientsAmount}
+								onChange={(currency) => {
+									setDisplayAmount(currency.display);
+									setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
+									singleRecipientOnChange();
+								}}
 							/>
 							<InputAddonEnd>
 								<button
 									type="button"
 									data-testid="add-recipient__send-all"
 									onClick={() => {
-										setValue("amount", maxAvailableAmount);
+										setDisplayAmount(availableAmount.toHuman());
+										setValue("amount", availableAmount.toString(), {
+											shouldValidate: true,
+											shouldDirty: true,
+										});
 										singleRecipientOnChange();
 									}}
 									className="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
@@ -191,7 +211,7 @@ export const AddRecipient = ({
 					</FormField>
 				</div>
 
-				{!isSingle && amount > 0 && !!recipientAddress && (
+				{!isSingle && displayAmount && !!recipientAddress && (
 					<Button
 						data-testid="add-recipient__add-btn"
 						variant="plain"
@@ -204,7 +224,7 @@ export const AddRecipient = ({
 			</SubForm>
 
 			{!isSingle && addedRecipients.length > 0 && (
-				<div className="border-b border-dotted border-theme-neutral-200">
+				<div className="border-b border-dashed border-theme-neutral-300">
 					<RecipientList
 						recipients={addedRecipients}
 						isEditable={true}
@@ -218,9 +238,7 @@ export const AddRecipient = ({
 };
 
 AddRecipient.defaultProps = {
-	maxAvailableAmount: 0,
 	assetSymbol: "ARK",
-	availableAmount: 0,
 	isSingleRecipient: true,
 	recipients: [],
 };
