@@ -18,7 +18,7 @@ export const Wrapper = styled.span<BadgeProps>(getStyles);
 
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 	({ className, children, icon, iconWidth, iconHeight, position, ...props }: BadgeProps, ref) => (
-		<Wrapper ref={ref} position={position} className={`${defaultClasses} ${className}`}>
+		<Wrapper ref={ref} position={position} className={`${defaultClasses} ${className}`} {...props}>
 			{!!icon && <Icon name={icon} width={iconWidth} height={iconHeight} />}
 			<span>{children}</span>
 		</Wrapper>
