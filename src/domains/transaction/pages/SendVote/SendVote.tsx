@@ -83,6 +83,23 @@ export const SendVote = () => {
 	];
 
 	const handleBack = () => {
+		if (activeTab === 1) {
+			const params = new URLSearchParams();
+
+			if (unvoteAddresses) {
+				params.append("unvotes", unvoteAddresses.join());
+			}
+
+			if (voteAddresses) {
+				params.append("votes", voteAddresses.join());
+			}
+
+			return history.push({
+				pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`,
+				search: `?${params}`,
+			});
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
@@ -224,9 +241,7 @@ export const SendVote = () => {
 								{activeTab < 4 && (
 									<>
 										<Button
-											disabled={
-												activeTab === 1 || (activeTab === 3 ? formState.isSubmitting : false)
-											}
+											disabled={activeTab === 3 ? formState.isSubmitting : false}
 											variant="plain"
 											onClick={handleBack}
 											data-testid="SendVote__button--back"
