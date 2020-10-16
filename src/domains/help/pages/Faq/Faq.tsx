@@ -2,7 +2,7 @@ import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

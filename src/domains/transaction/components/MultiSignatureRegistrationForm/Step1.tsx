@@ -13,10 +13,12 @@ export const FormStep = ({
 	profile,
 	fees,
 	wallet,
+	step = 0.001,
 }: {
 	profile: Profile;
 	fees: Contracts.TransactionFee;
 	wallet: ReadWriteWallet;
+	step?: number;
 }) => {
 	const { t } = useTranslation();
 	const { setValue, getValues, register } = useFormContext();
@@ -82,7 +84,7 @@ export const FormStep = ({
 						max={fees.max}
 						defaultValue={fee || 0}
 						value={fee || 0}
-						step={0.01}
+						step={step}
 						onChange={(currency) =>
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
 						}

@@ -42,11 +42,9 @@ const renderPage = async () => {
 		},
 	);
 
-	const { getAllByTestId } = rendered;
+	const { getByTestId } = rendered;
 
-	await waitFor(() =>
-		expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(1),
-	);
+	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(15));
 
 	return rendered;
 };
@@ -84,13 +82,7 @@ describe("WalletDetails", () => {
 			})
 			.get("/api/transactions")
 			.query((params) => !!params.address)
-			.reply(200, () => {
-				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
-				return {
-					meta,
-					data: data.slice(0, 1),
-				};
-			})
+			.reply(200, () => require("tests/fixtures/coins/ark/devnet/transactions.json"))
 			.persist();
 	});
 
@@ -257,8 +249,6 @@ describe("WalletDetails", () => {
 	it("should open detail modal on transaction row click", async () => {
 		const { asFragment, getByTestId } = await renderPage();
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(1));
-
 		act(() => {
 			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
 		});
@@ -284,7 +274,7 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => {
-			expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(2);
+			expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(30);
 		});
 	});
 

@@ -2,6 +2,7 @@ import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { images } from "app/assets/images";
 import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Divider } from "app/components/Divider";
+import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -9,7 +10,7 @@ import tw, { styled } from "twin.macro";
 
 import { version } from "../../../../../package.json";
 
-const { ARKLogo, WelcomeBanner } = images.common;
+const { ARKLogo } = images.common;
 
 const LogoContainer = styled.div`
 	${tw`flex items-center justify-center mr-2 text-theme-background bg-theme-neutral-500 rounded-sm`};
@@ -26,7 +27,7 @@ export const Splash = ({ year }: any) => {
 		<Page navbarVariant="logo-only">
 			<Section className="flex flex-col justify-center flex-1 text-center">
 				<div className="w-64 mx-auto lg:w-96">
-					<WelcomeBanner />
+					<Image name="WelcomeBanner" />
 				</div>
 
 				<div data-testid="Splash__text" className="mt-8">

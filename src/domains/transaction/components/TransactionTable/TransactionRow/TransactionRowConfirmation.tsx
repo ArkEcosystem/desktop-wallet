@@ -29,8 +29,8 @@ export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: 
 		status === "actionRequired" ? "Action Required" : `${transaction?.confirmations()} confirmations`;
 
 	const iconName = {
-		confirmed: "Ok",
-		pending: "StatusClock",
+		confirmed: "StatusOk",
+		pending: "StatusPending",
 		actionRequired: "Edit",
 	};
 
@@ -47,6 +47,8 @@ export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: 
 					data-testid={`TransactionRowConfirmation__${status}`}
 					name={iconName[status]}
 					className={iconStyle[status]}
+					width={22}
+					height={22}
 				/>
 			</div>
 		</Tippy>

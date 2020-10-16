@@ -1,8 +1,8 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeleteProfile";
@@ -12,8 +12,6 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
-
-const { WelcomeBanner } = images.common;
 
 export const Welcome = () => {
 	const context = useEnvironmentContext();
@@ -92,7 +90,7 @@ export const Welcome = () => {
 					</h1>
 
 					<div className="w-64 mx-auto lg:w-96">
-						<WelcomeBanner />
+						<Image name="WelcomeBanner" />
 					</div>
 
 					<div className="max-w-lg mx-auto mt-8 md:max-w-xl">

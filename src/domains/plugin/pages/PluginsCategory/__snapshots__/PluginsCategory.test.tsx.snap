@@ -35,7 +35,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -47,7 +47,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -58,7 +58,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -69,7 +69,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -430,7 +430,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                 data-testid="PluginList"
               >
                 <div
-                  class="sc-fznZeY dcwvzV"
+                  class="sc-fznZeY cLCsMF -mt-3"
                   role="table"
                 >
                   <table
@@ -439,10 +439,11 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   >
                     <thead>
                       <tr
+                        class="border-b border-theme-neutral-300"
                         role="row"
                       >
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
@@ -456,7 +457,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -486,7 +487,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -516,7 +517,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -546,7 +547,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
@@ -576,7 +577,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
@@ -606,7 +607,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
@@ -636,7 +637,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--7"
                           role="columnheader"
@@ -650,7 +651,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--8"
                           role="columnheader"
@@ -676,7 +677,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -687,7 +688,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -708,7 +709,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -717,7 +718,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -726,7 +727,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -761,7 +762,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -770,7 +771,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -779,7 +780,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -804,7 +805,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -825,7 +826,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -836,7 +837,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -857,7 +858,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -866,7 +867,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -875,7 +876,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -910,7 +911,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -919,7 +920,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -928,7 +929,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -953,7 +954,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -974,7 +975,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -985,7 +986,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -1006,7 +1007,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -1015,7 +1016,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -1024,7 +1025,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -1059,7 +1060,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -1068,7 +1069,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -1077,7 +1078,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -1102,7 +1103,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -1123,7 +1124,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -1134,7 +1135,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -1155,7 +1156,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -1164,7 +1165,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -1173,7 +1174,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -1208,7 +1209,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -1217,7 +1218,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -1226,7 +1227,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -1251,7 +1252,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -1272,7 +1273,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -1283,7 +1284,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -1304,7 +1305,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -1313,7 +1314,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -1322,7 +1323,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -1357,7 +1358,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -1366,7 +1367,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -1375,7 +1376,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -1400,7 +1401,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"
@@ -1433,7 +1434,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -1444,7 +1445,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -1465,7 +1466,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -1474,7 +1475,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -1483,7 +1484,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -1518,7 +1519,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -1527,7 +1528,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -1536,7 +1537,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -1561,7 +1562,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"
@@ -1594,7 +1595,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -1605,7 +1606,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -1626,7 +1627,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -1635,7 +1636,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -1644,7 +1645,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -1679,7 +1680,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -1688,7 +1689,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -1697,7 +1698,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -1722,7 +1723,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"
@@ -1813,7 +1814,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1825,7 +1826,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1836,7 +1837,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1847,7 +1848,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -2208,7 +2209,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                 data-testid="PluginList"
               >
                 <div
-                  class="sc-fznZeY dcwvzV"
+                  class="sc-fznZeY cLCsMF -mt-3"
                   role="table"
                 >
                   <table
@@ -2217,10 +2218,11 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   >
                     <thead>
                       <tr
+                        class="border-b border-theme-neutral-300"
                         role="row"
                       >
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
@@ -2234,7 +2236,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -2264,7 +2266,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -2294,7 +2296,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -2324,7 +2326,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
@@ -2354,7 +2356,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
@@ -2384,7 +2386,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
@@ -2414,7 +2416,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--7"
                           role="columnheader"
@@ -2428,7 +2430,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--8"
                           role="columnheader"
@@ -2454,7 +2456,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -2465,7 +2467,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -2486,7 +2488,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -2495,7 +2497,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -2504,7 +2506,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -2539,7 +2541,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -2548,7 +2550,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -2557,7 +2559,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -2582,7 +2584,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -2603,7 +2605,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -2614,7 +2616,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -2635,7 +2637,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -2644,7 +2646,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -2653,7 +2655,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -2688,7 +2690,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -2697,7 +2699,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -2706,7 +2708,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -2731,7 +2733,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -2752,7 +2754,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -2763,7 +2765,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -2784,7 +2786,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -2793,7 +2795,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -2802,7 +2804,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -2837,7 +2839,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -2846,7 +2848,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -2855,7 +2857,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -2880,7 +2882,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -2901,7 +2903,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -2912,7 +2914,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -2933,7 +2935,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -2942,7 +2944,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -2951,7 +2953,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -2986,7 +2988,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -2995,7 +2997,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -3004,7 +3006,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -3029,7 +3031,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -3050,7 +3052,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -3061,7 +3063,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -3082,7 +3084,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -3091,7 +3093,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -3100,7 +3102,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -3135,7 +3137,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -3144,7 +3146,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -3153,7 +3155,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -3178,7 +3180,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"
@@ -3211,7 +3213,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -3222,7 +3224,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -3243,7 +3245,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -3252,7 +3254,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -3261,7 +3263,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -3296,7 +3298,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -3305,7 +3307,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -3314,7 +3316,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -3339,7 +3341,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"
@@ -3372,7 +3374,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -3383,7 +3385,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -3404,7 +3406,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -3413,7 +3415,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -3422,7 +3424,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -3457,7 +3459,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -3466,7 +3468,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -3475,7 +3477,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -3500,7 +3502,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"
@@ -3591,7 +3593,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -3603,7 +3605,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -3614,7 +3616,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -3625,7 +3627,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -4649,7 +4651,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -4661,7 +4663,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -4672,7 +4674,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -4683,7 +4685,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -5044,7 +5046,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                 data-testid="PluginList"
               >
                 <div
-                  class="sc-fznZeY dcwvzV"
+                  class="sc-fznZeY cLCsMF -mt-3"
                   role="table"
                 >
                   <table
@@ -5053,10 +5055,11 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                   >
                     <thead>
                       <tr
+                        class="border-b border-theme-neutral-300"
                         role="row"
                       >
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
@@ -5070,7 +5073,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -5100,7 +5103,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -5130,7 +5133,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -5160,7 +5163,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
@@ -5190,7 +5193,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
@@ -5220,7 +5223,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
@@ -5250,7 +5253,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--7"
                           role="columnheader"
@@ -5264,7 +5267,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--8"
                           role="columnheader"
@@ -5290,7 +5293,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -5301,7 +5304,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -5322,7 +5325,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -5331,7 +5334,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -5340,7 +5343,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -5375,7 +5378,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -5384,7 +5387,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -5393,7 +5396,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -5418,7 +5421,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -5439,7 +5442,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -5450,7 +5453,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -5471,7 +5474,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -5480,7 +5483,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -5489,7 +5492,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -5524,7 +5527,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -5533,7 +5536,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -5542,7 +5545,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -5567,7 +5570,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -5588,7 +5591,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -5599,7 +5602,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -5620,7 +5623,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -5629,7 +5632,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -5638,7 +5641,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -5673,7 +5676,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -5682,7 +5685,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -5691,7 +5694,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -5716,7 +5719,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -5737,7 +5740,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -5748,7 +5751,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -5769,7 +5772,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -5778,7 +5781,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -5787,7 +5790,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -5822,7 +5825,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -5831,7 +5834,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -5840,7 +5843,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -5865,7 +5868,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -5886,7 +5889,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -5897,7 +5900,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -5918,7 +5921,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -5927,7 +5930,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -5936,7 +5939,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -5971,7 +5974,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -5980,7 +5983,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -5989,7 +5992,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -6014,7 +6017,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"
@@ -6047,7 +6050,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -6058,7 +6061,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -6079,7 +6082,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -6088,7 +6091,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -6097,7 +6100,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -6132,7 +6135,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -6141,7 +6144,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -6150,7 +6153,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -6175,7 +6178,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"
@@ -6208,7 +6211,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -6219,7 +6222,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -6240,7 +6243,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -6249,7 +6252,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -6258,7 +6261,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -6293,7 +6296,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -6302,7 +6305,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -6311,7 +6314,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -6336,7 +6339,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"
@@ -6582,7 +6585,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -6594,7 +6597,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -6605,7 +6608,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -6616,7 +6619,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -7795,7 +7798,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -7807,7 +7810,7 @@ exports[`PluginsCategory should render 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -7818,7 +7821,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -7829,7 +7832,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -8853,7 +8856,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -8865,7 +8868,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -8876,7 +8879,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -8887,7 +8890,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -9181,7 +9184,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                       class="flex-1 mx-4"
                     >
                       <input
-                        class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pt-2 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pt-2 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value="test"
@@ -9961,7 +9964,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -9973,7 +9976,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -9984,7 +9987,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -9995,7 +9998,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -11019,7 +11022,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -11031,7 +11034,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -11042,7 +11045,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -11053,7 +11056,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -11414,7 +11417,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                 data-testid="PluginList"
               >
                 <div
-                  class="sc-fznZeY dcwvzV"
+                  class="sc-fznZeY cLCsMF -mt-3"
                   role="table"
                 >
                   <table
@@ -11423,10 +11426,11 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   >
                     <thead>
                       <tr
+                        class="border-b border-theme-neutral-300"
                         role="row"
                       >
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
@@ -11440,7 +11444,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -11470,7 +11474,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -11500,7 +11504,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -11530,7 +11534,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
@@ -11560,7 +11564,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
@@ -11590,7 +11594,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
@@ -11620,7 +11624,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--7"
                           role="columnheader"
@@ -11634,7 +11638,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           </div>
                         </th>
                         <th
-                          class="text-sm text-left select-none text-theme-neutral"
+                          class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                           colspan="1"
                           data-testid="table__th--8"
                           role="columnheader"
@@ -11660,7 +11664,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -11671,7 +11675,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -11692,7 +11696,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -11701,7 +11705,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -11710,7 +11714,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -11745,7 +11749,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -11754,7 +11758,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -11763,7 +11767,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -11788,7 +11792,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -11809,7 +11813,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -11820,7 +11824,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -11841,7 +11845,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -11850,7 +11854,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -11859,7 +11863,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -11894,7 +11898,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -11903,7 +11907,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -11912,7 +11916,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -11937,7 +11941,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -11958,7 +11962,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -11969,7 +11973,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -11990,7 +11994,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -11999,7 +12003,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -12008,7 +12012,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -12043,7 +12047,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -12052,7 +12056,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -12061,7 +12065,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -12086,7 +12090,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -12107,7 +12111,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -12118,7 +12122,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -12139,7 +12143,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -12148,7 +12152,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Utility
@@ -12157,7 +12161,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -12192,7 +12196,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -12201,7 +12205,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               4.2 MB
@@ -12210,7 +12214,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto"
@@ -12235,7 +12239,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <button
                               class="sc-AxjAm hXnHfM"
@@ -12256,7 +12260,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -12267,7 +12271,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -12288,7 +12292,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -12297,7 +12301,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -12306,7 +12310,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -12341,7 +12345,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -12350,7 +12354,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -12359,7 +12363,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -12384,7 +12388,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"
@@ -12417,7 +12421,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -12428,7 +12432,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -12449,7 +12453,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -12458,7 +12462,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -12467,7 +12471,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -12502,7 +12506,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -12511,7 +12515,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -12520,7 +12524,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -12545,7 +12549,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"
@@ -12578,7 +12582,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-20"
                         >
                           <div
-                            class="sc-fzokOt ftMTsH"
+                            class="sc-fzokOt iFdobo"
                           >
                             <svg
                               class="w-15 h-15"
@@ -12589,7 +12593,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh space-x-2"
+                            class="sc-fzokOt krOiom space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -12610,7 +12614,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh pr-16"
+                            class="sc-fzokOt krOiom pr-16"
                           >
                             <span>
                               ARK.io
@@ -12619,7 +12623,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               Other
@@ -12628,7 +12632,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex"
@@ -12663,7 +12667,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               v 1.3.8
@@ -12672,7 +12676,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <span>
                               163 KB
@@ -12681,7 +12685,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="sc-fzokOt lauRYh"
+                            class="sc-fzokOt krOiom"
                           >
                             <div
                               class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
@@ -12706,7 +12710,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="sc-fzokOt iOhiPL justify-end"
+                            class="sc-fzokOt bQuLhg justify-end"
                           >
                             <div
                               class="relative"

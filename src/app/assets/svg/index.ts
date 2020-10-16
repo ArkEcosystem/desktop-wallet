@@ -64,7 +64,6 @@ import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
 import { ReactComponent as Npm } from "./npm.svg";
 import { ReactComponent as OfficialArkPlugin } from "./official-ark-plugin.svg";
-import { ReactComponent as Ok } from "./ok.svg";
 import { ReactComponent as PaginationFirst } from "./pagination-first.svg";
 import { ReactComponent as PaginationLast } from "./pagination-last.svg";
 import { ReactComponent as Peer } from "./peer.svg";
@@ -94,7 +93,8 @@ import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as StarOutline } from "./star-outline.svg";
 import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as StarsOutline } from "./stars-outline.svg";
-import { ReactComponent as StatusClock } from "./status-clock.svg";
+import { ReactComponent as StatusOk } from "./status-ok.svg";
+import { ReactComponent as StatusPending } from "./status-pending.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Unvote } from "./unvote.svg";
@@ -170,7 +170,6 @@ export const SvgCollection: any = {
 	Notification,
 	Npm,
 	OfficialArkPlugin,
-	Ok,
 	PaginationFirst,
 	PaginationLast,
 	Peer,
@@ -200,7 +199,8 @@ export const SvgCollection: any = {
 	Star,
 	StarOutline,
 	StarsOutline,
-	StatusClock,
+	StatusOk,
+	StatusPending,
 	Trash,
 	Twitter,
 	Unvote,

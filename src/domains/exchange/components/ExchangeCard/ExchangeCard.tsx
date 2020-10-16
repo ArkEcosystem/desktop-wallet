@@ -1,6 +1,6 @@
-import { images } from "app/assets/images";
 import { Card } from "app/components/Card";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -9,8 +9,6 @@ type ExchangeCardProps = {
 	isSelected?: boolean;
 	onClick: any;
 };
-
-const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
 
 export const AddExchangeCard = ({ onAddExchange }: { onAddExchange: any }) => {
 	const { t } = useTranslation();
@@ -47,7 +45,9 @@ export const ExchangeCard = ({ exchange, isSelected, onClick }: ExchangeCardProp
 		<Card isSelected={isSelected} onClick={onClick} actions={options}>
 			<div className="flex items-center p-2 font-semibold text-theme-primary">
 				<div className="mr-4">
-					<ChangeNowLogo className="w-12 h-12" />
+					<div className="w-12 h-12">
+						<Image name="ChangeNowLogo" domain="exchange" />
+					</div>
 				</div>
 
 				<div className="truncate">{exchange.name}</div>
