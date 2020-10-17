@@ -45,10 +45,9 @@ export const SummaryStep = ({
 	const [senderAddress, setSenderAddress] = useState("");
 
 	// TODO: Move this helpers to SignedData on platform-sdk
-	const participants =
-		transaction
-			.get<{ publicKeys: string[] }>("multiSignature")
-			?.publicKeys?.filter((pubKey) => pubKey !== wallet.publicKey()) || [];
+	const participants = transaction
+		.get<{ publicKeys: string[] }>("multiSignature")
+		.publicKeys.filter((pubKey) => pubKey !== wallet.publicKey());
 
 	const recipient = transaction.get<string>("recipientId");
 	const recipients = transaction
@@ -74,12 +73,7 @@ export const SummaryStep = ({
 		<section>
 			<Header title={t(titles[type])} />
 
-			<TransactionSender
-				address={senderAddress}
-				alias={wallet.alias()}
-				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
-				border={false}
-			/>
+			<TransactionSender address={senderAddress} alias={wallet.alias()} border={false} />
 
 			<TransactionRecipients
 				currency={wallet.currency()}

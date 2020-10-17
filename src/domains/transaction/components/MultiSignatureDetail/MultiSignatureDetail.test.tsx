@@ -32,7 +32,10 @@ describe("MultiSignatureDetail", () => {
 					amount: "1",
 				},
 				sign: {
-					mnemonic: "test",
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
 				},
 			});
 
@@ -76,7 +79,10 @@ describe("MultiSignatureDetail", () => {
 					],
 				},
 				sign: {
-					mnemonic: "test",
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
 				},
 			});
 	});

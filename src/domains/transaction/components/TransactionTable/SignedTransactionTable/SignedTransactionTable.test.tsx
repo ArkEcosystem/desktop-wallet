@@ -30,7 +30,10 @@ describe("Signed Transaction Table", () => {
 					amount: "1",
 				},
 				sign: {
-					mnemonic: "test",
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
 				},
 			});
 
@@ -74,7 +77,10 @@ describe("Signed Transaction Table", () => {
 					],
 				},
 				sign: {
-					mnemonic: "test",
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
 				},
 			});
 	});
