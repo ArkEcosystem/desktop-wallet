@@ -17,6 +17,7 @@ type LineChartProps = {
 };
 
 const ActiveDotSvg = SvgCollection["ChartActiveDot"];
+
 const ActiveDot = ({ cx, cy, color }: any) => (
 	<ActiveDotSvg
 		className={`text-theme-${color}`}
@@ -51,7 +52,7 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 			<div className="flex space-x-3">
 				{period && (
 					<div
-						className="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
+						className="pt-4 text-sm font-semibold cursor-pointer text-theme-secondary-text"
 						onClick={onPeriodClick}
 					>
 						<div className="flex items-center">
@@ -65,14 +66,16 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 					</div>
 				)}
 				<div className="flex justify-end flex-1 space-x-3">
-					{legend && <div className="my-auto text-sm text-base text-theme-neutral-600">{legend?.label}</div>}
+					{legend && (
+						<div className="my-auto text-sm text-base text-theme-secondary-text">{legend?.label}</div>
+					)}
 					{lines &&
 						lines.map((item: any, index: number) => (
 							<div key={index} className="flex items-center justify-end p-4 pt-4 pr-0 min-w-32">
 								<div
 									className={`mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 								/>
-								<div className="inline-block text-sm text-base font-semibold text-theme-neutral-dark">
+								<div className="inline-block text-sm text-base font-semibold text-theme-secondary-text">
 									{legend.formatted[item.dataKey] && <span>{legend.formatted[item.dataKey]} - </span>}
 									{item.label}
 								</div>
@@ -93,7 +96,7 @@ export const ChartContent = ({ period, onPeriodClick, data, lines, width, height
 	const [legend, setLegend] = useState(defaultValue);
 
 	return (
-		<Wrapper data-testid="line-chart-wrapper" className="text-theme-neutral-300 pb">
+		<Wrapper data-testid="line-chart-wrapper" className="text-theme-neutral-300 dark:text-theme-neutral-800 pb">
 			<ChartLegend legend={legend} lines={lines} period={period} onPeriodClick={onPeriodClick} />
 			<RechartsLine
 				width={width}

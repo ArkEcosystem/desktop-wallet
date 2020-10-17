@@ -100,7 +100,7 @@ export const Welcome = () => {
 
 						{profiles.length > 0 ? (
 							<>
-								<p className="text-sm text-theme-neutral-dark md:text-base">
+								<p className="text-sm text-theme-secondary-text md:text-base">
 									{t("PROFILE.PAGE_WELCOME.HAS_PROFILES")}
 								</p>
 
@@ -117,7 +117,7 @@ export const Welcome = () => {
 								</div>
 							</>
 						) : (
-							<p className="text-sm text-theme-neutral-dark md:text-base">
+							<p className="text-sm text-theme-secondary-text md:text-base">
 								{t("PROFILE.PAGE_WELCOME.HAS_NO_PROFILES")}
 							</p>
 						)}

@@ -17,7 +17,7 @@ export const LedgerWallet = ({ isOpen, onClose }: LedgerWalletProps) => {
 	return (
 		<Modal title={t("WALLETS.MODAL_LEDGER_WALLET.TITLE")} isOpen={isOpen} onClose={onClose}>
 			<div className="container">
-				<p className="mt-1 text-sm text-theme-neutral-dark md:text-base">
+				<p className="mt-1 text-sm text-theme-secondary-text md:text-base">
 					{t("WALLETS.MODAL_LEDGER_WALLET.DESCRIPTION")}
 				</p>
 				<WaitingLedger className="my-8" />

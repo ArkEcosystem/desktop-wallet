@@ -5,7 +5,7 @@ exports[`EntityTableRowItem should render 1`] = `
   <table>
     <tbody>
       <tr
-        class="sc-Axmtr gpPFXd group"
+        class="sc-Axmtr rUOKR group"
         data-testid="TableRow"
       >
         <td
@@ -18,7 +18,7 @@ exports[`EntityTableRowItem should render 1`] = `
               class="flex items-center"
             >
               <div
-                class="sc-AxiKw kDcqaP border-theme-neutral-800"
+                class="sc-AxiKw hpQrmn border-theme-neutral-800"
               >
                 <div
                   class="sc-AxhCb draJkT"
@@ -55,16 +55,16 @@ exports[`EntityTableRowItem should render 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D8rr…YUYD
+                D8rr … YUYD
               </span>
             </div>
           </div>
@@ -137,7 +137,7 @@ exports[`EntityTableRowItem should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxirZ jMIqnH"
+                class="sc-AxirZ bpsqFv"
                 color="primary"
                 type="button"
               >

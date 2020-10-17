@@ -45,7 +45,7 @@ export const FormStep = ({
 		<section data-testid="SendTransfer__step--first">
 			<div>
 				<h1 className="mb-0">{t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE")}</h1>
-				<div className="text-theme-neutral-dark">
+				<div className="text-theme-secondary-text">
 					{t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.DESCRIPTION")}
 				</div>
 			</div>

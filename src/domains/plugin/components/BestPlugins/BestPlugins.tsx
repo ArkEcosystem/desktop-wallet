@@ -73,21 +73,21 @@ export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 									{rowData.name}
 								</div>
 								<div className="inline-flex items-center space-x-2">
-									<span className="text-theme-neutral-dark">{rowData.author}</span>
+									<span className="text-theme-secondary-text">{rowData.author}</span>
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
 							</TableCell>
 
-							<TableCell className="text-theme-neutral-dark">
+							<TableCell className="text-theme-secondary-text">
 								{t(`PLUGINS.CATEGORIES.${rowData.category.toUpperCase()}`)}
 							</TableCell>
 
-							<TableCell className="text-theme-neutral-dark">
+							<TableCell className="text-theme-secondary-text">
 								<ReviewRating rating={rowData.rating} width={3} />
 							</TableCell>
 
-							<TableCell className="text-theme-neutral-dark">
+							<TableCell className="text-theme-secondary-text">
 								<span>v {rowData.version}</span>
 							</TableCell>
 

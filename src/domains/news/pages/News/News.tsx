@@ -101,7 +101,7 @@ export const News = ({ itemsPerPage }: Props) => {
 					title={t("NEWS.PAGE_NEWS.TITLE")}
 					subtitle={
 						<div className="flex items-center space-x-2">
-							<span className="font-semibold text-theme-neutral-dark">
+							<span className="font-semibold text-theme-secondary-text">
 								{t("NEWS.PAGE_NEWS.POWERED_BY")}
 							</span>
 							<SvgCollection.Blockfolio width={100} height={27} />

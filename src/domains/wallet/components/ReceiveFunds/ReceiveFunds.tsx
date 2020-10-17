@@ -64,14 +64,14 @@ export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: Recei
 						</>
 					}
 				>
-					{address}
-					<span className="ml-4">
-						<Clipboard>
-							<div className="text-theme-primary-300">
+					<div className="flex items-center space-x-3">
+						<span>{address}</span>
+						<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
+							<Clipboard data={address}>
 								<Icon name="Copy" />
-							</div>
-						</Clipboard>
-					</span>
+							</Clipboard>
+						</span>
+					</div>
 				</TransactionDetail>
 			</div>
 

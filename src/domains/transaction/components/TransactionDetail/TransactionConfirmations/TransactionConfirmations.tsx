@@ -15,33 +15,25 @@ export const TransactionConfirmations = ({ isConfirmed, confirmations }: Transac
 	const { t } = useTranslation();
 
 	const renderConfirmationStatus = (isConfirmed: boolean, confirmations: BigNumber) => {
-		const confirmationStatusStyle = isConfirmed
-			? "bg-theme-success-200 text-theme-success-500"
-			: "bg-theme-danger-200 text-theme-danger-500";
+		const confirmationStatusStyle = isConfirmed ? "text-theme-success" : "text-theme-warning";
 
 		if (isConfirmed) {
 			return (
-				<div className="flex">
+				<div className="flex space-x-3">
 					<span>{t("TRANSACTION.WELL_CONFIRMED")}</span>
 					<Tippy content={t("TRANSACTION.CONFIRMATIONS_COUNT", { count: confirmations.toNumber() })}>
-						<div className={`flex w-6 h-6 ml-2 rounded-full ${confirmationStatusStyle}`}>
-							<div className="m-auto">
-								<Icon name="Checkmark" width={15} height={15} />
-							</div>
-						</div>
+						<span>
+							<Icon name="StatusOk" className={confirmationStatusStyle} width={22} height={22} />
+						</span>
 					</Tippy>
 				</div>
 			);
 		}
 
 		return (
-			<div className="flex">
+			<div className="flex space-x-3">
 				<span>{t("TRANSACTION.NOT_CONFIRMED")}</span>
-				<div className={`flex w-6 h-6 ml-2 rounded-full ${confirmationStatusStyle}`}>
-					<div className="m-auto">
-						<Icon name="CrossSlim" width={12} height={12} />
-					</div>
-				</div>
+				<Icon name="StatusPending" className={confirmationStatusStyle} width={22} height={22} />
 			</div>
 		);
 	};

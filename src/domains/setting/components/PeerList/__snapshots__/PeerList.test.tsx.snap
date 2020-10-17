@@ -15,10 +15,10 @@ exports[`PeerList should add peer 1`] = `
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
         >
           <button
-            class="sc-AxjAm goVygI w-11 h-11"
+            class="sc-AxjAm RZxAM w-11 h-11"
             color="primary"
             data-testid="modal__close-btn"
             type="button"
@@ -53,7 +53,7 @@ exports[`PeerList should add peer 1`] = `
                 class="sc-AxheI dThsOi my-8"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="network"
                 >
@@ -92,7 +92,7 @@ exports[`PeerList should add peer 1`] = `
                         aria-controls="CustomPeers__network-menu"
                         aria-labelledby="CustomPeers__network-label"
                         autocomplete="off"
-                        class="sc-Axmtr dEPowd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                        class="sc-Axmtr ifvITQ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                         data-testid="SelectNetworkInput__input"
                         id="CustomPeers__network-input"
                         placeholder="Enter a cryptoasset name"
@@ -112,7 +112,7 @@ exports[`PeerList should add peer 1`] = `
                 class="sc-AxheI dThsOi flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="name"
                 >
@@ -123,7 +123,7 @@ exports[`PeerList should add peer 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-Axmtr dEPowd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  class="sc-Axmtr ifvITQ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                   data-testid="Input"
                   name="name"
                 />
@@ -132,7 +132,7 @@ exports[`PeerList should add peer 1`] = `
                 class="sc-AxheI dThsOi flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="peer-ip"
                 >
@@ -143,7 +143,7 @@ exports[`PeerList should add peer 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-Axmtr dEPowd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  class="sc-Axmtr ifvITQ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                   data-testid="Input"
                   name="peer-ip"
                 />
@@ -152,7 +152,7 @@ exports[`PeerList should add peer 1`] = `
                 class="sc-AxheI dThsOi flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="peer-type"
                 >
@@ -172,7 +172,7 @@ exports[`PeerList should add peer 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="ml-2 text-sm font-semibold text-theme-neutral-dark"
+                    class="ml-2 text-sm font-semibold text-theme-secondary-text"
                   >
                     Multisignature
                   </span>
@@ -182,7 +182,7 @@ exports[`PeerList should add peer 1`] = `
                 class="flex justify-end mt-4"
               >
                 <button
-                  class="sc-AxjAm kbZyZT"
+                  class="sc-AxjAm BsmvP"
                   color="primary"
                   data-testid="peer-list__add-button"
                   type="submit"
@@ -196,7 +196,7 @@ exports[`PeerList should add peer 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw gGhpZ -mt-3"
+      class="sc-AxiKw iDVQWj -mt-3"
       role="table"
     >
       <table
@@ -205,11 +205,11 @@ exports[`PeerList should add peer 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -223,7 +223,7 @@ exports[`PeerList should add peer 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -237,7 +237,7 @@ exports[`PeerList should add peer 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -251,7 +251,7 @@ exports[`PeerList should add peer 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -270,7 +270,7 @@ exports[`PeerList should add peer 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxhUy iIfeGO group"
+            class="sc-AxhUy dVXiwC group"
             data-testid="TableRow"
           >
             <td>
@@ -278,7 +278,7 @@ exports[`PeerList should add peer 1`] = `
                 class="sc-AxhCb osoeH space-x-2"
               >
                 <div
-                  class="sc-fzokOt kLPAEf text-logo border-theme-danger-light"
+                  class="sc-fzokOt jEkeni text-logo border-theme-danger-light"
                 >
                   <div
                     class="sc-AxirZ iQaTP"
@@ -354,7 +354,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxhUy iIfeGO group"
+            class="sc-AxhUy dVXiwC group"
             data-testid="TableRow"
           >
             <td>
@@ -362,7 +362,7 @@ exports[`PeerList should add peer 1`] = `
                 class="sc-AxhCb osoeH space-x-2"
               >
                 <div
-                  class="sc-fzokOt kLPAEf border-theme-neutral-300"
+                  class="sc-fzokOt jEkeni border-theme-neutral-300 dark:border-theme-neutral-800"
                 >
                   <div
                     class="sc-AxirZ iQaTP"
@@ -434,7 +434,7 @@ exports[`PeerList should add peer 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxhUy iIfeGO group"
+            class="sc-AxhUy dVXiwC group"
             data-testid="TableRow"
           >
             <td>
@@ -442,7 +442,7 @@ exports[`PeerList should add peer 1`] = `
                 class="sc-AxhCb osoeH space-x-2"
               >
                 <div
-                  class="sc-fzokOt kLPAEf text-theme-warning-400 border-theme-warning-200"
+                  class="sc-fzokOt jEkeni text-theme-warning-400 border-theme-warning-200"
                 >
                   <div
                     class="sc-AxirZ iQaTP"
@@ -517,7 +517,7 @@ exports[`PeerList should add peer 1`] = `
       </table>
     </div>
     <button
-      class="sc-AxjAm hXnHfM w-full mt-8 mb-2"
+      class="sc-AxjAm joLCoM w-full mt-8 mb-2"
       color="primary"
       data-testid="peer-list__add-button"
       type="button"
@@ -532,7 +532,7 @@ exports[`PeerList should render 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="sc-AxiKw gGhpZ -mt-3"
+      class="sc-AxiKw iDVQWj -mt-3"
       role="table"
     >
       <table
@@ -541,11 +541,11 @@ exports[`PeerList should render 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -559,7 +559,7 @@ exports[`PeerList should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -573,7 +573,7 @@ exports[`PeerList should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -587,7 +587,7 @@ exports[`PeerList should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -606,7 +606,7 @@ exports[`PeerList should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxhUy iIfeGO group"
+            class="sc-AxhUy dVXiwC group"
             data-testid="TableRow"
           >
             <td>
@@ -614,7 +614,7 @@ exports[`PeerList should render 1`] = `
                 class="sc-AxhCb osoeH space-x-2"
               >
                 <div
-                  class="sc-fzokOt kLPAEf text-logo border-theme-danger-light"
+                  class="sc-fzokOt jEkeni text-logo border-theme-danger-light"
                 >
                   <div
                     class="sc-AxirZ iQaTP"
@@ -690,7 +690,7 @@ exports[`PeerList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxhUy iIfeGO group"
+            class="sc-AxhUy dVXiwC group"
             data-testid="TableRow"
           >
             <td>
@@ -698,7 +698,7 @@ exports[`PeerList should render 1`] = `
                 class="sc-AxhCb osoeH space-x-2"
               >
                 <div
-                  class="sc-fzokOt kLPAEf border-theme-neutral-300"
+                  class="sc-fzokOt jEkeni border-theme-neutral-300 dark:border-theme-neutral-800"
                 >
                   <div
                     class="sc-AxirZ iQaTP"
@@ -770,7 +770,7 @@ exports[`PeerList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxhUy iIfeGO group"
+            class="sc-AxhUy dVXiwC group"
             data-testid="TableRow"
           >
             <td>
@@ -778,7 +778,7 @@ exports[`PeerList should render 1`] = `
                 class="sc-AxhCb osoeH space-x-2"
               >
                 <div
-                  class="sc-fzokOt kLPAEf text-theme-warning-400 border-theme-warning-200"
+                  class="sc-fzokOt jEkeni text-theme-warning-400 border-theme-warning-200"
                 >
                   <div
                     class="sc-AxirZ iQaTP"
@@ -853,7 +853,7 @@ exports[`PeerList should render 1`] = `
       </table>
     </div>
     <button
-      class="sc-AxjAm hXnHfM w-full mt-8 mb-2"
+      class="sc-AxjAm joLCoM w-full mt-8 mb-2"
       color="primary"
       data-testid="peer-list__add-button"
       type="button"
@@ -868,7 +868,7 @@ exports[`PeerList should render with empty peer list 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="sc-AxiKw gGhpZ -mt-3"
+      class="sc-AxiKw iDVQWj -mt-3"
       role="table"
     >
       <table
@@ -877,11 +877,11 @@ exports[`PeerList should render with empty peer list 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -895,7 +895,7 @@ exports[`PeerList should render with empty peer list 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -909,7 +909,7 @@ exports[`PeerList should render with empty peer list 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -923,7 +923,7 @@ exports[`PeerList should render with empty peer list 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -944,7 +944,7 @@ exports[`PeerList should render with empty peer list 1`] = `
       </table>
     </div>
     <button
-      class="sc-AxjAm hXnHfM w-full mt-8 mb-2"
+      class="sc-AxjAm joLCoM w-full mt-8 mb-2"
       color="primary"
       data-testid="peer-list__add-button"
       type="button"

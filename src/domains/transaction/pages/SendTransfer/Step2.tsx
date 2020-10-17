@@ -36,7 +36,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 		<section data-testid="SendTransfer__step--second">
 			<div>
 				<h1 className="mb-0">{t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE")}</h1>
-				<div className="text-theme-neutral-dark">
+				<div className="text-theme-secondary-text">
 					{t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.DESCRIPTION")}
 				</div>
 			</div>

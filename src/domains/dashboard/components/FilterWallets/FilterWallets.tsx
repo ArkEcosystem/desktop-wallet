@@ -48,7 +48,7 @@ export const FilterWallets = ({
 	return (
 		<div className="flex flex-col text-left">
 			<div className="mb-8">
-				<div className="font-semibold text-theme-neutral-dark">
+				<div className="font-semibold text-theme-secondary-text">
 					{t("DASHBOARD.FILTER_WALLETS.CRYPTOASSET.TITLE")}
 				</div>
 				<div className="mt-1 text-sm text-theme-neutral">
@@ -58,11 +58,11 @@ export const FilterWallets = ({
 
 			<FilterNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
 
-			<div className="my-8 border-t border-dotted border-1 border-theme-neutral-200" />
+			<div className="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 			<div className="flex flex-col">
 				<div className="flex items-center justify-between">
-					<div className="font-semibold text-theme-neutral-dark">
+					<div className="font-semibold text-theme-secondary-text">
 						{t("DASHBOARD.FILTER_WALLETS.WALLETS.TITLE")}
 					</div>
 
@@ -76,7 +76,7 @@ export const FilterWallets = ({
 						toggleContent={
 							<div
 								data-testid="filter-wallets__wallets"
-								className="flex items-center justify-end cursor-pointer text-theme-neutral-dark"
+								className="flex items-center justify-end cursor-pointer text-theme-secondary-text"
 							>
 								<span className="inline-block mr-2 font-semibold">{t("COMMON.ALL")}</span>
 								<Icon name="ChevronDown" width={12} height={12} />
@@ -90,11 +90,11 @@ export const FilterWallets = ({
 				</div>
 			</div>
 
-			<div className="my-8 border-t border-dotted border-1 border-theme-neutral-200" />
+			<div className="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 			<div className="flex flex-col mb-6">
 				<div className="flex items-center justify-between">
-					<div className="font-semibold text-theme-neutral-dark">
+					<div className="font-semibold text-theme-secondary-text">
 						{t("DASHBOARD.FILTER_WALLETS.CHART.TITLE")}
 					</div>
 
@@ -112,7 +112,7 @@ export const FilterWallets = ({
 
 			<div className="flex flex-col">
 				<div className="flex items-center justify-between">
-					<div className="font-semibold text-theme-neutral-dark">
+					<div className="font-semibold text-theme-secondary-text">
 						{t("DASHBOARD.FILTER_WALLETS.TRANSACTION_HISTORY.TITLE")}
 					</div>
 

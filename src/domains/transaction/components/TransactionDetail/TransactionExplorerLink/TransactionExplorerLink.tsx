@@ -20,12 +20,12 @@ export const TransactionExplorerLink = ({ id, link, variant, ...props }: Transac
 
 	return (
 		<TransactionDetail label={isTransactionLink() ? t("TRANSACTION.ID") : t("TRANSACTION.BLOCK_ID")} {...props}>
-			<div className="flex items-center">
+			<div className="flex items-center space-x-3">
 				<Link to={link} isExternal showExternalIcon={false}>
 					<TruncateMiddle text={id} maxChars={30} className="text-theme-primary-dark" />
 				</Link>
 
-				<span className="flex ml-5 text-theme-primary-300">
+				<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
 					<Clipboard data={id}>
 						<Icon name="Copy" />
 					</Clipboard>

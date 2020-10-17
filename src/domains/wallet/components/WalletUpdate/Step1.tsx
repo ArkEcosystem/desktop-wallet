@@ -7,7 +7,7 @@ export const FirstStep = () => {
 	return (
 		<section data-testid="WalletUpdate__first-step">
 			<div className="mb-8 text-center">
-				<p className="text-sm text-theme-neutral-dark md:text-base">
+				<p className="text-sm text-theme-secondary-text md:text-base">
 					{t("WALLETS.MODAL_WALLET_UPDATE.DESCRIPTION_1")}
 				</p>
 			</div>

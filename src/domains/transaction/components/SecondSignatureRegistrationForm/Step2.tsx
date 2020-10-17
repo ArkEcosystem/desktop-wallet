@@ -71,7 +71,7 @@ export const BackupStep = () => {
 
 			<div className="flex items-center justify-between">
 				<div className="space-y-2">
-					<span className="text-lg font-semibold text-theme-neutral-dark">
+					<span className="text-lg font-semibold text-theme-secondary-text">
 						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.TITLE")}
 					</span>
 					<p className="text-sm text-theme-neutral">
