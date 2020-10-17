@@ -19,7 +19,7 @@ exports[`BestPlugins should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -60,7 +60,7 @@ exports[`BestPlugins should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.
           </div>
@@ -68,7 +68,7 @@ exports[`BestPlugins should render a modal 1`] = `
             class="mt-8 -mb-6"
           >
             <div
-              class="sc-AxhCb ebDgDV -mt-3"
+              class="sc-AxhCb bnbqNj -mt-3"
               role="table"
             >
               <table
@@ -77,11 +77,11 @@ exports[`BestPlugins should render a modal 1`] = `
               >
                 <thead>
                   <tr
-                    class="border-b border-theme-neutral-300"
+                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -95,7 +95,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -109,7 +109,7 @@ exports[`BestPlugins should render a modal 1`] = `
                           Name
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                           data-testid="table__Sort"
                         >
                           <div
@@ -125,7 +125,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -139,7 +139,7 @@ exports[`BestPlugins should render a modal 1`] = `
                           Category
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                           data-testid="table__Sort"
                         >
                           <div
@@ -155,7 +155,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -169,7 +169,7 @@ exports[`BestPlugins should render a modal 1`] = `
                           Rating
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                           data-testid="table__Sort"
                         >
                           <div
@@ -185,7 +185,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -199,7 +199,7 @@ exports[`BestPlugins should render a modal 1`] = `
                           Version
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                           data-testid="table__Sort"
                         >
                           <div
@@ -215,7 +215,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
@@ -234,7 +234,7 @@ exports[`BestPlugins should render a modal 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="sc-AxgMl fRZhDw group"
+                    class="sc-AxgMl bRQeCM group"
                     data-testid="TableRow"
                   >
                     <td
@@ -263,7 +263,7 @@ exports[`BestPlugins should render a modal 1`] = `
                           class="inline-flex items-center space-x-2"
                         >
                           <span
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                           >
                             ARK Ecosystem
                           </span>
@@ -289,7 +289,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -298,7 +298,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -335,7 +335,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -350,7 +350,7 @@ exports[`BestPlugins should render a modal 1`] = `
                         class="sc-AxhUy RRbSA justify-end"
                       >
                         <button
-                          class="sc-AxjAm hXnHfM"
+                          class="sc-AxjAm joLCoM"
                           color="primary"
                           type="button"
                         >
@@ -360,7 +360,7 @@ exports[`BestPlugins should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-AxgMl fRZhDw group"
+                    class="sc-AxgMl bRQeCM group"
                     data-testid="TableRow"
                   >
                     <td
@@ -389,7 +389,7 @@ exports[`BestPlugins should render a modal 1`] = `
                           class="inline-flex items-center space-x-2"
                         >
                           <span
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                           >
                             Breno Polanski
                           </span>
@@ -397,7 +397,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -406,7 +406,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -443,7 +443,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -458,7 +458,7 @@ exports[`BestPlugins should render a modal 1`] = `
                         class="sc-AxhUy RRbSA justify-end"
                       >
                         <button
-                          class="sc-AxjAm hXnHfM"
+                          class="sc-AxjAm joLCoM"
                           color="primary"
                           type="button"
                         >
@@ -468,7 +468,7 @@ exports[`BestPlugins should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-AxgMl fRZhDw group"
+                    class="sc-AxgMl bRQeCM group"
                     data-testid="TableRow"
                   >
                     <td
@@ -497,7 +497,7 @@ exports[`BestPlugins should render a modal 1`] = `
                           class="inline-flex items-center space-x-2"
                         >
                           <span
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                           >
                             ChangeNOW
                           </span>
@@ -505,7 +505,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -514,7 +514,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -551,7 +551,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -566,7 +566,7 @@ exports[`BestPlugins should render a modal 1`] = `
                         class="sc-AxhUy RRbSA justify-end"
                       >
                         <button
-                          class="sc-AxjAm hXnHfM"
+                          class="sc-AxjAm joLCoM"
                           color="primary"
                           type="button"
                         >
@@ -576,7 +576,7 @@ exports[`BestPlugins should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-AxgMl fRZhDw group"
+                    class="sc-AxgMl bRQeCM group"
                     data-testid="TableRow"
                   >
                     <td
@@ -605,7 +605,7 @@ exports[`BestPlugins should render a modal 1`] = `
                           class="inline-flex items-center space-x-2"
                         >
                           <span
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                           >
                             Delegate Fun
                           </span>
@@ -622,7 +622,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -631,7 +631,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -668,7 +668,7 @@ exports[`BestPlugins should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-theme-neutral-dark"
+                      class="text-theme-secondary-text"
                     >
                       <div
                         class="sc-AxhUy RRbSA"
@@ -683,7 +683,7 @@ exports[`BestPlugins should render a modal 1`] = `
                         class="sc-AxhUy RRbSA justify-end"
                       >
                         <button
-                          class="sc-AxjAm hXnHfM"
+                          class="sc-AxjAm joLCoM"
                           color="primary"
                           type="button"
                         >

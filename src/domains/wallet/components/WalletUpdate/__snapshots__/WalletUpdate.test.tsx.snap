@@ -19,7 +19,7 @@ exports[`WalletUpdate should render 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -62,7 +62,7 @@ exports[`WalletUpdate should render 1`] = `
                   class="mb-8 text-center"
                 >
                   <p
-                    class="text-sm text-theme-neutral-dark md:text-base"
+                    class="text-sm text-theme-secondary-text md:text-base"
                   >
                     We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.
                   </p>
@@ -73,7 +73,7 @@ exports[`WalletUpdate should render 1`] = `
               class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
             >
               <button
-                class="sc-AxjAm hXnHfM mt-2 sm:mt-0"
+                class="sc-AxjAm joLCoM mt-2 sm:mt-0"
                 color="primary"
                 data-testid="WalletUpdate__cancel-button"
                 type="button"
@@ -81,7 +81,7 @@ exports[`WalletUpdate should render 1`] = `
                 Update Later
               </button>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm BsmvP"
                 color="primary"
                 data-testid="WalletUpdate__update-button"
                 type="button"
@@ -106,7 +106,7 @@ exports[`WalletUpdate should render 1st step 1`] = `
       class="mb-8 text-center"
     >
       <p
-        class="text-sm text-theme-neutral-dark md:text-base"
+        class="text-sm text-theme-secondary-text md:text-base"
       >
         We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.
       </p>
@@ -132,7 +132,7 @@ exports[`WalletUpdate should render 2st step 1`] = `
           Downloaded
         </p>
         <p
-          class="text-sm font-bold text-theme-neutral-dark"
+          class="text-sm font-bold text-theme-secondary-text"
         >
           154 KB / 154 KB
         </p>
@@ -207,7 +207,7 @@ exports[`WalletUpdate should render 3st step 1`] = `
       class="mb-6 text-center"
     >
       <p
-        class="text-sm text-theme-neutral-dark md:text-base"
+        class="text-sm text-theme-secondary-text md:text-base"
       >
         Update downloaded and ready to install
       </p>

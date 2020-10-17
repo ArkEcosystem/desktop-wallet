@@ -19,7 +19,7 @@ exports[`AddAssets should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxiKw eWLnbL w-11 h-11"
+          class="sc-AxiKw lgscAL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -47,7 +47,7 @@ exports[`AddAssets should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             Select which assets you would like to follow
           </div>
@@ -59,7 +59,7 @@ exports[`AddAssets should render a modal 1`] = `
               class="sc-AxhUy dJlYTe my-8"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="network"
               >
@@ -98,7 +98,7 @@ exports[`AddAssets should render a modal 1`] = `
                       aria-controls="AddAssets__network-menu"
                       aria-labelledby="AddAssets__network-label"
                       autocomplete="off"
-                      class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                      class="sc-AxheI fa-DppL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                       data-testid="SelectNetworkInput__input"
                       id="AddAssets__network-input"
                       placeholder="Enter the asset name"
@@ -119,7 +119,7 @@ exports[`AddAssets should render a modal 1`] = `
             >
               <div>
                 <span
-                  class="font-semibold text-theme-neutral-dark"
+                  class="font-semibold text-theme-secondary-text"
                 >
                   Your Selections
                 </span>
@@ -136,7 +136,7 @@ exports[`AddAssets should render a modal 1`] = `
                         data-testid="network__option--0"
                       >
                         <div
-                          class="sc-AxhCb iZzMIT relative border-theme-success-500 text-theme-success-500"
+                          class="sc-AxhCb gaiYPD relative border-theme-success-500 text-theme-success-500"
                         >
                           <div
                             class="sc-AxjAm buCJuk"
@@ -168,7 +168,7 @@ exports[`AddAssets should render a modal 1`] = `
                         data-testid="network__option--1"
                       >
                         <div
-                          class="sc-AxhCb iZzMIT relative border-theme-neutral-200 text-theme-neutral-300"
+                          class="sc-AxhCb gaiYPD relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                         >
                           <div
                             class="sc-AxjAm buCJuk"
@@ -180,7 +180,7 @@ exports[`AddAssets should render a modal 1`] = `
                             </svg>
                           </div>
                           <span
-                            class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                            class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <span />
                           </span>
@@ -191,7 +191,7 @@ exports[`AddAssets should render a modal 1`] = `
                         data-testid="network__option--2"
                       >
                         <div
-                          class="sc-AxhCb iZzMIT relative border-theme-neutral-200 text-theme-neutral-300"
+                          class="sc-AxhCb gaiYPD relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                         >
                           <div
                             class="sc-AxjAm buCJuk"
@@ -203,7 +203,7 @@ exports[`AddAssets should render a modal 1`] = `
                             </svg>
                           </div>
                           <span
-                            class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                            class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <span />
                           </span>
@@ -214,7 +214,7 @@ exports[`AddAssets should render a modal 1`] = `
                         data-testid="network__option--3"
                       >
                         <div
-                          class="sc-AxhCb iZzMIT relative border-theme-neutral-200 text-theme-neutral-300"
+                          class="sc-AxhCb gaiYPD relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                         >
                           <div
                             class="sc-AxjAm buCJuk"
@@ -226,7 +226,7 @@ exports[`AddAssets should render a modal 1`] = `
                             </svg>
                           </div>
                           <span
-                            class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                            class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <span />
                           </span>
@@ -238,7 +238,7 @@ exports[`AddAssets should render a modal 1`] = `
               </div>
               <div>
                 <span
-                  class="mb-3 font-semibold text-theme-neutral-dark"
+                  class="mb-3 font-semibold text-theme-secondary-text"
                 >
                   All Cryptoassets
                 </span>
@@ -246,7 +246,7 @@ exports[`AddAssets should render a modal 1`] = `
                   class="flex flex-wrap mt-3 -mx-3"
                 >
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -258,13 +258,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -276,13 +276,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -294,13 +294,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -312,13 +312,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -330,13 +330,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -348,13 +348,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -366,13 +366,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -384,13 +384,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -402,13 +402,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -420,13 +420,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -438,13 +438,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -456,13 +456,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -474,13 +474,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -492,13 +492,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -510,13 +510,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -528,13 +528,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -546,13 +546,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -564,13 +564,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -582,13 +582,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -600,13 +600,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -618,13 +618,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -636,13 +636,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -654,13 +654,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -672,13 +672,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -690,13 +690,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -708,13 +708,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="sc-AxjAm buCJuk"
@@ -726,13 +726,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                      class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb iZzMIT relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+                    class="sc-AxhCb gaiYPD relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                   >
                     <div
                       class="text-xs text-theme-primary-500"
@@ -747,14 +747,14 @@ exports[`AddAssets should render a modal 1`] = `
               class="flex justify-end mt-4 space-x-3"
             >
               <button
-                class="sc-AxiKw hqCeFD"
+                class="sc-AxiKw cBTSkf"
                 color="primary"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxiKw gQbnsc"
+                class="sc-AxiKw bJUjnk"
                 color="primary"
                 type="submit"
               >

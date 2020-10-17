@@ -19,7 +19,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -47,7 +47,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             Find and select a plugin to add or remove it from the blacklist.
           </div>
@@ -71,16 +71,16 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                   </svg>
                 </div>
                 <div
-                  class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
+                  class="flex-1 pl-4 mr-4 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 >
                   <input
-                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="Search for a plugin"
                   />
                 </div>
                 <button
-                  class="sc-AxjAm kbZyZT my-1"
+                  class="sc-AxjAm BsmvP my-1"
                   color="primary"
                   data-testid="SearchBar__button"
                   type="button"
@@ -98,7 +98,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
             class="mt-8 -mb-6"
           >
             <div
-              class="sc-fzpans dPCoLV -mt-3"
+              class="sc-fzpans eTpfHr -mt-3"
               role="table"
             >
               <table
@@ -107,11 +107,11 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
               >
                 <thead>
                   <tr
-                    class="border-b border-theme-neutral-300"
+                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -125,7 +125,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -139,7 +139,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                           Name
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                           data-testid="table__Sort"
                         >
                           <div
@@ -155,7 +155,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -169,7 +169,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                           Category
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                           data-testid="table__Sort"
                         >
                           <div
@@ -185,7 +185,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -199,7 +199,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                           Rating
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                           data-testid="table__Sort"
                         >
                           <div
@@ -215,7 +215,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -234,7 +234,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="sc-fznyAO cInDKW group"
+                    class="sc-fznyAO hmArzi group"
                     data-testid="TableRow"
                   >
                     <td
@@ -263,7 +263,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                           class="inline-flex items-center space-x-2"
                         >
                           <span
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                           >
                             ARK Ecosystem
                           </span>
@@ -290,7 +290,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN bpVNCE text-theme-neutral-dark justify-center"
+                        class="sc-fzplWN bpVNCE text-theme-secondary-text justify-center"
                       >
                         <span>
                           Utility
@@ -299,7 +299,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN bpVNCE text-theme-neutral-dark"
+                        class="sc-fzplWN bpVNCE text-theme-secondary-text"
                       >
                         <span>
                           <div
@@ -341,7 +341,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                         class="sc-fzplWN bpVNCE"
                       >
                         <button
-                          class="sc-AxjAm hXnHfM"
+                          class="sc-AxjAm joLCoM"
                           color="primary"
                           type="button"
                         >
@@ -351,7 +351,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fznyAO cInDKW group"
+                    class="sc-fznyAO hmArzi group"
                     data-testid="TableRow"
                   >
                     <td
@@ -380,7 +380,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                           class="inline-flex items-center space-x-2"
                         >
                           <span
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                           >
                             Breno Polanski
                           </span>
@@ -389,7 +389,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN bpVNCE text-theme-neutral-dark justify-center"
+                        class="sc-fzplWN bpVNCE text-theme-secondary-text justify-center"
                       >
                         <span>
                           Utility
@@ -398,7 +398,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN bpVNCE text-theme-neutral-dark"
+                        class="sc-fzplWN bpVNCE text-theme-secondary-text"
                       >
                         <span>
                           <div
@@ -440,7 +440,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                         class="sc-fzplWN bpVNCE"
                       >
                         <button
-                          class="sc-AxjAm hXnHfM"
+                          class="sc-AxjAm joLCoM"
                           color="primary"
                           type="button"
                         >
@@ -450,7 +450,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fznyAO cInDKW group"
+                    class="sc-fznyAO hmArzi group"
                     data-testid="TableRow"
                   >
                     <td
@@ -479,7 +479,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                           class="inline-flex items-center space-x-2"
                         >
                           <span
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                           >
                             ChangeNOW
                           </span>
@@ -488,7 +488,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN bpVNCE text-theme-neutral-dark justify-center"
+                        class="sc-fzplWN bpVNCE text-theme-secondary-text justify-center"
                       >
                         <span>
                           Other
@@ -497,7 +497,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN bpVNCE text-theme-neutral-dark"
+                        class="sc-fzplWN bpVNCE text-theme-secondary-text"
                       >
                         <span>
                           <div
@@ -539,7 +539,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                         class="sc-fzplWN bpVNCE"
                       >
                         <button
-                          class="sc-AxjAm hXnHfM"
+                          class="sc-AxjAm joLCoM"
                           color="primary"
                           type="button"
                         >
@@ -549,7 +549,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fznyAO cInDKW group"
+                    class="sc-fznyAO hmArzi group"
                     data-testid="TableRow"
                   >
                     <td
@@ -578,7 +578,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                           class="inline-flex items-center space-x-2"
                         >
                           <span
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                           >
                             Delegate Fun
                           </span>
@@ -596,7 +596,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN bpVNCE text-theme-neutral-dark justify-center"
+                        class="sc-fzplWN bpVNCE text-theme-secondary-text justify-center"
                       >
                         <span>
                           Game
@@ -605,7 +605,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzplWN bpVNCE text-theme-neutral-dark"
+                        class="sc-fzplWN bpVNCE text-theme-secondary-text"
                       >
                         <span>
                           <div
@@ -647,7 +647,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                         class="sc-fzplWN bpVNCE"
                       >
                         <button
-                          class="sc-AxjAm hXnHfM"
+                          class="sc-AxjAm joLCoM"
                           color="primary"
                           type="button"
                         >

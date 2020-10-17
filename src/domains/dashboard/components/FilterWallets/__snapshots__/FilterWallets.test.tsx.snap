@@ -9,7 +9,7 @@ exports[`FilterWallets should render 1`] = `
       class="mb-8"
     >
       <div
-        class="font-semibold text-theme-neutral-dark"
+        class="font-semibold text-theme-secondary-text"
       >
         Filter Cryptoasset
       </div>
@@ -25,7 +25,7 @@ exports[`FilterWallets should render 1`] = `
         data-testid="network__option"
       />
       <div
-        class="sc-AxhCb iZzMIT relative cursor-pointer border-theme-primary-contrast"
+        class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast"
         data-testid="network__viewall"
       >
         <div
@@ -50,7 +50,7 @@ exports[`FilterWallets should render 1`] = `
       </div>
     </div>
     <div
-      class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
+      class="my-8 border-t border-dotted border border-theme-neutral-300 dark:border-theme-neutral-800"
     />
     <div
       class="flex flex-col"
@@ -59,7 +59,7 @@ exports[`FilterWallets should render 1`] = `
         class="flex items-center justify-between"
       >
         <div
-          class="font-semibold text-theme-neutral-dark"
+          class="font-semibold text-theme-secondary-text"
         >
           Your Wallets
         </div>
@@ -68,7 +68,7 @@ exports[`FilterWallets should render 1`] = `
           data-testid="dropdown__toggle"
         >
           <div
-            class="flex items-center justify-end cursor-pointer text-theme-neutral-dark"
+            class="flex items-center justify-end cursor-pointer text-theme-secondary-text"
             data-testid="filter-wallets__wallets"
           >
             <span
@@ -95,7 +95,7 @@ exports[`FilterWallets should render 1`] = `
       </div>
     </div>
     <div
-      class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
+      class="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800"
     />
     <div
       class="flex flex-col mb-6"
@@ -104,7 +104,7 @@ exports[`FilterWallets should render 1`] = `
         class="flex items-center justify-between"
       >
         <div
-          class="font-semibold text-theme-neutral-dark"
+          class="font-semibold text-theme-secondary-text"
         >
           Portfolio Chart
         </div>
@@ -117,10 +117,10 @@ exports[`FilterWallets should render 1`] = `
             type="checkbox"
           />
           <div
-            class="Toggle__Handle-qyyifx-1 jXkMFJ"
+            class="Toggle__Handle-qyyifx-1 kLalye"
           >
             <span
-              class="Toggle__HandleInner-qyyifx-2 chnbkf"
+              class="Toggle__HandleInner-qyyifx-2 kvoLnZ"
             />
           </div>
         </label>
@@ -138,7 +138,7 @@ exports[`FilterWallets should render 1`] = `
         class="flex items-center justify-between"
       >
         <div
-          class="font-semibold text-theme-neutral-dark"
+          class="font-semibold text-theme-secondary-text"
         >
           Transaction History
         </div>
@@ -151,10 +151,10 @@ exports[`FilterWallets should render 1`] = `
             type="checkbox"
           />
           <div
-            class="Toggle__Handle-qyyifx-1 jXkMFJ"
+            class="Toggle__Handle-qyyifx-1 kLalye"
           >
             <span
-              class="Toggle__HandleInner-qyyifx-2 chnbkf"
+              class="Toggle__HandleInner-qyyifx-2 kvoLnZ"
             />
           </div>
         </label>
@@ -178,7 +178,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
       class="mb-8"
     >
       <div
-        class="font-semibold text-theme-neutral-dark"
+        class="font-semibold text-theme-secondary-text"
       >
         Filter Cryptoasset
       </div>
@@ -198,7 +198,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           data-testid="network__option--0"
         >
           <div
-            class="sc-AxhCb iZzMIT relative border-theme-success-500 text-theme-success-500"
+            class="sc-AxhCb gaiYPD relative border-theme-success-500 text-theme-success-500"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -226,7 +226,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           data-testid="network__option--1"
         >
           <div
-            class="sc-AxhCb iZzMIT relative border-theme-success-500 text-theme-success-500"
+            class="sc-AxhCb gaiYPD relative border-theme-success-500 text-theme-success-500"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -254,7 +254,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           data-testid="network__option--2"
         >
           <div
-            class="sc-AxhCb iZzMIT relative border-theme-neutral-200 text-theme-neutral-300"
+            class="sc-AxhCb gaiYPD relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -262,7 +262,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
               width="20"
             />
             <span
-              class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+              class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <span />
             </span>
@@ -270,7 +270,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         </li>
       </ul>
       <div
-        class="sc-AxhCb iZzMIT relative cursor-pointer border-theme-primary-contrast"
+        class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast"
         data-testid="network__viewall"
       >
         <div
@@ -295,7 +295,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
       </div>
     </div>
     <div
-      class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
+      class="my-8 border-t border-dotted border border-theme-neutral-300 dark:border-theme-neutral-800"
     />
     <div
       class="flex flex-col"
@@ -304,7 +304,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         class="flex items-center justify-between"
       >
         <div
-          class="font-semibold text-theme-neutral-dark"
+          class="font-semibold text-theme-secondary-text"
         >
           Your Wallets
         </div>
@@ -313,7 +313,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           data-testid="dropdown__toggle"
         >
           <div
-            class="flex items-center justify-end cursor-pointer text-theme-neutral-dark"
+            class="flex items-center justify-end cursor-pointer text-theme-secondary-text"
             data-testid="filter-wallets__wallets"
           >
             <span
@@ -340,7 +340,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
       </div>
     </div>
     <div
-      class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
+      class="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800"
     />
     <div
       class="flex flex-col mb-6"
@@ -349,7 +349,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         class="flex items-center justify-between"
       >
         <div
-          class="font-semibold text-theme-neutral-dark"
+          class="font-semibold text-theme-secondary-text"
         >
           Portfolio Chart
         </div>
@@ -362,10 +362,10 @@ exports[`FilterWallets should render with networks selection 1`] = `
             type="checkbox"
           />
           <div
-            class="Toggle__Handle-qyyifx-1 jXkMFJ"
+            class="Toggle__Handle-qyyifx-1 kLalye"
           >
             <span
-              class="Toggle__HandleInner-qyyifx-2 chnbkf"
+              class="Toggle__HandleInner-qyyifx-2 kvoLnZ"
             />
           </div>
         </label>
@@ -383,7 +383,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         class="flex items-center justify-between"
       >
         <div
-          class="font-semibold text-theme-neutral-dark"
+          class="font-semibold text-theme-secondary-text"
         >
           Transaction History
         </div>
@@ -396,10 +396,10 @@ exports[`FilterWallets should render with networks selection 1`] = `
             type="checkbox"
           />
           <div
-            class="Toggle__Handle-qyyifx-1 jXkMFJ"
+            class="Toggle__Handle-qyyifx-1 kLalye"
           >
             <span
-              class="Toggle__HandleInner-qyyifx-2 chnbkf"
+              class="Toggle__HandleInner-qyyifx-2 kvoLnZ"
             />
           </div>
         </label>

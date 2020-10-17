@@ -86,7 +86,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
         data-testid="clipboard__wrapper"
       >
         <button
-          class="sc-AxjAm hXnHfM"
+          class="sc-AxjAm joLCoM"
           color="primary"
           data-testid="CreateWallet__copy"
           type="button"
@@ -107,7 +107,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw kXkCOd border-theme-neutral-300"
+      class="sc-AxiKw kXkCOd border-theme-neutral-300 dark:border-theme-neutral-800"
       type="horizontal"
     />
     <div
@@ -117,7 +117,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
         class="space-y-2"
       >
         <span
-          class="text-lg font-semibold text-theme-neutral-dark"
+          class="text-lg font-semibold text-theme-secondary-text"
         >
           Download Your Passphrase
         </span>
@@ -141,7 +141,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
       class="flex justify-end w-full"
     >
       <button
-        class="sc-AxjAm hXnHfM flex items-center space-x-2"
+        class="sc-AxjAm joLCoM flex items-center space-x-2"
         color="primary"
         data-testid="CreateWallet__download"
         type="button"
@@ -161,7 +161,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
       </button>
     </div>
     <div
-      class="sc-AxiKw kXkCOd border-theme-neutral-300"
+      class="sc-AxiKw kXkCOd border-theme-neutral-300 dark:border-theme-neutral-800"
       type="horizontal"
     />
   </section>
@@ -173,7 +173,7 @@ exports[`CreateWallet should not have a pending wallet if leaving on step 1 1`] 
 exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -205,7 +205,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -216,7 +216,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -227,7 +227,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -238,7 +238,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -258,7 +258,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -284,13 +284,13 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -307,13 +307,13 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -330,7 +330,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -340,12 +340,12 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -363,10 +363,10 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="sc-AxgMl eQpXWo -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxhCb fxrKLH"
@@ -418,7 +418,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -434,7 +434,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
         class="space-x-3"
       >
         <a
-          class="text-theme-neutral-dark"
+          class="text-theme-secondary-text"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
@@ -494,7 +494,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           Select a Cryptoasset
                         </h1>
                         <div
-                          class="text-theme-neutral-dark"
+                          class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
                           Select a cryptoasset to create your new wallet address
@@ -505,7 +505,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -544,7 +544,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzqNJr hjzlwF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -566,7 +566,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="CreateWallet__back-button"
                     disabled=""
@@ -575,7 +575,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm kbZyZT"
+                    class="sc-AxjAm BsmvP"
                     color="primary"
                     data-testid="CreateWallet__continue-button"
                     disabled=""
@@ -599,7 +599,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 2`] = `<Docu
 exports[`CreateWallet should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -631,7 +631,7 @@ exports[`CreateWallet should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -642,7 +642,7 @@ exports[`CreateWallet should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -653,7 +653,7 @@ exports[`CreateWallet should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -664,7 +664,7 @@ exports[`CreateWallet should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -684,7 +684,7 @@ exports[`CreateWallet should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -710,13 +710,13 @@ exports[`CreateWallet should render 1`] = `
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -733,13 +733,13 @@ exports[`CreateWallet should render 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -756,7 +756,7 @@ exports[`CreateWallet should render 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -766,12 +766,12 @@ exports[`CreateWallet should render 1`] = `
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -789,10 +789,10 @@ exports[`CreateWallet should render 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="sc-AxgMl eQpXWo -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxhCb fxrKLH"
@@ -844,7 +844,7 @@ exports[`CreateWallet should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -860,7 +860,7 @@ exports[`CreateWallet should render 1`] = `
         class="space-x-3"
       >
         <a
-          class="text-theme-neutral-dark"
+          class="text-theme-secondary-text"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
@@ -920,7 +920,7 @@ exports[`CreateWallet should render 1`] = `
                           Select a Cryptoasset
                         </h1>
                         <div
-                          class="text-theme-neutral-dark"
+                          class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
                           Select a cryptoasset to create your new wallet address
@@ -931,7 +931,7 @@ exports[`CreateWallet should render 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -970,7 +970,7 @@ exports[`CreateWallet should render 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzqNJr hjzlwF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -992,7 +992,7 @@ exports[`CreateWallet should render 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="CreateWallet__back-button"
                     disabled=""
@@ -1001,7 +1001,7 @@ exports[`CreateWallet should render 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm kbZyZT"
+                    class="sc-AxjAm BsmvP"
                     color="primary"
                     data-testid="CreateWallet__continue-button"
                     disabled=""
@@ -1037,7 +1037,7 @@ exports[`CreateWallet should render 1st step 1`] = `
           Select a Cryptoasset
         </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
           Select a cryptoasset to create your new wallet address
@@ -1048,7 +1048,7 @@ exports[`CreateWallet should render 1st step 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
@@ -1087,7 +1087,7 @@ exports[`CreateWallet should render 1st step 1`] = `
               aria-controls="CreateWallet__network-menu"
               aria-labelledby="CreateWallet__network-label"
               autocomplete="off"
-              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-fzqNJr hjzlwF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="CreateWallet__network-input"
               placeholder="Enter a cryptoasset name"
@@ -1128,7 +1128,7 @@ exports[`CreateWallet should render 4th step 1`] = `
             Completed
           </h1>
           <div
-            class="text-theme-neutral-dark"
+            class="text-theme-secondary-text"
             data-testid="header__subtitle"
           >
             Wallet creation is complete. Now you can use it.
@@ -1137,7 +1137,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       </div>
     </div>
     <div
-      class="sc-fznyAO cAqoyI"
+      class="sc-fznyAO ccQaEh"
       data-testid="TransactionDetail"
     >
       <div
@@ -1156,7 +1156,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       </div>
       <div
         aria-label="ARK Devnet"
-        class="sc-AxgMl eqWWwc border-theme-primary-100 text-theme-primary-400"
+        class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
         data-testid="NetworkIcon-ARK-ark.devnet"
       >
         <div
@@ -1172,7 +1172,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       </div>
     </div>
     <div
-      class="sc-fznyAO cAqoyI"
+      class="sc-fznyAO ccQaEh"
       data-testid="TransactionDetail"
     >
       <div
@@ -1217,7 +1217,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       class="sc-AxirZ izhStr mt-8"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
@@ -1230,7 +1230,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         </span>
       </label>
       <input
-        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+        class="sc-fzqNJr hjzlwF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="CreateWallet__wallet-name"
         name="name"
       />

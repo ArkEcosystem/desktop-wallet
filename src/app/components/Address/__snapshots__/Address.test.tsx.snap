@@ -17,7 +17,7 @@ exports[`Formatted Address should render address only 1`] = `
       class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
       data-testid="address__wallet-address"
     >
-      ASuusX…GQ3kqT
+      ASuusX … GQ3kqT
     </span>
   </div>
 </div>
@@ -29,7 +29,7 @@ exports[`Formatted Address should render with normal font 1`] = `
     class="inline-block truncate align-middle"
   >
     <span
-      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-normal text-base"
+      class="max-w-24 flex-auto truncate mt-4 mr-2 font-normal text-base text-theme-text"
       data-testid="address__wallet-name"
     >
       Sample Wallet
@@ -38,7 +38,7 @@ exports[`Formatted Address should render with normal font 1`] = `
       class="sc-AxjAm StDqN text-theme-neutral-light font-normal text-base"
       data-testid="address__wallet-address"
     >
-      ASuusX…GQ3kqT
+      ASuusX … GQ3kqT
     </span>
   </div>
 </div>
@@ -50,7 +50,7 @@ exports[`Formatted Address should render with wallet name 1`] = `
     class="inline-block truncate align-middle"
   >
     <span
-      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+      class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
       data-testid="address__wallet-name"
     >
       Sample Wallet
@@ -59,7 +59,7 @@ exports[`Formatted Address should render with wallet name 1`] = `
       class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
       data-testid="address__wallet-address"
     >
-      ASuusX…GQ3kqT
+      ASuusX … GQ3kqT
     </span>
   </div>
 </div>

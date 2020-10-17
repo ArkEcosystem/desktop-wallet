@@ -19,7 +19,7 @@ exports[`ContactUs should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -47,7 +47,7 @@ exports[`ContactUs should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             We'd be happy to answer your questions
           </div>
@@ -59,7 +59,7 @@ exports[`ContactUs should render a modal 1`] = `
               href="https://twitter.ark.io"
             >
               <div
-                class="sc-AxirZ cscDYo border-black hover:bg-transparent"
+                class="sc-AxirZ ehQVdl border-black hover:bg-transparent"
               >
                 <div
                   class="sc-AxhCb fxrKLH"
@@ -77,7 +77,7 @@ exports[`ContactUs should render a modal 1`] = `
               href="https://slack.ark.io"
             >
               <div
-                class="sc-AxirZ cscDYo border-black hover:bg-transparent"
+                class="sc-AxirZ ehQVdl border-black hover:bg-transparent"
               >
                 <div
                   class="sc-AxhCb fxrKLH"
@@ -95,7 +95,7 @@ exports[`ContactUs should render a modal 1`] = `
               href="https://discord.ark.io/"
             >
               <div
-                class="sc-AxirZ cscDYo border-black hover:bg-transparent"
+                class="sc-AxirZ ehQVdl border-black hover:bg-transparent"
               >
                 <div
                   class="sc-AxhCb fxrKLH"
@@ -113,7 +113,7 @@ exports[`ContactUs should render a modal 1`] = `
               href="mailto:info@ark.io"
             >
               <div
-                class="sc-AxirZ cscDYo border-black hover:bg-transparent"
+                class="sc-AxirZ ehQVdl border-black hover:bg-transparent"
               >
                 <div
                   class="sc-AxhCb fxrKLH"
@@ -140,7 +140,7 @@ exports[`ContactUs should render a modal 1`] = `
                 Feedback
               </h2>
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -151,7 +151,7 @@ exports[`ContactUs should render a modal 1`] = `
                 />
               </label>
               <input
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 name="name"
               />
@@ -160,7 +160,7 @@ exports[`ContactUs should render a modal 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="email"
               >
@@ -171,7 +171,7 @@ exports[`ContactUs should render a modal 1`] = `
                 />
               </label>
               <input
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 name="email"
               />
@@ -180,7 +180,7 @@ exports[`ContactUs should render a modal 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="subject"
               >
@@ -194,7 +194,7 @@ exports[`ContactUs should render a modal 1`] = `
                 class="relative w-full"
               >
                 <input
-                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                  class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                   data-testid="select-list__input"
                   name="subject"
                   readonly=""
@@ -223,7 +223,7 @@ exports[`ContactUs should render a modal 1`] = `
                         aria-controls="downshift-1-menu"
                         aria-labelledby="downshift-1-label"
                         autocomplete="off"
-                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                        class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                         data-testid="SelectDropdownInput__input"
                         id="downshift-0-input"
                         name="subject"
@@ -233,7 +233,7 @@ exports[`ContactUs should render a modal 1`] = `
                     </div>
                     <ul
                       aria-labelledby="downshift-1-label"
-                      class="sc-fznKkj hxMaMB"
+                      class="sc-fznKkj hfplLx"
                       id="downshift-1-menu"
                       role="listbox"
                     />
@@ -258,7 +258,7 @@ exports[`ContactUs should render a modal 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="message"
               >
@@ -269,7 +269,7 @@ exports[`ContactUs should render a modal 1`] = `
                 />
               </label>
               <textarea
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="TextArea"
                 name="message"
               />
@@ -278,14 +278,14 @@ exports[`ContactUs should render a modal 1`] = `
               class="flex justify-end mt-4 space-x-3"
             >
               <button
-                class="sc-AxjAm hXnHfM"
+                class="sc-AxjAm joLCoM"
                 color="primary"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm BsmvP"
                 color="primary"
                 type="submit"
               >

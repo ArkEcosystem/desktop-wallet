@@ -19,7 +19,7 @@ exports[`SearchHelp should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxiKw eWLnbL w-11 h-11"
+          class="sc-AxiKw lgscAL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -47,7 +47,7 @@ exports[`SearchHelp should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             Quickly find the right answers to any questions
           </div>
@@ -82,16 +82,16 @@ exports[`SearchHelp should render a modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
+                  class="flex-1 pl-4 mr-4 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 >
                   <input
-                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="What would you like to search for?"
                   />
                 </div>
                 <button
-                  class="sc-AxiKw gQbnsc my-1"
+                  class="sc-AxiKw bJUjnk my-1"
                   color="primary"
                   data-testid="SearchBar__button"
                   type="button"
@@ -112,7 +112,7 @@ exports[`SearchHelp should render a modal 1`] = `
               class="mt-8"
             >
               <div
-                class="sc-fzplWN hwZmyA -mt-3"
+                class="sc-fzplWN jUcJYe -mt-3"
                 role="table"
               >
                 <table
@@ -121,11 +121,11 @@ exports[`SearchHelp should render a modal 1`] = `
                 >
                   <thead>
                     <tr
-                      class="border-b border-theme-neutral-300"
+                      class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                       role="row"
                     >
                       <th
-                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -139,7 +139,7 @@ exports[`SearchHelp should render a modal 1`] = `
                             Title
                           </div>
                           <div
-                            class="flex items-center ml-2 text-theme-color-neutral"
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                             data-testid="table__Sort"
                           >
                             <div
@@ -155,7 +155,7 @@ exports[`SearchHelp should render a modal 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -169,7 +169,7 @@ exports[`SearchHelp should render a modal 1`] = `
                             Category
                           </div>
                           <div
-                            class="flex items-center ml-2 text-theme-color-neutral"
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                             data-testid="table__Sort"
                           >
                             <div
@@ -190,7 +190,7 @@ exports[`SearchHelp should render a modal 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="transition-colors duration-100 border-b border-dashed last:border-b-0 border-theme-neutral-200 group"
+                      class="transition-colors duration-100 border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800 group"
                     >
                       <td>
                         <div
@@ -202,7 +202,7 @@ exports[`SearchHelp should render a modal 1`] = `
                             How do I install the plugin?
                           </div>
                           <div
-                            class="mt-2 text-sm text-theme-neutral-dark"
+                            class="mt-2 text-sm text-theme-secondary-text"
                           >
                             ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
                           </div>
@@ -219,7 +219,7 @@ exports[`SearchHelp should render a modal 1`] = `
                       </td>
                     </tr>
                     <tr
-                      class="transition-colors duration-100 border-b border-dashed last:border-b-0 border-theme-neutral-200 group"
+                      class="transition-colors duration-100 border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800 group"
                     >
                       <td>
                         <div
@@ -231,7 +231,7 @@ exports[`SearchHelp should render a modal 1`] = `
                             Installing the side plugin
                           </div>
                           <div
-                            class="mt-2 text-sm text-theme-neutral-dark"
+                            class="mt-2 text-sm text-theme-secondary-text"
                           >
                             ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
                           </div>
@@ -248,7 +248,7 @@ exports[`SearchHelp should render a modal 1`] = `
                       </td>
                     </tr>
                     <tr
-                      class="transition-colors duration-100 border-b border-dashed last:border-b-0 border-theme-neutral-200 group"
+                      class="transition-colors duration-100 border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800 group"
                     >
                       <td>
                         <div
@@ -260,7 +260,7 @@ exports[`SearchHelp should render a modal 1`] = `
                             If the plugin is not installed, what do we do?
                           </div>
                           <div
-                            class="mt-2 text-sm text-theme-neutral-dark"
+                            class="mt-2 text-sm text-theme-secondary-text"
                           >
                             ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
                           </div>
@@ -305,7 +305,7 @@ exports[`SearchHelp should render a modal 2`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxiKw eWLnbL w-11 h-11"
+          class="sc-AxiKw lgscAL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -333,7 +333,7 @@ exports[`SearchHelp should render a modal 2`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             Quickly find the right answers to any questions
           </div>
@@ -368,16 +368,16 @@ exports[`SearchHelp should render a modal 2`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
+                  class="flex-1 pl-4 mr-4 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 >
                   <input
-                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="What would you like to search for?"
                   />
                 </div>
                 <button
-                  class="sc-AxiKw gQbnsc my-1"
+                  class="sc-AxiKw bJUjnk my-1"
                   color="primary"
                   data-testid="SearchBar__button"
                   type="button"
@@ -398,7 +398,7 @@ exports[`SearchHelp should render a modal 2`] = `
               class="mt-8"
             >
               <div
-                class="sc-fzplWN hwZmyA -mt-3"
+                class="sc-fzplWN jUcJYe -mt-3"
                 role="table"
               >
                 <table
@@ -407,11 +407,11 @@ exports[`SearchHelp should render a modal 2`] = `
                 >
                   <thead>
                     <tr
-                      class="border-b border-theme-neutral-300"
+                      class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                       role="row"
                     >
                       <th
-                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -425,7 +425,7 @@ exports[`SearchHelp should render a modal 2`] = `
                             Title
                           </div>
                           <div
-                            class="flex items-center ml-2 text-theme-color-neutral"
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                             data-testid="table__Sort"
                           >
                             <div
@@ -441,7 +441,7 @@ exports[`SearchHelp should render a modal 2`] = `
                         </div>
                       </th>
                       <th
-                        class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -455,7 +455,7 @@ exports[`SearchHelp should render a modal 2`] = `
                             Category
                           </div>
                           <div
-                            class="flex items-center ml-2 text-theme-color-neutral"
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                             data-testid="table__Sort"
                           >
                             <div

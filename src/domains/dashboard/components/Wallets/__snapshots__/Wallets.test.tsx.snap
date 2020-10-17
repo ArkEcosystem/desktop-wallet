@@ -92,7 +92,7 @@ exports[`Wallets should change wallet view type from grid to list 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -116,7 +116,7 @@ exports[`Wallets should change wallet view type from grid to list 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -148,7 +148,7 @@ exports[`Wallets should change wallet view type from grid to list 1`] = `
     >
       <div>
         <div
-          class="text-theme-neutral-dark"
+          class="text-theme-secondary-text"
         />
       </div>
     </div>
@@ -248,7 +248,7 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -272,7 +272,7 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -309,8 +309,8 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
           class="relative"
         >
           <div
-            class="swiper-container swiper-container-initialized swiper-container-horizontal"
-            style="height: 185px;"
+            class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+            style="height: 224px;"
           >
             <div
               class="h-full swiper-wrapper "
@@ -318,25 +318,25 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
             >
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
                   <div
-                    class="sc-Axmtr kPFils"
+                    class="sc-Axmtr eqTXMl h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="relative p-2"
+                      class="relative h-full flex flex-col p-2 justify-between"
                     >
                       <div
                         class="-space-x-2"
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -366,27 +366,27 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex mt-6 truncate max-w-12"
+                        class="flex truncate max-w-12 mt-auto"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxgMl fFPQpl text-theme-neutral-500 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D8rr…YUYD
+                            D8rr … YUYD
                           </span>
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-text"
+                        class="font-bold text-lg text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -414,25 +414,25 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
                   <div
-                    class="sc-Axmtr kPFils"
+                    class="sc-Axmtr eqTXMl h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="relative p-2"
+                      class="relative h-full flex flex-col p-2 justify-between"
                     >
                       <div
                         class="-space-x-2"
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -462,27 +462,27 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex mt-6 truncate max-w-12"
+                        class="flex truncate max-w-12 mt-auto"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 2
                           </span>
                           <span
-                            class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxgMl fFPQpl text-theme-neutral-500 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D5sR…Jtwb
+                            D5sR … Jtwb
                           </span>
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-text"
+                        class="font-bold text-lg text-theme-text"
                         data-testid="Amount"
                       >
                         57.68 DARK
@@ -496,36 +496,36 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-Axmtr hBWlGR"
+                    class="sc-Axmtr eZDgvc h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="p-2"
+                      class="h-full flex flex-col p-2 justify-between"
                     >
                       <div
-                        class="flex"
+                        class="flex -space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                         <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                       </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                        class="mt-auto text-theme-primary-contrast dark:text-theme-neutral-800 font-semibold undefined"
                       >
                         New Wallet
                       </div>
                       <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
+                        class="text-lg text-theme-primary-contrast dark:text-theme-neutral-800 font-bold undefined"
                       >
                         Balance
                       </div>
@@ -637,7 +637,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -661,7 +661,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
               </div>
             </button>
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -696,7 +696,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw gGhpZ -mt-3"
+            class="sc-AxiKw iDVQWj -mt-3"
             role="table"
           >
             <table
@@ -705,11 +705,11 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
             >
               <thead>
                 <tr
-                  class="border-b border-theme-neutral-300"
+                  class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                   role="row"
                 >
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -723,7 +723,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         Asset Type
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -739,7 +739,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -753,7 +753,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         Wallet Address
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -769,7 +769,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -783,7 +783,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -797,7 +797,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         Balance
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -813,7 +813,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -827,7 +827,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         Fiat Value
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -848,7 +848,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 role="rowgroup"
               >
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -857,7 +857,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -895,7 +895,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -904,7 +904,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -956,7 +956,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -965,7 +965,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -1003,7 +1003,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -1012,7 +1012,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -1064,7 +1064,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -1073,7 +1073,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -1111,7 +1111,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -1120,7 +1120,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -1172,7 +1172,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -1181,7 +1181,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -1219,7 +1219,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -1228,7 +1228,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -1280,7 +1280,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -1289,7 +1289,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -1327,7 +1327,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -1336,7 +1336,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -1388,7 +1388,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -1397,7 +1397,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -1435,7 +1435,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -1444,7 +1444,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -1496,7 +1496,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -1505,7 +1505,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -1543,7 +1543,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -1552,7 +1552,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -1604,7 +1604,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -1613,7 +1613,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -1651,7 +1651,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -1660,7 +1660,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -1712,7 +1712,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -1721,7 +1721,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -1759,7 +1759,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -1768,7 +1768,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -1921,7 +1921,7 @@ exports[`Wallets should render grid 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -1945,7 +1945,7 @@ exports[`Wallets should render grid 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -1982,8 +1982,8 @@ exports[`Wallets should render grid 1`] = `
           class="relative"
         >
           <div
-            class="swiper-container swiper-container-initialized swiper-container-horizontal"
-            style="height: 185px;"
+            class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+            style="height: 224px;"
           >
             <div
               class="h-full swiper-wrapper "
@@ -1991,25 +1991,25 @@ exports[`Wallets should render grid 1`] = `
             >
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
                   <div
-                    class="sc-Axmtr kPFils"
+                    class="sc-Axmtr eqTXMl h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="relative p-2"
+                      class="relative h-full flex flex-col p-2 justify-between"
                     >
                       <div
                         class="-space-x-2"
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -2039,27 +2039,27 @@ exports[`Wallets should render grid 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex mt-6 truncate max-w-12"
+                        class="flex truncate max-w-12 mt-auto"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxgMl fFPQpl text-theme-neutral-500 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D8rr…YUYD
+                            D8rr … YUYD
                           </span>
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-text"
+                        class="font-bold text-lg text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -2087,25 +2087,25 @@ exports[`Wallets should render grid 1`] = `
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
                   <div
-                    class="sc-Axmtr kPFils"
+                    class="sc-Axmtr eqTXMl h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="relative p-2"
+                      class="relative h-full flex flex-col p-2 justify-between"
                     >
                       <div
                         class="-space-x-2"
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -2135,27 +2135,27 @@ exports[`Wallets should render grid 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex mt-6 truncate max-w-12"
+                        class="flex truncate max-w-12 mt-auto"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 2
                           </span>
                           <span
-                            class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxgMl fFPQpl text-theme-neutral-500 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D5sR…Jtwb
+                            D5sR … Jtwb
                           </span>
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-text"
+                        class="font-bold text-lg text-theme-text"
                         data-testid="Amount"
                       >
                         57.68 DARK
@@ -2169,36 +2169,36 @@ exports[`Wallets should render grid 1`] = `
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-Axmtr hBWlGR"
+                    class="sc-Axmtr eZDgvc h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="p-2"
+                      class="h-full flex flex-col p-2 justify-between"
                     >
                       <div
-                        class="flex"
+                        class="flex -space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                         <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                       </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                        class="mt-auto text-theme-primary-contrast dark:text-theme-neutral-800 font-semibold undefined"
                       >
                         New Wallet
                       </div>
                       <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
+                        class="text-lg text-theme-primary-contrast dark:text-theme-neutral-800 font-bold undefined"
                       >
                         Balance
                       </div>
@@ -2310,7 +2310,7 @@ exports[`Wallets should render list 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -2334,7 +2334,7 @@ exports[`Wallets should render list 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -2369,7 +2369,7 @@ exports[`Wallets should render list 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw gGhpZ -mt-3"
+            class="sc-AxiKw iDVQWj -mt-3"
             role="table"
           >
             <table
@@ -2378,11 +2378,11 @@ exports[`Wallets should render list 1`] = `
             >
               <thead>
                 <tr
-                  class="border-b border-theme-neutral-300"
+                  class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                   role="row"
                 >
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -2396,7 +2396,7 @@ exports[`Wallets should render list 1`] = `
                         Asset Type
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -2412,7 +2412,7 @@ exports[`Wallets should render list 1`] = `
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -2426,7 +2426,7 @@ exports[`Wallets should render list 1`] = `
                         Wallet Address
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -2442,7 +2442,7 @@ exports[`Wallets should render list 1`] = `
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -2456,7 +2456,7 @@ exports[`Wallets should render list 1`] = `
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -2470,7 +2470,7 @@ exports[`Wallets should render list 1`] = `
                         Balance
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -2486,7 +2486,7 @@ exports[`Wallets should render list 1`] = `
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -2500,7 +2500,7 @@ exports[`Wallets should render list 1`] = `
                         Fiat Value
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -2521,7 +2521,7 @@ exports[`Wallets should render list 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -2530,7 +2530,7 @@ exports[`Wallets should render list 1`] = `
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -2568,7 +2568,7 @@ exports[`Wallets should render list 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -2577,7 +2577,7 @@ exports[`Wallets should render list 1`] = `
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -2629,7 +2629,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -2638,7 +2638,7 @@ exports[`Wallets should render list 1`] = `
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -2676,7 +2676,7 @@ exports[`Wallets should render list 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 2
@@ -2685,7 +2685,7 @@ exports[`Wallets should render list 1`] = `
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D5sRKWckH…yC3cvJtwb
+                          D5sRKWckH … yC3cvJtwb
                         </span>
                       </div>
                     </div>
@@ -2824,7 +2824,7 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -2848,7 +2848,7 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -2885,8 +2885,8 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
           class="relative"
         >
           <div
-            class="swiper-container swiper-container-initialized swiper-container-horizontal"
-            style="height: 185px;"
+            class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+            style="height: 224px;"
           >
             <div
               class="h-full swiper-wrapper "
@@ -2894,25 +2894,25 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
             >
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
                   <div
-                    class="sc-Axmtr kPFils"
+                    class="sc-Axmtr eqTXMl h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="relative p-2"
+                      class="relative h-full flex flex-col p-2 justify-between"
                     >
                       <div
                         class="-space-x-2"
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -2942,27 +2942,27 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex mt-6 truncate max-w-12"
+                        class="flex truncate max-w-12 mt-auto"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxgMl fFPQpl text-theme-neutral-500 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D8rr…YUYD
+                            D8rr … YUYD
                           </span>
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-text"
+                        class="font-bold text-lg text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -2990,36 +2990,36 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-Axmtr hBWlGR"
+                    class="sc-Axmtr eZDgvc h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="p-2"
+                      class="h-full flex flex-col p-2 justify-between"
                     >
                       <div
-                        class="flex"
+                        class="flex -space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                         <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                       </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                        class="mt-auto text-theme-primary-contrast dark:text-theme-neutral-800 font-semibold undefined"
                       >
                         New Wallet
                       </div>
                       <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
+                        class="text-lg text-theme-primary-contrast dark:text-theme-neutral-800 font-bold undefined"
                       >
                         Balance
                       </div>
@@ -3032,36 +3032,36 @@ exports[`Wallets should render one grid row when less than three wallets 1`] = `
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-Axmtr hBWlGR"
+                    class="sc-Axmtr eZDgvc h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="p-2"
+                      class="h-full flex flex-col p-2 justify-between"
                     >
                       <div
-                        class="flex"
+                        class="flex -space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                         <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                       </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                        class="mt-auto text-theme-primary-contrast dark:text-theme-neutral-800 font-semibold undefined"
                       >
                         New Wallet
                       </div>
                       <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
+                        class="text-lg text-theme-primary-contrast dark:text-theme-neutral-800 font-bold undefined"
                       >
                         Balance
                       </div>
@@ -3173,7 +3173,7 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -3197,7 +3197,7 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
               </div>
             </button>
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -3234,8 +3234,8 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
           class="relative"
         >
           <div
-            class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
-            style="height: 390px;"
+            class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
+            style="height: 436px;"
           >
             <div
               class="h-full swiper-wrapper "
@@ -3243,25 +3243,25 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
             >
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
                   <div
-                    class="sc-Axmtr kPFils"
+                    class="sc-Axmtr eqTXMl h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="relative p-2"
+                      class="relative h-full flex flex-col p-2 justify-between"
                     >
                       <div
                         class="-space-x-2"
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -3291,27 +3291,27 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
                         </div>
                       </div>
                       <div
-                        class="flex mt-6 truncate max-w-12"
+                        class="flex truncate max-w-12 mt-auto"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxgMl fFPQpl text-theme-neutral-500 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D8rr…YUYD
+                            D8rr … YUYD
                           </span>
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-text"
+                        class="font-bold text-lg text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -3339,25 +3339,25 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
                   <div
-                    class="sc-Axmtr kPFils"
+                    class="sc-Axmtr eqTXMl h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="relative p-2"
+                      class="relative h-full flex flex-col p-2 justify-between"
                     >
                       <div
                         class="-space-x-2"
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -3387,27 +3387,27 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
                         </div>
                       </div>
                       <div
-                        class="flex mt-6 truncate max-w-12"
+                        class="flex truncate max-w-12 mt-auto"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxgMl fFPQpl text-theme-neutral-500 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D8rr…YUYD
+                            D8rr … YUYD
                           </span>
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-text"
+                        class="font-bold text-lg text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -3435,25 +3435,25 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
                   <div
-                    class="sc-Axmtr kPFils"
+                    class="sc-Axmtr eqTXMl h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="relative p-2"
+                      class="relative h-full flex flex-col p-2 justify-between"
                     >
                       <div
                         class="-space-x-2"
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -3483,27 +3483,27 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
                         </div>
                       </div>
                       <div
-                        class="flex mt-6 truncate max-w-12"
+                        class="flex truncate max-w-12 mt-auto"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxgMl fFPQpl text-theme-neutral-500 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D8rr…YUYD
+                            D8rr … YUYD
                           </span>
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-text"
+                        class="font-bold text-lg text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -3531,25 +3531,25 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
                   <div
-                    class="sc-Axmtr kPFils"
+                    class="sc-Axmtr eqTXMl h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="relative p-2"
+                      class="relative h-full flex flex-col p-2 justify-between"
                     >
                       <div
                         class="-space-x-2"
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -3579,27 +3579,27 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
                         </div>
                       </div>
                       <div
-                        class="flex mt-6 truncate max-w-12"
+                        class="flex truncate max-w-12 mt-auto"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxgMl fFPQpl text-theme-neutral-500 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D8rr…YUYD
+                            D8rr … YUYD
                           </span>
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-text"
+                        class="font-bold text-lg text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -3627,25 +3627,25 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
                   <div
-                    class="sc-Axmtr kPFils"
+                    class="sc-Axmtr eqTXMl h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="relative p-2"
+                      class="relative h-full flex flex-col p-2 justify-between"
                     >
                       <div
                         class="-space-x-2"
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                          class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -3675,27 +3675,27 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
                         </div>
                       </div>
                       <div
-                        class="flex mt-6 truncate max-w-12"
+                        class="flex truncate max-w-12 mt-auto"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxgMl fFPQpl text-theme-neutral-500 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D8rr…YUYD
+                            D8rr … YUYD
                           </span>
                         </div>
                       </div>
                       <span
-                        class="font-bold text-theme-text"
+                        class="font-bold text-lg text-theme-text"
                         data-testid="Amount"
                       >
                         33.75089801 DARK
@@ -3723,36 +3723,36 @@ exports[`Wallets should render two grid rows when more than three wallets 1`] = 
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-Axmtr hBWlGR"
+                    class="sc-Axmtr eZDgvc h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="p-2"
+                      class="h-full flex flex-col p-2 justify-between"
                     >
                       <div
-                        class="flex"
+                        class="flex -space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                         <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                       </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                        class="mt-auto text-theme-primary-contrast dark:text-theme-neutral-800 font-semibold undefined"
                       >
                         New Wallet
                       </div>
                       <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
+                        class="text-lg text-theme-primary-contrast dark:text-theme-neutral-800 font-bold undefined"
                       >
                         Balance
                       </div>
@@ -3864,7 +3864,7 @@ exports[`Wallets should render with empty wallets list 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -3888,7 +3888,7 @@ exports[`Wallets should render with empty wallets list 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -3925,8 +3925,8 @@ exports[`Wallets should render with empty wallets list 1`] = `
           class="relative"
         >
           <div
-            class="swiper-container swiper-container-initialized swiper-container-horizontal"
-            style="height: 185px;"
+            class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+            style="height: 224px;"
           >
             <div
               class="h-full swiper-wrapper "
@@ -3934,36 +3934,36 @@ exports[`Wallets should render with empty wallets list 1`] = `
             >
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-Axmtr hBWlGR"
+                    class="sc-Axmtr eZDgvc h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="p-2"
+                      class="h-full flex flex-col p-2 justify-between"
                     >
                       <div
-                        class="flex"
+                        class="flex -space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                         <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                       </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                        class="mt-auto text-theme-primary-contrast dark:text-theme-neutral-800 font-semibold undefined"
                       >
                         New Wallet
                       </div>
                       <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
+                        class="text-lg text-theme-primary-contrast dark:text-theme-neutral-800 font-bold undefined"
                       >
                         Balance
                       </div>
@@ -3976,36 +3976,36 @@ exports[`Wallets should render with empty wallets list 1`] = `
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-Axmtr hBWlGR"
+                    class="sc-Axmtr eZDgvc h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="p-2"
+                      class="h-full flex flex-col p-2 justify-between"
                     >
                       <div
-                        class="flex"
+                        class="flex -space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                         <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                       </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                        class="mt-auto text-theme-primary-contrast dark:text-theme-neutral-800 font-semibold undefined"
                       >
                         New Wallet
                       </div>
                       <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
+                        class="text-lg text-theme-primary-contrast dark:text-theme-neutral-800 font-bold undefined"
                       >
                         Balance
                       </div>
@@ -4018,36 +4018,36 @@ exports[`Wallets should render with empty wallets list 1`] = `
               </div>
               <div
                 class="swiper-slide"
-                style="height: 185px;"
+                style="height: 192px;"
               >
                 <div
                   class="w-64 inline-block w-full"
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-Axmtr hBWlGR"
+                    class="sc-Axmtr eZDgvc h-48"
                     data-testid="Card"
                   >
                     <div
-                      class="p-2"
+                      class="h-full flex flex-col p-2 justify-between"
                     >
                       <div
-                        class="flex"
+                        class="flex -space-x-2"
                       >
                         <div
-                          class="sc-AxmLO fgVzBM -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                         <div
-                          class="sc-AxmLO fgVzBM bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxmLO iSEIco bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
                         />
                       </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                        class="mt-auto text-theme-primary-contrast dark:text-theme-neutral-800 font-semibold undefined"
                       >
                         New Wallet
                       </div>
                       <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
+                        class="text-lg text-theme-primary-contrast dark:text-theme-neutral-800 font-bold undefined"
                       >
                         Balance
                       </div>
@@ -4159,7 +4159,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -4183,7 +4183,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -4218,7 +4218,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw gGhpZ -mt-3"
+            class="sc-AxiKw iDVQWj -mt-3"
             role="table"
           >
             <table
@@ -4227,11 +4227,11 @@ exports[`Wallets should render with list view enabled as default 1`] = `
             >
               <thead>
                 <tr
-                  class="border-b border-theme-neutral-300"
+                  class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                   role="row"
                 >
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -4245,7 +4245,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                         Asset Type
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -4261,7 +4261,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -4275,7 +4275,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                         Wallet Address
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -4291,7 +4291,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -4305,7 +4305,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -4319,7 +4319,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                         Balance
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -4335,7 +4335,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -4349,7 +4349,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                         Fiat Value
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -4370,7 +4370,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -4379,7 +4379,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -4417,7 +4417,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -4426,7 +4426,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -4478,7 +4478,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -4487,7 +4487,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -4525,7 +4525,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 2
@@ -4534,7 +4534,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D5sRKWckH…yC3cvJtwb
+                          D5sRKWckH … yC3cvJtwb
                         </span>
                       </div>
                     </div>
@@ -4673,7 +4673,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -4697,7 +4697,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
               </div>
             </button>
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -4732,7 +4732,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw gGhpZ -mt-3"
+            class="sc-AxiKw iDVQWj -mt-3"
             role="table"
           >
             <table
@@ -4741,11 +4741,11 @@ exports[`Wallets should render with list view enabled as default and empty walle
             >
               <thead>
                 <tr
-                  class="border-b border-theme-neutral-300"
+                  class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                   role="row"
                 >
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -4759,7 +4759,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                         Asset Type
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -4775,7 +4775,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -4789,7 +4789,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                         Wallet Address
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -4805,7 +4805,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -4819,7 +4819,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -4833,7 +4833,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                         Balance
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -4849,7 +4849,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -4863,7 +4863,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                         Fiat Value
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -4884,7 +4884,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                 role="rowgroup"
               >
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -4893,7 +4893,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -4931,7 +4931,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -4940,7 +4940,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -4992,7 +4992,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -5001,7 +5001,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -5039,7 +5039,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 2
@@ -5048,7 +5048,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D5sRKWckH…yC3cvJtwb
+                          D5sRKWckH … yC3cvJtwb
                         </span>
                       </div>
                     </div>
@@ -5187,7 +5187,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -5211,7 +5211,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
               </div>
             </button>
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               type="button"
             >
@@ -5246,7 +5246,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
           data-testid="WalletTable"
         >
           <div
-            class="sc-AxiKw gGhpZ -mt-3"
+            class="sc-AxiKw iDVQWj -mt-3"
             role="table"
           >
             <table
@@ -5255,11 +5255,11 @@ exports[`Wallets should show the view more button if there are more than 10 wall
             >
               <thead>
                 <tr
-                  class="border-b border-theme-neutral-300"
+                  class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                   role="row"
                 >
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -5273,7 +5273,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         Asset Type
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -5289,7 +5289,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -5303,7 +5303,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         Wallet Address
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -5319,7 +5319,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -5333,7 +5333,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -5347,7 +5347,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         Balance
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -5363,7 +5363,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -5377,7 +5377,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         Fiat Value
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                         data-testid="table__Sort"
                       >
                         <div
@@ -5398,7 +5398,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 role="rowgroup"
               >
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -5407,7 +5407,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -5445,7 +5445,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -5454,7 +5454,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -5506,7 +5506,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -5515,7 +5515,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -5553,7 +5553,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -5562,7 +5562,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -5614,7 +5614,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -5623,7 +5623,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -5661,7 +5661,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -5670,7 +5670,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -5722,7 +5722,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -5731,7 +5731,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -5769,7 +5769,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -5778,7 +5778,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -5830,7 +5830,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -5839,7 +5839,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -5877,7 +5877,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -5886,7 +5886,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -5938,7 +5938,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -5947,7 +5947,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -5985,7 +5985,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -5994,7 +5994,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -6046,7 +6046,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -6055,7 +6055,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -6093,7 +6093,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -6102,7 +6102,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -6154,7 +6154,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -6163,7 +6163,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -6201,7 +6201,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -6210,7 +6210,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -6262,7 +6262,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -6271,7 +6271,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -6309,7 +6309,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -6318,7 +6318,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -6370,7 +6370,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                 </tr>
                 <tr
-                  class="sc-AxhUy loGswa group"
+                  class="sc-AxhUy gFzLrG group"
                   data-testid="TableRow"
                 >
                   <td>
@@ -6379,7 +6379,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       <div
                         aria-label="ARK Devnet"
-                        class="sc-AxmLO fgVzBM border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxmLO iSEIco border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
@@ -6417,7 +6417,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           ARK Wallet 1
@@ -6426,7 +6426,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                           class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6 … VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -6481,7 +6481,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
             </table>
           </div>
           <button
-            class="sc-AxjAm hXnHfM w-full mt-10 mb-5"
+            class="sc-AxjAm joLCoM w-full mt-10 mb-5"
             color="primary"
             data-testid="WalletsList__ViewMore"
             type="button"

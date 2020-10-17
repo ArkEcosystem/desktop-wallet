@@ -19,7 +19,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -65,7 +65,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
@@ -74,7 +74,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                     class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -83,7 +83,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -112,7 +112,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -133,7 +133,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                     class="sc-fzpans dIvhjN"
                   >
                     <div
-                      class="sc-AxmLO eoVUTq -mt-3"
+                      class="sc-AxmLO iwBmdw -mt-3"
                       role="table"
                     >
                       <table
@@ -142,11 +142,11 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                       >
                         <thead>
                           <tr
-                            class="border-b border-theme-neutral-300"
+                            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                             role="row"
                           >
                             <th
-                              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--0"
                               role="columnheader"
@@ -160,7 +160,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                               </div>
                             </th>
                             <th
-                              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--1"
                               role="columnheader"
@@ -174,7 +174,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                               </div>
                             </th>
                             <th
-                              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--2"
                               role="columnheader"
@@ -200,7 +200,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -233,7 +233,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxhCb iZzMIT border-theme-danger-contrast text-theme-danger"
+              class="sc-AxhCb gaiYPD border-theme-danger-contrast text-theme-danger"
             >
               <div
                 class="sc-AxirZ caNxxo"
@@ -247,7 +247,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -270,7 +270,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -306,7 +306,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -325,7 +325,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -367,7 +367,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -394,7 +394,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
@@ -420,7 +420,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -496,7 +496,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -542,7 +542,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
@@ -551,7 +551,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                     class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -560,7 +560,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -589,7 +589,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -610,7 +610,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                     class="sc-fzpans dIvhjN"
                   >
                     <div
-                      class="sc-AxmLO eoVUTq -mt-3"
+                      class="sc-AxmLO iwBmdw -mt-3"
                       role="table"
                     >
                       <table
@@ -619,11 +619,11 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                       >
                         <thead>
                           <tr
-                            class="border-b border-theme-neutral-300"
+                            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                             role="row"
                           >
                             <th
-                              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--0"
                               role="columnheader"
@@ -637,7 +637,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                               </div>
                             </th>
                             <th
-                              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--1"
                               role="columnheader"
@@ -651,7 +651,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                               </div>
                             </th>
                             <th
-                              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--2"
                               role="columnheader"
@@ -670,7 +670,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                           role="rowgroup"
                         >
                           <tr
-                            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                             data-testid="recipient-list__recipient-list-item"
                           >
                             <td
@@ -721,7 +721,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                             </td>
                           </tr>
                           <tr
-                            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                             data-testid="recipient-list__recipient-list-item"
                           >
                             <td
@@ -772,7 +772,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                             </td>
                           </tr>
                           <tr
-                            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                             data-testid="recipient-list__recipient-list-item"
                           >
                             <td
@@ -831,7 +831,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -864,7 +864,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxhCb iZzMIT border-theme-danger-contrast text-theme-danger"
+              class="sc-AxhCb gaiYPD border-theme-danger-contrast text-theme-danger"
             >
               <div
                 class="sc-AxirZ caNxxo"
@@ -878,7 +878,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -901,7 +901,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -937,7 +937,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -956,7 +956,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -998,7 +998,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
@@ -1025,7 +1025,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
@@ -1051,7 +1051,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div

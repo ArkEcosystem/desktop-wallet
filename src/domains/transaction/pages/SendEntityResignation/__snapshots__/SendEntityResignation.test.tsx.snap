@@ -3,7 +3,7 @@
 exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -35,7 +35,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -46,7 +46,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -57,7 +57,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -68,7 +68,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -88,7 +88,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -114,13 +114,13 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -137,13 +137,13 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -160,7 +160,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -170,12 +170,12 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -193,10 +193,10 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="sc-AxgMl eQpXWo -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxiKw dzBdqj"
@@ -248,7 +248,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -265,7 +265,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
       >
         <a
           aria-current="page"
-          class="text-theme-neutral-dark active"
+          class="text-theme-secondary-text active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
@@ -328,7 +328,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                             Delegate Resignation
                           </h1>
                           <div
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                             data-testid="header__subtitle"
                           >
                             Resign your delegate for always.
@@ -395,7 +395,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                                   data-testid="address__wallet-name"
                                 >
                                   ARK Wallet 2
@@ -404,7 +404,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                                   class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  D5sRKW…cvJtwb
+                                  D5sRKW … cvJtwb
                                 </span>
                               </div>
                             </div>
@@ -429,7 +429,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                           </div>
                         </div>
                         <div
-                          class="sc-fznyAO jJXFwZ"
+                          class="sc-fznyAO fQrHXc"
                           data-testid="TransactionDetail"
                         >
                           <div
@@ -455,7 +455,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                           class="sc-AxirZ izhStr font-normal"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="fee"
                           >
@@ -476,7 +476,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                                 class="sc-fzpjYC dHxzen"
                               >
                                 <input
-                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                  class="sc-fzqNJr hjzlwF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -486,7 +486,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                             </div>
                             <div>
                               <div
-                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
                                 data-testid="SelectionBar"
                                 role="radiogroup"
                               >
@@ -528,7 +528,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                     class="flex justify-end mt-10 space-x-3"
                   >
                     <button
-                      class="sc-AxjAm hXnHfM"
+                      class="sc-AxjAm joLCoM"
                       color="primary"
                       data-testid="SendEntityResignation__back-button"
                       disabled=""
@@ -537,7 +537,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                       Back
                     </button>
                     <button
-                      class="sc-AxjAm kbZyZT"
+                      class="sc-AxjAm BsmvP"
                       color="primary"
                       data-testid="SendEntityResignation__continue-button"
                       type="button"
@@ -559,7 +559,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
 exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -591,7 +591,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -602,7 +602,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -613,7 +613,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -624,7 +624,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -644,7 +644,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -670,13 +670,13 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -693,13 +693,13 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -716,7 +716,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -726,12 +726,12 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -749,10 +749,10 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="sc-AxgMl eQpXWo -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxiKw dzBdqj"
@@ -804,7 +804,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -821,7 +821,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
       >
         <a
           aria-current="page"
-          class="text-theme-neutral-dark active"
+          class="text-theme-secondary-text active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
@@ -884,7 +884,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                             Transaction Review
                           </h1>
                           <div
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                             data-testid="header__subtitle"
                           >
                             Check the information again before Resignation
@@ -912,7 +912,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                           </div>
                           <div
                             aria-label="ARK Devnet"
-                            class="sc-AxgMl eqWWwc border-theme-primary-100 text-theme-primary-400"
+                            class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
@@ -928,7 +928,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                           </div>
                         </div>
                         <div
-                          class="sc-fznyAO iykGTc"
+                          class="sc-fznyAO ismzvh"
                           data-testid="TransactionDetail"
                         >
                           <div
@@ -960,7 +960,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                                   data-testid="address__wallet-name"
                                 >
                                   ARK Wallet 2
@@ -969,7 +969,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                                   class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  D5sRKW…cvJtwb
+                                  D5sRKW … cvJtwb
                                 </span>
                               </div>
                             </div>
@@ -994,7 +994,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                           </div>
                         </div>
                         <div
-                          class="sc-fznyAO iykGTc"
+                          class="sc-fznyAO ismzvh"
                           data-testid="TransactionDetail"
                         >
                           <div
@@ -1016,7 +1016,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                           class="mt-2"
                         >
                           <div
-                            class="border rounded-lg border-theme-neutral-300"
+                            class="border rounded-lg border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <div
                               class="relative p-4"
@@ -1074,7 +1074,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                               </div>
                             </div>
                             <div
-                              class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 justfiy-center bg-theme-neutral-contrast"
+                              class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
                             >
                               <span
                                 class="sc-fzolEj gcosPd"
@@ -1097,7 +1097,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                     class="flex justify-end mt-10 space-x-3"
                   >
                     <button
-                      class="sc-AxjAm hXnHfM"
+                      class="sc-AxjAm joLCoM"
                       color="primary"
                       data-testid="SendEntityResignation__back-button"
                       type="button"
@@ -1105,7 +1105,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                       Back
                     </button>
                     <button
-                      class="sc-AxjAm kbZyZT"
+                      class="sc-AxjAm BsmvP"
                       color="primary"
                       data-testid="SendEntityResignation__continue-button"
                       type="button"
@@ -1127,7 +1127,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
 exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1159,7 +1159,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1170,7 +1170,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1181,7 +1181,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1192,7 +1192,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1212,7 +1212,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1238,13 +1238,13 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1261,13 +1261,13 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1284,7 +1284,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -1294,12 +1294,12 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -1317,10 +1317,10 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="sc-AxgMl eQpXWo -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxiKw dzBdqj"
@@ -1372,7 +1372,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1389,7 +1389,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
       >
         <a
           aria-current="page"
-          class="text-theme-neutral-dark active"
+          class="text-theme-secondary-text active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
@@ -1452,7 +1452,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
                             Authenticate
                           </h1>
                           <div
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                             data-testid="header__subtitle"
                           >
                             Enter your twelve word mnemonic to authenticate the transaction.
@@ -1463,7 +1463,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
                         class="sc-AxirZ izhStr flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="mnemonic"
                         >
@@ -1478,7 +1478,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
                           data-testid="InputPassword"
                         >
                           <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                            class="sc-fzqNJr hjzlwF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                             data-testid="AuthenticationStep__mnemonic"
                             name="mnemonic"
                             type="password"
@@ -1508,7 +1508,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
                         class="sc-AxirZ izhStr flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="secondMnemonic"
                         >
@@ -1523,7 +1523,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
                           data-testid="InputPassword"
                         >
                           <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                            class="sc-fzqNJr hjzlwF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                             data-testid="AuthenticationStep__second-mnemonic"
                             name="secondMnemonic"
                             type="password"
@@ -1555,7 +1555,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
                     class="flex justify-end mt-10 space-x-3"
                   >
                     <button
-                      class="sc-AxjAm hXnHfM"
+                      class="sc-AxjAm joLCoM"
                       color="primary"
                       data-testid="SendEntityResignation__back-button"
                       type="button"
@@ -1563,7 +1563,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
                       Back
                     </button>
                     <button
-                      class="sc-AxjAm kbZyZT space-x-2"
+                      class="sc-AxjAm BsmvP space-x-2"
                       color="primary"
                       data-testid="SendEntityResignation__send-button"
                       disabled=""
@@ -1597,7 +1597,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
 exports[`SendEntityResignation Delegate Resignation should show authentication error 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1629,7 +1629,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1640,7 +1640,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1651,7 +1651,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1662,7 +1662,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1682,7 +1682,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1708,13 +1708,13 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1731,13 +1731,13 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1754,7 +1754,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -1764,12 +1764,12 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -1787,10 +1787,10 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="sc-AxgMl eQpXWo -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxiKw dzBdqj"
@@ -1842,7 +1842,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1859,7 +1859,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
       >
         <a
           aria-current="page"
-          class="text-theme-neutral-dark active"
+          class="text-theme-secondary-text active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
@@ -1922,7 +1922,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
                             Authenticate
                           </h1>
                           <div
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                             data-testid="header__subtitle"
                           >
                             Enter your twelve word mnemonic to authenticate the transaction.
@@ -1933,7 +1933,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
                         class="sc-AxirZ kMHTdH flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="mnemonic"
                         >
@@ -1949,7 +1949,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
                         >
                           <input
                             aria-invalid="true"
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                            class="sc-fzqNJr hjzlwF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                             data-testid="AuthenticationStep__mnemonic"
                             name="mnemonic"
                             type="password"
@@ -1984,7 +1984,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
                         class="sc-AxirZ izhStr flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="secondMnemonic"
                         >
@@ -1999,7 +1999,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
                           data-testid="InputPassword"
                         >
                           <input
-                            class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                            class="sc-fzqNJr hjzlwF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                             data-testid="AuthenticationStep__second-mnemonic"
                             name="secondMnemonic"
                             type="password"
@@ -2031,7 +2031,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
                     class="flex justify-end mt-10 space-x-3"
                   >
                     <button
-                      class="sc-AxjAm hXnHfM"
+                      class="sc-AxjAm joLCoM"
                       color="primary"
                       data-testid="SendEntityResignation__back-button"
                       type="button"
@@ -2039,7 +2039,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
                       Back
                     </button>
                     <button
-                      class="sc-AxjAm kbZyZT space-x-2"
+                      class="sc-AxjAm BsmvP space-x-2"
                       color="primary"
                       data-testid="SendEntityResignation__send-button"
                       disabled=""
@@ -2073,7 +2073,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
 exports[`SendEntityResignation Delegate Resignation should successfully sign and submit resignation transaction 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -2105,7 +2105,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -2116,7 +2116,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -2127,7 +2127,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -2138,7 +2138,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -2158,7 +2158,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2184,13 +2184,13 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2207,13 +2207,13 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -2230,7 +2230,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -2240,12 +2240,12 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -2263,10 +2263,10 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="sc-AxgMl eQpXWo -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxiKw dzBdqj"
@@ -2318,7 +2318,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2335,7 +2335,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
       >
         <a
           aria-current="page"
-          class="text-theme-neutral-dark active"
+          class="text-theme-secondary-text active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
@@ -2409,7 +2409,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                           transaction_successful.svg
                         </svg>
                         <p
-                          class="text-theme-neutral-dark"
+                          class="text-theme-secondary-text"
                         >
                           Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
                         </p>
@@ -2442,7 +2442,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                                       class="sc-fzpans kkFAbe text-theme-primary-dark"
                                       data-testid="TruncateMiddle"
                                     >
-                                      8f913b6b719e7…f1b89abb49877
+                                      8f913b6b719e7 … f1b89abb49877
                                     </span>
                                   </a>
                                   <span
@@ -2468,7 +2468,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                             </div>
                           </div>
                           <div
-                            class="sc-fznyAO iykGTc"
+                            class="sc-fznyAO ismzvh"
                             data-testid="TransactionDetail"
                           >
                             <div
@@ -2487,7 +2487,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                             </div>
                             <div
                               aria-label="ARK Devnet"
-                              class="sc-AxgMl eqWWwc border-theme-primary-100 text-theme-primary-400"
+                              class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
                               data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
@@ -2503,7 +2503,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                             </div>
                           </div>
                           <div
-                            class="sc-fznyAO iykGTc"
+                            class="sc-fznyAO ismzvh"
                             data-testid="TransactionDetail"
                           >
                             <div
@@ -2535,7 +2535,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                                   class="inline-block truncate align-middle"
                                 >
                                   <span
-                                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                                     data-testid="address__wallet-name"
                                   >
                                     ARK Wallet 2
@@ -2544,7 +2544,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                                     class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
-                                    D5sRKW…cvJtwb
+                                    D5sRKW … cvJtwb
                                   </span>
                                 </div>
                               </div>
@@ -2569,7 +2569,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                             </div>
                           </div>
                           <div
-                            class="sc-fznyAO iykGTc"
+                            class="sc-fznyAO ismzvh"
                             data-testid="TransactionDetail"
                           >
                             <div
@@ -2587,7 +2587,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                               </div>
                             </div>
                             <div
-                              class="sc-AxgMl eqWWwc border-theme-text"
+                              class="sc-AxgMl eQpXWo border-theme-text"
                             >
                               <div
                                 class="sc-AxiKw ifxpHV"
@@ -2601,7 +2601,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                             </div>
                           </div>
                           <div
-                            class="sc-fznyAO iykGTc"
+                            class="sc-fznyAO ismzvh"
                             data-testid="TransactionDetail"
                           >
                             <div
@@ -2620,7 +2620,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                             </div>
                           </div>
                           <div
-                            class="sc-fznyAO hJHVee"
+                            class="sc-fznyAO dQFpdT"
                             data-testid="TransactionDetail"
                           >
                             <div
@@ -2653,7 +2653,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="sc-AxjAm hXnHfM"
+                        class="sc-AxjAm joLCoM"
                         color="primary"
                         data-testid="SendEntityResignation__wallet-button"
                         type="button"
@@ -2661,7 +2661,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                         Back to Wallet
                       </button>
                       <button
-                        class="sc-AxjAm hXnHfM space-x-2"
+                        class="sc-AxjAm joLCoM space-x-2"
                         color="primary"
                         data-testid="SendEntityResignation__download-button"
                         type="button"
@@ -2695,7 +2695,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
 exports[`SendEntityResignation Entity Resignation should render 1st step as entity 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -2727,7 +2727,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -2738,7 +2738,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -2749,7 +2749,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -2760,7 +2760,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -2780,7 +2780,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2806,13 +2806,13 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2829,13 +2829,13 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -2852,7 +2852,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -2862,12 +2862,12 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -2885,10 +2885,10 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="sc-AxgMl eQpXWo -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxiKw dzBdqj"
@@ -2940,7 +2940,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2957,7 +2957,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
       >
         <a
           aria-current="page"
-          class="text-theme-neutral-dark active"
+          class="text-theme-secondary-text active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
@@ -3020,7 +3020,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                             Entity Resignation
                           </h1>
                           <div
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                             data-testid="header__subtitle"
                           >
                             Resign your entity for always.
@@ -3087,7 +3087,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                                   data-testid="address__wallet-name"
                                 >
                                   ARK Wallet 2
@@ -3096,7 +3096,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                                   class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  D5sRKW…cvJtwb
+                                  D5sRKW … cvJtwb
                                 </span>
                               </div>
                             </div>
@@ -3121,7 +3121,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                           </div>
                         </div>
                         <div
-                          class="sc-fznyAO jJXFwZ"
+                          class="sc-fznyAO fQrHXc"
                           data-testid="TransactionDetail"
                         >
                           <div
@@ -3145,7 +3145,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                           class="sc-AxirZ izhStr font-normal"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="fee"
                           >
@@ -3166,7 +3166,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                                 class="sc-fzpjYC dHxzen"
                               >
                                 <input
-                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                  class="sc-fzqNJr hjzlwF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -3176,7 +3176,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                             </div>
                             <div>
                               <div
-                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
                                 data-testid="SelectionBar"
                                 role="radiogroup"
                               >
@@ -3218,7 +3218,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                     class="flex justify-end mt-10 space-x-3"
                   >
                     <button
-                      class="sc-AxjAm hXnHfM"
+                      class="sc-AxjAm joLCoM"
                       color="primary"
                       data-testid="SendEntityResignation__back-button"
                       disabled=""
@@ -3227,7 +3227,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                       Back
                     </button>
                     <button
-                      class="sc-AxjAm kbZyZT"
+                      class="sc-AxjAm BsmvP"
                       color="primary"
                       data-testid="SendEntityResignation__continue-button"
                       type="button"
@@ -3249,7 +3249,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
 exports[`SendEntityResignation Entity Resignation should render 2nd step as entity 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -3281,7 +3281,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -3292,7 +3292,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -3303,7 +3303,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -3314,7 +3314,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -3334,7 +3334,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -3360,13 +3360,13 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -3383,13 +3383,13 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -3406,7 +3406,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -3416,12 +3416,12 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -3439,10 +3439,10 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="sc-AxgMl eQpXWo -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxiKw dzBdqj"
@@ -3494,7 +3494,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -3511,7 +3511,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
       >
         <a
           aria-current="page"
-          class="text-theme-neutral-dark active"
+          class="text-theme-secondary-text active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
@@ -3574,7 +3574,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                             Transaction Review
                           </h1>
                           <div
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                             data-testid="header__subtitle"
                           >
                             Check the information again before Resignation
@@ -3602,7 +3602,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                           </div>
                           <div
                             aria-label="ARK Devnet"
-                            class="sc-AxgMl eqWWwc border-theme-primary-100 text-theme-primary-400"
+                            class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
@@ -3618,7 +3618,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                           </div>
                         </div>
                         <div
-                          class="sc-fznyAO iykGTc"
+                          class="sc-fznyAO ismzvh"
                           data-testid="TransactionDetail"
                         >
                           <div
@@ -3650,7 +3650,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                                   data-testid="address__wallet-name"
                                 >
                                   ARK Wallet 2
@@ -3659,7 +3659,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                                   class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  D5sRKW…cvJtwb
+                                  D5sRKW … cvJtwb
                                 </span>
                               </div>
                             </div>
@@ -3684,7 +3684,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                           </div>
                         </div>
                         <div
-                          class="sc-fznyAO iykGTc"
+                          class="sc-fznyAO ismzvh"
                           data-testid="TransactionDetail"
                         >
                           <div
@@ -3704,7 +3704,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                           class="mt-2"
                         >
                           <div
-                            class="border rounded-lg border-theme-neutral-300"
+                            class="border rounded-lg border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <div
                               class="relative p-4"
@@ -3762,7 +3762,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                               </div>
                             </div>
                             <div
-                              class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 justfiy-center bg-theme-neutral-contrast"
+                              class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
                             >
                               <span
                                 class="sc-fzolEj gcosPd"
@@ -3785,7 +3785,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                     class="flex justify-end mt-10 space-x-3"
                   >
                     <button
-                      class="sc-AxjAm hXnHfM"
+                      class="sc-AxjAm joLCoM"
                       color="primary"
                       data-testid="SendEntityResignation__back-button"
                       type="button"
@@ -3793,7 +3793,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                       Back
                     </button>
                     <button
-                      class="sc-AxjAm kbZyZT"
+                      class="sc-AxjAm BsmvP"
                       color="primary"
                       data-testid="SendEntityResignation__continue-button"
                       type="button"
@@ -3815,7 +3815,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
 exports[`SendEntityResignation Entity Resignation should successfully sign and submit an entity resignation transaction 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -3847,7 +3847,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -3858,7 +3858,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -3869,7 +3869,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -3880,7 +3880,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -3900,7 +3900,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -3926,13 +3926,13 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -3949,13 +3949,13 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -3972,7 +3972,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -3982,12 +3982,12 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -4005,10 +4005,10 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="sc-AxgMl eQpXWo -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxiKw dzBdqj"
@@ -4060,7 +4060,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -4077,7 +4077,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
       >
         <a
           aria-current="page"
-          class="text-theme-neutral-dark active"
+          class="text-theme-secondary-text active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
@@ -4150,7 +4150,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                           transaction_successful.svg
                         </svg>
                         <p
-                          class="text-theme-neutral-dark"
+                          class="text-theme-secondary-text"
                         >
                           Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
                         </p>
@@ -4183,7 +4183,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                                       class="sc-fzpans kkFAbe text-theme-primary-dark"
                                       data-testid="TruncateMiddle"
                                     >
-                                      8f913b6b719e7…f1b89abb49877
+                                      8f913b6b719e7 … f1b89abb49877
                                     </span>
                                   </a>
                                   <span
@@ -4209,7 +4209,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                             </div>
                           </div>
                           <div
-                            class="sc-fznyAO iykGTc"
+                            class="sc-fznyAO ismzvh"
                             data-testid="TransactionDetail"
                           >
                             <div
@@ -4228,7 +4228,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                             </div>
                             <div
                               aria-label="ARK Devnet"
-                              class="sc-AxgMl eqWWwc border-theme-primary-100 text-theme-primary-400"
+                              class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
                               data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
@@ -4244,7 +4244,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                             </div>
                           </div>
                           <div
-                            class="sc-fznyAO iykGTc"
+                            class="sc-fznyAO ismzvh"
                             data-testid="TransactionDetail"
                           >
                             <div
@@ -4276,7 +4276,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                                   class="inline-block truncate align-middle"
                                 >
                                   <span
-                                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                                     data-testid="address__wallet-name"
                                   >
                                     ARK Wallet 2
@@ -4285,7 +4285,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                                     class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
-                                    D5sRKW…cvJtwb
+                                    D5sRKW … cvJtwb
                                   </span>
                                 </div>
                               </div>
@@ -4310,7 +4310,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                             </div>
                           </div>
                           <div
-                            class="sc-fznyAO iykGTc"
+                            class="sc-fznyAO ismzvh"
                             data-testid="TransactionDetail"
                           >
                             <div
@@ -4328,7 +4328,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                               </div>
                             </div>
                             <div
-                              class="sc-AxgMl eqWWwc border-theme-text"
+                              class="sc-AxgMl eQpXWo border-theme-text"
                             >
                               <div
                                 class="sc-AxiKw ifxpHV"
@@ -4342,7 +4342,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                             </div>
                           </div>
                           <div
-                            class="sc-fznyAO iykGTc"
+                            class="sc-fznyAO ismzvh"
                             data-testid="TransactionDetail"
                           >
                             <div
@@ -4359,7 +4359,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                             </div>
                           </div>
                           <div
-                            class="sc-fznyAO hJHVee"
+                            class="sc-fznyAO dQFpdT"
                             data-testid="TransactionDetail"
                           >
                             <div
@@ -4392,7 +4392,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="sc-AxjAm hXnHfM"
+                        class="sc-AxjAm joLCoM"
                         color="primary"
                         data-testid="SendEntityResignation__wallet-button"
                         type="button"
@@ -4400,7 +4400,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                         Back to Wallet
                       </button>
                       <button
-                        class="sc-AxjAm hXnHfM space-x-2"
+                        class="sc-AxjAm joLCoM space-x-2"
                         color="primary"
                         data-testid="SendEntityResignation__download-button"
                         type="button"

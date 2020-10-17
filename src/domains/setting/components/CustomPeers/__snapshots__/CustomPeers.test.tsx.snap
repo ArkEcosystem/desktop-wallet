@@ -19,7 +19,7 @@ exports[`CustomPeers should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -54,7 +54,7 @@ exports[`CustomPeers should render a modal 1`] = `
               class="sc-AxiKw iQzisX my-8"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="network"
               >
@@ -93,7 +93,7 @@ exports[`CustomPeers should render a modal 1`] = `
                       aria-controls="CustomPeers__network-menu"
                       aria-labelledby="CustomPeers__network-label"
                       autocomplete="off"
-                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                      class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                       data-testid="SelectNetworkInput__input"
                       id="CustomPeers__network-input"
                       placeholder="Enter a cryptoasset name"
@@ -113,7 +113,7 @@ exports[`CustomPeers should render a modal 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -124,7 +124,7 @@ exports[`CustomPeers should render a modal 1`] = `
                 />
               </label>
               <input
-                class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 name="name"
               />
@@ -133,7 +133,7 @@ exports[`CustomPeers should render a modal 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="peer-ip"
               >
@@ -144,7 +144,7 @@ exports[`CustomPeers should render a modal 1`] = `
                 />
               </label>
               <input
-                class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 name="peer-ip"
               />
@@ -153,7 +153,7 @@ exports[`CustomPeers should render a modal 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="peer-type"
               >
@@ -173,7 +173,7 @@ exports[`CustomPeers should render a modal 1`] = `
                   type="checkbox"
                 />
                 <span
-                  class="ml-2 text-sm font-semibold text-theme-neutral-dark"
+                  class="ml-2 text-sm font-semibold text-theme-secondary-text"
                 >
                   Multisignature
                 </span>
@@ -183,7 +183,7 @@ exports[`CustomPeers should render a modal 1`] = `
               class="flex justify-end mt-4"
             >
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm BsmvP"
                 color="primary"
                 data-testid="peer-list__add-button"
                 type="submit"

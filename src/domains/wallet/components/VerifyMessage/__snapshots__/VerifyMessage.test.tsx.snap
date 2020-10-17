@@ -17,7 +17,7 @@ exports[`VerifyMessage should render 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxhCb fYkhib w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -45,7 +45,7 @@ exports[`VerifyMessage should render 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             To make sure that you are the owner of this wallet, you can pass the check. and this more text.
           </div>
@@ -76,10 +76,10 @@ exports[`VerifyMessage should render 1`] = `
                       type="checkbox"
                     />
                     <div
-                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                      class="Toggle__Handle-qyyifx-1 kLalye"
                     >
                       <span
-                        class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                        class="Toggle__HandleInner-qyyifx-2 kvoLnZ"
                       />
                     </div>
                   </label>
@@ -136,7 +136,7 @@ exports[`VerifyMessage should render 1`] = `
                     class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="signed-message-content"
                     >
@@ -147,7 +147,7 @@ exports[`VerifyMessage should render 1`] = `
                       />
                     </label>
                     <input
-                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                      class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                       data-testid="VerifyMessage_message-content"
                       name="signed-message-content"
                       type="text"
@@ -160,7 +160,7 @@ exports[`VerifyMessage should render 1`] = `
                 class="flex justify-end space-x-3"
               >
                 <button
-                  class="sc-AxhCb hvkszb"
+                  class="sc-AxhCb izjXWb"
                   color="primary"
                   data-testid="VerifyMessage__cancel"
                   type="button"
@@ -168,7 +168,7 @@ exports[`VerifyMessage should render 1`] = `
                   Cancel
                 </button>
                 <button
-                  class="sc-AxhCb khNOPs"
+                  class="sc-AxhCb kJDVAQ"
                   color="primary"
                   data-testid="VerifyMessage__submit"
                   type="submit"
@@ -202,7 +202,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxhCb fYkhib w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -230,7 +230,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             To make sure that you are the owner of this wallet, you can pass the check. and this more text.
           </div>
@@ -261,10 +261,10 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                       type="checkbox"
                     />
                     <div
-                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                      class="Toggle__Handle-qyyifx-1 kLalye"
                     >
                       <span
-                        class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                        class="Toggle__HandleInner-qyyifx-2 kvoLnZ"
                       />
                     </div>
                   </label>
@@ -288,7 +288,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   class="sc-AxhUy dJlYTe mt-8"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                     data-testid="FormLabel"
                     for="message"
                   >
@@ -299,7 +299,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__message-input"
                     name="message"
                     type="text"
@@ -309,7 +309,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   class="sc-AxhUy dJlYTe mt-8"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                     data-testid="FormLabel"
                     for="signatory"
                   >
@@ -320,7 +320,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__signatory-input"
                     disabled=""
                     name="signatory"
@@ -332,7 +332,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   class="sc-AxhUy dJlYTe mt-8"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                     data-testid="FormLabel"
                     for="signature"
                   >
@@ -343,7 +343,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__signature-input"
                     name="signature"
                     type="text"
@@ -354,7 +354,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="flex justify-end space-x-3"
               >
                 <button
-                  class="sc-AxhCb hvkszb"
+                  class="sc-AxhCb izjXWb"
                   color="primary"
                   data-testid="VerifyMessage__cancel"
                   type="button"
@@ -362,7 +362,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   Cancel
                 </button>
                 <button
-                  class="sc-AxhCb khNOPs"
+                  class="sc-AxhCb kJDVAQ"
                   color="primary"
                   data-testid="VerifyMessage__submit"
                   type="submit"

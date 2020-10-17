@@ -3,7 +3,7 @@
 exports[`Offline should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -57,7 +57,7 @@ exports[`Offline should render 1`] = `
               Cannot Connect
             </h2>
             <p
-              class="text-theme-neutral-dark"
+              class="text-theme-secondary-text"
             >
               Check your internet connection if it doesn't work, check it again.
             </p>

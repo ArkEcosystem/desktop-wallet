@@ -28,7 +28,7 @@ exports[`LinkCollection should add links 1`] = `
       </div>
     </div>
     <div
-      class="mt-2 text-theme-neutral-dark"
+      class="mt-2 text-theme-secondary-text"
     >
       Tell people more about yourself through social media
     </div>
@@ -43,7 +43,7 @@ exports[`LinkCollection should add links 1`] = `
           class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="type"
           >
@@ -57,7 +57,7 @@ exports[`LinkCollection should add links 1`] = `
             class="relative w-full"
           >
             <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
               data-testid="select-list__input"
               name="type"
               readonly=""
@@ -93,7 +93,7 @@ exports[`LinkCollection should add links 1`] = `
                     aria-controls="downshift-5-menu"
                     aria-labelledby="downshift-5-label"
                     autocomplete="off"
-                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                    class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                     data-testid="SelectDropdownInput__input"
                     id="downshift-4-input"
                     name="type"
@@ -103,7 +103,7 @@ exports[`LinkCollection should add links 1`] = `
                 </div>
                 <ul
                   aria-labelledby="downshift-5-label"
-                  class="sc-fznyAO iPPKQM is-open"
+                  class="sc-fznyAO VmVew is-open"
                   id="downshift-5-menu"
                   role="listbox"
                 >
@@ -142,7 +142,7 @@ exports[`LinkCollection should add links 1`] = `
           class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="value"
           >
@@ -154,13 +154,13 @@ exports[`LinkCollection should add links 1`] = `
           </label>
           <input
             aria-invalid="false"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+            class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
             data-testid="LinkCollection__input-link"
             name="value"
           />
         </fieldset>
         <button
-          class="sc-AxjAm hXnHfM col-span-2"
+          class="sc-AxjAm joLCoM col-span-2"
           color="primary"
           data-testid="LinkCollection__add-link"
           disabled=""
@@ -170,7 +170,7 @@ exports[`LinkCollection should add links 1`] = `
         </button>
       </div>
       <div
-        class="sc-fznKkj fDNmAt -mt-3"
+        class="sc-fznKkj hAWHmD -mt-3"
         role="table"
       >
         <table
@@ -179,11 +179,11 @@ exports[`LinkCollection should add links 1`] = `
         >
           <thead>
             <tr
-              class="border-b border-theme-neutral-300"
+              class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
               role="row"
             >
               <th
-                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -197,7 +197,7 @@ exports[`LinkCollection should add links 1`] = `
                     Name
                   </div>
                   <div
-                    class="flex items-center ml-2 text-theme-color-neutral"
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                     data-testid="table__Sort"
                   >
                     <div
@@ -213,7 +213,7 @@ exports[`LinkCollection should add links 1`] = `
                 </div>
               </th>
               <th
-                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -227,7 +227,7 @@ exports[`LinkCollection should add links 1`] = `
                     Link
                   </div>
                   <div
-                    class="flex items-center ml-2 text-theme-color-neutral"
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                     data-testid="table__Sort"
                   >
                     <div
@@ -243,7 +243,7 @@ exports[`LinkCollection should add links 1`] = `
                 </div>
               </th>
               <th
-                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -262,7 +262,7 @@ exports[`LinkCollection should add links 1`] = `
             role="rowgroup"
           >
             <tr
-              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300"
+              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="LinkCollection__item"
             >
               <td
@@ -289,7 +289,7 @@ exports[`LinkCollection should add links 1`] = `
                 class="w-16 text-right align-middle"
               >
                 <button
-                  class="sc-AxjAm bIQEgQ"
+                  class="sc-AxjAm hMpHNk"
                   color="primary"
                   data-testid="LinkCollection__remove-link"
                   type="button"
@@ -342,7 +342,7 @@ exports[`LinkCollection should remove links 1`] = `
       </div>
     </div>
     <div
-      class="mt-2 text-theme-neutral-dark"
+      class="mt-2 text-theme-secondary-text"
     >
       Tell people more about yourself through social media
     </div>
@@ -357,7 +357,7 @@ exports[`LinkCollection should remove links 1`] = `
           class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="type"
           >
@@ -371,7 +371,7 @@ exports[`LinkCollection should remove links 1`] = `
             class="relative w-full"
           >
             <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
               data-testid="select-list__input"
               name="type"
               readonly=""
@@ -400,7 +400,7 @@ exports[`LinkCollection should remove links 1`] = `
                     aria-controls="downshift-33-menu"
                     aria-labelledby="downshift-33-label"
                     autocomplete="off"
-                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                    class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                     data-testid="SelectDropdownInput__input"
                     id="downshift-32-input"
                     name="type"
@@ -410,7 +410,7 @@ exports[`LinkCollection should remove links 1`] = `
                 </div>
                 <ul
                   aria-labelledby="downshift-33-label"
-                  class="sc-fznyAO iPPKQM"
+                  class="sc-fznyAO VmVew"
                   id="downshift-33-menu"
                   role="listbox"
                 />
@@ -435,7 +435,7 @@ exports[`LinkCollection should remove links 1`] = `
           class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="value"
           >
@@ -447,14 +447,14 @@ exports[`LinkCollection should remove links 1`] = `
           </label>
           <input
             aria-invalid="false"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+            class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
             data-testid="LinkCollection__input-link"
             disabled=""
             name="value"
           />
         </fieldset>
         <button
-          class="sc-AxjAm hXnHfM col-span-2"
+          class="sc-AxjAm joLCoM col-span-2"
           color="primary"
           data-testid="LinkCollection__add-link"
           disabled=""
@@ -496,7 +496,7 @@ exports[`LinkCollection should render 1`] = `
       </div>
     </div>
     <div
-      class="mt-2 text-theme-neutral-dark"
+      class="mt-2 text-theme-secondary-text"
     >
       Tell people more about yourself through social media
     </div>
@@ -532,7 +532,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
       </div>
     </div>
     <div
-      class="mt-2 text-theme-neutral-dark"
+      class="mt-2 text-theme-secondary-text"
     >
       Tell people more about yourself through social media
     </div>
@@ -547,7 +547,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
           class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="type"
           >
@@ -561,7 +561,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
             class="relative w-full"
           >
             <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
               data-testid="select-list__input"
               name="type"
               readonly=""
@@ -590,7 +590,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     aria-controls="downshift-89-menu"
                     aria-labelledby="downshift-89-label"
                     autocomplete="off"
-                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                    class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                     data-testid="SelectDropdownInput__input"
                     id="downshift-88-input"
                     name="type"
@@ -600,7 +600,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
                 <ul
                   aria-labelledby="downshift-89-label"
-                  class="sc-fznyAO iPPKQM"
+                  class="sc-fznyAO VmVew"
                   id="downshift-89-menu"
                   role="listbox"
                 />
@@ -625,7 +625,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
           class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="value"
           >
@@ -637,14 +637,14 @@ exports[`LinkCollection should select a specific link type 1`] = `
           </label>
           <input
             aria-invalid="false"
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+            class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
             data-testid="LinkCollection__input-link"
             disabled=""
             name="value"
           />
         </fieldset>
         <button
-          class="sc-AxjAm hXnHfM col-span-2"
+          class="sc-AxjAm joLCoM col-span-2"
           color="primary"
           data-testid="LinkCollection__add-link"
           disabled=""
@@ -654,7 +654,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
         </button>
       </div>
       <div
-        class="sc-fznKkj fDNmAt -mt-3"
+        class="sc-fznKkj hAWHmD -mt-3"
         role="table"
       >
         <table
@@ -663,11 +663,11 @@ exports[`LinkCollection should select a specific link type 1`] = `
         >
           <thead>
             <tr
-              class="border-b border-theme-neutral-300"
+              class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
               role="row"
             >
               <th
-                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -681,7 +681,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     Primary
                   </div>
                   <div
-                    class="flex items-center ml-2 text-theme-color-neutral"
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                     data-testid="table__Sort"
                   >
                     <div
@@ -697,7 +697,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -711,7 +711,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     Name
                   </div>
                   <div
-                    class="flex items-center ml-2 text-theme-color-neutral"
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                     data-testid="table__Sort"
                   >
                     <div
@@ -727,7 +727,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -741,7 +741,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     Link
                   </div>
                   <div
-                    class="flex items-center ml-2 text-theme-color-neutral"
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                     data-testid="table__Sort"
                   >
                     <div
@@ -757,7 +757,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -776,7 +776,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
             role="rowgroup"
           >
             <tr
-              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300"
+              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="LinkCollection__item"
             >
               <td
@@ -813,7 +813,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 class="w-16 text-right align-middle"
               >
                 <button
-                  class="sc-AxjAm bIQEgQ"
+                  class="sc-AxjAm hMpHNk"
                   color="primary"
                   data-testid="LinkCollection__remove-link"
                   type="button"
@@ -831,7 +831,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               </td>
             </tr>
             <tr
-              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300"
+              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="LinkCollection__item"
             >
               <td
@@ -861,7 +861,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 class="w-16 text-right align-middle"
               >
                 <button
-                  class="sc-AxjAm bIQEgQ"
+                  class="sc-AxjAm hMpHNk"
                   color="primary"
                   data-testid="LinkCollection__remove-link"
                   type="button"
@@ -914,7 +914,7 @@ exports[`LinkCollection should toggle open/close link collection 1`] = `
       </div>
     </div>
     <div
-      class="mt-2 text-theme-neutral-dark"
+      class="mt-2 text-theme-secondary-text"
     >
       Tell people more about yourself through social media
     </div>

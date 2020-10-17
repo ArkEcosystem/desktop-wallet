@@ -3,7 +3,7 @@
 exports[`Exchange should not render filler exchange cards 1`] = `
 <div>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -35,7 +35,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -46,7 +46,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -58,7 +58,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -69,7 +69,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -89,7 +89,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -115,13 +115,13 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -138,13 +138,13 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -161,7 +161,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -171,12 +171,12 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -194,10 +194,10 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy dHClEW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -268,7 +268,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                 Exchange
               </h1>
               <div
-                class="text-theme-neutral-dark"
+                class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
                 Trade your money safely from the comfort of your wallet.
@@ -282,8 +282,8 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               class="relative"
             >
               <div
-                class="swiper-container swiper-container-initialized swiper-container-horizontal"
-                style="height: 155px;"
+                class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                style="height: 187px;"
               >
                 <div
                   class="h-full swiper-wrapper grid grid-cols-8 gap-4"
@@ -294,7 +294,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -342,7 +342,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -390,7 +390,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -438,7 +438,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR flex col-span-2"
+                      class="sc-fzqNqU BNwGM flex col-span-2"
                       data-testid="Card"
                     >
                       <div
@@ -481,7 +481,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               exchange-cards-banner.svg
             </svg>
             <div
-              class="mt-8 text-theme-neutral-dark"
+              class="mt-8 text-theme-secondary-text"
             >
               Select one of the exchanges you have installed
             </div>
@@ -496,7 +496,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
 exports[`Exchange should open & close add exchange modal 1`] = `
 <div>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -528,7 +528,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -539,7 +539,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -551,7 +551,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -562,7 +562,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -582,7 +582,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -608,13 +608,13 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -631,13 +631,13 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -654,7 +654,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -664,12 +664,12 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -687,10 +687,10 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy dHClEW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -761,7 +761,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                 Exchange
               </h1>
               <div
-                class="text-theme-neutral-dark"
+                class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
                 Trade your money safely from the comfort of your wallet.
@@ -775,8 +775,8 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               class="relative"
             >
               <div
-                class="swiper-container swiper-container-initialized swiper-container-horizontal"
-                style="height: 155px;"
+                class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                style="height: 187px;"
               >
                 <div
                   class="h-full swiper-wrapper grid grid-cols-8 gap-4"
@@ -787,7 +787,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -835,7 +835,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -883,7 +883,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -931,7 +931,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR flex col-span-2"
+                      class="sc-fzqNqU BNwGM flex col-span-2"
                       data-testid="Card"
                     >
                       <div
@@ -974,7 +974,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               exchange-cards-banner.svg
             </svg>
             <div
-              class="mt-8 text-theme-neutral-dark"
+              class="mt-8 text-theme-secondary-text"
             >
               Select one of the exchanges you have installed
             </div>
@@ -989,7 +989,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
 exports[`Exchange should open & close add exchange modal when no existing exchanges 1`] = `
 <div>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1021,7 +1021,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1032,7 +1032,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1044,7 +1044,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1055,7 +1055,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1075,7 +1075,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1101,13 +1101,13 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1124,13 +1124,13 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1147,7 +1147,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -1157,12 +1157,12 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -1180,10 +1180,10 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy dHClEW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -1254,7 +1254,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
                 Exchange
               </h1>
               <div
-                class="text-theme-neutral-dark"
+                class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
                 Trade your money safely from the comfort of your wallet.
@@ -1283,7 +1283,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               </div>
             </div>
             <div
-              class="sc-fzqNqU dHAfqR flex col-span-2"
+              class="sc-fzqNqU BNwGM flex col-span-2"
               data-testid="Card"
             >
               <div
@@ -1328,7 +1328,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
 exports[`Exchange should render 1`] = `
 <div>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1360,7 +1360,7 @@ exports[`Exchange should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1371,7 +1371,7 @@ exports[`Exchange should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1383,7 +1383,7 @@ exports[`Exchange should render 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1394,7 +1394,7 @@ exports[`Exchange should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1414,7 +1414,7 @@ exports[`Exchange should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1440,13 +1440,13 @@ exports[`Exchange should render 1`] = `
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1463,13 +1463,13 @@ exports[`Exchange should render 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1486,7 +1486,7 @@ exports[`Exchange should render 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -1496,12 +1496,12 @@ exports[`Exchange should render 1`] = `
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -1519,10 +1519,10 @@ exports[`Exchange should render 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy dHClEW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -1593,7 +1593,7 @@ exports[`Exchange should render 1`] = `
                 Exchange
               </h1>
               <div
-                class="text-theme-neutral-dark"
+                class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
                 Trade your money safely from the comfort of your wallet.
@@ -1622,7 +1622,7 @@ exports[`Exchange should render 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzqNqU dHAfqR flex col-span-2"
+              class="sc-fzqNqU BNwGM flex col-span-2"
               data-testid="Card"
             >
               <div
@@ -1667,7 +1667,7 @@ exports[`Exchange should render 1`] = `
 exports[`Exchange should render filler exchange cards 1`] = `
 <div>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1699,7 +1699,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1710,7 +1710,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1722,7 +1722,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1733,7 +1733,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1753,7 +1753,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1779,13 +1779,13 @@ exports[`Exchange should render filler exchange cards 1`] = `
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1802,13 +1802,13 @@ exports[`Exchange should render filler exchange cards 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1825,7 +1825,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -1835,12 +1835,12 @@ exports[`Exchange should render filler exchange cards 1`] = `
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -1858,10 +1858,10 @@ exports[`Exchange should render filler exchange cards 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy dHClEW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -1932,7 +1932,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                 Exchange
               </h1>
               <div
-                class="text-theme-neutral-dark"
+                class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
                 Trade your money safely from the comfort of your wallet.
@@ -1949,8 +1949,8 @@ exports[`Exchange should render filler exchange cards 1`] = `
                 class="absolute right-0 flex items-center w-auto h-6 space-x-2 -top-12 swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
               />
               <div
-                class="swiper-container swiper-container-initialized swiper-container-horizontal"
-                style="height: 175px;"
+                class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                style="height: 207px;"
               >
                 <div
                   class="h-full swiper-wrapper grid grid-cols-8 gap-4"
@@ -1961,7 +1961,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -2009,7 +2009,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -2057,7 +2057,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -2105,7 +2105,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -2153,7 +2153,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR flex col-span-2"
+                      class="sc-fzqNqU BNwGM flex col-span-2"
                       data-testid="Card"
                     >
                       <div
@@ -2180,7 +2180,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU fYvljQ"
+                      class="sc-fzqNqU ckyHCZ"
                       data-testid="Card"
                     >
                       <div
@@ -2201,7 +2201,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU fYvljQ"
+                      class="sc-fzqNqU ckyHCZ"
                       data-testid="Card"
                     >
                       <div
@@ -2222,7 +2222,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU fYvljQ"
+                      class="sc-fzqNqU ckyHCZ"
                       data-testid="Card"
                     >
                       <div
@@ -2259,7 +2259,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
               exchange-cards-banner.svg
             </svg>
             <div
-              class="mt-8 text-theme-neutral-dark"
+              class="mt-8 text-theme-secondary-text"
             >
               Select one of the exchanges you have installed
             </div>
@@ -2274,7 +2274,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
 exports[`Exchange should render with exchanges 1`] = `
 <div>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -2306,7 +2306,7 @@ exports[`Exchange should render with exchanges 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -2317,7 +2317,7 @@ exports[`Exchange should render with exchanges 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -2329,7 +2329,7 @@ exports[`Exchange should render with exchanges 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -2340,7 +2340,7 @@ exports[`Exchange should render with exchanges 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -2360,7 +2360,7 @@ exports[`Exchange should render with exchanges 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2386,13 +2386,13 @@ exports[`Exchange should render with exchanges 1`] = `
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2409,13 +2409,13 @@ exports[`Exchange should render with exchanges 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -2432,7 +2432,7 @@ exports[`Exchange should render with exchanges 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -2442,12 +2442,12 @@ exports[`Exchange should render with exchanges 1`] = `
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -2465,10 +2465,10 @@ exports[`Exchange should render with exchanges 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy dHClEW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -2539,7 +2539,7 @@ exports[`Exchange should render with exchanges 1`] = `
                 Exchange
               </h1>
               <div
-                class="text-theme-neutral-dark"
+                class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
                 Trade your money safely from the comfort of your wallet.
@@ -2553,8 +2553,8 @@ exports[`Exchange should render with exchanges 1`] = `
               class="relative"
             >
               <div
-                class="swiper-container swiper-container-initialized swiper-container-horizontal"
-                style="height: 155px;"
+                class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                style="height: 187px;"
               >
                 <div
                   class="h-full swiper-wrapper grid grid-cols-8 gap-4"
@@ -2565,7 +2565,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -2613,7 +2613,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -2661,7 +2661,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -2709,7 +2709,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR flex col-span-2"
+                      class="sc-fzqNqU BNwGM flex col-span-2"
                       data-testid="Card"
                     >
                       <div
@@ -2752,7 +2752,7 @@ exports[`Exchange should render with exchanges 1`] = `
               exchange-cards-banner.svg
             </svg>
             <div
-              class="mt-8 text-theme-neutral-dark"
+              class="mt-8 text-theme-secondary-text"
             >
               Select one of the exchanges you have installed
             </div>
@@ -2767,7 +2767,7 @@ exports[`Exchange should render with exchanges 1`] = `
 exports[`Exchange should select exchange 1`] = `
 <div>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -2799,7 +2799,7 @@ exports[`Exchange should select exchange 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -2810,7 +2810,7 @@ exports[`Exchange should select exchange 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -2822,7 +2822,7 @@ exports[`Exchange should select exchange 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text active"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -2833,7 +2833,7 @@ exports[`Exchange should select exchange 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -2853,7 +2853,7 @@ exports[`Exchange should select exchange 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2879,13 +2879,13 @@ exports[`Exchange should select exchange 1`] = `
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2902,13 +2902,13 @@ exports[`Exchange should select exchange 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -2925,7 +2925,7 @@ exports[`Exchange should select exchange 1`] = `
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -2935,12 +2935,12 @@ exports[`Exchange should select exchange 1`] = `
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text"
               >
                 <span
                   data-testid="Amount"
@@ -2958,10 +2958,10 @@ exports[`Exchange should select exchange 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy dHClEW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -3032,7 +3032,7 @@ exports[`Exchange should select exchange 1`] = `
                 Exchange
               </h1>
               <div
-                class="text-theme-neutral-dark"
+                class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
                 Trade your money safely from the comfort of your wallet.
@@ -3046,8 +3046,8 @@ exports[`Exchange should select exchange 1`] = `
               class="relative"
             >
               <div
-                class="swiper-container swiper-container-initialized swiper-container-horizontal"
-                style="height: 155px;"
+                class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                style="height: 187px;"
               >
                 <div
                   class="h-full swiper-wrapper grid grid-cols-8 gap-4"
@@ -3106,7 +3106,7 @@ exports[`Exchange should select exchange 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -3154,7 +3154,7 @@ exports[`Exchange should select exchange 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR"
+                      class="sc-fzqNqU BNwGM"
                       data-testid="Card"
                     >
                       <div
@@ -3202,7 +3202,7 @@ exports[`Exchange should select exchange 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fzqNqU dHAfqR flex col-span-2"
+                      class="sc-fzqNqU BNwGM flex col-span-2"
                       data-testid="Card"
                     >
                       <div
@@ -3245,7 +3245,7 @@ exports[`Exchange should select exchange 1`] = `
               exchange-cards-banner.svg
             </svg>
             <div
-              class="mt-8 text-theme-neutral-dark"
+              class="mt-8 text-theme-secondary-text"
             >
               Select one of the exchanges you have installed
             </div>

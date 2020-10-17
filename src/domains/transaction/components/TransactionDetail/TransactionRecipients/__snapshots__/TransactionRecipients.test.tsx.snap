@@ -5,7 +5,7 @@ exports[`TransactionRecipients should not render without recipient or recipients
 exports[`TransactionRecipients should render a recipients array 1`] = `
 <div>
   <div
-    class="sc-AxmLO gIyyqu"
+    class="sc-AxmLO cvWCIb"
     data-testid="TransactionDetail"
   >
     <div
@@ -26,7 +26,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
             class="sc-Axmtr SNYwX"
           >
             <div
-              class="sc-AxhUy efoeRI -mt-3"
+              class="sc-AxhUy gupDsa -mt-3"
               role="table"
             >
               <table
@@ -35,11 +35,11 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
               >
                 <thead>
                   <tr
-                    class="border-b border-theme-neutral-300"
+                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -53,7 +53,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -67,7 +67,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -86,7 +86,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                    class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                     data-testid="recipient-list__recipient-list-item"
                   >
                     <td
@@ -150,7 +150,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
 exports[`TransactionRecipients should render a single recipient 1`] = `
 <div>
   <div
-    class="sc-AxmLO gIyyqu"
+    class="sc-AxmLO cvWCIb"
     data-testid="TransactionDetail"
   >
     <div
@@ -197,7 +197,7 @@ exports[`TransactionRecipients should render a single recipient 1`] = `
 exports[`TransactionRecipients should render a single recipient with alias 1`] = `
 <div>
   <div
-    class="sc-AxmLO gIyyqu"
+    class="sc-AxmLO cvWCIb"
     data-testid="TransactionDetail"
   >
     <div
@@ -215,7 +215,7 @@ exports[`TransactionRecipients should render a single recipient with alias 1`] =
           class="inline-block truncate align-middle"
         >
           <span
-            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
             data-testid="address__wallet-name"
           >
             test-alias

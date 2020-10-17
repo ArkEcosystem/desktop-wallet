@@ -7,7 +7,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
       class="sc-AxirZ kMHTdH relative"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="address"
       >
@@ -42,7 +42,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
           </div>
           <input
             aria-invalid="true"
-            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
             data-testid="SelectRecipient__input"
             name="address"
             type="text"
@@ -71,7 +71,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
       </p>
     </fieldset>
     <button
-      class="sc-AxjAm hXnHfM w-full my-4"
+      class="sc-AxjAm joLCoM w-full my-4"
       color="primary"
       type="button"
     >
@@ -81,7 +81,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for=""
       >
@@ -95,7 +95,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
         class="sc-fzoLag jJloPo"
       >
         <div
-          class="sc-fznKkj fDNmAt -mt-3"
+          class="sc-fznKkj hAWHmD -mt-3"
           role="table"
         >
           <table
@@ -104,11 +104,11 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
           >
             <thead>
               <tr
-                class="border-b border-theme-neutral-300"
+                class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                 role="row"
               >
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
@@ -122,7 +122,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
@@ -136,7 +136,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
@@ -150,7 +150,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--3"
                   role="columnheader"
@@ -169,7 +169,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
@@ -205,7 +205,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                       class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      D8rr7B…s6YUYD
+                      D8rr7B … s6YUYD
                     </span>
                   </div>
                 </td>
@@ -231,7 +231,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   class="w-20 py-6 text-right"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
@@ -268,7 +268,7 @@ exports[`Add Participant should fail to find 1`] = `
       class="sc-AxirZ kMHTdH relative"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="address"
       >
@@ -303,7 +303,7 @@ exports[`Add Participant should fail to find 1`] = `
           </div>
           <input
             aria-invalid="true"
-            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
             data-testid="SelectRecipient__input"
             name="address"
             type="text"
@@ -332,7 +332,7 @@ exports[`Add Participant should fail to find 1`] = `
       </p>
     </fieldset>
     <button
-      class="sc-AxjAm hXnHfM w-full my-4"
+      class="sc-AxjAm joLCoM w-full my-4"
       color="primary"
       type="button"
     >
@@ -342,7 +342,7 @@ exports[`Add Participant should fail to find 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for=""
       >
@@ -356,7 +356,7 @@ exports[`Add Participant should fail to find 1`] = `
         class="sc-fzoLag jJloPo"
       >
         <div
-          class="sc-fznKkj fDNmAt -mt-3"
+          class="sc-fznKkj hAWHmD -mt-3"
           role="table"
         >
           <table
@@ -365,11 +365,11 @@ exports[`Add Participant should fail to find 1`] = `
           >
             <thead>
               <tr
-                class="border-b border-theme-neutral-300"
+                class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                 role="row"
               >
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
@@ -383,7 +383,7 @@ exports[`Add Participant should fail to find 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
@@ -397,7 +397,7 @@ exports[`Add Participant should fail to find 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
@@ -411,7 +411,7 @@ exports[`Add Participant should fail to find 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--3"
                   role="columnheader"
@@ -430,7 +430,7 @@ exports[`Add Participant should fail to find 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
@@ -466,7 +466,7 @@ exports[`Add Participant should fail to find 1`] = `
                       class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      D8rr7B…s6YUYD
+                      D8rr7B … s6YUYD
                     </span>
                   </div>
                 </td>
@@ -492,7 +492,7 @@ exports[`Add Participant should fail to find 1`] = `
                   class="w-20 py-6 text-right"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
@@ -529,7 +529,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
       class="sc-AxirZ kMHTdH relative"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="address"
       >
@@ -564,7 +564,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
           </div>
           <input
             aria-invalid="true"
-            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
             data-testid="SelectRecipient__input"
             name="address"
             type="text"
@@ -593,7 +593,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
       </p>
     </fieldset>
     <button
-      class="sc-AxjAm hXnHfM w-full my-4"
+      class="sc-AxjAm joLCoM w-full my-4"
       color="primary"
       type="button"
     >
@@ -603,7 +603,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for=""
       >
@@ -617,7 +617,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
         class="sc-fzoLag jJloPo"
       >
         <div
-          class="sc-fznKkj fDNmAt -mt-3"
+          class="sc-fznKkj hAWHmD -mt-3"
           role="table"
         >
           <table
@@ -626,11 +626,11 @@ exports[`Add Participant should fail with cold wallet 1`] = `
           >
             <thead>
               <tr
-                class="border-b border-theme-neutral-300"
+                class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                 role="row"
               >
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
@@ -644,7 +644,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
@@ -658,7 +658,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
@@ -672,7 +672,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--3"
                   role="columnheader"
@@ -691,7 +691,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
@@ -727,7 +727,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                       class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      D8rr7B…s6YUYD
+                      D8rr7B … s6YUYD
                     </span>
                   </div>
                 </td>
@@ -753,7 +753,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   class="w-20 py-6 text-right"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
@@ -790,7 +790,7 @@ exports[`Add Participant should render custom participants 1`] = `
       class="sc-AxirZ izhStr relative"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="address"
       >
@@ -809,11 +809,11 @@ exports[`Add Participant should render custom participants 1`] = `
             class="absolute left-1"
           >
             <div
-              class="sc-AxhCb esLhBV mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+              class="sc-AxhCb esLhBV mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <input
-            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
             data-testid="SelectRecipient__input"
             name="address"
             type="text"
@@ -837,7 +837,7 @@ exports[`Add Participant should render custom participants 1`] = `
       </div>
     </fieldset>
     <button
-      class="sc-AxjAm hXnHfM w-full my-4"
+      class="sc-AxjAm joLCoM w-full my-4"
       color="primary"
       type="button"
     >
@@ -847,7 +847,7 @@ exports[`Add Participant should render custom participants 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for=""
       >
@@ -861,7 +861,7 @@ exports[`Add Participant should render custom participants 1`] = `
         class="sc-fzoLag jJloPo"
       >
         <div
-          class="sc-fznKkj fDNmAt -mt-3"
+          class="sc-fznKkj hAWHmD -mt-3"
           role="table"
         >
           <table
@@ -870,11 +870,11 @@ exports[`Add Participant should render custom participants 1`] = `
           >
             <thead>
               <tr
-                class="border-b border-theme-neutral-300"
+                class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                 role="row"
               >
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
@@ -888,7 +888,7 @@ exports[`Add Participant should render custom participants 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
@@ -902,7 +902,7 @@ exports[`Add Participant should render custom participants 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
@@ -916,7 +916,7 @@ exports[`Add Participant should render custom participants 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--3"
                   role="columnheader"
@@ -935,7 +935,7 @@ exports[`Add Participant should render custom participants 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
@@ -971,7 +971,7 @@ exports[`Add Participant should render custom participants 1`] = `
                       class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      D5sRKW…cvJtwb
+                      D5sRKW … cvJtwb
                     </span>
                   </div>
                 </td>
@@ -997,7 +997,7 @@ exports[`Add Participant should render custom participants 1`] = `
                   class="w-20 py-6 text-right"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
@@ -1034,7 +1034,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
       class="sc-AxirZ izhStr relative"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="address"
       >
@@ -1068,7 +1068,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
             </div>
           </div>
           <input
-            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
             data-testid="SelectRecipient__input"
             name="address"
             type="text"
@@ -1092,7 +1092,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
       </div>
     </fieldset>
     <button
-      class="sc-AxjAm hXnHfM w-full my-4"
+      class="sc-AxjAm joLCoM w-full my-4"
       color="primary"
       type="button"
     >
@@ -1102,7 +1102,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for=""
       >
@@ -1116,7 +1116,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
         class="sc-fzoLag jJloPo"
       >
         <div
-          class="sc-fznKkj fDNmAt -mt-3"
+          class="sc-fznKkj hAWHmD -mt-3"
           role="table"
         >
           <table
@@ -1125,11 +1125,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
           >
             <thead>
               <tr
-                class="border-b border-theme-neutral-300"
+                class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                 role="row"
               >
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
@@ -1143,7 +1143,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
@@ -1157,7 +1157,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
@@ -1171,7 +1171,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--3"
                   role="columnheader"
@@ -1190,7 +1190,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
@@ -1226,7 +1226,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                       class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      D8rr7B…s6YUYD
+                      D8rr7B … s6YUYD
                     </span>
                   </div>
                 </td>
@@ -1252,7 +1252,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   class="w-20 py-6 text-right"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
@@ -1274,7 +1274,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                 </td>
               </tr>
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
@@ -1310,7 +1310,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                       class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      D61mfS…J3Dyib
+                      D61mfS … J3Dyib
                     </span>
                   </div>
                 </td>
@@ -1336,7 +1336,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   class="w-20 py-6 text-right"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
@@ -1373,7 +1373,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
       class="sc-AxirZ izhStr relative"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="address"
       >
@@ -1407,7 +1407,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
             </div>
           </div>
           <input
-            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
             data-testid="SelectRecipient__input"
             name="address"
             type="text"
@@ -1431,7 +1431,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
       </div>
     </fieldset>
     <button
-      class="sc-AxjAm hXnHfM w-full my-4"
+      class="sc-AxjAm joLCoM w-full my-4"
       color="primary"
       type="button"
     >
@@ -1441,7 +1441,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for=""
       >
@@ -1455,7 +1455,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
         class="sc-fzoLag jJloPo"
       >
         <div
-          class="sc-fznKkj fDNmAt -mt-3"
+          class="sc-fznKkj hAWHmD -mt-3"
           role="table"
         >
           <table
@@ -1464,11 +1464,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
           >
             <thead>
               <tr
-                class="border-b border-theme-neutral-300"
+                class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                 role="row"
               >
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
@@ -1482,7 +1482,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
@@ -1496,7 +1496,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
@@ -1510,7 +1510,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                   colspan="1"
                   data-testid="table__th--3"
                   role="columnheader"
@@ -1529,7 +1529,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
@@ -1565,7 +1565,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                       class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      D8rr7B…s6YUYD
+                      D8rr7B … s6YUYD
                     </span>
                   </div>
                 </td>
@@ -1591,7 +1591,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   class="w-20 py-6 text-right"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
@@ -1613,7 +1613,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                 </td>
               </tr>
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
@@ -1649,7 +1649,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                       class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      D5sRKW…cvJtwb
+                      D5sRKW … cvJtwb
                     </span>
                   </div>
                 </td>
@@ -1675,7 +1675,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   class="w-20 py-6 text-right"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="recipient-list__remove-recipient"
                     type="button"

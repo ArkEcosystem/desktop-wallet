@@ -19,7 +19,7 @@ exports[`SignIn should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -47,7 +47,7 @@ exports[`SignIn should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             Sign in to access your profile.
           </div>
@@ -79,7 +79,7 @@ exports[`SignIn should render a modal 1`] = `
                   class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
                 >
                   <p
-                    class="text-sm font-semibold text-theme-neutral"
+                    class="text-sm font-semibold text-theme-neutral-700"
                   >
                     Name
                   </p>
@@ -102,12 +102,12 @@ exports[`SignIn should render a modal 1`] = `
                   class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
                 >
                   <p
-                    class="text-sm font-semibold text-theme-neutral"
+                    class="text-sm font-semibold text-theme-neutral-700"
                   >
                     Total balance
                   </p>
                   <span
-                    class="font-semibold text-theme-neutral"
+                    class="font-semibold text-theme-neutral-700"
                   >
                     N/A
                   </span>
@@ -116,7 +116,7 @@ exports[`SignIn should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxirZ jJscrd border-theme-neutral-300"
+            class="sc-AxirZ jJscrd border-theme-neutral-300 dark:border-theme-neutral-800"
             type="horizontal"
           />
           <form
@@ -127,7 +127,7 @@ exports[`SignIn should render a modal 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="password"
               >
@@ -142,7 +142,7 @@ exports[`SignIn should render a modal 1`] = `
                 data-testid="InputPassword"
               >
                 <input
-                  class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                  class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                   data-testid="SignIn__input--password"
                   name="password"
                   type="password"
@@ -172,7 +172,7 @@ exports[`SignIn should render a modal 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm hXnHfM"
+                class="sc-AxjAm joLCoM"
                 color="primary"
                 data-testid="SignIn__cancel-button"
                 type="button"
@@ -180,7 +180,7 @@ exports[`SignIn should render a modal 1`] = `
                 Cancel
               </button>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm BsmvP"
                 color="primary"
                 data-testid="SignIn__submit-button"
                 disabled=""
