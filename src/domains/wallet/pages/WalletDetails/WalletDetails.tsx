@@ -48,7 +48,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 		fetchMore,
 		isLoading: isLoadingTransactions,
 		hasMore,
-	} = useWalletTransactions(activeWallet, { limit: transactionLimit || 15 });
+	} = useWalletTransactions(activeWallet, { limit: transactionLimit! });
 
 	const walletVotes = () => {
 		// Being synced in background and will be updated after persisting
@@ -286,4 +286,5 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 
 WalletDetails.defaultProps = {
 	txSkeletonRowsLimit: 8,
+	transactionLimit: 15,
 };
