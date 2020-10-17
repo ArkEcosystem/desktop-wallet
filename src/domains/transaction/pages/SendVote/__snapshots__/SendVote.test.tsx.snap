@@ -350,7 +350,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             ID
                           </div>
@@ -358,7 +358,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex items-center"
+                              class="flex items-center space-x-3"
                             >
                               <a
                                 class="sc-fznKkj drQiih inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -374,7 +374,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                 </span>
                               </a>
                               <span
-                                class="flex ml-5 text-theme-primary-300"
+                                class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
@@ -403,7 +403,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Cryptoasset
                           </div>
@@ -438,7 +438,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             <span
                               class="mr-1"
@@ -469,7 +469,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -481,7 +481,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="sc-AxgMl eQpXWo border-theme-text"
+                            class="sc-AxgMl eQpXWo border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
                           >
                             <div
                               class="sc-AxiKw iQZLaj"
@@ -517,7 +517,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Transaction Type
                           </div>
@@ -549,7 +549,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Votes (1)
                           </div>
@@ -589,7 +589,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                       arkx
                                     </span>
                                     <span
-                                      class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                                       data-testid="address__wallet-address"
                                     >
                                       D61mfS … J3Dyib
@@ -609,7 +609,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Unvotes (1)
                           </div>
@@ -649,7 +649,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                       genesis_42
                                     </span>
                                     <span
-                                      class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                                       data-testid="address__wallet-address"
                                     >
                                       D5L5zX … d6iWVr
@@ -669,7 +669,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Transaction Fee
                           </div>
@@ -1072,7 +1072,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             ID
                           </div>
@@ -1080,7 +1080,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex items-center"
+                              class="flex items-center space-x-3"
                             >
                               <a
                                 class="sc-fznKkj drQiih inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1096,7 +1096,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                                 </span>
                               </a>
                               <span
-                                class="flex ml-5 text-theme-primary-300"
+                                class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
@@ -1125,7 +1125,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Cryptoasset
                           </div>
@@ -1160,7 +1160,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             <span
                               class="mr-1"
@@ -1191,7 +1191,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -1203,7 +1203,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="sc-AxgMl eQpXWo border-theme-text"
+                            class="sc-AxgMl eQpXWo border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
                           >
                             <div
                               class="sc-AxiKw iQZLaj"
@@ -1239,7 +1239,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Transaction Type
                           </div>
@@ -1271,7 +1271,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Unvotes (1)
                           </div>
@@ -1311,7 +1311,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                                       genesis_42
                                     </span>
                                     <span
-                                      class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                                       data-testid="address__wallet-address"
                                     >
                                       D5L5zX … d6iWVr
@@ -1331,7 +1331,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Transaction Fee
                           </div>
@@ -1734,7 +1734,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             ID
                           </div>
@@ -1742,7 +1742,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex items-center"
+                              class="flex items-center space-x-3"
                             >
                               <a
                                 class="sc-fznKkj drQiih inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1758,7 +1758,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                                 </span>
                               </a>
                               <span
-                                class="flex ml-5 text-theme-primary-300"
+                                class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
@@ -1787,7 +1787,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Cryptoasset
                           </div>
@@ -1822,7 +1822,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             <span
                               class="mr-1"
@@ -1853,7 +1853,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -1865,7 +1865,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="sc-AxgMl eQpXWo border-theme-text"
+                            class="sc-AxgMl eQpXWo border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
                           >
                             <div
                               class="sc-AxiKw iQZLaj"
@@ -1901,7 +1901,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Transaction Type
                           </div>
@@ -1933,7 +1933,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Votes (1)
                           </div>
@@ -1973,7 +1973,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                                       arkx
                                     </span>
                                     <span
-                                      class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                                       data-testid="address__wallet-address"
                                     >
                                       D61mfS … J3Dyib
@@ -1993,7 +1993,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Transaction Fee
                           </div>

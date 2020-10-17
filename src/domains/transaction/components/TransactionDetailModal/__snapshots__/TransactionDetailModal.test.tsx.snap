@@ -16,7 +16,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -54,7 +54,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 <span
                   class="mr-1"
@@ -85,7 +85,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -120,7 +120,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Delegate Name
               </div>
@@ -152,7 +152,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -175,7 +175,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -194,7 +194,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -202,27 +202,19 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -236,7 +228,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -244,7 +236,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -260,7 +252,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -289,7 +281,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -297,7 +289,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -313,7 +305,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -356,7 +348,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -394,7 +386,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 <span
                   class="mr-1"
@@ -425,7 +417,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -460,7 +452,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Delegate Name
               </div>
@@ -492,7 +484,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -515,7 +507,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -534,7 +526,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -542,27 +534,19 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -576,7 +560,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -584,7 +568,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -600,7 +584,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -629,7 +613,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -637,7 +621,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -653,7 +637,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -696,7 +680,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -734,7 +718,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -751,7 +735,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -763,7 +747,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm jcZnVc border-theme-text"
+                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -799,7 +783,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -822,7 +806,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -841,7 +825,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -849,27 +833,19 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -883,7 +859,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -891,7 +867,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -907,7 +883,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -936,7 +912,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -944,7 +920,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -960,7 +936,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1003,7 +979,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -1041,7 +1017,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -1058,7 +1034,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1070,7 +1046,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm jcZnVc border-theme-text"
+                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -1106,7 +1082,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -1129,7 +1105,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 IPFS Hash
               </div>
@@ -1161,7 +1137,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -1180,7 +1156,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -1188,27 +1164,19 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -1222,7 +1190,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -1230,7 +1198,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1246,7 +1214,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1275,7 +1243,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -1283,7 +1251,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1299,7 +1267,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1342,7 +1310,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -1380,7 +1348,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -1397,7 +1365,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1409,7 +1377,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm jcZnVc border-theme-text"
+                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -1445,7 +1413,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Recipients (0)
               </div>
@@ -1533,7 +1501,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Total Amount
               </div>
@@ -1559,12 +1527,12 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxjAm jcZnVc border-theme-danger-contrast text-theme-danger"
+              class="sc-AxjAm jcZnVc border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
             >
               <div
-                class="sc-AxirZ caNxxo"
-                height="21"
-                width="15"
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
               >
                 <svg>
                   sent.svg
@@ -1580,7 +1548,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -1603,7 +1571,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Smartbridge
               </div>
@@ -1639,7 +1607,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -1658,7 +1626,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -1666,27 +1634,19 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -1700,7 +1660,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -1708,7 +1668,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1724,7 +1684,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1753,7 +1713,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -1761,7 +1721,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1777,7 +1737,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1820,7 +1780,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -1869,7 +1829,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Sender
                       </div>
@@ -1906,7 +1866,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Recipient
                       </div>
@@ -1944,7 +1904,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Amount
                       </div>
@@ -1986,7 +1946,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Transaction Fee
                       </div>
@@ -2005,7 +1965,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Smartbridge
                       </div>
@@ -2037,7 +1997,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Timestamp
                       </div>
@@ -2056,7 +2016,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Confirmations
                       </div>
@@ -2302,7 +2262,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -2340,7 +2300,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -2357,7 +2317,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -2369,7 +2329,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm jcZnVc border-theme-text"
+                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -2405,7 +2365,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -2428,7 +2388,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -2447,7 +2407,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -2455,27 +2415,19 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -2489,7 +2441,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -2497,7 +2449,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2513,7 +2465,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2542,7 +2494,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -2550,7 +2502,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2566,7 +2518,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2609,7 +2561,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -2647,7 +2599,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -2664,7 +2616,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -2676,7 +2628,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm jcZnVc border-theme-text"
+                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -2712,7 +2664,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Recipient
               </div>
@@ -2754,7 +2706,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Amount
               </div>
@@ -2780,12 +2732,12 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxjAm jcZnVc border-theme-danger-contrast text-theme-danger"
+              class="sc-AxjAm jcZnVc border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
             >
               <div
-                class="sc-AxirZ caNxxo"
-                height="21"
-                width="15"
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
               >
                 <svg>
                   sent.svg
@@ -2801,7 +2753,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -2824,7 +2776,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Smartbridge
               </div>
@@ -2860,7 +2812,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -2879,7 +2831,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -2887,27 +2839,19 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -2921,7 +2865,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -2929,7 +2873,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2945,7 +2889,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2974,7 +2918,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -2982,7 +2926,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2998,7 +2942,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3041,7 +2985,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -3079,7 +3023,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -3096,7 +3040,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -3108,7 +3052,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm jcZnVc border-theme-text"
+                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -3144,7 +3088,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Type
               </div>
@@ -3176,7 +3120,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Votes (1)
               </div>
@@ -3216,7 +3160,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                           delegate-0
                         </span>
                         <span
-                          class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           034151 … aed192
@@ -3236,7 +3180,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Unvotes (1)
               </div>
@@ -3276,7 +3220,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                           delegate-0
                         </span>
                         <span
-                          class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           034151 … aed192
@@ -3296,7 +3240,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -3319,7 +3263,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -3338,7 +3282,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -3346,27 +3290,19 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -3380,7 +3316,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -3388,7 +3324,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3404,7 +3340,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3433,7 +3369,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -3441,7 +3377,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3457,7 +3393,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3500,7 +3436,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -3538,7 +3474,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -3555,7 +3491,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -3567,7 +3503,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxjAm jcZnVc border-theme-text"
+                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -3603,7 +3539,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Type
               </div>
@@ -3635,7 +3571,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Votes (1)
               </div>
@@ -3675,7 +3611,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                           delegate-0
                         </span>
                         <span
-                          class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           034151 … aed192
@@ -3695,7 +3631,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Unvotes (1)
               </div>
@@ -3735,7 +3671,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                           delegate-0
                         </span>
                         <span
-                          class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           034151 … aed192
@@ -3755,7 +3691,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -3778,7 +3714,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -3797,7 +3733,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -3805,27 +3741,19 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -3839,7 +3767,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -3847,7 +3775,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3863,7 +3791,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3892,7 +3820,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -3900,7 +3828,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3916,7 +3844,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"

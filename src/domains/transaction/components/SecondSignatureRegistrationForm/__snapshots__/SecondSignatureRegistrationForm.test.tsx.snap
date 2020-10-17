@@ -245,7 +245,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 <span
                   class="mr-1"
@@ -276,7 +276,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     ARK Wallet 1
                   </span>
                   <span
-                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                    class="sc-AxmLO cAKCgh text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -425,7 +425,7 @@ exports[`SecondSignatureRegistrationForm should render transaction details 1`] =
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Transaction Type
       </div>
@@ -457,7 +457,7 @@ exports[`SecondSignatureRegistrationForm should render transaction details 1`] =
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Transaction Fee
       </div>

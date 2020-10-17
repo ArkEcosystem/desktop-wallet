@@ -16,7 +16,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxjAm RZxAM w-11 h-11"
@@ -54,7 +54,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -71,7 +71,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -83,7 +83,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb gaiYPD border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -119,7 +119,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -142,7 +142,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -161,7 +161,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -169,27 +169,19 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -203,7 +195,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -211,7 +203,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -227,7 +219,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -256,7 +248,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -264,7 +256,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -280,7 +272,7 @@ exports[`SecondSignatureDetail should render a modal 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -322,7 +314,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxjAm RZxAM w-11 h-11"
@@ -360,7 +352,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -383,7 +375,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb gaiYPD border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -419,7 +411,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -442,7 +434,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -461,7 +453,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -469,27 +461,19 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -503,7 +487,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -511,7 +495,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -527,7 +511,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -556,7 +540,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -564,7 +548,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -580,7 +564,7 @@ exports[`SecondSignatureDetail should render a modal without a wallet alias 1`] 
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -622,7 +606,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxjAm RZxAM w-11 h-11"
@@ -660,7 +644,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -677,7 +661,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -689,7 +673,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb gaiYPD border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -725,7 +709,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -748,7 +732,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -767,7 +751,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -775,28 +759,22 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Well confirmed
                   </span>
-                  <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
-                  >
+                  <span>
                     <div
-                      class="m-auto"
+                      class="sc-AxirZ hmuEJr text-theme-success"
+                      height="22"
+                      width="22"
                     >
-                      <div
-                        class="sc-AxirZ fkjLBb"
-                        height="15"
-                        width="15"
-                      >
-                        <svg>
-                          checkmark.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        status-ok.svg
+                      </svg>
                     </div>
-                  </div>
+                  </span>
                 </div>
               </div>
             </div>
@@ -809,7 +787,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -817,7 +795,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -833,7 +811,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -862,7 +840,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -870,7 +848,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -886,7 +864,7 @@ exports[`SecondSignatureDetail should render as confirmed 1`] = `
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"

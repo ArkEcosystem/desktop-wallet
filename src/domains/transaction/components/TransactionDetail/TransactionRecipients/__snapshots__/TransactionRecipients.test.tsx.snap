@@ -12,7 +12,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Recipients (1)
       </div>
@@ -157,7 +157,7 @@ exports[`TransactionRecipients should render a single recipient 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Recipient
       </div>
@@ -204,7 +204,7 @@ exports[`TransactionRecipients should render a single recipient with alias 1`] =
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Recipient
       </div>
@@ -221,7 +221,7 @@ exports[`TransactionRecipients should render a single recipient with alias 1`] =
             test-alias
           </span>
           <span
-            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+            class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
             data-testid="address__wallet-address"
           >
             test-address

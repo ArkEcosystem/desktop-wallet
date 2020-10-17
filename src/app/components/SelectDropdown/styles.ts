@@ -34,7 +34,7 @@ export const SelectToggleButton = styled.button`
 
 export const SelectOptionsList = styled.ul`
 	& {
-		${tw`absolute z-10 w-full bg-white rounded-lg shadow-xl outline-none top-14`}
+		${tw`absolute z-10 w-full bg-theme-background rounded-lg shadow-xl outline-none top-14`}
 	}
 
 	&.is-open {
@@ -70,7 +70,7 @@ export const SelectOptionsList = styled.ul`
 
 		&.is-empty {
 			&:hover {
-				${tw`bg-white cursor-default`}
+				${tw`bg-theme-background cursor-default`}
 			}
 		}
 	}

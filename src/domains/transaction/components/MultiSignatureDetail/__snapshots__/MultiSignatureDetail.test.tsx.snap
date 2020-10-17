@@ -15,7 +15,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Sender
         </div>
@@ -52,7 +52,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Recipient
         </div>
@@ -90,7 +90,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Amount
         </div>
@@ -132,7 +132,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Transaction Fee
         </div>
@@ -151,7 +151,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Smartbridge
         </div>
@@ -183,7 +183,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Timestamp
         </div>
@@ -202,7 +202,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Confirmations
         </div>
@@ -621,7 +621,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxjAm RZxAM w-11 h-11"
@@ -670,7 +670,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Sender
                       </div>
@@ -707,7 +707,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Recipient
                       </div>
@@ -745,7 +745,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Amount
                       </div>
@@ -787,7 +787,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Transaction Fee
                       </div>
@@ -806,7 +806,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Smartbridge
                       </div>
@@ -838,7 +838,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Timestamp
                       </div>
@@ -857,7 +857,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Confirmations
                       </div>
@@ -1102,7 +1102,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxjAm RZxAM w-11 h-11"
@@ -1151,7 +1151,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Sender
                       </div>
@@ -1188,7 +1188,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Recipient
                       </div>
@@ -1226,7 +1226,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Amount
                       </div>
@@ -1268,7 +1268,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Transaction Fee
                       </div>
@@ -1287,7 +1287,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Smartbridge
                       </div>
@@ -1319,7 +1319,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Timestamp
                       </div>
@@ -1338,7 +1338,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Confirmations
                       </div>

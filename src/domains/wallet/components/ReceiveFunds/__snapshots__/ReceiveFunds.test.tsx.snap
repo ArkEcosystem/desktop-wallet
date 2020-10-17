@@ -16,7 +16,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -57,22 +57,23 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   Address
                 </div>
                 <div
                   class="font-semibold"
                 >
-                  <span
-                    class="ml-4"
+                  <div
+                    class="flex items-center space-x-3"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <span />
+                    <span
+                      class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
-                        class="text-theme-primary-300"
+                        class="inline-block cursor-pointer"
+                        data-testid="clipboard__wrapper"
                       >
                         <div
                           class="sc-AxirZ iQaTP"
@@ -84,8 +85,8 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                           </svg>
                         </div>
                       </div>
-                    </div>
-                  </span>
+                    </span>
+                  </div>
                 </div>
               </div>
               <div
@@ -141,7 +142,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -182,7 +183,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   Wallet
                 </div>
@@ -218,23 +219,25 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   Address
                 </div>
                 <div
                   class="font-semibold"
                 >
-                  abc
-                  <span
-                    class="ml-4"
+                  <div
+                    class="flex items-center space-x-3"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <span>
+                      abc
+                    </span>
+                    <span
+                      class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
-                        class="text-theme-primary-300"
+                        class="inline-block cursor-pointer"
+                        data-testid="clipboard__wrapper"
                       >
                         <div
                           class="sc-AxirZ iQaTP"
@@ -246,8 +249,8 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                           </svg>
                         </div>
                       </div>
-                    </div>
-                  </span>
+                    </span>
+                  </div>
                 </div>
               </div>
               <div
@@ -297,7 +300,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
           class="sc-AxiKw lgscAL w-11 h-11"
@@ -338,23 +341,25 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   Address
                 </div>
                 <div
                   class="font-semibold"
                 >
-                  abc
-                  <span
-                    class="ml-4"
+                  <div
+                    class="flex items-center space-x-3"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <span>
+                      abc
+                    </span>
+                    <span
+                      class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
-                        class="text-theme-primary-300"
+                        class="inline-block cursor-pointer"
+                        data-testid="clipboard__wrapper"
                       >
                         <div
                           class="sc-AxirZ iQaTP"
@@ -366,8 +371,8 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                           </svg>
                         </div>
                       </div>
-                    </div>
-                  </span>
+                    </span>
+                  </div>
                 </div>
               </div>
               <div

@@ -10,7 +10,7 @@ exports[`TransactionSender should not render delegate icon 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Sender
       </div>
@@ -33,7 +33,7 @@ exports[`TransactionSender should not render delegate icon 1`] = `
       class="flex items-center -space-x-2"
     >
       <div
-        class="sc-AxirZ dxHwgH border-theme-text"
+        class="sc-AxirZ dxHwgH border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
       >
         <div
           class="sc-AxiKw iQZLaj"
@@ -74,7 +74,7 @@ exports[`TransactionSender should not render with alias 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Sender
       </div>
@@ -91,7 +91,7 @@ exports[`TransactionSender should not render with alias 1`] = `
             test-alias
           </span>
           <span
-            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+            class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
             data-testid="address__wallet-address"
           >
             test-address
@@ -131,7 +131,7 @@ exports[`TransactionSender should render 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Sender
       </div>

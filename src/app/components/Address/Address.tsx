@@ -51,7 +51,8 @@ export const Address = ({ address, addressClass, walletNameClass, fontWeight, wa
 					maxChars={maxChars}
 					data-testid="address__wallet-address"
 					className={`${
-						addressClass || (walletName ? "text-theme-neutral-light" : "text-theme-text")
+						addressClass ||
+						(walletName ? "text-theme-neutral-500 dark:text-theme-neutral-700" : "text-theme-text")
 					} ${getFontWeight(fontWeight)} ${getFontSize(size)}`}
 				/>
 			)}

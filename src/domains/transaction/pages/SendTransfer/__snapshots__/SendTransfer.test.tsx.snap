@@ -2163,7 +2163,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Cryptoasset
         </div>
@@ -2232,7 +2232,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
                 ARK Wallet 1
               </span>
               <span
-                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 D8rr7B … s6YUYD
@@ -2264,7 +2264,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Recipient
         </div>
@@ -2306,7 +2306,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Smartbridge
         </div>
@@ -2453,7 +2453,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral"
+            class="text-sm font-semibold text-theme-neutral-700"
           >
             ID
           </div>
@@ -2461,7 +2461,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
             class="font-semibold"
           >
             <div
-              class="flex items-center"
+              class="flex items-center space-x-3"
             >
               <a
                 class="sc-fznKkj drQiih inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2477,7 +2477,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
                 </span>
               </a>
               <span
-                class="flex ml-5 text-theme-primary-300"
+                class="flex text-theme-primary-300 dark:text-theme-neutral-600"
               >
                 <div
                   class="inline-block cursor-pointer"
@@ -2506,7 +2506,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral"
+            class="text-sm font-semibold text-theme-neutral-700"
           >
             Cryptoasset
           </div>
@@ -2541,7 +2541,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral"
+            class="text-sm font-semibold text-theme-neutral-700"
           >
             <span
               class="mr-1"
@@ -2572,7 +2572,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
                 ARK Wallet 1
               </span>
               <span
-                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 D8rr7B … s6YUYD
@@ -2607,7 +2607,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral"
+            class="text-sm font-semibold text-theme-neutral-700"
           >
             Recipient
           </div>
@@ -2649,7 +2649,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral"
+            class="text-sm font-semibold text-theme-neutral-700"
           >
             Total Amount
           </div>
@@ -5442,7 +5442,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             ID
                           </div>
@@ -5450,7 +5450,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex items-center"
+                              class="flex items-center space-x-3"
                             >
                               <a
                                 class="sc-fznKkj drQiih inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -5466,7 +5466,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                 </span>
                               </a>
                               <span
-                                class="flex ml-5 text-theme-primary-300"
+                                class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
@@ -5495,7 +5495,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Cryptoasset
                           </div>
@@ -5530,7 +5530,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             <span
                               class="mr-1"
@@ -5561,7 +5561,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -5596,7 +5596,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Recipients (4)
                           </div>
@@ -5889,7 +5889,7 @@ exports[`SendTransfer should send a multi payment 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Total Amount
                           </div>
@@ -6309,7 +6309,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             ID
                           </div>
@@ -6317,7 +6317,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex items-center"
+                              class="flex items-center space-x-3"
                             >
                               <a
                                 class="sc-fznKkj drQiih inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -6333,7 +6333,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                                 </span>
                               </a>
                               <span
-                                class="flex ml-5 text-theme-primary-300"
+                                class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
@@ -6362,7 +6362,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Cryptoasset
                           </div>
@@ -6397,7 +6397,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             <span
                               class="mr-1"
@@ -6428,7 +6428,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -6463,7 +6463,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Recipient
                           </div>
@@ -6505,7 +6505,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Total Amount
                           </div>

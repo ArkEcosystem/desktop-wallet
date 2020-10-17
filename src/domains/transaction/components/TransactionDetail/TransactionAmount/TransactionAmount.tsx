@@ -33,13 +33,13 @@ export const TransactionAmount = ({
 		const tooltipContent = t(`TRANSACTION.${modeIconName.toUpperCase()}`);
 
 		const modeCircleStyle = isSent
-			? "border-theme-danger-contrast text-theme-danger"
-			: "border-theme-success-300 text-theme-success";
+			? "border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+			: "border-theme-success-300 text-theme-success dark:border-theme-success";
 
 		return (
 			<Tippy content={tooltipContent}>
 				<Circle className={modeCircleStyle} size="lg">
-					<Icon name={modeIconName} width={15} height={21} />
+					<Icon name={modeIconName} />
 				</Circle>
 			</Tippy>
 		);

@@ -69,7 +69,7 @@ const ModalContent = (props: ModalContentProps) => {
 			className={`absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background ${topOffsetClass}`}
 			data-testid="modal__inner"
 		>
-			<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900">
+			<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900">
 				<Button
 					data-testid="modal__close-btn"
 					variant="transparent"

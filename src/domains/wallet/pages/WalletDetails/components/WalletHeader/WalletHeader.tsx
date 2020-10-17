@@ -245,7 +245,7 @@ export const WalletHeader = ({
 										onStoreHash();
 									}
 								}}
-								dropdownClass="top-5 right-3 text-left bg-white"
+								dropdownClass="top-5 right-3 text-left"
 							/>
 						</div>
 					</div>

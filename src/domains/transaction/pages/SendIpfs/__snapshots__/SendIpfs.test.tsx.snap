@@ -759,7 +759,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             ID
                           </div>
@@ -767,7 +767,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex items-center"
+                              class="flex items-center space-x-3"
                             >
                               <a
                                 class="sc-fznKkj drQiih inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -783,7 +783,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                                 </span>
                               </a>
                               <span
-                                class="flex ml-5 text-theme-primary-300"
+                                class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                               >
                                 <div
                                   class="inline-block cursor-pointer"
@@ -812,7 +812,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             Cryptoasset
                           </div>
@@ -847,7 +847,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             <span
                               class="mr-1"
@@ -878,7 +878,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -913,7 +913,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-neutral"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
                             IPFS Hash
                           </div>
@@ -1297,7 +1297,7 @@ exports[`SendIpfs should render 2nd step 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral"
+            class="text-sm font-semibold text-theme-neutral-700"
           >
             Cryptoasset
           </div>
@@ -1366,7 +1366,7 @@ exports[`SendIpfs should render 2nd step 1`] = `
                   ARK Wallet 1
                 </span>
                 <span
-                  class="sc-fzpans kkFAbe text-theme-neutral-light font-semibold text-base"
+                  class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   D8rr7B … s6YUYD
@@ -1398,7 +1398,7 @@ exports[`SendIpfs should render 2nd step 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral"
+            class="text-sm font-semibold text-theme-neutral-700"
           >
             IPFS Hash
           </div>
@@ -1542,7 +1542,7 @@ exports[`SendIpfs should render 4th step 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral"
+            class="text-sm font-semibold text-theme-neutral-700"
           >
             IPFS Hash
           </div>
