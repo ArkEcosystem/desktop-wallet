@@ -89,7 +89,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -104,7 +104,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -121,7 +121,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -144,7 +144,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -155,7 +155,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -176,7 +176,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -190,14 +190,14 @@ exports[`Dashboard should fetch more transactions 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -222,13 +222,13 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -2427,7 +2427,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2442,7 +2442,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2459,7 +2459,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2482,7 +2482,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -2493,7 +2493,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -2514,7 +2514,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -2528,14 +2528,14 @@ exports[`Dashboard should hide portfolio view 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -2560,13 +2560,13 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -4142,7 +4142,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -4157,7 +4157,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4174,7 +4174,7 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -4197,7 +4197,7 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -4208,7 +4208,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -4229,7 +4229,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -4243,14 +4243,14 @@ exports[`Dashboard should hide transaction view 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -4275,13 +4275,13 @@ exports[`Dashboard should hide transaction view 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -5165,7 +5165,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -5180,7 +5180,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -5197,7 +5197,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -5220,7 +5220,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -5231,7 +5231,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -5252,7 +5252,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -5266,14 +5266,14 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -5298,13 +5298,13 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -6847,7 +6847,7 @@ exports[`Dashboard should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -6862,7 +6862,7 @@ exports[`Dashboard should render 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -6879,7 +6879,7 @@ exports[`Dashboard should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -6902,7 +6902,7 @@ exports[`Dashboard should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -6913,7 +6913,7 @@ exports[`Dashboard should render 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -6934,7 +6934,7 @@ exports[`Dashboard should render 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -6948,14 +6948,14 @@ exports[`Dashboard should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -6980,13 +6980,13 @@ exports[`Dashboard should render 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -8529,7 +8529,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -8544,7 +8544,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -8561,7 +8561,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -8584,7 +8584,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -8595,7 +8595,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -8616,7 +8616,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -8630,14 +8630,14 @@ exports[`Dashboard should render portfolio chart 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -8662,13 +8662,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -10211,7 +10211,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -10226,7 +10226,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -10243,7 +10243,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -10266,7 +10266,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -10277,7 +10277,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -10298,7 +10298,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -10312,14 +10312,14 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -10344,13 +10344,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -11893,7 +11893,7 @@ exports[`Dashboard should render wallets 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -11908,7 +11908,7 @@ exports[`Dashboard should render wallets 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -11925,7 +11925,7 @@ exports[`Dashboard should render wallets 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -11948,7 +11948,7 @@ exports[`Dashboard should render wallets 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -11959,7 +11959,7 @@ exports[`Dashboard should render wallets 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -11980,7 +11980,7 @@ exports[`Dashboard should render wallets 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -11994,14 +11994,14 @@ exports[`Dashboard should render wallets 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -12026,13 +12026,13 @@ exports[`Dashboard should render wallets 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -13575,7 +13575,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -13600,7 +13600,7 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -13623,7 +13623,7 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -13634,7 +13634,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -13655,7 +13655,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -13669,14 +13669,14 @@ exports[`Dashboard should render with no wallets 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhUy iDenJW -mr-2 border-theme-primary-contrast"
+                  class="sc-AxhUy iDenJW border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -13701,13 +13701,13 @@ exports[`Dashboard should render with no wallets 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JA
                     </span>
                   </div>
                   <span
-                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"

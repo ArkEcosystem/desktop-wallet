@@ -63,9 +63,9 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 			onSelect={onUserAction}
 			options={userActions}
 			toggleContent={(isOpen: boolean) => (
-				<div className="ml-4 cursor-pointer" data-testid="navbar__useractions">
-					<Circle className="-mr-2 border-theme-primary-contrast" size="lg">
-						<span className="text-theme-secondary-text">
+				<div className="ml-4 -space-x-2 cursor-pointer" data-testid="navbar__useractions">
+					<Circle className="border-theme-primary-contrast dark:border-theme-neutral-800" size="lg">
+						<span className="text-theme-secondary-text dark:text-theme-neutral-800">
 							{exchangeCurrency && (
 								<Icon
 									name={exchangeCurrency}
@@ -83,7 +83,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 							{avatarImage?.endsWith("</svg>") ? (
 								<>
 									<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
-									<span className="absolute text-sm font-semibold text-theme-background">
+									<span className="absolute text-sm font-semibold text-theme-background dark:text-theme-text">
 										{userInitials}
 									</span>
 								</>
@@ -97,7 +97,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 						</AvatarWrapper>
 
 						<Badge
-							className="bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+							className="bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
 							position="right"
 							icon={isOpen ? "ChevronUp" : "ChevronDown"}
 							iconWidth={10}
@@ -189,7 +189,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									<Button
 										variant="transparent"
 										size="icon"
-										className="text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+										className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
 										onClick={() => history.push(`/profiles/${profile?.id()}/send-transfer`)}
 										data-testid="navbar__buttons--send"
 									>
@@ -203,11 +203,11 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									<Button
 										size="icon"
 										variant="transparent"
-										className="text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+										className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
 										onClick={() => setSearchWalletIsOpen(true)}
 										data-testid="navbar__buttons--receive"
 									>
-										<Icon name="Receive" width={22} height={22} className="p-1" />
+										<Icon name="QrCode" width={22} height={22} className="p-1" />
 									</Button>
 								</div>
 
@@ -219,7 +219,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									<div className="text-xs font-semibold text-theme-neutral-700">
 										{t("COMMON.YOUR_BALANCE")}
 									</div>
-									<div className="text-sm font-bold text-theme-secondary-text">
+									<div className="text-sm font-bold text-theme-secondary-text dark:text-theme-text">
 										<Amount
 											value={profile?.balance() || BigNumber.ZERO}
 											ticker={

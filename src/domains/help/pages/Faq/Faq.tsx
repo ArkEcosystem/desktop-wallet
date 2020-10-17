@@ -17,7 +17,7 @@ type FaqProps = {
 };
 
 const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => (
-	<li className="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 dark:border-theme-neutral-800 last:border-b-0">
+	<li className="border-dotted cursor-pointer border-b border-theme-neutral-300 dark:border-theme-neutral-800 last:border-b-0">
 		<a
 			title={title}
 			href={path}

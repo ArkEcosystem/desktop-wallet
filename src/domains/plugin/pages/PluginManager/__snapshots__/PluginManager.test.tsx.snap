@@ -89,7 +89,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -104,7 +104,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -121,7 +121,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -144,7 +144,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -155,7 +155,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -176,7 +176,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -190,14 +190,14 @@ exports[`PluginManager should cancel install plugin 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO kAGxhi -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -222,13 +222,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -4672,7 +4672,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -4687,7 +4687,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4704,7 +4704,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -4727,7 +4727,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -4738,7 +4738,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -4759,7 +4759,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -4773,14 +4773,14 @@ exports[`PluginManager should close install plugin modal 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO kAGxhi -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -4805,13 +4805,13 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -9255,7 +9255,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -9270,7 +9270,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -9287,7 +9287,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -9310,7 +9310,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -9321,7 +9321,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -9342,7 +9342,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -9356,14 +9356,14 @@ exports[`PluginManager should delete plugin on game 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO kAGxhi -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -9388,13 +9388,13 @@ exports[`PluginManager should delete plugin on game 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -11133,7 +11133,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -11148,7 +11148,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -11165,7 +11165,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -11188,7 +11188,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -11199,7 +11199,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -11220,7 +11220,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -11234,14 +11234,14 @@ exports[`PluginManager should delete plugin on home 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO kAGxhi -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -11266,13 +11266,13 @@ exports[`PluginManager should delete plugin on home 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -13607,7 +13607,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -13622,7 +13622,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -13639,7 +13639,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -13662,7 +13662,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -13673,7 +13673,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -13694,7 +13694,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -13708,14 +13708,14 @@ exports[`PluginManager should download & install plugin on game 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO kAGxhi -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -13740,13 +13740,13 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -15640,7 +15640,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -15655,7 +15655,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -15672,7 +15672,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -15695,7 +15695,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -15706,7 +15706,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -15727,7 +15727,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -15741,14 +15741,14 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO kAGxhi -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -15773,13 +15773,13 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -20378,7 +20378,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -20393,7 +20393,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -20410,7 +20410,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -20433,7 +20433,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -20444,7 +20444,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -20465,7 +20465,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -20479,14 +20479,14 @@ exports[`PluginManager should install plugin from header install button 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO kAGxhi -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -20511,13 +20511,13 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -23007,7 +23007,7 @@ exports[`PluginManager should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -23022,7 +23022,7 @@ exports[`PluginManager should render 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -23039,7 +23039,7 @@ exports[`PluginManager should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -23062,7 +23062,7 @@ exports[`PluginManager should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -23073,7 +23073,7 @@ exports[`PluginManager should render 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -23094,7 +23094,7 @@ exports[`PluginManager should render 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -23108,14 +23108,14 @@ exports[`PluginManager should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO kAGxhi -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -23140,13 +23140,13 @@ exports[`PluginManager should render 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -25481,7 +25481,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -25496,7 +25496,7 @@ exports[`PluginManager should search for plugin 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -25513,7 +25513,7 @@ exports[`PluginManager should search for plugin 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -25536,7 +25536,7 @@ exports[`PluginManager should search for plugin 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -25547,7 +25547,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -25568,7 +25568,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -25582,14 +25582,14 @@ exports[`PluginManager should search for plugin 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO kAGxhi -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -25614,13 +25614,13 @@ exports[`PluginManager should search for plugin 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -28009,7 +28009,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -28024,7 +28024,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -28041,7 +28041,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -28064,7 +28064,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -28075,7 +28075,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -28096,7 +28096,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -28110,14 +28110,14 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO kAGxhi -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -28142,13 +28142,13 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"
@@ -29187,7 +29187,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -29202,7 +29202,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -29219,7 +29219,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -29242,7 +29242,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -29253,7 +29253,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
@@ -29274,7 +29274,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -29288,14 +29288,14 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO kAGxhi -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-secondary-text"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -29320,13 +29320,13 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxirZ fttODj"

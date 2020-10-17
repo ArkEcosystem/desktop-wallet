@@ -36,14 +36,14 @@ const FastNavigation = ({ sections }: FastNavProps) => {
 
 	return (
 		<NavWrapper className="sticky float-right w-40 top-2">
-			<div className="pl-3 text-xs font-bold text-theme-neutral-light border-l-1 border-theme-neutral-300 dark:border-theme-neutral-800">
+			<div className="pl-3 text-xs font-bold text-theme-neutral-light border-l border-theme-neutral-300 dark:border-theme-neutral-800">
 				Fast navigation
 			</div>
 			<ul>
 				{sections &&
 					sections.map((section: SectionItem, index) => (
 						<li
-							className={`text-sm border-l-1 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-800 ${activeClass(
+							className={`text-sm border-l border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-800 ${activeClass(
 								index,
 							)}`}
 							key={index}
@@ -107,7 +107,7 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 						))}
 				</div>
 
-				<div className="pt-16 mt-16 border-t-1 border-theme-neutral-300 dark:border-theme-neutral-800">
+				<div className="pt-16 mt-16 border-t border-theme-neutral-300 dark:border-theme-neutral-800">
 					<div className="max-w-2xl mx-auto">
 						<div className="flex">
 							<div className="w-3/4">

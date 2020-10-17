@@ -23,7 +23,9 @@ export const Page = ({ navbarVariant, title, profile, crumbs, sidebar, children 
 			{sidebar ? (
 				<div className="flex flex-1 bg-theme-background">
 					<div className="container flex mx-auto">
-						<div className="px-10 my-16 border-r-1 border-theme-primary-contrast">{sidebar}</div>
+						<div className="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800">
+							{sidebar}
+						</div>
 
 						<div className="w-full ml-16">{children}</div>
 					</div>
