@@ -58,7 +58,7 @@ export const FilterWallets = ({
 
 			<FilterNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
 
-			<div className="my-8 border-t border-dotted border border-theme-neutral-300 dark:border-theme-neutral-800" />
+			<div className="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 			<div className="flex flex-col">
 				<div className="flex items-center justify-between">
