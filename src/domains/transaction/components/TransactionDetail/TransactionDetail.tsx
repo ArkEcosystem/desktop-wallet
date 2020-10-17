@@ -38,7 +38,7 @@ export const TransactionDetail = ({
 	>
 		<div className="flex-1 space-y-2">
 			{label && (
-				<div className="text-sm font-semibold text-theme-neutral">
+				<div className="text-sm font-semibold text-theme-neutral-700">
 					{labelExtra ? (
 						<>
 							<span className="mr-1">{label}</span>

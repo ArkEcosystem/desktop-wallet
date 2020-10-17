@@ -23,17 +23,35 @@ export const Blank = () => {
 	return (
 		<div className="p-5">
 			<div className="mb-5" />
-			<Circle className="border-theme-neutral-200" size={size} />
+			<Circle className="border-theme-neutral-300 dark:border-theme-neutral-800" size={size} />
 
 			<div className="mb-5" />
-			<Circle className="-mr-2 bg-theme-background border-theme-neutral-200" size={size} />
-			<Circle className="-mr-2 bg-theme-background border-theme-neutral-200" size={size} />
+			<Circle
+				className="-mr-2 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+				size={size}
+			/>
+			<Circle
+				className="-mr-2 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+				size={size}
+			/>
 
 			<div className="mb-5" />
-			<Circle className="-mr-2 bg-theme-background border-theme-neutral-200" size={size} />
-			<Circle className="-mr-2 bg-theme-background border-theme-neutral-200" size={size} />
-			<Circle className="-mr-2 bg-theme-background border-theme-neutral-200" size={size} />
-			<Circle className="-mr-2 bg-theme-background border-theme-neutral-200" size={size} />
+			<Circle
+				className="-mr-2 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+				size={size}
+			/>
+			<Circle
+				className="-mr-2 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+				size={size}
+			/>
+			<Circle
+				className="-mr-2 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+				size={size}
+			/>
+			<Circle
+				className="-mr-2 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+				size={size}
+			/>
 		</div>
 	);
 };
@@ -50,7 +68,10 @@ export const Colored = () => {
 			<Circle className="-mr-2 bg-theme-background border-theme-success-light" size={size} />
 
 			<div className="mb-5" />
-			<Circle className="-mr-2 bg-theme-background border-theme-neutral-300" size={size} />
+			<Circle
+				className="-mr-2 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+				size={size}
+			/>
 			<Circle className="-mr-2 bg-theme-background border-theme-warning" size={size} />
 			<Circle className="-mr-2 bg-theme-background border-theme-success-300" size={size} />
 			<Circle className="-mr-2 bg-theme-background border-theme-danger-300" size={size} />
@@ -66,12 +87,18 @@ export const Avatar = () => {
 			<Circle avatarId="test" size={size} />
 
 			<div className="mb-5" />
-			<Circle className="-mr-2 bg-theme-background border-theme-neutral-300" size={size} />
+			<Circle
+				className="-mr-2 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+				size={size}
+			/>
 			<Circle avatarId="test" size={size} />
 
 			<div className="mb-5" />
 			<Circle avatarId="test" className="-mr-2 bg-theme-background" size={size} />
-			<Circle className="-mr-2 bg-theme-background border-theme-neutral-300" size={size} />
+			<Circle
+				className="-mr-2 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+				size={size}
+			/>
 			<Circle className="-mr-2 bg-theme-background border-theme-warning-contrast" size={size} />
 			<Circle avatarId="test" size={size} />
 		</div>

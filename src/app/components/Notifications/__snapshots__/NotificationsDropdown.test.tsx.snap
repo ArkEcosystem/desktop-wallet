@@ -11,7 +11,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="sc-Axmtr dEVhYF text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+            class="sc-Axmtr cuWAkR text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
             color="primary"
             data-testid="navbar__buttons--notifications"
             type="button"
@@ -26,7 +26,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </svg>
             </div>
             <div
-              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
             >
               <div
                 class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -36,7 +36,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
         </div>
       </span>
       <div
-        class="sc-AxmLO jgHuyU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 undefined"
+        class="sc-AxmLO jgHuyU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
       >
         <div
           data-testid="dropdown__content"
@@ -53,12 +53,12 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 data-testid="NotificationsWrapper"
               >
                 <div
-                  class="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
+                  class="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
                 >
                   Plugins
                 </div>
                 <div
-                  class="sc-AxirZ fgUA-Dx"
+                  class="sc-AxirZ jhHiEf"
                   role="table"
                 >
                   <table
@@ -143,12 +143,12 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                   class="mt-4"
                 >
                   <div
-                    class="sticky z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
+                    class="sticky z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
                   >
                     Transactions
                   </div>
                   <div
-                    class="sc-AxirZ fgUA-Dx"
+                    class="sc-AxirZ jhHiEf"
                     role="table"
                   >
                     <table
@@ -159,7 +159,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                         role="rowgroup"
                       >
                         <tr
-                          class="sc-AxhCb bTyNEn group"
+                          class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
                           <td
@@ -173,7 +173,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                                 data-testid="TransactionRowMode"
                               >
                                 <div
-                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
+                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success dark:border-theme-success"
                                 >
                                   <div
                                     class="sc-AxjAm cpczEI"
@@ -214,7 +214,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                                   class="sc-AxheI fniENP text-theme-text font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  D8rr7B…s6YUYD
+                                  D8rr7B … s6YUYD
                                 </span>
                               </div>
                             </div>
@@ -238,7 +238,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                           </td>
                         </tr>
                         <tr
-                          class="sc-AxhCb bTyNEn group"
+                          class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
                           <td
@@ -252,7 +252,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                                 data-testid="TransactionRowMode"
                               >
                                 <div
-                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
+                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success dark:border-theme-success"
                                 >
                                   <div
                                     class="sc-AxjAm cpczEI"
@@ -293,7 +293,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                                   class="sc-AxheI fniENP text-theme-text font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  D8rr7B…s6YUYD
+                                  D8rr7B … s6YUYD
                                 </span>
                               </div>
                             </div>
@@ -338,10 +338,10 @@ exports[`Notifications should open and close transaction details modal 1`] = `
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
         >
           <button
-            class="sc-Axmtr dEVhYF w-11 h-11"
+            class="sc-Axmtr cuWAkR w-11 h-11"
             color="primary"
             data-testid="modal__close-btn"
             type="button"
@@ -376,7 +376,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   Sender
                 </div>
@@ -387,16 +387,16 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                     class="inline-block truncate align-middle"
                   >
                     <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                      class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                       data-testid="address__wallet-name"
                     >
                       ARK Wallet 1
                     </span>
                     <span
-                      class="sc-AxheI fniENP text-theme-neutral-light font-semibold text-base"
+                      class="sc-AxheI fniENP text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      DK1f5f…Uzhpmy
+                      DK1f5f … Uzhpmy
                     </span>
                   </div>
                 </div>
@@ -421,14 +421,14 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLsD gBhvQZ"
+              class="sc-fzoLsD hqJqzc"
               data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   Recipient
                 </div>
@@ -463,14 +463,14 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLsD gBhvQZ"
+              class="sc-fzoLsD hqJqzc"
               data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   Amount
                 </div>
@@ -496,12 +496,12 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxgMl eqWWwc border-theme-success-300 text-theme-success"
+                class="sc-AxgMl eQpXWo border-theme-success-300 text-theme-success dark:border-theme-success"
               >
                 <div
-                  class="sc-AxjAm lfUeKD"
-                  height="21"
-                  width="15"
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
                 >
                   <svg>
                     received.svg
@@ -510,14 +510,14 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLsD gBhvQZ"
+              class="sc-fzoLsD hqJqzc"
               data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   Transaction Fee
                 </div>
@@ -533,14 +533,14 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLsD gBhvQZ"
+              class="sc-fzoLsD hqJqzc"
               data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   Timestamp
                 </div>
@@ -552,14 +552,14 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLsD gBhvQZ"
+              class="sc-fzoLsD hqJqzc"
               data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   Confirmations
                 </div>
@@ -567,41 +567,35 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex"
+                    class="flex space-x-3"
                   >
                     <span>
                       Well confirmed
                     </span>
-                    <div
-                      class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
-                    >
+                    <span>
                       <div
-                        class="m-auto"
+                        class="sc-AxjAm jmgDQY text-theme-success"
+                        height="22"
+                        width="22"
                       >
-                        <div
-                          class="sc-AxjAm pXfjM"
-                          height="15"
-                          width="15"
-                        >
-                          <svg>
-                            checkmark.svg
-                          </svg>
-                        </div>
+                        <svg>
+                          status-ok.svg
+                        </svg>
                       </div>
-                    </div>
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              class="sc-fzoLsD gBhvQZ"
+              class="sc-fzoLsD hqJqzc"
               data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   ID
                 </div>
@@ -609,7 +603,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center"
+                    class="flex items-center space-x-3"
                   >
                     <a
                       class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -621,11 +615,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                         class="sc-AxheI fniENP text-theme-primary-dark"
                         data-testid="TruncateMiddle"
                       >
-                        ea63bf9a4b3ea…1868681b5c79b
+                        ea63bf9a4b3ea … 1868681b5c79b
                       </span>
                     </a>
                     <span
-                      class="flex ml-5 text-theme-primary-300"
+                      class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="inline-block cursor-pointer"
@@ -647,14 +641,14 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLsD gBhvQZ"
+              class="sc-fzoLsD hqJqzc"
               data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
                   Block ID
                 </div>
@@ -662,7 +656,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center"
+                    class="flex items-center space-x-3"
                   >
                     <a
                       class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -674,11 +668,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                         class="sc-AxheI fniENP text-theme-primary-dark"
                         data-testid="TruncateMiddle"
                       >
-                        4fbdbedc9d147…cdd16290920a4
+                        4fbdbedc9d147 … cdd16290920a4
                       </span>
                     </a>
                     <span
-                      class="flex ml-5 text-theme-primary-300"
+                      class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="inline-block cursor-pointer"
@@ -718,7 +712,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="sc-Axmtr dEVhYF text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+            class="sc-Axmtr cuWAkR text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
             color="primary"
             data-testid="navbar__buttons--notifications"
             type="button"
@@ -733,7 +727,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
               </svg>
             </div>
             <div
-              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
             >
               <div
                 class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -743,7 +737,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
         </div>
       </span>
       <div
-        class="sc-AxmLO jgHuyU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 undefined"
+        class="sc-AxmLO jgHuyU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
       >
         <div
           data-testid="dropdown__content"
@@ -760,12 +754,12 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                 data-testid="NotificationsWrapper"
               >
                 <div
-                  class="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
+                  class="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
                 >
                   Plugins
                 </div>
                 <div
-                  class="sc-AxirZ fgUA-Dx"
+                  class="sc-AxirZ jhHiEf"
                   role="table"
                 >
                   <table
@@ -850,12 +844,12 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                   class="mt-4"
                 >
                   <div
-                    class="sticky z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
+                    class="sticky z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
                   >
                     Transactions
                   </div>
                   <div
-                    class="sc-AxirZ fgUA-Dx"
+                    class="sc-AxirZ jhHiEf"
                     role="table"
                   >
                     <table
@@ -866,7 +860,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                         role="rowgroup"
                       >
                         <tr
-                          class="sc-AxhCb bTyNEn group"
+                          class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
                           <td
@@ -880,7 +874,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                                 data-testid="TransactionRowMode"
                               >
                                 <div
-                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
+                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success dark:border-theme-success"
                                 >
                                   <div
                                     class="sc-AxjAm cpczEI"
@@ -921,7 +915,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                                   class="sc-AxheI fniENP text-theme-text font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  D8rr7B…s6YUYD
+                                  D8rr7B … s6YUYD
                                 </span>
                               </div>
                             </div>
@@ -945,7 +939,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                           </td>
                         </tr>
                         <tr
-                          class="sc-AxhCb bTyNEn group"
+                          class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
                           <td
@@ -959,7 +953,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                                 data-testid="TransactionRowMode"
                               >
                                 <div
-                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
+                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success dark:border-theme-success"
                                 >
                                   <div
                                     class="sc-AxjAm cpczEI"
@@ -1000,7 +994,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                                   class="sc-AxheI fniENP text-theme-text font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  D8rr7B…s6YUYD
+                                  D8rr7B … s6YUYD
                                 </span>
                               </div>
                             </div>
@@ -1048,7 +1042,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="sc-Axmtr dEVhYF text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+            class="sc-Axmtr cuWAkR text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
             color="primary"
             data-testid="navbar__buttons--notifications"
             type="button"
@@ -1063,7 +1057,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
               </svg>
             </div>
             <div
-              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
             >
               <div
                 class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1073,7 +1067,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
         </div>
       </span>
       <div
-        class="sc-AxmLO jgHuyU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 undefined"
+        class="sc-AxmLO jgHuyU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
       >
         <div
           data-testid="dropdown__content"
@@ -1090,12 +1084,12 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                 data-testid="NotificationsWrapper"
               >
                 <div
-                  class="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
+                  class="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
                 >
                   Plugins
                 </div>
                 <div
-                  class="sc-AxirZ fgUA-Dx"
+                  class="sc-AxirZ jhHiEf"
                   role="table"
                 >
                   <table
@@ -1180,12 +1174,12 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                   class="mt-4"
                 >
                   <div
-                    class="sticky z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5"
+                    class="sticky z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
                   >
                     Transactions
                   </div>
                   <div
-                    class="sc-AxirZ fgUA-Dx"
+                    class="sc-AxirZ jhHiEf"
                     role="table"
                   >
                     <table
@@ -1196,7 +1190,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                         role="rowgroup"
                       >
                         <tr
-                          class="sc-AxhCb bTyNEn group"
+                          class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
                           <td
@@ -1210,7 +1204,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                                 data-testid="TransactionRowMode"
                               >
                                 <div
-                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
+                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success dark:border-theme-success"
                                 >
                                   <div
                                     class="sc-AxjAm cpczEI"
@@ -1251,7 +1245,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                                   class="sc-AxheI fniENP text-theme-text font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  D8rr7B…s6YUYD
+                                  D8rr7B … s6YUYD
                                 </span>
                               </div>
                             </div>
@@ -1275,7 +1269,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                           </td>
                         </tr>
                         <tr
-                          class="sc-AxhCb bTyNEn group"
+                          class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
                           <td
@@ -1289,7 +1283,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                                 data-testid="TransactionRowMode"
                               >
                                 <div
-                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success"
+                                  class="sc-AxgMl jjHZYc border-theme-success-300 text-theme-success dark:border-theme-success"
                                 >
                                   <div
                                     class="sc-AxjAm cpczEI"
@@ -1330,7 +1324,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                                   class="sc-AxheI fniENP text-theme-text font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  D8rr7B…s6YUYD
+                                  D8rr7B … s6YUYD
                                 </span>
                               </div>
                             </div>

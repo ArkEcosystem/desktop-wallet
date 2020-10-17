@@ -7,12 +7,12 @@ type Props = {
 	addressClass?: string;
 	address?: string | undefined;
 	maxChars?: number;
-	className?: string;
+	walletNameClass?: string;
 	size?: Size;
 	fontWeight?: "normal";
 };
 
-export const Address = ({ address, addressClass, fontWeight, walletName, maxChars, size }: Props) => {
+export const Address = ({ address, addressClass, walletNameClass, fontWeight, walletName, maxChars, size }: Props) => {
 	const getFontSize = (size?: Size) => {
 		switch (size) {
 			case "sm":
@@ -38,9 +38,9 @@ export const Address = ({ address, addressClass, fontWeight, walletName, maxChar
 			{walletName && (
 				<span
 					data-testid="address__wallet-name"
-					className={`text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 ${getFontWeight(
-						fontWeight,
-					)} ${getFontSize(size)}`}
+					className={`max-w-24 flex-auto truncate mt-4 mr-2 ${getFontWeight(fontWeight)} ${getFontSize(
+						size,
+					)} ${walletNameClass || "text-theme-text"}`}
 				>
 					{walletName}
 				</span>
@@ -51,7 +51,8 @@ export const Address = ({ address, addressClass, fontWeight, walletName, maxChar
 					maxChars={maxChars}
 					data-testid="address__wallet-address"
 					className={`${
-						addressClass || (walletName ? "text-theme-neutral-light" : "text-theme-text")
+						addressClass ||
+						(walletName ? "text-theme-neutral-500 dark:text-theme-neutral-700" : "text-theme-text")
 					} ${getFontWeight(fontWeight)} ${getFontSize(size)}`}
 				/>
 			)}

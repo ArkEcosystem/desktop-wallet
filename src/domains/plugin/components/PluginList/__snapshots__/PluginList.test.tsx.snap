@@ -6,7 +6,7 @@ exports[`PluginList should render 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="sc-AxheI gbMMiE -mt-3"
+      class="sc-AxheI gYpVUW -mt-3"
       role="table"
     >
       <table
@@ -15,11 +15,11 @@ exports[`PluginList should render 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -33,7 +33,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -47,7 +47,7 @@ exports[`PluginList should render 1`] = `
                   Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -63,7 +63,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -77,7 +77,7 @@ exports[`PluginList should render 1`] = `
                   Author
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -93,7 +93,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -107,7 +107,7 @@ exports[`PluginList should render 1`] = `
                   Category
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -123,7 +123,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -137,7 +137,7 @@ exports[`PluginList should render 1`] = `
                   Rating
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -153,7 +153,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -167,7 +167,7 @@ exports[`PluginList should render 1`] = `
                   Version
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -183,7 +183,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -197,7 +197,7 @@ exports[`PluginList should render 1`] = `
                   Size
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -213,7 +213,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -227,7 +227,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -246,7 +246,7 @@ exports[`PluginList should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxmLO gyjzOY group"
+            class="sc-AxmLO iVatWU group"
             data-testid="TableRow"
           >
             <td
@@ -384,7 +384,7 @@ exports[`PluginList should render 1`] = `
                 class="sc-Axmtr hbxXZh justify-end"
               >
                 <button
-                  class="sc-AxjAm hXnHfM"
+                  class="sc-AxjAm joLCoM"
                   color="primary"
                   data-testid="PluginListItem__install"
                   type="button"
@@ -395,7 +395,7 @@ exports[`PluginList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxmLO gyjzOY group"
+            class="sc-AxmLO iVatWU group"
             data-testid="TableRow"
           >
             <td
@@ -537,7 +537,7 @@ exports[`PluginList should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bIQEgQ text-left"
+                    class="sc-AxjAm hMpHNk text-left"
                     color="primary"
                     type="button"
                   >
@@ -586,7 +586,7 @@ exports[`PluginList should render without pagination 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="sc-AxheI gbMMiE -mt-3"
+      class="sc-AxheI gYpVUW -mt-3"
       role="table"
     >
       <table
@@ -595,11 +595,11 @@ exports[`PluginList should render without pagination 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -613,7 +613,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -627,7 +627,7 @@ exports[`PluginList should render without pagination 1`] = `
                   Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -643,7 +643,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -657,7 +657,7 @@ exports[`PluginList should render without pagination 1`] = `
                   Author
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -673,7 +673,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -687,7 +687,7 @@ exports[`PluginList should render without pagination 1`] = `
                   Category
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -703,7 +703,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -717,7 +717,7 @@ exports[`PluginList should render without pagination 1`] = `
                   Rating
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -733,7 +733,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -747,7 +747,7 @@ exports[`PluginList should render without pagination 1`] = `
                   Version
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -763,7 +763,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -777,7 +777,7 @@ exports[`PluginList should render without pagination 1`] = `
                   Size
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -793,7 +793,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -807,7 +807,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -826,7 +826,7 @@ exports[`PluginList should render without pagination 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxmLO gyjzOY group"
+            class="sc-AxmLO iVatWU group"
             data-testid="TableRow"
           >
             <td
@@ -964,7 +964,7 @@ exports[`PluginList should render without pagination 1`] = `
                 class="sc-Axmtr hbxXZh justify-end"
               >
                 <button
-                  class="sc-AxjAm hXnHfM"
+                  class="sc-AxjAm joLCoM"
                   color="primary"
                   data-testid="PluginListItem__install"
                   type="button"
@@ -975,7 +975,7 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxmLO gyjzOY group"
+            class="sc-AxmLO iVatWU group"
             data-testid="TableRow"
           >
             <td
@@ -1117,7 +1117,7 @@ exports[`PluginList should render without pagination 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bIQEgQ text-left"
+                    class="sc-AxjAm hMpHNk text-left"
                     color="primary"
                     type="button"
                   >
@@ -1148,7 +1148,7 @@ exports[`PluginList should split by page 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="sc-AxheI gbMMiE -mt-3"
+      class="sc-AxheI gYpVUW -mt-3"
       role="table"
     >
       <table
@@ -1157,11 +1157,11 @@ exports[`PluginList should split by page 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1175,7 +1175,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1189,7 +1189,7 @@ exports[`PluginList should split by page 1`] = `
                   Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1205,7 +1205,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1219,7 +1219,7 @@ exports[`PluginList should split by page 1`] = `
                   Author
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1235,7 +1235,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -1249,7 +1249,7 @@ exports[`PluginList should split by page 1`] = `
                   Category
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1265,7 +1265,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -1279,7 +1279,7 @@ exports[`PluginList should split by page 1`] = `
                   Rating
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1295,7 +1295,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -1309,7 +1309,7 @@ exports[`PluginList should split by page 1`] = `
                   Version
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1325,7 +1325,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -1339,7 +1339,7 @@ exports[`PluginList should split by page 1`] = `
                   Size
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1355,7 +1355,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -1369,7 +1369,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -1388,7 +1388,7 @@ exports[`PluginList should split by page 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxmLO gyjzOY group"
+            class="sc-AxmLO iVatWU group"
             data-testid="TableRow"
           >
             <td
@@ -1530,7 +1530,7 @@ exports[`PluginList should split by page 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bIQEgQ text-left"
+                    class="sc-AxjAm hMpHNk text-left"
                     color="primary"
                     type="button"
                   >
@@ -1559,7 +1559,7 @@ exports[`PluginList should split by page 1`] = `
         data-testid="Pagination"
       >
         <button
-          class="sc-AxjAm hXnHfM"
+          class="sc-AxjAm joLCoM"
           color="primary"
           data-testid="Pagination__previous"
           type="button"
@@ -1601,7 +1601,7 @@ exports[`PluginList should trigger delete 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="sc-AxheI gbMMiE -mt-3"
+      class="sc-AxheI gYpVUW -mt-3"
       role="table"
     >
       <table
@@ -1610,11 +1610,11 @@ exports[`PluginList should trigger delete 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1628,7 +1628,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1642,7 +1642,7 @@ exports[`PluginList should trigger delete 1`] = `
                   Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1658,7 +1658,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1672,7 +1672,7 @@ exports[`PluginList should trigger delete 1`] = `
                   Author
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1688,7 +1688,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -1702,7 +1702,7 @@ exports[`PluginList should trigger delete 1`] = `
                   Category
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1718,7 +1718,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -1732,7 +1732,7 @@ exports[`PluginList should trigger delete 1`] = `
                   Rating
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1748,7 +1748,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -1762,7 +1762,7 @@ exports[`PluginList should trigger delete 1`] = `
                   Version
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1778,7 +1778,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -1792,7 +1792,7 @@ exports[`PluginList should trigger delete 1`] = `
                   Size
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1808,7 +1808,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -1822,7 +1822,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -1841,7 +1841,7 @@ exports[`PluginList should trigger delete 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxmLO gyjzOY group"
+            class="sc-AxmLO iVatWU group"
             data-testid="TableRow"
           >
             <td
@@ -1979,7 +1979,7 @@ exports[`PluginList should trigger delete 1`] = `
                 class="sc-Axmtr hbxXZh justify-end"
               >
                 <button
-                  class="sc-AxjAm hXnHfM"
+                  class="sc-AxjAm joLCoM"
                   color="primary"
                   data-testid="PluginListItem__install"
                   type="button"
@@ -1990,7 +1990,7 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxmLO gyjzOY group"
+            class="sc-AxmLO iVatWU group"
             data-testid="TableRow"
           >
             <td
@@ -2132,7 +2132,7 @@ exports[`PluginList should trigger delete 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bIQEgQ text-left"
+                    class="sc-AxjAm hMpHNk text-left"
                     color="primary"
                     type="button"
                   >
@@ -2181,7 +2181,7 @@ exports[`PluginList should trigger install 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="sc-AxheI gbMMiE -mt-3"
+      class="sc-AxheI gYpVUW -mt-3"
       role="table"
     >
       <table
@@ -2190,11 +2190,11 @@ exports[`PluginList should trigger install 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -2208,7 +2208,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -2222,7 +2222,7 @@ exports[`PluginList should trigger install 1`] = `
                   Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2238,7 +2238,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -2252,7 +2252,7 @@ exports[`PluginList should trigger install 1`] = `
                   Author
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2268,7 +2268,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -2282,7 +2282,7 @@ exports[`PluginList should trigger install 1`] = `
                   Category
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2298,7 +2298,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -2312,7 +2312,7 @@ exports[`PluginList should trigger install 1`] = `
                   Rating
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2328,7 +2328,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -2342,7 +2342,7 @@ exports[`PluginList should trigger install 1`] = `
                   Version
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2358,7 +2358,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -2372,7 +2372,7 @@ exports[`PluginList should trigger install 1`] = `
                   Size
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2388,7 +2388,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -2402,7 +2402,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -2421,7 +2421,7 @@ exports[`PluginList should trigger install 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxmLO gyjzOY group"
+            class="sc-AxmLO iVatWU group"
             data-testid="TableRow"
           >
             <td
@@ -2559,7 +2559,7 @@ exports[`PluginList should trigger install 1`] = `
                 class="sc-Axmtr hbxXZh justify-end"
               >
                 <button
-                  class="sc-AxjAm hXnHfM"
+                  class="sc-AxjAm joLCoM"
                   color="primary"
                   data-testid="PluginListItem__install"
                   type="button"
@@ -2570,7 +2570,7 @@ exports[`PluginList should trigger install 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxmLO gyjzOY group"
+            class="sc-AxmLO iVatWU group"
             data-testid="TableRow"
           >
             <td
@@ -2712,7 +2712,7 @@ exports[`PluginList should trigger install 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bIQEgQ text-left"
+                    class="sc-AxjAm hMpHNk text-left"
                     color="primary"
                     type="button"
                   >

@@ -29,7 +29,7 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 			{showSearchBar && (
 				<>
 					<HeaderSearchBar onSearch={onSearch} />
-					<div className="h-10 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
+					<div className="h-10 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 				</>
 			)}
 
@@ -142,7 +142,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 						<div data-testid="contacts__banner" className="text-center">
 							<ContactsBanner height={175} className="mx-auto" />
 
-							<div className="mt-8 text-theme-neutral-dark">
+							<div className="mt-8 text-theme-secondary-text">
 								{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}
 							</div>
 						</div>

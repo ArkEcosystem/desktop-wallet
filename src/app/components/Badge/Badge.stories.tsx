@@ -14,29 +14,29 @@ export const Default = () => (
 		<div className="w-64 text--xs">Colors, positions, size of badge controled by tailwind classes.</div>
 
 		<div className="mt-5 mb-10 space-x-5">
-			<Circle className="relative border-theme-neutral-200">
-				<Badge className="border-theme-neutral-200" position="top" />
+			<Circle className="relative border-theme-neutral-300 dark:border-theme-neutral-800">
+				<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" position="top" />
 			</Circle>
-			<Circle className="relative border-theme-neutral-200">
-				<Badge className="border-theme-neutral-200" position="top-right" />
+			<Circle className="relative border-theme-neutral-300 dark:border-theme-neutral-800">
+				<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" position="top-right" />
 			</Circle>
-			<Circle className="relative border-theme-neutral-200">
-				<Badge className=" border-theme-neutral-200" position="right" />
+			<Circle className="relative border-theme-neutral-300 dark:border-theme-neutral-800">
+				<Badge className=" border-theme-neutral-300 dark:border-theme-neutral-800" position="right" />
 			</Circle>
-			<Circle className="relative border-theme-neutral-200">
-				<Badge className="border-theme-neutral-200" position="bottom-right" />
+			<Circle className="relative border-theme-neutral-300 dark:border-theme-neutral-800">
+				<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" position="bottom-right" />
 			</Circle>
-			<Circle className="relative border-theme-neutral-200">
-				<Badge className="border-theme-neutral-200" position="bottom" />
+			<Circle className="relative border-theme-neutral-300 dark:border-theme-neutral-800">
+				<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" position="bottom" />
 			</Circle>
-			<Circle className="relative border-theme-neutral-200">
-				<Badge className=" border-theme-neutral-200" position="bottom-left" />
+			<Circle className="relative border-theme-neutral-300 dark:border-theme-neutral-800">
+				<Badge className=" border-theme-neutral-300 dark:border-theme-neutral-800" position="bottom-left" />
 			</Circle>
-			<Circle className="relative border-theme-neutral-200">
-				<Badge className="border-theme-neutral-200" position="left" />
+			<Circle className="relative border-theme-neutral-300 dark:border-theme-neutral-800">
+				<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" position="left" />
 			</Circle>
-			<Circle className="relative border-theme-neutral-200">
-				<Badge className="border-theme-neutral-200" position="top-left" />
+			<Circle className="relative border-theme-neutral-300 dark:border-theme-neutral-800">
+				<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" position="top-left" />
 			</Circle>
 		</div>
 	</div>
@@ -86,13 +86,13 @@ export const WithIcon = () => (
 				<Icon name="BTC" />
 				<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
 			</Circle>
-			<Circle className="relative ml-5 border-theme-neutral-200 text-theme-neutral-200">
+			<Circle className="relative ml-5 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-200">
 				<Icon name="LSK" />
-				<Badge className="border-theme-neutral-200" />
+				<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" />
 			</Circle>
-			<Circle className="relative ml-5 border-theme-neutral-200 text-theme-neutral-200">
+			<Circle className="relative ml-5 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-200">
 				<Icon name="XRP" />
-				<Badge className="border-theme-neutral-200" />
+				<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" />
 			</Circle>
 			<Circle className="relative ml-5 border-theme-primary-contrast">
 				<div className="text-xs text-theme-primary-500">All</div>

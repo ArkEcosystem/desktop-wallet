@@ -20,7 +20,7 @@ export const peers = [
 	},
 	{
 		coin: "Ethereum",
-		coinClass: "border-theme-neutral-300",
+		coinClass: "border-theme-neutral-300 dark:border-theme-neutral-800",
 		name: "MATBank",
 		peerIp: "194.168.4.67:800",
 		type: "Multisig",

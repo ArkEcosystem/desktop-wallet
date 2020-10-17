@@ -13,7 +13,7 @@ export const SearchBarFilters = ({ networks, onNetworkChange, onViewAllNetworks 
 		<Dropdown position="left" toggleIcon="Filters">
 			<div className="py-8 w-128 px-11">
 				<div className="mb-8">
-					<div className="mb-3 font-semibold text-theme-neutral-dark">Filter Cryptoasset</div>
+					<div className="mb-3 font-semibold text-theme-secondary-text">Filter Cryptoasset</div>
 					<div className="text-sm text-theme-neutral">Select the types of cryptoassets</div>
 				</div>
 				<FilterNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />

@@ -16,10 +16,10 @@ exports[`BlacklistPlugins should render a modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxirZ eUzagL w-11 h-11"
+          class="sc-AxirZ biTPIb w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -60,7 +60,7 @@ exports[`BlacklistPlugins should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.
           </div>
@@ -68,7 +68,7 @@ exports[`BlacklistPlugins should render a modal 1`] = `
             class="mt-8 -mb-6"
           >
             <div
-              class="sc-AxhCb ebDgDV -mt-3"
+              class="sc-AxhCb bnbqNj -mt-3"
               role="table"
             >
               <table
@@ -77,11 +77,11 @@ exports[`BlacklistPlugins should render a modal 1`] = `
               >
                 <thead>
                   <tr
-                    class="border-b border-theme-neutral-300"
+                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -95,7 +95,7 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -109,7 +109,7 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                           Name
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                           data-testid="table__Sort"
                         >
                           <div
@@ -125,7 +125,7 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -139,7 +139,7 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                           Category
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                           data-testid="table__Sort"
                         >
                           <div
@@ -155,7 +155,7 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -197,10 +197,10 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxirZ eUzagL w-11 h-11"
+          class="sc-AxirZ biTPIb w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -241,7 +241,7 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.
           </div>
@@ -249,7 +249,7 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
             class="mt-8 -mb-6"
           >
             <div
-              class="sc-AxhCb ebDgDV -mt-3"
+              class="sc-AxhCb bnbqNj -mt-3"
               role="table"
             >
               <table
@@ -258,11 +258,11 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
               >
                 <thead>
                   <tr
-                    class="border-b border-theme-neutral-300"
+                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -276,7 +276,7 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -290,7 +290,7 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
                           Name
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                           data-testid="table__Sort"
                         >
                           <div
@@ -306,7 +306,7 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -320,7 +320,7 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
                           Category
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                           data-testid="table__Sort"
                         >
                           <div
@@ -336,7 +336,7 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -355,7 +355,7 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="sc-AxgMl fRZhDw group"
+                    class="sc-AxgMl bRQeCM group"
                     data-testid="TableRow"
                   >
                     <td
@@ -384,7 +384,7 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
                           class="inline-flex items-center space-x-2"
                         >
                           <span
-                            class="text-theme-neutral-dark"
+                            class="text-theme-secondary-text"
                           >
                             ARK Ecosystem
                           </span>
@@ -411,7 +411,7 @@ exports[`BlacklistPlugins should render a modal with blacklist 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy iWqFsK justify-end text-theme-neutral-dark"
+                        class="sc-AxhUy iWqFsK justify-end text-theme-secondary-text"
                       >
                         Utility
                       </div>

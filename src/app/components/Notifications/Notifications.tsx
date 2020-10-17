@@ -38,7 +38,7 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 		<NotificationsWrapper ref={wrapperRef as React.MutableRefObject<any>} data-testid="NotificationsWrapper">
 			{plugins.length > 0 && (
 				<>
-					<div className="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5">
+					<div className="sticky z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5">
 						{t("COMMON.NOTIFICATIONS.PLUGINS_TITLE")}
 					</div>
 					<Table hideHeader columns={[{ Header: "-", className: "hidden" }]} data={plugins}>
@@ -56,7 +56,7 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 
 			{transactions.length > 0 && (
 				<div className="mt-4">
-					<div className="sticky z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold bg-white text-theme-neutral -top-5">
+					<div className="sticky z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5">
 						{t("COMMON.NOTIFICATIONS.TRANSACTIONS_TITLE")}
 					</div>
 					<Table hideHeader columns={[{ Header: "-", className: "hidden" }]} data={transactions}>

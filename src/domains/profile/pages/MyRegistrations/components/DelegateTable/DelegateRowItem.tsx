@@ -64,7 +64,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 				<span data-testid="DelegateRowItem__username">{delegateInfo.username()}</span>
 			</TableCell>
 
-			<TableCell innerClassName="font-semibold text-theme-neutral-dark">
+			<TableCell innerClassName="font-semibold text-theme-secondary-text">
 				<span data-testid="DelegateRowItem__rank">#{delegateInfo.rank()}</span>
 			</TableCell>
 
@@ -78,13 +78,13 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 				<span data-testid="DelegateRowItem__status">{getStatusIcon(isConfirmed)}</span>
 			</TableCell>
 
-			<TableCell innerClassName="font-semibold text-theme-neutral-dark justify-end">
+			<TableCell innerClassName="font-semibold text-theme-secondary-text justify-end">
 				<span data-testid="DelegateRowItem__forged" className="whitespace-no-wrap">
 					2,450.643 Ѧ
 				</span>
 			</TableCell>
 
-			<TableCell innerClassName="font-semibold text-theme-neutral-dark justify-end">
+			<TableCell innerClassName="font-semibold text-theme-secondary-text justify-end">
 				<span data-testid="DelegateRowItem__votes">
 					<small className="text-theme-neutral">2,43%</small>
 					<span className="ml-1 whitespace-no-wrap">2,450.643 Ѧ</span>

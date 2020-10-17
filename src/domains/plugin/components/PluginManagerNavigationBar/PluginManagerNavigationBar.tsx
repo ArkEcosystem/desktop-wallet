@@ -36,7 +36,7 @@ export const PluginManagerNavigationBar = ({
 									data-testid={`PluginManagerNavigationBar__${menuItem.name}`}
 									onClick={() => onChange(menuItem.name)}
 									title={menuItem.title}
-									className={`PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer ${
+									className={`PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer ${
 										selected === menuItem.name ? "active" : ""
 									}`}
 								>
@@ -47,7 +47,7 @@ export const PluginManagerNavigationBar = ({
 								</button>
 
 								{index < menu.length - 1 && (
-									<div className="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300" />
+									<div className="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800" />
 								)}
 							</li>
 						))}
@@ -59,7 +59,7 @@ export const PluginManagerNavigationBar = ({
 					data-testid={`PluginManagerNavigationBar__my-plugins`}
 					onClick={() => onChange("my-plugins")}
 					title="My Plugins"
-					className={`PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-text transition-colors duration-200 cursor-pointer ${
+					className={`PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer ${
 						selected === "my-plugins" ? "active" : ""
 					}`}
 				>
@@ -67,7 +67,7 @@ export const PluginManagerNavigationBar = ({
 					<span className="ml-1 text-theme-neutral">8</span>
 				</button>
 
-				<div className="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300" />
+				<div className="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 				<LayoutControls
 					data-testid="PluginManagerControls"

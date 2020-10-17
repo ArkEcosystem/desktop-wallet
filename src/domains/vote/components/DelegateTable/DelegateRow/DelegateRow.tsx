@@ -91,14 +91,14 @@ export const DelegateRow = ({
 
 			<TableCell
 				className="w-20"
-				innerClassName={`justify-center font-bold text-theme-neutral-dark ${getColorSelected()}`}
+				innerClassName={`justify-center font-bold text-theme-secondary-text ${getColorSelected()}`}
 			>
 				<span>#{delegate.rank()}</span>
 			</TableCell>
 
 			<TableCell
 				className="w-20"
-				innerClassName={`justify-center font-bold text-theme-neutral-dark ${getColorSelected()}`}
+				innerClassName={`justify-center font-bold text-theme-secondary-text ${getColorSelected()}`}
 			>
 				<span>%</span>
 			</TableCell>
@@ -109,28 +109,28 @@ export const DelegateRow = ({
 
 			<TableCell
 				className="w-20"
-				innerClassName={`justify-center font-bold text-theme-neutral-dark ${getColorSelected()}`}
+				innerClassName={`justify-center font-bold text-theme-secondary-text ${getColorSelected()}`}
 			>
 				<span>...</span>
 			</TableCell>
 
 			<TableCell
 				className="w-20"
-				innerClassName={`justify-center font-bold text-theme-neutral-dark ${getColorSelected()}`}
+				innerClassName={`justify-center font-bold text-theme-secondary-text ${getColorSelected()}`}
 			>
 				<span>...</span>
 			</TableCell>
 
 			<TableCell
 				className="w-20"
-				innerClassName={`justify-center font-bold text-theme-neutral-dark ${getColorSelected()}`}
+				innerClassName={`justify-center font-bold text-theme-secondary-text ${getColorSelected()}`}
 			>
 				<span>...</span>
 			</TableCell>
 
 			<TableCell
 				className="w-40"
-				innerClassName={`justify-end font-bold text-theme-neutral-dark ${getColorSelected()}`}
+				innerClassName={`justify-end font-bold text-theme-secondary-text ${getColorSelected()}`}
 			>
 				<span>...</span>
 			</TableCell>

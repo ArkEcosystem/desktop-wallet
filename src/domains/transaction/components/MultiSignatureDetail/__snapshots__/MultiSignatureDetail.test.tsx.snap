@@ -15,7 +15,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Sender
         </div>
@@ -45,14 +45,14 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxmLO gIyyqu"
+      class="sc-AxmLO cvWCIb"
       data-testid="TransactionDetail"
     >
       <div
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Recipient
         </div>
@@ -83,14 +83,14 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxmLO gIyyqu"
+      class="sc-AxmLO cvWCIb"
       data-testid="TransactionDetail"
     >
       <div
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Amount
         </div>
@@ -111,7 +111,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
         </div>
       </div>
       <div
-        class="sc-AxheI gXqoin border-theme-danger-contrast text-theme-danger-400"
+        class="sc-AxheI jgDdlq border-theme-danger-contrast text-theme-danger-400"
       >
         <div
           class="sc-AxiKw bctdez"
@@ -125,14 +125,14 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxmLO gIyyqu"
+      class="sc-AxmLO cvWCIb"
       data-testid="TransactionDetail"
     >
       <div
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Transaction Fee
         </div>
@@ -144,14 +144,14 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxmLO gIyyqu"
+      class="sc-AxmLO cvWCIb"
       data-testid="TransactionDetail"
     >
       <div
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Smartbridge
         </div>
@@ -176,14 +176,14 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxmLO gIyyqu"
+      class="sc-AxmLO cvWCIb"
       data-testid="TransactionDetail"
     >
       <div
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Timestamp
         </div>
@@ -195,14 +195,14 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxmLO gSgzTc"
+      class="sc-AxmLO jbdfHh"
       data-testid="TransactionDetail"
     >
       <div
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Confirmations
         </div>
@@ -232,7 +232,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
               You
             </div>
             <div
-              class="pr-4 mr-2 border-r border-theme-neutral-300"
+              class="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
@@ -391,7 +391,7 @@ exports[`MultiSignatureDetail should render 2nd step 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="passphrase"
       >
@@ -406,7 +406,7 @@ exports[`MultiSignatureDetail should render 2nd step 1`] = `
         data-testid="InputPassword"
       >
         <input
-          class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+          class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
           data-testid="import-wallet__passphrase-input"
           name="passphrase"
           type="password"
@@ -458,7 +458,7 @@ exports[`MultiSignatureDetail should render 3rd step 1`] = `
             You
           </div>
           <div
-            class="pr-4 mr-2 border-r border-theme-neutral-300"
+            class="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           >
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
@@ -621,10 +621,10 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -670,7 +670,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Sender
                       </div>
@@ -700,14 +700,14 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gIyyqu"
+                    class="sc-AxmLO cvWCIb"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Recipient
                       </div>
@@ -738,14 +738,14 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gIyyqu"
+                    class="sc-AxmLO cvWCIb"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Amount
                       </div>
@@ -766,7 +766,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxheI gXqoin border-theme-danger-contrast text-theme-danger-400"
+                      class="sc-AxheI jgDdlq border-theme-danger-contrast text-theme-danger-400"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -780,14 +780,14 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gIyyqu"
+                    class="sc-AxmLO cvWCIb"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Transaction Fee
                       </div>
@@ -799,14 +799,14 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gIyyqu"
+                    class="sc-AxmLO cvWCIb"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Smartbridge
                       </div>
@@ -831,14 +831,14 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gIyyqu"
+                    class="sc-AxmLO cvWCIb"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Timestamp
                       </div>
@@ -850,14 +850,14 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gSgzTc"
+                    class="sc-AxmLO jbdfHh"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Confirmations
                       </div>
@@ -887,7 +887,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                             You
                           </div>
                           <div
-                            class="pr-4 mr-2 border-r border-theme-neutral-300"
+                            class="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <div
                               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
@@ -1042,7 +1042,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                   class="flex-1"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM mr-2"
+                    class="sc-AxjAm joLCoM mr-2"
                     color="primary"
                     type="button"
                   >
@@ -1053,7 +1053,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                   class="space-x-3"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="MultiSignatureDetail__back-button"
                     disabled=""
@@ -1062,7 +1062,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm kbZyZT inline-block"
+                    class="sc-AxjAm BsmvP inline-block"
                     color="primary"
                     data-testid="MultiSignatureDetail__sign-button"
                     type="button"
@@ -1070,7 +1070,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                     Sign
                   </button>
                   <button
-                    class="sc-AxjAm kbZyZT hidden"
+                    class="sc-AxjAm BsmvP hidden"
                     color="primary"
                     data-testid="MultiSignatureDetail__submit-button"
                     type="submit"
@@ -1102,10 +1102,10 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -1151,7 +1151,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Sender
                       </div>
@@ -1181,14 +1181,14 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gIyyqu"
+                    class="sc-AxmLO cvWCIb"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Recipient
                       </div>
@@ -1219,14 +1219,14 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gIyyqu"
+                    class="sc-AxmLO cvWCIb"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Amount
                       </div>
@@ -1247,7 +1247,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxheI gXqoin border-theme-danger-contrast text-theme-danger-400"
+                      class="sc-AxheI jgDdlq border-theme-danger-contrast text-theme-danger-400"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -1261,14 +1261,14 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gIyyqu"
+                    class="sc-AxmLO cvWCIb"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Transaction Fee
                       </div>
@@ -1280,14 +1280,14 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gIyyqu"
+                    class="sc-AxmLO cvWCIb"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Smartbridge
                       </div>
@@ -1312,14 +1312,14 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gIyyqu"
+                    class="sc-AxmLO cvWCIb"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Timestamp
                       </div>
@@ -1331,14 +1331,14 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxmLO gSgzTc"
+                    class="sc-AxmLO jbdfHh"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Confirmations
                       </div>
@@ -1368,7 +1368,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                             You
                           </div>
                           <div
-                            class="pr-4 mr-2 border-r border-theme-neutral-300"
+                            class="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <div
                               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
@@ -1523,7 +1523,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                   class="flex-1"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM mr-2"
+                    class="sc-AxjAm joLCoM mr-2"
                     color="primary"
                     type="button"
                   >
@@ -1534,7 +1534,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                   class="space-x-3"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="MultiSignatureDetail__back-button"
                     disabled=""
@@ -1543,7 +1543,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm kbZyZT inline-block"
+                    class="sc-AxjAm BsmvP inline-block"
                     color="primary"
                     data-testid="MultiSignatureDetail__sign-button"
                     type="button"
@@ -1551,7 +1551,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                     Sign
                   </button>
                   <button
-                    class="sc-AxjAm kbZyZT hidden"
+                    class="sc-AxjAm BsmvP hidden"
                     color="primary"
                     data-testid="MultiSignatureDetail__submit-button"
                     type="submit"

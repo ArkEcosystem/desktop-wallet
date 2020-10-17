@@ -17,7 +17,7 @@ export const Offline = () => {
 
 				<div data-testid="Offline__text" className="mt-8">
 					<h2 className="text-2xl font-bold">{t("ERROR.OFFLINE.TITLE")}</h2>
-					<p className="text-theme-neutral-dark">{t("ERROR.OFFLINE.DESCRIPTION")}</p>
+					<p className="text-theme-secondary-text">{t("ERROR.OFFLINE.DESCRIPTION")}</p>
 				</div>
 			</Section>
 		</Page>

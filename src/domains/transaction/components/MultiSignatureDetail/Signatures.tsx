@@ -14,7 +14,7 @@ export const Signatures = () => {
 				<div>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">{t("COMMON.YOU")}</div>
 
-					<div className="pr-4 mr-2 border-r border-theme-neutral-300">
+					<div className="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 						<Avatar address="test" noShadow>
 							<Badge className="bg-theme-success-200 text-theme-success-500" icon="Checkmark" />
 						</Avatar>

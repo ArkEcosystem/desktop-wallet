@@ -89,7 +89,7 @@ export const CreateProfile = () => {
 			<Section className="flex flex-col justify-center flex-1">
 				<div className="max-w-lg mx-auto -mt-10">
 					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
-					<div className="text-theme-neutral-dark">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
+					<div className="text-theme-secondary-text">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
 
 					<div className="mt-8">
 						<Tippy content={t("COMMON.COMING_SOON")}>
@@ -103,7 +103,7 @@ export const CreateProfile = () => {
 					</div>
 
 					<Form
-						className="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-200"
+						className="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
 						context={form}
 						onSubmit={handleSubmit}
 						data-testid="CreateProfile__form"

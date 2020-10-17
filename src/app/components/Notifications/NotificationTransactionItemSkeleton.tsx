@@ -6,7 +6,7 @@ import Skeleton from "react-loading-skeleton";
 export const NotificationTransactionItemSkeleton = () => (
 	<TableRow
 		data-testid="NotificationTransactionItemSkeleton"
-		className="border-b border-dotted last:border-b-0 border-theme-neutral-300"
+		className="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
 	>
 		<TableCell variant="start" className="w-24">
 			<Circle size="sm" className="-mr-1" />

@@ -6,7 +6,7 @@ exports[`RecipientList should render condensed variant 1`] = `
     class="sc-Axmtr SNYwX"
   >
     <div
-      class="sc-AxhUy efoeRI -mt-3"
+      class="sc-AxhUy gupDsa -mt-3"
       role="table"
     >
       <table
@@ -15,11 +15,11 @@ exports[`RecipientList should render condensed variant 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -33,7 +33,7 @@ exports[`RecipientList should render condensed variant 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -47,7 +47,7 @@ exports[`RecipientList should render condensed variant 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -61,7 +61,7 @@ exports[`RecipientList should render condensed variant 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -80,7 +80,7 @@ exports[`RecipientList should render condensed variant 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -108,16 +108,16 @@ exports[`RecipientList should render condensed variant 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 1
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FJKDSA…SJKDFJ
+                  FJKDSA … SJKDFJ
                 </span>
               </div>
             </td>
@@ -137,7 +137,7 @@ exports[`RecipientList should render condensed variant 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -165,16 +165,16 @@ exports[`RecipientList should render condensed variant 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 2
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  AhFJKD…SJKDFJ
+                  AhFJKD … SJKDFJ
                 </span>
               </div>
             </td>
@@ -194,7 +194,7 @@ exports[`RecipientList should render condensed variant 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -222,16 +222,16 @@ exports[`RecipientList should render condensed variant 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 3
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FAhFJK…SJKDFJ
+                  FAhFJK … SJKDFJ
                 </span>
               </div>
             </td>
@@ -251,7 +251,7 @@ exports[`RecipientList should render condensed variant 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -314,7 +314,7 @@ exports[`RecipientList should render editable 1`] = `
     class="sc-Axmtr SNYwX"
   >
     <div
-      class="sc-AxhUy efoeRI -mt-3"
+      class="sc-AxhUy gupDsa -mt-3"
       role="table"
     >
       <table
@@ -323,11 +323,11 @@ exports[`RecipientList should render editable 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -341,7 +341,7 @@ exports[`RecipientList should render editable 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -355,7 +355,7 @@ exports[`RecipientList should render editable 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -369,7 +369,7 @@ exports[`RecipientList should render editable 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -388,7 +388,7 @@ exports[`RecipientList should render editable 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -421,16 +421,16 @@ exports[`RecipientList should render editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 1
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FJKDSA…SJKDFJ
+                  FJKDSA … SJKDFJ
                 </span>
               </div>
             </td>
@@ -456,7 +456,7 @@ exports[`RecipientList should render editable 1`] = `
               class="w-20 py-6 text-right"
             >
               <button
-                class="sc-AxirZ jCYjLj"
+                class="sc-AxirZ ioMJEX"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"
@@ -478,7 +478,7 @@ exports[`RecipientList should render editable 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -511,16 +511,16 @@ exports[`RecipientList should render editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 2
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  AhFJKD…SJKDFJ
+                  AhFJKD … SJKDFJ
                 </span>
               </div>
             </td>
@@ -546,7 +546,7 @@ exports[`RecipientList should render editable 1`] = `
               class="w-20 py-6 text-right"
             >
               <button
-                class="sc-AxirZ jCYjLj"
+                class="sc-AxirZ ioMJEX"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"
@@ -568,7 +568,7 @@ exports[`RecipientList should render editable 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -601,16 +601,16 @@ exports[`RecipientList should render editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 3
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FAhFJK…SJKDFJ
+                  FAhFJK … SJKDFJ
                 </span>
               </div>
             </td>
@@ -636,7 +636,7 @@ exports[`RecipientList should render editable 1`] = `
               class="w-20 py-6 text-right"
             >
               <button
-                class="sc-AxirZ jCYjLj"
+                class="sc-AxirZ ioMJEX"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"
@@ -658,7 +658,7 @@ exports[`RecipientList should render editable 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -694,7 +694,7 @@ exports[`RecipientList should render editable 1`] = `
                   class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FAhFJK…SJKDFJ
+                  FAhFJK … SJKDFJ
                 </span>
               </div>
             </td>
@@ -720,7 +720,7 @@ exports[`RecipientList should render editable 1`] = `
               class="w-20 py-6 text-right"
             >
               <button
-                class="sc-AxirZ jCYjLj"
+                class="sc-AxirZ ioMJEX"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"
@@ -754,7 +754,7 @@ exports[`RecipientList should render non-editable 1`] = `
     class="sc-Axmtr SNYwX"
   >
     <div
-      class="sc-AxhUy efoeRI -mt-3"
+      class="sc-AxhUy gupDsa -mt-3"
       role="table"
     >
       <table
@@ -763,11 +763,11 @@ exports[`RecipientList should render non-editable 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -781,7 +781,7 @@ exports[`RecipientList should render non-editable 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -795,7 +795,7 @@ exports[`RecipientList should render non-editable 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -814,7 +814,7 @@ exports[`RecipientList should render non-editable 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -847,16 +847,16 @@ exports[`RecipientList should render non-editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 1
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FJKDSA…SJKDFJ
+                  FJKDSA … SJKDFJ
                 </span>
               </div>
             </td>
@@ -880,7 +880,7 @@ exports[`RecipientList should render non-editable 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -913,16 +913,16 @@ exports[`RecipientList should render non-editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 2
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  AhFJKD…SJKDFJ
+                  AhFJKD … SJKDFJ
                 </span>
               </div>
             </td>
@@ -946,7 +946,7 @@ exports[`RecipientList should render non-editable 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -979,16 +979,16 @@ exports[`RecipientList should render non-editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 3
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FAhFJK…SJKDFJ
+                  FAhFJK … SJKDFJ
                 </span>
               </div>
             </td>
@@ -1012,7 +1012,7 @@ exports[`RecipientList should render non-editable 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -1048,7 +1048,7 @@ exports[`RecipientList should render non-editable 1`] = `
                   class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FAhFJK…SJKDFJ
+                  FAhFJK … SJKDFJ
                 </span>
               </div>
             </td>
@@ -1084,7 +1084,7 @@ exports[`RecipientList should render without amount column 1`] = `
     class="sc-Axmtr SNYwX"
   >
     <div
-      class="sc-AxhUy efoeRI -mt-3"
+      class="sc-AxhUy gupDsa -mt-3"
       role="table"
     >
       <table
@@ -1093,11 +1093,11 @@ exports[`RecipientList should render without amount column 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1111,7 +1111,7 @@ exports[`RecipientList should render without amount column 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1125,7 +1125,7 @@ exports[`RecipientList should render without amount column 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1139,7 +1139,7 @@ exports[`RecipientList should render without amount column 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -1158,7 +1158,7 @@ exports[`RecipientList should render without amount column 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -1191,16 +1191,16 @@ exports[`RecipientList should render without amount column 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 1
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FJKDSA…SJKDFJ
+                  FJKDSA … SJKDFJ
                 </span>
               </div>
             </td>
@@ -1226,7 +1226,7 @@ exports[`RecipientList should render without amount column 1`] = `
               class="w-20 py-6 text-right"
             >
               <button
-                class="sc-AxirZ jCYjLj"
+                class="sc-AxirZ ioMJEX"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"
@@ -1248,7 +1248,7 @@ exports[`RecipientList should render without amount column 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -1281,16 +1281,16 @@ exports[`RecipientList should render without amount column 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 2
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  AhFJKD…SJKDFJ
+                  AhFJKD … SJKDFJ
                 </span>
               </div>
             </td>
@@ -1316,7 +1316,7 @@ exports[`RecipientList should render without amount column 1`] = `
               class="w-20 py-6 text-right"
             >
               <button
-                class="sc-AxirZ jCYjLj"
+                class="sc-AxirZ ioMJEX"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"
@@ -1338,7 +1338,7 @@ exports[`RecipientList should render without amount column 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -1371,16 +1371,16 @@ exports[`RecipientList should render without amount column 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   Recipient 3
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FAhFJK…SJKDFJ
+                  FAhFJK … SJKDFJ
                 </span>
               </div>
             </td>
@@ -1406,7 +1406,7 @@ exports[`RecipientList should render without amount column 1`] = `
               class="w-20 py-6 text-right"
             >
               <button
-                class="sc-AxirZ jCYjLj"
+                class="sc-AxirZ ioMJEX"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"
@@ -1428,7 +1428,7 @@ exports[`RecipientList should render without amount column 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
@@ -1464,7 +1464,7 @@ exports[`RecipientList should render without amount column 1`] = `
                   class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FAhFJK…SJKDFJ
+                  FAhFJK … SJKDFJ
                 </span>
               </div>
             </td>
@@ -1490,7 +1490,7 @@ exports[`RecipientList should render without amount column 1`] = `
               class="w-20 py-6 text-right"
             >
               <button
-                class="sc-AxirZ jCYjLj"
+                class="sc-AxirZ ioMJEX"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"

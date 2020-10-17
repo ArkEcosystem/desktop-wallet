@@ -3,7 +3,7 @@
 exports[`TransactionVotes should render loading state 1`] = `
 <div>
   <div
-    class="flex items-center justify-between py-6 border-t border-dashed border-theme-neutral-300"
+    class="flex items-center justify-between py-6 border-t border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
     data-testid="TransactionVotes__skeleton"
   >
     <div
@@ -41,14 +41,14 @@ exports[`TransactionVotes should render loading state 1`] = `
 exports[`TransactionVotes should render with unvotes 1`] = `
 <div>
   <div
-    class="sc-AxhCb duqBKZ"
+    class="sc-AxhCb OJiFI"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Transaction Type
       </div>
@@ -59,7 +59,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxjAm bHAIY border-theme-text"
+      class="sc-AxjAm jcZnVc border-theme-text"
     >
       <div
         class="sc-AxirZ dqZknP"
@@ -73,14 +73,14 @@ exports[`TransactionVotes should render with unvotes 1`] = `
     </div>
   </div>
   <div
-    class="sc-AxhCb duqBKZ"
+    class="sc-AxhCb OJiFI"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Unvotes (1)
       </div>
@@ -91,7 +91,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
           class="-my-2"
         >
           <div
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
           >
             <div
               class="py-4 space-x-4"
@@ -114,13 +114,13 @@ exports[`TransactionVotes should render with unvotes 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   test-username
                 </span>
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -138,14 +138,14 @@ exports[`TransactionVotes should render with unvotes 1`] = `
 exports[`TransactionVotes should render with votes 1`] = `
 <div>
   <div
-    class="sc-AxhCb duqBKZ"
+    class="sc-AxhCb OJiFI"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Transaction Type
       </div>
@@ -156,7 +156,7 @@ exports[`TransactionVotes should render with votes 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxjAm bHAIY border-theme-text"
+      class="sc-AxjAm jcZnVc border-theme-text"
     >
       <div
         class="sc-AxirZ dqZknP"
@@ -170,14 +170,14 @@ exports[`TransactionVotes should render with votes 1`] = `
     </div>
   </div>
   <div
-    class="sc-AxhCb duqBKZ"
+    class="sc-AxhCb OJiFI"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Votes (1)
       </div>
@@ -188,7 +188,7 @@ exports[`TransactionVotes should render with votes 1`] = `
           class="-my-2"
         >
           <div
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
           >
             <div
               class="py-4 space-x-4"
@@ -211,13 +211,13 @@ exports[`TransactionVotes should render with votes 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   test-username
                 </span>
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -235,14 +235,14 @@ exports[`TransactionVotes should render with votes 1`] = `
 exports[`TransactionVotes should render with votes and unvotes 1`] = `
 <div>
   <div
-    class="sc-AxhCb duqBKZ"
+    class="sc-AxhCb OJiFI"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Transaction Type
       </div>
@@ -253,7 +253,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxjAm bHAIY border-theme-text"
+      class="sc-AxjAm jcZnVc border-theme-text"
     >
       <div
         class="sc-AxirZ dqZknP"
@@ -267,14 +267,14 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
     </div>
   </div>
   <div
-    class="sc-AxhCb duqBKZ"
+    class="sc-AxhCb OJiFI"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Votes (1)
       </div>
@@ -285,7 +285,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
           class="-my-2"
         >
           <div
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
           >
             <div
               class="py-4 space-x-4"
@@ -308,13 +308,13 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   test-username
                 </span>
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -327,14 +327,14 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
     </div>
   </div>
   <div
-    class="sc-AxhCb duqBKZ"
+    class="sc-AxhCb OJiFI"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Unvotes (1)
       </div>
@@ -345,7 +345,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
           class="-my-2"
         >
           <div
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
           >
             <div
               class="py-4 space-x-4"
@@ -368,13 +368,13 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   test-username
                 </span>
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address

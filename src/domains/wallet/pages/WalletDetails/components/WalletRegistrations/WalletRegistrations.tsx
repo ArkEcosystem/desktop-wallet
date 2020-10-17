@@ -152,7 +152,7 @@ export const WalletRegistrations = ({
 				{showInactiveIcons && (
 					<div
 						data-testid="WalletRegistrations__inactive"
-						className="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300"
+						className="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
 					>
 						{!isSecondSignature && renderIcon("Key")}
 

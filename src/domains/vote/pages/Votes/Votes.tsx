@@ -30,7 +30,7 @@ const Tabs = ({ selected, onClick }: TabsProps) => {
 	const getTabItemClass = (item: string) =>
 		selected === item
 			? "theme-neutral-900 border-theme-primary-dark"
-			: "text-theme-neutral-dark hover:text-theme-text border-transparent";
+			: "text-theme-secondary-text hover:text-theme-text border-transparent";
 
 	return (
 		<ul className="flex h-20 mr-auto -mt-5 -mb-5" data-testid="Tabs">
@@ -75,7 +75,11 @@ const InputAddress = ({ address, profile }: { address: string; profile: Profile 
 						</>
 					) : (
 						<>
-							<Circle className="mr-3 bg-theme-neutral-200 border-theme-neutral-200" size="sm" noShadow />
+							<Circle
+								className="mr-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+								size="sm"
+								noShadow
+							/>
 							<span className="text-theme-neutral-light">
 								{t("COMMON.SELECT_OPTION", { option: t("COMMON.ADDRESS") })}
 							</span>
@@ -277,7 +281,7 @@ export const Votes = () => {
 				) : network ? (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
 				) : (
-					<div className="mt-8 text-center text-theme-neutral-dark" data-testid="votes__message">
+					<div className="mt-8 text-center text-theme-secondary-text" data-testid="votes__message">
 						{t("VOTE.VOTES_PAGE.SELECT_CRYPTOASSET_MESSAGE")}
 					</div>
 				)}

@@ -57,7 +57,7 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeer
 					<FormLabel label={t("SETTINGS.PEERS.TYPE")} />
 					<label htmlFor="multisig" className="inline-flex items-center">
 						<Checkbox />
-						<span className="ml-2 text-sm font-semibold text-theme-neutral-dark">
+						<span className="ml-2 text-sm font-semibold text-theme-secondary-text">
 							{t("COMMON.MULTISIGNATURE")}
 						</span>
 					</label>

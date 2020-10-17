@@ -10,7 +10,7 @@ exports[`ContactForm should select 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
@@ -21,7 +21,7 @@ exports[`ContactForm should select 1`] = `
         />
       </label>
       <input
-        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value=""
@@ -34,7 +34,7 @@ exports[`ContactForm should select 1`] = `
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
@@ -73,7 +73,7 @@ exports[`ContactForm should select 1`] = `
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -94,7 +94,7 @@ exports[`ContactForm should select 1`] = `
         data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="address"
         >
@@ -108,7 +108,7 @@ exports[`ContactForm should select 1`] = `
           class="sc-AxmLO kuiknc max-w-20"
         >
           <input
-            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="contact-form__address-input"
             name="address"
             type="text"
@@ -127,7 +127,7 @@ exports[`ContactForm should select 1`] = `
                 width="20"
               >
                 <svg>
-                  qrcode.svg
+                  qr-code.svg
                 </svg>
               </div>
             </button>
@@ -138,7 +138,7 @@ exports[`ContactForm should select 1`] = `
         class="mt-4"
       >
         <button
-          class="sc-AxirZ jCYjLj w-full"
+          class="sc-AxirZ ioMJEX w-full"
           color="primary"
           data-testid="contact-form__add-address-btn"
           disabled=""
@@ -155,7 +155,7 @@ exports[`ContactForm should select 1`] = `
         class="space-x-3"
       >
         <button
-          class="sc-AxirZ jCYjLj"
+          class="sc-AxirZ ioMJEX"
           color="primary"
           data-testid="contact-form__cancel-btn"
           type="button"
@@ -163,7 +163,7 @@ exports[`ContactForm should select 1`] = `
           Cancel
         </button>
         <button
-          class="sc-AxirZ emecfQ"
+          class="sc-AxirZ edePbg"
           color="primary"
           data-testid="contact-form__save-btn"
           disabled=""
@@ -187,7 +187,7 @@ exports[`ContactForm should select with errors 1`] = `
       class="sc-AxiKw HGhoX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
@@ -199,7 +199,7 @@ exports[`ContactForm should select with errors 1`] = `
       </label>
       <input
         aria-invalid="true"
-        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value=""
@@ -217,7 +217,7 @@ exports[`ContactForm should select with errors 1`] = `
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
@@ -256,7 +256,7 @@ exports[`ContactForm should select with errors 1`] = `
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -277,7 +277,7 @@ exports[`ContactForm should select with errors 1`] = `
         data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="address"
         >
@@ -291,7 +291,7 @@ exports[`ContactForm should select with errors 1`] = `
           class="sc-AxmLO kuiknc max-w-20"
         >
           <input
-            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="contact-form__address-input"
             name="address"
             type="text"
@@ -310,7 +310,7 @@ exports[`ContactForm should select with errors 1`] = `
                 width="20"
               >
                 <svg>
-                  qrcode.svg
+                  qr-code.svg
                 </svg>
               </div>
             </button>
@@ -321,7 +321,7 @@ exports[`ContactForm should select with errors 1`] = `
         class="mt-4"
       >
         <button
-          class="sc-AxirZ jCYjLj w-full"
+          class="sc-AxirZ ioMJEX w-full"
           color="primary"
           data-testid="contact-form__add-address-btn"
           disabled=""
@@ -338,7 +338,7 @@ exports[`ContactForm should select with errors 1`] = `
         class="space-x-3"
       >
         <button
-          class="sc-AxirZ jCYjLj"
+          class="sc-AxirZ ioMJEX"
           color="primary"
           data-testid="contact-form__cancel-btn"
           type="button"
@@ -346,7 +346,7 @@ exports[`ContactForm should select with errors 1`] = `
           Cancel
         </button>
         <button
-          class="sc-AxirZ emecfQ"
+          class="sc-AxirZ edePbg"
           color="primary"
           data-testid="contact-form__save-btn"
           disabled=""
@@ -370,7 +370,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
@@ -381,7 +381,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         />
       </label>
       <input
-        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value=""
@@ -394,7 +394,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
@@ -433,7 +433,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -454,7 +454,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="address"
         >
@@ -468,7 +468,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           class="sc-AxmLO kuiknc max-w-20"
         >
           <input
-            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="contact-form__address-input"
             name="address"
             type="text"
@@ -487,7 +487,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
                 width="20"
               >
                 <svg>
-                  qrcode.svg
+                  qr-code.svg
                 </svg>
               </div>
             </button>
@@ -498,7 +498,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         class="mt-4"
       >
         <button
-          class="sc-AxirZ jCYjLj w-full"
+          class="sc-AxirZ ioMJEX w-full"
           color="primary"
           data-testid="contact-form__add-address-btn"
           disabled=""
@@ -515,7 +515,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         class="space-x-3"
       >
         <button
-          class="sc-AxirZ jCYjLj"
+          class="sc-AxirZ ioMJEX"
           color="primary"
           data-testid="contact-form__cancel-btn"
           type="button"
@@ -523,7 +523,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           Cancel
         </button>
         <button
-          class="sc-AxirZ emecfQ"
+          class="sc-AxirZ edePbg"
           color="primary"
           data-testid="contact-form__save-btn"
           disabled=""
@@ -547,7 +547,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
@@ -558,7 +558,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         />
       </label>
       <input
-        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value="Brian"
@@ -571,7 +571,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
@@ -610,7 +610,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -631,7 +631,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="address"
         >
@@ -645,7 +645,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           class="sc-AxmLO kuiknc max-w-20"
         >
           <input
-            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="contact-form__address-input"
             name="address"
             type="text"
@@ -664,7 +664,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 width="20"
               >
                 <svg>
-                  qrcode.svg
+                  qr-code.svg
                 </svg>
               </div>
             </button>
@@ -675,7 +675,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         class="mt-4"
       >
         <button
-          class="sc-AxirZ jCYjLj w-full"
+          class="sc-AxirZ ioMJEX w-full"
           color="primary"
           data-testid="contact-form__add-address-btn"
           disabled=""
@@ -689,7 +689,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="group"
     >
       <span
-        class="inline-block text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
+        class="inline-block text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-secondary-text"
       >
         Addresses
       </span>
@@ -697,7 +697,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         data-testid="contact-form__address-list"
       >
         <div
-          class="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
+          class="flex items-center py-4 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
           data-testid="contact-form__address-list-item"
         >
           <div
@@ -708,7 +708,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             >
               <div
                 aria-label="ARK Devnet"
-                class="sc-fzplWN fGeYla border-theme-primary-100 text-theme-primary-400"
+                class="sc-fzplWN jUnIkq border-theme-primary-100 text-theme-primary-400"
                 data-testid="NetworkIcon-ARK-ark.devnet"
               >
                 <div
@@ -748,12 +748,12 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D61mfSggzb…oHaqJ3Dyib
+                D61mfSggzb … oHaqJ3Dyib
               </span>
             </div>
           </span>
           <button
-            class="sc-AxirZ jMIqnH flex items-center ml-auto"
+            class="sc-AxirZ bpsqFv flex items-center ml-auto"
             color="primary"
             data-testid="contact-form__remove-address-btn"
             type="button"
@@ -775,7 +775,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="flex w-full justify-between"
     >
       <button
-        class="sc-AxirZ gVZClM"
+        class="sc-AxirZ evTvHI"
         color="danger"
         data-testid="contact-form__delete-btn"
         type="button"
@@ -797,7 +797,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         class="space-x-3"
       >
         <button
-          class="sc-AxirZ jCYjLj"
+          class="sc-AxirZ ioMJEX"
           color="primary"
           data-testid="contact-form__cancel-btn"
           type="button"
@@ -805,7 +805,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           Cancel
         </button>
         <button
-          class="sc-AxirZ emecfQ"
+          class="sc-AxirZ edePbg"
           color="primary"
           data-testid="contact-form__save-btn"
           disabled=""

@@ -27,7 +27,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	return (
 		<section data-testid="MultiSignature__review-step">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TITLE")}</h1>
-			<div className="text-theme-neutral-dark">
+			<div className="text-theme-secondary-text">
 				{t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.DESCRIPTION")}
 			</div>
 

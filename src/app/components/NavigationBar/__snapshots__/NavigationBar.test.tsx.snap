@@ -32,7 +32,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
               title="Portfolio"
             >
@@ -43,7 +43,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/test"
               title="test"
             >
@@ -63,7 +63,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                   color="primary"
                   data-testid="navbar__buttons--notifications"
                   type="button"
@@ -78,7 +78,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                   >
                     <div
                       class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -89,13 +89,13 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             </div>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
             class="flex items-center overflow-hidden rounded-lg"
           >
             <button
-              class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+              class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
               color="primary"
               data-testid="navbar__buttons--send"
               type="button"
@@ -112,13 +112,13 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             </button>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
             class="flex items-center overflow-hidden rounded-lg"
           >
             <button
-              class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+              class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
               color="primary"
               data-testid="navbar__buttons--receive"
               type="button"
@@ -129,13 +129,13 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                 width="22"
               >
                 <svg>
-                  receive.svg
+                  qr-code.svg
                 </svg>
               </div>
             </button>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
         </div>
         <div
@@ -145,12 +145,12 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             class="text-right"
           >
             <div
-              class="text-xs font-medium text-theme-neutral"
+              class="text-xs font-semibold text-theme-neutral-700"
             >
               Your balance
             </div>
             <div
-              class="text-sm font-bold text-theme-neutral-dark"
+              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
             >
               <span
                 data-testid="Amount"
@@ -164,14 +164,14 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             data-testid="dropdown__toggle"
           >
             <div
-              class="ml-4 cursor-pointer"
+              class="ml-4 -space-x-2 cursor-pointer"
               data-testid="navbar__useractions"
             >
               <div
-                class="sc-AxhCb iZzMIT -mr-2 border-theme-primary-contrast"
+                class="sc-AxhCb gaiYPD border-theme-primary-contrast dark:border-theme-neutral-800"
               >
                 <span
-                  class="text-theme-neutral-dark"
+                  class="text-theme-secondary-text dark:text-theme-neutral-800"
                 >
                   <div
                     class="sc-AxjAm cpczEI"
@@ -198,7 +198,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                   />
                 </div>
                 <span
-                  class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                 >
                   <div
                     class="sc-AxjAm iepfoc"
@@ -253,7 +253,7 @@ exports[`NavigationBar should render 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
               title="Portfolio"
             >
@@ -264,7 +264,7 @@ exports[`NavigationBar should render 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
               title="Plugins"
             >
@@ -275,7 +275,7 @@ exports[`NavigationBar should render 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
               title="Exchange"
             >
@@ -286,7 +286,7 @@ exports[`NavigationBar should render 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
               title="News"
             >
@@ -306,7 +306,7 @@ exports[`NavigationBar should render 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                   color="primary"
                   data-testid="navbar__buttons--notifications"
                   type="button"
@@ -321,7 +321,7 @@ exports[`NavigationBar should render 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                   >
                     <div
                       class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -332,13 +332,13 @@ exports[`NavigationBar should render 1`] = `
             </div>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
             class="flex items-center overflow-hidden rounded-lg"
           >
             <button
-              class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+              class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
               color="primary"
               data-testid="navbar__buttons--send"
               type="button"
@@ -355,13 +355,13 @@ exports[`NavigationBar should render 1`] = `
             </button>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
             class="flex items-center overflow-hidden rounded-lg"
           >
             <button
-              class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+              class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
               color="primary"
               data-testid="navbar__buttons--receive"
               type="button"
@@ -372,13 +372,13 @@ exports[`NavigationBar should render 1`] = `
                 width="22"
               >
                 <svg>
-                  receive.svg
+                  qr-code.svg
                 </svg>
               </div>
             </button>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
         </div>
         <div
@@ -388,12 +388,12 @@ exports[`NavigationBar should render 1`] = `
             class="text-right"
           >
             <div
-              class="text-xs font-medium text-theme-neutral"
+              class="text-xs font-semibold text-theme-neutral-700"
             >
               Your balance
             </div>
             <div
-              class="text-sm font-bold text-theme-neutral-dark"
+              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
             >
               <span
                 data-testid="Amount"
@@ -407,14 +407,14 @@ exports[`NavigationBar should render 1`] = `
             data-testid="dropdown__toggle"
           >
             <div
-              class="ml-4 cursor-pointer"
+              class="ml-4 -space-x-2 cursor-pointer"
               data-testid="navbar__useractions"
             >
               <div
-                class="sc-AxhCb iZzMIT -mr-2 border-theme-primary-contrast"
+                class="sc-AxhCb gaiYPD border-theme-primary-contrast dark:border-theme-neutral-800"
               >
                 <span
-                  class="text-theme-neutral-dark"
+                  class="text-theme-secondary-text dark:text-theme-neutral-800"
                 >
                   <div
                     class="sc-AxjAm cpczEI"
@@ -439,13 +439,13 @@ exports[`NavigationBar should render 1`] = `
                     src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                   />
                   <span
-                    class="absolute text-sm font-semibold text-theme-background"
+                    class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                   >
                     JO
                   </span>
                 </div>
                 <span
-                  class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                 >
                   <div
                     class="sc-AxjAm iepfoc"
@@ -500,7 +500,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
               title="Portfolio"
             >
@@ -511,7 +511,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/test"
               title="test"
             >
@@ -531,7 +531,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                   color="primary"
                   data-testid="navbar__buttons--notifications"
                   type="button"
@@ -546,7 +546,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                   >
                     <div
                       class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -557,13 +557,13 @@ exports[`NavigationBar should render with custom menu 1`] = `
             </div>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
             class="flex items-center overflow-hidden rounded-lg"
           >
             <button
-              class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+              class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
               color="primary"
               data-testid="navbar__buttons--send"
               type="button"
@@ -580,13 +580,13 @@ exports[`NavigationBar should render with custom menu 1`] = `
             </button>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
             class="flex items-center overflow-hidden rounded-lg"
           >
             <button
-              class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+              class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
               color="primary"
               data-testid="navbar__buttons--receive"
               type="button"
@@ -597,13 +597,13 @@ exports[`NavigationBar should render with custom menu 1`] = `
                 width="22"
               >
                 <svg>
-                  receive.svg
+                  qr-code.svg
                 </svg>
               </div>
             </button>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
         </div>
         <div
@@ -613,12 +613,12 @@ exports[`NavigationBar should render with custom menu 1`] = `
             class="text-right"
           >
             <div
-              class="text-xs font-medium text-theme-neutral"
+              class="text-xs font-semibold text-theme-neutral-700"
             >
               Your balance
             </div>
             <div
-              class="text-sm font-bold text-theme-neutral-dark"
+              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
             >
               <span
                 data-testid="Amount"
@@ -632,14 +632,14 @@ exports[`NavigationBar should render with custom menu 1`] = `
             data-testid="dropdown__toggle"
           >
             <div
-              class="ml-4 cursor-pointer"
+              class="ml-4 -space-x-2 cursor-pointer"
               data-testid="navbar__useractions"
             >
               <div
-                class="sc-AxhCb iZzMIT -mr-2 border-theme-primary-contrast"
+                class="sc-AxhCb gaiYPD border-theme-primary-contrast dark:border-theme-neutral-800"
               >
                 <span
-                  class="text-theme-neutral-dark"
+                  class="text-theme-secondary-text dark:text-theme-neutral-800"
                 >
                   <div
                     class="sc-AxjAm cpczEI"
@@ -664,13 +664,13 @@ exports[`NavigationBar should render with custom menu 1`] = `
                     src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                   />
                   <span
-                    class="absolute text-sm font-semibold text-theme-background"
+                    class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                   >
                     JO
                   </span>
                 </div>
                 <span
-                  class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                 >
                   <div
                     class="sc-AxjAm iepfoc"
@@ -730,7 +730,7 @@ exports[`NavigationBar should render with title 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
               title="Portfolio"
             >
@@ -741,7 +741,7 @@ exports[`NavigationBar should render with title 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
               title="Plugins"
             >
@@ -752,7 +752,7 @@ exports[`NavigationBar should render with title 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
               title="Exchange"
             >
@@ -763,7 +763,7 @@ exports[`NavigationBar should render with title 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+              class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
               title="News"
             >
@@ -783,7 +783,7 @@ exports[`NavigationBar should render with title 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                   color="primary"
                   data-testid="navbar__buttons--notifications"
                   type="button"
@@ -798,7 +798,7 @@ exports[`NavigationBar should render with title 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                    class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                   >
                     <div
                       class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -809,13 +809,13 @@ exports[`NavigationBar should render with title 1`] = `
             </div>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
             class="flex items-center overflow-hidden rounded-lg"
           >
             <button
-              class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+              class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
               color="primary"
               data-testid="navbar__buttons--send"
               type="button"
@@ -832,13 +832,13 @@ exports[`NavigationBar should render with title 1`] = `
             </button>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
             class="flex items-center overflow-hidden rounded-lg"
           >
             <button
-              class="sc-AxiKw eWLnbL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+              class="sc-AxiKw lgscAL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
               color="primary"
               data-testid="navbar__buttons--receive"
               type="button"
@@ -849,13 +849,13 @@ exports[`NavigationBar should render with title 1`] = `
                 width="22"
               >
                 <svg>
-                  receive.svg
+                  qr-code.svg
                 </svg>
               </div>
             </button>
           </div>
           <div
-            class="h-8 border-r border-theme-neutral-200"
+            class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
         </div>
         <div
@@ -865,12 +865,12 @@ exports[`NavigationBar should render with title 1`] = `
             class="text-right"
           >
             <div
-              class="text-xs font-medium text-theme-neutral"
+              class="text-xs font-semibold text-theme-neutral-700"
             >
               Your balance
             </div>
             <div
-              class="text-sm font-bold text-theme-neutral-dark"
+              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
             >
               <span
                 data-testid="Amount"
@@ -884,14 +884,14 @@ exports[`NavigationBar should render with title 1`] = `
             data-testid="dropdown__toggle"
           >
             <div
-              class="ml-4 cursor-pointer"
+              class="ml-4 -space-x-2 cursor-pointer"
               data-testid="navbar__useractions"
             >
               <div
-                class="sc-AxhCb iZzMIT -mr-2 border-theme-primary-contrast"
+                class="sc-AxhCb gaiYPD border-theme-primary-contrast dark:border-theme-neutral-800"
               >
                 <span
-                  class="text-theme-neutral-dark"
+                  class="text-theme-secondary-text dark:text-theme-neutral-800"
                 >
                   <div
                     class="sc-AxjAm cpczEI"
@@ -916,13 +916,13 @@ exports[`NavigationBar should render with title 1`] = `
                     src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                   />
                   <span
-                    class="absolute text-sm font-semibold text-theme-background"
+                    class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                   >
                     JO
                   </span>
                 </div>
                 <span
-                  class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                 >
                   <div
                     class="sc-AxjAm iepfoc"

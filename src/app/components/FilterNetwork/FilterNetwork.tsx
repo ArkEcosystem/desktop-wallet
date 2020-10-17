@@ -31,9 +31,12 @@ const renderNetworks = (networks: any[], onClick: any) => (
 						<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
 					</Circle>
 				) : (
-					<Circle size="lg" className="relative border-theme-neutral-200 text-theme-neutral-300">
+					<Circle
+						size="lg"
+						className="relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+					>
 						<Icon name={option.coin} width={20} height={20} />
-						<Badge className="border-theme-neutral-200" />
+						<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" />
 					</Circle>
 				)}
 			</li>

@@ -36,14 +36,14 @@ const FastNavigation = ({ sections }: FastNavProps) => {
 
 	return (
 		<NavWrapper className="sticky float-right w-40 top-2">
-			<div className="pl-3 text-xs font-bold text-theme-neutral-light border-l-1 border-theme-neutral-300">
+			<div className="pl-3 text-xs font-bold border-l text-theme-neutral-light border-theme-neutral-300 dark:border-theme-neutral-800">
 				Fast navigation
 			</div>
 			<ul>
 				{sections &&
 					sections.map((section: SectionItem, index) => (
 						<li
-							className={`text-sm border-l-1 border-theme-neutral-300 text-theme-neutral-800 ${activeClass(
+							className={`text-sm border-l border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-800 ${activeClass(
 								index,
 							)}`}
 							key={index}
@@ -85,14 +85,14 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 							<div className="my-auto mr-2">
 								<Icon name={categoryIcon} />
 							</div>
-							<div className="font-bold font-sm text-theme-neutral-dark">{category}</div>
+							<div className="font-bold font-sm text-theme-secondary-text">{category}</div>
 						</div>
 						{views && (
 							<div className="flex ml-5">
 								<div className="my-auto mr-2">
 									<Icon name="EyeTag" width={18} height={18} />
 								</div>
-								<div className="font-bold font-sm text-theme-neutral-dark">{views}</div>
+								<div className="font-bold font-sm text-theme-secondary-text">{views}</div>
 							</div>
 						)}
 					</div>
@@ -102,12 +102,12 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 						sections.map((section: SectionItem, index) => (
 							<div className="mt-8" id={section.id} key={index}>
 								<h3 className="text-lg">{section.title}</h3>
-								<p className="whitespace-pre-line text-theme-neutral-dark">{section.body}</p>
+								<p className="whitespace-pre-line text-theme-secondary-text">{section.body}</p>
 							</div>
 						))}
 				</div>
 
-				<div className="pt-16 mt-16 border-t-1 border-theme-neutral-300">
+				<div className="pt-16 mt-16 border-t border-theme-neutral-300 dark:border-theme-neutral-800">
 					<div className="max-w-2xl mx-auto">
 						<div className="flex">
 							<div className="w-3/4">
