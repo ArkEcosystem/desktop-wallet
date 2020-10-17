@@ -20,7 +20,6 @@ describe("InputFee", () => {
 	});
 
 	it("should render", () => {
-		const value = { display: "1", value: "100000000" };
 		const { asFragment } = render(
 			<InputFee min={min} max={max} avg={avg} defaultValue={value} value={value} step={step} />,
 		);
