@@ -2,7 +2,6 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
-
 export const sendTransfer = (t: any, env: Environment) => ({
 	fee: () => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
@@ -40,9 +39,6 @@ export const sendTransfer = (t: any, env: Environment) => ({
 		},
 	}),
 	recipientAddress: (network: Coins.Network) => ({
-		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.RECIPIENT"),
-		}),
 		validate: {
 			valid: async (address: string) => {
 				if (!network) return true; // skip if network is not set
@@ -53,17 +49,15 @@ export const sendTransfer = (t: any, env: Environment) => ({
 			},
 		},
 	}),
-	amount: (network: Coins.Network, availableAmount?: BigNumber) => ({
-		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.AMOUNT"),
-		}),
+	amount: (network: Coins.Network, balance?: BigNumber) => ({
 		validate: {
-			valid: (balance: any) => {
+			valid: (amount: any) => {
 				if (!network) return true; // skip if network is not set
+
 				return (
-					availableAmount?.isGreaterThanOrEqualTo(balance) ||
+					(balance?.isGreaterThanOrEqualTo(amount) && !balance?.isZero()) ||
 					t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance,
+						balance: balance?.toHuman(),
 						coinId: network.coin(),
 					})
 				);
