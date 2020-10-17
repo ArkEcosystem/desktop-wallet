@@ -18,7 +18,7 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="text-theme-neutral-dark hover:text-theme-primary">
+		<div className="text-theme-secondary-text hover:text-theme-primary">
 			<div className="flex items-center mb-2 space-x-2">
 				<div className="font-normal transition-colors duration-100 text-md">
 					{t("TRANSACTION.SINGLE_OR_MULTI")}
@@ -224,7 +224,7 @@ export const AddRecipient = ({
 			</SubForm>
 
 			{!isSingle && addedRecipients.length > 0 && (
-				<div className="border-b border-dashed border-theme-neutral-300">
+				<div className="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800">
 					<RecipientList
 						recipients={addedRecipients}
 						isEditable={true}

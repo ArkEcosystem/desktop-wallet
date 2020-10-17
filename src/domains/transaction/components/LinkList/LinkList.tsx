@@ -36,7 +36,7 @@ const linkIcons: Record<string, string> = {
 };
 
 const LinkItem = ({ link }: { link: ProviderEntityLink }) => (
-	<div className="flex items-center py-4 border-t border-dashed border-theme-neutral-300 first:border-0">
+	<div className="flex items-center py-4 border-t border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 first:border-0">
 		<div className="flex justify-between flex-1">
 			<div>
 				<div className="text-sm font-semibold text-theme-neutral">{link.displayName}</div>
@@ -89,7 +89,7 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 				</div>
 			</div>
 
-			<div className="mt-2 text-theme-neutral-dark">{description}</div>
+			<div className="mt-2 text-theme-secondary-text">{description}</div>
 
 			{isExpanded && <div>{items}</div>}
 		</div>

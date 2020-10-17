@@ -122,7 +122,9 @@ export const Exchange = ({ exchanges }: ExchangeProps) => {
 						<div className="text-center">
 							<Image name="ExchangeCardsBanner" domain="exchange" className="mx-auto" />
 
-							<div className="mt-8 text-theme-neutral-dark">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
+							<div className="mt-8 text-theme-secondary-text">
+								{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}
+							</div>
 						</div>
 					) : (
 						<Image name="NoExchangesBanner" domain="exchange" className="mx-auto" />

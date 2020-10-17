@@ -9,7 +9,7 @@ export const SelectionBar = ({ children }: GroupProps) => (
 	<div
 		data-testid="SelectionBar"
 		role="radiogroup"
-		className="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+		className="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
 	>
 		{children}
 	</div>

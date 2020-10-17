@@ -4,7 +4,7 @@ export const SelectToggleButton = styled.button`
 	& {
 		min-height: 50px;
 		${tw`inline-block w-full px-4 py-3 pr-12 text-left transition-colors duration-200 border rounded outline-none appearance-none bg-theme-background text-theme-neutral`}
-		${tw`border-theme-neutral-300`}
+		${tw`border-theme-neutral-300 dark:border-theme-neutral-800`}
 	}
 
 	&:focus {
@@ -12,7 +12,7 @@ export const SelectToggleButton = styled.button`
 	}
 
 	&:disabled {
-		${tw`border-theme-neutral-300 bg-theme-neutral-contrast text-theme-neutral-dark`}
+		${tw`border-theme-neutral-300 dark:border-theme-neutral-800 bg-theme-neutral-contrast text-theme-secondary-text`}
 	}
 
 	&.is-open {
@@ -50,7 +50,7 @@ export const SelectOptionsList = styled.ul`
 
 		&:not(:last-child) {
 			.select-list-option__label {
-				${tw`border-b border-theme-neutral-300`};
+				${tw`border-b border-theme-neutral-300 dark:border-theme-neutral-800`};
 			}
 		}
 

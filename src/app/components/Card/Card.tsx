@@ -20,7 +20,7 @@ const Wrapper = styled.div<{ isSelected?: boolean; onClick?: any }>`
 	${({ isSelected }) =>
 		isSelected
 			? tw`bg-theme-success-contrast border-theme-success-600 hover:border-theme-success-contrast`
-			: tw`bg-theme-background border-theme-primary-contrast`}
+			: tw`bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800`}
 `;
 
 export const Card = ({ children, addonIcons, actions, onClick, onSelect, isSelected, className }: CardProps) => (

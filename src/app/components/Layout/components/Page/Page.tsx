@@ -14,7 +14,7 @@ type PageProps = {
 };
 
 export const Page = ({ navbarVariant, title, profile, crumbs, sidebar, children }: PageProps) => (
-	<div className="relative flex flex-col min-h-screen bg-theme-neutral-contrast">
+	<div className="relative flex flex-col min-h-screen bg-theme-secondary-background">
 		{<NavigationBar variant={navbarVariant} title={title} profile={profile} />}
 
 		{crumbs?.length && <Breadcrumbs crumbs={crumbs} className="container py-5 mx-auto font-semibold px-14" />}

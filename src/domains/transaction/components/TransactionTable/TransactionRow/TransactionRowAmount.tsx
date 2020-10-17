@@ -18,7 +18,7 @@ export const BaseTransactionRowAmount = ({ isSent, wallet, total, convertedTotal
 			<Amount
 				value={convertedTotal!}
 				ticker={exchangeCurrency}
-				className="text-theme-neutral-dark"
+				className="text-theme-secondary-text"
 				data-testid="TransactionRowAmount"
 			/>
 		);

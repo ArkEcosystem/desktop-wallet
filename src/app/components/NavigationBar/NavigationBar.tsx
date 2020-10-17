@@ -65,7 +65,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 			toggleContent={(isOpen: boolean) => (
 				<div className="ml-4 cursor-pointer" data-testid="navbar__useractions">
 					<Circle className="-mr-2 border-theme-primary-contrast" size="lg">
-						<span className="text-theme-neutral-dark">
+						<span className="text-theme-secondary-text">
 							{exchangeCurrency && (
 								<Icon
 									name={exchangeCurrency}
@@ -148,7 +148,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 					<NavLink
 						to={menuItem.mountPath(profile.id())}
 						title={menuItem.title}
-						className="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+						className="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
 					>
 						{menuItem.title}
 					</NavLink>
@@ -183,7 +183,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}
 
-								<div className="h-8 border-r border-theme-neutral-200" />
+								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 								<div className="flex items-center overflow-hidden rounded-lg">
 									<Button
@@ -197,7 +197,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									</Button>
 								</div>
 
-								<div className="h-8 border-r border-theme-neutral-200" />
+								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 								<div className="flex items-center overflow-hidden rounded-lg">
 									<Button
@@ -211,15 +211,15 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									</Button>
 								</div>
 
-								<div className="h-8 border-r border-theme-neutral-200" />
+								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 							</div>
 
 							<div className="flex items-center my-auto ml-8 mr-4">
 								<div className="text-right">
-									<div className="text-xs font-medium text-theme-neutral">
+									<div className="text-xs font-semibold text-theme-neutral-700">
 										{t("COMMON.YOUR_BALANCE")}
 									</div>
-									<div className="text-sm font-bold text-theme-neutral-dark">
+									<div className="text-sm font-bold text-theme-secondary-text">
 										<Amount
 											value={profile?.balance() || BigNumber.ZERO}
 											ticker={

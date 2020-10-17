@@ -162,7 +162,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 				<Section marginTop={false}>
 					<div className="flex">
-						<div className="w-1/2 pr-12 border-r border-theme-neutral-300">
+						<div className="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 							<WalletVote
 								votes={activeWallet.hasSyncedWithNetwork() ? walletVotes() : []}
 								maxVotes={activeWallet.network().maximumVotesPerWallet()}

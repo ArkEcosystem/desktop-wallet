@@ -18,7 +18,7 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.DESCRIPTION"),
 			labelAddon: <Toggle />,
 			wrapperClass: "pb-6",
@@ -26,7 +26,7 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.PEERS.CUSTOM_PEERS.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION"),
 			labelAddon: <Toggle />,
 			wrapperClass: "pt-6",

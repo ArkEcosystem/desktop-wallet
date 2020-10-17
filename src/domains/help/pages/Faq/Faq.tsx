@@ -17,7 +17,7 @@ type FaqProps = {
 };
 
 const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => (
-	<li className="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0">
+	<li className="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 dark:border-theme-neutral-800 last:border-b-0">
 		<a
 			title={title}
 			href={path}
@@ -62,7 +62,7 @@ export const Faq = ({ articles }: FaqProps) => {
 								width={20}
 								height={20}
 							/>
-							<div className="h-10 my-auto border-l border-1 border-theme-primary-contrast" />
+							<div className="h-10 my-auto border-l border-theme-primary-contrast" />
 							<Button className="whitespace-no-wrap">{t("HELP.CONTACT_US")}</Button>
 						</div>
 					}

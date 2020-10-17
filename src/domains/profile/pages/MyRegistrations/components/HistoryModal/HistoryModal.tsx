@@ -35,7 +35,7 @@ export const HistoryModal = ({ isOpen, handleClose, history }: Props) => {
 					{(rowData: any) => (
 						<tr
 							data-testid="blockchain-table__row"
-							className="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+							className="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
 						>
 							<td className="py-6 font-semibold text-left">
 								<span>{t(`PROFILE.MODAL_HISTORY.TYPES.${rowData.type}`)}</span>

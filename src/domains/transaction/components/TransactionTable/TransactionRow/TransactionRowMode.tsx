@@ -5,6 +5,7 @@ import Tippy from "@tippyjs/react";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Size } from "types";
 
 import { TransactionRowRecipientIcon } from "./TransactionRowRecipientIcon";
@@ -19,12 +20,14 @@ type Props = {
 };
 
 export const BaseTransactionRowMode = ({ type, isSent, recipient, recipients, circleShadowColor, iconSize }: Props) => {
-	// TODO: i18n
-	const tooltipContent = isSent ? "Sent" : "Received";
+	const { t } = useTranslation();
+
+	const tooltipContent = isSent ? t("TRANSACTION.SENT") : t("TRANSACTION.RECEIVED");
 	const modeIconName = isSent ? "Sent" : "Received";
+
 	const modeCircleStyle = isSent
-		? "border-theme-danger-contrast text-theme-danger"
-		: "border-theme-success-300 text-theme-success";
+		? "border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+		: "border-theme-success-300 text-theme-success dark:border-theme-success";
 
 	return (
 		<div data-testid="TransactionRowMode" className="flex items-center -space-x-1">

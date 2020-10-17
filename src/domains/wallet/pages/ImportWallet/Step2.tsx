@@ -82,7 +82,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 
 			<div className="flex flex-col">
 				<div className="flex items-center justify-between">
-					<div className="text-lg font-semibold text-theme-neutral-dark">
+					<div className="text-lg font-semibold text-theme-secondary-text">
 						{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.TITLE")}
 					</div>
 

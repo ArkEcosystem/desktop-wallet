@@ -43,17 +43,27 @@ export const WalletCard = ({
 	if (wallet === undefined) {
 		return (
 			<div data-testid="WalletCard__blank" className={`w-64 inline-block ${className}`}>
-				<Card>
-					<div className="p-2">
-						<div className="flex">
-							<Circle size="lg" className="-mr-2 bg-theme-background border-theme-primary-contrast" />
-							<Circle size="lg" className="bg-theme-background border-theme-primary-contrast" />
+				<Card className="h-48">
+					<div className="h-full flex flex-col p-2 justify-between">
+						<div className="flex -space-x-2">
+							<Circle
+								size="lg"
+								className="bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+							/>
+							<Circle
+								size="lg"
+								className="bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+							/>
 						</div>
 
-						<div className={`mt-6 text-md text-theme-primary-contrast font-medium ${blankTitleClass}`}>
+						<div
+							className={`mt-auto text-theme-primary-contrast dark:text-theme-neutral-800 font-semibold ${blankTitleClass}`}
+						>
 							{blankTitle}
 						</div>
-						<div className={`text-md text-theme-primary-contrast font-bold ${blankSubtitleClass}`}>
+						<div
+							className={`text-lg text-theme-primary-contrast dark:text-theme-neutral-800 font-bold ${blankSubtitleClass}`}
+						>
 							{blankSubtitle}
 						</div>
 					</div>
@@ -94,23 +104,30 @@ export const WalletCard = ({
 						) : null,
 					)
 				}
+				className="h-48"
 				actions={actions}
 				onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`)}
 				onSelect={onSelect}
 			>
-				<div className="relative p-2">
+				<div className="relative h-full flex flex-col p-2 justify-between">
 					<div className="-space-x-2">
 						<NetworkIcon size="lg" coin={wallet.coinId()} network={wallet.networkId()} />
 						<Avatar size="lg" address={wallet.address()} />
 					</div>
 
-					<div className="flex mt-6 truncate max-w-12">
-						<Address walletName={wallet.alias()} address={wallet.address()} maxChars={13} />
+					<div className="flex truncate max-w-12 mt-auto">
+						<Address
+							walletName={wallet.alias()}
+							address={wallet.address()}
+							maxChars={13}
+							walletNameClass="text-theme-neutral-700"
+							addressClass="text-theme-neutral-500"
+						/>
 					</div>
 					<Amount
 						value={wallet.balance()}
 						ticker={wallet.network().ticker()}
-						className="font-bold text-theme-text"
+						className="font-bold text-lg text-theme-text"
 					/>
 				</div>
 			</Card>

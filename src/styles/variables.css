@@ -1,5 +1,6 @@
 :root {
 	--theme-white: #ffffff;
+	--theme-black: #121213;
 
 	--theme-color-primary: var(--theme-color-primary-600);
 	--theme-color-primary-rgb: 0, 125, 255;
@@ -84,10 +85,20 @@
 
 .theme-light {
 	--theme-background-color: var(--theme-white);
+	--theme-secondary-background-color: var(--theme-color-neutral-100);
+
 	--theme-text-color: var(--theme-color-neutral-900);
+	--theme-secondary-text-color: var(--theme-color-neutral-700);
 }
 
 .theme-dark {
 	--theme-background-color: var(--theme-color-neutral-900);
-	--theme-text-color: var(--theme-white);
+	--theme-secondary-background-color: var(--theme-black);
+
+	--theme-text-color: var(--theme-color-neutral-200);
+	--theme-secondary-text-color: var(--theme-color-neutral-500);
+
+	/* --theme-color-primary: var(--theme-color-neutral-200);
+	--theme-color-primary-rgb: 93, 95, 96;
+	--theme-color-primary-contrast: var(--theme-color-neutral-800); */
 }
