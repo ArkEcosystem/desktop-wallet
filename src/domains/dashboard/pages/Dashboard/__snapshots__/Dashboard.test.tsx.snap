@@ -104,7 +104,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -561,7 +561,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   class="relative"
                 >
                   <div
-                    class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -581,7 +581,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -618,7 +618,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -638,7 +638,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 33.75089801 DARK
@@ -677,7 +677,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -714,7 +714,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -734,7 +734,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 57.68 DARK
@@ -759,7 +759,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -796,7 +796,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -810,7 +810,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
@@ -2442,7 +2442,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2932,7 +2932,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                   class="relative"
                 >
                   <div
-                    class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -2952,7 +2952,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -2989,7 +2989,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -3009,7 +3009,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 33.75089801 DARK
@@ -3048,7 +3048,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -3085,7 +3085,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -3105,7 +3105,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 57.68 DARK
@@ -3130,7 +3130,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -3167,7 +3167,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -3181,7 +3181,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
@@ -4157,7 +4157,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4798,7 +4798,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                   class="relative"
                 >
                   <div
-                    class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -4818,7 +4818,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -4855,7 +4855,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -4875,7 +4875,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 33.75089801 DARK
@@ -4914,7 +4914,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -4951,7 +4951,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -4971,7 +4971,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 57.68 DARK
@@ -4996,7 +4996,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -5033,7 +5033,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -5047,7 +5047,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
@@ -5180,7 +5180,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -5637,7 +5637,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   class="relative"
                 >
                   <div
-                    class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -5657,7 +5657,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -5694,7 +5694,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -5714,7 +5714,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 33.75089801 DARK
@@ -5753,7 +5753,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -5790,7 +5790,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -5810,7 +5810,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 57.68 DARK
@@ -5835,7 +5835,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -5872,7 +5872,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -5886,7 +5886,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
@@ -6862,7 +6862,7 @@ exports[`Dashboard should render 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -7319,7 +7319,7 @@ exports[`Dashboard should render 1`] = `
                   class="relative"
                 >
                   <div
-                    class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -7339,7 +7339,7 @@ exports[`Dashboard should render 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -7376,7 +7376,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -7396,7 +7396,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 33.75089801 DARK
@@ -7435,7 +7435,7 @@ exports[`Dashboard should render 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -7472,7 +7472,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -7492,7 +7492,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 57.68 DARK
@@ -7517,7 +7517,7 @@ exports[`Dashboard should render 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -7554,7 +7554,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -7568,7 +7568,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
@@ -8544,7 +8544,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -9001,7 +9001,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   class="relative"
                 >
                   <div
-                    class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -9021,7 +9021,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -9058,7 +9058,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -9078,7 +9078,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 33.75089801 DARK
@@ -9117,7 +9117,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -9154,7 +9154,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -9174,7 +9174,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 57.68 DARK
@@ -9199,7 +9199,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -9236,7 +9236,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -9250,7 +9250,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
@@ -10226,7 +10226,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -10683,7 +10683,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   class="relative"
                 >
                   <div
-                    class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -10703,7 +10703,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -10740,7 +10740,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -10760,7 +10760,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 33.75089801 DARK
@@ -10799,7 +10799,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -10836,7 +10836,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -10856,7 +10856,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 57.68 DARK
@@ -10881,7 +10881,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -10918,7 +10918,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -10932,7 +10932,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
@@ -11908,7 +11908,7 @@ exports[`Dashboard should render wallets 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -12365,7 +12365,7 @@ exports[`Dashboard should render wallets 1`] = `
                   class="relative"
                 >
                   <div
-                    class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -12385,7 +12385,7 @@ exports[`Dashboard should render wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -12422,7 +12422,7 @@ exports[`Dashboard should render wallets 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -12442,7 +12442,7 @@ exports[`Dashboard should render wallets 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 33.75089801 DARK
@@ -12481,7 +12481,7 @@ exports[`Dashboard should render wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -12518,7 +12518,7 @@ exports[`Dashboard should render wallets 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -12538,7 +12538,7 @@ exports[`Dashboard should render wallets 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 57.68 DARK
@@ -12563,7 +12563,7 @@ exports[`Dashboard should render wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative h-full flex flex-col p-2 justify-between"
+                              class="relative flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="-space-x-2"
@@ -12600,7 +12600,7 @@ exports[`Dashboard should render wallets 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex truncate max-w-12 mt-auto"
+                                class="flex mt-auto truncate max-w-12"
                               >
                                 <div
                                   class="inline-block truncate align-middle"
@@ -12614,7 +12614,7 @@ exports[`Dashboard should render wallets 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="font-bold text-lg text-theme-text"
+                                class="text-lg font-bold text-theme-text"
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
@@ -14000,7 +14000,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                   class="relative"
                 >
                   <div
-                    class="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none swiper-container-initialized swiper-container-horizontal"
+                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -14020,7 +14020,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="h-full flex flex-col p-2 justify-between"
+                              class="flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="flex -space-x-2"
@@ -14062,7 +14062,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="h-full flex flex-col p-2 justify-between"
+                              class="flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="flex -space-x-2"
@@ -14104,7 +14104,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="h-full flex flex-col p-2 justify-between"
+                              class="flex flex-col justify-between h-full p-2"
                             >
                               <div
                                 class="flex -space-x-2"

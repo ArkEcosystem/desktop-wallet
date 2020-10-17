@@ -27,7 +27,7 @@ type SupportProps = {
 };
 
 const ArticleListItem = ({ title, path }: ArticleListItemProps) => (
-	<li className="border-dotted cursor-pointer border-b border-theme-neutral-300 dark:border-theme-neutral-800 last:border-b-0">
+	<li className="border-b border-dotted cursor-pointer border-theme-neutral-300 dark:border-theme-neutral-800 last:border-b-0">
 		<a
 			title={title}
 			href={path}

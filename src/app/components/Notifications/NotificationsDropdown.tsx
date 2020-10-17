@@ -24,7 +24,7 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 						>
 							<Icon name="Notification" width={22} height={22} className="p-1" />
 							{hasUnread && (
-								<div className="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-theme-background border-theme-background rounded-full">
+								<div className="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background">
 									<div className="w-2 h-2 rounded-full bg-theme-danger-500" />
 								</div>
 							)}

@@ -36,7 +36,7 @@ const FastNavigation = ({ sections }: FastNavProps) => {
 
 	return (
 		<NavWrapper className="sticky float-right w-40 top-2">
-			<div className="pl-3 text-xs font-bold text-theme-neutral-light border-l border-theme-neutral-300 dark:border-theme-neutral-800">
+			<div className="pl-3 text-xs font-bold border-l text-theme-neutral-light border-theme-neutral-300 dark:border-theme-neutral-800">
 				Fast navigation
 			</div>
 			<ul>

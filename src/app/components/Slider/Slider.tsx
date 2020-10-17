@@ -71,7 +71,7 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 			)}
 
 			<div
-				className="slide-container -mx-5 px-5 -mb-8 overflow-hidden list-none"
+				className="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container"
 				style={{ height: `${getContainerHeight()}px` }}
 			>
 				<div className={`h-full swiper-wrapper ${className || ""}`}>

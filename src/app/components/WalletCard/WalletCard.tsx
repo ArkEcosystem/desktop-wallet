@@ -44,7 +44,7 @@ export const WalletCard = ({
 		return (
 			<div data-testid="WalletCard__blank" className={`w-64 inline-block ${className}`}>
 				<Card className="h-48">
-					<div className="h-full flex flex-col p-2 justify-between">
+					<div className="flex flex-col justify-between h-full p-2">
 						<div className="flex -space-x-2">
 							<Circle
 								size="lg"
@@ -109,13 +109,13 @@ export const WalletCard = ({
 				onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`)}
 				onSelect={onSelect}
 			>
-				<div className="relative h-full flex flex-col p-2 justify-between">
+				<div className="relative flex flex-col justify-between h-full p-2">
 					<div className="-space-x-2">
 						<NetworkIcon size="lg" coin={wallet.coinId()} network={wallet.networkId()} />
 						<Avatar size="lg" address={wallet.address()} />
 					</div>
 
-					<div className="flex truncate max-w-12 mt-auto">
+					<div className="flex mt-auto truncate max-w-12">
 						<Address
 							walletName={wallet.alias()}
 							address={wallet.address()}
@@ -127,7 +127,7 @@ export const WalletCard = ({
 					<Amount
 						value={wallet.balance()}
 						ticker={wallet.network().ticker()}
-						className="font-bold text-lg text-theme-text"
+						className="text-lg font-bold text-theme-text"
 					/>
 				</div>
 			</Card>
