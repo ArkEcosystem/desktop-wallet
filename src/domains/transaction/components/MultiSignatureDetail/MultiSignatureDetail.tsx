@@ -108,7 +108,7 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 
 	return (
 		<Modal title={""} isOpen={isOpen} onClose={onClose}>
-			<Form context={form} onSubmit={() => void 0}>
+			<Form context={form} onSubmit={broadcast}>
 				<Tabs activeId={activeStep}>
 					<TabPanel tabId={1}>
 						<SummaryStep wallet={wallet} transaction={transaction} />
@@ -124,10 +124,7 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 
 					{canBeBroadascated && !canBeSigned && activeStep === 1 && (
 						<div className="flex justify-center mt-8 space-x-2">
-							<Button
-								data-testid="MultiSignatureDetail__broadcast"
-								onClick={handleSubmit(() => broadcast())}
-							>
+							<Button type="submit" data-testid="MultiSignatureDetail__broadcast">
 								{isSubmitting ? <Spinner size="sm" /> : t("COMMON.SEND")}
 							</Button>
 						</div>

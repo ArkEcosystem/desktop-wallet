@@ -149,6 +149,29 @@ describe("MultiSignatureDetail", () => {
 		broadcastMock.mockRestore();
 	});
 
+	it("should fail to broadcast transaction", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockRejectedValue(new Error("Failed"));
+		const toastsMock = jest.spyOn(toasts, "error");
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.getByTestId("MultiSignatureDetail__broadcast")));
+
+		expect(container).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("MultiSignatureDetail__broadcast"));
+		});
+
+		await waitFor(() => expect(toastsMock).toHaveBeenCalled());
+
+		broadcastMock.mockRestore();
+		toastsMock.mockReset();
+	});
+
 	it("should show paginator when able to sign", async () => {
 		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);

@@ -86,12 +86,16 @@ describe("Signed Transaction Table", () => {
 	});
 
 	it("should render", () => {
+		const isMultiSignatureReadyMock = jest
+			.spyOn(wallet.coin().multiSignature(), "isMultiSignatureReady")
+			.mockReturnValue(true);
 		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(false);
 		const { asFragment } = render(
 			<SignedTransactionTable transactions={Object.values(fixtures)} wallet={wallet} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 		canBeSignedMock.mockReset();
+		isMultiSignatureReadyMock.mockRestore();
 	});
 
 	it("should show as awaiting the wallet signature", async () => {
