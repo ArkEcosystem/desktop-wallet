@@ -25,9 +25,10 @@ import { useWalletTransactions } from "./hooks/use-wallet-transactions";
 
 type WalletDetailsProps = {
 	txSkeletonRowsLimit?: number;
+	transactionLimit?: number;
 };
 
-export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
+export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletDetailsProps) => {
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
@@ -52,7 +53,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		fetchMore,
 		isLoading: isLoadingTransactions,
 		hasMore,
-	} = useWalletTransactions(activeWallet, { limit: 15 });
+	} = useWalletTransactions(activeWallet, { limit: transactionLimit! });
 
 	const walletVotes = () => {
 		// Being synced in background and will be updated after persisting
@@ -303,4 +304,5 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 WalletDetails.defaultProps = {
 	txSkeletonRowsLimit: 8,
+	transactionLimit: 15,
 };
