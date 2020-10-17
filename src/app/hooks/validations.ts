@@ -19,6 +19,6 @@ export const useValidation = () => {
 			entityRegistration: entityRegistration(t),
 			sendTransfer: sendTransfer(t, env),
 		}),
-		[t],
+		[t, env],
 	);
 };
