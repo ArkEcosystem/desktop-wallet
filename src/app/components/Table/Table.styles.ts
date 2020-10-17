@@ -13,7 +13,7 @@ export const defaultTableStyle = `
 			    right: 0;
 			    top: 25%;
 			    border-left-width: 1px;
-			    border-color: var(--theme-color-neutral-300);
+			    border-color: inherit;
 			}
 		}
 	}

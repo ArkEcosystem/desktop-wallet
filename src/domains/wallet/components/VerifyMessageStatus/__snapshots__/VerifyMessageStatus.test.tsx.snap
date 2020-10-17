@@ -14,10 +14,10 @@ exports[`VerifyMessageStatus should render verify message error 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -45,7 +45,7 @@ exports[`VerifyMessageStatus should render verify message error 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             Description
           </div>
@@ -75,10 +75,10 @@ exports[`VerifyMessageStatus should render verify message success 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -106,7 +106,7 @@ exports[`VerifyMessageStatus should render verify message success 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             Description
           </div>

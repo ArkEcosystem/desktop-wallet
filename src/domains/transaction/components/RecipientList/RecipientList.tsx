@@ -34,7 +34,7 @@ const RecipientListItem = ({
 	if (variant === "condensed") {
 		return (
 			<tr
-				className="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+				className="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
 				data-testid="recipient-list__recipient-list-item"
 			>
 				<td className="w-12 py-4">
@@ -58,7 +58,7 @@ const RecipientListItem = ({
 
 	return (
 		<tr
-			className="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+			className="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
 			data-testid="recipient-list__recipient-list-item"
 		>
 			<td className="py-6 w-14">

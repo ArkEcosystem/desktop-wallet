@@ -74,7 +74,7 @@ export const Plugins = ({ formConfig, onSuccess }: SettingsProps) => {
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.PLUGINS.APPLY_BLACKLIST.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.PLUGINS.APPLY_BLACKLIST.DESCRIPTION"),
 			labelAddon: <Toggle />,
 			wrapperClass: "pb-6",
@@ -100,7 +100,7 @@ export const Plugins = ({ formConfig, onSuccess }: SettingsProps) => {
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.PLUGINS.PLUGIN_SOURCE.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.PLUGINS.PLUGIN_SOURCE.DESCRIPTION"),
 			labelAddon: <Toggle />,
 			wrapperClass: "pt-6",

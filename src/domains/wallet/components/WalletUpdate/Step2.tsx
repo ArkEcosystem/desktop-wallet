@@ -11,7 +11,7 @@ export const SecondStep = () => {
 			<div className="flex w-2/5 mx-auto mb-8">
 				<div className="flex-1">
 					<p className="text-sm font-semibold text-theme-neutral-light">{t("COMMON.DOWNLOADED")}</p>
-					<p className="text-sm font-bold text-theme-neutral-dark">154 KB / 154 KB</p>
+					<p className="text-sm font-bold text-theme-secondary-text">154 KB / 154 KB</p>
 				</div>
 				<div className="flex-1">
 					<div className="flex justify-center">

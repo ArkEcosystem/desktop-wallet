@@ -67,14 +67,14 @@ export const WalletHeader = ({
 								coin={coin}
 								network={network}
 								size="lg"
-								className="-mr-1 border-theme-neutral-dark text-theme-neutral-dark"
+								className="-mr-1 border-theme-neutral-dark text-theme-secondary-text"
 								noShadow
 							/>
 							<Avatar size="lg" address={address} shadowColor="--theme-color-neutral-900" />
 						</div>
 
 						<div className="flex flex-col overflow-hidden">
-							<div className="flex items-center space-x-5 text-theme-neutral-dark">
+							<div className="flex items-center space-x-5 text-theme-secondary-text">
 								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
 									{name}
 								</span>
@@ -111,7 +111,7 @@ export const WalletHeader = ({
 							<div className="flex items-center space-x-5">
 								<span className="text-lg font-semibold text-white truncate">{address}</span>
 
-								<div className="flex items-end mb-2 space-x-3 text-theme-neutral-dark">
+								<div className="flex items-end mb-2 space-x-3 text-theme-secondary-text">
 									<Clipboard data={address} tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_ADDRESS")}>
 										<Icon
 											name="CopyAddress"
@@ -139,7 +139,7 @@ export const WalletHeader = ({
 
 					<div className="flex items-center space-x-2 h-13 w-1/2 pl-12">
 						<div className="flex flex-col mr-auto">
-							<div className="flex items-center text-sm font-semibold text-theme-neutral-dark">
+							<div className="flex items-center text-sm font-semibold text-theme-secondary-text">
 								<span>{t("COMMON.BALANCE")}:</span>
 
 								{currencyBalance && (
@@ -179,7 +179,7 @@ export const WalletHeader = ({
 							<Button
 								size="icon"
 								variant="transparent"
-								className="text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+								className="text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
 								data-testid="WalletHeader__star-button"
 								onClick={onStar}
 							>
@@ -245,7 +245,7 @@ export const WalletHeader = ({
 										onStoreHash();
 									}
 								}}
-								dropdownClass="top-5 right-3 text-left bg-white"
+								dropdownClass="top-5 right-3 text-left"
 							/>
 						</div>
 					</div>

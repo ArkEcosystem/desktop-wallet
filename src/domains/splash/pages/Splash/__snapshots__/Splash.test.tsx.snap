@@ -3,7 +3,7 @@
 exports[`Splash should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -57,7 +57,7 @@ exports[`Splash should render 1`] = `
               ARK Desktop Wallet
             </h1>
             <p
-              class="text-theme-neutral-dark animate-pulse"
+              class="text-theme-secondary-text animate-pulse"
             >
               Initializing...
             </p>
@@ -98,25 +98,25 @@ exports[`Splash should render 1`] = `
             </div>
           </div>
           <div
-            class="fixed left-0 right-0 flex items-center justify-center text-xs font-semibold bottom-5 text-theme-neutral-500"
+            class="fixed left-0 right-0 flex items-center justify-center text-xs font-semibold bottom-5 text-theme-neutral-500 dark:text-theme-neutral-700"
             data-testid="Splash__footer"
           >
             <div>
               2020 © ARK.io
             </div>
             <div
-              class="sc-AxjAm gHUxAL border-theme-neutral-300"
+              class="sc-AxjAm gHUxAL border-theme-neutral-300 dark:border-theme-neutral-800"
               type="vertical"
             />
             <div>
               All Rights Reserved
             </div>
             <div
-              class="sc-AxjAm gHUxAL border-theme-neutral-300"
+              class="sc-AxjAm gHUxAL border-theme-neutral-300 dark:border-theme-neutral-800"
               type="vertical"
             />
             <div
-              class="sc-fzoyTs gXzUbB"
+              class="sc-fzoyTs dVnhyx"
             >
               <svg
                 width="18"
@@ -128,7 +128,7 @@ exports[`Splash should render 1`] = `
               An ARK.io Product
             </div>
             <div
-              class="sc-AxjAm gHUxAL border-theme-neutral-300"
+              class="sc-AxjAm gHUxAL border-theme-neutral-300 dark:border-theme-neutral-800"
               type="vertical"
             />
             <div>

@@ -9,7 +9,7 @@ type Props = {
 export const TransactionRowSkeleton = ({ showSign, showCurrency, ...props }: Props) => (
 	<tr
 		data-testid="TransactionRow"
-		className="border-b border-dotted last:border-b-0 border-theme-neutral-300"
+		className="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
 		{...props}
 	>
 		<td className="w-16 py-6">
@@ -34,7 +34,7 @@ export const TransactionRowSkeleton = ({ showSign, showCurrency, ...props }: Pro
 			<Skeleton height={6} width="60%" className="mt-4" />
 		</td>
 		<td className="text-right">
-			<span className="px-2 pt-2 mt-1 border-2 rounded-lg border-theme-neutral-200">
+			<span className="px-2 pt-2 mt-1 border-2 rounded-lg border-theme-neutral-300 dark:border-theme-neutral-800">
 				<Skeleton height={6} width="80%" className="mt-4" />
 			</span>
 		</td>

@@ -77,7 +77,7 @@ export const WalletListItem = ({ wallet, isCondensed, onAction, options }: Props
 
 			<TableCell
 				variant="end"
-				className="border-b border-dashed border-theme-neutral-200"
+				className="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
 				innerClassName="justify-end"
 			>
 				<Button

@@ -10,7 +10,10 @@ type VoteListProps = {
 export const VoteList = ({ votes }: VoteListProps) => (
 	<div className="-my-2">
 		{votes?.map((vote: ReadOnlyWallet, index: number) => (
-			<div key={index} className="border-b border-dashed last:border-b-0 border-theme-neutral-300">
+			<div
+				key={index}
+				className="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+			>
 				<div className="py-4 space-x-4">
 					<Avatar size="sm" address={vote.address()} />
 					<Address address={vote.address()} walletName={vote.username()} />

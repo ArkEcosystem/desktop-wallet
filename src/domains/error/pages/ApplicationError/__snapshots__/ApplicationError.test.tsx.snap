@@ -3,7 +3,7 @@
 exports[`ApplicationError should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -57,13 +57,13 @@ exports[`ApplicationError should render 1`] = `
               Something went wrong
             </h2>
             <p
-              class="text-theme-neutral-dark"
+              class="text-theme-secondary-text"
             >
               It looks like something went wrong. Try visiting another page or reloading.
             </p>
           </div>
           <button
-            class="sc-AxjAm kbZyZT mt-8"
+            class="sc-AxjAm BsmvP mt-8"
             color="primary"
             type="button"
           >

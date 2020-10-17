@@ -14,10 +14,10 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -71,7 +71,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Sender
                       </div>
@@ -82,16 +82,16 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzokOt gcdrkZ text-theme-neutral-light font-semibold text-base"
+                            class="sc-fzokOt gcdrkZ text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            DNzn2R…GwaMbH
+                            DNzn2R … GwaMbH
                           </span>
                         </div>
                       </div>
@@ -116,14 +116,14 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Recipients (2)
                       </div>
@@ -137,7 +137,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                             class="sc-fznJRM clPBLO"
                           >
                             <div
-                              class="sc-fzoXzr cYkDNe -mt-3"
+                              class="sc-fzoXzr dbrLwE -mt-3"
                               role="table"
                             >
                               <table
@@ -146,11 +146,11 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                               >
                                 <thead>
                                   <tr
-                                    class="border-b border-theme-neutral-300"
+                                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
                                     role="row"
                                   >
                                     <th
-                                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                                       colspan="1"
                                       data-testid="table__th--0"
                                       role="columnheader"
@@ -164,7 +164,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                       </div>
                                     </th>
                                     <th
-                                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                                       colspan="1"
                                       data-testid="table__th--1"
                                       role="columnheader"
@@ -178,7 +178,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                       </div>
                                     </th>
                                     <th
-                                      class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                                       colspan="1"
                                       data-testid="table__th--2"
                                       role="columnheader"
@@ -197,7 +197,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                   role="rowgroup"
                                 >
                                   <tr
-                                    class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                                    class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                                     data-testid="recipient-list__recipient-list-item"
                                   >
                                     <td
@@ -248,7 +248,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                     </td>
                                   </tr>
                                   <tr
-                                    class="border-b border-dashed last:border-b-0 border-theme-neutral-300"
+                                    class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
                                     data-testid="recipient-list__recipient-list-item"
                                   >
                                     <td
@@ -307,14 +307,14 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Transaction Fee
                       </div>
@@ -330,33 +330,33 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Timestamp
                       </div>
                       <div
                         class="font-semibold"
                       >
-                        10.08.2020 20:00:48
+                        10.08.2020 23:00:48
                       </div>
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Confirmations
                       </div>
@@ -368,14 +368,14 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         ID
                       </div>
@@ -389,7 +389,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                             class="sc-fzokOt gcdrkZ text-theme-text"
                             data-testid="TruncateMiddle"
                           >
-                            db26391ac72d2…5554a78408e57
+                            db26391ac72d2 … 5554a78408e57
                           </span>
                           <span
                             class="ml-5 text-theme-primary-300"
@@ -434,7 +434,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                             You
                           </div>
                           <div
-                            class="pr-6 mr-2 border-r border-theme-neutral-300"
+                            class="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <li
                               class="relative"
@@ -547,10 +547,10 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -604,7 +604,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Sender
                       </div>
@@ -615,16 +615,16 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzokOt gcdrkZ text-theme-neutral-light font-semibold text-base"
+                            class="sc-fzokOt gcdrkZ text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D8rr7B…s6YUYD
+                            D8rr7B … s6YUYD
                           </span>
                         </div>
                       </div>
@@ -649,14 +649,14 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Recipient
                       </div>
@@ -684,14 +684,14 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Transaction Fee
                       </div>
@@ -707,33 +707,33 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Timestamp
                       </div>
                       <div
                         class="font-semibold"
                       >
-                        10.08.2020 20:00:48
+                        10.08.2020 23:00:48
                       </div>
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Confirmations
                       </div>
@@ -745,14 +745,14 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         ID
                       </div>
@@ -766,7 +766,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                             class="sc-fzokOt gcdrkZ text-theme-text"
                             data-testid="TruncateMiddle"
                           >
-                            e4d2450ea41e5…128f1ab150377
+                            e4d2450ea41e5 … 128f1ab150377
                           </span>
                           <span
                             class="ml-5 text-theme-primary-300"
@@ -811,7 +811,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                             You
                           </div>
                           <div
-                            class="pr-6 mr-2 border-r border-theme-neutral-300"
+                            class="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <li
                               class="relative"
@@ -924,10 +924,10 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -981,7 +981,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Sender
                       </div>
@@ -992,16 +992,16 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzokOt gcdrkZ text-theme-neutral-light font-semibold text-base"
+                            class="sc-fzokOt gcdrkZ text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            DNzn2R…GwaMbH
+                            DNzn2R … GwaMbH
                           </span>
                         </div>
                       </div>
@@ -1026,14 +1026,14 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Recipient
                       </div>
@@ -1068,14 +1068,14 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Amount
                       </div>
@@ -1095,12 +1095,12 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-fzqBZW lhvUOh border-theme-danger-contrast text-theme-danger"
+                      class="sc-fzqBZW kAIIrp border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                     >
                       <div
-                        class="sc-AxiKw dbWRzA"
-                        height="21"
-                        width="15"
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
                           sent.svg
@@ -1109,14 +1109,14 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Transaction Fee
                       </div>
@@ -1132,33 +1132,33 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Timestamp
                       </div>
                       <div
                         class="font-semibold"
                       >
-                        10.08.2020 20:00:48
+                        10.08.2020 23:00:48
                       </div>
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Confirmations
                       </div>
@@ -1170,14 +1170,14 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         ID
                       </div>
@@ -1191,7 +1191,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                             class="sc-fzokOt gcdrkZ text-theme-text"
                             data-testid="TruncateMiddle"
                           >
-                            19a78bd9d42f7…7296c8c6993dd
+                            19a78bd9d42f7 … 7296c8c6993dd
                           </span>
                           <span
                             class="ml-5 text-theme-primary-300"
@@ -1236,7 +1236,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                             You
                           </div>
                           <div
-                            class="pr-6 mr-2 border-r border-theme-neutral-300"
+                            class="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <li
                               class="relative"
@@ -1349,10 +1349,10 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -1406,7 +1406,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Sender
                       </div>
@@ -1417,16 +1417,16 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzokOt gcdrkZ text-theme-neutral-light font-semibold text-base"
+                            class="sc-fzokOt gcdrkZ text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            DNzn2R…GwaMbH
+                            DNzn2R … GwaMbH
                           </span>
                         </div>
                       </div>
@@ -1451,14 +1451,14 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Recipient
                       </div>
@@ -1493,14 +1493,14 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Amount
                       </div>
@@ -1520,12 +1520,12 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-fzqBZW lhvUOh border-theme-danger-contrast text-theme-danger"
+                      class="sc-fzqBZW kAIIrp border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                     >
                       <div
-                        class="sc-AxiKw dbWRzA"
-                        height="21"
-                        width="15"
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
                           sent.svg
@@ -1534,14 +1534,14 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Transaction Fee
                       </div>
@@ -1557,33 +1557,33 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Timestamp
                       </div>
                       <div
                         class="font-semibold"
                       >
-                        10.08.2020 20:00:48
+                        10.08.2020 23:00:48
                       </div>
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Confirmations
                       </div>
@@ -1595,14 +1595,14 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         ID
                       </div>
@@ -1616,7 +1616,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                             class="sc-fzokOt gcdrkZ text-theme-text"
                             data-testid="TruncateMiddle"
                           >
-                            19a78bd9d42f7…7296c8c6993dd
+                            19a78bd9d42f7 … 7296c8c6993dd
                           </span>
                           <span
                             class="ml-5 text-theme-primary-300"
@@ -1661,7 +1661,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                             You
                           </div>
                           <div
-                            class="pr-6 mr-2 border-r border-theme-neutral-300"
+                            class="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <li
                               class="relative"
@@ -1755,7 +1755,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                 class="flex justify-end mt-8 space-x-2"
               >
                 <button
-                  class="sc-AxjAm hXnHfM"
+                  class="sc-AxjAm joLCoM"
                   color="primary"
                   data-testid="Paginator__cancel"
                   type="button"
@@ -1763,7 +1763,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                   Cancel
                 </button>
                 <button
-                  class="sc-AxjAm kbZyZT"
+                  class="sc-AxjAm BsmvP"
                   color="primary"
                   data-testid="Paginator__sign"
                   type="button"
@@ -1794,10 +1794,10 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -1851,7 +1851,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Sender
                       </div>
@@ -1862,16 +1862,16 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzokOt gcdrkZ text-theme-neutral-light font-semibold text-base"
+                            class="sc-fzokOt gcdrkZ text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            DNzn2R…GwaMbH
+                            DNzn2R … GwaMbH
                           </span>
                         </div>
                       </div>
@@ -1896,14 +1896,14 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Recipient
                       </div>
@@ -1938,14 +1938,14 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Amount
                       </div>
@@ -1965,12 +1965,12 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                       </div>
                     </div>
                     <div
-                      class="sc-fzqBZW lhvUOh border-theme-danger-contrast text-theme-danger"
+                      class="sc-fzqBZW kAIIrp border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                     >
                       <div
-                        class="sc-AxiKw dbWRzA"
-                        height="21"
-                        width="15"
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
                           sent.svg
@@ -1979,14 +1979,14 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Transaction Fee
                       </div>
@@ -2002,33 +2002,33 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Timestamp
                       </div>
                       <div
                         class="font-semibold"
                       >
-                        10.08.2020 20:00:48
+                        10.08.2020 23:00:48
                       </div>
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         Confirmations
                       </div>
@@ -2040,14 +2040,14 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-fzoyAV eovDFc"
+                    class="sc-fzoyAV hXeczV"
                     data-testid="TransactionDetail"
                   >
                     <div
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral"
+                        class="text-sm font-semibold text-theme-neutral-700"
                       >
                         ID
                       </div>
@@ -2061,7 +2061,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                             class="sc-fzokOt gcdrkZ text-theme-text"
                             data-testid="TruncateMiddle"
                           >
-                            19a78bd9d42f7…7296c8c6993dd
+                            19a78bd9d42f7 … 7296c8c6993dd
                           </span>
                           <span
                             class="ml-5 text-theme-primary-300"
@@ -2106,7 +2106,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                             You
                           </div>
                           <div
-                            class="pr-6 mr-2 border-r border-theme-neutral-300"
+                            class="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <li
                               class="relative"
@@ -2200,7 +2200,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                 class="flex justify-center mt-8 space-x-2"
               >
                 <button
-                  class="sc-AxjAm kbZyZT"
+                  class="sc-AxjAm BsmvP"
                   color="primary"
                   data-testid="MultiSignatureDetail__broadcast"
                   type="button"
@@ -2231,10 +2231,10 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -2311,7 +2311,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                             You
                           </div>
                           <div
-                            class="pr-6 mr-2 border-r border-theme-neutral-300"
+                            class="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <li
                               class="relative"

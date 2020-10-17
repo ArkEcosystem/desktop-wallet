@@ -21,7 +21,7 @@ export const SearchBar = ({ placeholder, className, children, onSearch }: Search
 			<div className="flex items-center px-10 py-6 rounded shadow-xl bg-theme-background">
 				{children ? children : <Icon name="Search" className="w-4 mr-8 text-theme-neutral-300" />}
 
-				<div className="flex-1 pl-4 mr-4 border-l border-theme-neutral-200">
+				<div className="flex-1 pl-4 mr-4 border-l border-theme-neutral-300 dark:border-theme-neutral-800">
 					<Input
 						className="border-none shadow-none"
 						placeholder={placeholder || t("COMMON.SEARCH.PLACEHOLDER")}

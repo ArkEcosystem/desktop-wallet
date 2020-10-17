@@ -59,7 +59,7 @@ export const TabList = styled.div`
     ${tw`inline-flex justify-start items-stretch rounded bg-theme-neutral-contrast px-3`}
 
     & > ${TabButton} {
-        ${tw`px-5 py-4 border-b-3 border-transparent font-semibold text-theme-neutral-dark relative transition-colors ease-in-out duration-300`}
+        ${tw`px-5 py-4 border-b-3 border-transparent font-semibold text-theme-secondary-text relative transition-colors ease-in-out duration-300`}
 
         &[aria-selected="true"] {
             ${tw`border-theme-primary text-theme-text`}

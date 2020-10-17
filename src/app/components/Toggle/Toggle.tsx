@@ -6,14 +6,15 @@ const Input = styled.input`
 `;
 
 const Handle = styled.div`
-	height: 7px;
-	${tw`inline-flex rounded-full relative w-9 cursor-pointer bg-theme-neutral-light`}
+	height: 5px;
+	width: 30px;
+	${tw`inline-flex rounded-full relative cursor-pointer bg-theme-primary-contrast`}
 `;
 
 const HandleInner = styled.span<{ baseColor?: string; disabled?: boolean }>`
-	margin-top: 3px;
-	width: 18px;
-	height: 18px;
+	margin-top: 2px;
+	width: 16px;
+	height: 16px;
     ${tw`rounded-full absolute transform -translate-y-1/2 transition transition-colors transition-transform ease-in-out duration-200`}
 
     ${({ baseColor, disabled }) =>
@@ -24,7 +25,7 @@ const HandleInner = styled.span<{ baseColor?: string; disabled?: boolean }>`
   		`};
 
     ${Input}:checked ~ ${Handle} & {
-        ${tw`translate-x-full bg-theme-primary text-2xl`}
+        ${tw`translate-x-full bg-theme-primary-600 text-2xl`}
     }
 
     ${Input}:focus ~ ${Handle} & {

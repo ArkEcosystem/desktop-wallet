@@ -73,7 +73,7 @@ export const Wallets = ({
 	];
 
 	const walletSliderOptions = {
-		slideHeight: 185,
+		slideHeight: 192,
 		slidesPerView: 3,
 		slidesPerColumn: 2,
 		slidesPerGroup: 3,
@@ -168,7 +168,7 @@ export const Wallets = ({
 								)}
 							</div>
 						)}
-						{wallets.length === 0 && <div className="text-theme-neutral-dark">{walletsEmptyText}</div>}
+						{wallets.length === 0 && <div className="text-theme-secondary-text">{walletsEmptyText}</div>}
 					</div>
 				)}
 			</div>

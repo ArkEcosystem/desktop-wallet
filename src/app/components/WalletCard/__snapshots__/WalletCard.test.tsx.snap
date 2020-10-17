@@ -7,18 +7,18 @@ exports[`Wallet Card should render 1`] = `
     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
   >
     <div
-      class="sc-AxhCb eUhgNa"
+      class="sc-AxhCb fzgwyr h-48"
       data-testid="Card"
     >
       <div
-        class="relative p-2"
+        class="relative flex flex-col justify-between h-full p-2"
       >
         <div
           class="-space-x-2"
         >
           <div
             aria-label="ARK Devnet"
-            class="sc-AxhUy dHClEW border-theme-primary-100 text-theme-primary-400"
+            class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
             data-testid="NetworkIcon-ARK-ark.devnet"
           >
             <div
@@ -48,27 +48,27 @@ exports[`Wallet Card should render 1`] = `
           </div>
         </div>
         <div
-          class="flex mt-6 truncate max-w-12"
+          class="flex mt-auto truncate max-w-12"
         >
           <div
             class="inline-block truncate align-middle"
           >
             <span
-              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+              class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
               data-testid="address__wallet-name"
             >
               ARK Wallet 1
             </span>
             <span
-              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+              class="sc-AxjAm StDqN text-theme-neutral-500 font-semibold text-base"
               data-testid="address__wallet-address"
             >
-              D8rr…YUYD
+              D8rr … YUYD
             </span>
           </div>
         </div>
         <span
-          class="font-bold text-theme-text"
+          class="text-lg font-bold text-theme-text"
           data-testid="Amount"
         >
           33.75089801 DARK
@@ -129,29 +129,29 @@ exports[`Wallet Card should render blank 1`] = `
     data-testid="WalletCard__blank"
   >
     <div
-      class="sc-AxhCb bieasX"
+      class="sc-AxhCb jCtSzq h-48"
       data-testid="Card"
     >
       <div
-        class="p-2"
+        class="flex flex-col justify-between h-full p-2"
       >
         <div
-          class="flex"
+          class="flex -space-x-2"
         >
           <div
-            class="sc-AxhUy dHClEW -mr-2 bg-theme-background border-theme-primary-contrast"
+            class="sc-AxhUy iDenJW bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
           />
           <div
-            class="sc-AxhUy dHClEW bg-theme-background border-theme-primary-contrast"
+            class="sc-AxhUy iDenJW bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
           />
         </div>
         <div
-          class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+          class="mt-auto text-theme-primary-contrast dark:text-theme-neutral-800 font-semibold undefined"
         >
           New Wallet
         </div>
         <div
-          class="text-md text-theme-primary-contrast font-bold undefined"
+          class="text-lg text-theme-primary-contrast dark:text-theme-neutral-800 font-bold undefined"
         >
           Balance
         </div>
@@ -171,18 +171,18 @@ exports[`Wallet Card should render with wallet data 1`] = `
     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
   >
     <div
-      class="sc-AxhCb eUhgNa"
+      class="sc-AxhCb fzgwyr h-48"
       data-testid="Card"
     >
       <div
-        class="relative p-2"
+        class="relative flex flex-col justify-between h-full p-2"
       >
         <div
           class="-space-x-2"
         >
           <div
             aria-label="ARK Devnet"
-            class="sc-AxhUy dHClEW border-theme-primary-100 text-theme-primary-400"
+            class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
             data-testid="NetworkIcon-ARK-ark.devnet"
           >
             <div
@@ -212,27 +212,27 @@ exports[`Wallet Card should render with wallet data 1`] = `
           </div>
         </div>
         <div
-          class="flex mt-6 truncate max-w-12"
+          class="flex mt-auto truncate max-w-12"
         >
           <div
             class="inline-block truncate align-middle"
           >
             <span
-              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+              class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
               data-testid="address__wallet-name"
             >
               My wallet
             </span>
             <span
-              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+              class="sc-AxjAm StDqN text-theme-neutral-500 font-semibold text-base"
               data-testid="address__wallet-address"
             >
-              D8rr…YUYD
+              D8rr … YUYD
             </span>
           </div>
         </div>
         <span
-          class="font-bold text-theme-text"
+          class="text-lg font-bold text-theme-text"
           data-testid="Amount"
         >
           33.75089801 DARK
@@ -294,18 +294,18 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
   >
     <div
-      class="sc-AxhCb eUhgNa"
+      class="sc-AxhCb fzgwyr h-48"
       data-testid="Card"
     >
       <div
-        class="relative p-2"
+        class="relative flex flex-col justify-between h-full p-2"
       >
         <div
           class="-space-x-2"
         >
           <div
             aria-label="ARK Devnet"
-            class="sc-AxhUy dHClEW border-theme-primary-100 text-theme-primary-400"
+            class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
             data-testid="NetworkIcon-ARK-ark.devnet"
           >
             <div
@@ -335,27 +335,27 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
           </div>
         </div>
         <div
-          class="flex mt-6 truncate max-w-12"
+          class="flex mt-auto truncate max-w-12"
         >
           <div
             class="inline-block truncate align-middle"
           >
             <span
-              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+              class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-neutral-700"
               data-testid="address__wallet-name"
             >
               My wallet
             </span>
             <span
-              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+              class="sc-AxjAm StDqN text-theme-neutral-500 font-semibold text-base"
               data-testid="address__wallet-address"
             >
-              D8rr…YUYD
+              D8rr … YUYD
             </span>
           </div>
         </div>
         <span
-          class="font-bold text-theme-text"
+          class="text-lg font-bold text-theme-text"
           data-testid="Amount"
         >
           33.75089801 DARK

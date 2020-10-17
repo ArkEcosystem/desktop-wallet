@@ -83,7 +83,7 @@ export const Signatures = ({
 				<div>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">{t("COMMON.YOU")}</div>
 
-					<div className="pr-6 mr-2 border-r border-theme-neutral-300">
+					<div className="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 						<ParticipantStatus
 							transactionId={transactionId}
 							publicKey={wallet.publicKey()!}

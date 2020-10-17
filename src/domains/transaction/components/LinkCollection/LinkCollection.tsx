@@ -156,7 +156,7 @@ export const LinkCollection = ({
 				</div>
 			</div>
 
-			<div className="mt-2 text-theme-neutral-dark">{description}</div>
+			<div className="mt-2 text-theme-secondary-text">{description}</div>
 
 			{isExpanded && (
 				<div className="mt-4">
@@ -204,7 +204,7 @@ export const LinkCollection = ({
 								<tr
 									data-testid="LinkCollection__item"
 									key={rowData.value}
-									className="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300"
+									className="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
 								>
 									{selectionTypeTitle && (
 										<td className="w-16 text-center align-middle">

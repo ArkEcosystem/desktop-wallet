@@ -220,7 +220,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onSearch={() => console.log("search")}
 									extra={<SearchBarPluginFilters />}
 								/>
-								<div className="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
+								<div className="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 								<Button
 									data-testid="PluginManager_header--install"
 									onClick={() => setInstallPlugin(true)}

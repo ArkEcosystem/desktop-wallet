@@ -45,14 +45,16 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 
 				<div className="flex flex-col space-y-10">
 					<div>
-						<span className="font-semibold text-theme-neutral-dark">{t("NEWS.ADD_ASSETS.SELECTIONS")}</span>
+						<span className="font-semibold text-theme-secondary-text">
+							{t("NEWS.ADD_ASSETS.SELECTIONS")}
+						</span>
 						<div className="mt-3">
 							<FilterNetwork networks={selectedAssets} hideViewAll />
 						</div>
 					</div>
 
 					<div>
-						<span className="mb-3 font-semibold text-theme-neutral-dark">
+						<span className="mb-3 font-semibold text-theme-secondary-text">
 							{t("NEWS.ADD_ASSETS.ALL_ASSETS")}
 						</span>
 						<div className="flex flex-wrap mt-3 -mx-3">
@@ -60,14 +62,17 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 								<Circle
 									key={index}
 									size="lg"
-									className="relative m-3 border-theme-neutral-200 text-theme-neutral-300"
+									className="relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
 								>
 									<Icon name="ARK" width={20} height={20} />
-									<Badge className="border-theme-neutral-200" />
+									<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" />
 								</Circle>
 							))}
 
-							<Circle size="lg" className="relative m-3 border-theme-neutral-200 text-theme-neutral-300">
+							<Circle
+								size="lg"
+								className="relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+							>
 								<div className="text-xs text-theme-primary-500">+443</div>
 							</Circle>
 						</div>
