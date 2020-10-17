@@ -34,7 +34,7 @@ const passphrase2 = "power return attend drink piece found tragic fire liar page
 const renderPage = async () => {
 	const rendered = renderWithRouter(
 		<Route path="/profiles/:profileId/wallets/:walletId">
-			<WalletDetails txSkeletonRowsLimit={1} />
+			<WalletDetails txSkeletonRowsLimit={1} transactionLimit={1} />
 		</Route>,
 		{
 			routes: [walletUrl],
@@ -44,7 +44,7 @@ const renderPage = async () => {
 
 	const { getByTestId } = rendered;
 
-	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(15));
+	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1));
 
 	return rendered;
 };
@@ -82,7 +82,13 @@ describe("WalletDetails", () => {
 			})
 			.get("/api/transactions")
 			.query((params) => !!params.address)
-			.reply(200, () => require("tests/fixtures/coins/ark/devnet/transactions.json"))
+			.reply(200, () => {
+				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
+				return {
+					meta,
+					data: data.slice(0, 1),
+				};
+			})
 			.persist();
 	});
 
@@ -274,7 +280,7 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => {
-			expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(30);
+			expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(2);
 		});
 	});
 
