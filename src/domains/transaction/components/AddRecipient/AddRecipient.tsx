@@ -59,45 +59,42 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
 	const [displayAmount, setDisplayAmount] = useState<string | undefined>();
-	const [isSubFormStateValid, setSubFormState] = useState<boolean>(false);
 
 	const { t } = useTranslation();
-	const { sendTransfer } = useValidation();
-	const { getValues, setValue, register, trigger, watch } = useFormContext();
+	const {
+		setValue,
+		register,
+		watch,
+		trigger,
+		clearErrors,
+		formState: { errors },
+	} = useFormContext();
 	const { recipientAddress, amount, network, senderAddress, fee } = watch();
+	const { sendTransfer } = useValidation();
 
-	const senderWalletBalance = useMemo(
-		() => profile.wallets().findByAddress(senderAddress)?.balance() || BigNumber.ZERO,
-		[senderAddress],
-	);
+	const availableBalance = useMemo(() => {
+		const senderBalance = profile.wallets().findByAddress(senderAddress)?.balance() || BigNumber.ZERO;
 
-	const availableAmount = useMemo(
-		() => addedRecipients.reduce((sum, item) => sum.minus(item.amount), senderWalletBalance),
-		[senderWalletBalance, addedRecipients],
-	);
+		if (isSingle) return senderBalance;
 
-	useEffect(() => {
-		const setValidationState = async () => {
-			const isValidFields = await trigger(["amount", "recipientAddress"]);
-			setSubFormState(isValidFields);
-		};
-		setValidationState();
-	}, [amount, recipientAddress, trigger]);
+		return addedRecipients.reduce((sum, item) => sum.minus(item.amount), senderBalance).minus(fee);
+	}, [addedRecipients, profile, senderAddress, isSingle, fee]);
 
 	useEffect(() => {
-		register("amount", sendTransfer.amount(network, availableAmount));
-	}, [register, availableAmount]);
+		clearErrors();
+	}, [isSingle, clearErrors]);
+
+	useEffect(() => {
+		register("amount", sendTransfer.amount(network, availableBalance));
+	}, [register, availableBalance, network, sendTransfer]);
 
 	const clearFields = () => {
-		setDisplayAmount("0.0");
+		setDisplayAmount(undefined);
 		setValue("amount", undefined);
 		setValue("recipientAddress", null);
 	};
 
 	const singleRecipientOnChange = () => {
-		const recipientAddress = getValues("recipientAddress");
-		const amount = getValues("amount");
-
 		if (!isSingle) return;
 
 		if (!recipientAddress || !BigNumber.make(amount).toNumber()) {
@@ -112,12 +109,17 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 		]);
 	};
 
-	const handleAddRecipient = (address: string, amount: number) => {
-		addedRecipients.push({
-			amount: BigNumber.make(amount),
-			address,
-		});
-		setAddressRecipients(addedRecipients);
+	const handleAddRecipient = async (address: string, amount: number) => {
+		const isValid = await trigger(["recipientAddress", "amount"]);
+		if (!isValid) return;
+
+		setAddressRecipients([
+			...addedRecipients,
+			{
+				amount: BigNumber.make(amount),
+				address,
+			},
+		]);
 		onChange?.(addedRecipients);
 		clearFields();
 	};
@@ -180,8 +182,8 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 									type="button"
 									data-testid="add-recipient__send-all"
 									onClick={() => {
-										setDisplayAmount(availableAmount.toHuman());
-										setValue("amount", availableAmount.toString(), {
+										setDisplayAmount(availableBalance.toHuman());
+										setValue("amount", availableBalance.toString(), {
 											shouldValidate: true,
 											shouldDirty: true,
 										});
@@ -199,7 +201,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 
 				{!isSingle && displayAmount && !!recipientAddress && (
 					<Button
-						disabled={!isSubFormStateValid}
+						disabled={!!errors.amount || !!errors.recipientAddress}
 						data-testid="add-recipient__add-btn"
 						variant="plain"
 						className="w-full mt-4"

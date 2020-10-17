@@ -34,7 +34,7 @@ export const SendTransfer = () => {
 	const activeWallet = useActiveWallet();
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm({ mode: "onChange", defaultValues: { fee: 0 } });
 	const { clearErrors, formState, getValues, register, setError, setValue } = form;
 	const { isValid } = formState;
 	const { sendTransfer } = useValidation();

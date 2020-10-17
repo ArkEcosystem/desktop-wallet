@@ -57,9 +57,7 @@ export const FormStep = ({
 								assetSymbol={senderWallet?.currency()}
 								maxAvailableAmount={maxAmount}
 								profile={profile}
-								onChange={(recipients: RecipientListItem[]) =>
-									setValue("recipients", recipients, { shouldValidate: true, shouldDirty: true })
-								}
+								onChange={(recipients: RecipientListItem[]) => setValue("recipients", recipients)}
 								recipients={getRecipients()}
 							/>
 						</div>
