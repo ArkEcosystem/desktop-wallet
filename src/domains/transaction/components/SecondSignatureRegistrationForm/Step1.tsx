@@ -66,8 +66,8 @@ export const GenerationStep = ({
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={step}
-						onChange={(currency: { display: string; value: string }) => {
-							setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
+						onChange={(currency) => {
+							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
 				</FormField>

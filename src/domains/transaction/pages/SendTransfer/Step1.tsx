@@ -24,9 +24,8 @@ export const FormStep = ({
 	const { recipients, smartbridge } = getValues();
 	const { senderAddress, fee } = watch();
 
-	const feeSatoshi = fee?.display ? fee.value : fee;
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
-	const maxAmount = senderWallet ? BigNumber.make(senderWallet.balance()).minus(feeSatoshi) : BigNumber.ZERO;
+	const maxAmount = senderWallet ? BigNumber.make(senderWallet.balance()).minus(fee) : BigNumber.ZERO;
 
 	const getRecipients = () => {
 		if (deeplinkProps?.recipient && deeplinkProps?.amount) {
