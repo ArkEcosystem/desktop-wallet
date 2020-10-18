@@ -58,7 +58,6 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipients, onChange }: AddRecipientProps) => {
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
-	const [displayAmount, setDisplayAmount] = useState<string | undefined>();
 
 	const { t } = useTranslation();
 	const {
@@ -69,7 +68,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 		clearErrors,
 		formState: { errors },
 	} = useFormContext();
-	const { recipientAddress, amount, network, senderAddress, fee } = watch();
+	const { recipientAddress, amount, displayAmount, network, senderAddress, fee } = watch();
 	const { sendTransfer } = useValidation();
 
 	const availableBalance = useMemo(() => {
@@ -86,25 +85,28 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 
 	useEffect(() => {
 		register("amount", sendTransfer.amount(network, availableBalance));
+		register("displayAmount");
 	}, [register, availableBalance, network, sendTransfer]);
 
 	const clearFields = () => {
-		setDisplayAmount(undefined);
 		setValue("amount", undefined);
+		setValue("displayAmount", undefined);
 		setValue("recipientAddress", null);
 	};
 
-	const singleRecipientOnChange = () => {
+	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
 		if (!isSingle) return;
 
-		if (!recipientAddress || !BigNumber.make(amount).toNumber()) {
+		if (!recipientAddressValue || !BigNumber.make(amountValue).toNumber()) {
+			console.log("case 2", BigNumber.make(amountValue).toNumber(), amount);
 			return onChange?.([]);
 		}
 
+		console.log("case 3", amountValue, recipientAddressValue);
 		onChange?.([
 			{
-				amount: BigNumber.make(amount),
-				address: recipientAddress,
+				amount: BigNumber.make(amountValue),
+				address: recipientAddressValue,
 			},
 		]);
 	};
@@ -155,7 +157,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 							profile={profile}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
-								singleRecipientOnChange();
+								singleRecipientOnChange(amount, address);
 							}}
 						/>
 						<FormHelperText />
@@ -172,9 +174,9 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 								className="pr-20"
 								value={displayAmount}
 								onChange={(currency) => {
-									setDisplayAmount(currency.display);
+									setValue("displayAmount", currency.display, { shouldDirty: true });
 									setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
-									singleRecipientOnChange();
+									singleRecipientOnChange(currency.value, recipientAddress);
 								}}
 							/>
 							<InputAddonEnd>
@@ -182,12 +184,12 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 									type="button"
 									data-testid="add-recipient__send-all"
 									onClick={() => {
-										setDisplayAmount(availableBalance.toHuman());
+										setValue("displayAmount", availableBalance.toHuman(), { shouldDirty: true });
 										setValue("amount", availableBalance.toString(), {
 											shouldValidate: true,
 											shouldDirty: true,
 										});
-										singleRecipientOnChange();
+										singleRecipientOnChange(availableBalance.toString(), recipientAddress);
 									}}
 									className="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
 								>
