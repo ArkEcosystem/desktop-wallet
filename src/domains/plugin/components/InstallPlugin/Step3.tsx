@@ -24,12 +24,12 @@ export const ThirdStep = () => {
 								<p className="text-sm font-semibold text-theme-neutral-light">
 									{t("COMMON.DOWNLOADED")}
 								</p>
-								<p className="font-bold text-theme-neutral-dark">{t("COMMON.COMPLETED")}</p>
+								<p className="font-bold text-theme-secondary-text">{t("COMMON.COMPLETED")}</p>
 							</span>
 							<div className="">
 								<Circle
 									size="lg"
-									className="relative z-10 bg-theme-background border-theme-neutral-300"
+									className="relative z-10 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
 								>
 									<span className="text-theme-success">
 										<Icon name="Checkmark" width={28} height={28} />

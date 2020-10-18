@@ -210,7 +210,7 @@ export const DelegateTable = ({
 					<div className="flex-1">
 						<div className="flex justify-between">
 							<div className="flex font-semibold">
-								<div className="px-8 border-r border-theme-neutral-300">
+								<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 									<div className="inline-flex">
 										<Circle
 											className="mr-2 bg-theme-background border-theme-text text-theme-text"
@@ -227,7 +227,7 @@ export const DelegateTable = ({
 									</div>
 								</div>
 
-								<div className="px-8 border-r border-theme-neutral-300">
+								<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 									<div className="inline-flex">
 										<Circle
 											className="mr-2 bg-theme-background border-theme-text text-theme-text"

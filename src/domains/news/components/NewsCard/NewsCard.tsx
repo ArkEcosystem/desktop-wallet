@@ -63,7 +63,7 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coin, 
 
 					<Divider />
 
-					<p className="whitespace-pre-line text-theme-neutral-dark" data-testid="NewsCard__content">
+					<p className="whitespace-pre-line text-theme-secondary-text" data-testid="NewsCard__content">
 						<Linkify
 							componentDecorator={(pathname: string, text: string, key: number) => (
 								<Link to={pathname} key={key} isExternal showExternalIcon={false}>

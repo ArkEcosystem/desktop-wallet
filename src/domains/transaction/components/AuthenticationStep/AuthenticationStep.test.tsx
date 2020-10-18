@@ -89,4 +89,20 @@ describe("AuthenticationStep", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should skip second signature", async () => {
+		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(true);
+
+		const { result } = renderHook(() => useForm({ mode: "onChange", shouldUnregister: false }));
+		const { asFragment } = renderWithRouter(
+			<Form context={result.current} onSubmit={() => void 0}>
+				<AuthenticationStep wallet={wallet} skipSecondSignature />
+			</Form>,
+		);
+
+		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__mnemonic")).toBeInTheDocument());
+		await waitFor(() =>
+			expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).not.toBeInTheDocument(),
+		);
+	});
 });

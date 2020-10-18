@@ -4,13 +4,13 @@ exports[`SelectAddress should render disabled 1`] = `
 <div>
   <div>
     <button
-      class="sc-fzokOt dprUuD SelectAddress is-disabled "
+      class="sc-fzokOt fsgxFS SelectAddress is-disabled "
       data-testid="SelectAddress__wrapper"
       disabled=""
       type="button"
     >
       <div
-        class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+        class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
       />
       <div
         class="inline-block truncate align-middle"
@@ -30,7 +30,7 @@ exports[`SelectAddress should render disabled 1`] = `
       </div>
     </button>
     <input
-      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+      class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
       data-testid="SelectAddress__input"
       readonly=""
       type="text"
@@ -44,12 +44,12 @@ exports[`SelectAddress should render empty 1`] = `
 <div>
   <div>
     <button
-      class="sc-fzokOt dprUuD SelectAddress  "
+      class="sc-fzokOt fsgxFS SelectAddress  "
       data-testid="SelectAddress__wrapper"
       type="button"
     >
       <div
-        class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+        class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
       />
       <div
         class="inline-block truncate align-middle"
@@ -69,7 +69,7 @@ exports[`SelectAddress should render empty 1`] = `
       </div>
     </button>
     <input
-      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+      class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
       data-testid="SelectAddress__input"
       readonly=""
       type="text"
@@ -83,12 +83,12 @@ exports[`SelectAddress should render invalid 1`] = `
 <div>
   <div>
     <button
-      class="sc-fzokOt dprUuD SelectAddress  is-invalid"
+      class="sc-fzokOt fsgxFS SelectAddress  is-invalid"
       data-testid="SelectAddress__wrapper"
       type="button"
     >
       <div
-        class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+        class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
       />
       <div
         class="inline-block truncate align-middle"
@@ -109,7 +109,7 @@ exports[`SelectAddress should render invalid 1`] = `
     </button>
     <input
       aria-invalid="true"
-      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+      class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
       data-testid="SelectAddress__input"
       readonly=""
       type="text"
@@ -123,7 +123,7 @@ exports[`SelectAddress should render with preselected address 1`] = `
 <div>
   <div>
     <button
-      class="sc-fzokOt dprUuD SelectAddress  "
+      class="sc-fzokOt fsgxFS SelectAddress  "
       data-testid="SelectAddress__wrapper"
       type="button"
     >
@@ -148,7 +148,7 @@ exports[`SelectAddress should render with preselected address 1`] = `
           class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
           data-testid="address__wallet-address"
         >
-          bP6T9GQ3kqP6T…TTTP6T9GQ3kqT
+          bP6T9GQ3kqP6T … TTTP6T9GQ3kqT
         </span>
       </div>
       <div
@@ -166,7 +166,7 @@ exports[`SelectAddress should render with preselected address 1`] = `
       </div>
     </button>
     <input
-      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+      class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
       data-testid="SelectAddress__input"
       readonly=""
       type="text"
@@ -180,12 +180,12 @@ exports[`SelectAddress should render with preselected verified address 1`] = `
 <div>
   <div>
     <button
-      class="sc-fzokOt dprUuD SelectAddress  "
+      class="sc-fzokOt fsgxFS SelectAddress  "
       data-testid="SelectAddress__wrapper"
       type="button"
     >
       <div
-        class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+        class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
       />
       <div
         class="inline-block truncate align-middle"
@@ -218,7 +218,7 @@ exports[`SelectAddress should render with preselected verified address 1`] = `
       </div>
     </button>
     <input
-      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+      class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
       data-testid="SelectAddress__input"
       readonly=""
       type="text"

@@ -16,10 +16,10 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -54,7 +54,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -65,16 +65,16 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -83,7 +83,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -112,14 +112,14 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -135,14 +135,14 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -154,14 +154,14 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -169,41 +169,33 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -211,7 +203,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -223,11 +215,11 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -249,14 +241,14 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -264,7 +256,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -276,11 +268,11 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -322,10 +314,10 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -360,7 +352,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -371,16 +363,16 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -389,7 +381,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -418,14 +410,14 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -441,14 +433,14 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -460,14 +452,14 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -475,41 +467,33 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -517,7 +501,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -529,11 +513,11 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -555,14 +539,14 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -570,7 +554,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -582,11 +566,11 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -628,10 +612,10 @@ exports[`EntityDetail should render a modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -666,7 +650,7 @@ exports[`EntityDetail should render a modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -677,16 +661,16 @@ exports[`EntityDetail should render a modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -695,7 +679,7 @@ exports[`EntityDetail should render a modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -724,14 +708,14 @@ exports[`EntityDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -747,14 +731,14 @@ exports[`EntityDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -766,14 +750,14 @@ exports[`EntityDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -781,41 +765,33 @@ exports[`EntityDetail should render a modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -823,7 +799,7 @@ exports[`EntityDetail should render a modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -835,11 +811,11 @@ exports[`EntityDetail should render a modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -861,14 +837,14 @@ exports[`EntityDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -876,7 +852,7 @@ exports[`EntityDetail should render a modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -888,11 +864,11 @@ exports[`EntityDetail should render a modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -934,10 +910,10 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -972,7 +948,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -995,7 +971,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -1024,14 +1000,14 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -1047,14 +1023,14 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -1066,14 +1042,14 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -1081,41 +1057,33 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -1123,7 +1091,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1135,11 +1103,11 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1161,14 +1129,14 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -1176,7 +1144,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1188,11 +1156,11 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1234,10 +1202,10 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -1272,7 +1240,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -1283,16 +1251,16 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -1301,7 +1269,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -1330,14 +1298,14 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -1353,14 +1321,14 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -1372,14 +1340,14 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -1387,41 +1355,33 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -1429,7 +1389,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1441,11 +1401,11 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1467,14 +1427,14 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -1482,7 +1442,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1494,11 +1454,11 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1540,10 +1500,10 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -1578,7 +1538,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -1589,16 +1549,16 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -1607,7 +1567,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -1636,14 +1596,14 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -1659,14 +1619,14 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -1678,14 +1638,14 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -1693,41 +1653,33 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -1735,7 +1687,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1747,11 +1699,11 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1773,14 +1725,14 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -1788,7 +1740,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1800,11 +1752,11 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1846,10 +1798,10 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -1884,7 +1836,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -1895,16 +1847,16 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -1913,7 +1865,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -1942,14 +1894,14 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -1965,14 +1917,14 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -1984,14 +1936,14 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -1999,41 +1951,33 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -2041,7 +1985,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2053,11 +1997,11 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2079,14 +2023,14 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -2094,7 +2038,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2106,11 +2050,11 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2152,10 +2096,10 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -2190,7 +2134,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -2201,16 +2145,16 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -2219,7 +2163,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -2248,14 +2192,14 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -2271,14 +2215,14 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -2290,14 +2234,14 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -2305,41 +2249,33 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -2347,7 +2283,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2359,11 +2295,11 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2385,14 +2321,14 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -2400,7 +2336,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2412,11 +2348,11 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2458,10 +2394,10 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -2496,7 +2432,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -2507,16 +2443,16 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -2525,7 +2461,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -2554,14 +2490,14 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -2577,14 +2513,14 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -2596,14 +2532,14 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -2611,41 +2547,33 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -2653,7 +2581,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2665,11 +2593,11 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2691,14 +2619,14 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -2706,7 +2634,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2718,11 +2646,11 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2764,10 +2692,10 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -2802,7 +2730,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -2813,16 +2741,16 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -2831,7 +2759,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -2860,14 +2788,14 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -2883,14 +2811,14 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -2902,14 +2830,14 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -2917,41 +2845,33 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -2959,7 +2879,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2971,11 +2891,11 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2997,14 +2917,14 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -3012,7 +2932,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3024,11 +2944,11 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3070,10 +2990,10 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -3108,7 +3028,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -3119,16 +3039,16 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -3137,7 +3057,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -3166,14 +3086,14 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -3189,14 +3109,14 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -3208,14 +3128,14 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -3223,41 +3143,33 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -3265,7 +3177,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3277,11 +3189,11 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3303,14 +3215,14 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -3318,7 +3230,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3330,11 +3242,11 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3376,10 +3288,10 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -3414,7 +3326,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -3425,16 +3337,16 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -3443,7 +3355,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -3472,14 +3384,14 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -3495,14 +3407,14 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -3514,14 +3426,14 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -3529,41 +3441,33 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -3571,7 +3475,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3583,11 +3487,11 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3609,14 +3513,14 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -3624,7 +3528,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3636,11 +3540,11 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3682,10 +3586,10 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -3720,7 +3624,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -3731,16 +3635,16 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -3749,7 +3653,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -3778,14 +3682,14 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -3801,14 +3705,14 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -3820,14 +3724,14 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -3835,41 +3739,33 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Not confirmed
                   </span>
                   <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    class="sc-AxirZ hmuEJr text-theme-warning"
+                    height="22"
+                    width="22"
                   >
-                    <div
-                      class="m-auto"
-                    >
-                      <div
-                        class="sc-AxirZ hDwaov"
-                        height="12"
-                        width="12"
-                      >
-                        <svg>
-                          cross-slim.svg
-                        </svg>
-                      </div>
-                    </div>
+                    <svg>
+                      status-pending.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -3877,7 +3773,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3889,11 +3785,11 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3915,14 +3811,14 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -3930,7 +3826,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3942,11 +3838,11 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3988,10 +3884,10 @@ exports[`EntityDetail should render as confirmed 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -4026,7 +3922,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Sender
               </div>
@@ -4037,16 +3933,16 @@ exports[`EntityDetail should render as confirmed 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -4055,7 +3951,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="sc-AxhCb iZzMIT border-theme-text"
+                class="sc-AxhCb gaiYPD border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxirZ dCVESD"
@@ -4084,14 +3980,14 @@ exports[`EntityDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Transaction Fee
               </div>
@@ -4107,14 +4003,14 @@ exports[`EntityDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Timestamp
               </div>
@@ -4126,14 +4022,14 @@ exports[`EntityDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Confirmations
               </div>
@@ -4141,41 +4037,35 @@ exports[`EntityDetail should render as confirmed 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <span>
                     Well confirmed
                   </span>
-                  <div
-                    class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
-                  >
+                  <span>
                     <div
-                      class="m-auto"
+                      class="sc-AxirZ hmuEJr text-theme-success"
+                      height="22"
+                      width="22"
                     >
-                      <div
-                        class="sc-AxirZ fkjLBb"
-                        height="15"
-                        width="15"
-                      >
-                        <svg>
-                          checkmark.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        status-ok.svg
+                      </svg>
                     </div>
-                  </div>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 ID
               </div>
@@ -4183,7 +4073,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -4195,11 +4085,11 @@ exports[`EntityDetail should render as confirmed 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      ee4175091d9f4…9d09bcf3ecefe
+                      ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -4221,14 +4111,14 @@ exports[`EntityDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Block ID
               </div>
@@ -4236,7 +4126,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center"
+                  class="flex items-center space-x-3"
                 >
                   <a
                     class="sc-AxheI bALhgA inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -4248,11 +4138,11 @@ exports[`EntityDetail should render as confirmed 1`] = `
                       class="sc-Axmtr hBVTto text-theme-primary-dark"
                       data-testid="TruncateMiddle"
                     >
-                      71fd1a494ded5…972b8075d67e9
+                      71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex ml-5 text-theme-primary-300"
+                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                   >
                     <div
                       class="inline-block cursor-pointer"

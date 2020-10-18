@@ -49,7 +49,9 @@ export const FormStep = ({
 	return (
 		<section data-testid="MultiSignatureRegistrationForm--form-step">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.TITLE")}</h1>
-			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.DESCRIPTION")}</div>
+			<div className="text-theme-secondary-text">
+				{t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.DESCRIPTION")}
+			</div>
 
 			<div className="mt-4">
 				<AddParticipant

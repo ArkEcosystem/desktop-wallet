@@ -16,7 +16,7 @@ describe("ListDivided", () => {
 			isFloatingLabel: true,
 			label: "New Profile",
 			labelDescription: "Select Profile Image",
-			itemLabelClass: "text-2xl font-semibold text-theme-neutral-dark",
+			itemLabelClass: "text-2xl font-semibold text-theme-secondary-text",
 			itemLabelDescriptionClass: "text-sm font-semibold text-neutral-dark",
 			labelClass: "",
 			value: "",

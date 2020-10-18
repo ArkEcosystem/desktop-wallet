@@ -21,7 +21,7 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
             Authenticate
           </h1>
           <div
-            class="text-theme-neutral-dark"
+            class="text-theme-secondary-text"
             data-testid="header__subtitle"
           >
             Enter your twelve word mnemonic to authenticate the transaction.
@@ -32,7 +32,7 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
         class="sc-AxjAm fmGClo flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="mnemonic"
         >
@@ -47,7 +47,7 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
           data-testid="InputPassword"
         >
           <input
-            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxirZ hYzWoS overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="AuthenticationStep__mnemonic"
             name="mnemonic"
             type="password"
@@ -99,7 +99,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
             Authenticate
           </h1>
           <div
-            class="text-theme-neutral-dark"
+            class="text-theme-secondary-text"
             data-testid="header__subtitle"
           >
             Enter your twelve word mnemonic to authenticate the transaction.
@@ -110,7 +110,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
         class="sc-AxjAm fmGClo flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="mnemonic"
         >
@@ -125,7 +125,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
           data-testid="InputPassword"
         >
           <input
-            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxirZ hYzWoS overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="AuthenticationStep__mnemonic"
             name="mnemonic"
             type="password"
@@ -155,7 +155,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
         class="sc-AxjAm fmGClo flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="secondMnemonic"
         >
@@ -170,7 +170,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
           data-testid="InputPassword"
         >
           <input
-            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxirZ hYzWoS overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="AuthenticationStep__second-mnemonic"
             name="secondMnemonic"
             type="password"
@@ -222,7 +222,7 @@ exports[`AuthenticationStep should show only ledger confirmation 1`] = `
             Confirm Your Transaction
           </h1>
           <div
-            class="text-theme-neutral-dark"
+            class="text-theme-secondary-text"
             data-testid="header__subtitle"
           >
             Enter your twelve word mnemonic to authenticate the transaction.
@@ -235,7 +235,7 @@ exports[`AuthenticationStep should show only ledger confirmation 1`] = `
         confirm-transaction-ledger-banner.svg
       </svg>
       <div
-        class="mt-8 text-center text-theme-neutral-dark"
+        class="mt-8 text-center text-theme-secondary-text"
         data-testid="LedgerConfirmation-description"
       >
         Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.

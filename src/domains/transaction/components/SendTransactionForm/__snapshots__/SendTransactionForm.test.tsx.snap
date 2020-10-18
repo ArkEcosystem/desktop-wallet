@@ -12,7 +12,7 @@ exports[`SendTransactionForm should render 1`] = `
         class="mb-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
@@ -52,7 +52,7 @@ exports[`SendTransactionForm should render 1`] = `
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
@@ -75,7 +75,7 @@ exports[`SendTransactionForm should render 1`] = `
         class="mb-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="senderAddress"
         >
@@ -91,12 +91,12 @@ exports[`SendTransactionForm should render 1`] = `
       >
         <div>
           <button
-            class="sc-fzqBZW iKvOTi SelectAddress  "
+            class="sc-fzqBZW SAsor SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
             <div
-              class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+              class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="inline-block truncate align-middle"
@@ -116,7 +116,7 @@ exports[`SendTransactionForm should render 1`] = `
             </div>
           </button>
           <input
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -130,7 +130,7 @@ exports[`SendTransactionForm should render 1`] = `
       class="sc-AxjAm fmGClo flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="fee"
       >
@@ -151,7 +151,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="sc-Axmtr jzhOwR"
           >
             <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
               data-testid="InputCurrency"
               name="fee"
               type="text"
@@ -192,7 +192,7 @@ exports[`SendTransactionForm should render 1`] = `
         </div>
         <div>
           <div
-            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="SelectionBar"
             role="radiogroup"
           >
@@ -504,7 +504,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
         class="mb-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
@@ -544,7 +544,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
@@ -567,7 +567,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
         class="mb-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="senderAddress"
         >
@@ -583,7 +583,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
       >
         <div>
           <button
-            class="sc-fzqBZW iKvOTi SelectAddress  "
+            class="sc-fzqBZW SAsor SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -608,7 +608,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
                 class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D8rr7B1d6TL6p…sKp1VBMs6YUYD
+                D8rr7B1d6TL6p … sKp1VBMs6YUYD
               </span>
             </div>
             <div
@@ -626,7 +626,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             </div>
           </button>
           <input
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -640,7 +640,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
       class="sc-AxjAm fmGClo flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="fee"
       >
@@ -661,7 +661,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             class="sc-Axmtr jzhOwR"
           >
             <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
               data-testid="InputCurrency"
               name="fee"
               type="text"
@@ -702,7 +702,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
         </div>
         <div>
           <div
-            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
             data-testid="SelectionBar"
             role="radiogroup"
           >

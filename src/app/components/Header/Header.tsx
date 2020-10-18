@@ -13,7 +13,7 @@ export const Header = ({ title, subtitle, extra }: Props) => (
 				{title}
 			</h1>
 			{subtitle && (
-				<div className="text-theme-neutral-dark" data-testid="header__subtitle">
+				<div className="text-theme-secondary-text" data-testid="header__subtitle">
 					{subtitle}
 				</div>
 			)}

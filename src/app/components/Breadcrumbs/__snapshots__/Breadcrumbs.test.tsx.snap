@@ -5,7 +5,7 @@ exports[`Breadcrumbs should not render without crumbs 1`] = `<DocumentFragment /
 exports[`Breadcrumbs should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-3 text-sm undefined text-theme-neutral-dark"
+    class="flex items-center space-x-3 text-sm undefined text-theme-secondary-text"
     data-testid="breadcrumbs__wrapper"
   >
     <div
@@ -21,7 +21,7 @@ exports[`Breadcrumbs should render 1`] = `
       class="space-x-3"
     >
       <a
-        class="text-theme-neutral-dark"
+        class="text-theme-secondary-text"
         href="/dashboard"
       >
         <span>
@@ -61,7 +61,7 @@ exports[`Breadcrumbs should render with custom classes 1`] = `
       </a>
       <span>
         <div
-          class="sc-AxjAm gHUxAL border-theme-neutral-300"
+          class="sc-AxjAm gHUxAL border-theme-neutral-300 dark:border-theme-neutral-800"
           type="vertical"
         />
       </span>
@@ -70,7 +70,7 @@ exports[`Breadcrumbs should render with custom classes 1`] = `
       class="space-x-3"
     >
       <a
-        class="text-theme-neutral-dark"
+        class="text-theme-secondary-text"
         href="/wallets/my_wallet"
       >
         <span>

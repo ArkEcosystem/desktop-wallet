@@ -9,6 +9,10 @@ const wallet = {
 	isDelegate: () => true,
 	isLedger: () => false,
 	isResignedDelegate: () => false,
+	transaction: () => ({
+		canBeSigned: () => false,
+		isAwaitingOurSignature: () => false,
+	}),
 };
 
 export const TransactionFixture = {

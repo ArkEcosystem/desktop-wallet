@@ -3,14 +3,14 @@
 exports[`TransactionExplorerLink should render a 'block' link 1`] = `
 <div>
   <div
-    class="sc-AxhUy epJbbA"
+    class="sc-AxhUy cQFpUB"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Block ID
       </div>
@@ -18,7 +18,7 @@ exports[`TransactionExplorerLink should render a 'block' link 1`] = `
         class="font-semibold"
       >
         <div
-          class="flex items-center"
+          class="flex items-center space-x-3"
         >
           <a
             class="sc-AxirZ fYobRB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -34,7 +34,7 @@ exports[`TransactionExplorerLink should render a 'block' link 1`] = `
             </span>
           </a>
           <span
-            class="flex ml-5 text-theme-primary-300"
+            class="flex text-theme-primary-300 dark:text-theme-neutral-600"
           >
             <div
               class="inline-block cursor-pointer"
@@ -61,14 +61,14 @@ exports[`TransactionExplorerLink should render a 'block' link 1`] = `
 exports[`TransactionExplorerLink should render a 'transaction' link 1`] = `
 <div>
   <div
-    class="sc-AxhUy epJbbA"
+    class="sc-AxhUy cQFpUB"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         ID
       </div>
@@ -76,7 +76,7 @@ exports[`TransactionExplorerLink should render a 'transaction' link 1`] = `
         class="font-semibold"
       >
         <div
-          class="flex items-center"
+          class="flex items-center space-x-3"
         >
           <a
             class="sc-AxirZ fYobRB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -92,7 +92,7 @@ exports[`TransactionExplorerLink should render a 'transaction' link 1`] = `
             </span>
           </a>
           <span
-            class="flex ml-5 text-theme-primary-300"
+            class="flex text-theme-primary-300 dark:text-theme-neutral-600"
           >
             <div
               class="inline-block cursor-pointer"

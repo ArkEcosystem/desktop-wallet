@@ -16,10 +16,10 @@ exports[`LedgerWallet should render a modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -50,7 +50,7 @@ exports[`LedgerWallet should render a modal 1`] = `
             class="container"
           >
             <p
-              class="mt-1 text-sm text-theme-neutral-dark md:text-base"
+              class="mt-1 text-sm text-theme-secondary-text md:text-base"
             >
               Connect your Ledger to PC and confirm the input.
             </p>

@@ -12,11 +12,11 @@ type TransactionFieldProps = {
 export const TransactionField = ({ border, children, className, extra, label, padding }: TransactionFieldProps) => (
 	<div
 		className={`flex items-center ${padding || "py-4"} ${
-			!border || "border-t border-dashed border-theme-neutral-300"
+			!border || "border-t border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
 		} ${className}`}
 	>
 		<div className="flex-1">
-			{label && <div className="text-sm font-medium text-theme-neutral-dark">{label}</div>}
+			{label && <div className="text-sm font-medium text-theme-secondary-text">{label}</div>}
 
 			<div className="mt-2">{children}</div>
 		</div>

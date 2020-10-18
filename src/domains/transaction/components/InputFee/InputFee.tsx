@@ -39,8 +39,6 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 			setFee(BigNumber.make("0").times(1e8).toString());
 		}
 
-		if (value?.display) return;
-
 		if (value && value !== fee) {
 			setFee(BigNumber.make(value).divide(1e8).toString());
 		}

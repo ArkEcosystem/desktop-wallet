@@ -15,7 +15,7 @@ type SliderProps = {
 
 const defaultOptions = {
 	// Custom component options
-	slideHeight: 185, // default slideheight (used for wallet cards),
+	slideHeight: 192, // default slideheight (used for wallet cards),
 	// Swiper options
 	slidesPerView: 1,
 	slidesPerColumn: 1,
@@ -42,18 +42,20 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 	// `slideHeight` is required.
 	const getContainerHeight = () => {
 		const spacing = 20;
+		const shadowOffset = 32;
 
 		const paginationOffset = showPagination && paginationPosition === "bottom-center" ? spacing + 24 : 0;
 
 		return (
 			swiperOptions.slidesPerColumn * swiperOptions.slideHeight +
 			(data.length > swiperOptions.slidesPerView ? spacing : 0) +
-			paginationOffset
+			paginationOffset +
+			shadowOffset
 		);
 	};
 
 	useEffect(() => {
-		const sw = new Swiper(".swiper-container", swiperOptions);
+		const sw = new Swiper(".slide-container", swiperOptions);
 		return () => sw.destroy(true, false);
 	});
 
@@ -68,7 +70,10 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 				<div className="absolute right-0 flex items-center w-auto h-6 space-x-2 -top-12 swiper-pagination" />
 			)}
 
-			<div className="swiper-container" style={{ height: `${getContainerHeight()}px` }}>
+			<div
+				className="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container"
+				style={{ height: `${getContainerHeight()}px` }}
+			>
 				<div className={`h-full swiper-wrapper ${className || ""}`}>
 					{data.map((item: any, index: number) => (
 						<div className="swiper-slide" key={index} style={{ height: `${swiperOptions.slideHeight}px` }}>
@@ -78,7 +83,7 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 				</div>
 
 				{showPagination && paginationPosition === "bottom-center" && (
-					<div className="flex items-center justify-center h-6 swiper-pagination important:bottom-0" />
+					<div className="flex items-center justify-center h-6 swiper-pagination important:bottom-8" />
 				)}
 			</div>
 		</div>

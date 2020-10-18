@@ -16,10 +16,10 @@ exports[`AdvancedMode should render a modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -47,7 +47,7 @@ exports[`AdvancedMode should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.
           </div>
@@ -55,7 +55,7 @@ exports[`AdvancedMode should render a modal 1`] = `
             class="flex justify-end mt-8 space-x-3"
           >
             <button
-              class="sc-AxjAm hXnHfM"
+              class="sc-AxjAm joLCoM"
               color="primary"
               data-testid="AdvancedMode__decline-button"
               type="button"
@@ -63,7 +63,7 @@ exports[`AdvancedMode should render a modal 1`] = `
               I Decline
             </button>
             <button
-              class="sc-AxjAm kbZyZT"
+              class="sc-AxjAm BsmvP"
               color="primary"
               data-testid="AdvancedMode__accept-button"
               type="button"

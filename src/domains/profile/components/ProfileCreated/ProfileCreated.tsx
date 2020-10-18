@@ -25,10 +25,10 @@ export const ProfileCreated = ({ isOpen, onClose, onSkip, onStart }: ProfileCrea
 		>
 			<div className="container">
 				<div className="mb-8 text-center">
-					<p className="mb-1 text-sm text-theme-neutral-dark md:text-base">
+					<p className="mb-1 text-sm text-theme-secondary-text md:text-base">
 						{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_1")}
 					</p>
-					<p className="text-sm text-theme-neutral-dark md:text-base">
+					<p className="text-sm text-theme-secondary-text md:text-base">
 						{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_2")}
 					</p>
 				</div>
