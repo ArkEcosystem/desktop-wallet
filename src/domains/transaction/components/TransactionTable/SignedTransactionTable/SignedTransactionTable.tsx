@@ -46,12 +46,12 @@ const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transac
 	}, [wallet, transaction]);
 
 	if (wallet.transaction().isAwaitingOurSignature(transaction.id())) {
-		return <span className="text-theme-danger-500">Your Signature</span>;
+		return <span className="text-theme-danger-400">Your Signature</span>;
 	}
 
 	if (wallet.transaction().isAwaitingOtherSignatures(transaction.id())) {
 		return (
-			<span className="text-theme-danger-500">{`${wallet
+			<span className="text-theme-danger-400">{`${wallet
 				.coin()
 				.multiSignature()
 				.remainingSignatureCount(transaction)} more signature(s)`}</span>

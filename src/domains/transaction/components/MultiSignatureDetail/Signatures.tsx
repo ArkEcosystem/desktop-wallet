@@ -2,7 +2,7 @@ import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Avatar } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const WaitingBadge = () => {
@@ -12,7 +12,7 @@ const WaitingBadge = () => {
 			<Badge
 				data-testid="Signatures__waiting-badge"
 				className="bg-theme-danger-contrast text-theme-danger-400"
-				icon="StatusClock"
+				icon="StatusPending"
 			/>
 		</Tippy>
 	);
@@ -40,7 +40,14 @@ const ParticipantStatus = ({
 	publicKey: string;
 	wallet: ReadWriteWallet;
 }) => {
-	const isAwaitingSignature = wallet.transaction().isAwaitingSignatureByPublicKey(transactionId, publicKey);
+	const isAwaitingSignature = useMemo(() => {
+		try {
+			return wallet.transaction().isAwaitingSignatureByPublicKey(transactionId, publicKey);
+		} catch {
+			return false;
+		}
+	}, [wallet, transactionId, publicKey]);
+
 	const [address, setAddress] = useState("");
 
 	useEffect(() => {
@@ -52,7 +59,7 @@ const ParticipantStatus = ({
 	}, [wallet, publicKey]);
 
 	return (
-		<li className="relative">
+		<div data-testid="Signatures__participant-status" className="relative">
 			<Tippy content={address}>
 				<div>
 					<Avatar address={publicKey} />
@@ -60,7 +67,7 @@ const ParticipantStatus = ({
 			</Tippy>
 
 			{isAwaitingSignature ? <WaitingBadge /> : <SignedBadge />}
-		</li>
+		</div>
 	);
 };
 
@@ -83,7 +90,7 @@ export const Signatures = ({
 				<div>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">{t("COMMON.YOU")}</div>
 
-					<div className="pr-4 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+					<div className="pr-6 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 						<ParticipantStatus
 							transactionId={transactionId}
 							publicKey={wallet.publicKey()!}
@@ -94,7 +101,7 @@ export const Signatures = ({
 
 				<div>
 					<div className="mb-2 ml-2 text-sm font-semibold text-theme-neutral">{t("COMMON.OTHER")}</div>
-					<ul className="flex ml-2 space-x-4">
+					<div className="flex ml-2 space-x-4">
 						{publicKeys.map((publicKey) => (
 							<ParticipantStatus
 								key={publicKey}
@@ -103,7 +110,7 @@ export const Signatures = ({
 								wallet={wallet}
 							/>
 						))}
-					</ul>
+					</div>
 				</div>
 			</div>
 		</div>

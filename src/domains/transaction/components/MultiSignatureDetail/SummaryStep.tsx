@@ -75,11 +75,13 @@ export const SummaryStep = ({
 
 			<TransactionSender address={senderAddress} alias={wallet.alias()} border={false} />
 
-			<TransactionRecipients
-				currency={wallet.currency()}
-				recipient={{ address: recipient }}
-				recipients={recipients}
-			/>
+			{(recipients || recipient) && (
+				<TransactionRecipients
+					currency={wallet.currency()}
+					recipient={{ address: recipient }}
+					recipients={recipients}
+				/>
+			)}
 
 			{!transaction.amount().isZero() && (
 				<TransactionAmount amount={transaction.amount()} currency={wallet.currency()} isSent={true} />

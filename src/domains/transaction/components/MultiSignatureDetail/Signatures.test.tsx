@@ -25,10 +25,26 @@ describe("Signatures", () => {
 			<Signatures transactionId="1" wallet={wallet} publicKeys={[profile.wallets().last().publicKey()!]} />,
 		);
 
-		await waitFor(() => expect(screen.getAllByRole("listitem")).toHaveLength(2));
+		await waitFor(() => expect(screen.getAllByTestId("Signatures__participant-status")).toHaveLength(2));
 
 		expect(screen.getAllByTestId("Signatures__signed-badge")).toHaveLength(1);
 		expect(screen.getAllByTestId("Signatures__waiting-badge")).toHaveLength(1);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with final signature", async () => {
+		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => {
+			throw new Error("Failed");
+		});
+
+		const { container } = render(
+			<Signatures transactionId="1" wallet={wallet} publicKeys={[profile.wallets().last().publicKey()!]} />,
+		);
+
+		await waitFor(() => expect(screen.getAllByTestId("Signatures__participant-status")).toHaveLength(2));
+
+		expect(screen.getAllByTestId("Signatures__signed-badge")).toHaveLength(2);
 
 		expect(container).toMatchSnapshot();
 	});

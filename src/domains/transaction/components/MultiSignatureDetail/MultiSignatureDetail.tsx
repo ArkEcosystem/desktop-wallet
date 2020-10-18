@@ -93,10 +93,8 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 	const addSignature = useCallback(
 		async ({ mnemonic }: { mnemonic: string }) => {
 			try {
-				if (wallet.transaction().canBeSigned(transaction.id())) {
-					await wallet.transaction().addSignature(transaction.id(), mnemonic);
-					await wallet.transaction().sync();
-				}
+				await wallet.transaction().addSignature(transaction.id(), mnemonic);
+				await wallet.transaction().sync();
 
 				await broadcast();
 			} catch {
