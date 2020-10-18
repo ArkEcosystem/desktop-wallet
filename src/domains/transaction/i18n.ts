@@ -67,6 +67,8 @@ export const translations: { [key: string]: any } = {
 			ADDRESS_NOT_FOUND: "The address could not be found",
 			PUBLIC_KEY_NOT_FOUND: "The public key could not be found",
 			REMOVE_OWN_ADDRESS: "Cannot remove your own address",
+			FAILED_TO_BROADCAST: "Failed to broadcast your transaction",
+			FAILED_TO_SIGN: "Failed to sign the transaction",
 		},
 	},
 

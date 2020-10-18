@@ -43,7 +43,6 @@ const renderPage = async () => {
 	);
 
 	const { getByTestId } = rendered;
-
 	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1));
 
 	return rendered;
