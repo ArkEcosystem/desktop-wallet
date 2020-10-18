@@ -39,6 +39,9 @@ export const sendTransfer = (t: any, env: Environment) => ({
 		},
 	}),
 	recipientAddress: (network: Coins.Network) => ({
+		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+			field: t("COMMON.RECIPIENT"),
+		}),
 		validate: {
 			valid: async (address: string) => {
 				if (!network) return true; // skip if network is not set
@@ -50,6 +53,9 @@ export const sendTransfer = (t: any, env: Environment) => ({
 		},
 	}),
 	amount: (network: Coins.Network, balance?: BigNumber) => ({
+		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+			field: t("COMMON.AMOUNT"),
+		}),
 		validate: {
 			valid: (amount: any) => {
 				if (!network) return true; // skip if network is not set

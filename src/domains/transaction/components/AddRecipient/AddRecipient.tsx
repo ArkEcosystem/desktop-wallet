@@ -201,7 +201,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 
 				{!isSingle && displayAmount && !!recipientAddress && (
 					<Button
-						disabled={!!errors.amount || !!errors.recipientAddress}
+						disabled={!!errors.amount || !!errors.recipientAddress || BigNumber.make(amount).isZero()}
 						data-testid="add-recipient__add-btn"
 						variant="plain"
 						className="w-full mt-4"
