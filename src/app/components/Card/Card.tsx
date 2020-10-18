@@ -34,12 +34,12 @@ export const Card = ({ children, addonIcons, actions, onClick, onSelect, isSelec
 					options={actions}
 					onSelect={onSelect}
 					toggleContent={
-						<Icon
-							name="Settings"
-							width={4}
-							height={20}
-							className="p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-						/>
+						<div className="flex justify-center w-4 overflow-hidden">
+							<Icon
+								name="Settings"
+								className="transition-colors duration-200 p-2 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+							/>
+						</div>
 					}
 				/>
 			)}
