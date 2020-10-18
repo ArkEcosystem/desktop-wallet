@@ -1,97 +1,143 @@
-import { images } from "app/assets/images";
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Modal } from "app/components/Modal";
+import { Spinner } from "app/components/Spinner";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import React from "react";
+import { useEnvironmentContext } from "app/contexts";
+import { toasts } from "app/services";
+import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
+import { AuthenticationStep } from "../AuthenticationStep";
+import { SentStep } from "./SentStep";
+import { SummaryStep } from "./SummaryStep";
 
 type MultiSignatureDetailProps = {
 	isOpen: boolean;
-	transaction?: any;
-	onClose?: any;
-	onCancel?: any;
+	wallet: ReadWriteWallet;
+	transaction: Contracts.SignedTransactionData;
+	onClose?: () => void;
 };
 
-const SuccessBanner = images.common.SuccessBanner;
-
-export const MultiSignatureDetail = (props: MultiSignatureDetailProps) => {
+const Paginator = (props: {
+	onCancel?: () => void;
+	onSign?: () => void;
+	onBack?: () => void;
+	onContinue?: () => void;
+	isEnabled?: boolean;
+	isLoading?: boolean;
+	activeStep: number;
+}) => {
 	const { t } = useTranslation();
-	const [activeStep, setActiveStep] = React.useState(1);
-	const title = t(`TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.STEP_${activeStep}.TITLE`);
-	const description = t(`TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.STEP_${activeStep}.DESCRIPTION`, "");
-	let image = null;
-	if (activeStep === 3) {
-		image = <SuccessBanner data-testid="MultiSignatureDetail__success-banner" className="mt-8 mb-12" />;
-	}
+	return (
+		<div className="flex justify-end mt-8 space-x-2">
+			{props.activeStep === 1 && (
+				<>
+					<Button data-testid="Paginator__cancel" variant="plain" onClick={props.onCancel}>
+						{t("COMMON.CANCEL")}
+					</Button>
 
+					<Button data-testid="Paginator__sign" onClick={props.onSign}>
+						{t("COMMON.SIGN")}
+					</Button>
+				</>
+			)}
+
+			{props.activeStep === 2 && (
+				<>
+					<Button data-testid="Paginator__back" variant="plain" onClick={props.onBack}>
+						{t("COMMON.BACK")}
+					</Button>
+
+					<Button
+						disabled={!props.isEnabled || props.isLoading}
+						data-testid="Paginator__continue"
+						onClick={props.onContinue}
+					>
+						{props.isLoading ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
+					</Button>
+				</>
+			)}
+		</div>
+	);
+};
+
+export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: MultiSignatureDetailProps) => {
+	const { t } = useTranslation();
+	const { persist } = useEnvironmentContext();
 	const form = useForm({ mode: "onChange" });
-	const { formState } = form;
-	const { isValid } = formState;
 
-	const handleBack = () => {
-		setActiveStep(activeStep - 1);
-	};
+	const { handleSubmit, formState } = form;
+	const { isValid, isSubmitting } = formState;
 
-	const handleNext = () => {
-		setActiveStep(activeStep + 1);
-	};
+	const [activeStep, setActiveStep] = useState(1);
+
+	const canBeBroadascated = wallet.transaction().canBeBroadcasted(transaction.id());
+	const canBeSigned = wallet.transaction().canBeSigned(transaction.id());
+
+	const broadcast = useCallback(async () => {
+		try {
+			if (wallet.transaction().canBeBroadcasted(transaction.id())) {
+				await wallet.transaction().broadcast(transaction.id());
+			}
+			await persist();
+			setActiveStep(3);
+		} catch {
+			toasts.error(t("TRANSACTION.MULTISIGNATURE.ERROR.FAILED_TO_BROADCAST"));
+		}
+	}, [wallet, transaction, persist, t]);
+
+	const addSignature = useCallback(
+		async ({ mnemonic }: { mnemonic: string }) => {
+			try {
+				await wallet.transaction().addSignature(transaction.id(), mnemonic);
+				await wallet.transaction().sync();
+
+				await broadcast();
+			} catch {
+				toasts.error(t("TRANSACTION.MULTISIGNATURE.ERROR.FAILED_TO_SIGN"));
+			}
+		},
+		[transaction, wallet, broadcast, t],
+	);
 
 	return (
-		<Modal title={title} description={description} image={image} isOpen={props.isOpen} onClose={props.onClose}>
-			<Form context={form} onSubmit={handleNext}>
+		<Modal title={""} isOpen={isOpen} onClose={onClose}>
+			<Form context={form} onSubmit={broadcast}>
 				<Tabs activeId={activeStep}>
 					<TabPanel tabId={1}>
-						<FirstStep />
+						<SummaryStep wallet={wallet} transaction={transaction} />
 					</TabPanel>
+
 					<TabPanel tabId={2}>
-						<SecondStep />
+						<AuthenticationStep wallet={wallet} skipSecondSignature />
 					</TabPanel>
+
 					<TabPanel tabId={3}>
-						<ThirdStep />
+						<SentStep transaction={transaction} wallet={wallet} />
 					</TabPanel>
 
-					{activeStep < 3 && (
-						<div className="flex justify-end mt-8">
-							<div className="flex-1">
-								<Button variant="plain" onClick={props.onCancel} className="mr-2">
-									{t("COMMON.CANCEL")}
-								</Button>
-							</div>
-
-							<div className="space-x-3">
-								<Button
-									disabled={activeStep === 1}
-									data-testid="MultiSignatureDetail__back-button"
-									variant="plain"
-									onClick={handleBack}
-								>
-									{t("COMMON.BACK")}
-								</Button>
-
-								<Button
-									data-testid="MultiSignatureDetail__sign-button"
-									onClick={handleNext}
-									className={activeStep === 1 ? "inline-block" : "hidden"}
-								>
-									{t("COMMON.SIGN")}
-								</Button>
-
-								<Button
-									disabled={!isValid}
-									data-testid="MultiSignatureDetail__submit-button"
-									type="submit"
-									className={activeStep === 2 ? "inline-block" : "hidden"}
-								>
-									{t("COMMON.CONTINUE")}
-								</Button>
-							</div>
+					{canBeBroadascated && !canBeSigned && activeStep === 1 && (
+						<div className="flex justify-center mt-8 space-x-2">
+							<Button type="submit" data-testid="MultiSignatureDetail__broadcast">
+								{isSubmitting ? <Spinner size="sm" /> : t("COMMON.SEND")}
+							</Button>
 						</div>
+					)}
+
+					{canBeSigned && (
+						<Paginator
+							activeStep={activeStep}
+							onCancel={onClose}
+							onSign={() => setActiveStep(2)}
+							onBack={() => setActiveStep(1)}
+							onContinue={handleSubmit((data: any) => addSignature(data))}
+							isLoading={isSubmitting}
+							isEnabled={isValid}
+						/>
 					)}
 				</Tabs>
 			</Form>

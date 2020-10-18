@@ -8,7 +8,13 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const AuthenticationStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
+export const AuthenticationStep = ({
+	wallet,
+	skipSecondSignature,
+}: {
+	wallet: ReadWriteWallet;
+	skipSecondSignature?: boolean;
+}) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
 
@@ -42,7 +48,7 @@ export const AuthenticationStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				<FormHelperText />
 			</FormField>
 
-			{wallet.isSecondSignature() && (
+			{wallet.isSecondSignature() && !skipSecondSignature && (
 				<FormField name="secondMnemonic">
 					<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
 					<InputPassword
@@ -54,4 +60,8 @@ export const AuthenticationStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			)}
 		</div>
 	);
+};
+
+AuthenticationStep.defaultProps = {
+	skipSecondSignature: false,
 };
