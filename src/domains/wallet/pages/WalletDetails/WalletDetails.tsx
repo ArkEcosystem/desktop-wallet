@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Page, Section } from "app/components/Layout";
 import { Spinner } from "app/components/Spinner";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
@@ -23,15 +25,19 @@ import { useWalletTransactions } from "./hooks/use-wallet-transactions";
 
 type WalletDetailsProps = {
 	txSkeletonRowsLimit?: number;
+	transactionLimit?: number;
 };
 
-export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
+export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletDetailsProps) => {
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
+	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<SignedTransactionData | undefined>(
+		undefined,
+	);
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 
 	const { t } = useTranslation();
@@ -47,7 +53,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		fetchMore,
 		isLoading: isLoadingTransactions,
 		hasMore,
-	} = useWalletTransactions(activeWallet, { limit: 15 });
+	} = useWalletTransactions(activeWallet, { limit: transactionLimit! });
 
 	const walletVotes = () => {
 		// Being synced in background and will be updated after persisting
@@ -162,7 +168,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 				<Section marginTop={false}>
 					<div className="flex">
-						<div className="w-1/2 pr-12 border-r border-theme-neutral-300">
+						<div className="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 							<WalletVote
 								votes={activeWallet.hasSyncedWithNetwork() ? walletVotes() : []}
 								maxVotes={activeWallet.network().maximumVotesPerWallet()}
@@ -199,7 +205,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					{pendingTransactions.length ? (
 						<div className="mb-16">
 							<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
-							<SignedTransactionTable transactions={pendingTransactions} wallet={activeWallet} />
+							<SignedTransactionTable
+								transactions={pendingTransactions}
+								wallet={activeWallet}
+								onClick={setSignedTransactionModalItem}
+							/>
 						</div>
 					) : null}
 
@@ -272,6 +282,15 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 				signatory={activeWallet.publicKey()}
 			/>
 
+			{signedTransactionModalItem && (
+				<MultiSignatureDetail
+					wallet={activeWallet}
+					isOpen={!!signedTransactionModalItem}
+					transaction={signedTransactionModalItem}
+					onClose={() => setSignedTransactionModalItem(undefined)}
+				/>
+			)}
+
 			{transactionModalItem && (
 				<TransactionDetailModal
 					isOpen={!!transactionModalItem}
@@ -285,4 +304,5 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 WalletDetails.defaultProps = {
 	txSkeletonRowsLimit: 8,
+	transactionLimit: 15,
 };

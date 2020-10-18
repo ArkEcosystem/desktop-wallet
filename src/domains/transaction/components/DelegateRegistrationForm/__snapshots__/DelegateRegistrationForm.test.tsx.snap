@@ -21,7 +21,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
               Register Delegate
             </h1>
             <div
-              class="text-theme-neutral-dark"
+              class="text-theme-secondary-text"
               data-testid="header__subtitle"
             >
               Make up a name and register your delegate online.
@@ -55,14 +55,14 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxgMl kdFVBs"
+          class="sc-AxgMl ezokut"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral"
+              class="text-sm font-semibold text-theme-neutral-700"
             >
               <span
                 class="mr-1"
@@ -87,16 +87,16 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   ARK Wallet 1
                 </span>
                 <span
-                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B … s6YUYD
                 </span>
               </div>
             </div>
@@ -127,7 +127,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
             class="sc-fznZeY kYLJCb flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -139,7 +139,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
             </label>
             <input
               aria-invalid="true"
-              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="invalid delegate"
@@ -154,7 +154,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
             class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -175,7 +175,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                   class="sc-fzoLag hoOQgq"
                 >
                   <input
-                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -216,7 +216,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
@@ -279,7 +279,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
               Register Delegate
             </h1>
             <div
-              class="text-theme-neutral-dark"
+              class="text-theme-secondary-text"
               data-testid="header__subtitle"
             >
               Make up a name and register your delegate online.
@@ -313,14 +313,14 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxgMl kdFVBs"
+          class="sc-AxgMl ezokut"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral"
+              class="text-sm font-semibold text-theme-neutral-700"
             >
               <span
                 class="mr-1"
@@ -345,16 +345,16 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   ARK Wallet 1
                 </span>
                 <span
-                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B … s6YUYD
                 </span>
               </div>
             </div>
@@ -385,7 +385,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
             class="sc-fznZeY kYLJCb flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -397,7 +397,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
             </label>
             <input
               aria-invalid="true"
-              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="thisisaveryveryverylongdelegatename"
@@ -412,7 +412,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
             class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -433,7 +433,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                   class="sc-fzoLag hoOQgq"
                 >
                   <input
-                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -474,7 +474,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
@@ -537,7 +537,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
               Register Delegate
             </h1>
             <div
-              class="text-theme-neutral-dark"
+              class="text-theme-secondary-text"
               data-testid="header__subtitle"
             >
               Make up a name and register your delegate online.
@@ -571,14 +571,14 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
           </div>
         </div>
         <div
-          class="sc-AxgMl kdFVBs"
+          class="sc-AxgMl ezokut"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral"
+              class="text-sm font-semibold text-theme-neutral-700"
             >
               <span
                 class="mr-1"
@@ -603,16 +603,16 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   ARK Wallet 1
                 </span>
                 <span
-                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B … s6YUYD
                 </span>
               </div>
             </div>
@@ -643,7 +643,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
             class="sc-fznZeY kYLJCb flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -655,7 +655,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
             </label>
             <input
               aria-invalid="true"
-              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="arkx"
@@ -670,7 +670,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
             class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -691,7 +691,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                   class="sc-fzoLag hoOQgq"
                 >
                   <input
-                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -732,7 +732,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
@@ -795,7 +795,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
               Register Delegate
             </h1>
             <div
-              class="text-theme-neutral-dark"
+              class="text-theme-secondary-text"
               data-testid="header__subtitle"
             >
               Make up a name and register your delegate online.
@@ -829,14 +829,14 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxgMl kdFVBs"
+          class="sc-AxgMl ezokut"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral"
+              class="text-sm font-semibold text-theme-neutral-700"
             >
               <span
                 class="mr-1"
@@ -861,16 +861,16 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   ARK Wallet 1
                 </span>
                 <span
-                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B … s6YUYD
                 </span>
               </div>
             </div>
@@ -901,7 +901,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
             class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -912,7 +912,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
               />
             </label>
             <input
-              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value=""
@@ -922,7 +922,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
             class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -943,7 +943,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
                   class="sc-fzoLag hoOQgq"
                 >
                   <input
-                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -984,7 +984,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
@@ -1047,7 +1047,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
               Register Delegate
             </h1>
             <div
-              class="text-theme-neutral-dark"
+              class="text-theme-secondary-text"
               data-testid="header__subtitle"
             >
               Make up a name and register your delegate online.
@@ -1063,7 +1063,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Cryptoasset
               </div>
@@ -1075,7 +1075,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
             </div>
             <div
               aria-label="ARK Devnet"
-              class="sc-AxjAm bHAIY border-theme-primary-100 text-theme-primary-400"
+              class="sc-AxjAm jcZnVc border-theme-primary-100 text-theme-primary-400"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -1091,14 +1091,14 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 <span
                   class="mr-1"
@@ -1123,16 +1123,16 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     ARK Wallet 1
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -1157,14 +1157,14 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl iUTnJW"
+            class="sc-AxgMl gKdTrD"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 Delegate Name
               </div>
@@ -1177,7 +1177,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
             class="mt-2"
           >
             <div
-              class="border rounded-lg border-theme-neutral-300"
+              class="border rounded-lg border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <div
                 class="relative p-4"
@@ -1235,7 +1235,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 justfiy-center bg-theme-neutral-contrast"
+                class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
               >
                 <span
                   class="sc-fznWqX crDlml"
@@ -1279,7 +1279,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               Register Delegate
             </h1>
             <div
-              class="text-theme-neutral-dark"
+              class="text-theme-secondary-text"
               data-testid="header__subtitle"
             >
               Make up a name and register your delegate online.
@@ -1313,14 +1313,14 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxgMl kdFVBs"
+          class="sc-AxgMl ezokut"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral"
+              class="text-sm font-semibold text-theme-neutral-700"
             >
               <span
                 class="mr-1"
@@ -1345,16 +1345,16 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   ARK Wallet 1
                 </span>
                 <span
-                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B … s6YUYD
                 </span>
               </div>
             </div>
@@ -1385,7 +1385,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -1396,7 +1396,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               />
             </label>
             <input
-              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value=""
@@ -1406,7 +1406,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -1427,7 +1427,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   class="sc-fzoLag hoOQgq"
                 >
                   <input
-                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -1468,7 +1468,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
@@ -1531,7 +1531,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               Register Delegate
             </h1>
             <div
-              class="text-theme-neutral-dark"
+              class="text-theme-secondary-text"
               data-testid="header__subtitle"
             >
               Make up a name and register your delegate online.
@@ -1565,14 +1565,14 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxgMl kdFVBs"
+          class="sc-AxgMl ezokut"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral"
+              class="text-sm font-semibold text-theme-neutral-700"
             >
               <span
                 class="mr-1"
@@ -1597,16 +1597,16 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   ARK Wallet 1
                 </span>
                 <span
-                  class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                  class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B … s6YUYD
                 </span>
               </div>
             </div>
@@ -1637,7 +1637,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -1648,7 +1648,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               />
             </label>
             <input
-              class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="test_delegate"
@@ -1658,7 +1658,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             class="sc-fznZeY dWCRDT flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -1679,7 +1679,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   class="sc-fzoLag hoOQgq"
                 >
                   <input
-                    class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -1720,7 +1720,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >

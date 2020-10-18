@@ -3,9 +3,12 @@ import React from "react";
 import Skeleton from "react-loading-skeleton";
 
 export const AddressRowSkeleton = () => (
-	<tr data-testid="AddressRowSkeleton" className="border-b border-dotted last:border-b-0 border-theme-neutral-300">
+	<tr
+		data-testid="AddressRowSkeleton"
+		className="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+	>
 		<td className="py-5">
-			<Circle className="bg-theme-neutral-200 border-theme-neutral-200" />
+			<Circle className="bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800" />
 		</td>
 
 		<td className="py-5">
@@ -21,7 +24,7 @@ export const AddressRowSkeleton = () => (
 		</td>
 
 		<td className="py-5">
-			<Circle className="bg-theme-neutral-200 border-theme-neutral-200" />
+			<Circle className="bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800" />
 		</td>
 
 		<td className="py-5">

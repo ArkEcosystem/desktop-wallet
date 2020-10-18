@@ -41,7 +41,10 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 
 	return (
 		<div>
-			<p data-testid="MnemonicVerificationOptions__title" className="mb-2 font-semibold text-theme-neutral-dark">
+			<p
+				data-testid="MnemonicVerificationOptions__title"
+				className="mb-2 font-semibold text-theme-secondary-text"
+			>
 				{t("WALLETS.MNEMONIC_VERIFICATION.SELECT_WORD", { position })}
 			</p>
 			<div className="grid grid-cols-3 gap-2">

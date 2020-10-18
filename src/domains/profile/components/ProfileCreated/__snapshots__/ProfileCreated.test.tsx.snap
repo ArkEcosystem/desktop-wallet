@@ -16,10 +16,10 @@ exports[`ProfileCreated should render a modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -58,12 +58,12 @@ exports[`ProfileCreated should render a modal 1`] = `
               class="mb-8 text-center"
             >
               <p
-                class="mb-1 text-sm text-theme-neutral-dark md:text-base"
+                class="mb-1 text-sm text-theme-secondary-text md:text-base"
               >
                 If you are new to the ARK Desktop Wallet, view our tutorial to get started.
               </p>
               <p
-                class="text-sm text-theme-neutral-dark md:text-base"
+                class="text-sm text-theme-secondary-text md:text-base"
               >
                 If not, you can skip the tutorial to go directly to your portfolio.
               </p>
@@ -72,14 +72,14 @@ exports[`ProfileCreated should render a modal 1`] = `
               class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
             >
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm BsmvP"
                 color="primary"
                 type="button"
               >
                 Start Tutorial
               </button>
               <button
-                class="sc-AxjAm hXnHfM mt-2 sm:mt-0"
+                class="sc-AxjAm joLCoM mt-2 sm:mt-0"
                 color="primary"
                 type="button"
               >

@@ -23,7 +23,7 @@ export const SecondStep = () => {
 								<p className="text-sm font-semibold text-theme-neutral-light">
 									{t("COMMON.DOWNLOADED")}
 								</p>
-								<p className="font-bold text-theme-neutral-dark">154 KB / 154 KB</p>
+								<p className="font-bold text-theme-secondary-text">154 KB / 154 KB</p>
 							</span>
 							<div className="mr-2">
 								<CircularProgressBar value={78} size={50} strokeWidth={4} fontSize={0.8} />

@@ -9,14 +9,14 @@ export const DelegateRowItemSkeleton = () => (
 	>
 		<td className="w-24 py-6 pr-4">
 			<div className="flex items-center">
-				<Circle className="border-theme-neutral-300" size="lg" />
-				<Circle className="border-theme-neutral-300" size="lg" />
+				<Circle className="border-theme-neutral-300 dark:border-theme-neutral-800" size="lg" />
+				<Circle className="border-theme-neutral-300 dark:border-theme-neutral-800" size="lg" />
 			</div>
 		</td>
 		<td className="font-semibold">
 			<Skeleton height={6} width="60%" className="mt-4" />
 		</td>
-		<td className="font-semibold text-theme-neutral-dark">
+		<td className="font-semibold text-theme-secondary-text">
 			<Skeleton height={6} width="80%" className="mt-4" />
 		</td>
 		<td className="font-semibold text-center text-theme-primary">
@@ -29,12 +29,12 @@ export const DelegateRowItemSkeleton = () => (
 				<Skeleton width={24} height={24} />
 			</span>
 		</td>
-		<td className="font-semibold text-theme-neutral-dark">
+		<td className="font-semibold text-theme-secondary-text">
 			<div className="flex items-center justify-end">
 				<Skeleton height={6} width={100} className="mt-4" />
 			</div>
 		</td>
-		<td className="font-semibold text-theme-neutral-dark">
+		<td className="font-semibold text-theme-secondary-text">
 			<div className="flex items-center justify-end">
 				<Skeleton height={6} width={40} className="mt-4" />
 				<Skeleton height={6} width={80} className="mt-4 ml-4" />

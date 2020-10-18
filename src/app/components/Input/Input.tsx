@@ -14,7 +14,7 @@ const InputStyled = styled.input`
 		${tw`text-theme-neutral-light`}
 	}
 	&:disabled {
-		${tw`border-theme-neutral-300 bg-theme-neutral-contrast text-theme-neutral-dark`}
+		${tw`border-theme-neutral-300 dark:border-theme-neutral-800 bg-theme-neutral-contrast text-theme-secondary-text`}
 	}
 	&[aria-invalid="true"] {
 		${tw`border-theme-danger`}
@@ -36,7 +36,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 		return (
 			<InputStyled
 				data-testid="Input"
-				className={`overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 ${
+				className={`overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 ${
 					className || ""
 				}`}
 				name={fieldContext?.name}

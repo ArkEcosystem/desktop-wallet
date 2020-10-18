@@ -7,7 +7,7 @@ const baseStyle = [
 	css`
 		line-height: 1.25;
 		&:disabled {
-			${tw`bg-theme-neutral-200 text-theme-neutral-light cursor-not-allowed`}
+			${tw`bg-theme-neutral-200 text-theme-neutral-light dark:bg-theme-neutral-800 dark:text-theme-neutral-700 cursor-not-allowed`}
 		}
 	`,
 ];

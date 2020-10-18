@@ -49,14 +49,14 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 					<thead>
 						{headerGroups.map((headerGroup: any, index: number) => (
 							<tr
-								className="border-b border-theme-neutral-300"
+								className="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
 								key={index}
 								{...headerGroup.getHeaderGroupProps()}
 							>
 								{headerGroup.headers.map((column: any, thIndex: number) => (
 									<th
 										key={thIndex}
-										className={`relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold ${
+										className={`relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold ${
 											!column.className?.includes("invisible") ? "hasBorder" : ""
 										}`}
 										data-testid={`table__th--${thIndex}`}
@@ -66,7 +66,7 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 											<div>{column.render("Header")}</div>
 											{column.canSort && (
 												<div
-													className="flex items-center ml-2 text-theme-color-neutral"
+													className="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
 													data-testid={`table__${getSortIconName(
 														column.isSorted,
 														column.isSortedDesc,

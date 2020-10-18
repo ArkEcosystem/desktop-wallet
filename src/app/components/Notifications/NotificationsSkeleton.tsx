@@ -5,7 +5,7 @@ import { NotificationsSkeletonProps, NotificationsWrapper } from "./";
 
 export const NotificationsSkeleton = ({ title }: NotificationsSkeletonProps) => (
 	<NotificationsWrapper>
-		<div className="p-6 mb-5 border-2 border-theme-neutral-200 text-md rounded-xl text-theme-neutral-dark">
+		<div className="p-6 mb-5 border-2 border-theme-neutral-300 dark:border-theme-neutral-800 text-md rounded-xl text-theme-secondary-text">
 			{title}
 		</div>
 		<div>

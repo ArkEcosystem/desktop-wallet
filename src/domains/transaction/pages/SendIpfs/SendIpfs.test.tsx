@@ -88,7 +88,7 @@ describe("SendIpfs", () => {
 
 		expect(getByTestId("SendIpfs__step--second")).toBeTruthy();
 		expect(container).toHaveTextContent(wallet.network().name());
-		expect(container).toHaveTextContent("D8rr7B…s6YUYD");
+		expect(container).toHaveTextContent("D8rr7B … s6YUYD");
 		expect(container).toHaveTextContent("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		expect(asFragment()).toMatchSnapshot();
@@ -180,7 +180,7 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("SendIpfs__button--submit"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a…db3d69131067");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a … db3d69131067");
 
 			// Copy Transaction
 			const copyMock = jest.fn();

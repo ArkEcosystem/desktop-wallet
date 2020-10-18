@@ -18,7 +18,7 @@ export const ApplicationError = ({ resetErrorBoundary }: any) => {
 
 				<div data-testid="ApplicationError__text" className="mt-8">
 					<h2 className="text-2xl font-bold">{t("ERROR.APPLICATION.TITLE")}</h2>
-					<p className="text-theme-neutral-dark">{t("ERROR.APPLICATION.DESCRIPTION")}</p>
+					<p className="text-theme-secondary-text">{t("ERROR.APPLICATION.DESCRIPTION")}</p>
 				</div>
 
 				<Button onClick={resetErrorBoundary} className="mt-8">

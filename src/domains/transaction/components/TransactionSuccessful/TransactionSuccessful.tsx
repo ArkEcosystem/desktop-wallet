@@ -27,7 +27,7 @@ export const TransactionSuccessful = ({ children, transaction, senderWallet }: T
 
 			<TransactionSuccessfulBanner className="w-full" />
 
-			<p className="text-theme-neutral-dark">{t("TRANSACTION.SUCCESS.DESCRIPTION")}</p>
+			<p className="text-theme-secondary-text">{t("TRANSACTION.SUCCESS.DESCRIPTION")}</p>
 
 			<div>
 				{senderWallet && transaction && (

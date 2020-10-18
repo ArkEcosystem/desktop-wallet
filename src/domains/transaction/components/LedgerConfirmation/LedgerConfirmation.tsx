@@ -11,7 +11,7 @@ export const LedgerConfirmation = () => {
 	return (
 		<>
 			<ConfirmTransactionLedgerBanner className="my-8" />
-			<div className="mt-8 text-center text-theme-neutral-dark" data-testid="LedgerConfirmation-description">
+			<div className="mt-8 text-center text-theme-secondary-text" data-testid="LedgerConfirmation-description">
 				{t("TRANSACTION.LEDGER_CONFIRMATION.DESCRIPTION")}
 			</div>
 			<div className="inline-flex items-center justify-center w-full mt-8 space-x-3">

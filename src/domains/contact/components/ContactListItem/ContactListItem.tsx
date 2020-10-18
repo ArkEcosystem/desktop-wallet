@@ -30,7 +30,7 @@ export const ContactListItem = ({ item, variant, type, template, onAction, optio
 				.map((address: ContactAddress, index: number) => {
 					const borderClasses = () =>
 						index !== 0 && index !== item.addresses().count() - 1
-							? "border-b border-dashed border-theme-neutral-200"
+							? "border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
 							: "";
 
 					return (
@@ -142,7 +142,7 @@ export const ContactListItem = ({ item, variant, type, template, onAction, optio
 				.map((address: ContactAddress, index: number) => {
 					const borderClasses = () =>
 						index !== 0 && index !== item.addresses().count() - 1
-							? "border-b border-dashed border-theme-neutral-200"
+							? "border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
 							: "";
 
 					return (

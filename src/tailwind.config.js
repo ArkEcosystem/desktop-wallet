@@ -15,7 +15,10 @@ module.exports = {
 			transparent: "transparent",
 
 			"theme-background": "var(--theme-background-color)",
+			"theme-secondary-background": "var(--theme-secondary-background-color)",
+
 			"theme-text": "var(--theme-text-color)",
+			"theme-secondary-text": "var(--theme-secondary-text-color)",
 
 			"theme-primary": "var(--theme-color-primary)",
 			"theme-primary-contrast": "var(--theme-color-primary-contrast)",
@@ -163,8 +166,6 @@ module.exports = {
 				"8xl": "6rem",
 			},
 			borderWidth: {
-				1: "1px",
-				2: "2px",
 				3: "3px",
 				10: "10px",
 				20: "20px",

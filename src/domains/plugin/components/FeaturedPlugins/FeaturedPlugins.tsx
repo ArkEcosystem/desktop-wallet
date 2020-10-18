@@ -61,7 +61,7 @@ export const FeaturedPlugins = ({ isOpen, plugins, onClose }: FeaturedPluginsPro
 			<div className="mt-8 -mb-6">
 				<Table columns={columns} data={plugins}>
 					{(rowData: any) => (
-						<tr className="border-b border-dashed border-theme-neutral-200">
+						<tr className="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800">
 							<td className="w-16">
 								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
 							</td>
@@ -71,21 +71,21 @@ export const FeaturedPlugins = ({ isOpen, plugins, onClose }: FeaturedPluginsPro
 									{rowData.name}
 								</div>
 								<div className="inline-flex items-center space-x-2">
-									<span className="text-theme-neutral-dark">{rowData.author}</span>
+									<span className="text-theme-secondary-text">{rowData.author}</span>
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
 							</td>
 
-							<td className="py-10 text-center text-theme-neutral-dark">
+							<td className="py-10 text-center text-theme-secondary-text">
 								{t(`PLUGINS.CATEGORIES.${rowData.category.toUpperCase()}`)}
 							</td>
 
-							<td className="flex justify-center py-10 text-theme-neutral-dark">
+							<td className="flex justify-center py-10 text-theme-secondary-text">
 								<ReviewRating rating={rowData.rating} width={3} />
 							</td>
 
-							<td className="py-10 text-center text-theme-neutral-dark">v {rowData.version}</td>
+							<td className="py-10 text-center text-theme-secondary-text">v {rowData.version}</td>
 
 							<td className="w-16">
 								<Button variant="plain">{t("COMMON.INSTALL")}</Button>

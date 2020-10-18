@@ -13,7 +13,7 @@ exports[`NewsOptions should render 1`] = `
         class="flex items-center justify-between px-2 py-4 rounded-md shadow-xl"
       >
         <input
-          class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
+          class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
           data-testid="NewsOptions__search"
           maxlength="32"
           placeholder="Search"
@@ -29,7 +29,7 @@ exports[`NewsOptions should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-AxirZ jJscrd border-theme-neutral-300"
+        class="sc-AxirZ jJscrd border-theme-neutral-300 dark:border-theme-neutral-800"
         type="horizontal"
       />
       <div
@@ -125,7 +125,7 @@ exports[`NewsOptions should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-AxirZ jJscrd border-theme-neutral-300"
+        class="sc-AxirZ jJscrd border-theme-neutral-300 dark:border-theme-neutral-800"
         type="horizontal"
       />
       <div
@@ -154,7 +154,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="network__option--0"
               >
                 <div
-                  class="sc-AxhUy dHClEW relative border-theme-success-500 text-theme-success-500"
+                  class="sc-AxhUy iDenJW relative border-theme-success-500 text-theme-success-500"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -186,7 +186,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="network__option--1"
               >
                 <div
-                  class="sc-AxhUy dHClEW relative border-theme-neutral-200 text-theme-neutral-300"
+                  class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -198,7 +198,7 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <span />
                   </span>
@@ -209,7 +209,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="network__option--2"
               >
                 <div
-                  class="sc-AxhUy dHClEW relative border-theme-neutral-200 text-theme-neutral-300"
+                  class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -221,7 +221,7 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <span />
                   </span>
@@ -232,7 +232,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="network__option--3"
               >
                 <div
-                  class="sc-AxhUy dHClEW relative border-theme-neutral-200 text-theme-neutral-300"
+                  class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -244,7 +244,7 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
+                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <span />
                   </span>
@@ -254,7 +254,7 @@ exports[`NewsOptions should render 1`] = `
           </div>
         </div>
         <button
-          class="sc-AxjAm hXnHfM w-full"
+          class="sc-AxjAm joLCoM w-full"
           color="primary"
           data-testid="NewsOptions__submit"
           type="button"

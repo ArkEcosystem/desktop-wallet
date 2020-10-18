@@ -8,6 +8,7 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 	const pendingTransactions: SignedTransactionData[] = Object.values({
 		...wallet.transaction().waitingForOtherSignatures(),
 		...wallet.transaction().waitingForOurSignature(),
+		...wallet.transaction().signed(),
 	});
 
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);

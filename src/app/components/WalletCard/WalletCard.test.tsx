@@ -98,7 +98,7 @@ describe("Wallet Card", () => {
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/dashboard`);
 
 		act(() => {
-			fireEvent.click(getByText("D8rr…YUYD"));
+			fireEvent.click(getByText("D8rr … YUYD"));
 		});
 
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
