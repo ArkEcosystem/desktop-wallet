@@ -34,14 +34,14 @@ export const SendTransfer = () => {
 	const activeWallet = useActiveWallet();
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const form = useForm({ mode: "onChange", defaultValues: { fee: 0 } });
+	const form = useForm({ mode: "onChange", defaultValues: { fee: 0 }, shouldUnregister: false });
 	const { clearErrors, formState, getValues, register, setError, setValue } = form;
 	const { isValid } = formState;
 	const { sendTransfer } = useValidation();
 
 	useEffect(() => {
 		register("network", sendTransfer.network());
-		register("recipients", sendTransfer.recipients());
+		register("recipients");
 		register("senderAddress", sendTransfer.senderAddress());
 		register("fee", sendTransfer.fee());
 		register("smartbridge", sendTransfer.smartbridge());

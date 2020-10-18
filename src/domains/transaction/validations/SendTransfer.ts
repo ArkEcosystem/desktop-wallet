@@ -27,17 +27,6 @@ export const sendTransfer = (t: any, env: Environment) => ({
 			field: t("COMMON.NETWORK"),
 		}),
 	}),
-	recipients: () => ({
-		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.RECIPIENTS"),
-		}),
-		validate: {
-			valid: (value: string) => {
-				if (Array.isArray(value) && value.length > 0) return true;
-				return t("COMMON.VALIDATION.MIN_RECIPIENTS");
-			},
-		},
-	}),
 	recipientAddress: (network: Coins.Network) => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("COMMON.RECIPIENT"),
