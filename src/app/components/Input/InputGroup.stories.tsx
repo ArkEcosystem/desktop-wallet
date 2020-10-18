@@ -9,7 +9,7 @@ export default {
 export const Start = () => (
 	<InputGroup className="max-w-xs">
 		<InputAddonStart>
-			<span className="flex items-center justify-center w-10 h-full border-r bg-theme-neutral-contrast border-theme-neutral-300 text-theme-neutral-dark">
+			<span className="flex items-center justify-center w-10 h-full border-r bg-theme-neutral-contrast border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-secondary-text">
 				$
 			</span>
 		</InputAddonStart>
@@ -29,7 +29,7 @@ export const End = () => (
 export const Both = () => (
 	<InputGroup className="max-w-xs">
 		<InputAddonStart>
-			<span className="flex items-center justify-center w-10 h-full border-r bg-theme-neutral-contrast border-theme-neutral-300 text-theme-neutral-dark">
+			<span className="flex items-center justify-center w-10 h-full border-r bg-theme-neutral-contrast border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-secondary-text">
 				$
 			</span>
 		</InputAddonStart>

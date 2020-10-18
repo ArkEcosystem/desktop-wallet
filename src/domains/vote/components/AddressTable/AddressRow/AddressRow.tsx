@@ -92,7 +92,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				</div>
 			</TableCell>
 
-			<TableCell innerClassName="justify-end font-bold text-theme-neutral-dark">
+			<TableCell innerClassName="justify-end font-bold text-theme-secondary-text">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
@@ -101,7 +101,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 					{hasVotes ? (
 						<Avatar size="lg" address={votes[0].address()} noShadow />
 					) : (
-						<Circle size="lg" className="border-theme-neutral-300" noShadow />
+						<Circle size="lg" className="border-theme-neutral-300 dark:border-theme-neutral-800" noShadow />
 					)}
 				</div>
 			</TableCell>
@@ -114,7 +114,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				)}
 			</TableCell>
 
-			<TableCell innerClassName="justify-center font-bold text-theme-neutral-dark">
+			<TableCell innerClassName="justify-center font-bold text-theme-secondary-text">
 				{hasVotes && <span>#{votes[0].rank()}</span>}
 			</TableCell>
 

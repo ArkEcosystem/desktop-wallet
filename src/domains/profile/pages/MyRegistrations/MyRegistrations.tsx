@@ -26,7 +26,7 @@ const EmptyRegistrations = () => {
 			<div data-testid="MyRegistrations__empty-state" className="text-center">
 				<RegisterBanner className="mx-auto" />
 
-				<div className="mt-8 text-theme-neutral-dark">
+				<div className="mt-8 text-theme-secondary-text">
 					{t("PROFILE.PAGE_MY_REGISTRATIONS.NO_REGISTRATIONS_MESSAGE")}
 				</div>
 			</div>

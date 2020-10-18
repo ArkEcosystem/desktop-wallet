@@ -86,7 +86,7 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 						<Address walletName={delegate.username()} />
 					</div>
 
-					<div className="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300">
+					<div className="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800">
 						<span className="text-sm font-semibold text-theme-neutral">{t("COMMON.STATUS")}</span>
 
 						{rank ? (

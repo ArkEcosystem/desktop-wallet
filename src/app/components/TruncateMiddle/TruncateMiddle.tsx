@@ -20,7 +20,8 @@ export const TruncateMiddle = ({ text, maxChars, showTooltip, ...props }: Props)
 		const midPos = Math.floor(maxChars / 2) - 2;
 		const start = text.substr(0, midPos);
 		const end = text.substr(text.length - midPos, text.length);
-		return `${start}…${end}`;
+
+		return `${start} … ${end}`;
 	}, [maxChars, text]);
 
 	return (

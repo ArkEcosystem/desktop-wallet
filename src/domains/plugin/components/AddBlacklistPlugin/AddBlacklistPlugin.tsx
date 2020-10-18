@@ -85,17 +85,17 @@ export const AddBlacklistPlugin = ({
 									{rowData.name}
 								</div>
 								<div className="inline-flex items-center space-x-2">
-									<span className="text-theme-neutral-dark">{rowData.author}</span>
+									<span className="text-theme-secondary-text">{rowData.author}</span>
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
 							</TableCell>
 
-							<TableCell innerClassName="text-theme-neutral-dark justify-center">
+							<TableCell innerClassName="text-theme-secondary-text justify-center">
 								<span>{t(`PLUGINS.CATEGORIES.${rowData.category.toUpperCase()}`)}</span>
 							</TableCell>
 
-							<TableCell innerClassName="text-theme-neutral-dark">
+							<TableCell innerClassName="text-theme-secondary-text">
 								<span>
 									<ReviewRating rating={rowData.rating} width={3} />
 								</span>

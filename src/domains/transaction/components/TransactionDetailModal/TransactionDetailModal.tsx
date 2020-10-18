@@ -5,7 +5,7 @@ import { DelegateResignationDetail } from "domains/transaction/components/Delega
 import { EntityDetail } from "domains/transaction/components/EntityDetail";
 import { IpfsDetail } from "domains/transaction/components/IpfsDetail";
 import { MultiPaymentDetail } from "domains/transaction/components/MultiPaymentDetail";
-import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
+import { MultiSignatureRegistrationDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { SecondSignatureDetail } from "domains/transaction/components/SecondSignatureDetail";
 import { TransferDetail } from "domains/transaction/components/TransferDetail";
 import { VoteDetail } from "domains/transaction/components/VoteDetail";
@@ -32,7 +32,7 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 			TransactionModal = TransferDetail;
 			break;
 		case "multiSignature":
-			TransactionModal = MultiSignatureDetail;
+			TransactionModal = MultiSignatureRegistrationDetail;
 			break;
 		case "multiPayment":
 			TransactionModal = MultiPaymentDetail;

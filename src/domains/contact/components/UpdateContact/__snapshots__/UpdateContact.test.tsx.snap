@@ -16,10 +16,10 @@ exports[`UpdateContact should render a modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -57,7 +57,7 @@ exports[`UpdateContact should render a modal 1`] = `
                 class="sc-AxhUy dJlYTe flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="name"
                 >
@@ -68,7 +68,7 @@ exports[`UpdateContact should render a modal 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                   data-testid="contact-form__name-input"
                   name="name"
                   value="Brian"
@@ -81,7 +81,7 @@ exports[`UpdateContact should render a modal 1`] = `
                   class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                     data-testid="FormLabel"
                     for="network"
                   >
@@ -120,7 +120,7 @@ exports[`UpdateContact should render a modal 1`] = `
                           aria-controls="ContactForm__network-menu"
                           aria-labelledby="ContactForm__network-label"
                           autocomplete="off"
-                          class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                          class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                           data-testid="SelectNetworkInput__input"
                           id="ContactForm__network-input"
                           placeholder="Enter a cryptoasset name"
@@ -141,7 +141,7 @@ exports[`UpdateContact should render a modal 1`] = `
                   data-testid="ContactForm__address"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                     data-testid="FormLabel"
                     for="address"
                   >
@@ -155,7 +155,7 @@ exports[`UpdateContact should render a modal 1`] = `
                     class="sc-fzozJi OgXfh max-w-20"
                   >
                     <input
-                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                      class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                       data-testid="contact-form__address-input"
                       name="address"
                       type="text"
@@ -174,7 +174,7 @@ exports[`UpdateContact should render a modal 1`] = `
                           width="20"
                         >
                           <svg>
-                            qrcode.svg
+                            qr-code.svg
                           </svg>
                         </div>
                       </button>
@@ -185,7 +185,7 @@ exports[`UpdateContact should render a modal 1`] = `
                   class="mt-4"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM w-full"
+                    class="sc-AxjAm joLCoM w-full"
                     color="primary"
                     data-testid="contact-form__add-address-btn"
                     disabled=""
@@ -199,7 +199,7 @@ exports[`UpdateContact should render a modal 1`] = `
                 class="group"
               >
                 <span
-                  class="inline-block text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
+                  class="inline-block text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-secondary-text"
                 >
                   Addresses
                 </span>
@@ -207,7 +207,7 @@ exports[`UpdateContact should render a modal 1`] = `
                   data-testid="contact-form__address-list"
                 >
                   <div
-                    class="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
+                    class="flex items-center py-4 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
                     data-testid="contact-form__address-list-item"
                   >
                     <div
@@ -218,7 +218,7 @@ exports[`UpdateContact should render a modal 1`] = `
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="sc-fznyAO dLHlnS border-theme-primary-100 text-theme-primary-400"
+                          class="sc-fznyAO kAGxhi border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -258,12 +258,12 @@ exports[`UpdateContact should render a modal 1`] = `
                           class="sc-AxhCb ccMvAG text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D61mfSggzb…oHaqJ3Dyib
+                          D61mfSggzb … oHaqJ3Dyib
                         </span>
                       </div>
                     </span>
                     <button
-                      class="sc-AxjAm bIQEgQ flex items-center ml-auto"
+                      class="sc-AxjAm hMpHNk flex items-center ml-auto"
                       color="primary"
                       data-testid="contact-form__remove-address-btn"
                       type="button"
@@ -285,7 +285,7 @@ exports[`UpdateContact should render a modal 1`] = `
                 class="flex w-full justify-between"
               >
                 <button
-                  class="sc-AxjAm dFRFHH"
+                  class="sc-AxjAm AcEoP"
                   color="danger"
                   data-testid="contact-form__delete-btn"
                   type="button"
@@ -307,7 +307,7 @@ exports[`UpdateContact should render a modal 1`] = `
                   class="space-x-3"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="contact-form__cancel-btn"
                     type="button"
@@ -315,7 +315,7 @@ exports[`UpdateContact should render a modal 1`] = `
                     Cancel
                   </button>
                   <button
-                    class="sc-AxjAm kbZyZT"
+                    class="sc-AxjAm BsmvP"
                     color="primary"
                     data-testid="contact-form__save-btn"
                     type="submit"

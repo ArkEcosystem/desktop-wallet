@@ -68,13 +68,13 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose, blacklisted }: Blac
 									{rowData.name}
 								</div>
 								<div className="inline-flex items-center space-x-2">
-									<span className="text-theme-neutral-dark">{rowData.author}</span>
+									<span className="text-theme-secondary-text">{rowData.author}</span>
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
 							</TableCell>
 
-							<TableCell variant="end" innerClassName="justify-end text-theme-neutral-dark">
+							<TableCell variant="end" innerClassName="justify-end text-theme-secondary-text">
 								{t(`PLUGINS.CATEGORIES.${rowData.category?.toUpperCase()}`)}
 							</TableCell>
 						</TableRow>

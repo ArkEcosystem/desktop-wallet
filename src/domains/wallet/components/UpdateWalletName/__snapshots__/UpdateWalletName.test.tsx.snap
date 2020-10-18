@@ -16,10 +16,10 @@ exports[`UpdateWalletName should render a modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -52,7 +52,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
             name-wallet.svg
           </svg>
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             You can enter the name of your wallet for a quick search in your wallet.
           </div>
@@ -64,14 +64,14 @@ exports[`UpdateWalletName should render a modal 1`] = `
               class="sc-AxirZ izhStr flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
                 Name
               </label>
               <input
-                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -80,14 +80,14 @@ exports[`UpdateWalletName should render a modal 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm hXnHfM"
+                class="sc-AxjAm joLCoM"
                 color="primary"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm BsmvP"
                 color="primary"
                 data-testid="UpdateWalletName__submit"
                 type="submit"
@@ -117,10 +117,10 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -153,7 +153,7 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
             name-wallet.svg
           </svg>
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             You can enter the name of your wallet for a quick search in your wallet.
           </div>
@@ -165,14 +165,14 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
               class="sc-AxirZ izhStr flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
                 Name
               </label>
               <input
-                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -181,14 +181,14 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm hXnHfM"
+                class="sc-AxjAm joLCoM"
                 color="primary"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm BsmvP"
                 color="primary"
                 data-testid="UpdateWalletName__submit"
                 type="submit"
@@ -218,10 +218,10 @@ exports[`UpdateWalletName should show error message when name consists only of w
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -254,7 +254,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
             name-wallet.svg
           </svg>
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             You can enter the name of your wallet for a quick search in your wallet.
           </div>
@@ -266,7 +266,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
               class="sc-AxirZ kMHTdH flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -274,7 +274,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
               </label>
               <input
                 aria-invalid="true"
-                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -288,14 +288,14 @@ exports[`UpdateWalletName should show error message when name consists only of w
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm hXnHfM"
+                class="sc-AxjAm joLCoM"
                 color="primary"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm BsmvP"
                 color="primary"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
@@ -326,10 +326,10 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm goVygI w-11 h-11"
+          class="sc-AxjAm RZxAM w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -362,7 +362,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
             name-wallet.svg
           </svg>
           <div
-            class="mt-1 text-theme-neutral-dark"
+            class="mt-1 text-theme-secondary-text"
           >
             You can enter the name of your wallet for a quick search in your wallet.
           </div>
@@ -374,7 +374,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               class="sc-AxirZ kMHTdH flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -382,7 +382,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               </label>
               <input
                 aria-invalid="true"
-                class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -396,14 +396,14 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm hXnHfM"
+                class="sc-AxjAm joLCoM"
                 color="primary"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm BsmvP"
                 color="primary"
                 data-testid="UpdateWalletName__submit"
                 disabled=""

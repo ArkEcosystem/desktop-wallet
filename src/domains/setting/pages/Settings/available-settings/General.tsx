@@ -68,7 +68,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const securityItems = [
 		{
 			label: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
@@ -82,7 +82,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		},
 		{
 			label: t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
@@ -120,7 +120,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const otherItems = [
 		{
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
@@ -134,7 +134,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		},
 		{
 			label: t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.DESCRIPTION"),
 			labelAddon: (
 				<Toggle

@@ -24,9 +24,8 @@ export const FormStep = ({
 	const { recipients, smartbridge } = getValues();
 	const { senderAddress, fee } = watch();
 
-	const feeSatoshi = fee?.display ? fee.value : fee;
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
-	const maxAmount = senderWallet ? BigNumber.make(senderWallet.balance()).minus(feeSatoshi) : BigNumber.ZERO;
+	const maxAmount = senderWallet ? BigNumber.make(senderWallet.balance()).minus(fee) : BigNumber.ZERO;
 
 	const getRecipients = () => {
 		if (deeplinkProps?.recipient && deeplinkProps?.amount) {
@@ -45,7 +44,7 @@ export const FormStep = ({
 		<section data-testid="SendTransfer__step--first">
 			<div>
 				<h1 className="mb-0">{t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE")}</h1>
-				<div className="text-theme-neutral-dark">
+				<div className="text-theme-secondary-text">
 					{t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.DESCRIPTION")}
 				</div>
 			</div>

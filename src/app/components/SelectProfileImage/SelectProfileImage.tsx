@@ -53,7 +53,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 	return (
 		<div className={`group ${className}`}>
 			{showLabel && (
-				<span className="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark">
+				<span className="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-secondary-text">
 					{t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE")}
 				</span>
 			)}

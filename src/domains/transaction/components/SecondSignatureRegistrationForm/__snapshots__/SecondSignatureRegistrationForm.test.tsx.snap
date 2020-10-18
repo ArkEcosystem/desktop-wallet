@@ -94,7 +94,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
               data-testid="clipboard__wrapper"
             >
               <button
-                class="sc-fzozJi biJhRJ"
+                class="sc-fzozJi lmGYyR"
                 color="primary"
                 data-testid="SecondSignature__copy"
                 type="button"
@@ -115,7 +115,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             </div>
           </div>
           <div
-            class="sc-fznWqX kGOVcl border-theme-neutral-300"
+            class="sc-fznWqX kGOVcl border-theme-neutral-300 dark:border-theme-neutral-800"
             type="horizontal"
           />
           <div
@@ -125,7 +125,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
               class="space-y-2"
             >
               <span
-                class="text-lg font-semibold text-theme-neutral-dark"
+                class="text-lg font-semibold text-theme-secondary-text"
               >
                 Download Your Passphrase
               </span>
@@ -149,7 +149,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             class="flex justify-end w-full"
           >
             <button
-              class="sc-fzozJi biJhRJ flex items-center space-x-2"
+              class="sc-fzozJi lmGYyR flex items-center space-x-2"
               color="primary"
               data-testid="SecondSignature__download"
               type="button"
@@ -169,7 +169,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             </button>
           </div>
           <div
-            class="sc-fznWqX kGOVcl border-theme-neutral-300"
+            class="sc-fznWqX kGOVcl border-theme-neutral-300 dark:border-theme-neutral-800"
             type="horizontal"
           />
         </section>
@@ -204,7 +204,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                 Register Second Signature
               </h1>
               <div
-                class="text-theme-neutral-dark"
+                class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
                 Registration of your second signature.
@@ -238,14 +238,14 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI cWavUu"
+            class="sc-AxheI jRywGH"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral"
+                class="text-sm font-semibold text-theme-neutral-700"
               >
                 <span
                   class="mr-1"
@@ -270,16 +270,16 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     ARK Wallet 1
                   </span>
                   <span
-                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                    class="sc-AxmLO cAKCgh text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B … s6YUYD
                   </span>
                 </div>
               </div>
@@ -310,7 +310,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
               class="sc-AxjAm fmGClo flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="fee"
               >
@@ -331,7 +331,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     class="sc-fzoLag hoOQgq"
                   >
                     <input
-                      class="sc-fzokOt iLiRks overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                      class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -372,7 +372,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                 </div>
                 <div>
                   <div
-                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
                     data-testid="SelectionBar"
                     role="radiogroup"
                   >
@@ -418,14 +418,14 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
 exports[`SecondSignatureRegistrationForm should render transaction details 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxheI dlZkJI"
+    class="sc-AxheI jqCIcB"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Transaction Type
       </div>
@@ -436,7 +436,7 @@ exports[`SecondSignatureRegistrationForm should render transaction details 1`] =
       </div>
     </div>
     <div
-      class="sc-AxirZ fFfSST border-theme-text"
+      class="sc-AxirZ dxHwgH border-theme-text"
     >
       <div
         class="sc-AxiKw dklFyP"
@@ -450,14 +450,14 @@ exports[`SecondSignatureRegistrationForm should render transaction details 1`] =
     </div>
   </div>
   <div
-    class="sc-AxheI iCJnuC"
+    class="sc-AxheI iKwmMj"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Transaction Fee
       </div>

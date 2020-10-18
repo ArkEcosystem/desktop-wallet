@@ -9,7 +9,7 @@ export const NewsCardSkeleton = () => (
 		<div className="flex flex-col p-4 space-y-8" data-testid="NewsCard__skeleton">
 			<div className="flex justify-between w-full">
 				<div className="flex items-center space-x-4">
-					<Circle aria-label="network" className="border-theme-neutral-200" />
+					<Circle aria-label="network" className="border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 					<div>
 						<div>
@@ -41,7 +41,7 @@ export const NewsCardSkeleton = () => (
 
 			<Divider />
 
-			<p className="text-theme-neutral-dark" data-testid="NewsCard__content">
+			<p className="text-theme-secondary-text" data-testid="NewsCard__content">
 				<Skeleton height={6} width="100%" style={{ verticalAlign: "middle" }} />
 				<Skeleton height={6} width="100%" style={{ verticalAlign: "middle" }} />
 				<Skeleton height={6} width="100%" style={{ verticalAlign: "middle" }} />

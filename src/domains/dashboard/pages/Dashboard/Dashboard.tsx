@@ -124,7 +124,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 						{!activeProfile.balance().isZero() && (
 							<>
-								<div className="pt-6 mb-2 border-b border-dashed border-theme-neutral-300" />
+								<div className="pt-6 mb-2 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 								<PercentageBar
 									title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}

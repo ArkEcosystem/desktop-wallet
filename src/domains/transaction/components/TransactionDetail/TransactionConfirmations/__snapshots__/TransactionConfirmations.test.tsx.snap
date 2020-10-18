@@ -3,14 +3,14 @@
 exports[`TransactionConfirmations should render when confirmed 1`] = `
 <div>
   <div
-    class="sc-AxiKw cQbCYh"
+    class="sc-AxiKw euNdOI"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Confirmations
       </div>
@@ -18,28 +18,22 @@ exports[`TransactionConfirmations should render when confirmed 1`] = `
         class="font-semibold"
       >
         <div
-          class="flex"
+          class="flex space-x-3"
         >
           <span>
             Well confirmed
           </span>
-          <div
-            class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
-          >
+          <span>
             <div
-              class="m-auto"
+              class="sc-AxjAm jmgDQY text-theme-success"
+              height="22"
+              width="22"
             >
-              <div
-                class="sc-AxjAm pXfjM"
-                height="15"
-                width="15"
-              >
-                <svg>
-                  checkmark.svg
-                </svg>
-              </div>
+              <svg>
+                status-ok.svg
+              </svg>
             </div>
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -50,14 +44,14 @@ exports[`TransactionConfirmations should render when confirmed 1`] = `
 exports[`TransactionConfirmations should render when not confirmed 1`] = `
 <div>
   <div
-    class="sc-AxiKw cQbCYh"
+    class="sc-AxiKw euNdOI"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Confirmations
       </div>
@@ -65,27 +59,19 @@ exports[`TransactionConfirmations should render when not confirmed 1`] = `
         class="font-semibold"
       >
         <div
-          class="flex"
+          class="flex space-x-3"
         >
           <span>
             Not confirmed
           </span>
           <div
-            class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+            class="sc-AxjAm jmgDQY text-theme-warning"
+            height="22"
+            width="22"
           >
-            <div
-              class="m-auto"
-            >
-              <div
-                class="sc-AxjAm HWmvM"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
+            <svg>
+              status-pending.svg
+            </svg>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ exports[`NewsCard should render 1`] = `
     data-testid="NewsCard"
   >
     <div
-      class="sc-AxiKw deMsQD bg-theme-background"
+      class="sc-AxiKw ikHNGi bg-theme-background"
       data-testid="Card"
     >
       <div
@@ -19,7 +19,7 @@ exports[`NewsCard should render 1`] = `
             class="flex items-center space-x-4"
           >
             <div
-              class="sc-AxheI fZbLLc border-theme-neutral-light text-theme-neutral"
+              class="sc-AxheI kNFwgA border-theme-neutral-light text-theme-neutral"
               data-testid="NetworkIcon__placeholder"
             />
             <div>
@@ -37,7 +37,7 @@ exports[`NewsCard should render 1`] = `
                   Travis Walker, Co-Founder
                 </p>
                 <div
-                  class="sc-AxhCb hvZPgQ border-theme-neutral-300"
+                  class="sc-AxhCb hvZPgQ border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="vertical"
                 />
                 <p
@@ -70,11 +70,11 @@ exports[`NewsCard should render 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxhCb bmdmIf border-theme-neutral-300"
+          class="sc-AxhCb bmdmIf border-theme-neutral-300 dark:border-theme-neutral-800"
           type="horizontal"
         />
         <p
-          class="whitespace-pre-line text-theme-neutral-dark"
+          class="whitespace-pre-line text-theme-secondary-text"
           data-testid="NewsCard__content"
         >
           Recently we released our all-in-one toolkit the ARK Platform SDK, along with an overview and what blockchain projects it will initially support. Today we are going into more details on a technical level. 
@@ -102,7 +102,7 @@ exports[`NewsCard should render with cover image 1`] = `
     data-testid="NewsCard"
   >
     <div
-      class="sc-AxiKw deMsQD bg-theme-background"
+      class="sc-AxiKw ikHNGi bg-theme-background"
       data-testid="Card"
     >
       <div
@@ -115,7 +115,7 @@ exports[`NewsCard should render with cover image 1`] = `
             class="flex items-center space-x-4"
           >
             <div
-              class="sc-AxheI fZbLLc border-theme-neutral-light text-theme-neutral"
+              class="sc-AxheI kNFwgA border-theme-neutral-light text-theme-neutral"
               data-testid="NetworkIcon__placeholder"
             />
             <div>
@@ -133,7 +133,7 @@ exports[`NewsCard should render with cover image 1`] = `
                   Travis Walker, Co-Founder
                 </p>
                 <div
-                  class="sc-AxhCb hvZPgQ border-theme-neutral-300"
+                  class="sc-AxhCb hvZPgQ border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="vertical"
                 />
                 <p
@@ -166,11 +166,11 @@ exports[`NewsCard should render with cover image 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxhCb bmdmIf border-theme-neutral-300"
+          class="sc-AxhCb bmdmIf border-theme-neutral-300 dark:border-theme-neutral-800"
           type="horizontal"
         />
         <p
-          class="whitespace-pre-line text-theme-neutral-dark"
+          class="whitespace-pre-line text-theme-secondary-text"
           data-testid="NewsCard__content"
         >
           June is over and it's time for the Monthly Update. This blog post will cover last month’s highlights, activities, development, partner activities, news and updates of our upcoming releases. 

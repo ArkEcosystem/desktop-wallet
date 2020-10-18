@@ -3,14 +3,14 @@
 exports[`TransactionSender should not render delegate icon 1`] = `
 <div>
   <div
-    class="sc-AxhUy epJbbA"
+    class="sc-AxhUy cQFpUB"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Sender
       </div>
@@ -33,7 +33,7 @@ exports[`TransactionSender should not render delegate icon 1`] = `
       class="flex items-center -space-x-2"
     >
       <div
-        class="sc-AxirZ fFfSST border-theme-text"
+        class="sc-AxirZ dxHwgH border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
       >
         <div
           class="sc-AxiKw iQZLaj"
@@ -67,14 +67,14 @@ exports[`TransactionSender should not render delegate icon 1`] = `
 exports[`TransactionSender should not render with alias 1`] = `
 <div>
   <div
-    class="sc-AxhUy epJbbA"
+    class="sc-AxhUy cQFpUB"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Sender
       </div>
@@ -85,13 +85,13 @@ exports[`TransactionSender should not render with alias 1`] = `
           class="inline-block truncate align-middle"
         >
           <span
-            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base"
+            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
             data-testid="address__wallet-name"
           >
             test-alias
           </span>
           <span
-            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+            class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
             data-testid="address__wallet-address"
           >
             test-address
@@ -124,14 +124,14 @@ exports[`TransactionSender should not render with alias 1`] = `
 exports[`TransactionSender should render 1`] = `
 <div>
   <div
-    class="sc-AxhUy epJbbA"
+    class="sc-AxhUy cQFpUB"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
         Sender
       </div>

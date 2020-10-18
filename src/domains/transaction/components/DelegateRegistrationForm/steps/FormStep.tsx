@@ -80,8 +80,8 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 						defaultValue={fee}
 						value={fee}
 						step={step}
-						onChange={(currency: { display: string; value: string }) => {
-							setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
+						onChange={(currency) => {
+							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
 				</FormField>

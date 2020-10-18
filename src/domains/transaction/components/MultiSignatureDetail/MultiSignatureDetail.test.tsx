@@ -1,97 +1,306 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { toasts } from "app/services";
 import React from "react";
-import { FormProvider, useForm } from "react-hook-form";
-import { act, fireEvent, render } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
-// i18n
 import { translations } from "../../i18n";
 import { MultiSignatureDetail } from "./MultiSignatureDetail";
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
 
 describe("MultiSignatureDetail", () => {
-	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(<MultiSignatureDetail isOpen={false} onCancel={() => void 0} />);
+	let profile: Profile;
+	let wallet: ReadWriteWallet;
 
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-		expect(asFragment()).toMatchSnapshot();
+	const fixtures: Record<string, any> = {
+		transfer: undefined,
+		multiSignature: undefined,
+		multiPayment: undefined,
+	};
+
+	beforeEach(async () => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().first();
+
+		fixtures.transfer = await wallet
+			.coin()
+			.transaction()
+			.transfer({
+				nonce: "1",
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				fee: "1",
+				data: {
+					to: wallet.address(),
+					amount: "1",
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
+
+		fixtures.multiSignature = await wallet
+			.coin()
+			.transaction()
+			.multiSignature({
+				nonce: "1",
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				fee: "1",
+				data: {
+					min: 2,
+					publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					senderPublicKey: wallet.publicKey()!,
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
+
+		fixtures.multiPayment = await wallet
+			.coin()
+			.transaction()
+			.multiPayment({
+				nonce: "1",
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				fee: "1",
+				data: {
+					payments: [
+						{
+							amount: "1",
+							to: wallet.address(),
+						},
+						{
+							amount: "2",
+							to: wallet.address(),
+						},
+					],
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
 	});
 
-	it("should render a modal and get to step 3", async () => {
-		const { asFragment, findByTestId, getByTestId } = render(
-			<MultiSignatureDetail isOpen={true} onCancel={() => void 0} />,
+	it("should render summary step for transfer", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => false);
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.getByText(translations.TRANSACTION_TYPES.TRANSFER)));
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render summary step for multi payment", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => false);
+
+		const { container } = render(
+			<MultiSignatureDetail transaction={fixtures.multiPayment} wallet={wallet} isOpen />,
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(screen.getByText(translations.TRANSACTION_TYPES.MULTI_PAYMENT)));
 
-		const signButton = getByTestId("MultiSignatureDetail__sign-button");
-
-		act(() => {
-			fireEvent.click(signButton);
-		});
-		const secondStepNode = await findByTestId("MultiSignatureDetail__second-step");
-		expect(secondStepNode).toBeTruthy();
-
-		act(() => {
-			fireEvent.keyUp(getByTestId("import-wallet__passphrase-input"), { key: "A", code: "KeyA" });
-			fireEvent.click(signButton);
-		});
-		const thirdStepNode = await findByTestId("MultiSignatureDetail__third-step");
-		const successBannerElem = await findByTestId("MultiSignatureDetail__success-banner");
-		expect(thirdStepNode).toBeTruthy();
-		expect(successBannerElem).toBeTruthy();
+		expect(container).toMatchSnapshot();
 	});
 
-	it("should render a modal and go back", async () => {
-		const { asFragment, findByTestId, getByTestId } = render(
-			<MultiSignatureDetail isOpen={true} onCancel={() => void 0} />,
+	it("should render summary step for multi signature", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => false);
+
+		const { container } = render(
+			<MultiSignatureDetail transaction={fixtures.multiSignature} wallet={wallet} isOpen />,
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(screen.getByText(translations.TRANSACTION_TYPES.MULTI_SIGNATURE)));
 
-		const signButton = getByTestId("MultiSignatureDetail__sign-button");
-		const backButton = getByTestId("MultiSignatureDetail__back-button");
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should show send button when able to broadcast", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+		// @ts-ignore
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue(void 0);
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.getByTestId("MultiSignatureDetail__broadcast")));
+
+		expect(container).toMatchSnapshot();
 
 		act(() => {
-			fireEvent.click(signButton);
+			fireEvent.click(screen.getByTestId("MultiSignatureDetail__broadcast"));
 		});
-		const secondStepNode = await findByTestId("MultiSignatureDetail__second-step");
-		expect(secondStepNode).toBeTruthy();
+
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(screen.getByText(translations.SUCCESS.TITLE)).toBeInTheDocument());
+
+		broadcastMock.mockRestore();
+	});
+
+	it("should fail to broadcast transaction", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockRejectedValue(new Error("Failed"));
+		const toastsMock = jest.spyOn(toasts, "error");
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.getByTestId("MultiSignatureDetail__broadcast")));
+
+		expect(container).toMatchSnapshot();
 
 		act(() => {
-			fireEvent.click(backButton);
+			fireEvent.click(screen.getByTestId("MultiSignatureDetail__broadcast"));
 		});
-		const firstStepNode = await findByTestId("MultiSignatureDetail__first-step");
-		expect(firstStepNode).toBeTruthy();
+
+		await waitFor(() => expect(toastsMock).toHaveBeenCalled());
+
+		broadcastMock.mockRestore();
+		toastsMock.mockReset();
 	});
 
-	it("should render 1st step", () => {
-		const { asFragment, getByTestId } = render(<FirstStep />);
+	it("should show paginator when able to sign", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);
 
-		expect(getByTestId("MultiSignatureDetail__first-step")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.getByTestId("Paginator__sign")));
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__sign"));
+		});
+
+		await waitFor(() => expect(screen.getByTestId("AuthenticationStep")));
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__back"));
+		});
+
+		await waitFor(() => expect(screen.getByTestId("Paginator__sign")));
+
+		expect(container).toMatchSnapshot();
 	});
 
-	it("should render 2nd step", () => {
-		const { result: form } = renderHook(() => useForm());
+	it("should emit close when click on cancel button", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);
 
-		const { asFragment, getByTestId } = render(
-			<FormProvider {...form.current}>
-				<SecondStep />
-			</FormProvider>,
-		);
+		const onClose = jest.fn();
+		render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen onClose={onClose} />);
 
-		expect(getByTestId("MultiSignatureDetail__second-step")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(screen.getByTestId("Paginator__cancel")));
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__cancel"));
+		});
+
+		expect(onClose).toHaveBeenCalled();
 	});
 
-	it("should render 3rd step", () => {
-		const { asFragment, getByTestId } = render(<ThirdStep />);
+	it("should go to authentication step with sign button", async () => {
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);
 
-		expect(getByTestId("MultiSignatureDetail__third-step")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
+		render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.getByTestId("Paginator__sign")));
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__sign"));
+		});
+
+		await waitFor(() => expect(screen.getByTestId("AuthenticationStep")).toBeInTheDocument());
+	});
+
+	it("should sign transaction after authentication page", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);
+		jest.spyOn(wallet.transaction(), "sync").mockResolvedValue(void 0);
+
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast");
+		const addSignatureMock = jest.spyOn(wallet.transaction(), "addSignature").mockResolvedValue(void 0);
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.getByTestId("Paginator__sign")));
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__sign"));
+		});
+
+		await waitFor(() => expect(screen.getByTestId("AuthenticationStep")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: "my mnemonic",
+				},
+			});
+		});
+
+		await waitFor(() => expect(screen.getByTestId("Paginator__continue")).not.toBeDisabled(), { timeout: 1000 });
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__continue"));
+		});
+
+		await waitFor(() => expect(addSignatureMock).toHaveBeenCalled());
+		await waitFor(() => expect(broadcastMock).not.toHaveBeenCalled());
+		await waitFor(() => expect(screen.getByText(translations.SUCCESS.TITLE)).toBeInTheDocument());
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should fail to sign transaction after authentication page", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);
+		jest.spyOn(wallet.transaction(), "sync").mockResolvedValue(void 0);
+
+		const addSignatureMock = jest
+			.spyOn(wallet.transaction(), "addSignature")
+			.mockRejectedValue(new Error("Failed"));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast");
+		const toastsMock = jest.spyOn(toasts, "error");
+
+		render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.getByTestId("Paginator__sign")));
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__sign"));
+		});
+
+		await waitFor(() => expect(screen.getByTestId("AuthenticationStep")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: "my mnemonic",
+				},
+			});
+		});
+
+		await waitFor(() => expect(screen.getByTestId("Paginator__continue")).not.toBeDisabled(), { timeout: 1000 });
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__continue"));
+		});
+
+		await waitFor(() => expect(addSignatureMock).toHaveBeenCalled());
+		await waitFor(() => expect(toastsMock).toHaveBeenCalled());
+		await waitFor(() => expect(broadcastMock).not.toHaveBeenCalled());
 	});
 });

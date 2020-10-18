@@ -61,7 +61,9 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 					</div>
 
 					<div className="flex space-x-4 text-sm text-theme-neutral-light">
-						<div className="pr-4 border-r border-theme-neutral-300">{plugin.author}</div>
+						<div className="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+							{plugin.author}
+						</div>
 
 						<div>
 							<ReviewRating rating={plugin.rating} />

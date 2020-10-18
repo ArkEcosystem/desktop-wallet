@@ -104,7 +104,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 							</span>
 							<span
 								data-testid="WalletBottomSheetMenu__counter"
-								className="ml-1 font-bold text-theme-neutral-dark"
+								className="ml-1 font-bold text-theme-secondary-text"
 							>
 								{wallets.length}
 							</span>
@@ -113,7 +113,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 							{isOpen && (
 								<button
 									data-testid="WalletBottomSheetMenu__filters"
-									className="flex items-center px-5 py-1 font-medium border-r text-theme-neutral-dark border-theme-neutral-800 focus:outline-none"
+									className="flex items-center px-5 py-1 font-medium border-r text-theme-secondary-text border-theme-neutral-800 focus:outline-none"
 								>
 									<Icon name="Filters" width={16} height={20} />
 								</button>
@@ -121,7 +121,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 							<CollapseToggleButton
 								data-testid="WalletBottomSheetMenu__toggle"
 								isOpen={isOpen}
-								className="text-theme-neutral-dark"
+								className="text-theme-secondary-text"
 								onClick={() => setIsOpen(!isOpen)}
 							/>
 						</div>
