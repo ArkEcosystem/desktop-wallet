@@ -4280,11 +4280,11 @@ exports[`SendTransfer should render registration form without selected wallet 1`
 exports[`SendTransfer should select a cryptoasset and select sender without wallet id param 1`] = `
 <div>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoiQi bBgYbl"
+      class="sc-fzqARJ juliij"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4296,7 +4296,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqARJ ktgHVM"
+              class="sc-fzqNqU bFCCVL"
             >
               <svg
                 width="48"
@@ -4312,7 +4312,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -4323,7 +4323,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -4334,7 +4334,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -4345,7 +4345,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-text"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -4365,7 +4365,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -4380,7 +4380,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 bg-white border-white rounded-full"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4391,13 +4391,13 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -4414,13 +4414,13 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -4431,13 +4431,13 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   width="22"
                 >
                   <svg>
-                    receive.svg
+                    qr-code.svg
                   </svg>
                 </div>
               </button>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
@@ -4447,12 +4447,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="text-right"
             >
               <div
-                class="text-xs font-medium text-theme-neutral"
+                class="text-xs font-semibold text-theme-neutral-700"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-dark"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -4466,14 +4466,14 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               data-testid="dropdown__toggle"
             >
               <div
-                class="ml-4 cursor-pointer"
+                class="ml-4 -space-x-2 cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxgMl eqWWwc -mr-2 border-theme-primary-contrast"
+                  class="sc-AxgMl eQpXWo border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
-                    class="text-theme-neutral-dark"
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
                       class="sc-AxiKw dzBdqj"
@@ -4498,13 +4498,13 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                     >
                       JO
                     </span>
                   </div>
                   <span
-                    class="sc-AxhUy kTPsmA flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    class="sc-AxhUy kTPsmA flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxiKw ksjdLL"
@@ -4525,7 +4525,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -4541,7 +4541,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
         class="space-x-3"
       >
         <a
-          class="text-theme-neutral-dark"
+          class="text-theme-secondary-text"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
@@ -4565,19 +4565,19 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
           >
             <div>
               <ul
-                class="sc-fzoyTs cPoNle"
+                class="sc-fzoNJl fLBodk"
               >
                 <li
-                  class="sc-fzqNqU jDKVmr"
+                  class="sc-fzoyTs gSSopp"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoyTs gDSWzs"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoyTs gDSWzs"
                 />
                 <li
-                  class="sc-fzqNqU iyMmQK"
+                  class="sc-fzoyTs gDSWzs"
                 />
               </ul>
               <div
@@ -4596,7 +4596,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         Send
                       </h1>
                       <div
-                        class="text-theme-neutral-dark"
+                        class="text-theme-secondary-text"
                       >
                         Enter details to send your money
                       </div>
@@ -4614,7 +4614,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             class="mb-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                               data-testid="FormLabel"
                               for="network"
                             >
@@ -4638,11 +4638,11 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 id="SendTransactionForm__network-label"
                               />
                               <div
-                                class="sc-fzpjYC dHxzen"
+                                class="sc-fznxsB hhZPAY"
                                 data-testid="SelectNetworkInput"
                               >
                                 <div
-                                  class="sc-fzoyAV sc-fzoLag grqxuS px-4"
+                                  class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                                 >
                                   <div
                                     aria-label="ARK Devnet"
@@ -4662,7 +4662,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   </div>
                                 </div>
                                 <span
-                                  class="sc-fzoyAV gCfUUB py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                  class="sc-fzoLag buWfop py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                                   data-testid="SelectNetworkInput__typeahead"
                                 >
                                   ARK Devnet
@@ -4673,7 +4673,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   aria-controls="SendTransactionForm__network-menu"
                                   aria-labelledby="SendTransactionForm__network-label"
                                   autocomplete="off"
-                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                                  class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                                   data-testid="SelectNetworkInput__input"
                                   id="SendTransactionForm__network-input"
                                   placeholder="Enter a cryptoasset name"
@@ -4696,7 +4696,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
+                                  class="sc-AxgMl hLfYuP text-theme-success-500 border-theme-success-200"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -4721,7 +4721,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             class="mb-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                               data-testid="FormLabel"
                               for="senderAddress"
                             >
@@ -4737,7 +4737,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           >
                             <div>
                               <button
-                                class="sc-fzpmMD jvETLY SelectAddress  "
+                                class="sc-fzpmMD dNZfph SelectAddress  "
                                 data-testid="SelectAddress__wrapper"
                                 type="button"
                               >
@@ -4762,7 +4762,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
-                                    D5sRKWckH4rE1…AepgyC3cvJtwb
+                                    D5sRKWckH4rE1 … AepgyC3cvJtwb
                                   </span>
                                 </div>
                                 <div
@@ -4780,7 +4780,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 </div>
                               </button>
                               <input
-                                class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                                 data-testid="SelectAddress__input"
                                 name="senderAddress"
                                 readonly=""
@@ -4797,7 +4797,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             class="sc-fzoXWK jbZdUf"
                           >
                             <div
-                              class="text-theme-neutral-dark hover:text-theme-primary"
+                              class="text-theme-secondary-text hover:text-theme-primary"
                             >
                               <div
                                 class="flex items-center mb-2 space-x-2"
@@ -4827,7 +4827,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 class="flex items-stretch select-buttons"
                               >
                                 <button
-                                  class="sc-AxjAm kbZyZT flex-1"
+                                  class="sc-AxjAm BsmvP flex-1"
                                   color="primary"
                                   data-testid="add-recipient-is-single-toggle"
                                   type="button"
@@ -4835,7 +4835,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   Single
                                 </button>
                                 <button
-                                  class="sc-AxjAm hXnHfM flex-1 border-l-0"
+                                  class="sc-AxjAm joLCoM flex-1 border-l-0"
                                   color="primary"
                                   data-testid="add-recipient-is-multiple-toggle"
                                   type="button"
@@ -4857,7 +4857,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     class="mb-2"
                                   >
                                     <label
-                                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                       data-testid="FormLabel"
                                       for="recipientAddress"
                                     >
@@ -4877,11 +4877,11 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         class="absolute left-1"
                                       >
                                         <div
-                                          class="sc-AxgMl eLFBRi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                                          class="sc-AxgMl eLFBRi mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
                                         />
                                       </div>
                                       <input
-                                        class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                                        class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
                                         data-testid="SelectRecipient__input"
                                         name="recipientAddress"
                                         type="text"
@@ -4911,7 +4911,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     class="mb-2"
                                   >
                                     <label
-                                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                       data-testid="FormLabel"
                                       for="amount"
                                     >
@@ -4923,10 +4923,10 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     </label>
                                   </div>
                                   <div
-                                    class="sc-fzpjYC dHxzen"
+                                    class="sc-fznxsB hhZPAY"
                                   >
                                     <input
-                                      class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                                      class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
@@ -4934,7 +4934,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       value="0"
                                     />
                                     <div
-                                      class="sc-fzoyAV sc-fzoXzr YtqIf"
+                                      class="sc-fzoLag sc-fzpjYC fdEbuY"
                                     >
                                       <button
                                         class="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
@@ -4954,17 +4954,17 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           class="sc-AxirZ izhStr relative"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="smartbridge"
                           >
                             Smartbridge
                           </label>
                           <div
-                            class="sc-fzpjYC dHxzen"
+                            class="sc-fznxsB hhZPAY"
                           >
                             <input
-                              class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
                               data-testid="Input__smartbridge"
                               name="smartbridge"
                               placeholder=" "
@@ -4972,7 +4972,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               value=""
                             />
                             <div
-                              class="sc-fzoyAV sc-fzoXzr YtqIf px-2 text-sm pointer-events-none text-theme-neutral"
+                              class="sc-fzoLag sc-fzpjYC fdEbuY px-2 text-sm pointer-events-none text-theme-neutral"
                               data-testid="InputCounter__counter"
                             >
                               0
@@ -4985,7 +4985,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           class="sc-AxirZ izhStr flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="fee"
                           >
@@ -5003,10 +5003,10 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               class="flex-1"
                             >
                               <div
-                                class="sc-fzpjYC dHxzen"
+                                class="sc-fznxsB hhZPAY"
                               >
                                 <input
-                                  class="sc-fzqNJr kdQsaY overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                  class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -5020,19 +5020,19 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     data-testid="Range"
                                   >
                                     <div
-                                      class="sc-fznxsB iIkzuE"
+                                      class="sc-fznJRM kQDqMk"
                                       data-testid="Range__track"
                                       style="transform: scale(1); cursor: pointer;"
                                     >
                                       <div
-                                        class="sc-fznJRM csJQgR"
+                                        class="sc-fznWqX cugARS"
                                         data-testid="Range__track__filled"
                                       >
                                         <div
                                           aria-valuemax="6.63"
                                           aria-valuemin="0.00357"
                                           aria-valuenow="0.71538139"
-                                          class="sc-fznWqX dbpdEg"
+                                          class="sc-fzoiQi kEqFhK"
                                           data-testid="Range__thumb"
                                           draggable="false"
                                           role="slider"
@@ -5047,7 +5047,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </div>
                             <div>
                               <div
-                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
                                 data-testid="SelectionBar"
                                 role="radiogroup"
                               >
@@ -5090,7 +5090,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm hXnHfM"
+                    class="sc-AxjAm joLCoM"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     disabled=""
@@ -5099,7 +5099,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm kbZyZT"
+                    class="sc-AxjAm BsmvP"
                     color="primary"
                     data-testid="SendTransfer__button--continue"
                     disabled=""
