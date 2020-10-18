@@ -17,7 +17,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
           Opening of the app
         </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
           Information from your device is expected
@@ -28,7 +28,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
       class="sc-AxhCb ckQmOL flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
@@ -79,7 +79,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-AxheI fa-DppL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               disabled=""
               id="ImportWallet__network-input"
@@ -143,7 +143,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
           Opening of the app
         </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
           Information from your device is expected
@@ -154,7 +154,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
       class="sc-AxhCb ckQmOL flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
@@ -205,7 +205,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-AxheI fa-DppL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               disabled=""
               id="ImportWallet__network-input"

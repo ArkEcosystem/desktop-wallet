@@ -5,7 +5,7 @@ import { Divider } from "app/components/Divider";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
-import { LedgerData } from "app/contexts/Ledger/use-ledger";
+import { LedgerData } from "app/contexts/Ledger/utils";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React, { useState } from "react";

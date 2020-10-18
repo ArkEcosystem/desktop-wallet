@@ -9,7 +9,7 @@ import { Header } from "app/components/Header";
 import { Spinner } from "app/components/Spinner";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import { useLedgerContext } from "app/contexts";
-import { LedgerData } from "app/contexts/Ledger/use-ledger";
+import { LedgerData } from "app/contexts/Ledger/utils";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useCallback, useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -81,9 +81,9 @@ export const LedgerScanStep = ({ profile }: { profile: Profile }) => {
 	const [checkedAddresses, setCheckedAddresses] = useState<Record<string, boolean>>({});
 
 	const scan = useCallback(() => {
-		scanWallets(network.coin(), network.id(), profile, (wallet) => {
-			setLedgerWallets((prev) => [...prev, wallet]);
-			setCheckedAddresses((prev) => ({ ...prev, [wallet.address]: true }));
+		scanWallets(network.coin(), network.id(), profile, (wallets) => {
+			setLedgerWallets((prev) => [...prev, ...wallets]);
+			setCheckedAddresses((prev) => wallets.reduce((acc, item) => ({ ...acc, [item.address]: true }), prev));
 		});
 	}, [scanWallets, network, profile]);
 
@@ -122,7 +122,7 @@ export const LedgerScanStep = ({ profile }: { profile: Profile }) => {
 			{(isBusy || isAwaitingConnection) && (
 				<div className="inline-flex items-center justify-center w-full mt-8 space-x-3">
 					<Spinner color="primary" />
-					<span className="text-theme-text">{t("COMMON.LOADING_LEDGER")}</span>
+					<span className="text-theme-secondary-text animate-pulse">{t("COMMON.LOADING_LEDGER")}</span>
 				</div>
 			)}
 		</section>

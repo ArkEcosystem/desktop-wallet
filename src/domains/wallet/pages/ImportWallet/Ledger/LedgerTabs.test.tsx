@@ -19,12 +19,16 @@ describe("LedgerTabs", () => {
 
 	beforeAll(() => {
 		nock("https://dwallets.ark.io/api")
-			.get("/wallets/DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq")
+			.get("/wallets")
+			.query((params) => !!params.address)
 			.reply(200, {
-				data: {
-					address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
-					balance: "0",
-				},
+				meta: {},
+				data: [
+					{
+						address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
+						balance: "0",
+					},
+				],
 			})
 			.persist();
 	});
@@ -34,9 +38,11 @@ describe("LedgerTabs", () => {
 		wallet = profile.wallets().first();
 		transport = createTransportReplayer(RecordStore.fromString(""));
 		publicKeyPaths = new Map([
-			["44'/111'/0'/0/0", "027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582"],
-			["44'/111'/1'/0/0", wallet.publicKey()!],
-			["44'/111'/2'/0/0", "020aac4ec02d47d306b394b79d3351c56c1253cd67fe2c1a38ceba59b896d584d1"],
+			["44'/1'/0'/0/0", "027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582"],
+			["44'/1'/1'/0/0", wallet.publicKey()!],
+			["44'/1'/2'/0/0", "020aac4ec02d47d306b394b79d3351c56c1253cd67fe2c1a38ceba59b896d584d1"],
+			["44'/1'/3'/0/0", "033a5474f68f92f254691e93c06a2f22efaf7d66b543a53efcece021819653a200"],
+			["44'/1'/4'/0/0", "03d3c6889608074b44155ad2e6577c3368e27e6e129c457418eb3e5ed029544e8d"],
 		]);
 
 		jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
@@ -145,6 +151,49 @@ describe("LedgerTabs", () => {
 		// Auto redirect to next step
 		await waitFor(() => expect(screen.getByTestId("LedgerScanStep")).toBeInTheDocument());
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(3));
+
+		getPublicKeySpy.mockReset();
+	});
+
+	it("should redirect to first screen when clicking back", async () => {
+		const getPublicKeySpy = jest
+			.spyOn(wallet.coin().ledger(), "getPublicKey")
+			.mockImplementation((path) => Promise.resolve(publicKeyPaths.get(path)!));
+
+		const Component = () => {
+			const form = useForm({
+				mode: "onChange",
+				defaultValues: {
+					network: wallet.network(),
+				},
+			});
+
+			const { register } = form;
+
+			useEffect(() => {
+				register("network");
+			}, [register]);
+
+			return (
+				<FormProvider {...form}>
+					<BaseComponent activeIndex={2} />
+				</FormProvider>
+			);
+		};
+
+		renderWithRouter(<Component />, { routes: [`/profiles/${profile.id()}`] });
+
+		await waitFor(() => expect(screen.getByTestId("LedgerConnectionStep")).toBeInTheDocument());
+
+		// Auto redirect to next step
+		await waitFor(() => expect(screen.getByTestId("LedgerScanStep")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(backSelector());
+		});
+
+		await waitFor(() => expect(screen.getByTestId("SelectNetwork")).toBeInTheDocument());
+		await waitFor(() => expect(nextSelector()).toBeEnabled());
 
 		getPublicKeySpy.mockReset();
 	});

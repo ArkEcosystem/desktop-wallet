@@ -1,21 +1,14 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { chunk } from "@arkecosystem/utils";
 import Transport from "@ledgerhq/hw-transport";
 import retry from "async-retry";
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
 
 import { useEnvironmentContext } from "../Environment";
 import { defaultLedgerState, ledgerStateReducer } from "./Ledger.state";
-
-const formatDerivationPath = (coinType: number, index: number) => `44'/${coinType}'/${index}'/0/0`;
-
-export type LedgerData = {
-	address: string;
-	balance: BigNumber;
-	index: number;
-	isNew?: boolean;
-};
+import { formatDerivationPath, LedgerData, searchAddresses, searchWallets } from "./utils";
 
 export const useLedger = (transport: typeof Transport) => {
 	const { env, persist } = useEnvironmentContext();
@@ -95,61 +88,57 @@ export const useLedger = (transport: typeof Transport) => {
 	}, []);
 
 	const scanWallets = useCallback(
-		async (coin: string, network: string, profile: Profile, onChange?: (wallet: LedgerData) => void) => {
-			const wallets: LedgerData[] = [];
+		async (coin: string, network: string, profile: Profile, onChange?: (wallets: LedgerData[]) => void) => {
+			const allWallets: LedgerData[] = [];
 
 			try {
 				await connect(coin, network);
 
 				const instance = await env.coin(coin, network);
-				const slip44 = instance.config().get<number>("network.crypto.slip44");
 
 				dispatch({ type: "busy" });
 
-				let hasMore = true;
-				let cursor = 0;
+				// TODO: Get value from profile
+				const limit = 50;
+				const indexes = Array.from(Array(limit).keys());
+				const chunks = chunk(indexes, 5);
 
-				while (hasMore) {
-					const path = formatDerivationPath(slip44, cursor);
-					const publicKey = await instance.ledger().getPublicKey(path);
-					const address = await instance.identity().address().fromPublicKey(publicKey);
+				for (const iterator of chunks) {
+					const addressMap = await searchAddresses(iterator, instance, profile);
+					const ledgerWallets = await searchWallets(addressMap, instance);
 
-					// Already imported
-					if (profile.wallets().findByAddress(address)) {
-						cursor++;
-						continue;
-					}
+					const addresses = Object.keys(addressMap);
+					let hasMore = true;
 
-					let wallet: LedgerData;
-					try {
-						const identity = await instance.client().wallet(address);
-						wallet = {
-							address: identity.address(),
-							balance: identity.balance(),
-							index: cursor,
-						};
-					} catch {
-						// New Cold Wallet
-						wallet = {
-							address,
+					if (addresses.length > ledgerWallets.length) {
+						const ledgerAddresses = ledgerWallets.map((wallet) => wallet.address);
+						const coldAddress = addresses.find((address) => !ledgerAddresses.includes(address))!;
+
+						ledgerWallets.push({
+							address: coldAddress,
 							balance: BigNumber.ZERO,
-							index: cursor,
+							index: addressMap[coldAddress],
 							isNew: true,
-						};
+						});
+
 						hasMore = false;
 					}
-					onChange?.(wallet);
-					wallets.push(wallet);
-					cursor++;
+
+					onChange?.(ledgerWallets);
+					allWallets.push(...ledgerWallets);
+
+					if (!hasMore) {
+						break;
+					}
 				}
 
 				await disconnect(instance);
-				return wallets;
+				return allWallets;
 			} catch (e) {
 				dispatch({ type: "failed", message: e.message });
 			}
 
-			return wallets;
+			return allWallets;
 		},
 		[env, connect, disconnect],
 	);

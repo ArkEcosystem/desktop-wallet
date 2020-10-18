@@ -41,7 +41,7 @@ exports[`LedgerTabs should render connection step 1`] = `
                 Select a Cryptoasset
               </h1>
               <div
-                class="text-theme-neutral-dark"
+                class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
                 Select a cryptoasset to import your existing wallet address
@@ -52,7 +52,7 @@ exports[`LedgerTabs should render connection step 1`] = `
             class="sc-AxheI dThsOi flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="network"
             >
@@ -91,7 +91,7 @@ exports[`LedgerTabs should render connection step 1`] = `
                     aria-controls="ImportWallet__network-menu"
                     aria-labelledby="ImportWallet__network-label"
                     autocomplete="off"
-                    class="sc-fzozJi fwEJKJ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                    class="sc-fzozJi gNOhWM overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                     data-testid="SelectNetworkInput__input"
                     id="ImportWallet__network-input"
                     placeholder="Enter a cryptoasset name"
@@ -114,7 +114,7 @@ exports[`LedgerTabs should render connection step 1`] = `
       class="flex justify-end mt-10 space-x-3"
     >
       <button
-        class="sc-AxjAm hXnHfM"
+        class="sc-AxjAm joLCoM"
         color="primary"
         data-testid="Paginator__back-button"
         disabled=""
@@ -123,7 +123,7 @@ exports[`LedgerTabs should render connection step 1`] = `
         Back
       </button>
       <button
-        class="sc-AxjAm kbZyZT"
+        class="sc-AxjAm BsmvP"
         color="primary"
         data-testid="Paginator__continue-button"
         disabled=""

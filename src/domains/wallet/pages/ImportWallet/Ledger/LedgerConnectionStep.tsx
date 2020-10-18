@@ -36,7 +36,7 @@ const ConnectionContent = ({
 			<WaitingLedgerDevice className="mx-auto" />
 			<div className="inline-flex items-center justify-center w-full mt-8 space-x-3">
 				<Spinner color="primary" />
-				<span className="font-normal text-theme-text">
+				<span className="text-theme-secondary-text animate-pulse">
 					{t("WALLETS.MODAL_LEDGER_WALLET.OPEN_APP", { coin: coinName })}
 				</span>
 			</div>

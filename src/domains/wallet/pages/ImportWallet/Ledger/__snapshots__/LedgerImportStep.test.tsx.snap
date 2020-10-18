@@ -17,7 +17,7 @@ exports[`LedgerImportStep should render 1`] = `
           Completed
         </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
           Wallet import is complete. Now you can use it.
@@ -25,14 +25,14 @@ exports[`LedgerImportStep should render 1`] = `
       </div>
     </div>
     <div
-      class="sc-fznKkj kfQUkX"
+      class="sc-fznKkj csQbiu"
       data-testid="TransactionDetail"
     >
       <div
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           Cryptoasset
         </div>
@@ -44,7 +44,7 @@ exports[`LedgerImportStep should render 1`] = `
       </div>
       <div
         aria-label="ARK Devnet"
-        class="sc-fzplWN fGeYla border-theme-primary-100 text-theme-primary-400"
+        class="sc-fzplWN jUnIkq border-theme-primary-100 text-theme-primary-400"
         data-testid="NetworkIcon-ARK-ark.devnet"
       >
         <div
@@ -69,7 +69,7 @@ exports[`LedgerImportStep should render 1`] = `
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral"
+              class="text-sm font-semibold text-theme-neutral-700"
             >
               Address
             </div>
@@ -107,7 +107,7 @@ exports[`LedgerImportStep should render 1`] = `
           class="sc-AxiKw iQzisX flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="names.DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
           >
@@ -122,13 +122,13 @@ exports[`LedgerImportStep should render 1`] = `
             </span>
           </label>
           <input
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+            class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
             data-testid="ImportWallet__name-input"
             name="names.DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
           />
         </fieldset>
         <div
-          class="sc-AxirZ jJscrd border-theme-neutral-300"
+          class="sc-AxirZ jJscrd border-theme-neutral-300 dark:border-theme-neutral-800"
           type="horizontal"
         />
       </li>
@@ -141,7 +141,7 @@ exports[`LedgerImportStep should render 1`] = `
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral"
+              class="text-sm font-semibold text-theme-neutral-700"
             >
               Address
             </div>
@@ -179,7 +179,7 @@ exports[`LedgerImportStep should render 1`] = `
           class="sc-AxiKw iQzisX flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
           >
@@ -194,13 +194,13 @@ exports[`LedgerImportStep should render 1`] = `
             </span>
           </label>
           <input
-            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+            class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
             data-testid="ImportWallet__name-input"
             name="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
           />
         </fieldset>
         <div
-          class="sc-AxirZ jJscrd border-theme-neutral-300"
+          class="sc-AxirZ jJscrd border-theme-neutral-300 dark:border-theme-neutral-800"
           type="horizontal"
         />
       </li>

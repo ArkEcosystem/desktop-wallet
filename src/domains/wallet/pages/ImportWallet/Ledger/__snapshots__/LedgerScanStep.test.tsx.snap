@@ -17,7 +17,7 @@ exports[`LedgerScanStep should render 1`] = `
           Opening of the app
         </h1>
         <div
-          class="text-theme-neutral-dark"
+          class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
           Information from your device is expected
@@ -28,7 +28,7 @@ exports[`LedgerScanStep should render 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
@@ -79,7 +79,7 @@ exports[`LedgerScanStep should render 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="sc-fzozJi fwEJKJ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-fzozJi gNOhWM overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               disabled=""
               id="ImportWallet__network-input"
@@ -97,7 +97,7 @@ exports[`LedgerScanStep should render 1`] = `
       </div>
     </fieldset>
     <div
-      class="sc-AxgMl gqroiy"
+      class="sc-AxgMl bcDffM -mt-3"
       role="table"
     >
       <table
@@ -106,10 +106,11 @@ exports[`LedgerScanStep should render 1`] = `
       >
         <thead>
           <tr
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -123,7 +124,7 @@ exports[`LedgerScanStep should render 1`] = `
                   Wallet
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -139,7 +140,7 @@ exports[`LedgerScanStep should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -153,7 +154,7 @@ exports[`LedgerScanStep should render 1`] = `
                   Balance
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -169,7 +170,7 @@ exports[`LedgerScanStep should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -188,12 +189,12 @@ exports[`LedgerScanStep should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-Axmtr gpPFXd group"
+            class="sc-Axmtr rUOKR group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxheI hFrGzt space-x-3"
+                class="sc-AxheI hqJHZW space-x-3"
               >
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
@@ -216,14 +217,14 @@ exports[`LedgerScanStep should render 1`] = `
                     class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    DJpFwW…DJ28jq
+                    DJpFwW … DJ28jq
                   </span>
                 </div>
               </div>
             </td>
             <td>
               <div
-                class="sc-AxheI heJeLD font-semibold"
+                class="sc-AxheI jcbimQ font-semibold"
               >
                 <span
                   data-testid="Amount"
@@ -234,7 +235,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxheI heJeLD justify-center"
+                class="sc-AxheI jcbimQ justify-center"
               >
                 <input
                   class="sc-AxirZ dMNlTF"
@@ -245,12 +246,12 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-Axmtr gpPFXd group"
+            class="sc-Axmtr rUOKR group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxheI hDMgmF space-x-3"
+                class="sc-AxheI jMktVy space-x-3"
               >
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
@@ -273,14 +274,14 @@ exports[`LedgerScanStep should render 1`] = `
                     class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    DRgF3P…Ay23ES
+                    DRgF3P … Ay23ES
                   </span>
                 </div>
               </div>
             </td>
             <td>
               <div
-                class="sc-AxheI fdnrQr font-semibold"
+                class="sc-AxheI gAPAsk font-semibold"
               >
                 <span
                   data-testid="Amount"
@@ -291,7 +292,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxheI fdnrQr justify-center"
+                class="sc-AxheI gAPAsk justify-center"
               >
                 <input
                   class="sc-AxirZ dMNlTF"

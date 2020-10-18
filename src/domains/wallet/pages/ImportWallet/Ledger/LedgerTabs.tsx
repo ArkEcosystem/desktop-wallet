@@ -113,6 +113,14 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 		[handleSubmit, importWallets],
 	);
 
+	const handleBack = (newIndex: number) => {
+		if (newIndex === 2) {
+			setActiveTab(1);
+			return;
+		}
+		setActiveTab(newIndex);
+	};
+
 	return (
 		<Tabs activeId={activeTab}>
 			<StepIndicator size={4} activeIndex={activeTab} />
@@ -138,7 +146,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 				isNextDisabled={!isValid}
 				isNextLoading={isSubmitting}
 				onNext={handleNext}
-				onBack={setActiveTab}
+				onBack={handleBack}
 				onSubmit={handleSubmit((data: any) => saveNames(data))}
 			/>
 		</Tabs>
