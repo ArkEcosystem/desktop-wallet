@@ -33,8 +33,6 @@ export const sendTransfer = (t: any, env: Environment) => ({
 		}),
 		validate: {
 			valid: async (address: string) => {
-				if (!network) return true; // skip if network is not set
-
 				const instance: Coins.Coin = await env.coin(network?.coin(), network?.id());
 				const isValidAddress: boolean = await instance.identity().address().validate(address);
 				return isValidAddress || t("COMMON.VALIDATION.RECIPIENT_INVALID");
@@ -46,17 +44,12 @@ export const sendTransfer = (t: any, env: Environment) => ({
 			field: t("COMMON.AMOUNT"),
 		}),
 		validate: {
-			valid: (amount: any) => {
-				if (!network) return true; // skip if network is not set
-
-				return (
-					(balance?.isGreaterThanOrEqualTo(amount) && !balance?.isZero()) ||
-					t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance: balance?.toHuman(),
-						coinId: network.coin(),
-					})
-				);
-			},
+			valid: (amount: any) =>
+				(balance?.isGreaterThanOrEqualTo(amount) && !balance?.isZero()) ||
+				t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+					balance: balance?.toHuman(),
+					coinId: network?.coin(),
+				}),
 		},
 	}),
 });
