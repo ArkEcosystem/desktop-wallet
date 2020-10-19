@@ -4736,10 +4736,10 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   </div>
                                 </div>
                                 <div
-                                  class="inline-block truncate align-middle"
+                                  class="inline-flex items-center"
                                 >
                                   <span
-                                    class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                    class="sc-fzpans kkFAbe text-theme-text truncate font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sRKWckH4rE1 … AepgyC3cvJtwb
@@ -4885,23 +4885,19 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   </div>
                                 </fieldset>
                                 <fieldset
-                                  class="sc-AxirZ izhStr relative mt-1"
+                                  class="sc-AxirZ izhStr flex flex-col space-y-2"
                                 >
-                                  <div
-                                    class="mb-2"
+                                  <label
+                                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                                    data-testid="FormLabel"
+                                    for="amount"
                                   >
-                                    <label
-                                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                                      data-testid="FormLabel"
-                                      for="amount"
-                                    >
-                                      Amount
-                                      <div
-                                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                        data-testid="FormLabel__required"
-                                      />
-                                    </label>
-                                  </div>
+                                    Amount
+                                    <div
+                                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                      data-testid="FormLabel__required"
+                                    />
+                                  </label>
                                   <div
                                     class="sc-fznxsB hhZPAY"
                                   >
