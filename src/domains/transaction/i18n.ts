@@ -57,6 +57,7 @@ export const translations: { [key: string]: any } = {
 	IPFS_NOT_FOUND: "Unable to find ipfs data for transaction [{{transactionId}}]",
 
 	MULTISIGNATURE: {
+		GENERATED_ADDRESS: "Generated Address",
 		MIN_SIGNATURES: "Minimum Required Signatures",
 		PARTICIPANT_ADDRESS: "Participant Address",
 		PARTICIPANTS: "Multisignature Participants",

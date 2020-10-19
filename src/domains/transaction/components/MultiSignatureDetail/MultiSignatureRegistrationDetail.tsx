@@ -64,6 +64,17 @@ export const MultiSignatureRegistrationDetail = ({
 				{(transaction as MultiSignatureData).min()} / {(transaction as MultiSignatureData).publicKeys().length}
 			</TransactionDetail>
 
+			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.GENERATED_ADDRESS")}>
+				{wallet
+					.coin()
+					.identity()
+					.address()
+					.fromMultiSignature(
+						(transaction as MultiSignatureData).min(),
+						(transaction as MultiSignatureData).publicKeys(),
+					)}
+			</TransactionDetail>
+
 			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
 
 			{transaction.blockId() && (
