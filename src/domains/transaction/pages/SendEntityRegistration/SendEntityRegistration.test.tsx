@@ -308,6 +308,7 @@ describe("Registration", () => {
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toHaveTextContent("Delegate"));
 
 			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+			await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("delegateRegistration"));
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 

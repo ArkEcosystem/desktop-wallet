@@ -59,7 +59,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		setWallets(profile.wallets().values());
 	}, [network, profile]);
 
-	const registrationTypes: SendEntityRegistrationType[] = [];
+	const registrationTypes = [];
 
 	if (network?.can("Transaction.entityRegistration")) {
 		registrationTypes.push({
