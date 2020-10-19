@@ -128,7 +128,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 						setFeeWarning(validateFee(getValues("fee"), fees.min));
 					}}
 				/>
-				{feeWarning && <FormHelperText isWarning warningMessage={t(feeWarning)} />}
+				{feeWarning && /* istanbul ignore next */ <FormHelperText isWarning warningMessage={t(feeWarning)} />}
 			</FormField>
 		</div>
 	);
