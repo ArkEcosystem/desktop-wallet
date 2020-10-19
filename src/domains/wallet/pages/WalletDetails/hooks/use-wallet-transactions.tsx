@@ -5,11 +5,11 @@ import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limit: number }) => {
-	const pendingTransactions: SignedTransactionData[] = Object.values({
+	const pendingMultiSignatureTransactions: SignedTransactionData[] = Object.values({
 		...wallet.transaction().waitingForOtherSignatures(),
 		...wallet.transaction().waitingForOurSignature(),
 		...wallet.transaction().signed(),
-	});
+	}).filter((item) => !!item.get("multiSignature"));
 
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
 	const [itemCount, setItemCount] = useState<number>(0);
@@ -73,6 +73,6 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 		fetchMore,
 		hasMore,
 		transactions,
-		pendingTransactions,
+		pendingMultiSignatureTransactions,
 	};
 };
