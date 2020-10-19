@@ -109,12 +109,10 @@ describe("MultiSignature Registration Form", () => {
 						{
 							address: wallet.address(),
 							publicKey: wallet.publicKey()!,
-							balance: wallet.balance().toString(),
 						},
 						{
 							address: wallet2.address(),
 							publicKey: wallet2.publicKey()!,
-							balance: wallet2.balance().toString(),
 						},
 					],
 					minParticipants: 2,
@@ -133,7 +131,13 @@ describe("MultiSignature Registration Form", () => {
 	it("should render transaction details", async () => {
 		const DetailsComponent = () => {
 			const { t } = useTranslation();
-			return <MultiSignatureRegistrationForm.transactionDetails translations={t} transaction={transaction} />;
+			return (
+				<MultiSignatureRegistrationForm.transactionDetails
+					translations={t}
+					transaction={transaction}
+					wallet={wallet}
+				/>
+			);
 		};
 		const transaction = {
 			id: () => multiSignatureFixture.data.id,
@@ -145,7 +149,7 @@ describe("MultiSignature Registration Form", () => {
 		} as Contracts.SignedTransactionData;
 		const { asFragment } = render(<DetailsComponent />);
 
-		await waitFor(() => expect(screen.getByTestId("TransactionDetail")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getAllByTestId("TransactionDetail")).toHaveLength(3));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -161,12 +165,10 @@ describe("MultiSignature Registration Form", () => {
 					{
 						address: wallet.address(),
 						publicKey: wallet.publicKey()!,
-						balance: wallet.balance().toString(),
 					},
 					{
 						address: wallet2.address(),
 						publicKey: wallet2.publicKey()!,
-						balance: wallet2.balance().toString(),
 					},
 				],
 			}),
@@ -215,12 +217,10 @@ describe("MultiSignature Registration Form", () => {
 					{
 						address: wallet.address(),
 						publicKey: wallet.publicKey()!,
-						balance: wallet.balance().toString(),
 					},
 					{
 						address: wallet2.address(),
 						publicKey: wallet2.publicKey()!,
-						balance: wallet2.balance().toString(),
 					},
 				],
 			}),

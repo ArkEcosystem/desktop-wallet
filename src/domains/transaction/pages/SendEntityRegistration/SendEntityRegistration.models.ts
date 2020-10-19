@@ -3,6 +3,10 @@ import { Enums, Environment, Profile, ReadWriteWallet } from "@arkecosystem/plat
 import { TFunction } from "i18next";
 import { useForm } from "react-hook-form";
 
+export type ExtendedSignedTransactionData = Contracts.SignedTransactionData & {
+	generatedAddress?: string;
+};
+
 export type SendEntityRegistrationType = {
 	label: string;
 	value: string;
@@ -10,7 +14,7 @@ export type SendEntityRegistrationType = {
 };
 
 export type SendEntityRegistrationDetailsOptions = {
-	transaction: Contracts.SignedTransactionData;
+	transaction: ExtendedSignedTransactionData;
 	translations: TFunction;
 	wallet: ReadWriteWallet;
 };
@@ -28,7 +32,7 @@ export type SendEntityRegistrationSignOptions = {
 	form: ReturnType<typeof useForm>;
 	handleNext: () => void;
 	profile: Profile;
-	setTransaction: (transaction: Contracts.SignedTransactionData) => void;
+	setTransaction: (transaction: ExtendedSignedTransactionData) => void;
 	translations: TFunction;
 	type?: Enums.EntityType;
 };

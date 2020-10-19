@@ -58,7 +58,7 @@ export const translations: { [key: string]: any } = {
 
 	MULTISIGNATURE: {
 		MIN_SIGNATURES: "Minimum Required Signatures",
-		PARTICIPANT_ADDRESS: "Participant Address",
+		PARTICIPANT: "Multisignature Participant",
 		PARTICIPANTS: "Multisignature Participants",
 		ADD_PARTICIPANT: "Add Participant",
 		OUT_OF_LENGTH: "out of {{ length }}",
@@ -254,6 +254,7 @@ export const translations: { [key: string]: any } = {
 		REVIEW_STEP: {
 			TITLE: "Transaction Review",
 			DESCRIPTION: "Review your multisignature registration details",
+			GENERATED_ADDRESS: "Generated Address",
 			TYPE: "Multisignature Registration",
 		},
 	},
