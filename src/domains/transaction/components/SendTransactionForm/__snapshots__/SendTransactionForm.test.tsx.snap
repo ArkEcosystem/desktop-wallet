@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SendTransactionForm should change sender & route 1`] = `<div />`;
-
 exports[`SendTransactionForm should render 1`] = `
 <div>
   <div
@@ -233,6 +231,267 @@ exports[`SendTransactionForm should render 1`] = `
 </div>
 `;
 
+exports[`SendTransactionForm should select a sender & update fees 1`] = `
+<div>
+  <div
+    class="space-y-8 SendTransactionForm"
+  >
+    <fieldset
+      class="sc-AxjAm fmGClo relative"
+    >
+      <div
+        class="mb-2"
+      >
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="network"
+        >
+          Cryptoasset
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+      </div>
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="SendTransactionForm__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="SendTransactionForm__network-input"
+            id="SendTransactionForm__network-label"
+          />
+          <div
+            class="sc-Axmtr jzhOwR"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            >
+              <div
+                aria-label="ARK Devnet"
+                class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
+                data-testid="SelectNetworkInput__network"
+              >
+                <div
+                  class="sc-AxiKw dklFyP"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransactionForm__network-menu"
+              aria-labelledby="SendTransactionForm__network-label"
+              autocomplete="off"
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="SendTransactionForm__network-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
+            />
+          </div>
+        </div>
+        <ul
+          aria-labelledby="SendTransactionForm__network-label"
+          class="hidden"
+          id="SendTransactionForm__network-menu"
+          role="listbox"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      class="sc-AxjAm fmGClo relative"
+    >
+      <div
+        class="mb-2"
+      >
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="senderAddress"
+        >
+          Sender
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+      </div>
+      <div
+        data-testid="sender-address"
+      >
+        <div>
+          <button
+            class="sc-fzqBZW SAsor SelectAddress  "
+            data-testid="SelectAddress__wrapper"
+            type="button"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                  title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                />
+              </div>
+            </div>
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D5sRKWckH4rE1 … AepgyC3cvJtwb
+              </span>
+            </div>
+            <div
+              class="absolute flex items-center space-x-3 right-4"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  user.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+          <input
+            class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            data-testid="SelectAddress__input"
+            name="senderAddress"
+            readonly=""
+            type="text"
+            value="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+          />
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      class="sc-AxjAm fmGClo flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="fee"
+      >
+        Transaction Fee
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div
+        class="flex space-x-2"
+        data-testid="InputFee"
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="sc-Axmtr jzhOwR"
+          >
+            <input
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+              data-testid="InputCurrency"
+              name="fee"
+              type="text"
+              value="0.71538139"
+            />
+            <div
+              class="absolute bottom-0 w-full px-1"
+            >
+              <div
+                class="flex flex-wrap justify-center"
+                data-testid="Range"
+              >
+                <div
+                  class="sc-AxmLO fErXAA"
+                  data-testid="Range__track"
+                  style="transform: scale(1); cursor: pointer;"
+                >
+                  <div
+                    class="sc-fzozJi fxOiEw"
+                    data-testid="Range__track__filled"
+                  >
+                    <div
+                      aria-valuemax="6.63"
+                      aria-valuemin="0.00357"
+                      aria-valuenow="0.71538139"
+                      class="sc-fzoLsD iBGNss"
+                      data-testid="Range__thumb"
+                      draggable="false"
+                      role="slider"
+                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                      tabindex="0"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
+            data-testid="SelectionBar"
+            role="radiogroup"
+          >
+            <button
+              aria-checked="false"
+              class="sc-fzqNJr dLZgRW relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Min
+            </button>
+            <button
+              aria-checked="true"
+              class="sc-fzqNJr dLZgRW relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Average
+            </button>
+            <button
+              aria-checked="false"
+              class="sc-fzqNJr dLZgRW relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Max
+            </button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+`;
+
 exports[`SendTransactionForm should select fill out form 1`] = `
 <div>
   <div
@@ -287,7 +546,6 @@ exports[`SendTransactionForm should select fill out form 1`] = `
               autocomplete="off"
               class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
-              disabled=""
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
               value=""
