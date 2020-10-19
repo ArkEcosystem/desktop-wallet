@@ -2,16 +2,13 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { httpClient } from "app/services";
-import { createMemoryHistory } from "history";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { Route } from "react-router-dom";
 import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
 	render,
-	renderWithRouter,
 	syncFees,
 	useDefaultNetMocks,
 	waitFor,
@@ -87,7 +84,7 @@ describe("SendTransactionForm", () => {
 		});
 	});
 
-	it("should change sender & route", async () => {
+	it("should select a sender & update fees", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		form.current.register("fee");
@@ -103,23 +100,13 @@ describe("SendTransactionForm", () => {
 			}
 		}
 
-		const history = createMemoryHistory();
-		const sendUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}/sign-transfer`;
-		history.push(sendUrl);
-
 		let rendered: any;
 
 		await act(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/sign-transfer">
-					<FormProvider {...form.current}>
-						<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
-					</FormProvider>
-				</Route>,
-				{
-					routes: [sendUrl],
-					history,
-				},
+			rendered = render(
+				<FormProvider {...form.current}>
+					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
+				</FormProvider>,
 			);
 
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__wrapper")).toBeTruthy());
@@ -130,24 +117,12 @@ describe("SendTransactionForm", () => {
 		await act(async () => {
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
 
-			// Select sender & update fees
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
 			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
-
-			const historySpy = jest.spyOn(history, "push");
 
 			const firstAddress = getByTestId("SearchWalletListItem__select-1");
 			fireEvent.click(firstAddress);
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
-			const secondWallet = profile.wallets().values()[1];
-			await waitFor(() =>
-				expect(historySpy).toHaveBeenCalledWith(
-					`/profiles/${profile?.id()}/wallets/${secondWallet.id()}/send-transfer`,
-				),
-			);
-
-			historySpy.mockRestore();
 
 			expect(rendered.container).toMatchSnapshot();
 		});
