@@ -42,6 +42,10 @@ const getType = (transaction: SignedTransactionData): string => {
 		return "vote";
 	}
 
+	if (type === 5) {
+		return "ipfs";
+	}
+
 	return "transfer";
 };
 

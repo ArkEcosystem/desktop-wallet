@@ -25,6 +25,7 @@ describe("MultiSignatureDetail", () => {
 		multiPayment: undefined,
 		vote: undefined,
 		unvote: undefined,
+		ipfs: undefined,
 	};
 
 	beforeAll(() => {
@@ -136,6 +137,24 @@ describe("MultiSignatureDetail", () => {
 					},
 				},
 			});
+
+		fixtures.ipfs = await wallet
+			.coin()
+			.transaction()
+			.ipfs({
+				nonce: "1",
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				fee: "1",
+				data: {
+					hash: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco",
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
 	});
 
 	it("should render summary step for transfer", async () => {
@@ -201,6 +220,20 @@ describe("MultiSignatureDetail", () => {
 
 		await waitFor(() =>
 			expect(screen.getByTestId("header__title")).toHaveTextContent(translations.TRANSACTION_TYPES.UNVOTE),
+		);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render summary step for ipfs", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => false);
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.ipfs} wallet={wallet} isOpen />);
+
+		await waitFor(() =>
+			expect(screen.getByTestId("header__title")).toHaveTextContent(translations.TRANSACTION_TYPES.IPFS),
 		);
 
 		expect(container).toMatchSnapshot();

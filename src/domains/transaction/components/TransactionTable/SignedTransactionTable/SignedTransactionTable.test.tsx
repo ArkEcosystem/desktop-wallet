@@ -14,6 +14,7 @@ describe("Signed Transaction Table", () => {
 		multiPayment: undefined,
 		vote: undefined,
 		unvote: undefined,
+		ipfs: undefined,
 	};
 
 	beforeEach(async () => {
@@ -113,6 +114,24 @@ describe("Signed Transaction Table", () => {
 				fee: "1",
 				data: {
 					vote: "-034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
+
+		fixtures.ipfs = await wallet
+			.coin()
+			.transaction()
+			.ipfs({
+				nonce: "1",
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				fee: "1",
+				data: {
+					hash: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco",
 				},
 				sign: {
 					multiSignature: {

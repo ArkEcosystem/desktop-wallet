@@ -891,6 +891,151 @@ exports[`Signed Transaction Table should render 1`] = `
               />
             </td>
           </tr>
+          <tr
+            class="sc-AxhUy gFzLrG group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="sc-AxhCb osoeH"
+              >
+                <span
+                  class="sc-AxgMl fFPQpl"
+                  data-testid="TruncateMiddle"
+                >
+                  c99038 … 446c5b
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-48"
+            >
+              <div
+                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+              >
+                <span
+                  data-testid="TransactionRow__timestamp"
+                >
+                  31 Jul 2020 16:34:41
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-32"
+            >
+              <div
+                class="sc-AxhCb kdNpYF"
+              >
+                <div
+                  class="flex items-center -space-x-1"
+                  data-testid="TransactionRowMode"
+                >
+                  <div
+                    class="sc-Axmtr HieAR border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      data-testid="TransactionRowMode__Sent"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-Axmtr hVOxCZ border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                    data-testid="TransactionRowRecipientIcon"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        ipfs.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb kdNpYF"
+              >
+                <span
+                  class="font-semibold text-theme-text"
+                  data-testid="TransactionRowRecipientLabel"
+                >
+                  IPFS
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb kdNpYF justify-center"
+              >
+                <div
+                  class="inline-flex space-x-1 align-middle"
+                  data-testid="TransactionRowInfo"
+                >
+                  <span
+                    class="p-1"
+                  >
+                    <div
+                      class="sc-AxirZ jZjiyi"
+                      data-testid="TransactionRowInfo__multiSignature"
+                      height="14"
+                      width="22"
+                    >
+                      <svg>
+                        multisig.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td
+              class="w-16"
+            >
+              <div
+                class="sc-AxhCb kdNpYF justify-center truncate"
+              >
+                <span
+                  class="text-theme-success-500"
+                >
+                  Ready
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-56"
+            >
+              <div
+                class="sc-AxhCb kdNpYF justify-end"
+              >
+                <div
+                  class="sc-AxheI kinEEx"
+                  color="danger"
+                  data-testid="TransactionRowAmount"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    0.00000001 DARK
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhCb dazjdf justify-end"
+              />
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

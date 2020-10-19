@@ -2,6 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { DelegateMapper, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
@@ -41,6 +42,10 @@ const getType = (transaction: Contracts.SignedTransactionData): string => {
 		return "vote";
 	}
 
+	if (type === 5) {
+		return "ipfs";
+	}
+
 	return "transfer";
 };
 
@@ -76,6 +81,7 @@ export const SummaryStep = ({
 		multiPayment: "TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT",
 		vote: "TRANSACTION.TRANSACTION_TYPES.VOTE",
 		unvote: "TRANSACTION.TRANSACTION_TYPES.UNVOTE",
+		ipfs: "TRANSACTION.TRANSACTION_TYPES.IPFS",
 	};
 
 	useEffect(() => {
@@ -120,6 +126,19 @@ export const SummaryStep = ({
 			)}
 
 			{(type === "vote" || type === "unvote") && <TransactionVotes {...delegates} />}
+
+			{type === "ipfs" && (
+				<TransactionDetail
+					label={t("TRANSACTION.IPFS_HASH")}
+					extra={
+						<Circle className="border-theme-text" size="lg">
+							<Icon name="Ipfs" width={21} height={23} />
+						</Circle>
+					}
+				>
+					{transaction.get<{ hash: string }>("asset").hash}
+				</TransactionDetail>
+			)}
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 
