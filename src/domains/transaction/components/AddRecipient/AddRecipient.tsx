@@ -79,6 +79,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 		return addedRecipients.reduce((sum, item) => sum.minus(item.amount), senderBalance).minus(fee);
 	}, [addedRecipients, profile, senderAddress, isSingle, fee]);
 
+	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
 	useEffect(() => {
 		clearErrors();
 	}, [isSingle, clearErrors]);
@@ -98,11 +99,9 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 		if (!isSingle) return;
 
 		if (!recipientAddressValue || !BigNumber.make(amountValue).toNumber()) {
-			console.log("case 2", BigNumber.make(amountValue).toNumber(), amount);
 			return onChange?.([]);
 		}
 
-		console.log("case 3", amountValue, recipientAddressValue);
 		onChange?.([
 			{
 				amount: BigNumber.make(amountValue),
@@ -152,6 +151,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 						</div>
 
 						<SelectRecipient
+							disabled={!isSenderFilled}
 							address={recipientAddress}
 							ref={register(sendTransfer.recipientAddress(network))}
 							profile={profile}
@@ -169,6 +169,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 						</div>
 						<InputGroup>
 							<InputCurrency
+								disabled={!isSenderFilled}
 								data-testid="add-recipient__amount-input"
 								placeholder={t("COMMON.AMOUNT")}
 								className="pr-20"
