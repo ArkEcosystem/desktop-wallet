@@ -31,13 +31,13 @@ const registrationComponents: any = {
 	multiSignature: MultiSignatureRegistrationForm,
 };
 
-const RegistrationTypeDropdown = ({ className, defaultValue, disabled, registrationTypes, onChange }: any) => {
+const RegistrationTypeDropdown = ({ className, defaultValue, registrationTypes, onChange }: any) => {
 	const { t } = useTranslation();
 
 	return (
 		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
 			<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
-			<Select options={registrationTypes} defaultValue={defaultValue} disabled={disabled} onChange={onChange} />
+			<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
 		</FormField>
 	);
 };
@@ -47,35 +47,6 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 	const history = useHistory();
 
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
-
-	const registrationTypes: SendEntityRegistrationType[] = [
-		{
-			value: "entityRegistration",
-			type: Enums.EntityType.Business,
-			label: "Business",
-		},
-	];
-
-	if (!wallet.isDelegate?.()) {
-		registrationTypes.push({
-			value: "delegateRegistration",
-			label: "Delegate",
-		});
-	}
-
-	if (!wallet.isMultiSignature?.()) {
-		registrationTypes.push({
-			value: "multiSignature",
-			label: "MultiSignature",
-		});
-	}
-
-	if (!wallet.isSecondSignature?.()) {
-		registrationTypes.push({
-			value: "secondSignature",
-			label: "Second Signature",
-		});
-	}
 
 	const form = useFormContext();
 	const { setValue } = form;
@@ -87,6 +58,37 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		}
 		setWallets(profile.wallets().values());
 	}, [network, profile]);
+
+	const registrationTypes: SendEntityRegistrationType[] = [];
+
+	if (network?.can("Transaction.entityRegistration")) {
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Business,
+			label: "Business",
+		});
+	}
+
+	if (!wallet.isDelegate?.() && network?.can("Transaction.delegateRegistration")) {
+		registrationTypes.push({
+			value: "delegateRegistration",
+			label: "Delegate",
+		});
+	}
+
+	if (!wallet.isMultiSignature?.() && network?.can("Transaction.multiSignature")) {
+		registrationTypes.push({
+			value: "multiSignature",
+			label: "MultiSignature",
+		});
+	}
+
+	if (!wallet.isSecondSignature?.() && network?.can("Transaction.secondSignature")) {
+		registrationTypes.push({
+			value: "secondSignature",
+			label: "Second Signature",
+		});
+	}
 
 	const onSelectSender = (address: any) => {
 		setValue("senderAddress", address, { shouldValidate: true, shouldDirty: true });
@@ -132,7 +134,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 					<SelectAddress
 						address={senderAddress}
 						wallets={wallets}
-						disabled={!network?.can("Transaction.entityRegistration") || wallets.length === 0}
+						disabled={wallets.length === 0}
 						onChange={onSelectSender}
 					/>
 				</div>
@@ -143,7 +145,6 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 					(type: SendEntityRegistrationType) => type.value === registrationType?.value,
 				)}
 				registrationTypes={registrationTypes}
-				disabled={!network?.can("Transaction.entityRegistration")}
 				onChange={onSelectType}
 			/>
 		</section>

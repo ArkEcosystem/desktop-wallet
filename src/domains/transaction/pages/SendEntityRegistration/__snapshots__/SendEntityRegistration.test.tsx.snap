@@ -2255,12 +2255,12 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                           <div
                             aria-expanded="true"
                             aria-haspopup="listbox"
-                            aria-owns="downshift-73-menu"
+                            aria-owns="downshift-57-menu"
                             role="combobox"
                           >
                             <label
-                              for="downshift-72-input"
-                              id="downshift-73-label"
+                              for="downshift-56-input"
+                              id="downshift-57-label"
                             />
                             <div
                               class="sc-fznxsB hhZPAY"
@@ -2268,28 +2268,28 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="downshift-73-menu"
-                                aria-labelledby="downshift-73-label"
+                                aria-controls="downshift-57-menu"
+                                aria-labelledby="downshift-57-label"
                                 autocomplete="off"
                                 class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                 data-testid="SelectDropdownInput__input"
-                                id="downshift-72-input"
+                                id="downshift-56-input"
                                 name="registrationType"
                                 placeholder="Select option"
                                 value=""
                               />
                             </div>
                             <ul
-                              aria-labelledby="downshift-73-label"
+                              aria-labelledby="downshift-57-label"
                               class="sc-fznMAR jOZRmr is-open"
-                              id="downshift-73-menu"
+                              id="downshift-57-menu"
                               role="listbox"
                             >
                               <li
                                 aria-selected="false"
                                 class="select-list-option cursor-default "
                                 data-testid="select-list__toggle-option-0"
-                                id="downshift-73-item-0"
+                                id="downshift-57-item-0"
                                 role="option"
                               >
                                 <div
@@ -2302,7 +2302,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 aria-selected="false"
                                 class="select-list-option cursor-default "
                                 data-testid="select-list__toggle-option-1"
-                                id="downshift-73-item-1"
+                                id="downshift-57-item-1"
                                 role="option"
                               >
                                 <div
@@ -3782,9 +3782,8 @@ exports[`Registration should render registration form without selected wallet 1`
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg eObUJS SelectAddress is-disabled "
+                            class="sc-fzqBkg eObUJS SelectAddress  "
                             data-testid="SelectAddress__wrapper"
-                            disabled=""
                             type="button"
                           >
                             <div
@@ -3868,7 +3867,6 @@ exports[`Registration should render registration form without selected wallet 1`
                                 autocomplete="off"
                                 class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                 data-testid="SelectDropdownInput__input"
-                                disabled=""
                                 id="downshift-0-input"
                                 name="registrationType"
                                 placeholder="Select option"
