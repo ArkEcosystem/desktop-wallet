@@ -15,7 +15,6 @@ import { useTranslation } from "react-i18next";
 import { RecipientList } from "../RecipientList";
 import { TotalAmountBox } from "../TotalAmountBox";
 
-
 export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { unregister, watch } = useFormContext();
