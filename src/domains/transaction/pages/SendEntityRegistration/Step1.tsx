@@ -16,6 +16,14 @@ import { useHistory } from "react-router-dom";
 
 import { SendEntityRegistrationType } from "./SendEntityRegistration.models";
 
+type FirstStepProps = {
+	networks: Coins.Network[];
+	profile: Profile;
+	wallet: ReadWriteWallet;
+	setRegistrationForm: any;
+	fees: Record<string, any>;
+};
+
 const registrationComponents: any = {
 	delegateRegistration: DelegateRegistrationForm,
 	entityRegistration: EntityRegistrationForm,
@@ -23,23 +31,15 @@ const registrationComponents: any = {
 	multiSignature: MultiSignatureRegistrationForm,
 };
 
-const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
+const RegistrationTypeDropdown = ({ className, defaultValue, registrationTypes, disabled, onChange }: any) => {
 	const { t } = useTranslation();
 
 	return (
 		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
 			<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
-			<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
+			<Select options={registrationTypes} defaultValue={defaultValue} disabled={disabled} onChange={onChange} />
 		</FormField>
 	);
-};
-
-type FirstStepProps = {
-	networks: Coins.Network[];
-	profile: Profile;
-	wallet: ReadWriteWallet;
-	setRegistrationForm: any;
-	fees: Record<string, any>;
 };
 
 export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees }: FirstStepProps) => {
@@ -132,7 +132,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 					<SelectAddress
 						address={senderAddress}
 						wallets={wallets}
-						disabled={wallets.length === 0}
+						disabled={!network?.can("Transaction.entityRegistration") || wallets.length === 0}
 						onChange={onSelectSender}
 					/>
 				</div>
@@ -143,6 +143,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 					(type: SendEntityRegistrationType) => type.value === registrationType?.value,
 				)}
 				registrationTypes={registrationTypes}
+				disabled={!network?.can("Transaction.entityRegistration")}
 				onChange={onSelectType}
 			/>
 		</section>
