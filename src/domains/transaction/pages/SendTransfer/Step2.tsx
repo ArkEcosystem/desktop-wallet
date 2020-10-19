@@ -1,13 +1,13 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
-import { Icon } from "app/components/Icon";
-import { Label } from "app/components/Label";
-import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import { RecipientList } from "domains/transaction/components/RecipientList";
+import { Header } from "app/components/Header";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import {
+	TransactionMemo,
+	TransactionNetwork,
+	TransactionRecipients,
+	TransactionSender,
+} from "domains/transaction/components/TransactionDetail";
 import { evaluateFee } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -34,60 +34,22 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 	return (
 		<section data-testid="SendTransfer__step--second">
-			<div>
-				<h1 className="mb-0">{t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE")}</h1>
-				<div className="text-theme-secondary-text">
-					{t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.DESCRIPTION")}
-				</div>
-			</div>
+			<Header
+				title={t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.DESCRIPTION")}
+			/>
 
-			<TransactionDetail
-				border={false}
-				label={t("TRANSACTION.CRYPTOASSET")}
-				extra={<NetworkIcon size="lg" coin={wallet.network().coin()} network={wallet.network().id()} />}
-			>
-				{wallet.network().name()}
-			</TransactionDetail>
+			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 
-			<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />}>
-				<div className="flex-1 space-y-2">
-					<div className="text-theme-neutral">
-						<span className="mr-1 text-sm">{t("TRANSACTION.SENDER")}</span>
-						<Label color="warning">
-							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
-						</Label>
-					</div>
-					<Address address={wallet.address()} walletName={wallet.alias()} />
-				</div>
-			</TransactionDetail>
+			<TransactionSender
+				address={wallet.address()}
+				alias={wallet.alias()}
+				labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
+			/>
 
-			{recipients.length === 1 ? (
-				<TransactionDetail
-					label={t("TRANSACTION.RECIPIENT")}
-					extra={<Avatar size="lg" address={recipients[0].address} />}
-				>
-					<Address address={recipients[0].address} walletName={recipients[0].walletName} />
-				</TransactionDetail>
-			) : (
-				<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })}>
-					<div className="-my-2">
-						<RecipientList recipients={recipients} assetSymbol={wallet.currency()} variant="condensed" />
-					</div>
-				</TransactionDetail>
-			)}
+			<TransactionRecipients currency={wallet.currency()} recipients={recipients} />
 
-			{smartbridge && (
-				<TransactionDetail
-					label={t("TRANSACTION.SMARTBRIDGE")}
-					extra={
-						<div className="flex justify-center w-11">
-							<Icon name="Smartbridge" width={18} height={22} />
-						</div>
-					}
-				>
-					<p className="break-all">{smartbridge}</p>
-				</TransactionDetail>
-			)}
+			{smartbridge && <TransactionMemo memo={smartbridge} />}
 
 			<div className="mt-2">
 				<TotalAmountBox amount={amount} fee={evaluateFee(fee)} ticker={wallet.currency()} />
