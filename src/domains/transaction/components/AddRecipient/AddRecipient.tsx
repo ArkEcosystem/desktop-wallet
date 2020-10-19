@@ -61,6 +61,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 
 	const { t } = useTranslation();
 	const {
+		getValues,
 		setValue,
 		register,
 		watch,
@@ -68,7 +69,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 		clearErrors,
 		formState: { errors },
 	} = useFormContext();
-	const { recipientAddress, amount, displayAmount, network, senderAddress, fee } = watch();
+	const { network, senderAddress, fee, recipientAddress } = watch();
 	const { sendTransfer } = useValidation();
 
 	const availableBalance = useMemo(() => {
@@ -80,6 +81,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 	}, [addedRecipients, profile, senderAddress, isSingle, fee]);
 
 	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
+
 	useEffect(() => {
 		clearErrors();
 	}, [isSingle, clearErrors]);
@@ -157,7 +159,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 							profile={profile}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
-								singleRecipientOnChange(amount, address);
+								singleRecipientOnChange(getValues("amount"), address);
 							}}
 						/>
 						<FormHelperText />
@@ -173,9 +175,9 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 								data-testid="add-recipient__amount-input"
 								placeholder={t("COMMON.AMOUNT")}
 								className="pr-20"
-								value={displayAmount}
+								value={getValues("displayAmount")}
 								onChange={(currency) => {
-									setValue("displayAmount", currency.display, { shouldDirty: true });
+									setValue("displayAmount", currency.display);
 									setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
 									singleRecipientOnChange(currency.value, recipientAddress);
 								}}
@@ -185,7 +187,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 									type="button"
 									data-testid="add-recipient__send-all"
 									onClick={() => {
-										setValue("displayAmount", availableBalance.toHuman(), { shouldDirty: true });
+										setValue("displayAmount", availableBalance.toHuman());
 										setValue("amount", availableBalance.toString(), {
 											shouldValidate: true,
 											shouldDirty: true,
@@ -202,13 +204,15 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 					</FormField>
 				</div>
 
-				{!isSingle && displayAmount && !!recipientAddress && (
+				{!isSingle && getValues("amount") && !!recipientAddress && (
 					<Button
-						disabled={!!errors.amount || !!errors.recipientAddress || BigNumber.make(amount).isZero()}
+						disabled={
+							!!errors.amount || !!errors.recipientAddress || BigNumber.make(getValues("amount")).isZero()
+						}
 						data-testid="add-recipient__add-btn"
 						variant="plain"
 						className="w-full mt-4"
-						onClick={() => handleAddRecipient(recipientAddress as string, amount)}
+						onClick={() => handleAddRecipient(recipientAddress as string, getValues("amount"))}
 					>
 						{t("TRANSACTION.ADD_RECIPIENT")}
 					</Button>
