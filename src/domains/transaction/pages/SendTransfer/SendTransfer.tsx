@@ -3,6 +3,7 @@ import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
+import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -35,8 +36,8 @@ export const SendTransfer = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearErrors, formState, getValues, register, setError, setValue } = form;
-	const { isValid } = formState;
+	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit } = form;
+	const { isValid, isSubmitting } = formState;
 	const { sendTransfer } = useValidation();
 
 	useEffect(() => {
@@ -72,7 +73,7 @@ export const SendTransfer = () => {
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		const isMultiPayment = recipients.length > 1;
-		const transferInput = {
+		const transferInput: Contracts.TransactionInput = {
 			fee,
 			from: senderAddress,
 			sign: {
@@ -80,6 +81,13 @@ export const SendTransfer = () => {
 				secondMnemonic,
 			},
 		};
+
+		if (senderWallet?.isMultiSignature()) {
+			transferInput.nonce = senderWallet.nonce().plus(1).toFixed();
+			transferInput.sign = {
+				multiSignature: senderWallet?.multiSignature(),
+			};
+		}
 
 		try {
 			let transactionId: string;
@@ -111,7 +119,7 @@ export const SendTransfer = () => {
 
 			setTransaction(senderWallet!.transaction().transaction(transactionId));
 
-			handleNext();
+			setActiveTab(4);
 		} catch (error) {
 			console.error("Could not create transaction: ", error);
 
@@ -124,8 +132,17 @@ export const SendTransfer = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = () => {
-		setActiveTab(activeTab + 1);
+	const handleNext = async () => {
+		const newIndex = activeTab + 1;
+		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
+
+		// Skip authorization step
+		if (newIndex === 3 && senderWallet?.isMultiSignature()) {
+			await handleSubmit(submitForm)();
+			return;
+		}
+
+		setActiveTab(newIndex);
 	};
 
 	const copyTransaction = () => {
@@ -178,10 +195,10 @@ export const SendTransfer = () => {
 										{activeTab < 3 && (
 											<Button
 												data-testid="SendTransfer__button--continue"
-												disabled={!isValid}
+												disabled={!isValid || isSubmitting}
 												onClick={handleNext}
 											>
-												{t("COMMON.CONTINUE")}
+												{isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
 											</Button>
 										)}
 
@@ -189,11 +206,11 @@ export const SendTransfer = () => {
 											<Button
 												type="submit"
 												data-testid="SendTransfer__button--submit"
-												disabled={!isValid}
+												disabled={!isValid || isSubmitting}
 												className="space-x-2"
 											>
 												<Icon name="Send" width={20} height={20} />
-												<span>{t("COMMON.SEND")}</span>
+												{isSubmitting ? <Spinner size="sm" /> : <span>{t("COMMON.SEND")}</span>}
 											</Button>
 										)}
 									</>
