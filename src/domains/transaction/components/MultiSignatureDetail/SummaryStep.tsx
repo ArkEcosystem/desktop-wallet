@@ -26,9 +26,11 @@ const getType = (transaction: Contracts.SignedTransactionData): string => {
 	}
 
 	if (type === 6) {
+		console.log("multiPayment");
 		return "multiPayment";
 	}
 
+	console.log("transfer");
 	return "transfer";
 };
 
@@ -96,10 +98,10 @@ export const SummaryStep = ({
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>
-				<div className="flex items-center">
+				<div className="flex items-center space-x-3">
 					<TruncateMiddle text={transaction.id()} maxChars={30} className="text-theme-text" />
 
-					<span className="ml-5 text-theme-primary-300">
+					<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
 						<Clipboard data={transaction.id()}>
 							<Icon name="Copy" />
 						</Clipboard>
@@ -107,7 +109,7 @@ export const SummaryStep = ({
 				</div>
 			</TransactionDetail>
 
-			<div className="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-light">
+			<div className="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800">
 				<Signatures transactionId={transaction.id()} publicKeys={participants} wallet={wallet} />
 			</div>
 		</section>
