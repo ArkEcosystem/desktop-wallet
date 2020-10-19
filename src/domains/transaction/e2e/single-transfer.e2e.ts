@@ -35,7 +35,7 @@ test("should show an error if wrong mnemonic", async (t) => {
 	// Select recipient
 	await t.click(Selector("[data-testid=SelectRecipient__select-contact]"));
 	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
-	await t.click(Selector("[data-testid=ContactListItem__one-option-button-0]"));
+	await t.click(Selector("[data-testid=RecipientListItem__select-button]"));
 
 	// Amount
 	await t.click(Selector("[data-testid=add-recipient__send-all]"));
@@ -70,7 +70,7 @@ test("should send transfer successfully", async (t) => {
 	// Select recipient
 	await t.click(Selector("[data-testid=SelectRecipient__select-contact]"));
 	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
-	await t.click(Selector("[data-testid=ContactListItem__one-option-button-0]"));
+	await t.click(Selector("[data-testid=RecipientListItem__select-button]"));
 
 	// Amount
 	await t.click(Selector("[data-testid=add-recipient__send-all]"));
