@@ -37,16 +37,16 @@ exports[`AddressRow should emit action on select button 1`] = `
             class="sc-AxgMl jraKvu"
           >
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             >
               <span
-                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 D8rr7B1d6 … VBMs6YUYD
@@ -249,16 +249,16 @@ exports[`AddressRow should render 1`] = `
             class="sc-AxgMl jraKvu"
           >
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             >
               <span
-                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 D8rr7B1d6 … VBMs6YUYD
@@ -461,16 +461,16 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
             class="sc-AxgMl jraKvu"
           >
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             >
               <span
-                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 D8rr7B1d6 … VBMs6YUYD
@@ -664,10 +664,10 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
             class="sc-AxgMl jraKvu"
           >
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             >
               <span
-                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 DHijNjwnQ … womG1J7vs
@@ -795,16 +795,16 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
             class="sc-AxgMl jraKvu"
           >
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             >
               <span
-                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 D8rr7B1d6 … VBMs6YUYD
@@ -998,10 +998,10 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
             class="sc-AxgMl jraKvu"
           >
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             >
               <span
-                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 DTLomV8hp … fDZJnG23z

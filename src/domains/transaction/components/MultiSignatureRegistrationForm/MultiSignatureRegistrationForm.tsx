@@ -1,8 +1,9 @@
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
 import {
+	ExtendedSignedTransactionData,
 	SendEntityRegistrationComponent,
 	SendEntityRegistrationDetailsOptions,
 	SendEntityRegistrationForm,
@@ -25,19 +26,27 @@ const StepsComponent = ({ activeTab, fees, wallet, profile }: SendEntityRegistra
 	</Tabs>
 );
 
-const transactionDetails = ({ translations }: SendEntityRegistrationDetailsOptions) => (
-	<TransactionDetail
-		label={translations("TRANSACTION.TYPE")}
-		extra={
-			<div>
-				<Circle className="border-black bg-theme-background" size="lg">
-					<Icon name="Multisig" width={20} height={20} />
-				</Circle>
-			</div>
-		}
-	>
-		{translations("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TYPE")}
-	</TransactionDetail>
+const transactionDetails = ({ transaction, translations, wallet }: SendEntityRegistrationDetailsOptions) => (
+	<>
+		<TransactionDetail
+			label={translations("TRANSACTION.TYPE")}
+			extra={
+				<div>
+					<Circle className="border-black bg-theme-background" size="lg">
+						<Icon name="Multisig" width={20} height={20} />
+					</Circle>
+				</div>
+			}
+		>
+			{translations("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TYPE")}
+		</TransactionDetail>
+
+		<TransactionDetail label="TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.GENERATE_ADDRESS">
+			{transaction.generatedAddress}
+		</TransactionDetail>
+
+		<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />
+	</>
 );
 
 StepsComponent.displayName = "MultiSignatureRegistrationForm";
@@ -84,7 +93,14 @@ const signTransaction = async ({
 
 		await env.persist();
 
-		setTransaction(senderWallet!.transaction().transaction(transactionId));
+		const transaction: ExtendedSignedTransactionData = senderWallet!.transaction().transaction(transactionId);
+		transaction.generatedAddress = await senderWallet!
+			.coin()
+			.identity()
+			.address()
+			.fromMultiSignature(minParticipants, publicKeys);
+
+		setTransaction(transaction);
 
 		handleNext();
 	} catch (error) {

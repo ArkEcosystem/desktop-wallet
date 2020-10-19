@@ -3,94 +3,87 @@
 exports[`Add Participant should fail if cannot find the address remotely 1`] = `
 <DocumentFragment>
   <div>
-    <fieldset
-      class="sc-AxirZ kMHTdH relative"
+    <div
+      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
     >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for="address"
+      <fieldset
+        class="sc-AxirZ kMHTdH flex flex-col space-y-2"
       >
-        Participant Address
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-      <div>
-        <div
-          class="relative flex items-center w-full text-left"
-          data-testid="SelectRecipient__wrapper"
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="address"
         >
+          Multisignature Participant
           <div
-            class="absolute left-1"
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div>
+          <div
+            class="relative flex items-center w-full text-left"
+            data-testid="SelectRecipient__wrapper"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
-              data-testid="Avatar"
+              class="absolute left-1"
             >
               <div
-                class="w-full h-full"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
+                data-testid="Avatar"
               >
-                <img
-                  alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
-                  title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20"
-                />
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                    title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20"
+                  />
+                </div>
+              </div>
+            </div>
+            <input
+              aria-invalid="true"
+              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              data-testid="SelectRecipient__input"
+              name="address"
+              type="text"
+              value="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20"
+            />
+            <div
+              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              data-testid="SelectRecipient__select-contact"
+            >
+              <div
+                class="sc-AxhUy hSYVGy"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  user.svg
+                </svg>
               </div>
             </div>
           </div>
-          <input
-            aria-invalid="true"
-            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-            data-testid="SelectRecipient__input"
-            name="address"
-            type="text"
-            value="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20"
-          />
-          <div
-            class="absolute flex items-center space-x-3 cursor-pointer right-4"
-            data-testid="SelectRecipient__select-contact"
-          >
-            <div
-              class="sc-AxhUy hSYVGy"
-              height="20"
-              width="20"
-            >
-              <svg>
-                user.svg
-              </svg>
-            </div>
-          </div>
         </div>
-      </div>
-      <p
-        class="text-sm text-theme-danger"
+        <p
+          class="text-sm text-theme-danger"
+        >
+          The address could not be found
+        </p>
+      </fieldset>
+      <button
+        class="sc-AxjAm joLCoM w-full my-4"
+        color="primary"
+        type="button"
       >
-        The address could not be found
-      </p>
-    </fieldset>
-    <button
-      class="sc-AxjAm joLCoM w-full my-4"
-      color="primary"
-      type="button"
+        Add Participant
+      </button>
+    </div>
+    <div
+      class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 mt-3"
     >
-      Add Participant
-    </button>
-    <fieldset
-      class="sc-AxirZ izhStr flex flex-col space-y-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for=""
-      >
-        Multisignature Participants
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
       <div
         class="sc-fzoLag jJloPo"
       >
@@ -145,20 +138,6 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                     class="flex flex-inline align-top hidden"
                   >
                     <div>
-                      Amount
-                    </div>
-                  </div>
-                </th>
-                <th
-                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                  colspan="1"
-                  data-testid="table__th--3"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top hidden"
-                  >
-                    <div>
                       Action
                     </div>
                   </div>
@@ -176,7 +155,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                     data-testid="Avatar"
                   >
                     <div
@@ -196,35 +175,23 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   <div
                     class="mb-1 text-sm font-semibold text-theme-neutral"
                   >
-                    Recipient #1
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D8rr7B … s6YUYD
+                    <span>
+                      Participant #1
                     </span>
                   </div>
-                </td>
-                <td
-                  class="py-6"
-                >
                   <div
-                    class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                    class="max-w-sm"
                   >
-                    Amount
-                  </div>
-                  <div
-                    class="font-bold text-right text-theme-neutral-800"
-                  >
-                    <span
-                      data-testid="Amount"
+                    <div
+                      class="inline-flex items-center"
                     >
-                      33.75089801 DARK
-                    </span>
+                      <span
+                        class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
                   </div>
                 </td>
                 <td
@@ -256,7 +223,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
           </table>
         </div>
       </div>
-    </fieldset>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -264,94 +231,87 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
 exports[`Add Participant should fail to find 1`] = `
 <DocumentFragment>
   <div>
-    <fieldset
-      class="sc-AxirZ kMHTdH relative"
+    <div
+      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
     >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for="address"
+      <fieldset
+        class="sc-AxirZ kMHTdH flex flex-col space-y-2"
       >
-        Participant Address
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-      <div>
-        <div
-          class="relative flex items-center w-full text-left"
-          data-testid="SelectRecipient__wrapper"
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="address"
         >
+          Multisignature Participant
           <div
-            class="absolute left-1"
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div>
+          <div
+            class="relative flex items-center w-full text-left"
+            data-testid="SelectRecipient__wrapper"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
-              data-testid="Avatar"
+              class="absolute left-1"
             >
               <div
-                class="w-full h-full"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
+                data-testid="Avatar"
               >
-                <img
-                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                />
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  />
+                </div>
+              </div>
+            </div>
+            <input
+              aria-invalid="true"
+              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              data-testid="SelectRecipient__input"
+              name="address"
+              type="text"
+              value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+            />
+            <div
+              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              data-testid="SelectRecipient__select-contact"
+            >
+              <div
+                class="sc-AxhUy hSYVGy"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  user.svg
+                </svg>
               </div>
             </div>
           </div>
-          <input
-            aria-invalid="true"
-            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-            data-testid="SelectRecipient__input"
-            name="address"
-            type="text"
-            value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-          />
-          <div
-            class="absolute flex items-center space-x-3 cursor-pointer right-4"
-            data-testid="SelectRecipient__select-contact"
-          >
-            <div
-              class="sc-AxhUy hSYVGy"
-              height="20"
-              width="20"
-            >
-              <svg>
-                user.svg
-              </svg>
-            </div>
-          </div>
         </div>
-      </div>
-      <p
-        class="text-sm text-theme-danger"
+        <p
+          class="text-sm text-theme-danger"
+        >
+          The address could not be found
+        </p>
+      </fieldset>
+      <button
+        class="sc-AxjAm joLCoM w-full my-4"
+        color="primary"
+        type="button"
       >
-        The address could not be found
-      </p>
-    </fieldset>
-    <button
-      class="sc-AxjAm joLCoM w-full my-4"
-      color="primary"
-      type="button"
+        Add Participant
+      </button>
+    </div>
+    <div
+      class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 mt-3"
     >
-      Add Participant
-    </button>
-    <fieldset
-      class="sc-AxirZ izhStr flex flex-col space-y-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for=""
-      >
-        Multisignature Participants
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
       <div
         class="sc-fzoLag jJloPo"
       >
@@ -406,20 +366,6 @@ exports[`Add Participant should fail to find 1`] = `
                     class="flex flex-inline align-top hidden"
                   >
                     <div>
-                      Amount
-                    </div>
-                  </div>
-                </th>
-                <th
-                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                  colspan="1"
-                  data-testid="table__th--3"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top hidden"
-                  >
-                    <div>
                       Action
                     </div>
                   </div>
@@ -437,7 +383,7 @@ exports[`Add Participant should fail to find 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                     data-testid="Avatar"
                   >
                     <div
@@ -457,35 +403,23 @@ exports[`Add Participant should fail to find 1`] = `
                   <div
                     class="mb-1 text-sm font-semibold text-theme-neutral"
                   >
-                    Recipient #1
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D8rr7B … s6YUYD
+                    <span>
+                      Participant #1
                     </span>
                   </div>
-                </td>
-                <td
-                  class="py-6"
-                >
                   <div
-                    class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                    class="max-w-sm"
                   >
-                    Amount
-                  </div>
-                  <div
-                    class="font-bold text-right text-theme-neutral-800"
-                  >
-                    <span
-                      data-testid="Amount"
+                    <div
+                      class="inline-flex items-center"
                     >
-                      33.75089801 DARK
-                    </span>
+                      <span
+                        class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
                   </div>
                 </td>
                 <td
@@ -517,7 +451,7 @@ exports[`Add Participant should fail to find 1`] = `
           </table>
         </div>
       </div>
-    </fieldset>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -525,94 +459,87 @@ exports[`Add Participant should fail to find 1`] = `
 exports[`Add Participant should fail with cold wallet 1`] = `
 <DocumentFragment>
   <div>
-    <fieldset
-      class="sc-AxirZ kMHTdH relative"
+    <div
+      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
     >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for="address"
+      <fieldset
+        class="sc-AxirZ kMHTdH flex flex-col space-y-2"
       >
-        Participant Address
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-      <div>
-        <div
-          class="relative flex items-center w-full text-left"
-          data-testid="SelectRecipient__wrapper"
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="address"
         >
+          Multisignature Participant
           <div
-            class="absolute left-1"
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div>
+          <div
+            class="relative flex items-center w-full text-left"
+            data-testid="SelectRecipient__wrapper"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
-              data-testid="Avatar"
+              class="absolute left-1"
             >
               <div
-                class="w-full h-full"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
+                data-testid="Avatar"
               >
-                <img
-                  alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
-                  title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                />
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                    title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                  />
+                </div>
+              </div>
+            </div>
+            <input
+              aria-invalid="true"
+              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              data-testid="SelectRecipient__input"
+              name="address"
+              type="text"
+              value="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+            />
+            <div
+              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              data-testid="SelectRecipient__select-contact"
+            >
+              <div
+                class="sc-AxhUy hSYVGy"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  user.svg
+                </svg>
               </div>
             </div>
           </div>
-          <input
-            aria-invalid="true"
-            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-            data-testid="SelectRecipient__input"
-            name="address"
-            type="text"
-            value="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-          />
-          <div
-            class="absolute flex items-center space-x-3 cursor-pointer right-4"
-            data-testid="SelectRecipient__select-contact"
-          >
-            <div
-              class="sc-AxhUy hSYVGy"
-              height="20"
-              width="20"
-            >
-              <svg>
-                user.svg
-              </svg>
-            </div>
-          </div>
         </div>
-      </div>
-      <p
-        class="text-sm text-theme-danger"
+        <p
+          class="text-sm text-theme-danger"
+        >
+          The public key could not be found
+        </p>
+      </fieldset>
+      <button
+        class="sc-AxjAm joLCoM w-full my-4"
+        color="primary"
+        type="button"
       >
-        The public key could not be found
-      </p>
-    </fieldset>
-    <button
-      class="sc-AxjAm joLCoM w-full my-4"
-      color="primary"
-      type="button"
+        Add Participant
+      </button>
+    </div>
+    <div
+      class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 mt-3"
     >
-      Add Participant
-    </button>
-    <fieldset
-      class="sc-AxirZ izhStr flex flex-col space-y-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for=""
-      >
-        Multisignature Participants
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
       <div
         class="sc-fzoLag jJloPo"
       >
@@ -667,20 +594,6 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                     class="flex flex-inline align-top hidden"
                   >
                     <div>
-                      Amount
-                    </div>
-                  </div>
-                </th>
-                <th
-                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                  colspan="1"
-                  data-testid="table__th--3"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top hidden"
-                  >
-                    <div>
                       Action
                     </div>
                   </div>
@@ -698,7 +611,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                     data-testid="Avatar"
                   >
                     <div
@@ -718,35 +631,23 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   <div
                     class="mb-1 text-sm font-semibold text-theme-neutral"
                   >
-                    Recipient #1
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D8rr7B … s6YUYD
+                    <span>
+                      Participant #1
                     </span>
                   </div>
-                </td>
-                <td
-                  class="py-6"
-                >
                   <div
-                    class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                    class="max-w-sm"
                   >
-                    Amount
-                  </div>
-                  <div
-                    class="font-bold text-right text-theme-neutral-800"
-                  >
-                    <span
-                      data-testid="Amount"
+                    <div
+                      class="inline-flex items-center"
                     >
-                      33.75089801 DARK
-                    </span>
+                      <span
+                        class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
                   </div>
                 </td>
                 <td
@@ -778,7 +679,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
           </table>
         </div>
       </div>
-    </fieldset>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -786,77 +687,71 @@ exports[`Add Participant should fail with cold wallet 1`] = `
 exports[`Add Participant should render custom participants 1`] = `
 <DocumentFragment>
   <div>
-    <fieldset
-      class="sc-AxirZ izhStr relative"
+    <div
+      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
     >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for="address"
+      <fieldset
+        class="sc-AxirZ izhStr flex flex-col space-y-2"
       >
-        Participant Address
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-      <div>
-        <div
-          class="relative flex items-center w-full text-left"
-          data-testid="SelectRecipient__wrapper"
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="address"
         >
+          Multisignature Participant
           <div
-            class="absolute left-1"
-          >
-            <div
-              class="sc-AxhCb esLhBV mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-          </div>
-          <input
-            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-            data-testid="SelectRecipient__input"
-            name="address"
-            type="text"
-            value=""
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
           />
+        </label>
+        <div>
           <div
-            class="absolute flex items-center space-x-3 cursor-pointer right-4"
-            data-testid="SelectRecipient__select-contact"
+            class="relative flex items-center w-full text-left"
+            data-testid="SelectRecipient__wrapper"
           >
             <div
-              class="sc-AxhUy hSYVGy"
-              height="20"
-              width="20"
+              class="absolute left-1"
             >
-              <svg>
-                user.svg
-              </svg>
+              <div
+                class="sc-AxhCb esLhBV mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+            </div>
+            <input
+              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              data-testid="SelectRecipient__input"
+              name="address"
+              type="text"
+              value=""
+            />
+            <div
+              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              data-testid="SelectRecipient__select-contact"
+            >
+              <div
+                class="sc-AxhUy hSYVGy"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  user.svg
+                </svg>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </fieldset>
-    <button
-      class="sc-AxjAm joLCoM w-full my-4"
-      color="primary"
-      type="button"
-    >
-      Add Participant
-    </button>
-    <fieldset
-      class="sc-AxirZ izhStr flex flex-col space-y-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for=""
+      </fieldset>
+      <button
+        class="sc-AxjAm joLCoM w-full my-4"
+        color="primary"
+        disabled=""
+        type="button"
       >
-        Multisignature Participants
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
+        Add Participant
+      </button>
+    </div>
+    <div
+      class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 mt-3"
+    >
       <div
         class="sc-fzoLag jJloPo"
       >
@@ -911,20 +806,6 @@ exports[`Add Participant should render custom participants 1`] = `
                     class="flex flex-inline align-top hidden"
                   >
                     <div>
-                      Amount
-                    </div>
-                  </div>
-                </th>
-                <th
-                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                  colspan="1"
-                  data-testid="table__th--3"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top hidden"
-                  >
-                    <div>
                       Action
                     </div>
                   </div>
@@ -942,7 +823,7 @@ exports[`Add Participant should render custom participants 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                     data-testid="Avatar"
                   >
                     <div
@@ -962,35 +843,23 @@ exports[`Add Participant should render custom participants 1`] = `
                   <div
                     class="mb-1 text-sm font-semibold text-theme-neutral"
                   >
-                    Recipient #1
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D5sRKW … cvJtwb
+                    <span>
+                      Participant #1
                     </span>
                   </div>
-                </td>
-                <td
-                  class="py-6"
-                >
                   <div
-                    class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                    class="max-w-sm"
                   >
-                    Amount
-                  </div>
-                  <div
-                    class="font-bold text-right text-theme-neutral-800"
-                  >
-                    <span
-                      data-testid="Amount"
+                    <div
+                      class="inline-flex items-center"
                     >
-                      57.68 DARK
-                    </span>
+                      <span
+                        class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                      </span>
+                    </div>
                   </div>
                 </td>
                 <td
@@ -1022,7 +891,7 @@ exports[`Add Participant should render custom participants 1`] = `
           </table>
         </div>
       </div>
-    </fieldset>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -1030,88 +899,82 @@ exports[`Add Participant should render custom participants 1`] = `
 exports[`Add Participant should work with a remote wallet 1`] = `
 <DocumentFragment>
   <div>
-    <fieldset
-      class="sc-AxirZ izhStr relative"
+    <div
+      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
     >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for="address"
+      <fieldset
+        class="sc-AxirZ izhStr flex flex-col space-y-2"
       >
-        Participant Address
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-      <div>
-        <div
-          class="relative flex items-center w-full text-left"
-          data-testid="SelectRecipient__wrapper"
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="address"
         >
+          Multisignature Participant
           <div
-            class="absolute left-1"
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div>
+          <div
+            class="relative flex items-center w-full text-left"
+            data-testid="SelectRecipient__wrapper"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
-              data-testid="Avatar"
+              class="absolute left-1"
             >
               <div
-                class="w-full h-full"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
+                data-testid="Avatar"
               >
-                <img
-                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                />
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  />
+                </div>
+              </div>
+            </div>
+            <input
+              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              data-testid="SelectRecipient__input"
+              name="address"
+              type="text"
+              value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+            />
+            <div
+              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              data-testid="SelectRecipient__select-contact"
+            >
+              <div
+                class="sc-AxhUy hSYVGy"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  user.svg
+                </svg>
               </div>
             </div>
           </div>
-          <input
-            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-            data-testid="SelectRecipient__input"
-            name="address"
-            type="text"
-            value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-          />
-          <div
-            class="absolute flex items-center space-x-3 cursor-pointer right-4"
-            data-testid="SelectRecipient__select-contact"
-          >
-            <div
-              class="sc-AxhUy hSYVGy"
-              height="20"
-              width="20"
-            >
-              <svg>
-                user.svg
-              </svg>
-            </div>
-          </div>
         </div>
-      </div>
-    </fieldset>
-    <button
-      class="sc-AxjAm joLCoM w-full my-4"
-      color="primary"
-      type="button"
-    >
-      Add Participant
-    </button>
-    <fieldset
-      class="sc-AxirZ izhStr flex flex-col space-y-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for=""
+      </fieldset>
+      <button
+        class="sc-AxjAm joLCoM w-full my-4"
+        color="primary"
+        disabled=""
+        type="button"
       >
-        Multisignature Participants
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
+        Add Participant
+      </button>
+    </div>
+    <div
+      class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 mt-3"
+    >
       <div
         class="sc-fzoLag jJloPo"
       >
@@ -1166,20 +1029,6 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     class="flex flex-inline align-top hidden"
                   >
                     <div>
-                      Amount
-                    </div>
-                  </div>
-                </th>
-                <th
-                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                  colspan="1"
-                  data-testid="table__th--3"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top hidden"
-                  >
-                    <div>
                       Action
                     </div>
                   </div>
@@ -1197,7 +1046,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                     data-testid="Avatar"
                   >
                     <div
@@ -1217,35 +1066,23 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   <div
                     class="mb-1 text-sm font-semibold text-theme-neutral"
                   >
-                    Recipient #1
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D8rr7B … s6YUYD
+                    <span>
+                      Participant #1
                     </span>
                   </div>
-                </td>
-                <td
-                  class="py-6"
-                >
                   <div
-                    class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                    class="max-w-sm"
                   >
-                    Amount
-                  </div>
-                  <div
-                    class="font-bold text-right text-theme-neutral-800"
-                  >
-                    <span
-                      data-testid="Amount"
+                    <div
+                      class="inline-flex items-center"
                     >
-                      33.75089801 DARK
-                    </span>
+                      <span
+                        class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
                   </div>
                 </td>
                 <td
@@ -1281,7 +1118,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                     data-testid="Avatar"
                   >
                     <div
@@ -1301,35 +1138,23 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   <div
                     class="mb-1 text-sm font-semibold text-theme-neutral"
                   >
-                    Recipient #2
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D61mfS … J3Dyib
+                    <span>
+                      Participant #2
                     </span>
                   </div>
-                </td>
-                <td
-                  class="py-6"
-                >
                   <div
-                    class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                    class="max-w-sm"
                   >
-                    Amount
-                  </div>
-                  <div
-                    class="font-bold text-right text-theme-neutral-800"
-                  >
-                    <span
-                      data-testid="Amount"
+                    <div
+                      class="inline-flex items-center"
                     >
-                      558,270.93444556 DARK
-                    </span>
+                      <span
+                        class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
+                      </span>
+                    </div>
                   </div>
                 </td>
                 <td
@@ -1361,7 +1186,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
           </table>
         </div>
       </div>
-    </fieldset>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -1369,88 +1194,82 @@ exports[`Add Participant should work with a remote wallet 1`] = `
 exports[`Add Participant should work with an imported wallet 1`] = `
 <DocumentFragment>
   <div>
-    <fieldset
-      class="sc-AxirZ izhStr relative"
+    <div
+      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
     >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for="address"
+      <fieldset
+        class="sc-AxirZ izhStr flex flex-col space-y-2"
       >
-        Participant Address
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-      <div>
-        <div
-          class="relative flex items-center w-full text-left"
-          data-testid="SelectRecipient__wrapper"
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="address"
         >
+          Multisignature Participant
           <div
-            class="absolute left-1"
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div>
+          <div
+            class="relative flex items-center w-full text-left"
+            data-testid="SelectRecipient__wrapper"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
-              data-testid="Avatar"
+              class="absolute left-1"
             >
               <div
-                class="w-full h-full"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
+                data-testid="Avatar"
               >
-                <img
-                  alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                  title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                />
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                    title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  />
+                </div>
+              </div>
+            </div>
+            <input
+              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              data-testid="SelectRecipient__input"
+              name="address"
+              type="text"
+              value="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+            />
+            <div
+              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              data-testid="SelectRecipient__select-contact"
+            >
+              <div
+                class="sc-AxhUy hSYVGy"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  user.svg
+                </svg>
               </div>
             </div>
           </div>
-          <input
-            class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-            data-testid="SelectRecipient__input"
-            name="address"
-            type="text"
-            value="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-          />
-          <div
-            class="absolute flex items-center space-x-3 cursor-pointer right-4"
-            data-testid="SelectRecipient__select-contact"
-          >
-            <div
-              class="sc-AxhUy hSYVGy"
-              height="20"
-              width="20"
-            >
-              <svg>
-                user.svg
-              </svg>
-            </div>
-          </div>
         </div>
-      </div>
-    </fieldset>
-    <button
-      class="sc-AxjAm joLCoM w-full my-4"
-      color="primary"
-      type="button"
-    >
-      Add Participant
-    </button>
-    <fieldset
-      class="sc-AxirZ izhStr flex flex-col space-y-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for=""
+      </fieldset>
+      <button
+        class="sc-AxjAm joLCoM w-full my-4"
+        color="primary"
+        disabled=""
+        type="button"
       >
-        Multisignature Participants
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
+        Add Participant
+      </button>
+    </div>
+    <div
+      class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 mt-3"
+    >
       <div
         class="sc-fzoLag jJloPo"
       >
@@ -1505,20 +1324,6 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     class="flex flex-inline align-top hidden"
                   >
                     <div>
-                      Amount
-                    </div>
-                  </div>
-                </th>
-                <th
-                  class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                  colspan="1"
-                  data-testid="table__th--3"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top hidden"
-                  >
-                    <div>
                       Action
                     </div>
                   </div>
@@ -1536,7 +1341,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                     data-testid="Avatar"
                   >
                     <div
@@ -1556,35 +1361,23 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   <div
                     class="mb-1 text-sm font-semibold text-theme-neutral"
                   >
-                    Recipient #1
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D8rr7B … s6YUYD
+                    <span>
+                      Participant #1
                     </span>
                   </div>
-                </td>
-                <td
-                  class="py-6"
-                >
                   <div
-                    class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                    class="max-w-sm"
                   >
-                    Amount
-                  </div>
-                  <div
-                    class="font-bold text-right text-theme-neutral-800"
-                  >
-                    <span
-                      data-testid="Amount"
+                    <div
+                      class="inline-flex items-center"
                     >
-                      33.75089801 DARK
-                    </span>
+                      <span
+                        class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
                   </div>
                 </td>
                 <td
@@ -1620,7 +1413,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                     data-testid="Avatar"
                   >
                     <div
@@ -1640,35 +1433,23 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   <div
                     class="mb-1 text-sm font-semibold text-theme-neutral"
                   >
-                    Recipient #2
-                  </div>
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      D5sRKW … cvJtwb
+                    <span>
+                      Participant #2
                     </span>
                   </div>
-                </td>
-                <td
-                  class="py-6"
-                >
                   <div
-                    class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                    class="max-w-sm"
                   >
-                    Amount
-                  </div>
-                  <div
-                    class="font-bold text-right text-theme-neutral-800"
-                  >
-                    <span
-                      data-testid="Amount"
+                    <div
+                      class="inline-flex items-center"
                     >
-                      57.68 DARK
-                    </span>
+                      <span
+                        class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                      </span>
+                    </div>
                   </div>
                 </td>
                 <td
@@ -1700,7 +1481,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
           </table>
         </div>
       </div>
-    </fieldset>
+    </div>
   </div>
 </DocumentFragment>
 `;

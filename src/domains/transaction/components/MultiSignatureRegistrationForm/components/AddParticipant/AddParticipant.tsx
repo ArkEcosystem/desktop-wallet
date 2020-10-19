@@ -1,7 +1,6 @@
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
 import { Spinner } from "app/components/Spinner";
 import { toasts } from "app/services";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
@@ -13,7 +12,6 @@ import { useTranslation } from "react-i18next";
 export type Participant = {
 	address: string;
 	publicKey: string;
-	balance: string;
 };
 
 type Props = {
@@ -40,7 +38,6 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 				{
 					address: wallet.address(),
 					publicKey: wallet.publicKey()!,
-					balance: wallet.balance().toString(),
 				},
 			]);
 		}
@@ -55,7 +52,6 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 		const participant = {
 			address: ref.address(),
 			publicKey: ref.publicKey()!,
-			balance: ref.balance().toString(),
 		};
 		setParticipants((prev) => [...prev, participant]);
 		setValue("address", "");
@@ -116,43 +112,46 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 	return (
 		<div>
 			<FormProvider {...form}>
-				<FormField name="address" className="relative">
-					<FormLabel label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANT_ADDRESS")} />
+				<SubForm>
+					<FormField name="address">
+						<FormLabel label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANT")} />
+						<SelectRecipient
+							address={address}
+							profile={profile}
+							ref={register({
+								required: true,
+								validate: {
+									findDuplicate,
+									findByAddress,
+								},
+							})}
+							onChange={(address: string) => setValue("address", address, { shouldDirty: true })}
+						/>
+						<FormHelperText />
+					</FormField>
 
-					<SelectRecipient
-						address={address}
-						profile={profile}
-						ref={register({
-							required: true,
-							validate: {
-								findDuplicate,
-								findByAddress,
-							},
-						})}
-						onChange={(address: string) => setValue("address", address, { shouldDirty: true })}
-					/>
-					<FormHelperText />
-				</FormField>
-
-				<Button
-					className="w-full my-4"
-					variant="plain"
-					type="button"
-					onClick={handleSubmit(() => addParticipant())}
-				>
-					{isValidating ? <Spinner size="sm" /> : t("TRANSACTION.MULTISIGNATURE.ADD_PARTICIPANT")}
-				</Button>
+					<Button
+						className="w-full my-4"
+						variant="plain"
+						type="button"
+						disabled={isValidating || !address}
+						onClick={handleSubmit(() => addParticipant())}
+					>
+						{isValidating ? <Spinner size="sm" /> : t("TRANSACTION.MULTISIGNATURE.ADD_PARTICIPANT")}
+					</Button>
+				</SubForm>
 			</FormProvider>
 
-			<FormField name="">
-				<FormLabel label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")} />
+			<div className="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 mt-3">
 				<RecipientList
-					recipients={participants.map((item) => ({ ...item, amount: BigNumber.make(item.balance) }))}
+					recipients={participants}
 					assetSymbol={wallet.network().ticker()}
 					onRemove={removeParticipant}
+					label={t("COMMON.PARTICIPANT")}
+					showAmount={false}
 					isEditable
 				/>
-			</FormField>
+			</div>
 		</div>
 	);
 };

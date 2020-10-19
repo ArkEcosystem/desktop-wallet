@@ -468,7 +468,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
                                 />
                                 <div
-                                  class="inline-block truncate align-middle"
+                                  class="inline-flex items-center"
                                 />
                                 <div
                                   class="absolute flex items-center space-x-3 right-4"
@@ -610,23 +610,19 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   </div>
                                 </fieldset>
                                 <fieldset
-                                  class="sc-AxirZ izhStr relative mt-1"
+                                  class="sc-AxirZ izhStr flex flex-col space-y-2"
                                 >
-                                  <div
-                                    class="mb-2"
+                                  <label
+                                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                                    data-testid="FormLabel"
+                                    for="amount"
                                   >
-                                    <label
-                                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                                      data-testid="FormLabel"
-                                      for="amount"
-                                    >
-                                      Amount
-                                      <div
-                                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                        data-testid="FormLabel__required"
-                                      />
-                                    </label>
-                                  </div>
+                                    Amount
+                                    <div
+                                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                      data-testid="FormLabel__required"
+                                    />
+                                  </label>
                                   <div
                                     class="sc-fznxsB hhZPAY"
                                   >
@@ -1364,7 +1360,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                   class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 />
                 <div
                   class="absolute flex items-center space-x-3 right-4"
@@ -1506,23 +1502,19 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                   </div>
                 </fieldset>
                 <fieldset
-                  class="sc-AxirZ izhStr relative mt-1"
+                  class="sc-AxirZ izhStr flex flex-col space-y-2"
                 >
-                  <div
-                    class="mb-2"
+                  <label
+                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    data-testid="FormLabel"
+                    for="amount"
                   >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                      data-testid="FormLabel"
-                      for="amount"
-                    >
-                      Amount
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                  </div>
+                    Amount
+                    <div
+                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
+                  </label>
                   <div
                     class="sc-fznxsB hhZPAY"
                   >
@@ -1804,7 +1796,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                   class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 />
                 <div
                   class="absolute flex items-center space-x-3 right-4"
@@ -1957,23 +1949,19 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                   </div>
                 </fieldset>
                 <fieldset
-                  class="sc-AxirZ izhStr relative mt-1"
+                  class="sc-AxirZ izhStr flex flex-col space-y-2"
                 >
-                  <div
-                    class="mb-2"
+                  <label
+                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    data-testid="FormLabel"
+                    for="amount"
                   >
-                    <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                      data-testid="FormLabel"
-                      for="amount"
-                    >
-                      Amount
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                  </div>
+                    Amount
+                    <div
+                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
+                  </label>
                   <div
                     class="sc-fznxsB hhZPAY"
                   >
@@ -2223,16 +2211,16 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
               </div>
             </div>
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             >
               <span
-                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
               </span>
               <span
-                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 D8rr7B … s6YUYD
@@ -2272,10 +2260,10 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
           class="font-semibold"
         >
           <div
-            class="inline-block truncate align-middle"
+            class="inline-flex items-center"
           >
             <span
-              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+              class="sc-fzpans kkFAbe text-theme-text truncate font-semibold text-base"
               data-testid="address__wallet-address"
             >
               D8rr7B … s6YUYD
@@ -2563,16 +2551,16 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
             class="font-semibold"
           >
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             >
               <span
-                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 ARK Wallet 1
               </span>
               <span
-                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 D8rr7B … s6YUYD
@@ -2615,10 +2603,10 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
             class="font-semibold"
           >
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             >
               <span
-                class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                class="sc-fzpans kkFAbe text-theme-text truncate font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 D5pVkh … xfKwSv
@@ -3140,10 +3128,10 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="inline-block truncate align-middle"
+                                  class="inline-flex items-center"
                                 >
                                   <span
-                                    class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                    class="sc-fzpans kkFAbe text-theme-text truncate font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr7B1d6TL6p … sKp1VBMs6YUYD
@@ -3289,23 +3277,19 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   </div>
                                 </fieldset>
                                 <fieldset
-                                  class="sc-AxirZ izhStr relative mt-1"
+                                  class="sc-AxirZ izhStr flex flex-col space-y-2"
                                 >
-                                  <div
-                                    class="mb-2"
+                                  <label
+                                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                                    data-testid="FormLabel"
+                                    for="amount"
                                   >
-                                    <label
-                                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                                      data-testid="FormLabel"
-                                      for="amount"
-                                    >
-                                      Amount
-                                      <div
-                                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                        data-testid="FormLabel__required"
-                                      />
-                                    </label>
-                                  </div>
+                                    Amount
+                                    <div
+                                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                      data-testid="FormLabel__required"
+                                    />
+                                  </label>
                                   <div
                                     class="sc-fznxsB hhZPAY"
                                   >
@@ -3924,7 +3908,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                   class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
                                 />
                                 <div
-                                  class="inline-block truncate align-middle"
+                                  class="inline-flex items-center"
                                 />
                                 <div
                                   class="absolute flex items-center space-x-3 right-4"
@@ -4066,23 +4050,19 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                   </div>
                                 </fieldset>
                                 <fieldset
-                                  class="sc-AxirZ izhStr relative mt-1"
+                                  class="sc-AxirZ izhStr flex flex-col space-y-2"
                                 >
-                                  <div
-                                    class="mb-2"
+                                  <label
+                                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                                    data-testid="FormLabel"
+                                    for="amount"
                                   >
-                                    <label
-                                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                                      data-testid="FormLabel"
-                                      for="amount"
-                                    >
-                                      Amount
-                                      <div
-                                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                        data-testid="FormLabel__required"
-                                      />
-                                    </label>
-                                  </div>
+                                    Amount
+                                    <div
+                                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                      data-testid="FormLabel__required"
+                                    />
+                                  </label>
                                   <div
                                     class="sc-fznxsB hhZPAY"
                                   >
@@ -4745,7 +4725,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                   class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
                                 />
                                 <div
-                                  class="inline-block truncate align-middle"
+                                  class="inline-flex items-center"
                                 />
                                 <div
                                   class="absolute flex items-center space-x-3 right-4"
@@ -4887,23 +4867,19 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                   </div>
                                 </fieldset>
                                 <fieldset
-                                  class="sc-AxirZ izhStr relative mt-1"
+                                  class="sc-AxirZ izhStr flex flex-col space-y-2"
                                 >
-                                  <div
-                                    class="mb-2"
+                                  <label
+                                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                                    data-testid="FormLabel"
+                                    for="amount"
                                   >
-                                    <label
-                                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                                      data-testid="FormLabel"
-                                      for="amount"
-                                    >
-                                      Amount
-                                      <div
-                                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                        data-testid="FormLabel__required"
-                                      />
-                                    </label>
-                                  </div>
+                                    Amount
+                                    <div
+                                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                      data-testid="FormLabel__required"
+                                    />
+                                  </label>
                                   <div
                                     class="sc-fznxsB hhZPAY"
                                   >
@@ -5552,16 +5528,16 @@ exports[`SendTransfer should send a multi payment 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -5695,14 +5671,18 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                           class="py-4"
                                         >
                                           <div
-                                            class="inline-block truncate align-middle"
+                                            class="max-w-lg"
                                           >
-                                            <span
-                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
-                                              data-testid="address__wallet-address"
+                                            <div
+                                              class="inline-flex items-center"
                                             >
-                                              DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd
-                                            </span>
+                                              <span
+                                                class="sc-fzpans kkFAbe text-theme-text truncate font-semibold text-base"
+                                                data-testid="address__wallet-address"
+                                              >
+                                                DReUcX … yPwAmd
+                                              </span>
+                                            </div>
                                           </div>
                                         </td>
                                         <td
@@ -5746,14 +5726,18 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                           class="py-4"
                                         >
                                           <div
-                                            class="inline-block truncate align-middle"
+                                            class="max-w-lg"
                                           >
-                                            <span
-                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
-                                              data-testid="address__wallet-address"
+                                            <div
+                                              class="inline-flex items-center"
                                             >
-                                              D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP
-                                            </span>
+                                              <span
+                                                class="sc-fzpans kkFAbe text-theme-text truncate font-semibold text-base"
+                                                data-testid="address__wallet-address"
+                                              >
+                                                D7JJ4Z … U3HHGP
+                                              </span>
+                                            </div>
                                           </div>
                                         </td>
                                         <td
@@ -5797,14 +5781,18 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                           class="py-4"
                                         >
                                           <div
-                                            class="inline-block truncate align-middle"
+                                            class="max-w-lg"
                                           >
-                                            <span
-                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
-                                              data-testid="address__wallet-address"
+                                            <div
+                                              class="inline-flex items-center"
                                             >
-                                              DA4RAKRngGDfgEA7L6nQjYVEKcZPgi8EdP
-                                            </span>
+                                              <span
+                                                class="sc-fzpans kkFAbe text-theme-text truncate font-semibold text-base"
+                                                data-testid="address__wallet-address"
+                                              >
+                                                DA4RAK … gi8EdP
+                                              </span>
+                                            </div>
                                           </div>
                                         </td>
                                         <td
@@ -5848,14 +5836,18 @@ exports[`SendTransfer should send a multi payment 1`] = `
                                           class="py-4"
                                         >
                                           <div
-                                            class="inline-block truncate align-middle"
+                                            class="max-w-lg"
                                           >
-                                            <span
-                                              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
-                                              data-testid="address__wallet-address"
+                                            <div
+                                              class="inline-flex items-center"
                                             >
-                                              DK52aX793nEMRpDvRVB2euBgGXiCpRfmwQ
-                                            </span>
+                                              <span
+                                                class="sc-fzpans kkFAbe text-theme-text truncate font-semibold text-base"
+                                                data-testid="address__wallet-address"
+                                              >
+                                                DK52aX … pRfmwQ
+                                              </span>
+                                            </div>
                                           </div>
                                         </td>
                                         <td
@@ -6419,16 +6411,16 @@ exports[`SendTransfer should send a single transfer 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -6471,10 +6463,10 @@ exports[`SendTransfer should send a single transfer 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             >
                               <span
-                                class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-text truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh … xfKwSv
