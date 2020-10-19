@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 
 import { ContactListItemProps, Option } from "./ContactListItem.models";
 
-export const ContactListItem = ({ item, variant, template, onAction, options }: ContactListItemProps) => {
+export const ContactListItem = ({ item, variant, onAction, options }: ContactListItemProps) => {
 	const { t } = useTranslation();
 	// TODO: add "Business", "Bridgechain"
 	const contactTypes: string[] = ["Delegate"];
@@ -63,8 +63,6 @@ export const ContactListItem = ({ item, variant, template, onAction, options }: 
 								<Avatar address={address.address()} size="lg" noShadow />
 								<Address address={address.address()} maxChars={isCondensed() ? 24 : undefined} />
 							</TableCell>
-
-							{/* is this even used anywhere? */}
 
 							{!isCondensed() && (
 								<TableCell

@@ -6,7 +6,6 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { SearchRecipient } from "domains/transaction/components/SearchRecipient";
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 
 type SelectRecipientProps = {
 	address?: string;
@@ -30,8 +29,6 @@ const ProfileAvatar = ({ address }: any) => {
 
 export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProps>(
 	({ address, profile, disabled, isInvalid, onChange }: SelectRecipientProps, ref) => {
-		const { t } = useTranslation();
-
 		const [isRecipientSearchOpen, setIsRecipientSearchOpen] = useState(false);
 		const [selectedAddress, setSelectedAddress] = useState("");
 
@@ -89,7 +86,6 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 				<SearchRecipient
 					isOpen={isRecipientSearchOpen}
 					profile={profile}
-					options={[{ value: "select", label: t("COMMON.SELECT") }]}
 					onAction={(_, address: string) => onSelectProfile(address)}
 					onClose={() => setIsRecipientSearchOpen(false)}
 				/>

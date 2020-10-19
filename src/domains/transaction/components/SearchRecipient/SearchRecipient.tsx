@@ -8,11 +8,6 @@ import { TableCell, TableRow } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type Option = {
-	label: string;
-	value: string | number;
-};
-
 type Recipient = {
 	id: string;
 	address: string;
@@ -23,12 +18,11 @@ type Recipient = {
 
 type RecipientListItemProps = {
 	recipient: Recipient;
-	options: Option[];
 	translations: any;
-	onAction?: (action: Option, address: string) => void;
+	onAction: (action: { value: string }, address: string) => void;
 };
 
-const RecipientListItem = ({ recipient, options, translations, onAction }: RecipientListItemProps) => (
+const RecipientListItem = ({ recipient, translations, onAction }: RecipientListItemProps) => (
 	<TableRow key={recipient.id} border>
 		<TableCell variant="start" innerClassName="space-x-4">
 			<AvatarWrapper size="lg" noShadow>
@@ -58,11 +52,11 @@ const RecipientListItem = ({ recipient, options, translations, onAction }: Recip
 
 		<TableCell variant="end" innerClassName="justify-end">
 			<Button
-				data-testid={`RecipientListItem__one-option-button-${recipient.id}`}
+				data-testid="RecipientListItem__select-button"
 				variant="plain"
-				onClick={() => onAction?.(options[0], recipient.address)}
+				onClick={() => onAction({ value: "select" }, recipient.address)}
 			>
-				{options[0]?.label}
+				{translations("COMMON.SELECT")}
 			</Button>
 		</TableCell>
 	</TableRow>
@@ -73,21 +67,19 @@ type SearchRecipientProps = {
 	description?: string;
 	isOpen: boolean;
 	profile: Profile;
-	options: any[];
 	onClose?: any;
 	onSearch?: any;
-	onAction?: (action: Option, address: any) => void;
+	onAction: (action: { value: "select" }, address: string) => void;
 };
 
 export const SearchRecipient = ({
-	isOpen,
+	title,
+	description,
 	profile,
+	isOpen,
 	onClose,
 	onSearch,
 	onAction,
-	options,
-	title,
-	description,
 }: SearchRecipientProps) => {
 	const { t } = useTranslation();
 
@@ -153,7 +145,7 @@ export const SearchRecipient = ({
 		>
 			<Table columns={columns} data={availableData}>
 				{(recipient: Recipient) => (
-					<RecipientListItem recipient={recipient} options={options} translations={t} onAction={onAction} />
+					<RecipientListItem recipient={recipient} translations={t} onAction={onAction} />
 				)}
 			</Table>
 		</SearchResource>
