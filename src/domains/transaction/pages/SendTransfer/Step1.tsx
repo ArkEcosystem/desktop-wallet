@@ -14,10 +14,12 @@ export const FormStep = ({
 	networks,
 	profile,
 	deeplinkProps,
+	hasWalletId,
 }: {
 	networks: Coins.Network[];
 	profile: Profile;
 	deeplinkProps: any;
+	hasWalletId: boolean;
 }) => {
 	const { t } = useTranslation();
 	const { getValues, setValue, watch } = useFormContext();
@@ -49,7 +51,7 @@ export const FormStep = ({
 				</div>
 			</div>
 			<div className="mt-8">
-				<SendTransactionForm networks={networks} profile={profile}>
+				<SendTransactionForm networks={networks} profile={profile} hasWalletId={hasWalletId}>
 					<>
 						<div data-testid="recipient-address">
 							<AddRecipient
@@ -83,4 +85,8 @@ export const FormStep = ({
 			</div>
 		</section>
 	);
+};
+
+FormStep.defaultProps = {
+	hasWalletId: false,
 };

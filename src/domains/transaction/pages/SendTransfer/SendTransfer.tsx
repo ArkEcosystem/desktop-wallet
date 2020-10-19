@@ -1,4 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -11,7 +12,7 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation, useParams } from "react-router-dom";
 
 import { FormStep } from "./Step1";
 import { ReviewStep } from "./Step2";
@@ -21,6 +22,7 @@ export const SendTransfer = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
 	const location = useLocation();
+	const { walletId: hasWalletId } = useParams();
 	const { state } = location;
 
 	const [activeTab, setActiveTab] = useState(1);
@@ -32,11 +34,13 @@ export const SendTransfer = () => {
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+	const [wallet, setWallet] = useState<ReadWriteWallet | undefined>(hasWalletId ? activeWallet : undefined);
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange", defaultValues: { fee: 0 }, shouldUnregister: false });
-	const { clearErrors, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue, watch } = form;
 	const { isValid } = formState;
+	const { senderAddress } = watch();
 	const { sendTransfer } = useValidation();
 
 	useEffect(() => {
@@ -48,18 +52,25 @@ export const SendTransfer = () => {
 	}, [register, sendTransfer]);
 
 	useEffect(() => {
-		if (!activeWallet?.address?.()) return;
+		if (!hasWalletId && senderAddress) {
+			const wallet = activeProfile.wallets().findByAddress(senderAddress);
+			setWallet(wallet);
+		}
+	}, [activeProfile, hasWalletId, senderAddress]);
 
-		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
+	useEffect(() => {
+		if (!wallet?.address?.()) return;
+
+		setValue("senderAddress", wallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
-			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
+			if (network.coin() === wallet.coinId() && network.id() === wallet.networkId()) {
 				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
 		}
-	}, [activeWallet, networks, setValue]);
+	}, [wallet, networks, setValue]);
 
 	useEffect(() => {
 		if (state?.memo) setValue("smartbridge", state.memo);
@@ -148,19 +159,24 @@ export const SendTransfer = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FormStep networks={networks} profile={activeProfile} deeplinkProps={state} />
+								<FormStep
+									networks={networks}
+									profile={activeProfile}
+									deeplinkProps={state}
+									hasWalletId={hasWalletId}
+								/>
 							</TabPanel>
 
 							<TabPanel tabId={2}>
-								<ReviewStep wallet={activeWallet} />
+								<ReviewStep wallet={wallet!} />
 							</TabPanel>
 
 							<TabPanel tabId={3}>
-								<AuthenticationStep wallet={activeWallet} />
+								<AuthenticationStep wallet={wallet!} />
 							</TabPanel>
 
 							<TabPanel tabId={4}>
-								<SummaryStep transaction={transaction} senderWallet={activeWallet} />
+								<SummaryStep transaction={transaction} senderWallet={wallet!} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
@@ -206,9 +222,7 @@ export const SendTransfer = () => {
 											variant="plain"
 											className="block"
 											onClick={() =>
-												history.push(
-													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-												)
+												history.push(`/profiles/${activeProfile.id()}/wallets/${wallet?.id()}`)
 											}
 										>
 											{t("COMMON.BACK_TO_WALLET")}
