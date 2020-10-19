@@ -68,18 +68,18 @@ export const WalletsControls = ({
 				</Dropdown>
 			</div>
 
-			<div className="space-x-3">
+			<div className="flex space-x-3">
 				<Button onClick={onCreateWallet} variant="plain">
-					<div className="flex items-center justify-center mr-2 align-middle">
-						<Icon name="Plus" width={10} />
-						<span className="ml-2">{t("DASHBOARD.WALLET_CONTROLS.CREATE")}</span>
+					<div className="flex items-center space-x-2">
+						<Icon name="Plus" width={12} height={12} />
+						<span>{t("DASHBOARD.WALLET_CONTROLS.CREATE")}</span>
 					</div>
 				</Button>
 
 				<Button onClick={onImportWallet} variant="plain">
-					<div className="flex items-center justify-center mr-2 align-middle">
-						<Icon name="Import" />
-						<span className="ml-2">{t("DASHBOARD.WALLET_CONTROLS.IMPORT")}</span>
+					<div className="flex items-center space-x-2">
+						<Icon name="Import" width={15} height={15} />
+						<span>{t("DASHBOARD.WALLET_CONTROLS.IMPORT")}</span>
 					</div>
 				</Button>
 			</div>
