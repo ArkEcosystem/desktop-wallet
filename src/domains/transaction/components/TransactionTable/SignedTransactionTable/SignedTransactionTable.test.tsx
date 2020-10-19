@@ -12,6 +12,8 @@ describe("Signed Transaction Table", () => {
 		transfer: undefined,
 		multiSignature: undefined,
 		multiPayment: undefined,
+		vote: undefined,
+		unvote: undefined,
 	};
 
 	beforeEach(async () => {
@@ -75,6 +77,42 @@ describe("Signed Transaction Table", () => {
 							to: wallet.address(),
 						},
 					],
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
+
+		fixtures.vote = await wallet
+			.coin()
+			.transaction()
+			.vote({
+				nonce: "1",
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				fee: "1",
+				data: {
+					vote: "+034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
+
+		fixtures.unvote = await wallet
+			.coin()
+			.transaction()
+			.vote({
+				nonce: "1",
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				fee: "1",
+				data: {
+					vote: "-034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
 				},
 				sign: {
 					multiSignature: {

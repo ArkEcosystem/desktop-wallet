@@ -211,6 +211,7 @@ describe("SendVote", () => {
 	});
 
 	it("should send a unvote & vote transaction", async () => {
+		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(false);
 		const votesMock = jest.spyOn(wallet, "votes").mockImplementation(() => [
 			new ReadOnlyWallet({
 				address: delegateData[1].address,
@@ -322,6 +323,7 @@ describe("SendVote", () => {
 			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 			historySpy.mockRestore();
 		});
+		isMultiSignatureSpy.mockReset();
 	});
 
 	it("should send a vote transaction", async () => {
@@ -562,5 +564,91 @@ describe("SendVote", () => {
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
+	});
+
+	it("should send a unvote transaction with a multisignature wallet", async () => {
+		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
+		const multisignatureSpy = jest
+			.spyOn(wallet, "multiSignature")
+			.mockReturnValue({ min: 2, publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!] });
+
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			unvotes: delegateData[1].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+					<SendVote />
+				</Route>,
+				{
+					routes: [voteURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVote__step--first")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVote__step--first")).toHaveTextContent(delegateData[1].username),
+			);
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[1]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVote__step--second")).toBeTruthy());
+
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signVote")
+				.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createUnvoteTransactionMock(wallet);
+
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
+			expect(signMock).toHaveBeenCalledWith(
+				expect.objectContaining({
+					data: expect.anything(),
+					fee: expect.any(String),
+					from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+					nonce: expect.any(String),
+					sign: {
+						multiSignature: {
+							min: 2,
+							publicKeys: [
+								"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+								"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
+							],
+						},
+					},
+				}),
+			);
+
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
+		});
+		isMultiSignatureSpy.mockRestore();
+		multisignatureSpy.mockRestore();
 	});
 });
