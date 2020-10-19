@@ -136,8 +136,7 @@ export const SendVote = () => {
 
 		try {
 			const voteTransactionInput = {
-				/* istanbul ignore next */
-				fee: fee?.value || fee,
+				fee: /* istanbul ignore next */ fee?.value || fee,
 				from: senderAddress,
 				sign: {
 					mnemonic,

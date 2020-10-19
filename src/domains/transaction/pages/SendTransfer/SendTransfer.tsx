@@ -84,8 +84,7 @@ export const SendTransfer = () => {
 
 		const isMultiPayment = recipients.length > 1;
 		const transferInput = {
-			/* istanbul ignore next */
-			fee: fee?.value || fee,
+			fee: /* istanbul ignore next */ fee?.value || fee,
 			from: senderAddress,
 			sign: {
 				mnemonic,
