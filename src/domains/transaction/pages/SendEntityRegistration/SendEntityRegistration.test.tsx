@@ -170,13 +170,24 @@ describe("Registration", () => {
 
 	it("should render 1st step", async () => {
 		const setRegistrationForm = jest.fn();
+		const network = {
+			id: () => "ark.devnet",
+			coin: () => "ARK",
+			can: () => true,
+		};
 		const fees = {
 			delegateRegistration: {
 				avg: "1",
 			},
 		};
 
-		const { result: form } = renderHook(() => useForm());
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					network,
+				},
+			}),
+		);
 		const setValueSpy = jest.spyOn(form.current, "setValue");
 		let rendered: RenderResult;
 
@@ -205,17 +216,21 @@ describe("Registration", () => {
 
 			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
+			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(1, "network", { ...network }));
 			await waitFor(() =>
 				expect(setValueSpy).toHaveBeenNthCalledWith(
-					1,
+					2,
 					"registrationType",
 					{ label: "Delegate", value: "delegateRegistration" },
-					{ shouldValidate: true, shouldDirty: true },
+					{
+						shouldValidate: true,
+						shouldDirty: true,
+					},
 				),
 			);
 			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
 			await waitFor(() =>
-				expect(setValueSpy).toHaveBeenNthCalledWith(2, "fee", "1", { shouldValidate: true, shouldDirty: true }),
+				expect(setValueSpy).toHaveBeenNthCalledWith(3, "fee", "1", { shouldValidate: true, shouldDirty: true }),
 			);
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
@@ -223,9 +238,20 @@ describe("Registration", () => {
 
 	it("should not set fee if no fee options", async () => {
 		const setRegistrationForm = jest.fn();
+		const network = {
+			id: () => "ark.devnet",
+			coin: () => "ARK",
+			can: () => true,
+		};
 		const fees = {};
 
-		const { result: form } = renderHook(() => useForm());
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					network,
+				},
+			}),
+		);
 		const setValueSpy = jest.spyOn(form.current, "setValue");
 		let rendered: RenderResult;
 
@@ -254,16 +280,17 @@ describe("Registration", () => {
 
 			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
+			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(1, "network", { ...network }));
 			await waitFor(() =>
 				expect(setValueSpy).toHaveBeenNthCalledWith(
-					1,
+					2,
 					"registrationType",
 					{ label: "Delegate", value: "delegateRegistration" },
 					{ shouldValidate: true, shouldDirty: true },
 				),
 			);
 			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
-			await waitFor(() => expect(setValueSpy).not.toHaveBeenNthCalledWith(2, "fee", "1", true));
+			await waitFor(() => expect(setValueSpy).not.toHaveBeenNthCalledWith(3, "fee", "1", true));
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
 	});
@@ -278,6 +305,7 @@ describe("Registration", () => {
 			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
 			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toHaveTextContent("Delegate"));
 
 			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
