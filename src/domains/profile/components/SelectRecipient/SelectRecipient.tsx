@@ -6,7 +6,6 @@ import { Input } from "app/components/Input";
 import { SearchContact } from "domains/contact/components/SearchContact";
 import React, { useEffect, useState } from "react";
 
-
 type SelectRecipientProps = {
 	address?: string;
 	profile: Profile;

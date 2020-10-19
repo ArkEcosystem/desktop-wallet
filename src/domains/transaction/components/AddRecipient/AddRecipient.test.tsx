@@ -5,7 +5,7 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import {  env, fireEvent, getDefaultProfileId, render, waitFor, within } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, render, waitFor, within } from "utils/testing-library";
 
 import { AddRecipient } from "./AddRecipient";
 
