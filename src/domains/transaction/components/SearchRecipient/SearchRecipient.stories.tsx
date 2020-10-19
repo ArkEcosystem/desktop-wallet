@@ -22,7 +22,6 @@ export const Default = () => (
 		profile={profile}
 		onClose={action("onClose")}
 		onAction={console.log}
-		options={[{ value: "select", label: "Select" }]}
 	/>
 );
 
@@ -32,6 +31,5 @@ export const OneAction = () => (
 		profile={profile}
 		onClose={action("onClose")}
 		onAction={console.log}
-		options={[{ value: "select", label: "Select" }]}
 	/>
 );

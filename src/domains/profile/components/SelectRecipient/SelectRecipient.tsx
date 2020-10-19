@@ -41,7 +41,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 		const fieldContext = useFormField();
 		const isInvalidField = fieldContext?.isInvalid || isInvalid;
 
-		const onSelectProfile = (address: string) => {
+		const handleSelectAddress = (address: string) => {
 			setSelectedAddress(address);
 			setIsRecipientSearchOpen(false);
 			onChange?.(address);
@@ -86,7 +86,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 				<SearchRecipient
 					isOpen={isRecipientSearchOpen}
 					profile={profile}
-					onAction={(_, address: string) => onSelectProfile(address)}
+					onAction={(address: string) => handleSelectAddress(address)}
 					onClose={() => setIsRecipientSearchOpen(false)}
 				/>
 			</div>

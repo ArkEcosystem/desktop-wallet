@@ -19,7 +19,7 @@ type Recipient = {
 type RecipientListItemProps = {
 	recipient: Recipient;
 	translations: any;
-	onAction: (action: { value: string }, address: string) => void;
+	onAction: (address: string) => void;
 };
 
 const RecipientListItem = ({ recipient, translations, onAction }: RecipientListItemProps) => (
@@ -54,7 +54,7 @@ const RecipientListItem = ({ recipient, translations, onAction }: RecipientListI
 			<Button
 				data-testid="RecipientListItem__select-button"
 				variant="plain"
-				onClick={() => onAction({ value: "select" }, recipient.address)}
+				onClick={() => onAction(recipient.address)}
 			>
 				{translations("COMMON.SELECT")}
 			</Button>
@@ -69,7 +69,7 @@ type SearchRecipientProps = {
 	profile: Profile;
 	onClose?: any;
 	onSearch?: any;
-	onAction: (action: { value: "select" }, address: string) => void;
+	onAction: (address: string) => void;
 };
 
 export const SearchRecipient = ({
