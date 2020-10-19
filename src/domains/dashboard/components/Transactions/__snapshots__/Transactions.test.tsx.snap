@@ -7,7 +7,7 @@ exports[`Transactions should render with 1`] = `
     data-testid="TransactionTable"
   >
     <div
-      class="sc-AxiKw gGhpZ"
+      class="sc-AxiKw iDVQWj"
       role="table"
     >
       <table
@@ -21,7 +21,7 @@ exports[`Transactions should render with 1`] = `
     </div>
   </div>
   <div
-    class="border border-solid border-theme-neutral-300 p-6 rounded-lg text-theme-neutral-dark -mt-5"
+    class="border border-solid border-theme-neutral-300 dark:border-theme-neutral-800 p-6 rounded-lg text-theme-secondary-text -mt-5"
   >
     This will display the history of your transactions. But you don't have more than one transaction at the moment.
   </div>
@@ -40,7 +40,7 @@ exports[`Transactions should render with custom title 1`] = `
     data-testid="TransactionTable"
   >
     <div
-      class="sc-AxiKw gGhpZ"
+      class="sc-AxiKw iDVQWj"
       role="table"
     >
       <table
@@ -54,7 +54,7 @@ exports[`Transactions should render with custom title 1`] = `
     </div>
   </div>
   <div
-    class="border border-solid border-theme-neutral-300 p-6 rounded-lg text-theme-neutral-dark -mt-5"
+    class="border border-solid border-theme-neutral-300 dark:border-theme-neutral-800 p-6 rounded-lg text-theme-secondary-text -mt-5"
   >
     This will display the history of your transactions. But you don't have more than one transaction at the moment.
   </div>
@@ -68,7 +68,7 @@ exports[`Transactions should render with with transactions 1`] = `
     data-testid="TransactionTable"
   >
     <div
-      class="sc-AxiKw gGhpZ -mt-3"
+      class="sc-AxiKw iDVQWj -mt-3"
       role="table"
     >
       <table
@@ -77,11 +77,11 @@ exports[`Transactions should render with with transactions 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300"
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -95,7 +95,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -109,7 +109,7 @@ exports[`Transactions should render with with transactions 1`] = `
                   Date
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -125,7 +125,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -139,7 +139,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -153,7 +153,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -167,7 +167,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -181,7 +181,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -195,7 +195,7 @@ exports[`Transactions should render with with transactions 1`] = `
                   Amount
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                   data-testid="table__Sort"
                 >
                   <div
@@ -216,7 +216,7 @@ exports[`Transactions should render with with transactions 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxhUy loGswa group"
+            class="sc-AxhUy gFzLrG group"
             data-testid="TableRow"
           >
             <td>
@@ -266,7 +266,7 @@ exports[`Transactions should render with with transactions 1`] = `
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-AxheI hiopcG border-theme-danger-contrast text-theme-danger"
+                    class="sc-AxheI etPkdG border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -307,7 +307,7 @@ exports[`Transactions should render with with transactions 1`] = `
                     class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    ASuusX…GQ3kqT
+                    ASuusX … GQ3kqT
                   </span>
                 </div>
               </div>
@@ -384,7 +384,7 @@ exports[`Transactions should render with with transactions 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxhUy loGswa group"
+            class="sc-AxhUy gFzLrG group"
             data-testid="TableRow"
           >
             <td>
@@ -434,7 +434,7 @@ exports[`Transactions should render with with transactions 1`] = `
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-AxheI hiopcG border-theme-danger-contrast text-theme-danger"
+                    class="sc-AxheI etPkdG border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -475,7 +475,7 @@ exports[`Transactions should render with with transactions 1`] = `
                     class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    ASuusX…GQ3kqT
+                    ASuusX … GQ3kqT
                   </span>
                 </div>
               </div>
@@ -552,7 +552,7 @@ exports[`Transactions should render with with transactions 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxhUy loGswa group"
+            class="sc-AxhUy gFzLrG group"
             data-testid="TableRow"
           >
             <td>
@@ -602,7 +602,7 @@ exports[`Transactions should render with with transactions 1`] = `
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-AxheI hiopcG border-theme-danger-contrast text-theme-danger"
+                    class="sc-AxheI etPkdG border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -616,7 +616,7 @@ exports[`Transactions should render with with transactions 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxheI hiopcG border-theme-text text-theme-text"
+                    class="sc-AxheI etPkdG border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
                     data-testid="TransactionRowRecipientIcon"
                   >
                     <div
@@ -716,7 +716,7 @@ exports[`Transactions should render with with transactions 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxhUy loGswa group"
+            class="sc-AxhUy gFzLrG group"
             data-testid="TableRow"
           >
             <td>
@@ -766,7 +766,7 @@ exports[`Transactions should render with with transactions 1`] = `
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-AxheI hiopcG border-theme-danger-contrast text-theme-danger"
+                    class="sc-AxheI etPkdG border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -780,7 +780,7 @@ exports[`Transactions should render with with transactions 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxheI hiopcG border-theme-text text-theme-text"
+                    class="sc-AxheI etPkdG border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
                     data-testid="TransactionRowRecipientIcon"
                   >
                     <div
@@ -884,7 +884,7 @@ exports[`Transactions should render with with transactions 1`] = `
     </div>
   </div>
   <button
-    class="sc-AxjAm hXnHfM w-full mt-10 mb-5"
+    class="sc-AxjAm joLCoM w-full mt-10 mb-5"
     color="primary"
     data-testid="transactions__fetch-more-button"
     type="button"
