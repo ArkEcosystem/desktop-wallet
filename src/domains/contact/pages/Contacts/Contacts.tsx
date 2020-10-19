@@ -85,29 +85,25 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	const listColumns = [
 		{
-			Header: "ContactAvatar",
-			disableSortBy: true,
-			className: "hidden",
-		},
-		{
 			Header: t("COMMON.NAME"),
 			accessor: "name",
+			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.CRYPTOASSET"),
 			className: "justify-center",
 		},
 		{
-			Header: "Avatar",
-			disableSortBy: true,
-			className: "hidden",
-		},
-		{
 			Header: t("COMMON.ADDRESS"),
+			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.ACCOUNT_TYPE"),
-			className: "justify-center",
+			className: "justify-center no-border",
+		},
+		{
+			Header: "Actions",
+			className: "hidden",
 		},
 	];
 
