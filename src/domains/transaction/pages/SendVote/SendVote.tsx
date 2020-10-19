@@ -136,7 +136,7 @@ export const SendVote = () => {
 
 		try {
 			const voteTransactionInput = {
-				fee,
+				fee: fee?.value || fee,
 				from: senderAddress,
 				sign: {
 					mnemonic,

@@ -65,7 +65,7 @@ export const SendIpfs = () => {
 
 		try {
 			const transactionId = await senderWallet!.transaction().signIpfs({
-				fee,
+				fee: fee?.value || fee,
 				from: senderAddress,
 				sign: {
 					mnemonic,

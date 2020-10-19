@@ -124,7 +124,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 					value={fee || 0}
 					step={0.01}
 					onChange={(currency: { display: string; value: string }) => {
-						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+						setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
 						setFeeWarning(validateFee(getValues("fee"), fees.min));
 					}}
 				/>
