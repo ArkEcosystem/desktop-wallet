@@ -46,7 +46,7 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 							{t("COMMON.BALANCE")}
 						</div>
 
-						<span className="truncate mt-1 text-xs font-semibold text-theme-primary-contrast dark:text-theme-neutral-800">
+						<span className="mt-1 text-xs font-semibold truncate text-theme-primary-contrast dark:text-theme-neutral-800">
 							{t("COMMON.ADDRESS")}
 						</span>
 					</div>
@@ -94,12 +94,12 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 			>
 				<div className="relative flex flex-col justify-between h-full p-4">
 					<div className="flex items-center space-x-4">
-						<div className="whitespace-no-wrap -space-x-2">
+						<div className="-space-x-2 whitespace-no-wrap">
 							<NetworkIcon size="lg" coin={wallet.coinId()} network={wallet.networkId()} />
 							<Avatar size="lg" address={wallet.address()} />
 						</div>
 
-						<span className="truncate text-theme-secondary-text font-semibold">{wallet.alias()}</span>
+						<span className="font-semibold truncate text-theme-secondary-text">{wallet.alias()}</span>
 					</div>
 
 					<Amount
@@ -108,7 +108,7 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 						className="mt-auto text-lg font-bold text-theme-text"
 					/>
 
-					<span className="truncate text-theme-secondary-text font-semibold text-xs mt-1">
+					<span className="mt-1 text-xs font-semibold truncate text-theme-secondary-text">
 						{wallet.address()}
 					</span>
 				</div>

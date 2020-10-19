@@ -17,7 +17,7 @@ exports[`Wallet Card should render 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="whitespace-no-wrap -space-x-2"
+            class="-space-x-2 whitespace-no-wrap"
           >
             <div
               aria-label="ARK Devnet"
@@ -51,7 +51,7 @@ exports[`Wallet Card should render 1`] = `
             </div>
           </div>
           <span
-            class="truncate text-theme-secondary-text font-semibold"
+            class="font-semibold truncate text-theme-secondary-text"
           >
             ARK Wallet 1
           </span>
@@ -63,7 +63,7 @@ exports[`Wallet Card should render 1`] = `
           33.75089801 DARK
         </span>
         <span
-          class="truncate text-theme-secondary-text font-semibold text-xs mt-1"
+          class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
         >
           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
         </span>
@@ -145,7 +145,7 @@ exports[`Wallet Card should render blank 1`] = `
           Balance
         </div>
         <span
-          class="truncate mt-1 text-xs font-semibold text-theme-primary-contrast dark:text-theme-neutral-800"
+          class="mt-1 text-xs font-semibold truncate text-theme-primary-contrast dark:text-theme-neutral-800"
         >
           Address
         </span>
@@ -175,7 +175,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="whitespace-no-wrap -space-x-2"
+            class="-space-x-2 whitespace-no-wrap"
           >
             <div
               aria-label="ARK Devnet"
@@ -209,7 +209,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
             </div>
           </div>
           <span
-            class="truncate text-theme-secondary-text font-semibold"
+            class="font-semibold truncate text-theme-secondary-text"
           >
             My wallet
           </span>
@@ -221,7 +221,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
           33.75089801 DARK
         </span>
         <span
-          class="truncate text-theme-secondary-text font-semibold text-xs mt-1"
+          class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
         >
           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
         </span>
@@ -292,7 +292,7 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="whitespace-no-wrap -space-x-2"
+            class="-space-x-2 whitespace-no-wrap"
           >
             <div
               aria-label="ARK Devnet"
@@ -326,7 +326,7 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
             </div>
           </div>
           <span
-            class="truncate text-theme-secondary-text font-semibold"
+            class="font-semibold truncate text-theme-secondary-text"
           >
             My wallet
           </span>
@@ -338,7 +338,7 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
           33.75089801 DARK
         </span>
         <span
-          class="truncate text-theme-secondary-text font-semibold text-xs mt-1"
+          class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
         >
           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
         </span>
