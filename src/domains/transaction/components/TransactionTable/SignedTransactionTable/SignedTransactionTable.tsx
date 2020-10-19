@@ -94,7 +94,7 @@ const Row = ({
 				<TruncateMiddle text={transaction.id()} />
 			</TableCell>
 
-			<TableCell className="w-48" innerClassName="text-sm text-theme-neutral-600">
+			<TableCell className="w-48" innerClassName="text-theme-secondary-text">
 				<span data-testid="TransactionRow__timestamp">
 					{/* TODO */}
 					{DateTime.fromUnix(1596213281).format("DD MMM YYYY HH:mm:ss")}
