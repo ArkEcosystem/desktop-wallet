@@ -69,7 +69,7 @@ export const GenerationStep = ({
 						value={fee || 0}
 						step={step}
 						onChange={(currency) => {
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+							setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
 							setFeeWarning(validateFee(currency, fees.min));
 						}}
 					/>

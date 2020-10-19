@@ -65,6 +65,7 @@ export const SendIpfs = () => {
 
 		try {
 			const transactionId = await senderWallet!.transaction().signIpfs({
+				/* istanbul ignore next */
 				fee: fee?.value || fee,
 				from: senderAddress,
 				sign: {

@@ -67,7 +67,8 @@ export const DelegateRegistrationForm: SendEntityRegistrationForm = {
 
 		try {
 			const transactionId = await senderWallet.transaction().signDelegateRegistration({
-				fee,
+				/* istanbul ignore next */
+				fee: fee?.value || fee,
 				from: senderAddress,
 				sign: {
 					mnemonic,

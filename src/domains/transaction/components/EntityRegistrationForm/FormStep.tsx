@@ -201,7 +201,7 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 						defaultValue={fee || 0}
 						step={0.01}
 						onChange={(currency) => {
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+							setValue("fee", currency, { shouldValidate: true, shouldDirty: true });
 							setFeeWarning(validateFee(currency, fees.min));
 						}}
 					/>
