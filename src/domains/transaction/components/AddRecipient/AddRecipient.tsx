@@ -222,7 +222,7 @@ export const AddRecipient = ({
 			</SubForm>
 
 			{!isSingle && addedRecipients.length > 0 && (
-				<div className="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 mt-3">
+				<div className="mt-3 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800">
 					<RecipientList
 						recipients={addedRecipients}
 						isEditable={true}
