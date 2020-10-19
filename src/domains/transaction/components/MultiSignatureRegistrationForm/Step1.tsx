@@ -1,6 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
+import { Header } from "app/components/Header";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
 import React, { ChangeEvent, useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -47,13 +48,13 @@ export const FormStep = ({
 	};
 
 	return (
-		<section data-testid="MultiSignatureRegistrationForm--form-step">
-			<h1 className="mb-0">{t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.TITLE")}</h1>
-			<div className="text-theme-secondary-text">
-				{t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.DESCRIPTION")}
-			</div>
+		<section data-testid="MultiSignatureRegistrationForm--form-step" className="space-y-8">
+			<Header
+				title={t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.DESCRIPTION")}
+			/>
 
-			<div className="mt-4">
+			<div className="space-y-8">
 				<AddParticipant
 					profile={profile}
 					wallet={wallet}
@@ -61,7 +62,7 @@ export const FormStep = ({
 					defaultParticipants={participants}
 				/>
 
-				<FormField name="minParticipants" className="mt-8">
+				<FormField name="minParticipants">
 					<FormLabel>{t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}</FormLabel>
 					<InputGroup>
 						<Input
@@ -78,7 +79,7 @@ export const FormStep = ({
 					</InputGroup>
 				</FormField>
 
-				<FormField name="fee" className="mt-8">
+				<FormField name="fee">
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
 						min={fees.min}
