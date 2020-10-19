@@ -10,7 +10,6 @@ import { RecipientListItem } from "domains/transaction/components/RecipientList/
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
 
 import { AddRecipientProps, ToggleButtonProps } from "./AddRecipient.models";
 import { AddRecipientWrapper } from "./AddRecipient.styles";
@@ -62,12 +61,12 @@ export const AddRecipient = ({
 	profile,
 	recipients,
 	onChange,
+	withDeeplink,
 }: AddRecipientProps) => {
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
 	const [displayAmount, setDisplayAmount] = useState<string | undefined>();
 	const [recipientsAmount, setRecipientsAmount] = useState<any>();
-	const { state } = useLocation();
 
 	const { t } = useTranslation();
 
@@ -88,14 +87,14 @@ export const AddRecipient = ({
 	}, [register]);
 
 	useEffect(() => {
-		if (state) {
+		if (withDeeplink) {
 			setRecipientsAmount(
 				recipients
 					?.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue.amount), 0)
 					.toString(),
 			);
 		}
-	}, [recipients, displayAmount, state]);
+	}, [recipients, displayAmount, withDeeplink]);
 
 	const availableAmount = useMemo(
 		() => addedRecipients.reduce((sum, item) => sum.minus(item.amount), maxAvailableAmount),
@@ -105,8 +104,8 @@ export const AddRecipient = ({
 	const { recipientAddress, amount } = form.watch();
 
 	const clearFields = () => {
-		setDisplayAmount("");
-		setValue("amount", "");
+		setDisplayAmount(undefined);
+		setValue("amount", undefined);
 		setValue("recipientAddress", null);
 	};
 

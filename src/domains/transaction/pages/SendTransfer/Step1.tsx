@@ -53,6 +53,7 @@ export const FormStep = ({
 					<>
 						<div data-testid="recipient-address">
 							<AddRecipient
+								withDeeplink={!!deeplinkProps?.recipient}
 								assetSymbol={senderWallet?.currency()}
 								maxAvailableAmount={maxAmount}
 								profile={profile}
