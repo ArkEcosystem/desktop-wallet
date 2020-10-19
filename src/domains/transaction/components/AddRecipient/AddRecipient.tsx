@@ -116,14 +116,16 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 		const isValid = await trigger(["recipientAddress", "amount"]);
 		if (!isValid) return;
 
-		setAddressRecipients([
+		const newRecipients = [
 			...addedRecipients,
 			{
 				amount: BigNumber.make(amount),
 				address,
 			},
-		]);
-		onChange?.(addedRecipients);
+		];
+
+		setAddressRecipients(newRecipients);
+		onChange?.(newRecipients);
 		clearFields();
 	};
 
