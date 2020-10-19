@@ -1,19 +1,19 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
+import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
-import { Label } from "app/components/Label";
-import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import {
+	TransactionDetail,
+	TransactionNetwork,
+	TransactionSender,
+} from "domains/transaction/components/TransactionDetail";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { RecipientList } from "../RecipientList";
 import { TotalAmountBox } from "../TotalAmountBox";
-import { Participant } from "./components/AddParticipant/AddParticipant";
 
 export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
@@ -25,42 +25,26 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	}, [unregister]);
 
 	return (
-		<section data-testid="MultiSignature__review-step">
-			<h1 className="mb-0">{t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TITLE")}</h1>
-			<div className="text-theme-secondary-text">
-				{t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.DESCRIPTION")}
-			</div>
+		<section data-testid="MultiSignature__review-step" className="space-y-8">
+			<Header
+				title={t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.DESCRIPTION")}
+			/>
 
-			<div className="grid grid-flow-row gap-2 mt-4">
-				<TransactionDetail
-					border={false}
-					label={t("TRANSACTION.CRYPTOASSET")}
-					extra={<NetworkIcon coin={wallet.coinId()} network={wallet.networkId()} />}
-				>
-					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{wallet.network().name()}
-					</div>
-				</TransactionDetail>
+			<div>
+				<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" />
 
-				<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />}>
-					<div className="mb-2 font-semibold text-theme-neutral">
-						<span className="mr-1 text-sm">{t("TRANSACTION.SENDER")}</span>
-						<Label color="warning">
-							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
-						</Label>
-					</div>
-					<Address address={wallet.address()} walletName={wallet.alias()} />
-				</TransactionDetail>
+				<TransactionSender
+					address={wallet.address()}
+					alias={wallet.alias()}
+					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
+				/>
 
-				<TransactionDetail border={false} label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")}>
+				<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")}>
 					<RecipientList
 						showAmount={false}
 						variant="condensed"
-						recipients={participants.map((item: Participant) => ({
-							...item,
-							amount: BigNumber.make(item.balance),
-						}))}
-						assetSymbol={wallet.network().ticker()}
+						recipients={participants}
 						isEditable={false}
 					/>
 				</TransactionDetail>
