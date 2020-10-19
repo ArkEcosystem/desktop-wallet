@@ -23,7 +23,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
-	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);=
+	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
 	const [feeWarning, setFeeWarning] = useState("");
 
 	const form = useFormContext();
