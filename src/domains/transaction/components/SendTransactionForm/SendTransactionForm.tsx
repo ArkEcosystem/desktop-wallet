@@ -9,21 +9,26 @@ import { validateFee } from "domains/transaction/validations";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
 
 type SendTransactionFormProps = {
+	children?: React.ReactNode;
 	networks: Coins.Network[];
 	profile: Profile;
-	children?: React.ReactNode;
 	transactionType: string;
+	hasWalletId: boolean;
 };
 
-export const SendTransactionForm = ({ children, networks, profile, transactionType }: SendTransactionFormProps) => {
-	const history = useHistory();
+export const SendTransactionForm = ({
+	children,
+	hasWalletId,
+	networks,
+	profile,
+	transactionType,
+}: SendTransactionFormProps) => {
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
-	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
+	const [availableNetworks, setAvailableNetworks] = useState<Coins.Network[]>([]);
 	const [feeWarning, setFeeWarning] = useState("");
 
 	const form = useFormContext();
@@ -60,19 +65,18 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 		if (network) {
 			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
+
 		setWallets(profile.wallets().values());
 	}, [network, profile]);
 
 	const onSelectSender = (address: any) => {
 		setValue("senderAddress", address, { shouldValidate: true, shouldDirty: true });
-
-		const wallet = wallets.find((wallet) => wallet.address() === address);
-		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-transfer`);
 	};
 
 	useEffect(() => {
 		const userNetworks: string[] = [];
-		const wallets: any = profile.wallets().values();
+		const wallets: ReadWriteWallet[] = profile.wallets().values();
+
 		for (const wallet of wallets) {
 			userNetworks.push(wallet.networkId());
 		}
@@ -90,7 +94,7 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 					id="SendTransactionForm__network"
 					networks={availableNetworks}
 					selected={network}
-					disabled={!!senderAddress}
+					disabled={hasWalletId && !!senderAddress}
 					onSelect={(selectedNetwork: Coins.Network | null | undefined) =>
 						setValue("network", selectedNetwork)
 					}
@@ -136,4 +140,5 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 
 SendTransactionForm.defaultProps = {
 	transactionType: "transfer",
+	hasWalletId: false,
 };
