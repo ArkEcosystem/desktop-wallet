@@ -31,7 +31,7 @@ const registrationComponents: any = {
 	multiSignature: MultiSignatureRegistrationForm,
 };
 
-const RegistrationTypeDropdown = ({ className, defaultValue, registrationTypes, disabled, onChange }: any) => {
+const RegistrationTypeDropdown = ({ className, defaultValue, disabled, registrationTypes, onChange }: any) => {
 	const { t } = useTranslation();
 
 	return (
