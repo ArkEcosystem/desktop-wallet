@@ -27,10 +27,10 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top hidden"
+              class="flex flex-inline align-top ml-25"
             >
               <div>
-                Avatar
+                Address
               </div>
             </div>
           </th>
@@ -44,20 +44,6 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
               class="flex flex-inline align-top "
             >
               <div>
-                Address
-              </div>
-            </div>
-          </th>
-          <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-            colspan="1"
-            data-testid="table__th--2"
-            role="columnheader"
-          >
-            <div
-              class="flex flex-inline align-top "
-            >
-              <div>
                 Entity name
               </div>
             </div>
@@ -65,7 +51,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--3"
+            data-testid="table__th--2"
             role="columnheader"
           >
             <div
@@ -79,7 +65,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--4"
+            data-testid="table__th--3"
             role="columnheader"
           >
             <div
@@ -93,7 +79,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--5"
+            data-testid="table__th--4"
             role="columnheader"
           >
             <div
@@ -105,13 +91,13 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
             colspan="1"
-            data-testid="table__th--6"
+            data-testid="table__th--5"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top justify-center"
+              class="flex flex-inline align-top justify-center no-border"
             >
               <div>
                 Repository
@@ -121,7 +107,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--7"
+            data-testid="table__th--6"
             role="columnheader"
           >
             <div
@@ -141,14 +127,12 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
           class="sc-AxhCb jCOJxD group"
           data-testid="TableRow"
         >
-          <td
-            class="w-24"
-          >
+          <td>
             <div
-              class="sc-AxiKw kPBQtr"
+              class="sc-AxiKw ekuVpr space-x-4"
             >
               <div
-                class="flex items-center"
+                class="flex items-center -space-x-1"
               >
                 <div
                   class="sc-AxheI etPkdG border-theme-neutral-800"
@@ -164,7 +148,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                   data-testid="Avatar"
                 >
                   <div
@@ -178,12 +162,6 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
                   </div>
                 </div>
               </div>
-            </div>
-          </td>
-          <td>
-            <div
-              class="sc-AxiKw lfBQQd"
-            >
               <div
                 class="inline-flex items-center"
               >
@@ -204,7 +182,12 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold"
+              class="sc-AxiKw jHcrVp"
+            />
+          </td>
+          <td>
+            <div
+              class="sc-AxiKw jHcrVp font-semibold"
             >
               <span>
                 business2reg
@@ -213,7 +196,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold justify-center text-theme-primary"
+              class="sc-AxiKw jHcrVp font-semibold justify-center text-theme-primary"
             >
               <span>
                 View
@@ -222,7 +205,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd justify-center text-theme-neutral-light"
+              class="sc-AxiKw jHcrVp justify-center text-theme-neutral-light"
             >
               <div
                 class="sc-AxjAm cpczEI text-center"
@@ -237,7 +220,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold justify-center text-theme-primary"
+              class="sc-AxiKw jHcrVp font-semibold justify-center text-theme-primary"
             >
               <div
                 class="sc-AxjAm jmgDQY"
@@ -252,7 +235,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold justify-center text-theme-primary"
+              class="sc-AxiKw jHcrVp font-semibold justify-center text-theme-primary"
             >
               <span>
                 View
@@ -263,7 +246,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
             class="w-22"
           >
             <div
-              class="sc-AxiKw fGKrFr justify-end"
+              class="sc-AxiKw gCtQxH justify-end"
             >
               <div
                 class="relative"
@@ -321,10 +304,10 @@ exports[`BusinessRegistrationsTable should render empty state 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top hidden"
+              class="flex flex-inline align-top ml-25"
             >
               <div>
-                Avatar
+                Address
               </div>
             </div>
           </th>
@@ -338,20 +321,6 @@ exports[`BusinessRegistrationsTable should render empty state 1`] = `
               class="flex flex-inline align-top "
             >
               <div>
-                Address
-              </div>
-            </div>
-          </th>
-          <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-            colspan="1"
-            data-testid="table__th--2"
-            role="columnheader"
-          >
-            <div
-              class="flex flex-inline align-top "
-            >
-              <div>
                 Entity name
               </div>
             </div>
@@ -359,7 +328,7 @@ exports[`BusinessRegistrationsTable should render empty state 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--3"
+            data-testid="table__th--2"
             role="columnheader"
           >
             <div
@@ -373,7 +342,7 @@ exports[`BusinessRegistrationsTable should render empty state 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--4"
+            data-testid="table__th--3"
             role="columnheader"
           >
             <div
@@ -387,7 +356,7 @@ exports[`BusinessRegistrationsTable should render empty state 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--5"
+            data-testid="table__th--4"
             role="columnheader"
           >
             <div
@@ -399,13 +368,13 @@ exports[`BusinessRegistrationsTable should render empty state 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
             colspan="1"
-            data-testid="table__th--6"
+            data-testid="table__th--5"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top justify-center"
+              class="flex flex-inline align-top justify-center no-border"
             >
               <div>
                 Repository
@@ -415,7 +384,7 @@ exports[`BusinessRegistrationsTable should render empty state 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--7"
+            data-testid="table__th--6"
             role="columnheader"
           >
             <div
@@ -463,10 +432,10 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top hidden"
+              class="flex flex-inline align-top ml-25"
             >
               <div>
-                Avatar
+                Address
               </div>
             </div>
           </th>
@@ -480,20 +449,6 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
               class="flex flex-inline align-top "
             >
               <div>
-                Address
-              </div>
-            </div>
-          </th>
-          <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-            colspan="1"
-            data-testid="table__th--2"
-            role="columnheader"
-          >
-            <div
-              class="flex flex-inline align-top "
-            >
-              <div>
                 Entity name
               </div>
             </div>
@@ -501,7 +456,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--3"
+            data-testid="table__th--2"
             role="columnheader"
           >
             <div
@@ -515,7 +470,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--4"
+            data-testid="table__th--3"
             role="columnheader"
           >
             <div
@@ -529,7 +484,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--5"
+            data-testid="table__th--4"
             role="columnheader"
           >
             <div
@@ -541,13 +496,13 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
             colspan="1"
-            data-testid="table__th--6"
+            data-testid="table__th--5"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top justify-center"
+              class="flex flex-inline align-top justify-center no-border"
             >
               <div>
                 Repository
@@ -557,7 +512,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
           <th
             class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
             colspan="1"
-            data-testid="table__th--7"
+            data-testid="table__th--6"
             role="columnheader"
           >
             <div
@@ -577,14 +532,12 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
           class="sc-AxhCb jCOJxD group"
           data-testid="TableRow"
         >
-          <td
-            class="w-24"
-          >
+          <td>
             <div
-              class="sc-AxiKw kPBQtr"
+              class="sc-AxiKw ekuVpr space-x-4"
             >
               <div
-                class="flex items-center"
+                class="flex items-center -space-x-1"
               >
                 <div
                   class="sc-AxheI etPkdG border-theme-neutral-800"
@@ -600,7 +553,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                   data-testid="Avatar"
                 >
                   <div
@@ -614,12 +567,6 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
                   </div>
                 </div>
               </div>
-            </div>
-          </td>
-          <td>
-            <div
-              class="sc-AxiKw lfBQQd"
-            >
               <div
                 class="inline-flex items-center"
               >
@@ -640,7 +587,12 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold"
+              class="sc-AxiKw jHcrVp"
+            />
+          </td>
+          <td>
+            <div
+              class="sc-AxiKw jHcrVp font-semibold"
             >
               <span>
                 business2reg
@@ -649,7 +601,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold justify-center text-theme-primary"
+              class="sc-AxiKw jHcrVp font-semibold justify-center text-theme-primary"
             >
               <span>
                 View
@@ -658,7 +610,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd justify-center text-theme-neutral-light"
+              class="sc-AxiKw jHcrVp justify-center text-theme-neutral-light"
             >
               <div
                 class="sc-AxjAm cpczEI text-center"
@@ -673,7 +625,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold justify-center text-theme-primary"
+              class="sc-AxiKw jHcrVp font-semibold justify-center text-theme-primary"
             >
               <div
                 class="sc-AxjAm jmgDQY"
@@ -688,7 +640,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold justify-center text-theme-primary"
+              class="sc-AxiKw jHcrVp font-semibold justify-center text-theme-primary"
             >
               <span>
                 View
@@ -699,7 +651,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
             class="w-22"
           >
             <div
-              class="sc-AxiKw fGKrFr justify-end"
+              class="sc-AxiKw gCtQxH justify-end"
             >
               <div
                 class="relative"

@@ -941,27 +941,13 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top hidden no-border"
-                      >
-                        <div>
-                          Type
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top ml-25"
                       >
                         <div>
                           Recipient
@@ -971,7 +957,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
@@ -985,7 +971,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
@@ -999,7 +985,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--5"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -1029,7 +1015,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
@@ -1051,7 +1037,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1073,10 +1059,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -1085,11 +1071,9 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1124,12 +1108,6 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -1144,7 +1122,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -1156,7 +1134,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -1177,7 +1155,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -1194,7 +1172,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -1215,7 +1193,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1237,10 +1215,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -1249,11 +1227,9 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1288,12 +1264,6 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -1308,7 +1278,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -1320,7 +1290,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -1341,7 +1311,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -1358,7 +1328,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -1379,7 +1349,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1401,10 +1371,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -1413,11 +1383,9 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1452,12 +1420,6 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -1472,7 +1434,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -1484,7 +1446,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -1505,7 +1467,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -1522,7 +1484,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -1543,7 +1505,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1565,10 +1527,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -1577,11 +1539,9 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1616,12 +1576,6 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -1636,7 +1590,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -1648,7 +1602,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -1669,7 +1623,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -1686,7 +1640,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -1707,7 +1661,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1729,10 +1683,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -1741,11 +1695,9 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1780,12 +1732,6 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -1800,7 +1746,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -1812,7 +1758,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -1833,7 +1779,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -1850,7 +1796,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -1871,7 +1817,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1893,10 +1839,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -1905,11 +1851,9 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1944,12 +1888,6 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -1964,7 +1902,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -1976,7 +1914,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -1997,7 +1935,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -2014,7 +1952,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -2035,7 +1973,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2057,10 +1995,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -2069,11 +2007,9 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -2108,12 +2044,6 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -2128,7 +2058,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -2140,7 +2070,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -2161,7 +2091,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -2178,7 +2108,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -2199,7 +2129,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2221,10 +2151,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -2233,11 +2163,9 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -2272,12 +2200,6 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -2292,7 +2214,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -2304,7 +2226,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -2325,7 +2247,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -2342,7 +2264,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -3350,27 +3272,13 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top hidden no-border"
-                      >
-                        <div>
-                          Type
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top ml-25"
                       >
                         <div>
                           Recipient
@@ -3380,7 +3288,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
@@ -3394,7 +3302,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
@@ -3408,7 +3316,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--5"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -3438,7 +3346,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
@@ -3460,7 +3368,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3482,10 +3390,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -3494,11 +3402,9 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -3533,12 +3439,6 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -3553,7 +3453,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -3565,7 +3465,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -3586,7 +3486,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -3603,7 +3503,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -3624,7 +3524,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3646,10 +3546,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -3658,11 +3558,9 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -3697,12 +3595,6 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -3717,7 +3609,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -3729,7 +3621,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -3750,7 +3642,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -3767,7 +3659,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -3788,7 +3680,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3810,10 +3702,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -3822,11 +3714,9 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -3861,12 +3751,6 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -3881,7 +3765,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -3893,7 +3777,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -3914,7 +3798,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -3931,7 +3815,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -3952,7 +3836,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3974,10 +3858,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -3986,11 +3870,9 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -4025,12 +3907,6 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -4045,7 +3921,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -4057,7 +3933,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -4078,7 +3954,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -4095,7 +3971,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -6131,27 +6007,13 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top hidden no-border"
-                      >
-                        <div>
-                          Type
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top ml-25"
                       >
                         <div>
                           Recipient
@@ -6161,7 +6023,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
@@ -6175,7 +6037,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
@@ -6189,7 +6051,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--5"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -6219,7 +6081,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
@@ -6241,7 +6103,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -6263,10 +6125,10 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -6275,11 +6137,9 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -6314,12 +6174,6 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -6334,7 +6188,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -6346,7 +6200,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -6367,7 +6221,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -6384,7 +6238,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -6405,7 +6259,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -6427,10 +6281,10 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -6439,11 +6293,9 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -6478,12 +6330,6 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -6498,7 +6344,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -6510,7 +6356,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -6531,7 +6377,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -6548,7 +6394,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -6569,7 +6415,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -6591,10 +6437,10 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -6603,11 +6449,9 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -6642,12 +6486,6 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -6662,7 +6500,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -6674,7 +6512,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -6695,7 +6533,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -6712,7 +6550,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -6733,7 +6571,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -6755,10 +6593,10 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -6767,11 +6605,9 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -6806,12 +6642,6 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -6826,7 +6656,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -6838,7 +6668,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -6859,7 +6689,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -6876,7 +6706,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -7851,27 +7681,13 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top hidden no-border"
-                      >
-                        <div>
-                          Type
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top ml-25"
                       >
                         <div>
                           Recipient
@@ -7881,7 +7697,7 @@ exports[`Dashboard should render 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
@@ -7895,7 +7711,7 @@ exports[`Dashboard should render 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
@@ -7909,7 +7725,7 @@ exports[`Dashboard should render 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--5"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -7939,7 +7755,7 @@ exports[`Dashboard should render 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
@@ -7961,7 +7777,7 @@ exports[`Dashboard should render 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -7983,10 +7799,10 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -7995,11 +7811,9 @@ exports[`Dashboard should render 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -8034,12 +7848,6 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -8054,7 +7862,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -8066,7 +7874,7 @@ exports[`Dashboard should render 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -8087,7 +7895,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -8104,7 +7912,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -8125,7 +7933,7 @@ exports[`Dashboard should render 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -8147,10 +7955,10 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -8159,11 +7967,9 @@ exports[`Dashboard should render 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -8198,12 +8004,6 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -8218,7 +8018,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -8230,7 +8030,7 @@ exports[`Dashboard should render 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -8251,7 +8051,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -8268,7 +8068,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -8289,7 +8089,7 @@ exports[`Dashboard should render 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -8311,10 +8111,10 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -8323,11 +8123,9 @@ exports[`Dashboard should render 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -8362,12 +8160,6 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -8382,7 +8174,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -8394,7 +8186,7 @@ exports[`Dashboard should render 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -8415,7 +8207,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -8432,7 +8224,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -8453,7 +8245,7 @@ exports[`Dashboard should render 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -8475,10 +8267,10 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -8487,11 +8279,9 @@ exports[`Dashboard should render 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -8526,12 +8316,6 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -8546,7 +8330,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -8558,7 +8342,7 @@ exports[`Dashboard should render 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -8579,7 +8363,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -8596,7 +8380,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -9571,27 +9355,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top hidden no-border"
-                      >
-                        <div>
-                          Type
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top ml-25"
                       >
                         <div>
                           Recipient
@@ -9601,7 +9371,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
@@ -9615,7 +9385,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
@@ -9629,7 +9399,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--5"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -9659,7 +9429,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
@@ -9681,7 +9451,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -9703,10 +9473,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -9715,11 +9485,9 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -9754,12 +9522,6 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -9774,7 +9536,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -9786,7 +9548,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -9807,7 +9569,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -9824,7 +9586,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -9845,7 +9607,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -9867,10 +9629,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -9879,11 +9641,9 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -9918,12 +9678,6 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -9938,7 +9692,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -9950,7 +9704,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -9971,7 +9725,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -9988,7 +9742,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -10009,7 +9763,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -10031,10 +9785,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -10043,11 +9797,9 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -10082,12 +9834,6 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -10102,7 +9848,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -10114,7 +9860,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -10135,7 +9881,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -10152,7 +9898,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -10173,7 +9919,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -10195,10 +9941,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -10207,11 +9953,9 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -10246,12 +9990,6 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -10266,7 +10004,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -10278,7 +10016,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -10299,7 +10037,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -10316,7 +10054,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -11291,27 +11029,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top hidden no-border"
-                      >
-                        <div>
-                          Type
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top ml-25"
                       >
                         <div>
                           Recipient
@@ -11321,7 +11045,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
@@ -11335,7 +11059,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
@@ -11349,7 +11073,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--5"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -11379,7 +11103,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
@@ -11401,7 +11125,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -11423,10 +11147,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -11435,11 +11159,9 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -11474,12 +11196,6 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -11494,7 +11210,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -11506,7 +11222,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -11527,7 +11243,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -11544,7 +11260,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -11565,7 +11281,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -11587,10 +11303,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -11599,11 +11315,9 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -11638,12 +11352,6 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -11658,7 +11366,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -11670,7 +11378,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -11691,7 +11399,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -11708,7 +11416,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -11729,7 +11437,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -11751,10 +11459,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -11763,11 +11471,9 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -11802,12 +11508,6 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -11822,7 +11522,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -11834,7 +11534,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -11855,7 +11555,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -11872,7 +11572,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -11893,7 +11593,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -11915,10 +11615,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -11927,11 +11627,9 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -11966,12 +11664,6 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -11986,7 +11678,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -11998,7 +11690,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -12019,7 +11711,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -12036,7 +11728,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -13011,27 +12703,13 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top hidden no-border"
-                      >
-                        <div>
-                          Type
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top ml-25"
                       >
                         <div>
                           Recipient
@@ -13041,7 +12719,7 @@ exports[`Dashboard should render wallets 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
@@ -13055,7 +12733,7 @@ exports[`Dashboard should render wallets 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
@@ -13069,7 +12747,7 @@ exports[`Dashboard should render wallets 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--5"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -13099,7 +12777,7 @@ exports[`Dashboard should render wallets 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
@@ -13121,7 +12799,7 @@ exports[`Dashboard should render wallets 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -13143,10 +12821,10 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -13155,11 +12833,9 @@ exports[`Dashboard should render wallets 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -13194,12 +12870,6 @@ exports[`Dashboard should render wallets 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -13214,7 +12884,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -13226,7 +12896,7 @@ exports[`Dashboard should render wallets 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -13247,7 +12917,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -13264,7 +12934,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -13285,7 +12955,7 @@ exports[`Dashboard should render wallets 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -13307,10 +12977,10 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -13319,11 +12989,9 @@ exports[`Dashboard should render wallets 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -13358,12 +13026,6 @@ exports[`Dashboard should render wallets 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -13378,7 +13040,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -13390,7 +13052,7 @@ exports[`Dashboard should render wallets 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -13411,7 +13073,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -13428,7 +13090,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -13449,7 +13111,7 @@ exports[`Dashboard should render wallets 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -13471,10 +13133,10 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -13483,11 +13145,9 @@ exports[`Dashboard should render wallets 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -13522,12 +13182,6 @@ exports[`Dashboard should render wallets 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -13542,7 +13196,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -13554,7 +13208,7 @@ exports[`Dashboard should render wallets 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -13575,7 +13229,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -13592,7 +13246,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -13613,7 +13267,7 @@ exports[`Dashboard should render wallets 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-Axmtr gOfPTF"
+                        class="sc-Axmtr iUbJZh"
                       >
                         <a
                           class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -13635,10 +13289,10 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48"
+                      class="w-50"
                     >
                       <div
-                        class="sc-Axmtr kJpthz text-theme-secondary-text"
+                        class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
                         <span
                           data-testid="TransactionRow__timestamp"
@@ -13647,11 +13301,9 @@ exports[`Dashboard should render wallets 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td
-                      class="w-32"
-                    >
+                    <td>
                       <div
-                        class="sc-Axmtr kJpthz"
+                        class="sc-Axmtr cSXHUn space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -13686,12 +13338,6 @@ exports[`Dashboard should render wallets 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="sc-Axmtr kJpthz"
-                      >
                         <div
                           class="inline-flex items-center"
                         >
@@ -13706,7 +13352,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -13718,7 +13364,7 @@ exports[`Dashboard should render wallets 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-Axmtr kJpthz justify-center"
+                        class="sc-Axmtr cSXHUn justify-center"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -13739,7 +13385,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr kJpthz justify-end"
+                        class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
                           class="sc-fzozJi iTqYGz"
@@ -13756,7 +13402,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-Axmtr hbxXZh justify-end"
+                        class="sc-Axmtr eOYxtN justify-end"
                       >
                         <span
                           data-testid="TransactionRow__currency"
@@ -14514,27 +14160,13 @@ exports[`Dashboard should render with no wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top hidden no-border"
-                      >
-                        <div>
-                          Type
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top ml-25"
                       >
                         <div>
                           Recipient
@@ -14544,7 +14176,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
@@ -14558,7 +14190,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
@@ -14572,7 +14204,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--5"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -14602,7 +14234,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div

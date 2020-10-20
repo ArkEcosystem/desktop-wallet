@@ -730,37 +730,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top "
-                    >
-                      <div>
-                        Asset Type
-                      </div>
-                      <div
-                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                        data-testid="table__Sort"
-                      >
-                        <div
-                          class="sc-AxirZ jMwzyA"
-                          height="12"
-                          width="15"
-                        >
-                          <svg>
-                            sort.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                    colspan="1"
-                    data-testid="table__th--1"
-                    role="columnheader"
-                    style="cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    <div
-                      class="flex flex-inline align-top "
+                      class="flex flex-inline align-top ml-24"
                     >
                       <div>
                         Wallet Address
@@ -784,7 +754,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--2"
+                    data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
@@ -798,7 +768,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--2"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -828,7 +798,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--4"
+                    data-testid="table__th--3"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -866,44 +836,42 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -924,7 +892,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -947,7 +915,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -958,7 +926,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -974,44 +942,42 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -1032,7 +998,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1055,7 +1021,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1066,7 +1032,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1082,44 +1048,42 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -1140,7 +1104,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1163,7 +1127,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1174,7 +1138,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1190,44 +1154,42 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -1248,7 +1210,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1271,7 +1233,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1282,7 +1244,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1298,44 +1260,42 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -1356,7 +1316,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1379,7 +1339,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1390,7 +1350,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1406,44 +1366,42 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -1464,7 +1422,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1487,7 +1445,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1498,7 +1456,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1514,44 +1472,42 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -1572,7 +1528,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1595,7 +1551,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1606,7 +1562,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1622,44 +1578,42 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -1680,7 +1634,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1703,7 +1657,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1714,7 +1668,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1730,44 +1684,42 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -1788,7 +1740,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1811,7 +1763,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -1822,7 +1774,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -2420,37 +2372,7 @@ exports[`Wallets should render list 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top "
-                    >
-                      <div>
-                        Asset Type
-                      </div>
-                      <div
-                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                        data-testid="table__Sort"
-                      >
-                        <div
-                          class="sc-AxirZ jMwzyA"
-                          height="12"
-                          width="15"
-                        >
-                          <svg>
-                            sort.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                    colspan="1"
-                    data-testid="table__th--1"
-                    role="columnheader"
-                    style="cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    <div
-                      class="flex flex-inline align-top "
+                      class="flex flex-inline align-top ml-24"
                     >
                       <div>
                         Wallet Address
@@ -2474,7 +2396,7 @@ exports[`Wallets should render list 1`] = `
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--2"
+                    data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
@@ -2488,7 +2410,7 @@ exports[`Wallets should render list 1`] = `
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--2"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -2518,7 +2440,7 @@ exports[`Wallets should render list 1`] = `
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--4"
+                    data-testid="table__th--3"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -2556,44 +2478,42 @@ exports[`Wallets should render list 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -2614,7 +2534,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -2637,7 +2557,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -2648,7 +2568,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -2664,44 +2584,42 @@ exports[`Wallets should render list 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -2722,7 +2640,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -2731,7 +2649,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -2742,7 +2660,7 @@ exports[`Wallets should render list 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4325,37 +4243,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top "
-                    >
-                      <div>
-                        Asset Type
-                      </div>
-                      <div
-                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                        data-testid="table__Sort"
-                      >
-                        <div
-                          class="sc-AxirZ jMwzyA"
-                          height="12"
-                          width="15"
-                        >
-                          <svg>
-                            sort.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                    colspan="1"
-                    data-testid="table__th--1"
-                    role="columnheader"
-                    style="cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    <div
-                      class="flex flex-inline align-top "
+                      class="flex flex-inline align-top ml-24"
                     >
                       <div>
                         Wallet Address
@@ -4379,7 +4267,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--2"
+                    data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
@@ -4393,7 +4281,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--2"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4423,7 +4311,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--4"
+                    data-testid="table__th--3"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4461,44 +4349,42 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -4519,7 +4405,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -4542,7 +4428,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -4553,7 +4439,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4569,44 +4455,42 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -4627,7 +4511,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -4636,7 +4520,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -4647,7 +4531,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4835,37 +4719,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top "
-                    >
-                      <div>
-                        Asset Type
-                      </div>
-                      <div
-                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                        data-testid="table__Sort"
-                      >
-                        <div
-                          class="sc-AxirZ jMwzyA"
-                          height="12"
-                          width="15"
-                        >
-                          <svg>
-                            sort.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                    colspan="1"
-                    data-testid="table__th--1"
-                    role="columnheader"
-                    style="cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    <div
-                      class="flex flex-inline align-top "
+                      class="flex flex-inline align-top ml-24"
                     >
                       <div>
                         Wallet Address
@@ -4889,7 +4743,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--2"
+                    data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
@@ -4903,7 +4757,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--2"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4933,7 +4787,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--4"
+                    data-testid="table__th--3"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4971,44 +4825,42 @@ exports[`Wallets should render with list view enabled as default and empty walle
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -5029,7 +4881,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5052,7 +4904,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5063,7 +4915,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5079,44 +4931,42 @@ exports[`Wallets should render with list view enabled as default and empty walle
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -5137,7 +4987,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5146,7 +4996,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5157,7 +5007,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5345,37 +5195,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top "
-                    >
-                      <div>
-                        Asset Type
-                      </div>
-                      <div
-                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                        data-testid="table__Sort"
-                      >
-                        <div
-                          class="sc-AxirZ jMwzyA"
-                          height="12"
-                          width="15"
-                        >
-                          <svg>
-                            sort.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                    colspan="1"
-                    data-testid="table__th--1"
-                    role="columnheader"
-                    style="cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    <div
-                      class="flex flex-inline align-top "
+                      class="flex flex-inline align-top ml-24"
                     >
                       <div>
                         Wallet Address
@@ -5399,7 +5219,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--2"
+                    data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
@@ -5413,7 +5233,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--2"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -5443,7 +5263,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   <th
                     class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
-                    data-testid="table__th--4"
+                    data-testid="table__th--3"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -5481,44 +5301,42 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -5539,7 +5357,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5562,7 +5380,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5573,7 +5391,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5589,44 +5407,42 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -5647,7 +5463,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5670,7 +5486,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5681,7 +5497,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5697,44 +5513,42 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -5755,7 +5569,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5778,7 +5592,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5789,7 +5603,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5805,44 +5619,42 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -5863,7 +5675,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5886,7 +5698,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -5897,7 +5709,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5913,44 +5725,42 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -5971,7 +5781,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5994,7 +5804,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6005,7 +5815,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6021,44 +5831,42 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -6079,7 +5887,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6102,7 +5910,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6113,7 +5921,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6129,44 +5937,42 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -6187,7 +5993,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6210,7 +6016,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6221,7 +6027,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6237,44 +6043,42 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -6295,7 +6099,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6318,7 +6122,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6329,7 +6133,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6345,44 +6149,42 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -6403,7 +6205,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6426,7 +6228,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6437,7 +6239,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6453,44 +6255,42 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 >
                   <td>
                     <div
-                      class="sc-AxhCb osoeH -space-x-2"
+                      class="sc-AxhCb hbkWNL space-x-4"
                     >
                       <div
-                        aria-label="ARK Devnet"
-                        class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
+                        class="-space-x-2"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          data-testid="NetworkIcon__icon"
-                          height="20"
-                          width="20"
+                          aria-label="ARK Devnet"
+                          class="sc-Axmtr hVOxCZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                        data-testid="Avatar"
-                      >
                         <div
-                          class="w-full h-full"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                          />
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="sc-AxhCb kdNpYF"
-                    >
                       <div
                         class="inline-flex items-center"
                       >
@@ -6511,7 +6311,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb udmdB text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6534,7 +6334,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb kdNpYF font-semibold justify-end"
+                      class="sc-AxhCb udmdB font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
@@ -6545,7 +6345,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb dazjdf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb fYMCjD justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"

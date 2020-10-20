@@ -64,27 +64,13 @@ exports[`TransactionTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden no-border"
-              >
-                <div>
-                  Type
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top ml-25"
               >
                 <div>
                   Recipient
@@ -94,7 +80,7 @@ exports[`TransactionTable should render 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--3"
               role="columnheader"
             >
               <div
@@ -108,7 +94,7 @@ exports[`TransactionTable should render 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
@@ -122,7 +108,7 @@ exports[`TransactionTable should render 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--5"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -160,7 +146,7 @@ exports[`TransactionTable should render 1`] = `
           >
             <td>
               <div
-                class="sc-AxiKw kPBQtr"
+                class="sc-AxiKw ekuVpr"
               >
                 <a
                   class="sc-AxmLO fFHGCy inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -182,10 +168,10 @@ exports[`TransactionTable should render 1`] = `
               </div>
             </td>
             <td
-              class="w-48"
+              class="w-50"
             >
               <div
-                class="sc-AxiKw lfBQQd text-theme-secondary-text"
+                class="sc-AxiKw jHcrVp text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -194,11 +180,9 @@ exports[`TransactionTable should render 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="w-32"
-            >
+            <td>
               <div
-                class="sc-AxiKw lfBQQd"
+                class="sc-AxiKw jHcrVp space-x-4"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -233,12 +217,6 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="sc-AxiKw lfBQQd"
-              >
                 <div
                   class="inline-flex items-center"
                 >
@@ -253,7 +231,7 @@ exports[`TransactionTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -280,7 +258,7 @@ exports[`TransactionTable should render 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex p-1 align-middle"
@@ -301,7 +279,7 @@ exports[`TransactionTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-end"
+                class="sc-AxiKw jHcrVp justify-end"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
@@ -318,7 +296,7 @@ exports[`TransactionTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw fGKrFr justify-end"
+                class="sc-AxiKw gCtQxH justify-end"
               />
             </td>
           </tr>
@@ -328,7 +306,7 @@ exports[`TransactionTable should render 1`] = `
           >
             <td>
               <div
-                class="sc-AxiKw kPBQtr"
+                class="sc-AxiKw ekuVpr"
               >
                 <a
                   class="sc-AxmLO fFHGCy inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -350,10 +328,10 @@ exports[`TransactionTable should render 1`] = `
               </div>
             </td>
             <td
-              class="w-48"
+              class="w-50"
             >
               <div
-                class="sc-AxiKw lfBQQd text-theme-secondary-text"
+                class="sc-AxiKw jHcrVp text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -362,11 +340,9 @@ exports[`TransactionTable should render 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="w-32"
-            >
+            <td>
               <div
-                class="sc-AxiKw lfBQQd"
+                class="sc-AxiKw jHcrVp space-x-4"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -401,12 +377,6 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="sc-AxiKw lfBQQd"
-              >
                 <div
                   class="inline-flex items-center"
                 >
@@ -421,7 +391,7 @@ exports[`TransactionTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -462,7 +432,7 @@ exports[`TransactionTable should render 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex p-1 align-middle"
@@ -483,7 +453,7 @@ exports[`TransactionTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-end"
+                class="sc-AxiKw jHcrVp justify-end"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
@@ -500,7 +470,7 @@ exports[`TransactionTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw fGKrFr justify-end"
+                class="sc-AxiKw gCtQxH justify-end"
               />
             </td>
           </tr>
@@ -537,20 +507,6 @@ exports[`TransactionTable should render compact 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Type
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-            >
-              <div
                 class="flex flex-inline align-top "
               >
                 <div>
@@ -561,7 +517,7 @@ exports[`TransactionTable should render compact 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--1"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -597,11 +553,9 @@ exports[`TransactionTable should render compact 1`] = `
             class="sc-AxhCb ivWAPv group"
             data-testid="TableRow"
           >
-            <td
-              class="w-24"
-            >
+            <td>
               <div
-                class="sc-AxiKw kPBQtr"
+                class="sc-AxiKw bhHuBq space-x-3"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -636,12 +590,6 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="sc-AxiKw lfBQQd"
-              >
                 <div
                   class="inline-flex items-center"
                 >
@@ -656,7 +604,7 @@ exports[`TransactionTable should render compact 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw fGKrFr justify-end"
+                class="sc-AxiKw jxgwWm justify-end"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
@@ -676,11 +624,9 @@ exports[`TransactionTable should render compact 1`] = `
             class="sc-AxhCb ivWAPv group"
             data-testid="TableRow"
           >
-            <td
-              class="w-24"
-            >
+            <td>
               <div
-                class="sc-AxiKw kPBQtr"
+                class="sc-AxiKw bhHuBq space-x-3"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -715,12 +661,6 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="sc-AxiKw lfBQQd"
-              >
                 <div
                   class="inline-flex items-center"
                 >
@@ -735,7 +675,7 @@ exports[`TransactionTable should render compact 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw fGKrFr justify-end"
+                class="sc-AxiKw jxgwWm justify-end"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
@@ -822,27 +762,13 @@ exports[`TransactionTable should render loading state  1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden no-border"
-              >
-                <div>
-                  Type
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top ml-25"
               >
                 <div>
                   Recipient
@@ -852,7 +778,7 @@ exports[`TransactionTable should render loading state  1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--3"
               role="columnheader"
             >
               <div
@@ -866,7 +792,7 @@ exports[`TransactionTable should render loading state  1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
@@ -880,7 +806,7 @@ exports[`TransactionTable should render loading state  1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--5"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1488,27 +1414,13 @@ exports[`TransactionTable should render loading state with currency column 1`] =
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden no-border"
-              >
-                <div>
-                  Type
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top ml-25"
               >
                 <div>
                   Recipient
@@ -1518,7 +1430,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--3"
               role="columnheader"
             >
               <div
@@ -1532,7 +1444,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
@@ -1546,7 +1458,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--5"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1576,7 +1488,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--6"
               role="columnheader"
             >
               <div
@@ -2233,27 +2145,13 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden no-border"
-              >
-                <div>
-                  Type
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top ml-25"
               >
                 <div>
                   Recipient
@@ -2263,7 +2161,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--3"
               role="columnheader"
             >
               <div
@@ -2277,7 +2175,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
@@ -2291,7 +2189,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--5"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2321,7 +2219,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--6"
               role="columnheader"
             >
               <div
@@ -2973,27 +2871,13 @@ exports[`TransactionTable should render with sign 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden no-border"
-              >
-                <div>
-                  Type
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top ml-25"
               >
                 <div>
                   Recipient
@@ -3003,7 +2887,7 @@ exports[`TransactionTable should render with sign 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--3"
               role="columnheader"
             >
               <div
@@ -3017,7 +2901,7 @@ exports[`TransactionTable should render with sign 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
@@ -3031,7 +2915,7 @@ exports[`TransactionTable should render with sign 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--5"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -3061,7 +2945,7 @@ exports[`TransactionTable should render with sign 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--6"
               role="columnheader"
             >
               <div
@@ -3083,7 +2967,7 @@ exports[`TransactionTable should render with sign 1`] = `
           >
             <td>
               <div
-                class="sc-AxiKw kPBQtr"
+                class="sc-AxiKw ekuVpr"
               >
                 <a
                   class="sc-AxmLO fFHGCy inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3105,10 +2989,10 @@ exports[`TransactionTable should render with sign 1`] = `
               </div>
             </td>
             <td
-              class="w-48"
+              class="w-50"
             >
               <div
-                class="sc-AxiKw lfBQQd text-theme-secondary-text"
+                class="sc-AxiKw jHcrVp text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -3117,11 +3001,9 @@ exports[`TransactionTable should render with sign 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="w-32"
-            >
+            <td>
               <div
-                class="sc-AxiKw lfBQQd"
+                class="sc-AxiKw jHcrVp space-x-4"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -3156,12 +3038,6 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="sc-AxiKw lfBQQd"
-              >
                 <div
                   class="inline-flex items-center"
                 >
@@ -3176,7 +3052,7 @@ exports[`TransactionTable should render with sign 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -3203,7 +3079,7 @@ exports[`TransactionTable should render with sign 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex p-1 align-middle"
@@ -3224,7 +3100,7 @@ exports[`TransactionTable should render with sign 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-end"
+                class="sc-AxiKw jHcrVp justify-end"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
@@ -3241,7 +3117,7 @@ exports[`TransactionTable should render with sign 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw fGKrFr justify-end"
+                class="sc-AxiKw gCtQxH justify-end"
               >
                 <button
                   class="sc-Axmtr lkbZfF"
@@ -3271,7 +3147,7 @@ exports[`TransactionTable should render with sign 1`] = `
           >
             <td>
               <div
-                class="sc-AxiKw kPBQtr"
+                class="sc-AxiKw ekuVpr"
               >
                 <a
                   class="sc-AxmLO fFHGCy inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3293,10 +3169,10 @@ exports[`TransactionTable should render with sign 1`] = `
               </div>
             </td>
             <td
-              class="w-48"
+              class="w-50"
             >
               <div
-                class="sc-AxiKw lfBQQd text-theme-secondary-text"
+                class="sc-AxiKw jHcrVp text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -3305,11 +3181,9 @@ exports[`TransactionTable should render with sign 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="w-32"
-            >
+            <td>
               <div
-                class="sc-AxiKw lfBQQd"
+                class="sc-AxiKw jHcrVp space-x-4"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -3344,12 +3218,6 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="sc-AxiKw lfBQQd"
-              >
                 <div
                   class="inline-flex items-center"
                 >
@@ -3364,7 +3232,7 @@ exports[`TransactionTable should render with sign 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -3405,7 +3273,7 @@ exports[`TransactionTable should render with sign 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex p-1 align-middle"
@@ -3426,7 +3294,7 @@ exports[`TransactionTable should render with sign 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-end"
+                class="sc-AxiKw jHcrVp justify-end"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
@@ -3443,7 +3311,7 @@ exports[`TransactionTable should render with sign 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw fGKrFr justify-end"
+                class="sc-AxiKw gCtQxH justify-end"
               >
                 <button
                   class="sc-Axmtr lkbZfF"
@@ -3524,27 +3392,13 @@ exports[`TransactionTable should render without explorer link column 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden no-border"
-              >
-                <div>
-                  Type
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top ml-25"
               >
                 <div>
                   Recipient
@@ -3554,7 +3408,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--2"
               role="columnheader"
             >
               <div
@@ -3568,7 +3422,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--3"
               role="columnheader"
             >
               <div
@@ -3582,7 +3436,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
             <th
               class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--4"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -3619,10 +3473,10 @@ exports[`TransactionTable should render without explorer link column 1`] = `
             data-testid="TableRow"
           >
             <td
-              class="w-48"
+              class="w-50"
             >
               <div
-                class="sc-AxiKw kPBQtr text-theme-secondary-text"
+                class="sc-AxiKw ekuVpr text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -3631,11 +3485,9 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="w-32"
-            >
+            <td>
               <div
-                class="sc-AxiKw lfBQQd"
+                class="sc-AxiKw jHcrVp space-x-4"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -3670,12 +3522,6 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="sc-AxiKw lfBQQd"
-              >
                 <div
                   class="inline-flex items-center"
                 >
@@ -3690,7 +3536,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -3717,7 +3563,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex p-1 align-middle"
@@ -3738,7 +3584,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-end"
+                class="sc-AxiKw jHcrVp justify-end"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
@@ -3755,7 +3601,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw fGKrFr justify-end"
+                class="sc-AxiKw gCtQxH justify-end"
               />
             </td>
           </tr>
@@ -3764,10 +3610,10 @@ exports[`TransactionTable should render without explorer link column 1`] = `
             data-testid="TableRow"
           >
             <td
-              class="w-48"
+              class="w-50"
             >
               <div
-                class="sc-AxiKw kPBQtr text-theme-secondary-text"
+                class="sc-AxiKw ekuVpr text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -3776,11 +3622,9 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="w-32"
-            >
+            <td>
               <div
-                class="sc-AxiKw lfBQQd"
+                class="sc-AxiKw jHcrVp space-x-4"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -3815,12 +3659,6 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="sc-AxiKw lfBQQd"
-              >
                 <div
                   class="inline-flex items-center"
                 >
@@ -3835,7 +3673,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -3876,7 +3714,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxiKw lfBQQd justify-center"
+                class="sc-AxiKw jHcrVp justify-center"
               >
                 <div
                   class="inline-flex p-1 align-middle"
@@ -3897,7 +3735,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw lfBQQd justify-end"
+                class="sc-AxiKw jHcrVp justify-end"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
@@ -3914,7 +3752,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw fGKrFr justify-end"
+                class="sc-AxiKw gCtQxH justify-end"
               />
             </td>
           </tr>
