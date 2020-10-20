@@ -42,8 +42,6 @@ export const EntityTableRowItem = ({ onAction, entity, type }: EntityTableRowIte
 				<Address walletName={entity.wallet().alias()} address={entity.wallet().address()} maxChars={12} />
 			</TableCell>
 
-			<TableCell />
-
 			<TableCell innerClassName="font-semibold">
 				<span>{data?.name}</span>
 			</TableCell>
