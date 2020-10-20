@@ -94,7 +94,7 @@ describe("AddRecipient", () => {
 	it("should set amount", async () => {
 		const onChange = jest.fn();
 
-		const { getByTestId, form, waitForNextUpdate } = await renderWithFormProvider(
+		const { getByTestId, form } = await renderWithFormProvider(
 			<AddRecipient
 				profile={profile}
 				assetSymbol="ARK"
@@ -134,12 +134,12 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		await act(async () => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 		await act(async () => {
 			fireEvent.click(firstAddress);
 		});
@@ -205,8 +205,6 @@ describe("AddRecipient", () => {
 			/>,
 			values,
 		);
-
-		expect(form.current.getValues("recipients")).toEqual(values.recipients);
 
 		await act(async () => {
 			fireEvent.input(getByTestId("add-recipient__amount-input"), {
@@ -280,14 +278,14 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		await act(async () => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 
 		await act(async () => {
 			fireEvent.click(firstAddress);
@@ -319,14 +317,14 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		await act(async () => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 
 		await act(async () => {
 			fireEvent.click(firstAddress);
@@ -358,15 +356,14 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		await act(async () => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
-
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 		await act(async () => {
 			fireEvent.click(firstAddress);
 		});
@@ -402,14 +399,14 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		await act(async () => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 
 		await act(async () => {
 			fireEvent.click(firstAddress);
@@ -446,7 +443,7 @@ describe("AddRecipient", () => {
 			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		};
 
-		const { getByTestId, getAllByTestId, form, waitForNextUpdate } = await renderWithFormProvider(
+		const { getByTestId, getAllByTestId, form } = await renderWithFormProvider(
 			<AddRecipient
 				profile={profile}
 				assetSymbol="ARK"
@@ -459,14 +456,14 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		await act(async () => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 
 		await act(async () => {
 			fireEvent.click(firstAddress);
