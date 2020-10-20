@@ -92,7 +92,7 @@ describe("MultiSignature Registration Form", () => {
 		});
 
 		await waitForNextUpdate();
-		await waitFor(() => expect(result.current.getValues("fee")).toBe({ display: "1.354", value: "135400000" }));
+		await waitFor(() => expect(result.current.getValues("fee")).toEqual({ display: "1.354", value: "135400000" }));
 		await waitFor(() => expect(result.current.getValues("minParticipants")).toBe("3"));
 
 		rerender(<Component form={result.current} />);
