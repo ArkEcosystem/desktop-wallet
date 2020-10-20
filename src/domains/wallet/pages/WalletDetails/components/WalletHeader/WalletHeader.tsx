@@ -70,6 +70,27 @@ export const WalletHeader = ({
 		},
 	];
 
+	if (showSignMessageOption) {
+		moreOptionsMenu.push({
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
+			value: "sign-message",
+		});
+	}
+
+	if (showVerifyMessageOption) {
+		moreOptionsMenu.push({
+			label: t("WALLETS.MODAL_VERIFY_MESSAGE.TITLE"),
+			value: "verify-message",
+		});
+	}
+
+	if (showStoreHashOption) {
+		moreOptionsMenu.push({
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.STORE_HASH"),
+			value: "store-hash",
+		});
+	}
+
 	return (
 		<header data-testid="WalletHeader">
 			<div className="py-8 bg-theme-neutral-900">
@@ -222,19 +243,7 @@ export const WalletHeader = ({
 									</Button>
 								}
 								options={[
-									{
-										label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME"),
-										value: "wallet-name",
-									},
-									{
-										label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
-										value: "sign-message",
-									},
-									{
-										label: t("WALLETS.MODAL_VERIFY_MESSAGE.TITLE"),
-										value: "verify-message",
-									},
-									{ label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.STORE_HASH"), value: "store-hash" },
+									...moreOptionsMenu,
 									{ label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.DELETE"), value: "delete-wallet" },
 								]}
 								onSelect={(option: Record<string, string>) => {
