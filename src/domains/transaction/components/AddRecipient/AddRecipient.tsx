@@ -61,6 +61,7 @@ export const AddRecipient = ({
 	profile,
 	recipients,
 	onChange,
+	withDeeplink,
 }: AddRecipientProps) => {
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
