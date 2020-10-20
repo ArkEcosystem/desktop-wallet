@@ -91,7 +91,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		},
 		{
 			Header: t("COMMON.CRYPTOASSET"),
-			className: "justify-center",
+			className: "w-1 justify-center",
 		},
 		{
 			Header: t("COMMON.ADDRESS"),
@@ -99,7 +99,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		},
 		{
 			Header: t("COMMON.ACCOUNT_TYPE"),
-			className: "justify-center no-border",
+			className: "w-1 whitespace-no-wrap justify-center no-border",
 		},
 		{
 			Header: "Actions",
