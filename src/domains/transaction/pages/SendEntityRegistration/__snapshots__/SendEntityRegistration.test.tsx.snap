@@ -1920,12 +1920,12 @@ exports[`Registration should hide options for multisignature wallet 1`] = `
           <div
             aria-expanded="true"
             aria-haspopup="listbox"
-            aria-owns="downshift-1-menu"
+            aria-owns="downshift-21-menu"
             role="combobox"
           >
             <label
-              for="downshift-0-input"
-              id="downshift-1-label"
+              for="downshift-20-input"
+              id="downshift-21-label"
             />
             <div
               class="sc-fznxsB hhZPAY"
@@ -1933,28 +1933,28 @@ exports[`Registration should hide options for multisignature wallet 1`] = `
             >
               <input
                 aria-autocomplete="list"
-                aria-controls="downshift-1-menu"
-                aria-labelledby="downshift-1-label"
+                aria-controls="downshift-21-menu"
+                aria-labelledby="downshift-21-label"
                 autocomplete="off"
                 class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                 data-testid="SelectDropdownInput__input"
-                id="downshift-0-input"
+                id="downshift-20-input"
                 name="registrationType"
                 placeholder="Select option"
                 value=""
               />
             </div>
             <ul
-              aria-labelledby="downshift-1-label"
+              aria-labelledby="downshift-21-label"
               class="sc-fznMAR jOZRmr is-open"
-              id="downshift-1-menu"
+              id="downshift-21-menu"
               role="listbox"
             >
               <li
                 aria-selected="false"
                 class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-0"
-                id="downshift-1-item-0"
+                id="downshift-21-item-0"
                 role="option"
               >
                 <div
@@ -2493,12 +2493,12 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                           <div
                             aria-expanded="true"
                             aria-haspopup="listbox"
-                            aria-owns="downshift-73-menu"
+                            aria-owns="downshift-79-menu"
                             role="combobox"
                           >
                             <label
-                              for="downshift-72-input"
-                              id="downshift-73-label"
+                              for="downshift-78-input"
+                              id="downshift-79-label"
                             />
                             <div
                               class="sc-fznxsB hhZPAY"
@@ -2506,28 +2506,28 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="downshift-73-menu"
-                                aria-labelledby="downshift-73-label"
+                                aria-controls="downshift-79-menu"
+                                aria-labelledby="downshift-79-label"
                                 autocomplete="off"
                                 class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                 data-testid="SelectDropdownInput__input"
-                                id="downshift-72-input"
+                                id="downshift-78-input"
                                 name="registrationType"
                                 placeholder="Select option"
                                 value=""
                               />
                             </div>
                             <ul
-                              aria-labelledby="downshift-73-label"
+                              aria-labelledby="downshift-79-label"
                               class="sc-fznMAR jOZRmr is-open"
-                              id="downshift-73-menu"
+                              id="downshift-79-menu"
                               role="listbox"
                             >
                               <li
                                 aria-selected="false"
                                 class="select-list-option cursor-default "
                                 data-testid="select-list__toggle-option-0"
-                                id="downshift-73-item-0"
+                                id="downshift-79-item-0"
                                 role="option"
                               >
                                 <div
@@ -2540,7 +2540,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 aria-selected="false"
                                 class="select-list-option cursor-default "
                                 data-testid="select-list__toggle-option-1"
-                                id="downshift-73-item-1"
+                                id="downshift-79-item-1"
                                 role="option"
                               >
                                 <div
@@ -2755,12 +2755,12 @@ exports[`Registration should not set fee if no fee options 1`] = `
           <div
             aria-expanded="true"
             aria-haspopup="listbox"
-            aria-owns="downshift-31-menu"
+            aria-owns="downshift-37-menu"
             role="combobox"
           >
             <label
-              for="downshift-30-input"
-              id="downshift-31-label"
+              for="downshift-36-input"
+              id="downshift-37-label"
             />
             <div
               class="sc-fznxsB hhZPAY"
@@ -2773,30 +2773,30 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 Delegate
               </span>
               <input
-                aria-activedescendant="downshift-31-item-1"
+                aria-activedescendant="downshift-37-item-1"
                 aria-autocomplete="list"
-                aria-controls="downshift-31-menu"
-                aria-labelledby="downshift-31-label"
+                aria-controls="downshift-37-menu"
+                aria-labelledby="downshift-37-label"
                 autocomplete="off"
                 class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                 data-testid="SelectDropdownInput__input"
-                id="downshift-30-input"
+                id="downshift-36-input"
                 name="registrationType"
                 placeholder="Select option"
                 value="Delegate"
               />
             </div>
             <ul
-              aria-labelledby="downshift-31-label"
+              aria-labelledby="downshift-37-label"
               class="sc-fznMAR jOZRmr is-open"
-              id="downshift-31-menu"
+              id="downshift-37-menu"
               role="listbox"
             >
               <li
                 aria-selected="false"
                 class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-0"
-                id="downshift-31-item-0"
+                id="downshift-37-item-0"
                 role="option"
               >
                 <div
@@ -2809,7 +2809,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 aria-selected="true"
                 class="select-list-option cursor-default is-highlighted"
                 data-testid="select-list__toggle-option-1"
-                id="downshift-31-item-1"
+                id="downshift-37-item-1"
                 role="option"
               >
                 <div
@@ -2822,7 +2822,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 aria-selected="false"
                 class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-2"
-                id="downshift-31-item-2"
+                id="downshift-37-item-2"
                 role="option"
               >
                 <div
@@ -2835,7 +2835,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 aria-selected="false"
                 class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-3"
-                id="downshift-31-item-3"
+                id="downshift-37-item-3"
                 role="option"
               >
                 <div
@@ -3609,12 +3609,12 @@ exports[`Registration should render 1st step 1`] = `
           <div
             aria-expanded="true"
             aria-haspopup="listbox"
-            aria-owns="downshift-21-menu"
+            aria-owns="downshift-27-menu"
             role="combobox"
           >
             <label
-              for="downshift-20-input"
-              id="downshift-21-label"
+              for="downshift-26-input"
+              id="downshift-27-label"
             />
             <div
               class="sc-fznxsB hhZPAY"
@@ -3627,30 +3627,30 @@ exports[`Registration should render 1st step 1`] = `
                 Delegate
               </span>
               <input
-                aria-activedescendant="downshift-21-item-1"
+                aria-activedescendant="downshift-27-item-1"
                 aria-autocomplete="list"
-                aria-controls="downshift-21-menu"
-                aria-labelledby="downshift-21-label"
+                aria-controls="downshift-27-menu"
+                aria-labelledby="downshift-27-label"
                 autocomplete="off"
                 class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                 data-testid="SelectDropdownInput__input"
-                id="downshift-20-input"
+                id="downshift-26-input"
                 name="registrationType"
                 placeholder="Select option"
                 value="Delegate"
               />
             </div>
             <ul
-              aria-labelledby="downshift-21-label"
+              aria-labelledby="downshift-27-label"
               class="sc-fznMAR jOZRmr is-open"
-              id="downshift-21-menu"
+              id="downshift-27-menu"
               role="listbox"
             >
               <li
                 aria-selected="false"
                 class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-0"
-                id="downshift-21-item-0"
+                id="downshift-27-item-0"
                 role="option"
               >
                 <div
@@ -3663,7 +3663,7 @@ exports[`Registration should render 1st step 1`] = `
                 aria-selected="true"
                 class="select-list-option cursor-default is-highlighted"
                 data-testid="select-list__toggle-option-1"
-                id="downshift-21-item-1"
+                id="downshift-27-item-1"
                 role="option"
               >
                 <div
@@ -3676,7 +3676,7 @@ exports[`Registration should render 1st step 1`] = `
                 aria-selected="false"
                 class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-2"
-                id="downshift-21-item-2"
+                id="downshift-27-item-2"
                 role="option"
               >
                 <div
@@ -3689,7 +3689,7 @@ exports[`Registration should render 1st step 1`] = `
                 aria-selected="false"
                 class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-3"
-                id="downshift-21-item-3"
+                id="downshift-27-item-3"
                 role="option"
               >
                 <div
