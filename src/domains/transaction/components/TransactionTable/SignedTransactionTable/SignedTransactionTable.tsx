@@ -1,10 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table, TableCell, TableRow } from "app/components/Table";
-import { TruncateMiddle } from "app/components/TruncateMiddle";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -91,7 +91,11 @@ const Row = ({
 			onClick={() => onRowClick?.(transaction)}
 		>
 			<TableCell variant="start">
-				<TruncateMiddle text={transaction.id()} />
+				<Tippy content={transaction.id()}>
+					<span className="text-theme-neutral-300 dark:text-theme-neutral-800">
+						<Icon name="Redirect" />
+					</span>
+				</Tippy>
 			</TableCell>
 
 			<TableCell className="w-48" innerClassName="text-theme-secondary-text">
