@@ -38,7 +38,7 @@ export const SendTransfer = () => {
 	const [wallet, setWallet] = useState<ReadWriteWallet | undefined>(hasWalletId ? activeWallet : undefined);
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm({ mode: "onChange", defaultValues: { fee: 0 }, shouldUnregister: false });
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
@@ -47,7 +47,7 @@ export const SendTransfer = () => {
 
 	useEffect(() => {
 		register("network", sendTransfer.network());
-		register("recipients", sendTransfer.recipients());
+		register("recipients");
 		register("senderAddress", sendTransfer.senderAddress());
 		register("fee", sendTransfer.fee());
 		register("smartbridge", sendTransfer.smartbridge());
