@@ -25,7 +25,7 @@ createFixture(`Single Transfer action`, [
 	),
 	mockRequest(
 		{
-			url: "https://dmusig1.ark.io/transactions",
+			url: "https://dmusig1.ark.io/transaction",
 			method: "POST",
 		},
 		{
