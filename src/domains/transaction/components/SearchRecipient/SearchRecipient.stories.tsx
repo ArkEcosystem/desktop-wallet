@@ -6,10 +6,10 @@ import { httpClient } from "app/services";
 import React from "react";
 import { StubStorage } from "tests/mocks";
 
-import { SearchContact } from "./SearchContact";
+import { SearchRecipient } from "./SearchRecipient";
 
 export default {
-	title: "Domains / Contact / Pages / SearchContact",
+	title: "Domains / Contact / Pages / SearchRecipient",
 	decorators: [withKnobs],
 };
 
@@ -17,7 +17,7 @@ const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStora
 const profile = env.profiles().create("Test profile");
 
 export const Default = () => (
-	<SearchContact
+	<SearchRecipient
 		isOpen={boolean("isOpen", true)}
 		profile={profile}
 		onClose={action("onClose")}
@@ -26,11 +26,10 @@ export const Default = () => (
 );
 
 export const OneAction = () => (
-	<SearchContact
+	<SearchRecipient
 		isOpen={boolean("isOpen", true)}
 		profile={profile}
 		onClose={action("onClose")}
 		onAction={console.log}
-		options={[{ value: "select", label: "Select" }]}
 	/>
 );
