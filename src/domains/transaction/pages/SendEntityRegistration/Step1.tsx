@@ -56,6 +56,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		if (network) {
 			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
+
 		setWallets(profile.wallets().values());
 	}, [network, profile]);
 
