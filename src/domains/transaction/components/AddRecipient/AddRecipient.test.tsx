@@ -41,6 +41,22 @@ describe("AddRecipient", () => {
 			/>,
 		);
 
+		act(() => {
+			fireEvent.input(getByTestId("SelectRecipient__input"), {
+				target: {
+					value: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+				},
+			});
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("add-recipient__amount-input"), {
+				target: {
+					value: BigNumber.make(100 * 1e8).toString(),
+				},
+			});
+		});
+
 		expect(getByTestId("SelectRecipient__input")).toHaveValue("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
 
 		expect(container).toMatchSnapshot();
