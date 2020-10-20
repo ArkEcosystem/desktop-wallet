@@ -533,6 +533,14 @@ describe("SendTransfer", () => {
 			.get("/api/transactions/34b557950ed485985aad81ccefaa374b7c81150c52f8ef4621cbbb907b2c829c")
 			.reply(200, transactionMultipleFixture);
 
+		nock("https://dwallets.ark.io")
+			.get("/api/wallets/DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T")
+			.reply(200, require("tests/fixtures/coins/ark/devnet/wallets/DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T.json"));
+
+		nock("https://dwallets.ark.io")
+			.get("/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")
+			.reply(200, require("tests/fixtures/coins/ark/devnet/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
+
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
@@ -584,9 +592,9 @@ describe("SendTransfer", () => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
 			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
-			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[1]);
+			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
 			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[1].addresses().values()[0].address(),
+				profile.contacts().values()[0].addresses().values()[0].address(),
 			);
 
 			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "1" } });
@@ -594,21 +602,6 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getByTestId("add-recipient__add-btn"));
 			await waitFor(() => expect(getAllByTestId("recipient-list__recipient-list-item").length).toEqual(2));
-
-			// Recipient #3
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
-			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
-
-			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[1]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[1].addresses().values()[0].address(),
-			);
-
-			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "1" } });
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue("1");
-
-			fireEvent.click(getByTestId("add-recipient__add-btn"));
-			await waitFor(() => expect(getAllByTestId("recipient-list__recipient-list-item").length).toEqual(3));
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
@@ -634,6 +627,9 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
+			const coin = await env.coin("ARK", "ark.devnet");
+			const coinMock = jest.spyOn(coin.identity().address(), "validate").mockReturnValue(true);
+
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signMultiPayment")
 				.mockReturnValue(Promise.resolve(transactionMultipleFixture.data.id));
@@ -644,7 +640,6 @@ describe("SendTransfer", () => {
 			fireEvent.click(getByTestId("SendTransfer__button--submit"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7 … f1b89abb49877");
 
 			// Copy Transaction
 			const copyMock = jest.fn();
@@ -655,11 +650,12 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getByTestId("SendTransfer__button--copy"));
 
-			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionFixture.data.id));
+			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionMultipleFixture.data.id));
 
 			// @ts-ignore
 			navigator.clipboard = clipboardOriginal;
 
+			coinMock.mockRestore();
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();
