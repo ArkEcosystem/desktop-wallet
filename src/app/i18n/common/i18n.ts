@@ -215,6 +215,7 @@ export const translations: { [key: string]: any } = {
 		SUBJECT_INVALID: "The {{subject}} is invalid",
 		SUBJECT_MISMATCH: "The {{subject}} do not match",
 		MIN_RECIPIENTS: "At least one recipient is required",
+		RECIPIENT_INVALID: "Recipient address is invalid",
 	},
 
 	DATETIME: {
