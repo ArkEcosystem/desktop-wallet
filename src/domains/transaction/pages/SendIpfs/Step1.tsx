@@ -20,7 +20,7 @@ export const FirstStep = ({ networks, profile }: { networks: Coins.Network[]; pr
 				subtitle={t("TRANSACTION.PAGE_IPFS.FIRST_STEP.DESCRIPTION")}
 			/>
 
-			<SendTransactionForm networks={networks} profile={profile} transactionType="ipfs">
+			<SendTransactionForm networks={networks} profile={profile} transactionType="ipfs" hasWalletId={true}>
 				<FormField name="hash">
 					<FormLabel label={t("TRANSACTION.IPFS_HASH")} />
 					<InputGroup>

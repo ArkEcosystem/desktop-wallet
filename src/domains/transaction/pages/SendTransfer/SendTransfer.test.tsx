@@ -273,9 +273,9 @@ describe("SendTransfer", () => {
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 
-	it("should send a single transfer", async () => {
+	it("should select a cryptoasset and select sender without wallet id param", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
+		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
 
 		history.push(transferURL);
 
@@ -283,7 +283,53 @@ describe("SendTransfer", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
+				<Route path="/profiles/:profileId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+		});
+
+		const { getAllByTestId, getByTestId } = rendered!;
+
+		await act(async () => {
+			// Select cryptoasset
+			fireEvent.focus(rendered.getByTestId("SelectNetworkInput__input"));
+
+			await waitFor(() => expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.devnet"));
+
+			expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
+
+			// Select sender
+			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
+			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
+			const firstAddress = getByTestId("SearchWalletListItem__select-1");
+			fireEvent.click(firstAddress);
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should send a single transfer", async () => {
+		const history = createMemoryHistory();
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
+
+		history.push(transferURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 					<SendTransfer />
 				</Route>,
 				{
@@ -304,10 +350,10 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 			// Select recipient
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
-			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
+			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			expect(getByTestId("SelectRecipient__input")).toHaveValue(
 				profile.contacts().values()[0].addresses().values()[0].address(),
 			);
@@ -393,7 +439,7 @@ describe("SendTransfer", () => {
 			.reply(200, transactionMultipleFixture);
 
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
 		history.push(transferURL);
 
@@ -401,7 +447,7 @@ describe("SendTransfer", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 					<SendTransfer />
 				</Route>,
 				{
@@ -506,7 +552,7 @@ describe("SendTransfer", () => {
 
 	it("should error if wrong mnemonic", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
 		history.push(transferURL);
 
@@ -514,7 +560,7 @@ describe("SendTransfer", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 					<SendTransfer />
 				</Route>,
 				{
@@ -530,10 +576,10 @@ describe("SendTransfer", () => {
 
 		await act(async () => {
 			// Select recipient
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
-			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
+			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			expect(getByTestId("SelectRecipient__input")).toHaveValue(
 				profile.contacts().values()[0].addresses().values()[0].address(),
 			);

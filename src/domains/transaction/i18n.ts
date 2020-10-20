@@ -58,7 +58,7 @@ export const translations: { [key: string]: any } = {
 
 	MULTISIGNATURE: {
 		MIN_SIGNATURES: "Minimum Required Signatures",
-		PARTICIPANT_ADDRESS: "Participant Address",
+		PARTICIPANT: "Multisignature Participant",
 		PARTICIPANTS: "Multisignature Participants",
 		ADD_PARTICIPANT: "Add Participant",
 		OUT_OF_LENGTH: "out of {{ length }}",
@@ -158,6 +158,12 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Second Signature",
 	},
 
+	MODAL_SEARCH_RECIPIENT: {
+		TITLE: "Select Recipient",
+		DESCRIPTION: "Find and select a recipient from your contacts and wallets",
+		PLACEHOLDER: "Search...",
+	},
+
 	LEDGER_CONFIRMATION: {
 		TITLE: "Confirm Your Transaction",
 		DESCRIPTION:
@@ -254,6 +260,7 @@ export const translations: { [key: string]: any } = {
 		REVIEW_STEP: {
 			TITLE: "Transaction Review",
 			DESCRIPTION: "Review your multisignature registration details",
+			GENERATED_ADDRESS: "Generated Address",
 			TYPE: "Multisignature Registration",
 		},
 	},

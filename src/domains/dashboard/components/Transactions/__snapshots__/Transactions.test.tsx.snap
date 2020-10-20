@@ -131,7 +131,7 @@ exports[`Transactions should render with with transactions 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -301,10 +301,10 @@ exports[`Transactions should render with with transactions 1`] = `
                 class="sc-AxhCb kdNpYF"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusX … GQ3kqT
@@ -469,10 +469,10 @@ exports[`Transactions should render with with transactions 1`] = `
                 class="sc-AxhCb kdNpYF"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusX … GQ3kqT
