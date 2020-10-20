@@ -24,7 +24,9 @@ type Props = {
 	network: string;
 	publicKey?: string;
 	ticker: string;
+	showSignMessageOption?: boolean;
 	showStoreHashOption?: boolean;
+	showVerifyMessageOption?: boolean;
 	onDeleteWallet: () => void;
 	onSend?: () => void;
 	onSignMessage: () => void;
@@ -48,7 +50,9 @@ export const WalletHeader = ({
 	network,
 	publicKey,
 	ticker,
+	showSignMessageOption,
 	showStoreHashOption,
+	showVerifyMessageOption,
 	onDeleteWallet,
 	onSend,
 	onSignMessage,
