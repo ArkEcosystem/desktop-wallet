@@ -61,6 +61,7 @@ export const AddRecipient = ({
 	profile,
 	recipients,
 	onChange,
+	withDeeplink,
 }: AddRecipientProps) => {
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
@@ -86,12 +87,14 @@ export const AddRecipient = ({
 	}, [register]);
 
 	useEffect(() => {
-		setRecipientsAmount(
-			recipients
-				?.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue.amount), 0)
-				.toString(),
-		);
-	}, [recipients, displayAmount]);
+		if (withDeeplink) {
+			setRecipientsAmount(
+				recipients
+					?.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue.amount), 0)
+					.toString(),
+			);
+		}
+	}, [recipients, displayAmount, withDeeplink]);
 
 	const availableAmount = useMemo(
 		() => addedRecipients.reduce((sum, item) => sum.minus(item.amount!), maxAvailableAmount),
@@ -133,8 +136,8 @@ export const AddRecipient = ({
 			address,
 		});
 		setAddressRecipients(addedRecipients);
-		onChange?.(addedRecipients);
 		clearFields();
+		onChange?.(addedRecipients);
 	};
 
 	const onRemoveRecipient = (address: string) => {

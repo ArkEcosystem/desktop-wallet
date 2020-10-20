@@ -30,30 +30,19 @@ describe("ContactListItem", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render as my contacts template", () => {
-		const { asFragment } = render(
-			<table>
-				<tbody>
-					<ContactListItem item={contact} template="contacts" />
-				</tbody>
-			</table>,
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render as my contacts template and delegate", () => {
+	it("should render as delegate", () => {
 		const delegateContact = {
 			id: () => "id5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			name: () => "Caio",
 			avatar: () => "data:image/png;base64,avatarImage",
 			addresses: () => ({
+				count: () => 1,
 				values: () => [
 					{
 						address: () => "id5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 						coin: () => "ARK",
 						network: () => "ark.devnet",
-						isDelegate: () => false,
+						isDelegate: () => true,
 						hasSyncedWithNetwork: () => true,
 					},
 				],
@@ -63,7 +52,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem item={delegateContact} template="contacts" />
+					<ContactListItem item={delegateContact} />
 				</tbody>
 			</table>,
 		);
@@ -76,44 +65,6 @@ describe("ContactListItem", () => {
 			<table>
 				<tbody>
 					<ContactListItem item={contact} variant="condensed" />
-				</tbody>
-			</table>,
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render using variant in my contacts template", () => {
-		const { asFragment } = render(
-			<table>
-				<tbody>
-					<ContactListItem item={contact} variant="condensed" template="contacts" />
-				</tbody>
-			</table>,
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render as my contacts template with multiple addresses", async () => {
-		await contact.addresses().create({
-			coin: "ARK",
-			network: "ark.devnet",
-			name: "test",
-			address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
-		});
-
-		await contact.addresses().create({
-			coin: "ARK",
-			network: "ark.devnet",
-			name: "test2",
-			address: "DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
-		});
-
-		const { asFragment } = render(
-			<table>
-				<tbody>
-					<ContactListItem item={contact} template="contacts" />
 				</tbody>
 			</table>,
 		);
@@ -195,7 +146,7 @@ describe("ContactListItem", () => {
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem item={contact} onAction={onAction} options={singleOption} template="contacts" />
+					<ContactListItem item={contact} onAction={onAction} options={singleOption} />
 				</tbody>
 			</table>,
 		);
@@ -235,7 +186,7 @@ describe("ContactListItem", () => {
 		const { getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem item={contact} onAction={onAction} options={multiOptions} template="contacts" />
+					<ContactListItem item={contact} onAction={onAction} options={multiOptions} />
 				</tbody>
 			</table>,
 		);
@@ -279,7 +230,7 @@ describe("ContactListItem", () => {
 		const { getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem item={contact} options={multiOptions} template="contacts" />
+					<ContactListItem item={contact} options={multiOptions} />
 				</tbody>
 			</table>,
 		);
@@ -322,7 +273,7 @@ describe("ContactListItem", () => {
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem item={contact} onAction={onAction} options={singleOption} template="contacts" />
+					<ContactListItem item={contact} onAction={onAction} options={singleOption} />
 				</tbody>
 			</table>,
 		);

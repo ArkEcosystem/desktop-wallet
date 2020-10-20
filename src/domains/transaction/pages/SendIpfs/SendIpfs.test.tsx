@@ -112,7 +112,7 @@ describe("SendIpfs", () => {
 
 	it("should navigate between steps", async () => {
 		const history = createMemoryHistory();
-		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
 
 		history.push(ipfsURL);
 
@@ -120,7 +120,7 @@ describe("SendIpfs", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
+				<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 					<SendIpfs />
 				</Route>,
 				{
@@ -214,7 +214,7 @@ describe("SendIpfs", () => {
 
 	it("should error if wrong mnemonic", async () => {
 		const history = createMemoryHistory();
-		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
 
 		history.push(ipfsURL);
 
@@ -222,7 +222,7 @@ describe("SendIpfs", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
+				<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 					<SendIpfs />
 				</Route>,
 				{
@@ -291,12 +291,12 @@ describe("SendIpfs", () => {
 
 	it("should show an error if an invalid IPFS hash is entered", async () => {
 		const history = createMemoryHistory();
-		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
 
 		history.push(ipfsURL);
 
 		const { container, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
+			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<SendIpfs />
 			</Route>,
 			{

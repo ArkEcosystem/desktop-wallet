@@ -24,11 +24,6 @@ export const translations: { [key: string]: any } = {
 	MODAL_UPDATE_CONTACT: {
 		TITLE: "Edit Contact",
 	},
-	MODAL_SEARCH_CONTACT: {
-		TITLE: "Search Contact",
-		DESCRIPTION: "Find the contact you need quickly and conveniently",
-		PLACEHOLDER: "Search...",
-	},
 	VALIDATION: {
 		CONTACT_NAME_EXISTS: "Contact with name {{name}} already exists.",
 		CONTACT_NAME_EXISTS_SUFFIX: "already exists",

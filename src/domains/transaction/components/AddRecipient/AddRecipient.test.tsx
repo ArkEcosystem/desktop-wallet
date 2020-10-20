@@ -41,6 +41,22 @@ describe("AddRecipient", () => {
 			/>,
 		);
 
+		act(() => {
+			fireEvent.input(getByTestId("SelectRecipient__input"), {
+				target: {
+					value: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+				},
+			});
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("add-recipient__amount-input"), {
+				target: {
+					value: BigNumber.make(100 * 1e8).toString(),
+				},
+			});
+		});
+
 		expect(getByTestId("SelectRecipient__input")).toHaveValue("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
 
 		expect(container).toMatchSnapshot();
@@ -100,14 +116,14 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		await act(async () => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 
 		await act(async () => {
 			fireEvent.click(firstAddress);
@@ -172,14 +188,14 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 
 		act(() => {
 			fireEvent.click(firstAddress);
@@ -205,11 +221,11 @@ describe("AddRecipient", () => {
 		const sendAll = getByTestId("add-recipient__send-all");
 		act(() => {
 			fireEvent.click(sendAll);
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 
 		act(() => {
 			fireEvent.click(firstAddress);
@@ -225,11 +241,11 @@ describe("AddRecipient", () => {
 
 		act(() => {
 			fireEvent.click(sendAll);
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
-		const secondAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const secondAddress = getAllByTestId("RecipientListItem__select-button")[0];
 		act(() => {
 			fireEvent.click(secondAddress);
 		});
@@ -254,7 +270,7 @@ describe("AddRecipient", () => {
 		const sendAll = getByTestId("add-recipient__send-all");
 		await act(async () => {
 			fireEvent.click(sendAll);
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(
@@ -264,7 +280,7 @@ describe("AddRecipient", () => {
 			{ timeout: 2000 },
 		);
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 		await act(async () => {
 			fireEvent.click(firstAddress);
 		});
