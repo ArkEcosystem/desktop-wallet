@@ -24,6 +24,7 @@ type Props = {
 	network: string;
 	publicKey?: string;
 	ticker: string;
+	showStoreHashOption?: boolean;
 	onDeleteWallet: () => void;
 	onSend?: () => void;
 	onSignMessage: () => void;
@@ -47,6 +48,7 @@ export const WalletHeader = ({
 	network,
 	publicKey,
 	ticker,
+	showStoreHashOption,
 	onDeleteWallet,
 	onSend,
 	onSignMessage,
@@ -57,11 +59,18 @@ export const WalletHeader = ({
 }: Props) => {
 	const { t } = useTranslation();
 
+	const moreOptionsMenu = [
+		{
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME"),
+			value: "wallet-name",
+		},
+	];
+
 	return (
 		<header data-testid="WalletHeader">
 			<div className="py-8 bg-theme-neutral-900">
 				<div className="container flex items-center mx-auto px-14">
-					<div className="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800">
+					<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800">
 						<div className="flex">
 							<NetworkIcon
 								coin={coin}
@@ -137,7 +146,7 @@ export const WalletHeader = ({
 						</div>
 					</div>
 
-					<div className="flex items-center space-x-2 h-13 w-1/2 pl-12">
+					<div className="flex items-center w-1/2 pl-12 space-x-2 h-13">
 						<div className="flex flex-col mr-auto">
 							<div className="flex items-center text-sm font-semibold text-theme-secondary-text">
 								<span>{t("COMMON.BALANCE")}:</span>
