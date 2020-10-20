@@ -107,7 +107,7 @@ const Row = ({
 				<TruncateMiddle text={transaction.id()} />
 			</TableCell>
 
-			<TableCell className="w-48" innerClassName="text-sm text-theme-neutral-600">
+			<TableCell className="w-48" innerClassName="text-theme-secondary-text">
 				<span data-testid="TransactionRow__timestamp">
 					{/* TODO */}
 					{DateTime.fromUnix(1596213281).format("DD MMM YYYY HH:mm:ss")}
@@ -168,8 +168,8 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 			accessor: "timestamp",
 		},
 		{
-			Header: t("COMMON.TYPE"),
-			className: "invisible",
+			Header: "Type",
+			className: "hidden no-border",
 		},
 		{
 			Header: t("COMMON.RECIPIENT"),
@@ -188,8 +188,8 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 			className: "justify-end",
 		},
 		{
-			Header: t("COMMON.SIGN"),
-			className: "invisible w-24",
+			Header: "Sign",
+			className: "invisible no-border w-24",
 		},
 	];
 

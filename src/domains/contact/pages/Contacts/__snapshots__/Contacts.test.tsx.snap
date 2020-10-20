@@ -372,25 +372,11 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top hidden"
-                      >
-                        <div>
-                          ContactAvatar
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top ml-15"
                       >
                         <div>
                           Name
@@ -414,7 +400,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--2"
+                      data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
@@ -428,14 +414,28 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     <th
                       class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top ml-15"
+                      >
+                        <div>
+                          Address
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
+                      colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top hidden"
+                        class="flex flex-inline align-top justify-center no-border"
                       >
                         <div>
-                          Avatar
+                          Account Type
                         </div>
                       </div>
                     </th>
@@ -446,24 +446,10 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                          Address
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Account Type
+                          Actions
                         </div>
                       </div>
                     </th>
@@ -476,37 +462,25 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     class="sc-fzqBZW eDztqB group"
                     data-testid="TableRow"
                   >
-                    <td
-                      class="w-1"
-                    >
-                      <div
-                        class="sc-fzokOt iFdobo"
-                      >
-                        <div
-                          class="mr-4"
-                        >
-                          <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="ContactListItem__user--avatar"
-                          >
-                            <img
-                              alt="Brian"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
-                              title="Brian"
-                            />
-                            <span
-                              class="absolute text-sm font-semibold text-theme-background"
-                            >
-                              BR
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
                     <td>
                       <div
-                        class="sc-fzokOt krOiom"
+                        class="sc-fzokOt iFdobo space-x-4"
                       >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                          data-testid="ContactListItem__user--avatar"
+                        >
+                          <img
+                            alt="Brian"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                            title="Brian"
+                          />
+                          <span
+                            class="absolute text-sm font-semibold text-theme-background"
+                          >
+                            BR
+                          </span>
+                        </div>
                         <span
                           class="font-semibold"
                           data-testid="ContactListItem__name"
@@ -538,14 +512,13 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-1 
-								"
+                      class=""
                     >
                       <div
-                        class="sc-fzokOt krOiom"
+                        class="sc-fzokOt krOiom space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
                           data-testid="Avatar"
                         >
                           <div
@@ -558,19 +531,11 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                             />
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td
-                      class=""
-                    >
-                      <div
-                        class="sc-fzokOt krOiom"
-                      >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="sc-fzoyAV lgNqAT text-theme-text font-semibold text-base"
+                            class="sc-fzoyAV lgNqAT text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D61mfS … J3Dyib
@@ -633,40 +598,28 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqBZW eDztqB group"
+                    class="sc-fzqBZW jYTRGi group"
                     data-testid="TableRow"
                   >
-                    <td
-                      class="w-1"
-                    >
-                      <div
-                        class="sc-fzokOt iFdobo"
-                      >
-                        <div
-                          class="mr-4"
-                        >
-                          <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="ContactListItem__user--avatar"
-                          >
-                            <img
-                              alt="Rok"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
-                              title="Rok"
-                            />
-                            <span
-                              class="absolute text-sm font-semibold text-theme-background"
-                            >
-                              RO
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
                     <td>
                       <div
-                        class="sc-fzokOt krOiom"
+                        class="sc-fzokOt iFdobo space-x-4"
                       >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                          data-testid="ContactListItem__user--avatar"
+                        >
+                          <img
+                            alt="Rok"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                            title="Rok"
+                          />
+                          <span
+                            class="absolute text-sm font-semibold text-theme-background"
+                          >
+                            RO
+                          </span>
+                        </div>
                         <span
                           class="font-semibold"
                           data-testid="ContactListItem__name"
@@ -698,14 +651,13 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-1 
-								"
+                      class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <div
-                        class="sc-fzokOt krOiom"
+                        class="sc-fzokOt krOiom space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
                           data-testid="Avatar"
                         >
                           <div
@@ -718,19 +670,11 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                             />
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td
-                      class=""
-                    >
-                      <div
-                        class="sc-fzokOt krOiom"
-                      >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="sc-fzoyAV lgNqAT text-theme-text font-semibold text-base"
+                            class="sc-fzoyAV lgNqAT text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             DFJ5Z5 … LZkc6T
@@ -739,14 +683,14 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </td>
                     <td
-                      class=""
+                      class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <div
                         class="sc-fzokOt krOiom space-x-2 text-sm font-bold justify-center"
                       />
                     </td>
                     <td
-                      class=""
+                      class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <div
                         class="sc-fzokOt bQuLhg justify-end"
@@ -782,16 +726,9 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     class="sc-fzqBZW jYTRGi group"
                     data-testid="TableRow"
                   >
-                    <td
-                      class="w-1"
-                    >
-                      <div
-                        class="sc-fzokOt iFdobo"
-                      />
-                    </td>
                     <td>
                       <div
-                        class="sc-fzokOt krOiom"
+                        class="sc-fzokOt iFdobo space-x-4"
                       />
                     </td>
                     <td>
@@ -817,14 +754,13 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-1 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800
-								"
+                      class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <div
-                        class="sc-fzokOt krOiom"
+                        class="sc-fzokOt krOiom space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
                           data-testid="Avatar"
                         >
                           <div
@@ -837,19 +773,11 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                             />
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td
-                      class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
-                    >
-                      <div
-                        class="sc-fzokOt krOiom"
-                      >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="sc-fzoyAV lgNqAT text-theme-text font-semibold text-base"
+                            class="sc-fzoyAV lgNqAT text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D9YiyR … gJLM7f
@@ -876,16 +804,9 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     class="sc-fzqBZW eDztqB group"
                     data-testid="TableRow"
                   >
-                    <td
-                      class="w-1"
-                    >
-                      <div
-                        class="sc-fzokOt iFdobo"
-                      />
-                    </td>
                     <td>
                       <div
-                        class="sc-fzokOt krOiom"
+                        class="sc-fzokOt iFdobo space-x-4"
                       />
                     </td>
                     <td>
@@ -911,14 +832,13 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-1 
-								"
+                      class=""
                     >
                       <div
-                        class="sc-fzokOt krOiom"
+                        class="sc-fzokOt krOiom space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
                           data-testid="Avatar"
                         >
                           <div
@@ -931,19 +851,11 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                             />
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td
-                      class=""
-                    >
-                      <div
-                        class="sc-fzokOt krOiom"
-                      >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="sc-fzoyAV lgNqAT text-theme-text font-semibold text-base"
+                            class="sc-fzoyAV lgNqAT text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             DKrACQ … jfXYqu
@@ -970,37 +882,25 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     class="sc-fzqBZW eDztqB group"
                     data-testid="TableRow"
                   >
-                    <td
-                      class="w-1"
-                    >
-                      <div
-                        class="sc-fzokOt iFdobo"
-                      >
-                        <div
-                          class="mr-4"
-                        >
-                          <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="ContactListItem__user--avatar"
-                          >
-                            <img
-                              alt="name"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                              title="name"
-                            />
-                            <span
-                              class="absolute text-sm font-semibold text-theme-background"
-                            >
-                              NA
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
                     <td>
                       <div
-                        class="sc-fzokOt krOiom"
+                        class="sc-fzokOt iFdobo space-x-4"
                       >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                          data-testid="ContactListItem__user--avatar"
+                        >
+                          <img
+                            alt="name"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                            title="name"
+                          />
+                          <span
+                            class="absolute text-sm font-semibold text-theme-background"
+                          >
+                            NA
+                          </span>
+                        </div>
                         <span
                           class="font-semibold"
                           data-testid="ContactListItem__name"
@@ -1032,14 +932,13 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-1 
-								"
+                      class=""
                     >
                       <div
-                        class="sc-fzokOt krOiom"
+                        class="sc-fzokOt krOiom space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
                           data-testid="Avatar"
                         >
                           <div
@@ -1052,19 +951,11 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                             />
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td
-                      class=""
-                    >
-                      <div
-                        class="sc-fzokOt krOiom"
-                      >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="sc-fzoyAV lgNqAT text-theme-text font-semibold text-base"
+                            class="sc-fzoyAV lgNqAT text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B … s6YUYD

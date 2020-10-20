@@ -76,16 +76,16 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -408,16 +408,16 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -726,16 +726,16 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1025,16 +1025,16 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1356,16 +1356,16 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1826,16 +1826,16 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     ARK Wallet 1
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1957,10 +1957,10 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                   class="flex flex-col space-y-2"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-flex items-center"
                   >
                     <span
-                      class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
+                      class="sc-Axmtr hBVTto text-theme-text truncate font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
                       D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2192,16 +2192,16 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -2491,16 +2491,16 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -2556,10 +2556,10 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2915,16 +2915,16 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -3035,16 +3035,16 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-block truncate align-middle"
+                        class="inline-flex items-center"
                       >
                         <span
-                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                          class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           delegate-0
                         </span>
                         <span
-                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           034151 … aed192
@@ -3095,16 +3095,16 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-block truncate align-middle"
+                        class="inline-flex items-center"
                       >
                         <span
-                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                          class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           delegate-0
                         </span>
                         <span
-                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           034151 … aed192
@@ -3366,16 +3366,16 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     Test Wallet
                   </span>
                   <span
-                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -3486,16 +3486,16 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-block truncate align-middle"
+                        class="inline-flex items-center"
                       >
                         <span
-                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                          class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           delegate-0
                         </span>
                         <span
-                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           034151 … aed192
@@ -3546,16 +3546,16 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-block truncate align-middle"
+                        class="inline-flex items-center"
                       >
                         <span
-                          class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                          class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                           data-testid="address__wallet-name"
                         >
                           delegate-0
                         </span>
                         <span
-                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                          class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           034151 … aed192

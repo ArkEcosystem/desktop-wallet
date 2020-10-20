@@ -70,7 +70,7 @@ exports[`Signed Transaction Table should render 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -156,7 +156,7 @@ exports[`Signed Transaction Table should render 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible w-24"
+                class="flex flex-inline align-top invisible no-border w-24"
               >
                 <div>
                   Sign
@@ -188,7 +188,7 @@ exports[`Signed Transaction Table should render 1`] = `
               class="w-48"
             >
               <div
-                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+                class="sc-AxhCb kdNpYF text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -208,7 +208,7 @@ exports[`Signed Transaction Table should render 1`] = `
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-Axmtr HieAR border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+                    class="sc-Axmtr hVOxCZ border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -243,10 +243,10 @@ exports[`Signed Transaction Table should render 1`] = `
                 class="sc-AxhCb kdNpYF"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-text font-semibold text-base"
+                    class="sc-AxgMl fFPQpl text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -337,7 +337,7 @@ exports[`Signed Transaction Table should render 1`] = `
               class="w-48"
             >
               <div
-                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+                class="sc-AxhCb kdNpYF text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -357,7 +357,7 @@ exports[`Signed Transaction Table should render 1`] = `
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-Axmtr HieAR border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+                    class="sc-Axmtr hVOxCZ border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -482,7 +482,7 @@ exports[`Signed Transaction Table should render 1`] = `
               class="w-48"
             >
               <div
-                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+                class="sc-AxhCb kdNpYF text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -502,7 +502,7 @@ exports[`Signed Transaction Table should render 1`] = `
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-Axmtr HieAR border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+                    class="sc-Axmtr hVOxCZ border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -1113,7 +1113,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -1199,7 +1199,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible w-24"
+                class="flex flex-inline align-top invisible no-border w-24"
               >
                 <div>
                   Sign
@@ -1231,7 +1231,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               class="w-48"
             >
               <div
-                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+                class="sc-AxhCb kdNpYF text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -1251,7 +1251,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-Axmtr HieAR border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+                    class="sc-Axmtr hVOxCZ border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -1286,10 +1286,10 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
                 class="sc-AxhCb kdNpYF"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-text font-semibold text-base"
+                    class="sc-AxgMl fFPQpl text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1437,7 +1437,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -1523,7 +1523,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible w-24"
+                class="flex flex-inline align-top invisible no-border w-24"
               >
                 <div>
                   Sign
@@ -1555,7 +1555,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               class="w-48"
             >
               <div
-                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+                class="sc-AxhCb kdNpYF text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -1575,7 +1575,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-Axmtr HieAR border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+                    class="sc-Axmtr hVOxCZ border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -1610,10 +1610,10 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
                 class="sc-AxhCb kdNpYF"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-text font-semibold text-base"
+                    class="sc-AxgMl fFPQpl text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1761,7 +1761,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -1847,7 +1847,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible w-24"
+                class="flex flex-inline align-top invisible no-border w-24"
               >
                 <div>
                   Sign
@@ -1879,7 +1879,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               class="w-48"
             >
               <div
-                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+                class="sc-AxhCb kdNpYF text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -1899,7 +1899,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-Axmtr HieAR border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+                    class="sc-Axmtr hVOxCZ border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -1934,10 +1934,10 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
                 class="sc-AxhCb kdNpYF"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-text font-semibold text-base"
+                    class="sc-AxgMl fFPQpl text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -2085,7 +2085,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -2171,7 +2171,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible w-24"
+                class="flex flex-inline align-top invisible no-border w-24"
               >
                 <div>
                   Sign
@@ -2203,7 +2203,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               class="w-48"
             >
               <div
-                class="sc-AxhCb kdNpYF text-sm text-theme-neutral-600"
+                class="sc-AxhCb kdNpYF text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -2223,7 +2223,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-Axmtr HieAR border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+                    class="sc-Axmtr hVOxCZ border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"

@@ -62,7 +62,7 @@ const ParticipantStatus = ({
 		<div data-testid="Signatures__participant-status" className="relative">
 			<Tippy content={address}>
 				<div>
-					<Avatar address={publicKey} />
+					<Avatar address={publicKey} size="lg" />
 				</div>
 			</Tippy>
 

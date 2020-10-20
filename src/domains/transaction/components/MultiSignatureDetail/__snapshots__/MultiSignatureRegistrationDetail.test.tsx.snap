@@ -60,16 +60,16 @@ exports[`MultiSignatureRegistrationDetail should render 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     ARK Wallet 1
                   </span>
                   <span
-                    class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                    class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -191,13 +191,23 @@ exports[`MultiSignatureRegistrationDetail should render 1`] = `
                   class="flex flex-col space-y-2"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-flex items-center"
                   >
                     <span
-                      class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                      class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
                       D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                    </span>
+                  </div>
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                     </span>
                   </div>
                 </div>
@@ -221,7 +231,26 @@ exports[`MultiSignatureRegistrationDetail should render 1`] = `
               >
                 2
                  / 
-                1
+                2
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-AxheI jqCIcB"
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral-700"
+              >
+                Generated Address
+              </div>
+              <div
+                class="font-semibold"
+              >
+                DNzn2Rg6jCg3RCZnUyYjhbhvAgSWGwaMbH
               </div>
             </div>
           </div>

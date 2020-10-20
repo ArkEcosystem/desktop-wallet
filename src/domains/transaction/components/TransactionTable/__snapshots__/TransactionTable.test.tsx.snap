@@ -70,7 +70,7 @@ exports[`TransactionTable should render 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -185,7 +185,7 @@ exports[`TransactionTable should render 1`] = `
               class="w-48"
             >
               <div
-                class="sc-AxiKw lfBQQd text-sm text-theme-neutral-600"
+                class="sc-AxiKw lfBQQd text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -240,10 +240,10 @@ exports[`TransactionTable should render 1`] = `
                 class="sc-AxiKw lfBQQd"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusX … GQ3kqT
@@ -353,7 +353,7 @@ exports[`TransactionTable should render 1`] = `
               class="w-48"
             >
               <div
-                class="sc-AxiKw lfBQQd text-sm text-theme-neutral-600"
+                class="sc-AxiKw lfBQQd text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -408,10 +408,10 @@ exports[`TransactionTable should render 1`] = `
                 class="sc-AxiKw lfBQQd"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusX … GQ3kqT
@@ -643,10 +643,10 @@ exports[`TransactionTable should render compact 1`] = `
                 class="sc-AxiKw lfBQQd"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusX … GQ3kqT
@@ -722,10 +722,10 @@ exports[`TransactionTable should render compact 1`] = `
                 class="sc-AxiKw lfBQQd"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusX … GQ3kqT
@@ -828,7 +828,7 @@ exports[`TransactionTable should render loading state  1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -1494,7 +1494,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -2239,7 +2239,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -2325,7 +2325,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible w-24"
+                class="flex flex-inline align-top invisible no-border w-24"
               >
                 <div>
                   Sign
@@ -2979,7 +2979,7 @@ exports[`TransactionTable should render with sign 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -3065,7 +3065,7 @@ exports[`TransactionTable should render with sign 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible w-24"
+                class="flex flex-inline align-top invisible no-border w-24"
               >
                 <div>
                   Sign
@@ -3108,7 +3108,7 @@ exports[`TransactionTable should render with sign 1`] = `
               class="w-48"
             >
               <div
-                class="sc-AxiKw lfBQQd text-sm text-theme-neutral-600"
+                class="sc-AxiKw lfBQQd text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -3163,10 +3163,10 @@ exports[`TransactionTable should render with sign 1`] = `
                 class="sc-AxiKw lfBQQd"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusX … GQ3kqT
@@ -3296,7 +3296,7 @@ exports[`TransactionTable should render with sign 1`] = `
               class="w-48"
             >
               <div
-                class="sc-AxiKw lfBQQd text-sm text-theme-neutral-600"
+                class="sc-AxiKw lfBQQd text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -3351,10 +3351,10 @@ exports[`TransactionTable should render with sign 1`] = `
                 class="sc-AxiKw lfBQQd"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusX … GQ3kqT
@@ -3530,7 +3530,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -3622,7 +3622,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
               class="w-48"
             >
               <div
-                class="sc-AxiKw kPBQtr text-sm text-theme-neutral-600"
+                class="sc-AxiKw kPBQtr text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -3677,10 +3677,10 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                 class="sc-AxiKw lfBQQd"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusX … GQ3kqT
@@ -3767,7 +3767,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
               class="w-48"
             >
               <div
-                class="sc-AxiKw kPBQtr text-sm text-theme-neutral-600"
+                class="sc-AxiKw kPBQtr text-theme-secondary-text"
               >
                 <span
                   data-testid="TransactionRow__timestamp"
@@ -3822,10 +3822,10 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                 class="sc-AxiKw lfBQQd"
               >
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusX … GQ3kqT

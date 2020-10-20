@@ -214,13 +214,13 @@ exports[`SearchWallet should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold "
                         colspan="1"
                         data-testid="table__th--4"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top hidden"
+                          class="flex flex-inline align-top hidden no-border"
                         >
                           <div>
                             Action
@@ -274,16 +274,16 @@ exports[`SearchWallet should render 1`] = `
                           class="sc-fznKkj fxVkeV"
                         >
                           <div
-                            class="inline-block truncate align-middle"
+                            class="inline-flex items-center"
                           >
                             <span
-                              class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                              class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                               data-testid="address__wallet-name"
                             >
                               Sample Wallet
                             </span>
                             <span
-                              class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                              class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D8rr7B1d6 … VBMs6YUYD

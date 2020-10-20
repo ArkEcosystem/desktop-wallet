@@ -79,16 +79,16 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R … GwaMbH
@@ -131,10 +131,10 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -231,25 +231,6 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                       <div
                         class="text-sm font-semibold text-theme-neutral-700"
                       >
-                        Timestamp
-                      </div>
-                      <div
-                        class="font-semibold"
-                      >
-                        31.07.2020 16:34:41
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-fzoyAV hXeczV"
-                    data-testid="TransactionDetail"
-                  >
-                    <div
-                      class="flex-1 space-y-2"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-700"
-                      >
                         Confirmations
                       </div>
                       <div
@@ -275,7 +256,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="flex items-center"
+                          class="flex items-center space-x-3"
                         >
                           <span
                             class="sc-fzqBZW kvyVsY text-theme-text"
@@ -284,7 +265,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                             19a78bd9d42f7 … 7296c8c6993dd
                           </span>
                           <span
-                            class="ml-5 text-theme-primary-300"
+                            class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                           >
                             <div
                               class="inline-block cursor-pointer"
@@ -306,7 +287,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-light"
+                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -334,7 +315,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -381,7 +362,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -518,16 +499,16 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R … GwaMbH
@@ -617,25 +598,6 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                       <div
                         class="text-sm font-semibold text-theme-neutral-700"
                       >
-                        Timestamp
-                      </div>
-                      <div
-                        class="font-semibold"
-                      >
-                        31.07.2020 16:34:41
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-fzoyAV hXeczV"
-                    data-testid="TransactionDetail"
-                  >
-                    <div
-                      class="flex-1 space-y-2"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-700"
-                      >
                         Confirmations
                       </div>
                       <div
@@ -661,7 +623,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="flex items-center"
+                          class="flex items-center space-x-3"
                         >
                           <span
                             class="sc-fzqBZW kvyVsY text-theme-text"
@@ -670,7 +632,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                             c9903894eaa10 … ff7b8eb446c5b
                           </span>
                           <span
-                            class="ml-5 text-theme-primary-300"
+                            class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                           >
                             <div
                               class="inline-block cursor-pointer"
@@ -692,7 +654,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-light"
+                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -720,7 +682,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -767,7 +729,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -892,16 +854,16 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R … GwaMbH
@@ -1035,14 +997,18 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                       class="py-4"
                                     >
                                       <div
-                                        class="inline-block truncate align-middle"
+                                        class="max-w-lg"
                                       >
-                                        <span
-                                          class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                                          data-testid="address__wallet-address"
+                                        <div
+                                          class="inline-flex items-center"
                                         >
-                                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                                        </span>
+                                          <span
+                                            class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
+                                            data-testid="address__wallet-address"
+                                          >
+                                            D8rr7B … s6YUYD
+                                          </span>
+                                        </div>
                                       </div>
                                     </td>
                                     <td
@@ -1086,14 +1052,18 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                       class="py-4"
                                     >
                                       <div
-                                        class="inline-block truncate align-middle"
+                                        class="max-w-lg"
                                       >
-                                        <span
-                                          class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                                          data-testid="address__wallet-address"
+                                        <div
+                                          class="inline-flex items-center"
                                         >
-                                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                                        </span>
+                                          <span
+                                            class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
+                                            data-testid="address__wallet-address"
+                                          >
+                                            D8rr7B … s6YUYD
+                                          </span>
+                                        </div>
                                       </div>
                                     </td>
                                     <td
@@ -1152,25 +1122,6 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                       <div
                         class="text-sm font-semibold text-theme-neutral-700"
                       >
-                        Timestamp
-                      </div>
-                      <div
-                        class="font-semibold"
-                      >
-                        31.07.2020 16:34:41
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-fzoyAV hXeczV"
-                    data-testid="TransactionDetail"
-                  >
-                    <div
-                      class="flex-1 space-y-2"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-700"
-                      >
                         Confirmations
                       </div>
                       <div
@@ -1196,7 +1147,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                         class="font-semibold"
                       >
                         <div
-                          class="flex items-center"
+                          class="flex items-center space-x-3"
                         >
                           <span
                             class="sc-fzqBZW kvyVsY text-theme-text"
@@ -1205,7 +1156,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                             db26391ac72d2 … 5554a78408e57
                           </span>
                           <span
-                            class="ml-5 text-theme-primary-300"
+                            class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                           >
                             <div
                               class="inline-block cursor-pointer"
@@ -1227,7 +1178,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-light"
+                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -1255,7 +1206,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -1302,7 +1253,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -1427,16 +1378,16 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B … s6YUYD
@@ -1496,25 +1447,6 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                       <div
                         class="text-sm font-semibold text-theme-neutral-700"
                       >
-                        Timestamp
-                      </div>
-                      <div
-                        class="font-semibold"
-                      >
-                        31.07.2020 16:34:41
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-fzoyAV hXeczV"
-                    data-testid="TransactionDetail"
-                  >
-                    <div
-                      class="flex-1 space-y-2"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-700"
-                      >
                         Confirmations
                       </div>
                       <div
@@ -1540,7 +1472,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                         class="font-semibold"
                       >
                         <div
-                          class="flex items-center"
+                          class="flex items-center space-x-3"
                         >
                           <span
                             class="sc-fzqBZW kvyVsY text-theme-text"
@@ -1549,7 +1481,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                             e4d2450ea41e5 … 128f1ab150377
                           </span>
                           <span
-                            class="ml-5 text-theme-primary-300"
+                            class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                           >
                             <div
                               class="inline-block cursor-pointer"
@@ -1571,7 +1503,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-light"
+                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -1599,7 +1531,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -1646,7 +1578,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -1771,16 +1703,16 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R … GwaMbH
@@ -1823,10 +1755,10 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1923,25 +1855,6 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                       <div
                         class="text-sm font-semibold text-theme-neutral-700"
                       >
-                        Timestamp
-                      </div>
-                      <div
-                        class="font-semibold"
-                      >
-                        31.07.2020 16:34:41
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-fzoyAV hXeczV"
-                    data-testid="TransactionDetail"
-                  >
-                    <div
-                      class="flex-1 space-y-2"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-700"
-                      >
                         Confirmations
                       </div>
                       <div
@@ -1967,7 +1880,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="flex items-center"
+                          class="flex items-center space-x-3"
                         >
                           <span
                             class="sc-fzqBZW kvyVsY text-theme-text"
@@ -1976,7 +1889,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                             19a78bd9d42f7 … 7296c8c6993dd
                           </span>
                           <span
-                            class="ml-5 text-theme-primary-300"
+                            class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                           >
                             <div
                               class="inline-block cursor-pointer"
@@ -1998,7 +1911,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-light"
+                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -2026,7 +1939,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -2073,7 +1986,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -2198,16 +2111,16 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R … GwaMbH
@@ -2305,16 +2218,16 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="inline-block truncate align-middle"
+                                class="inline-flex items-center"
                               >
                                 <span
-                                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                   data-testid="address__wallet-name"
                                 >
                                   arkx
                                 </span>
                                 <span
-                                  class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                  class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D61mfS … J3Dyib
@@ -2359,25 +2272,6 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                       <div
                         class="text-sm font-semibold text-theme-neutral-700"
                       >
-                        Timestamp
-                      </div>
-                      <div
-                        class="font-semibold"
-                      >
-                        31.07.2020 16:34:41
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-fzoyAV hXeczV"
-                    data-testid="TransactionDetail"
-                  >
-                    <div
-                      class="flex-1 space-y-2"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-700"
-                      >
                         Confirmations
                       </div>
                       <div
@@ -2403,7 +2297,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="flex items-center"
+                          class="flex items-center space-x-3"
                         >
                           <span
                             class="sc-fzqBZW kvyVsY text-theme-text"
@@ -2412,7 +2306,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                             5a2ce1d0c157d … 3761004e9017c
                           </span>
                           <span
-                            class="ml-5 text-theme-primary-300"
+                            class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                           >
                             <div
                               class="inline-block cursor-pointer"
@@ -2434,7 +2328,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-light"
+                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -2462,7 +2356,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -2509,7 +2403,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -2634,16 +2528,16 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R … GwaMbH
@@ -2741,16 +2635,16 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="inline-block truncate align-middle"
+                                class="inline-flex items-center"
                               >
                                 <span
-                                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                   data-testid="address__wallet-name"
                                 >
                                   arkx
                                 </span>
                                 <span
-                                  class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                  class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D61mfS … J3Dyib
@@ -2795,25 +2689,6 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                       <div
                         class="text-sm font-semibold text-theme-neutral-700"
                       >
-                        Timestamp
-                      </div>
-                      <div
-                        class="font-semibold"
-                      >
-                        31.07.2020 16:34:41
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-fzoyAV hXeczV"
-                    data-testid="TransactionDetail"
-                  >
-                    <div
-                      class="flex-1 space-y-2"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-700"
-                      >
                         Confirmations
                       </div>
                       <div
@@ -2839,7 +2714,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="flex items-center"
+                          class="flex items-center space-x-3"
                         >
                           <span
                             class="sc-fzqBZW kvyVsY text-theme-text"
@@ -2848,7 +2723,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                             55467c07c6c66 … 6833e7a6e7c68
                           </span>
                           <span
-                            class="ml-5 text-theme-primary-300"
+                            class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                           >
                             <div
                               class="inline-block cursor-pointer"
@@ -2870,7 +2745,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-light"
+                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -2898,7 +2773,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -2945,7 +2820,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -3070,16 +2945,16 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R … GwaMbH
@@ -3122,10 +2997,10 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -3222,25 +3097,6 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                       <div
                         class="text-sm font-semibold text-theme-neutral-700"
                       >
-                        Timestamp
-                      </div>
-                      <div
-                        class="font-semibold"
-                      >
-                        31.07.2020 16:34:41
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-fzoyAV hXeczV"
-                    data-testid="TransactionDetail"
-                  >
-                    <div
-                      class="flex-1 space-y-2"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-700"
-                      >
                         Confirmations
                       </div>
                       <div
@@ -3266,7 +3122,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="flex items-center"
+                          class="flex items-center space-x-3"
                         >
                           <span
                             class="sc-fzqBZW kvyVsY text-theme-text"
@@ -3275,7 +3131,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                             19a78bd9d42f7 … 7296c8c6993dd
                           </span>
                           <span
-                            class="ml-5 text-theme-primary-300"
+                            class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                           >
                             <div
                               class="inline-block cursor-pointer"
@@ -3297,7 +3153,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-light"
+                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -3325,7 +3181,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -3372,7 +3228,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -3517,16 +3373,16 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R … GwaMbH
@@ -3569,10 +3425,10 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                         class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate align-middle"
+                          class="inline-flex items-center"
                         >
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
+                            class="sc-fzqBZW kvyVsY text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -3669,25 +3525,6 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                       <div
                         class="text-sm font-semibold text-theme-neutral-700"
                       >
-                        Timestamp
-                      </div>
-                      <div
-                        class="font-semibold"
-                      >
-                        31.07.2020 16:34:41
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-fzoyAV hXeczV"
-                    data-testid="TransactionDetail"
-                  >
-                    <div
-                      class="flex-1 space-y-2"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-700"
-                      >
                         Confirmations
                       </div>
                       <div
@@ -3713,7 +3550,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                         class="font-semibold"
                       >
                         <div
-                          class="flex items-center"
+                          class="flex items-center space-x-3"
                         >
                           <span
                             class="sc-fzqBZW kvyVsY text-theme-text"
@@ -3722,7 +3559,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                             19a78bd9d42f7 … 7296c8c6993dd
                           </span>
                           <span
-                            class="ml-5 text-theme-primary-300"
+                            class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                           >
                             <div
                               class="inline-block cursor-pointer"
@@ -3744,7 +3581,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-light"
+                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -3772,7 +3609,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -3819,7 +3656,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -3979,7 +3816,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -4026,7 +3863,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                             >
                               <div>
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                                   data-testid="Avatar"
                                 >
                                   <div

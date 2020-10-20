@@ -61,6 +61,7 @@ export const AddRecipient = ({
 	profile,
 	recipients,
 	onChange,
+	withDeeplink,
 }: AddRecipientProps) => {
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
@@ -86,15 +87,17 @@ export const AddRecipient = ({
 	}, [register]);
 
 	useEffect(() => {
-		setRecipientsAmount(
-			recipients
-				?.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue.amount), 0)
-				.toString(),
-		);
-	}, [recipients, displayAmount]);
+		if (withDeeplink) {
+			setRecipientsAmount(
+				recipients
+					?.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue.amount), 0)
+					.toString(),
+			);
+		}
+	}, [recipients, displayAmount, withDeeplink]);
 
 	const availableAmount = useMemo(
-		() => addedRecipients.reduce((sum, item) => sum.minus(item.amount), maxAvailableAmount),
+		() => addedRecipients.reduce((sum, item) => sum.minus(item.amount!), maxAvailableAmount),
 		[maxAvailableAmount, addedRecipients],
 	);
 
@@ -133,8 +136,8 @@ export const AddRecipient = ({
 			address,
 		});
 		setAddressRecipients(addedRecipients);
-		onChange?.(addedRecipients);
 		clearFields();
+		onChange?.(addedRecipients);
 	};
 
 	const onRemoveRecipient = (address: string) => {
@@ -173,10 +176,8 @@ export const AddRecipient = ({
 						/>
 					</FormField>
 
-					<FormField name="amount" className="relative mt-1">
-						<div className="mb-2">
-							<FormLabel label={t("COMMON.AMOUNT")} />
-						</div>
+					<FormField name="amount">
+						<FormLabel label={t("COMMON.AMOUNT")} />
 						<InputGroup>
 							<InputCurrency
 								data-testid="add-recipient__amount-input"
@@ -224,7 +225,7 @@ export const AddRecipient = ({
 			</SubForm>
 
 			{!isSingle && addedRecipients.length > 0 && (
-				<div className="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800">
+				<div className="mt-3 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800">
 					<RecipientList
 						recipients={addedRecipients}
 						isEditable={true}

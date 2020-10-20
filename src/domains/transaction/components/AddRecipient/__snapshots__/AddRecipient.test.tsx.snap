@@ -3,7 +3,7 @@
 exports[`AddRecipient should render 1`] = `
 <div>
   <div
-    class="sc-fzoLag jxEpyZ"
+    class="sc-fzoyAV crGsrt"
   >
     <div
       class="text-theme-secondary-text hover:text-theme-primary"
@@ -98,7 +98,7 @@ exports[`AddRecipient should render 1`] = `
               />
               <div
                 class="absolute flex items-center space-x-3 cursor-pointer right-4"
-                data-testid="SelectRecipient__select-contact"
+                data-testid="SelectRecipient__select-recipient"
               >
                 <div
                   class="sc-AxiKw dklFyP"
@@ -114,23 +114,19 @@ exports[`AddRecipient should render 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="sc-AxirZ izhStr relative mt-1"
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="amount"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-              data-testid="FormLabel"
-              for="amount"
-            >
-              Amount
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Amount
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
           <div
             class="sc-Axmtr jzhOwR"
           >
@@ -140,7 +136,7 @@ exports[`AddRecipient should render 1`] = `
               name="amount"
               placeholder="Amount"
               type="text"
-              value="0"
+              value=""
             />
             <div
               class="sc-AxhUy sc-AxheI bYHtKZ"
@@ -164,7 +160,7 @@ exports[`AddRecipient should render 1`] = `
 exports[`AddRecipient should render with multiple recipients tab 1`] = `
 <div>
   <div
-    class="sc-fzoLag jxEpyZ"
+    class="sc-fzoyAV crGsrt"
   >
     <div
       class="text-theme-secondary-text hover:text-theme-primary"
@@ -259,7 +255,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
               />
               <div
                 class="absolute flex items-center space-x-3 cursor-pointer right-4"
-                data-testid="SelectRecipient__select-contact"
+                data-testid="SelectRecipient__select-recipient"
               >
                 <div
                   class="sc-AxiKw dklFyP"
@@ -275,23 +271,19 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="sc-AxirZ izhStr relative mt-1"
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="amount"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-              data-testid="FormLabel"
-              for="amount"
-            >
-              Amount
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Amount
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
           <div
             class="sc-Axmtr jzhOwR"
           >
@@ -301,7 +293,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
               name="amount"
               placeholder="Amount"
               type="text"
-              value="0"
+              value=""
             />
             <div
               class="sc-AxhUy sc-AxheI bYHtKZ"
@@ -325,7 +317,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
 exports[`AddRecipient should render with single recipient data 1`] = `
 <div>
   <div
-    class="sc-fzoLag jxEpyZ"
+    class="sc-fzoyAV crGsrt"
   >
     <div
       class="text-theme-secondary-text hover:text-theme-primary"
@@ -431,7 +423,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
               />
               <div
                 class="absolute flex items-center space-x-3 cursor-pointer right-4"
-                data-testid="SelectRecipient__select-contact"
+                data-testid="SelectRecipient__select-recipient"
               >
                 <div
                   class="sc-AxiKw dklFyP"
@@ -447,23 +439,19 @@ exports[`AddRecipient should render with single recipient data 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="sc-AxirZ izhStr relative mt-1"
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="amount"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-              data-testid="FormLabel"
-              for="amount"
-            >
-              Amount
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Amount
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
           <div
             class="sc-Axmtr jzhOwR"
           >
@@ -497,7 +485,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
 exports[`AddRecipient should render without recipients 1`] = `
 <div>
   <div
-    class="sc-fzoLag jxEpyZ"
+    class="sc-fzoyAV crGsrt"
   >
     <div
       class="text-theme-secondary-text hover:text-theme-primary"
@@ -592,7 +580,7 @@ exports[`AddRecipient should render without recipients 1`] = `
               />
               <div
                 class="absolute flex items-center space-x-3 cursor-pointer right-4"
-                data-testid="SelectRecipient__select-contact"
+                data-testid="SelectRecipient__select-recipient"
               >
                 <div
                   class="sc-AxiKw dklFyP"
@@ -608,23 +596,19 @@ exports[`AddRecipient should render without recipients 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="sc-AxirZ izhStr relative mt-1"
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="amount"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-              data-testid="FormLabel"
-              for="amount"
-            >
-              Amount
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Amount
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
           <div
             class="sc-Axmtr jzhOwR"
           >
@@ -634,7 +618,7 @@ exports[`AddRecipient should render without recipients 1`] = `
               name="amount"
               placeholder="Amount"
               type="text"
-              value="0"
+              value=""
             />
             <div
               class="sc-AxhUy sc-AxheI bYHtKZ"
@@ -658,7 +642,7 @@ exports[`AddRecipient should render without recipients 1`] = `
 exports[`AddRecipient should set available amount 1`] = `
 <div>
   <div
-    class="sc-fzoLag jxEpyZ"
+    class="sc-fzoyAV crGsrt"
   >
     <div
       class="text-theme-secondary-text hover:text-theme-primary"
@@ -753,7 +737,7 @@ exports[`AddRecipient should set available amount 1`] = `
               />
               <div
                 class="absolute flex items-center space-x-3 cursor-pointer right-4"
-                data-testid="SelectRecipient__select-contact"
+                data-testid="SelectRecipient__select-recipient"
               >
                 <div
                   class="sc-AxiKw dklFyP"
@@ -769,23 +753,19 @@ exports[`AddRecipient should set available amount 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="sc-AxirZ izhStr relative mt-1"
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="amount"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-              data-testid="FormLabel"
-              for="amount"
-            >
-              Amount
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Amount
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
           <div
             class="sc-Axmtr jzhOwR"
           >
