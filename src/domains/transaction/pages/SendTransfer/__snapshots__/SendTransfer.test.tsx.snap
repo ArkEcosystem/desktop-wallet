@@ -588,6 +588,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                       <input
                                         class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
                                         data-testid="SelectRecipient__input"
+                                        disabled=""
                                         name="recipientAddress"
                                         type="text"
                                         value=""
@@ -633,10 +634,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                     <input
                                       class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                                       data-testid="add-recipient__amount-input"
+                                      disabled=""
                                       name="amount"
                                       placeholder="Amount"
                                       type="text"
-                                      value="0"
+                                      value=""
                                     />
                                     <div
                                       class="sc-fzoLag sc-fzpjYC fdEbuY"
@@ -1484,6 +1486,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                       <input
                         class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
                         data-testid="SelectRecipient__input"
+                        disabled=""
                         name="recipientAddress"
                         type="text"
                         value=""
@@ -1529,10 +1532,11 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                     <input
                       class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                       data-testid="add-recipient__amount-input"
+                      disabled=""
                       name="amount"
                       placeholder="Amount"
                       type="text"
-                      value="0"
+                      value=""
                     />
                     <div
                       class="sc-fzoLag sc-fzpjYC fdEbuY"
@@ -1918,26 +1922,16 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                         class="absolute left-1"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
-                              title="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
-                            />
-                          </div>
-                        </div>
+                          class="sc-AxgMl eLFBRi mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+                        />
                       </div>
                       <input
                         class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
                         data-testid="SelectRecipient__input"
+                        disabled=""
                         name="recipientAddress"
                         type="text"
-                        value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                        value=""
                       />
                       <div
                         class="absolute flex items-center space-x-3 cursor-pointer right-4"
@@ -1980,10 +1974,11 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                     <input
                       class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                       data-testid="add-recipient__amount-input"
+                      disabled=""
                       name="amount"
                       placeholder="Amount"
                       type="text"
-                      value="1.2"
+                      value=""
                     />
                     <div
                       class="sc-fzoLag sc-fzpjYC fdEbuY"
@@ -3315,7 +3310,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                       name="amount"
                                       placeholder="Amount"
                                       type="text"
-                                      value="0"
+                                      value=""
                                     />
                                     <div
                                       class="sc-fzoLag sc-fzpjYC fdEbuY"
@@ -4044,6 +4039,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                       <input
                                         class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
                                         data-testid="SelectRecipient__input"
+                                        disabled=""
                                         name="recipientAddress"
                                         type="text"
                                         value=""
@@ -4089,10 +4085,11 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                     <input
                                       class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                                       data-testid="add-recipient__amount-input"
+                                      disabled=""
                                       name="amount"
                                       placeholder="Amount"
                                       type="text"
-                                      value="0"
+                                      value=""
                                     />
                                     <div
                                       class="sc-fzoLag sc-fzpjYC fdEbuY"
@@ -4931,7 +4928,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       name="amount"
                                       placeholder="Amount"
                                       type="text"
-                                      value="0"
+                                      value=""
                                     />
                                     <div
                                       class="sc-fzoLag sc-fzpjYC fdEbuY"
@@ -5706,6 +5703,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                       <input
                                         class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
                                         data-testid="SelectRecipient__input"
+                                        disabled=""
                                         name="recipientAddress"
                                         type="text"
                                         value=""
@@ -5751,10 +5749,11 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                     <input
                                       class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                                       data-testid="add-recipient__amount-input"
+                                      disabled=""
                                       name="amount"
                                       placeholder="Amount"
                                       type="text"
-                                      value="0"
+                                      value=""
                                     />
                                     <div
                                       class="sc-fzoLag sc-fzpjYC fdEbuY"
@@ -6805,6 +6804,8 @@ exports[`SendTransfer should send a multi payment 1`] = `
   </div>
 </div>
 `;
+
+exports[`SendTransfer should send a multi payment 2`] = `<div />`;
 
 exports[`SendTransfer should send a single transfer 1`] = `
 <div>
