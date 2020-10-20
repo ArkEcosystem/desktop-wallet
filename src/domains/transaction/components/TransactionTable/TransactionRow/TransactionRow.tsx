@@ -67,7 +67,7 @@ export const TransactionRow = ({
 
 			<TableCell
 				variant={showExplorerLink ? "middle" : "start"}
-				className="w-48"
+				className="w-50"
 				innerClassName="text-theme-secondary-text"
 			>
 				<span data-testid="TransactionRow__timestamp">
@@ -75,11 +75,8 @@ export const TransactionRow = ({
 				</span>
 			</TableCell>
 
-			<TableCell className="w-32">
+			<TableCell innerClassName="space-x-4">
 				<TransactionRowMode transaction={transaction} circleShadowColor={shadowColor} />
-			</TableCell>
-
-			<TableCell>
 				<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
 			</TableCell>
 
