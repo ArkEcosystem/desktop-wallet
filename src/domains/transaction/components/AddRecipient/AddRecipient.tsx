@@ -55,7 +55,13 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 	);
 };
 
-export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipients, onChange }: AddRecipientProps) => {
+export const AddRecipient = ({
+	assetSymbol,
+	isSingleRecipient = true,
+	profile,
+	recipients,
+	onChange,
+}: AddRecipientProps) => {
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
 
@@ -84,17 +90,31 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 
 	useEffect(() => {
 		clearErrors();
-	}, [isSingle, clearErrors]);
+
+		// Case: user added a single recipient (in multiple tab)
+		// and switched to single. Copy the values to input fields
+		// when it's only 1 recipient.
+		if (isSingle && addedRecipients.length === 1) {
+			setValue("amount", addedRecipients[0].amount);
+			setValue("displayAmount", addedRecipients[0].displayAmount);
+			setValue("recipientAddress", addedRecipients[0].address);
+			return;
+		}
+
+		// Clear the recipient inputs when moving back to multiple tab with
+		// added recipients.
+		if (!isSingle && addedRecipients.length > 0) clearFields();
+	}, [isSingle, clearErrors, addedRecipients]);
 
 	useEffect(() => {
-		register("amount", sendTransfer.amount(network, availableBalance));
+		register("amount", sendTransfer.amount(network, availableBalance, addedRecipients, isSingle));
 		register("displayAmount");
 	}, [register, availableBalance, network, sendTransfer]);
 
 	const clearFields = () => {
 		setValue("amount", undefined);
 		setValue("displayAmount", undefined);
-		setValue("recipientAddress", null);
+		setValue("recipientAddress", undefined);
 	};
 
 	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
@@ -112,7 +132,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 		]);
 	};
 
-	const handleAddRecipient = async (address: string, amount: number) => {
+	const handleAddRecipient = async (address: string, amount: number, displayAmount: string) => {
 		const isValid = await trigger(["recipientAddress", "amount"]);
 		if (!isValid) return;
 
@@ -120,6 +140,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 			...addedRecipients,
 			{
 				amount: BigNumber.make(amount),
+				displayAmount,
 				address,
 			},
 		];
@@ -157,7 +178,7 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 						<SelectRecipient
 							disabled={!isSenderFilled}
 							address={recipientAddress}
-							ref={register(sendTransfer.recipientAddress(network))}
+							ref={register(sendTransfer.recipientAddress(network, addedRecipients, isSingle))}
 							profile={profile}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
@@ -214,7 +235,13 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 						data-testid="add-recipient__add-btn"
 						variant="plain"
 						className="w-full mt-4"
-						onClick={() => handleAddRecipient(recipientAddress as string, getValues("amount"))}
+						onClick={() =>
+							handleAddRecipient(
+								recipientAddress as string,
+								getValues("amount"),
+								getValues("displayAmount"),
+							)
+						}
 					>
 						{t("TRANSACTION.ADD_RECIPIENT")}
 					</Button>
@@ -237,6 +264,5 @@ export const AddRecipient = ({ assetSymbol, isSingleRecipient, profile, recipien
 
 AddRecipient.defaultProps = {
 	assetSymbol: "ARK",
-	isSingleRecipient: true,
 	recipients: [],
 };
