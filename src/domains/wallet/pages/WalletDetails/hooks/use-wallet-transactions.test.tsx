@@ -99,4 +99,58 @@ describe("Wallet Transactions Hook", () => {
 
 		expect(screen.getByText("Empty")).toBeInTheDocument();
 	});
+
+	it("should show only pending multisignature transactions", async () => {
+		const transfer = await wallet
+			.coin()
+			.transaction()
+			.transfer({
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				nonce: "1",
+				fee: "1",
+				data: {
+					to: wallet.address(),
+					amount: "1",
+				},
+				sign: {
+					mnemonic: "test",
+				},
+			});
+
+		const transferWithMultisig = await wallet
+			.coin()
+			.transaction()
+			.transfer({
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				nonce: "1",
+				fee: "1",
+				data: {
+					to: wallet.address(),
+					amount: "1",
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
+
+		const signedMock = jest.spyOn(wallet.transaction(), "signed").mockReturnValue({
+			"1": transfer,
+			"2": transferWithMultisig,
+		});
+
+		const Component = () => {
+			const { pendingMultiSignatureTransactions } = useWalletTransactions(wallet, { limit: 10 });
+
+			return <span>{pendingMultiSignatureTransactions.length}</span>;
+		};
+
+		render(<Component />);
+
+		expect(screen.getByText("1"));
+
+		signedMock.mockRestore();
+	});
 });
