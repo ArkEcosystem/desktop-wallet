@@ -142,7 +142,7 @@ exports[`Signed Transaction Table should render 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden w-24"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Sign
@@ -289,7 +289,9 @@ exports[`Signed Transaction Table should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-24"
+            >
               <div
                 class="sc-AxhCb fYMCjD justify-end"
               />
@@ -426,7 +428,9 @@ exports[`Signed Transaction Table should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-24"
+            >
               <div
                 class="sc-AxhCb fYMCjD justify-end"
               />
@@ -557,7 +561,9 @@ exports[`Signed Transaction Table should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-24"
+            >
               <div
                 class="sc-AxhCb fYMCjD justify-end"
               />
@@ -712,7 +718,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden w-24"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Sign
@@ -859,7 +865,9 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-24"
+            >
               <div
                 class="sc-AxhCb fYMCjD justify-end"
               />
@@ -1014,7 +1022,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden w-24"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Sign
@@ -1161,7 +1169,9 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-24"
+            >
               <div
                 class="sc-AxhCb fYMCjD justify-end"
               />
@@ -1316,7 +1326,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden w-24"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Sign
@@ -1463,7 +1473,9 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-24"
+            >
               <div
                 class="sc-AxhCb fYMCjD justify-end"
               />
@@ -1618,7 +1630,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden w-24"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Sign
@@ -1761,7 +1773,9 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-24"
+            >
               <div
                 class="sc-AxhCb fYMCjD justify-end"
               >
