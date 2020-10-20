@@ -350,10 +350,10 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 			// Select recipient
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
-			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
+			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			expect(getByTestId("SelectRecipient__input")).toHaveValue(
 				profile.contacts().values()[0].addresses().values()[0].address(),
 			);
@@ -576,10 +576,10 @@ describe("SendTransfer", () => {
 
 		await act(async () => {
 			// Select recipient
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
-			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
+			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			expect(getByTestId("SelectRecipient__input")).toHaveValue(
 				profile.contacts().values()[0].addresses().values()[0].address(),
 			);

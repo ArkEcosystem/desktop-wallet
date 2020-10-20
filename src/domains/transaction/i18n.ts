@@ -158,6 +158,12 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Second Signature",
 	},
 
+	MODAL_SEARCH_RECIPIENT: {
+		TITLE: "Select Recipient",
+		DESCRIPTION: "Find and select a recipient from your contacts and wallets",
+		PLACEHOLDER: "Search...",
+	},
+
 	LEDGER_CONFIRMATION: {
 		TITLE: "Confirm Your Transaction",
 		DESCRIPTION:

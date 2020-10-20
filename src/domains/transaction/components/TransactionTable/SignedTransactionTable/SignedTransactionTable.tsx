@@ -155,8 +155,8 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 			accessor: "timestamp",
 		},
 		{
-			Header: t("COMMON.TYPE"),
-			className: "invisible",
+			Header: "Type",
+			className: "hidden no-border",
 		},
 		{
 			Header: t("COMMON.RECIPIENT"),
@@ -175,8 +175,8 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 			className: "justify-end",
 		},
 		{
-			Header: t("COMMON.SIGN"),
-			className: "invisible w-24",
+			Header: "Sign",
+			className: "invisible no-border w-24",
 		},
 	];
 

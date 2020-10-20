@@ -70,7 +70,7 @@ exports[`TransactionTable should render 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -828,7 +828,7 @@ exports[`TransactionTable should render loading state  1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -1494,7 +1494,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -2239,7 +2239,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -2325,7 +2325,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible w-24"
+                class="flex flex-inline align-top invisible no-border w-24"
               >
                 <div>
                   Sign
@@ -2979,7 +2979,7 @@ exports[`TransactionTable should render with sign 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
@@ -3065,7 +3065,7 @@ exports[`TransactionTable should render with sign 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible w-24"
+                class="flex flex-inline align-top invisible no-border w-24"
               >
                 <div>
                   Sign
@@ -3530,7 +3530,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden no-border"
               >
                 <div>
                   Type
