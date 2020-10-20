@@ -84,7 +84,7 @@ export const AddRecipient = ({
 
 		if (isSingle) return senderBalance;
 
-		return addedRecipients.reduce((sum, item) => sum.minus(item.amount), senderBalance).minus(fee);
+		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance).minus(fee);
 	}, [addedRecipients, profile, senderAddress, isSingle, fee]);
 
 	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
