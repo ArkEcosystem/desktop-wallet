@@ -8,7 +8,7 @@ import { useValidation } from "app/hooks";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import React, { useCallback,useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -65,6 +65,7 @@ export const AddRecipient = ({
 }: AddRecipientProps) => {
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
+	const [recipientsAmount, setRecipientsAmount] = useState<any>();
 
 	const { t } = useTranslation();
 	const {
@@ -94,6 +95,16 @@ export const AddRecipient = ({
 		setValue("displayAmount", undefined);
 		setValue("recipientAddress", undefined);
 	}, [setValue]);
+
+	useEffect(() => {
+		if (!withDeeplink) return;
+
+		setRecipientsAmount(
+			recipients
+				?.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue.amount), 0)
+				.toString(),
+		);
+	}, [recipients, withDeeplink]);
 
 	useEffect(() => {
 		register("amount", sendTransfer.amount(network, availableBalance, addedRecipients, isSingle));
@@ -197,7 +208,7 @@ export const AddRecipient = ({
 								data-testid="add-recipient__amount-input"
 								placeholder={t("COMMON.AMOUNT")}
 								className="pr-20"
-								value={getValues("displayAmount")}
+								value={getValues("displayAmount") || recipientsAmount}
 								onChange={(currency) => {
 									setValue("displayAmount", currency.display);
 									setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
