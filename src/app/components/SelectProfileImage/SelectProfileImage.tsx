@@ -14,6 +14,18 @@ type SelectProfileImageProps = {
 	onSelect: (raw: string) => void;
 };
 
+const ButtonUploadWrapper = styled.div`
+	.button-upload {
+		&:not(:focus):hover:enabled {
+			${tw`bg-theme-neutral-900 opacity-85`};
+
+			.button-upload__icon {
+				${tw`text-white`};
+			}
+		}
+	}
+`;
+
 const ProfileImageStyled = styled.div`
 	& {
 		${tw`relative inline-flex items-center justify-center overflow-hidden rounded cursor-pointer`};
@@ -25,11 +37,11 @@ const ProfileImageStyled = styled.div`
 		${tw`absolute rounded-full w-22 h-22 left-1 top-1`};
 	}
 
-	&:hover .upload-button-overlay {
+	&:hover .button-upload-overlay {
 		${tw`block`};
 
 		div {
-			background-color: rgba(0, 0, 0, 0.7);
+			${tw`bg-theme-neutral-900 opacity-85`};
 		}
 	}
 `;
@@ -63,14 +75,16 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 					<Tippy content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
 						<div className="flex items-center justify-center w-24 h-24 border-2 border-dashed rounded border-theme-primary-contrast">
 							<div className="overflow-hidden rounded-full w-22 h-22">
-								<Button
-									className="w-22 h-22"
-									variant="plain"
-									onClick={handleUploadImage}
-									data-testid="SelectProfileImage__upload-button"
-								>
-									<Icon name="Upload" className="text-theme-primary" />
-								</Button>
+								<ButtonUploadWrapper>
+									<Button
+										className="button-upload w-22 h-22"
+										variant="plain"
+										onClick={handleUploadImage}
+										data-testid="SelectProfileImage__upload-button"
+									>
+										<Icon name="Upload" className="button-upload__icon text-theme-primary" />
+									</Button>
+								</ButtonUploadWrapper>
 							</div>
 						</div>
 					</Tippy>
@@ -90,7 +104,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 								)}
 
 								<div
-									className="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+									className="absolute z-50 hidden overflow-hidden rounded-full button-upload-overlay w-22 h-22"
 									onClick={handleUploadImage}
 									data-testid="SelectProfileImage__upload-button"
 								>
