@@ -1,7 +1,6 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
-import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { SearchRecipient } from "domains/transaction/components/SearchRecipient";
@@ -12,6 +11,9 @@ type SelectRecipientProps = {
 	profile: Profile;
 	disabled?: boolean;
 	isInvalid?: boolean;
+	contactSearchTitle?: string;
+	contactSearchDescription?: string;
+	selectActionLabel?: string;
 	onChange?: (address: string) => void;
 } & Omit<React.InputHTMLAttributes<any>, "onChange">;
 
@@ -37,9 +39,6 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 				setSelectedAddress(address);
 			}
 		}, [address, setSelectedAddress]);
-
-		const fieldContext = useFormField();
-		const isInvalidField = fieldContext?.isInvalid || isInvalid;
 
 		const handleSelectAddress = (address: string) => {
 			setSelectedAddress(address);
@@ -71,7 +70,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 						defaultValue={selectedAddress}
 						onChange={(ev: any) => onInputChange(ev.target.value)}
 						disabled={disabled}
-						isInvalid={isInvalidField}
+						isInvalid={isInvalid}
 					/>
 
 					<div

@@ -2,6 +2,7 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export type RecipientListItem = {
 	address: string;
+	displayAmount?: string;
 	amount?: BigNumber;
 	assetSymbol?: string;
 	isEditable?: boolean;
