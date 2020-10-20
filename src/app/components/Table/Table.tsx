@@ -25,6 +25,7 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 		{
 			data: tableData,
 			columns: tableColumns,
+			autoResetSortBy: false,
 		},
 		useSortBy,
 	);
