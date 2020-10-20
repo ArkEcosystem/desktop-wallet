@@ -8,7 +8,7 @@ import { useValidation } from "app/hooks";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback,useEffect, useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -89,11 +89,11 @@ export const AddRecipient = ({
 
 	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
 
-	const clearFields = () => {
+	const clearFields = useCallback(() => {
 		setValue("amount", undefined);
 		setValue("displayAmount", undefined);
 		setValue("recipientAddress", undefined);
-	};
+	}, [setValue]);
 
 	useEffect(() => {
 		register("amount", sendTransfer.amount(network, availableBalance, addedRecipients, isSingle));
