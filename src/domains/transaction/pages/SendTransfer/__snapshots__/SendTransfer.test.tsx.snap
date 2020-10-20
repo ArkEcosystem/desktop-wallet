@@ -1914,8 +1914,19 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                         class="absolute left-1"
                       >
                         <div
-                          class="sc-AxgMl eLFBRi mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
-                        />
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mx-3"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                              title="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                            />
+                          </div>
+                        </div>
                       </div>
                       <input
                         class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
@@ -1923,7 +1934,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                         disabled=""
                         name="recipientAddress"
                         type="text"
-                        value=""
+                        value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
                       />
                       <div
                         class="absolute flex items-center space-x-3 cursor-pointer right-4"
@@ -1966,7 +1977,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                       name="amount"
                       placeholder="Amount"
                       type="text"
-                      value=""
+                      value="1.2"
                     />
                     <div
                       class="sc-fzoLag sc-fzpjYC fdEbuY"
