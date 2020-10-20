@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Clipboard } from "app/components/Clipboard";
@@ -12,7 +11,6 @@ import {
 	TransactionFee,
 	TransactionRecipients,
 	TransactionSender,
-	TransactionTimestamp,
 } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -91,7 +89,9 @@ export const SummaryStep = ({
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 
-			<TransactionTimestamp timestamp={DateTime.make("08.10.2020 20:00:48")} />
+			{/* @TODO
+				<TransactionTimestamp timestamp={DateTime.make("08.10.2020 20:00:48")} />
+			*/}
 
 			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
 				{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.WAITING_FOR_SIGNATURES")}

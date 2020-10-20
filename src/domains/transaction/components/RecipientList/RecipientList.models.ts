@@ -2,10 +2,11 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export type RecipientListItem = {
 	address: string;
-	amount: BigNumber;
 	displayAmount?: string;
+	amount?: BigNumber;
 	assetSymbol?: string;
 	isEditable?: boolean;
+	label?: string;
 	listIndex?: number;
 	variant?: "condensed";
 	walletName?: string;
@@ -14,10 +15,11 @@ export type RecipientListItem = {
 };
 
 export type RecipientList = {
-	assetSymbol: string;
+	assetSymbol?: string;
 	isEditable?: boolean;
 	recipients?: RecipientListItem[];
 	showAmount?: boolean;
+	label?: string;
 	variant?: "condensed";
 	onRemove?: (address: string) => void;
 };

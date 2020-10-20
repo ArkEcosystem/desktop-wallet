@@ -23,6 +23,7 @@ const RecipientListItem = ({
 	amount,
 	assetSymbol,
 	isEditable,
+	label,
 	listIndex,
 	variant,
 	walletName,
@@ -42,16 +43,22 @@ const RecipientListItem = ({
 				</td>
 
 				<td className="py-4">
-					<Address address={address} walletName={walletName} maxChars={!walletName ? 0 : undefined} />
+					<div className="max-w-lg">
+						<Address
+							address={address}
+							walletName={walletName}
+							maxChars={walletName || !showAmount ? 0 : undefined}
+						/>
+					</div>
 				</td>
 
-				<td className="py-4 text-right">
-					{showAmount && (
+				{showAmount && (
+					<td className="py-4 text-right">
 						<Label color="danger">
-							<Amount ticker={assetSymbol!} value={amount} />
+							<Amount ticker={assetSymbol!} value={amount!} />
 						</Label>
-					)}
-				</td>
+					</td>
+				)}
 			</tr>
 		);
 	}
@@ -62,22 +69,34 @@ const RecipientListItem = ({
 			data-testid="recipient-list__recipient-list-item"
 		>
 			<td className="py-6 w-14">
-				<Avatar address={address} />
+				<Avatar address={address} size="lg" />
 			</td>
 
 			<td className="py-6">
 				<div className="mb-1 text-sm font-semibold text-theme-neutral">
-					{t("COMMON.RECIPIENT_#", { count: listIndex })}
+					<span>
+						{label || t("COMMON.RECIPIENT")} #{listIndex}
+					</span>
 				</div>
-				<Address address={address} walletName={walletName} />
+				<div className="max-w-sm">
+					<Address
+						address={address}
+						walletName={walletName}
+						maxChars={walletName || !showAmount ? 0 : undefined}
+					/>
+				</div>
 			</td>
 
-			<td className="py-6">
-				<div className="mb-1 text-sm font-semibold text-right text-theme-neutral">{t("COMMON.AMOUNT")}</div>
-				<div className="font-bold text-right text-theme-neutral-800">
-					<Amount ticker={assetSymbol!} value={amount} />
-				</div>
-			</td>
+			{showAmount && (
+				<td className="py-6">
+					<div className="mb-1 text-sm font-semibold text-right text-theme-neutral">
+						<span>{t("COMMON.AMOUNT")}</span>
+					</div>
+					<div className="font-bold text-right text-theme-neutral-800">
+						<Amount ticker={assetSymbol!} value={amount!} />
+					</div>
+				</td>
+			)}
 
 			{isEditable && (
 				<td className="w-20 py-6 text-right">
@@ -101,18 +120,20 @@ export const RecipientList = ({
 	isEditable,
 	recipients,
 	variant,
-	onRemove,
+	label,
 	showAmount,
+	onRemove,
 }: RecipientListProps) => {
 	const onRemoveRecipient = (address: string) => {
 		if (typeof onRemove === "function") return onRemove(address);
 	};
+
 	const columns = [
 		{ Header: "Avatar", className: "hidden" },
 		{ Header: "Address", className: "hidden" },
-		{ Header: "Amount", className: "hidden" },
 	];
 
+	if (showAmount) columns.push({ Header: "Amount", className: "hidden" });
 	if (isEditable) columns.push({ Header: "Action", className: "hidden" });
 
 	return (
@@ -125,6 +146,7 @@ export const RecipientList = ({
 						amount={recipient.amount}
 						assetSymbol={assetSymbol}
 						isEditable={isEditable}
+						label={label}
 						listIndex={index + 1}
 						variant={variant}
 						walletName={recipient.walletName}

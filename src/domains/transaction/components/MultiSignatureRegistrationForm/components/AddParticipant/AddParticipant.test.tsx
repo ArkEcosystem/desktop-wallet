@@ -165,13 +165,11 @@ describe("Add Participant", () => {
 		expect(onChange).toHaveBeenCalledWith([
 			{
 				address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-				balance: "3375089801",
 				publicKey: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 			},
 			{
 				address: "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 				publicKey: "03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
-				balance: "5768000000",
 			},
 		]);
 		expect(asFragment()).toMatchSnapshot();
@@ -214,7 +212,6 @@ describe("Add Participant", () => {
 					{
 						address: wallet2.address(),
 						publicKey: wallet2.publicKey()!,
-						balance: wallet2.balance().toString(),
 					},
 				]}
 			/>,
@@ -234,12 +231,10 @@ describe("Add Participant", () => {
 					{
 						address: wallet.address(),
 						publicKey: wallet.publicKey()!,
-						balance: wallet.balance().toString(),
 					},
 					{
 						address: wallet2.address(),
 						publicKey: wallet2.publicKey()!,
-						balance: wallet2.balance().toString(),
 					},
 				]}
 			/>,
@@ -254,7 +249,6 @@ describe("Add Participant", () => {
 		expect(onChange).toHaveBeenCalledWith([
 			{
 				address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-				balance: "3375089801",
 				publicKey: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 			},
 		]);

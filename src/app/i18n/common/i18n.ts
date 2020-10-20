@@ -110,6 +110,7 @@ export const translations: { [key: string]: any } = {
 	OPTIONAL: "optional",
 	OTHER: "Other",
 	PAGE: "Page",
+	PARTICIPANT: "Participant",
 	PASSWORD: "Password",
 	PASSWORDS: "Passwords",
 	PERIOD: "Period",
