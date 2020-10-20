@@ -58,7 +58,6 @@ describe("SendIpfs", () => {
 	});
 
 	it("should render 1st step", async () => {
-		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
@@ -68,7 +67,6 @@ describe("SendIpfs", () => {
 
 		expect(getByTestId("SendIpfs__step--first")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
-		isMultiSignatureSpy.mockReset();
 	});
 
 	it("should render 2nd step", async () => {

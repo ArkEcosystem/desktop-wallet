@@ -108,7 +108,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 			{ shouldValidate: true, shouldDirty: true },
 		);
 
-		const fees = getFeesByRegistrationType("engityRegistration");
+		const fees = getFeesByRegistrationType("entityRegistration");
 
 		setValue("fees", fees);
 		setValue("fee", fees?.avg);

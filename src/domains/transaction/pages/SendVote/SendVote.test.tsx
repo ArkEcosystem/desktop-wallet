@@ -211,7 +211,6 @@ describe("SendVote", () => {
 	});
 
 	it("should send a unvote & vote transaction", async () => {
-		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(false);
 		const votesMock = jest.spyOn(wallet, "votes").mockImplementation(() => [
 			new ReadOnlyWallet({
 				address: delegateData[1].address,
@@ -323,7 +322,6 @@ describe("SendVote", () => {
 			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 			historySpy.mockRestore();
 		});
-		isMultiSignatureSpy.mockReset();
 	});
 
 	it("should send a vote transaction", async () => {

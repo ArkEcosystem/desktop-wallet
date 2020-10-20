@@ -320,7 +320,6 @@ describe("SendTransfer", () => {
 	});
 
 	it("should send a single transfer", async () => {
-		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(false);
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
@@ -432,12 +431,9 @@ describe("SendTransfer", () => {
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
-
-		isMultiSignatureSpy.mockRestore();
 	});
 
 	it("should send a single transfer with a multisignature wallet", async () => {
-		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 		const multisignatureSpy = jest
 			.spyOn(wallet, "multiSignature")
 			.mockReturnValue({ min: 2, publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!] });
@@ -542,12 +538,10 @@ describe("SendTransfer", () => {
 			transactionMock.mockRestore();
 		});
 
-		isMultiSignatureSpy.mockRestore();
 		multisignatureSpy.mockRestore();
 	});
 
 	it("should send a multi payment", async () => {
-		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(false);
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions/34b557950ed485985aad81ccefaa374b7c81150c52f8ef4621cbbb907b2c829c")
 			.reply(200, transactionMultipleFixture);
@@ -662,11 +656,9 @@ describe("SendTransfer", () => {
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
-		isMultiSignatureSpy.mockRestore();
 	});
 
 	it("should error if wrong mnemonic", async () => {
-		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(false);
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
@@ -752,6 +744,5 @@ describe("SendTransfer", () => {
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
-		isMultiSignatureSpy.mockRestore();
 	});
 });
