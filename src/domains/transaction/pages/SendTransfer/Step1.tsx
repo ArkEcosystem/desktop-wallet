@@ -55,12 +55,13 @@ export const FormStep = ({
 					<>
 						<div data-testid="recipient-address">
 							<AddRecipient
+								withDeeplink={!!deeplinkProps?.recipient}
 								assetSymbol={senderWallet?.currency()}
 								maxAvailableAmount={maxAmount}
 								profile={profile}
-								onChange={(recipients: RecipientListItem[]) =>
-									setValue("recipients", recipients, { shouldValidate: true, shouldDirty: true })
-								}
+								onChange={(recipients: RecipientListItem[]) => {
+									setValue("recipients", recipients, { shouldValidate: true, shouldDirty: true });
+								}}
 								recipients={getRecipients()}
 							/>
 						</div>

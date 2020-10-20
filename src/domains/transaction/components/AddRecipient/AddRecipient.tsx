@@ -1,14 +1,15 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
-import { FormField, FormLabel, SubForm } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputAddonEnd, InputCurrency, InputGroup } from "app/components/Input";
+import { useValidation } from "app/hooks";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import React, { useEffect, useMemo, useState } from "react";
-import { useForm } from "react-hook-form";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { AddRecipientProps, ToggleButtonProps } from "./AddRecipient.models";
@@ -55,89 +56,113 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 };
 
 export const AddRecipient = ({
-	maxAvailableAmount,
 	assetSymbol,
-	isSingleRecipient,
+	isSingleRecipient = true,
 	profile,
 	recipients,
 	onChange,
+	withDeeplink,
 }: AddRecipientProps) => {
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
-	const [displayAmount, setDisplayAmount] = useState<string | undefined>();
 	const [recipientsAmount, setRecipientsAmount] = useState<any>();
 
 	const { t } = useTranslation();
+	const {
+		getValues,
+		setValue,
+		register,
+		watch,
+		trigger,
+		clearErrors,
+		formState: { errors },
+	} = useFormContext();
+	const { network, senderAddress, fee, recipientAddress } = watch();
+	const { sendTransfer } = useValidation();
 
-	const defaultValues: any = {
-		recipientAddress: null,
-		isSingle: isSingleRecipient,
-	};
+	const availableBalance = useMemo(() => {
+		const senderBalance = profile.wallets().findByAddress(senderAddress)?.balance() || BigNumber.ZERO;
 
-	if (isSingle && addedRecipients.length) {
-		defaultValues.recipientAddress = addedRecipients[0].address;
-	}
+		if (isSingle) return senderBalance;
 
-	const form = useForm({ defaultValues });
-	const { getValues, setValue, register } = form;
+		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance).minus(fee);
+	}, [addedRecipients, profile, senderAddress, isSingle, fee]);
+
+	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
+
+	const clearFields = useCallback(() => {
+		setValue("amount", undefined);
+		setValue("displayAmount", undefined);
+		setValue("recipientAddress", undefined);
+	}, [setValue]);
 
 	useEffect(() => {
-		register("amount");
-	}, [register]);
+		if (!withDeeplink) return;
 
-	useEffect(() => {
 		setRecipientsAmount(
 			recipients
 				?.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue.amount), 0)
 				.toString(),
 		);
-	}, [recipients, displayAmount]);
+	}, [recipients, withDeeplink]);
 
-	const availableAmount = useMemo(
-		() => addedRecipients.reduce((sum, item) => sum.minus(item.amount!), maxAvailableAmount),
-		[maxAvailableAmount, addedRecipients],
-	);
+	useEffect(() => {
+		register("amount", sendTransfer.amount(network, availableBalance, addedRecipients, isSingle));
+		register("displayAmount");
+	}, [register, availableBalance, network, sendTransfer, addedRecipients, isSingle]);
 
-	const { recipientAddress, amount } = form.watch();
+	useEffect(() => {
+		clearErrors();
 
-	const clearFields = () => {
-		setDisplayAmount(undefined);
-		setValue("amount", undefined);
-		setValue("recipientAddress", null);
-	};
-
-	const singleRecipientOnChange = () => {
-		const recipientAddress = getValues("recipientAddress");
-		const amount = getValues("amount");
-		if (!isSingle) {
+		// Case: user added a single recipient (in multiple tab)
+		// and switched to single. Copy the values to input fields
+		// when it's only 1 recipient.
+		if (isSingle && addedRecipients.length === 1) {
+			setValue("amount", addedRecipients[0].amount);
+			setValue("displayAmount", addedRecipients[0].displayAmount);
+			setValue("recipientAddress", addedRecipients[0].address);
 			return;
 		}
 
-		if (!recipientAddress || !BigNumber.make(amount).toNumber()) {
-			onChange?.([]);
+		// Clear the recipient inputs when moving back to multiple tab with
+		// added recipients.
+		if (!isSingle && addedRecipients.length > 0) clearFields();
+	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]);
 
-			return;
+	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
+		if (!isSingle) return;
+
+		if (!recipientAddressValue || !BigNumber.make(amountValue).toNumber()) {
+			return onChange?.([]);
 		}
 
 		onChange?.([
 			{
-				amount: BigNumber.make(amount),
-				address: recipientAddress,
+				amount: BigNumber.make(amountValue),
+				address: recipientAddressValue,
 			},
 		]);
 	};
 
-	const onAddRecipient = (address: string, amount: number) => {
-		addedRecipients.push({
-			amount: BigNumber.make(amount),
-			address,
-		});
-		setAddressRecipients(addedRecipients);
-		onChange?.(addedRecipients);
+	const handleAddRecipient = async (address: string, amount: number, displayAmount: string) => {
+		const isValid = await trigger(["recipientAddress", "amount"]);
+		if (!isValid) return;
+
+		const newRecipients = [
+			...addedRecipients,
+			{
+				amount: BigNumber.make(amount),
+				displayAmount,
+				address,
+			},
+		];
+
+		setAddressRecipients(newRecipients);
+		onChange?.(newRecipients);
 		clearFields();
 	};
 
-	const onRemoveRecipient = (address: string) => {
+	const handleRemoveRecipient = (address: string) => {
 		const index = addedRecipients.findIndex((addedRecipient: any) => addedRecipient.address === address);
 		const newRecipients = addedRecipients.concat();
 		newRecipients.splice(index, 1);
@@ -163,29 +188,31 @@ export const AddRecipient = ({
 						</div>
 
 						<SelectRecipient
+							disabled={!isSenderFilled}
 							address={recipientAddress}
-							ref={register}
+							ref={register(sendTransfer.recipientAddress(network, addedRecipients, isSingle))}
 							profile={profile}
 							onChange={(address: any) => {
-								setValue("recipientAddress", address);
-								singleRecipientOnChange();
+								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
+								singleRecipientOnChange(getValues("amount"), address);
 							}}
 						/>
+						<FormHelperText />
 					</FormField>
 
 					<FormField name="amount">
 						<FormLabel label={t("COMMON.AMOUNT")} />
 						<InputGroup>
 							<InputCurrency
+								disabled={!isSenderFilled}
 								data-testid="add-recipient__amount-input"
-								name="amount"
 								placeholder={t("COMMON.AMOUNT")}
 								className="pr-20"
-								value={displayAmount || recipientsAmount}
+								value={getValues("displayAmount") || recipientsAmount}
 								onChange={(currency) => {
-									setDisplayAmount(currency.display);
+									setValue("displayAmount", currency.display);
 									setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
-									singleRecipientOnChange();
+									singleRecipientOnChange(currency.value, recipientAddress);
 								}}
 							/>
 							<InputAddonEnd>
@@ -193,12 +220,12 @@ export const AddRecipient = ({
 									type="button"
 									data-testid="add-recipient__send-all"
 									onClick={() => {
-										setDisplayAmount(availableAmount.toHuman());
-										setValue("amount", availableAmount.toString(), {
+										setValue("displayAmount", availableBalance.toHuman());
+										setValue("amount", availableBalance.toString(), {
 											shouldValidate: true,
 											shouldDirty: true,
 										});
-										singleRecipientOnChange();
+										singleRecipientOnChange(availableBalance.toString(), recipientAddress);
 									}}
 									className="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
 								>
@@ -206,15 +233,25 @@ export const AddRecipient = ({
 								</button>
 							</InputAddonEnd>
 						</InputGroup>
+						<FormHelperText />
 					</FormField>
 				</div>
 
-				{!isSingle && displayAmount && !!recipientAddress && (
+				{!isSingle && getValues("amount") && !!recipientAddress && (
 					<Button
+						disabled={
+							!!errors.amount || !!errors.recipientAddress || BigNumber.make(getValues("amount")).isZero()
+						}
 						data-testid="add-recipient__add-btn"
 						variant="plain"
 						className="w-full mt-4"
-						onClick={() => onAddRecipient(recipientAddress as string, amount)}
+						onClick={() =>
+							handleAddRecipient(
+								recipientAddress as string,
+								getValues("amount"),
+								getValues("displayAmount"),
+							)
+						}
 					>
 						{t("TRANSACTION.ADD_RECIPIENT")}
 					</Button>
@@ -226,7 +263,7 @@ export const AddRecipient = ({
 					<RecipientList
 						recipients={addedRecipients}
 						isEditable={true}
-						onRemove={onRemoveRecipient}
+						onRemove={handleRemoveRecipient}
 						assetSymbol={assetSymbol}
 					/>
 				</div>
@@ -237,6 +274,5 @@ export const AddRecipient = ({
 
 AddRecipient.defaultProps = {
 	assetSymbol: "ARK",
-	isSingleRecipient: true,
 	recipients: [],
 };

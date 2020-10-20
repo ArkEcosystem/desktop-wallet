@@ -12,6 +12,7 @@ export type AddRecipientProps = {
 	profile: Profile;
 	labelText?: string;
 	helpText?: string;
+	withDeeplink?: boolean;
 	onChange?: (recipients: RecipientListItem[]) => void;
 };
 
