@@ -37,8 +37,8 @@ export const TransactionTable = ({
 			accessor: "timestamp",
 		},
 		{
-			Header: t("COMMON.TYPE"),
-			className: "invisible",
+			Header: "Type",
+			className: "hidden no-border",
 		},
 		{
 			Header: t("COMMON.RECIPIENT"),
@@ -87,7 +87,7 @@ export const TransactionTable = ({
 		}
 
 		if (showSignColumn) {
-			return [...commonColumns, { Header: t("COMMON.SIGN"), className: "invisible w-24" }];
+			return [...commonColumns, { Header: "Sign", className: "invisible no-border w-24" }];
 		}
 
 		return commonColumns;
