@@ -52,28 +52,28 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		{
 			value: "entityRegistration",
 			type: Enums.EntityType.Business,
-			label: t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION"),
+			label: "Business",
 		},
 	];
 
-	if (!wallet.isDelegate?.() && !wallet.isMultiSignature()) {
+	if (!wallet.isDelegate?.() && !wallet.isMultiSignature?.()) {
 		registrationTypes.push({
 			value: "delegateRegistration",
-			label: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
+			label: "Delegate",
 		});
 	}
 
-	if (!wallet.isMultiSignature?.() && !wallet.isMultiSignature()) {
+	if (!wallet.isMultiSignature?.()) {
 		registrationTypes.push({
 			value: "multiSignature",
-			label: t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
+			label: "MultiSignature",
 		});
 	}
 
-	if (!wallet.isSecondSignature?.() && !wallet.isMultiSignature()) {
+	if (!wallet.isSecondSignature?.() && !wallet.isMultiSignature?.()) {
 		registrationTypes.push({
 			value: "secondSignature",
-			label: t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
+			label: "Second Signature",
 		});
 	}
 
