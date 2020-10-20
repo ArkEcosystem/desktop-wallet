@@ -137,7 +137,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fznxKY ioYtdB"
+                            class="sc-fznxKY dCcPYp"
                           >
                             <img
                               alt="Profile avatar"
@@ -150,7 +150,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               TE
                             </span>
                             <div
-                              class="absolute z-50 hidden overflow-hidden rounded-full button-upload-overlay w-22 h-22"
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
@@ -761,7 +761,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fznxKY ioYtdB"
+                            class="sc-fznxKY dCcPYp"
                           >
                             <img
                               alt="Profile avatar"
@@ -774,7 +774,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               TE
                             </span>
                             <div
-                              class="absolute z-50 hidden overflow-hidden rounded-full button-upload-overlay w-22 h-22"
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
@@ -1388,16 +1388,16 @@ exports[`CreateProfile should render 1`] = `
                             class="overflow-hidden rounded-full w-22 h-22"
                           >
                             <div
-                              class="sc-fzpmMD dAgRKR"
+                              class="sc-fzpmMD lboxOY"
                             >
                               <button
-                                class="sc-AxjAm fCKjFI button-upload w-22 h-22"
+                                class="sc-AxjAm fCKjFI upload-button w-22 h-22"
                                 color="primary"
                                 data-testid="SelectProfileImage__upload-button"
                                 type="button"
                               >
                                 <div
-                                  class="sc-AxhCb fxrKLH button-upload__icon text-theme-primary"
+                                  class="sc-AxhCb fxrKLH upload-button__icon text-theme-primary"
                                   height="1em"
                                   width="1em"
                                 >
@@ -1759,7 +1759,7 @@ exports[`CreateProfile should store profile 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fznxKY ioYtdB"
+                            class="sc-fznxKY dCcPYp"
                           >
                             <img
                               alt="Profile avatar"
@@ -1767,7 +1767,7 @@ exports[`CreateProfile should store profile 1`] = `
                               src="data:image/png;base64,avatarImage"
                             />
                             <div
-                              class="absolute z-50 hidden overflow-hidden rounded-full button-upload-overlay w-22 h-22"
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
@@ -2394,7 +2394,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fznxKY ioYtdB"
+                            class="sc-fznxKY dCcPYp"
                           >
                             <img
                               alt="Profile avatar"
@@ -2407,7 +2407,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               TE
                             </span>
                             <div
-                              class="absolute z-50 hidden overflow-hidden rounded-full button-upload-overlay w-22 h-22"
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
@@ -3018,7 +3018,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fznxKY ioYtdB"
+                            class="sc-fznxKY dCcPYp"
                           >
                             <img
                               alt="Profile avatar"
@@ -3031,7 +3031,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               TE
                             </span>
                             <div
-                              class="absolute z-50 hidden overflow-hidden rounded-full button-upload-overlay w-22 h-22"
+                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div

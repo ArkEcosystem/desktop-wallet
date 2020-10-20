@@ -14,12 +14,12 @@ type SelectProfileImageProps = {
 	onSelect: (raw: string) => void;
 };
 
-const ButtonUploadWrapper = styled.div`
-	.button-upload {
+const UploadButtonWrapper = styled.div`
+	.upload-button {
 		&:not(:focus):hover:enabled {
 			${tw`bg-theme-neutral-900 opacity-85`};
 
-			.button-upload__icon {
+			.upload-button__icon {
 				${tw`text-white`};
 			}
 		}
@@ -37,7 +37,7 @@ const ProfileImageStyled = styled.div`
 		${tw`absolute rounded-full w-22 h-22 left-1 top-1`};
 	}
 
-	&:hover .button-upload-overlay {
+	&:hover .upload-button-overlay {
 		${tw`block`};
 
 		div {
@@ -75,16 +75,16 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 					<Tippy content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
 						<div className="flex items-center justify-center w-24 h-24 border-2 border-dashed rounded border-theme-primary-contrast">
 							<div className="overflow-hidden rounded-full w-22 h-22">
-								<ButtonUploadWrapper>
+								<UploadButtonWrapper>
 									<Button
-										className="button-upload w-22 h-22"
+										className="upload-button w-22 h-22"
 										variant="plain"
 										onClick={handleUploadImage}
 										data-testid="SelectProfileImage__upload-button"
 									>
-										<Icon name="Upload" className="button-upload__icon text-theme-primary" />
+										<Icon name="Upload" className="upload-button__icon text-theme-primary" />
 									</Button>
-								</ButtonUploadWrapper>
+								</UploadButtonWrapper>
 							</div>
 						</div>
 					</Tippy>
@@ -104,7 +104,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 								)}
 
 								<div
-									className="absolute z-50 hidden overflow-hidden rounded-full button-upload-overlay w-22 h-22"
+									className="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
 									onClick={handleUploadImage}
 									data-testid="SelectProfileImage__upload-button"
 								>
