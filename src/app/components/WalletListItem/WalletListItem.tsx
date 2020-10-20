@@ -64,12 +64,16 @@ export const WalletListItem = ({
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor(defaultShadowColor)}
 		>
-			<TableCell variant="start" isSelected={isSelected} innerClassName="-space-x-2">
-				<NetworkIcon size="lg" coin={wallet.coinId()} network={wallet.networkId()} shadowColor={shadowColor} />
-				<Avatar size="lg" address={wallet.address()} shadowColor={shadowColor} />
-			</TableCell>
-
-			<TableCell isSelected={isSelected}>
+			<TableCell variant="start" isSelected={isSelected} innerClassName="space-x-4">
+				<div className="-space-x-2">
+					<NetworkIcon
+						size="lg"
+						coin={wallet.coinId()}
+						network={wallet.networkId()}
+						shadowColor={shadowColor}
+					/>
+					<Avatar size="lg" address={wallet.address()} shadowColor={shadowColor} />
+				</div>
 				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
 			</TableCell>
 

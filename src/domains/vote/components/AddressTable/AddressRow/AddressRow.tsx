@@ -68,12 +68,9 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 
 	return (
 		<TableRow>
-			<TableCell variant="start" className="w-1">
-				<Avatar className="mr-4" size="lg" address={wallet.address()} noShadow />
-			</TableCell>
-
-			<TableCell className="w-20">
-				<Address address={wallet.address()} walletName={wallet.alias()} maxChars={22} />
+			<TableCell variant="start" className="w-20" innerClassName="space-x-4">
+				<Avatar size="lg" address={wallet.address()} noShadow />
+				<Address address={wallet.address()} walletName={wallet.alias()} />
 			</TableCell>
 
 			<TableCell className="w-20" innerClassName="justify-center text-sm font-bold">
@@ -96,21 +93,17 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
-			<TableCell className="w-24" innerClassName="justify-end">
-				<div className="mr-4">
-					{hasVotes ? (
-						<Avatar size="lg" address={votes[0].address()} noShadow />
-					) : (
-						<Circle size="lg" className="border-theme-neutral-300 dark:border-theme-neutral-800" noShadow />
-					)}
-				</div>
-			</TableCell>
-
-			<TableCell innerClassName="font-bold">
+			<TableCell innerClassName="space-x-4 font-bold">
 				{hasVotes ? (
-					<span>{votes[0].username()}</span>
+					<>
+						<Avatar size="lg" address={votes[0].address()} noShadow />
+						<span>{votes[0].username()}</span>
+					</>
 				) : (
-					<span className="text-theme-neutral-light">{t("COMMON.NOT_AVAILABLE")}</span>
+					<>
+						<Circle size="lg" className="border-theme-neutral-300 dark:border-theme-neutral-800" noShadow />
+						<span className="text-theme-neutral-light">{t("COMMON.NOT_AVAILABLE")}</span>
+					</>
 				)}
 			</TableCell>
 
@@ -125,7 +118,15 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 			</TableCell>
 
 			<TableCell innerClassName="justify-center">
-				{hasVotes && <Icon name="StatusOk" className="text-theme-success" data-testid="AddressRow__status" />}
+				{hasVotes && (
+					<Icon
+						name="StatusOk"
+						width={22}
+						height={22}
+						className="text-theme-success"
+						data-testid="AddressRow__status"
+					/>
+				)}
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end">

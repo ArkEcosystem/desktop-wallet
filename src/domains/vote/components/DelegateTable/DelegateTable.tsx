@@ -38,13 +38,9 @@ export const DelegateTable = ({
 
 	const columns = [
 		{
-			Header: "Avatar",
-			disableSortBy: true,
-			className: "hidden",
-		},
-		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
 			accessor: "delegateName",
+			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.STATUS"),

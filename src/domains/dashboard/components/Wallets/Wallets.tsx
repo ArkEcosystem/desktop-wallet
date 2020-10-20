@@ -52,12 +52,9 @@ export const Wallets = ({
 
 	const listColumns = [
 		{
-			Header: t("COMMON.ASSET_TYPE"),
-			accessor: "avatarId",
-		},
-		{
 			Header: t("COMMON.WALLET_ADDRESS"),
 			accessor: "address",
+			className: "ml-24",
 		},
 		{
 			Header: t("COMMON.WALLET_TYPE"),
