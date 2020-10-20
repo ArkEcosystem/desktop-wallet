@@ -89,6 +89,17 @@ export const AddRecipient = ({
 
 	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
 
+	const clearFields = () => {
+		setValue("amount", undefined);
+		setValue("displayAmount", undefined);
+		setValue("recipientAddress", undefined);
+	};
+
+	useEffect(() => {
+		register("amount", sendTransfer.amount(network, availableBalance, addedRecipients, isSingle));
+		register("displayAmount");
+	}, [register, availableBalance, network, sendTransfer, addedRecipients, isSingle]);
+
 	useEffect(() => {
 		clearErrors();
 
@@ -105,18 +116,7 @@ export const AddRecipient = ({
 		// Clear the recipient inputs when moving back to multiple tab with
 		// added recipients.
 		if (!isSingle && addedRecipients.length > 0) clearFields();
-	}, [isSingle, clearErrors, addedRecipients]);
-
-	useEffect(() => {
-		register("amount", sendTransfer.amount(network, availableBalance, addedRecipients, isSingle));
-		register("displayAmount");
-	}, [register, availableBalance, network, sendTransfer]);
-
-	const clearFields = () => {
-		setValue("amount", undefined);
-		setValue("displayAmount", undefined);
-		setValue("recipientAddress", undefined);
-	};
+	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]);
 
 	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
 		if (!isSingle) return;
