@@ -108,7 +108,7 @@ export const SearchWallet = ({
 	const listColumns = [
 		{
 			Header: t("COMMON.ASSET_TYPE"),
-			className: !showNetwork ? "invisible w-0 text-0" : "",
+			className: !showNetwork ? "hidden no-border" : "",
 		},
 		{
 			Header: t("COMMON.ADDRESS"),
@@ -126,7 +126,7 @@ export const SearchWallet = ({
 		},
 		{
 			Header: t("COMMON.ACTION"),
-			className: "hidden",
+			className: "hidden no-border",
 		},
 	];
 
