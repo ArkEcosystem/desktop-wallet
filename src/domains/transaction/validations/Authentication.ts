@@ -1,14 +1,17 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
 
 export const authentication = (t: any) => ({
-	mnemonic: (wallet: ReadWriteWallet) => ({
+	mnemonic: (coin: Coins.Coin, senderAddress: string) => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("COMMON.MNEMONIC"),
 		}),
 		validate: {
-			matchWalletAddress: async (value: string) => {
-				const generatedAddress = await wallet.coin().identity().address().fromMnemonic(value);
-				return generatedAddress === wallet.address();
+			matchSenderAddress: async (mnemonic: string) => {
+				const generatedAddress = await coin.identity().address().fromMnemonic(mnemonic);
+				if (generatedAddress === senderAddress) {
+					return true;
+				}
+				return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_ADDRESS");
 			},
 		},
 	}),
