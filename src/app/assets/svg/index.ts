@@ -1,5 +1,4 @@
 import { Currencies } from "app/assets/svg/currencies";
-import { Transactions } from "app/assets/svg/transactions";
 
 import { ReactComponent as AlertDanger } from "./alert-danger.svg";
 import { ReactComponent as AlertDefault } from "./alert-default.svg";
@@ -65,6 +64,7 @@ import { ReactComponent as LoaderLogo } from "./loader-logo.svg";
 import { ReactComponent as Lock } from "./lock.svg";
 import { ReactComponent as Medium } from "./medium.svg";
 import { ReactComponent as Msq } from "./msq.svg";
+import { ReactComponent as Multipayment } from "./multipayment.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
 import { ReactComponent as Npm } from "./npm.svg";
@@ -113,6 +113,7 @@ export const SvgCollection: any = {
 	AlertDanger,
 	AlertDefault,
 	AlertSuccess,
+	ArkLogo,
 	ArrowLeft,
 	ArrowRight,
 	Article,
@@ -173,6 +174,7 @@ export const SvgCollection: any = {
 	Lock,
 	Medium,
 	Msq,
+	Multipayment,
 	Multisig,
 	Notification,
 	Npm,
@@ -214,9 +216,7 @@ export const SvgCollection: any = {
 	Upload,
 	User,
 	Vote,
-	Voted,
 	VoteCombination,
-	ArkLogo,
+	Voted,
 	...Currencies,
-	...Transactions,
 };
