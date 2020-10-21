@@ -72,6 +72,7 @@ describe("Wallet Transactions Hook", () => {
 	it("should run periodically", async () => {
 		jest.useFakeTimers();
 		const spyTransactions = jest.spyOn(wallet, "transactions");
+		const spySync = jest.spyOn(wallet.transaction(), "sync");
 
 		const Component = () => {
 			const { transactions } = useWalletTransactions(wallet, { limit: 10 });
@@ -83,8 +84,10 @@ describe("Wallet Transactions Hook", () => {
 		jest.advanceTimersByTime(40000);
 
 		await waitFor(() => expect(spyTransactions).toHaveBeenCalledTimes(2));
+		await waitFor(() => expect(spySync).toHaveBeenCalledTimes(2));
 
 		spyTransactions.mockRestore();
+		spySync.mockRestore();
 		jest.useRealTimers();
 	});
 
