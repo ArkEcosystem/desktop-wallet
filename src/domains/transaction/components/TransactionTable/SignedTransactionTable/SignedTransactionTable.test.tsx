@@ -104,7 +104,7 @@ describe("Signed Transaction Table", () => {
 			.mockImplementation(() => true);
 
 		const { asFragment } = render(<SignedTransactionTable transactions={[fixtures.transfer]} wallet={wallet} />);
-		await waitFor(() => expect(screen.getByText("Your Signature")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByText("awaiting-our-signature.svg")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 		isAwaitingOurSignatureMock.mockRestore();
@@ -119,7 +119,7 @@ describe("Signed Transaction Table", () => {
 			.mockImplementation(() => 3);
 
 		const { asFragment } = render(<SignedTransactionTable transactions={[fixtures.transfer]} wallet={wallet} />);
-		await waitFor(() => expect(screen.getByText("3 more signature(s)")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByText("awaiting-other-signature.svg")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 		isAwaitingOurSignatureMock.mockRestore();
@@ -134,7 +134,7 @@ describe("Signed Transaction Table", () => {
 			});
 
 		const { asFragment } = render(<SignedTransactionTable transactions={[fixtures.transfer]} wallet={wallet} />);
-		await waitFor(() => expect(screen.getByText("Final Signature")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByText("awaiting-final-signature.svg")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 		isAwaitingOurSignatureMock.mockRestore();
