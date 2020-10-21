@@ -21,6 +21,7 @@ import {
 import { data as delegateData } from "tests/fixtures/coins/ark/devnet/delegates.json";
 import unvoteFixture from "tests/fixtures/coins/ark/devnet/transactions/unvote.json";
 import voteFixture from "tests/fixtures/coins/ark/devnet/transactions/vote.json";
+import { getDefaultWalletMnemonic } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendVote } from "../SendVote";
@@ -49,8 +50,7 @@ const createUnvoteTransactionMock = (wallet: ReadWriteWallet) =>
 		data: () => unvoteFixture.data,
 	});
 
-const passphrase = "master dizzy era math peanut crew run manage better flame tree prevent";
-
+const passphrase = getDefaultWalletMnemonic();
 let profile: Profile;
 let wallet: ReadWriteWallet;
 let votes: ReadOnlyWallet[];
