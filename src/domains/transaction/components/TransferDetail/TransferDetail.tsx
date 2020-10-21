@@ -42,7 +42,7 @@ export const TransferDetail = ({
 				border={false}
 			/>
 
-			<TransactionRecipients currency={wallet.currency()} recipient={{ address: transaction.recipient() }} />
+			<TransactionRecipients currency={wallet.currency()} recipients={[{ address: transaction.recipient() }]} />
 
 			<TransactionAmount
 				amount={transaction.amount()}
