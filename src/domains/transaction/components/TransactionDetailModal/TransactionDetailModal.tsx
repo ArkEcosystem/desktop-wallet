@@ -48,6 +48,7 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 			break;
 		case "vote":
 		case "unvote":
+		case "voteCombination":
 			TransactionModal = VoteDetail;
 			break;
 		case "secondSignature":

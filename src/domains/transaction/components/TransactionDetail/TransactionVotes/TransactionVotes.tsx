@@ -42,7 +42,7 @@ export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotes
 
 	const getTransactionType = () => {
 		if (votes.length && unvotes.length) {
-			return `${t("TRANSACTION.TRANSACTION_TYPES.VOTE")} / ${t("TRANSACTION.TRANSACTION_TYPES.UNVOTE")}`;
+			return t("TRANSACTION.TRANSACTION_TYPES.VOTE_COMBINATION");
 		}
 
 		return votes.length ? t("TRANSACTION.TRANSACTION_TYPES.VOTE") : t("TRANSACTION.TRANSACTION_TYPES.UNVOTE");

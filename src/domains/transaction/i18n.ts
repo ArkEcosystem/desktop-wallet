@@ -89,6 +89,7 @@ export const translations: { [key: string]: any } = {
 		DELEGATE_REGISTRATION: "Delegate Registration",
 		VOTE: "Vote",
 		UNVOTE: "Unvote",
+		VOTE_COMBINATION: "Vote / Unvote",
 		MULTI_SIGNATURE: "Multisignature",
 		IPFS: "IPFS",
 		MULTI_PAYMENT: "Multipayment",
