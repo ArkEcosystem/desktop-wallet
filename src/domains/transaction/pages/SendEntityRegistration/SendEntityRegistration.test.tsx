@@ -995,9 +995,7 @@ describe("Registration", () => {
 
 			await waitFor(() => expect(input).toHaveValue(""));
 
-			await waitFor(() =>
-				expect(within(collection).getAllByTestId("TableRow")).toHaveLength(newLength),
-			);
+			await waitFor(() => expect(within(collection).getAllByTestId("TableRow")).toHaveLength(newLength));
 			const addedItem = within(collection).getAllByTestId("TableRow")[newLength - 1];
 			await waitFor(() => expect(addedItem).toBeTruthy());
 			await waitFor(() => expect(addedItem).toHaveTextContent(optionLabel));
