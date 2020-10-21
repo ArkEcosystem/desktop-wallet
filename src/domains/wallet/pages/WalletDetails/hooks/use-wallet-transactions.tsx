@@ -87,5 +87,6 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 		hasMore,
 		transactions,
 		pendingMultiSignatureTransactions,
+		syncMultiSignatures,
 	};
 };
