@@ -34,7 +34,7 @@ export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotes
 
 	const getTransactionIcon = () => {
 		if (votes.length && unvotes.length) {
-			return "VoteUnvote";
+			return "VoteCombination";
 		}
 
 		return votes.length ? "Vote" : "Unvote";
