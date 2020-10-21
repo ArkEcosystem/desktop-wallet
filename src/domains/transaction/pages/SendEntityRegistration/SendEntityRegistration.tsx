@@ -37,6 +37,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
@@ -108,7 +109,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 			{ shouldValidate: true, shouldDirty: true },
 		);
 
-		const fees = getFeesByRegistrationType("engityRegistration");
+		const fees = getFeesByRegistrationType("entityRegistration");
 
 		setValue("fees", fees);
 		setValue("fee", fees?.avg);

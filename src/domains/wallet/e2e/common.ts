@@ -34,3 +34,27 @@ export const importWallet = async (
 		await t.click(Selector("button").withExactText(translations.COMMON.GO_TO_WALLET));
 	}
 };
+
+export const importWalletByAddress = async (
+	t: any,
+	address: string,
+	alias = "Test Wallet",
+	navigateToWallet = true,
+) => {
+	await t.click(Selector("a").withText("Portfolio")); // @TODO replace with i18n key
+	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
+	await t
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.ok();
+	await t.click('[data-testid="SelectNetworkInput__input"]');
+	await t.click(Selector("#ImportWallet__network-item-1"));
+	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
+	await t.click(Selector("input[name=isAddressOnly]").parent());
+	await t.typeText(Selector("input[name=address]"), address);
+	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
+	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
+
+	if (navigateToWallet) {
+		await t.click(Selector("button").withExactText(translations.COMMON.GO_TO_WALLET));
+	}
+};

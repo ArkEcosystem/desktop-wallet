@@ -22,6 +22,7 @@ import {
 	render,
 	RenderResult,
 	renderWithRouter,
+	screen,
 	syncDelegates,
 	syncFees,
 	waitFor,
@@ -166,6 +167,42 @@ describe("Registration", () => {
 
 		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should hide options for multisignature wallet", async () => {
+		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
+
+		const Component = () => {
+			const form = useForm();
+
+			return (
+				<FormProvider {...form}>
+					<FirstStep
+						networks={env.availableNetworks()}
+						profile={profile}
+						wallet={wallet}
+						setRegistrationForm={() => void 0}
+						fees={{
+							entityRegistration: {
+								avg: "1",
+							},
+						}}
+					/>
+				</FormProvider>
+			);
+		};
+
+		const { container } = render(<Component />);
+
+		act(() => {
+			fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+		});
+
+		await waitFor(() => expect(screen.queryByText("MultiSignature")).not.toBeInTheDocument());
+
+		isMultiSignatureSpy.mockRestore();
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should render 1st step", async () => {
