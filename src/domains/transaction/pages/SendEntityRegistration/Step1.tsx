@@ -70,7 +70,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		});
 	}
 
-	if (!wallet.isDelegate?.() && network?.can("Transaction.delegateRegistration")) {
+	if (!wallet.isDelegate?.() && !wallet.isMultiSignature?.() && network?.can("Transaction.delegateRegistration")) {
 		registrationTypes.push({
 			value: "delegateRegistration",
 			label: "Delegate",
@@ -84,7 +84,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		});
 	}
 
-	if (!wallet.isSecondSignature?.() && network?.can("Transaction.secondSignature")) {
+	if (!wallet.isSecondSignature?.() && !wallet.isMultiSignature?.() && network?.can("Transaction.secondSignature")) {
 		registrationTypes.push({
 			value: "secondSignature",
 			label: "Second Signature",
