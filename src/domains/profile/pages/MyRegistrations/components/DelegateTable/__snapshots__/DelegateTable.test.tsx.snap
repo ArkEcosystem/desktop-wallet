@@ -21,27 +21,13 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
           role="row"
         >
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top hidden"
-            >
-              <div>
-                Avatar
-              </div>
-            </div>
-          </th>
-          <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-            colspan="1"
-            data-testid="table__th--1"
-            role="columnheader"
-          >
-            <div
-              class="flex flex-inline align-top "
+              class="flex flex-inline align-top ml-25"
             >
               <div>
                 Delegate Name
@@ -49,13 +35,13 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--2"
+            data-testid="table__th--1"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top "
+              class="flex flex-inline align-top justify-end"
             >
               <div>
                 Rank
@@ -63,9 +49,9 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--3"
+            data-testid="table__th--2"
             role="columnheader"
           >
             <div
@@ -77,9 +63,9 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--4"
+            data-testid="table__th--3"
             role="columnheader"
           >
             <div
@@ -91,9 +77,9 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--5"
+            data-testid="table__th--4"
             role="columnheader"
           >
             <div
@@ -105,13 +91,13 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
             colspan="1"
-            data-testid="table__th--6"
+            data-testid="table__th--5"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top justify-end"
+              class="flex flex-inline align-top justify-end no-border"
             >
               <div>
                 Votes
@@ -119,9 +105,9 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--7"
+            data-testid="table__th--6"
             role="columnheader"
           >
             <div
@@ -141,14 +127,12 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
           class="sc-AxhCb jCOJxD group"
           data-testid="TableRow"
         >
-          <td
-            class="w-24"
-          >
+          <td>
             <div
-              class="sc-AxiKw kPBQtr"
+              class="sc-AxiKw ekuVpr space-x-4"
             >
               <span
-                class="flex items-center"
+                class="flex items-center -space-x-1"
                 data-testid="DelegateRowItem__address"
               >
                 <div
@@ -160,12 +144,12 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
                     width="22"
                   >
                     <svg>
-                      business.svg
+                      delegate.svg
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                   data-testid="Avatar"
                 >
                   <div
@@ -179,12 +163,6 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
                   </div>
                 </div>
               </span>
-            </div>
-          </td>
-          <td>
-            <div
-              class="sc-AxiKw lfBQQd font-semibold"
-            >
               <span
                 data-testid="DelegateRowItem__username"
               >
@@ -194,7 +172,7 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold text-theme-secondary-text"
+              class="sc-AxiKw jHcrVp font-semibold text-theme-secondary-text justify-end"
             >
               <span
                 data-testid="DelegateRowItem__rank"
@@ -205,7 +183,7 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold justify-center text-theme-primary"
+              class="sc-AxiKw jHcrVp font-semibold justify-center text-theme-primary"
             >
               <span
                 data-testid="DelegateRowItem__msq"
@@ -224,7 +202,7 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd text-theme-neutral-light justify-center"
+              class="sc-AxiKw jHcrVp text-theme-neutral-light justify-center"
             >
               <span
                 data-testid="DelegateRowItem__status"
@@ -239,7 +217,7 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold text-theme-secondary-text justify-end"
+              class="sc-AxiKw jHcrVp font-semibold text-theme-secondary-text justify-end"
             >
               <span
                 class="whitespace-no-wrap"
@@ -251,7 +229,7 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold text-theme-secondary-text justify-end"
+              class="sc-AxiKw jHcrVp font-semibold text-theme-secondary-text justify-end"
             >
               <span
                 data-testid="DelegateRowItem__votes"
@@ -273,7 +251,7 @@ exports[`Welcome should handle resign delegate dropdown action 1`] = `
             class="w-22"
           >
             <div
-              class="sc-AxiKw fGKrFr justify-end"
+              class="sc-AxiKw gCtQxH justify-end"
             >
               <span
                 data-testid="DelegateRowItem__actions"
@@ -329,27 +307,13 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
           role="row"
         >
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top hidden"
-            >
-              <div>
-                Avatar
-              </div>
-            </div>
-          </th>
-          <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-            colspan="1"
-            data-testid="table__th--1"
-            role="columnheader"
-          >
-            <div
-              class="flex flex-inline align-top "
+              class="flex flex-inline align-top ml-25"
             >
               <div>
                 Delegate Name
@@ -357,13 +321,13 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--2"
+            data-testid="table__th--1"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top "
+              class="flex flex-inline align-top justify-end"
             >
               <div>
                 Rank
@@ -371,9 +335,9 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--3"
+            data-testid="table__th--2"
             role="columnheader"
           >
             <div
@@ -385,9 +349,9 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--4"
+            data-testid="table__th--3"
             role="columnheader"
           >
             <div
@@ -399,9 +363,9 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--5"
+            data-testid="table__th--4"
             role="columnheader"
           >
             <div
@@ -413,13 +377,13 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
             colspan="1"
-            data-testid="table__th--6"
+            data-testid="table__th--5"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top justify-end"
+              class="flex flex-inline align-top justify-end no-border"
             >
               <div>
                 Votes
@@ -427,9 +391,9 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--7"
+            data-testid="table__th--6"
             role="columnheader"
           >
             <div
@@ -449,14 +413,12 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
           class="sc-AxhCb jCOJxD group"
           data-testid="TableRow"
         >
-          <td
-            class="w-24"
-          >
+          <td>
             <div
-              class="sc-AxiKw kPBQtr"
+              class="sc-AxiKw ekuVpr space-x-4"
             >
               <span
-                class="flex items-center"
+                class="flex items-center -space-x-1"
                 data-testid="DelegateRowItem__address"
               >
                 <div
@@ -468,12 +430,12 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
                     width="22"
                   >
                     <svg>
-                      business.svg
+                      delegate.svg
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                   data-testid="Avatar"
                 >
                   <div
@@ -487,12 +449,6 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
                   </div>
                 </div>
               </span>
-            </div>
-          </td>
-          <td>
-            <div
-              class="sc-AxiKw lfBQQd font-semibold"
-            >
               <span
                 data-testid="DelegateRowItem__username"
               >
@@ -502,7 +458,7 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold text-theme-secondary-text"
+              class="sc-AxiKw jHcrVp font-semibold text-theme-secondary-text justify-end"
             >
               <span
                 data-testid="DelegateRowItem__rank"
@@ -513,7 +469,7 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold justify-center text-theme-primary"
+              class="sc-AxiKw jHcrVp font-semibold justify-center text-theme-primary"
             >
               <span
                 data-testid="DelegateRowItem__msq"
@@ -532,7 +488,7 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd text-theme-neutral-light justify-center"
+              class="sc-AxiKw jHcrVp text-theme-neutral-light justify-center"
             >
               <span
                 data-testid="DelegateRowItem__status"
@@ -547,7 +503,7 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold text-theme-secondary-text justify-end"
+              class="sc-AxiKw jHcrVp font-semibold text-theme-secondary-text justify-end"
             >
               <span
                 class="whitespace-no-wrap"
@@ -559,7 +515,7 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold text-theme-secondary-text justify-end"
+              class="sc-AxiKw jHcrVp font-semibold text-theme-secondary-text justify-end"
             >
               <span
                 data-testid="DelegateRowItem__votes"
@@ -581,7 +537,7 @@ exports[`Welcome should handle update delegate dropdown action 1`] = `
             class="w-22"
           >
             <div
-              class="sc-AxiKw fGKrFr justify-end"
+              class="sc-AxiKw gCtQxH justify-end"
             >
               <span
                 data-testid="DelegateRowItem__actions"
@@ -637,27 +593,13 @@ exports[`Welcome should render delegates 1`] = `
           role="row"
         >
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top hidden"
-            >
-              <div>
-                Avatar
-              </div>
-            </div>
-          </th>
-          <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-            colspan="1"
-            data-testid="table__th--1"
-            role="columnheader"
-          >
-            <div
-              class="flex flex-inline align-top "
+              class="flex flex-inline align-top ml-25"
             >
               <div>
                 Delegate Name
@@ -665,13 +607,13 @@ exports[`Welcome should render delegates 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--2"
+            data-testid="table__th--1"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top "
+              class="flex flex-inline align-top justify-end"
             >
               <div>
                 Rank
@@ -679,9 +621,9 @@ exports[`Welcome should render delegates 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--3"
+            data-testid="table__th--2"
             role="columnheader"
           >
             <div
@@ -693,9 +635,9 @@ exports[`Welcome should render delegates 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--4"
+            data-testid="table__th--3"
             role="columnheader"
           >
             <div
@@ -707,9 +649,9 @@ exports[`Welcome should render delegates 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--5"
+            data-testid="table__th--4"
             role="columnheader"
           >
             <div
@@ -721,13 +663,13 @@ exports[`Welcome should render delegates 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
             colspan="1"
-            data-testid="table__th--6"
+            data-testid="table__th--5"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top justify-end"
+              class="flex flex-inline align-top justify-end no-border"
             >
               <div>
                 Votes
@@ -735,9 +677,9 @@ exports[`Welcome should render delegates 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--7"
+            data-testid="table__th--6"
             role="columnheader"
           >
             <div
@@ -757,14 +699,12 @@ exports[`Welcome should render delegates 1`] = `
           class="sc-AxhCb jCOJxD group"
           data-testid="TableRow"
         >
-          <td
-            class="w-24"
-          >
+          <td>
             <div
-              class="sc-AxiKw kPBQtr"
+              class="sc-AxiKw ekuVpr space-x-4"
             >
               <span
-                class="flex items-center"
+                class="flex items-center -space-x-1"
                 data-testid="DelegateRowItem__address"
               >
                 <div
@@ -776,12 +716,12 @@ exports[`Welcome should render delegates 1`] = `
                     width="22"
                   >
                     <svg>
-                      business.svg
+                      delegate.svg
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                   data-testid="Avatar"
                 >
                   <div
@@ -795,12 +735,6 @@ exports[`Welcome should render delegates 1`] = `
                   </div>
                 </div>
               </span>
-            </div>
-          </td>
-          <td>
-            <div
-              class="sc-AxiKw lfBQQd font-semibold"
-            >
               <span
                 data-testid="DelegateRowItem__username"
               >
@@ -810,7 +744,7 @@ exports[`Welcome should render delegates 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold text-theme-secondary-text"
+              class="sc-AxiKw jHcrVp font-semibold text-theme-secondary-text justify-end"
             >
               <span
                 data-testid="DelegateRowItem__rank"
@@ -821,7 +755,7 @@ exports[`Welcome should render delegates 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold justify-center text-theme-primary"
+              class="sc-AxiKw jHcrVp font-semibold justify-center text-theme-primary"
             >
               <span
                 data-testid="DelegateRowItem__msq"
@@ -840,7 +774,7 @@ exports[`Welcome should render delegates 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd text-theme-neutral-light justify-center"
+              class="sc-AxiKw jHcrVp text-theme-neutral-light justify-center"
             >
               <span
                 data-testid="DelegateRowItem__status"
@@ -855,7 +789,7 @@ exports[`Welcome should render delegates 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold text-theme-secondary-text justify-end"
+              class="sc-AxiKw jHcrVp font-semibold text-theme-secondary-text justify-end"
             >
               <span
                 class="whitespace-no-wrap"
@@ -867,7 +801,7 @@ exports[`Welcome should render delegates 1`] = `
           </td>
           <td>
             <div
-              class="sc-AxiKw lfBQQd font-semibold text-theme-secondary-text justify-end"
+              class="sc-AxiKw jHcrVp font-semibold text-theme-secondary-text justify-end"
             >
               <span
                 data-testid="DelegateRowItem__votes"
@@ -889,7 +823,7 @@ exports[`Welcome should render delegates 1`] = `
             class="w-22"
           >
             <div
-              class="sc-AxiKw fGKrFr justify-end"
+              class="sc-AxiKw gCtQxH justify-end"
             >
               <span
                 data-testid="DelegateRowItem__actions"
@@ -945,27 +879,13 @@ exports[`Welcome should render empty state 1`] = `
           role="row"
         >
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top hidden"
-            >
-              <div>
-                Avatar
-              </div>
-            </div>
-          </th>
-          <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-            colspan="1"
-            data-testid="table__th--1"
-            role="columnheader"
-          >
-            <div
-              class="flex flex-inline align-top "
+              class="flex flex-inline align-top ml-25"
             >
               <div>
                 Delegate Name
@@ -973,13 +893,13 @@ exports[`Welcome should render empty state 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--2"
+            data-testid="table__th--1"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top "
+              class="flex flex-inline align-top justify-end"
             >
               <div>
                 Rank
@@ -987,9 +907,9 @@ exports[`Welcome should render empty state 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--3"
+            data-testid="table__th--2"
             role="columnheader"
           >
             <div
@@ -1001,9 +921,9 @@ exports[`Welcome should render empty state 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--4"
+            data-testid="table__th--3"
             role="columnheader"
           >
             <div
@@ -1015,9 +935,9 @@ exports[`Welcome should render empty state 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--5"
+            data-testid="table__th--4"
             role="columnheader"
           >
             <div
@@ -1029,13 +949,13 @@ exports[`Welcome should render empty state 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
             colspan="1"
-            data-testid="table__th--6"
+            data-testid="table__th--5"
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top justify-end"
+              class="flex flex-inline align-top justify-end no-border"
             >
               <div>
                 Votes
@@ -1043,9 +963,9 @@ exports[`Welcome should render empty state 1`] = `
             </div>
           </th>
           <th
-            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
             colspan="1"
-            data-testid="table__th--7"
+            data-testid="table__th--6"
             role="columnheader"
           >
             <div

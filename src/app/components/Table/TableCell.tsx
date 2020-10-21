@@ -5,17 +5,23 @@ import { getStyles } from "./TableCell.styles";
 
 type TableCellProps = {
 	variant?: "start" | "middle" | "end";
-	isSelected?: boolean;
 	className?: string;
 	innerClassName?: string;
+	isCompact?: boolean;
+	isSelected?: boolean;
 	children: React.ReactNode;
 };
 
 const TableCellInnerWrapper = styled.div<TableCellProps>(getStyles);
 
-export const TableCell = ({ variant, isSelected, className, innerClassName, children }: TableCellProps) => (
+export const TableCell = ({ variant, className, innerClassName, isCompact, isSelected, children }: TableCellProps) => (
 	<td className={className}>
-		<TableCellInnerWrapper variant={variant} isSelected={isSelected} className={innerClassName}>
+		<TableCellInnerWrapper
+			variant={variant}
+			className={innerClassName}
+			isSelected={isSelected}
+			isCompact={isCompact}
+		>
 			{children}
 		</TableCellInnerWrapper>
 	</td>

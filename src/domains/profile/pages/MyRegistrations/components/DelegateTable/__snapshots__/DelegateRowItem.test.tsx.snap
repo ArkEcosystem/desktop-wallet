@@ -8,14 +8,12 @@ exports[`DelegateRowItem should render 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-24"
-        >
+        <td>
           <div
-            class="sc-AxgMl eObzhI"
+            class="sc-AxgMl fLXqo space-x-4"
           >
             <span
-              class="flex items-center"
+              class="flex items-center -space-x-1"
               data-testid="DelegateRowItem__address"
             >
               <div
@@ -27,12 +25,12 @@ exports[`DelegateRowItem should render 1`] = `
                   width="22"
                 >
                   <svg>
-                    business.svg
+                    delegate.svg
                   </svg>
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -46,12 +44,6 @@ exports[`DelegateRowItem should render 1`] = `
                 </div>
               </div>
             </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="sc-AxgMl jraKvu font-semibold"
-          >
             <span
               data-testid="DelegateRowItem__username"
             >
@@ -61,7 +53,7 @@ exports[`DelegateRowItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               data-testid="DelegateRowItem__rank"
@@ -72,7 +64,7 @@ exports[`DelegateRowItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold justify-center text-theme-primary"
+            class="sc-AxgMl ibgOgG font-semibold justify-center text-theme-primary"
           >
             <span
               data-testid="DelegateRowItem__msq"
@@ -91,7 +83,7 @@ exports[`DelegateRowItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu text-theme-neutral-light justify-center"
+            class="sc-AxgMl ibgOgG text-theme-neutral-light justify-center"
           >
             <span
               data-testid="DelegateRowItem__status"
@@ -106,7 +98,7 @@ exports[`DelegateRowItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text justify-end"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               class="whitespace-no-wrap"
@@ -118,7 +110,7 @@ exports[`DelegateRowItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text justify-end"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               data-testid="DelegateRowItem__votes"
@@ -140,7 +132,7 @@ exports[`DelegateRowItem should render 1`] = `
           class="w-22"
         >
           <div
-            class="sc-AxgMl iwmQfA justify-end"
+            class="sc-AxgMl IcBqo justify-end"
           >
             <span
               data-testid="DelegateRowItem__actions"
@@ -182,14 +174,12 @@ exports[`DelegateRowItem should render all columns 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-24"
-        >
+        <td>
           <div
-            class="sc-AxgMl eObzhI"
+            class="sc-AxgMl fLXqo space-x-4"
           >
             <span
-              class="flex items-center"
+              class="flex items-center -space-x-1"
               data-testid="DelegateRowItem__address"
             >
               <div
@@ -201,12 +191,12 @@ exports[`DelegateRowItem should render all columns 1`] = `
                   width="22"
                 >
                   <svg>
-                    business.svg
+                    delegate.svg
                   </svg>
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -220,12 +210,6 @@ exports[`DelegateRowItem should render all columns 1`] = `
                 </div>
               </div>
             </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="sc-AxgMl jraKvu font-semibold"
-          >
             <span
               data-testid="DelegateRowItem__username"
             >
@@ -235,7 +219,7 @@ exports[`DelegateRowItem should render all columns 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               data-testid="DelegateRowItem__rank"
@@ -246,7 +230,7 @@ exports[`DelegateRowItem should render all columns 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold justify-center text-theme-primary"
+            class="sc-AxgMl ibgOgG font-semibold justify-center text-theme-primary"
           >
             <span
               data-testid="DelegateRowItem__msq"
@@ -265,7 +249,7 @@ exports[`DelegateRowItem should render all columns 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu text-theme-neutral-light justify-center"
+            class="sc-AxgMl ibgOgG text-theme-neutral-light justify-center"
           >
             <span
               data-testid="DelegateRowItem__status"
@@ -280,7 +264,7 @@ exports[`DelegateRowItem should render all columns 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text justify-end"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               class="whitespace-no-wrap"
@@ -292,7 +276,7 @@ exports[`DelegateRowItem should render all columns 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text justify-end"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               data-testid="DelegateRowItem__votes"
@@ -314,7 +298,7 @@ exports[`DelegateRowItem should render all columns 1`] = `
           class="w-22"
         >
           <div
-            class="sc-AxgMl iwmQfA justify-end"
+            class="sc-AxgMl IcBqo justify-end"
           >
             <span
               data-testid="DelegateRowItem__actions"
@@ -356,14 +340,12 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-24"
-        >
+        <td>
           <div
-            class="sc-AxgMl eObzhI"
+            class="sc-AxgMl fLXqo space-x-4"
           >
             <span
-              class="flex items-center"
+              class="flex items-center -space-x-1"
               data-testid="DelegateRowItem__address"
             >
               <div
@@ -375,12 +357,12 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
                   width="22"
                 >
                   <svg>
-                    business.svg
+                    delegate.svg
                   </svg>
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -394,12 +376,6 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
                 </div>
               </div>
             </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="sc-AxgMl jraKvu font-semibold"
-          >
             <span
               data-testid="DelegateRowItem__username"
             >
@@ -409,7 +385,7 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               data-testid="DelegateRowItem__rank"
@@ -420,7 +396,7 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold justify-center text-theme-primary"
+            class="sc-AxgMl ibgOgG font-semibold justify-center text-theme-primary"
           >
             <span
               data-testid="DelegateRowItem__msq"
@@ -439,7 +415,7 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu text-theme-neutral-light justify-center"
+            class="sc-AxgMl ibgOgG text-theme-neutral-light justify-center"
           >
             <span
               data-testid="DelegateRowItem__status"
@@ -458,7 +434,7 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text justify-end"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               class="whitespace-no-wrap"
@@ -470,7 +446,7 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text justify-end"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               data-testid="DelegateRowItem__votes"
@@ -492,7 +468,7 @@ exports[`DelegateRowItem should render confirmed status 1`] = `
           class="w-22"
         >
           <div
-            class="sc-AxgMl iwmQfA justify-end"
+            class="sc-AxgMl IcBqo justify-end"
           >
             <span
               data-testid="DelegateRowItem__actions"
@@ -534,14 +510,12 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-24"
-        >
+        <td>
           <div
-            class="sc-AxgMl eObzhI"
+            class="sc-AxgMl fLXqo space-x-4"
           >
             <span
-              class="flex items-center"
+              class="flex items-center -space-x-1"
               data-testid="DelegateRowItem__address"
             >
               <div
@@ -553,12 +527,12 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
                   width="22"
                 >
                   <svg>
-                    business.svg
+                    delegate.svg
                   </svg>
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
               >
                 <div
@@ -572,12 +546,6 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
                 </div>
               </div>
             </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="sc-AxgMl jraKvu font-semibold"
-          >
             <span
               data-testid="DelegateRowItem__username"
             >
@@ -587,7 +555,7 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               data-testid="DelegateRowItem__rank"
@@ -598,7 +566,7 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold justify-center text-theme-primary"
+            class="sc-AxgMl ibgOgG font-semibold justify-center text-theme-primary"
           >
             <span
               data-testid="DelegateRowItem__msq"
@@ -617,7 +585,7 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu text-theme-neutral-light justify-center"
+            class="sc-AxgMl ibgOgG text-theme-neutral-light justify-center"
           >
             <span
               data-testid="DelegateRowItem__status"
@@ -632,7 +600,7 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text justify-end"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               class="whitespace-no-wrap"
@@ -644,7 +612,7 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl jraKvu font-semibold text-theme-secondary-text justify-end"
+            class="sc-AxgMl ibgOgG font-semibold text-theme-secondary-text justify-end"
           >
             <span
               data-testid="DelegateRowItem__votes"
@@ -666,7 +634,7 @@ exports[`DelegateRowItem should render uncofirmed status 1`] = `
           class="w-22"
         >
           <div
-            class="sc-AxgMl iwmQfA justify-end"
+            class="sc-AxgMl IcBqo justify-end"
           >
             <span
               data-testid="DelegateRowItem__actions"

@@ -133,14 +133,14 @@ const Row = ({
 				<TruncateMiddle text={transaction.id()} />
 			</TableCell>
 
-			<TableCell className="w-48" innerClassName="text-theme-secondary-text">
+			<TableCell className="w-50" innerClassName="text-theme-secondary-text">
 				<span data-testid="TransactionRow__timestamp">
 					{/* TODO */}
 					{DateTime.fromUnix(1596213281).format("DD MMM YYYY HH:mm:ss")}
 				</span>
 			</TableCell>
 
-			<TableCell className="w-32">
+			<TableCell innerClassName="space-x-4">
 				<BaseTransactionRowMode
 					isSent={true}
 					type={type}
@@ -148,9 +148,7 @@ const Row = ({
 					circleShadowColor={shadowColor}
 					recipients={recipients}
 				/>
-			</TableCell>
 
-			<TableCell>
 				<BaseTransactionRowRecipientLabel type={type} recipient={recipient} />
 			</TableCell>
 
@@ -170,7 +168,7 @@ const Row = ({
 				/>
 			</TableCell>
 
-			<TableCell variant="end" innerClassName="justify-end">
+			<TableCell variant="end" className="w-24" innerClassName="justify-end">
 				{canBeSigned ? (
 					<Button data-testid="TransactionRow__sign" variant="plain" onClick={() => onSign?.(transaction)}>
 						<Icon name="Edit" />
@@ -194,11 +192,8 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 			accessor: "timestamp",
 		},
 		{
-			Header: "Type",
-			className: "hidden no-border",
-		},
-		{
 			Header: t("COMMON.RECIPIENT"),
+			className: "ml-25",
 		},
 		{
 			Header: t("COMMON.INFO"),
@@ -211,11 +206,11 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 		{
 			Header: t("COMMON.AMOUNT"),
 			accessor: "amount",
-			className: "justify-end",
+			className: "justify-end no-border",
 		},
 		{
 			Header: "Sign",
-			className: "invisible no-border w-24",
+			className: "hidden",
 		},
 	];
 
