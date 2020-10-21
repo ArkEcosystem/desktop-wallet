@@ -25,8 +25,12 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
-	const [showPortfolio, setShowPortfolio] = useState(true);
-	const [showTransactions, setShowTransactions] = useState(true);
+	const [{ showPortfolio }, setShowPortfolio] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { showPortfolio: true },
+	);
+	const [{ showTransactions }, setShowTransactions] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { showTransactions: true },
+	);
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
@@ -102,11 +106,11 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		networks,
 		visiblePortfolioView: showPortfolio,
 		visibleTransactionsView: showTransactions,
-		togglePortfolioView: (isChecked: boolean) => {
-			setShowPortfolio(isChecked);
+		togglePortfolioView: (showPortfolio: boolean) => {
+			setShowPortfolio({ showPortfolio });
 		},
-		toggleTransactionsView: (isChecked: boolean) => {
-			setShowTransactions(isChecked);
+		toggleTransactionsView: (showTransactions: boolean) => {
+			setShowTransactions({ showTransactions });
 		},
 	};
 
