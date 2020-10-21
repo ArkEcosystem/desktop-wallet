@@ -57,6 +57,11 @@ export const translations: { [key: string]: any } = {
 	IPFS_NOT_FOUND: "Unable to find ipfs data for transaction [{{transactionId}}]",
 
 	MULTISIGNATURE: {
+		AWAITING_OUR_SIGNATURE: "Awaiting our signature",
+		AWAITING_OTHER_SIGNATURE_COUNT: "Awaiting {{count}} other signature",
+		AWAITING_OTHER_SIGNATURE_COUNT_plural: "Awaiting {{count}} other signatures",
+		AWAITING_FINAL_SIGNATURE: "Awaiting final signature",
+		READY: "Ready to broadcast",
 		MIN_SIGNATURES: "Minimum Required Signatures",
 		PARTICIPANT: "Multisignature Participant",
 		PARTICIPANTS: "Multisignature Participants",
