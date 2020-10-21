@@ -42,17 +42,31 @@ export const SummaryStep = ({
 	const { t } = useTranslation();
 	const [senderAddress, setSenderAddress] = useState("");
 
+	const type = getType(transaction);
+
+	const isTransferType = () => ["transfer", "multiPayment"].includes(type);
+
 	// TODO: Move this helpers to SignedData on platform-sdk
 	const participants = transaction
 		.get<{ publicKeys: string[] }>("multiSignature")
 		.publicKeys.filter((pubKey) => pubKey !== wallet.publicKey());
 
-	const recipient = transaction.get<string>("recipientId");
-	const recipients = transaction
-		.get<{ payments: Record<string, string>[] }>("asset")
-		?.payments?.map((item) => ({ address: item.recipientId, amount: BigNumber.make(item.amount) }));
+	let recipients: any;
+	let transactionAmount: BigNumber;
 
-	const type = getType(transaction);
+	if (isTransferType()) {
+		recipients = transaction
+			.get<{ payments: Record<string, string>[] }>("asset")
+			?.payments?.map((item) => ({ address: item.recipientId, amount: BigNumber.make(item.amount) })) || [
+			{ address: transaction.recipient(), amount: transaction.amount() },
+		];
+
+		transactionAmount = recipients.reduce(
+			(sum: BigNumber, recipient: Contracts.MultiPaymentRecipient) => sum.plus(recipient.amount),
+			BigNumber.ZERO,
+		);
+	}
+
 	const titles: Record<string, string> = {
 		transfer: "TRANSACTION.TRANSACTION_TYPES.TRANSFER",
 		multiSignature: "TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE",
@@ -69,20 +83,21 @@ export const SummaryStep = ({
 
 	return (
 		<section>
-			<Header title={t(titles[type])} />
+			<div className="mb-8">
+				<Header title={t(titles[type])} />
+			</div>
 
 			<TransactionSender address={senderAddress} alias={wallet.alias()} border={false} />
 
-			{(recipients || recipient) && (
-				<TransactionRecipients
-					currency={wallet.currency()}
-					recipient={{ address: recipient }}
-					recipients={recipients}
-				/>
-			)}
+			{recipients && <TransactionRecipients currency={wallet.currency()} recipients={recipients} />}
 
-			{!transaction.amount().isZero() && (
-				<TransactionAmount amount={transaction.amount()} currency={wallet.currency()} isSent={true} />
+			{isTransferType() && (
+				<TransactionAmount
+					amount={transactionAmount!}
+					currency={wallet.currency()}
+					isMultiPayment={recipients.length > 1}
+					isSent={true}
+				/>
 			)}
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
