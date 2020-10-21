@@ -194,7 +194,10 @@ export const AddRecipient = ({
 							profile={profile}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
-								singleRecipientOnChange(getValues("amount"), address);
+
+								if (isSingle) {
+									singleRecipientOnChange(getValues("amount"), address);
+								}
 							}}
 						/>
 						<FormHelperText />
@@ -210,9 +213,12 @@ export const AddRecipient = ({
 								className="pr-20"
 								value={getValues("displayAmount") || recipientsAmount}
 								onChange={(currency) => {
+									if (isSingle) {
+										singleRecipientOnChange(currency.value, recipientAddress);
+									}
+
 									setValue("displayAmount", currency.display);
 									setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
-									singleRecipientOnChange(currency.value, recipientAddress);
 								}}
 							/>
 							<InputAddonEnd>
@@ -220,12 +226,15 @@ export const AddRecipient = ({
 									type="button"
 									data-testid="add-recipient__send-all"
 									onClick={() => {
+										if (isSingle) {
+											singleRecipientOnChange(availableBalance.toString(), recipientAddress);
+										}
+
 										setValue("displayAmount", availableBalance.toHuman());
 										setValue("amount", availableBalance.toString(), {
 											shouldValidate: true,
 											shouldDirty: true,
 										});
-										singleRecipientOnChange(availableBalance.toString(), recipientAddress);
 									}}
 									className="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
 								>
