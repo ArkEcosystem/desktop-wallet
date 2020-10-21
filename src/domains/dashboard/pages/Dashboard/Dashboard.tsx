@@ -22,7 +22,7 @@ type DashboardProps = {
 
 export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const history = useHistory();
-	const { env } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
 	const [showPortfolio, setShowPortfolio] = useState(true);
@@ -87,6 +87,15 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		fetchTransactions(true);
 		// eslint-disable-next-line
 	}, []);
+
+	useEffect(() => {
+		const updateDashboardSettings = async () => {
+			activeProfile.settings().set(ProfileSetting.DashboardConfiguration, { showPortfolio, showTransactions });
+			await persist();
+		};
+
+		updateDashboardSettings();
+	}, [activeProfile, persist, showPortfolio, showTransactions]);
 
 	// Wallet controls data
 	const filterProperties = {
