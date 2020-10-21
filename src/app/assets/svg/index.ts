@@ -63,6 +63,7 @@ import { ReactComponent as ListView } from "./list-view.svg";
 import { ReactComponent as LoaderLogo } from "./loader-logo.svg";
 import { ReactComponent as Lock } from "./lock.svg";
 import { ReactComponent as Medium } from "./medium.svg";
+import { ReactComponent as Module } from "./module.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multipayment } from "./multipayment.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
@@ -78,6 +79,7 @@ import { ReactComponent as Plugins } from "./plugins.svg";
 import { ReactComponent as Plus } from "./plus.svg";
 import { ReactComponent as PortfolioTag } from "./portfolio-tag.svg";
 import { ReactComponent as Portfolio } from "./portfolio.svg";
+import { ReactComponent as Product } from "./product.svg";
 import { ReactComponent as Profile } from "./profile.svg";
 import { ReactComponent as QrCode } from "./qr-code.svg";
 import { ReactComponent as QuestionMark } from "./questionmark.svg";
@@ -99,6 +101,7 @@ import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as StarsOutline } from "./stars-outline.svg";
 import { ReactComponent as StatusOk } from "./status-ok.svg";
 import { ReactComponent as StatusPending } from "./status-pending.svg";
+import { ReactComponent as Timelock } from "./timelock.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Unvote } from "./unvote.svg";
@@ -173,6 +176,7 @@ export const SvgCollection: any = {
 	LoaderLogo,
 	Lock,
 	Medium,
+	Module,
 	Msq,
 	Multipayment,
 	Multisig,
@@ -188,6 +192,7 @@ export const SvgCollection: any = {
 	Plus,
 	Portfolio,
 	PortfolioTag,
+	Product,
 	Profile,
 	QrCode,
 	QuestionMark,
@@ -209,6 +214,7 @@ export const SvgCollection: any = {
 	StarsOutline,
 	StatusOk,
 	StatusPending,
+	Timelock,
 	Trash,
 	Twitter,
 	Unvote,
