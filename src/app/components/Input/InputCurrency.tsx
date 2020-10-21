@@ -1,5 +1,5 @@
 import { Currency } from "@arkecosystem/platform-sdk-intl";
-import React, { useCallback, useLayoutEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { Input } from "./Input";
 
@@ -13,7 +13,7 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 		const convertValue = useCallback((value: string) => Currency.fromString(value || "", magnitude), [magnitude]);
 		const [amount, setAmount] = useState(convertValue(value?.toString() || ""));
 
-		useLayoutEffect(() => {
+		useEffect(() => {
 			const evaluateValue = (value: any) => {
 				if (value?.display) return value;
 
