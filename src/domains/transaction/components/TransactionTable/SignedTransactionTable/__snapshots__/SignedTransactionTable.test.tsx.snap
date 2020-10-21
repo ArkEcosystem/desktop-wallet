@@ -286,9 +286,17 @@ exports[`Signed Transaction Table should render 1`] = `
                 class="sc-AxhCb kdNpYF justify-center truncate"
               >
                 <span
-                  class="text-theme-success-500"
+                  class="p-1 text-theme-success-500"
                 >
-                  Ready
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      send.svg
+                    </svg>
+                  </div>
                 </span>
               </div>
             </td>
@@ -431,9 +439,17 @@ exports[`Signed Transaction Table should render 1`] = `
                 class="sc-AxhCb kdNpYF justify-center truncate"
               >
                 <span
-                  class="text-theme-success-500"
+                  class="p-1 text-theme-success-500"
                 >
-                  Ready
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      send.svg
+                    </svg>
+                  </div>
                 </span>
               </div>
             </td>
@@ -570,9 +586,17 @@ exports[`Signed Transaction Table should render 1`] = `
                 class="sc-AxhCb kdNpYF justify-center truncate"
               >
                 <span
-                  class="text-theme-success-500"
+                  class="p-1 text-theme-success-500"
                 >
-                  Ready
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      send.svg
+                    </svg>
+                  </div>
                 </span>
               </div>
             </td>
@@ -894,9 +918,17 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
                 class="sc-AxhCb kdNpYF justify-center truncate"
               >
                 <span
-                  class="text-theme-danger-400"
+                  class="p-1 text-theme-warning-300"
                 >
-                  3 more signature(s)
+                  <div
+                    class="sc-AxirZ gfsEGU"
+                    height="22"
+                    width="30"
+                  >
+                    <svg>
+                      awaiting-other-signature.svg
+                    </svg>
+                  </div>
                 </span>
               </div>
             </td>
@@ -1218,9 +1250,17 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
                 class="sc-AxhCb kdNpYF justify-center truncate"
               >
                 <span
-                  class="text-theme-danger-400"
+                  class="p-1 text-theme-danger-400"
                 >
-                  Your Signature
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      awaiting-our-signature.svg
+                    </svg>
+                  </div>
                 </span>
               </div>
             </td>
@@ -1542,9 +1582,17 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
                 class="sc-AxhCb kdNpYF justify-center truncate"
               >
                 <span
-                  class="text-theme-success-500"
+                  class="p-1 text-theme-success-500"
                 >
-                  Final Signature
+                  <div
+                    class="sc-AxirZ gfsEGU"
+                    height="22"
+                    width="30"
+                  >
+                    <svg>
+                      awaiting-final-signature.svg
+                    </svg>
+                  </div>
                 </span>
               </div>
             </td>
@@ -1862,9 +1910,17 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
                 class="sc-AxhCb kdNpYF justify-center truncate"
               >
                 <span
-                  class="text-theme-success-500"
+                  class="p-1 text-theme-success-500"
                 >
-                  Final Signature
+                  <div
+                    class="sc-AxirZ gfsEGU"
+                    height="22"
+                    width="30"
+                  >
+                    <svg>
+                      awaiting-final-signature.svg
+                    </svg>
+                  </div>
                 </span>
               </div>
             </td>
