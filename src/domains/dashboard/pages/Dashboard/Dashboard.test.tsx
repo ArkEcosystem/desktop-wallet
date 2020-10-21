@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
@@ -125,17 +126,44 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await act(async () => {
+			await waitFor(() =>
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			);
 
-		act(() => {
 			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
-		});
 
-		act(() => {
+			await waitFor(() => expect(getByTestId("filter-wallets_toggle--transactions")).toBeTruthy());
+
 			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
-		});
 
-		expect(asFragment()).toMatchSnapshot();
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
+	});
+
+	it("should show transaction view", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await act(async () => {
+			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
+
+			await waitFor(() => expect(getByTestId("filter-wallets_toggle--transactions")).toBeTruthy());
+
+			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
+
+			await waitFor(() =>
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			);
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
 	});
 
 	it("should render portfolio percentage bar", async () => {
@@ -179,20 +207,19 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await act(async () => {
+			await waitFor(() =>
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			);
 
-		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
+			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
 
-		act(() => {
-			fireEvent.click(filterNetwork);
+			await waitFor(() => expect(getByTestId("filter-wallets_toggle--portfolio")).toBeTruthy());
+
+			fireEvent.click(getByTestId("filter-wallets_toggle--portfolio"));
+
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
-
-		const toggle = getByTestId("filter-wallets_toggle--portfolio");
-		act(() => {
-			fireEvent.click(toggle);
-		});
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should navigate to import page", async () => {
