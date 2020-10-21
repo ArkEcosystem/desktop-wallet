@@ -45,7 +45,6 @@ export const BaseTransactionRowMode = ({
 			</Tippy>
 			<TransactionRowRecipientIcon
 				size={iconSize}
-				recipients={recipients}
 				recipient={recipient}
 				type={type}
 				className={`bg-theme-background font-semibold ${modeCircleStyle}`}

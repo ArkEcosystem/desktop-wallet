@@ -50,6 +50,15 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 		return <Address walletName={walletName} address={recipient} />;
 	}
 
+	if (transaction?.isMultiPayment()) {
+		return (
+			<>
+				<RecipientLabel type={transactionLabel.multiPayment} />
+				<span className="ml-1 font-semibold text-theme-neutral-500">{transaction?.recipients().length}</span>
+			</>
+		);
+	}
+
 	if (transaction?.isBusinessEntityRegistration()) {
 		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION")} />;
 	}

@@ -1,4 +1,3 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -8,7 +7,6 @@ import { Size } from "types";
 type Props = {
 	type: string;
 	recipient?: string;
-	recipients?: Contracts.MultiPaymentRecipient[];
 	className?: string;
 	circleShadowColor?: string;
 	size?: Size;
@@ -34,14 +32,7 @@ const Wrapper = ({
 	</Circle>
 );
 
-export const TransactionRowRecipientIcon = ({
-	type,
-	recipient,
-	recipients,
-	className,
-	circleShadowColor,
-	size,
-}: Props) => {
+export const TransactionRowRecipientIcon = ({ type, recipient, className, circleShadowColor, size }: Props) => {
 	const transactionIcon: Record<string, string> = {
 		transfer: "Transfer",
 		secondSignature: "Key",
@@ -50,7 +41,7 @@ export const TransactionRowRecipientIcon = ({
 		unvote: "Voted",
 		multiSignature: "Multisig",
 		ipfs: "Ipfs",
-		multiPayment: "Multisig",
+		multiPayment: "Multipayment",
 		delegateResignation: "Delegate",
 		htlcLock: "StatusClock",
 		htlcClaim: "StatusClock",
@@ -85,22 +76,13 @@ export const TransactionRowRecipientIcon = ({
 		return <Avatar size={size} address={recipient} shadowColor={circleShadowColor} />;
 	}
 
-	if (type === "multiPayment") {
-		return (
-			<Wrapper className={className} shadowColor={circleShadowColor} size={size}>
-				<span>{recipients!.length}</span>
-			</Wrapper>
-		);
-	}
-
 	return (
 		<Wrapper shadowColor={circleShadowColor} size={size}>
-			<Icon name={transactionIcon[type]} />
+			<Icon name={transactionIcon[type]} width={22} height={22} />
 		</Wrapper>
 	);
 };
 
 TransactionRowRecipientIcon.defaultProps = {
-	recipients: [],
 	size: "lg",
 };

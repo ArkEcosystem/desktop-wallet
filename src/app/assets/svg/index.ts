@@ -1,3 +1,6 @@
+import { Currencies } from "app/assets/svg/currencies";
+import { Transactions } from "app/assets/svg/transactions";
+
 import { ReactComponent as AlertDanger } from "./alert-danger.svg";
 import { ReactComponent as AlertDefault } from "./alert-default.svg";
 import { ReactComponent as AlertSuccess } from "./alert-success.svg";
@@ -25,7 +28,6 @@ import { ReactComponent as CopyAddress } from "./copy-address.svg";
 import { ReactComponent as CopyKey } from "./copy-key.svg";
 import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
-import { Currencies } from "./currencies";
 import { ReactComponent as Dash } from "./dash.svg";
 import { ReactComponent as DelegateResigned } from "./delegate-resigned.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
@@ -210,4 +212,5 @@ export const SvgCollection: any = {
 	VoteUnvote,
 	ArkLogo,
 	...Currencies,
+	...Transactions,
 };

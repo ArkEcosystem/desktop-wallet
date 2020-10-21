@@ -22,12 +22,18 @@ exports[`TransactionRowRecipientIcon should render avatar 1`] = `
 exports[`TransactionRowRecipientIcon should render counter 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxjAm jcZnVc"
+    class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
     data-testid="TransactionRowRecipientIcon"
   >
-    <span>
-      2
-    </span>
+    <div
+      class="sc-AxirZ hmuEJr"
+      height="22"
+      width="22"
+    >
+      <svg>
+        multipayment.svg
+      </svg>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -39,9 +45,9 @@ exports[`TransactionRowRecipientIcon should render icon 1`] = `
     data-testid="TransactionRowRecipientIcon"
   >
     <div
-      class="sc-AxirZ iQaTP"
-      height="1em"
-      width="1em"
+      class="sc-AxirZ hmuEJr"
+      height="22"
+      width="22"
     >
       <svg>
         key.svg
