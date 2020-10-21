@@ -5,6 +5,9 @@ import { ReactComponent as ArkLogo } from "./ark-logo.svg";
 import { ReactComponent as ArrowLeft } from "./arrow-left.svg";
 import { ReactComponent as ArrowRight } from "./arrow-right.svg";
 import { ReactComponent as Article } from "./article.svg";
+import { ReactComponent as AwaitingFinalSignature } from "./awaiting-final-signature.svg";
+import { ReactComponent as AwaitingOtherSignature } from "./awaiting-other-signature.svg";
+import { ReactComponent as AwaitingOurSignature } from "./awaiting-our-signature.svg";
 import { ReactComponent as Back } from "./back.svg";
 import { ReactComponent as BitBucket } from "./bitbucket.svg";
 import { ReactComponent as Blockfolio } from "./blockfolio.svg";
@@ -100,7 +103,7 @@ import { ReactComponent as Unvote } from "./unvote.svg";
 import { ReactComponent as Update } from "./update.svg";
 import { ReactComponent as Upload } from "./upload.svg";
 import { ReactComponent as User } from "./user.svg";
-import { ReactComponent as VoteUnvote } from "./vote-unvote.svg";
+import { ReactComponent as VoteCombination } from "./vote-combination.svg";
 import { ReactComponent as Vote } from "./vote.svg";
 import { ReactComponent as Voted } from "./voted.svg";
 
@@ -111,6 +114,9 @@ export const SvgCollection: any = {
 	ArrowLeft,
 	ArrowRight,
 	Article,
+	AwaitingFinalSignature,
+	AwaitingOtherSignature,
+	AwaitingOurSignature,
 	Back,
 	BitBucket,
 	Blockfolio,
@@ -207,7 +213,7 @@ export const SvgCollection: any = {
 	User,
 	Vote,
 	Voted,
-	VoteUnvote,
+	VoteCombination,
 	ArkLogo,
 	...Currencies,
 };

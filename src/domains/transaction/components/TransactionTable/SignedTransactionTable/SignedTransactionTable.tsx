@@ -1,6 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table, TableCell, TableRow } from "app/components/Table";
@@ -37,6 +38,8 @@ const getType = (transaction: SignedTransactionData): string => {
 };
 
 const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transaction: SignedTransactionData }) => {
+	const { t } = useTranslation();
+
 	const isMultiSignatureReady = useMemo(() => {
 		try {
 			return wallet.coin().multiSignature().isMultiSignatureReady(transaction);
@@ -46,23 +49,46 @@ const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transac
 	}, [wallet, transaction]);
 
 	if (wallet.transaction().isAwaitingOurSignature(transaction.id())) {
-		return <span className="text-theme-danger-400">Your Signature</span>;
+		return (
+			<Tippy content={t("TRANSACTION.MULTISIGNATURE.AWAITING_OUR_SIGNATURE")}>
+				<span className="p-1 text-theme-danger-400">
+					<Icon name="AwaitingOurSignature" width={20} height={20} />
+				</span>
+			</Tippy>
+		);
 	}
 
 	if (wallet.transaction().isAwaitingOtherSignatures(transaction.id())) {
 		return (
-			<span className="text-theme-danger-400">{`${wallet
-				.coin()
-				.multiSignature()
-				.remainingSignatureCount(transaction)} more signature(s)`}</span>
+			<Tippy
+				content={t("TRANSACTION.MULTISIGNATURE.AWAITING_OTHER_SIGNATURE_COUNT", {
+					count: wallet.coin().multiSignature().remainingSignatureCount(transaction),
+				})}
+			>
+				<span className="p-1 text-theme-warning-300">
+					<Icon name="AwaitingOtherSignature" width={30} height={22} />
+				</span>
+			</Tippy>
 		);
 	}
 
 	if (isMultiSignatureReady) {
-		return <span className="text-theme-success-500">Ready</span>;
+		return (
+			<Tippy content={t("TRANSACTION.MULTISIGNATURE.READY")}>
+				<span className="p-1 text-theme-success-500">
+					<Icon name="Send" width={20} height={20} />
+				</span>
+			</Tippy>
+		);
 	}
 
-	return <span className="text-theme-success-500">Final Signature</span>;
+	return (
+		<Tippy content={t("TRANSACTION.MULTISIGNATURE.AWAITING_FINAL_SIGNATURE")}>
+			<span className="p-1 text-theme-success-500">
+				<Icon name="AwaitingFinalSignature" width={30} height={22} />
+			</span>
+		</Tippy>
+	);
 };
 
 const Row = ({

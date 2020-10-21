@@ -261,7 +261,7 @@ export const Votes = () => {
 			</div>
 
 			<Section className="flex-1">
-				{network && address ? (
+				{network?.allowsVoting() && address ? (
 					tabItem === "delegate" ? (
 						<DelegateTable
 							delegates={delegates}
@@ -278,7 +278,7 @@ export const Votes = () => {
 							onContinue={handleContinue}
 						/>
 					)
-				) : network ? (
+				) : network?.allowsVoting() ? (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
 				) : (
 					<div className="mt-8 text-center text-theme-secondary-text" data-testid="votes__message">

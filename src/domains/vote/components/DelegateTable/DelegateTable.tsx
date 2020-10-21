@@ -249,7 +249,7 @@ export const DelegateTable = ({
 											className="mr-2 bg-theme-background border-theme-text text-theme-text"
 											size="lg"
 										>
-											<Icon name="VoteUnvote" className="text-xl" />
+											<Icon name="VoteCombination" className="text-xl" />
 										</Circle>
 										<div className="flex flex-col">
 											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
