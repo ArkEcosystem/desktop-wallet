@@ -32,16 +32,13 @@ export const EntityTableRowItem = ({ onAction, entity, type }: EntityTableRowIte
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
-			<TableCell variant="start" className="w-24">
-				<div className="flex items-center">
+			<TableCell variant="start" innerClassName="space-x-4">
+				<div className="flex items-center -space-x-1">
 					<Circle className="border-theme-neutral-800" size="lg" shadowColor={shadowColor}>
 						<Icon name="Business" width={22} height={22} />
 					</Circle>
-					<Avatar address={entity.sender()} size="lg" className="mr-4" shadowColor={shadowColor} />
+					<Avatar address={entity.sender()} size="lg" shadowColor={shadowColor} />
 				</div>
-			</TableCell>
-
-			<TableCell>
 				<Address walletName={entity.wallet().alias()} address={entity.wallet().address()} maxChars={12} />
 			</TableCell>
 

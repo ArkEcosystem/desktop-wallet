@@ -12,7 +12,7 @@ exports[`WalletHeader should render 1`] = `
         class="container flex items-center mx-auto px-14"
       >
         <div
-          class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
+          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
         >
           <div
             class="flex"
@@ -94,7 +94,7 @@ exports[`WalletHeader should render 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center space-x-2 h-13 w-1/2 pl-12"
+          class="flex items-center w-1/2 pl-12 space-x-2 h-13"
         >
           <div
             class="flex flex-col mr-auto"
@@ -117,7 +117,7 @@ exports[`WalletHeader should render 1`] = `
             class="my-auto"
           >
             <button
-              class="sc-AxjAm RZxAM text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
               color="primary"
               data-testid="WalletHeader__star-button"
               type="button"
@@ -138,7 +138,7 @@ exports[`WalletHeader should render 1`] = `
             </button>
           </div>
           <button
-            class="sc-AxjAm BsmvP my-auto"
+            class="sc-AxjAm colAFb my-auto"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -154,7 +154,7 @@ exports[`WalletHeader should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm hMpHNk text-left"
+                class="sc-AxjAm eRbxBA text-left"
                 color="primary"
                 type="button"
               >
@@ -189,7 +189,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         class="container flex items-center mx-auto px-14"
       >
         <div
-          class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
+          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
         >
           <div
             class="flex"
@@ -298,7 +298,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center space-x-2 h-13 w-1/2 pl-12"
+          class="flex items-center w-1/2 pl-12 space-x-2 h-13"
         >
           <div
             class="flex flex-col mr-auto"
@@ -339,7 +339,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             class="my-auto"
           >
             <button
-              class="sc-AxjAm RZxAM text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
               color="primary"
               data-testid="WalletHeader__star-button"
               type="button"
@@ -360,7 +360,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             </button>
           </div>
           <button
-            class="sc-AxjAm BsmvP my-auto"
+            class="sc-AxjAm colAFb my-auto"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -376,7 +376,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm hMpHNk text-left"
+                class="sc-AxjAm eRbxBA text-left"
                 color="primary"
                 type="button"
               >
@@ -411,7 +411,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         class="container flex items-center mx-auto px-14"
       >
         <div
-          class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
+          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
         >
           <div
             class="flex"
@@ -520,7 +520,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center space-x-2 h-13 w-1/2 pl-12"
+          class="flex items-center w-1/2 pl-12 space-x-2 h-13"
         >
           <div
             class="flex flex-col mr-auto"
@@ -561,7 +561,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             class="my-auto"
           >
             <button
-              class="sc-AxjAm RZxAM text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
               color="primary"
               data-testid="WalletHeader__star-button"
               type="button"
@@ -582,7 +582,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             </button>
           </div>
           <button
-            class="sc-AxjAm BsmvP my-auto"
+            class="sc-AxjAm colAFb my-auto"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -598,7 +598,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm hMpHNk text-left"
+                class="sc-AxjAm eRbxBA text-left"
                 color="primary"
                 type="button"
               >
@@ -633,7 +633,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         class="container flex items-center mx-auto px-14"
       >
         <div
-          class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
+          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
         >
           <div
             class="flex"
@@ -742,7 +742,7 @@ exports[`WalletHeader should show modifiers 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center space-x-2 h-13 w-1/2 pl-12"
+          class="flex items-center w-1/2 pl-12 space-x-2 h-13"
         >
           <div
             class="flex flex-col mr-auto"
@@ -765,7 +765,7 @@ exports[`WalletHeader should show modifiers 1`] = `
             class="my-auto"
           >
             <button
-              class="sc-AxjAm RZxAM text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
               color="primary"
               data-testid="WalletHeader__star-button"
               type="button"
@@ -786,7 +786,7 @@ exports[`WalletHeader should show modifiers 1`] = `
             </button>
           </div>
           <button
-            class="sc-AxjAm BsmvP my-auto"
+            class="sc-AxjAm colAFb my-auto"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -802,7 +802,7 @@ exports[`WalletHeader should show modifiers 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm hMpHNk text-left"
+                class="sc-AxjAm eRbxBA text-left"
                 color="primary"
                 type="button"
               >

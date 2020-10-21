@@ -10,18 +10,6 @@ describe("TransactionRowRecipientIcon", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render counter", () => {
-		const recipients = [
-			{ amount: "1", address: "test" },
-			{ amount: "2", address: "test2" },
-		];
-		const { getByTestId, asFragment } = render(
-			<TransactionRowRecipientIcon type="multiPayment" recipients={recipients} />,
-		);
-		expect(getByTestId("TransactionRowRecipientIcon")).toHaveTextContent(recipients.length.toString());
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should render icon", () => {
 		const { getByTestId, asFragment } = render(<TransactionRowRecipientIcon type="secondSignature" />);
 		expect(getByTestId("TransactionRowRecipientIcon")).toBeTruthy();
