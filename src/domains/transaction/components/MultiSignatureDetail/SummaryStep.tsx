@@ -26,11 +26,9 @@ const getType = (transaction: Contracts.SignedTransactionData): string => {
 	}
 
 	if (type === 6) {
-		console.log("multiPayment");
 		return "multiPayment";
 	}
 
-	console.log("transfer");
 	return "transfer";
 };
 
