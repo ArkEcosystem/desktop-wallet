@@ -90,8 +90,8 @@ describe("TransactionDetailModal", () => {
 						...TransactionFixture,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "multiSignature",
-						min: () => 3,
-						publicKeys: () => [wallet.publicKey()],
+						min: () => 2,
+						publicKeys: () => [wallet.publicKey(), profile.wallets().last().publicKey()],
 						wallet: () => wallet,
 					}}
 				/>

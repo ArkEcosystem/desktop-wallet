@@ -334,21 +334,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   />
                   <div
                     class="flex items-center space-x-3"
-                  >
-                    <span
-                      data-testid="WalletHeader__multisig"
-                    >
-                      <div
-                        class="sc-AxiKw bctdez hover:text-theme-neutral"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
+                  />
                 </div>
                 <div
                   class="flex items-center space-x-5"
@@ -592,53 +578,23 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   <span
                     class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
-                    (1)
+                    (0)
                   </span>
                 </div>
                 <div
-                  class="flex items-center h-11"
+                  class="flex items-center space-x-4"
+                  data-testid="WalletRegistrations__empty"
                 >
                   <div
-                    class="flex items-center mr-8 -space-x-2"
+                    class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW border-theme-text text-theme-text"
+                      class="sc-AxhUy iDenJW text-theme-neutral-light"
                     >
                       <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-                    data-testid="WalletRegistrations__inactive"
-                  >
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          key.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                        class="sc-AxiKw dzBdqj text-xl"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
                           delegate.svg
@@ -646,27 +602,42 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW"
+                    />
+                  </div>
+                  <div
+                    class="flex justify-between flex-1"
+                  >
+                    <div
+                      class="flex flex-col mr-4 font-semibold text-theme-text"
                     >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                      <span
+                        class="mr-2"
                       >
-                        <svg>
-                          entity.svg
-                        </svg>
+                        You have no active registrations
+                      </span>
+                      <div
+                        class="mr-auto"
+                      >
+                        <a
+                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="@TODO"
+                        >
+                          Learn more
+                        </a>
                       </div>
                     </div>
+                    <button
+                      class="sc-AxjAm joLCoM"
+                      color="primary"
+                      data-testid="WalletRegistrations__button"
+                      type="button"
+                    >
+                      Register
+                    </button>
                   </div>
-                  <button
-                    class="sc-AxjAm joLCoM ml-auto"
-                    color="primary"
-                    data-testid="WalletRegistrations__button"
-                    type="button"
-                  >
-                    Show All
-                  </button>
                 </div>
               </section>
             </div>
@@ -1519,21 +1490,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     >
                       <div
                         class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxiKw bctdez"
-                            height="16"
-                            width="16"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                      </div>
+                      />
                     </div>
                   </td>
                   <td>
@@ -2880,21 +2837,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   />
                   <div
                     class="flex items-center space-x-3"
-                  >
-                    <span
-                      data-testid="WalletHeader__multisig"
-                    >
-                      <div
-                        class="sc-AxiKw bctdez hover:text-theme-neutral"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
+                  />
                 </div>
                 <div
                   class="flex items-center space-x-5"
@@ -3150,53 +3093,23 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   <span
                     class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
-                    (1)
+                    (0)
                   </span>
                 </div>
                 <div
-                  class="flex items-center h-11"
+                  class="flex items-center space-x-4"
+                  data-testid="WalletRegistrations__empty"
                 >
                   <div
-                    class="flex items-center mr-8 -space-x-2"
+                    class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW border-theme-text text-theme-text"
+                      class="sc-AxhUy iDenJW text-theme-neutral-light"
                     >
                       <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-                    data-testid="WalletRegistrations__inactive"
-                  >
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          key.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                        class="sc-AxiKw dzBdqj text-xl"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
                           delegate.svg
@@ -3204,27 +3117,42 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW"
+                    />
+                  </div>
+                  <div
+                    class="flex justify-between flex-1"
+                  >
+                    <div
+                      class="flex flex-col mr-4 font-semibold text-theme-text"
                     >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                      <span
+                        class="mr-2"
                       >
-                        <svg>
-                          entity.svg
-                        </svg>
+                        You have no active registrations
+                      </span>
+                      <div
+                        class="mr-auto"
+                      >
+                        <a
+                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="@TODO"
+                        >
+                          Learn more
+                        </a>
                       </div>
                     </div>
+                    <button
+                      class="sc-AxjAm joLCoM"
+                      color="primary"
+                      data-testid="WalletRegistrations__button"
+                      type="button"
+                    >
+                      Register
+                    </button>
                   </div>
-                  <button
-                    class="sc-AxjAm joLCoM ml-auto"
-                    color="primary"
-                    data-testid="WalletRegistrations__button"
-                    type="button"
-                  >
-                    Show All
-                  </button>
                 </div>
               </section>
             </div>
@@ -3813,21 +3741,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxiKw bctdez"
-                            height="16"
-                            width="16"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                      </div>
+                      />
                     </div>
                   </td>
                   <td>
@@ -4461,21 +4375,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   />
                   <div
                     class="flex items-center space-x-3"
-                  >
-                    <span
-                      data-testid="WalletHeader__multisig"
-                    >
-                      <div
-                        class="sc-AxiKw bctdez hover:text-theme-neutral"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
+                  />
                 </div>
                 <div
                   class="flex items-center space-x-5"
@@ -4731,53 +4631,23 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   <span
                     class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
-                    (1)
+                    (0)
                   </span>
                 </div>
                 <div
-                  class="flex items-center h-11"
+                  class="flex items-center space-x-4"
+                  data-testid="WalletRegistrations__empty"
                 >
                   <div
-                    class="flex items-center mr-8 -space-x-2"
+                    class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW border-theme-text text-theme-text"
+                      class="sc-AxhUy iDenJW text-theme-neutral-light"
                     >
                       <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-                    data-testid="WalletRegistrations__inactive"
-                  >
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          key.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                        class="sc-AxiKw dzBdqj text-xl"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
                           delegate.svg
@@ -4785,27 +4655,42 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW"
+                    />
+                  </div>
+                  <div
+                    class="flex justify-between flex-1"
+                  >
+                    <div
+                      class="flex flex-col mr-4 font-semibold text-theme-text"
                     >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                      <span
+                        class="mr-2"
                       >
-                        <svg>
-                          entity.svg
-                        </svg>
+                        You have no active registrations
+                      </span>
+                      <div
+                        class="mr-auto"
+                      >
+                        <a
+                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="@TODO"
+                        >
+                          Learn more
+                        </a>
                       </div>
                     </div>
+                    <button
+                      class="sc-AxjAm joLCoM"
+                      color="primary"
+                      data-testid="WalletRegistrations__button"
+                      type="button"
+                    >
+                      Register
+                    </button>
                   </div>
-                  <button
-                    class="sc-AxjAm joLCoM ml-auto"
-                    color="primary"
-                    data-testid="WalletRegistrations__button"
-                    type="button"
-                  >
-                    Show All
-                  </button>
                 </div>
               </section>
             </div>
@@ -5394,21 +5279,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxiKw bctdez"
-                            height="16"
-                            width="16"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                      </div>
+                      />
                     </div>
                   </td>
                   <td>
@@ -6044,21 +5915,7 @@ exports[`WalletDetails should render 1`] = `
                   </span>
                   <div
                     class="flex items-center space-x-3"
-                  >
-                    <span
-                      data-testid="WalletHeader__multisig"
-                    >
-                      <div
-                        class="sc-AxiKw bctdez hover:text-theme-neutral"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
+                  />
                 </div>
                 <div
                   class="flex items-center space-x-5"
@@ -6314,53 +6171,23 @@ exports[`WalletDetails should render 1`] = `
                   <span
                     class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
-                    (1)
+                    (0)
                   </span>
                 </div>
                 <div
-                  class="flex items-center h-11"
+                  class="flex items-center space-x-4"
+                  data-testid="WalletRegistrations__empty"
                 >
                   <div
-                    class="flex items-center mr-8 -space-x-2"
+                    class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW border-theme-text text-theme-text"
+                      class="sc-AxhUy iDenJW text-theme-neutral-light"
                     >
                       <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-                    data-testid="WalletRegistrations__inactive"
-                  >
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          key.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                        class="sc-AxiKw dzBdqj text-xl"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
                           delegate.svg
@@ -6368,27 +6195,42 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW"
+                    />
+                  </div>
+                  <div
+                    class="flex justify-between flex-1"
+                  >
+                    <div
+                      class="flex flex-col mr-4 font-semibold text-theme-text"
                     >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                      <span
+                        class="mr-2"
                       >
-                        <svg>
-                          entity.svg
-                        </svg>
+                        You have no active registrations
+                      </span>
+                      <div
+                        class="mr-auto"
+                      >
+                        <a
+                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="@TODO"
+                        >
+                          Learn more
+                        </a>
                       </div>
                     </div>
+                    <button
+                      class="sc-AxjAm joLCoM"
+                      color="primary"
+                      data-testid="WalletRegistrations__button"
+                      type="button"
+                    >
+                      Register
+                    </button>
                   </div>
-                  <button
-                    class="sc-AxjAm joLCoM ml-auto"
-                    color="primary"
-                    data-testid="WalletRegistrations__button"
-                    type="button"
-                  >
-                    Show All
-                  </button>
                 </div>
               </section>
             </div>
@@ -6983,21 +6825,7 @@ exports[`WalletDetails should render 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxiKw bctdez"
-                            height="16"
-                            width="16"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                      </div>
+                      />
                     </div>
                   </td>
                   <td>
@@ -8529,21 +8357,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxiKw bctdez"
-                            height="16"
-                            width="16"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                      </div>
+                      />
                     </div>
                   </td>
                   <td>
@@ -10075,21 +9889,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxiKw bctdez"
-                            height="16"
-                            width="16"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                      </div>
+                      />
                     </div>
                   </td>
                   <td>
@@ -10723,21 +10523,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   />
                   <div
                     class="flex items-center space-x-3"
-                  >
-                    <span
-                      data-testid="WalletHeader__multisig"
-                    >
-                      <div
-                        class="sc-AxiKw bctdez hover:text-theme-neutral"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
+                  />
                 </div>
                 <div
                   class="flex items-center space-x-5"
@@ -10993,53 +10779,23 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   <span
                     class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
-                    (1)
+                    (0)
                   </span>
                 </div>
                 <div
-                  class="flex items-center h-11"
+                  class="flex items-center space-x-4"
+                  data-testid="WalletRegistrations__empty"
                 >
                   <div
-                    class="flex items-center mr-8 -space-x-2"
+                    class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW border-theme-text text-theme-text"
+                      class="sc-AxhUy iDenJW text-theme-neutral-light"
                     >
                       <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-                    data-testid="WalletRegistrations__inactive"
-                  >
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          key.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                        class="sc-AxiKw dzBdqj text-xl"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
                           delegate.svg
@@ -11047,27 +10803,42 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW"
+                    />
+                  </div>
+                  <div
+                    class="flex justify-between flex-1"
+                  >
+                    <div
+                      class="flex flex-col mr-4 font-semibold text-theme-text"
                     >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                      <span
+                        class="mr-2"
                       >
-                        <svg>
-                          entity.svg
-                        </svg>
+                        You have no active registrations
+                      </span>
+                      <div
+                        class="mr-auto"
+                      >
+                        <a
+                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="@TODO"
+                        >
+                          Learn more
+                        </a>
                       </div>
                     </div>
+                    <button
+                      class="sc-AxjAm joLCoM"
+                      color="primary"
+                      data-testid="WalletRegistrations__button"
+                      type="button"
+                    >
+                      Register
+                    </button>
                   </div>
-                  <button
-                    class="sc-AxjAm joLCoM ml-auto"
-                    color="primary"
-                    data-testid="WalletRegistrations__button"
-                    type="button"
-                  >
-                    Show All
-                  </button>
                 </div>
               </section>
             </div>
@@ -11656,21 +11427,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxiKw bctdez"
-                            height="16"
-                            width="16"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                      </div>
+                      />
                     </div>
                   </td>
                   <td>
@@ -12306,21 +12063,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </span>
                   <div
                     class="flex items-center space-x-3"
-                  >
-                    <span
-                      data-testid="WalletHeader__multisig"
-                    >
-                      <div
-                        class="sc-AxiKw bctdez hover:text-theme-neutral"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
+                  />
                 </div>
                 <div
                   class="flex items-center space-x-5"
@@ -12576,53 +12319,23 @@ exports[`WalletDetails should update wallet name 1`] = `
                   <span
                     class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
-                    (1)
+                    (0)
                   </span>
                 </div>
                 <div
-                  class="flex items-center h-11"
+                  class="flex items-center space-x-4"
+                  data-testid="WalletRegistrations__empty"
                 >
                   <div
-                    class="flex items-center mr-8 -space-x-2"
+                    class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW border-theme-text text-theme-text"
+                      class="sc-AxhUy iDenJW text-theme-neutral-light"
                     >
                       <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-                    data-testid="WalletRegistrations__inactive"
-                  >
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
-                      >
-                        <svg>
-                          key.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
-                    >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                        class="sc-AxiKw dzBdqj text-xl"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
                           delegate.svg
@@ -12630,27 +12343,42 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW border-theme-neutral-light text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW"
+                    />
+                  </div>
+                  <div
+                    class="flex justify-between flex-1"
+                  >
+                    <div
+                      class="flex flex-col mr-4 font-semibold text-theme-text"
                     >
-                      <div
-                        class="sc-AxiKw jcWfEX"
-                        height="21"
-                        width="21"
+                      <span
+                        class="mr-2"
                       >
-                        <svg>
-                          entity.svg
-                        </svg>
+                        You have no active registrations
+                      </span>
+                      <div
+                        class="mr-auto"
+                      >
+                        <a
+                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="@TODO"
+                        >
+                          Learn more
+                        </a>
                       </div>
                     </div>
+                    <button
+                      class="sc-AxjAm joLCoM"
+                      color="primary"
+                      data-testid="WalletRegistrations__button"
+                      type="button"
+                    >
+                      Register
+                    </button>
                   </div>
-                  <button
-                    class="sc-AxjAm joLCoM ml-auto"
-                    color="primary"
-                    data-testid="WalletRegistrations__button"
-                    type="button"
-                  >
-                    Show All
-                  </button>
                 </div>
               </section>
             </div>
@@ -13245,21 +12973,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxiKw bctdez"
-                            height="16"
-                            width="16"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                      </div>
+                      />
                     </div>
                   </td>
                   <td>

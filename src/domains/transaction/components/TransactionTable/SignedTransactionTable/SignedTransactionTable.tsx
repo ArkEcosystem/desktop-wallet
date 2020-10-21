@@ -25,6 +25,7 @@ type Props = {
 const getType = (transaction: SignedTransactionData): string => {
 	const type = transaction.get<number>("type");
 	const typeGroup = transaction.get<number>("typeGroup");
+	const asset = transaction.get<Record<string, any>>("asset");
 
 	if (type === 4 && typeGroup === 1) {
 		return "multiSignature";
@@ -32,6 +33,18 @@ const getType = (transaction: SignedTransactionData): string => {
 
 	if (type === 6) {
 		return "multiPayment";
+	}
+
+	if (type === 3 && asset?.votes?.[0].startsWith("-")) {
+		return "unvote";
+	}
+
+	if (type === 3) {
+		return "vote";
+	}
+
+	if (type === 5) {
+		return "ipfs";
 	}
 
 	return "transfer";
