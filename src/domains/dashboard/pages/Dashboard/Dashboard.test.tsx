@@ -115,7 +115,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should hide transaction view", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -139,7 +139,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should render portfolio percentage bar", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -154,7 +154,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should render portfolio chart", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} />
 			</Route>,
@@ -169,7 +169,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should hide portfolio view", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} />
 			</Route>,
@@ -196,7 +196,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should navigate to import page", async () => {
-		const { asFragment, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -217,7 +217,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should navigate to create page", async () => {
-		const { asFragment, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} />
 			</Route>,
