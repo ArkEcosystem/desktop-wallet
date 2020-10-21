@@ -16,7 +16,7 @@ test("should navigate to transfer page", async (t) => {
 });
 
 test("should navigate to my registrations page", async (t) => {
-	await goToWallet(t);
+	await goToWallet(t, "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
 
 	// Go to my registrations page
 	await t.click(Selector("[data-testid=WalletRegistrations__button]"));

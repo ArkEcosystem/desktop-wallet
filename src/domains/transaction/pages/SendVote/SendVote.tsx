@@ -4,6 +4,7 @@ import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
+import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -37,7 +38,7 @@ export const SendVote = () => {
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearErrors, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -103,8 +104,17 @@ export const SendVote = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = () => {
-		setActiveTab(activeTab + 1);
+	const handleNext = async () => {
+		const newIndex = activeTab + 1;
+		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
+
+		// Skip authorization step
+		if (newIndex === 3 && senderWallet?.isMultiSignature()) {
+			await handleSubmit(submitForm)();
+			return;
+		}
+
+		setActiveTab(newIndex);
 	};
 
 	const confirmSendVote = (type: "unvote" | "vote") =>
@@ -135,7 +145,7 @@ export const SendVote = () => {
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		try {
-			const voteTransactionInput = {
+			const voteTransactionInput: Contracts.TransactionInput = {
 				fee,
 				from: senderAddress,
 				sign: {
@@ -143,6 +153,13 @@ export const SendVote = () => {
 					secondMnemonic,
 				},
 			};
+
+			if (senderWallet?.isMultiSignature()) {
+				voteTransactionInput.nonce = senderWallet.nonce().plus(1).toFixed();
+				voteTransactionInput.sign = {
+					multiSignature: senderWallet.multiSignature(),
+				};
+			}
 
 			if (unvotes.length > 0 && votes.length > 0) {
 				const unvoteTransactionId = await senderWallet!.transaction().signVote({
@@ -171,7 +188,7 @@ export const SendVote = () => {
 
 				setTransaction(senderWallet!.transaction().transaction(voteTransactionId));
 
-				handleNext();
+				setActiveTab(4);
 
 				await confirmSendVote("vote");
 			} else {
@@ -189,7 +206,7 @@ export const SendVote = () => {
 
 				setTransaction(senderWallet!.transaction().transaction(transactionId));
 
-				handleNext();
+				setActiveTab(4);
 
 				await confirmSendVote(isUnvote ? "unvote" : "vote");
 			}
@@ -251,11 +268,11 @@ export const SendVote = () => {
 
 										{activeTab < 3 && (
 											<Button
-												disabled={!formState.isValid}
+												disabled={!formState.isValid || formState.isSubmitting}
 												onClick={handleNext}
 												data-testid="SendVote__button--continue"
 											>
-												{t("COMMON.CONTINUE")}
+												{formState.isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
 											</Button>
 										)}
 
@@ -267,7 +284,11 @@ export const SendVote = () => {
 												className="space-x-2"
 											>
 												<Icon name="Send" width={20} height={20} />
-												<span>{t("COMMON.SEND")}</span>
+												{formState.isSubmitting ? (
+													<Spinner size="sm" />
+												) : (
+													<span>{t("COMMON.SEND")}</span>
+												)}
 											</Button>
 										)}
 									</>

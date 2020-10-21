@@ -441,6 +441,115 @@ describe("SendTransfer", () => {
 		});
 	});
 
+	it("should send a single transfer with a multisignature wallet", async () => {
+		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
+		const multisignatureSpy = jest
+			.spyOn(wallet, "multiSignature")
+			.mockReturnValue({ min: 2, publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!] });
+
+		const history = createMemoryHistory();
+		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
+
+		history.push(transferURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+		});
+
+		const { getAllByTestId, getByTestId } = rendered!;
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
+			);
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+
+			// Select recipient
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
+			expect(getByTestId("SelectRecipient__input")).toHaveValue(
+				profile.contacts().values()[0].addresses().values()[0].address(),
+			);
+
+			// Amount
+			fireEvent.click(getByTestId("add-recipient__send-all"));
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.75089801");
+
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("SendTransfer__button--continue"));
+			await waitFor(() => expect(getByTestId("SendTransfer__step--second")).toBeTruthy());
+
+			// Step 5 (skip step 4 for now - ledger confirmation)
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signTransfer")
+				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
+
+			fireEvent.click(getByTestId("SendTransfer__button--continue"));
+
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7 … f1b89abb49877");
+
+			// Copy Transaction
+			const copyMock = jest.fn();
+			const clipboardOriginal = navigator.clipboard;
+
+			// @ts-ignore
+			navigator.clipboard = { writeText: copyMock };
+
+			fireEvent.click(getByTestId("SendTransfer__button--copy"));
+
+			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionFixture.data.id));
+
+			expect(signMock).toHaveBeenCalledWith(
+				expect.objectContaining({
+					data: expect.anything(),
+					fee: "71538139",
+					from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+					nonce: expect.any(String),
+					sign: {
+						multiSignature: {
+							min: 2,
+							publicKeys: [
+								"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+								"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
+							],
+						},
+					},
+				}),
+			);
+
+			// @ts-ignore
+			navigator.clipboard = clipboardOriginal;
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
+		});
+		isMultiSignatureSpy.mockRestore();
+		multisignatureSpy.mockRestore();
+	});
+
 	it("should error if wrong mnemonic", async () => {
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
