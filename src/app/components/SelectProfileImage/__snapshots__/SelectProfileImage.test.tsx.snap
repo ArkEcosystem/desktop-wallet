@@ -19,22 +19,26 @@ exports[`SelectProfileImage should render 1`] = `
         <div
           class="overflow-hidden rounded-full w-22 h-22"
         >
-          <button
-            class="sc-AxjAm joLCoM w-22 h-22"
-            color="primary"
-            data-testid="SelectProfileImage__upload-button"
-            type="button"
+          <div
+            class="sc-AxiKw iNCFpk"
           >
-            <div
-              class="sc-AxirZ iQaTP text-theme-primary"
-              height="1em"
-              width="1em"
+            <button
+              class="sc-AxjAm fCKjFI upload-button w-22 h-22"
+              color="primary"
+              data-testid="SelectProfileImage__upload-button"
+              type="button"
             >
-              <svg>
-                upload.svg
-              </svg>
-            </div>
-          </button>
+              <div
+                class="sc-AxirZ iQaTP upload-button__icon text-theme-primary"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  upload.svg
+                </svg>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
