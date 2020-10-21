@@ -15,13 +15,9 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 
 	const columns = [
 		{
-			accessor: "walletAddressAvatar",
-			disableSortBy: true,
-			className: "hidden",
-		},
-		{
 			Header: t("COMMON.ADDRESS"),
 			accessor: "walletAddress",
+			className: "ml-15",
 		},
 		{
 			accessor: "type",
@@ -33,13 +29,9 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 			className: "justify-end",
 		},
 		{
-			accessor: "delegateAddressAvatar",
-			disableSortBy: true,
-			className: "hidden",
-		},
-		{
 			Header: t("COMMON.DELEGATE"),
 			accessor: "delegate",
+			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.RANK"),
@@ -56,7 +48,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 			Header: t("COMMON.STATUS"),
 			accessor: "status",
 			disableSortBy: true,
-			className: "justify-center",
+			className: "justify-center no-border",
 		},
 		{
 			accessor: "onSelect",

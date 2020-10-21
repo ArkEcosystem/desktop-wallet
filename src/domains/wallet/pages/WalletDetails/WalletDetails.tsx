@@ -153,6 +153,9 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					network={networkId}
 					publicKey={activeWallet.publicKey()}
 					ticker={ticker}
+					showSignMessageOption={activeWallet.network().can("Message.sign")}
+					showStoreHashOption={activeWallet.network().can("Transaction.ipfs")}
+					showVerifyMessageOption={activeWallet.network().can("Message.verify")}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 					onSend={() =>
 						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)

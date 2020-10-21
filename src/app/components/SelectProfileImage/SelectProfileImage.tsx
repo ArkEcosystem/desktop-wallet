@@ -14,6 +14,18 @@ type SelectProfileImageProps = {
 	onSelect: (raw: string) => void;
 };
 
+const UploadButtonWrapper = styled.div`
+	.upload-button {
+		&:not(:focus):hover:enabled {
+			${tw`bg-theme-neutral-900 opacity-85`};
+
+			.upload-button__icon {
+				${tw`text-white`};
+			}
+		}
+	}
+`;
+
 const ProfileImageStyled = styled.div`
 	& {
 		${tw`relative inline-flex items-center justify-center overflow-hidden rounded cursor-pointer`};
@@ -29,7 +41,7 @@ const ProfileImageStyled = styled.div`
 		${tw`block`};
 
 		div {
-			background-color: rgba(0, 0, 0, 0.7);
+			${tw`bg-theme-neutral-900 opacity-85`};
 		}
 	}
 `;
@@ -63,14 +75,16 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 					<Tippy content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
 						<div className="flex items-center justify-center w-24 h-24 border-2 border-dashed rounded border-theme-primary-contrast">
 							<div className="overflow-hidden rounded-full w-22 h-22">
-								<Button
-									className="w-22 h-22"
-									variant="plain"
-									onClick={handleUploadImage}
-									data-testid="SelectProfileImage__upload-button"
-								>
-									<Icon name="Upload" className="text-theme-primary" />
-								</Button>
+								<UploadButtonWrapper>
+									<Button
+										className="upload-button w-22 h-22"
+										variant="plain"
+										onClick={handleUploadImage}
+										data-testid="SelectProfileImage__upload-button"
+									>
+										<Icon name="Upload" className="upload-button__icon text-theme-primary" />
+									</Button>
+								</UploadButtonWrapper>
 							</div>
 						</div>
 					</Tippy>

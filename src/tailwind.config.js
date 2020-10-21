@@ -160,6 +160,7 @@ module.exports = {
 			},
 			margin: {
 				"-14": "-3.5rem",
+				25: "6.25rem",
 			},
 			fontSize: {
 				0: "0",
