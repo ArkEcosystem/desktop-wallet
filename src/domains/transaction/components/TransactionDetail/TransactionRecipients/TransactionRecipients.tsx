@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { RecipientList } from "domains/transaction/components/RecipientList";
@@ -9,35 +9,32 @@ import { TransactionDetail } from "../TransactionDetail";
 
 type TransactionRecipientsProps = {
 	currency: string;
-	recipient?: { address: string; alias?: string };
-	recipients?: (Contracts.MultiPaymentRecipient & { alias?: string })[];
+	recipients: { address: string; alias?: string; amount?: BigNumber }[];
 };
 
-export const TransactionRecipients = ({ currency, recipient, recipients }: TransactionRecipientsProps) => {
+export const TransactionRecipients = ({ currency, recipients }: TransactionRecipientsProps) => {
 	const { t } = useTranslation();
 
-	if (recipients && Array.isArray(recipients)) {
-		return (
-			<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })}>
-				<div className="-my-2">
-					<RecipientList recipients={recipients} assetSymbol={currency} variant="condensed" />
-				</div>
-			</TransactionDetail>
-		);
-	} else if (recipient) {
-		return (
-			<TransactionDetail
-				label={t("TRANSACTION.RECIPIENT")}
-				extra={<Avatar size="lg" address={recipient.address} />}
-			>
-				<Address
-					address={recipient.address}
-					walletName={recipient.alias}
-					maxChars={!recipient.alias ? 0 : undefined}
-				/>
-			</TransactionDetail>
-		);
+	if (!recipients.length) {
+		return null;
 	}
 
-	return null;
+	return recipients.length > 1 ? (
+		<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })}>
+			<div className="-my-2">
+				<RecipientList recipients={recipients} assetSymbol={currency} variant="condensed" />
+			</div>
+		</TransactionDetail>
+	) : (
+		<TransactionDetail
+			label={t("TRANSACTION.RECIPIENT")}
+			extra={<Avatar size="lg" address={recipients[0].address} />}
+		>
+			<Address
+				address={recipients[0].address}
+				walletName={recipients[0].alias}
+				maxChars={!recipients[0].alias ? 0 : undefined}
+			/>
+		</TransactionDetail>
+	);
 };
