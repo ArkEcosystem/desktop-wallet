@@ -14,6 +14,11 @@ export type InputFeeProps = {
 	onChange?: (value: { display: string; value: string }) => void;
 };
 
+export type InputFee = {
+	display: string;
+	value: string;
+};
+
 // TODO: Remove defaultValue?
 export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }: InputFeeProps) => {
 	const { t } = useTranslation();
@@ -27,9 +32,9 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 	const defaultFeeValue = value || defaultValue || avg;
 	const defaultHuman = toHuman(defaultFeeValue);
 
-	const [fee, setFee] = useState<any>({ display: defaultHuman, value: defaultFeeValue });
+	const [fee, setFee] = useState<InputFee>({ display: defaultHuman, value: defaultFeeValue });
 
-	const handleFeeChange = (currency: { display: string; value: string }) => {
+	const handleFeeChange = (currency: InputFee) => {
 		setFee(currency);
 		onChange?.(currency);
 	};
