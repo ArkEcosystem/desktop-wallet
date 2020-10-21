@@ -6,17 +6,10 @@ import { translations as transactionTranslations } from "../../../i18n";
 import { TransactionRecipients } from "./TransactionRecipients";
 
 describe("TransactionRecipients", () => {
-	it("should not render without recipient or recipients", () => {
-		const { container, getByTestId } = render(<TransactionRecipients currency="DARK" />);
-
-		expect(() => getByTestId("TransactionDetail")).toThrow(/Unable to find an element by/);
-		expect(container).toMatchSnapshot();
-	});
-
 	it("should render a single recipient", () => {
 		const address = "test-address";
 
-		const { container } = render(<TransactionRecipients currency="DARK" recipient={{ address }} />);
+		const { container } = render(<TransactionRecipients currency="DARK" recipients={[{ address }]} />);
 
 		expect(container).toHaveTextContent(transactionTranslations.RECIPIENT);
 		expect(container).toHaveTextContent(address);
@@ -28,7 +21,7 @@ describe("TransactionRecipients", () => {
 		const address = "test-address";
 		const alias = "test-alias";
 
-		const { container } = render(<TransactionRecipients currency="DARK" recipient={{ address, alias }} />);
+		const { container } = render(<TransactionRecipients currency="DARK" recipients={[{ address, alias }]} />);
 
 		expect(container).toHaveTextContent(transactionTranslations.RECIPIENT);
 		expect(container).toHaveTextContent(address);
@@ -41,7 +34,13 @@ describe("TransactionRecipients", () => {
 		const address = "test-address";
 
 		const { container } = render(
-			<TransactionRecipients currency="DARK" recipients={[{ address, amount: BigNumber.ONE }]} />,
+			<TransactionRecipients
+				currency="DARK"
+				recipients={[
+					{ address, amount: BigNumber.ONE },
+					{ address, amount: BigNumber.ONE },
+				]}
+			/>,
 		);
 
 		expect(container).toHaveTextContent("1 DARK");
