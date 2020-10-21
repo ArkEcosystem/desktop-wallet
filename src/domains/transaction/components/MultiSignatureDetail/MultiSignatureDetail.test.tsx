@@ -149,7 +149,7 @@ describe("MultiSignatureDetail", () => {
 		broadcastMock.mockRestore();
 	});
 
-	it("should not show send button when waiting for con	firmations", async () => {
+	it("should not show send button when waiting for confirmations", async () => {
 		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockImplementationOnce(() => true);
 		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
