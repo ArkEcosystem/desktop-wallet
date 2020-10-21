@@ -3,7 +3,7 @@ import { Selector } from "testcafe";
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
-import { goToWallet, importWallet } from "../../wallet/e2e/common";
+import { goToWallet, importWallet, importWalletByAddress } from "../../wallet/e2e/common";
 
 const translations = buildTranslations();
 
@@ -47,7 +47,19 @@ const walletMock = mockRequest(
 	},
 );
 
-createFixture(`Votes`, [transactionMock, walletMock]);
+createFixture(`Votes`, [
+	transactionMock,
+	walletMock,
+	mockRequest(
+		{
+			url: "https://dmusig1.ark.io/transaction",
+			method: "POST",
+		},
+		{
+			id: "transaction-id",
+		},
+	),
+]);
 
 test("should navigate to votes page from navigation bar", async (t) => {
 	// Navigate to wallet page
@@ -58,6 +70,44 @@ test("should navigate to votes page from navigation bar", async (t) => {
 	await t.expect(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES).exists).ok();
 	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES));
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
+});
+
+test("should successfully send a vote transaction with a multisig wallet", async (t) => {
+	// Navigate to profile page
+	await goToProfile(t);
+
+	// Import wallet
+	await importWalletByAddress(t, "DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq");
+
+	// Navigate to vote page
+	await t.click(Selector('[data-testid="navbar__useractions"]'));
+	await t.expect(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES).exists).ok();
+	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES));
+	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
+
+	// Select cryptoasset
+	await t.click('[data-testid="SelectNetworkInput__input"]');
+	await t.click(Selector("#Votes__network-item-0"));
+
+	// Select address
+	await t.expect(Selector("h2").withText(translations.VOTE.ADDRESS_TABLE.TITLE).exists).ok();
+	await t.click(Selector('[data-testid="AddressRow__select-2"]').withText(translations.COMMON.SELECT));
+
+	// Select delegate
+	await t.expect(Selector("h2").withText(translations.VOTE.DELEGATE_TABLE.TITLE).exists).ok();
+	await t.click(Selector('[data-testid="DelegateRow__toggle-1"]').withText(translations.COMMON.NOT_SELECTED));
+	await t.expect(Selector("[data-testid=DelegateTable__footer]").exists).ok();
+	await t.click(Selector('[data-testid="DelegateTable__continue-button"]').withText(translations.COMMON.CONTINUE));
+
+	// Vote Transaction
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE).exists).ok();
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
+
+	// Transaction Review
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
+
+	// Transaction successful
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok();
 });
 
 test("should successfully send a vote transaction", async (t) => {

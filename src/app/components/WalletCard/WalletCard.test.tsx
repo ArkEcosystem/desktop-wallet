@@ -22,6 +22,8 @@ describe("Wallet Card", () => {
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(WalletFlag.Starred, true);
 		wallet.data().set(WalletFlag.LedgerIndex, true);
+
+		jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 	});
 
 	it("should render", () => {

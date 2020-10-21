@@ -27,6 +27,7 @@ const walletMocks = () => {
 		"DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
 		"DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
 		"D68sFcspN2LVd9HZpf98c7bXkNimK3M6AZ",
+		"DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq",
 	];
 
 	const publicKeys = ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"];
@@ -78,6 +79,7 @@ const searchAddressesMocks = () => {
 			{ page: 1, limit: 10 },
 			{ page: 1, limit: 15 },
 		],
+		DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq: [{ page: 1, limit: 15 }],
 	};
 
 	const mocks: any = [];
