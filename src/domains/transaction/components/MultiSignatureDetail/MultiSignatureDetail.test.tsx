@@ -156,7 +156,7 @@ describe("MultiSignatureDetail", () => {
 
 		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
 
-		await waitFor(() => expect(screen.getByTestId("MultiSignatureDetail__broadcast")).not.toBeInTheDocument());
+		await waitFor(() => expect(screen.queryByTestId("MultiSignatureDetail__broadcast")).not.toBeInTheDocument());
 
 		expect(container).toMatchSnapshot();
 	});
