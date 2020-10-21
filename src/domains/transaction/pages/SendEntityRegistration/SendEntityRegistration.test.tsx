@@ -1002,7 +1002,7 @@ describe("Registration", () => {
 		await toggleLinkCollectionHeader(media);
 
 		expect(asFragment()).toMatchSnapshot();
-	});
+	}, 10000);
 
 	it("should successfully register entity", async () => {
 		const { asFragment, getByTestId, queryAllByTestId } = await renderPage(secondWallet);
