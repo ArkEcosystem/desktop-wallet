@@ -4,6 +4,7 @@ import { DelegateRegistrationDetail } from "domains/transaction/components/Deleg
 import { DelegateResignationDetail } from "domains/transaction/components/DelegateResignationDetail";
 import { EntityDetail } from "domains/transaction/components/EntityDetail";
 import { IpfsDetail } from "domains/transaction/components/IpfsDetail";
+import { LegacyMagistrateDetail } from "domains/transaction/components/LegacyMagistrateDetail";
 import { MultiPaymentDetail } from "domains/transaction/components/MultiPaymentDetail";
 import { MultiSignatureRegistrationDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { SecondSignatureDetail } from "domains/transaction/components/SecondSignatureDetail";
@@ -58,6 +59,14 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 		case "entityResignation":
 		case "entityUpdate":
 			TransactionModal = EntityDetail;
+			break;
+		case "legacyBusinessRegistration":
+		case "legacyBusinessResignation":
+		case "legacyBusinessUpdate":
+		case "legacyBridgechainRegistration":
+		case "legacyBridgechainResignation":
+		case "legacyBridgechainUpdate":
+			TransactionModal = LegacyMagistrateDetail;
 			break;
 
 		default:
