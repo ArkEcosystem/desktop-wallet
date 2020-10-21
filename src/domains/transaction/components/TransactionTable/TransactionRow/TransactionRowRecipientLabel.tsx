@@ -25,6 +25,7 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 		delegateRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
 		vote: t("TRANSACTION.TRANSACTION_TYPES.VOTE"),
 		unvote: t("TRANSACTION.TRANSACTION_TYPES.UNVOTE"),
+		voteCombination: t("TRANSACTION.TRANSACTION_TYPES.VOTE_COMBINATION"),
 		multiSignature: t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
 		ipfs: t("TRANSACTION.TRANSACTION_TYPES.IPFS"),
 		multiPayment: t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
@@ -48,6 +49,15 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 
 	if (type === "transfer") {
 		return <Address walletName={walletName} address={recipient} />;
+	}
+
+	if (transaction?.isMultiPayment()) {
+		return (
+			<>
+				<RecipientLabel type={transactionLabel.multiPayment} />
+				<span className="ml-1 font-semibold text-theme-neutral-500">{transaction?.recipients().length}</span>
+			</>
+		);
 	}
 
 	if (transaction?.isBusinessEntityRegistration()) {

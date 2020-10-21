@@ -3,6 +3,7 @@ import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
+import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -33,7 +34,7 @@ export const SendIpfs = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearErrors, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -63,14 +64,25 @@ export const SendIpfs = () => {
 		const { fee, mnemonic, secondMnemonic, senderAddress, hash } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
+		const transactionInput: Contracts.TransactionInput = {
+			fee,
+			from: senderAddress,
+			sign: {
+				mnemonic,
+				secondMnemonic,
+			},
+		};
+
+		if (senderWallet?.isMultiSignature()) {
+			transactionInput.nonce = senderWallet.nonce().plus(1).toFixed();
+			transactionInput.sign = {
+				multiSignature: senderWallet.multiSignature(),
+			};
+		}
+
 		try {
 			const transactionId = await senderWallet!.transaction().signIpfs({
-				fee,
-				from: senderAddress,
-				sign: {
-					mnemonic,
-					secondMnemonic,
-				},
+				...transactionInput,
 				data: {
 					hash,
 				},
@@ -82,7 +94,7 @@ export const SendIpfs = () => {
 
 			setTransaction(senderWallet!.transaction().transaction(transactionId));
 
-			handleNext();
+			setActiveTab(4);
 		} catch (error) {
 			console.error("Could not create transaction: ", error);
 
@@ -95,8 +107,17 @@ export const SendIpfs = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = () => {
-		setActiveTab(activeTab + 1);
+	const handleNext = async () => {
+		const newIndex = activeTab + 1;
+		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
+
+		// Skip authorization step
+		if (newIndex === 3 && senderWallet?.isMultiSignature()) {
+			await handleSubmit(submitForm)();
+			return;
+		}
+
+		setActiveTab(newIndex);
 	};
 
 	const copyTransaction = () => {
@@ -146,10 +167,10 @@ export const SendIpfs = () => {
 										{activeTab < 3 && (
 											<Button
 												data-testid="SendIpfs__button--continue"
-												disabled={!formState.isValid}
+												disabled={!formState.isValid || formState.isSubmitting}
 												onClick={handleNext}
 											>
-												{t("COMMON.CONTINUE")}
+												{formState.isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
 											</Button>
 										)}
 
@@ -157,9 +178,13 @@ export const SendIpfs = () => {
 											<Button
 												type="submit"
 												data-testid="SendIpfs__button--submit"
-												disabled={!formState.isValid}
+												disabled={!formState.isValid || formState.isSubmitting}
 											>
-												{t("TRANSACTION.SIGN_CONTINUE")}
+												{formState.isSubmitting ? (
+													<Spinner size="sm" />
+												) : (
+													t("TRANSACTION.SIGN_CONTINUE")
+												)}
 											</Button>
 										)}
 									</>

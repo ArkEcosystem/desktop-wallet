@@ -22,15 +22,12 @@ export const TransactionCompactRow = ({ transaction, walletName, iconSize, ...pr
 			onMouseLeave={() => setShadowColor("")}
 			{...props}
 		>
-			<TableCell variant="start" className="w-24">
+			<TableCell variant="start" innerClassName="space-x-3" isCompact>
 				<TransactionRowMode transaction={transaction} circleShadowColor={shadowColor} iconSize={iconSize} />
-			</TableCell>
-
-			<TableCell>
 				<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
 			</TableCell>
 
-			<TableCell variant="end" innerClassName="justify-end">
+			<TableCell variant="end" innerClassName="justify-end" isCompact>
 				<TransactionRowAmount transaction={transaction} />
 			</TableCell>
 		</TableRow>

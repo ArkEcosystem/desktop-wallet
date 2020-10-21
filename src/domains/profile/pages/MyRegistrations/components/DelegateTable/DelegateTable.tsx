@@ -20,14 +20,12 @@ export const DelegateTable = ({ wallets, onAction }: Props) => {
 
 	const columns = [
 		{
-			Header: "Avatar",
-			className: "hidden",
-		},
-		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.DELEGATE_NAME"),
+			className: "ml-25",
 		},
 		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.RANK"),
+			className: "justify-end",
 		},
 		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.MSQ"),
@@ -43,7 +41,7 @@ export const DelegateTable = ({ wallets, onAction }: Props) => {
 		},
 		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.VOTES"),
-			className: "justify-end",
+			className: "justify-end no-border",
 		},
 		{
 			Header: "Actions",

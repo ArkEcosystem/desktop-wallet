@@ -88,7 +88,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -120,7 +120,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -143,7 +143,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -536,7 +536,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               class="flex items-stretch select-buttons"
                             >
                               <button
-                                class="sc-AxjAm BsmvP flex-1"
+                                class="sc-AxjAm colAFb flex-1"
                                 color="primary"
                                 data-testid="add-recipient-is-single-toggle"
                                 type="button"
@@ -544,7 +544,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 Single
                               </button>
                               <button
-                                class="sc-AxjAm joLCoM flex-1 border-l-0"
+                                class="sc-AxjAm fCKjFI flex-1 border-l-0"
                                 color="primary"
                                 data-testid="add-recipient-is-multiple-toggle"
                                 type="button"
@@ -794,7 +794,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     disabled=""
@@ -803,7 +803,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="SendTransfer__button--continue"
                     disabled=""
@@ -910,7 +910,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -942,7 +942,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -965,7 +965,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1210,7 +1210,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     type="button"
@@ -1218,7 +1218,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP space-x-2"
+                    class="sc-AxjAm colAFb space-x-2"
                     color="primary"
                     data-testid="SendTransfer__button--submit"
                     disabled=""
@@ -1433,7 +1433,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               class="flex items-stretch select-buttons"
             >
               <button
-                class="sc-AxjAm BsmvP flex-1"
+                class="sc-AxjAm colAFb flex-1"
                 color="primary"
                 data-testid="add-recipient-is-single-toggle"
                 type="button"
@@ -1441,7 +1441,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                 Single
               </button>
               <button
-                class="sc-AxjAm joLCoM flex-1 border-l-0"
+                class="sc-AxjAm fCKjFI flex-1 border-l-0"
                 color="primary"
                 data-testid="add-recipient-is-multiple-toggle"
                 type="button"
@@ -1874,7 +1874,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
               class="flex items-stretch select-buttons"
             >
               <button
-                class="sc-AxjAm BsmvP flex-1"
+                class="sc-AxjAm colAFb flex-1"
                 color="primary"
                 data-testid="add-recipient-is-single-toggle"
                 type="button"
@@ -1882,7 +1882,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                 Single
               </button>
               <button
-                class="sc-AxjAm joLCoM flex-1 border-l-0"
+                class="sc-AxjAm fCKjFI flex-1 border-l-0"
                 color="primary"
                 data-testid="add-recipient-is-multiple-toggle"
                 type="button"
@@ -2807,7 +2807,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2839,7 +2839,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2862,7 +2862,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -3248,7 +3248,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               class="flex items-stretch select-buttons"
                             >
                               <button
-                                class="sc-AxjAm BsmvP flex-1"
+                                class="sc-AxjAm colAFb flex-1"
                                 color="primary"
                                 data-testid="add-recipient-is-single-toggle"
                                 type="button"
@@ -3256,7 +3256,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 Single
                               </button>
                               <button
-                                class="sc-AxjAm joLCoM flex-1 border-l-0"
+                                class="sc-AxjAm fCKjFI flex-1 border-l-0"
                                 color="primary"
                                 data-testid="add-recipient-is-multiple-toggle"
                                 type="button"
@@ -3504,7 +3504,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     disabled=""
@@ -3513,7 +3513,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="SendTransfer__button--continue"
                     disabled=""
@@ -3620,7 +3620,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -3652,7 +3652,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -3675,7 +3675,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -4024,7 +4024,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               class="flex items-stretch select-buttons"
                             >
                               <button
-                                class="sc-AxjAm BsmvP flex-1"
+                                class="sc-AxjAm colAFb flex-1"
                                 color="primary"
                                 data-testid="add-recipient-is-single-toggle"
                                 type="button"
@@ -4032,7 +4032,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                 Single
                               </button>
                               <button
-                                class="sc-AxjAm joLCoM flex-1 border-l-0"
+                                class="sc-AxjAm fCKjFI flex-1 border-l-0"
                                 color="primary"
                                 data-testid="add-recipient-is-multiple-toggle"
                                 type="button"
@@ -4282,7 +4282,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     disabled=""
@@ -4291,7 +4291,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="SendTransfer__button--continue"
                     disabled=""
@@ -4398,7 +4398,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -4430,7 +4430,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -4453,7 +4453,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -4864,7 +4864,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               class="flex items-stretch select-buttons"
                             >
                               <button
-                                class="sc-AxjAm BsmvP flex-1"
+                                class="sc-AxjAm colAFb flex-1"
                                 color="primary"
                                 data-testid="add-recipient-is-single-toggle"
                                 type="button"
@@ -4872,7 +4872,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 Single
                               </button>
                               <button
-                                class="sc-AxjAm joLCoM flex-1 border-l-0"
+                                class="sc-AxjAm fCKjFI flex-1 border-l-0"
                                 color="primary"
                                 data-testid="add-recipient-is-multiple-toggle"
                                 type="button"
@@ -5122,7 +5122,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     disabled=""
@@ -5131,7 +5131,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="SendTransfer__button--continue"
                     disabled=""
@@ -5238,7 +5238,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -5270,7 +5270,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -5293,7 +5293,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -5686,7 +5686,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               class="flex items-stretch select-buttons"
                             >
                               <button
-                                class="sc-AxjAm BsmvP flex-1"
+                                class="sc-AxjAm colAFb flex-1"
                                 color="primary"
                                 data-testid="add-recipient-is-single-toggle"
                                 type="button"
@@ -5694,7 +5694,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 Single
                               </button>
                               <button
-                                class="sc-AxjAm joLCoM flex-1 border-l-0"
+                                class="sc-AxjAm fCKjFI flex-1 border-l-0"
                                 color="primary"
                                 data-testid="add-recipient-is-multiple-toggle"
                                 type="button"
@@ -5944,7 +5944,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="SendTransfer__button--back"
                     disabled=""
@@ -5953,7 +5953,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="SendTransfer__button--continue"
                     disabled=""
@@ -6060,7 +6060,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -6092,7 +6092,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -6115,7 +6115,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -6575,7 +6575,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM block"
+                    class="sc-AxjAm fCKjFI block"
                     color="primary"
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
@@ -6583,7 +6583,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm joLCoM space-x-2"
+                    class="sc-AxjAm fCKjFI space-x-2"
                     color="primary"
                     data-testid="SendTransfer__button--copy"
                     type="button"

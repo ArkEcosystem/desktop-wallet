@@ -168,7 +168,7 @@ describe("WalletDetails", () => {
 
 	it("should navigate to registrations page when clicking on WalletRegistrations button (show all)", async () => {
 		const historySpy = jest.spyOn(history, "push");
-
+		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
 		const { getByTestId, queryAllByTestId } = await renderPage();
 
 		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
@@ -178,6 +178,7 @@ describe("WalletDetails", () => {
 		});
 
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/registrations`);
+		isMultiSignatureSpy.mockRestore();
 	});
 
 	it("should render when wallet hasn't voted", async () => {

@@ -31,17 +31,14 @@ export const TransactionTable = ({
 }: Props) => {
 	const { t } = useTranslation();
 
-	const commonColumns = [
+	const commonColumns: any = [
 		{
 			Header: t("COMMON.DATE"),
 			accessor: "timestamp",
 		},
 		{
-			Header: "Type",
-			className: "hidden no-border",
-		},
-		{
 			Header: t("COMMON.RECIPIENT"),
+			className: "ml-25",
 		},
 		{
 			Header: t("COMMON.INFO"),
@@ -61,10 +58,6 @@ export const TransactionTable = ({
 	const columns = useMemo(() => {
 		if (isCompact) {
 			return [
-				{
-					Header: t("COMMON.TYPE"),
-					className: "hidden",
-				},
 				{
 					Header: t("COMMON.RECIPIENT"),
 				},

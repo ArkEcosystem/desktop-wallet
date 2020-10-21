@@ -51,20 +51,17 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
-			<TableCell variant="start" className="w-24">
-				<span data-testid="DelegateRowItem__address" className="flex items-center">
+			<TableCell variant="start" innerClassName="space-x-4">
+				<span data-testid="DelegateRowItem__address" className="flex items-center -space-x-1">
 					<Circle className="border-theme-neutral-800" size="lg" shadowColor={shadowColor}>
-						<Icon name="Business" width={22} height={22} />
+						<Icon name="Delegate" width={22} height={22} />
 					</Circle>
-					<Avatar address={wallet.address()} size="lg" className="mr-4" shadowColor={shadowColor} />
+					<Avatar address={wallet.address()} size="lg" shadowColor={shadowColor} />
 				</span>
-			</TableCell>
-
-			<TableCell innerClassName="font-semibold">
 				<span data-testid="DelegateRowItem__username">{delegateInfo.username()}</span>
 			</TableCell>
 
-			<TableCell innerClassName="font-semibold text-theme-secondary-text">
+			<TableCell innerClassName="font-semibold text-theme-secondary-text justify-end">
 				<span data-testid="DelegateRowItem__rank">#{delegateInfo.rank()}</span>
 			</TableCell>
 
