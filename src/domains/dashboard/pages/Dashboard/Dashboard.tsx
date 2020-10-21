@@ -25,8 +25,8 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
-	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
+	const [showTransactions, setShowTransactions] = useState(true);
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
@@ -90,14 +90,14 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 	// Wallet controls data
 	const filterProperties = {
-		visibleTransactionsView: showTransactions,
-		visiblePortfolioView: true,
 		networks,
-		toggleTransactionsView: (isChecked: boolean) => {
-			setShowTransactions(isChecked);
-		},
+		visiblePortfolioView: showPortfolio,
+		visibleTransactionsView: showTransactions,
 		togglePortfolioView: (isChecked: boolean) => {
 			setShowPortfolio(isChecked);
+		},
+		toggleTransactionsView: (isChecked: boolean) => {
+			setShowTransactions(isChecked);
 		},
 	};
 
