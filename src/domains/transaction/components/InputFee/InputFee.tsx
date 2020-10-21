@@ -23,8 +23,7 @@ export type InputFee = {
 export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }: InputFeeProps) => {
 	const { t } = useTranslation();
 
-	const toHuman = (value: string | number) => BigNumber.make(value).divide(1e8).toString();
-
+	const toHuman = (inputValue: string | number) => BigNumber.make(inputValue).divide(1e8).toString();
 	const minHuman = toHuman(min);
 	const maxHuman = toHuman(max);
 	const avgHuman = toHuman(avg);
@@ -33,6 +32,19 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 	const defaultHuman = toHuman(defaultFeeValue);
 
 	const [fee, setFee] = useState<InputFee>({ display: defaultHuman, value: defaultFeeValue });
+
+	const setDefaultFee = () => {
+		setFee({ display: "0", value: BigNumber.make("0").times(1e8).toString() });
+	};
+
+	const updateFee = (value: any) => {
+		setFee({
+			display: BigNumber.make(value || 0)
+				.divide(1e8)
+				.toString(),
+			value,
+		});
+	};
 
 	const handleFeeChange = (currency: InputFee) => {
 		setFee(currency);
@@ -45,14 +57,10 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 	}, [fee]);
 
 	useEffect(() => {
-		if (!value && !defaultValue) {
-			setFee({ display: "0", value: BigNumber.make("0").times(1e8).toString() });
-		}
+		if (!value && !defaultValue) setDefaultFee();
 
 		const isFeeOutdated = !BigNumber.make(value).isEqualTo(updatedFee.current.value);
-		if (isFeeOutdated) {
-			setFee({ display: BigNumber.make(value).divide(1e8).toString(), value });
-		}
+		if (isFeeOutdated) updateFee(value);
 	}, [value, defaultValue, updatedFee]);
 
 	return (
