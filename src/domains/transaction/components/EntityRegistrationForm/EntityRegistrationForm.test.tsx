@@ -246,6 +246,68 @@ describe("EntityRegistrationForm", () => {
 		transactionMock.mockRestore();
 	});
 
+	it("should sign transaction with a multisignature wallet", async () => {
+		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
+		const multiSignatureSpy = jest
+			.spyOn(wallet, "multiSignature")
+			.mockReturnValue({ min: 2, publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!] });
+
+		const form = {
+			clearErrors: jest.fn(),
+			getValues: () => ({
+				fee: "1",
+				mnemonic: "sample passphrase",
+				senderAddress: wallet.address(),
+				ipfsData: ipfsForm,
+			}),
+			setError: jest.fn(),
+			setValue: jest.fn(),
+		};
+		const handleNext = jest.fn();
+		const setTransaction = jest.fn();
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityRegistration")
+			.mockReturnValue(Promise.resolve(entityRegistrationFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createTransactionMock(wallet);
+
+		await EntityRegistrationForm.signTransaction({
+			env,
+			form,
+			handleNext,
+			profile,
+			setTransaction,
+		});
+
+		expect(signMock).toHaveBeenCalledWith(
+			expect.objectContaining({
+				data: expect.anything(),
+				fee: expect.any(String),
+				from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+				nonce: expect.any(String),
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [
+							"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+							"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
+						],
+					},
+				},
+			}),
+		);
+		expect(broadcastMock).toHaveBeenCalled();
+		expect(transactionMock).toHaveBeenCalled();
+		expect(setTransaction).toHaveBeenCalled();
+		expect(handleNext).toHaveBeenCalled();
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+		isMultiSignatureSpy.mockRestore();
+		multiSignatureSpy.mockRestore();
+	});
 	it("should sign transaction with a custom entity type", async () => {
 		const form = {
 			clearErrors: jest.fn(),
