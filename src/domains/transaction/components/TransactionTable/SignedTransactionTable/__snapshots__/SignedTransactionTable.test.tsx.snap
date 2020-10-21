@@ -361,9 +361,9 @@ exports[`Signed Transaction Table should render 1`] = `
                     data-testid="TransactionRowRecipientIcon"
                   >
                     <div
-                      class="sc-AxirZ iQaTP"
-                      height="1em"
-                      width="1em"
+                      class="sc-AxirZ hmuEJr"
+                      height="22"
+                      width="22"
                     >
                       <svg>
                         multisig.svg
@@ -504,12 +504,18 @@ exports[`Signed Transaction Table should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-Axmtr hVOxCZ bg-theme-background font-semibold border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+                    class="sc-Axmtr hVOxCZ border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
                     data-testid="TransactionRowRecipientIcon"
                   >
-                    <span>
-                      2
-                    </span>
+                    <div
+                      class="sc-AxirZ hmuEJr"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        multipayment.svg
+                      </svg>
+                    </div>
                   </div>
                 </div>
                 <span
@@ -649,12 +655,12 @@ exports[`Signed Transaction Table should render 1`] = `
                     data-testid="TransactionRowRecipientIcon"
                   >
                     <div
-                      class="sc-AxirZ iQaTP"
-                      height="1em"
-                      width="1em"
+                      class="sc-AxirZ hmuEJr"
+                      height="22"
+                      width="22"
                     >
                       <svg>
-                        voted.svg
+                        vote.svg
                       </svg>
                     </div>
                   </div>
@@ -796,12 +802,12 @@ exports[`Signed Transaction Table should render 1`] = `
                     data-testid="TransactionRowRecipientIcon"
                   >
                     <div
-                      class="sc-AxirZ iQaTP"
-                      height="1em"
-                      width="1em"
+                      class="sc-AxirZ hmuEJr"
+                      height="22"
+                      width="22"
                     >
                       <svg>
-                        voted.svg
+                        unvote.svg
                       </svg>
                     </div>
                   </div>
@@ -943,9 +949,9 @@ exports[`Signed Transaction Table should render 1`] = `
                     data-testid="TransactionRowRecipientIcon"
                   >
                     <div
-                      class="sc-AxirZ iQaTP"
-                      height="1em"
-                      width="1em"
+                      class="sc-AxirZ hmuEJr"
+                      height="22"
+                      width="22"
                     >
                       <svg>
                         ipfs.svg
@@ -2187,9 +2193,9 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
                     data-testid="TransactionRowRecipientIcon"
                   >
                     <div
-                      class="sc-AxirZ iQaTP"
-                      height="1em"
-                      width="1em"
+                      class="sc-AxirZ hmuEJr"
+                      height="22"
+                      width="22"
                     >
                       <svg>
                         multisig.svg
