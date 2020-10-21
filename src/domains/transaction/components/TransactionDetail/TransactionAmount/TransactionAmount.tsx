@@ -7,7 +7,7 @@ import { Label } from "app/components/Label";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { TransactionDetail } from "../TransactionDetail";
+import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail";
 
 type TransactionAmountProps = {
 	amount: BigNumber;
@@ -16,7 +16,7 @@ type TransactionAmountProps = {
 	exchangeCurrency?: string;
 	isMultiPayment?: boolean;
 	isSent: boolean;
-};
+} & TransactionDetailProps;
 
 export const TransactionAmount = ({
 	amount,
@@ -25,6 +25,7 @@ export const TransactionAmount = ({
 	exchangeCurrency,
 	isMultiPayment,
 	isSent,
+	...props
 }: TransactionAmountProps) => {
 	const { t } = useTranslation();
 
@@ -49,6 +50,7 @@ export const TransactionAmount = ({
 		<TransactionDetail
 			label={isMultiPayment ? t("TRANSACTION.TOTAL_AMOUNT") : t("TRANSACTION.AMOUNT")}
 			extra={renderModeIcon(isSent)}
+			{...props}
 		>
 			<Label color={isSent ? "danger" : "success"}>
 				<Amount ticker={currency} value={amount} />
