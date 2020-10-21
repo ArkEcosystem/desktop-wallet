@@ -1,7 +1,7 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { InputRange } from "app/components/Input";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export type InputFeeProps = {
@@ -39,15 +39,21 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 		onChange?.(currency);
 	};
 
+	const updatedFee = useRef(fee);
+	useEffect(() => {
+		updatedFee.current = fee;
+	}, [fee]);
+
 	useEffect(() => {
 		if (!value && !defaultValue) {
-			setFee(BigNumber.make("0").times(1e8).toString());
+			setFee({ display: "0", value: BigNumber.make("0").times(1e8).toString() });
 		}
 
-		if (value && value !== fee) {
-			setFee(BigNumber.make(value).divide(1e8).toString());
+		const isFeeOutdated = !BigNumber.make(value).isEqualTo(updatedFee.current.value);
+		if (isFeeOutdated) {
+			setFee({ display: BigNumber.make(value).divide(1e8).toString(), value });
 		}
-	}, [fee, value, defaultValue]);
+	}, [value, defaultValue, updatedFee]);
 
 	return (
 		<div data-testid="InputFee" className="flex space-x-2">
@@ -59,7 +65,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 					min={minHuman}
 					max={maxHuman}
 					step={step}
-					onChange={handleFeeChange}
+					onChange={onChange}
 				/>
 			</div>
 			<div>
