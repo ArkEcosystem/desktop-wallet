@@ -56,7 +56,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		},
 	];
 
-	if (!wallet.isDelegate?.()) {
+	if (!wallet.isDelegate?.() && !wallet.isMultiSignature?.()) {
 		registrationTypes.push({
 			value: "delegateRegistration",
 			label: "Delegate",
@@ -70,7 +70,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		});
 	}
 
-	if (!wallet.isSecondSignature?.()) {
+	if (!wallet.isSecondSignature?.() && !wallet.isMultiSignature?.()) {
 		registrationTypes.push({
 			value: "secondSignature",
 			label: "Second Signature",

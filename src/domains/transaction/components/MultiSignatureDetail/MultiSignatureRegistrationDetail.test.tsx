@@ -21,7 +21,7 @@ describe("MultiSignatureRegistrationDetail", () => {
 				transaction={{
 					...TransactionFixture,
 					min: () => 2,
-					publicKeys: () => [wallet.publicKey()!],
+					publicKeys: () => [wallet.publicKey()!, profile.wallets().last().publicKey()],
 					wallet: () => wallet,
 				}}
 				isOpen

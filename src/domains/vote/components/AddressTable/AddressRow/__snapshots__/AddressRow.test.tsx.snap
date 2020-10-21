@@ -77,6 +77,192 @@ exports[`AddressRow should emit action on select button 1`] = `
                 </div>
               </span>
               <span
+                class="text-theme-warning-400"
+              >
+                <div
+                  class="sc-AxhCb kAKLDr"
+                  height="16"
+                  width="16"
+                >
+                  <svg>
+                    star.svg
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu justify-end font-bold text-theme-secondary-text"
+          >
+            <span
+              data-testid="Amount"
+            >
+              33.75089801 DARK
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-24"
+        >
+          <div
+            class="sc-AxgMl jraKvu justify-end"
+          >
+            <div
+              class="mr-4"
+            >
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu font-bold"
+          >
+            <span>
+              arkx
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu justify-center font-bold text-theme-secondary-text"
+          >
+            <span>
+              #
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu justify-center"
+          >
+            <div
+              class="sc-AxhCb fxrKLH text-xl text-theme-primary"
+              data-testid="AddressRow__profile"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                msq.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl jraKvu justify-center"
+          >
+            <div
+              class="sc-AxhCb fxrKLH text-theme-success"
+              data-testid="AddressRow__status"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                status-ok.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl iwmQfA justify-end"
+          >
+            <button
+              class="sc-AxirZ hTzPEr"
+              color="primary"
+              data-testid="AddressRow__select-0"
+              type="button"
+            >
+              Select
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`AddressRow should render 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="sc-AxheI jLykHa group"
+        data-testid="TableRow"
+      >
+        <td
+          class="w-1"
+        >
+          <div
+            class="sc-AxgMl eObzhI"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="sc-AxgMl jraKvu"
+          >
+            <div
+              class="inline-flex items-center"
+            >
+              <span
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                data-testid="address__wallet-name"
+              >
+                ARK Wallet 1
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D8rr7B1d6 … VBMs6YUYD
+              </span>
+            </div>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="sc-AxgMl jraKvu justify-center text-sm font-bold"
+          >
+            <div
+              class="inline-flex items-center space-x-2"
+            >
+              <span
                 class="text-theme-neutral-600"
               >
                 <div
@@ -85,7 +271,7 @@ exports[`AddressRow should emit action on select button 1`] = `
                   width="16"
                 >
                   <svg>
-                    multisig.svg
+                    ledger.svg
                   </svg>
                 </div>
               </span>
@@ -212,7 +398,7 @@ exports[`AddressRow should emit action on select button 1`] = `
 </DocumentFragment>
 `;
 
-exports[`AddressRow should render 1`] = `
+exports[`AddressRow should render for a multisignature wallet 1`] = `
 <DocumentFragment>
   <table>
     <tbody>
@@ -497,19 +683,6 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
                 >
                   <svg>
                     ledger.svg
-                  </svg>
-                </div>
-              </span>
-              <span
-                class="text-theme-neutral-600"
-              >
-                <div
-                  class="sc-AxhCb kAKLDr"
-                  height="16"
-                  width="16"
-                >
-                  <svg>
-                    multisig.svg
                   </svg>
                 </div>
               </span>
@@ -831,19 +1004,6 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
                 >
                   <svg>
                     ledger.svg
-                  </svg>
-                </div>
-              </span>
-              <span
-                class="text-theme-neutral-600"
-              >
-                <div
-                  class="sc-AxhCb kAKLDr"
-                  height="16"
-                  width="16"
-                >
-                  <svg>
-                    multisig.svg
                   </svg>
                 </div>
               </span>
