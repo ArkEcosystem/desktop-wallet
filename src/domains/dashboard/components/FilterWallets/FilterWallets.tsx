@@ -31,18 +31,18 @@ export const FilterWallets = ({
 
 	const { t } = useTranslation();
 
-	const toggleTransactions = (isChecked: boolean) => {
-		setShowTransactions(isChecked);
-		if (typeof toggleTransactionsView === "function") toggleTransactionsView(isChecked);
-	};
-
 	const togglePortfolio = (isChecked: boolean) => {
 		setShowPortfolio(isChecked);
-		if (typeof togglePortfolioView === "function") togglePortfolioView(isChecked);
+		togglePortfolioView?.(isChecked);
+	};
+
+	const toggleTransactions = (isChecked: boolean) => {
+		setShowTransactions(isChecked);
+		toggleTransactionsView?.(isChecked);
 	};
 
 	const onWalletClick = () => {
-		if (typeof onWalletsDisplay === "function") onWalletsDisplay();
+		onWalletsDisplay?.();
 	};
 
 	return (
