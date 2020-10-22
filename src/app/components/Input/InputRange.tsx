@@ -1,7 +1,7 @@
 import { isNil } from "@arkecosystem/utils";
 import { Range } from "app/components/Range";
 import { useCurrencyDisplay } from "app/hooks";
-import React, { useEffect,useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { getTrackBackground } from "react-range";
 
 import { InputCurrency } from "./InputCurrency";

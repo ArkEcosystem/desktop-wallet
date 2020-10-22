@@ -1,6 +1,6 @@
 import { InputFee } from "domains/transaction/components/InputFee";
 import React from "react";
-import { act,fireEvent, render, waitFor } from "utils/testing-library";
+import { act, fireEvent, render, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 
