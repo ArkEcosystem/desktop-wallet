@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
@@ -115,7 +116,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should hide transaction view", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -125,21 +126,48 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await act(async () => {
+			await waitFor(() =>
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			);
 
-		act(() => {
 			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
-		});
 
-		act(() => {
+			await waitFor(() => expect(getByTestId("filter-wallets_toggle--transactions")).toBeTruthy());
+
 			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
-		});
 
-		expect(asFragment()).toMatchSnapshot();
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
+	});
+
+	it("should show transaction view", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await act(async () => {
+			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
+
+			await waitFor(() => expect(getByTestId("filter-wallets_toggle--transactions")).toBeTruthy());
+
+			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
+
+			await waitFor(() =>
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			);
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
 	});
 
 	it("should render portfolio percentage bar", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -154,7 +182,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should render portfolio chart", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} />
 			</Route>,
@@ -169,7 +197,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should hide portfolio view", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} />
 			</Route>,
@@ -179,24 +207,23 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await act(async () => {
+			await waitFor(() =>
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			);
 
-		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
+			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
 
-		act(() => {
-			fireEvent.click(filterNetwork);
+			await waitFor(() => expect(getByTestId("filter-wallets_toggle--portfolio")).toBeTruthy());
+
+			fireEvent.click(getByTestId("filter-wallets_toggle--portfolio"));
+
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
-
-		const toggle = getByTestId("filter-wallets_toggle--portfolio");
-		act(() => {
-			fireEvent.click(toggle);
-		});
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should navigate to import page", async () => {
-		const { asFragment, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -217,7 +244,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should navigate to create page", async () => {
-		const { asFragment, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} />
 			</Route>,
