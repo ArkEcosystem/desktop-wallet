@@ -6,6 +6,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	getDefaultWalletMnemonic,
 	render,
 	screen,
 	syncDelegates,
@@ -14,6 +15,8 @@ import {
 
 import { translations } from "../../i18n";
 import { MultiSignatureDetail } from "./MultiSignatureDetail";
+
+const passphrase = getDefaultWalletMnemonic();
 
 describe("MultiSignatureDetail", () => {
 	let profile: Profile;
@@ -358,7 +361,7 @@ describe("MultiSignatureDetail", () => {
 		act(() => {
 			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
-					value: "my mnemonic",
+					value: passphrase,
 				},
 			});
 		});
@@ -400,7 +403,7 @@ describe("MultiSignatureDetail", () => {
 		act(() => {
 			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
-					value: "my mnemonic",
+					value: passphrase,
 				},
 			});
 		});

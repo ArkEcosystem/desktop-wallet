@@ -21,6 +21,7 @@ import {
 import { data as delegateData } from "tests/fixtures/coins/ark/devnet/delegates.json";
 import unvoteFixture from "tests/fixtures/coins/ark/devnet/transactions/unvote.json";
 import voteFixture from "tests/fixtures/coins/ark/devnet/transactions/vote.json";
+import { getDefaultWalletMnemonic } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendVote } from "../SendVote";
@@ -49,6 +50,7 @@ const createUnvoteTransactionMock = (wallet: ReadWriteWallet) =>
 		data: () => unvoteFixture.data,
 	});
 
+const passphrase = getDefaultWalletMnemonic();
 let profile: Profile;
 let wallet: ReadWriteWallet;
 let votes: ReadOnlyWallet[];
@@ -279,8 +281,8 @@ describe("SendVote", () => {
 			fireEvent.click(getByTestId("SendVote__button--continue"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			const signUnvoteMock = jest
 				.spyOn(wallet.transaction(), "signVote")
@@ -385,8 +387,8 @@ describe("SendVote", () => {
 			fireEvent.click(getByTestId("SendVote__button--continue"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signVote")
@@ -463,8 +465,8 @@ describe("SendVote", () => {
 			fireEvent.click(getByTestId("SendVote__button--continue"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signVote")
@@ -541,8 +543,8 @@ describe("SendVote", () => {
 			fireEvent.click(getByTestId("SendVote__button--continue"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			const signMock = jest.spyOn(wallet.transaction(), "signVote").mockImplementation(() => {
 				throw new Error();

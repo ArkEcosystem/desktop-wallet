@@ -19,6 +19,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	getDefaultWalletMnemonic,
 	render,
 	RenderResult,
 	renderWithRouter,
@@ -29,7 +30,6 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { translations as transactionTranslations } from "../../i18n";
 import { SendEntityRegistration } from "./SendEntityRegistration";
 import { FirstStep } from "./Step1";
 
@@ -37,6 +37,7 @@ let profile: Profile;
 let wallet: ReadWriteWallet;
 let secondWallet: ReadWriteWallet;
 const history = createMemoryHistory();
+const passphrase = getDefaultWalletMnemonic();
 
 const renderPage = async (wallet?: ReadWriteWallet) => {
 	const path = wallet
@@ -527,8 +528,8 @@ describe("Registration", () => {
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
 
@@ -581,70 +582,6 @@ describe("Registration", () => {
 			await waitFor(() =>
 				expect(renderedPage.getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("testwallet2"),
 			);
-		});
-	});
-
-	it("should error for invalid mnemonic", async () => {
-		const { asFragment, getByTestId } = await renderPage(wallet);
-
-		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
-		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
-
-		await act(async () => {
-			// Step 1
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Delegate"));
-
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
-			await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("delegateRegistration"));
-			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
-
-			// Step 2
-			fireEvent.click(getByTestId("Registration__continue-button"));
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")).toBeTruthy());
-
-			const input = getByTestId("Input__username");
-			act(() => {
-				fireEvent.change(input, { target: { value: "test_delegate" } });
-			});
-
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(fees[1]);
-
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
-			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
-
-			// Step 3
-			fireEvent.click(getByTestId("Registration__continue-button"));
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--third")).toBeTruthy());
-
-			// Step 4 - signing
-			fireEvent.click(getByTestId("Registration__continue-button"));
-			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-
-			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
-
-			const signMock = jest.spyOn(wallet.transaction(), "signDelegateRegistration").mockImplementation(() => {
-				throw new Error();
-			});
-
-			const consoleSpy = jest.spyOn(console, "error").mockImplementation();
-
-			fireEvent.click(getByTestId("Registration__send-button"));
-
-			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
-			await waitFor(() => expect(passwordInput).toHaveValue(""));
-			await waitFor(() =>
-				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
-			);
-
-			signMock.mockRestore();
-
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
 	});
 
@@ -1128,12 +1065,12 @@ describe("Registration", () => {
 		const secondMnemonic = getByTestId("AuthenticationStep__second-mnemonic");
 
 		act(() => {
-			fireEvent.input(mnemonic, { target: { value: "passphrase" } });
+			fireEvent.input(mnemonic, { target: { value: "v3wallet2" } });
 		});
 
 		fireEvent.input(secondMnemonic, { target: { value: "passphrase" } });
 
-		await waitFor(() => expect(mnemonic).toHaveValue("passphrase"));
+		await waitFor(() => expect(mnemonic).toHaveValue("v3wallet2"));
 		await waitFor(() => expect(secondMnemonic).toHaveValue("passphrase"));
 
 		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));

@@ -244,6 +244,7 @@ export const translations: { [key: string]: any } = {
 	INPUT_PASSPHRASE: {
 		VALIDATION: {
 			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
+			MNEMONIC_NOT_MATCH_ADDRESS: "The mnemonic does not match the sender address",
 		},
 	},
 
