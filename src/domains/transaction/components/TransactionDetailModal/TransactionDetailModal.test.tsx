@@ -334,7 +334,34 @@ describe("TransactionDetailModal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render as null if unknow type", () => {
+	it("should render a legacy magistrate modal", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<TransactionDetailModal
+					isOpen={true}
+					transactionItem={{
+						...TransactionFixture,
+						isTransfer: () => false,
+						isLegacyBusinessRegistration: () => true,
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						type: () => "legacyBusinessRegistration",
+					}}
+				/>
+				,
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			translations.TRANSACTION_TYPES.LEGACY_BUSINESS_REGISTRATION,
+		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should throw an error for unknown types", () => {
 		// disable console to throw to avoid break the CI (this is added because we don't have error boundaries)
 		jest.spyOn(console, "error").mockImplementation();
 
