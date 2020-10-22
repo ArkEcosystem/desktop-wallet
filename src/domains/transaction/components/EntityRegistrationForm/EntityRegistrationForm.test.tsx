@@ -26,6 +26,7 @@ describe("EntityRegistrationForm", () => {
 		},
 		fee: 0,
 	};
+
 	const ipfsForm = {
 		meta: {
 			displayName: "Test Entity Display Name",
@@ -308,6 +309,7 @@ describe("EntityRegistrationForm", () => {
 		isMultiSignatureSpy.mockRestore();
 		multiSignatureSpy.mockRestore();
 	});
+
 	it("should sign transaction with a custom entity type", async () => {
 		const form = {
 			clearErrors: jest.fn(),
@@ -336,7 +338,7 @@ describe("EntityRegistrationForm", () => {
 			handleNext,
 			profile,
 			setTransaction,
-			type: Enums.EntityType.Developer,
+			type: Enums.EntityType.Plugin,
 		});
 
 		expect(signMock).toHaveBeenCalledWith({
