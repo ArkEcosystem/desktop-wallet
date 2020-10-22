@@ -80,9 +80,25 @@ export const Wallets = ({
 		spaceBetween: 20,
 	};
 
+	const { walletDisplay } = filterProperties;
+
 	// Grid
 	const loadGridWallets = () => {
-		const walletObjects = wallets.map((wallet: ReadWriteWallet) => ({ wallet, actions: walletCardActions }));
+		const walletObjects = wallets
+			.filter((wallet: ReadWriteWallet) => {
+				if (walletDisplay === "all") {
+					return wallet;
+				}
+
+				if (walletDisplay === "starred") {
+					return wallet.isStarred();
+				}
+
+				if (walletDisplay === "ledger") {
+					return wallet.isLedger();
+				}
+			})
+			.map((wallet: ReadWriteWallet) => ({ wallet, actions: walletCardActions }));
 
 		if (walletObjects.length <= walletSliderOptions.slidesPerView) {
 			return walletObjects.concat(
@@ -110,7 +126,24 @@ export const Wallets = ({
 	};
 
 	// List
-	const getWalletsForList = () => wallets.filter((wallet: any) => !wallet.isBlank).map((wallet) => ({ wallet }));
+	const getWalletsForList = () =>
+		wallets
+			.filter((wallet: any) => {
+				if (walletDisplay === "all") {
+					return wallet;
+				}
+
+				if (walletDisplay === "starred") {
+					return wallet.isStarred();
+				}
+
+				if (walletDisplay === "ledger") {
+					return wallet.isLedger();
+				}
+
+				return !wallet.isBlank;
+			})
+			.map((wallet) => ({ wallet }));
 
 	const loadListWallets = () => allWallets || getWalletsForList().slice(0, 10);
 
