@@ -986,7 +986,7 @@ describe("Registration", () => {
 				});
 			});
 
-			const addedItems = within(collection).queryAllByTestId("LinkCollection__item");
+			const addedItems = within(collection).queryAllByTestId("TableRow");
 			const newLength = addedItems.length + 1;
 
 			await act(async () => {
@@ -995,10 +995,8 @@ describe("Registration", () => {
 
 			await waitFor(() => expect(input).toHaveValue(""));
 
-			await waitFor(() =>
-				expect(within(collection).getAllByTestId("LinkCollection__item")).toHaveLength(newLength),
-			);
-			const addedItem = within(collection).getAllByTestId("LinkCollection__item")[newLength - 1];
+			await waitFor(() => expect(within(collection).getAllByTestId("TableRow")).toHaveLength(newLength));
+			const addedItem = within(collection).getAllByTestId("TableRow")[newLength - 1];
 			await waitFor(() => expect(addedItem).toBeTruthy());
 			await waitFor(() => expect(addedItem).toHaveTextContent(optionLabel));
 			await waitFor(() => expect(addedItem).toHaveTextContent(inputValue));
@@ -1030,7 +1028,7 @@ describe("Registration", () => {
 		await toggleLinkCollectionHeader(media);
 
 		// Select avatar
-		const firstMediaItem = within(media).getAllByTestId("LinkCollection__item")[0];
+		const firstMediaItem = within(media).getAllByTestId("TableRow")[0];
 
 		await act(async () => {
 			fireEvent.click(within(firstMediaItem).getByTestId("LinkCollection__selected"));

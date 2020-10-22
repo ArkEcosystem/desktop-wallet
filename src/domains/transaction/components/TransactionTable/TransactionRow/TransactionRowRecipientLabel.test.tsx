@@ -18,7 +18,7 @@ describe("TransactionRowRecipientLabel", () => {
 		expect(getByText(translations.TRANSACTION_TYPES.SECOND_SIGNATURE)).toBeTruthy();
 	});
 
-	it("should show a multi payment label", () => {
+	it("should show a multipayment label", () => {
 		const { getByText } = render(
 			<TransactionRowRecipientLabel
 				transaction={{
