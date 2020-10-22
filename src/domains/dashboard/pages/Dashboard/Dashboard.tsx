@@ -1,5 +1,6 @@
 import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { sortByDesc } from "@arkecosystem/utils";
+import { DropdownOption } from "app/components/Dropdown";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { BarItem, PercentageBar } from "app/components/PercentageBar";
@@ -106,6 +107,9 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		networks,
 		visiblePortfolioView: showPortfolio,
 		visibleTransactionsView: showTransactions,
+		onWalletsDisplay: (option: DropdownOption) => {
+			console.log("option", option);
+		},
 		togglePortfolioView: (showPortfolio: boolean) => {
 			setShowPortfolio({ showPortfolio });
 		},

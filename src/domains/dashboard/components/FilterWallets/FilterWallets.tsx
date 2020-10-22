@@ -1,4 +1,4 @@
-import { Dropdown } from "app/components/Dropdown";
+import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { FilterNetwork } from "app/components/FilterNetwork";
 import { Icon } from "app/components/Icon";
 import { Toggle } from "app/components/Toggle";
@@ -41,8 +41,8 @@ export const FilterWallets = ({
 		toggleTransactionsView?.(isChecked);
 	};
 
-	const onWalletClick = () => {
-		onWalletsDisplay?.();
+	const onWalletClick = (option: DropdownOption) => {
+		onWalletsDisplay?.(option);
 	};
 
 	return (
