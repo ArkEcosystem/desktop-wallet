@@ -70,7 +70,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(() =>
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -87,7 +90,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(() =>
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 
 		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
 
@@ -129,6 +135,7 @@ describe("Dashboard", () => {
 		await act(async () => {
 			await waitFor(() =>
 				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+				{ timeout: 5000 },
 			);
 
 			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
@@ -161,6 +168,7 @@ describe("Dashboard", () => {
 
 			await waitFor(() =>
 				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+				{ timeout: 5000 },
 			);
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
@@ -177,7 +185,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(() =>
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -192,7 +203,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(() =>
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -210,6 +224,7 @@ describe("Dashboard", () => {
 		await act(async () => {
 			await waitFor(() =>
 				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+				{ timeout: 5000 },
 			);
 
 			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
@@ -233,7 +248,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(() =>
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 
 		act(() => {
 			fireEvent.click(getByText("Import"));
@@ -254,7 +272,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(() =>
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 
 		fireEvent.click(getByText("Create"));
 
@@ -276,7 +297,7 @@ describe("Dashboard", () => {
 		await waitFor(() => {
 			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent("View More");
 			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
-		});
+		}, { timeout: 5000 });
 
 		act(() => {
 			fireEvent.click(getByTestId("transactions__fetch-more-button"));
@@ -287,7 +308,7 @@ describe("Dashboard", () => {
 		await waitFor(() => {
 			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
 			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
-		});
+		}, { timeout: 5000 });
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -303,7 +324,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(() =>
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 
 		act(() => {
 			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
