@@ -72,6 +72,7 @@ export const TransactionTable = ({
 		if (showExplorerLinkColumn) {
 			commonColumns.unshift({
 				Header: t("COMMON.ID"),
+				minimumWidth: true,
 			});
 		}
 

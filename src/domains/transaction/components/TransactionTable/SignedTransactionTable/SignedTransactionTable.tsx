@@ -189,6 +189,7 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 	const columns = [
 		{
 			Header: t("COMMON.ID"),
+			minimumWidth: true,
 		},
 		{
 			Header: t("COMMON.DATE"),
