@@ -18,7 +18,7 @@ describe("TransactionRowRecipientLabel", () => {
 		expect(getByText(translations.TRANSACTION_TYPES.SECOND_SIGNATURE)).toBeTruthy();
 	});
 
-	it("should show a multi payment label", () => {
+	it("should show a multipayment label", () => {
 		const { getByText } = render(
 			<TransactionRowRecipientLabel
 				transaction={{
@@ -37,9 +37,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isBusinessEntityRegistration: () => true,
-					type: () => "entityRegistration",
+					type: () => "businessEntityRegistration",
 				}}
 			/>,
 		);
@@ -51,9 +49,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isBusinessEntityResignation: () => true,
-					type: () => "entityResignation",
+					type: () => "businessEntityResignation",
 				}}
 			/>,
 		);
@@ -65,9 +61,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isBusinessEntityUpdate: () => true,
-					type: () => "entityUpdate",
+					type: () => "businessEntityUpdate",
 				}}
 			/>,
 		);
@@ -79,9 +73,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isProductEntityRegistration: () => true,
-					type: () => "entityRegistration",
+					type: () => "productEntityRegistration",
 				}}
 			/>,
 		);
@@ -93,9 +85,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isProductEntityResignation: () => true,
-					type: () => "entityResignation",
+					type: () => "productEntityResignation",
 				}}
 			/>,
 		);
@@ -107,9 +97,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isProductEntityUpdate: () => true,
-					type: () => "entityUpdate",
+					type: () => "productEntityUpdate",
 				}}
 			/>,
 		);
@@ -121,9 +109,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isPluginEntityRegistration: () => true,
-					type: () => "entityRegistration",
+					type: () => "pluginEntityRegistration",
 				}}
 			/>,
 		);
@@ -135,9 +121,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isPluginEntityResignation: () => true,
-					type: () => "entityResignation",
+					type: () => "pluginEntityResignation",
 				}}
 			/>,
 		);
@@ -149,9 +133,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isPluginEntityUpdate: () => true,
-					type: () => "entityUpdate",
+					type: () => "pluginEntityUpdate",
 				}}
 			/>,
 		);
@@ -163,9 +145,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isModuleEntityRegistration: () => true,
-					type: () => "entityRegistration",
+					type: () => "moduleEntityRegistration",
 				}}
 			/>,
 		);
@@ -177,9 +157,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isModuleEntityResignation: () => true,
-					type: () => "entityResignation",
+					type: () => "moduleEntityResignation",
 				}}
 			/>,
 		);
@@ -191,9 +169,7 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isModuleEntityUpdate: () => true,
-					type: () => "entityUpdate",
+					type: () => "moduleEntityUpdate",
 				}}
 			/>,
 		);
