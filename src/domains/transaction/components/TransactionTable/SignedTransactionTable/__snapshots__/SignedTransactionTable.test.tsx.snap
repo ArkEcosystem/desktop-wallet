@@ -1073,7 +1073,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1087,7 +1087,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1117,7 +1117,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1145,7 +1145,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -1189,7 +1189,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -1216,16 +1216,21 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
                 class="sc-AxhCb hbkWNL"
               >
                 <span
-                  class="sc-AxgMl fFPQpl"
-                  data-testid="TruncateMiddle"
+                  class="text-theme-neutral-300 dark:text-theme-neutral-800"
                 >
-                  19a78b … 6993dd
+                  <div
+                    class="sc-AxirZ iQaTP"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      redirect.svg
+                    </svg>
+                  </div>
                 </span>
               </div>
             </td>
-            <td
-              class="w-50"
-            >
+            <td>
               <div
                 class="sc-AxhCb udmdB text-theme-secondary-text"
               >
@@ -1245,7 +1250,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
                   data-testid="TransactionRowMode"
                 >
                   <div
-                    class="sc-Axmtr hVOxCZ border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+                    class="sc-AxheI etPkdG border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                   >
                     <div
                       class="sc-AxirZ iQaTP"
@@ -1277,7 +1282,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
                   class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-text truncate font-semibold text-base"
+                    class="sc-Axmtr hBVTto text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1331,14 +1336,12 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="w-56"
-            >
+            <td>
               <div
                 class="sc-AxhCb udmdB justify-end"
               >
                 <div
-                  class="sc-AxheI kinEEx"
+                  class="sc-AxgMl eXChH"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -1350,9 +1353,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
                 </div>
               </div>
             </td>
-            <td
-              class="w-24"
-            >
+            <td>
               <div
                 class="sc-AxhCb fYMCjD justify-end"
               />
