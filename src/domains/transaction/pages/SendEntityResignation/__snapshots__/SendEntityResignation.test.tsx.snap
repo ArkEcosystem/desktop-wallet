@@ -3170,7 +3170,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
-                                  value="NaN"
+                                  value="0"
                                 />
                               </div>
                             </div>
@@ -3181,7 +3181,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                                 role="radiogroup"
                               >
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -3190,7 +3190,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                                   Min
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -3199,7 +3199,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                                   Average
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
