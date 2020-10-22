@@ -70,8 +70,8 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() =>
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 			{ timeout: 5000 },
 		);
 		expect(asFragment()).toMatchSnapshot();
@@ -90,8 +90,8 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() =>
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 			{ timeout: 5000 },
 		);
 
@@ -133,8 +133,8 @@ describe("Dashboard", () => {
 		);
 
 		await act(async () => {
-			await waitFor(() =>
-				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			await waitFor(
+				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 				{ timeout: 5000 },
 			);
 
@@ -166,8 +166,8 @@ describe("Dashboard", () => {
 
 			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
 
-			await waitFor(() =>
-				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			await waitFor(
+				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 				{ timeout: 5000 },
 			);
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
@@ -185,8 +185,8 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() =>
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 			{ timeout: 5000 },
 		);
 		expect(asFragment()).toMatchSnapshot();
@@ -203,8 +203,8 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() =>
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 			{ timeout: 5000 },
 		);
 		expect(asFragment()).toMatchSnapshot();
@@ -222,8 +222,8 @@ describe("Dashboard", () => {
 		);
 
 		await act(async () => {
-			await waitFor(() =>
-				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			await waitFor(
+				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 				{ timeout: 5000 },
 			);
 
@@ -248,8 +248,8 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() =>
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 			{ timeout: 5000 },
 		);
 
@@ -272,8 +272,8 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() =>
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 			{ timeout: 5000 },
 		);
 
@@ -294,10 +294,13 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent("View More");
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
-		}, { timeout: 5000 });
+		await waitFor(
+			() => {
+				expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent("View More");
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
+			},
+			{ timeout: 5000 },
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("transactions__fetch-more-button"));
@@ -305,10 +308,13 @@ describe("Dashboard", () => {
 
 		expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.LOADING);
 
-		await waitFor(() => {
-			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
-		}, { timeout: 5000 });
+		await waitFor(
+			() => {
+				expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
+			},
+			{ timeout: 5000 },
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -324,8 +330,8 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() =>
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 			{ timeout: 5000 },
 		);
 
