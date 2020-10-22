@@ -19,6 +19,7 @@ import {
 	within,
 } from "testing-library";
 import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
+import { getDefaultWalletMnemonic } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendIpfs } from "./SendIpfs";
@@ -26,6 +27,7 @@ import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { FourthStep } from "./Step4";
 
+const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();
 
 const createTransactionMock = (wallet: ReadWriteWallet) =>
@@ -167,8 +169,8 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			// Step 4
 			const signMock = jest
@@ -265,8 +267,8 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
