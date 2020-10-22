@@ -155,6 +155,18 @@ describe("Signed Transaction Table", () => {
 		isMultiSignatureReadyMock.mockRestore();
 	});
 
+	it("should show as awaiting confirmations", async () => {
+		const isAwaitingConfirmationMock = jest
+			.spyOn(wallet.transaction(), "isAwaitingConfirmation")
+			.mockImplementation(() => true);
+
+		const { asFragment } = render(<SignedTransactionTable transactions={[fixtures.transfer]} wallet={wallet} />);
+		await waitFor(() => expect(screen.getByText("status-pending.svg")).toBeInTheDocument());
+
+		expect(asFragment()).toMatchSnapshot();
+		isAwaitingConfirmationMock.mockRestore();
+	});
+
 	it("should show as awaiting the wallet signature", async () => {
 		const isAwaitingOurSignatureMock = jest
 			.spyOn(wallet.transaction(), "isAwaitingOurSignature")
