@@ -24,7 +24,7 @@ describe("MyRegistrations", () => {
 			.query((params) => params["asset.type"] === "0")
 			.reply(200, require("tests/fixtures/registrations/businesses.json"))
 			.get("/api/transactions")
-			.query((params) => params["asset.type"] === "3")
+			.query((params) => params["asset.type"] === "2")
 			.reply(200, require("tests/fixtures/registrations/plugins.json"))
 			.get("/api/transactions")
 			.query((params) => !!params["asset.type"])
