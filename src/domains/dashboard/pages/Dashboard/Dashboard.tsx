@@ -26,6 +26,9 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
+	const [{ walletDisplay }, setWalletDisplay] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { walletDisplay: "all" },
+	);
 	const [{ showPortfolio }, setShowPortfolio] = useState(
 		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { showPortfolio: true },
 	);
@@ -95,20 +98,23 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 	useEffect(() => {
 		const updateDashboardSettings = async () => {
-			activeProfile.settings().set(ProfileSetting.DashboardConfiguration, { showPortfolio, showTransactions });
+			activeProfile
+				.settings()
+				.set(ProfileSetting.DashboardConfiguration, { showPortfolio, showTransactions, walletDisplay });
 			await persist();
 		};
 
 		updateDashboardSettings();
-	}, [activeProfile, persist, showPortfolio, showTransactions]);
+	}, [activeProfile, persist, showPortfolio, showTransactions, walletDisplay]);
 
 	// Wallet controls data
 	const filterProperties = {
 		networks,
+		walletDisplay,
 		visiblePortfolioView: showPortfolio,
 		visibleTransactionsView: showTransactions,
-		onWalletsDisplay: (option: DropdownOption) => {
-			console.log("option", option);
+		onWalletsDisplay: ({ value }: DropdownOption) => {
+			setWalletDisplay({ walletDisplay: value });
 		},
 		togglePortfolioView: (showPortfolio: boolean) => {
 			setShowPortfolio({ showPortfolio });

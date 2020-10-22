@@ -7,29 +7,37 @@ import { useTranslation } from "react-i18next";
 
 export type FilterWalletsProps = {
 	networks?: any;
-	visiblePortfolioView?: any;
-	visibleTransactionsView?: any;
+	visiblePortfolioView?: boolean;
+	visibleTransactionsView?: boolean;
+	walletDisplay?: string;
+	togglePortfolioView?: any;
+	toggleTransactionsView?: any;
 	onNetworkChange?: any;
 	onViewAllNetworks?: any;
 	onWalletsDisplay?: any;
-	togglePortfolioView?: any;
-	toggleTransactionsView?: any;
 };
 
 export const FilterWallets = ({
 	networks,
+	visiblePortfolioView,
+	visibleTransactionsView,
+	walletDisplay,
+	togglePortfolioView,
+	toggleTransactionsView,
 	onNetworkChange,
 	onViewAllNetworks,
 	onWalletsDisplay,
-	togglePortfolioView,
-	toggleTransactionsView,
-	visibleTransactionsView,
-	visiblePortfolioView,
 }: FilterWalletsProps) => {
 	const [showPortfolio, setShowPortfolio] = useState(visiblePortfolioView);
 	const [showTransactions, setShowTransactions] = useState(visibleTransactionsView);
 
 	const { t } = useTranslation();
+
+	const walletsDisplayOptions = [
+		{ label: t("COMMON.ALL"), value: "all" },
+		{ label: t("COMMON.STARRED"), value: "starred" },
+		{ label: t("COMMON.LEDGER"), value: "ledger" },
+	];
 
 	const togglePortfolio = (isChecked: boolean) => {
 		setShowPortfolio(isChecked);
@@ -68,18 +76,16 @@ export const FilterWallets = ({
 
 					<Dropdown
 						toggleIcon="ChevronDown"
-						options={[
-							{ label: t("COMMON.ALL"), value: "all" },
-							{ label: t("COMMON.STARRED"), value: "starred" },
-							{ label: t("COMMON.LEDGER"), value: "ledger" },
-						]}
+						options={walletsDisplayOptions}
 						onSelect={onWalletClick}
 						toggleContent={
 							<div
 								data-testid="filter-wallets__wallets"
 								className="flex items-center justify-end cursor-pointer text-theme-secondary-text"
 							>
-								<span className="inline-block mr-2 font-semibold">{t("COMMON.ALL")}</span>
+								<span className="inline-block mr-2 font-semibold">
+									{walletsDisplayOptions.find((option) => option.value === walletDisplay)?.label}
+								</span>
 								<Icon name="ChevronDown" width={12} height={12} />
 							</div>
 						}
@@ -102,7 +108,7 @@ export const FilterWallets = ({
 					<Toggle
 						checked={showPortfolio}
 						data-testid="filter-wallets_toggle--portfolio"
-						onChange={(e) => togglePortfolio(e.target.checked)}
+						onChange={(event) => togglePortfolio(event.target.checked)}
 					/>
 				</div>
 
@@ -120,7 +126,7 @@ export const FilterWallets = ({
 					<Toggle
 						checked={showTransactions}
 						data-testid="filter-wallets_toggle--transactions"
-						onChange={(e) => toggleTransactions(e.target.checked)}
+						onChange={(event) => toggleTransactions(event.target.checked)}
 					/>
 				</div>
 
@@ -133,7 +139,8 @@ export const FilterWallets = ({
 };
 
 FilterWallets.defaultProps = {
+	networks: [],
 	visibleTransactionsView: false,
 	visiblePortfolioView: false,
-	networks: [],
+	walletDisplay: "all",
 };
