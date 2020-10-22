@@ -84,6 +84,16 @@ const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transac
 		);
 	}
 
+	if (wallet.transaction().isAwaitingConfirmation(transaction.id())) {
+		return (
+			<Tippy content={t("TRANSACTION.MULTISIGNATURE.AWAITING_CONFIRMATIONS")}>
+				<span className="p-1 text-theme-warning-300">
+					<Icon name="StatusPending" width={30} height={22} />
+				</span>
+			</Tippy>
+		);
+	}
+
 	if (isMultiSignatureReady) {
 		return (
 			<Tippy content={t("TRANSACTION.MULTISIGNATURE.READY")}>

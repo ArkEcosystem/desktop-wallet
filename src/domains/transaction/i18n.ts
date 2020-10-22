@@ -58,6 +58,7 @@ export const translations: { [key: string]: any } = {
 
 	MULTISIGNATURE: {
 		GENERATED_ADDRESS: "Generated Address",
+		AWAITING_CONFIRMATIONS: "Awaiting confirmations",
 		AWAITING_OUR_SIGNATURE: "Awaiting our signature",
 		AWAITING_OTHER_SIGNATURE_COUNT: "Awaiting {{count}} other signature",
 		AWAITING_OTHER_SIGNATURE_COUNT_plural: "Awaiting {{count}} other signatures",

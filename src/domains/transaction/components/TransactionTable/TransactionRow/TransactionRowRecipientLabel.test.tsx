@@ -37,20 +37,6 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
-					isMultiPayment: () => true,
-					type: () => "multiPayment",
-				}}
-			/>,
-		);
-		expect(getByText(translations.TRANSACTION_TYPES.MULTI_PAYMENT)).toBeTruthy();
-	});
-
-	it("should show a business entity registration label", () => {
-		const { getByText } = render(
-			<TransactionRowRecipientLabel
-				transaction={{
-					...TransactionFixture,
 					type: () => "businessEntityRegistration",
 				}}
 			/>,
