@@ -60,14 +60,16 @@ export const AddRecipient = ({
 	isSingleRecipient = true,
 	profile,
 	recipients,
-	onChange,
+	showMultiPaymentOption,
 	withDeeplink,
+	onChange,
 }: AddRecipientProps) => {
+	const { t } = useTranslation();
+
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
 	const [recipientsAmount, setRecipientsAmount] = useState<any>();
 
-	const { t } = useTranslation();
 	const {
 		getValues,
 		setValue,
@@ -95,6 +97,12 @@ export const AddRecipient = ({
 		setValue("displayAmount", undefined);
 		setValue("recipientAddress", undefined);
 	}, [setValue]);
+
+	useEffect(() => {
+		if (showMultiPaymentOption) return;
+
+		setIsSingle(true);
+	}, [showMultiPaymentOption]);
 
 	useEffect(() => {
 		if (!withDeeplink) return;
@@ -172,9 +180,15 @@ export const AddRecipient = ({
 
 	return (
 		<AddRecipientWrapper>
-			<ToggleButtons isSingle={isSingle} onChange={(isSingle) => setIsSingle(isSingle)} />
+			{showMultiPaymentOption && (
+				<ToggleButtons isSingle={isSingle} onChange={(isSingle) => setIsSingle(isSingle)} />
+			)}
 
-			<SubForm data-testid="add-recipient__form-wrapper" className="mt-6" noBackground={isSingle}>
+			<SubForm
+				data-testid="add-recipient__form-wrapper"
+				className={`${showMultiPaymentOption ? "mt-6" : ""}`}
+				noBackground={isSingle}
+			>
 				<div className="space-y-8">
 					<FormField name="recipientAddress" className="relative mt-1">
 						<div className="mb-2">
@@ -275,4 +289,5 @@ export const AddRecipient = ({
 AddRecipient.defaultProps = {
 	assetSymbol: "ARK",
 	recipients: [],
+	showMultiPaymentOption: true,
 };
