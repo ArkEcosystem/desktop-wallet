@@ -34,7 +34,6 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 		updateFee(currency);
 		onChange?.(currency);
 	};
-	console.log("fee", { fee });
 
 	return (
 		<div data-testid="InputFee" className="flex space-x-2">

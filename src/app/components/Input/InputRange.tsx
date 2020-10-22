@@ -1,4 +1,3 @@
-import { isNil } from "@arkecosystem/utils";
 import { Range } from "app/components/Range";
 import { useCurrencyDisplay } from "app/hooks";
 import React, { useEffect, useMemo } from "react";
@@ -30,11 +29,11 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		const { formatRange, converToCurrency, keepInRange } = useCurrencyDisplay();
 		const [values, setValues] = React.useState<CurrencyInput[]>([converToCurrency(avg)]);
 
-		const rangeValues = useMemo(() => formatRange(values, max), [formatRange, values, max, values]);
+		const rangeValues = useMemo(() => formatRange(values, max), [formatRange, max, values]);
 		const trackBackgroundMinValue = Number(values[0].display);
 
 		useEffect(() => {
-			if (!isNil(value)) setValues([converToCurrency(value)]);
+			setValues([converToCurrency(value)]);
 		}, [value, converToCurrency]);
 
 		const handleInput = (currency: CurrencyInput) => {
