@@ -88,7 +88,7 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 					)
 				}
 				className="h-48"
-				actions={actions}
+				// actions={actions}
 				onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`)}
 				onSelect={onSelect}
 			>
