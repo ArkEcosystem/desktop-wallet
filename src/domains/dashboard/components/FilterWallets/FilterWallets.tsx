@@ -69,9 +69,9 @@ export const FilterWallets = ({
 					<Dropdown
 						toggleIcon="ChevronDown"
 						options={[
-							{ label: "All", value: "all" },
-							{ label: "Starred", value: "starred" },
-							{ label: "Ledger", value: "ledger" },
+							{ label: t("COMMON.ALL"), value: "all" },
+							{ label: t("COMMON.STARRED"), value: "starred" },
+							{ label: t("COMMON.LEDGER"), value: "ledger" },
 						]}
 						onSelect={onWalletClick}
 						toggleContent={
