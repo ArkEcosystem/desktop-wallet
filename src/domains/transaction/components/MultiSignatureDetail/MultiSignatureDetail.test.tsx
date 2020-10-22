@@ -6,6 +6,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	getDefaultWalletMnemonic,
 	render,
 	screen,
 	syncDelegates,
@@ -14,6 +15,8 @@ import {
 
 import { translations } from "../../i18n";
 import { MultiSignatureDetail } from "./MultiSignatureDetail";
+
+const passphrase = getDefaultWalletMnemonic();
 
 describe("MultiSignatureDetail", () => {
 	let profile: Profile;
@@ -261,6 +264,18 @@ describe("MultiSignatureDetail", () => {
 		broadcastMock.mockRestore();
 	});
 
+	it("should not show send button when waiting for confirmations", async () => {
+		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockImplementationOnce(() => true);
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.queryByTestId("MultiSignatureDetail__broadcast")).not.toBeInTheDocument());
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should fail to broadcast transaction", async () => {
 		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
@@ -358,7 +373,7 @@ describe("MultiSignatureDetail", () => {
 		act(() => {
 			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
-					value: "my mnemonic",
+					value: passphrase,
 				},
 			});
 		});
@@ -400,7 +415,7 @@ describe("MultiSignatureDetail", () => {
 		act(() => {
 			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
-					value: "my mnemonic",
+					value: passphrase,
 				},
 			});
 		});

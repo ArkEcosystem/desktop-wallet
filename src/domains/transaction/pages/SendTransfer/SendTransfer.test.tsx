@@ -7,21 +7,22 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
+import transactionMultipleFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer-multiple.json";
+import transactionFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer.json";
 import {
 	act as utilsAct,
 	env,
 	fireEvent,
 	getDefaultProfileId,
 	getDefaultWalletId,
+	getDefaultWalletMnemonic,
 	render,
 	RenderResult,
 	renderWithRouter,
 	syncFees,
 	waitFor,
 	within,
-} from "testing-library";
-import transactionMultipleFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer-multiple.json";
-import transactionFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer.json";
+} from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendTransfer } from "./SendTransfer";
@@ -29,6 +30,7 @@ import { FormStep } from "./Step1";
 import { ReviewStep } from "./Step2";
 import { SummaryStep } from "./Step4";
 
+const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();
 const fixtureWalletId = getDefaultWalletId();
 
@@ -396,8 +398,8 @@ describe("SendTransfer", () => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const signMock = jest
@@ -613,8 +615,8 @@ describe("SendTransfer", () => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const signMock = jest.spyOn(wallet.transaction(), "signTransfer").mockImplementation(() => {
@@ -732,8 +734,8 @@ describe("SendTransfer", () => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const coin = await env.coin("ARK", "ark.devnet");
