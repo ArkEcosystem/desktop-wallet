@@ -1,18 +1,18 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
-type Currency = {
-	display: string;
-	value: string;
-};
-
 export const common = (t: any) => ({
-	fee: (min: string) => ({
+	fee: (fees: Contracts.TransactionFee) => ({
 		validate: {
-			valid: (fee: Currency) => {
-				if (fee?.value) {
-					if (BigNumber.make(fee.value).isLessThan(min)) {
-						return t("TRANSACTION.VALIDATION.FEE_BELOW_MINIMUM");
-					}
+			valid: (fee?: string | number) => {
+				const feeSatoshi = BigNumber.make(fee || 0);
+
+				if (feeSatoshi.isLessThan(fees?.min)) {
+					return t("TRANSACTION.VALIDATION.FEE_BELOW_MINIMUM");
+				}
+
+				if (feeSatoshi.isGreaterThan(fees?.max)) {
+					return t("TRANSACTION.VALIDATION.FEE_ABOVE_MAXIMUM");
 				}
 
 				return true;

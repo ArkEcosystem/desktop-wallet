@@ -42,16 +42,16 @@ export const SendTransfer = () => {
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
-	const { senderAddress } = watch();
-	const { sendTransfer } = useValidation();
+	const { senderAddress, fees } = watch();
+	const { sendTransfer, common } = useValidation();
 
 	useEffect(() => {
 		register("network", sendTransfer.network());
 		register("recipients");
 		register("senderAddress", sendTransfer.senderAddress());
-		register("fee", sendTransfer.fee());
+		register("fee", common.fee(fees));
 		register("smartbridge", sendTransfer.smartbridge());
-	}, [register, sendTransfer]);
+	}, [register, sendTransfer, common, fees]);
 
 	useEffect(() => {
 		if (!hasWalletId && senderAddress) {

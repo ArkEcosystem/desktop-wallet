@@ -26,7 +26,7 @@ type Props = {
 // TODO: tidy up storage of amount (why array of values?)
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 	({ min, max, step, avg, magnitude, onChange, value }: Props, ref) => {
-		const { formatRange, converToCurrency, keepInRange } = useCurrencyDisplay();
+		const { formatRange, converToCurrency } = useCurrencyDisplay();
 		const [values, setValues] = React.useState<CurrencyInput[]>([converToCurrency(avg)]);
 
 		const rangeValues = useMemo(() => formatRange(values, max), [formatRange, max, values]);
@@ -38,9 +38,8 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		}, [value, converToCurrency]);
 
 		const handleInput = (currency: CurrencyInput) => {
-			const valueInRange = keepInRange(currency, max);
-			setValues([valueInRange]);
-			onChange?.(valueInRange);
+			setValues([currency]);
+			onChange?.(currency);
 		};
 
 		const handleRange = (values: number[]) => {
