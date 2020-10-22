@@ -1,8 +1,9 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { InputRange } from "app/components/Input";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
+
+import { useFeeFormat } from "./hooks";
 
 export type InputFeeProps = {
 	defaultValue: any;
@@ -23,52 +24,24 @@ export type InputFee = {
 export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }: InputFeeProps) => {
 	const { t } = useTranslation();
 
-	const toHuman = (inputValue: string | number) => BigNumber.make(inputValue).divide(1e8).toString();
+	const { fee, toHuman, updateFee } = useFeeFormat({ defaultValue, value, avg });
+
+	const avgHuman = toHuman(avg);
 	const minHuman = toHuman(min);
 	const maxHuman = toHuman(max);
-	const avgHuman = toHuman(avg);
-
-	const defaultFeeValue = value || defaultValue || avg;
-	const defaultHuman = toHuman(defaultFeeValue);
-
-	const [fee, setFee] = useState<InputFee>({ display: defaultHuman, value: defaultFeeValue });
-
-	const setDefaultFee = () => {
-		setFee({ display: "0", value: BigNumber.make("0").times(1e8).toString() });
-	};
-
-	const updateFee = (value: any) => {
-		setFee({
-			display: BigNumber.make(value || 0)
-				.divide(1e8)
-				.toString(),
-			value,
-		});
-	};
 
 	const handleFeeChange = (currency: InputFee) => {
-		setFee(currency);
+		updateFee(currency);
 		onChange?.(currency);
 	};
-
-	const updatedFee = useRef(fee);
-	useEffect(() => {
-		updatedFee.current = fee;
-	}, [fee]);
-
-	useEffect(() => {
-		if (!value && !defaultValue) setDefaultFee();
-
-		const isFeeOutdated = !BigNumber.make(value).isEqualTo(updatedFee.current.value);
-		if (isFeeOutdated) updateFee(value);
-	}, [value, defaultValue, updatedFee]);
+	console.log("fee", { fee });
 
 	return (
 		<div data-testid="InputFee" className="flex space-x-2">
 			<div className="flex-1">
 				<InputRange
 					name="fee"
-					avg={avg}
+					avg={avgHuman}
 					value={fee}
 					min={minHuman}
 					max={maxHuman}
