@@ -49,6 +49,7 @@ export { customRender as render, renderWithRouter };
 
 export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
 export const getDefaultWalletId = () => Object.keys(Object.values(fixtureData.profiles)[0].wallets)[0];
+export const getDefaultWalletMnemonic = () => "master dizzy era math peanut crew run manage better flame tree prevent";
 
 export const defaultNetMocks = () => {
 	nock.disableNetConnect();

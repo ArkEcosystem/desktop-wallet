@@ -30,6 +30,7 @@ let resignationType: string;
 const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
 let resignationUrl;
 
+const passphrase = "v3wallet2";
 const history = createMemoryHistory();
 
 const renderPage = (type?: "entity") => {
@@ -142,12 +143,12 @@ describe("SendEntityResignation", () => {
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
 					target: {
-						value: "test",
+						value: passphrase,
 					},
 				});
 			});
 
-			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
@@ -252,12 +253,12 @@ describe("SendEntityResignation", () => {
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
 					target: {
-						value: "test",
+						value: passphrase,
 					},
 				});
 			});
 
-			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
@@ -304,12 +305,12 @@ describe("SendEntityResignation", () => {
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
 					target: {
-						value: "test",
+						value: passphrase,
 					},
 				});
 			});
 
-			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
@@ -409,12 +410,12 @@ describe("SendEntityResignation", () => {
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
 					target: {
-						value: "test",
+						value: passphrase,
 					},
 				});
 			});
 
-			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
