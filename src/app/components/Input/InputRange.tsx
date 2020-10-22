@@ -31,6 +31,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 
 		const rangeValues = useMemo(() => formatRange(values, max), [formatRange, max, values]);
 		const trackBackgroundMinValue = Number(values[0].display);
+		const minValue = Number(trackBackgroundMinValue < Number(min) ? trackBackgroundMinValue : min);
 
 		useEffect(() => {
 			setValues([converToCurrency(value)]);
@@ -54,7 +55,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						background: getTrackBackground({
 							values: [trackBackgroundMinValue],
 							colors: ["rgba(var(--theme-color-primary-rgb), 0.1)", "transparent"],
-							min: Number(min),
+							min: minValue,
 							max: Number(max),
 						}),
 					}}
@@ -68,8 +69,8 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 					<div className="absolute bottom-0 w-full px-1">
 						<Range
 							colors={["var(--theme-color-primary)", "transparent"]}
-							step={sanitizeStep({ min: Number(min), max: Number(max), step })}
-							min={Number(min)}
+							step={sanitizeStep({ min: Number(minValue), max: Number(max), step })}
+							min={minValue}
 							max={Number(max)}
 							onChange={handleRange}
 							values={rangeValues}
