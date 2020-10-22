@@ -1,14 +1,13 @@
 import { Button } from "app/components/Button";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { RadioButton } from "app/components/RadioButton";
 import { Select } from "app/components/SelectDropdown";
-import { Table } from "app/components/Table";
+import { Table, TableCell, TableRow } from "app/components/Table";
 import React, { useEffect, useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { styled } from "twin.macro";
 
 import { EntityLink } from "./LinkCollection.models";
 
@@ -29,19 +28,6 @@ type LinkCollectionProps = {
 	onChange?: (links: EntityLink[]) => void;
 	onChoose?: (link: EntityLink) => void;
 };
-
-const Wrapper = styled.div`
-	table th {
-		padding-bottom: 0;
-	}
-	table tr td {
-		padding-top: 1rem;
-		padding-bottom: 1rem;
-	}
-	table tr:first-child td {
-		padding-top: 0.25rem;
-	}
-`;
 
 export const LinkCollection = ({
 	data,
@@ -121,6 +107,7 @@ export const LinkCollection = ({
 		{
 			Header: t("COMMON.LINK"),
 			accessor: "link",
+			className: "no-border",
 		},
 		{
 			Header: "Actions",
@@ -129,7 +116,7 @@ export const LinkCollection = ({
 	);
 
 	return (
-		<Wrapper data-testid="LinkCollection" className="flex flex-col font-normal">
+		<div data-testid="LinkCollection" className="flex flex-col font-normal">
 			<div
 				data-testid="LinkCollection__header"
 				className="flex items-center justify-between cursor-pointer"
@@ -159,55 +146,62 @@ export const LinkCollection = ({
 			<div className="mt-2 text-theme-secondary-text">{description}</div>
 
 			{isExpanded && (
-				<div className="mt-4">
-					<div
-						className="grid row-gap-4 col-gap-2"
-						style={{
-							gridTemplateColumns: "2fr 3fr",
-						}}
-					>
-						<FormField name="type">
-							<FormLabel label={`Add ${typeName}`} />
-							<Select options={types} ref={register({ required: true })} onChange={handleSelectType} />
-						</FormField>
-
-						<FormField name="value">
-							<FormLabel label={t("COMMON.LINK")} />
-							<Input
-								data-testid="LinkCollection__input-link"
-								ref={register({
-									required: true,
-									validate: {
-										validateProviderURL,
-									},
-								})}
-								isInvalid={!!errors?.value}
-								disabled={!type}
-							/>
-						</FormField>
-
-						<Button
-							data-testid="LinkCollection__add-link"
-							className="col-span-2"
-							variant="plain"
-							type="button"
-							disabled={!value || !formState.isValid} // @TODO disable on duplicate entry
-							onClick={handleSubmit(({ type, value }) => addLink({ type, value }))}
+				<div className="mt-4 space-y-4">
+					<SubForm>
+						<div
+							className="grid gap-4"
+							style={{
+								gridTemplateColumns: "2fr 3fr",
+							}}
 						>
-							{t("TRANSACTION.ADD_LINK")}
-						</Button>
-					</div>
+							<FormField name="type">
+								<FormLabel label={`Add ${typeName}`} />
+								<Select
+									options={types}
+									ref={register({ required: true })}
+									onChange={handleSelectType}
+								/>
+							</FormField>
+
+							<FormField name="value">
+								<FormLabel label={t("COMMON.LINK")} />
+								<Input
+									data-testid="LinkCollection__input-link"
+									ref={register({
+										required: true,
+										validate: {
+											validateProviderURL,
+										},
+									})}
+									isInvalid={!!errors?.value}
+									disabled={!type}
+								/>
+							</FormField>
+
+							<Button
+								data-testid="LinkCollection__add-link"
+								className="col-span-2"
+								variant="plain"
+								type="button"
+								disabled={!value || !formState.isValid} // @TODO disable on duplicate entry
+								onClick={handleSubmit(({ type, value }) => addLink({ type, value }))}
+							>
+								{t("TRANSACTION.ADD_LINK")}
+							</Button>
+						</div>
+					</SubForm>
 
 					{fields && fields.length > 0 && (
-						<Table columns={columns} data={fields} className="mt-4">
+						<Table columns={columns} data={fields} className="font-semibold">
 							{(rowData: any, rowIndex: any) => (
-								<tr
-									data-testid="LinkCollection__item"
-									key={rowData.value}
-									className="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-								>
+								<TableRow>
 									{selectionTypeTitle && (
-										<td className="w-16 text-center align-middle">
+										<TableCell
+											variant="start"
+											className="w-16"
+											innerClassName="justify-center"
+											isCompact
+										>
 											{selectionTypes && selectionTypes.includes(rowData.type) && (
 												<RadioButton
 													data-testid="LinkCollection__selected"
@@ -218,30 +212,35 @@ export const LinkCollection = ({
 													onChange={() => setSelected(rowData)}
 												/>
 											)}
-										</td>
+										</TableCell>
 									)}
 
-									<td className="w-40">
+									<TableCell
+										variant={selectionTypeTitle ? "middle" : "start"}
+										className="w-40"
+										innerClassName="font-semibold"
+										isCompact
+									>
 										<input
 											type="hidden"
 											name={`links[${rowIndex}].type`}
 											ref={register()}
 											defaultValue={rowData.type}
 										/>
-										{getType(rowData.type)!.label}
-									</td>
+										<span>{getType(rowData.type)!.label}</span>
+									</TableCell>
 
-									<td className="break-all align-middle">
+									<TableCell innerClassName="font-semibold break-all" isCompact>
 										<input
 											type="hidden"
 											name={`links[${rowIndex}].value`}
 											ref={register()}
 											defaultValue={rowData.value}
 										/>
-										{rowData.value}
-									</td>
+										<span>{rowData.value}</span>
+									</TableCell>
 
-									<td className="w-16 text-right align-middle">
+									<TableCell variant="end" innerClassName="justify-end" isCompact>
 										<Button
 											data-testid="LinkCollection__remove-link"
 											size="icon"
@@ -250,13 +249,13 @@ export const LinkCollection = ({
 										>
 											<Icon name="Trash" />
 										</Button>
-									</td>
-								</tr>
+									</TableCell>
+								</TableRow>
 							)}
 						</Table>
 					)}
 				</div>
 			)}
-		</Wrapper>
+		</div>
 	);
 };
