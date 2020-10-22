@@ -35,10 +35,12 @@ export const TransactionTable = ({
 		{
 			Header: t("COMMON.DATE"),
 			accessor: "timestamp",
+			cellWidth: "w-50",
 		},
 		{
 			Header: t("COMMON.RECIPIENT"),
 			className: "ml-25",
+			cellWidth: "w-96",
 		},
 		{
 			Header: t("COMMON.INFO"),
@@ -47,6 +49,7 @@ export const TransactionTable = ({
 		{
 			Header: t("COMMON.STATUS"),
 			className: "justify-center",
+			minimumWidth: true,
 		},
 		{
 			Header: t("COMMON.AMOUNT"),
@@ -77,11 +80,14 @@ export const TransactionTable = ({
 		}
 
 		if (exchangeCurrency) {
-			return [...commonColumns, { Header: t("COMMON.CURRENCY"), className: "w-24 justify-end float-right" }];
+			return [
+				...commonColumns,
+				{ Header: t("COMMON.CURRENCY"), className: "justify-end float-right", cellWidth: "w-24" },
+			];
 		}
 
 		if (showSignColumn) {
-			return [...commonColumns, { Header: "Sign", className: "invisible no-border w-24" }];
+			return [...commonColumns, { Header: "Sign", className: "invisible", cellWidth: "w-24" }];
 		}
 
 		return commonColumns;

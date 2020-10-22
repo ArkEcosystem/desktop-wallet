@@ -136,7 +136,7 @@ const Row = ({
 				</Tippy>
 			</TableCell>
 
-			<TableCell className="w-50" innerClassName="text-theme-secondary-text">
+			<TableCell innerClassName="text-theme-secondary-text">
 				<span data-testid="TransactionRow__timestamp">
 					{/* TODO */}
 					{DateTime.fromUnix(1596213281).format("DD MMM YYYY HH:mm:ss")}
@@ -163,7 +163,7 @@ const Row = ({
 				<StatusLabel wallet={wallet} transaction={transaction} />
 			</TableCell>
 
-			<TableCell className="w-56" innerClassName="justify-end">
+			<TableCell innerClassName="justify-end">
 				<BaseTransactionRowAmount
 					isSent={true}
 					total={transaction.amount().plus(transaction.fee())}
@@ -171,7 +171,7 @@ const Row = ({
 				/>
 			</TableCell>
 
-			<TableCell variant="end" className="w-24" innerClassName="justify-end">
+			<TableCell variant="end" innerClassName="justify-end">
 				{canBeSigned ? (
 					<Button data-testid="TransactionRow__sign" variant="plain" onClick={() => onSign?.(transaction)}>
 						<Icon name="Edit" />
@@ -194,10 +194,12 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 		{
 			Header: t("COMMON.DATE"),
 			accessor: "timestamp",
+			cellWidth: "w-50",
 		},
 		{
 			Header: t("COMMON.RECIPIENT"),
 			className: "ml-25",
+			cellWidth: "w-96",
 		},
 		{
 			Header: t("COMMON.INFO"),
@@ -206,6 +208,7 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 		{
 			Header: t("COMMON.STATUS"),
 			className: "justify-center",
+			minimumWidth: true,
 		},
 		{
 			Header: t("COMMON.AMOUNT"),
@@ -215,6 +218,7 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 		{
 			Header: "Sign",
 			className: "hidden",
+			cellWidth: "w-24",
 		},
 	];
 
