@@ -1,16 +1,21 @@
-import { Currency } from "@arkecosystem/platform-sdk-intl";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { isNil } from "@arkecosystem/utils";
 import { Range } from "app/components/Range";
-import React, { useCallback, useEffect } from "react";
+import { useCurrencyDisplay } from "app/hooks";
+import React, { useEffect,useMemo } from "react";
 import { getTrackBackground } from "react-range";
 
 import { InputCurrency } from "./InputCurrency";
 import { InputGroup } from "./InputGroup";
 import { sanitizeStep } from "./utils";
 
+type CurrencyInput = {
+	display: string;
+	value: string;
+};
+
 type Props = {
 	avg: any;
-	value?: { display: string; value: string };
+	value?: CurrencyInput;
 	min: string;
 	max: string;
 	step: number;
@@ -22,38 +27,26 @@ type Props = {
 // TODO: tidy up storage of amount (why array of values?)
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 	({ min, max, step, avg, magnitude, onChange, value }: Props, ref) => {
-		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
-		const [values, setValues] = React.useState<any>([BigNumber.make(avg).divide(1e8)]);
+		const { formatRange, converToCurrency, keepInRange } = useCurrencyDisplay();
+		const [values, setValues] = React.useState<CurrencyInput[]>([converToCurrency(avg)]);
 
-		const handleInput = (currency: { display: string; value: string }) => {
-			let value = currency;
+		const rangeValues = useMemo(() => formatRange(values, max), [formatRange, values, max, values]);
+		const trackBackgroundMinValue = Number(values[0].display);
 
-			if (Number(value.display) > Number(max)) {
-				value = convertValue(max.toString());
-			}
+		useEffect(() => {
+			if (!isNil(value)) setValues([converToCurrency(value)]);
+		}, [value, converToCurrency]);
 
-			setValues([value]);
-			onChange?.(value);
+		const handleInput = (currency: CurrencyInput) => {
+			const valueInRange = keepInRange(currency, max);
+			setValues([valueInRange]);
+			onChange?.(valueInRange);
 		};
 
 		const handleRange = (values: number[]) => {
-			const amount = convertValue(values[0].toString());
-
+			const amount = converToCurrency(values[0].toString());
 			onChange?.(amount);
 		};
-
-		let trackBackgroundMinValue = values[0];
-		let rangeValues = [Math.min(values[0], Number(max))];
-
-		if (values[0]?.value) {
-			const rangeValue = BigNumber.make(values[0].value).divide(1e8);
-			trackBackgroundMinValue = rangeValue;
-			rangeValues = [Math.min(rangeValue.toNumber(), Number(max))];
-		}
-
-		useEffect(() => {
-			setValues([value]);
-		}, [value]);
 
 		return (
 			<InputGroup>
@@ -68,7 +61,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 					}}
 					magnitude={magnitude}
 					type="text"
-					value={values[0]}
+					value={values[0].display}
 					ref={ref}
 					onChange={handleInput}
 				/>
