@@ -3,7 +3,7 @@
 exports[`LinkCollection should add links 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzqBZW eEiUFK flex flex-col font-normal"
+    class="flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
@@ -33,141 +33,145 @@ exports[`LinkCollection should add links 1`] = `
       Tell people more about yourself through social media
     </div>
     <div
-      class="mt-4"
+      class="mt-4 space-y-4"
     >
       <div
-        class="grid row-gap-4 col-gap-2"
-        style="grid-template-columns: 2fr 3fr;"
+        class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
       >
-        <fieldset
-          class="sc-AxirZ izhStr flex flex-col space-y-2"
+        <div
+          class="grid gap-4"
+          style="grid-template-columns: 2fr 3fr;"
         >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="type"
+          <fieldset
+            class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
-            Add media
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-          <div
-            class="relative w-full"
-          >
-            <input
-              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
-              data-testid="select-list__input"
-              name="type"
-              readonly=""
-              type="text"
-              value="twitter"
-            />
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              data-testid="FormLabel"
+              for="type"
+            >
+              Add media
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
             <div
               class="relative w-full"
             >
+              <input
+                class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                data-testid="select-list__input"
+                name="type"
+                readonly=""
+                type="text"
+                value="twitter"
+              />
               <div
-                aria-expanded="true"
-                aria-haspopup="listbox"
-                aria-owns="downshift-5-menu"
-                role="combobox"
+                class="relative w-full"
               >
-                <label
-                  for="downshift-4-input"
-                  id="downshift-5-label"
-                />
                 <div
-                  class="sc-Axmtr jzhOwR"
-                  data-testid="SelectDropdownInput"
+                  aria-expanded="true"
+                  aria-haspopup="listbox"
+                  aria-owns="downshift-5-menu"
+                  role="combobox"
                 >
-                  <span
-                    class="sc-AxhUy escgqZ py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
-                    data-testid="SelectDropdownInput__typeahead"
-                  >
-                    Twitter
-                  </span>
-                  <input
-                    aria-activedescendant="downshift-5-item-0"
-                    aria-autocomplete="list"
-                    aria-controls="downshift-5-menu"
-                    aria-labelledby="downshift-5-label"
-                    autocomplete="off"
-                    class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
-                    data-testid="SelectDropdownInput__input"
-                    id="downshift-4-input"
-                    name="type"
-                    placeholder="Select option"
-                    value="Twitter"
+                  <label
+                    for="downshift-4-input"
+                    id="downshift-5-label"
                   />
-                </div>
-                <ul
-                  aria-labelledby="downshift-5-label"
-                  class="sc-fznyAO iHcpqi is-open"
-                  id="downshift-5-menu"
-                  role="listbox"
-                >
-                  <li
-                    aria-selected="true"
-                    class="select-list-option cursor-default is-highlighted"
-                    data-testid="select-list__toggle-option-0"
-                    id="downshift-5-item-0"
-                    role="option"
+                  <div
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectDropdownInput"
                   >
-                    <div
-                      class="select-list-option__label"
+                    <span
+                      class="sc-AxhUy escgqZ py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                      data-testid="SelectDropdownInput__typeahead"
                     >
                       Twitter
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div
-                class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
-              >
+                    </span>
+                    <input
+                      aria-activedescendant="downshift-5-item-0"
+                      aria-autocomplete="list"
+                      aria-controls="downshift-5-menu"
+                      aria-labelledby="downshift-5-label"
+                      autocomplete="off"
+                      class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                      data-testid="SelectDropdownInput__input"
+                      id="downshift-4-input"
+                      name="type"
+                      placeholder="Select option"
+                      value="Twitter"
+                    />
+                  </div>
+                  <ul
+                    aria-labelledby="downshift-5-label"
+                    class="sc-fznyAO iHcpqi is-open"
+                    id="downshift-5-menu"
+                    role="listbox"
+                  >
+                    <li
+                      aria-selected="true"
+                      class="select-list-option cursor-default is-highlighted"
+                      data-testid="select-list__toggle-option-0"
+                      id="downshift-5-item-0"
+                      role="option"
+                    >
+                      <div
+                        class="select-list-option__label"
+                      >
+                        Twitter
+                      </div>
+                    </li>
+                  </ul>
+                </div>
                 <div
-                  class="sc-AxiKw jNSjzx transform rotate-180"
-                  height="5"
-                  width="7"
+                  class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
                 >
-                  <svg>
-                    caret-down.svg
-                  </svg>
+                  <div
+                    class="sc-AxiKw jNSjzx transform rotate-180"
+                    height="5"
+                    width="7"
+                  >
+                    <svg>
+                      caret-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </fieldset>
-        <fieldset
-          class="sc-AxirZ izhStr flex flex-col space-y-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="value"
+          </fieldset>
+          <fieldset
+            class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
-            Link
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              data-testid="FormLabel"
+              for="value"
+            >
+              Link
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <input
+              aria-invalid="false"
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+              data-testid="LinkCollection__input-link"
+              name="value"
             />
-          </label>
-          <input
-            aria-invalid="false"
-            class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
-            data-testid="LinkCollection__input-link"
-            name="value"
-          />
-        </fieldset>
-        <button
-          class="sc-AxjAm fCKjFI col-span-2"
-          color="primary"
-          data-testid="LinkCollection__add-link"
-          disabled=""
-          type="button"
-        >
-          Add Link
-        </button>
+          </fieldset>
+          <button
+            class="sc-AxjAm fCKjFI col-span-2"
+            color="primary"
+            data-testid="LinkCollection__add-link"
+            disabled=""
+            type="button"
+          >
+            Add Link
+          </button>
+        </div>
       </div>
       <div
         class="sc-fznKkj hAWHmD -mt-3"
@@ -213,7 +217,7 @@ exports[`LinkCollection should add links 1`] = `
                 </div>
               </th>
               <th
-                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -221,7 +225,7 @@ exports[`LinkCollection should add links 1`] = `
                 title="Toggle SortBy"
               >
                 <div
-                  class="flex flex-inline align-top "
+                  class="flex flex-inline align-top no-border"
                 >
                   <div>
                     Link
@@ -262,48 +266,60 @@ exports[`LinkCollection should add links 1`] = `
             role="rowgroup"
           >
             <tr
-              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-              data-testid="LinkCollection__item"
+              class="sc-fzokOt ccmXmQ group"
+              data-testid="TableRow"
             >
               <td
                 class="w-40"
               >
-                <input
-                  name="links[0].type"
-                  type="hidden"
-                  value="twitter"
-                />
-                Twitter
-              </td>
-              <td
-                class="break-all align-middle"
-              >
-                <input
-                  name="links[0].value"
-                  type="hidden"
-                  value="https://twitter.com/arkecosystem"
-                />
-                https://twitter.com/arkecosystem
-              </td>
-              <td
-                class="w-16 text-right align-middle"
-              >
-                <button
-                  class="sc-AxjAm eRbxBA"
-                  color="primary"
-                  data-testid="LinkCollection__remove-link"
-                  type="button"
+                <div
+                  class="sc-fznZeY jpaLwm font-semibold"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
+                  <input
+                    name="links[0].type"
+                    type="hidden"
+                    value="twitter"
+                  />
+                  <span>
+                    Twitter
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-fznZeY iujcIQ font-semibold break-all"
+                >
+                  <input
+                    name="links[0].value"
+                    type="hidden"
+                    value="https://twitter.com/arkecosystem"
+                  />
+                  <span>
+                    https://twitter.com/arkecosystem
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-fznZeY JbhMm justify-end"
+                >
+                  <button
+                    class="sc-AxjAm eRbxBA"
+                    color="primary"
+                    data-testid="LinkCollection__remove-link"
+                    type="button"
                   >
-                    <svg>
-                      trash.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -317,7 +333,7 @@ exports[`LinkCollection should add links 1`] = `
 exports[`LinkCollection should remove links 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzqBZW eEiUFK flex flex-col font-normal"
+    class="flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
@@ -347,121 +363,125 @@ exports[`LinkCollection should remove links 1`] = `
       Tell people more about yourself through social media
     </div>
     <div
-      class="mt-4"
+      class="mt-4 space-y-4"
     >
       <div
-        class="grid row-gap-4 col-gap-2"
-        style="grid-template-columns: 2fr 3fr;"
+        class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
       >
-        <fieldset
-          class="sc-AxirZ izhStr flex flex-col space-y-2"
+        <div
+          class="grid gap-4"
+          style="grid-template-columns: 2fr 3fr;"
         >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="type"
+          <fieldset
+            class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
-            Add media
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-          <div
-            class="relative w-full"
-          >
-            <input
-              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
-              data-testid="select-list__input"
-              name="type"
-              readonly=""
-              type="text"
-              value=""
-            />
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              data-testid="FormLabel"
+              for="type"
+            >
+              Add media
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
             <div
               class="relative w-full"
             >
+              <input
+                class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                data-testid="select-list__input"
+                name="type"
+                readonly=""
+                type="text"
+                value=""
+              />
               <div
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-owns="downshift-33-menu"
-                role="combobox"
+                class="relative w-full"
               >
-                <label
-                  for="downshift-32-input"
-                  id="downshift-33-label"
-                />
                 <div
-                  class="sc-Axmtr jzhOwR"
-                  data-testid="SelectDropdownInput"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-owns="downshift-33-menu"
+                  role="combobox"
                 >
-                  <input
-                    aria-autocomplete="list"
-                    aria-controls="downshift-33-menu"
+                  <label
+                    for="downshift-32-input"
+                    id="downshift-33-label"
+                  />
+                  <div
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectDropdownInput"
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="downshift-33-menu"
+                      aria-labelledby="downshift-33-label"
+                      autocomplete="off"
+                      class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                      data-testid="SelectDropdownInput__input"
+                      id="downshift-32-input"
+                      name="type"
+                      placeholder="Select option"
+                      value=""
+                    />
+                  </div>
+                  <ul
                     aria-labelledby="downshift-33-label"
-                    autocomplete="off"
-                    class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
-                    data-testid="SelectDropdownInput__input"
-                    id="downshift-32-input"
-                    name="type"
-                    placeholder="Select option"
-                    value=""
+                    class="sc-fznyAO iHcpqi"
+                    id="downshift-33-menu"
+                    role="listbox"
                   />
                 </div>
-                <ul
-                  aria-labelledby="downshift-33-label"
-                  class="sc-fznyAO iHcpqi"
-                  id="downshift-33-menu"
-                  role="listbox"
-                />
-              </div>
-              <div
-                class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
-              >
                 <div
-                  class="sc-AxiKw jNSjzx"
-                  height="5"
-                  width="7"
+                  class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
                 >
-                  <svg>
-                    caret-down.svg
-                  </svg>
+                  <div
+                    class="sc-AxiKw jNSjzx"
+                    height="5"
+                    width="7"
+                  >
+                    <svg>
+                      caret-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </fieldset>
-        <fieldset
-          class="sc-AxirZ izhStr flex flex-col space-y-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="value"
+          </fieldset>
+          <fieldset
+            class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
-            Link
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              data-testid="FormLabel"
+              for="value"
+            >
+              Link
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <input
+              aria-invalid="false"
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+              data-testid="LinkCollection__input-link"
+              disabled=""
+              name="value"
             />
-          </label>
-          <input
-            aria-invalid="false"
-            class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
-            data-testid="LinkCollection__input-link"
+          </fieldset>
+          <button
+            class="sc-AxjAm fCKjFI col-span-2"
+            color="primary"
+            data-testid="LinkCollection__add-link"
             disabled=""
-            name="value"
-          />
-        </fieldset>
-        <button
-          class="sc-AxjAm fCKjFI col-span-2"
-          color="primary"
-          data-testid="LinkCollection__add-link"
-          disabled=""
-          type="button"
-        >
-          Add Link
-        </button>
+            type="button"
+          >
+            Add Link
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -471,7 +491,7 @@ exports[`LinkCollection should remove links 1`] = `
 exports[`LinkCollection should render 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzqBZW eEiUFK flex flex-col font-normal"
+    class="flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
@@ -507,7 +527,7 @@ exports[`LinkCollection should render 1`] = `
 exports[`LinkCollection should select a specific link type 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzqBZW eEiUFK flex flex-col font-normal"
+    class="flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
@@ -537,121 +557,125 @@ exports[`LinkCollection should select a specific link type 1`] = `
       Tell people more about yourself through social media
     </div>
     <div
-      class="mt-4"
+      class="mt-4 space-y-4"
     >
       <div
-        class="grid row-gap-4 col-gap-2"
-        style="grid-template-columns: 2fr 3fr;"
+        class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
       >
-        <fieldset
-          class="sc-AxirZ izhStr flex flex-col space-y-2"
+        <div
+          class="grid gap-4"
+          style="grid-template-columns: 2fr 3fr;"
         >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="type"
+          <fieldset
+            class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
-            Add media
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-          <div
-            class="relative w-full"
-          >
-            <input
-              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
-              data-testid="select-list__input"
-              name="type"
-              readonly=""
-              type="text"
-              value=""
-            />
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              data-testid="FormLabel"
+              for="type"
+            >
+              Add media
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
             <div
               class="relative w-full"
             >
+              <input
+                class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                data-testid="select-list__input"
+                name="type"
+                readonly=""
+                type="text"
+                value=""
+              />
               <div
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-owns="downshift-89-menu"
-                role="combobox"
+                class="relative w-full"
               >
-                <label
-                  for="downshift-88-input"
-                  id="downshift-89-label"
-                />
                 <div
-                  class="sc-Axmtr jzhOwR"
-                  data-testid="SelectDropdownInput"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-owns="downshift-89-menu"
+                  role="combobox"
                 >
-                  <input
-                    aria-autocomplete="list"
-                    aria-controls="downshift-89-menu"
+                  <label
+                    for="downshift-88-input"
+                    id="downshift-89-label"
+                  />
+                  <div
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectDropdownInput"
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="downshift-89-menu"
+                      aria-labelledby="downshift-89-label"
+                      autocomplete="off"
+                      class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                      data-testid="SelectDropdownInput__input"
+                      id="downshift-88-input"
+                      name="type"
+                      placeholder="Select option"
+                      value=""
+                    />
+                  </div>
+                  <ul
                     aria-labelledby="downshift-89-label"
-                    autocomplete="off"
-                    class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
-                    data-testid="SelectDropdownInput__input"
-                    id="downshift-88-input"
-                    name="type"
-                    placeholder="Select option"
-                    value=""
+                    class="sc-fznyAO iHcpqi"
+                    id="downshift-89-menu"
+                    role="listbox"
                   />
                 </div>
-                <ul
-                  aria-labelledby="downshift-89-label"
-                  class="sc-fznyAO iHcpqi"
-                  id="downshift-89-menu"
-                  role="listbox"
-                />
-              </div>
-              <div
-                class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
-              >
                 <div
-                  class="sc-AxiKw jNSjzx"
-                  height="5"
-                  width="7"
+                  class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
                 >
-                  <svg>
-                    caret-down.svg
-                  </svg>
+                  <div
+                    class="sc-AxiKw jNSjzx"
+                    height="5"
+                    width="7"
+                  >
+                    <svg>
+                      caret-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </fieldset>
-        <fieldset
-          class="sc-AxirZ izhStr flex flex-col space-y-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="value"
+          </fieldset>
+          <fieldset
+            class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
-            Link
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
+            <label
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              data-testid="FormLabel"
+              for="value"
+            >
+              Link
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
+            </label>
+            <input
+              aria-invalid="false"
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+              data-testid="LinkCollection__input-link"
+              disabled=""
+              name="value"
             />
-          </label>
-          <input
-            aria-invalid="false"
-            class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
-            data-testid="LinkCollection__input-link"
+          </fieldset>
+          <button
+            class="sc-AxjAm fCKjFI col-span-2"
+            color="primary"
+            data-testid="LinkCollection__add-link"
             disabled=""
-            name="value"
-          />
-        </fieldset>
-        <button
-          class="sc-AxjAm fCKjFI col-span-2"
-          color="primary"
-          data-testid="LinkCollection__add-link"
-          disabled=""
-          type="button"
-        >
-          Add Link
-        </button>
+            type="button"
+          >
+            Add Link
+          </button>
+        </div>
       </div>
       <div
         class="sc-fznKkj hAWHmD -mt-3"
@@ -727,7 +751,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -735,7 +759,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 title="Toggle SortBy"
               >
                 <div
-                  class="flex flex-inline align-top "
+                  class="flex flex-inline align-top no-border"
                 >
                   <div>
                     Link
@@ -776,106 +800,138 @@ exports[`LinkCollection should select a specific link type 1`] = `
             role="rowgroup"
           >
             <tr
-              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-              data-testid="LinkCollection__item"
+              class="sc-fzokOt ccmXmQ group"
+              data-testid="TableRow"
             >
               <td
-                class="w-16 text-center align-middle"
+                class="w-16"
               >
-                <input
-                  class="sc-fzpans ioBrsH"
-                  color="success"
-                  data-testid="LinkCollection__selected"
-                  type="radio"
-                />
+                <div
+                  class="sc-fznZeY jpaLwm justify-center"
+                >
+                  <input
+                    class="sc-fzpans jffRdD"
+                    color="success"
+                    data-testid="LinkCollection__selected"
+                    type="radio"
+                  />
+                </div>
               </td>
               <td
                 class="w-40"
               >
-                <input
-                  name="links[0].type"
-                  type="hidden"
-                  value="twitter"
-                />
-                Twitter
-              </td>
-              <td
-                class="break-all align-middle"
-              >
-                <input
-                  name="links[0].value"
-                  type="hidden"
-                  value="testing link"
-                />
-                testing link
-              </td>
-              <td
-                class="w-16 text-right align-middle"
-              >
-                <button
-                  class="sc-AxjAm eRbxBA"
-                  color="primary"
-                  data-testid="LinkCollection__remove-link"
-                  type="button"
+                <div
+                  class="sc-fznZeY iujcIQ font-semibold"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
+                  <input
+                    name="links[0].type"
+                    type="hidden"
+                    value="twitter"
+                  />
+                  <span>
+                    Twitter
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-fznZeY iujcIQ font-semibold break-all"
+                >
+                  <input
+                    name="links[0].value"
+                    type="hidden"
+                    value="testing link"
+                  />
+                  <span>
+                    testing link
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-fznZeY JbhMm justify-end"
+                >
+                  <button
+                    class="sc-AxjAm eRbxBA"
+                    color="primary"
+                    data-testid="LinkCollection__remove-link"
+                    type="button"
                   >
-                    <svg>
-                      trash.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
               </td>
             </tr>
             <tr
-              class="font-semibold border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-              data-testid="LinkCollection__item"
+              class="sc-fzokOt ccmXmQ group"
+              data-testid="TableRow"
             >
               <td
-                class="w-16 text-center align-middle"
-              />
+                class="w-16"
+              >
+                <div
+                  class="sc-fznZeY jpaLwm justify-center"
+                />
+              </td>
               <td
                 class="w-40"
               >
-                <input
-                  name="links[1].type"
-                  type="hidden"
-                  value="facebook"
-                />
-                Facebook
-              </td>
-              <td
-                class="break-all align-middle"
-              >
-                <input
-                  name="links[1].value"
-                  type="hidden"
-                  value="testing link 2"
-                />
-                testing link 2
-              </td>
-              <td
-                class="w-16 text-right align-middle"
-              >
-                <button
-                  class="sc-AxjAm eRbxBA"
-                  color="primary"
-                  data-testid="LinkCollection__remove-link"
-                  type="button"
+                <div
+                  class="sc-fznZeY iujcIQ font-semibold"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
+                  <input
+                    name="links[1].type"
+                    type="hidden"
+                    value="facebook"
+                  />
+                  <span>
+                    Facebook
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-fznZeY iujcIQ font-semibold break-all"
+                >
+                  <input
+                    name="links[1].value"
+                    type="hidden"
+                    value="testing link 2"
+                  />
+                  <span>
+                    testing link 2
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-fznZeY JbhMm justify-end"
+                >
+                  <button
+                    class="sc-AxjAm eRbxBA"
+                    color="primary"
+                    data-testid="LinkCollection__remove-link"
+                    type="button"
                   >
-                    <svg>
-                      trash.svg
-                    </svg>
-                  </div>
-                </button>
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -889,7 +945,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
 exports[`LinkCollection should toggle open/close link collection 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzqBZW eEiUFK flex flex-col font-normal"
+    class="flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
