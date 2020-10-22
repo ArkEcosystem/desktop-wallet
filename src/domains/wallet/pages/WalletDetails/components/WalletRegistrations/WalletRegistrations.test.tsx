@@ -20,17 +20,17 @@ const businessEntity = {
 	hash: "hash",
 };
 
-const pluginEntity = {
+const productEntity = {
 	id: "id",
-	type: Enums.EntityType.Plugin,
+	type: Enums.EntityType.Product,
 	subType: Enums.EntitySubType.None,
 	name: "my business",
 	hash: "hash",
 };
 
-const developerEntity = {
+const pluginEntity = {
 	id: "id",
-	type: Enums.EntityType.Developer,
+	type: Enums.EntityType.Plugin,
 	subType: Enums.EntitySubType.None,
 	name: "my business",
 	hash: "hash",
@@ -41,7 +41,7 @@ describe("WalletRegistrations", () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
-		entities = [businessEntity, pluginEntity, developerEntity];
+		entities = [businessEntity, pluginEntity, productEntity];
 	});
 
 	it("should emit actions (register)", () => {
@@ -153,7 +153,7 @@ describe("WalletRegistrations", () => {
 	});
 
 	it("should show generic icon", () => {
-		const { getByText, asFragment } = render(<WalletRegistrations entities={[developerEntity]} />);
+		const { getByText, asFragment } = render(<WalletRegistrations entities={[productEntity]} />);
 
 		expect(getByText("+1")).toBeTruthy();
 
