@@ -14,7 +14,7 @@ import React from "react";
 
 type TransactionDetailModalProps = {
 	isOpen: boolean;
-	transactionItem?: ExtendedTransactionData;
+	transactionItem: ExtendedTransactionData;
 	onClose?: any;
 };
 
@@ -22,10 +22,10 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 	const activeProfile = useActiveProfile();
 
 	const ticker = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!;
-	const walletAlias = activeProfile.wallets().findByAddress(transactionItem!.sender())?.alias();
-	const recipientWalletAlias = activeProfile.wallets().findByAddress(transactionItem!.recipient())?.alias();
+	const walletAlias = activeProfile.wallets().findByAddress(transactionItem.sender())?.alias();
+	const recipientWalletAlias = activeProfile.wallets().findByAddress(transactionItem.recipient())?.alias();
 
-	const transactionType = transactionItem?.type();
+	const transactionType = transactionItem.type();
 	let TransactionModal;
 
 	switch (transactionType) {
@@ -55,11 +55,6 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 		case "secondSignature":
 			TransactionModal = SecondSignatureDetail;
 			break;
-		case "entityRegistration":
-		case "entityResignation":
-		case "entityUpdate":
-			TransactionModal = EntityDetail;
-			break;
 		case "legacyBusinessRegistration":
 		case "legacyBusinessResignation":
 		case "legacyBusinessUpdate":
@@ -71,6 +66,10 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 
 		default:
 			break;
+	}
+
+	if (transactionType.toLowerCase().includes("entity")) {
+		TransactionModal = EntityDetail;
 	}
 
 	if (!TransactionModal) {
