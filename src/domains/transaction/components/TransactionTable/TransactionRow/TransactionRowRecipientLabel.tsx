@@ -36,6 +36,18 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 		entityRegistration: t("TRANSACTION.TRANSACTION_TYPES.ENTITY_REGISTRATION"),
 		entityResignation: t("TRANSACTION.TRANSACTION_TYPES.ENTITY_RESIGNATION"),
 		entityUpdate: t("TRANSACTION.TRANSACTION_TYPES.ENTITY_UPDATE"),
+		businessEntityRegistration: t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION"),
+		businessEntityResignation: t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_RESIGNATION"),
+		businessEntityUpdate: t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_UPDATE"),
+		productEntityRegistration: t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_REGISTRATION"),
+		productEntityResignation: t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_RESIGNATION"),
+		productEntityUpdate: t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_UPDATE"),
+		pluginEntityRegistration: t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_REGISTRATION"),
+		pluginEntityResignation: t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_RESIGNATION"),
+		pluginEntityUpdate: t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_UPDATE"),
+		moduleEntityRegistration: t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_REGISTRATION"),
+		moduleEntityResignation: t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_RESIGNATION"),
+		moduleEntityUpdate: t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_UPDATE"),
 		delegateEntityRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_REGISTRATION"),
 		delegateEntityResignation: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_RESIGNATION"),
 		delegateEntityUpdate: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_UPDATE"),
@@ -53,59 +65,11 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 
 	if (transaction?.isMultiPayment()) {
 		return (
-			<>
+			<span>
 				<RecipientLabel type={transactionLabel.multiPayment} />
 				<span className="ml-1 font-semibold text-theme-neutral-500">{transaction?.recipients().length}</span>
-			</>
+			</span>
 		);
-	}
-
-	if (transaction?.isBusinessEntityRegistration()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION")} />;
-	}
-
-	if (transaction?.isBusinessEntityResignation()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_RESIGNATION")} />;
-	}
-
-	if (transaction?.isBusinessEntityUpdate()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_UPDATE")} />;
-	}
-
-	if (transaction?.isProductEntityRegistration()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_REGISTRATION")} />;
-	}
-
-	if (transaction?.isProductEntityResignation()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_RESIGNATION")} />;
-	}
-
-	if (transaction?.isProductEntityUpdate()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_UPDATE")} />;
-	}
-
-	if (transaction?.isPluginEntityRegistration()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_REGISTRATION")} />;
-	}
-
-	if (transaction?.isPluginEntityResignation()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_RESIGNATION")} />;
-	}
-
-	if (transaction?.isPluginEntityUpdate()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_UPDATE")} />;
-	}
-
-	if (transaction?.isModuleEntityRegistration()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_REGISTRATION")} />;
-	}
-
-	if (transaction?.isModuleEntityResignation()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_RESIGNATION")} />;
-	}
-
-	if (transaction?.isModuleEntityUpdate()) {
-		return <RecipientLabel type={t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_UPDATE")} />;
 	}
 
 	return (

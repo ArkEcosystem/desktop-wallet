@@ -46,7 +46,7 @@ const entityRegistrationMocks = () => {
 
 	const types = {
 		0: "business",
-		3: "plugin",
+		2: "plugin",
 		4: "delegate",
 	};
 

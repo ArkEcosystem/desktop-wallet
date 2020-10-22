@@ -435,7 +435,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -479,7 +479,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -523,7 +523,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -1221,7 +1221,7 @@ exports[`Registration should go to review step after successfully filling form d
                                   class="flex flex-col w-1/2 justify-center px-4 py-2"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Amount
                                   </span>
@@ -1236,7 +1236,7 @@ exports[`Registration should go to review step after successfully filling form d
                                   class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Fee
                                   </span>
@@ -1270,7 +1270,7 @@ exports[`Registration should go to review step after successfully filling form d
                               class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
                             >
                               <span
-                                class="sc-fzolEj gcosPd"
+                                class="sc-fznWOq evvoWC"
                               >
                                 Total Amount
                               </span>
@@ -1423,7 +1423,7 @@ exports[`Registration should hide options for multisignature wallet 1`] = `
       >
         <div>
           <button
-            class="sc-fzqBkg eObUJS SelectAddress  "
+            class="sc-fzolEj fPCwSR SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -1971,7 +1971,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg eObUJS SelectAddress  "
+                            class="sc-fzolEj fPCwSR SelectAddress  "
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -2263,7 +2263,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
       >
         <div>
           <button
-            class="sc-fzqBkg eObUJS SelectAddress  "
+            class="sc-fzolEj fPCwSR SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -2913,7 +2913,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                   class="flex flex-col w-1/2 justify-center px-4 py-2"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Amount
                                   </span>
@@ -2928,7 +2928,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                   class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Fee
                                   </span>
@@ -2962,7 +2962,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                               class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
                             >
                               <span
-                                class="sc-fzolEj gcosPd"
+                                class="sc-fznWOq evvoWC"
                               >
                                 Total Amount
                               </span>
@@ -3129,7 +3129,7 @@ exports[`Registration should render 1st step 1`] = `
       >
         <div>
           <button
-            class="sc-fzqBkg eObUJS SelectAddress  "
+            class="sc-fzolEj fPCwSR SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -3711,7 +3711,7 @@ exports[`Registration should render registration form without selected wallet 1`
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg eObUJS SelectAddress  "
+                            class="sc-fzolEj fPCwSR SelectAddress  "
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -4288,7 +4288,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg eObUJS SelectAddress  "
+                            class="sc-fzolEj fPCwSR SelectAddress  "
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -4865,7 +4865,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg eObUJS SelectAddress  "
+                            class="sc-fzolEj fPCwSR SelectAddress  "
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -5333,7 +5333,7 @@ exports[`Registration should select registration type & show form 1`] = `
                         class="flex rounded-lg overflow-hidden bg-theme-warning"
                       >
                         <div
-                          class="sc-fzoxKX habbCf flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="sc-fzqPZZ hQmpwy flex items-center justify-center text-theme-warning bg-theme-warning-200"
                         >
                           <div
                             class="sc-AxiKw iRsrJT"
@@ -5346,7 +5346,7 @@ exports[`Registration should select registration type & show form 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-fzqPZZ jgngte flex-1 bg-theme-warning-100 space-y-2"
+                          class="sc-fzqBkg czMUCU flex-1 bg-theme-warning-100 space-y-2"
                         >
                           <div
                             class="text-sm"
@@ -5889,7 +5889,7 @@ exports[`Registration should should go back and forth & correctly register field
                         class="flex rounded-lg overflow-hidden bg-theme-warning"
                       >
                         <div
-                          class="sc-fzoxKX habbCf flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="sc-fzqPZZ hQmpwy flex items-center justify-center text-theme-warning bg-theme-warning-200"
                         >
                           <div
                             class="sc-AxiKw iRsrJT"
@@ -5902,7 +5902,7 @@ exports[`Registration should should go back and forth & correctly register field
                           </div>
                         </div>
                         <div
-                          class="sc-fzqPZZ jgngte flex-1 bg-theme-warning-100 space-y-2"
+                          class="sc-fzqBkg czMUCU flex-1 bg-theme-warning-100 space-y-2"
                         >
                           <div
                             class="text-sm"
@@ -7254,7 +7254,7 @@ exports[`Registration should validate description 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -7298,7 +7298,7 @@ exports[`Registration should validate description 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -7342,7 +7342,7 @@ exports[`Registration should validate description 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -7921,7 +7921,7 @@ exports[`Registration should validate display name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -7965,7 +7965,7 @@ exports[`Registration should validate display name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8009,7 +8009,7 @@ exports[`Registration should validate display name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8588,7 +8588,7 @@ exports[`Registration should validate entity name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8632,7 +8632,7 @@ exports[`Registration should validate entity name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8676,7 +8676,7 @@ exports[`Registration should validate entity name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -9255,7 +9255,7 @@ exports[`Registration should validate website url 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -9299,7 +9299,7 @@ exports[`Registration should validate website url 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -9343,7 +9343,7 @@ exports[`Registration should validate website url 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
