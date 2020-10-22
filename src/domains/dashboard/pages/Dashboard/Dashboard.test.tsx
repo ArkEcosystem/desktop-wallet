@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
@@ -69,7 +70,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -86,7 +90,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 
 		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
 
@@ -115,7 +122,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should hide transaction view", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -125,21 +132,50 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await act(async () => {
+			await waitFor(
+				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+				{ timeout: 5000 },
+			);
 
-		act(() => {
 			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
-		});
 
-		act(() => {
+			await waitFor(() => expect(getByTestId("filter-wallets_toggle--transactions")).toBeTruthy());
+
 			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
-		});
 
-		expect(asFragment()).toMatchSnapshot();
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
+	});
+
+	it("should show transaction view", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await act(async () => {
+			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
+
+			await waitFor(() => expect(getByTestId("filter-wallets_toggle--transactions")).toBeTruthy());
+
+			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
+
+			await waitFor(
+				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+				{ timeout: 5000 },
+			);
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
 	});
 
 	it("should render portfolio percentage bar", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -149,12 +185,15 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render portfolio chart", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} />
 			</Route>,
@@ -164,12 +203,15 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should hide portfolio view", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} />
 			</Route>,
@@ -179,24 +221,24 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await act(async () => {
+			await waitFor(
+				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+				{ timeout: 5000 },
+			);
 
-		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
+			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
 
-		act(() => {
-			fireEvent.click(filterNetwork);
+			await waitFor(() => expect(getByTestId("filter-wallets_toggle--portfolio")).toBeTruthy());
+
+			fireEvent.click(getByTestId("filter-wallets_toggle--portfolio"));
+
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
-
-		const toggle = getByTestId("filter-wallets_toggle--portfolio");
-		act(() => {
-			fireEvent.click(toggle);
-		});
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should navigate to import page", async () => {
-		const { asFragment, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -206,7 +248,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 
 		act(() => {
 			fireEvent.click(getByText("Import"));
@@ -217,7 +262,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should navigate to create page", async () => {
-		const { asFragment, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} />
 			</Route>,
@@ -227,7 +272,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 
 		fireEvent.click(getByText("Create"));
 
@@ -246,10 +294,13 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent("View More");
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
-		});
+		await waitFor(
+			() => {
+				expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent("View More");
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
+			},
+			{ timeout: 5000 },
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("transactions__fetch-more-button"));
@@ -257,10 +308,13 @@ describe("Dashboard", () => {
 
 		expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.LOADING);
 
-		await waitFor(() => {
-			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
-		});
+		await waitFor(
+			() => {
+				expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
+			},
+			{ timeout: 5000 },
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -276,7 +330,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
 
 		act(() => {
 			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
