@@ -4,6 +4,7 @@ import { DelegateRegistrationDetail } from "domains/transaction/components/Deleg
 import { DelegateResignationDetail } from "domains/transaction/components/DelegateResignationDetail";
 import { EntityDetail } from "domains/transaction/components/EntityDetail";
 import { IpfsDetail } from "domains/transaction/components/IpfsDetail";
+import { LegacyMagistrateDetail } from "domains/transaction/components/LegacyMagistrateDetail";
 import { MultiPaymentDetail } from "domains/transaction/components/MultiPaymentDetail";
 import { MultiSignatureRegistrationDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { SecondSignatureDetail } from "domains/transaction/components/SecondSignatureDetail";
@@ -13,7 +14,7 @@ import React from "react";
 
 type TransactionDetailModalProps = {
 	isOpen: boolean;
-	transactionItem?: ExtendedTransactionData;
+	transactionItem: ExtendedTransactionData;
 	onClose?: any;
 };
 
@@ -21,10 +22,10 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 	const activeProfile = useActiveProfile();
 
 	const ticker = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!;
-	const walletAlias = activeProfile.wallets().findByAddress(transactionItem!.sender())?.alias();
-	const recipientWalletAlias = activeProfile.wallets().findByAddress(transactionItem!.recipient())?.alias();
+	const walletAlias = activeProfile.wallets().findByAddress(transactionItem.sender())?.alias();
+	const recipientWalletAlias = activeProfile.wallets().findByAddress(transactionItem.recipient())?.alias();
 
-	const transactionType = transactionItem?.type();
+	const transactionType = transactionItem.type();
 	let TransactionModal;
 
 	switch (transactionType) {
@@ -54,14 +55,21 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 		case "secondSignature":
 			TransactionModal = SecondSignatureDetail;
 			break;
-		case "entityRegistration":
-		case "entityResignation":
-		case "entityUpdate":
-			TransactionModal = EntityDetail;
+		case "legacyBusinessRegistration":
+		case "legacyBusinessResignation":
+		case "legacyBusinessUpdate":
+		case "legacyBridgechainRegistration":
+		case "legacyBridgechainResignation":
+		case "legacyBridgechainUpdate":
+			TransactionModal = LegacyMagistrateDetail;
 			break;
 
 		default:
 			break;
+	}
+
+	if (transactionType.toLowerCase().includes("entity")) {
+		TransactionModal = EntityDetail;
 	}
 
 	if (!TransactionModal) {
