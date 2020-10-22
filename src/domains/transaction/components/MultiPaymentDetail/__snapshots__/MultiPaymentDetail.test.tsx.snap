@@ -19,7 +19,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm RZxAM w-11 h-11"
+          class="sc-AxjAm cGlMcw w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -107,94 +107,6 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                     src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                   />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxgMl gKdTrD"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Recipients (0)
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="-my-2"
-                >
-                  <div
-                    class="sc-fzpans dIvhjN"
-                  >
-                    <div
-                      class="sc-AxmLO iwBmdw -mt-3"
-                      role="table"
-                    >
-                      <table
-                        cellpadding="0"
-                        class="table-auto"
-                      >
-                        <thead>
-                          <tr
-                            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-                            role="row"
-                          >
-                            <th
-                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                              colspan="1"
-                              data-testid="table__th--0"
-                              role="columnheader"
-                            >
-                              <div
-                                class="flex flex-inline align-top hidden"
-                              >
-                                <div>
-                                  Avatar
-                                </div>
-                              </div>
-                            </th>
-                            <th
-                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                              colspan="1"
-                              data-testid="table__th--1"
-                              role="columnheader"
-                            >
-                              <div
-                                class="flex flex-inline align-top hidden"
-                              >
-                                <div>
-                                  Address
-                                </div>
-                              </div>
-                            </th>
-                            <th
-                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                              colspan="1"
-                              data-testid="table__th--2"
-                              role="columnheader"
-                            >
-                              <div
-                                class="flex flex-inline align-top hidden"
-                              >
-                                <div>
-                                  Amount
-                                </div>
-                              </div>
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody
-                          role="rowgroup"
-                        />
-                      </table>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -488,7 +400,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxjAm RZxAM w-11 h-11"
+          class="sc-AxjAm cGlMcw w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -615,7 +527,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                             role="row"
                           >
                             <th
-                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                               colspan="1"
                               data-testid="table__th--0"
                               role="columnheader"
@@ -629,7 +541,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                               </div>
                             </th>
                             <th
-                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                               colspan="1"
                               data-testid="table__th--1"
                               role="columnheader"
@@ -643,7 +555,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                               </div>
                             </th>
                             <th
-                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                               colspan="1"
                               data-testid="table__th--2"
                               role="columnheader"

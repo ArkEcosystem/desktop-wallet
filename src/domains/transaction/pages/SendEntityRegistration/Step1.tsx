@@ -16,6 +16,14 @@ import { useHistory } from "react-router-dom";
 
 import { SendEntityRegistrationType } from "./SendEntityRegistration.models";
 
+type FirstStepProps = {
+	networks: Coins.Network[];
+	profile: Profile;
+	wallet: ReadWriteWallet;
+	setRegistrationForm: any;
+	fees: Record<string, any>;
+};
+
 const registrationComponents: any = {
 	delegateRegistration: DelegateRegistrationForm,
 	entityRegistration: EntityRegistrationForm,
@@ -23,7 +31,7 @@ const registrationComponents: any = {
 	multiSignature: MultiSignatureRegistrationForm,
 };
 
-const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
+const RegistrationTypeDropdown = ({ className, defaultValue, registrationTypes, onChange }: any) => {
 	const { t } = useTranslation();
 
 	return (
@@ -34,48 +42,11 @@ const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrat
 	);
 };
 
-type FirstStepProps = {
-	networks: Coins.Network[];
-	profile: Profile;
-	wallet: ReadWriteWallet;
-	setRegistrationForm: any;
-	fees: Record<string, any>;
-};
-
 export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees }: FirstStepProps) => {
 	const { t } = useTranslation();
 	const history = useHistory();
 
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
-
-	const registrationTypes: SendEntityRegistrationType[] = [
-		{
-			value: "entityRegistration",
-			type: Enums.EntityType.Business,
-			label: "Business",
-		},
-	];
-
-	if (!wallet.isDelegate?.()) {
-		registrationTypes.push({
-			value: "delegateRegistration",
-			label: "Delegate",
-		});
-	}
-
-	if (!wallet.isMultiSignature?.()) {
-		registrationTypes.push({
-			value: "multiSignature",
-			label: "MultiSignature",
-		});
-	}
-
-	if (!wallet.isSecondSignature?.()) {
-		registrationTypes.push({
-			value: "secondSignature",
-			label: "Second Signature",
-		});
-	}
 
 	const form = useFormContext();
 	const { setValue } = form;
@@ -85,8 +56,40 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		if (network) {
 			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
+
 		setWallets(profile.wallets().values());
 	}, [network, profile]);
+
+	const registrationTypes = [];
+
+	if (network?.can("Transaction.entityRegistration")) {
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Business,
+			label: "Business",
+		});
+	}
+
+	if (!wallet.isDelegate?.() && !wallet.isMultiSignature?.() && network?.can("Transaction.delegateRegistration")) {
+		registrationTypes.push({
+			value: "delegateRegistration",
+			label: "Delegate",
+		});
+	}
+
+	if (!wallet.isMultiSignature?.() && network?.can("Transaction.multiSignature")) {
+		registrationTypes.push({
+			value: "multiSignature",
+			label: "MultiSignature",
+		});
+	}
+
+	if (!wallet.isSecondSignature?.() && !wallet.isMultiSignature?.() && network?.can("Transaction.secondSignature")) {
+		registrationTypes.push({
+			value: "secondSignature",
+			label: "Second Signature",
+		});
+	}
 
 	const onSelectSender = (address: any) => {
 		setValue("senderAddress", address, { shouldValidate: true, shouldDirty: true });

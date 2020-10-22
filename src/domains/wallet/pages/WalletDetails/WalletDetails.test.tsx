@@ -113,6 +113,23 @@ describe("WalletDetails", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should navigate to votes page when clicking on WalletVote button (vote)", async () => {
+		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
+		history.push(walletUrl);
+
+		const historySpy = jest.spyOn(history, "push");
+
+		const { getByTestId, queryAllByTestId } = await renderPage();
+
+		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletVote__button"));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${blankWallet.id()}/votes`);
+	});
+
 	it("should navigate to vote page when clicking on WalletVote button (unvote)", async () => {
 		const historySpy = jest.spyOn(history, "push");
 
@@ -126,7 +143,7 @@ describe("WalletDetails", () => {
 
 		expect(historySpy).toHaveBeenCalledWith({
 			pathname: `/profiles/${profile.id()}/wallets/${wallet.id()}/send-vote`,
-			search: `?unvotes=${wallet.votes()[0].address()}`,
+			search: "?unvotes=D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
 		});
 	});
 
@@ -151,7 +168,7 @@ describe("WalletDetails", () => {
 
 	it("should navigate to registrations page when clicking on WalletRegistrations button (show all)", async () => {
 		const historySpy = jest.spyOn(history, "push");
-
+		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
 		const { getByTestId, queryAllByTestId } = await renderPage();
 
 		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
@@ -161,6 +178,7 @@ describe("WalletDetails", () => {
 		});
 
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/registrations`);
+		isMultiSignatureSpy.mockRestore();
 	});
 
 	it("should render when wallet hasn't voted", async () => {

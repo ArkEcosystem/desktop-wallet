@@ -1,3 +1,5 @@
+import { Currencies } from "app/assets/svg/currencies";
+
 import { ReactComponent as AlertDanger } from "./alert-danger.svg";
 import { ReactComponent as AlertDefault } from "./alert-default.svg";
 import { ReactComponent as AlertSuccess } from "./alert-success.svg";
@@ -5,6 +7,9 @@ import { ReactComponent as ArkLogo } from "./ark-logo.svg";
 import { ReactComponent as ArrowLeft } from "./arrow-left.svg";
 import { ReactComponent as ArrowRight } from "./arrow-right.svg";
 import { ReactComponent as Article } from "./article.svg";
+import { ReactComponent as AwaitingFinalSignature } from "./awaiting-final-signature.svg";
+import { ReactComponent as AwaitingOtherSignature } from "./awaiting-other-signature.svg";
+import { ReactComponent as AwaitingOurSignature } from "./awaiting-our-signature.svg";
 import { ReactComponent as Back } from "./back.svg";
 import { ReactComponent as BitBucket } from "./bitbucket.svg";
 import { ReactComponent as Blockfolio } from "./blockfolio.svg";
@@ -25,7 +30,6 @@ import { ReactComponent as CopyAddress } from "./copy-address.svg";
 import { ReactComponent as CopyKey } from "./copy-key.svg";
 import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
-import { Currencies } from "./currencies";
 import { ReactComponent as Dash } from "./dash.svg";
 import { ReactComponent as DelegateResigned } from "./delegate-resigned.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
@@ -59,7 +63,9 @@ import { ReactComponent as ListView } from "./list-view.svg";
 import { ReactComponent as LoaderLogo } from "./loader-logo.svg";
 import { ReactComponent as Lock } from "./lock.svg";
 import { ReactComponent as Medium } from "./medium.svg";
+import { ReactComponent as Module } from "./module.svg";
 import { ReactComponent as Msq } from "./msq.svg";
+import { ReactComponent as Multipayment } from "./multipayment.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
 import { ReactComponent as Npm } from "./npm.svg";
@@ -73,6 +79,7 @@ import { ReactComponent as Plugins } from "./plugins.svg";
 import { ReactComponent as Plus } from "./plus.svg";
 import { ReactComponent as PortfolioTag } from "./portfolio-tag.svg";
 import { ReactComponent as Portfolio } from "./portfolio.svg";
+import { ReactComponent as Product } from "./product.svg";
 import { ReactComponent as Profile } from "./profile.svg";
 import { ReactComponent as QrCode } from "./qr-code.svg";
 import { ReactComponent as QuestionMark } from "./questionmark.svg";
@@ -94,13 +101,14 @@ import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as StarsOutline } from "./stars-outline.svg";
 import { ReactComponent as StatusOk } from "./status-ok.svg";
 import { ReactComponent as StatusPending } from "./status-pending.svg";
+import { ReactComponent as Timelock } from "./timelock.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Unvote } from "./unvote.svg";
 import { ReactComponent as Update } from "./update.svg";
 import { ReactComponent as Upload } from "./upload.svg";
 import { ReactComponent as User } from "./user.svg";
-import { ReactComponent as VoteUnvote } from "./vote-unvote.svg";
+import { ReactComponent as VoteCombination } from "./vote-combination.svg";
 import { ReactComponent as Vote } from "./vote.svg";
 import { ReactComponent as Voted } from "./voted.svg";
 
@@ -108,9 +116,13 @@ export const SvgCollection: any = {
 	AlertDanger,
 	AlertDefault,
 	AlertSuccess,
+	ArkLogo,
 	ArrowLeft,
 	ArrowRight,
 	Article,
+	AwaitingFinalSignature,
+	AwaitingOtherSignature,
+	AwaitingOurSignature,
 	Back,
 	BitBucket,
 	Blockfolio,
@@ -164,7 +176,9 @@ export const SvgCollection: any = {
 	LoaderLogo,
 	Lock,
 	Medium,
+	Module,
 	Msq,
+	Multipayment,
 	Multisig,
 	Notification,
 	Npm,
@@ -178,6 +192,7 @@ export const SvgCollection: any = {
 	Plus,
 	Portfolio,
 	PortfolioTag,
+	Product,
 	Profile,
 	QrCode,
 	QuestionMark,
@@ -199,6 +214,7 @@ export const SvgCollection: any = {
 	StarsOutline,
 	StatusOk,
 	StatusPending,
+	Timelock,
 	Trash,
 	Twitter,
 	Unvote,
@@ -206,8 +222,7 @@ export const SvgCollection: any = {
 	Upload,
 	User,
 	Vote,
+	VoteCombination,
 	Voted,
-	VoteUnvote,
-	ArkLogo,
 	...Currencies,
 };

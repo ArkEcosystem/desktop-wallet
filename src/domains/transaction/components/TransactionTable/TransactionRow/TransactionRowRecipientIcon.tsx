@@ -1,4 +1,3 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -8,7 +7,6 @@ import { Size } from "types";
 type Props = {
 	type: string;
 	recipient?: string;
-	recipients?: Contracts.MultiPaymentRecipient[];
 	className?: string;
 	circleShadowColor?: string;
 	size?: Size;
@@ -34,42 +32,36 @@ const Wrapper = ({
 	</Circle>
 );
 
-export const TransactionRowRecipientIcon = ({
-	type,
-	recipient,
-	recipients,
-	className,
-	circleShadowColor,
-	size,
-}: Props) => {
+export const TransactionRowRecipientIcon = ({ type, recipient, className, circleShadowColor, size }: Props) => {
 	const transactionIcon: Record<string, string> = {
 		transfer: "Transfer",
+		multiPayment: "Multipayment",
 		secondSignature: "Key",
-		delegateRegistration: "Delegate",
-		vote: "Voted",
-		unvote: "Voted",
 		multiSignature: "Multisig",
+		delegateRegistration: "Delegate",
+		delegateResignation: "DelegateResigned",
+		vote: "Vote",
+		unvote: "Unvote",
+		voteCombination: "VoteCombination",
 		ipfs: "Ipfs",
-		multiPayment: "Multisig",
-		delegateResignation: "Delegate",
-		htlcLock: "StatusClock",
-		htlcClaim: "StatusClock",
-		htlcRefund: "StatusClock",
+		htlcLock: "Timelock",
+		htlcClaim: "Timelock",
+		htlcRefund: "Timelock",
 		entityRegistration: "Entity",
 		entityResignation: "Entity",
 		entityUpdate: "Entity",
 		businessEntityRegistration: "Business",
 		businessEntityResignation: "Business",
 		businessEntityUpdate: "Business",
-		developerEntityRegistration: "Developer",
-		developerEntityResignation: "Developer",
-		developerEntityUpdate: "Developer",
-		corePluginEntityRegistration: "CorePlugin",
-		corePluginEntityResignation: "CorePlugin",
-		corePluginEntityUpdate: "CorePlugin",
-		desktopPluginEntityRegistration: "DesktopPlugin",
-		desktopPluginEntityResignation: "DesktopPlugin",
-		desktopPluginEntityUpdate: "DesktopPlugin",
+		productEntityRegistration: "Product",
+		productEntityResignation: "Product",
+		productEntityUpdate: "Product",
+		pluginEntityRegistration: "Plugin",
+		pluginEntityResignation: "Plugin",
+		pluginEntityUpdate: "Plugin",
+		moduleEntityRegistration: "Module",
+		moduleEntityResignation: "Module",
+		moduleEntityUpdate: "Module",
 		delegateEntityRegistration: "Delegate",
 		delegateEntityResignation: "Delegate",
 		delegateEntityUpdate: "Delegate",
@@ -85,22 +77,13 @@ export const TransactionRowRecipientIcon = ({
 		return <Avatar size={size} address={recipient} shadowColor={circleShadowColor} />;
 	}
 
-	if (type === "multiPayment") {
-		return (
-			<Wrapper className={className} shadowColor={circleShadowColor} size={size}>
-				<span>{recipients!.length}</span>
-			</Wrapper>
-		);
-	}
-
 	return (
 		<Wrapper shadowColor={circleShadowColor} size={size}>
-			<Icon name={transactionIcon[type]} />
+			<Icon name={transactionIcon[type]} width={22} height={22} />
 		</Wrapper>
 	);
 };
 
 TransactionRowRecipientIcon.defaultProps = {
-	recipients: [],
 	size: "lg",
 };

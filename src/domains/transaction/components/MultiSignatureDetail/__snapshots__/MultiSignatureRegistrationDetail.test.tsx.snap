@@ -17,7 +17,7 @@ exports[`MultiSignatureRegistrationDetail should render 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxirZ biTPIb w-11 h-11"
+          class="sc-AxirZ jFqSPL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -200,6 +200,16 @@ exports[`MultiSignatureRegistrationDetail should render 1`] = `
                       D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                     </span>
                   </div>
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -221,7 +231,26 @@ exports[`MultiSignatureRegistrationDetail should render 1`] = `
               >
                 2
                  / 
-                1
+                2
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-AxheI jqCIcB"
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral-700"
+              >
+                Generated Address
+              </div>
+              <div
+                class="font-semibold"
+              >
+                DNzn2Rg6jCg3RCZnUyYjhbhvAgSWGwaMbH
               </div>
             </div>
           </div>

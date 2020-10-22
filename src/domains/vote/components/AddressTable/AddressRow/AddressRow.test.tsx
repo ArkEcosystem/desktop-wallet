@@ -70,6 +70,22 @@ describe("AddressRow", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render for a multisignature wallet", async () => {
+		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
+		const { asFragment, container, getByTestId } = render(
+			<table>
+				<tbody>
+					<AddressRow index={0} wallet={wallet} />
+				</tbody>
+			</table>,
+		);
+
+		expect(container).toBeTruthy();
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+		isMultiSignatureSpy.mockRestore();
+	});
+
 	it("should render when wallet not found for votes", async () => {
 		const { asFragment, getByTestId } = render(
 			<table>

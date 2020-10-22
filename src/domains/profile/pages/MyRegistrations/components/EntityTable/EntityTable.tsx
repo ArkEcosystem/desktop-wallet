@@ -18,11 +18,8 @@ export const EntityTable = ({ entities, onAction, title, type, nameColumnHeader 
 
 	const columns = [
 		{
-			Header: "Avatar",
-			className: "hidden",
-		},
-		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.ADDRESS"),
+			className: "ml-25",
 		},
 		{
 			Header: nameColumnHeader,
@@ -41,7 +38,7 @@ export const EntityTable = ({ entities, onAction, title, type, nameColumnHeader 
 		},
 		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.REPOSITORY"),
-			className: "justify-center",
+			className: "justify-center no-border",
 		},
 		{
 			Header: "Actions",
