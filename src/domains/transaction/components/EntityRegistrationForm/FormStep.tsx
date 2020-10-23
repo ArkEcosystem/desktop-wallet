@@ -8,7 +8,7 @@ import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { EntityLink } from "domains/transaction/components/LinkCollection/LinkCollection.models";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { EntityProvider } from "domains/transaction/entity/providers";
-import React, { ChangeEvent, useCallback, useEffect,useState } from "react";
+import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -33,7 +33,7 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 	useEffect(() => {
 		register("fee", common.fee(fees));
 		return () => unregister("fee");
-	}, [register, common]);
+	}, [register, common, unregister]);
 
 	const handleInput = useCallback(
 		(event: ChangeEvent<HTMLInputElement>) => {

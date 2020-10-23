@@ -4,6 +4,7 @@ import {
 	common,
 	delegateRegistration,
 	entityRegistration,
+	sendIpfs,
 	sendTransfer,
 } from "domains/transaction/validations";
 import { useMemo } from "react";
@@ -20,6 +21,7 @@ export const useValidation = () => {
 			delegateRegistration: delegateRegistration(t),
 			entityRegistration: entityRegistration(t),
 			sendTransfer: sendTransfer(t, env),
+			sendIpfs: sendIpfs(t),
 		}),
 		[t, env],
 	);
