@@ -6,6 +6,7 @@ export const common = (t: any) => ({
 		validate: {
 			valid: (fee?: string | number) => {
 				const feeSatoshi = BigNumber.make(fee || 0);
+				console.log("validating fee", fees, fee);
 
 				if (feeSatoshi.isLessThan(fees?.min)) {
 					return t("TRANSACTION.VALIDATION.FEE_BELOW_MINIMUM");
