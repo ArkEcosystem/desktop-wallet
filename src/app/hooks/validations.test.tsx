@@ -35,7 +35,7 @@ describe("useValidation hook", () => {
 			const {
 				result: { current },
 			} = renderHook(() => useValidation(), { wrapper });
-			const balance = BigNumber.make(0);
+			const balance = BigNumber.ZERO;
 			const validation = current.common.fee(defaultFees, balance, mockNetwork);
 			const isValid = validation.validate.valid(2);
 
