@@ -10,6 +10,12 @@ describe("Label", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render as solid", () => {
+		const { container } = render(<Label variant="solid" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render primary color", () => {
 		const { container } = render(<Label color="primary" />);
 
