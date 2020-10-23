@@ -36,7 +36,7 @@ const FormStepsComponent = ({ activeTab, wallet, title }: SendEntityRegistration
 	return (
 		<Tabs activeId={activeTab}>
 			<TabPanel tabId={2}>
-				<FormStep title={title} />
+				<FormStep title={title} wallet={wallet} />
 			</TabPanel>
 			<TabPanel tabId={3}>
 				<ReviewStep senderWallet={wallet} />

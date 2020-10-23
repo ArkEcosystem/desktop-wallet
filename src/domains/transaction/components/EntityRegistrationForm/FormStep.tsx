@@ -1,3 +1,4 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
@@ -18,9 +19,10 @@ type FormStepProps = {
 	title?: string;
 	description?: string;
 	showEntityNameField?: boolean;
+	wallet: ReadWriteWallet;
 };
 
-export const FormStep = ({ title, description, showEntityNameField = true }: FormStepProps) => {
+export const FormStep = ({ title, description, showEntityNameField = true, wallet }: FormStepProps) => {
 	const [selectedAvatar, setSelectedAvatar] = useState<EntityLink | undefined>();
 
 	const { t } = useTranslation();
@@ -31,9 +33,8 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 	const { common } = useValidation();
 
 	useEffect(() => {
-		register("fee", common.fee(fees));
-		return () => unregister("fee");
-	}, [register, common, unregister]);
+		register("fee", common.fee(fees, wallet.balance(), wallet.network()));
+	}, [register, common, unregister, fees, wallet]);
 
 	const handleInput = useCallback(
 		(event: ChangeEvent<HTMLInputElement>) => {

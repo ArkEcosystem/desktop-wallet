@@ -50,7 +50,7 @@ export const FirstStep = ({
 		const voteFees = env.fees().findByType(wallet.coinId(), wallet.networkId(), "vote");
 		setFees(voteFees);
 		setValue("fees", voteFees);
-	}, [env, setFees, wallet]);
+	}, [env, setFees, wallet, setValue]);
 
 	useEffect(() => {
 		setValue("fee", fees.avg, { shouldValidate: true, shouldDirty: true });

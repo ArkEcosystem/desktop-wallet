@@ -26,9 +26,8 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 	const fee = getValues("fee") || defaultFee;
 
 	useEffect(() => {
-		register("fee", common.fee(fees));
-		return () => unregister("fee");
-	}, [register, unregister, common, fees]);
+		register("fee", common.fee(fees, wallet.balance(), wallet.network()));
+	}, [register, unregister, common, fees, wallet]);
 
 	useEffect(() => {
 		setDelegates(env.delegates().all(wallet.coinId(), wallet.networkId()));

@@ -45,7 +45,7 @@ export const SendVote = () => {
 		register("network", sendVote.network());
 		register("senderAddress", sendVote.senderAddress());
 		register("fees");
-		register("fee", common.fee(getValues("fees")));
+		register("fee", common.fee(getValues("fees"), activeWallet?.balance?.(), activeWallet?.network?.()));
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
@@ -56,7 +56,7 @@ export const SendVote = () => {
 				break;
 			}
 		}
-	}, [activeWallet, networks, register, setValue]);
+	}, [activeWallet, networks, register, setValue, common, getValues, sendVote]);
 
 	useEffect(() => {
 		if (unvoteAddresses && unvotes.length === 0) {
