@@ -79,7 +79,7 @@ export const AddRecipient = ({
 		clearErrors,
 		formState: { errors },
 	} = useFormContext();
-	const { network, senderAddress, fee, recipientAddress, amount, fees } = watch();
+	const { network, senderAddress, fee, recipientAddress, amount } = watch();
 	const { sendTransfer } = useValidation();
 
 	const remainingBalance = useMemo(() => {

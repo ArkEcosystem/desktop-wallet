@@ -8,7 +8,7 @@ import { Loader } from "app/components/Loader";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
+import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/components/DelegateResignationForm";
 import React, { useEffect, useState } from "react";
@@ -22,14 +22,13 @@ import {
 	SummaryStep as EntitySummaryStep,
 } from "../../components/EntityResignationSteps";
 
-export const SendEntityResignation = ({ formDefaultData, passwordType }: any) => {
+export const SendEntityResignation = ({ formDefaultData }: any) => {
 	const { t } = useTranslation();
 	const history = useHistory();
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 
-	const { common } = useValidation();
-	const { formState, getValues, setError, register } = form;
+	const { formState, getValues, setError } = form;
 	const { isValid } = formState;
 
 	const [activeTab, setActiveTab] = useState(1);
