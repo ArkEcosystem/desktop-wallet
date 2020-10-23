@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormHelperText,FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
 import { useValidation } from "app/hooks";
