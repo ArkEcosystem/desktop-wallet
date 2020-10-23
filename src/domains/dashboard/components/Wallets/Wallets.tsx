@@ -13,32 +13,33 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 type WalletsProps = {
-	wallets: ReadWriteWallet[];
 	title?: string;
-	walletsEmptyText?: string;
 	filterProperties: any;
 	viewType?: "grid" | "list";
+	wallets: ReadWriteWallet[];
+	walletsEmptyText?: string;
 	onCreateWallet?: any;
 	onImportWallet?: any;
+	onSelectViewType?: any;
 	onWalletAction?: any;
 };
 
 type GridWallet = {
-	wallet?: ReadWriteWallet;
 	isBlank?: boolean;
+	wallet?: ReadWriteWallet;
 };
 
 export const Wallets = ({
-	viewType,
 	title,
-	wallets,
 	filterProperties,
+	viewType,
+	wallets,
+	walletsEmptyText,
 	onCreateWallet,
 	onImportWallet,
+	onSelectViewType,
 	onWalletAction,
-	walletsEmptyText,
 }: WalletsProps) => {
-	const [walletsViewType, setWalletsViewType] = useState(viewType);
 	const [allWallets, setAllWallets] = useState<any>(undefined);
 	const [hasMoreWallets, setHasMoreWallets] = useState<any>(wallets.length > 10);
 
@@ -130,17 +131,17 @@ export const Wallets = ({
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls
+						filterProperties={filterProperties}
+						viewType={viewType}
 						onCreateWallet={onCreateWallet}
 						onImportWallet={onImportWallet}
-						onSelectGridView={() => setWalletsViewType("grid")}
-						onSelectListView={() => setWalletsViewType("list")}
-						filterProperties={filterProperties}
-						viewType={walletsViewType}
+						onSelectGridView={() => onSelectViewType("grid")}
+						onSelectListView={() => onSelectViewType("list")}
 					/>
 				</div>
 			</div>
 			<div className="mt-1">
-				{walletsViewType === "grid" && (
+				{viewType === "grid" && (
 					<div className="w-full">
 						<Slider data={loadGridWallets()} options={walletSliderOptions}>
 							{(walletData: any) => (
@@ -149,7 +150,7 @@ export const Wallets = ({
 						</Slider>
 					</div>
 				)}
-				{walletsViewType === "list" && (
+				{viewType === "list" && (
 					<div>
 						{wallets.length > 0 && (
 							<div data-testid="WalletTable">
@@ -179,7 +180,7 @@ export const Wallets = ({
 
 Wallets.defaultProps = {
 	networks: [],
+	viewType: "grid",
 	wallets: [],
 	walletsEmptyText: "",
-	viewType: "grid",
 };
