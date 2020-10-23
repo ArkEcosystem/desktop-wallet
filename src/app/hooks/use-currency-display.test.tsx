@@ -36,13 +36,4 @@ describe("useCurrencyDisplay hook", () => {
 		const fromString = current.converToCurrency("25");
 		expect(fromString).toEqual({ display: "25", value: "2500000000" });
 	});
-
-	it("should keep in range", () => {
-		const {
-			result: { current },
-		} = renderHook(() => useCurrencyDisplay());
-
-		const result = current.keepInRange({ display: "25", value: "2500000000" }, "24");
-		expect(result).toEqual({ display: "24", value: "2400000000" });
-	});
 });

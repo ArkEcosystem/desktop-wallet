@@ -21,14 +21,8 @@ export const useCurrencyDisplay = () => {
 		return Currency.fromString(String(value));
 	}, []);
 
-	const keepInRange = useCallback((value: CurrencyInput, max: string): CurrencyInput => {
-		const inRangeValue = Number(value.display) > Number(max) ? max : value.display;
-		return Currency.fromString(String(inRangeValue));
-	}, []);
-
 	return {
 		formatRange,
 		converToCurrency,
-		keepInRange,
 	};
 };
