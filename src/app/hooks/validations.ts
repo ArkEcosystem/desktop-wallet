@@ -4,6 +4,7 @@ import {
 	common,
 	delegateRegistration,
 	entityRegistration,
+	multiSignatureRegistration,
 	sendIpfs,
 	sendTransfer,
 	sendVote,
@@ -24,6 +25,7 @@ export const useValidation = () => {
 			sendTransfer: sendTransfer(t, env),
 			sendIpfs: sendIpfs(t),
 			sendVote: sendVote(t),
+			multiSignatureRegistration: multiSignatureRegistration(t),
 		}),
 		[t, env],
 	);

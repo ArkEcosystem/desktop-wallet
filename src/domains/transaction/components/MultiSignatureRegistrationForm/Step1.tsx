@@ -1,8 +1,9 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText,FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
+import { useValidation } from "app/hooks";
 import React, { ChangeEvent, useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -25,10 +26,13 @@ export const FormStep = ({
 	const { setValue, getValues, register } = useFormContext();
 	const { participants, fee, minParticipants } = getValues();
 
+	const { common, multiSignatureRegistration } = useValidation();
+
 	useEffect(() => {
-		register("participants", { required: true, validate: (value) => Array.isArray(value) && value.length > 1 });
-		register("minParticipants", { required: true, min: 2, max: Math.max(2, participants?.length || 0) });
-	}, [register, participants]);
+		register("fee", common.fee(fees));
+		register("participants", multiSignatureRegistration.participants());
+		register("minParticipants", multiSignatureRegistration.minParticipants(participants));
+	}, [register, participants, common, fees]);
 
 	useEffect(() => {
 		if (minParticipants === undefined) {
@@ -92,6 +96,7 @@ export const FormStep = ({
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
 						}
 					/>
+					<FormHelperText />
 				</FormField>
 			</div>
 		</section>
