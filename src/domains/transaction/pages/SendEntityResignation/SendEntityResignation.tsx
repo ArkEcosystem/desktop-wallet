@@ -83,10 +83,6 @@ export const SendEntityResignation = ({ formDefaultData, passwordType }: any) =>
 	];
 
 	useEffect(() => {
-		register("fee", common.fee(fees, activeWallet?.balance?.(), activeWallet?.network?.()));
-	}, [register, common, fees, activeWallet]);
-
-	useEffect(() => {
 		const transactionTypes: { [key: string]: string } = {
 			entity: "entityResignation",
 			delegate: "delegateResignation",

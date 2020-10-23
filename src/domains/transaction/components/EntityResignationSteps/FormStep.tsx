@@ -1,5 +1,5 @@
 import { Alert } from "app/components/Alert";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText,FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TransactionDetail, TransactionSender } from "domains/transaction/components/TransactionDetail";
@@ -11,7 +11,8 @@ import { EntityResignationStepProps } from "./EntityResignationSteps.models";
 
 export const FormStep = ({ entity, fees }: EntityResignationStepProps) => {
 	const { t } = useTranslation();
-	const { setValue } = useFormContext();
+	const { setValue, watch } = useFormContext();
+	const { fee } = watch();
 
 	return (
 		<div data-testid="SendEntityResignation__form-step" className="space-y-8">
@@ -40,8 +41,8 @@ export const FormStep = ({ entity, fees }: EntityResignationStepProps) => {
 				<FormField name="fee" className="font-normal">
 					<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 					<InputFee
-						value={fees.static}
-						defaultValue={fees.static}
+						value={fee}
+						defaultValue={fee}
 						min={fees.min}
 						avg={fees.avg}
 						max={fees.max}
@@ -50,6 +51,7 @@ export const FormStep = ({ entity, fees }: EntityResignationStepProps) => {
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
 						}
 					/>
+					<FormHelperText />
 				</FormField>
 			</div>
 		</div>
