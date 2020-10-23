@@ -1,5 +1,5 @@
 import { Alert } from "app/components/Alert";
-import { FormField, FormHelperText,FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TransactionDetail, TransactionSender } from "domains/transaction/components/TransactionDetail";
