@@ -18,9 +18,9 @@ type Action =
 	| { type: "disconnected" }
 	| { type: "failed"; message: string };
 
-export const defaultLedgerState = { isConnected: false, isBusy: false, isWaiting: false };
+export const defaultConnectionState = { isConnected: false, isBusy: false, isWaiting: false };
 
-export const ledgerStateReducer = (state: State, action: Action): State => {
+export const connectionReducer = (state: State, action: Action): State => {
 	switch (action.type) {
 		case "add":
 			return {

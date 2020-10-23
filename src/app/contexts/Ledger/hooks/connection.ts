@@ -1,18 +1,16 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { chunk } from "@arkecosystem/utils";
 import Transport from "@ledgerhq/hw-transport";
 import retry from "async-retry";
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
 
-import { useEnvironmentContext } from "../Environment";
-import { defaultLedgerState, ledgerStateReducer } from "./Ledger.state";
-import { formatDerivationPath, LedgerData, searchAddresses, searchWallets } from "./utils";
+import { useEnvironmentContext } from "../../Environment";
+import { formatLedgerDerivationPath, LedgerData } from "../utils";
+import { connectionReducer, defaultConnectionState } from "./connection.state";
 
-export const useLedger = (transport: typeof Transport) => {
+export const useLedgerConnection = (transport: typeof Transport) => {
 	const { env, persist } = useEnvironmentContext();
-	const [state, dispatch] = useReducer(ledgerStateReducer, defaultLedgerState);
+	const [state, dispatch] = useReducer(connectionReducer, defaultConnectionState);
 	const abortRetryRef = useRef<boolean>(false);
 
 	const { isBusy, isConnected, error } = state;
@@ -68,7 +66,7 @@ export const useLedger = (transport: typeof Transport) => {
 
 					await instance.ledger().connect(transport);
 					// Ensure that the app is accessible
-					await instance.ledger().getPublicKey(formatDerivationPath(slip44, 0));
+					await instance.ledger().getPublicKey(formatLedgerDerivationPath(slip44, 0));
 				};
 
 				await retry(connectFn, retryOptions);
@@ -87,62 +85,6 @@ export const useLedger = (transport: typeof Transport) => {
 		dispatch({ type: "disconnected" });
 	}, []);
 
-	const scanWallets = useCallback(
-		async (coin: string, network: string, profile: Profile, onChange?: (wallets: LedgerData[]) => void) => {
-			const allWallets: LedgerData[] = [];
-
-			try {
-				await connect(coin, network);
-
-				const instance = await env.coin(coin, network);
-
-				dispatch({ type: "busy" });
-
-				// TODO: Get value from profile
-				const limit = 50;
-				const indexes = Array.from(Array(limit).keys());
-				const chunks = chunk(indexes, 5);
-
-				for (const iterator of chunks) {
-					const addressMap = await searchAddresses(iterator, instance, profile);
-					const ledgerWallets = await searchWallets(addressMap, instance);
-
-					const addresses = Object.keys(addressMap);
-					let hasMore = true;
-
-					if (addresses.length > ledgerWallets.length) {
-						const ledgerAddresses = ledgerWallets.map((wallet) => wallet.address);
-						const coldAddress = addresses.find((address) => !ledgerAddresses.includes(address))!;
-
-						ledgerWallets.push({
-							address: coldAddress,
-							balance: BigNumber.ZERO,
-							index: addressMap[coldAddress],
-							isNew: true,
-						});
-
-						hasMore = false;
-					}
-
-					onChange?.(ledgerWallets);
-					allWallets.push(...ledgerWallets);
-
-					if (!hasMore) {
-						break;
-					}
-				}
-
-				await disconnect(instance);
-				return allWallets;
-			} catch (e) {
-				dispatch({ type: "failed", message: e.message });
-			}
-
-			return allWallets;
-		},
-		[env, connect, disconnect],
-	);
-
 	const abortConnectionRetry = useCallback(() => (abortRetryRef.current = true), []);
 	const isAwaitingConnection = useMemo(() => state.isWaiting && !state.isConnected, [state]);
 	const isAwaitingDeviceConfirmation = useMemo(() => state.isWaiting && state.isConnected, [state]);
@@ -159,6 +101,7 @@ export const useLedger = (transport: typeof Transport) => {
 		abortConnectionRetry,
 		connect,
 		disconnect,
+		dispatch,
 		error,
 		hasDeviceAvailable,
 		importLedgerWallets,
@@ -166,6 +109,5 @@ export const useLedger = (transport: typeof Transport) => {
 		isAwaitingDeviceConfirmation,
 		isBusy,
 		isConnected,
-		scanWallets,
 	};
 };

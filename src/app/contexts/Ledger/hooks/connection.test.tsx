@@ -1,33 +1,16 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
-import nock from "nock";
-import React, { useState } from "react";
+import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
-import { useLedger } from "./use-ledger";
+import { useLedgerConnection } from "./connection";
 
-describe("Use Ledger", () => {
+describe("Use Ledger Connection", () => {
 	let transport: typeof Transport;
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
 	let publicKeyPaths = new Map();
-
-	beforeAll(() => {
-		nock("https://dwallets.ark.io/api")
-			.get("/wallets")
-			.query((params) => !!params.address)
-			.reply(200, {
-				meta: {},
-				data: [
-					{
-						address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
-						balance: "0",
-					},
-				],
-			})
-			.persist();
-	});
 
 	beforeEach(() => {
 		transport = createTransportReplayer(RecordStore.fromString(""));
@@ -52,7 +35,7 @@ describe("Use Ledger", () => {
 
 	it("should listen for device", async () => {
 		const Component = () => {
-			const { hasDeviceAvailable, error } = useLedger(transport);
+			const { hasDeviceAvailable, error } = useLedgerConnection(transport);
 			return (
 				<div>
 					{error && <span>{error}</span>}
@@ -101,7 +84,7 @@ describe("Use Ledger", () => {
 
 	it("should import ledger wallets", async () => {
 		const Component = () => {
-			const { importLedgerWallets } = useLedger(transport);
+			const { importLedgerWallets } = useLedgerConnection(transport);
 			const wallets = profile.wallets().values();
 
 			const handleImport = async () => {
@@ -139,7 +122,9 @@ describe("Use Ledger", () => {
 
 	describe("Ledger Connection", () => {
 		const Component = ({ retries = 3 }: { retries?: number }) => {
-			const { connect, isConnected, isAwaitingConnection, error, abortConnectionRetry } = useLedger(transport);
+			const { connect, isConnected, isAwaitingConnection, error, abortConnectionRetry } = useLedgerConnection(
+				transport,
+			);
 			const handleConnect = async () => {
 				try {
 					await connect(wallet.coinId(), wallet.networkId(), { retries, randomize: false, minTimeout: 10 });
@@ -223,71 +208,6 @@ describe("Use Ledger", () => {
 			await waitFor(() => expect(screen.queryByText("Failed")).toBeInTheDocument());
 
 			expect(getPublicKeySpy).toHaveBeenCalledTimes(5);
-
-			getPublicKeySpy.mockReset();
-		});
-	});
-
-	describe("Scan Wallets", () => {
-		const Component = () => {
-			const { scanWallets, isAwaitingConnection, error } = useLedger(transport);
-			const [wallets, setWallets] = useState<any>([]);
-
-			const handleScan = async () => {
-				const wallets = await scanWallets(wallet.coinId(), wallet.networkId(), profile);
-				setWallets(wallets);
-			};
-
-			return (
-				<div>
-					{error && <span>{error}</span>}
-					{isAwaitingConnection && <span>Waiting Device</span>}
-					<ul>
-						{wallets.map((wallet) => (
-							<li key={wallet.address}>{wallet.address}</li>
-						))}
-					</ul>
-					<button onClick={handleScan}>Scan</button>
-				</div>
-			);
-		};
-
-		it("should scan wallets", async () => {
-			const getPublicKeySpy = jest
-				.spyOn(wallet.coin().ledger(), "getPublicKey")
-				.mockImplementation((path) => Promise.resolve(publicKeyPaths.get(path)!));
-
-			render(<Component />);
-
-			act(() => {
-				fireEvent.click(screen.getByText("Scan"));
-			});
-
-			expect(screen.queryByText("Waiting Device")).toBeInTheDocument();
-
-			await waitFor(() => expect(screen.getByText("DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq")).toBeInTheDocument());
-			await waitFor(() => expect(screen.getByText("DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES")).toBeInTheDocument());
-			await waitFor(() => expect(screen.queryByText("Waiting Device")).not.toBeInTheDocument());
-
-			getPublicKeySpy.mockReset();
-		});
-
-		it("should fail to scan wallets", async () => {
-			jest.setTimeout(10000);
-
-			const getPublicKeySpy = jest
-				.spyOn(wallet.coin().ledger(), "getPublicKey")
-				.mockRejectedValue(new Error("Failed"));
-
-			render(<Component />);
-
-			act(() => {
-				fireEvent.click(screen.getByText("Scan"));
-			});
-
-			expect(screen.getByText("Waiting Device")).toBeInTheDocument();
-
-			await waitFor(() => expect(screen.getByText("Failed")).toBeInTheDocument(), { timeout: 10000 });
 
 			getPublicKeySpy.mockReset();
 		});

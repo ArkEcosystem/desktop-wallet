@@ -1,31 +1,67 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
+import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Checkbox } from "app/components/Checkbox";
+import { Circle } from "app/components/Circle";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
+import { Icon } from "app/components/Icon";
 import { Spinner } from "app/components/Spinner";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import { useLedgerContext } from "app/contexts";
-import { LedgerData } from "app/contexts/Ledger/utils";
+import { LedgerData, useLedgerScanner } from "app/contexts/Ledger";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import Skeleton from "react-loading-skeleton";
+
+const AmountWrapper = ({
+	isFailed,
+	isLoading,
+	children,
+}: {
+	isFailed: boolean;
+	isLoading: boolean;
+	children: React.ReactNode;
+}) => {
+	const { t } = useTranslation();
+
+	if (isLoading) {
+		return <Skeleton width={60} height={16} />;
+	}
+
+	if (isFailed) {
+		return (
+			<div className="flex items-center space-x-3 text-theme-danger-400">
+				<Circle className="border-theme-danger-400" noShadow size="sm">
+					<Icon name="CrossSlim" />
+				</Circle>
+				<span>{t("COMMON.ERROR")}</span>
+			</div>
+		);
+	}
+
+	return <div>{children}</div>;
+};
 
 export const LedgerTable = ({
 	network,
-	data,
-	onChange,
-	checkedAddresses,
+	wallets,
+	selectedWallets,
+	isSelected,
+	isLoading,
+	isFailed,
+	toggleSelect,
+	toggleSelectAll,
 }: {
 	network: Network;
-	data: LedgerData[];
-	onChange: (cb: (prev: Record<string, boolean>) => Record<string, boolean>) => void;
-	checkedAddresses: Record<string, boolean>;
-}) => {
+} & ReturnType<typeof useLedgerScanner>) => {
+	const { t } = useTranslation();
+
 	const columns = [
 		{
 			Header: "Wallet",
@@ -36,32 +72,37 @@ export const LedgerTable = ({
 			accessor: "balance",
 		},
 		{
-			Header: "Select",
+			Header: (
+				<Tippy content={t("COMMON.SELECT_ALL")}>
+					<Checkbox
+						onChange={() => toggleSelectAll()}
+						checked={wallets.length > 0 && selectedWallets.length === wallets.length}
+					/>
+				</Tippy>
+			),
+			className: "justify-center pr-3",
+			id: "select",
 		},
 	];
 
-	const handleCheckbox = (address: string) => {
-		onChange((prev) => {
-			const value = prev[address];
-			return { ...prev, [address]: !value };
-		});
-	};
-
 	return (
-		<Table columns={columns} data={data}>
+		<Table columns={columns} data={wallets}>
 			{(wallet: LedgerData) => (
 				<TableRow>
-					<TableCell isSelected={checkedAddresses[wallet.address]} variant="start" innerClassName="space-x-3">
+					<TableCell isSelected={isSelected(wallet.index)} variant="start" innerClassName="space-x-3">
 						<Avatar address={wallet.address} noShadow />
 						<Address address={wallet.address} />
 					</TableCell>
-					<TableCell isSelected={checkedAddresses[wallet.address]} innerClassName="font-semibold">
-						<Amount value={wallet.balance} ticker={network.ticker()} />
+					<TableCell isSelected={isSelected(wallet.index)} innerClassName="font-semibold" className="w-64">
+						<AmountWrapper isLoading={isLoading(wallet.index)} isFailed={isFailed(wallet.index)}>
+							<Amount value={wallet.balance!} ticker={network.ticker()} />
+						</AmountWrapper>
 					</TableCell>
-					<TableCell isSelected={checkedAddresses[wallet.address]} innerClassName="justify-center">
+					<TableCell isSelected={isSelected(wallet.index)} innerClassName="justify-center">
 						<Checkbox
-							checked={checkedAddresses[wallet.address] ?? false}
-							onChange={() => handleCheckbox(wallet.address)}
+							disabled={isLoading(wallet.index) || isFailed(wallet.index)}
+							checked={isSelected(wallet.index)}
+							onChange={() => toggleSelect(wallet.index)}
 						/>
 					</TableCell>
 				</TableRow>
@@ -70,35 +111,43 @@ export const LedgerTable = ({
 	);
 };
 
-export const LedgerScanStep = ({ profile }: { profile: Profile }) => {
+export const LedgerScanStep = ({
+	profile,
+	setRetryFn,
+}: {
+	profile: Profile;
+	setRetryFn: (fn?: () => void) => void;
+}) => {
 	const { t } = useTranslation();
 	const { watch, register, setValue } = useFormContext();
-	const { scanWallets, isBusy, isAwaitingConnection } = useLedgerContext();
+
+	const { isBusy, isAwaitingConnection } = useLedgerContext();
 
 	const [network] = useState<Network>(() => watch("network"));
 
-	const [ledgerWallets, setLedgerWallets] = useState<LedgerData[]>([]);
-	const [checkedAddresses, setCheckedAddresses] = useState<Record<string, boolean>>({});
+	const ledgerScanner = useLedgerScanner(network.coin(), network.id(), profile);
+	const { scanUntilNewOrFail, selectedWallets, scanRetry, canRetry } = ledgerScanner;
 
-	const scan = useCallback(() => {
-		scanWallets(network.coin(), network.id(), profile, (wallets) => {
-			setLedgerWallets((prev) => [...prev, ...wallets]);
-			setCheckedAddresses((prev) => wallets.reduce((acc, item) => ({ ...acc, [item.address]: true }), prev));
-		});
-	}, [scanWallets, network, profile]);
+	useEffect(() => {
+		if (canRetry) {
+			setRetryFn(() => scanRetry());
+		} else {
+			setRetryFn(undefined);
+		}
+		return () => setRetryFn(undefined);
+	}, [setRetryFn, scanRetry, canRetry]);
+
+	useEffect(() => {
+		scanUntilNewOrFail();
+	}, [scanUntilNewOrFail]);
 
 	useEffect(() => {
 		register("wallets", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 });
 	}, [register]);
 
 	useEffect(() => {
-		const wallets = ledgerWallets.filter((item) => checkedAddresses[item.address]);
-		setValue("wallets", wallets, { shouldValidate: true, shouldDirty: true });
-	}, [checkedAddresses, setValue, ledgerWallets]);
-
-	useEffect(() => {
-		scan();
-	}, [scan]);
+		setValue("wallets", selectedWallets, { shouldValidate: true, shouldDirty: true });
+	}, [selectedWallets, setValue]);
 
 	return (
 		<section data-testid="LedgerScanStep" className="space-y-8">
@@ -112,12 +161,7 @@ export const LedgerScanStep = ({ profile }: { profile: Profile }) => {
 				<SelectNetwork id="ImportWallet__network" networks={[]} selected={network} disabled />
 			</FormField>
 
-			<LedgerTable
-				network={network}
-				checkedAddresses={checkedAddresses}
-				onChange={setCheckedAddresses}
-				data={ledgerWallets}
-			/>
+			<LedgerTable network={network} {...ledgerScanner} />
 
 			{(isBusy || isAwaitingConnection) && (
 				<div className="inline-flex items-center justify-center w-full mt-8 space-x-3">

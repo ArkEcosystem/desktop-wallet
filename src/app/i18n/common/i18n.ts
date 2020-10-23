@@ -134,6 +134,7 @@ export const translations: { [key: string]: any } = {
 	RESET_DATA: "Reset Data",
 	RESIGN: "Resign",
 	RESIGNED: "Resigned",
+	RETRY: "Retry",
 	SAVE: "Save",
 	SAVE_FINISH: "Save & Finish",
 	SECOND_SIGNATURE: "Second Signature",

@@ -4,7 +4,7 @@ import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Spinner } from "app/components/Spinner";
-import { useLedgerContext } from "app/contexts/Ledger/Ledger";
+import { useLedgerContext } from "app/contexts/Ledger";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";

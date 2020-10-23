@@ -1,10 +1,11 @@
 import { Button } from "app/components/Button";
+import { Icon } from "app/components/Icon";
 import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -17,14 +18,18 @@ import { LedgerScanStep } from "./LedgerScanStep";
 export const Paginator = ({
 	size,
 	activeIndex,
+	showRetry,
 	onBack,
 	onNext,
+	onRetry,
 	onSubmit,
 	isNextDisabled,
 	isNextLoading,
 }: {
 	size: number;
 	activeIndex: number;
+	showRetry?: boolean;
+	onRetry?: () => void;
 	onBack?: (newIndex: number) => void;
 	onNext?: (newIndex: number) => void;
 	onSubmit?: () => void;
@@ -33,39 +38,50 @@ export const Paginator = ({
 }) => {
 	const { t } = useTranslation();
 	return (
-		<div className="flex justify-end mt-10 space-x-3">
-			{activeIndex < size && (
-				<Button
-					disabled={activeIndex === 1}
-					variant="plain"
-					onClick={() => onBack?.(activeIndex - 1)}
-					data-testid="Paginator__back-button"
-				>
-					{t("COMMON.BACK")}
-				</Button>
-			)}
+		<div className="flex justify-between mt-10">
+			<div>
+				{showRetry && (
+					<Button variant="plain" onClick={onRetry} data-testid="Paginator__retry-button">
+						<Icon name="Reset" />
+						<span>{t("COMMON.RETRY")}</span>
+					</Button>
+				)}
+			</div>
 
-			{activeIndex < size && (
-				<Button
-					disabled={isNextDisabled || isNextLoading}
-					onClick={() => onNext?.(activeIndex + 1)}
-					data-testid="Paginator__continue-button"
-				>
-					{isNextLoading ? (
-						<span className="px-3">
-							<Spinner size="sm" />
-						</span>
-					) : (
-						t("COMMON.CONTINUE")
-					)}
-				</Button>
-			)}
+			<div className="flex space-x-3">
+				{activeIndex < size && (
+					<Button
+						disabled={activeIndex === 1}
+						variant="plain"
+						onClick={() => onBack?.(activeIndex - 1)}
+						data-testid="Paginator__back-button"
+					>
+						{t("COMMON.BACK")}
+					</Button>
+				)}
 
-			{activeIndex === size && (
-				<Button disabled={isNextDisabled} data-testid="Paginator__submit-button" onClick={onSubmit}>
-					{t("COMMON.SAVE_FINISH")}
-				</Button>
-			)}
+				{activeIndex < size && (
+					<Button
+						disabled={isNextDisabled || isNextLoading}
+						onClick={() => onNext?.(activeIndex + 1)}
+						data-testid="Paginator__continue-button"
+					>
+						{isNextLoading ? (
+							<span className="px-3">
+								<Spinner size="sm" />
+							</span>
+						) : (
+							t("COMMON.CONTINUE")
+						)}
+					</Button>
+				)}
+
+				{activeIndex === size && (
+					<Button disabled={isNextDisabled} data-testid="Paginator__submit-button" onClick={onSubmit}>
+						{t("COMMON.SAVE_FINISH")}
+					</Button>
+				)}
+			</div>
 		</div>
 	);
 };
@@ -83,6 +99,9 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	const wallets = getValues("wallets");
 
 	const [activeTab, setActiveTab] = useState<number>(activeIndex!);
+
+	const [showRetry, setShowRetry] = useState(false);
+	const retryFnRef = useRef<() => void>();
 
 	const importWallets = useCallback(
 		async ({ network, wallets }: any) => {
@@ -121,6 +140,11 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 		setActiveTab(newIndex);
 	};
 
+	const handleRetry = useCallback((fn?: () => void) => {
+		retryFnRef.current = fn;
+		setShowRetry(!!fn);
+	}, []);
+
 	return (
 		<Tabs activeId={activeTab}>
 			<StepIndicator size={4} activeIndex={activeTab} />
@@ -133,7 +157,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 					<LedgerConnectionStep onConnect={() => setActiveTab(3)} />
 				</TabPanel>
 				<TabPanel tabId={3}>
-					<LedgerScanStep profile={activeProfile} />
+					<LedgerScanStep profile={activeProfile} setRetryFn={handleRetry} />
 				</TabPanel>
 				<TabPanel tabId={4}>
 					<LedgerImportStep wallets={wallets} />
@@ -145,6 +169,8 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 				activeIndex={activeTab}
 				isNextDisabled={!isValid}
 				isNextLoading={isSubmitting}
+				showRetry={showRetry}
+				onRetry={retryFnRef.current}
 				onNext={handleNext}
 				onBack={handleBack}
 				onSubmit={handleSubmit((data: any) => saveNames(data))}
