@@ -40,6 +40,7 @@ export const Wallets = ({
 	onSelectViewType,
 	onWalletAction,
 }: WalletsProps) => {
+	const [walletsViewType, setWalletsViewType] = useState(viewType);
 	const [allWallets, setAllWallets] = useState<any>(undefined);
 	const [hasMoreWallets, setHasMoreWallets] = useState<any>(wallets.length > 10);
 
@@ -80,6 +81,11 @@ export const Wallets = ({
 		slidesPerColumn: 2,
 		slidesPerGroup: 3,
 		spaceBetween: 20,
+	};
+
+	const toggleViewType = (viewType: "grid" | "list") => {
+		setWalletsViewType(viewType);
+		onSelectViewType?.(viewType);
 	};
 
 	// Grid
@@ -132,16 +138,16 @@ export const Wallets = ({
 				<div className="text-right">
 					<WalletsControls
 						filterProperties={filterProperties}
-						viewType={viewType}
+						viewType={walletsViewType}
 						onCreateWallet={onCreateWallet}
 						onImportWallet={onImportWallet}
-						onSelectGridView={() => onSelectViewType("grid")}
-						onSelectListView={() => onSelectViewType("list")}
+						onSelectGridView={() => toggleViewType("grid")}
+						onSelectListView={() => toggleViewType("list")}
 					/>
 				</div>
 			</div>
 			<div className="mt-1">
-				{viewType === "grid" && (
+				{walletsViewType === "grid" && (
 					<div className="w-full">
 						<Slider data={loadGridWallets()} options={walletSliderOptions}>
 							{(walletData: any) => (
@@ -150,7 +156,7 @@ export const Wallets = ({
 						</Slider>
 					</div>
 				)}
-				{viewType === "list" && (
+				{walletsViewType === "list" && (
 					<div>
 						{wallets.length > 0 && (
 							<div data-testid="WalletTable">
