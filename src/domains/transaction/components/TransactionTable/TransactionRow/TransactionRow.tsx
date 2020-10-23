@@ -65,11 +65,7 @@ export const TransactionRow = ({
 				</TableCell>
 			)}
 
-			<TableCell
-				variant={showExplorerLink ? "middle" : "start"}
-				className="w-50"
-				innerClassName="text-theme-secondary-text"
-			>
+			<TableCell variant={showExplorerLink ? "middle" : "start"} innerClassName="text-theme-secondary-text">
 				<span data-testid="TransactionRow__timestamp">
 					{transaction.timestamp()!.format("DD MMM YYYY HH:mm:ss")}
 				</span>
