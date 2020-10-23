@@ -73,7 +73,7 @@ export const SummaryStep = ({
 		recipients = transaction
 			.get<{ payments: Record<string, string>[] }>("asset")
 			?.payments?.map((item) => ({ address: item.recipientId, amount: BigNumber.make(item.amount) })) || [
-			{ address: transaction.recipient(), amount: transaction.amount() },
+			{ address: transaction.get<string>("recipientId"), amount: transaction.amount() },
 		];
 
 		transactionAmount = recipients.reduce(
@@ -121,9 +121,7 @@ export const SummaryStep = ({
 
 	return (
 		<section>
-			<div className="mb-8">
-				<Header title={t(titles[type])} />
-			</div>
+			<Header title={t(titles[type])} />
 
 			<TransactionSender address={senderAddress} alias={wallet.alias()} border={false} />
 

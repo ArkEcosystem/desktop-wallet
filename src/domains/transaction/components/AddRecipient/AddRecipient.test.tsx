@@ -91,6 +91,20 @@ describe("AddRecipient", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render without the single & multiple tabs", async () => {
+		const { container } = await renderWithFormProvider(
+			<AddRecipient
+				profile={profile}
+				assetSymbol="ARK"
+				maxAvailableAmount={BigNumber.make(80)}
+				isSingleRecipient={true}
+				showMultiPaymentOption={false}
+			/>,
+		);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should set amount", async () => {
 		const onChange = jest.fn();
 
