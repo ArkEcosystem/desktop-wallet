@@ -39,7 +39,16 @@ export const SendTransfer = () => {
 	const [wallet, setWallet] = useState<ReadWriteWallet | undefined>(hasWalletId ? activeWallet : undefined);
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const form = useForm({ mode: "onChange", defaultValues: { fee: 0 }, shouldUnregister: false });
+	const form = useForm({
+		mode: "onChange",
+		defaultValues: {
+			fee: 0,
+			amount: 0,
+			remainingBalance: wallet?.balance?.(),
+		},
+		shouldUnregister: false,
+	});
+
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
@@ -47,12 +56,13 @@ export const SendTransfer = () => {
 	const { sendTransfer, common } = useValidation();
 
 	useEffect(() => {
+		register("remainingBalance");
 		register("network", sendTransfer.network());
 		register("recipients");
 		register("senderAddress", sendTransfer.senderAddress());
 		register("fee", common.fee(fees, remainingBalance, wallet?.network?.()));
 		register("smartbridge", sendTransfer.smartbridge());
-	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount]);
+	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount, senderAddress]);
 
 	useEffect(() => {
 		if (!hasWalletId && senderAddress) {

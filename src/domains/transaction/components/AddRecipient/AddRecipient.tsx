@@ -79,7 +79,7 @@ export const AddRecipient = ({
 		clearErrors,
 		formState: { errors },
 	} = useFormContext();
-	const { network, senderAddress, fee, recipientAddress, amount } = watch();
+	const { network, senderAddress, fee, recipientAddress, amount, fees } = watch();
 	const { sendTransfer } = useValidation();
 
 	const remainingBalance = useMemo(() => {
@@ -99,13 +99,16 @@ export const AddRecipient = ({
 	}, [setValue]);
 
 	useEffect(() => {
+		register("remainingBalance");
+	}, [register]);
+
+	useEffect(() => {
 		const remaining = remainingBalance.isLessThanOrEqualTo(BigNumber.ZERO)
 			? BigNumber.ZERO
-			: remainingBalance.minus(amount);
+			: remainingBalance.minus(amount || 0);
 
-		register("remainingBalance");
 		setValue("remainingBalance", remaining);
-	}, [remainingBalance, setValue, amount, register]);
+	}, [remainingBalance, setValue, amount, recipientAddress, fee, senderAddress]);
 
 	useEffect(() => {
 		if (!withDeeplink) return;
