@@ -40,6 +40,22 @@ describe("Wallet Card", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render with actions", () => {
+		const actions = [{ label: "show", value: "show" }];
+
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<WalletCard wallet={wallet} actions={actions} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render blank", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
