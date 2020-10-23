@@ -18,6 +18,7 @@ import { useHistory, useLocation, useParams } from "react-router-dom";
 import { FormStep } from "./Step1";
 import { ReviewStep } from "./Step2";
 import { SummaryStep } from "./Step4";
+// import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
@@ -42,16 +43,16 @@ export const SendTransfer = () => {
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
-	const { senderAddress, fees } = watch();
+	const { senderAddress, fees, remainingBalance, amount } = watch();
 	const { sendTransfer, common } = useValidation();
 
 	useEffect(() => {
 		register("network", sendTransfer.network());
 		register("recipients");
 		register("senderAddress", sendTransfer.senderAddress());
-		register("fee", common.fee(fees));
+		register("fee", common.fee(fees, remainingBalance, wallet?.network?.()));
 		register("smartbridge", sendTransfer.smartbridge());
-	}, [register, sendTransfer, common, fees]);
+	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount]);
 
 	useEffect(() => {
 		if (!hasWalletId && senderAddress) {

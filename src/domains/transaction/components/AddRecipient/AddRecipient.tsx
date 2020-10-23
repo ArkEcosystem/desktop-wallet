@@ -79,16 +79,16 @@ export const AddRecipient = ({
 		clearErrors,
 		formState: { errors },
 	} = useFormContext();
-	const { network, senderAddress, fee, recipientAddress } = watch();
+	const { network, senderAddress, fee, recipientAddress, amount } = watch();
 	const { sendTransfer } = useValidation();
 
-	const availableBalance = useMemo(() => {
+	const remainingBalance = useMemo(() => {
 		const senderBalance = profile.wallets().findByAddress(senderAddress)?.balance() || BigNumber.ZERO;
 
 		if (isSingle) return senderBalance;
 
-		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance).minus(fee);
-	}, [addedRecipients, profile, senderAddress, isSingle, fee]);
+		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance);
+	}, [addedRecipients, profile, senderAddress, isSingle]);
 
 	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
 
@@ -99,10 +99,13 @@ export const AddRecipient = ({
 	}, [setValue]);
 
 	useEffect(() => {
-		if (showMultiPaymentOption) return;
+		const remaining = remainingBalance.isLessThanOrEqualTo(BigNumber.ZERO)
+			? BigNumber.ZERO
+			: remainingBalance.minus(amount);
 
-		setIsSingle(true);
-	}, [showMultiPaymentOption]);
+		register("remainingBalance");
+		setValue("remainingBalance", remaining);
+	}, [remainingBalance, setValue, amount, register]);
 
 	useEffect(() => {
 		if (!withDeeplink) return;
@@ -115,9 +118,9 @@ export const AddRecipient = ({
 	}, [recipients, withDeeplink]);
 
 	useEffect(() => {
-		register("amount", sendTransfer.amount(network, availableBalance, addedRecipients, isSingle));
+		register("amount", sendTransfer.amount(network, remainingBalance, addedRecipients, isSingle));
 		register("displayAmount");
-	}, [register, availableBalance, network, sendTransfer, addedRecipients, isSingle]);
+	}, [register, remainingBalance, network, sendTransfer, addedRecipients, isSingle]);
 
 	useEffect(() => {
 		clearErrors();
@@ -234,12 +237,12 @@ export const AddRecipient = ({
 									type="button"
 									data-testid="add-recipient__send-all"
 									onClick={() => {
-										setValue("displayAmount", availableBalance.toHuman());
-										setValue("amount", availableBalance.toString(), {
+										setValue("displayAmount", remainingBalance.minus(fee).toHuman());
+										setValue("amount", remainingBalance.minus(fee).toString(), {
 											shouldValidate: true,
 											shouldDirty: true,
 										});
-										singleRecipientOnChange(availableBalance.toString(), recipientAddress);
+										singleRecipientOnChange(remainingBalance.toString(), recipientAddress);
 									}}
 									className="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
 								>

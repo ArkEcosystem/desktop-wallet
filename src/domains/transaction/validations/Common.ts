@@ -1,13 +1,17 @@
-import { Coins,Contracts } from "@arkecosystem/platform-sdk";
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const common = (t: any) => ({
-	fee: (fees: Contracts.TransactionFee, balance: BigNumber = BigNumber.ZERO, network: Coins.Network) => ({
+	fee: (fees: Contracts.TransactionFee, balance: BigNumber = BigNumber.ZERO, network?: Coins.Network) => ({
 		validate: {
 			valid: (fee?: string | number) => {
 				const feeSatoshi = BigNumber.make(fee || 0);
 
-				if (balance.isZero()) {
+				if (!network?.coin()) {
+					return true;
+				}
+
+				if (balance.isZero() || balance.isNegative()) {
 					return t("TRANSACTION.VALIDATION.EMPTY_BALANCE");
 				}
 
