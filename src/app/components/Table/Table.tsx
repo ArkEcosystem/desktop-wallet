@@ -59,7 +59,7 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 										key={thIndex}
 										className={`relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold ${
 											column.className?.includes("no-border") ? "" : "hasBorder"
-										} ${column.minimumWidth ? "w-1" : ""}`}
+										} ${column.minimumWidth ? "w-1" : column.cellWidth || ""}`}
 										data-testid={`table__th--${thIndex}`}
 										{...column.getHeaderProps(column.getSortByToggleProps())}
 									>
