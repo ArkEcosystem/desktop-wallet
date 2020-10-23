@@ -25,7 +25,7 @@ export const FormStep = ({
 	const { t } = useTranslation();
 	const { getValues, setValue, watch } = useFormContext();
 	const { recipients, smartbridge } = getValues();
-	const { senderAddress, fee } = watch();
+	const { fee, network, senderAddress } = watch();
 
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 	const maxAmount = senderWallet ? BigNumber.make(senderWallet.balance()).minus(fee) : BigNumber.ZERO;
@@ -54,14 +54,15 @@ export const FormStep = ({
 				<>
 					<div data-testid="recipient-address">
 						<AddRecipient
-							withDeeplink={!!deeplinkProps?.recipient}
 							assetSymbol={senderWallet?.currency()}
 							maxAvailableAmount={maxAmount}
 							profile={profile}
+							recipients={getRecipients()}
+							showMultiPaymentOption={network?.can("Transaction.multiPayment")}
+							withDeeplink={!!deeplinkProps?.recipient}
 							onChange={(recipients: RecipientListItem[]) =>
 								setValue("recipients", recipients, { shouldValidate: true, shouldDirty: true })
 							}
-							recipients={getRecipients()}
 						/>
 					</div>
 
@@ -74,8 +75,8 @@ export const FormStep = ({
 							className="pr-24"
 							maxLengthLabel="255"
 							defaultValue={smartbridge}
-							onChange={(e: ChangeEvent<HTMLInputElement>) =>
-								setValue("smartbridge", e.target.value, { shouldDirty: true, shouldValidate: true })
+							onChange={(event: ChangeEvent<HTMLInputElement>) =>
+								setValue("smartbridge", event.target.value, { shouldDirty: true, shouldValidate: true })
 							}
 						/>
 						<FormHelperText />
