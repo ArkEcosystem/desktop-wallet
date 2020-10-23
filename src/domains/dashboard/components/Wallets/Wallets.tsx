@@ -129,11 +129,11 @@ export const Wallets = ({
 		wallets
 			.filter((wallet: any) => {
 				if (walletsDisplayType === "starred") {
-					return wallet.isStarred() && !wallet.isBlank;
+					return wallet.isStarred();
 				}
 
 				if (walletsDisplayType === "ledger") {
-					return wallet.isLedger() && !wallet.isBlank;
+					return wallet.isLedger();
 				}
 
 				return wallet && !wallet.isBlank;

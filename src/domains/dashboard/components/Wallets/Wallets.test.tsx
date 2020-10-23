@@ -15,9 +15,10 @@ let wallets: ReadWriteWallet[];
 
 // Wallet filter properties
 const filterProperties = {
+	networks,
 	visibleTransactionsView: true,
 	visiblePortfolioView: true,
-	networks,
+	walletsDisplayType: "all",
 	onNetworkChange: (changedNetwork: any, newNetworksList: any) => {
 		console.log("changed network", changedNetwork);
 		console.log("changed network new list", newNetworksList);
@@ -28,11 +29,11 @@ const filterProperties = {
 	toggleTransactionsView: (isChecked: boolean) => {
 		console.log("show transactions view", isChecked);
 	},
-	onWalletsDisplay: () => {
-		alert("on Wallet display");
-	},
 	onViewAllNetworks: () => {
 		alert("on view all networks");
+	},
+	onWalletsDisplayType: () => {
+		alert("on wallets display");
 	},
 };
 
@@ -48,6 +49,27 @@ describe("Wallets", () => {
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets wallets={wallets} filterProperties={filterProperties} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getAllByTestId("WalletCard__blank")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it.each(["all", "starred", "ledger"])("should render wallets type in a grid view", (type) => {
+		const { asFragment, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets
+					wallets={wallets}
+					filterProperties={{
+						...filterProperties,
+						walletsDisplayType: type,
+					}}
+				/>
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -103,8 +125,29 @@ describe("Wallets", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it.each(["all", "starred", "ledger"])("should render wallets type in a list view", (type) => {
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets
+					wallets={wallets}
+					viewType="list"
+					filterProperties={{
+						...filterProperties,
+						walletsDisplayType: type,
+					}}
+				/>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should redirect when clicking on row", () => {
-		const { getByTestId, getByText } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets wallets={wallets} viewType="list" filterProperties={filterProperties} />
 			</Route>,
@@ -115,7 +158,7 @@ describe("Wallets", () => {
 		);
 
 		act(() => {
-			fireEvent.click(within(getByTestId("WalletTable")).getByText(wallets[0].alias()));
+			fireEvent.click(within(getByTestId("WalletTable")).getByText(wallets[0].alias()!));
 		});
 
 		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallets[0].id()}`);
