@@ -50,7 +50,7 @@ export const FilterWallets = ({
 	};
 
 	return (
-		<div className="flex flex-col text-left">
+		<div className="flex flex-col text-left" data-testid="FilterWallets">
 			<div className="mb-8">
 				<div className="font-semibold text-theme-secondary-text">
 					{t("DASHBOARD.FILTER_WALLETS.CRYPTOASSET.TITLE")}
