@@ -8,7 +8,7 @@ import { Loader } from "app/components/Loader";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/components/DelegateResignationForm";
 import React, { useEffect, useState } from "react";
@@ -28,7 +28,8 @@ export const SendEntityResignation = ({ formDefaultData, passwordType }: any) =>
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 
-	const { formState, getValues, setError } = form;
+	const { common } = useValidation();
+	const { formState, getValues, setError, register } = form;
 	const { isValid } = formState;
 
 	const [activeTab, setActiveTab] = useState(1);
@@ -80,6 +81,10 @@ export const SendEntityResignation = ({ formDefaultData, passwordType }: any) =>
 			label: t("COMMON.BACK_TO_WALLET"),
 		},
 	];
+
+	useEffect(() => {
+		register("fee", common.fee(fees));
+	}, [register, common]);
 
 	useEffect(() => {
 		const transactionTypes: { [key: string]: string } = {

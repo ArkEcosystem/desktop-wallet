@@ -5,10 +5,12 @@ import { InputFee } from "domains/transaction/components/InputFee";
 import { TransactionDetail, TransactionSender } from "domains/transaction/components/TransactionDetail";
 import { StepProps } from "domains/transaction/pages/SendEntityResignation/SendEntityResignation.models";
 import React from "react";
+import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const FormStep = ({ fees, senderWallet }: StepProps) => {
 	const { t } = useTranslation();
+	const { setValue } = useFormContext();
 
 	return (
 		<section data-testid="SendDelegateResignation__form-step" className="space-y-8">
@@ -43,6 +45,9 @@ export const FormStep = ({ fees, senderWallet }: StepProps) => {
 						avg={fees.avg}
 						max={fees.max}
 						step={0.01}
+						onChange={(currency) =>
+							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
+						}
 					/>
 				</FormField>
 			</div>

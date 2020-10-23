@@ -4,12 +4,14 @@ import { Header } from "app/components/Header";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TransactionDetail, TransactionSender } from "domains/transaction/components/TransactionDetail";
 import React from "react";
+import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { EntityResignationStepProps } from "./EntityResignationSteps.models";
 
 export const FormStep = ({ entity, fees }: EntityResignationStepProps) => {
 	const { t } = useTranslation();
+	const { setValue } = useFormContext();
 
 	return (
 		<div data-testid="SendEntityResignation__form-step" className="space-y-8">
@@ -44,6 +46,9 @@ export const FormStep = ({ entity, fees }: EntityResignationStepProps) => {
 						avg={fees.avg}
 						max={fees.max}
 						step={0.01}
+						onChange={(currency) =>
+							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
+						}
 					/>
 				</FormField>
 			</div>
