@@ -48,9 +48,11 @@ const getType = (transaction: Contracts.SignedTransactionData): string => {
 };
 
 export const SummaryStep = ({
+	senderWallet,
 	wallet,
 	transaction,
 }: {
+	senderWallet?: ReadWriteWallet;
 	wallet: ReadWriteWallet;
 	transaction: Contracts.SignedTransactionData;
 }) => {
@@ -125,7 +127,7 @@ export const SummaryStep = ({
 				<Header title={t(titles[type])} />
 			</div>
 
-			<TransactionSender address={senderAddress} alias={wallet.alias()} border={false} />
+			<TransactionSender address={senderAddress} wallet={senderWallet} border={false} />
 
 			{recipients && <TransactionRecipients currency={wallet.currency()} recipients={recipients} />}
 

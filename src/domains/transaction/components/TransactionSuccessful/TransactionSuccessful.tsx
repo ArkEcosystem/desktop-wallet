@@ -43,9 +43,8 @@ export const TransactionSuccessful = ({ children, transaction, senderWallet }: T
 
 						<TransactionSender
 							address={senderWallet.address()}
-							alias={senderWallet.alias()}
+							wallet={senderWallet}
 							labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
-							isDelegate={senderWallet.isDelegate() && !senderWallet.isResignedDelegate()}
 						/>
 					</>
 				)}

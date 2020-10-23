@@ -56,21 +56,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
               <div
                 class="text-sm font-semibold text-theme-neutral-700"
               >
-                <span
-                  class="mr-1"
-                >
-                  Sender
-                </span>
-                <div
-                  class="sc-AxhUy kDFfAu"
-                  color="warning"
-                >
-                  <span
-                    class="text-sm"
-                  >
-                    Your address
-                  </span>
-                </div>
+                Sender
               </div>
               <div
                 class="font-semibold"
@@ -82,7 +68,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    ARK Wallet 1
                   </span>
                   <span
                     class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
@@ -388,21 +374,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
               <div
                 class="text-sm font-semibold text-theme-neutral-700"
               >
-                <span
-                  class="mr-1"
-                >
-                  Sender
-                </span>
-                <div
-                  class="sc-AxhUy kDFfAu"
-                  color="warning"
-                >
-                  <span
-                    class="text-sm"
-                  >
-                    Your address
-                  </span>
-                </div>
+                Sender
               </div>
               <div
                 class="font-semibold"
@@ -414,7 +386,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    ARK Wallet 1
                   </span>
                   <span
                     class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
@@ -732,7 +704,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    ARK Wallet 1
                   </span>
                   <span
                     class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
@@ -746,19 +718,6 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
             <div
               class="flex items-center -space-x-2"
             >
-              <div
-                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
@@ -1031,7 +990,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    ARK Wallet 1
                   </span>
                   <span
                     class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
@@ -1045,19 +1004,6 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
             <div
               class="flex items-center -space-x-2"
             >
-              <div
-                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
@@ -1362,7 +1308,7 @@ exports[`TransactionDetailModal should render a legacy magistrate modal 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    ARK Wallet 1
                   </span>
                   <span
                     class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
@@ -1376,19 +1322,6 @@ exports[`TransactionDetailModal should render a legacy magistrate modal 1`] = `
             <div
               class="flex items-center -space-x-2"
             >
-              <div
-                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
@@ -1661,7 +1594,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    ARK Wallet 1
                   </span>
                   <span
                     class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
@@ -1675,19 +1608,6 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
             <div
               class="flex items-center -space-x-2"
             >
-              <div
-                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
@@ -2409,7 +2329,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    ARK Wallet 1
                   </span>
                   <span
                     class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
@@ -2423,19 +2343,6 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
             <div
               class="flex items-center -space-x-2"
             >
-              <div
-                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
@@ -2708,7 +2615,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    ARK Wallet 1
                   </span>
                   <span
                     class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
@@ -2722,19 +2629,6 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
             <div
               class="flex items-center -space-x-2"
             >
-              <div
-                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
@@ -3132,7 +3026,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    ARK Wallet 1
                   </span>
                   <span
                     class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
@@ -3146,19 +3040,6 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
             <div
               class="flex items-center -space-x-2"
             >
-              <div
-                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"
@@ -3583,7 +3464,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    ARK Wallet 1
                   </span>
                   <span
                     class="sc-Axmtr hBVTto text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
@@ -3597,19 +3478,6 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
             <div
               class="flex items-center -space-x-2"
             >
-              <div
-                class="sc-AxjAm jcZnVc border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
-              >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                 data-testid="Avatar"

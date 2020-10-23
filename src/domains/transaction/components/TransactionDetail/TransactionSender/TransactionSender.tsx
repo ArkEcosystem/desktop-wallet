@@ -1,3 +1,4 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -9,12 +10,14 @@ import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail"
 
 type TransactionSenderProps = {
 	address: string;
-	alias?: string;
-	isDelegate?: boolean;
+	wallet?: ReadWriteWallet;
 } & TransactionDetailProps;
 
-export const TransactionSender = ({ address, alias, isDelegate, ...props }: TransactionSenderProps) => {
+export const TransactionSender = ({ address, wallet, ...props }: TransactionSenderProps) => {
 	const { t } = useTranslation();
+
+	const alias = wallet?.alias() || (wallet?.isDelegate() ? wallet.username() : undefined);
+	const isDelegate = wallet?.isDelegate() && !wallet?.isResignedDelegate();
 
 	return (
 		<TransactionDetail

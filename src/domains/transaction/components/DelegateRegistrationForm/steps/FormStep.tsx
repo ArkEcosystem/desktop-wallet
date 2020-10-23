@@ -51,7 +51,7 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 
 			<TransactionSender
 				address={wallet.address()}
-				alias={wallet.alias()}
+				wallet={wallet}
 				labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 				borderPosition="bottom"
 				paddingPosition="bottom"

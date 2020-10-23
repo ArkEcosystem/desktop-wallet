@@ -1,3 +1,4 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import {
 	TransactionConfirmations,
@@ -6,19 +7,25 @@ import {
 	TransactionSender,
 	TransactionTimestamp,
 } from "domains/transaction/components/TransactionDetail";
-import React, { useMemo } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 type LegacyMagistrateDetailProps = {
 	isOpen: boolean;
+	senderWallet?: ReadWriteWallet;
 	transaction: any;
+	wallet: any;
 	onClose?: any;
 };
 
-export const LegacyMagistrateDetail = ({ isOpen, transaction, onClose }: LegacyMagistrateDetailProps) => {
+export const LegacyMagistrateDetail = ({
+	isOpen,
+	senderWallet,
+	transaction,
+	wallet,
+	onClose,
+}: LegacyMagistrateDetailProps) => {
 	const { t } = useTranslation();
-
-	const wallet = useMemo(() => transaction.wallet(), [transaction]);
 
 	const titles: Record<string, string> = {
 		legacyBusinessRegistration: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BUSINESS_REGISTRATION"),
@@ -33,8 +40,7 @@ export const LegacyMagistrateDetail = ({ isOpen, transaction, onClose }: LegacyM
 		<Modal title={titles[transaction.type()]} isOpen={isOpen} onClose={onClose}>
 			<TransactionSender
 				address={transaction.sender()}
-				alias={wallet.alias()}
-				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+				wallet={senderWallet}
 				border={false}
 			/>
 

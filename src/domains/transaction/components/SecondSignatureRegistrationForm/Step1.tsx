@@ -50,7 +50,7 @@ export const GenerationStep = ({
 
 			<TransactionSender
 				address={wallet.address()}
-				alias={wallet.alias()}
+				wallet={wallet}
 				labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 				borderPosition="bottom"
 				paddingPosition="bottom"

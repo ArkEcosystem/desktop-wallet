@@ -10,12 +10,10 @@ describe("DelegateResignationDetail", () => {
 		const { asFragment, getByTestId } = render(
 			<DelegateResignationDetail
 				isOpen={false}
-				transaction={{
-					...TransactionFixture,
-					wallet: () => ({
-						...TransactionFixture.wallet(),
-						username: () => "ARK Wallet",
-					}),
+				transaction={TransactionFixture}
+				wallet={{
+					...TransactionFixture.wallet(),
+					username: () => "ARK Wallet",
 				}}
 			/>,
 		);
@@ -28,12 +26,10 @@ describe("DelegateResignationDetail", () => {
 		const { asFragment, getByTestId } = render(
 			<DelegateResignationDetail
 				isOpen={true}
-				transaction={{
-					...TransactionFixture,
-					wallet: () => ({
-						...TransactionFixture.wallet(),
-						username: () => "ARK Wallet",
-					}),
+				transaction={TransactionFixture}
+				wallet={{
+					...TransactionFixture.wallet(),
+					username: () => "ARK Wallet",
 				}}
 			/>,
 		);
@@ -48,12 +44,11 @@ describe("DelegateResignationDetail", () => {
 				isOpen={true}
 				transaction={{
 					...TransactionFixture,
-					username: () => "Ark Wallet",
 					isConfirmed: () => true,
-					wallet: () => ({
-						...TransactionFixture.wallet(),
-						username: () => "ARK Wallet",
-					}),
+				}}
+				wallet={{
+					...TransactionFixture.wallet(),
+					username: () => "ARK Wallet",
 				}}
 			/>,
 		);

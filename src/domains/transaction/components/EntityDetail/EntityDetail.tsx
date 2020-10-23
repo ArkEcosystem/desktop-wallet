@@ -1,3 +1,4 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import {
 	TransactionConfirmations,
@@ -11,14 +12,20 @@ import { useTranslation } from "react-i18next";
 
 type EntityDetailProps = {
 	isOpen: boolean;
+	senderWallet?: ReadWriteWallet;
 	transaction: any;
+	wallet: any;
 	onClose?: any;
 };
 
-export const EntityDetail = ({ isOpen, transaction, onClose }: EntityDetailProps) => {
+export const EntityDetail = ({
+	isOpen,
+	senderWallet,
+	transaction,
+	wallet,
+	onClose,
+}: EntityDetailProps) => {
 	const { t } = useTranslation();
-
-	const wallet = useMemo(() => transaction.wallet(), [transaction]);
 
 	const getEntityTitle = () => {
 		let entityTitle = "";
@@ -78,8 +85,7 @@ export const EntityDetail = ({ isOpen, transaction, onClose }: EntityDetailProps
 		<Modal title={getEntityTitle()} isOpen={isOpen} onClose={onClose}>
 			<TransactionSender
 				address={transaction.sender()}
-				alias={wallet.alias()}
-				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+				wallet={senderWallet}
 				border={false}
 			/>
 

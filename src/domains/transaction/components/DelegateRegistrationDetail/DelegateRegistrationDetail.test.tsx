@@ -10,7 +10,14 @@ describe("DelegateRegistrationDetail", () => {
 		const { asFragment, getByTestId } = render(
 			<DelegateRegistrationDetail
 				isOpen={false}
-				transaction={{ ...TransactionFixture, username: () => "Ark Wallet" }}
+				transaction={{
+					...TransactionFixture,
+					username: () => "ARK Wallet",
+				}}
+				wallet={{
+					...TransactionFixture.wallet(),
+					username: () => "ARK Wallet",
+				}}
 			/>,
 		);
 
@@ -22,7 +29,14 @@ describe("DelegateRegistrationDetail", () => {
 		const { asFragment, getByTestId } = render(
 			<DelegateRegistrationDetail
 				isOpen={true}
-				transaction={{ ...TransactionFixture, username: () => "Ark Wallet" }}
+				transaction={{
+					...TransactionFixture,
+					username: () => "ARK Wallet",
+				}}
+				wallet={{
+					...TransactionFixture.wallet(),
+					username: () => "ARK Wallet",
+				}}
 			/>,
 		);
 
@@ -36,8 +50,12 @@ describe("DelegateRegistrationDetail", () => {
 				isOpen={true}
 				transaction={{
 					...TransactionFixture,
-					username: () => "Ark Wallet",
+					username: () => "ARK Wallet",
 					isConfirmed: () => true,
+				}}
+				wallet={{
+					...TransactionFixture.wallet(),
+					username: () => "ARK Wallet",
 				}}
 			/>,
 		);

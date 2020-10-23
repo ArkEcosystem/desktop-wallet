@@ -22,8 +22,8 @@ describe("MultiSignatureRegistrationDetail", () => {
 					...TransactionFixture,
 					min: () => 2,
 					publicKeys: () => [wallet.publicKey()!, profile.wallets().last().publicKey()],
-					wallet: () => wallet,
 				}}
+				wallet={wallet}
 				isOpen
 			/>,
 		);

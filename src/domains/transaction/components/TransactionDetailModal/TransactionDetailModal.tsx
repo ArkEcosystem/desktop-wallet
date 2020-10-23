@@ -10,7 +10,7 @@ import { MultiSignatureRegistrationDetail } from "domains/transaction/components
 import { SecondSignatureDetail } from "domains/transaction/components/SecondSignatureDetail";
 import { TransferDetail } from "domains/transaction/components/TransferDetail";
 import { VoteDetail } from "domains/transaction/components/VoteDetail";
-import React from "react";
+import React, { useMemo } from "react";
 
 type TransactionDetailModalProps = {
 	isOpen: boolean;
@@ -21,11 +21,11 @@ type TransactionDetailModalProps = {
 export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProps) => {
 	const activeProfile = useActiveProfile();
 
-	const ticker = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!;
-	const walletAlias = activeProfile.wallets().findByAddress(transactionItem.sender())?.alias();
-	const recipientWalletAlias = activeProfile.wallets().findByAddress(transactionItem.recipient())?.alias();
+	const senderWallet = useMemo(() => activeProfile.wallets().findByAddress(transactionItem.sender()), [transactionItem]);
+	const wallet = useMemo(() => transactionItem.wallet(), [transactionItem]);
 
 	const transactionType = transactionItem.type();
+
 	let TransactionModal;
 
 	switch (transactionType) {
@@ -79,10 +79,9 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 	return (
 		<TransactionModal
 			isOpen={isOpen}
+			senderWallet={senderWallet}
 			transaction={transactionItem}
-			ticker={ticker}
-			walletAlias={walletAlias}
-			recipientWalletAlias={recipientWalletAlias}
+			wallet={wallet}
 			onClose={onClose}
 		/>
 	);

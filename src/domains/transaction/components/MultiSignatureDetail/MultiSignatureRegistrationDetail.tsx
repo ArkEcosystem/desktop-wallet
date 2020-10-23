@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, MultiSignatureData } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, MultiSignatureData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Modal } from "app/components/Modal";
 import {
@@ -14,18 +14,21 @@ import { useTranslation } from "react-i18next";
 
 type MultisignatureRegistrationDetailProps = {
 	isOpen: boolean;
+	senderWallet?: ReadWriteWallet;
 	transaction: ExtendedTransactionData;
+	wallet: any;
 	onClose?: () => void;
 };
 
 export const MultiSignatureRegistrationDetail = ({
 	isOpen,
+	senderWallet,
 	transaction,
+	wallet,
 	onClose,
 }: MultisignatureRegistrationDetailProps) => {
 	const { t } = useTranslation();
 
-	const wallet = transaction.wallet();
 	const [participants, setParticipants] = useState<string[]>([]);
 	const [generatedAddress, setGeneratedAddress] = useState<string | undefined>(undefined);
 
@@ -54,7 +57,11 @@ export const MultiSignatureRegistrationDetail = ({
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE")} isOpen={isOpen} onClose={onClose}>
-			<TransactionSender address={transaction.sender()} alias={wallet.alias()} border={false} />
+			<TransactionSender
+				address={transaction.sender()}
+				wallet={senderWallet}
+				border={false}
+			/>
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 

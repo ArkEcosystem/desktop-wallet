@@ -62,9 +62,8 @@ export const FirstStep = ({
 
 				<TransactionSender
 					address={wallet.address()}
-					alias={wallet.alias()}
+					wallet={wallet}
 					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
-					isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
 				/>
 
 				{unvotes.length > 0 && (

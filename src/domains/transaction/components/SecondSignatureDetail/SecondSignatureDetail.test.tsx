@@ -8,7 +8,8 @@ import { SecondSignatureDetail } from "./SecondSignatureDetail";
 describe("SecondSignatureDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
-			<SecondSignatureDetail isOpen={false} transaction={TransactionFixture} />,
+			<SecondSignatureDetail isOpen={false} transaction={TransactionFixture}
+				wallet={TransactionFixture.wallet()} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -17,7 +18,8 @@ describe("SecondSignatureDetail", () => {
 
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
-			<SecondSignatureDetail isOpen={true} transaction={TransactionFixture} />,
+			<SecondSignatureDetail isOpen={true} transaction={TransactionFixture}
+				wallet={TransactionFixture.wallet()} />,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SECOND_SIGNATURE_DETAIL.TITLE);
@@ -28,12 +30,10 @@ describe("SecondSignatureDetail", () => {
 		const { asFragment, getByTestId } = render(
 			<SecondSignatureDetail
 				isOpen={true}
-				transaction={{
-					...TransactionFixture,
-					wallet: () => ({
-						...TransactionFixture.wallet(),
-						alias: () => undefined,
-					}),
+				transaction={TransactionFixture}
+				wallet={{
+					...TransactionFixture.wallet(),
+					alias: () => undefined,
 				}}
 			/>,
 		);
@@ -50,6 +50,7 @@ describe("SecondSignatureDetail", () => {
 					...TransactionFixture,
 					isConfirmed: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 

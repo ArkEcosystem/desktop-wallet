@@ -48,7 +48,11 @@ describe("VoteDetail", () => {
 	it("should not render if not open", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<VoteDetail isOpen={false} transaction={TransactionFixture} />
+				<VoteDetail
+					isOpen={false}
+					transaction={TransactionFixture}
+					wallet={TransactionFixture.wallet()}
+				/>
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -70,6 +74,7 @@ describe("VoteDetail", () => {
 						votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 						unvotes: () => [],
 					}}
+					wallet={TransactionFixture.wallet()}
 				/>
 			</Route>,
 			{
@@ -98,6 +103,7 @@ describe("VoteDetail", () => {
 						votes: () => [],
 						unvotes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 					}}
+					wallet={TransactionFixture.wallet()}
 				/>
 			</Route>,
 			{
@@ -126,6 +132,7 @@ describe("VoteDetail", () => {
 						votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 						unvotes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 					}}
+					wallet={TransactionFixture.wallet()}
 				/>
 			</Route>,
 			{

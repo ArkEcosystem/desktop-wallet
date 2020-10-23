@@ -28,7 +28,7 @@ export const ReviewStep = ({ entity, fees }: EntityResignationStepProps) => {
 
 				<TransactionSender
 					address={entity.wallet().address()}
-					alias={entity.wallet().alias()}
+					wallet={entity.wallet()}
 					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 				/>
 

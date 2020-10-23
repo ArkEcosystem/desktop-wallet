@@ -1,3 +1,4 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import {
 	TransactionAmount,
@@ -9,36 +10,31 @@ import {
 	TransactionSender,
 	TransactionTimestamp,
 } from "domains/transaction/components/TransactionDetail";
-import React, { useMemo } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 type TransferDetailProps = {
 	isOpen: boolean;
-	ticker?: string;
+	senderWallet?: ReadWriteWallet;
 	transaction: any;
-	walletAlias?: string;
-	recipientWalletAlias?: string;
+	wallet: any;
 	onClose?: any;
 };
 
 export const TransferDetail = ({
 	isOpen,
-	ticker,
+	senderWallet,
 	transaction,
-	walletAlias,
-	recipientWalletAlias,
+	wallet,
 	onClose,
 }: TransferDetailProps) => {
 	const { t } = useTranslation();
-
-	const wallet = useMemo(() => transaction.wallet(), [transaction]);
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			<TransactionSender
 				address={transaction.sender()}
-				alias={wallet.alias()}
-				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+				wallet={senderWallet}
 				border={false}
 			/>
 

@@ -25,7 +25,7 @@ export const ReviewStep = ({ fees, senderWallet }: StepProps) => {
 
 				<TransactionSender
 					address={senderWallet.address()}
-					alias={senderWallet.alias()}
+					wallet={senderWallet}
 					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 				/>
 

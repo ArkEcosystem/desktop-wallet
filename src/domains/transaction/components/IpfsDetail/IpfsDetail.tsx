@@ -1,3 +1,4 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
@@ -9,26 +10,31 @@ import {
 	TransactionSender,
 	TransactionTimestamp,
 } from "domains/transaction/components/TransactionDetail";
-import React, { useMemo } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 type IpfsDetailProps = {
 	isOpen: boolean;
-	transaction?: any;
+	senderWallet?: ReadWriteWallet;
+	transaction: any;
+	wallet: any;
 	onClose?: any;
 };
 
-export const IpfsDetail = ({ isOpen, transaction, onClose }: IpfsDetailProps) => {
+export const IpfsDetail = ({
+	isOpen,
+	senderWallet,
+	transaction,
+	wallet,
+	onClose,
+}: IpfsDetailProps) => {
 	const { t } = useTranslation();
-
-	const wallet = useMemo(() => transaction.wallet(), [transaction]);
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_IPFS_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			<TransactionSender
 				address={transaction.sender()}
-				alias={wallet.alias()}
-				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+				wallet={senderWallet}
 				border={false}
 			/>
 

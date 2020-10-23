@@ -34,7 +34,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 				<TransactionSender
 					address={wallet.address()}
-					alias={wallet.alias()}
+					wallet={wallet}
 					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 				/>
 

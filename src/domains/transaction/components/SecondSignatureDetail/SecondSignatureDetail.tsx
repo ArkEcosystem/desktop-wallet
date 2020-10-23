@@ -1,3 +1,4 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import {
 	TransactionConfirmations,
@@ -6,26 +7,31 @@ import {
 	TransactionSender,
 	TransactionTimestamp,
 } from "domains/transaction/components/TransactionDetail";
-import React, { useMemo } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 type SecondSignatureDetailProps = {
 	isOpen: boolean;
+	senderWallet?: ReadWriteWallet;
 	transaction: any;
+	wallet: any;
 	onClose?: any;
 };
 
-export const SecondSignatureDetail = ({ isOpen, transaction, onClose }: SecondSignatureDetailProps) => {
+export const SecondSignatureDetail = ({
+	isOpen,
+	senderWallet,
+	transaction,
+	wallet,
+	onClose,
+}: SecondSignatureDetailProps) => {
 	const { t } = useTranslation();
-
-	const wallet = useMemo(() => transaction.wallet(), [transaction]);
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_SECOND_SIGNATURE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			<TransactionSender
 				address={transaction.sender()}
-				alias={wallet.alias()}
-				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+				wallet={senderWallet}
 				border={false}
 			/>
 

@@ -1,4 +1,4 @@
-import { DelegateMapper, ReadOnlyWallet, VoteData } from "@arkecosystem/platform-sdk-profiles";
+import { DelegateMapper, ReadOnlyWallet, ReadWriteWallet, VoteData } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import {
@@ -9,20 +9,26 @@ import {
 	TransactionTimestamp,
 	TransactionVotes,
 } from "domains/transaction/components/TransactionDetail";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type VoteDetailProps = {
 	isOpen: boolean;
+	senderWallet?: ReadWriteWallet;
 	transaction: any;
+	wallet: any;
 	onClose?: () => void;
 };
 
-export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailProps) => {
+export const VoteDetail = ({
+	isOpen,
+	senderWallet,
+	transaction,
+	wallet,
+	onClose,
+}: VoteDetailProps) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
-
-	const wallet = useMemo(() => transaction.wallet(), [transaction]);
 
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(true);
 	const [delegates, setDelegates] = useState<{ votes: ReadOnlyWallet[]; unvotes: ReadOnlyWallet[] }>({
@@ -54,8 +60,7 @@ export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailProps) =>
 		<Modal title={t("TRANSACTION.MODAL_VOTE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			<TransactionSender
 				address={transaction.sender()}
-				alias={wallet.alias()}
-				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+				wallet={senderWallet}
 				border={false}
 			/>
 

@@ -7,7 +7,13 @@ import { EntityDetail } from "./EntityDetail";
 
 describe("EntityDetail", () => {
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(<EntityDetail isOpen={false} transaction={TransactionFixture} />);
+		const { asFragment, getByTestId } = render(
+			<EntityDetail
+				isOpen={false}
+				transaction={TransactionFixture}
+				wallet={TransactionFixture.wallet()}
+			/>
+		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
@@ -22,6 +28,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isBusinessEntityRegistration: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -39,10 +46,10 @@ describe("EntityDetail", () => {
 					...TransactionFixture,
 					isTransfer: () => false,
 					isBusinessEntityRegistration: () => true,
-					wallet: () => ({
-						...TransactionFixture.wallet(),
-						alias: () => undefined,
-					}),
+				}}
+				wallet={{
+					...TransactionFixture.wallet(),
+					alias: () => undefined,
 				}}
 			/>,
 		);
@@ -63,6 +70,7 @@ describe("EntityDetail", () => {
 					isBusinessEntityRegistration: () => true,
 					isConfirmed: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -82,6 +90,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isBusinessEntityResignation: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -100,6 +109,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isBusinessEntityUpdate: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -116,6 +126,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isProductEntityRegistration: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -134,6 +145,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isProductEntityResignation: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -152,6 +164,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isProductEntityUpdate: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -168,6 +181,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isPluginEntityRegistration: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -186,6 +200,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isPluginEntityResignation: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -202,6 +217,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isPluginEntityUpdate: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -218,6 +234,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isModuleEntityRegistration: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -236,6 +253,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isModuleEntityResignation: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 
@@ -252,6 +270,7 @@ describe("EntityDetail", () => {
 					isTransfer: () => false,
 					isModuleEntityUpdate: () => true,
 				}}
+				wallet={TransactionFixture.wallet()}
 			/>,
 		);
 

@@ -8,7 +8,11 @@ import { LegacyMagistrateDetail } from "./LegacyMagistrateDetail";
 describe("LegacyMagistrateDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
-			<LegacyMagistrateDetail isOpen={false} transaction={TransactionFixture} />,
+			<LegacyMagistrateDetail
+				isOpen={false}
+				transaction={TransactionFixture}
+				wallet={TransactionFixture.wallet()}
+			/>,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -27,6 +31,7 @@ describe("LegacyMagistrateDetail", () => {
 						isTransfer: () => false,
 						type: () => transactionType,
 					}}
+					wallet={TransactionFixture.wallet()}
 				/>,
 			);
 
