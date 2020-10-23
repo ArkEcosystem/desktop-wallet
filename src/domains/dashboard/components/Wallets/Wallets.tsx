@@ -48,7 +48,8 @@ export const Wallets = ({
 
 	const { t } = useTranslation();
 
-	const walletCardActions: DropdownOption[] = [{ label: t("COMMON.SHOW"), value: "show" }];
+	// const walletCardActions: DropdownOption[] = [{ label: t("COMMON.SHOW"), value: "show" }];
+	const walletCardActions: DropdownOption[] = [];
 
 	const listColumns = [
 		{
