@@ -26,8 +26,8 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
-	const [{ walletDisplay }, setWalletDisplay] = useState(
-		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { walletDisplay: "all" },
+	const [{ walletsDisplayType }, setWalletsDisplayType] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { walletsDisplayType: "all" },
 	);
 	const [{ showPortfolio }, setShowPortfolio] = useState(
 		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { showPortfolio: true },
@@ -100,27 +100,27 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		const updateDashboardSettings = async () => {
 			activeProfile
 				.settings()
-				.set(ProfileSetting.DashboardConfiguration, { showPortfolio, showTransactions, walletDisplay });
+				.set(ProfileSetting.DashboardConfiguration, { showPortfolio, showTransactions, walletsDisplayType });
 			await persist();
 		};
 
 		updateDashboardSettings();
-	}, [activeProfile, persist, showPortfolio, showTransactions, walletDisplay]);
+	}, [activeProfile, persist, showPortfolio, showTransactions, walletsDisplayType]);
 
 	// Wallet controls data
 	const filterProperties = {
 		networks,
-		walletDisplay,
+		walletsDisplayType,
 		visiblePortfolioView: showPortfolio,
 		visibleTransactionsView: showTransactions,
-		onWalletsDisplay: ({ value }: DropdownOption) => {
-			setWalletDisplay({ walletDisplay: value });
-		},
 		togglePortfolioView: (showPortfolio: boolean) => {
 			setShowPortfolio({ showPortfolio });
 		},
 		toggleTransactionsView: (showTransactions: boolean) => {
 			setShowTransactions({ showTransactions });
+		},
+		onWalletsDisplayType: ({ value }: DropdownOption) => {
+			setWalletsDisplayType({ walletsDisplayType: value });
 		},
 	};
 

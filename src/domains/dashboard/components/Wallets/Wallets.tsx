@@ -80,23 +80,21 @@ export const Wallets = ({
 		spaceBetween: 20,
 	};
 
-	const { walletDisplay } = filterProperties;
+	const { walletsDisplayType } = filterProperties;
 
 	// Grid
 	const loadGridWallets = () => {
 		const walletObjects = wallets
 			.filter((wallet: ReadWriteWallet) => {
-				if (walletDisplay === "all") {
-					return wallet;
-				}
-
-				if (walletDisplay === "starred") {
+				if (walletsDisplayType === "starred") {
 					return wallet.isStarred();
 				}
 
-				if (walletDisplay === "ledger") {
+				if (walletsDisplayType === "ledger") {
 					return wallet.isLedger();
 				}
+
+				return wallet;
 			})
 			.map((wallet: ReadWriteWallet) => ({ wallet, actions: walletCardActions }));
 
@@ -129,19 +127,15 @@ export const Wallets = ({
 	const getWalletsForList = () =>
 		wallets
 			.filter((wallet: any) => {
-				if (walletDisplay === "all") {
-					return wallet;
+				if (walletsDisplayType === "starred") {
+					return wallet.isStarred() && !wallet.isBlank;
 				}
 
-				if (walletDisplay === "starred") {
-					return wallet.isStarred();
+				if (walletsDisplayType === "ledger") {
+					return wallet.isLedger() && !wallet.isBlank;
 				}
 
-				if (walletDisplay === "ledger") {
-					return wallet.isLedger();
-				}
-
-				return !wallet.isBlank;
+				return wallet && !wallet.isBlank;
 			})
 			.map((wallet) => ({ wallet }));
 

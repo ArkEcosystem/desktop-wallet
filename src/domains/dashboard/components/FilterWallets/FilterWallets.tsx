@@ -9,31 +9,31 @@ export type FilterWalletsProps = {
 	networks?: any;
 	visiblePortfolioView?: boolean;
 	visibleTransactionsView?: boolean;
-	walletDisplay?: string;
+	walletsDisplayType?: string;
 	togglePortfolioView?: any;
 	toggleTransactionsView?: any;
 	onNetworkChange?: any;
 	onViewAllNetworks?: any;
-	onWalletsDisplay?: any;
+	onWalletsDisplayType?: any;
 };
 
 export const FilterWallets = ({
 	networks,
 	visiblePortfolioView,
 	visibleTransactionsView,
-	walletDisplay,
+	walletsDisplayType,
 	togglePortfolioView,
 	toggleTransactionsView,
 	onNetworkChange,
 	onViewAllNetworks,
-	onWalletsDisplay,
+	onWalletsDisplayType,
 }: FilterWalletsProps) => {
 	const [showPortfolio, setShowPortfolio] = useState(visiblePortfolioView);
 	const [showTransactions, setShowTransactions] = useState(visibleTransactionsView);
 
 	const { t } = useTranslation();
 
-	const walletsDisplayOptions = [
+	const walletDisplayOptions = [
 		{ label: t("COMMON.ALL"), value: "all" },
 		{ label: t("COMMON.STARRED"), value: "starred" },
 		{ label: t("COMMON.LEDGER"), value: "ledger" },
@@ -47,10 +47,6 @@ export const FilterWallets = ({
 	const toggleTransactions = (isChecked: boolean) => {
 		setShowTransactions(isChecked);
 		toggleTransactionsView?.(isChecked);
-	};
-
-	const onWalletClick = (option: DropdownOption) => {
-		onWalletsDisplay?.(option);
 	};
 
 	return (
@@ -76,15 +72,15 @@ export const FilterWallets = ({
 
 					<Dropdown
 						toggleIcon="ChevronDown"
-						options={walletsDisplayOptions}
-						onSelect={onWalletClick}
+						options={walletDisplayOptions}
+						onSelect={(option: DropdownOption) => onWalletsDisplayType?.(option)}
 						toggleContent={
 							<div
 								data-testid="filter-wallets__wallets"
 								className="flex items-center justify-end cursor-pointer text-theme-secondary-text"
 							>
 								<span className="inline-block mr-2 font-semibold">
-									{walletsDisplayOptions.find((option) => option.value === walletDisplay)?.label}
+									{walletDisplayOptions.find((option) => option.value === walletsDisplayType)?.label}
 								</span>
 								<Icon name="ChevronDown" width={12} height={12} />
 							</div>
@@ -142,5 +138,5 @@ FilterWallets.defaultProps = {
 	networks: [],
 	visibleTransactionsView: false,
 	visiblePortfolioView: false,
-	walletDisplay: "all",
+	walletsDisplayType: "all",
 };
