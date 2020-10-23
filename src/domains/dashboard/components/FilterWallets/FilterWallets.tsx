@@ -35,7 +35,7 @@ export const FilterWallets = ({
 
 	const walletDisplayOptions = [
 		{ label: t("COMMON.ALL"), value: "all" },
-		{ label: t("COMMON.STARRED"), value: "starred" },
+		{ label: t("COMMON.FAVORITES"), value: "favorites" },
 		{ label: t("COMMON.LEDGER"), value: "ledger" },
 	];
 

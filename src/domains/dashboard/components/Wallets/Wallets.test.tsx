@@ -60,7 +60,7 @@ describe("Wallets", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.each(["all", "starred", "ledger"])("should render wallets type in a grid view", (type) => {
+	it.each(["all", "favorites", "ledger"])("should render wallets type in a grid view", (type) => {
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets
@@ -125,7 +125,7 @@ describe("Wallets", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.each(["all", "starred", "ledger"])("should render wallets type in a list view", (type) => {
+	it.each(["all", "favorites", "ledger"])("should render wallets type in a list view", (type) => {
 		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets

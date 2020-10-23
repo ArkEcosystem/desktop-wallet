@@ -87,7 +87,7 @@ export const Wallets = ({
 	const loadGridWallets = () => {
 		const walletObjects = wallets
 			.filter((wallet: ReadWriteWallet) => {
-				if (walletsDisplayType === "starred") {
+				if (walletsDisplayType === "favorites") {
 					return wallet.isStarred();
 				}
 
@@ -128,7 +128,7 @@ export const Wallets = ({
 	const getWalletsForList = () =>
 		wallets
 			.filter((wallet: any) => {
-				if (walletsDisplayType === "starred") {
+				if (walletsDisplayType === "favorites") {
 					return wallet.isStarred();
 				}
 
