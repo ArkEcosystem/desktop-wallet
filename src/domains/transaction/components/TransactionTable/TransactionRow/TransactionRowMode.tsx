@@ -19,7 +19,14 @@ type Props = {
 	iconSize?: Size;
 };
 
-export const BaseTransactionRowMode = ({ type, isSent, recipient, recipients, circleShadowColor, iconSize }: Props) => {
+export const BaseTransactionRowMode = ({
+	type,
+	isSent,
+	recipient,
+	recipients,
+	circleShadowColor,
+	iconSize = "lg",
+}: Props) => {
 	const { t } = useTranslation();
 
 	const tooltipContent = isSent ? t("TRANSACTION.SENT") : t("TRANSACTION.RECEIVED");
@@ -38,7 +45,6 @@ export const BaseTransactionRowMode = ({ type, isSent, recipient, recipients, ci
 			</Tippy>
 			<TransactionRowRecipientIcon
 				size={iconSize}
-				recipients={recipients}
 				recipient={recipient}
 				type={type}
 				className={`bg-theme-background font-semibold ${modeCircleStyle}`}

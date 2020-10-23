@@ -57,8 +57,15 @@ export const translations: { [key: string]: any } = {
 	IPFS_NOT_FOUND: "Unable to find ipfs data for transaction [{{transactionId}}]",
 
 	MULTISIGNATURE: {
+		GENERATED_ADDRESS: "Generated Address",
+		AWAITING_CONFIRMATIONS: "Awaiting confirmations",
+		AWAITING_OUR_SIGNATURE: "Awaiting our signature",
+		AWAITING_OTHER_SIGNATURE_COUNT: "Awaiting {{count}} other signature",
+		AWAITING_OTHER_SIGNATURE_COUNT_plural: "Awaiting {{count}} other signatures",
+		AWAITING_FINAL_SIGNATURE: "Awaiting final signature",
+		READY: "Ready to broadcast",
 		MIN_SIGNATURES: "Minimum Required Signatures",
-		PARTICIPANT_ADDRESS: "Participant Address",
+		PARTICIPANT: "Multisignature Participant",
 		PARTICIPANTS: "Multisignature Participants",
 		ADD_PARTICIPANT: "Add Participant",
 		OUT_OF_LENGTH: "out of {{ length }}",
@@ -84,6 +91,7 @@ export const translations: { [key: string]: any } = {
 		DELEGATE_REGISTRATION: "Delegate Registration",
 		VOTE: "Vote",
 		UNVOTE: "Unvote",
+		VOTE_COMBINATION: "Vote / Unvote",
 		MULTI_SIGNATURE: "Multisignature",
 		IPFS: "IPFS",
 		MULTI_PAYMENT: "Multipayment",
@@ -156,6 +164,12 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_SECOND_SIGNATURE_DETAIL: {
 		TITLE: "Second Signature",
+	},
+
+	MODAL_SEARCH_RECIPIENT: {
+		TITLE: "Select Recipient",
+		DESCRIPTION: "Find and select a recipient from your contacts and wallets",
+		PLACEHOLDER: "Search...",
 	},
 
 	LEDGER_CONFIRMATION: {
@@ -254,6 +268,7 @@ export const translations: { [key: string]: any } = {
 		REVIEW_STEP: {
 			TITLE: "Transaction Review",
 			DESCRIPTION: "Review your multisignature registration details",
+			GENERATED_ADDRESS: "Generated Address",
 			TYPE: "Multisignature Registration",
 		},
 	},
@@ -366,5 +381,9 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Transaction Sent",
 		DESCRIPTION:
 			"Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:",
+	},
+
+	VALIDATION: {
+		LOW_BALANCE: "The balance it too low ({{balance}} {{ coinId }})",
 	},
 };

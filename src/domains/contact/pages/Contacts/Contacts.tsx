@@ -85,29 +85,27 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	const listColumns = [
 		{
-			Header: "ContactAvatar",
-			disableSortBy: true,
-			className: "hidden",
-		},
-		{
 			Header: t("COMMON.NAME"),
 			accessor: "name",
+			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.CRYPTOASSET"),
 			className: "justify-center",
-		},
-		{
-			Header: "Avatar",
-			disableSortBy: true,
-			className: "hidden",
+			minimumWidth: true,
 		},
 		{
 			Header: t("COMMON.ADDRESS"),
+			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.ACCOUNT_TYPE"),
-			className: "justify-center",
+			className: "whitespace-no-wrap justify-center no-border",
+			minimumWidth: true,
+		},
+		{
+			Header: "Actions",
+			className: "hidden",
 		},
 	];
 
@@ -153,7 +151,6 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 							<Table columns={listColumns} data={contacts}>
 								{(contact: Contact) => (
 									<ContactListItem
-										template="contacts"
 										item={contact}
 										options={contactOptions}
 										onAction={(action: { value: any }) =>

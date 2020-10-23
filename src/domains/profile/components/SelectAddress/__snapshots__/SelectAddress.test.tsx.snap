@@ -13,7 +13,7 @@ exports[`SelectAddress should render disabled 1`] = `
         class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
       />
       <div
-        class="inline-block truncate align-middle"
+        class="inline-flex items-center"
       />
       <div
         class="absolute flex items-center space-x-3 right-4"
@@ -52,7 +52,7 @@ exports[`SelectAddress should render empty 1`] = `
         class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
       />
       <div
-        class="inline-block truncate align-middle"
+        class="inline-flex items-center"
       />
       <div
         class="absolute flex items-center space-x-3 right-4"
@@ -91,7 +91,7 @@ exports[`SelectAddress should render invalid 1`] = `
         class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
       />
       <div
-        class="inline-block truncate align-middle"
+        class="inline-flex items-center"
       />
       <div
         class="absolute flex items-center space-x-3 right-4"
@@ -142,10 +142,10 @@ exports[`SelectAddress should render with preselected address 1`] = `
         </div>
       </div>
       <div
-        class="inline-block truncate align-middle"
+        class="inline-flex items-center"
       >
         <span
-          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+          class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
           data-testid="address__wallet-address"
         >
           bP6T9GQ3kqP6T … TTTP6T9GQ3kqT
@@ -188,7 +188,7 @@ exports[`SelectAddress should render with preselected verified address 1`] = `
         class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
       />
       <div
-        class="inline-block truncate align-middle"
+        class="inline-flex items-center"
       />
       <div
         class="absolute flex items-center space-x-3 right-4"

@@ -111,6 +111,7 @@ export const translations: { [key: string]: any } = {
 	OPTIONAL: "optional",
 	OTHER: "Other",
 	PAGE: "Page",
+	PARTICIPANT: "Participant",
 	PASSWORD: "Password",
 	PASSWORDS: "Passwords",
 	PERIOD: "Period",
@@ -216,6 +217,7 @@ export const translations: { [key: string]: any } = {
 		SUBJECT_INVALID: "The {{subject}} is invalid",
 		SUBJECT_MISMATCH: "The {{subject}} do not match",
 		MIN_RECIPIENTS: "At least one recipient is required",
+		RECIPIENT_INVALID: "Recipient address is invalid",
 	},
 
 	DATETIME: {
@@ -244,6 +246,7 @@ export const translations: { [key: string]: any } = {
 	INPUT_PASSPHRASE: {
 		VALIDATION: {
 			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
+			MNEMONIC_NOT_MATCH_ADDRESS: "The mnemonic does not match the sender address",
 		},
 	},
 

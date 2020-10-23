@@ -19,16 +19,17 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	getDefaultWalletMnemonic,
 	render,
 	RenderResult,
 	renderWithRouter,
+	screen,
 	syncDelegates,
 	syncFees,
 	waitFor,
 	within,
 } from "utils/testing-library";
 
-import { translations as transactionTranslations } from "../../i18n";
 import { SendEntityRegistration } from "./SendEntityRegistration";
 import { FirstStep } from "./Step1";
 
@@ -36,6 +37,7 @@ let profile: Profile;
 let wallet: ReadWriteWallet;
 let secondWallet: ReadWriteWallet;
 const history = createMemoryHistory();
+const passphrase = getDefaultWalletMnemonic();
 
 const renderPage = async (wallet?: ReadWriteWallet) => {
 	const path = wallet
@@ -168,15 +170,62 @@ describe("Registration", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should hide options for multisignature wallet", async () => {
+		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
+
+		const Component = () => {
+			const form = useForm();
+
+			return (
+				<FormProvider {...form}>
+					<FirstStep
+						networks={env.availableNetworks()}
+						profile={profile}
+						wallet={wallet}
+						setRegistrationForm={() => void 0}
+						fees={{
+							entityRegistration: {
+								avg: "1",
+							},
+						}}
+					/>
+				</FormProvider>
+			);
+		};
+
+		const { container } = render(<Component />);
+
+		act(() => {
+			fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+		});
+
+		await waitFor(() => expect(screen.queryByText("MultiSignature")).not.toBeInTheDocument());
+
+		isMultiSignatureSpy.mockRestore();
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render 1st step", async () => {
 		const setRegistrationForm = jest.fn();
+		const network = {
+			id: () => "ark.devnet",
+			coin: () => "ARK",
+			can: () => true,
+		};
 		const fees = {
 			delegateRegistration: {
 				avg: "1",
 			},
 		};
 
-		const { result: form } = renderHook(() => useForm());
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					network,
+				},
+			}),
+		);
 		const setValueSpy = jest.spyOn(form.current, "setValue");
 		let rendered: RenderResult;
 
@@ -205,17 +254,21 @@ describe("Registration", () => {
 
 			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
+			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(1, "network", { ...network }));
 			await waitFor(() =>
 				expect(setValueSpy).toHaveBeenNthCalledWith(
-					1,
+					2,
 					"registrationType",
 					{ label: "Delegate", value: "delegateRegistration" },
-					{ shouldValidate: true, shouldDirty: true },
+					{
+						shouldValidate: true,
+						shouldDirty: true,
+					},
 				),
 			);
 			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
 			await waitFor(() =>
-				expect(setValueSpy).toHaveBeenNthCalledWith(2, "fee", "1", { shouldValidate: true, shouldDirty: true }),
+				expect(setValueSpy).toHaveBeenNthCalledWith(3, "fee", "1", { shouldValidate: true, shouldDirty: true }),
 			);
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
@@ -223,9 +276,20 @@ describe("Registration", () => {
 
 	it("should not set fee if no fee options", async () => {
 		const setRegistrationForm = jest.fn();
+		const network = {
+			id: () => "ark.devnet",
+			coin: () => "ARK",
+			can: () => true,
+		};
 		const fees = {};
 
-		const { result: form } = renderHook(() => useForm());
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					network,
+				},
+			}),
+		);
 		const setValueSpy = jest.spyOn(form.current, "setValue");
 		let rendered: RenderResult;
 
@@ -254,16 +318,17 @@ describe("Registration", () => {
 
 			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
+			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(1, "network", { ...network }));
 			await waitFor(() =>
 				expect(setValueSpy).toHaveBeenNthCalledWith(
-					1,
+					2,
 					"registrationType",
 					{ label: "Delegate", value: "delegateRegistration" },
 					{ shouldValidate: true, shouldDirty: true },
 				),
 			);
 			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
-			await waitFor(() => expect(setValueSpy).not.toHaveBeenNthCalledWith(2, "fee", "1", true));
+			await waitFor(() => expect(setValueSpy).not.toHaveBeenNthCalledWith(3, "fee", "1", true));
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
 	});
@@ -275,11 +340,13 @@ describe("Registration", () => {
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
 
 		await act(async () => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Delegate"));
 
-			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("delegateRegistration"));
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
@@ -333,11 +400,13 @@ describe("Registration", () => {
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
 
 		await act(async () => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Delegate"));
 
-			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("delegateRegistration"));
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
@@ -376,11 +445,13 @@ describe("Registration", () => {
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
 
 		await act(async () => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Delegate"));
 
-			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("delegateRegistration"));
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
@@ -424,10 +495,12 @@ describe("Registration", () => {
 
 		await act(async () => {
 			// Step 1
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Delegate"));
 
-			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("delegateRegistration"));
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 			// Step 2
@@ -455,8 +528,8 @@ describe("Registration", () => {
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
 
@@ -512,81 +585,21 @@ describe("Registration", () => {
 		});
 	});
 
-	it("should error for invalid mnemonic", async () => {
-		const { asFragment, getByTestId } = await renderPage(wallet);
-
-		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
-		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
-
-		await act(async () => {
-			// Step 1
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
-
-			fireEvent.click(getByTestId("select-list__toggle-option-1"));
-			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
-
-			// Step 2
-			fireEvent.click(getByTestId("Registration__continue-button"));
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")).toBeTruthy());
-
-			const input = getByTestId("Input__username");
-			act(() => {
-				fireEvent.change(input, { target: { value: "test_delegate" } });
-			});
-
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(fees[1]);
-
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
-			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
-
-			// Step 3
-			fireEvent.click(getByTestId("Registration__continue-button"));
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--third")).toBeTruthy());
-
-			// Step 4 - signing
-			fireEvent.click(getByTestId("Registration__continue-button"));
-			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-
-			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
-
-			const signMock = jest.spyOn(wallet.transaction(), "signDelegateRegistration").mockImplementation(() => {
-				throw new Error();
-			});
-
-			const consoleSpy = jest.spyOn(console, "error").mockImplementation();
-
-			fireEvent.click(getByTestId("Registration__send-button"));
-
-			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
-			await waitFor(() => expect(passwordInput).toHaveValue(""));
-			await waitFor(() =>
-				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
-			);
-
-			signMock.mockRestore();
-
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
-		});
-	});
-
 	it("should validate website url", async () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
 
 		act(() => {
 			fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		});
 
+		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -608,15 +621,17 @@ describe("Registration", () => {
 		const { getByTestId, getAllByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
 
 		act(() => {
 			fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		});
 
+		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -637,15 +652,17 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
 
 		act(() => {
 			fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		});
 
+		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -667,15 +684,17 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
 
 		act(() => {
 			fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		});
 
+		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -699,15 +718,17 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
 
 		act(() => {
 			fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		});
 
+		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -729,15 +750,17 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
 
 		act(() => {
 			fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		});
 
+		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -802,15 +825,17 @@ describe("Registration", () => {
 		const { asFragment, getByTestId, getAllByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
 
 		act(() => {
 			fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		});
 
+		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -898,7 +923,7 @@ describe("Registration", () => {
 				});
 			});
 
-			const addedItems = within(collection).queryAllByTestId("LinkCollection__item");
+			const addedItems = within(collection).queryAllByTestId("TableRow");
 			const newLength = addedItems.length + 1;
 
 			await act(async () => {
@@ -907,10 +932,8 @@ describe("Registration", () => {
 
 			await waitFor(() => expect(input).toHaveValue(""));
 
-			await waitFor(() =>
-				expect(within(collection).getAllByTestId("LinkCollection__item")).toHaveLength(newLength),
-			);
-			const addedItem = within(collection).getAllByTestId("LinkCollection__item")[newLength - 1];
+			await waitFor(() => expect(within(collection).getAllByTestId("TableRow")).toHaveLength(newLength));
+			const addedItem = within(collection).getAllByTestId("TableRow")[newLength - 1];
 			await waitFor(() => expect(addedItem).toBeTruthy());
 			await waitFor(() => expect(addedItem).toHaveTextContent(optionLabel));
 			await waitFor(() => expect(addedItem).toHaveTextContent(inputValue));
@@ -942,7 +965,7 @@ describe("Registration", () => {
 		await toggleLinkCollectionHeader(media);
 
 		// Select avatar
-		const firstMediaItem = within(media).getAllByTestId("LinkCollection__item")[0];
+		const firstMediaItem = within(media).getAllByTestId("TableRow")[0];
 
 		await act(async () => {
 			fireEvent.click(within(firstMediaItem).getByTestId("LinkCollection__selected"));
@@ -951,7 +974,7 @@ describe("Registration", () => {
 		await toggleLinkCollectionHeader(media);
 
 		expect(asFragment()).toMatchSnapshot();
-	});
+	}, 10000);
 
 	it("should successfully register entity", async () => {
 		const { asFragment, getByTestId, queryAllByTestId } = await renderPage(secondWallet);
@@ -959,15 +982,17 @@ describe("Registration", () => {
 		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));
 
 		act(() => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
 		});
 
 		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
 
 		act(() => {
 			fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		});
 
+		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -1040,12 +1065,12 @@ describe("Registration", () => {
 		const secondMnemonic = getByTestId("AuthenticationStep__second-mnemonic");
 
 		act(() => {
-			fireEvent.input(mnemonic, { target: { value: "passphrase" } });
+			fireEvent.input(mnemonic, { target: { value: "v3wallet2" } });
 		});
 
 		fireEvent.input(secondMnemonic, { target: { value: "passphrase" } });
 
-		await waitFor(() => expect(mnemonic).toHaveValue("passphrase"));
+		await waitFor(() => expect(mnemonic).toHaveValue("v3wallet2"));
 		await waitFor(() => expect(secondMnemonic).toHaveValue("passphrase"));
 
 		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));

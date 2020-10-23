@@ -75,7 +75,9 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 
 	const [activeStep, setActiveStep] = useState(1);
 
-	const canBeBroadascated = wallet.transaction().canBeBroadcasted(transaction.id());
+	const canBeBroadascated =
+		wallet.transaction().canBeBroadcasted(transaction.id()) &&
+		!wallet.transaction().isAwaitingConfirmation(transaction.id());
 	const canBeSigned = wallet.transaction().canBeSigned(transaction.id());
 
 	const broadcast = useCallback(async () => {

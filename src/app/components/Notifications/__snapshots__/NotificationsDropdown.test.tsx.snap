@@ -11,7 +11,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="sc-Axmtr cuWAkR text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+            class="sc-Axmtr jqXAAR text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
             color="primary"
             data-testid="navbar__buttons--notifications"
             type="button"
@@ -162,11 +162,9 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                           class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
-                          <td
-                            class="w-24"
-                          >
+                          <td>
                             <div
-                              class="sc-AxiKw kPBQtr"
+                              class="sc-AxiKw bhHuBq space-x-3"
                             >
                               <div
                                 class="flex items-center -space-x-1"
@@ -201,17 +199,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-AxiKw lfBQQd"
-                            >
                               <div
-                                class="inline-block truncate align-middle"
+                                class="inline-flex items-center"
                               >
                                 <span
-                                  class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                                  class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D8rr7B … s6YUYD
@@ -221,7 +213,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-AxiKw fGKrFr justify-end"
+                              class="sc-AxiKw jxgwWm justify-end"
                             >
                               <div
                                 class="sc-AxhUy eCrePA"
@@ -241,11 +233,9 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                           class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
-                          <td
-                            class="w-24"
-                          >
+                          <td>
                             <div
-                              class="sc-AxiKw kPBQtr"
+                              class="sc-AxiKw bhHuBq space-x-3"
                             >
                               <div
                                 class="flex items-center -space-x-1"
@@ -280,17 +270,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-AxiKw lfBQQd"
-                            >
                               <div
-                                class="inline-block truncate align-middle"
+                                class="inline-flex items-center"
                               >
                                 <span
-                                  class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                                  class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D8rr7B … s6YUYD
@@ -300,7 +284,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-AxiKw fGKrFr justify-end"
+                              class="sc-AxiKw jxgwWm justify-end"
                             >
                               <div
                                 class="sc-AxhUy eCrePA"
@@ -341,7 +325,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
           class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
         >
           <button
-            class="sc-Axmtr cuWAkR w-11 h-11"
+            class="sc-Axmtr jqXAAR w-11 h-11"
             color="primary"
             data-testid="modal__close-btn"
             type="button"
@@ -384,16 +368,16 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-flex items-center"
                   >
                     <span
-                      class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                       data-testid="address__wallet-name"
                     >
                       ARK Wallet 1
                     </span>
                     <span
-                      class="sc-AxheI fniENP text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                      class="sc-AxheI fniENP text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
                       DK1f5f … Uzhpmy
@@ -436,10 +420,10 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-flex items-center"
                   >
                     <span
-                      class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                      class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
                       D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -712,7 +696,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="sc-Axmtr cuWAkR text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+            class="sc-Axmtr jqXAAR text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
             color="primary"
             data-testid="navbar__buttons--notifications"
             type="button"
@@ -863,11 +847,9 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                           class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
-                          <td
-                            class="w-24"
-                          >
+                          <td>
                             <div
-                              class="sc-AxiKw kPBQtr"
+                              class="sc-AxiKw bhHuBq space-x-3"
                             >
                               <div
                                 class="flex items-center -space-x-1"
@@ -902,17 +884,11 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-AxiKw lfBQQd"
-                            >
                               <div
-                                class="inline-block truncate align-middle"
+                                class="inline-flex items-center"
                               >
                                 <span
-                                  class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                                  class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D8rr7B … s6YUYD
@@ -922,7 +898,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-AxiKw fGKrFr justify-end"
+                              class="sc-AxiKw jxgwWm justify-end"
                             >
                               <div
                                 class="sc-AxhUy eCrePA"
@@ -942,11 +918,9 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                           class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
-                          <td
-                            class="w-24"
-                          >
+                          <td>
                             <div
-                              class="sc-AxiKw kPBQtr"
+                              class="sc-AxiKw bhHuBq space-x-3"
                             >
                               <div
                                 class="flex items-center -space-x-1"
@@ -981,17 +955,11 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-AxiKw lfBQQd"
-                            >
                               <div
-                                class="inline-block truncate align-middle"
+                                class="inline-flex items-center"
                               >
                                 <span
-                                  class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                                  class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D8rr7B … s6YUYD
@@ -1001,7 +969,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-AxiKw fGKrFr justify-end"
+                              class="sc-AxiKw jxgwWm justify-end"
                             >
                               <div
                                 class="sc-AxhUy eCrePA"
@@ -1042,7 +1010,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="sc-Axmtr cuWAkR text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+            class="sc-Axmtr jqXAAR text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
             color="primary"
             data-testid="navbar__buttons--notifications"
             type="button"
@@ -1193,11 +1161,9 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                           class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
-                          <td
-                            class="w-24"
-                          >
+                          <td>
                             <div
-                              class="sc-AxiKw kPBQtr"
+                              class="sc-AxiKw bhHuBq space-x-3"
                             >
                               <div
                                 class="flex items-center -space-x-1"
@@ -1232,17 +1198,11 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-AxiKw lfBQQd"
-                            >
                               <div
-                                class="inline-block truncate align-middle"
+                                class="inline-flex items-center"
                               >
                                 <span
-                                  class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                                  class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D8rr7B … s6YUYD
@@ -1252,7 +1212,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-AxiKw fGKrFr justify-end"
+                              class="sc-AxiKw jxgwWm justify-end"
                             >
                               <div
                                 class="sc-AxhUy eCrePA"
@@ -1272,11 +1232,9 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                           class="sc-AxhCb ivWAPv group"
                           data-testid="TableRow"
                         >
-                          <td
-                            class="w-24"
-                          >
+                          <td>
                             <div
-                              class="sc-AxiKw kPBQtr"
+                              class="sc-AxiKw bhHuBq space-x-3"
                             >
                               <div
                                 class="flex items-center -space-x-1"
@@ -1311,17 +1269,11 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-AxiKw lfBQQd"
-                            >
                               <div
-                                class="inline-block truncate align-middle"
+                                class="inline-flex items-center"
                               >
                                 <span
-                                  class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                                  class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D8rr7B … s6YUYD
@@ -1331,7 +1283,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-AxiKw fGKrFr justify-end"
+                              class="sc-AxiKw jxgwWm justify-end"
                             >
                               <div
                                 class="sc-AxhUy eCrePA"

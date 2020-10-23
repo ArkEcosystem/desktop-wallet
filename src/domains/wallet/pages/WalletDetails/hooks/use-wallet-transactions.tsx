@@ -5,22 +5,30 @@ import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limit: number }) => {
-	const pendingTransactions: SignedTransactionData[] = Object.values({
+	const pendingMultiSignatureTransactions: SignedTransactionData[] = Object.values({
 		...wallet.transaction().waitingForOtherSignatures(),
 		...wallet.transaction().waitingForOurSignature(),
 		...wallet.transaction().signed(),
-	});
+	})
+		// TODO: Use the `isMultiSignature()` method from interface when ready on the platform-sdk
+		.filter((item) => !!item.get("multiSignature"));
 
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
 	const [itemCount, setItemCount] = useState<number>(0);
 	const [nextPage, setNextPage] = useState<string | number | undefined>();
 	const [isLoading, setIsLoading] = useState(false);
 
+	const syncMultiSignatures = useCallback(async () => {
+		await wallet.transaction().sync();
+		const broadcasted = Object.keys(wallet.transaction().broadcasted());
+		for (const id of broadcasted) {
+			await wallet.transaction().confirm(id);
+		}
+	}, [wallet]);
+
 	const sync = useCallback(
 		async (cursor: string | number | undefined) => {
 			setIsLoading(true);
-
-			await wallet.transaction().sync();
 
 			const response = await wallet.transactions({ limit, cursor });
 
@@ -39,7 +47,8 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 		setNextPage(undefined);
 		setTransactions([]);
 		await sync(1);
-	}, [sync]);
+		await syncMultiSignatures();
+	}, [sync, syncMultiSignatures]);
 
 	const hasMore = itemCount === limit && nextPage !== undefined;
 
@@ -57,8 +66,12 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 				callback: verifyNew,
 				interval: 30000,
 			},
+			{
+				callback: syncMultiSignatures,
+				interval: 30000,
+			},
 		],
-		[verifyNew],
+		[verifyNew, syncMultiSignatures],
 	);
 
 	const { start } = useSynchronizer(jobs);
@@ -73,6 +86,7 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 		fetchMore,
 		hasMore,
 		transactions,
-		pendingTransactions,
+		pendingMultiSignatureTransactions,
+		syncMultiSignatures,
 	};
 };

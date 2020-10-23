@@ -86,7 +86,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
         data-testid="clipboard__wrapper"
       >
         <button
-          class="sc-AxjAm joLCoM"
+          class="sc-AxjAm fCKjFI"
           color="primary"
           data-testid="CreateWallet__copy"
           type="button"
@@ -141,7 +141,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
       class="flex justify-end w-full"
     >
       <button
-        class="sc-AxjAm joLCoM flex items-center space-x-2"
+        class="sc-AxjAm fCKjFI flex items-center space-x-2"
         color="primary"
         data-testid="CreateWallet__download"
         type="button"
@@ -258,7 +258,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -290,7 +290,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -313,7 +313,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -566,7 +566,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="CreateWallet__back-button"
                     disabled=""
@@ -575,7 +575,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="CreateWallet__continue-button"
                     disabled=""
@@ -684,7 +684,7 @@ exports[`CreateWallet should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -716,7 +716,7 @@ exports[`CreateWallet should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -739,7 +739,7 @@ exports[`CreateWallet should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -992,7 +992,7 @@ exports[`CreateWallet should render 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="CreateWallet__back-button"
                     disabled=""
@@ -1001,7 +1001,7 @@ exports[`CreateWallet should render 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="CreateWallet__continue-button"
                     disabled=""
@@ -1187,10 +1187,10 @@ exports[`CreateWallet should render 4th step 1`] = `
           class="font-semibold"
         >
           <div
-            class="inline-block truncate align-middle"
+            class="inline-flex items-center"
           >
             <span
-              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+              class="sc-fzpans kkFAbe text-theme-text truncate font-semibold text-base"
               data-testid="address__wallet-address"
             >
               TEST-WALLET-ADDRESS

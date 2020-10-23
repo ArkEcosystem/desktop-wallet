@@ -1,6 +1,7 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { chunk } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
+import { DropdownOption } from "app/components/Dropdown";
 import { Slider } from "app/components/Slider";
 import { Table } from "app/components/Table";
 import { WalletCard } from "app/components/WalletCard";
@@ -51,14 +52,14 @@ export const Wallets = ({
 
 	const { t } = useTranslation();
 
+	// const walletCardActions: DropdownOption[] = [{ label: t("COMMON.SHOW"), value: "show" }];
+	const walletCardActions: DropdownOption[] = [];
+
 	const listColumns = [
-		{
-			Header: t("COMMON.ASSET_TYPE"),
-			accessor: "avatarId",
-		},
 		{
 			Header: t("COMMON.WALLET_ADDRESS"),
 			accessor: "address",
+			className: "ml-24",
 		},
 		{
 			Header: t("COMMON.WALLET_TYPE"),
@@ -86,7 +87,7 @@ export const Wallets = ({
 
 	// Grid
 	const loadGridWallets = () => {
-		const walletObjects = wallets.map((wallet: ReadWriteWallet) => ({ wallet }));
+		const walletObjects = wallets.map((wallet: ReadWriteWallet) => ({ wallet, actions: walletCardActions }));
 
 		if (walletObjects.length <= walletSliderOptions.slidesPerView) {
 			return walletObjects.concat(

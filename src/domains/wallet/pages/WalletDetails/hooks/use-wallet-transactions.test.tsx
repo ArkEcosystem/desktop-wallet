@@ -1,6 +1,6 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
-import React from "react";
+import React, { useState } from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { useWalletTransactions } from "./use-wallet-transactions";
@@ -35,6 +35,56 @@ describe("Wallet Transactions Hook", () => {
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
+	});
+
+	it("should sync multisignatures", async () => {
+		const transfer = await wallet
+			.coin()
+			.transaction()
+			.transfer({
+				fee: "1",
+				nonce: "1",
+				from: wallet.address(),
+				data: {
+					to: wallet.address(),
+					amount: "1",
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
+
+		jest.spyOn(wallet.transaction(), "sync").mockResolvedValue(void 0);
+		jest.spyOn(wallet.transaction(), "broadcasted").mockReturnValue({ 1: transfer });
+
+		const confirm = jest.spyOn(wallet.transaction(), "confirm").mockResolvedValue(true);
+
+		const Component = () => {
+			const { syncMultiSignatures } = useWalletTransactions(wallet, { limit: 10 });
+			const [loading, setLoading] = useState(false);
+
+			const run = async () => {
+				setLoading(true);
+				await syncMultiSignatures();
+				setLoading(false);
+			};
+			return loading ? <span>Loading</span> : <button onClick={run}>Sync</button>;
+		};
+
+		render(<Component />);
+
+		act(() => {
+			fireEvent.click(screen.getByRole("button"));
+		});
+
+		await waitFor(() => expect(screen.queryByText("Loading")).not.toBeInTheDocument());
+
+		expect(confirm).toHaveBeenCalled();
+
+		jest.clearAllMocks();
 	});
 
 	it("should fetch more", async () => {
@@ -72,6 +122,7 @@ describe("Wallet Transactions Hook", () => {
 	it("should run periodically", async () => {
 		jest.useFakeTimers();
 		const spyTransactions = jest.spyOn(wallet, "transactions");
+		const spySync = jest.spyOn(wallet.transaction(), "sync");
 
 		const Component = () => {
 			const { transactions } = useWalletTransactions(wallet, { limit: 10 });
@@ -83,8 +134,10 @@ describe("Wallet Transactions Hook", () => {
 		jest.advanceTimersByTime(40000);
 
 		await waitFor(() => expect(spyTransactions).toHaveBeenCalledTimes(2));
+		await waitFor(() => expect(spySync).toHaveBeenCalledTimes(2));
 
 		spyTransactions.mockRestore();
+		spySync.mockRestore();
 		jest.useRealTimers();
 	});
 
@@ -98,5 +151,59 @@ describe("Wallet Transactions Hook", () => {
 		render(<Component />);
 
 		expect(screen.getByText("Empty")).toBeInTheDocument();
+	});
+
+	it("should show only pending multisignature transactions", async () => {
+		const transfer = await wallet
+			.coin()
+			.transaction()
+			.transfer({
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				nonce: "1",
+				fee: "1",
+				data: {
+					to: wallet.address(),
+					amount: "1",
+				},
+				sign: {
+					mnemonic: "test",
+				},
+			});
+
+		const transferWithMultisig = await wallet
+			.coin()
+			.transaction()
+			.transfer({
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				nonce: "1",
+				fee: "1",
+				data: {
+					to: wallet.address(),
+					amount: "1",
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
+
+		const signedMock = jest.spyOn(wallet.transaction(), "signed").mockReturnValue({
+			"1": transfer,
+			"2": transferWithMultisig,
+		});
+
+		const Component = () => {
+			const { pendingMultiSignatureTransactions } = useWalletTransactions(wallet, { limit: 10 });
+
+			return <span>{pendingMultiSignatureTransactions.length}</span>;
+		};
+
+		render(<Component />);
+
+		expect(screen.getByText("1"));
+
+		signedMock.mockRestore();
 	});
 });

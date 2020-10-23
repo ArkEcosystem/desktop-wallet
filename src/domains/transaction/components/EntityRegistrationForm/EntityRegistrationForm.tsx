@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { File } from "@arkecosystem/platform-sdk-ipfs";
 import { Enums, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { filter, isEmpty } from "@arkecosystem/utils";
@@ -66,11 +67,22 @@ export const EntityRegistrationForm: SendEntityRegistrationForm = {
 		const sanitizedData = filter(ipfsData, (item) => !isEmpty(item));
 		const entityType = type ?? Enums.EntityType.Business;
 
+		const transactionInput: Contracts.TransactionInput = {
+			fee,
+			from: senderAddress,
+			sign: { mnemonic },
+		};
+
+		if (senderWallet?.isMultiSignature()) {
+			transactionInput.nonce = senderWallet.nonce().plus(1).toFixed();
+			transactionInput.sign = {
+				multiSignature: senderWallet.multiSignature(),
+			};
+		}
+
 		try {
 			const transactionId = await senderWallet!.transaction().signEntityRegistration({
-				fee,
-				from: senderAddress,
-				sign: { mnemonic },
+				...transactionInput,
 				data: {
 					type: entityType,
 					// @TODO: let the user choose what sub-type they wish to use.

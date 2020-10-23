@@ -3,11 +3,11 @@ import { Size } from "types";
 
 // @TODO add focus-visible:shadow-outline
 const baseStyle = [
-	tw`focus:outline-none inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear rounded justify-center`,
+	tw`inline-flex items-center justify-center font-semibold text-center transition-all duration-100 ease-linear rounded focus:outline-none`,
 	css`
 		line-height: 1.25;
 		&:disabled {
-			${tw`bg-theme-neutral-200 text-theme-neutral-light dark:bg-theme-neutral-800 dark:text-theme-neutral-700 cursor-not-allowed`}
+			${tw`cursor-not-allowed bg-theme-neutral-200 text-theme-neutral-light dark:bg-theme-neutral-800 dark:text-theme-neutral-700`}
 		}
 	`,
 ];

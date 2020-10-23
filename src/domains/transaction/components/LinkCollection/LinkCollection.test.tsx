@@ -135,15 +135,15 @@ describe("LinkCollection", () => {
 
 		fireEvent.click(getByTestId("LinkCollection__header"));
 
-		expect(() => getAllByTestId("LinkCollection__item").toHaveLength(1));
+		expect(() => getAllByTestId("TableRow").toHaveLength(1));
 
-		expect(getByTestId("LinkCollection__item")).toHaveTextContent("Twitter");
-		expect(getByTestId("LinkCollection__item")).toHaveTextContent(data[0].value);
+		expect(getByTestId("TableRow")).toHaveTextContent("Twitter");
+		expect(getByTestId("TableRow")).toHaveTextContent(data[0].value);
 
 		fireEvent.click(getByTestId("LinkCollection__remove-link"));
 		expect(onChange).toHaveBeenCalledWith([]);
 
-		expect(() => getByTestId("LinkCollection__item")).toThrow(/Unable to find an element by/);
+		expect(() => getByTestId("TableRow")).toThrow(/Unable to find an element by/);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -34,13 +34,13 @@ export const Address = ({ address, addressClass, walletNameClass, fontWeight, wa
 	};
 
 	return (
-		<div className="inline-block truncate align-middle">
+		<div className="inline-flex items-center">
 			{walletName && (
 				<span
 					data-testid="address__wallet-name"
-					className={`max-w-24 flex-auto truncate mt-4 mr-2 ${getFontWeight(fontWeight)} ${getFontSize(
-						size,
-					)} ${walletNameClass || "text-theme-text"}`}
+					className={`max-w-24 flex-auto truncate mr-2 ${getFontWeight(fontWeight)} ${getFontSize(size)} ${
+						walletNameClass || "text-theme-text"
+					}`}
 				>
 					{walletName}
 				</span>
@@ -53,7 +53,7 @@ export const Address = ({ address, addressClass, walletNameClass, fontWeight, wa
 					className={`${
 						addressClass ||
 						(walletName ? "text-theme-neutral-500 dark:text-theme-neutral-700" : "text-theme-text")
-					} ${getFontWeight(fontWeight)} ${getFontSize(size)}`}
+					} truncate ${getFontWeight(fontWeight)} ${getFontSize(size)}`}
 				/>
 			)}
 		</div>

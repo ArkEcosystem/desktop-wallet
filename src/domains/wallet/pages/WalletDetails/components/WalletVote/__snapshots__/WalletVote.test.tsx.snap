@@ -62,10 +62,10 @@ exports[`WalletVote should render 1`] = `
           Delegate
         </span>
         <div
-          class="inline-block truncate align-middle"
+          class="inline-flex items-center"
         >
           <span
-            class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
             data-testid="address__wallet-name"
           >
             arkx
@@ -87,7 +87,7 @@ exports[`WalletVote should render 1`] = `
         />
       </div>
       <button
-        class="sc-AxirZ ioMJEX ml-auto"
+        class="sc-AxirZ hTzPEr ml-auto"
         color="primary"
         data-testid="WalletVote__button"
         type="button"
@@ -248,7 +248,7 @@ exports[`WalletVote should render multiple votes 1`] = `
         </div>
       </div>
       <button
-        class="sc-AxirZ ioMJEX ml-auto"
+        class="sc-AxirZ hTzPEr ml-auto"
         color="primary"
         data-testid="WalletVote__button"
         type="button"
@@ -358,7 +358,7 @@ exports[`WalletVote should render multiple votes 2`] = `
         </div>
       </div>
       <button
-        class="sc-AxirZ ioMJEX ml-auto"
+        class="sc-AxirZ hTzPEr ml-auto"
         color="primary"
         data-testid="WalletVote__button"
         type="button"
@@ -459,7 +459,7 @@ exports[`WalletVote should render multiple votes 3`] = `
         </div>
       </div>
       <button
-        class="sc-AxirZ ioMJEX ml-auto"
+        class="sc-AxirZ hTzPEr ml-auto"
         color="primary"
         data-testid="WalletVote__button"
         type="button"
@@ -552,7 +552,7 @@ exports[`WalletVote should render the maximum votes 1`] = `
           </div>
         </div>
         <button
-          class="sc-AxirZ ioMJEX"
+          class="sc-AxirZ hTzPEr"
           color="primary"
           data-testid="WalletVote__button"
           type="button"
@@ -639,7 +639,7 @@ exports[`WalletVote should render without votes 1`] = `
           </div>
         </div>
         <button
-          class="sc-AxirZ ioMJEX"
+          class="sc-AxirZ hTzPEr"
           color="primary"
           data-testid="WalletVote__button"
           type="button"

@@ -8,11 +8,9 @@ exports[`Notifications should render notification item 1`] = `
         class="sc-AxhCb ivWAPv group"
         data-testid="TableRow"
       >
-        <td
-          class="w-24"
-        >
+        <td>
           <div
-            class="sc-AxiKw kPBQtr"
+            class="sc-AxiKw bhHuBq space-x-3"
           >
             <div
               class="flex items-center -space-x-1"
@@ -47,17 +45,11 @@ exports[`Notifications should render notification item 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-        </td>
-        <td>
-          <div
-            class="sc-AxiKw lfBQQd"
-          >
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             >
               <span
-                class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 D8rr7B … s6YUYD
@@ -67,7 +59,7 @@ exports[`Notifications should render notification item 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxiKw fGKrFr justify-end"
+            class="sc-AxiKw jxgwWm justify-end"
           >
             <div
               class="sc-AxhUy eCrePA"

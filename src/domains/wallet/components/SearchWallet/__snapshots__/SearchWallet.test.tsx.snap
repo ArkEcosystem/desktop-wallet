@@ -17,7 +17,7 @@ exports[`SearchWallet should render 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxirZ biTPIb w-11 h-11"
+          class="sc-AxirZ jFqSPL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -78,7 +78,7 @@ exports[`SearchWallet should render 1`] = `
                   />
                 </div>
                 <button
-                  class="sc-AxirZ edePbg my-1"
+                  class="sc-AxirZ hNClQs my-1"
                   color="primary"
                   data-testid="SearchBar__button"
                   type="button"
@@ -110,7 +110,7 @@ exports[`SearchWallet should render 1`] = `
                       role="row"
                     >
                       <th
-                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -124,7 +124,7 @@ exports[`SearchWallet should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -154,7 +154,7 @@ exports[`SearchWallet should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -184,7 +184,7 @@ exports[`SearchWallet should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
@@ -214,13 +214,13 @@ exports[`SearchWallet should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
                         colspan="1"
                         data-testid="table__th--4"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top hidden"
+                          class="flex flex-inline align-top hidden no-border"
                         >
                           <div>
                             Action
@@ -238,7 +238,7 @@ exports[`SearchWallet should render 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-fznKkj hwFbkH"
+                          class="sc-fznKkj iYmNHv"
                         >
                           <div
                             class="sc-AxiKw hpQrmn -mr-2"
@@ -271,19 +271,19 @@ exports[`SearchWallet should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-fznKkj fxVkeV"
+                          class="sc-fznKkj fZNlpJ"
                         >
                           <div
-                            class="inline-block truncate align-middle"
+                            class="inline-flex items-center"
                           >
                             <span
-                              class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                              class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                               data-testid="address__wallet-name"
                             >
                               Sample Wallet
                             </span>
                             <span
-                              class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                              class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D8rr7B1d6 … VBMs6YUYD
@@ -293,7 +293,7 @@ exports[`SearchWallet should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-fznKkj fxVkeV font-semibold justify-end"
+                          class="sc-fznKkj fZNlpJ font-semibold justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -304,7 +304,7 @@ exports[`SearchWallet should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-fznKkj fxVkeV text-theme-neutral-light justify-end"
+                          class="sc-fznKkj fZNlpJ text-theme-neutral-light justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -315,10 +315,10 @@ exports[`SearchWallet should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-fznKkj jlXLrv justify-end"
+                          class="sc-fznKkj cuFNOj justify-end"
                         >
                           <button
-                            class="sc-AxirZ ioMJEX"
+                            class="sc-AxirZ hTzPEr"
                             color="primary"
                             data-testid="SearchWalletListItem__select-0"
                             type="button"

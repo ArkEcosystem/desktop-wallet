@@ -22,6 +22,49 @@ describe("AuthenticationStep", () => {
 		</Form>
 	);
 
+	it("should validate if mnemonic match the wallet address", async () => {
+		wallet = await profile.wallets().importByMnemonic("passphrase", "ARK", "ark.devnet");
+
+		jest.spyOn(wallet, "isSecondSignature").mockReturnValue(false);
+
+		const TestValidation = () => {
+			const form = useForm({ mode: "onChange" });
+			const { formState } = form;
+			const { isValid } = formState;
+
+			return (
+				<div>
+					<span>{isValid ? "Valid" : "Invalid"}</span>
+					<Component form={form} />
+				</div>
+			);
+		};
+
+		renderWithRouter(<TestValidation />);
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: "wrong passphrase",
+				},
+			});
+		});
+
+		await waitFor(() => expect(screen.queryByText("Invalid")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: "passphrase",
+				},
+			});
+		});
+
+		await waitFor(() => expect(screen.queryByText("Valid")).toBeInTheDocument());
+
+		jest.clearAllMocks();
+	});
+
 	it("should request mnemonic", async () => {
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(false);
 

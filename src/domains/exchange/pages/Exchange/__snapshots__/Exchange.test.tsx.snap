@@ -89,7 +89,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -121,7 +121,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -144,7 +144,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -325,13 +325,17 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -373,13 +377,17 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -421,13 +429,17 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -582,7 +594,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -614,7 +626,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -637,7 +649,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -818,13 +830,17 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -866,13 +882,17 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -914,13 +934,17 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1075,7 +1099,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1107,7 +1131,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1130,7 +1154,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1414,7 +1438,7 @@ exports[`Exchange should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1446,7 +1470,7 @@ exports[`Exchange should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1469,7 +1493,7 @@ exports[`Exchange should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1753,7 +1777,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1785,7 +1809,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1808,7 +1832,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1992,13 +2016,17 @@ exports[`Exchange should render filler exchange cards 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2040,13 +2068,17 @@ exports[`Exchange should render filler exchange cards 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2088,13 +2120,17 @@ exports[`Exchange should render filler exchange cards 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2136,13 +2172,17 @@ exports[`Exchange should render filler exchange cards 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2360,7 +2400,7 @@ exports[`Exchange should render with exchanges 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2392,7 +2432,7 @@ exports[`Exchange should render with exchanges 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2415,7 +2455,7 @@ exports[`Exchange should render with exchanges 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -2596,13 +2636,17 @@ exports[`Exchange should render with exchanges 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2644,13 +2688,17 @@ exports[`Exchange should render with exchanges 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2692,13 +2740,17 @@ exports[`Exchange should render with exchanges 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2853,7 +2905,7 @@ exports[`Exchange should select exchange 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2885,7 +2937,7 @@ exports[`Exchange should select exchange 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2908,7 +2960,7 @@ exports[`Exchange should select exchange 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb fYkhib text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -3089,13 +3141,17 @@ exports[`Exchange should select exchange 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -3137,13 +3193,17 @@ exports[`Exchange should select exchange 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -3185,13 +3245,17 @@ exports[`Exchange should select exchange 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ deQuuR p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
-                            height="20"
-                            width="4"
+                            class="flex justify-center w-4 overflow-hidden"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>

@@ -1,435 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Registration should error for invalid mnemonic 1`] = `
-<DocumentFragment>
-  <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-10"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center my-auto"
-          >
-            <div
-              class="sc-fzqNqU bFCCVL"
-            >
-              <svg
-                width="48"
-              >
-                ark-logo.svg
-              </svg>
-            </div>
-          </div>
-          <ul
-            class="flex h-20 mr-auto md:h-24"
-          >
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                title="Portfolio"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                title="Plugins"
-              >
-                Plugins
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                title="Exchange"
-              >
-                Exchange
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                title="News"
-              >
-                News
-              </a>
-            </li>
-          </ul>
-          <div
-            class="flex items-center my-auto space-x-4"
-          >
-            <div>
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="overflow-hidden rounded-lg"
-                >
-                  <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
-                    color="primary"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxiKw fFXzuz p-1"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
-                    >
-                      <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-            <div
-              class="flex items-center overflow-hidden rounded-lg"
-            >
-              <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-            <div
-              class="flex items-center overflow-hidden rounded-lg"
-            >
-              <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-          </div>
-          <div
-            class="flex items-center my-auto ml-8 mr-4"
-          >
-            <div
-              class="text-right"
-            >
-              <div
-                class="text-xs font-semibold text-theme-neutral-700"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  0 BTC
-                </span>
-              </div>
-            </div>
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
-              >
-                <div
-                  class="sc-AxgMl eQpXWo border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-AxiKw dzBdqj"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
-                >
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                  >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                    >
-                      JO
-                    </span>
-                  </div>
-                  <span
-                    class="sc-AxhUy kTPsmA flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
-                  >
-                    <div
-                      class="sc-AxiKw ksjdLL"
-                      height="10"
-                      width="10"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                    <span />
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-AxiKw eKFBFH"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <div
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Go back to Portfolio
-          </span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <form
-            class="max-w-xl mx-auto"
-            data-testid="Registration__form"
-          >
-            <div>
-              <ul
-                class="sc-fzoNJl fLBodk"
-              >
-                <li
-                  class="sc-fzoyTs gSSopp"
-                />
-                <li
-                  class="sc-fzoyTs gSSopp"
-                />
-                <li
-                  class="sc-fzoyTs gSSopp"
-                />
-                <li
-                  class="sc-fzoyTs gSSopp"
-                />
-                <li
-                  class="sc-fzoyTs gDSWzs"
-                />
-              </ul>
-              <div
-                class="mt-8"
-              >
-                <div />
-                <div
-                  data-testid="tab-pabel__active-panel"
-                >
-                  <div
-                    class="space-y-8"
-                    data-testid="AuthenticationStep"
-                  >
-                    <div
-                      class="flex items-end justify-between bg-theme-background"
-                    >
-                      <div>
-                        <h1
-                          class="mb-0 md:text-4xl"
-                          data-testid="header__title"
-                        >
-                          Authenticate
-                        </h1>
-                        <div
-                          class="text-theme-secondary-text"
-                          data-testid="header__subtitle"
-                        >
-                          Enter your twelve word mnemonic to authenticate the transaction.
-                        </div>
-                      </div>
-                    </div>
-                    <fieldset
-                      class="sc-AxirZ kMHTdH flex flex-col space-y-2"
-                    >
-                      <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                        data-testid="FormLabel"
-                        for="mnemonic"
-                      >
-                        Mnemonic
-                        <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
-                      </label>
-                      <div
-                        class="sc-fznxsB hhZPAY max-w-20"
-                        data-testid="InputPassword"
-                      >
-                        <input
-                          aria-invalid="true"
-                          class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
-                          data-testid="AuthenticationStep__mnemonic"
-                          name="mnemonic"
-                          type="password"
-                        />
-                        <div
-                          class="sc-fzoLag sc-fzpjYC fdEbuY my-px mr-4"
-                        >
-                          <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                            data-testid="InputPassword__toggle"
-                            type="button"
-                          >
-                            <div
-                              class="sc-AxiKw dzBdqj"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                eye.svg
-                              </svg>
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-                      <p
-                        class="text-sm text-theme-danger"
-                      >
-                        Invalid Mnemonic
-                      </p>
-                    </fieldset>
-                  </div>
-                </div>
-                <div
-                  class="flex justify-end mt-10 space-x-3"
-                >
-                  <button
-                    class="sc-AxjAm joLCoM"
-                    color="primary"
-                    data-testid="Registration__back-button"
-                    type="button"
-                  >
-                    Back
-                  </button>
-                  <button
-                    class="sc-AxjAm BsmvP space-x-2"
-                    color="primary"
-                    data-testid="Registration__send-button"
-                    disabled=""
-                    type="submit"
-                  >
-                    <div
-                      class="sc-AxiKw dklFyP"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        send.svg
-                      </svg>
-                    </div>
-                    <span>
-                      Send
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Registration should fill all data including link collections 1`] = `
 <DocumentFragment>
   <div
@@ -518,7 +88,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -550,7 +120,7 @@ exports[`Registration should fill all data including link collections 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -573,7 +143,7 @@ exports[`Registration should fill all data including link collections 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -865,7 +435,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -909,7 +479,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -953,7 +523,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -1066,7 +636,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="Registration__back-button"
                     type="button"
@@ -1074,7 +644,7 @@ exports[`Registration should fill all data including link collections 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="Registration__continue-button"
                     type="button"
@@ -1180,7 +750,7 @@ exports[`Registration should go to review step after successfully filling form d
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1212,7 +782,7 @@ exports[`Registration should go to review step after successfully filling form d
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1235,7 +805,7 @@ exports[`Registration should go to review step after successfully filling form d
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1493,16 +1063,16 @@ exports[`Registration should go to review step after successfully filling form d
                               class="font-semibold"
                             >
                               <div
-                                class="inline-block truncate align-middle"
+                                class="inline-flex items-center"
                               >
                                 <span
-                                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                   data-testid="address__wallet-name"
                                 >
                                   ARK Wallet 1
                                 </span>
                                 <span
-                                  class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                  class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D8rr7B … s6YUYD
@@ -1651,7 +1221,7 @@ exports[`Registration should go to review step after successfully filling form d
                                   class="flex flex-col w-1/2 justify-center px-4 py-2"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Amount
                                   </span>
@@ -1666,7 +1236,7 @@ exports[`Registration should go to review step after successfully filling form d
                                   class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Fee
                                   </span>
@@ -1685,9 +1255,9 @@ exports[`Registration should go to review step after successfully filling form d
                                   class="py-2 ml-px bg-theme-background"
                                 >
                                   <div
-                                    class="sc-AxiKw kgmJgX"
-                                    height="14"
-                                    width="14"
+                                    class="sc-AxiKw dzBdqj"
+                                    height="1em"
+                                    width="1em"
                                   >
                                     <svg>
                                       plus.svg
@@ -1700,7 +1270,7 @@ exports[`Registration should go to review step after successfully filling form d
                               class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
                             >
                               <span
-                                class="sc-fzolEj gcosPd"
+                                class="sc-fznWOq evvoWC"
                               >
                                 Total Amount
                               </span>
@@ -1721,7 +1291,7 @@ exports[`Registration should go to review step after successfully filling form d
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="Registration__back-button"
                     type="button"
@@ -1729,7 +1299,7 @@ exports[`Registration should go to review step after successfully filling form d
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="Registration__continue-button"
                     type="button"
@@ -1745,6 +1315,237 @@ exports[`Registration should go to review step after successfully filling form d
     </div>
   </div>
 </DocumentFragment>
+`;
+
+exports[`Registration should hide options for multisignature wallet 1`] = `
+<div>
+  <section
+    class="space-y-8"
+    data-testid="Registration__first-step"
+  >
+    <div
+      class="flex items-end justify-between bg-theme-background"
+    >
+      <div>
+        <h1
+          class="mb-0 md:text-4xl"
+          data-testid="header__title"
+        >
+          Registration
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Select the type of registration and the address you want to register with.
+        </div>
+      </div>
+    </div>
+    <fieldset
+      class="sc-AxirZ izhStr flex flex-col space-y-2"
+    >
+      <div
+        class="mb-2"
+      >
+        <label
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="network"
+        >
+          Cryptoasset
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+      </div>
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="SendTransactionForm__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="SendTransactionForm__network-input"
+            id="SendTransactionForm__network-label"
+          />
+          <div
+            class="sc-fznxsB hhZPAY"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="sc-fzoLag sc-fzoXzr jnLryM px-4"
+            >
+              <div
+                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransactionForm__network-menu"
+              aria-labelledby="SendTransactionForm__network-label"
+              autocomplete="off"
+              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="SendTransactionForm__network-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
+            />
+          </div>
+        </div>
+        <ul
+          aria-labelledby="SendTransactionForm__network-label"
+          class="hidden"
+          id="SendTransactionForm__network-menu"
+          role="listbox"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      class="sc-AxirZ izhStr flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="senderAddress"
+      >
+        Sender
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div
+        data-testid="sender-address"
+      >
+        <div>
+          <button
+            class="sc-fzolEj fPCwSR SelectAddress  "
+            data-testid="SelectAddress__wrapper"
+            type="button"
+          >
+            <div
+              class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="inline-flex items-center"
+            />
+            <div
+              class="absolute flex items-center space-x-3 right-4"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  user.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+          <input
+            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            data-testid="SelectAddress__input"
+            name="senderAddress"
+            readonly=""
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      class="sc-AxirZ izhStr relative h-20 undefined"
+      data-testid="Registration__type"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="registrationType"
+      >
+        Registration Type
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div
+        class="relative w-full"
+      >
+        <input
+          class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+          data-testid="select-list__input"
+          name="registrationType"
+          readonly=""
+          type="text"
+          value=""
+        />
+        <div
+          class="relative w-full"
+        >
+          <div
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-owns="downshift-21-menu"
+            role="combobox"
+          >
+            <label
+              for="downshift-20-input"
+              id="downshift-21-label"
+            />
+            <div
+              class="sc-fznxsB hhZPAY"
+              data-testid="SelectDropdownInput"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="downshift-21-menu"
+                aria-labelledby="downshift-21-label"
+                autocomplete="off"
+                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                data-testid="SelectDropdownInput__input"
+                id="downshift-20-input"
+                name="registrationType"
+                placeholder="Select option"
+                value=""
+              />
+            </div>
+            <ul
+              aria-labelledby="downshift-21-label"
+              class="sc-fznMAR jOZRmr is-open"
+              id="downshift-21-menu"
+              role="listbox"
+            >
+              <li
+                class="select-list-option is-empty"
+                data-testid="select-list__empty-option"
+              >
+                No options
+              </li>
+            </ul>
+          </div>
+          <div
+            class="sc-fzoLag sc-fzpjYC fdEbuY w-10 pointer-events-none text-theme-neutral"
+          >
+            <div
+              class="sc-AxiKw jNSjzx transform rotate-180"
+              height="5"
+              width="7"
+            >
+              <svg>
+                caret-down.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </section>
+</div>
 `;
 
 exports[`Registration should not have delegate option if wallet is a delegate 1`] = `
@@ -1835,7 +1636,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1867,7 +1668,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1890,7 +1691,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -2170,7 +1971,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg eObUJS SelectAddress  "
+                            class="sc-fzolEj fPCwSR SelectAddress  "
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -2189,10 +1990,10 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               </div>
                             </div>
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             >
                               <span
-                                class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-text truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5sRKWckH4rE1 … AepgyC3cvJtwb
@@ -2255,12 +2056,12 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                           <div
                             aria-expanded="true"
                             aria-haspopup="listbox"
-                            aria-owns="downshift-73-menu"
+                            aria-owns="downshift-81-menu"
                             role="combobox"
                           >
                             <label
-                              for="downshift-72-input"
-                              id="downshift-73-label"
+                              for="downshift-80-input"
+                              id="downshift-81-label"
                             />
                             <div
                               class="sc-fznxsB hhZPAY"
@@ -2268,28 +2069,28 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="downshift-73-menu"
-                                aria-labelledby="downshift-73-label"
+                                aria-controls="downshift-81-menu"
+                                aria-labelledby="downshift-81-label"
                                 autocomplete="off"
                                 class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                 data-testid="SelectDropdownInput__input"
-                                id="downshift-72-input"
+                                id="downshift-80-input"
                                 name="registrationType"
                                 placeholder="Select option"
                                 value=""
                               />
                             </div>
                             <ul
-                              aria-labelledby="downshift-73-label"
+                              aria-labelledby="downshift-81-label"
                               class="sc-fznMAR jOZRmr is-open"
-                              id="downshift-73-menu"
+                              id="downshift-81-menu"
                               role="listbox"
                             >
                               <li
                                 aria-selected="false"
                                 class="select-list-option cursor-default "
                                 data-testid="select-list__toggle-option-0"
-                                id="downshift-73-item-0"
+                                id="downshift-81-item-0"
                                 role="option"
                               >
                                 <div
@@ -2302,7 +2103,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 aria-selected="false"
                                 class="select-list-option cursor-default "
                                 data-testid="select-list__toggle-option-1"
-                                id="downshift-73-item-1"
+                                id="downshift-81-item-1"
                                 role="option"
                               >
                                 <div
@@ -2406,9 +2207,21 @@ exports[`Registration should not set fee if no fee options 1`] = `
               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
             >
               <div
-                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                aria-label="ARK Devnet"
+                class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
                 data-testid="SelectNetworkInput__network"
-              />
+              >
+                <div
+                  class="sc-AxiKw dklFyP"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
             </div>
             <input
               aria-autocomplete="list"
@@ -2450,7 +2263,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
       >
         <div>
           <button
-            class="sc-fzqBkg eObUJS SelectAddress  "
+            class="sc-fzolEj fPCwSR SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -2458,7 +2271,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
               class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             />
             <div
               class="absolute flex items-center space-x-3 right-4"
@@ -2517,12 +2330,12 @@ exports[`Registration should not set fee if no fee options 1`] = `
           <div
             aria-expanded="true"
             aria-haspopup="listbox"
-            aria-owns="downshift-31-menu"
+            aria-owns="downshift-37-menu"
             role="combobox"
           >
             <label
-              for="downshift-30-input"
-              id="downshift-31-label"
+              for="downshift-36-input"
+              id="downshift-37-label"
             />
             <div
               class="sc-fznxsB hhZPAY"
@@ -2535,30 +2348,30 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 Delegate
               </span>
               <input
-                aria-activedescendant="downshift-31-item-1"
+                aria-activedescendant="downshift-37-item-1"
                 aria-autocomplete="list"
-                aria-controls="downshift-31-menu"
-                aria-labelledby="downshift-31-label"
+                aria-controls="downshift-37-menu"
+                aria-labelledby="downshift-37-label"
                 autocomplete="off"
                 class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                 data-testid="SelectDropdownInput__input"
-                id="downshift-30-input"
+                id="downshift-36-input"
                 name="registrationType"
                 placeholder="Select option"
                 value="Delegate"
               />
             </div>
             <ul
-              aria-labelledby="downshift-31-label"
+              aria-labelledby="downshift-37-label"
               class="sc-fznMAR jOZRmr is-open"
-              id="downshift-31-menu"
+              id="downshift-37-menu"
               role="listbox"
             >
               <li
                 aria-selected="false"
                 class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-0"
-                id="downshift-31-item-0"
+                id="downshift-37-item-0"
                 role="option"
               >
                 <div
@@ -2571,7 +2384,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 aria-selected="true"
                 class="select-list-option cursor-default is-highlighted"
                 data-testid="select-list__toggle-option-1"
-                id="downshift-31-item-1"
+                id="downshift-37-item-1"
                 role="option"
               >
                 <div
@@ -2584,7 +2397,20 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 aria-selected="false"
                 class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-2"
-                id="downshift-31-item-2"
+                id="downshift-37-item-2"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  MultiSignature
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-3"
+                id="downshift-37-item-3"
                 role="option"
               >
                 <div
@@ -2703,7 +2529,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2735,7 +2561,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2758,7 +2584,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -3016,16 +2842,16 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                               class="font-semibold"
                             >
                               <div
-                                class="inline-block truncate align-middle"
+                                class="inline-flex items-center"
                               >
                                 <span
-                                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                   data-testid="address__wallet-name"
                                 >
                                   ARK Wallet 1
                                 </span>
                                 <span
-                                  class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                  class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D8rr7B … s6YUYD
@@ -3087,7 +2913,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                   class="flex flex-col w-1/2 justify-center px-4 py-2"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Amount
                                   </span>
@@ -3102,7 +2928,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                   class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Fee
                                   </span>
@@ -3121,9 +2947,9 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                   class="py-2 ml-px bg-theme-background"
                                 >
                                   <div
-                                    class="sc-AxiKw kgmJgX"
-                                    height="14"
-                                    width="14"
+                                    class="sc-AxiKw dzBdqj"
+                                    height="1em"
+                                    width="1em"
                                   >
                                     <svg>
                                       plus.svg
@@ -3136,7 +2962,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                               class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
                             >
                               <span
-                                class="sc-fzolEj gcosPd"
+                                class="sc-fznWOq evvoWC"
                               >
                                 Total Amount
                               </span>
@@ -3157,7 +2983,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="Registration__back-button"
                     type="button"
@@ -3165,7 +2991,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="Registration__continue-button"
                     type="button"
@@ -3247,9 +3073,21 @@ exports[`Registration should render 1st step 1`] = `
               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
             >
               <div
-                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                aria-label="ARK Devnet"
+                class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
                 data-testid="SelectNetworkInput__network"
-              />
+              >
+                <div
+                  class="sc-AxiKw dklFyP"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
             </div>
             <input
               aria-autocomplete="list"
@@ -3291,7 +3129,7 @@ exports[`Registration should render 1st step 1`] = `
       >
         <div>
           <button
-            class="sc-fzqBkg eObUJS SelectAddress  "
+            class="sc-fzolEj fPCwSR SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -3299,7 +3137,7 @@ exports[`Registration should render 1st step 1`] = `
               class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="inline-block truncate align-middle"
+              class="inline-flex items-center"
             />
             <div
               class="absolute flex items-center space-x-3 right-4"
@@ -3358,12 +3196,12 @@ exports[`Registration should render 1st step 1`] = `
           <div
             aria-expanded="true"
             aria-haspopup="listbox"
-            aria-owns="downshift-21-menu"
+            aria-owns="downshift-27-menu"
             role="combobox"
           >
             <label
-              for="downshift-20-input"
-              id="downshift-21-label"
+              for="downshift-26-input"
+              id="downshift-27-label"
             />
             <div
               class="sc-fznxsB hhZPAY"
@@ -3376,30 +3214,30 @@ exports[`Registration should render 1st step 1`] = `
                 Delegate
               </span>
               <input
-                aria-activedescendant="downshift-21-item-1"
+                aria-activedescendant="downshift-27-item-1"
                 aria-autocomplete="list"
-                aria-controls="downshift-21-menu"
-                aria-labelledby="downshift-21-label"
+                aria-controls="downshift-27-menu"
+                aria-labelledby="downshift-27-label"
                 autocomplete="off"
                 class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                 data-testid="SelectDropdownInput__input"
-                id="downshift-20-input"
+                id="downshift-26-input"
                 name="registrationType"
                 placeholder="Select option"
                 value="Delegate"
               />
             </div>
             <ul
-              aria-labelledby="downshift-21-label"
+              aria-labelledby="downshift-27-label"
               class="sc-fznMAR jOZRmr is-open"
-              id="downshift-21-menu"
+              id="downshift-27-menu"
               role="listbox"
             >
               <li
                 aria-selected="false"
                 class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-0"
-                id="downshift-21-item-0"
+                id="downshift-27-item-0"
                 role="option"
               >
                 <div
@@ -3412,7 +3250,7 @@ exports[`Registration should render 1st step 1`] = `
                 aria-selected="true"
                 class="select-list-option cursor-default is-highlighted"
                 data-testid="select-list__toggle-option-1"
-                id="downshift-21-item-1"
+                id="downshift-27-item-1"
                 role="option"
               >
                 <div
@@ -3425,7 +3263,20 @@ exports[`Registration should render 1st step 1`] = `
                 aria-selected="false"
                 class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-2"
-                id="downshift-21-item-2"
+                id="downshift-27-item-2"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  MultiSignature
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-3"
+                id="downshift-27-item-3"
                 role="option"
               >
                 <div
@@ -3544,7 +3395,7 @@ exports[`Registration should render registration form without selected wallet 1`
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -3576,7 +3427,7 @@ exports[`Registration should render registration form without selected wallet 1`
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -3599,7 +3450,7 @@ exports[`Registration should render registration form without selected wallet 1`
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -3860,7 +3711,7 @@ exports[`Registration should render registration form without selected wallet 1`
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg eObUJS SelectAddress  "
+                            class="sc-fzolEj fPCwSR SelectAddress  "
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -3868,7 +3719,7 @@ exports[`Registration should render registration form without selected wallet 1`
                               class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
                             />
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             />
                             <div
                               class="absolute flex items-center space-x-3 right-4"
@@ -4077,7 +3928,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -4109,7 +3960,7 @@ exports[`Registration should select cryptoasset first and see select address inp
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -4132,7 +3983,7 @@ exports[`Registration should select cryptoasset first and see select address inp
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -4437,7 +4288,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg eObUJS SelectAddress  "
+                            class="sc-fzolEj fPCwSR SelectAddress  "
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -4445,7 +4296,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                               class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
                             />
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             />
                             <div
                               class="absolute flex items-center space-x-3 right-4"
@@ -4654,7 +4505,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -4686,7 +4537,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -4709,7 +4560,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -5014,7 +4865,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                       >
                         <div>
                           <button
-                            class="sc-fzqBkg eObUJS SelectAddress  "
+                            class="sc-fzolEj fPCwSR SelectAddress  "
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -5022,7 +4873,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                               class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
                             />
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             />
                             <div
                               class="absolute flex items-center space-x-3 right-4"
@@ -5231,7 +5082,7 @@ exports[`Registration should select registration type & show form 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -5263,7 +5114,7 @@ exports[`Registration should select registration type & show form 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -5286,7 +5137,7 @@ exports[`Registration should select registration type & show form 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -5482,7 +5333,7 @@ exports[`Registration should select registration type & show form 1`] = `
                         class="flex rounded-lg overflow-hidden bg-theme-warning"
                       >
                         <div
-                          class="sc-fzoxKX habbCf flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="sc-fzqPZZ hQmpwy flex items-center justify-center text-theme-warning bg-theme-warning-200"
                         >
                           <div
                             class="sc-AxiKw iRsrJT"
@@ -5495,7 +5346,7 @@ exports[`Registration should select registration type & show form 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-fzqPZZ jgngte flex-1 bg-theme-warning-100 space-y-2"
+                          class="sc-fzqBkg czMUCU flex-1 bg-theme-warning-100 space-y-2"
                         >
                           <div
                             class="text-sm"
@@ -5534,16 +5385,16 @@ exports[`Registration should select registration type & show form 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -5672,7 +5523,7 @@ exports[`Registration should select registration type & show form 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="Registration__back-button"
                     type="button"
@@ -5680,7 +5531,7 @@ exports[`Registration should select registration type & show form 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="Registration__continue-button"
                     disabled=""
@@ -5787,7 +5638,7 @@ exports[`Registration should should go back and forth & correctly register field
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -5819,7 +5670,7 @@ exports[`Registration should should go back and forth & correctly register field
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -5842,7 +5693,7 @@ exports[`Registration should should go back and forth & correctly register field
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -6038,7 +5889,7 @@ exports[`Registration should should go back and forth & correctly register field
                         class="flex rounded-lg overflow-hidden bg-theme-warning"
                       >
                         <div
-                          class="sc-fzoxKX habbCf flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="sc-fzqPZZ hQmpwy flex items-center justify-center text-theme-warning bg-theme-warning-200"
                         >
                           <div
                             class="sc-AxiKw iRsrJT"
@@ -6051,7 +5902,7 @@ exports[`Registration should should go back and forth & correctly register field
                           </div>
                         </div>
                         <div
-                          class="sc-fzqPZZ jgngte flex-1 bg-theme-warning-100 space-y-2"
+                          class="sc-fzqBkg czMUCU flex-1 bg-theme-warning-100 space-y-2"
                         >
                           <div
                             class="text-sm"
@@ -6090,16 +5941,16 @@ exports[`Registration should should go back and forth & correctly register field
                             class="font-semibold"
                           >
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -6228,7 +6079,7 @@ exports[`Registration should should go back and forth & correctly register field
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="Registration__back-button"
                     type="button"
@@ -6236,7 +6087,7 @@ exports[`Registration should should go back and forth & correctly register field
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="Registration__continue-button"
                     type="button"
@@ -6342,7 +6193,7 @@ exports[`Registration should successfully register entity 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -6374,7 +6225,7 @@ exports[`Registration should successfully register entity 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -6397,7 +6248,7 @@ exports[`Registration should successfully register entity 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -6712,16 +6563,16 @@ exports[`Registration should successfully register entity 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 2
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5sRKW … cvJtwb
@@ -6924,7 +6775,7 @@ exports[`Registration should successfully register entity 1`] = `
                     class="flex justify-end space-x-3"
                   >
                     <button
-                      class="sc-AxjAm joLCoM"
+                      class="sc-AxjAm fCKjFI"
                       color="primary"
                       data-testid="Registration__button--back-to-wallet"
                       type="button"
@@ -6932,7 +6783,7 @@ exports[`Registration should successfully register entity 1`] = `
                       Back to Wallet
                     </button>
                     <button
-                      class="sc-AxjAm joLCoM space-x-2"
+                      class="sc-AxjAm fCKjFI space-x-2"
                       color="primary"
                       data-testid="Registration__download-button"
                       type="button"
@@ -7050,7 +6901,7 @@ exports[`Registration should validate description 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -7082,7 +6933,7 @@ exports[`Registration should validate description 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -7105,7 +6956,7 @@ exports[`Registration should validate description 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -7403,7 +7254,7 @@ exports[`Registration should validate description 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -7447,7 +7298,7 @@ exports[`Registration should validate description 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -7491,7 +7342,7 @@ exports[`Registration should validate description 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -7604,7 +7455,7 @@ exports[`Registration should validate description 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="Registration__back-button"
                     type="button"
@@ -7612,7 +7463,7 @@ exports[`Registration should validate description 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="Registration__continue-button"
                     disabled=""
@@ -7719,7 +7570,7 @@ exports[`Registration should validate display name 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -7751,7 +7602,7 @@ exports[`Registration should validate display name 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -7774,7 +7625,7 @@ exports[`Registration should validate display name 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -8070,7 +7921,7 @@ exports[`Registration should validate display name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8114,7 +7965,7 @@ exports[`Registration should validate display name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8158,7 +8009,7 @@ exports[`Registration should validate display name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8271,7 +8122,7 @@ exports[`Registration should validate display name 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="Registration__back-button"
                     type="button"
@@ -8279,7 +8130,7 @@ exports[`Registration should validate display name 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="Registration__continue-button"
                     disabled=""
@@ -8386,7 +8237,7 @@ exports[`Registration should validate entity name 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -8418,7 +8269,7 @@ exports[`Registration should validate entity name 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -8441,7 +8292,7 @@ exports[`Registration should validate entity name 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -8737,7 +8588,7 @@ exports[`Registration should validate entity name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8781,7 +8632,7 @@ exports[`Registration should validate entity name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8825,7 +8676,7 @@ exports[`Registration should validate entity name 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -8938,7 +8789,7 @@ exports[`Registration should validate entity name 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="Registration__back-button"
                     type="button"
@@ -8946,7 +8797,7 @@ exports[`Registration should validate entity name 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="Registration__continue-button"
                     disabled=""
@@ -9053,7 +8904,7 @@ exports[`Registration should validate website url 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -9085,7 +8936,7 @@ exports[`Registration should validate website url 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -9108,7 +8959,7 @@ exports[`Registration should validate website url 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -9404,7 +9255,7 @@ exports[`Registration should validate website url 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -9448,7 +9299,7 @@ exports[`Registration should validate website url 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -9492,7 +9343,7 @@ exports[`Registration should validate website url 1`] = `
                               class="font-semibold"
                             >
                               <div
-                                class="sc-fznWOq leTOwr flex flex-col font-normal"
+                                class="flex flex-col font-normal"
                                 data-testid="LinkCollection"
                               >
                                 <div
@@ -9605,7 +9456,7 @@ exports[`Registration should validate website url 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="Registration__back-button"
                     type="button"
@@ -9613,7 +9464,7 @@ exports[`Registration should validate website url 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP"
+                    class="sc-AxjAm colAFb"
                     color="primary"
                     data-testid="Registration__continue-button"
                     disabled=""

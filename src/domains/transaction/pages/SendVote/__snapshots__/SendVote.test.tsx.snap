@@ -94,7 +94,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -126,7 +126,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -149,7 +149,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -460,16 +460,16 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -536,7 +536,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                             width="21"
                           >
                             <svg>
-                              vote-unvote.svg
+                              vote-combination.svg
                             </svg>
                           </div>
                         </div>
@@ -580,16 +580,16 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-flex items-center"
                                   >
                                     <span
-                                      class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                       data-testid="address__wallet-name"
                                     >
                                       arkx
                                     </span>
                                     <span
-                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                       data-testid="address__wallet-address"
                                     >
                                       D61mfS … J3Dyib
@@ -640,16 +640,16 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-flex items-center"
                                   >
                                     <span
-                                      class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                       data-testid="address__wallet-name"
                                     >
                                       genesis_42
                                     </span>
                                     <span
-                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                       data-testid="address__wallet-address"
                                     >
                                       D5L5zX … d6iWVr
@@ -691,7 +691,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="SendVote__button--back-to-wallet"
                     type="button"
@@ -699,7 +699,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm joLCoM space-x-2"
+                    class="sc-AxjAm fCKjFI space-x-2"
                     color="primary"
                     data-testid="SendVote__button--download"
                     type="button"
@@ -816,7 +816,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -848,7 +848,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -871,7 +871,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1182,16 +1182,16 @@ exports[`SendVote should send a unvote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -1302,16 +1302,16 @@ exports[`SendVote should send a unvote transaction 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-flex items-center"
                                   >
                                     <span
-                                      class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                       data-testid="address__wallet-name"
                                     >
                                       genesis_42
                                     </span>
                                     <span
-                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                       data-testid="address__wallet-address"
                                     >
                                       D5L5zX … d6iWVr
@@ -1353,7 +1353,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="SendVote__button--back-to-wallet"
                     type="button"
@@ -1361,7 +1361,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm joLCoM space-x-2"
+                    class="sc-AxjAm fCKjFI space-x-2"
                     color="primary"
                     data-testid="SendVote__button--download"
                     type="button"
@@ -1478,7 +1478,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1510,7 +1510,7 @@ exports[`SendVote should send a vote transaction 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1533,7 +1533,7 @@ exports[`SendVote should send a vote transaction 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1844,16 +1844,16 @@ exports[`SendVote should send a vote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="inline-block truncate align-middle"
+                              class="inline-flex items-center"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 ARK Wallet 1
                               </span>
                               <span
-                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B … s6YUYD
@@ -1964,16 +1964,16 @@ exports[`SendVote should send a vote transaction 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-flex items-center"
                                   >
                                     <span
-                                      class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                                       data-testid="address__wallet-name"
                                     >
                                       arkx
                                     </span>
                                     <span
-                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                                      class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                                       data-testid="address__wallet-address"
                                     >
                                       D61mfS … J3Dyib
@@ -2015,7 +2015,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="SendVote__button--back-to-wallet"
                     type="button"
@@ -2023,7 +2023,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm joLCoM space-x-2"
+                    class="sc-AxjAm fCKjFI space-x-2"
                     color="primary"
                     data-testid="SendVote__button--download"
                     type="button"
@@ -2140,7 +2140,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2172,7 +2172,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2195,7 +2195,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm RZxAM text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -2440,7 +2440,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm joLCoM"
+                    class="sc-AxjAm fCKjFI"
                     color="primary"
                     data-testid="SendVote__button--back"
                     type="button"
@@ -2448,7 +2448,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm BsmvP space-x-2"
+                    class="sc-AxjAm colAFb space-x-2"
                     color="primary"
                     data-testid="SendVote__button--submit"
                     disabled=""

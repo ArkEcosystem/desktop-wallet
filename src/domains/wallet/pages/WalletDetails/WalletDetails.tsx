@@ -47,7 +47,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const {
-		pendingTransactions,
+		pendingMultiSignatureTransactions,
 		transactions,
 		fetchInit,
 		fetchMore,
@@ -153,6 +153,9 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					network={networkId}
 					publicKey={activeWallet.publicKey()}
 					ticker={ticker}
+					showSignMessageOption={activeWallet.network().can("Message.sign")}
+					showStoreHashOption={activeWallet.network().can("Transaction.ipfs")}
+					showVerifyMessageOption={activeWallet.network().can("Message.verify")}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 					onSend={() =>
 						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)
@@ -202,11 +205,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 				</Section>
 
 				<Section className="flex-1">
-					{pendingTransactions.length ? (
+					{pendingMultiSignatureTransactions.length ? (
 						<div className="mb-16">
 							<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
 							<SignedTransactionTable
-								transactions={pendingTransactions}
+								transactions={pendingMultiSignatureTransactions}
 								wallet={activeWallet}
 								onClick={setSignedTransactionModalItem}
 							/>

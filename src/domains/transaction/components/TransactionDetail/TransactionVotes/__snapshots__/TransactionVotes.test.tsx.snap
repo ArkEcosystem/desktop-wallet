@@ -111,16 +111,16 @@ exports[`TransactionVotes should render with unvotes 1`] = `
                 </div>
               </div>
               <div
-                class="inline-block truncate align-middle"
+                class="inline-flex items-center"
               >
                 <span
-                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   test-username
                 </span>
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -208,16 +208,16 @@ exports[`TransactionVotes should render with votes 1`] = `
                 </div>
               </div>
               <div
-                class="inline-block truncate align-middle"
+                class="inline-flex items-center"
               >
                 <span
-                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   test-username
                 </span>
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -261,7 +261,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
         width="21"
       >
         <svg>
-          vote-unvote.svg
+          vote-combination.svg
         </svg>
       </div>
     </div>
@@ -305,16 +305,16 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                 </div>
               </div>
               <div
-                class="inline-block truncate align-middle"
+                class="inline-flex items-center"
               >
                 <span
-                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   test-username
                 </span>
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -365,16 +365,16 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                 </div>
               </div>
               <div
-                class="inline-block truncate align-middle"
+                class="inline-flex items-center"
               >
                 <span
-                  class="max-w-24 flex-auto truncate mt-4 mr-2 font-semibold text-base text-theme-text"
+                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   test-username
                 </span>
                 <span
-                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 font-semibold text-base"
+                  class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address

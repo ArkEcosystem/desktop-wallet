@@ -22,11 +22,15 @@ type DashboardProps = {
 
 export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const history = useHistory();
-	const { env } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
-	const [showTransactions, setShowTransactions] = useState(true);
-	const [showPortfolio, setShowPortfolio] = useState(true);
+	const [{ showPortfolio }, setShowPortfolio] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { showPortfolio: true },
+	);
+	const [{ showTransactions }, setShowTransactions] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { showTransactions: true },
+	);
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
@@ -88,16 +92,25 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		// eslint-disable-next-line
 	}, []);
 
+	useEffect(() => {
+		const updateDashboardSettings = async () => {
+			activeProfile.settings().set(ProfileSetting.DashboardConfiguration, { showPortfolio, showTransactions });
+			await persist();
+		};
+
+		updateDashboardSettings();
+	}, [activeProfile, persist, showPortfolio, showTransactions]);
+
 	// Wallet controls data
 	const filterProperties = {
-		visibleTransactionsView: showTransactions,
-		visiblePortfolioView: true,
 		networks,
-		toggleTransactionsView: (isChecked: boolean) => {
-			setShowTransactions(isChecked);
+		visiblePortfolioView: showPortfolio,
+		visibleTransactionsView: showTransactions,
+		togglePortfolioView: (showPortfolio: boolean) => {
+			setShowPortfolio({ showPortfolio });
 		},
-		togglePortfolioView: (isChecked: boolean) => {
-			setShowPortfolio(isChecked);
+		toggleTransactionsView: (showTransactions: boolean) => {
+			setShowTransactions({ showTransactions });
 		},
 	};
 

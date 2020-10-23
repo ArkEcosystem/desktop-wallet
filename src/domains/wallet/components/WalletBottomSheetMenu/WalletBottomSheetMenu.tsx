@@ -36,12 +36,9 @@ const WalletTable = ({
 
 	const columns = [
 		{
-			Header: t("COMMON.ASSET_TYPE"),
-			accessor: "avatarId",
-		},
-		{
 			Header: t("COMMON.ADDRESS"),
 			accessor: "address",
+			className: "ml-24",
 		},
 		{
 			Header: t("COMMON.WALLET_TYPE"),

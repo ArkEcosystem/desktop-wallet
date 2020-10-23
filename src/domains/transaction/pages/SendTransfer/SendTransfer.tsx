@@ -1,8 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
+import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -11,7 +13,7 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation, useParams } from "react-router-dom";
 
 import { FormStep } from "./Step1";
 import { ReviewStep } from "./Step2";
@@ -21,6 +23,7 @@ export const SendTransfer = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
 	const location = useLocation();
+	const { walletId: hasWalletId } = useParams();
 	const { state } = location;
 
 	const [activeTab, setActiveTab] = useState(1);
@@ -32,34 +35,44 @@ export const SendTransfer = () => {
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+	const [wallet, setWallet] = useState<ReadWriteWallet | undefined>(hasWalletId ? activeWallet : undefined);
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const form = useForm({ mode: "onChange" });
-	const { clearErrors, formState, getValues, register, setError, setValue } = form;
-	const { isValid } = formState;
+	const form = useForm({ mode: "onChange", defaultValues: { fee: 0 }, shouldUnregister: false });
+	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
+	const { isValid, isSubmitting } = formState;
+
+	const { senderAddress } = watch();
 	const { sendTransfer } = useValidation();
 
 	useEffect(() => {
 		register("network", sendTransfer.network());
-		register("recipients", sendTransfer.recipients());
+		register("recipients");
 		register("senderAddress", sendTransfer.senderAddress());
 		register("fee", sendTransfer.fee());
 		register("smartbridge", sendTransfer.smartbridge());
 	}, [register, sendTransfer]);
 
 	useEffect(() => {
-		if (!activeWallet?.address?.()) return;
+		if (!hasWalletId && senderAddress) {
+			const wallet = activeProfile.wallets().findByAddress(senderAddress);
+			setWallet(wallet);
+		}
+	}, [activeProfile, hasWalletId, senderAddress]);
 
-		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
+	useEffect(() => {
+		if (!wallet?.address?.()) return;
+
+		setValue("senderAddress", wallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
-			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
+			if (network.coin() === wallet.coinId() && network.id() === wallet.networkId()) {
 				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
 		}
-	}, [activeWallet, networks, setValue]);
+	}, [wallet, networks, setValue]);
 
 	useEffect(() => {
 		if (state?.memo) setValue("smartbridge", state.memo);
@@ -72,7 +85,7 @@ export const SendTransfer = () => {
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		const isMultiPayment = recipients.length > 1;
-		const transferInput = {
+		const transferInput: Contracts.TransactionInput = {
 			fee,
 			from: senderAddress,
 			sign: {
@@ -80,6 +93,13 @@ export const SendTransfer = () => {
 				secondMnemonic,
 			},
 		};
+
+		if (senderWallet?.isMultiSignature()) {
+			transferInput.nonce = senderWallet.nonce().plus(1).toFixed();
+			transferInput.sign = {
+				multiSignature: senderWallet?.multiSignature(),
+			};
+		}
 
 		try {
 			let transactionId: string;
@@ -111,7 +131,7 @@ export const SendTransfer = () => {
 
 			setTransaction(senderWallet!.transaction().transaction(transactionId));
 
-			handleNext();
+			setActiveTab(4);
 		} catch (error) {
 			console.error("Could not create transaction: ", error);
 
@@ -124,8 +144,17 @@ export const SendTransfer = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = () => {
-		setActiveTab(activeTab + 1);
+	const handleNext = async () => {
+		const newIndex = activeTab + 1;
+		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
+
+		// Skip authorization step
+		if (newIndex === 3 && senderWallet?.isMultiSignature()) {
+			await handleSubmit(submitForm)();
+			return;
+		}
+
+		setActiveTab(newIndex);
 	};
 
 	const copyTransaction = () => {
@@ -148,19 +177,24 @@ export const SendTransfer = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FormStep networks={networks} profile={activeProfile} deeplinkProps={state} />
+								<FormStep
+									networks={networks}
+									profile={activeProfile}
+									deeplinkProps={state}
+									hasWalletId={hasWalletId}
+								/>
 							</TabPanel>
 
 							<TabPanel tabId={2}>
-								<ReviewStep wallet={activeWallet} />
+								<ReviewStep wallet={wallet!} />
 							</TabPanel>
 
 							<TabPanel tabId={3}>
-								<AuthenticationStep wallet={activeWallet} />
+								<AuthenticationStep wallet={wallet!} />
 							</TabPanel>
 
 							<TabPanel tabId={4}>
-								<SummaryStep transaction={transaction} senderWallet={activeWallet} />
+								<SummaryStep transaction={transaction} senderWallet={wallet!} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
@@ -178,10 +212,10 @@ export const SendTransfer = () => {
 										{activeTab < 3 && (
 											<Button
 												data-testid="SendTransfer__button--continue"
-												disabled={!isValid}
+												disabled={!isValid || isSubmitting}
 												onClick={handleNext}
 											>
-												{t("COMMON.CONTINUE")}
+												{isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
 											</Button>
 										)}
 
@@ -189,11 +223,11 @@ export const SendTransfer = () => {
 											<Button
 												type="submit"
 												data-testid="SendTransfer__button--submit"
-												disabled={!isValid}
+												disabled={!isValid || isSubmitting}
 												className="space-x-2"
 											>
 												<Icon name="Send" width={20} height={20} />
-												<span>{t("COMMON.SEND")}</span>
+												{isSubmitting ? <Spinner size="sm" /> : <span>{t("COMMON.SEND")}</span>}
 											</Button>
 										)}
 									</>
@@ -206,9 +240,7 @@ export const SendTransfer = () => {
 											variant="plain"
 											className="block"
 											onClick={() =>
-												history.push(
-													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-												)
+												history.push(`/profiles/${activeProfile.id()}/wallets/${wallet?.id()}`)
 											}
 										>
 											{t("COMMON.BACK_TO_WALLET")}

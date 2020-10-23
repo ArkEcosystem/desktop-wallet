@@ -1,10 +1,22 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { toasts } from "app/services";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	getDefaultWalletMnemonic,
+	render,
+	screen,
+	syncDelegates,
+	waitFor,
+} from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { MultiSignatureDetail } from "./MultiSignatureDetail";
+
+const passphrase = getDefaultWalletMnemonic();
 
 describe("MultiSignatureDetail", () => {
 	let profile: Profile;
@@ -14,7 +26,14 @@ describe("MultiSignatureDetail", () => {
 		transfer: undefined,
 		multiSignature: undefined,
 		multiPayment: undefined,
+		vote: undefined,
+		unvote: undefined,
+		ipfs: undefined,
 	};
+
+	beforeAll(() => {
+		syncDelegates();
+	});
 
 	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -85,6 +104,60 @@ describe("MultiSignatureDetail", () => {
 					},
 				},
 			});
+
+		fixtures.vote = await wallet
+			.coin()
+			.transaction()
+			.vote({
+				nonce: "1",
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				fee: "1",
+				data: {
+					vote: "+034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
+
+		fixtures.unvote = await wallet
+			.coin()
+			.transaction()
+			.vote({
+				nonce: "1",
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				fee: "1",
+				data: {
+					vote: "-034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
+
+		fixtures.ipfs = await wallet
+			.coin()
+			.transaction()
+			.ipfs({
+				nonce: "1",
+				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				fee: "1",
+				data: {
+					hash: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco",
+				},
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+					},
+				},
+			});
 	});
 
 	it("should render summary step for transfer", async () => {
@@ -127,6 +200,48 @@ describe("MultiSignatureDetail", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render summary step for vote", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => false);
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.vote} wallet={wallet} isOpen />);
+
+		await waitFor(() =>
+			expect(screen.getByTestId("header__title")).toHaveTextContent(translations.TRANSACTION_TYPES.VOTE),
+		);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render summary step for unvote", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => false);
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.unvote} wallet={wallet} isOpen />);
+
+		await waitFor(() =>
+			expect(screen.getByTestId("header__title")).toHaveTextContent(translations.TRANSACTION_TYPES.UNVOTE),
+		);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render summary step for ipfs", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => false);
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.ipfs} wallet={wallet} isOpen />);
+
+		await waitFor(() =>
+			expect(screen.getByTestId("header__title")).toHaveTextContent(translations.TRANSACTION_TYPES.IPFS),
+		);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should show send button when able to broadcast", async () => {
 		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
@@ -147,6 +262,18 @@ describe("MultiSignatureDetail", () => {
 		await waitFor(() => expect(screen.getByText(translations.SUCCESS.TITLE)).toBeInTheDocument());
 
 		broadcastMock.mockRestore();
+	});
+
+	it("should not show send button when waiting for confirmations", async () => {
+		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockImplementationOnce(() => true);
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => true);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.queryByTestId("MultiSignatureDetail__broadcast")).not.toBeInTheDocument());
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should fail to broadcast transaction", async () => {
@@ -246,7 +373,7 @@ describe("MultiSignatureDetail", () => {
 		act(() => {
 			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
-					value: "my mnemonic",
+					value: passphrase,
 				},
 			});
 		});
@@ -288,7 +415,7 @@ describe("MultiSignatureDetail", () => {
 		act(() => {
 			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
-					value: "my mnemonic",
+					value: passphrase,
 				},
 			});
 		});

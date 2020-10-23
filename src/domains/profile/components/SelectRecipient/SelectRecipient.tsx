@@ -1,10 +1,9 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
-import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { SearchContact } from "domains/contact/components/SearchContact";
+import { SearchRecipient } from "domains/transaction/components/SearchRecipient";
 import React, { useEffect, useState } from "react";
 
 type SelectRecipientProps = {
@@ -31,20 +30,8 @@ const ProfileAvatar = ({ address }: any) => {
 };
 
 export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProps>(
-	(
-		{
-			contactSearchTitle,
-			contactSearchDescription,
-			selectActionLabel,
-			address,
-			profile,
-			disabled,
-			isInvalid,
-			onChange,
-		}: SelectRecipientProps,
-		ref,
-	) => {
-		const [isContactSearchOpen, setIsContactSearchOpen] = useState(false);
+	({ address, profile, disabled, isInvalid, onChange }: SelectRecipientProps, ref) => {
+		const [isRecipientSearchOpen, setIsRecipientSearchOpen] = useState(false);
 		const [selectedAddress, setSelectedAddress] = useState("");
 
 		useEffect(() => {
@@ -53,18 +40,15 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 			}
 		}, [address, setSelectedAddress]);
 
-		const fieldContext = useFormField();
-		const isInvalidField = fieldContext?.isInvalid || isInvalid;
-
-		const onSelectProfile = (address: string) => {
+		const handleSelectAddress = (address: string) => {
 			setSelectedAddress(address);
-			setIsContactSearchOpen(false);
+			setIsRecipientSearchOpen(false);
 			onChange?.(address);
 		};
 
-		const openContacts = () => {
+		const openRecipients = () => {
 			if (disabled) return;
-			setIsContactSearchOpen(true);
+			setIsRecipientSearchOpen(true);
 		};
 
 		const onInputChange = (value: string) => {
@@ -86,36 +70,27 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 						defaultValue={selectedAddress}
 						onChange={(ev: any) => onInputChange(ev.target.value)}
 						disabled={disabled}
-						isInvalid={isInvalidField}
+						isInvalid={isInvalid}
 					/>
 
 					<div
-						data-testid="SelectRecipient__select-contact"
+						data-testid="SelectRecipient__select-recipient"
 						className="absolute flex items-center space-x-3 cursor-pointer right-4"
-						onClick={openContacts}
+						onClick={openRecipients}
 					>
 						<Icon name="User" width={20} height={20} />
 					</div>
 				</div>
 
-				<SearchContact
-					title={contactSearchTitle}
-					description={contactSearchDescription}
-					isOpen={isContactSearchOpen}
+				<SearchRecipient
+					isOpen={isRecipientSearchOpen}
 					profile={profile}
-					options={[{ value: "select", label: selectActionLabel }]}
-					onAction={(_, address: string) => onSelectProfile(address)}
-					onClose={() => setIsContactSearchOpen(false)}
+					onAction={(address: string) => handleSelectAddress(address)}
+					onClose={() => setIsRecipientSearchOpen(false)}
 				/>
 			</div>
 		);
 	},
 );
-
-SelectRecipient.defaultProps = {
-	contactSearchTitle: "Recipient search",
-	contactSearchDescription: "Find and select the recipient from your contacts",
-	selectActionLabel: "Select",
-};
 
 SelectRecipient.displayName = "SelectRecipient";

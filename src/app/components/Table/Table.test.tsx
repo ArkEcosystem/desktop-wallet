@@ -62,4 +62,20 @@ describe("Table", () => {
 		const { queryAllByRole } = render(<Table hideHeader columns={columns} data={data} />);
 		expect(queryAllByRole("columnheader")).toHaveLength(0);
 	});
+
+	it("should render with width class applied to column header", () => {
+		const { getByTestId } = render(
+			<Table
+				columns={[
+					{
+						Header: "Header 1",
+						cellWidth: "width",
+					},
+				]}
+				data={data}
+			/>,
+		);
+
+		expect(getByTestId("table__th--0")).toHaveClass("width");
+	});
 });

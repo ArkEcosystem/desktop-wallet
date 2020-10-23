@@ -136,7 +136,7 @@ module.exports = {
 			maxHeight: {
 				"17e": "4.25em",
 				"18e": "4.5em",
-				"128": "32rem",
+				128: "32rem",
 			},
 			height: {
 				"1/2": "50%",
@@ -147,6 +147,7 @@ module.exports = {
 			width: {
 				22: "5.5rem",
 				44: "11rem",
+				50: "12.5rem",
 				96: "24rem",
 				128: "32rem",
 				144: "36rem",
@@ -160,6 +161,7 @@ module.exports = {
 			},
 			margin: {
 				"-14": "-3.5rem",
+				25: "6.25rem",
 			},
 			fontSize: {
 				0: "0",

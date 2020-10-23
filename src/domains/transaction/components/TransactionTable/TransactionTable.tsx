@@ -31,17 +31,16 @@ export const TransactionTable = ({
 }: Props) => {
 	const { t } = useTranslation();
 
-	const commonColumns = [
+	const commonColumns: any = [
 		{
 			Header: t("COMMON.DATE"),
 			accessor: "timestamp",
-		},
-		{
-			Header: t("COMMON.TYPE"),
-			className: "invisible",
+			cellWidth: "w-50",
 		},
 		{
 			Header: t("COMMON.RECIPIENT"),
+			className: "ml-25",
+			cellWidth: "w-96",
 		},
 		{
 			Header: t("COMMON.INFO"),
@@ -50,6 +49,7 @@ export const TransactionTable = ({
 		{
 			Header: t("COMMON.STATUS"),
 			className: "justify-center",
+			minimumWidth: true,
 		},
 		{
 			Header: t("COMMON.AMOUNT"),
@@ -61,10 +61,6 @@ export const TransactionTable = ({
 	const columns = useMemo(() => {
 		if (isCompact) {
 			return [
-				{
-					Header: t("COMMON.TYPE"),
-					className: "hidden",
-				},
 				{
 					Header: t("COMMON.RECIPIENT"),
 				},
@@ -79,15 +75,19 @@ export const TransactionTable = ({
 		if (showExplorerLinkColumn) {
 			commonColumns.unshift({
 				Header: t("COMMON.ID"),
+				minimumWidth: true,
 			});
 		}
 
 		if (exchangeCurrency) {
-			return [...commonColumns, { Header: t("COMMON.CURRENCY"), className: "w-24 justify-end float-right" }];
+			return [
+				...commonColumns,
+				{ Header: t("COMMON.CURRENCY"), className: "justify-end float-right", cellWidth: "w-24" },
+			];
 		}
 
 		if (showSignColumn) {
-			return [...commonColumns, { Header: t("COMMON.SIGN"), className: "invisible w-24" }];
+			return [...commonColumns, { Header: "Sign", className: "invisible", cellWidth: "w-24" }];
 		}
 
 		return commonColumns;

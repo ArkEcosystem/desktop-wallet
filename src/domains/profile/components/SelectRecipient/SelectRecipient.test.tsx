@@ -42,7 +42,7 @@ describe("SelectRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => {
@@ -66,14 +66,14 @@ describe("SelectRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 		act(() => {
 			fireEvent.click(firstAddress);
 		});
@@ -97,7 +97,7 @@ describe("SelectRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => {
@@ -129,14 +129,14 @@ describe("SelectRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
 		});
 
 		await waitFor(() => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
 
 		act(() => {
 			fireEvent.click(firstAddress);

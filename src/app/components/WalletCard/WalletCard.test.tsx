@@ -22,12 +22,30 @@ describe("Wallet Card", () => {
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(WalletFlag.Starred, true);
 		wallet.data().set(WalletFlag.LedgerIndex, 0);
+
+		jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 	});
 
 	it("should render", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<WalletCard wallet={wallet} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with actions", () => {
+		const actions = [{ label: "show", value: "show" }];
+
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<WalletCard wallet={wallet} actions={actions} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -98,7 +116,7 @@ describe("Wallet Card", () => {
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/dashboard`);
 
 		act(() => {
-			fireEvent.click(getByText("D8rr … YUYD"));
+			fireEvent.click(getByText("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"));
 		});
 
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/wallets/${wallet.id()}`);

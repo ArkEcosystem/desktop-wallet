@@ -19,6 +19,7 @@ import {
 	within,
 } from "testing-library";
 import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
+import { getDefaultWalletMnemonic } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SendIpfs } from "./SendIpfs";
@@ -26,6 +27,7 @@ import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { FourthStep } from "./Step4";
 
+const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();
 
 const createTransactionMock = (wallet: ReadWriteWallet) =>
@@ -112,7 +114,7 @@ describe("SendIpfs", () => {
 
 	it("should navigate between steps", async () => {
 		const history = createMemoryHistory();
-		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
 
 		history.push(ipfsURL);
 
@@ -120,7 +122,7 @@ describe("SendIpfs", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
+				<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 					<SendIpfs />
 				</Route>,
 				{
@@ -167,8 +169,8 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			// Step 4
 			const signMock = jest
@@ -214,7 +216,7 @@ describe("SendIpfs", () => {
 
 	it("should error if wrong mnemonic", async () => {
 		const history = createMemoryHistory();
-		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
 
 		history.push(ipfsURL);
 
@@ -222,7 +224,7 @@ describe("SendIpfs", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
+				<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 					<SendIpfs />
 				</Route>,
 				{
@@ -265,8 +267,8 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
-			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
@@ -291,12 +293,12 @@ describe("SendIpfs", () => {
 
 	it("should show an error if an invalid IPFS hash is entered", async () => {
 		const history = createMemoryHistory();
-		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
 
 		history.push(ipfsURL);
 
 		const { container, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
+			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<SendIpfs />
 			</Route>,
 			{
@@ -320,5 +322,107 @@ describe("SendIpfs", () => {
 
 			await waitFor(() => expect(container).toMatchSnapshot());
 		});
+	});
+
+	it("should send an ipfs transaction with a multisig wallet", async () => {
+		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
+		const multisignatureSpy = jest
+			.spyOn(wallet, "multiSignature")
+			.mockReturnValue({ min: 2, publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!] });
+
+		const history = createMemoryHistory();
+		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
+
+		history.push(ipfsURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
+					<SendIpfs />
+				</Route>,
+				{
+					routes: [ipfsURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__step--first`)).toBeTruthy());
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
+			);
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+
+			// Hash
+			fireEvent.input(getByTestId("Input__hash"), {
+				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
+			});
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+
+			// Fee
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+			// Step 2
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+			await waitFor(() => expect(getByTestId("SendIpfs__step--second")).toBeTruthy());
+
+			// Step 4
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signIpfs")
+				.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
+
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a … db3d69131067");
+
+			// Copy Transaction
+			const copyMock = jest.fn();
+			const clipboardOriginal = navigator.clipboard;
+
+			// @ts-ignore
+			navigator.clipboard = { writeText: copyMock };
+
+			fireEvent.click(getByTestId(`SendIpfs__button--copy`));
+
+			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(ipfsFixture.data.id));
+
+			expect(signMock).toHaveBeenCalledWith(
+				expect.objectContaining({
+					data: expect.anything(),
+					fee: expect.any(String),
+					from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+					nonce: expect.any(String),
+					sign: {
+						multiSignature: {
+							min: 2,
+							publicKeys: [
+								"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+								"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
+							],
+						},
+					},
+				}),
+			);
+
+			// @ts-ignore
+			navigator.clipboard = clipboardOriginal;
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
+		});
+
+		multisignatureSpy.mockRestore();
+		isMultiSignatureSpy.mockRestore();
 	});
 });
