@@ -2,12 +2,13 @@ import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
 import { TextArea } from "app/components/TextArea";
+import { useValidation } from "app/hooks";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { EntityLink } from "domains/transaction/components/LinkCollection/LinkCollection.models";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { EntityProvider } from "domains/transaction/entity/providers";
-import React, { ChangeEvent, useCallback, useState } from "react";
+import React, { ChangeEvent, useCallback, useEffect,useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -25,8 +26,14 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 	const { t } = useTranslation();
 
 	const form = useFormContext();
-	const { setValue, getValues } = form;
+	const { setValue, getValues, register, unregister } = form;
 	const { fee, fees } = form.watch();
+	const { common } = useValidation();
+
+	useEffect(() => {
+		register("fee", common.fee(fees));
+		return () => unregister("fee");
+	}, [register, common]);
 
 	const handleInput = useCallback(
 		(event: ChangeEvent<HTMLInputElement>) => {
@@ -197,11 +204,13 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 						avg={fees.avg}
 						max={fees.max}
 						defaultValue={fee || 0}
+						value={fee || 0}
 						step={0.01}
 						onChange={(currency) =>
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
 						}
 					/>
+					<FormHelperText />
 				</FormField>
 			</div>
 		</section>

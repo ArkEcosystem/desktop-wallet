@@ -31,7 +31,6 @@ const FormStepsComponent = ({ activeTab, wallet, title }: SendEntityRegistration
 		register("ipfsData.videos");
 
 		register("fees");
-		register("fee");
 	}, [register, entityRegistration]);
 
 	return (
