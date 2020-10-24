@@ -34,7 +34,7 @@ export const TransactionRowSkeleton = ({ showSign, showCurrency, ...props }: Pro
 			</TableCell>
 
 			<TableCell noHover>
-				<div className="flex items-center -space-x-1 mr-4">
+				<div className="flex items-center mr-4 -space-x-1">
 					<Circle className="border-transparent" size="lg">
 						<Skeleton circle height={44} width={44} />
 					</Circle>
@@ -55,7 +55,7 @@ export const TransactionRowSkeleton = ({ showSign, showCurrency, ...props }: Pro
 			</TableCell>
 
 			<TableCell innerClassName="justify-end" noHover>
-				<span className="flex items-center space-x-1 px-2 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800">
+				<span className="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800">
 					<Skeleton height={16} width={amountWidth} />
 					<Skeleton height={16} width={35} />
 				</span>
