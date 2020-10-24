@@ -1,3 +1,4 @@
+import { Enums } from "@arkecosystem/platform-sdk-profiles";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -21,10 +22,10 @@ describe("MyRegistrations", () => {
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
 			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"))
 			.get("/api/transactions")
-			.query((params) => params["asset.type"] === "0")
+			.query((params) => params["asset.type"] == `${Enums.EntityType.Business}`)
 			.reply(200, require("tests/fixtures/registrations/businesses.json"))
 			.get("/api/transactions")
-			.query((params) => params["asset.type"] === "2")
+			.query((params) => params["asset.type"] === `${Enums.EntityType.Plugin}`)
 			.reply(200, require("tests/fixtures/registrations/plugins.json"))
 			.get("/api/transactions")
 			.query((params) => !!params["asset.type"])
