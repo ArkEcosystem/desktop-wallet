@@ -1,6 +1,6 @@
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { DelegateMapper, ExtendedTransactionData, ReadOnlyWallet, VoteData } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
@@ -10,13 +10,7 @@ type Props = {
 	walletName?: string;
 };
 
-const RecipientLabel = ({ type }: { type: string }) => (
-	<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
-		{type}
-	</span>
-);
-
-export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient, walletName }: Props) => {
+const RecipientLabel = ({ type }: { type: string }) => {
 	const { t } = useTranslation();
 
 	const transactionLabel: Record<string, string> = {
@@ -59,6 +53,66 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 		legacyBridgechainUpdate: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BRIDGECHAIN_UPDATE"),
 	};
 
+	return (
+		<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
+			{transactionLabel[type]}
+		</span>
+	);
+};
+
+const VoteCombinationLabel = ({ votes, unvotes }: { votes: string[]; unvotes: string[] }) => (
+	<span className="space-x-1">
+		<span className="inline-flex max-w-72">
+			<RecipientLabel type="vote" />
+			{votes.length > 1 && (
+				<span className="ml-1 font-semibold text-theme-neutral-500 dark:text-theme-neutral-700">
+					{votes.length}
+				</span>
+			)}
+		</span>
+
+		<span>/</span>
+
+		<span>
+			<RecipientLabel type="unvote" />
+			{unvotes.length > 1 && (
+				<span className="ml-1 font-semibold text-theme-neutral-500 dark:text-theme-neutral-700">
+					{unvotes.length}
+				</span>
+			)}
+		</span>
+	</span>
+);
+
+const VoteLabel = ({ delegates, isUnvote }: { delegates: ReadOnlyWallet[]; isUnvote?: boolean }) => (
+	<span>
+		<RecipientLabel type={isUnvote ? "unvote" : "vote"} />
+		<span className="pl-2 ml-2 border-l text-theme-primary-600 font-semibold border-theme-neutral-300 dark:border-theme-neutral-800 truncate">
+			{delegates[0]?.username()}
+		</span>
+		{delegates.length > 1 && (
+			<span className="ml-1 font-semibold text-theme-neutral-500 dark:text-theme-neutral-700">
+				+{delegates.length - 1}
+			</span>
+		)}
+	</span>
+);
+
+export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient, walletName }: Props) => {
+	const [delegates, setDelegates] = useState<{ votes: ReadOnlyWallet[]; unvotes: ReadOnlyWallet[] }>({
+		votes: [],
+		unvotes: [],
+	});
+
+	useEffect(() => {
+		if (transaction?.isVote() || transaction?.isUnvote()) {
+			setDelegates({
+				votes: DelegateMapper.execute(transaction.wallet(), (transaction as VoteData).votes()),
+				unvotes: DelegateMapper.execute(transaction.wallet(), (transaction as VoteData).unvotes()),
+			});
+		}
+	}, [transaction]);
+
 	if (type === "transfer") {
 		return <Address walletName={walletName} address={recipient} />;
 	}
@@ -66,17 +120,33 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 	if (transaction?.isMultiPayment()) {
 		return (
 			<span>
-				<RecipientLabel type={transactionLabel.multiPayment} />
-				<span className="ml-1 font-semibold text-theme-neutral-500">{transaction?.recipients().length}</span>
+				<RecipientLabel type="multiPayment" />
+				<span className="ml-1 font-semibold text-theme-neutral-500 dark:text-theme-neutral-700">
+					{transaction?.recipients().length}
+				</span>
 			</span>
 		);
 	}
 
-	return (
-		<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
-			{transactionLabel[type]}
-		</span>
-	);
+	if (transaction?.isVoteCombination()) {
+		return (
+			<VoteCombinationLabel
+				votes={(transaction as VoteData)?.votes()}
+				unvotes={(transaction as VoteData)?.unvotes()}
+			/>
+		);
+	}
+
+	if (transaction?.isVote() || transaction?.isUnvote()) {
+		return (
+			<VoteLabel
+				delegates={delegates[transaction?.isVote() ? "votes" : "unvotes"]}
+				isUnvote={transaction.isUnvote()}
+			/>
+		);
+	}
+
+	return <RecipientLabel type={type} />;
 };
 
 export const TransactionRowRecipientLabel = ({
