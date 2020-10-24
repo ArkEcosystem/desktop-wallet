@@ -207,6 +207,7 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_REGISTRATION: {
+		TITLE: "Register {{ title }}",
 		FIRST_STEP: {
 			TITLE: "Registration",
 			DESCRIPTION: "Select the type of registration and the address you want to register with.",
