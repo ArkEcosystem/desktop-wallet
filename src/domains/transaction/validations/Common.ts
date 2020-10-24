@@ -12,7 +12,10 @@ export const common = (t: any) => ({
 				}
 
 				if (balance.isZero() || balance.isNegative()) {
-					return t("TRANSACTION.VALIDATION.EMPTY_BALANCE");
+					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+						balance: "0",
+						coinId: network.coin(),
+					});
 				}
 
 				if (feeSatoshi.isGreaterThan(balance)) {
@@ -23,11 +26,17 @@ export const common = (t: any) => ({
 				}
 
 				if (feeSatoshi.isLessThan(fees?.min)) {
-					return t("TRANSACTION.VALIDATION.FEE_BELOW_MINIMUM");
+					return t("TRANSACTION.VALIDATION.FEE_BELOW_MINIMUM", {
+						min: BigNumber.make(fees.min).toHuman(),
+						coinId: network.coin(),
+					});
 				}
 
 				if (feeSatoshi.isGreaterThan(fees?.max)) {
-					return t("TRANSACTION.VALIDATION.FEE_ABOVE_MAXIMUM");
+					return t("TRANSACTION.VALIDATION.FEE_ABOVE_MAXIMUM", {
+						max: BigNumber.make(fees.max).toHuman(),
+						coinId: network.coin(),
+					});
 				}
 
 				return true;
