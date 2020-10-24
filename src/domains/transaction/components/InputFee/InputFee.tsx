@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useFeeFormat } from "./hooks";
 
 export type InputFeeProps = {
-	defaultValue: any;
+	defaultValue?: any;
 	value?: any;
 	min: string;
 	avg: string;

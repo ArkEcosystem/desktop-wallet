@@ -41,7 +41,6 @@ export const FormStep = ({ fees, senderWallet }: StepProps) => {
 					<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 					<InputFee
 						value={fee}
-						defaultValue={fee}
 						min={fees.min}
 						avg={fees.avg}
 						max={fees.max}
