@@ -389,58 +389,92 @@ exports[`WalletRegistrations should render loading state 1`] = `
       </span>
     </div>
     <div
-      class="flex items-center pr-8 space-x-4"
+      class="flex items-center"
       data-testid="WalletRegistrations__skeleton"
     >
       <div
-        class="flex items-center -space-x-2"
+        class="flex items-center -space-x-2 mr-4"
       >
         <div
-          class="sc-AxirZ dxHwgH text-theme-neutral-light"
-        />
-        <div
-          class="sc-AxirZ dxHwgH bg-theme-background"
-        />
-      </div>
-      <div
-        class="flex flex-col"
-      >
-        <span
-          class="text-sm font-semibold text-theme-neutral"
+          class="sc-AxirZ dxHwgH border-transparent"
         >
           <span>
             <span
-              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-              style="width: 120px; height: 6px;"
+              class="flex items-center leading-none"
             >
-              ‌
-            </span>
-          </span>
-        </span>
-        <span
-          class="font-semibold text-theme-text"
-        >
-          <span>
-            <span
-              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-              style="width: 120px; height: 6px;"
-            >
-              ‌
-            </span>
-          </span>
-          <a
-            class="px-2 text-theme-primary"
-            href="/#"
-          >
-            <span>
               <span
                 class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                style="width: 60px; height: 6px;"
+                style="width: 44px; height: 44px; border-radius: 50%;"
               >
                 ‌
               </span>
+              ‌
             </span>
-          </a>
+          </span>
+        </div>
+        <div
+          class="sc-AxirZ dxHwgH border-transparent"
+        >
+          <span>
+            <span
+              class="flex items-center leading-none"
+            >
+              <span
+                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                style="width: 44px; height: 44px; border-radius: 50%;"
+              >
+                ‌
+              </span>
+              ‌
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex flex-col h-10 justify-between"
+      >
+        <span>
+          <span
+            class="flex items-center leading-none"
+          >
+            <span
+              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+              style="width: 150px; height: 14px;"
+            >
+              ‌
+            </span>
+            ‌
+          </span>
+        </span>
+        <span>
+          <span
+            class="flex items-center leading-none"
+          >
+            <span
+              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+              style="width: 100px; height: 16px;"
+            >
+              ‌
+            </span>
+            ‌
+          </span>
+        </span>
+      </div>
+      <div
+        class="ml-auto"
+      >
+        <span>
+          <span
+            class="flex items-center leading-none"
+          >
+            <span
+              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+              style="width: 100px; height: 48px;"
+            >
+              ‌
+            </span>
+            ‌
+          </span>
         </span>
       </div>
     </div>

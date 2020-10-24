@@ -188,7 +188,7 @@ describe("TransactionTable", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
 			<TransactionTable transactions={[]} isLoading skeletonRowsLimit={5} />,
 		);
-		expect(getAllByTestId("TransactionRow__skeleton")).toHaveLength(5);
+		expect(getAllByTestId("TableRow")).toHaveLength(5);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -196,14 +196,15 @@ describe("TransactionTable", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
 			<TransactionTable transactions={[]} isLoading showSignColumn skeletonRowsLimit={5} />,
 		);
-		expect(getAllByTestId("TransactionRow__skeleton")).toHaveLength(5);
+		expect(getAllByTestId("TableRow")).toHaveLength(5);
 		expect(asFragment()).toMatchSnapshot();
 	});
+
 	it("should render loading state with currency column", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
 			<TransactionTable transactions={[]} isLoading exchangeCurrency="BTC" skeletonRowsLimit={5} />,
 		);
-		expect(getAllByTestId("TransactionRow__skeleton")).toHaveLength(5);
+		expect(getAllByTestId("TableRow")).toHaveLength(5);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

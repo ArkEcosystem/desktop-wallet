@@ -10,6 +10,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	RenderResult,
 	renderWithRouter,
 	syncDelegates,
 	waitFor,
@@ -32,17 +33,24 @@ let wallet2: ReadWriteWallet;
 const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 
 const renderPage = async () => {
-	const rendered = renderWithRouter(
-		<Route path="/profiles/:profileId/wallets/:walletId">
-			<WalletDetails txSkeletonRowsLimit={1} transactionLimit={1} />
-		</Route>,
-		{
-			routes: [walletUrl],
-			history,
-		},
-	);
+	let rendered: RenderResult;
 
-	const { getByTestId } = rendered;
+	await act(async () => {
+		rendered = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletDetails txSkeletonRowsLimit={1} transactionLimit={1} />
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
+			},
+		);
+	});
+
+	const { getByTestId, queryAllByTestId } = rendered;
+
+	await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
+	await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
 	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1));
 
 	return rendered;
