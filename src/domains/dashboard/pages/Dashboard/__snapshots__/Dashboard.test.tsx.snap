@@ -485,26 +485,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -580,26 +561,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -673,26 +635,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -733,7 +676,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -747,7 +690,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -777,7 +720,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -805,7 +748,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -849,13 +792,13 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top w-24 justify-end float-right"
+                        class="flex flex-inline align-top justify-end float-right"
                       >
                         <div>
                           Currency
@@ -894,9 +837,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -916,7 +857,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -994,7 +935,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -1050,9 +991,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -1072,7 +1011,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1150,7 +1089,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -1206,9 +1145,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -1228,7 +1165,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1306,7 +1243,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -1362,9 +1299,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -1384,7 +1319,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1462,7 +1397,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -1518,9 +1453,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -1540,7 +1473,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1618,7 +1551,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -1674,9 +1607,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -1696,7 +1627,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1774,7 +1705,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -1830,9 +1761,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -1852,7 +1781,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1930,7 +1859,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -1986,9 +1915,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -2008,7 +1935,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -2086,7 +2013,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -2803,26 +2730,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -2898,26 +2806,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -2991,26 +2880,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -3051,7 +2921,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -3065,7 +2935,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -3095,7 +2965,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -3123,7 +2993,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -3167,13 +3037,13 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top w-24 justify-end float-right"
+                        class="flex flex-inline align-top justify-end float-right"
                       >
                         <div>
                           Currency
@@ -3212,9 +3082,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -3234,7 +3102,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -3312,7 +3180,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -3368,9 +3236,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -3390,7 +3256,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -3468,7 +3334,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -3524,9 +3390,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -3546,7 +3410,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -3624,7 +3488,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -3680,9 +3544,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -3702,7 +3564,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -3780,7 +3642,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -4648,26 +4510,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -4743,26 +4586,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -4836,26 +4660,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -5361,26 +5166,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -5456,26 +5242,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -5549,26 +5316,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -5609,7 +5357,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -5623,7 +5371,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -5653,7 +5401,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -5681,7 +5429,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -5725,13 +5473,13 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top w-24 justify-end float-right"
+                        class="flex flex-inline align-top justify-end float-right"
                       >
                         <div>
                           Currency
@@ -5770,9 +5518,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -5792,7 +5538,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -5870,7 +5616,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -5926,9 +5672,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -5948,7 +5692,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -6026,7 +5770,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -6082,9 +5826,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -6104,7 +5846,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -6182,7 +5924,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -6238,9 +5980,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -6260,7 +6000,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -6338,7 +6078,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -7022,26 +6762,7 @@ exports[`Dashboard should render 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -7117,26 +6838,7 @@ exports[`Dashboard should render 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -7210,26 +6912,7 @@ exports[`Dashboard should render 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -7270,7 +6953,7 @@ exports[`Dashboard should render 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -7284,7 +6967,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -7314,7 +6997,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -7342,7 +7025,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -7386,13 +7069,13 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top w-24 justify-end float-right"
+                        class="flex flex-inline align-top justify-end float-right"
                       >
                         <div>
                           Currency
@@ -7431,9 +7114,7 @@ exports[`Dashboard should render 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -7453,7 +7134,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -7531,7 +7212,7 @@ exports[`Dashboard should render 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -7587,9 +7268,7 @@ exports[`Dashboard should render 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -7609,7 +7288,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -7687,7 +7366,7 @@ exports[`Dashboard should render 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -7743,9 +7422,7 @@ exports[`Dashboard should render 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -7765,7 +7442,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -7843,7 +7520,7 @@ exports[`Dashboard should render 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -7899,9 +7576,7 @@ exports[`Dashboard should render 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -7921,7 +7596,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -7999,7 +7674,7 @@ exports[`Dashboard should render 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -8683,26 +8358,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -8778,26 +8434,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -8871,26 +8508,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -8931,7 +8549,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -8945,7 +8563,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -8975,7 +8593,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -9003,7 +8621,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -9047,13 +8665,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top w-24 justify-end float-right"
+                        class="flex flex-inline align-top justify-end float-right"
                       >
                         <div>
                           Currency
@@ -9092,9 +8710,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -9114,7 +8730,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -9192,7 +8808,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -9248,9 +8864,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -9270,7 +8884,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -9348,7 +8962,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -9404,9 +9018,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -9426,7 +9038,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -9504,7 +9116,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -9560,9 +9172,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -9582,7 +9192,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -9660,7 +9270,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -10344,26 +9954,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -10439,26 +10030,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -10532,26 +10104,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -10592,7 +10145,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -10606,7 +10159,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -10636,7 +10189,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -10664,7 +10217,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -10708,13 +10261,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top w-24 justify-end float-right"
+                        class="flex flex-inline align-top justify-end float-right"
                       >
                         <div>
                           Currency
@@ -10753,9 +10306,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -10775,7 +10326,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -10853,7 +10404,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -10909,9 +10460,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -10931,7 +10480,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -11009,7 +10558,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -11065,9 +10614,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -11087,7 +10634,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -11165,7 +10712,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -11221,9 +10768,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -11243,7 +10788,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -11321,7 +10866,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -12005,26 +11550,7 @@ exports[`Dashboard should render wallets 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -12100,26 +11626,7 @@ exports[`Dashboard should render wallets 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -12193,26 +11700,7 @@ exports[`Dashboard should render wallets 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -12253,7 +11741,7 @@ exports[`Dashboard should render wallets 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -12267,7 +11755,7 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -12297,7 +11785,7 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -12325,7 +11813,7 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -12369,13 +11857,13 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top w-24 justify-end float-right"
+                        class="flex flex-inline align-top justify-end float-right"
                       >
                         <div>
                           Currency
@@ -12414,9 +11902,7 @@ exports[`Dashboard should render wallets 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -12436,7 +11922,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -12514,7 +12000,7 @@ exports[`Dashboard should render wallets 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -12570,9 +12056,7 @@ exports[`Dashboard should render wallets 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -12592,7 +12076,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -12670,7 +12154,7 @@ exports[`Dashboard should render wallets 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -12726,9 +12210,7 @@ exports[`Dashboard should render wallets 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -12748,7 +12230,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -12826,7 +12308,7 @@ exports[`Dashboard should render wallets 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -12882,9 +12364,7 @@ exports[`Dashboard should render wallets 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -12904,7 +12384,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -12982,7 +12462,7 @@ exports[`Dashboard should render wallets 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -13710,7 +13190,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -13724,7 +13204,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -13754,7 +13234,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -13782,7 +13262,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -13826,13 +13306,13 @@ exports[`Dashboard should render with no wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top w-24 justify-end float-right"
+                        class="flex flex-inline align-top justify-end float-right"
                       >
                         <div>
                           Currency
@@ -15586,26 +15066,7 @@ exports[`Dashboard should show transaction view 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -15681,26 +15142,7 @@ exports[`Dashboard should show transaction view 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -15774,26 +15216,7 @@ exports[`Dashboard should show transaction view 1`] = `
                             </div>
                             <div
                               class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            >
-                              <div
-                                class="relative"
-                                data-testid="dropdown__toggle"
-                              >
-                                <div
-                                  class="flex justify-center w-4 overflow-hidden"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      settings.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            />
                           </div>
                         </div>
                       </div>
@@ -15834,7 +15257,7 @@ exports[`Dashboard should show transaction view 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -15848,7 +15271,7 @@ exports[`Dashboard should show transaction view 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -15878,7 +15301,7 @@ exports[`Dashboard should show transaction view 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -15906,7 +15329,7 @@ exports[`Dashboard should show transaction view 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -15950,13 +15373,13 @@ exports[`Dashboard should show transaction view 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top w-24 justify-end float-right"
+                        class="flex flex-inline align-top justify-end float-right"
                       >
                         <div>
                           Currency
@@ -15995,9 +15418,7 @@ exports[`Dashboard should show transaction view 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -16017,7 +15438,7 @@ exports[`Dashboard should show transaction view 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -16095,7 +15516,7 @@ exports[`Dashboard should show transaction view 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -16151,9 +15572,7 @@ exports[`Dashboard should show transaction view 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -16173,7 +15592,7 @@ exports[`Dashboard should show transaction view 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -16251,7 +15670,7 @@ exports[`Dashboard should show transaction view 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -16307,9 +15726,7 @@ exports[`Dashboard should show transaction view 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -16329,7 +15746,7 @@ exports[`Dashboard should show transaction view 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -16407,7 +15824,7 @@ exports[`Dashboard should show transaction view 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -16463,9 +15880,7 @@ exports[`Dashboard should show transaction view 1`] = `
                         </a>
                       </div>
                     </td>
-                    <td
-                      class="w-50"
-                    >
+                    <td>
                       <div
                         class="sc-Axmtr cSXHUn text-theme-secondary-text"
                       >
@@ -16485,7 +15900,7 @@ exports[`Dashboard should show transaction view 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy iDenJW border-theme-success-300 text-theme-success dark:border-theme-success"
+                            class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -16563,7 +15978,7 @@ exports[`Dashboard should show transaction view 1`] = `
                         class="sc-Axmtr cSXHUn justify-end"
                       >
                         <div
-                          class="sc-fzozJi iTqYGz"
+                          class="sc-fzozJi bXfNeq"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >

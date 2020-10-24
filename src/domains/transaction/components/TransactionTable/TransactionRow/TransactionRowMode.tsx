@@ -33,8 +33,8 @@ export const BaseTransactionRowMode = ({
 	const modeIconName = isSent ? "Sent" : "Received";
 
 	const modeCircleStyle = isSent
-		? "border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
-		: "border-theme-success-300 text-theme-success dark:border-theme-success";
+		? "border-theme-danger-100 text-theme-danger-400 dark:border-theme-danger-400"
+		: "border-theme-success-200 text-theme-success-600 dark:border-theme-success-600";
 
 	return (
 		<div data-testid="TransactionRowMode" className="flex items-center -space-x-1">
