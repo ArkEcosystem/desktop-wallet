@@ -61,7 +61,7 @@ const RecipientLabel = ({ type }: { type: string }) => {
 };
 
 const VoteCombinationLabel = ({ votes, unvotes }: { votes: string[]; unvotes: string[] }) => (
-	<span className="space-x-1">
+	<span data-testid="TransactionRowVoteCombinationLabel" className="space-x-1">
 		<span className="inline-flex max-w-72">
 			<RecipientLabel type="vote" />
 			{votes.length > 1 && (
@@ -85,7 +85,7 @@ const VoteCombinationLabel = ({ votes, unvotes }: { votes: string[]; unvotes: st
 );
 
 const VoteLabel = ({ delegates, isUnvote }: { delegates: ReadOnlyWallet[]; isUnvote?: boolean }) => (
-	<span>
+	<span data-testid="TransactionRowVoteLabel">
 		<RecipientLabel type={isUnvote ? "unvote" : "vote"} />
 		<span className="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-neutral-300 dark:border-theme-neutral-800">
 			{delegates[0]?.username()}
