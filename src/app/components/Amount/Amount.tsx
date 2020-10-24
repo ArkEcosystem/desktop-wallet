@@ -7,6 +7,8 @@ type AmountProps = {
 	ticker: string;
 	value: BigNumber;
 	locale?: string;
+	showSign?: boolean;
+	isNegative?: boolean;
 };
 type FormatProps = AmountProps & { decimals: number };
 type Props = AmountProps & Omit<React.HTMLProps<any>, "value">;
@@ -17,6 +19,8 @@ type CurrencyConfig = {
 };
 
 type ExchangeCurrencyList = keyof typeof CURRENCIES;
+
+const formatSign = (amount: string, isNegative: boolean) => `${isNegative ? "-" : "+"} ${amount}`;
 
 const formatFiat = ({ ticker, value, decimals }: FormatProps): string => {
 	const cents = value.times(Math.pow(10, decimals)).decimalPlaces(0).toNumber();
@@ -39,7 +43,7 @@ const formatCrypto = ({ ticker, value, decimals, locale }: FormatProps): string 
 	return money;
 };
 
-export const Amount = ({ ticker, value, locale, ...props }: Props) => {
+export const Amount = ({ ticker, value, locale, showSign, isNegative, ...props }: Props) => {
 	const tickerConfig: CurrencyConfig | undefined = CURRENCIES[ticker as ExchangeCurrencyList];
 	const decimals = tickerConfig?.decimals || 8;
 	const isFiat = decimals <= 2;
@@ -47,7 +51,7 @@ export const Amount = ({ ticker, value, locale, ...props }: Props) => {
 
 	return (
 		<span data-testid="Amount" {...props}>
-			{amount}
+			{showSign ? formatSign(amount, !!isNegative) : amount}
 		</span>
 	);
 };
