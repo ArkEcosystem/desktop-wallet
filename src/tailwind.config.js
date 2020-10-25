@@ -131,6 +131,7 @@ module.exports = {
 			maxWidth: {
 				"1/4": "25%",
 				"8xl": "85rem",
+				72: "18rem",
 				128: "32rem",
 			},
 			maxHeight: {
