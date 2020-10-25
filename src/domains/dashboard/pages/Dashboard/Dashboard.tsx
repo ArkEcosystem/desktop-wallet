@@ -101,14 +101,12 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 	useEffect(() => {
 		const updateDashboardSettings = async () => {
-			activeProfile
-				.settings()
-				.set(ProfileSetting.DashboardConfiguration, {
-					showPortfolio,
-					showTransactions,
-					viewType,
-					walletsDisplayType,
-				});
+			activeProfile.settings().set(ProfileSetting.DashboardConfiguration, {
+				showPortfolio,
+				showTransactions,
+				viewType,
+				walletsDisplayType,
+			});
 			await persist();
 		};
 
