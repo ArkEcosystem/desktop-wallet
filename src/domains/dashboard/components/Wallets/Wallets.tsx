@@ -13,30 +13,32 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 type WalletsProps = {
-	wallets: ReadWriteWallet[];
 	title?: string;
-	walletsEmptyText?: string;
 	filterProperties: any;
 	viewType?: "grid" | "list";
+	wallets: ReadWriteWallet[];
+	walletsEmptyText?: string;
 	onCreateWallet?: any;
 	onImportWallet?: any;
+	onSelectViewType?: any;
 	onWalletAction?: any;
 };
 
 type GridWallet = {
-	wallet?: ReadWriteWallet;
 	isBlank?: boolean;
+	wallet?: ReadWriteWallet;
 };
 
 export const Wallets = ({
-	viewType,
 	title,
-	wallets,
 	filterProperties,
+	viewType,
+	wallets,
+	walletsEmptyText,
 	onCreateWallet,
 	onImportWallet,
+	onSelectViewType,
 	onWalletAction,
-	walletsEmptyText,
 }: WalletsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 	const [allWallets, setAllWallets] = useState<any>(undefined);
@@ -79,6 +81,11 @@ export const Wallets = ({
 		slidesPerColumn: 2,
 		slidesPerGroup: 3,
 		spaceBetween: 20,
+	};
+
+	const toggleViewType = (viewType: "grid" | "list") => {
+		setWalletsViewType(viewType);
+		onSelectViewType?.(viewType);
 	};
 
 	// Grid
@@ -130,12 +137,12 @@ export const Wallets = ({
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls
-						onCreateWallet={onCreateWallet}
-						onImportWallet={onImportWallet}
-						onSelectGridView={() => setWalletsViewType("grid")}
-						onSelectListView={() => setWalletsViewType("list")}
 						filterProperties={filterProperties}
 						viewType={walletsViewType}
+						onCreateWallet={onCreateWallet}
+						onImportWallet={onImportWallet}
+						onSelectGridView={() => toggleViewType("grid")}
+						onSelectListView={() => toggleViewType("list")}
 					/>
 				</div>
 			</div>
@@ -179,7 +186,7 @@ export const Wallets = ({
 
 Wallets.defaultProps = {
 	networks: [],
+	viewType: "grid",
 	wallets: [],
 	walletsEmptyText: "",
-	viewType: "grid",
 };

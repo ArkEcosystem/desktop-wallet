@@ -8,7 +8,7 @@ import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useQueryParams, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -39,11 +39,13 @@ export const SendVote = () => {
 
 	const form = useForm({ mode: "onChange" });
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit } = form;
+	const { sendVote, common } = useValidation();
 
 	useEffect(() => {
-		register("network", { required: true });
-		register("senderAddress", { required: true });
-		register("fee", { required: true });
+		register("network", sendVote.network());
+		register("senderAddress", sendVote.senderAddress());
+		register("fees");
+		register("fee", common.fee(getValues("fees"), activeWallet?.balance?.(), activeWallet?.network?.()));
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
@@ -54,7 +56,7 @@ export const SendVote = () => {
 				break;
 			}
 		}
-	}, [activeWallet, networks, register, setValue]);
+	}, [activeWallet, networks, register, setValue, common, getValues, sendVote]);
 
 	useEffect(() => {
 		if (unvoteAddresses && unvotes.length === 0) {
