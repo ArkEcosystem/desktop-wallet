@@ -15,15 +15,19 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 
-	const { delegateRegistration } = useValidation();
+	const { delegateRegistration, common } = useValidation();
 
-	const { getValues, register, setValue, watch } = useFormContext();
+	const { getValues, register, unregister, setValue, watch } = useFormContext();
 	const username = getValues("username");
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
+
+	useEffect(() => {
+		register("fee", common.fee(fees, wallet.balance(), wallet.network()));
+	}, [register, unregister, common, fees, wallet]);
 
 	useEffect(() => {
 		setDelegates(env.delegates().all(wallet.coinId(), wallet.networkId()));
@@ -84,6 +88,7 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
+					<FormHelperText />
 				</FormField>
 			</div>
 		</section>

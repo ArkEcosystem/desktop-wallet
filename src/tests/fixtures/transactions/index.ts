@@ -39,6 +39,7 @@ export const TransactionFixture = {
 	isMultiSignature: () => false,
 	isDelegateRegistration: () => false,
 	isDelegateResignation: () => false,
+	isVoteCombination: () => false,
 	isVote: () => false,
 	isUnvote: () => false,
 	isIpfs: () => false,

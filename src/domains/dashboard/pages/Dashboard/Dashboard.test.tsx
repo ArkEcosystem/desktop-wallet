@@ -217,6 +217,30 @@ describe("Dashboard", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should change wallet view type from grid to list", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard balances={balances} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await act(async () => {
+			const toggle = getByTestId("LayoutControls__list--icon");
+
+			await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+
+			fireEvent.click(toggle);
+
+			await waitFor(() => expect(() => getAllByTestId("WalletTable")).toBeTruthy());
+
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
+	});
+
 	it("should hide portfolio view", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">

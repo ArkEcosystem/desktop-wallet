@@ -31,6 +31,9 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const [{ showTransactions }, setShowTransactions] = useState(
 		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { showTransactions: true },
 	);
+	const [{ viewType }, setViewType] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { viewType: "grid" },
+	);
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
@@ -94,14 +97,20 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 	useEffect(() => {
 		const updateDashboardSettings = async () => {
-			activeProfile.settings().set(ProfileSetting.DashboardConfiguration, { showPortfolio, showTransactions });
+			activeProfile
+				.settings()
+				.set(ProfileSetting.DashboardConfiguration, { showPortfolio, showTransactions, viewType });
 			await persist();
 		};
 
 		updateDashboardSettings();
-	}, [activeProfile, persist, showPortfolio, showTransactions]);
+	}, [activeProfile, persist, showPortfolio, showTransactions, viewType]);
 
 	// Wallet controls data
+	const toggleViewType = (viewType: string) => {
+		setViewType({ viewType });
+	};
+
 	const filterProperties = {
 		networks,
 		visiblePortfolioView: showPortfolio,
@@ -150,12 +159,13 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 				<Section className={!showTransactions ? "flex-1" : undefined}>
 					<Wallets
+						title={t("COMMON.WALLETS")}
+						filterProperties={filterProperties}
+						viewType={viewType}
+						wallets={wallets}
 						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
 						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
-						viewType="grid"
-						title={t("COMMON.WALLETS")}
-						wallets={wallets}
-						filterProperties={filterProperties}
+						onSelectViewType={toggleViewType}
 					/>
 				</Section>
 
