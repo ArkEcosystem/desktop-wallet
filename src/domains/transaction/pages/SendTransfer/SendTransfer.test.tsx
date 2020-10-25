@@ -279,7 +279,7 @@ describe("SendTransfer", () => {
 		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
-
+	//
 	it("should select a cryptoasset and select sender without wallet id param", async () => {
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
@@ -361,26 +361,28 @@ describe("SendTransfer", () => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[0].addresses().values()[0].address(),
+			await waitFor(() =>
+				expect(getByTestId("SelectRecipient__input")).toHaveValue(
+					profile.contacts().values()[0].addresses().values()[0].address(),
+				),
 			);
 
 			// Amount
-			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.75089801");
+			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "1" } });
+			await waitFor(() => expect(getByTestId("add-recipient__amount-input")).toHaveValue("1"));
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
-			expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+			await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
 
 			// Step 2
-			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+			await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 			await waitFor(() => expect(getByTestId("SendTransfer__step--second")).toBeTruthy());
 
@@ -389,7 +391,7 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("SendTransfer__step--first")).toBeTruthy());
 
 			// Step 2
-			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+			await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 			await waitFor(() => expect(getByTestId("SendTransfer__step--second")).toBeTruthy());
 
@@ -408,10 +410,13 @@ describe("SendTransfer", () => {
 			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 			const transactionMock = createTransactionMock(wallet);
 
+			await waitFor(() => expect(getByTestId("SendTransfer__button--submit")).not.toBeDisabled());
 			fireEvent.click(getByTestId("SendTransfer__button--submit"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7 … f1b89abb49877");
+			await waitFor(() =>
+				expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7 … f1b89abb49877"),
+			);
 
 			// Copy Transaction
 			const copyMock = jest.fn();
@@ -489,7 +494,7 @@ describe("SendTransfer", () => {
 
 			// Amount
 			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.75089801");
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.03551662");
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -593,7 +598,7 @@ describe("SendTransfer", () => {
 
 			// Amount
 			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.75089801");
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.03551662");
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
