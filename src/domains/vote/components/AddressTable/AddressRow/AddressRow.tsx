@@ -73,7 +73,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				<Address address={wallet.address()} walletName={wallet.alias()} />
 			</TableCell>
 
-			<TableCell className="w-20" innerClassName="justify-center text-sm font-bold">
+			<TableCell className="w-20" innerClassName="justify-center text-sm font-bold text-center align-middle">
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
 						walletTypes.map((type: string) =>
@@ -81,7 +81,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 							wallet[`is${type}`]() ? (
 								<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
 									<span className={getIconColor(type)}>
-										<Icon name={getIconName(type)} width={16} height={16} />
+										<Icon name={getIconName(type)} width={18} />
 									</span>
 								</Tippy>
 							) : null,

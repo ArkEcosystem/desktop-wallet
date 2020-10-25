@@ -26,14 +26,17 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
-	const [{ walletsDisplayType }, setWalletsDisplayType] = useState(
-		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { walletsDisplayType: "all" },
-	);
 	const [{ showPortfolio }, setShowPortfolio] = useState(
 		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { showPortfolio: true },
 	);
 	const [{ showTransactions }, setShowTransactions] = useState(
 		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { showTransactions: true },
+	);
+	const [{ viewType }, setViewType] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { viewType: "grid" },
+	);
+	const [{ walletsDisplayType }, setWalletsDisplayType] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { walletsDisplayType: "all" },
 	);
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
@@ -100,14 +103,23 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		const updateDashboardSettings = async () => {
 			activeProfile
 				.settings()
-				.set(ProfileSetting.DashboardConfiguration, { showPortfolio, showTransactions, walletsDisplayType });
+				.set(ProfileSetting.DashboardConfiguration, {
+					showPortfolio,
+					showTransactions,
+					viewType,
+					walletsDisplayType,
+				});
 			await persist();
 		};
 
 		updateDashboardSettings();
-	}, [activeProfile, persist, showPortfolio, showTransactions, walletsDisplayType]);
+	}, [activeProfile, persist, showPortfolio, showTransactions, viewType, walletsDisplayType]);
 
 	// Wallet controls data
+	const toggleViewType = (viewType: string) => {
+		setViewType({ viewType });
+	};
+
 	const filterProperties = {
 		networks,
 		walletsDisplayType,
@@ -160,12 +172,13 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 				<Section className={!showTransactions ? "flex-1" : undefined}>
 					<Wallets
+						title={t("COMMON.WALLETS")}
+						filterProperties={filterProperties}
+						viewType={viewType}
+						wallets={wallets}
 						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
 						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
-						viewType="grid"
-						title={t("COMMON.WALLETS")}
-						wallets={wallets}
-						filterProperties={filterProperties}
+						onSelectViewType={toggleViewType}
 					/>
 				</Section>
 

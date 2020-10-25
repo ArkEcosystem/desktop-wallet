@@ -5,11 +5,6 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { RecipientListItem } from "../components/RecipientList/RecipientList.models";
 
 export const sendTransfer = (t: any, env: Environment) => ({
-	fee: () => ({
-		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.FEE"),
-		}),
-	}),
 	senderAddress: () => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("COMMON.SENDER_ADDRESS"),

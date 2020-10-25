@@ -2,8 +2,9 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
+import { useValidation } from "app/hooks";
 import { TransactionSender } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -22,6 +23,7 @@ export const GenerationStep = ({
 }) => {
 	const { t } = useTranslation();
 
+	const { common } = useValidation();
 	const { getValues, setValue, register, watch } = useFormContext();
 
 	// getValues does not get the value of `defaultValues` on first render
@@ -29,9 +31,10 @@ export const GenerationStep = ({
 	const fee = getValues("fee") || defaultFee;
 
 	useEffect(() => {
+		register("fee", common.fee(fees, wallet.balance(), wallet.network()));
 		register("secondMnemonic");
 		register("wallet");
-	}, [register]);
+	}, [register, common, fees, wallet]);
 
 	useEffect(() => {
 		const newMnemonic = BIP39.generate();
@@ -70,6 +73,7 @@ export const GenerationStep = ({
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
+					<FormHelperText />
 				</FormField>
 			</div>
 		</section>

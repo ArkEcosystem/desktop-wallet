@@ -161,6 +161,7 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 							<div className="mt-8">
 								<TabPanel tabId={1}>
 									<FirstStep
+										wallet={activeWallet}
 										showEntityNameField={false}
 										title={t("TRANSACTION.PAGE_UPDATE_REGISTRATION.FIRST_STEP.BUSINESS.TITLE")}
 										description={t(

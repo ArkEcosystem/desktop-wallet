@@ -1,11 +1,12 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { InputRange } from "app/components/Input";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { useFeeFormat } from "./hooks";
+
 export type InputFeeProps = {
-	defaultValue: any;
+	defaultValue?: any;
 	value?: any;
 	min: string;
 	avg: string;
@@ -14,54 +15,44 @@ export type InputFeeProps = {
 	onChange?: (value: { display: string; value: string }) => void;
 };
 
+export type InputFee = {
+	display: string;
+	value: string;
+};
+
 // TODO: Remove defaultValue?
 export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }: InputFeeProps) => {
 	const { t } = useTranslation();
 
-	const toHuman = (value: string | number) => BigNumber.make(value).divide(1e8).toString();
+	const { fee, toHuman, updateFee } = useFeeFormat({ defaultValue, value, avg });
 
+	const avgHuman = toHuman(avg);
 	const minHuman = toHuman(min);
 	const maxHuman = toHuman(max);
-	const avgHuman = toHuman(avg);
 
-	const defaultFeeValue = value || defaultValue || avg;
-	const defaultHuman = toHuman(defaultFeeValue);
-
-	const [fee, setFee] = useState<any>({ display: defaultHuman, value: defaultFeeValue });
-
-	const handleFeeChange = (currency: { display: string; value: string }) => {
-		setFee(currency);
+	const handleFeeChange = (currency: InputFee) => {
+		updateFee(currency);
 		onChange?.(currency);
 	};
-
-	useEffect(() => {
-		if (!value && !defaultValue) {
-			setFee(BigNumber.make("0").times(1e8).toString());
-		}
-
-		if (value && value !== fee) {
-			setFee(BigNumber.make(value).divide(1e8).toString());
-		}
-	}, [fee, value, defaultValue]);
 
 	return (
 		<div data-testid="InputFee" className="flex space-x-2">
 			<div className="flex-1">
 				<InputRange
 					name="fee"
-					avg={avg}
+					avg={avgHuman}
 					value={fee}
 					min={minHuman}
 					max={maxHuman}
 					step={step}
-					onChange={handleFeeChange}
+					onChange={onChange}
 				/>
 			</div>
 			<div>
 				<SelectionBar>
 					<SelectionBarOption
 						value={minHuman}
-						isValueChecked={() => (fee?.display ? fee.display === minHuman : fee === minHuman)}
+						isValueChecked={() => fee.display === minHuman}
 						setCheckedValue={() => handleFeeChange({ display: minHuman, value: min })}
 					>
 						{t("TRANSACTION.FEES.MIN")}
@@ -69,7 +60,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 
 					<SelectionBarOption
 						value={avgHuman}
-						isValueChecked={() => (fee?.display ? fee.display === avgHuman : fee === avgHuman)}
+						isValueChecked={() => fee.display === avgHuman}
 						setCheckedValue={() => handleFeeChange({ display: avgHuman, value: avg })}
 					>
 						{t("TRANSACTION.FEES.AVERAGE")}
@@ -77,7 +68,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 
 					<SelectionBarOption
 						value={maxHuman}
-						isValueChecked={() => (fee?.display ? fee.display === maxHuman : fee === maxHuman)}
+						isValueChecked={() => fee.display === maxHuman}
 						setCheckedValue={() => handleFeeChange({ display: maxHuman, value: max })}
 					>
 						{t("TRANSACTION.FEES.MAX")}
