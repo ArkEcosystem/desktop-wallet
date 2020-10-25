@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -48,8 +49,14 @@ beforeAll(async () => {
 	const profile = env.profiles().findById(fixtureProfileId);
 	const wallet = await profile.wallets().importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
 
+	jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);
+
 	await syncDelegates();
 	await wallet.syncVotes();
+});
+
+afterAll(() => {
+	useRandomNumberHook.useRandomNumber.mockRestore();
 });
 
 beforeEach(() => {

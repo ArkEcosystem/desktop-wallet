@@ -1,5 +1,6 @@
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import * as useRandomNumberHook from "app/hooks/use-random-number";
 import React from "react";
 import { fireEvent, renderWithRouter } from "utils/testing-library";
 
@@ -184,28 +185,38 @@ describe("TransactionTable", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render loading state ", () => {
-		const { getAllByTestId, asFragment } = renderWithRouter(
-			<TransactionTable transactions={[]} isLoading skeletonRowsLimit={5} />,
-		);
-		expect(getAllByTestId("TableRow")).toHaveLength(5);
-		expect(asFragment()).toMatchSnapshot();
-	});
+	describe("loading state", () => {
+		beforeAll(() => {
+			jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);
+		});
 
-	it("should render loading state with sign column", () => {
-		const { getAllByTestId, asFragment } = renderWithRouter(
-			<TransactionTable transactions={[]} isLoading showSignColumn skeletonRowsLimit={5} />,
-		);
-		expect(getAllByTestId("TableRow")).toHaveLength(5);
-		expect(asFragment()).toMatchSnapshot();
-	});
+		afterAll(() => {
+			useRandomNumberHook.useRandomNumber.mockRestore();
+		});
 
-	it("should render loading state with currency column", () => {
-		const { getAllByTestId, asFragment } = renderWithRouter(
-			<TransactionTable transactions={[]} isLoading exchangeCurrency="BTC" skeletonRowsLimit={5} />,
-		);
-		expect(getAllByTestId("TableRow")).toHaveLength(5);
-		expect(asFragment()).toMatchSnapshot();
+		it("should render", () => {
+			const { getAllByTestId, asFragment } = renderWithRouter(
+				<TransactionTable transactions={[]} isLoading skeletonRowsLimit={5} />,
+			);
+			expect(getAllByTestId("TableRow")).toHaveLength(5);
+			expect(asFragment()).toMatchSnapshot();
+		});
+
+		it("should render with sign column", () => {
+			const { getAllByTestId, asFragment } = renderWithRouter(
+				<TransactionTable transactions={[]} isLoading showSignColumn skeletonRowsLimit={5} />,
+			);
+			expect(getAllByTestId("TableRow")).toHaveLength(5);
+			expect(asFragment()).toMatchSnapshot();
+		});
+
+		it("should render with currency column", () => {
+			const { getAllByTestId, asFragment } = renderWithRouter(
+				<TransactionTable transactions={[]} isLoading exchangeCurrency="BTC" skeletonRowsLimit={5} />,
+			);
+			expect(getAllByTestId("TableRow")).toHaveLength(5);
+			expect(asFragment()).toMatchSnapshot();
+		});
 	});
 
 	it("should emit action on the row click", () => {
