@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 const entityProvider = new EntityProvider();
 
 type FormStepProps = {
-	title?: string;
+	title: string;
 	description?: string;
 	showEntityNameField?: boolean;
 };
@@ -96,7 +96,7 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 	return (
 		<section data-testid="EntityRegistrationForm" className="space-y-8">
 			<Header
-				title={title || t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.TITLE")}
+				title={title}
 				subtitle={description || t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 			/>
 

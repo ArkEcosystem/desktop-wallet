@@ -250,9 +250,9 @@ describe("Registration", () => {
 		await renderHookAct(async () => {
 			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-3")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+			fireEvent.click(getByTestId("select-list__toggle-option-3"));
 
 			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(1, "network", { ...network }));
 			await waitFor(() =>
@@ -314,9 +314,9 @@ describe("Registration", () => {
 		await renderHookAct(async () => {
 			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-3")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+			fireEvent.click(getByTestId("select-list__toggle-option-3"));
 
 			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(1, "network", { ...network }));
 			await waitFor(() =>
