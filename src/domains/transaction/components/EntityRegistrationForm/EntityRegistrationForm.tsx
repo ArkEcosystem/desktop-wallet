@@ -31,13 +31,12 @@ const FormStepsComponent = ({ activeTab, wallet, title }: SendEntityRegistration
 		register("ipfsData.videos");
 
 		register("fees");
-		register("fee");
 	}, [register, entityRegistration]);
 
 	return (
 		<Tabs activeId={activeTab}>
 			<TabPanel tabId={2}>
-				<FormStep title={title} />
+				<FormStep title={title} wallet={wallet} />
 			</TabPanel>
 			<TabPanel tabId={3}>
 				<ReviewStep senderWallet={wallet} />

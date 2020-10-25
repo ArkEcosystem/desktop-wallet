@@ -8,4 +8,5 @@ export * from "./use-deeplink";
 export * from "./use-query-params";
 export * from "./use-reload-path";
 export * from "./use-synchronizer";
+export * from "./use-currency-display";
 export * from "./validations";

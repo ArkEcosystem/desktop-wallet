@@ -68,6 +68,18 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 			type: Enums.EntityType.Business,
 			label: "Business",
 		});
+
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Product,
+			label: "Product",
+		});
+
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Plugin,
+			label: "Plugin",
+		});
 	}
 
 	if (!wallet.isDelegate?.() && !wallet.isMultiSignature?.() && network?.can("Transaction.delegateRegistration")) {
@@ -104,6 +116,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 
 		if (fees[selectedItem.value]) {
 			setValue("fee", fees[selectedItem.value].avg, { shouldValidate: true, shouldDirty: true });
+			setValue("fees", fees[selectedItem.value]);
 		}
 	};
 

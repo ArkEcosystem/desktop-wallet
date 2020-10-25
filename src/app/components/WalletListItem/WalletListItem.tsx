@@ -77,7 +77,10 @@ export const WalletListItem = ({
 				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
 			</TableCell>
 
-			<TableCell isSelected={isSelected} innerClassName="text-sm font-bold text-center align-middle">
+			<TableCell
+				isSelected={isSelected}
+				innerClassName="justify-center text-sm font-bold text-center align-middle"
+			>
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
 						walletTypes.map((type: string) =>
@@ -85,7 +88,7 @@ export const WalletListItem = ({
 							wallet[`is${type}`]() ? (
 								<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
 									<span className={getIconColor(type)}>
-										<Icon name={getIconName(type)} width={16} height={16} />
+										<Icon name={getIconName(type)} width={18} />
 									</span>
 								</Tippy>
 							) : null,

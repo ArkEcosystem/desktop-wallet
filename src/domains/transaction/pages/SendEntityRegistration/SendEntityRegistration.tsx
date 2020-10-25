@@ -177,6 +177,10 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
+	const registrationTitleByType = useMemo(
+		() => t("TRANSACTION.PAGE_REGISTRATION.TITLE", { title: registrationType?.label }),
+		[t, registrationType],
+	);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
@@ -203,7 +207,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 
 							{activeTab > 1 && registrationForm && getValues("fees") && (
 								<registrationForm.component
-									title={entityRegistrationTitle}
+									title={entityRegistrationTitle || registrationTitleByType}
 									activeTab={activeTab}
 									fees={getValues("fees")}
 									wallet={activeWallet}

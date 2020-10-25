@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { useEnvironmentContext } from "app/contexts";
 import { InputFee } from "domains/transaction/components/InputFee";
@@ -29,7 +29,7 @@ export const FirstStep = ({
 	const { t } = useTranslation();
 
 	const form = useFormContext();
-	const { getValues, setValue, watch } = form;
+	const { getValues, setValue, watch, register } = form;
 
 	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "5",
@@ -38,13 +38,19 @@ export const FirstStep = ({
 		max: "2",
 	});
 
+	useEffect(() => {
+		register("fees");
+	}, [register]);
+
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
 
 	useEffect(() => {
-		setFees(env.fees().findByType(wallet.coinId(), wallet.networkId(), "vote"));
-	}, [env, setFees, wallet]);
+		const voteFees = env.fees().findByType(wallet.coinId(), wallet.networkId(), "vote");
+		setFees(voteFees);
+		setValue("fees", voteFees);
+	}, [env, setFees, wallet, setValue]);
 
 	useEffect(() => {
 		setValue("fee", fees.avg, { shouldValidate: true, shouldDirty: true });
@@ -93,6 +99,7 @@ export const FirstStep = ({
 								setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 							}}
 						/>
+						<FormHelperText />
 					</FormField>
 				</TransactionDetail>
 			</div>

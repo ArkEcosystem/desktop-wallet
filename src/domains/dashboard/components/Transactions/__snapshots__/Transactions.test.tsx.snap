@@ -61,7 +61,7 @@ exports[`Transactions should render with custom title 1`] = `
 </div>
 `;
 
-exports[`Transactions should render with with transactions 1`] = `
+exports[`Transactions should render with transactions 1`] = `
 <div>
   <div
     class="relative"
@@ -593,10 +593,30 @@ exports[`Transactions should render with with transactions 1`] = `
                   </div>
                 </div>
                 <span
-                  class="font-semibold text-theme-text"
-                  data-testid="TransactionRowRecipientLabel"
+                  class="space-x-1"
+                  data-testid="TransactionRowVoteCombinationLabel"
                 >
-                  Vote
+                  <span
+                    class="inline-flex max-w-72"
+                  >
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Vote
+                    </span>
+                  </span>
+                  <span>
+                    /
+                  </span>
+                  <span>
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Unvote
+                    </span>
+                  </span>
                 </span>
               </div>
             </td>
@@ -747,10 +767,30 @@ exports[`Transactions should render with with transactions 1`] = `
                   </div>
                 </div>
                 <span
-                  class="font-semibold text-theme-text"
-                  data-testid="TransactionRowRecipientLabel"
+                  class="space-x-1"
+                  data-testid="TransactionRowVoteCombinationLabel"
                 >
-                  Delegate Registration
+                  <span
+                    class="inline-flex max-w-72"
+                  >
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Vote
+                    </span>
+                  </span>
+                  <span>
+                    /
+                  </span>
+                  <span>
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Unvote
+                    </span>
+                  </span>
                 </span>
               </div>
             </td>

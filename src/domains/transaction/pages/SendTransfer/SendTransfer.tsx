@@ -18,6 +18,7 @@ import { useHistory, useLocation, useParams } from "react-router-dom";
 import { FormStep } from "./Step1";
 import { ReviewStep } from "./Step2";
 import { SummaryStep } from "./Step4";
+// import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
@@ -38,20 +39,30 @@ export const SendTransfer = () => {
 	const [wallet, setWallet] = useState<ReadWriteWallet | undefined>(hasWalletId ? activeWallet : undefined);
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const form = useForm({ mode: "onChange", defaultValues: { fee: 0 }, shouldUnregister: false });
+	const form = useForm({
+		mode: "onChange",
+		defaultValues: {
+			fee: 0,
+			amount: 0,
+			remainingBalance: wallet?.balance?.(),
+		},
+		shouldUnregister: false,
+	});
+
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
-	const { senderAddress } = watch();
-	const { sendTransfer } = useValidation();
+	const { senderAddress, fees, remainingBalance, amount } = watch();
+	const { sendTransfer, common } = useValidation();
 
 	useEffect(() => {
+		register("remainingBalance");
 		register("network", sendTransfer.network());
 		register("recipients");
 		register("senderAddress", sendTransfer.senderAddress());
-		register("fee", sendTransfer.fee());
+		register("fee", common.fee(fees, remainingBalance, wallet?.network?.()));
 		register("smartbridge", sendTransfer.smartbridge());
-	}, [register, sendTransfer]);
+	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount, senderAddress]);
 
 	useEffect(() => {
 		if (!hasWalletId && senderAddress) {
