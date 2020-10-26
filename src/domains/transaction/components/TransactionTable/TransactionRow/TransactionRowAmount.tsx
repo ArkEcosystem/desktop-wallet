@@ -13,13 +13,15 @@ type Props = {
 };
 
 export const BaseTransactionRowAmount = ({ isSent, wallet, total, convertedTotal, exchangeCurrency }: Props) => {
+	const isNegative = !total.isZero() && isSent;
+
 	if (exchangeCurrency) {
 		return (
 			<Amount
+				data-testid="TransactionRowAmount"
 				value={convertedTotal!}
 				ticker={exchangeCurrency}
 				className="text-theme-secondary-text"
-				data-testid="TransactionRowAmount"
 			/>
 		);
 	}
@@ -28,7 +30,7 @@ export const BaseTransactionRowAmount = ({ isSent, wallet, total, convertedTotal
 
 	return (
 		<Label data-testid="TransactionRowAmount" color={color} className="whitespace-no-wrap">
-			<Amount ticker={wallet?.currency() || ""} value={total} />
+			<Amount ticker={wallet?.currency() || ""} value={total} isNegative={isNegative} showSign />
 		</Label>
 	);
 };
