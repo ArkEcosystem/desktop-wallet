@@ -1,5 +1,4 @@
 import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -10,6 +9,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
+import { Tooltip } from "app/components/Tooltip";
 import { useEnvironmentContext } from "app/contexts";
 import { PlatformSdkChoices } from "data";
 import React, { useEffect, useMemo, useState } from "react";
@@ -92,14 +92,14 @@ export const CreateProfile = () => {
 					<div className="text-theme-secondary-text">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
 
 					<div className="mt-8">
-						<Tippy content={t("COMMON.COMING_SOON")}>
+						<Tooltip content={t("COMMON.COMING_SOON")}>
 							<div>
 								<Button className="w-full" disabled>
 									<Icon name="Msq" width={20} height={20} />
 									<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
 								</Button>
 							</div>
-						</Tippy>
+						</Tooltip>
 					</div>
 
 					<Form

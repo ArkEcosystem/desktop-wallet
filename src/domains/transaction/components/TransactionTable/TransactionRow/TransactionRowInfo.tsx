@@ -1,6 +1,6 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 
 type Props = {
@@ -10,29 +10,29 @@ type Props = {
 };
 
 const VendorField = ({ vendorField }: { vendorField: string | undefined }) => (
-	<Tippy className="break-all" content={vendorField}>
+	<Tooltip className="break-all" content={vendorField}>
 		<span className="p-1">
 			<Icon data-testid="TransactionRowInfo__vendorField" name="Smartbridge" width={17} height={16} />
 		</span>
-	</Tippy>
+	</Tooltip>
 );
 
 const Ledger = () => (
 	// TODO: i18n
-	<Tippy content="Ledger">
+	<Tooltip content="Ledger">
 		<span className="p-1">
 			<Icon data-testid="TransactionRowInfo__ledger" name="Ledger" />
 		</span>
-	</Tippy>
+	</Tooltip>
 );
 
 const MultiSignature = () => (
 	// TODO: i18n
-	<Tippy content="MultiSignature">
+	<Tooltip content="MultiSignature">
 		<span className="p-1">
 			<Icon data-testid="TransactionRowInfo__multiSignature" name="Multisig" width={22} height={14} />
 		</span>
-	</Tippy>
+	</Tooltip>
 );
 
 export const BaseTransactionRowInfo = ({ memo, isMultiSignature, isLedger }: Props) => (
