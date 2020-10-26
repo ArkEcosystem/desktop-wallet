@@ -70,7 +70,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                 Sender
               </span>
               <div
-                class="sc-AxhUy kDFfAu"
+                class="sc-AxhUy hthPiX"
                 color="warning"
               >
                 <span
@@ -328,7 +328,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                 Sender
               </span>
               <div
-                class="sc-AxhUy kDFfAu"
+                class="sc-AxhUy hthPiX"
                 color="warning"
               >
                 <span
@@ -586,7 +586,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                 Sender
               </span>
               <div
-                class="sc-AxhUy kDFfAu"
+                class="sc-AxhUy hthPiX"
                 color="warning"
               >
                 <span
@@ -844,7 +844,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
                 Sender
               </span>
               <div
-                class="sc-AxhUy kDFfAu"
+                class="sc-AxhUy hthPiX"
                 color="warning"
               >
                 <span
@@ -1106,7 +1106,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
                   Sender
                 </span>
                 <div
-                  class="sc-AxhUy kDFfAu"
+                  class="sc-AxhUy hthPiX"
                   color="warning"
                 >
                   <span
@@ -1212,7 +1212,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
                       class="mt-1 text-lg font-semibold"
                       data-testid="total-amount-box__transaction-fee"
                     >
-                      NaN DARK
+                      2 DARK
                     </span>
                   </div>
                 </div>
@@ -1246,7 +1246,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
                   class="text-2xl font-bold"
                   data-testid="total-amount-box__total"
                 >
-                  NaN DARK
+                  2 DARK
                 </span>
               </div>
             </div>
@@ -1328,7 +1328,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 Sender
               </span>
               <div
-                class="sc-AxhUy kDFfAu"
+                class="sc-AxhUy hthPiX"
                 color="warning"
               >
                 <span
@@ -1431,7 +1431,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
-                    value="1"
+                    value="10"
                   />
                   <div
                     class="absolute bottom-0 w-full px-1"
@@ -1452,7 +1452,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                           <div
                             aria-valuemax="10"
                             aria-valuemin="0"
-                            aria-valuenow="1"
+                            aria-valuenow="10"
                             class="sc-fznxsB fjEYYX"
                             data-testid="Range__thumb"
                             draggable="false"
@@ -1491,7 +1491,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                     Average
                   </button>
                   <button
-                    aria-checked="false"
+                    aria-checked="true"
                     class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
@@ -1580,7 +1580,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 Sender
               </span>
               <div
-                class="sc-AxhUy kDFfAu"
+                class="sc-AxhUy hthPiX"
                 color="warning"
               >
                 <span

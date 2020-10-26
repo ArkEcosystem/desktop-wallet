@@ -1,4 +1,5 @@
 import { Currencies } from "app/assets/svg/currencies";
+import { Providers } from "app/assets/svg/providers";
 
 import { ReactComponent as AlertDanger } from "./alert-danger.svg";
 import { ReactComponent as AlertDefault } from "./alert-default.svg";
@@ -11,7 +12,6 @@ import { ReactComponent as AwaitingFinalSignature } from "./awaiting-final-signa
 import { ReactComponent as AwaitingOtherSignature } from "./awaiting-other-signature.svg";
 import { ReactComponent as AwaitingOurSignature } from "./awaiting-our-signature.svg";
 import { ReactComponent as Back } from "./back.svg";
-import { ReactComponent as BitBucket } from "./bitbucket.svg";
 import { ReactComponent as Blockfolio } from "./blockfolio.svg";
 import { ReactComponent as Bridgechain } from "./bridgechain.svg";
 import { ReactComponent as Business } from "./business.svg";
@@ -33,7 +33,6 @@ import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { ReactComponent as Dash } from "./dash.svg";
 import { ReactComponent as DelegateResigned } from "./delegate-resigned.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
-import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
 import { ReactComponent as Edit } from "./edit.svg";
 import { ReactComponent as Entity } from "./entity.svg";
@@ -42,33 +41,26 @@ import { ReactComponent as Explorer } from "./explorer.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
 import { ReactComponent as EyeTag } from "./eye-tag.svg";
 import { ReactComponent as Eye } from "./eye.svg";
-import { ReactComponent as Facebook } from "./facebook.svg";
 import { ReactComponent as FilePassword } from "./file-password.svg";
 import { ReactComponent as File } from "./file.svg";
 import { ReactComponent as Filters } from "./filters.svg";
 import { ReactComponent as Forward } from "./forward.svg";
 import { ReactComponent as General } from "./general.svg";
-import { ReactComponent as GitHub } from "./github.svg";
-import { ReactComponent as GitLab } from "./gitlab.svg";
 import { ReactComponent as Grant } from "./grant.svg";
 import { ReactComponent as GridView } from "./grid-view.svg";
 import { ReactComponent as Import } from "./import.svg";
-import { ReactComponent as Instagram } from "./instagram.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
 import { ReactComponent as Key } from "./key.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
 import { ReactComponent as Link } from "./link.svg";
-import { ReactComponent as LinkedIn } from "./linkedin.svg";
 import { ReactComponent as ListView } from "./list-view.svg";
 import { ReactComponent as LoaderLogo } from "./loader-logo.svg";
 import { ReactComponent as Lock } from "./lock.svg";
-import { ReactComponent as Medium } from "./medium.svg";
 import { ReactComponent as Module } from "./module.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multipayment } from "./multipayment.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
-import { ReactComponent as Npm } from "./npm.svg";
 import { ReactComponent as OfficialArkPlugin } from "./official-ark-plugin.svg";
 import { ReactComponent as PaginationFirst } from "./pagination-first.svg";
 import { ReactComponent as PaginationLast } from "./pagination-last.svg";
@@ -84,7 +76,6 @@ import { ReactComponent as Profile } from "./profile.svg";
 import { ReactComponent as QrCode } from "./qr-code.svg";
 import { ReactComponent as QuestionMark } from "./questionmark.svg";
 import { ReactComponent as Received } from "./received.svg";
-import { ReactComponent as Reddit } from "./reddit.svg";
 import { ReactComponent as Redirect } from "./redirect.svg";
 import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
 import { ReactComponent as Report } from "./report.svg";
@@ -93,7 +84,6 @@ import { ReactComponent as Search } from "./search.svg";
 import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Sent } from "./sent.svg";
 import { ReactComponent as Settings } from "./settings.svg";
-import { ReactComponent as Slack } from "./slack.svg";
 import { ReactComponent as Smartbridge } from "./smartbridge.svg";
 import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as StarOutline } from "./star-outline.svg";
@@ -103,7 +93,6 @@ import { ReactComponent as StatusOk } from "./status-ok.svg";
 import { ReactComponent as StatusPending } from "./status-pending.svg";
 import { ReactComponent as Timelock } from "./timelock.svg";
 import { ReactComponent as Trash } from "./trash.svg";
-import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Unvote } from "./unvote.svg";
 import { ReactComponent as Update } from "./update.svg";
 import { ReactComponent as Upload } from "./upload.svg";
@@ -113,6 +102,8 @@ import { ReactComponent as Vote } from "./vote.svg";
 import { ReactComponent as Voted } from "./voted.svg";
 
 export const SvgCollection: any = {
+	...Currencies,
+	...Providers,
 	AlertDanger,
 	AlertDefault,
 	AlertSuccess,
@@ -124,7 +115,6 @@ export const SvgCollection: any = {
 	AwaitingOtherSignature,
 	AwaitingOurSignature,
 	Back,
-	BitBucket,
 	Blockfolio,
 	Bridgechain,
 	Business,
@@ -146,7 +136,6 @@ export const SvgCollection: any = {
 	Dash,
 	Delegate,
 	DelegateResigned,
-	Discord,
 	Download,
 	Edit,
 	Entity,
@@ -155,33 +144,26 @@ export const SvgCollection: any = {
 	Eye,
 	EyeOff,
 	EyeTag,
-	Facebook,
 	File,
 	FilePassword,
 	Filters,
 	Forward,
 	General,
-	GitHub,
-	GitLab,
 	Grant,
 	GridView,
 	Import,
-	Instagram,
 	Ipfs,
 	Key,
 	Ledger,
 	Link,
-	LinkedIn,
 	ListView,
 	LoaderLogo,
 	Lock,
-	Medium,
 	Module,
 	Msq,
 	Multipayment,
 	Multisig,
 	Notification,
-	Npm,
 	OfficialArkPlugin,
 	PaginationFirst,
 	PaginationLast,
@@ -197,7 +179,6 @@ export const SvgCollection: any = {
 	QrCode,
 	QuestionMark,
 	Received,
-	Reddit,
 	Redirect,
 	ReplyArrow,
 	Report,
@@ -206,7 +187,6 @@ export const SvgCollection: any = {
 	Send,
 	Sent,
 	Settings,
-	Slack,
 	Smartbridge,
 	Sort,
 	Star,
@@ -216,7 +196,6 @@ export const SvgCollection: any = {
 	StatusPending,
 	Timelock,
 	Trash,
-	Twitter,
 	Unvote,
 	Update,
 	Upload,
@@ -224,5 +203,4 @@ export const SvgCollection: any = {
 	Vote,
 	VoteCombination,
 	Voted,
-	...Currencies,
 };

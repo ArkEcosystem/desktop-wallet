@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -48,8 +49,14 @@ beforeAll(async () => {
 	const profile = env.profiles().findById(fixtureProfileId);
 	const wallet = await profile.wallets().importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
 
+	jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);
+
 	await syncDelegates();
 	await wallet.syncVotes();
+});
+
+afterAll(() => {
+	useRandomNumberHook.useRandomNumber.mockRestore();
 });
 
 beforeEach(() => {
@@ -208,6 +215,30 @@ describe("Dashboard", () => {
 			{ timeout: 5000 },
 		);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should change wallet view type from grid to list", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard balances={balances} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await act(async () => {
+			const toggle = getByTestId("LayoutControls__list--icon");
+
+			await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+
+			fireEvent.click(toggle);
+
+			await waitFor(() => expect(() => getAllByTestId("WalletTable")).toBeTruthy());
+
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
 	});
 
 	it("should hide portfolio view", async () => {

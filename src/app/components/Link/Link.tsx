@@ -1,4 +1,4 @@
-import Tippy from "@tippyjs/react";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { Link as RouterLink, LinkProps } from "react-router-dom";
 import { styled } from "twin.macro";
@@ -64,7 +64,7 @@ type Props = {
 } & LinkProps;
 
 export const Link = ({ tooltip, ...props }: Props) => (
-	<Tippy content={tooltip} disabled={!tooltip}>
+	<Tooltip content={tooltip} disabled={!tooltip}>
 		{props.isExternal ? (
 			<Anchor
 				onClick={(event) => {
@@ -77,7 +77,7 @@ export const Link = ({ tooltip, ...props }: Props) => (
 		) : (
 			<RouterLink component={Anchor} {...props} />
 		)}
-	</Tippy>
+	</Tooltip>
 );
 
 Link.defaultProps = {

@@ -1,10 +1,10 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
+import { Tooltip } from "app/components/Tooltip";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -77,24 +77,27 @@ export const WalletListItem = ({
 				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
 			</TableCell>
 
-			<TableCell isSelected={isSelected} innerClassName="text-sm font-bold text-center align-middle">
+			<TableCell
+				isSelected={isSelected}
+				innerClassName="justify-center text-sm font-bold text-center align-middle"
+			>
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
 						walletTypes.map((type: string) =>
 							// @ts-ignore
 							wallet[`is${type}`]() ? (
-								<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+								<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
 									<span className={getIconColor(type)}>
-										<Icon name={getIconName(type)} width={16} height={16} />
+										<Icon name={getIconName(type)} width={18} />
 									</span>
-								</Tippy>
+								</Tooltip>
 							) : null,
 						)}
 				</div>
 			</TableCell>
 
 			<TableCell isSelected={isSelected} innerClassName="font-semibold justify-end">
-				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
+				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} showSign />
 			</TableCell>
 
 			<TableCell

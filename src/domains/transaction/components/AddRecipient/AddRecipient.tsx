@@ -1,9 +1,9 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputAddonEnd, InputCurrency, InputGroup } from "app/components/Input";
+import { Tooltip } from "app/components/Tooltip";
 import { useValidation } from "app/hooks";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
@@ -25,11 +25,11 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 					{t("TRANSACTION.SINGLE_OR_MULTI")}
 				</div>
 				<div>
-					<Tippy content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
+					<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
 						<div className="rounded-full cursor-pointer text-theme-primary-600 hover:text-theme-primary-100 questionmark">
 							<Icon name="QuestionMark" width={20} height={20} />
 						</div>
-					</Tippy>
+					</Tooltip>
 				</div>
 			</div>
 
@@ -79,16 +79,16 @@ export const AddRecipient = ({
 		clearErrors,
 		formState: { errors },
 	} = useFormContext();
-	const { network, senderAddress, fee, recipientAddress } = watch();
+	const { network, senderAddress, fee, recipientAddress, amount } = watch();
 	const { sendTransfer } = useValidation();
 
-	const availableBalance = useMemo(() => {
+	const remainingBalance = useMemo(() => {
 		const senderBalance = profile.wallets().findByAddress(senderAddress)?.balance() || BigNumber.ZERO;
 
 		if (isSingle) return senderBalance;
 
-		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance).minus(fee);
-	}, [addedRecipients, profile, senderAddress, isSingle, fee]);
+		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance);
+	}, [addedRecipients, profile, senderAddress, isSingle]);
 
 	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
 
@@ -99,10 +99,16 @@ export const AddRecipient = ({
 	}, [setValue]);
 
 	useEffect(() => {
-		if (showMultiPaymentOption) return;
+		register("remainingBalance");
+	}, [register]);
 
-		setIsSingle(true);
-	}, [showMultiPaymentOption]);
+	useEffect(() => {
+		const remaining = remainingBalance.isLessThanOrEqualTo(BigNumber.ZERO)
+			? BigNumber.ZERO
+			: remainingBalance.minus(amount || 0);
+
+		setValue("remainingBalance", remaining);
+	}, [remainingBalance, setValue, amount, recipientAddress, fee, senderAddress]);
 
 	useEffect(() => {
 		if (!withDeeplink) return;
@@ -115,9 +121,9 @@ export const AddRecipient = ({
 	}, [recipients, withDeeplink]);
 
 	useEffect(() => {
-		register("amount", sendTransfer.amount(network, availableBalance, addedRecipients, isSingle));
+		register("amount", sendTransfer.amount(network, remainingBalance, addedRecipients, isSingle));
 		register("displayAmount");
-	}, [register, availableBalance, network, sendTransfer, addedRecipients, isSingle]);
+	}, [register, remainingBalance, network, sendTransfer, addedRecipients, isSingle]);
 
 	useEffect(() => {
 		clearErrors();
@@ -190,17 +196,14 @@ export const AddRecipient = ({
 				noBackground={isSingle}
 			>
 				<div className="space-y-8">
-					<FormField name="recipientAddress" className="relative mt-1">
-						<div className="mb-2">
-							<FormLabel
-								label={
-									isSingle
-										? t("COMMON.RECIPIENT")
-										: t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })
-								}
-							/>
-						</div>
-
+					<FormField name="recipientAddress">
+						<FormLabel
+							label={
+								isSingle
+									? t("COMMON.RECIPIENT")
+									: t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })
+							}
+						/>
 						<SelectRecipient
 							disabled={!isSenderFilled}
 							address={recipientAddress}
@@ -234,12 +237,12 @@ export const AddRecipient = ({
 									type="button"
 									data-testid="add-recipient__send-all"
 									onClick={() => {
-										setValue("displayAmount", availableBalance.toHuman());
-										setValue("amount", availableBalance.toString(), {
+										setValue("displayAmount", remainingBalance.minus(fee).toHuman());
+										setValue("amount", remainingBalance.minus(fee).toString(), {
 											shouldValidate: true,
 											shouldDirty: true,
 										});
-										singleRecipientOnChange(availableBalance.toString(), recipientAddress);
+										singleRecipientOnChange(remainingBalance.toString(), recipientAddress);
 									}}
 									className="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
 								>

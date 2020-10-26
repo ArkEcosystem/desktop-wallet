@@ -1,11 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table, TableCell, TableRow } from "app/components/Table";
-import { TruncateMiddle } from "app/components/TruncateMiddle";
+import { Tooltip } from "app/components/Tooltip";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -63,17 +62,17 @@ const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transac
 
 	if (wallet.transaction().isAwaitingOurSignature(transaction.id())) {
 		return (
-			<Tippy content={t("TRANSACTION.MULTISIGNATURE.AWAITING_OUR_SIGNATURE")}>
+			<Tooltip content={t("TRANSACTION.MULTISIGNATURE.AWAITING_OUR_SIGNATURE")}>
 				<span className="p-1 text-theme-danger-400">
 					<Icon name="AwaitingOurSignature" width={20} height={20} />
 				</span>
-			</Tippy>
+			</Tooltip>
 		);
 	}
 
 	if (wallet.transaction().isAwaitingOtherSignatures(transaction.id())) {
 		return (
-			<Tippy
+			<Tooltip
 				content={t("TRANSACTION.MULTISIGNATURE.AWAITING_OTHER_SIGNATURE_COUNT", {
 					count: wallet.coin().multiSignature().remainingSignatureCount(transaction),
 				})}
@@ -81,36 +80,36 @@ const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transac
 				<span className="p-1 text-theme-warning-300">
 					<Icon name="AwaitingOtherSignature" width={30} height={22} />
 				</span>
-			</Tippy>
+			</Tooltip>
 		);
 	}
 
 	if (wallet.transaction().isAwaitingConfirmation(transaction.id())) {
 		return (
-			<Tippy content={t("TRANSACTION.MULTISIGNATURE.AWAITING_CONFIRMATIONS")}>
+			<Tooltip content={t("TRANSACTION.MULTISIGNATURE.AWAITING_CONFIRMATIONS")}>
 				<span className="p-1 text-theme-warning-300">
 					<Icon name="StatusPending" width={30} height={22} />
 				</span>
-			</Tippy>
+			</Tooltip>
 		);
 	}
 
 	if (isMultiSignatureReady) {
 		return (
-			<Tippy content={t("TRANSACTION.MULTISIGNATURE.READY")}>
+			<Tooltip content={t("TRANSACTION.MULTISIGNATURE.READY")}>
 				<span className="p-1 text-theme-success-500">
 					<Icon name="Send" width={20} height={20} />
 				</span>
-			</Tippy>
+			</Tooltip>
 		);
 	}
 
 	return (
-		<Tippy content={t("TRANSACTION.MULTISIGNATURE.AWAITING_FINAL_SIGNATURE")}>
+		<Tooltip content={t("TRANSACTION.MULTISIGNATURE.AWAITING_FINAL_SIGNATURE")}>
 			<span className="p-1 text-theme-success-500">
 				<Icon name="AwaitingFinalSignature" width={30} height={22} />
 			</span>
-		</Tippy>
+		</Tooltip>
 	);
 };
 
@@ -140,10 +139,14 @@ const Row = ({
 			onClick={() => onRowClick?.(transaction)}
 		>
 			<TableCell variant="start">
-				<TruncateMiddle text={transaction.id()} />
+				<Tooltip content={transaction.id()}>
+					<span className="text-theme-neutral-300 dark:text-theme-neutral-800">
+						<Icon name="Redirect" />
+					</span>
+				</Tooltip>
 			</TableCell>
 
-			<TableCell className="w-50" innerClassName="text-theme-secondary-text">
+			<TableCell innerClassName="text-theme-secondary-text">
 				<span data-testid="TransactionRow__timestamp">
 					{/* TODO */}
 					{DateTime.fromUnix(1596213281).format("DD MMM YYYY HH:mm:ss")}
@@ -170,7 +173,7 @@ const Row = ({
 				<StatusLabel wallet={wallet} transaction={transaction} />
 			</TableCell>
 
-			<TableCell className="w-56" innerClassName="justify-end">
+			<TableCell innerClassName="justify-end">
 				<BaseTransactionRowAmount
 					isSent={true}
 					total={transaction.amount().plus(transaction.fee())}
@@ -178,7 +181,7 @@ const Row = ({
 				/>
 			</TableCell>
 
-			<TableCell variant="end" className="w-24" innerClassName="justify-end">
+			<TableCell variant="end" innerClassName="justify-end">
 				{canBeSigned ? (
 					<Button data-testid="TransactionRow__sign" variant="plain" onClick={() => onSign?.(transaction)}>
 						<Icon name="Edit" />
@@ -196,14 +199,17 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 	const columns = [
 		{
 			Header: t("COMMON.ID"),
+			minimumWidth: true,
 		},
 		{
 			Header: t("COMMON.DATE"),
 			accessor: "timestamp",
+			cellWidth: "w-50",
 		},
 		{
 			Header: t("COMMON.RECIPIENT"),
 			className: "ml-25",
+			cellWidth: "w-96",
 		},
 		{
 			Header: t("COMMON.INFO"),
@@ -212,6 +218,7 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 		{
 			Header: t("COMMON.STATUS"),
 			className: "justify-center",
+			minimumWidth: true,
 		},
 		{
 			Header: t("COMMON.AMOUNT"),
@@ -221,6 +228,7 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 		{
 			Header: "Sign",
 			className: "hidden",
+			cellWidth: "w-24",
 		},
 	];
 

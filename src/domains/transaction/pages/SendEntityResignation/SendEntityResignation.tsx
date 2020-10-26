@@ -22,7 +22,7 @@ import {
 	SummaryStep as EntitySummaryStep,
 } from "../../components/EntityResignationSteps";
 
-export const SendEntityResignation = ({ formDefaultData, passwordType }: any) => {
+export const SendEntityResignation = ({ formDefaultData }: any) => {
 	const { t } = useTranslation();
 	const history = useHistory();
 

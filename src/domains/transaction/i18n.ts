@@ -207,6 +207,7 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_REGISTRATION: {
+		TITLE: "Register {{ title }}",
 		FIRST_STEP: {
 			TITLE: "Registration",
 			DESCRIPTION: "Select the type of registration and the address you want to register with.",
@@ -384,6 +385,8 @@ export const translations: { [key: string]: any } = {
 	},
 
 	VALIDATION: {
-		LOW_BALANCE: "The balance it too low ({{balance}} {{ coinId }})",
+		LOW_BALANCE: "The balance is too low ({{balance}} {{ coinId }})",
+		FEE_BELOW_MINIMUM: "The selected fee is below the minimum  ({{min}} {{ coinId }}) and may not be forged",
+		FEE_ABOVE_MAXIMUM: "The selected fee is above the maximum ({{max}} {{ coinId }})",
 	},
 };

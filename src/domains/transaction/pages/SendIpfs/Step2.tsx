@@ -47,7 +47,7 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					<div className="flex-1 space-y-2">
 						<div className="text-theme-neutral">
 							<span className="mr-1 text-sm">{t("TRANSACTION.SENDER")}</span>
-							<Label color="warning">
+							<Label color="warning" variant="solid">
 								<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 							</Label>
 						</div>

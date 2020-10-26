@@ -1,6 +1,6 @@
 import { InputFee } from "domains/transaction/components/InputFee";
 import React from "react";
-import { fireEvent, render, waitFor } from "utils/testing-library";
+import { act, fireEvent, render, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 
@@ -20,31 +20,32 @@ describe("InputFee", () => {
 	});
 
 	it("should render", () => {
-		const { asFragment } = render(
+		const { asFragment, getByTestId } = render(
 			<InputFee min={min} max={max} avg={avg} defaultValue={value} value={value} step={step} />,
 		);
 
+		expect(getByTestId("InputCurrency")).toHaveValue("2");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should update fee if value property changes", () => {
+	it("should update fee if value property changes", async () => {
 		const { asFragment, getByTestId, rerender } = render(
 			<InputFee min={min} max={max} avg={avg} defaultValue={value} value={value} step={step} />,
 		);
 
+		expect(getByTestId("InputCurrency")).toHaveValue("2");
 		rerender(<InputFee min={min} max={max} avg={avg} defaultValue={value} value={"100000000"} step={step} />);
-
-		waitFor(() => {
+		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("1");
 		});
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should update fee when clicking on min", () => {
+	it("should update fee when clicking on min", async () => {
 		const onChange = jest.fn();
 
-		const { asFragment, getByText } = render(
+		const { asFragment, getByText, getByTestId } = render(
 			<InputFee
 				min={min}
 				max={max}
@@ -55,10 +56,13 @@ describe("InputFee", () => {
 				onChange={onChange}
 			/>,
 		);
+		expect(getByTestId("InputCurrency")).toHaveValue("2");
 
-		fireEvent.click(getByText(transactionTranslations.FEES.MIN));
+		act(() => {
+			fireEvent.click(getByText(transactionTranslations.FEES.MIN));
+		});
 
-		waitFor(() => {
+		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("1");
 			expect(onChange).toHaveBeenCalledWith({ display: "1", value: "100000000" });
 		});
@@ -66,33 +70,37 @@ describe("InputFee", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should update fee when clicking on avg", () => {
+	it("should update fee when clicking on avg", async () => {
 		const onChange = jest.fn();
 
-		const { asFragment, getByText } = render(
+		const { asFragment, getByText, getByTestId } = render(
 			<InputFee min={min} max={max} avg={avg} defaultValue={value} step={step} onChange={onChange} />,
 		);
 
-		fireEvent.click(getByText(transactionTranslations.FEES.AVERAGE));
+		act(() => {
+			fireEvent.click(getByText(transactionTranslations.FEES.AVERAGE));
+		});
 
-		waitFor(() => {
-			expect(getByTestId("InputCurrency")).toHaveValue("1.354");
-			expect(onChange).toHaveBeenCalledWith({ display: "1.354", value: "135400000" });
+		await waitFor(() => {
+			expect(getByTestId("InputCurrency")).toHaveValue("1.355");
+			expect(onChange).toHaveBeenCalledWith({ display: "1.355", value: "135500000" });
 		});
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should update fee when clicking on max", () => {
+	it("should update fee when clicking on max", async () => {
 		const onChange = jest.fn();
 
-		const { asFragment, getByText } = render(
+		const { asFragment, getByText, getByTestId } = render(
 			<InputFee min={min} max={max} avg={avg} defaultValue={value} step={step} onChange={onChange} />,
 		);
 
-		fireEvent.click(getByText(transactionTranslations.FEES.MAX));
+		act(() => {
+			fireEvent.click(getByText(transactionTranslations.FEES.MAX));
+		});
 
-		waitFor(() => {
+		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("10");
 			expect(onChange).toHaveBeenCalledWith({ display: "10", value: "1000000000" });
 		});
