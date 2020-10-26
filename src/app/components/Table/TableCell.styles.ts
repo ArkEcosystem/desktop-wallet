@@ -1,10 +1,13 @@
 import tw from "twin.macro";
 
-const baseStyle = [tw`flex items-center px-3 my-1 transition-colors duration-100 group-hover:bg-theme-neutral-100`];
+const baseStyle = tw`flex items-center px-3 my-1 transition-colors duration-100`;
 
 const getHeight = (isCompact?: boolean): any => (isCompact ? tw`h-16` : tw`h-20`);
 
-const getHoverStyles = (isSelected?: boolean): any => (isSelected ? tw`bg-theme-success-100` : "");
+const getHoverStyles = (isSelected?: boolean): any => [
+	tw`group-hover:bg-theme-neutral-100`,
+	isSelected ? tw`bg-theme-success-100` : "",
+];
 
 const getVariant = (variant: "start" | "middle" | "end"): any => {
 	if (variant === "start") {
@@ -16,9 +19,12 @@ const getVariant = (variant: "start" | "middle" | "end"): any => {
 	}
 };
 
-export const getStyles = ({ variant, isSelected, isCompact }: any) => [
-	...baseStyle,
-	getHeight(isCompact),
-	getHoverStyles(isSelected),
-	getVariant(variant),
-];
+export const getStyles = ({ variant, noHover, isSelected, isCompact }: any) => {
+	const styles = [baseStyle, getHeight(isCompact), getVariant(variant)];
+
+	if (!noHover) {
+		styles.push(...getHoverStyles(isSelected));
+	}
+
+	return styles;
+};

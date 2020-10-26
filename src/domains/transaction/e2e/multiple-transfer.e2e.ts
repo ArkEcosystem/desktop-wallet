@@ -36,14 +36,18 @@ test("should show an error if wrong mnemonic", async (t: any) => {
 	await t.click(Selector("[data-testid=add-recipient-is-multiple-toggle]"));
 
 	// Add recipient #1
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd");
+	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
+		paste: true,
+	});
 	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
-	await t.click(Selector("button").withText("Add Recipient"));
+	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Add recipient #2
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP");
+	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
+		paste: true,
+	});
 	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
-	await t.click(Selector("button").withText("Add Recipient"));
+	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Go to step 2
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
@@ -75,12 +79,16 @@ test("should send multiple transfer successfully", async (t) => {
 	await t.click(Selector("[data-testid=add-recipient-is-multiple-toggle]"));
 
 	// Add recipient #1
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd");
+	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
+		paste: true,
+	});
 	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
 	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Add recipient #2
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP");
+	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
+		paste: true,
+	});
 	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
 	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 

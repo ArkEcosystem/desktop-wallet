@@ -196,17 +196,14 @@ export const AddRecipient = ({
 				noBackground={isSingle}
 			>
 				<div className="space-y-8">
-					<FormField name="recipientAddress" className="relative mt-1">
-						<div className="mb-2">
-							<FormLabel
-								label={
-									isSingle
-										? t("COMMON.RECIPIENT")
-										: t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })
-								}
-							/>
-						</div>
-
+					<FormField name="recipientAddress">
+						<FormLabel
+							label={
+								isSingle
+									? t("COMMON.RECIPIENT")
+									: t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })
+							}
+						/>
 						<SelectRecipient
 							disabled={!isSenderFilled}
 							address={recipientAddress}
