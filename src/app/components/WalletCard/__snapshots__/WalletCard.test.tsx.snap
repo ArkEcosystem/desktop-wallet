@@ -69,15 +69,15 @@ exports[`Wallet Card should render 1`] = `
         </span>
       </div>
       <div
-        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
       >
         <div
-          class="inline-block text-theme-neutral-600"
+          class="inline-block p-1 text-theme-neutral-600"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               ledger.svg
@@ -85,12 +85,12 @@ exports[`Wallet Card should render 1`] = `
           </div>
         </div>
         <div
-          class="inline-block text-theme-neutral-600"
+          class="inline-block p-1 text-theme-neutral-600"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               multisig.svg
@@ -98,12 +98,12 @@ exports[`Wallet Card should render 1`] = `
           </div>
         </div>
         <div
-          class="inline-block text-theme-warning-400"
+          class="inline-block p-1 text-theme-warning-400"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               star.svg
@@ -151,7 +151,7 @@ exports[`Wallet Card should render blank 1`] = `
         </span>
       </div>
       <div
-        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
       />
     </div>
   </div>
@@ -227,15 +227,15 @@ exports[`Wallet Card should render with actions 1`] = `
         </span>
       </div>
       <div
-        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
       >
         <div
-          class="inline-block text-theme-neutral-600"
+          class="inline-block p-1 text-theme-neutral-600"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               ledger.svg
@@ -243,12 +243,12 @@ exports[`Wallet Card should render with actions 1`] = `
           </div>
         </div>
         <div
-          class="inline-block text-theme-neutral-600"
+          class="inline-block p-1 text-theme-neutral-600"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               multisig.svg
@@ -256,12 +256,12 @@ exports[`Wallet Card should render with actions 1`] = `
           </div>
         </div>
         <div
-          class="inline-block text-theme-warning-400"
+          class="inline-block p-1 text-theme-warning-400"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               star.svg
@@ -276,7 +276,7 @@ exports[`Wallet Card should render with actions 1`] = `
             class="flex justify-center w-4 overflow-hidden"
           >
             <div
-              class="sc-AxjAm cpczEI p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+              class="sc-AxjAm cpczEI p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
               height="1em"
               width="1em"
             >
@@ -361,15 +361,15 @@ exports[`Wallet Card should render with wallet data 1`] = `
         </span>
       </div>
       <div
-        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
       >
         <div
-          class="inline-block text-theme-neutral-600"
+          class="inline-block p-1 text-theme-neutral-600"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               ledger.svg
@@ -377,12 +377,12 @@ exports[`Wallet Card should render with wallet data 1`] = `
           </div>
         </div>
         <div
-          class="inline-block text-theme-neutral-600"
+          class="inline-block p-1 text-theme-neutral-600"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               multisig.svg
@@ -390,12 +390,12 @@ exports[`Wallet Card should render with wallet data 1`] = `
           </div>
         </div>
         <div
-          class="inline-block text-theme-warning-400"
+          class="inline-block p-1 text-theme-warning-400"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               star.svg
@@ -478,15 +478,15 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
         </span>
       </div>
       <div
-        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
       >
         <div
-          class="inline-block text-theme-neutral-600"
+          class="inline-block p-1 text-theme-neutral-600"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               ledger.svg
@@ -494,12 +494,12 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
           </div>
         </div>
         <div
-          class="inline-block text-theme-neutral-600"
+          class="inline-block p-1 text-theme-neutral-600"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               multisig.svg
@@ -507,12 +507,12 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
           </div>
         </div>
         <div
-          class="inline-block text-theme-warning-400"
+          class="inline-block p-1 text-theme-warning-400"
         >
           <div
-            class="sc-AxjAm bYGgTo"
+            class="sc-AxjAm bHbtor"
             height="1em"
-            width="18"
+            width="20"
           >
             <svg>
               star.svg

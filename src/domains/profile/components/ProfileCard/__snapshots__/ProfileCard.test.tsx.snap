@@ -70,7 +70,7 @@ exports[`ProfileCard should hide the balance if the profile uses a password 1`] 
         </div>
       </div>
       <div
-        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
       />
     </div>
   </div>
@@ -147,7 +147,7 @@ exports[`ProfileCard should hide the settings icon 1`] = `
         </div>
       </div>
       <div
-        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
       />
     </div>
   </div>
@@ -229,7 +229,7 @@ exports[`ProfileCard should render 1`] = `
         </div>
       </div>
       <div
-        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
       />
     </div>
   </div>
@@ -307,7 +307,7 @@ exports[`ProfileCard should render the profile with avatar image 1`] = `
         </div>
       </div>
       <div
-        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
       />
     </div>
   </div>
@@ -384,7 +384,7 @@ exports[`ProfileCard should render the settings icon 1`] = `
         </div>
       </div>
       <div
-        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
       >
         <div
           class="relative"
@@ -394,7 +394,7 @@ exports[`ProfileCard should render the settings icon 1`] = `
             class="flex justify-center w-4 overflow-hidden"
           >
             <div
-              class="sc-AxjAm cpczEI p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+              class="sc-AxjAm cpczEI p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
               height="1em"
               width="1em"
             >
