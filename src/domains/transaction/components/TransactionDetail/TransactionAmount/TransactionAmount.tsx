@@ -53,7 +53,7 @@ export const TransactionAmount = ({
 			{...props}
 		>
 			<Label color={isSent ? "danger" : "success"}>
-				<Amount ticker={currency} value={amount} />
+				<Amount ticker={currency} value={amount} isNegative={isSent} showSign />
 			</Label>
 			{exchangeCurrency && convertedAmount && (
 				<Amount ticker={exchangeCurrency} value={convertedAmount} className="ml-2 text-theme-neutral-light" />
