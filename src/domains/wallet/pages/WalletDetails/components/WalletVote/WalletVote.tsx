@@ -96,7 +96,7 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 								</span>
 							</Tippy>
 						) : (
-							<Icon name="StatusClock" className="text-theme-neutral" width={20} height={20} />
+							<Icon name="StatusPending" className="text-theme-warning" width={20} height={20} />
 						)}
 					</div>
 
