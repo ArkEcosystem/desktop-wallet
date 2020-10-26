@@ -1,9 +1,9 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { TransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
-import Tippy from "@tippyjs/react";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Size } from "types";
@@ -38,11 +38,11 @@ export const BaseTransactionRowMode = ({
 
 	return (
 		<div data-testid="TransactionRowMode" className="flex items-center -space-x-1">
-			<Tippy content={tooltipContent}>
+			<Tooltip content={tooltipContent}>
 				<Circle size={iconSize} className={modeCircleStyle} shadowColor={circleShadowColor}>
 					<Icon data-testid={`TransactionRowMode__${modeIconName}`} name={modeIconName} />
 				</Circle>
-			</Tippy>
+			</Tooltip>
 			<TransactionRowRecipientIcon
 				size={iconSize}
 				recipient={recipient}

@@ -1,10 +1,10 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
+import { Tooltip } from "app/components/Tooltip";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -86,11 +86,11 @@ export const WalletListItem = ({
 						walletTypes.map((type: string) =>
 							// @ts-ignore
 							wallet[`is${type}`]() ? (
-								<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+								<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
 									<span className={getIconColor(type)}>
 										<Icon name={getIconName(type)} width={18} />
 									</span>
-								</Tippy>
+								</Tooltip>
 							) : null,
 						)}
 				</div>
