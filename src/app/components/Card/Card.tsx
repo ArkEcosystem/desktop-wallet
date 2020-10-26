@@ -26,7 +26,7 @@ const Wrapper = styled.div<{ isSelected?: boolean; onClick?: any }>`
 export const Card = ({ children, addonIcons, actions, onClick, onSelect, isSelected, className }: CardProps) => (
 	<Wrapper isSelected={isSelected} className={className} onClick={onClick} data-testid="Card">
 		{children}
-		<div className="absolute top-0 right-0 flex items-center m-2 space-x-2">
+		<div className="absolute -top-1 -right-1 flex items-center m-4 space-x-1">
 			{addonIcons}
 			{actions && actions.length > 0 && (
 				<Dropdown
@@ -37,7 +37,7 @@ export const Card = ({ children, addonIcons, actions, onClick, onSelect, isSelec
 						<div className="flex justify-center w-4 overflow-hidden">
 							<Icon
 								name="Settings"
-								className="p-2 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+								className="p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
 							/>
 						</div>
 					}
