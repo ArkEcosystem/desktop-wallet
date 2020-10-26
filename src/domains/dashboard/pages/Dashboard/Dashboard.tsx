@@ -50,7 +50,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		[env],
 	);
 
-	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
+	const wallets = useMemo(() => activeProfile.wallets().sortBy("balance", "desc"), [activeProfile]);
 	const balancePerCoin = useMemo(() => activeProfile.walletAggregate().balancePerCoin(), [activeProfile]);
 
 	const portfolioPercentages = useMemo(() => {
