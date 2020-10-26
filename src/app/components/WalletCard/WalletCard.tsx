@@ -80,8 +80,8 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 						// @ts-ignore
 						wallet[`is${type}`]() ? (
 							<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-								<div className={`inline-block ${getIconColor(type)}`}>
-									<Icon name={getIconName(type)} width={18} />
+								<div className={`inline-block p-1 ${getIconColor(type)}`}>
+									<Icon name={getIconName(type)} width={20} />
 								</div>
 							</Tippy>
 						) : null,

@@ -8,7 +8,7 @@ exports[`Card should handle click 1`] = `
   >
     Test
     <div
-      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+      class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
     />
   </div>
 </DocumentFragment>
@@ -21,7 +21,7 @@ exports[`Card should render 1`] = `
     data-testid="Card"
   >
     <div
-      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+      class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
     />
   </div>
 </DocumentFragment>
