@@ -1,18 +1,21 @@
 export const translations: { [key: string]: any } = {
 	CONTACT_US: "Contact us",
 	GO_BACK_TO_HELP_SUPPORT: "Go back to Help & Support",
+
 	PAGE_ARTICLE: {
 		FOOTER: {
 			TITLE: "Do you still need help with your question?",
 			SUBTITLE: "Write us a letter and we will reply as soon as possible.",
 		},
 	},
+
 	PAGE_FAQ: {
 		PORTFOLIO: {
 			TITLE: "Portfolio",
 			SUBTITLE: "Frequently asked questions about portfolio and addresses",
 		},
 	},
+
 	PAGE_SUPPORT: {
 		TITLE: "Help & Support",
 		SUBTITLE: "Do you need any help? Find it in our archive or write to us",
@@ -22,6 +25,12 @@ export const translations: { [key: string]: any } = {
 			NEWEST: "Newest",
 		},
 	},
+
+	PAGE_CONTACT_US: {
+		TITLE: "Contact Us",
+		SUBTITLE: "Have questions? Contact our Team for additional support.",
+	},
+
 	MODAL_CONTACT_US: {
 		TITLE: "Contact Us",
 		DESCRIPTION: "We'd be happy to answer your questions",
@@ -33,6 +42,7 @@ export const translations: { [key: string]: any } = {
 			MESSAGE: "Message",
 		},
 	},
+
 	MODAL_SEARCH_HELP: {
 		TITLE: "Search",
 		DESCRIPTION: "Quickly find the right answers to any questions",
