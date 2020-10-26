@@ -7,6 +7,7 @@ type TableCellProps = {
 	variant?: "start" | "middle" | "end";
 	className?: string;
 	innerClassName?: string;
+	noHover?: boolean;
 	isCompact?: boolean;
 	isSelected?: boolean;
 	children: React.ReactNode;
@@ -14,11 +15,20 @@ type TableCellProps = {
 
 const TableCellInnerWrapper = styled.div<TableCellProps>(getStyles);
 
-export const TableCell = ({ variant, className, innerClassName, isCompact, isSelected, children }: TableCellProps) => (
+export const TableCell = ({
+	variant,
+	className,
+	innerClassName,
+	noHover,
+	isCompact,
+	isSelected,
+	children,
+}: TableCellProps) => (
 	<td className={className}>
 		<TableCellInnerWrapper
 			variant={variant}
 			className={innerClassName}
+			noHover={noHover}
 			isSelected={isSelected}
 			isCompact={isCompact}
 		>
