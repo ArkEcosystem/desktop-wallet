@@ -97,7 +97,7 @@ export const WalletListItem = ({
 			</TableCell>
 
 			<TableCell isSelected={isSelected} innerClassName="font-semibold justify-end">
-				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
+				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} showSign />
 			</TableCell>
 
 			<TableCell
