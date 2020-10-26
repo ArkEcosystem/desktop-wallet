@@ -1,5 +1,4 @@
 import { ContactAddress } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { AvatarWrapper } from "app/components/Avatar";
@@ -8,6 +7,7 @@ import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
+import { Tooltip } from "app/components/Tooltip";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -73,11 +73,11 @@ export const ContactListItem = ({ item, variant, onAction, options }: ContactLis
 										contactTypes.map((type: string) =>
 											// @ts-ignore
 											address[`is${type}`]() ? (
-												<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+												<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
 													<Circle className="border-black" noShadow>
 														<Icon name={type} width={25} height={25} />
 													</Circle>
-												</Tippy>
+												</Tooltip>
 											) : null,
 										)}
 								</TableCell>

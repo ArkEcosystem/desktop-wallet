@@ -1,9 +1,9 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputAddonEnd, InputCurrency, InputGroup } from "app/components/Input";
+import { Tooltip } from "app/components/Tooltip";
 import { useValidation } from "app/hooks";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
@@ -25,11 +25,11 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 					{t("TRANSACTION.SINGLE_OR_MULTI")}
 				</div>
 				<div>
-					<Tippy content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
+					<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
 						<div className="rounded-full cursor-pointer text-theme-primary-600 hover:text-theme-primary-100 questionmark">
 							<Icon name="QuestionMark" width={20} height={20} />
 						</div>
-					</Tippy>
+					</Tooltip>
 				</div>
 			</div>
 
@@ -196,17 +196,14 @@ export const AddRecipient = ({
 				noBackground={isSingle}
 			>
 				<div className="space-y-8">
-					<FormField name="recipientAddress" className="relative mt-1">
-						<div className="mb-2">
-							<FormLabel
-								label={
-									isSingle
-										? t("COMMON.RECIPIENT")
-										: t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })
-								}
-							/>
-						</div>
-
+					<FormField name="recipientAddress">
+						<FormLabel
+							label={
+								isSingle
+									? t("COMMON.RECIPIENT")
+									: t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })
+							}
+						/>
 						<SelectRecipient
 							disabled={!isSenderFilled}
 							address={recipientAddress}

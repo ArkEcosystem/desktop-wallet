@@ -93,7 +93,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 		setIsLoadingTransactions(true);
 
-		const response = await activeProfile.transactionAggregate().transactions({ limit: 10 });
+		const response = await activeProfile.transactionAggregate().transactions({ limit: 30 });
 		const transactions = response.items();
 
 		setIsLoadingTransactions(false);

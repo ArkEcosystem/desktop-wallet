@@ -1,6 +1,6 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import Tippy from "@tippyjs/react";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -21,11 +21,11 @@ export const TransactionConfirmations = ({ isConfirmed, confirmations }: Transac
 			return (
 				<div className="flex space-x-3">
 					<span>{t("TRANSACTION.WELL_CONFIRMED")}</span>
-					<Tippy content={t("TRANSACTION.CONFIRMATIONS_COUNT", { count: confirmations.toNumber() })}>
+					<Tooltip content={t("TRANSACTION.CONFIRMATIONS_COUNT", { count: confirmations.toNumber() })}>
 						<span>
 							<Icon name="StatusOk" className={confirmationStatusStyle} width={22} height={22} />
 						</span>
-					</Tippy>
+					</Tooltip>
 				</div>
 			);
 		}

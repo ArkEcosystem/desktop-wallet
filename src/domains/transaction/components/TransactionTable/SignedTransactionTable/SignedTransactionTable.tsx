@@ -1,10 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table, TableCell, TableRow } from "app/components/Table";
+import { Tooltip } from "app/components/Tooltip";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -62,17 +62,17 @@ const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transac
 
 	if (wallet.transaction().isAwaitingOurSignature(transaction.id())) {
 		return (
-			<Tippy content={t("TRANSACTION.MULTISIGNATURE.AWAITING_OUR_SIGNATURE")}>
+			<Tooltip content={t("TRANSACTION.MULTISIGNATURE.AWAITING_OUR_SIGNATURE")}>
 				<span className="p-1 text-theme-danger-400">
 					<Icon name="AwaitingOurSignature" width={20} height={20} />
 				</span>
-			</Tippy>
+			</Tooltip>
 		);
 	}
 
 	if (wallet.transaction().isAwaitingOtherSignatures(transaction.id())) {
 		return (
-			<Tippy
+			<Tooltip
 				content={t("TRANSACTION.MULTISIGNATURE.AWAITING_OTHER_SIGNATURE_COUNT", {
 					count: wallet.coin().multiSignature().remainingSignatureCount(transaction),
 				})}
@@ -80,36 +80,36 @@ const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transac
 				<span className="p-1 text-theme-warning-300">
 					<Icon name="AwaitingOtherSignature" width={30} height={22} />
 				</span>
-			</Tippy>
+			</Tooltip>
 		);
 	}
 
 	if (wallet.transaction().isAwaitingConfirmation(transaction.id())) {
 		return (
-			<Tippy content={t("TRANSACTION.MULTISIGNATURE.AWAITING_CONFIRMATIONS")}>
+			<Tooltip content={t("TRANSACTION.MULTISIGNATURE.AWAITING_CONFIRMATIONS")}>
 				<span className="p-1 text-theme-warning-300">
 					<Icon name="StatusPending" width={30} height={22} />
 				</span>
-			</Tippy>
+			</Tooltip>
 		);
 	}
 
 	if (isMultiSignatureReady) {
 		return (
-			<Tippy content={t("TRANSACTION.MULTISIGNATURE.READY")}>
+			<Tooltip content={t("TRANSACTION.MULTISIGNATURE.READY")}>
 				<span className="p-1 text-theme-success-500">
 					<Icon name="Send" width={20} height={20} />
 				</span>
-			</Tippy>
+			</Tooltip>
 		);
 	}
 
 	return (
-		<Tippy content={t("TRANSACTION.MULTISIGNATURE.AWAITING_FINAL_SIGNATURE")}>
+		<Tooltip content={t("TRANSACTION.MULTISIGNATURE.AWAITING_FINAL_SIGNATURE")}>
 			<span className="p-1 text-theme-success-500">
 				<Icon name="AwaitingFinalSignature" width={30} height={22} />
 			</span>
-		</Tippy>
+		</Tooltip>
 	);
 };
 
@@ -139,11 +139,11 @@ const Row = ({
 			onClick={() => onRowClick?.(transaction)}
 		>
 			<TableCell variant="start">
-				<Tippy content={transaction.id()}>
+				<Tooltip content={transaction.id()}>
 					<span className="text-theme-neutral-300 dark:text-theme-neutral-800">
 						<Icon name="Redirect" />
 					</span>
-				</Tippy>
+				</Tooltip>
 			</TableCell>
 
 			<TableCell innerClassName="text-theme-secondary-text">

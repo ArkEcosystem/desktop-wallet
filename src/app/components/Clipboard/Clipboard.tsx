@@ -1,6 +1,4 @@
-import "tippy.js/dist/tippy.css";
-
-import Tippy from "@tippyjs/react";
+import { Tooltip } from "app/components/Tooltip";
 import { useClipboard } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -25,14 +23,14 @@ export const Clipboard = ({ data, tooltip, options, children }: ClipboardProps) 
 	}
 
 	return (
-		<Tippy
+		<Tooltip
 			content={hasCopied ? t("COMMON.CLIPBOARD.SUCCESS") : tooltip || t("COMMON.CLIPBOARD.TOOLTIP_TEXT")}
 			hideOnClick={false}
 		>
 			<div data-testid="clipboard__wrapper" className="inline-block cursor-pointer" onClick={() => copy(data)}>
 				{children}
 			</div>
-		</Tippy>
+		</Tooltip>
 	);
 };
 

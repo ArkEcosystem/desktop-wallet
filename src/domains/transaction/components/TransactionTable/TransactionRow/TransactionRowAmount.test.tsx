@@ -10,7 +10,7 @@ describe("TransactionRowAmount", () => {
 		const { getByText } = render(
 			<TransactionRowAmount transaction={{ ...TransactionFixture, wallet: () => ({ currency: () => "ARK" }) }} />,
 		);
-		expect(getByText("121 ARK")).toBeTruthy();
+		expect(getByText("- 121 ARK")).toBeTruthy();
 	});
 
 	it("should show total as currency", () => {
