@@ -711,98 +711,6 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                                     class="w-full h-full"
                                   >
                                     <img
-                                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                class="inline-flex items-center"
-                              >
-                                <span
-                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                                  data-testid="address__wallet-name"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                                <span
-                                  class="sc-fzoLsD fqEnxe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  D8rr7B1d6 … VBMs6YUYD
-                                </span>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
-                            >
-                              <div
-                                class="inline-flex items-center space-x-2"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr cSXHUn font-semibold justify-end"
-                            >
-                              <span
-                                data-testid="Amount"
-                              >
-                                33.75089801 DARK
-                              </span>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr eOYxtN justify-end text-theme-neutral-light"
-                            >
-                              <span
-                                data-testid="Amount"
-                              >
-                                0 BTC
-                              </span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr
-                          class="sc-AxmLO kbgHZc group"
-                          data-testid="TableRow"
-                        >
-                          <td>
-                            <div
-                              class="sc-Axmtr iUbJZh space-x-4"
-                            >
-                              <div
-                                class="-space-x-2"
-                              >
-                                <div
-                                  aria-label="ARK Devnet"
-                                  class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
-                                  data-testid="NetworkIcon-ARK-ark.devnet"
-                                >
-                                  <div
-                                    class="sc-AxirZ eEbZjj"
-                                    data-testid="NetworkIcon__icon"
-                                    height="20"
-                                    width="20"
-                                  >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                                  data-testid="Avatar"
-                                >
-                                  <div
-                                    class="w-full h-full"
-                                  >
-                                    <img
                                       alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                                       title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -830,7 +738,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
                             >
                               <div
                                 class="inline-flex items-center space-x-2"
@@ -916,7 +824,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
                             >
                               <div
                                 class="inline-flex items-center space-x-2"
@@ -931,6 +839,98 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr eOYxtN justify-end text-theme-neutral-light"
+                            >
+                              <span
+                                data-testid="Amount"
+                              >
+                                0 BTC
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          class="sc-AxmLO kbgHZc group"
+                          data-testid="TableRow"
+                        >
+                          <td>
+                            <div
+                              class="sc-Axmtr iUbJZh space-x-4"
+                            >
+                              <div
+                                class="-space-x-2"
+                              >
+                                <div
+                                  aria-label="ARK Devnet"
+                                  class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+                                  data-testid="NetworkIcon-ARK-ark.devnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="inline-flex items-center"
+                              >
+                                <span
+                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                  data-testid="address__wallet-name"
+                                >
+                                  ARK Wallet 1
+                                </span>
+                                <span
+                                  class="sc-fzoLsD fqEnxe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                                  data-testid="address__wallet-address"
+                                >
+                                  D8rr7B1d6 … VBMs6YUYD
+                                </span>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
+                            >
+                              <div
+                                class="inline-flex items-center space-x-2"
+                              />
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr cSXHUn font-semibold justify-end"
+                            >
+                              <span
+                                data-testid="Amount"
+                              >
+                                33.75089801 DARK
                               </span>
                             </div>
                           </td>
@@ -2601,98 +2601,6 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                     class="w-full h-full"
                                   >
                                     <img
-                                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                class="inline-flex items-center"
-                              >
-                                <span
-                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                                  data-testid="address__wallet-name"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                                <span
-                                  class="sc-fzoLsD fqEnxe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  D8rr7B1d6 … VBMs6YUYD
-                                </span>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
-                            >
-                              <div
-                                class="inline-flex items-center space-x-2"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr cSXHUn font-semibold justify-end"
-                            >
-                              <span
-                                data-testid="Amount"
-                              >
-                                33.75089801 DARK
-                              </span>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr eOYxtN justify-end text-theme-neutral-light"
-                            >
-                              <span
-                                data-testid="Amount"
-                              >
-                                0 BTC
-                              </span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr
-                          class="sc-AxmLO kbgHZc group"
-                          data-testid="TableRow"
-                        >
-                          <td>
-                            <div
-                              class="sc-Axmtr iUbJZh space-x-4"
-                            >
-                              <div
-                                class="-space-x-2"
-                              >
-                                <div
-                                  aria-label="ARK Devnet"
-                                  class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
-                                  data-testid="NetworkIcon-ARK-ark.devnet"
-                                >
-                                  <div
-                                    class="sc-AxirZ eEbZjj"
-                                    data-testid="NetworkIcon__icon"
-                                    height="20"
-                                    width="20"
-                                  >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                                  data-testid="Avatar"
-                                >
-                                  <div
-                                    class="w-full h-full"
-                                  >
-                                    <img
                                       alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                                       title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -2720,7 +2628,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
                             >
                               <div
                                 class="inline-flex items-center space-x-2"
@@ -2806,7 +2714,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
                             >
                               <div
                                 class="inline-flex items-center space-x-2"
@@ -2821,6 +2729,98 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr eOYxtN justify-end text-theme-neutral-light"
+                            >
+                              <span
+                                data-testid="Amount"
+                              >
+                                0 BTC
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          class="sc-AxmLO kbgHZc group"
+                          data-testid="TableRow"
+                        >
+                          <td>
+                            <div
+                              class="sc-Axmtr iUbJZh space-x-4"
+                            >
+                              <div
+                                class="-space-x-2"
+                              >
+                                <div
+                                  aria-label="ARK Devnet"
+                                  class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+                                  data-testid="NetworkIcon-ARK-ark.devnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="inline-flex items-center"
+                              >
+                                <span
+                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                  data-testid="address__wallet-name"
+                                >
+                                  ARK Wallet 1
+                                </span>
+                                <span
+                                  class="sc-fzoLsD fqEnxe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                                  data-testid="address__wallet-address"
+                                >
+                                  D8rr7B1d6 … VBMs6YUYD
+                                </span>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
+                            >
+                              <div
+                                class="inline-flex items-center space-x-2"
+                              />
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr cSXHUn font-semibold justify-end"
+                            >
+                              <span
+                                data-testid="Amount"
+                              >
+                                33.75089801 DARK
                               </span>
                             </div>
                           </td>
@@ -5003,98 +5003,6 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                     class="w-full h-full"
                                   >
                                     <img
-                                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                class="inline-flex items-center"
-                              >
-                                <span
-                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                                  data-testid="address__wallet-name"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                                <span
-                                  class="sc-fzoLsD fqEnxe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  D8rr7B1d6 … VBMs6YUYD
-                                </span>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
-                            >
-                              <div
-                                class="inline-flex items-center space-x-2"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr cSXHUn font-semibold justify-end"
-                            >
-                              <span
-                                data-testid="Amount"
-                              >
-                                33.75089801 DARK
-                              </span>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr eOYxtN justify-end text-theme-neutral-light"
-                            >
-                              <span
-                                data-testid="Amount"
-                              >
-                                0 BTC
-                              </span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr
-                          class="sc-AxmLO kbgHZc group"
-                          data-testid="TableRow"
-                        >
-                          <td>
-                            <div
-                              class="sc-Axmtr iUbJZh space-x-4"
-                            >
-                              <div
-                                class="-space-x-2"
-                              >
-                                <div
-                                  aria-label="ARK Devnet"
-                                  class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
-                                  data-testid="NetworkIcon-ARK-ark.devnet"
-                                >
-                                  <div
-                                    class="sc-AxirZ eEbZjj"
-                                    data-testid="NetworkIcon__icon"
-                                    height="20"
-                                    width="20"
-                                  >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                                  data-testid="Avatar"
-                                >
-                                  <div
-                                    class="w-full h-full"
-                                  >
-                                    <img
                                       alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                                       title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -5122,7 +5030,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
                             >
                               <div
                                 class="inline-flex items-center space-x-2"
@@ -5208,7 +5116,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
                             >
                               <div
                                 class="inline-flex items-center space-x-2"
@@ -5223,6 +5131,98 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr eOYxtN justify-end text-theme-neutral-light"
+                            >
+                              <span
+                                data-testid="Amount"
+                              >
+                                0 BTC
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          class="sc-AxmLO kbgHZc group"
+                          data-testid="TableRow"
+                        >
+                          <td>
+                            <div
+                              class="sc-Axmtr iUbJZh space-x-4"
+                            >
+                              <div
+                                class="-space-x-2"
+                              >
+                                <div
+                                  aria-label="ARK Devnet"
+                                  class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+                                  data-testid="NetworkIcon-ARK-ark.devnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="inline-flex items-center"
+                              >
+                                <span
+                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                  data-testid="address__wallet-name"
+                                >
+                                  ARK Wallet 1
+                                </span>
+                                <span
+                                  class="sc-fzoLsD fqEnxe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                                  data-testid="address__wallet-address"
+                                >
+                                  D8rr7B1d6 … VBMs6YUYD
+                                </span>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
+                            >
+                              <div
+                                class="inline-flex items-center space-x-2"
+                              />
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr cSXHUn font-semibold justify-end"
+                            >
+                              <span
+                                data-testid="Amount"
+                              >
+                                33.75089801 DARK
                               </span>
                             </div>
                           </td>
@@ -6799,82 +6799,6 @@ exports[`Dashboard should hide transaction view 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                        >
-                          <div
-                            class="sc-fzoNJl iRZQek h-48"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="relative flex flex-col justify-between h-full p-4"
-                            >
-                              <div
-                                class="flex items-center space-x-4"
-                              >
-                                <div
-                                  class="-space-x-2 whitespace-no-wrap"
-                                >
-                                  <div
-                                    aria-label="ARK Devnet"
-                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
-                                    data-testid="NetworkIcon-ARK-ark.devnet"
-                                  >
-                                    <div
-                                      class="sc-AxirZ eEbZjj"
-                                      data-testid="NetworkIcon__icon"
-                                      height="20"
-                                      width="20"
-                                    >
-                                      <svg>
-                                        ark.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                                    data-testid="Avatar"
-                                  >
-                                    <div
-                                      class="w-full h-full"
-                                    >
-                                      <img
-                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <span
-                                  class="font-semibold truncate text-theme-secondary-text"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                              </div>
-                              <span
-                                class="mt-auto text-lg font-bold text-theme-text"
-                                data-testid="Amount"
-                              >
-                                33.75089801 DARK
-                              </span>
-                              <span
-                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 192px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
@@ -7011,6 +6935,82 @@ exports[`Dashboard should hide transaction view 1`] = `
                                 class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
                               >
                                 AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                              </span>
+                            </div>
+                            <div
+                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        >
+                          <div
+                            class="sc-fzoNJl iRZQek h-48"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="relative flex flex-col justify-between h-full p-4"
+                            >
+                              <div
+                                class="flex items-center space-x-4"
+                              >
+                                <div
+                                  class="-space-x-2 whitespace-no-wrap"
+                                >
+                                  <div
+                                    aria-label="ARK Devnet"
+                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+                                    data-testid="NetworkIcon-ARK-ark.devnet"
+                                  >
+                                    <div
+                                      class="sc-AxirZ eEbZjj"
+                                      data-testid="NetworkIcon__icon"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        ark.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <span
+                                  class="font-semibold truncate text-theme-secondary-text"
+                                >
+                                  ARK Wallet 1
+                                </span>
+                              </div>
+                              <span
+                                class="mt-auto text-lg font-bold text-theme-text"
+                                data-testid="Amount"
+                              >
+                                33.75089801 DARK
+                              </span>
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+                              >
+                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
                             </div>
                             <div
@@ -7596,98 +7596,6 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                     class="w-full h-full"
                                   >
                                     <img
-                                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                class="inline-flex items-center"
-                              >
-                                <span
-                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                                  data-testid="address__wallet-name"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                                <span
-                                  class="sc-fzoLsD fqEnxe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  D8rr7B1d6 … VBMs6YUYD
-                                </span>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
-                            >
-                              <div
-                                class="inline-flex items-center space-x-2"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr cSXHUn font-semibold justify-end"
-                            >
-                              <span
-                                data-testid="Amount"
-                              >
-                                33.75089801 DARK
-                              </span>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="sc-Axmtr eOYxtN justify-end text-theme-neutral-light"
-                            >
-                              <span
-                                data-testid="Amount"
-                              >
-                                0 BTC
-                              </span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr
-                          class="sc-AxmLO kbgHZc group"
-                          data-testid="TableRow"
-                        >
-                          <td>
-                            <div
-                              class="sc-Axmtr iUbJZh space-x-4"
-                            >
-                              <div
-                                class="-space-x-2"
-                              >
-                                <div
-                                  aria-label="ARK Devnet"
-                                  class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
-                                  data-testid="NetworkIcon-ARK-ark.devnet"
-                                >
-                                  <div
-                                    class="sc-AxirZ eEbZjj"
-                                    data-testid="NetworkIcon__icon"
-                                    height="20"
-                                    width="20"
-                                  >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                                  data-testid="Avatar"
-                                >
-                                  <div
-                                    class="w-full h-full"
-                                  >
-                                    <img
                                       alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                                       title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -7715,7 +7623,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
                             >
                               <div
                                 class="inline-flex items-center space-x-2"
@@ -7801,7 +7709,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           </td>
                           <td>
                             <div
-                              class="sc-Axmtr cSXHUn text-sm font-bold text-center align-middle"
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
                             >
                               <div
                                 class="inline-flex items-center space-x-2"
@@ -7816,6 +7724,98 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                 data-testid="Amount"
                               >
                                 50,114.21127898 ARK
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr eOYxtN justify-end text-theme-neutral-light"
+                            >
+                              <span
+                                data-testid="Amount"
+                              >
+                                0 BTC
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          class="sc-AxmLO kbgHZc group"
+                          data-testid="TableRow"
+                        >
+                          <td>
+                            <div
+                              class="sc-Axmtr iUbJZh space-x-4"
+                            >
+                              <div
+                                class="-space-x-2"
+                              >
+                                <div
+                                  aria-label="ARK Devnet"
+                                  class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+                                  data-testid="NetworkIcon-ARK-ark.devnet"
+                                >
+                                  <div
+                                    class="sc-AxirZ eEbZjj"
+                                    data-testid="NetworkIcon__icon"
+                                    height="20"
+                                    width="20"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                  data-testid="Avatar"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                  >
+                                    <img
+                                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="inline-flex items-center"
+                              >
+                                <span
+                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                  data-testid="address__wallet-name"
+                                >
+                                  ARK Wallet 1
+                                </span>
+                                <span
+                                  class="sc-fzoLsD fqEnxe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                                  data-testid="address__wallet-address"
+                                >
+                                  D8rr7B1d6 … VBMs6YUYD
+                                </span>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr cSXHUn justify-center text-sm font-bold text-center align-middle"
+                            >
+                              <div
+                                class="inline-flex items-center space-x-2"
+                              />
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              class="sc-Axmtr cSXHUn font-semibold justify-end"
+                            >
+                              <span
+                                data-testid="Amount"
+                              >
+                                33.75089801 DARK
                               </span>
                             </div>
                           </td>
@@ -9208,82 +9208,6 @@ exports[`Dashboard should render 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                        >
-                          <div
-                            class="sc-fzoNJl iRZQek h-48"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="relative flex flex-col justify-between h-full p-4"
-                            >
-                              <div
-                                class="flex items-center space-x-4"
-                              >
-                                <div
-                                  class="-space-x-2 whitespace-no-wrap"
-                                >
-                                  <div
-                                    aria-label="ARK Devnet"
-                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
-                                    data-testid="NetworkIcon-ARK-ark.devnet"
-                                  >
-                                    <div
-                                      class="sc-AxirZ eEbZjj"
-                                      data-testid="NetworkIcon__icon"
-                                      height="20"
-                                      width="20"
-                                    >
-                                      <svg>
-                                        ark.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                                    data-testid="Avatar"
-                                  >
-                                    <div
-                                      class="w-full h-full"
-                                    >
-                                      <img
-                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <span
-                                  class="font-semibold truncate text-theme-secondary-text"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                              </div>
-                              <span
-                                class="mt-auto text-lg font-bold text-theme-text"
-                                data-testid="Amount"
-                              >
-                                33.75089801 DARK
-                              </span>
-                              <span
-                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 192px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
@@ -9420,6 +9344,82 @@ exports[`Dashboard should render 1`] = `
                                 class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
                               >
                                 AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                              </span>
+                            </div>
+                            <div
+                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        >
+                          <div
+                            class="sc-fzoNJl iRZQek h-48"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="relative flex flex-col justify-between h-full p-4"
+                            >
+                              <div
+                                class="flex items-center space-x-4"
+                              >
+                                <div
+                                  class="-space-x-2 whitespace-no-wrap"
+                                >
+                                  <div
+                                    aria-label="ARK Devnet"
+                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+                                    data-testid="NetworkIcon-ARK-ark.devnet"
+                                  >
+                                    <div
+                                      class="sc-AxirZ eEbZjj"
+                                      data-testid="NetworkIcon__icon"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        ark.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <span
+                                  class="font-semibold truncate text-theme-secondary-text"
+                                >
+                                  ARK Wallet 1
+                                </span>
+                              </div>
+                              <span
+                                class="mt-auto text-lg font-bold text-theme-text"
+                                data-testid="Amount"
+                              >
+                                33.75089801 DARK
+                              </span>
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+                              >
+                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
                             </div>
                             <div
@@ -10804,82 +10804,6 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                        >
-                          <div
-                            class="sc-fzoNJl iRZQek h-48"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="relative flex flex-col justify-between h-full p-4"
-                            >
-                              <div
-                                class="flex items-center space-x-4"
-                              >
-                                <div
-                                  class="-space-x-2 whitespace-no-wrap"
-                                >
-                                  <div
-                                    aria-label="ARK Devnet"
-                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
-                                    data-testid="NetworkIcon-ARK-ark.devnet"
-                                  >
-                                    <div
-                                      class="sc-AxirZ eEbZjj"
-                                      data-testid="NetworkIcon__icon"
-                                      height="20"
-                                      width="20"
-                                    >
-                                      <svg>
-                                        ark.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                                    data-testid="Avatar"
-                                  >
-                                    <div
-                                      class="w-full h-full"
-                                    >
-                                      <img
-                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <span
-                                  class="font-semibold truncate text-theme-secondary-text"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                              </div>
-                              <span
-                                class="mt-auto text-lg font-bold text-theme-text"
-                                data-testid="Amount"
-                              >
-                                33.75089801 DARK
-                              </span>
-                              <span
-                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 192px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
@@ -11016,6 +10940,82 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
                               >
                                 AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                              </span>
+                            </div>
+                            <div
+                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        >
+                          <div
+                            class="sc-fzoNJl iRZQek h-48"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="relative flex flex-col justify-between h-full p-4"
+                            >
+                              <div
+                                class="flex items-center space-x-4"
+                              >
+                                <div
+                                  class="-space-x-2 whitespace-no-wrap"
+                                >
+                                  <div
+                                    aria-label="ARK Devnet"
+                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+                                    data-testid="NetworkIcon-ARK-ark.devnet"
+                                  >
+                                    <div
+                                      class="sc-AxirZ eEbZjj"
+                                      data-testid="NetworkIcon__icon"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        ark.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <span
+                                  class="font-semibold truncate text-theme-secondary-text"
+                                >
+                                  ARK Wallet 1
+                                </span>
+                              </div>
+                              <span
+                                class="mt-auto text-lg font-bold text-theme-text"
+                                data-testid="Amount"
+                              >
+                                33.75089801 DARK
+                              </span>
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+                              >
+                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
                             </div>
                             <div
@@ -12400,82 +12400,6 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                        >
-                          <div
-                            class="sc-fzoNJl iRZQek h-48"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="relative flex flex-col justify-between h-full p-4"
-                            >
-                              <div
-                                class="flex items-center space-x-4"
-                              >
-                                <div
-                                  class="-space-x-2 whitespace-no-wrap"
-                                >
-                                  <div
-                                    aria-label="ARK Devnet"
-                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
-                                    data-testid="NetworkIcon-ARK-ark.devnet"
-                                  >
-                                    <div
-                                      class="sc-AxirZ eEbZjj"
-                                      data-testid="NetworkIcon__icon"
-                                      height="20"
-                                      width="20"
-                                    >
-                                      <svg>
-                                        ark.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                                    data-testid="Avatar"
-                                  >
-                                    <div
-                                      class="w-full h-full"
-                                    >
-                                      <img
-                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <span
-                                  class="font-semibold truncate text-theme-secondary-text"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                              </div>
-                              <span
-                                class="mt-auto text-lg font-bold text-theme-text"
-                                data-testid="Amount"
-                              >
-                                33.75089801 DARK
-                              </span>
-                              <span
-                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 192px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
@@ -12612,6 +12536,82 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
                               >
                                 AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                              </span>
+                            </div>
+                            <div
+                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        >
+                          <div
+                            class="sc-fzoNJl iRZQek h-48"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="relative flex flex-col justify-between h-full p-4"
+                            >
+                              <div
+                                class="flex items-center space-x-4"
+                              >
+                                <div
+                                  class="-space-x-2 whitespace-no-wrap"
+                                >
+                                  <div
+                                    aria-label="ARK Devnet"
+                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+                                    data-testid="NetworkIcon-ARK-ark.devnet"
+                                  >
+                                    <div
+                                      class="sc-AxirZ eEbZjj"
+                                      data-testid="NetworkIcon__icon"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        ark.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <span
+                                  class="font-semibold truncate text-theme-secondary-text"
+                                >
+                                  ARK Wallet 1
+                                </span>
+                              </div>
+                              <span
+                                class="mt-auto text-lg font-bold text-theme-text"
+                                data-testid="Amount"
+                              >
+                                33.75089801 DARK
+                              </span>
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+                              >
+                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
                             </div>
                             <div
@@ -13996,82 +13996,6 @@ exports[`Dashboard should render wallets 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                        >
-                          <div
-                            class="sc-fzoNJl iRZQek h-48"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="relative flex flex-col justify-between h-full p-4"
-                            >
-                              <div
-                                class="flex items-center space-x-4"
-                              >
-                                <div
-                                  class="-space-x-2 whitespace-no-wrap"
-                                >
-                                  <div
-                                    aria-label="ARK Devnet"
-                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
-                                    data-testid="NetworkIcon-ARK-ark.devnet"
-                                  >
-                                    <div
-                                      class="sc-AxirZ eEbZjj"
-                                      data-testid="NetworkIcon__icon"
-                                      height="20"
-                                      width="20"
-                                    >
-                                      <svg>
-                                        ark.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                                    data-testid="Avatar"
-                                  >
-                                    <div
-                                      class="w-full h-full"
-                                    >
-                                      <img
-                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <span
-                                  class="font-semibold truncate text-theme-secondary-text"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                              </div>
-                              <span
-                                class="mt-auto text-lg font-bold text-theme-text"
-                                data-testid="Amount"
-                              >
-                                33.75089801 DARK
-                              </span>
-                              <span
-                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 192px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
@@ -14208,6 +14132,82 @@ exports[`Dashboard should render wallets 1`] = `
                                 class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
                               >
                                 AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                              </span>
+                            </div>
+                            <div
+                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        >
+                          <div
+                            class="sc-fzoNJl iRZQek h-48"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="relative flex flex-col justify-between h-full p-4"
+                            >
+                              <div
+                                class="flex items-center space-x-4"
+                              >
+                                <div
+                                  class="-space-x-2 whitespace-no-wrap"
+                                >
+                                  <div
+                                    aria-label="ARK Devnet"
+                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+                                    data-testid="NetworkIcon-ARK-ark.devnet"
+                                  >
+                                    <div
+                                      class="sc-AxirZ eEbZjj"
+                                      data-testid="NetworkIcon__icon"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        ark.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <span
+                                  class="font-semibold truncate text-theme-secondary-text"
+                                >
+                                  ARK Wallet 1
+                                </span>
+                              </div>
+                              <span
+                                class="mt-auto text-lg font-bold text-theme-text"
+                                data-testid="Amount"
+                              >
+                                33.75089801 DARK
+                              </span>
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+                              >
+                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
                             </div>
                             <div
@@ -17512,82 +17512,6 @@ exports[`Dashboard should show transaction view 1`] = `
                       >
                         <div
                           class="w-64 inline-block w-full"
-                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                        >
-                          <div
-                            class="sc-fzoNJl iRZQek h-48"
-                            data-testid="Card"
-                          >
-                            <div
-                              class="relative flex flex-col justify-between h-full p-4"
-                            >
-                              <div
-                                class="flex items-center space-x-4"
-                              >
-                                <div
-                                  class="-space-x-2 whitespace-no-wrap"
-                                >
-                                  <div
-                                    aria-label="ARK Devnet"
-                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
-                                    data-testid="NetworkIcon-ARK-ark.devnet"
-                                  >
-                                    <div
-                                      class="sc-AxirZ eEbZjj"
-                                      data-testid="NetworkIcon__icon"
-                                      height="20"
-                                      width="20"
-                                    >
-                                      <svg>
-                                        ark.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                                    data-testid="Avatar"
-                                  >
-                                    <div
-                                      class="w-full h-full"
-                                    >
-                                      <img
-                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <span
-                                  class="font-semibold truncate text-theme-secondary-text"
-                                >
-                                  ARK Wallet 1
-                                </span>
-                              </div>
-                              <span
-                                class="mt-auto text-lg font-bold text-theme-text"
-                                data-testid="Amount"
-                              >
-                                33.75089801 DARK
-                              </span>
-                              <span
-                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
-                            </div>
-                            <div
-                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 192px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
@@ -17724,6 +17648,82 @@ exports[`Dashboard should show transaction view 1`] = `
                                 class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
                               >
                                 AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                              </span>
+                            </div>
+                            <div
+                              class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        >
+                          <div
+                            class="sc-fzoNJl iRZQek h-48"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="relative flex flex-col justify-between h-full p-4"
+                            >
+                              <div
+                                class="flex items-center space-x-4"
+                              >
+                                <div
+                                  class="-space-x-2 whitespace-no-wrap"
+                                >
+                                  <div
+                                    aria-label="ARK Devnet"
+                                    class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+                                    data-testid="NetworkIcon-ARK-ark.devnet"
+                                  >
+                                    <div
+                                      class="sc-AxirZ eEbZjj"
+                                      data-testid="NetworkIcon__icon"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        ark.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <span
+                                  class="font-semibold truncate text-theme-secondary-text"
+                                >
+                                  ARK Wallet 1
+                                </span>
+                              </div>
+                              <span
+                                class="mt-auto text-lg font-bold text-theme-text"
+                                data-testid="Amount"
+                              >
+                                33.75089801 DARK
+                              </span>
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+                              >
+                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
                             </div>
                             <div
