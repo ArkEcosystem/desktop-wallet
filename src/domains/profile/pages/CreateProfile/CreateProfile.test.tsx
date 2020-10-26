@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
+import { EnvironmentProvider, ThemeProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import electron from "electron";
 import os from "os";
@@ -46,6 +46,15 @@ const baseSettings = {
 	TIME_FORMAT: "h:mm A",
 };
 
+const renderComponent = () =>
+	renderWithRouter(
+		<EnvironmentProvider env={env}>
+			<ThemeProvider>
+				<CreateProfile />
+			</ThemeProvider>
+		</EnvironmentProvider>,
+	);
+
 describe("CreateProfile", () => {
 	beforeAll(() => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
@@ -58,15 +67,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should render", () => {
-		const { container, getByText, asFragment } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<CreateProfile />
-			</EnvironmentProvider>,
-			{
-				routes: ["/", "/profile/create"],
-				withProviders: false,
-			},
-		);
+		const { container, getByText, asFragment } = renderComponent();
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText("Back"));
@@ -75,15 +76,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should store profile", async () => {
-		const { asFragment, container, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<CreateProfile />
-			</EnvironmentProvider>,
-			{
-				routes: ["/", "/profile/create"],
-				withProviders: false,
-			},
-		);
+		const { asFragment, container, getAllByTestId, getByTestId } = renderComponent();
 
 		// Upload avatar image
 		await act(async () => {
@@ -144,15 +137,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should not create new profile if profile name exists", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<CreateProfile />
-			</EnvironmentProvider>,
-			{
-				routes: ["/", "/profile/create"],
-				withProviders: false,
-			},
-		);
+		const { asFragment, getAllByTestId, getByTestId } = renderComponent();
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
 
@@ -184,15 +169,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should store profile with password", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<CreateProfile />
-			</EnvironmentProvider>,
-			{
-				routes: ["/", "/profile/create"],
-				withProviders: false,
-			},
-		);
+		const { asFragment, getAllByTestId, getByTestId } = renderComponent();
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 3" } });
 		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "test password" } });
@@ -215,15 +192,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should upload and remove avatar image", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<CreateProfile />
-			</EnvironmentProvider>,
-			{
-				routes: ["/", "/profile/create"],
-				withProviders: false,
-			},
-		);
+		const { asFragment, getAllByTestId, getByTestId } = renderComponent();
 
 		// Upload avatar image
 		await act(async () => {
@@ -254,15 +223,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should not upload avatar image", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<CreateProfile />
-			</EnvironmentProvider>,
-			{
-				routes: ["/", "/profile/create"],
-				withProviders: false,
-			},
-		);
+		const { asFragment, getAllByTestId, getByTestId } = renderComponent();
 
 		// Not upload avatar image
 		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({

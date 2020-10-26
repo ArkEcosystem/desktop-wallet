@@ -1,11 +1,11 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -90,11 +90,11 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 						<span className="text-sm font-semibold text-theme-neutral">{t("COMMON.STATUS")}</span>
 
 						{rank ? (
-							<Tippy content={`#${rank}`} placement="right">
+							<Tooltip content={`#${rank}`} placement="right">
 								<span>
 									<Icon name="StatusOk" className="text-theme-success" width={20} height={20} />
 								</span>
-							</Tippy>
+							</Tooltip>
 						) : (
 							<Icon name="StatusClock" className="text-theme-neutral" width={20} height={20} />
 						)}
@@ -115,11 +115,11 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 		const [first, second, ...rest] = votes;
 
 		const renderAvatar = (address: string, username?: string) => (
-			<Tippy content={username}>
+			<Tooltip content={username}>
 				<span className="inline-block">
 					<Avatar size="lg" address={address} />
 				</span>
-			</Tippy>
+			</Tooltip>
 		);
 
 		return (

@@ -1,6 +1,6 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 
 import { TransactionStatus } from "../TransactionTable.models";
@@ -41,7 +41,7 @@ export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: 
 	};
 
 	return (
-		<Tippy content={tooltipContent}>
+		<Tooltip content={tooltipContent}>
 			<div data-testid="TransactionRowConfirmation" className="inline-flex p-1 align-middle">
 				<Icon
 					data-testid={`TransactionRowConfirmation__${status}`}
@@ -51,6 +51,6 @@ export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: 
 					height={22}
 				/>
 			</div>
-		</Tippy>
+		</Tooltip>
 	);
 };

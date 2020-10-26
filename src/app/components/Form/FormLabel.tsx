@@ -1,4 +1,4 @@
-import Tippy from "@tippyjs/react";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -32,20 +32,20 @@ export function FormLabel(props: FormLabelProps) {
 			{props.label || props.children}
 
 			{props.required && (
-				<Tippy content={t("COMMON.VALIDATION.REQUIRED")}>
+				<Tooltip content={t("COMMON.VALIDATION.REQUIRED")}>
 					<div
 						data-testid="FormLabel__required"
 						className="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
 					/>
-				</Tippy>
+				</Tooltip>
 			)}
 
 			{props.optional && (
-				<Tippy content={t("COMMON.VALIDATION.OPTIONAL")}>
+				<Tooltip content={t("COMMON.VALIDATION.OPTIONAL")}>
 					<span data-testid="FormLabel__optional" className="ml-1 text-theme-neutral-light">
 						({t("COMMON.OPTIONAL")})
 					</span>
-				</Tippy>
+				</Tooltip>
 			)}
 		</label>
 	);
