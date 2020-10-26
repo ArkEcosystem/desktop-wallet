@@ -121,9 +121,9 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				{hasVotes && (
 					<Icon
 						name="StatusOk"
+						className="text-theme-success"
 						width={22}
 						height={22}
-						className="text-theme-success"
 						data-testid="AddressRow__status"
 					/>
 				)}

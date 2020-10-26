@@ -73,16 +73,12 @@ export const DelegateRow = ({
 
 			<TableCell className="w-20" innerClassName={`justify-center ${getColorSelected()}`}>
 				{isVoted && (
-					<div
-						className={`flex items-center justify-center p-2 rounded-full ${
-							!isSelectedUnvote ? "bg-theme-primary-100" : "bg-theme-danger-100"
-						}`}
-					>
-						<Icon
-							name="StatusOk"
-							className={`text-xs ${!isSelectedUnvote ? "text-theme-primary" : "text-theme-danger"}`}
-						/>
-					</div>
+					<Icon
+						name="StatusOk"
+						className={`text-xs ${!isSelectedUnvote ? "text-theme-primary" : "text-theme-danger"}`}
+						width={22}
+						height={22}
+					/>
 				)}
 			</TableCell>
 

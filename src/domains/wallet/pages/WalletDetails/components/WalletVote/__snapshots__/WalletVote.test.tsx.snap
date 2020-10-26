@@ -81,10 +81,14 @@ exports[`WalletVote should render 1`] = `
           Status
         </span>
         <div
-          class="sc-AxhCb VoPpj text-theme-neutral"
+          class="sc-AxhCb VoPpj text-theme-warning"
           height="20"
           width="20"
-        />
+        >
+          <svg>
+            status-pending.svg
+          </svg>
+        </div>
       </div>
       <button
         class="sc-AxirZ hTzPEr ml-auto"
