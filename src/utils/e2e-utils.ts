@@ -72,12 +72,14 @@ const searchAddressesMocks = () => {
 			{ page: 1, limit: 10 },
 			{ page: 1, limit: 15 },
 			{ page: 2, limit: 15 },
+			{ page: 1, limit: 30 },
 		],
 		DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS: [{ page: 1, limit: 15 }],
 		DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P: [{ page: 1, limit: 15 }],
 		D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb: [
 			{ page: 1, limit: 10 },
 			{ page: 1, limit: 15 },
+			{ page: 1, limit: 30 },
 		],
 		DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq: [{ page: 1, limit: 15 }],
 	};
@@ -161,6 +163,7 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/devnet/transaction-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=10", "coins/ark/devnet/transactions"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=20", "coins/ark/devnet/transactions"),
+		mockRequest("https://dwallets.ark.io/api/transactions?limit=30", "coins/ark/devnet/transactions"),
 
 		...businessRegistrations(),
 

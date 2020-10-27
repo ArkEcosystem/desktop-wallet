@@ -1,6 +1,6 @@
-import Tippy from "@tippyjs/react";
 import { Circle, CircleProps } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
 import { Size } from "types";
@@ -36,7 +36,7 @@ export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, .
 	const displayName = networkExtendedData.displayName;
 
 	return (
-		<Tippy content={displayName} disabled={!showTooltip || !displayName}>
+		<Tooltip content={displayName} disabled={!showTooltip || !displayName}>
 			<Circle
 				aria-label={displayName}
 				data-testid={`NetworkIcon-${coin}-${network}`}
@@ -45,7 +45,7 @@ export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, .
 			>
 				<Icon data-testid="NetworkIcon__icon" name={iconName} width={iconSize} height={iconSize} />
 			</Circle>
-		</Tippy>
+		</Tooltip>
 	);
 };
 

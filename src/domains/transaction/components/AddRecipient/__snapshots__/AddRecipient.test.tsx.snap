@@ -60,23 +60,19 @@ exports[`AddRecipient should render 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="sc-AxirZ izhStr relative mt-1"
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="recipientAddress"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-              data-testid="FormLabel"
-              for="recipientAddress"
-            >
-              Recipient
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Recipient
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
           <div>
             <div
               class="relative flex items-center w-full text-left"
@@ -217,23 +213,19 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="sc-AxirZ izhStr relative mt-1"
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="recipientAddress"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-              data-testid="FormLabel"
-              for="recipientAddress"
-            >
-              Recipient #1
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Recipient #1
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
           <div>
             <div
               class="relative flex items-center w-full text-left"
@@ -374,23 +366,19 @@ exports[`AddRecipient should render with single recipient data 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="sc-AxirZ izhStr relative mt-1"
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="recipientAddress"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-              data-testid="FormLabel"
-              for="recipientAddress"
-            >
-              Recipient
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Recipient
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
           <div>
             <div
               class="relative flex items-center w-full text-left"
@@ -542,23 +530,19 @@ exports[`AddRecipient should render without recipients 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="sc-AxirZ izhStr relative mt-1"
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="recipientAddress"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-              data-testid="FormLabel"
-              for="recipientAddress"
-            >
-              Recipient
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Recipient
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
           <div>
             <div
               class="relative flex items-center w-full text-left"
@@ -651,23 +635,19 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="sc-AxirZ izhStr relative mt-1"
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="recipientAddress"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-              data-testid="FormLabel"
-              for="recipientAddress"
-            >
-              Recipient
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Recipient
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
           <div>
             <div
               class="relative flex items-center w-full text-left"
@@ -808,23 +788,19 @@ exports[`AddRecipient should set available amount 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="sc-AxirZ izhStr relative mt-1"
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="mb-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="recipientAddress"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-              data-testid="FormLabel"
-              for="recipientAddress"
-            >
-              Recipient
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-          </div>
+            Recipient
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
           <div>
             <div
               class="relative flex items-center w-full text-left"
