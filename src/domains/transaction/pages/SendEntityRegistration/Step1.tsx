@@ -82,25 +82,35 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		});
 	}
 
-	if (!wallet.isDelegate?.() && !wallet.isMultiSignature?.() && network?.can("Transaction.delegateRegistration")) {
-		registrationTypes.push({
-			value: "delegateRegistration",
-			label: "Delegate",
-		});
-	}
+	if (wallet.hasSyncedWithNetwork?.()) {
+		if (
+			!wallet.isDelegate?.() &&
+			!wallet.isMultiSignature?.() &&
+			network?.can("Transaction.delegateRegistration")
+		) {
+			registrationTypes.push({
+				value: "delegateRegistration",
+				label: "Delegate",
+			});
+		}
 
-	if (!wallet.isMultiSignature?.() && network?.can("Transaction.multiSignature")) {
-		registrationTypes.push({
-			value: "multiSignature",
-			label: "MultiSignature",
-		});
-	}
+		if (!wallet.isMultiSignature?.() && network?.can("Transaction.multiSignature")) {
+			registrationTypes.push({
+				value: "multiSignature",
+				label: "MultiSignature",
+			});
+		}
 
-	if (!wallet.isSecondSignature?.() && !wallet.isMultiSignature?.() && network?.can("Transaction.secondSignature")) {
-		registrationTypes.push({
-			value: "secondSignature",
-			label: "Second Signature",
-		});
+		if (
+			!wallet.isSecondSignature?.() &&
+			!wallet.isMultiSignature?.() &&
+			network?.can("Transaction.secondSignature")
+		) {
+			registrationTypes.push({
+				value: "secondSignature",
+				label: "Second Signature",
+			});
+		}
 	}
 
 	const onSelectSender = (address: any) => {

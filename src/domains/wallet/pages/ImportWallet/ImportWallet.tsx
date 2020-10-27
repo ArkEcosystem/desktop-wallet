@@ -105,8 +105,7 @@ export const ImportWallet = () => {
 			setWalletData(wallet);
 			await persist();
 
-			// Run in background
-			syncNewWallet(network, wallet);
+			await syncNewWallet(network, wallet);
 
 			setActiveTab(activeTab + 1);
 		} else {
