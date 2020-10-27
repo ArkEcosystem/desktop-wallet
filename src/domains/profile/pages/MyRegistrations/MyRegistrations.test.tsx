@@ -4,7 +4,16 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, getDefaultProfileId, renderWithRouter, syncDelegates, waitFor, within } from "testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	syncDelegates,
+	waitFor,
+	within,
+} from "testing-library";
 
 import { MyRegistrations } from "./MyRegistrations";
 
@@ -108,6 +117,28 @@ describe("MyRegistrations", () => {
 		);
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render empty with unsynced wallets", async () => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		const mockWalletSync = jest.spyOn(wallet, "hasSyncedWithNetwork").mockReturnValue(false);
+
+		history.push(`/profiles/${profile.id()}/registrations`);
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/registrations`],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("MyRegistrations__empty-state")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+		mockWalletSync.mockRestore();
 	});
 
 	it("should redirect to registration page", async () => {
