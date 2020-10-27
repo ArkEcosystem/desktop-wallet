@@ -1,6 +1,7 @@
 import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { isEqual } from "@arkecosystem/utils";
 import { sortByDesc } from "@arkecosystem/utils";
+import { DropdownOption } from "app/components/Dropdown";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { BarItem, PercentageBar } from "app/components/PercentageBar";
@@ -25,6 +26,7 @@ type DashboardConfiguration = {
 	showPortfolio: boolean;
 	showTransactions: boolean;
 	viewType: "list" | "grid";
+	walletsDisplayType: "all" | "favorites" | "ledger";
 };
 
 export const Dashboard = ({ networks, balances }: DashboardProps) => {
@@ -38,12 +40,13 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 			showPortfolio: true,
 			showTransactions: true,
 			viewType: "grid",
+			walletsDisplayType: "all",
 		},
 	);
 
 	const previousConfiguration = usePrevious(dashboardConfiguration);
 
-	const { showPortfolio, showTransactions, viewType } = dashboardConfiguration;
+	const { showPortfolio, showTransactions, viewType, walletsDisplayType } = dashboardConfiguration;
 
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
@@ -126,6 +129,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 	const filterProperties = {
 		networks,
+		walletsDisplayType,
 		visiblePortfolioView: showPortfolio,
 		visibleTransactionsView: showTransactions,
 		togglePortfolioView: (showPortfolio: boolean) => {
@@ -133,6 +137,9 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		},
 		toggleTransactionsView: (showTransactions: boolean) => {
 			setDashboardConfiguration({ showTransactions });
+		},
+		onWalletsDisplayType: ({ value }: DropdownOption) => {
+			setDashboardConfiguration({ walletsDisplayType: value });
 		},
 	};
 

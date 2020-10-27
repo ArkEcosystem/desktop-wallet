@@ -59,6 +59,7 @@ export const translations: { [key: string]: any } = {
 	EXPLORER: "Explorer",
 	FAILED_FETCH: "Failed to fetch {{name}}. Reason {{msg}}",
 	FAILED_UPDATE: "Failed to update {{name}}. Reason: {{reason}}",
+	FAVORITES: "Favorites",
 	FETCH: "Fetch",
 	FIAT_VALUE: "Fiat Value",
 	FILTER_BLACKLISTED_PLUGINS: "Apply blacklist",
