@@ -1,10 +1,10 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
-import { modalTopOffsetClass } from "./utils";
+import { modalTopOffsetClass, useModal } from "./";
 
 type ModalProps = {
 	children: React.ReactNode;
@@ -112,66 +112,40 @@ const ModalContent = (props: ModalContentProps) => {
 	);
 };
 
-export const Modal = (props: ModalProps) => {
-	// Disable scrolling when open
-	useEffect(() => {
-		const originalStyle = window.getComputedStyle(document.body).overflow;
+export const Modal = ({
+	isOpen,
+	description,
+	title,
+	titleClass,
+	banner,
+	image,
+	size,
+	children,
+	onClose,
+}: ModalProps) => {
+	useModal({ isOpen, onClose });
 
-		document.body.style.width = "100vw";
-		document.body.style.overflowX = "hidden";
-
-		if (props.isOpen) {
-			document.body.style.overflow = "hidden";
-			document.body.style.paddingRight = "calc(100vw - 100%)";
-		}
-
-		return () => {
-			document.body.style.overflow = originalStyle;
-			document.body.style.paddingRight = "0";
-			return;
-		};
-	}, [props.isOpen]);
-
-	const onEscKey = useCallback(
-		(event: KeyboardEvent) => {
-			if (event.key === "Escape") {
-				props.onClose();
-			}
-		},
-		[props],
-	);
-
-	useEffect(() => {
-		document.addEventListener("keyup", onEscKey, false);
-
-		return () => {
-			document.removeEventListener("keyup", onEscKey);
-		};
-	}, [onEscKey]);
-
-	if (!props.isOpen) {
-		return <></>;
-	}
+	if (!isOpen) return <></>;
 
 	return (
 		<div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto">
 			<div
 				className="fixed z-50 w-full h-full bg-black opacity-50"
 				data-testid="modal__overlay"
-				onClick={props.onClose}
+				onClick={onClose}
 			/>
 
 			<ModalContent
-				aria-selected={props.isOpen}
-				title={props.title}
-				titleClass={props.titleClass}
-				description={props.description}
-				banner={props.banner}
-				image={props.image}
-				size={props.size}
-				onClose={props.onClose}
+				aria-selected={isOpen}
+				title={title}
+				titleClass={titleClass}
+				description={description}
+				banner={banner}
+				image={image}
+				size={size}
+				onClose={onClose}
 			>
-				{props.children}
+				{children}
 			</ModalContent>
 		</div>
 	);
