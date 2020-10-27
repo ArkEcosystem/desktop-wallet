@@ -1,4 +1,4 @@
-import { Dropdown } from "app/components/Dropdown";
+import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { FilterNetwork } from "app/components/FilterNetwork";
 import { Icon } from "app/components/Icon";
 import { Toggle } from "app/components/Toggle";
@@ -7,29 +7,37 @@ import { useTranslation } from "react-i18next";
 
 export type FilterWalletsProps = {
 	networks?: any;
-	visiblePortfolioView?: any;
-	visibleTransactionsView?: any;
-	onNetworkChange?: any;
-	onViewAllNetworks?: any;
-	onWalletsDisplay?: any;
+	visiblePortfolioView?: boolean;
+	visibleTransactionsView?: boolean;
+	walletsDisplayType?: string;
 	togglePortfolioView?: any;
 	toggleTransactionsView?: any;
+	onNetworkChange?: any;
+	onViewAllNetworks?: any;
+	onWalletsDisplayType?: any;
 };
 
 export const FilterWallets = ({
 	networks,
-	onNetworkChange,
-	onViewAllNetworks,
-	onWalletsDisplay,
+	visiblePortfolioView,
+	visibleTransactionsView,
+	walletsDisplayType,
 	togglePortfolioView,
 	toggleTransactionsView,
-	visibleTransactionsView,
-	visiblePortfolioView,
+	onNetworkChange,
+	onViewAllNetworks,
+	onWalletsDisplayType,
 }: FilterWalletsProps) => {
 	const [showPortfolio, setShowPortfolio] = useState(visiblePortfolioView);
 	const [showTransactions, setShowTransactions] = useState(visibleTransactionsView);
 
 	const { t } = useTranslation();
+
+	const walletDisplayOptions = [
+		{ label: t("COMMON.ALL"), value: "all" },
+		{ label: t("COMMON.FAVORITES"), value: "favorites" },
+		{ label: t("COMMON.LEDGER"), value: "ledger" },
+	];
 
 	const togglePortfolio = (isChecked: boolean) => {
 		setShowPortfolio(isChecked);
@@ -41,12 +49,8 @@ export const FilterWallets = ({
 		toggleTransactionsView?.(isChecked);
 	};
 
-	const onWalletClick = () => {
-		onWalletsDisplay?.();
-	};
-
 	return (
-		<div className="flex flex-col text-left">
+		<div className="flex flex-col text-left" data-testid="FilterWallets">
 			<div className="mb-8">
 				<div className="font-semibold text-theme-secondary-text">
 					{t("DASHBOARD.FILTER_WALLETS.CRYPTOASSET.TITLE")}
@@ -68,17 +72,16 @@ export const FilterWallets = ({
 
 					<Dropdown
 						toggleIcon="ChevronDown"
-						options={[
-							{ label: "Option 1", value: "option1" },
-							{ label: "Option 2", value: "option2" },
-						]}
-						onSelect={onWalletClick}
+						options={walletDisplayOptions}
+						onSelect={(option: DropdownOption) => onWalletsDisplayType?.(option)}
 						toggleContent={
 							<div
 								data-testid="filter-wallets__wallets"
 								className="flex items-center justify-end cursor-pointer text-theme-secondary-text"
 							>
-								<span className="inline-block mr-2 font-semibold">{t("COMMON.ALL")}</span>
+								<span className="inline-block mr-2 font-semibold">
+									{walletDisplayOptions.find((option) => option.value === walletsDisplayType)?.label}
+								</span>
 								<Icon name="ChevronDown" width={12} height={12} />
 							</div>
 						}
@@ -101,7 +104,7 @@ export const FilterWallets = ({
 					<Toggle
 						checked={showPortfolio}
 						data-testid="filter-wallets_toggle--portfolio"
-						onChange={(e) => togglePortfolio(e.target.checked)}
+						onChange={(event) => togglePortfolio(event.target.checked)}
 					/>
 				</div>
 
@@ -119,7 +122,7 @@ export const FilterWallets = ({
 					<Toggle
 						checked={showTransactions}
 						data-testid="filter-wallets_toggle--transactions"
-						onChange={(e) => toggleTransactions(e.target.checked)}
+						onChange={(event) => toggleTransactions(event.target.checked)}
 					/>
 				</div>
 
@@ -132,7 +135,8 @@ export const FilterWallets = ({
 };
 
 FilterWallets.defaultProps = {
+	networks: [],
 	visibleTransactionsView: false,
 	visiblePortfolioView: false,
-	networks: [],
+	walletsDisplayType: "all",
 };

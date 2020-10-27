@@ -38,6 +38,7 @@ describe("FilterWallets", () => {
 		act(() => {
 			fireEvent.click(toggle);
 		});
+
 		expect(fn).toBeCalled();
 	});
 
@@ -49,6 +50,7 @@ describe("FilterWallets", () => {
 		act(() => {
 			fireEvent.click(toggle);
 		});
+
 		expect(fn).not.toBeCalled();
 	});
 
@@ -60,6 +62,7 @@ describe("FilterWallets", () => {
 		act(() => {
 			fireEvent.click(toggle);
 		});
+
 		expect(onPortfolioView).toBeCalled();
 	});
 
@@ -71,12 +74,13 @@ describe("FilterWallets", () => {
 		act(() => {
 			fireEvent.click(toggle);
 		});
+
 		expect(fn).not.toBeCalled();
 	});
 
 	it("should emit event for wallets display", () => {
 		const fn = jest.fn();
-		const { getByTestId } = render(<FilterWallets networks={networks} onWalletsDisplay={fn} />);
+		const { getByTestId } = render(<FilterWallets networks={networks} onWalletsDisplayType={fn} />);
 
 		act(() => {
 			fireEvent.click(getByTestId("filter-wallets__wallets"));
@@ -92,6 +96,7 @@ describe("FilterWallets", () => {
 	it("should ignore emit event for wallet display if callback not provided", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<FilterWallets networks={networks} />);
+
 		act(() => {
 			fireEvent.click(getByTestId("filter-wallets__wallets"));
 		});
