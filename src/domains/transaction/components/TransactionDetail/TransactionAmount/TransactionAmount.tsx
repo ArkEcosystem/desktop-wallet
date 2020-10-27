@@ -1,9 +1,9 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import Tippy from "@tippyjs/react";
 import { Amount } from "app/components/Amount";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -38,11 +38,11 @@ export const TransactionAmount = ({
 			: "border-theme-success-300 text-theme-success dark:border-theme-success";
 
 		return (
-			<Tippy content={tooltipContent}>
+			<Tooltip content={tooltipContent}>
 				<Circle className={modeCircleStyle} size="lg">
 					<Icon name={modeIconName} />
 				</Circle>
-			</Tippy>
+			</Tooltip>
 		);
 	};
 

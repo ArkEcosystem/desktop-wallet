@@ -1,33 +1,33 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Avatar } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";
+import { Tooltip } from "app/components/Tooltip";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const WaitingBadge = () => {
 	const { t } = useTranslation();
 	return (
-		<Tippy content={t("COMMON.AWAITING_SIGNATURE")}>
+		<Tooltip content={t("COMMON.AWAITING_SIGNATURE")}>
 			<Badge
 				data-testid="Signatures__waiting-badge"
 				className="bg-theme-danger-contrast text-theme-danger-400"
 				icon="StatusPending"
 			/>
-		</Tippy>
+		</Tooltip>
 	);
 };
 
 const SignedBadge = () => {
 	const { t } = useTranslation();
 	return (
-		<Tippy content={t("COMMON.SIGNED")}>
+		<Tooltip content={t("COMMON.SIGNED")}>
 			<Badge
 				data-testid="Signatures__signed-badge"
 				className="bg-theme-success-200 text-theme-success-500"
 				icon="Checkmark"
 			/>
-		</Tippy>
+		</Tooltip>
 	);
 };
 
@@ -60,11 +60,11 @@ const ParticipantStatus = ({
 
 	return (
 		<div data-testid="Signatures__participant-status" className="relative">
-			<Tippy content={address}>
+			<Tooltip content={address}>
 				<div>
 					<Avatar address={publicKey} size="lg" />
 				</div>
-			</Tippy>
+			</Tooltip>
 
 			{isAwaitingSignature ? <WaitingBadge /> : <SignedBadge />}
 		</div>
