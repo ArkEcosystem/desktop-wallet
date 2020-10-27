@@ -67,11 +67,13 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
 	const showWalletVote = useMemo(() => activeWallet.network().can("Transaction.vote"), [activeWallet]);
-	const showWalletRegistrations = useMemo(() => (
-		activeWallet.network().can("Transaction.secondSignature") ||
-		activeWallet.network().can("Transaction.delegateRegistration") ||
-		activeWallet.network().can("Transaction.entityRegistration")
-	), [activeWallet]);
+	const showWalletRegistrations = useMemo(
+		() =>
+			activeWallet.network().can("Transaction.secondSignature") ||
+			activeWallet.network().can("Transaction.delegateRegistration") ||
+			activeWallet.network().can("Transaction.entityRegistration"),
+		[activeWallet],
+	);
 
 	const coinName = activeWallet.coinId();
 	const networkId = activeWallet.networkId();
