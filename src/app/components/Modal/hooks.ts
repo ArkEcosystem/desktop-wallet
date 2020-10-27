@@ -1,4 +1,4 @@
-import { useCallback,useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 export const useModal = ({ isOpen, onClose }: { isOpen: boolean; onClose?: any }) => {
 	useEffect(() => {
