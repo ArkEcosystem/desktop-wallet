@@ -16,7 +16,7 @@ import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomSheetMenu";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -66,14 +66,17 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
-	const showWalletVote = useMemo(() => activeWallet.network().can("Transaction.vote"), [activeWallet]);
-	const showWalletRegistrations = useMemo(
-		() =>
+	const [showWalletVote, setShowWalletVote] = useState(false);
+	const [showWalletRegistrations, setShowWalletRegistrations] = useState(false);
+
+	useLayoutEffect(() => {
+		setShowWalletVote(activeWallet.network().can("Transaction.vote"));
+		setShowWalletRegistrations(
 			activeWallet.network().can("Transaction.secondSignature") ||
-			activeWallet.network().can("Transaction.delegateRegistration") ||
-			activeWallet.network().can("Transaction.entityRegistration"),
-		[activeWallet],
-	);
+				activeWallet.network().can("Transaction.delegateRegistration") ||
+				activeWallet.network().can("Transaction.entityRegistration"),
+		);
+	}, [activeWallet]);
 
 	const coinName = activeWallet.coinId();
 	const networkId = activeWallet.networkId();
