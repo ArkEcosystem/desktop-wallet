@@ -3,6 +3,7 @@ import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { useActiveProfile } from "app/hooks";
+import { SocialButton } from "domains/help/components/SocialButton";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -61,46 +62,10 @@ export const ContactUs = () => {
 						<div className="space-y-3 text-theme-secondary-900">
 							<div className="font-bold">{t("HELP.PAGE_CONTACT_US.SECTION_THIRD.TITLE")}</div>
 							<div className="flex space-x-3">
-								<a
-									href="https://twitter.ark.io/"
-									className="block w-16 border rounded-lg cursor-pointer border-theme-neutral-300 dark:border-theme-neutral-800 h-14 lg:w-14 lg:h-12 transition-default hover:bg-theme-danger-400 hover:text-white"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<div className="flex items-center justify-center h-full">
-										<Icon name="Twitter" />
-									</div>
-								</a>
-								<a
-									href="https://facebook.ark.io/"
-									className="block w-16 border rounded-lg cursor-pointer border-theme-neutral-300 dark:border-theme-neutral-800 h-14 lg:w-14 lg:h-12 transition-default hover:bg-theme-danger-400 hover:text-white"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<div className="flex items-center justify-center h-full">
-										<Icon name="Facebook" />
-									</div>
-								</a>
-								<a
-									href="https://reddit.ark.io/"
-									className="block w-16 border rounded-lg cursor-pointer border-theme-neutral-300 dark:border-theme-neutral-800 h-14 lg:w-14 lg:h-12 transition-default hover:bg-theme-danger-400 hover:text-white"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<div className="flex items-center justify-center h-full">
-										<Icon name="Reddit" />
-									</div>
-								</a>
-								<a
-									href="https://www.linkedin.com/company/ark-ecosystem"
-									className="block w-16 border rounded-lg cursor-pointer border-theme-neutral-300 dark:border-theme-neutral-800 h-14 lg:w-14 lg:h-12 transition-default hover:bg-theme-danger-400 hover:text-white"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<div className="flex items-center justify-center h-full">
-										<Icon name="LinkedIn" />
-									</div>
-								</a>
+								<SocialButton icon="Twitter" link="https://twitter.ark.io/" />
+								<SocialButton icon="Facebook" link="https://facebook.ark.io/" />
+								<SocialButton icon="Reddit" link="https://reddit.ark.io/" />
+								<SocialButton icon="LinkedIn" link="https://www.linkedin.com/company/ark-ecosystem" />
 							</div>
 						</div>
 					</div>
