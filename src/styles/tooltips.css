@@ -1,0 +1,32 @@
+@import "tippy.js/dist/tippy.css";
+
+.tippy-box {
+	max-width: 96%;
+	max-width: calc(100% - 20px);
+	@apply font-semibold;
+}
+
+@media (min-width: 1024px) {
+	.tippy-box {
+		max-width: 600px;
+		@apply break-all;
+	}
+}
+
+.tippy-box[data-theme~="light"] {
+	background-color: var(--theme-color-neutral-900);
+	color: var(--theme-white);
+}
+
+.tippy-box[data-theme~="light"] .tippy-arrow {
+	color: var(--theme-color-neutral-900);
+}
+
+.tippy-box[data-theme~="dark"] {
+	background-color: var(--theme-color-neutral-700);
+	color: var(--theme-color-neutral-200);
+}
+
+.tippy-box[data-theme~="dark"] .tippy-arrow {
+	color: var(--theme-color-neutral-700);
+}

@@ -1,9 +1,9 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
+import { Tooltip } from "app/components/Tooltip";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -73,16 +73,12 @@ export const DelegateRow = ({
 
 			<TableCell className="w-20" innerClassName={`justify-center ${getColorSelected()}`}>
 				{isVoted && (
-					<div
-						className={`flex items-center justify-center p-2 rounded-full ${
-							!isSelectedUnvote ? "bg-theme-primary-100" : "bg-theme-danger-100"
-						}`}
-					>
-						<Icon
-							name="StatusOk"
-							className={`text-xs ${!isSelectedUnvote ? "text-theme-primary" : "text-theme-danger"}`}
-						/>
-					</div>
+					<Icon
+						name="StatusOk"
+						className={`text-xs ${!isSelectedUnvote ? "text-theme-primary" : "text-theme-danger"}`}
+						width={22}
+						height={22}
+					/>
 				)}
 			</TableCell>
 
@@ -144,8 +140,11 @@ export const DelegateRow = ({
 					</Button>
 				) : (
 					// Add `<span>` wrapper to show the tooltip when the button is disabled.
-					// https://github.com/atomiks/tippyjs-react/issues/123#issuecomment-535148835
-					<Tippy content={t("VOTE.DELEGATE_TABLE.TOOLTIP_TEXT")} disabled={isSelectedVote || !isVoteDisabled}>
+					// https://github.com/atomiks/Tooltipjs-react/issues/123#issuecomment-535148835
+					<Tooltip
+						content={t("VOTE.DELEGATE_TABLE.TOOLTIP_TEXT")}
+						disabled={isSelectedVote || !isVoteDisabled}
+					>
 						{!isSelectedVote && isVoteDisabled ? (
 							<span>
 								<Button
@@ -167,7 +166,7 @@ export const DelegateRow = ({
 								{isSelectedVote ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}
 							</Button>
 						)}
-					</Tippy>
+					</Tooltip>
 				)}
 			</TableCell>
 		</TableRow>

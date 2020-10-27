@@ -1,11 +1,11 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import Tippy from "@tippyjs/react";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -115,7 +115,7 @@ export const WalletHeader = ({
 
 								<div className="flex items-center space-x-3">
 									{isLedger && (
-										<Tippy content={t("COMMON.LEDGER")}>
+										<Tooltip content={t("COMMON.LEDGER")}>
 											<span data-testid="WalletHeader__ledger">
 												<Icon
 													name="Ledger"
@@ -124,11 +124,11 @@ export const WalletHeader = ({
 													height={16}
 												/>
 											</span>
-										</Tippy>
+										</Tooltip>
 									)}
 
 									{isMultisig && (
-										<Tippy content={t("COMMON.MULTISIGNATURE")}>
+										<Tooltip content={t("COMMON.MULTISIGNATURE")}>
 											<span data-testid="WalletHeader__multisig">
 												<Icon
 													name="Multisig"
@@ -137,7 +137,7 @@ export const WalletHeader = ({
 													height={16}
 												/>
 											</span>
-										</Tippy>
+										</Tooltip>
 									)}
 								</div>
 							</div>
@@ -217,7 +217,7 @@ export const WalletHeader = ({
 								data-testid="WalletHeader__star-button"
 								onClick={onStar}
 							>
-								<Tippy
+								<Tooltip
 									content={
 										isStarred
 											? t("WALLETS.PAGE_WALLET_DETAILS.UNSTAR_WALLET")
@@ -227,7 +227,7 @@ export const WalletHeader = ({
 									<span className={isStarred ? "text-theme-warning-400" : ""}>
 										<Icon name={isStarred ? "Star" : "StarOutline"} />
 									</span>
-								</Tippy>
+								</Tooltip>
 							</Button>
 						</div>
 
