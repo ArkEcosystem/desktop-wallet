@@ -54,6 +54,15 @@ export const MyRegistrations = () => {
 		},
 	];
 
+	const hasAllWalletsSynced = useMemo(
+		() =>
+			activeProfile
+				.wallets()
+				.values()
+				.every((wallet) => wallet.hasSyncedWithNetwork()),
+		[activeProfile],
+	);
+
 	useEffect(() => {
 		const fetchRegistrations = async () => {
 			setIsLoading(true);
@@ -81,8 +90,8 @@ export const MyRegistrations = () => {
 
 			setIsLoading(false);
 		};
-		fetchRegistrations();
-	}, [activeProfile]);
+		if (hasAllWalletsSynced) fetchRegistrations();
+	}, [activeProfile, hasAllWalletsSynced]);
 
 	const { pluginEntities, businessEntities, delegateWallets } = useMemo(
 		() => ({
