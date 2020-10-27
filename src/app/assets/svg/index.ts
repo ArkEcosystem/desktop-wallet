@@ -33,6 +33,7 @@ import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { ReactComponent as Dash } from "./dash.svg";
 import { ReactComponent as DelegateResigned } from "./delegate-resigned.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
+import { ReactComponent as DiscordFlat } from "./discord-flat.svg";
 import { ReactComponent as Download } from "./download.svg";
 import { ReactComponent as Edit } from "./edit.svg";
 import { ReactComponent as Entity } from "./entity.svg";
@@ -84,6 +85,7 @@ import { ReactComponent as Search } from "./search.svg";
 import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Sent } from "./sent.svg";
 import { ReactComponent as Settings } from "./settings.svg";
+import { ReactComponent as SlackFlat } from "./slack-flat.svg";
 import { ReactComponent as Smartbridge } from "./smartbridge.svg";
 import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as StarOutline } from "./star-outline.svg";
@@ -134,8 +136,9 @@ export const SvgCollection: any = {
 	CopyKey,
 	CrossSlim,
 	Dash,
-	Delegate,
 	DelegateResigned,
+	Delegate,
+	DiscordFlat,
 	Download,
 	Edit,
 	Entity,
@@ -187,6 +190,7 @@ export const SvgCollection: any = {
 	Send,
 	Sent,
 	Settings,
+	SlackFlat,
 	Smartbridge,
 	Sort,
 	Star,

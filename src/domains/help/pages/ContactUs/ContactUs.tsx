@@ -48,11 +48,11 @@ export const ContactUs = () => {
 									or
 								</span>
 								<Button variant="plain" className="space-x-2">
-									<Icon name="Slack" />
+									<Icon name="SlackFlat" width={20} height={20} />
 									<span>{t("HELP.PAGE_CONTACT_US.SECTION_SECOND.SLACK")}</span>
 								</Button>
 								<Button variant="plain" className="space-x-2">
-									<Icon name="Discord" />
+									<Icon name="DiscordFlat" width={20} height={20} />
 									<span>{t("HELP.PAGE_CONTACT_US.SECTION_SECOND.DISCORD")}</span>
 								</Button>
 							</div>
